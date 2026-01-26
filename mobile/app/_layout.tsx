@@ -3,11 +3,17 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useAuthStore } from '@/stores/authStore';
+import { ThemeProvider } from '@/contexts/ThemeContext';
+import { ToastProvider } from '@/contexts/ToastContext';
+import { ErrorBoundary } from '@/components/ErrorBoundary';
 
 // Prevent splash screen from hiding automatically
 SplashScreen.preventAutoHideAsync();
+
+const ONBOARDING_KEY = '@rize_onboarding_completed';
 
 // Create a client
 const queryClient = new QueryClient({
@@ -23,6 +29,7 @@ export default function RootLayout() {
   const router = useRouter();
   const segments = useSegments();
   const { isAuthenticated, isLoading, initAuth } = useAuthStore();
+  const [onboardingCompleted, setOnboardingCompleted] = useState<boolean | null>(null);
 
   // Comentado temporalmente hasta descargar fuentes
   const fontsLoaded = true;
@@ -37,49 +44,71 @@ export default function RootLayout() {
   });
   */
 
-  // Initialize auth on mount
+  // Initialize auth and check onboarding on mount
   useEffect(() => {
-    initAuth();
+    const init = async () => {
+      initAuth();
+      const completed = await AsyncStorage.getItem(ONBOARDING_KEY);
+      setOnboardingCompleted(completed === 'true');
+    };
+    init();
   }, []);
 
   useEffect(() => {
-    if (fontsLoaded && !isLoading) {
+    if (fontsLoaded && !isLoading && onboardingCompleted !== null) {
       SplashScreen.hideAsync();
     }
-  }, [fontsLoaded, isLoading]);
+  }, [fontsLoaded, isLoading, onboardingCompleted]);
 
-  // Handle auth routing
+  // Handle auth routing with onboarding
   useEffect(() => {
-    if (isLoading || !fontsLoaded) return;
+    if (isLoading || !fontsLoaded || onboardingCompleted === null) return;
 
     const inAuthGroup = segments[0] === '(tabs)';
+    const inOnboarding = segments[0] === 'onboarding';
+
+    // Show onboarding if not completed and not authenticated
+    if (!onboardingCompleted && !isAuthenticated && !inOnboarding) {
+      router.replace('/onboarding');
+      return;
+    }
 
     if (!isAuthenticated && inAuthGroup) {
       router.replace('/login');
-    } else if (isAuthenticated && !inAuthGroup) {
+    } else if (isAuthenticated && !inAuthGroup && !inOnboarding) {
       router.replace('/(tabs)');
     }
-  }, [isAuthenticated, segments, isLoading, fontsLoaded]);
+  }, [isAuthenticated, segments, isLoading, fontsLoaded, onboardingCompleted]);
 
-  if (!fontsLoaded || isLoading) {
+  if (!fontsLoaded || isLoading || onboardingCompleted === null) {
     return null;
   }
 
   return (
-    <GestureHandlerRootView style={{ flex: 1 }}>
-      <QueryClientProvider client={queryClient}>
-        <Stack screenOptions={{ headerShown: false }}>
-          <Stack.Screen name="(tabs)" />
-          <Stack.Screen name="login" />
-          <Stack.Screen name="register" />
-          <Stack.Screen name="workouts/create" />
-          <Stack.Screen name="workouts/[id]" />
-          <Stack.Screen name="workouts/active" />
-          <Stack.Screen name="workouts/configure-sets" />
-          <Stack.Screen name="exercises/library" />
-          <Stack.Screen name="exercises/create" />
-          <Stack.Screen name="exercises/my" />
-          <Stack.Screen name="achievements/index" />
+    <ErrorBoundary>
+      <GestureHandlerRootView style={{ flex: 1 }}>
+        <QueryClientProvider client={queryClient}>
+          <ThemeProvider>
+            <ToastProvider>
+              <Stack screenOptions={{ headerShown: false }}>
+                <Stack.Screen name="(tabs)" />
+                <Stack.Screen name="onboarding" />
+                <Stack.Screen name="login" />
+                <Stack.Screen name="register" />
+                <Stack.Screen name="workouts/create" />
+                <Stack.Screen name="workouts/[id]" />
+                <Stack.Screen name="workouts/active" />
+                <Stack.Screen name="workouts/configure-sets" />
+                <Stack.Screen name="exercises/library" />
+                <Stack.Screen name="exercises/create" />
+                <Stack.Screen name="exercises/my" />
+                <Stack.Screen name="achievements/index" />
+              </Stack>
+            </ToastProvider>
+          </ThemeProvider>
+        </QueryClientProvider>
+      </GestureHandlerRootView>
+    </ErrorBoundary>
         </Stack>
       </QueryClientProvider>
     </GestureHandlerRootView>
