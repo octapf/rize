@@ -22,6 +22,8 @@ const categories = [
   { id: 'legs', label: 'Piernas', icon: 'walk', color: '#F59E0B' },
   { id: 'core', label: 'Core', icon: 'body', color: '#10B981' },
   { id: 'skills', label: 'Skills', icon: 'trophy', color: '#A855F7' },
+  { id: 'cardio', label: 'Cardio', icon: 'heart', color: '#EC4899' },
+  { id: 'flexibility', label: 'Flexibilidad', icon: 'flower', color: '#8B5CF6' },
 ];
 
 export default function ExerciseLibraryScreen() {
@@ -94,6 +96,15 @@ export default function ExerciseLibraryScreen() {
                 : `${data?.data.length || 0} ejercicios disponibles`}
             </Text>
           </View>
+          
+          {!isSelectMode && (
+            <TouchableOpacity
+              onPress={() => router.push('/exercises/my')}
+              className="bg-white/20 p-2 rounded-lg border border-white/30"
+            >
+              <Ionicons name="person" size={24} color="white" />
+            </TouchableOpacity>
+          )}
         </View>
 
         {/* Search */}

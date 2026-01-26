@@ -77,6 +77,8 @@ export default function RootLayout() {
           <Stack.Screen name="workouts/active" />
           <Stack.Screen name="workouts/configure-sets" />
           <Stack.Screen name="exercises/library" />
+          <Stack.Screen name="exercises/create" />
+          <Stack.Screen name="exercises/my" />
           <Stack.Screen name="achievements/index" />
         </Stack>
       </QueryClientProvider>

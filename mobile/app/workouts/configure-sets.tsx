@@ -13,10 +13,14 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { Card } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
 import { useWorkoutDraft } from '@/stores/workoutDraftStore';
+import { useQuery } from '@tanstack/react-query';
+import { exercisesApi } from '@/services/api/exercises.api';
 
 interface Set {
-  reps: string;
-  weight: string;
+  reps?: string;
+  weight?: string;
+  duration?: string;
+  distance?: string;
   completed: boolean;
 }
 
@@ -27,6 +31,23 @@ export default function ConfigureSetsScreen() {
     { reps: '', weight: '', completed: false },
   ]);
 
+  // Fetch exercise details to get type
+  const { data: exerciseData } = useQuery({
+    queryKey: ['exercise', params.exerciseId],
+    queryFn: async () => {
+      if (!params.exerciseId) return null;
+      const response = await exercisesApi.getExercises({ limit: 1 });
+      // Try to find in cached list or make individual request
+      return null; // Simplified for now
+    },
+    enabled: false, // We'll determine type from draft store
+  });
+
+  // Get exercise type from draft store
+  const currentExercise = exercises.find((e) => e.exercise._id === params.exerciseId);
+  const exerciseType = currentExercise?.exercise.type || 'reps';
+  const exerciseUnit = currentExercise?.exercise.unit;
+
   // Cargar sets existentes si los hay
   useEffect(() => {
     if (params.exerciseId) {
@@ -34,17 +55,37 @@ export default function ConfigureSetsScreen() {
       if (exercise && exercise.sets.length > 0) {
         setSets(
           exercise.sets.map((s) => ({
-            reps: s.reps.toString(),
+            reps: s.reps?.toString() || '',
             weight: s.weight?.toString() || '',
+            duration: s.duration?.toString() || '',
+            distance: s.distance?.toString() || '',
             completed: s.completed,
           }))
         );
+      } else {
+        // Initialize based on exercise type
+        setSets([
+          {
+            ...(exerciseType === 'reps' && { reps: '', weight: '' }),
+            ...(exerciseType === 'time' && { duration: '' }),
+            ...(exerciseType === 'distance' && { distance: '' }),
+            completed: false,
+          },
+        ]);
       }
     }
-  }, [params.exerciseId, exercises]);
+  }, [params.exerciseId, exercises, exerciseType]);
 
   const addSet = () => {
-    setSets([...sets, { reps: '', weight: '', completed: false }]);
+    setSets([
+      ...sets,
+      {
+        ...(exerciseType === 'reps' && { reps: '', weight: '' }),
+        ...(exerciseType === 'time' && { duration: '' }),
+        ...(exerciseType === 'distance' && { distance: '' }),
+        completed: false,
+      },
+    ]);
   };
 
   const removeSet = (index: number) => {
@@ -55,31 +96,65 @@ export default function ConfigureSetsScreen() {
     setSets(sets.filter((_, i) => i !== index));
   };
 
-  const updateSet = (index: number, field: 'reps' | 'weight', value: string) => {
+  const updateSet = (
+    index: number,
+    field: 'reps' | 'weight' | 'duration' | 'distance',
+    value: string
+  ) => {
     const newSets = [...sets];
     newSets[index][field] = value;
     setSets(newSets);
   };
 
   const handleConfirm = () => {
-    // Validar que todas las series tengan reps
-    const allValid = sets.every((set) => set.reps && parseInt(set.reps) > 0);
-    if (!allValid) {
-      Alert.alert('Error', 'Todas las series deben tener al menos 1 repetición');
-      return;
+    // Validar según tipo
+    let allValid = false;
+
+    if (exerciseType === 'reps') {
+      allValid = sets.every((set) => set.reps && parseInt(set.reps) > 0);
+      if (!allValid) {
+        Alert.alert('Error', 'Todas las series deben tener al menos 1 repetición');
+        return;
+      }
+    } else if (exerciseType === 'time') {
+      allValid = sets.every((set) => set.duration && parseFloat(set.duration) > 0);
+      if (!allValid) {
+        Alert.alert('Error', 'Todas las series deben tener duración mayor a 0');
+        return;
+      }
+    } else if (exerciseType === 'distance') {
+      allValid = sets.every((set) => set.distance && parseFloat(set.distance) > 0);
+      if (!allValid) {
+        Alert.alert('Error', 'Todas las series deben tener distancia mayor a 0');
+        return;
+      }
     }
 
     // Convertir y guardar en el store
     if (params.exerciseId) {
       const convertedSets = sets.map((set) => ({
-        reps: parseInt(set.reps),
-        weight: set.weight ? parseFloat(set.weight) : undefined,
+        ...(set.reps && { reps: parseInt(set.reps) }),
+        ...(set.weight && { weight: parseFloat(set.weight) }),
+        ...(set.duration && { duration: parseFloat(set.duration) }),
+        ...(set.distance && { distance: parseFloat(set.distance) }),
         completed: set.completed,
       }));
-      configureSets(params.exerciseId, convertedSets);
+      configureSets(params.exerciseId, convertedSets as any);
     }
 
     router.back();
+  };
+
+  const getUnitLabel = () => {
+    if (exerciseType === 'time') {
+      return exerciseUnit === 'minutes' ? 'min' : 'seg';
+    }
+    if (exerciseType === 'distance') {
+      if (exerciseUnit === 'kilometers') return 'km';
+      if (exerciseUnit === 'miles') return 'mi';
+      return 'm';
+    }
+    return '';
   };
 
   return (
@@ -113,7 +188,12 @@ export default function ConfigureSetsScreen() {
                 Configura tus series
               </Text>
               <Text className="text-blue-700 text-sm">
-                Agrega las series que planeas hacer. El peso es opcional.
+                {exerciseType === 'reps' &&
+                  'Agrega las series que planeas hacer. El peso es opcional.'}
+                {exerciseType === 'time' &&
+                  `Configura la duración de cada serie en ${getUnitLabel()}.`}
+                {exerciseType === 'distance' &&
+                  `Configura la distancia de cada serie en ${getUnitLabel()}.`}
               </Text>
             </View>
           </View>
@@ -137,33 +217,68 @@ export default function ConfigureSetsScreen() {
             </View>
 
             <View className="flex-row gap-3">
-              {/* Reps */}
-              <View className="flex-1">
-                <Text className="text-sm font-semibold text-gray-700 mb-2">
-                  Repeticiones *
-                </Text>
-                <TextInput
-                  value={set.reps}
-                  onChangeText={(value) => updateSet(index, 'reps', value)}
-                  placeholder="0"
-                  keyboardType="number-pad"
-                  className="bg-white border-2 border-gray-200 rounded-xl px-4 py-3 text-base"
-                />
-              </View>
+              {/* Reps Type */}
+              {exerciseType === 'reps' && (
+                <>
+                  <View className="flex-1">
+                    <Text className="text-sm font-semibold text-gray-700 mb-2">
+                      Repeticiones *
+                    </Text>
+                    <TextInput
+                      value={set.reps}
+                      onChangeText={(value) => updateSet(index, 'reps', value)}
+                      placeholder="0"
+                      keyboardType="number-pad"
+                      className="bg-white border-2 border-gray-200 rounded-xl px-4 py-3 text-base"
+                    />
+                  </View>
 
-              {/* Weight */}
-              <View className="flex-1">
-                <Text className="text-sm font-semibold text-gray-700 mb-2">
-                  Peso (kg)
-                </Text>
-                <TextInput
-                  value={set.weight}
-                  onChangeText={(value) => updateSet(index, 'weight', value)}
-                  placeholder="0"
-                  keyboardType="decimal-pad"
-                  className="bg-white border-2 border-gray-200 rounded-xl px-4 py-3 text-base"
-                />
-              </View>
+                  <View className="flex-1">
+                    <Text className="text-sm font-semibold text-gray-700 mb-2">
+                      Peso (kg)
+                    </Text>
+                    <TextInput
+                      value={set.weight}
+                      onChangeText={(value) => updateSet(index, 'weight', value)}
+                      placeholder="0"
+                      keyboardType="decimal-pad"
+                      className="bg-white border-2 border-gray-200 rounded-xl px-4 py-3 text-base"
+                    />
+                  </View>
+                </>
+              )}
+
+              {/* Time Type */}
+              {exerciseType === 'time' && (
+                <View className="flex-1">
+                  <Text className="text-sm font-semibold text-gray-700 mb-2">
+                    Duración ({getUnitLabel()}) *
+                  </Text>
+                  <TextInput
+                    value={set.duration}
+                    onChangeText={(value) => updateSet(index, 'duration', value)}
+                    placeholder="0"
+                    keyboardType="decimal-pad"
+                    className="bg-white border-2 border-gray-200 rounded-xl px-4 py-3 text-base"
+                  />
+                </View>
+              )}
+
+              {/* Distance Type */}
+              {exerciseType === 'distance' && (
+                <View className="flex-1">
+                  <Text className="text-sm font-semibold text-gray-700 mb-2">
+                    Distancia ({getUnitLabel()}) *
+                  </Text>
+                  <TextInput
+                    value={set.distance}
+                    onChangeText={(value) => updateSet(index, 'distance', value)}
+                    placeholder="0"
+                    keyboardType="decimal-pad"
+                    className="bg-white border-2 border-gray-200 rounded-xl px-4 py-3 text-base"
+                  />
+                </View>
+              )}
             </View>
           </Card>
         ))}

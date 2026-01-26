@@ -5,8 +5,10 @@ export interface IExercise extends Document {
     es: string;
     en: string;
   };
-  category: 'push' | 'pull' | 'legs' | 'core' | 'skills';
+  category: 'push' | 'pull' | 'legs' | 'core' | 'skills' | 'cardio' | 'flexibility';
   difficulty: number;
+  type: 'reps' | 'time' | 'distance';
+  unit?: 'seconds' | 'minutes' | 'meters' | 'kilometers' | 'miles';
   description?: {
     es: string;
     en: string;
@@ -28,7 +30,7 @@ const exerciseSchema = new Schema<IExercise>(
     },
     category: {
       type: String,
-      enum: ['push', 'pull', 'legs', 'core', 'skills'],
+      enum: ['push', 'pull', 'legs', 'core', 'skills', 'cardio', 'flexibility'],
       required: true,
       index: true,
     },
@@ -37,6 +39,19 @@ const exerciseSchema = new Schema<IExercise>(
       required: true,
       min: 0.5,
       max: 10.0,
+    },
+    type: {
+      type: String,
+      enum: ['reps', 'time', 'distance'],
+      required: true,
+      default: 'reps',
+    },
+    unit: {
+      type: String,
+      enum: ['seconds', 'minutes', 'meters', 'kilometers', 'miles'],
+      required: function (this: IExercise) {
+        return this.type === 'time' || this.type === 'distance';
+      },
     },
     description: {
       es: String,
