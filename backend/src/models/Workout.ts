@@ -12,6 +12,7 @@ export interface IWorkout extends Document {
       duration?: number;
       distance?: number;
       completed: boolean;
+      completedAt?: Date;
     }[];
     notes?: string;
   }[];
@@ -19,6 +20,9 @@ export interface IWorkout extends Document {
   notes?: string;
   xpEarned: number;
   visibility: 'private' | 'friends' | 'public';
+  status: 'planned' | 'in-progress' | 'completed';
+  startedAt?: Date;
+  completedAt?: Date;
   photo?: {
     url: string;
     publicId: string;
@@ -52,6 +56,7 @@ const workoutSchema = new Schema<IWorkout>(
             duration: { type: Number, min: 0, max: 86400 }, // max 24 hours
             distance: { type: Number, min: 0, max: 999999 },
             completed: { type: Boolean, default: false },
+            completedAt: { type: Date },
           },
         ],
         notes: { type: String, maxlength: 500 },
@@ -65,6 +70,13 @@ const workoutSchema = new Schema<IWorkout>(
       enum: ['private', 'friends', 'public'],
       default: 'private',
     },
+    status: {
+      type: String,
+      enum: ['planned', 'in-progress', 'completed'],
+      default: 'planned',
+    },
+    startedAt: { type: Date },
+    completedAt: { type: Date },
     photo: {
       url: String,
       publicId: String,

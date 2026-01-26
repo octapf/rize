@@ -9,6 +9,9 @@ import { errorHandler } from './middleware/errorHandler';
 import authRoutes from './features/auth/auth.routes';
 import workoutRoutes from './features/workouts/workout.routes';
 import exerciseRoutes from './features/exercises/exercise.routes';
+import statsRoutes from './features/stats/stats.routes';
+import socialRoutes from './features/social/social.routes';
+import achievementsRoutes from './features/achievements/achievements.routes';
 
 // Create Express app
 const app = express();
@@ -41,7 +44,9 @@ app.get('/api/version', (_req, res) => {
 app.use('/api/v1/auth', authRoutes);
 app.use('/api/v1/workouts', workoutRoutes);
 app.use('/api/v1/exercises', exerciseRoutes);
-// TODO: Import and use more routes
+app.use('/api/v1/stats', statsRoutes);
+app.use('/api/v1/social', socialRoutes);
+app.use('/api/v1/achievements', achievementsRoutes);
 
 // 404 handler
 app.use((_req, res) => {

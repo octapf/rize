@@ -7,6 +7,9 @@ import {
   updateWorkoutSchema,
   getWorkoutsQuerySchema,
   deleteWorkoutSchema,
+  startWorkoutSchema,
+  completeSetSchema,
+  finishWorkoutSchema,
 } from './workout.validation';
 import {
   createWorkout,
@@ -15,6 +18,9 @@ import {
   getWorkoutById,
   updateWorkout,
   deleteWorkout,
+  startWorkout,
+  completeSet,
+  finishWorkout,
 } from './workout.controller';
 
 const router = Router();
@@ -43,5 +49,14 @@ router.patch(
 
 // DELETE /workouts/:id - Delete workout
 router.delete('/:id', validate(z.object({ params: deleteWorkoutSchema })), deleteWorkout);
+
+// POST /workouts/:id/start - Start workout tracking
+router.post('/:id/start', validate(startWorkoutSchema), startWorkout);
+
+// PATCH /workouts/:id/set - Complete/uncomplete a set
+router.patch('/:id/set', validate(completeSetSchema), completeSet);
+
+// POST /workouts/:id/finish - Finish workout
+router.post('/:id/finish', validate(finishWorkoutSchema), finishWorkout);
 
 export default router;

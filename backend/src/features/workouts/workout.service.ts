@@ -3,7 +3,7 @@ import { Workout } from '@/models/Workout';
 import { User } from '@/models/User';
 import { Exercise } from '@/models/Exercise';
 import { AppError } from '@/utils/errors';
-import type { CreateWorkoutInput, UpdateWorkoutInput, GetWorkoutsQuery } from './workout.validation';
+import type { CreateWorkoutInput, UpdateWorkoutInput, GetWorkoutsQuery, CompleteSetInput, FinishWorkoutInput } from './workout.validation';
 
 /**
  * Workout Service - Business logic for workouts
@@ -164,6 +164,104 @@ export class WorkoutService {
 
     // Subtract XP from user
     await User.findByIdAndUpdate(userId, { $inc: { xp: -workout.xpEarned } });
+  }
+
+  /**
+   * Start a workout (tracking mode)
+   */
+  async startWorkout(workoutId: string, userId: string): Promise<IWorkout> {
+    const workout = await Workout.findOne({
+      _id: workoutId,
+      userId,
+      isDeleted: false,
+    });
+
+    if (!workout) {
+      throw new AppError('Workout not found', 404, 'WORKOUT_NOT_FOUND');
+    }
+
+    workout.status = 'in-progress';
+    workout.startedAt = new Date();
+    await workout.save();
+
+    return workout;
+  }
+
+  /**
+   * Complete/uncomplete a specific set during workout
+   */
+  async completeSet(
+    workoutId: string,
+    userId: string,
+    data: CompleteSetInput
+  ): Promise<IWorkout> {
+    const workout = await Workout.findOne({
+      _id: workoutId,
+      userId,
+      isDeleted: false,
+    });
+
+    if (!workout) {
+      throw new AppError('Workout not found', 404, 'WORKOUT_NOT_FOUND');
+    }
+
+    const { exerciseIndex, setIndex, completed } = data;
+
+    if (!workout.exercises[exerciseIndex]) {
+      throw new AppError('Exercise not found', 400, 'INVALID_EXERCISE_INDEX');
+    }
+
+    if (!workout.exercises[exerciseIndex].sets[setIndex]) {
+      throw new AppError('Set not found', 400, 'INVALID_SET_INDEX');
+    }
+
+    workout.exercises[exerciseIndex].sets[setIndex].completed = completed;
+    workout.exercises[exerciseIndex].sets[setIndex].completedAt = completed ? new Date() : undefined;
+    
+    await workout.save();
+
+    return workout;
+  }
+
+  /**
+   * Finish workout and calculate final stats
+   */
+  async finishWorkout(
+    workoutId: string,
+    userId: string,
+    data: FinishWorkoutInput
+  ): Promise<IWorkout> {
+    const workout = await Workout.findOne({
+      _id: workoutId,
+      userId,
+      isDeleted: false,
+    });
+
+    if (!workout) {
+      throw new AppError('Workout not found', 404, 'WORKOUT_NOT_FOUND');
+    }
+
+    workout.status = 'completed';
+    workout.completedAt = new Date();
+    
+    if (data.duration) {
+      workout.duration = data.duration;
+      // Recalculate XP with duration
+      const totalSets = workout.exercises.reduce((sum, ex) => sum + ex.sets.length, 0);
+      const newXP = this.calculateWorkoutXP(totalSets, data.duration);
+      const xpDiff = newXP - workout.xpEarned;
+      
+      workout.xpEarned = newXP;
+      
+      // Update user XP if changed
+      if (xpDiff !== 0) {
+        await User.findByIdAndUpdate(userId, { $inc: { xp: xpDiff } });
+      }
+    }
+
+    await workout.save();
+
+    return workout;
   }
 
   /**

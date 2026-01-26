@@ -1,7 +1,7 @@
 import type { Request, Response } from 'express';
 import { workoutService } from './workout.service';
 import { asyncHandler } from '@/utils/asyncHandler';
-import type { CreateWorkoutInput, UpdateWorkoutInput, GetWorkoutsQuery } from './workout.validation';
+import type { CreateWorkoutInput, UpdateWorkoutInput, GetWorkoutsQuery, CompleteSetInput, FinishWorkoutInput } from './workout.validation';
 
 /**
  * @route   POST /api/v1/workouts
@@ -108,5 +108,58 @@ export const deleteWorkout = asyncHandler(async (req: Request, res: Response) =>
   res.json({
     success: true,
     message: 'Workout deleted successfully',
+  });
+});
+
+/**
+ * @route   POST /api/v1/workouts/:id/start
+ * @desc    Start workout tracking
+ * @access  Private
+ */
+export const startWorkout = asyncHandler(async (req: Request, res: Response) => {
+  const userId = req.user!._id.toString();
+  const workoutId = req.params.id;
+
+  const workout = await workoutService.startWorkout(workoutId, userId);
+
+  res.json({
+    success: true,
+    data: workout,
+  });
+});
+
+/**
+ * @route   PATCH /api/v1/workouts/:id/set
+ * @desc    Complete/uncomplete a set
+ * @access  Private
+ */
+export const completeSet = asyncHandler(async (req: Request, res: Response) => {
+  const userId = req.user!._id.toString();
+  const workoutId = req.params.id;
+  const data = req.body as CompleteSetInput;
+
+  const workout = await workoutService.completeSet(workoutId, userId, data);
+
+  res.json({
+    success: true,
+    data: workout,
+  });
+});
+
+/**
+ * @route   POST /api/v1/workouts/:id/finish
+ * @desc    Finish workout
+ * @access  Private
+ */
+export const finishWorkout = asyncHandler(async (req: Request, res: Response) => {
+  const userId = req.user!._id.toString();
+  const workoutId = req.params.id;
+  const data = req.body as FinishWorkoutInput;
+
+  const workout = await workoutService.finishWorkout(workoutId, userId, data);
+
+  res.json({
+    success: true,
+    data: workout,
   });
 });

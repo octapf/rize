@@ -74,8 +74,10 @@ export default function RootLayout() {
           <Stack.Screen name="register" />
           <Stack.Screen name="workouts/create" />
           <Stack.Screen name="workouts/[id]" />
+          <Stack.Screen name="workouts/active" />
           <Stack.Screen name="workouts/configure-sets" />
           <Stack.Screen name="exercises/library" />
+          <Stack.Screen name="achievements/index" />
         </Stack>
       </QueryClientProvider>
     </GestureHandlerRootView>

@@ -1,0 +1,300 @@
+import React, { useState, useEffect } from 'react';
+import {
+  View,
+  Text,
+  ScrollView,
+  TouchableOpacity,
+  Alert,
+  ActivityIndicator,
+} from 'react-native';
+import { router, useLocalSearchParams } from 'expo-router';
+import { Ionicons } from '@expo/vector-icons';
+import { LinearGradient } from 'expo-linear-gradient';
+import { useWorkout } from '@/hooks/useWorkouts';
+import { workoutsApi } from '@/services/api/workouts.api';
+import { Card } from '@/components/ui/Card';
+import { Button } from '@/components/ui/Button';
+import type { Workout } from '@/services/api/workouts.api';
+
+export default function ActiveWorkoutScreen() {
+  const { id } = useLocalSearchParams<{ id: string }>();
+  const { data, isLoading, refetch } = useWorkout(id);
+  const [workout, setWorkout] = useState<Workout | null>(null);
+  const [timer, setTimer] = useState(0);
+  const [isRunning, setIsRunning] = useState(false);
+
+  useEffect(() => {
+    if (data?.data) {
+      setWorkout(data.data);
+      if (data.data.status === 'in-progress' && data.data.startedAt) {
+        const elapsed = Math.floor(
+          (Date.now() - new Date(data.data.startedAt).getTime()) / 1000
+        );
+        setTimer(elapsed);
+        setIsRunning(true);
+      }
+    }
+  }, [data]);
+
+  useEffect(() => {
+    let interval: NodeJS.Timeout;
+    if (isRunning) {
+      interval = setInterval(() => {
+        setTimer((t) => t + 1);
+      }, 1000);
+    }
+    return () => clearInterval(interval);
+  }, [isRunning]);
+
+  const handleStart = async () => {
+    try {
+      const response = await workoutsApi.startWorkout(id);
+      setWorkout(response.data);
+      setIsRunning(true);
+      setTimer(0);
+    } catch (error) {
+      Alert.alert('Error', 'No se pudo iniciar el entrenamiento');
+    }
+  };
+
+  const handleToggleSet = async (exerciseIndex: number, setIndex: number) => {
+    if (!workout) return;
+
+    const currentCompleted = workout.exercises[exerciseIndex].sets[setIndex].completed;
+
+    try {
+      const response = await workoutsApi.completeSet(
+        id,
+        exerciseIndex,
+        setIndex,
+        !currentCompleted
+      );
+      setWorkout(response.data);
+    } catch (error) {
+      Alert.alert('Error', 'No se pudo actualizar');
+    }
+  };
+
+  const handleFinish = () => {
+    Alert.alert(
+      'Finalizar Entrenamiento',
+      '¿Seguro que quieres finalizar?',
+      [
+        { text: 'Cancelar', style: 'cancel' },
+        {
+          text: 'Finalizar',
+          style: 'destructive',
+          onPress: async () => {
+            try {
+              await workoutsApi.finishWorkout(id, timer);
+              Alert.alert('¡Éxito!', 'Entrenamiento completado', [
+                { text: 'OK', onPress: () => router.back() },
+              ]);
+            } catch (error) {
+              Alert.alert('Error', 'No se pudo finalizar');
+            }
+          },
+        },
+      ]
+    );
+  };
+
+  const formatTime = (seconds: number) => {
+    const h = Math.floor(seconds / 3600);
+    const m = Math.floor((seconds % 3600) / 60);
+    const s = seconds % 60;
+    return `${h.toString().padStart(2, '0')}:${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
+  };
+
+  const calculateProgress = () => {
+    if (!workout) return 0;
+    const totalSets = workout.exercises.reduce(
+      (sum, ex) => sum + ex.sets.length,
+      0
+    );
+    const completedSets = workout.exercises.reduce(
+      (sum, ex) => sum + ex.sets.filter((s) => s.completed).length,
+      0
+    );
+    return totalSets > 0 ? (completedSets / totalSets) * 100 : 0;
+  };
+
+  if (isLoading) {
+    return (
+      <View className="flex-1 bg-gray-50 items-center justify-center">
+        <ActivityIndicator size="large" color="#10B981" />
+      </View>
+    );
+  }
+
+  if (!workout) {
+    return (
+      <View className="flex-1 bg-gray-50 items-center justify-center">
+        <Text className="text-gray-500">Entrenamiento no encontrado</Text>
+      </View>
+    );
+  }
+
+  const progress = calculateProgress();
+  const totalSets = workout.exercises.reduce(
+    (sum, ex) => sum + ex.sets.length,
+    0
+  );
+  const completedSets = workout.exercises.reduce(
+    (sum, ex) => sum + ex.sets.filter((s) => s.completed).length,
+    0
+  );
+
+  return (
+    <View className="flex-1 bg-gray-50">
+      {/* Header */}
+      <LinearGradient colors={['#10B981', '#059669']} className="px-6 pt-12 pb-6">
+        <View className="flex-row items-center justify-between mb-4">
+          <TouchableOpacity onPress={() => router.back()} className="p-2">
+            <Ionicons name="arrow-back" size={28} color="white" />
+          </TouchableOpacity>
+          <Text className="text-2xl font-bold text-white">{workout.name}</Text>
+          <View className="w-10" />
+        </View>
+
+        {/* Timer */}
+        <View className="items-center py-4">
+          <Text className="text-white text-6xl font-bold mb-2">
+            {formatTime(timer)}
+          </Text>
+          {workout.status === 'planned' ? (
+            <Button
+              variant="secondary"
+              onPress={handleStart}
+              className="mt-4"
+            >
+              Iniciar Entrenamiento
+            </Button>
+          ) : (
+            <Text className="text-emerald-100 text-sm">En progreso...</Text>
+          )}
+        </View>
+
+        {/* Progress Bar */}
+        <View className="mt-4">
+          <View className="flex-row justify-between mb-2">
+            <Text className="text-white text-sm font-semibold">
+              Progreso: {completedSets}/{totalSets} series
+            </Text>
+            <Text className="text-white text-sm font-semibold">
+              {Math.round(progress)}%
+            </Text>
+          </View>
+          <View className="h-3 bg-white/20 rounded-full overflow-hidden">
+            <View
+              className="h-full bg-white rounded-full"
+              style={{ width: `${progress}%` }}
+            />
+          </View>
+        </View>
+      </LinearGradient>
+
+      {/* Exercises List */}
+      <ScrollView className="flex-1" contentContainerClassName="p-6 gap-4">
+        {workout.exercises.map((exercise, exerciseIndex) => {
+          const exerciseData =
+            typeof exercise.exerciseId === 'string'
+              ? null
+              : exercise.exerciseId;
+
+          if (!exerciseData) return null;
+
+          const exerciseSets = exercise.sets.length;
+          const exerciseCompleted = exercise.sets.filter((s) => s.completed)
+            .length;
+
+          return (
+            <Card key={exerciseIndex} className="p-4">
+              <View className="flex-row items-center justify-between mb-3">
+                <View className="flex-1">
+                  <Text className="text-lg font-bold text-gray-900">
+                    {exerciseData.name.es}
+                  </Text>
+                  <Text className="text-sm text-gray-600">
+                    {exerciseCompleted}/{exerciseSets} series completadas
+                  </Text>
+                </View>
+                <View
+                  className={`px-3 py-1 rounded-full ${
+                    exerciseCompleted === exerciseSets
+                      ? 'bg-emerald-100'
+                      : 'bg-gray-100'
+                  }`}
+                >
+                  <Text
+                    className={`text-xs font-semibold ${
+                      exerciseCompleted === exerciseSets
+                        ? 'text-emerald-700'
+                        : 'text-gray-600'
+                    }`}
+                  >
+                    {Math.round((exerciseCompleted / exerciseSets) * 100)}%
+                  </Text>
+                </View>
+              </View>
+
+              {/* Sets */}
+              <View className="gap-2">
+                {exercise.sets.map((set, setIndex) => (
+                  <TouchableOpacity
+                    key={setIndex}
+                    onPress={() =>
+                      workout.status === 'in-progress' &&
+                      handleToggleSet(exerciseIndex, setIndex)
+                    }
+                    disabled={workout.status !== 'in-progress'}
+                    className={`flex-row items-center justify-between p-3 rounded-lg border-2 ${
+                      set.completed
+                        ? 'bg-emerald-50 border-emerald-500'
+                        : 'bg-white border-gray-200'
+                    }`}
+                  >
+                    <View className="flex-row items-center gap-3">
+                      <View
+                        className={`w-8 h-8 rounded-full items-center justify-center ${
+                          set.completed ? 'bg-emerald-500' : 'bg-gray-200'
+                        }`}
+                      >
+                        {set.completed ? (
+                          <Ionicons name="checkmark" size={20} color="white" />
+                        ) : (
+                          <Text className="text-gray-600 font-bold">
+                            {setIndex + 1}
+                          </Text>
+                        )}
+                      </View>
+                      <View>
+                        <Text className="text-sm font-semibold text-gray-900">
+                          Serie {setIndex + 1}
+                        </Text>
+                        <Text className="text-xs text-gray-600">
+                          {set.reps} reps
+                          {set.weight && ` • ${set.weight} kg`}
+                        </Text>
+                      </View>
+                    </View>
+                  </TouchableOpacity>
+                ))}
+              </View>
+            </Card>
+          );
+        })}
+
+        {workout.status === 'in-progress' && (
+          <Button
+            variant="primary"
+            onPress={handleFinish}
+            className="mt-4"
+          >
+            Finalizar Entrenamiento
+          </Button>
+        )}
+      </ScrollView>
+    </View>
+  );
+}

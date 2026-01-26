@@ -78,6 +78,10 @@ export default function WorkoutDetailScreen() {
 
   const workout = data.data;
 
+  const handleStartWorkout = () => {
+    router.push(`/workouts/active?id=${id}`);
+  };
+
   return (
     <View className="flex-1 bg-gray-50">
       {/* Header con gradiente */}
@@ -94,6 +98,19 @@ export default function WorkoutDetailScreen() {
             <Ionicons name="trash-outline" size={28} color="white" />
           </TouchableOpacity>
         </View>
+
+        {/* Start Workout Button */}
+        {workout.status !== 'completed' && (
+          <TouchableOpacity
+            onPress={handleStartWorkout}
+            className="bg-white mt-4 py-3 rounded-xl flex-row items-center justify-center gap-2"
+          >
+            <Ionicons name="play-circle" size={24} color="#10B981" />
+            <Text className="text-emerald-600 font-bold text-lg">
+              {workout.status === 'in-progress' ? 'Continuar Entrenamiento' : 'Empezar Entrenamiento'}
+            </Text>
+          </TouchableOpacity>
+        )}
       </LinearGradient>
 
       <ScrollView className="flex-1" contentContainerClassName="p-6 gap-6">

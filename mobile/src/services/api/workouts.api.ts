@@ -7,6 +7,7 @@ export interface WorkoutSet {
   duration?: number;
   distance?: number;
   completed: boolean;
+  completedAt?: string;
 }
 
 export interface WorkoutExercise {
@@ -25,6 +26,9 @@ export interface Workout {
   notes?: string;
   xpEarned: number;
   visibility: 'private' | 'friends' | 'public';
+  status: 'planned' | 'in-progress' | 'completed';
+  startedAt?: string;
+  completedAt?: string;
   createdAt: string;
   updatedAt: string;
 }
@@ -123,6 +127,38 @@ export const workoutsApi = {
   getStats: async (days = 30): Promise<WorkoutStatsResponse> => {
     const response = await apiClient.get<WorkoutStatsResponse>(
       `/workouts/stats?days=${days}`
+    );
+    return response.data;
+  },
+
+  startWorkout: async (id: string): Promise<WorkoutResponse> => {
+    const response = await apiClient.post<WorkoutResponse>(
+      `/workouts/${id}/start`,
+      {}
+    );
+    return response.data;
+  },
+
+  completeSet: async (
+    id: string,
+    exerciseIndex: number,
+    setIndex: number,
+    completed: boolean
+  ): Promise<WorkoutResponse> => {
+    const response = await apiClient.patch<WorkoutResponse>(
+      `/workouts/${id}/set`,
+      { exerciseIndex, setIndex, completed }
+    );
+    return response.data;
+  },
+
+  finishWorkout: async (
+    id: string,
+    duration?: number
+  ): Promise<WorkoutResponse> => {
+    const response = await apiClient.post<WorkoutResponse>(
+      `/workouts/${id}/finish`,
+      { duration }
     );
     return response.data;
   },

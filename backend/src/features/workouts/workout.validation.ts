@@ -72,6 +72,34 @@ export const deleteWorkoutSchema = z.object({
   }),
 });
 
+export const startWorkoutSchema = z.object({
+  params: z.object({
+    id: z.string().regex(/^[0-9a-fA-F]{24}$/, 'Invalid workout ID'),
+  }),
+});
+
+export const completeSetSchema = z.object({
+  params: z.object({
+    id: z.string().regex(/^[0-9a-fA-F]{24}$/, 'Invalid workout ID'),
+  }),
+  body: z.object({
+    exerciseIndex: z.number().int().min(0),
+    setIndex: z.number().int().min(0),
+    completed: z.boolean(),
+  }),
+});
+
+export const finishWorkoutSchema = z.object({
+  params: z.object({
+    id: z.string().regex(/^[0-9a-fA-F]{24}$/, 'Invalid workout ID'),
+  }),
+  body: z.object({
+    duration: z.number().int().positive().optional(),
+  }),
+});
+
 export type CreateWorkoutInput = z.infer<typeof createWorkoutSchema>['body'];
 export type UpdateWorkoutInput = z.infer<typeof updateWorkoutSchema>['body'];
 export type GetWorkoutsQuery = z.infer<typeof getWorkoutsQuerySchema>['query'];
+export type CompleteSetInput = z.infer<typeof completeSetSchema>['body'];
+export type FinishWorkoutInput = z.infer<typeof finishWorkoutSchema>['body'];
