@@ -3,12 +3,22 @@ import { View, Text, ScrollView, TouchableOpacity } from 'react-native';
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
+import { useQuery } from '@tanstack/react-query';
 import { useAuthStore } from '@/stores/authStore';
 import { Card } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
+import { notificationsApi } from '@/services/api/notifications.api';
 
 export default function ProfileScreen() {
   const { user, logout } = useAuthStore();
+
+  const { data: unreadData } = useQuery({
+    queryKey: ['notifications-unread-count'],
+    queryFn: notificationsApi.getUnreadCount,
+    refetchInterval: 30000, // Refetch every 30 seconds
+  });
+
+  const unreadCount = unreadData?.data.count || 0;
 
   const handleLogout = () => {
     logout();
@@ -36,6 +46,53 @@ export default function ProfileScreen() {
       </LinearGradient>
 
       <ScrollView className="flex-1" contentContainerClassName="p-6 gap-4">
+        {/* Notifications Button */}
+        <TouchableOpacity onPress={() => router.push('/notifications')}>
+          <Card className="p-4 bg-gradient-to-r from-blue-50 to-indigo-50">
+            <View className="flex-row items-center gap-4">
+              <View className="bg-blue-500 w-12 h-12 rounded-xl items-center justify-center relative">
+                <Ionicons name="notifications" size={28} color="white" />
+                {unreadCount > 0 && (
+                  <View className="absolute -top-1 -right-1 bg-red-500 rounded-full min-w-[20px] h-5 items-center justify-center px-1">
+                    <Text className="text-white text-xs font-bold">
+                      {unreadCount > 99 ? '99+' : unreadCount}
+                    </Text>
+                  </View>
+                )}
+              </View>
+              <View className="flex-1">
+                <Text className="text-lg font-bold text-gray-900">
+                  Notificaciones
+                </Text>
+                <Text className="text-sm text-gray-600">
+                  {unreadCount > 0 ? `${unreadCount} sin leer` : 'Sin notificaciones nuevas'}
+                </Text>
+              </View>
+              <Ionicons name="chevron-forward" size={24} color="#9CA3AF" />
+            </View>
+          </Card>
+        </TouchableOpacity>
+
+        {/* Challenges Button */}
+        <TouchableOpacity onPress={() => router.push('/challenges')}>
+          <Card className="p-4 bg-gradient-to-r from-red-50 to-orange-50">
+            <View className="flex-row items-center gap-4">
+              <View className="bg-red-500 w-12 h-12 rounded-xl items-center justify-center">
+                <Ionicons name="flash" size={28} color="white" />
+              </View>
+              <View className="flex-1">
+                <Text className="text-lg font-bold text-gray-900">
+                  Mis Retos
+                </Text>
+                <Text className="text-sm text-gray-600">
+                  Desafía a tus amigos
+                </Text>
+              </View>
+              <Ionicons name="chevron-forward" size={24} color="#9CA3AF" />
+            </View>
+          </Card>
+        </TouchableOpacity>
+
         {/* Achievements Button */}
         <TouchableOpacity onPress={() => router.push('/achievements')}>
           <Card className="p-4 bg-gradient-to-r from-purple-50 to-pink-50">
@@ -70,12 +127,24 @@ export default function ProfileScreen() {
             <Ionicons name="chevron-forward" size={20} color="#9CA3AF" />
           </TouchableOpacity>
 
-          <TouchableOpacity className="flex-row items-center justify-between py-3 border-b border-gray-200">
+          <TouchableOpacity
+            onPress={() => router.push('/notifications')}
+            className="flex-row items-center justify-between py-3 border-b border-gray-200"
+          >
             <View className="flex-row items-center gap-3">
               <Ionicons name="notifications-outline" size={24} color="#6B7280" />
-              <Text className="text-gray-900">Notificaciones</Text>
+              <Text className="text-gray-900">Configurar Notificaciones</Text>
             </View>
-            <Ionicons name="chevron-forward" size={20} color="#9CA3AF" />
+            <View className="flex-row items-center gap-2">
+              {unreadCount > 0 && (
+                <View className="bg-red-500 rounded-full min-w-[20px] h-5 items-center justify-center px-1.5">
+                  <Text className="text-white text-xs font-bold">
+                    {unreadCount > 99 ? '99+' : unreadCount}
+                  </Text>
+                </View>
+              )}
+              <Ionicons name="chevron-forward" size={20} color="#9CA3AF" />
+            </View>
           </TouchableOpacity>
 
           <TouchableOpacity className="flex-row items-center justify-between py-3 border-b border-gray-200">
