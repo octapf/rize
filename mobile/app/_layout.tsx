@@ -209,6 +209,9 @@ export default function RootLayout() {
                 <Stack.Screen name="integrations/wearables" />
                 <Stack.Screen name="workouts/advanced-builder" />
                 <Stack.Screen name="nutrition/meal-planning" />
+                <Stack.Screen name="progress/transformation" />
+                <Stack.Screen name="testing/performance" />
+                <Stack.Screen name="programs/custom" />
               </Stack>
               </SocketProvider>
               </NotificationProvider>
