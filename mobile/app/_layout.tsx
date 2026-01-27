@@ -180,6 +180,9 @@ export default function RootLayout() {
                 <Stack.Screen name="videos/tutorial" />
                 <Stack.Screen name="videos/library" />
                 <Stack.Screen name="videos/form-check" />
+                <Stack.Screen name="integrations/index" />
+                <Stack.Screen name="integrations/data-export" />
+                <Stack.Screen name="coaching/index" />
               </Stack>
               </SocketProvider>
               </NotificationProvider>
