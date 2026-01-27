@@ -14,6 +14,8 @@ import { useWorkout } from '@/hooks/useWorkouts';
 import { workoutsApi } from '@/services/api/workouts.api';
 import { Card } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
+import RestTimer from '@/components/RestTimer';
+import PlateCalculator from '@/components/PlateCalculator';
 import type { Workout } from '@/services/api/workouts.api';
 
 export default function ActiveWorkoutScreen() {
@@ -22,6 +24,13 @@ export default function ActiveWorkoutScreen() {
   const [workout, setWorkout] = useState<Workout | null>(null);
   const [timer, setTimer] = useState(0);
   const [isRunning, setIsRunning] = useState(false);
+  
+  // Rest timer state
+  const [showRestTimer, setShowRestTimer] = useState(false);
+  const [restDuration, setRestDuration] = useState(90); // 90 segundos por defecto
+  
+  // Plate calculator state
+  const [showPlateCalculator, setShowPlateCalculator] = useState(false);
 
   useEffect(() => {
     if (data?.data) {
@@ -70,6 +79,11 @@ export default function ActiveWorkoutScreen() {
         !currentCompleted
       );
       setWorkout(response.data);
+      
+      // Si se completó la serie, mostrar rest timer
+      if (!currentCompleted) {
+        setShowRestTimer(true);
+      }
     } catch (error) {
       Alert.alert('Error', 'No se pudo actualizar');
     }
@@ -154,7 +168,12 @@ export default function ActiveWorkoutScreen() {
             <Ionicons name="arrow-back" size={28} color="white" />
           </TouchableOpacity>
           <Text className="text-2xl font-bold text-white">{workout.name}</Text>
-          <View className="w-10" />
+          <TouchableOpacity 
+            onPress={() => setShowPlateCalculator(true)} 
+            className="p-2 bg-white/20 rounded-full"
+          >
+            <Ionicons name="calculator-outline" size={24} color="white" />
+          </TouchableOpacity>
         </View>
 
         {/* Timer */}
@@ -295,6 +314,21 @@ export default function ActiveWorkoutScreen() {
           </Button>
         )}
       </ScrollView>
+      
+      {/* Rest Timer */}
+      <RestTimer
+        visible={showRestTimer}
+        duration={restDuration}
+        onComplete={() => setShowRestTimer(false)}
+        onSkip={() => setShowRestTimer(false)}
+        onAddTime={(seconds) => setRestDuration(prev => prev + seconds)}
+      />
+      
+      {/* Plate Calculator */}
+      <PlateCalculator
+        visible={showPlateCalculator}
+        onClose={() => setShowPlateCalculator(false)}
+      />
     </View>
   );
 }
