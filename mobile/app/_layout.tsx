@@ -233,6 +233,8 @@ export default function RootLayout() {
                 <Stack.Screen name="scheduling/smart" />
                 <Stack.Screen name="quests/daily" />
                 <Stack.Screen name="community/forum" />
+                <Stack.Screen name="exercises/variations" />
+                <Stack.Screen name="nutrition/hydration" />
               </Stack>
               </SocketProvider>
               </NotificationProvider>
