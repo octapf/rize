@@ -139,6 +139,8 @@ export default function RootLayout() {
                 <Stack.Screen name="auth/forgot-password" options={{ headerShown: false }} />
                 <Stack.Screen name="auth/onboarding" options={{ headerShown: false }} />
                 <Stack.Screen name="index" options={{ headerShown: false }} />
+                <Stack.Screen name="chat/[id]" />
+                <Stack.Screen name="tools/plate-calculator" />
                 <Stack.Screen name="goals/index" />
                 <Stack.Screen name="calendar/index" />
                 <Stack.Screen name="notifications/index" />
