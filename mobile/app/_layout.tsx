@@ -230,6 +230,9 @@ export default function RootLayout() {
                 <Stack.Screen name="supplements/stacks" />
                 <Stack.Screen name="records/personal" />
                 <Stack.Screen name="tutorials/videos" />
+                <Stack.Screen name="scheduling/smart" />
+                <Stack.Screen name="quests/daily" />
+                <Stack.Screen name="community/forum" />
               </Stack>
               </SocketProvider>
               </NotificationProvider>
