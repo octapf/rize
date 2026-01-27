@@ -362,6 +362,66 @@ export default function ProfileScreen() {
           </Card>
         </TouchableOpacity>
 
+        {/* Achievements */}
+        <TouchableOpacity onPress={() => router.push('/achievements')}>
+          <Card className="p-4 bg-gradient-to-r from-amber-50 to-yellow-50">
+            <View className="flex-row items-center gap-4">
+              <View className="bg-amber-500 w-12 h-12 rounded-xl items-center justify-center">
+                <Ionicons name="trophy" size={28} color="white" />
+              </View>
+              <View className="flex-1">
+                <Text className="text-lg font-bold text-gray-900">
+                  Logros
+                </Text>
+                <Text className="text-sm text-gray-600">
+                  Desbloquea achievements
+                </Text>
+              </View>
+              <Ionicons name="chevron-forward" size={24} color="#9CA3AF" />
+            </View>
+          </Card>
+        </TouchableOpacity>
+
+        {/* Nutrition */}
+        <TouchableOpacity onPress={() => router.push('/nutrition')}>
+          <Card className="p-4 bg-gradient-to-r from-green-50 to-emerald-50">
+            <View className="flex-row items-center gap-4">
+              <View className="bg-green-500 w-12 h-12 rounded-xl items-center justify-center">
+                <Ionicons name="nutrition" size={28} color="white" />
+              </View>
+              <View className="flex-1">
+                <Text className="text-lg font-bold text-gray-900">
+                  Nutrición
+                </Text>
+                <Text className="text-sm text-gray-600">
+                  Track tus macros
+                </Text>
+              </View>
+              <Ionicons name="chevron-forward" size={24} color="#9CA3AF" />
+            </View>
+          </Card>
+        </TouchableOpacity>
+
+        {/* Messages */}
+        <TouchableOpacity onPress={() => router.push('/messages')}>
+          <Card className="p-4 bg-gradient-to-r from-blue-50 to-cyan-50">
+            <View className="flex-row items-center gap-4">
+              <View className="bg-blue-500 w-12 h-12 rounded-xl items-center justify-center">
+                <Ionicons name="chatbubbles" size={28} color="white" />
+              </View>
+              <View className="flex-1">
+                <Text className="text-lg font-bold text-gray-900">
+                  Mensajes
+                </Text>
+                <Text className="text-sm text-gray-600">
+                  Chatea con amigos
+                </Text>
+              </View>
+              <Ionicons name="chevron-forward" size={24} color="#9CA3AF" />
+            </View>
+          </Card>
+        </TouchableOpacity>
+
         {/* Settings */}
         <TouchableOpacity onPress={() => router.push('/settings')}>
           <Card className="p-4 bg-gradient-to-r from-gray-50 to-slate-50">

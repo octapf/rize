@@ -132,6 +132,8 @@ export default function RootLayout() {
                 <Stack.Screen name="exercises/[id]" />
                 <Stack.Screen name="workouts/templates" />
                 <Stack.Screen name="achievements/index" />
+                <Stack.Screen name="nutrition/index" />
+                <Stack.Screen name="messages/index" />
                 <Stack.Screen name="goals/index" />
                 <Stack.Screen name="calendar/index" />
                 <Stack.Screen name="notifications/index" />
