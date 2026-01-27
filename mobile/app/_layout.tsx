@@ -118,6 +118,9 @@ export default function RootLayout() {
                 <Stack.Screen name="settings/index" />
                 <Stack.Screen name="timer/index" />
                 <Stack.Screen name="stats/log-weight" />
+                <Stack.Screen name="challenges/index" />
+                <Stack.Screen name="exercises/library" />
+                <Stack.Screen name="records/index" />
                 <Stack.Screen name="goals/index" />
                 <Stack.Screen name="calendar/index" />
                 <Stack.Screen name="notifications/index" />

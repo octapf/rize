@@ -282,6 +282,26 @@ export default function ProfileScreen() {
           </Card>
         </TouchableOpacity>
 
+        {/* Personal Records */}
+        <TouchableOpacity onPress={() => router.push('/records')}>
+          <Card className="p-4 bg-gradient-to-r from-purple-50 to-violet-50">
+            <View className="flex-row items-center gap-4">
+              <View className="bg-purple-600 w-12 h-12 rounded-xl items-center justify-center">
+                <Ionicons name="trophy" size={28} color="white" />
+              </View>
+              <View className="flex-1">
+                <Text className="text-lg font-bold text-gray-900">
+                  Récords Personales
+                </Text>
+                <Text className="text-sm text-gray-600">
+                  Tus mejores marcas
+                </Text>
+              </View>
+              <Ionicons name="chevron-forward" size={24} color="#9CA3AF" />
+            </View>
+          </Card>
+        </TouchableOpacity>
+
         {/* Settings */}
         <TouchableOpacity onPress={() => router.push('/settings')}>
           <Card className="p-4 bg-gradient-to-r from-gray-50 to-slate-50">
