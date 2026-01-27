@@ -268,7 +268,7 @@ export class WorkoutService {
     workoutId: string,
     userId: string,
     data: FinishWorkoutInput
-  ): Promise<IWorkout> {
+  ): Promise<{ workout: IWorkout; newRecords: any[] }> {
     const workout = await Workout.findOne({
       _id: workoutId,
       userId,
@@ -300,14 +300,15 @@ export class WorkoutService {
     await workout.save();
 
     // Check and update personal records
+    let newRecords: any[] = [];
     try {
-      await recordsService.checkAndUpdateRecords(workoutId, userId);
+      newRecords = await recordsService.checkAndUpdateRecords(workoutId, userId);
     } catch (error) {
       console.error('Error checking personal records:', error);
       // Don't fail workout completion if records check fails
     }
 
-    return workout;
+    return { workout, newRecords };
   }
 
   /**

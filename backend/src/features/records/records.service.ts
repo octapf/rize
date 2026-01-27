@@ -15,7 +15,7 @@ export const recordsService = {
     workoutId: string,
     userId: string
   ): Promise<IPersonalRecord[]> {
-    const workout = await Workout.findById(workoutId);
+    const workout = await Workout.findById(workoutId).populate('exercises.exerciseId');
 
     if (!workout || workout.userId.toString() !== userId) {
       throw new Error('Workout not found');
@@ -99,6 +99,12 @@ export const recordsService = {
         if (record) newRecords.push(record);
       }
     }
+
+    // Populate exercise data for newRecords
+    await PersonalRecord.populate(newRecords, {
+      path: 'exerciseId',
+      select: 'name category muscleGroup',
+    });
 
     return newRecords;
   },

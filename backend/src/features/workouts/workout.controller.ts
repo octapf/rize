@@ -174,10 +174,11 @@ export const finishWorkout = asyncHandler(async (req: Request, res: Response) =>
   const workoutId = req.params.id;
   const data = req.body as FinishWorkoutInput;
 
-  const workout = await workoutService.finishWorkout(workoutId, userId, data);
+  const result = await workoutService.finishWorkout(workoutId, userId, data);
 
   res.json({
     success: true,
-    data: workout,
+    data: result.workout,
+    newRecords: result.newRecords,
   });
 });
