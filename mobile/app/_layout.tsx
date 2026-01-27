@@ -113,6 +113,8 @@ export default function RootLayout() {
                 <Stack.Screen name="rankings/index" />
                 <Stack.Screen name="achievements/[achievementId]/details" />
                 <Stack.Screen name="community/feed" />
+                <Stack.Screen name="workouts/quick-start" />
+                <Stack.Screen name="settings/shortcuts" />
                 <Stack.Screen name="notifications/index" />
                 <Stack.Screen name="challenges/index" />
                 <Stack.Screen name="challenges/create" />

@@ -62,6 +62,47 @@ export default function HomeScreen() {
       </LinearGradient>
 
       <ScrollView className="flex-1" contentContainerClassName="p-6 gap-6">
+        {/* Quick Actions */}
+        {stats && (
+          <View className="mb-6">
+            <Text className="text-lg font-bold text-gray-900 mb-3">
+              Acciones Rápidas
+            </Text>
+
+            <View className="flex-row flex-wrap gap-2">
+              <TouchableOpacity
+                onPress={() => router.push('/workouts/quick-start')}
+                className="bg-emerald-500 px-4 py-2 rounded-full flex-row items-center gap-2"
+              >
+                <Ionicons name="flash" size={16} color="white" />
+                <Text className="text-white font-semibold">
+                  Inicio Rápido
+                </Text>
+              </TouchableOpacity>
+
+              <TouchableOpacity
+                onPress={() => router.push('/progress')}
+                className="bg-blue-500 px-4 py-2 rounded-full flex-row items-center gap-2"
+              >
+                <Ionicons name="analytics" size={16} color="white" />
+                <Text className="text-white font-semibold">
+                  Mi Progreso
+                </Text>
+              </TouchableOpacity>
+
+              <TouchableOpacity
+                onPress={() => router.push('/settings/shortcuts')}
+                className="bg-purple-500 px-4 py-2 rounded-full flex-row items-center gap-2"
+              >
+                <Ionicons name="settings" size={16} color="white" />
+                <Text className="text-white font-semibold">
+                  Personalizar
+                </Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+        )}
+
         {/* Quick Stats */}
         <View>
           <Text className="text-xl font-bold text-gray-900 mb-3">
