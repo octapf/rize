@@ -124,6 +124,26 @@ export default function ProfileScreen() {
           </Card>
         </TouchableOpacity>
 
+        {/* Workout History Button */}
+        <TouchableOpacity onPress={() => router.push('/workouts/history')}>
+          <Card className="p-4 bg-gradient-to-r from-emerald-50 to-teal-50">
+            <View className="flex-row items-center gap-4">
+              <View className="bg-emerald-500 w-12 h-12 rounded-xl items-center justify-center">
+                <Ionicons name="calendar" size={28} color="white" />
+              </View>
+              <View className="flex-1">
+                <Text className="text-lg font-bold text-gray-900">
+                  Historial de Entrenamientos
+                </Text>
+                <Text className="text-sm text-gray-600">
+                  Revisa tus entrenamientos pasados
+                </Text>
+              </View>
+              <Ionicons name="chevron-forward" size={24} color="#9CA3AF" />
+            </View>
+          </Card>
+        </TouchableOpacity>
+
         {/* Settings Section */}
         <Card className="p-4">
           <Text className="text-lg font-bold text-gray-900 mb-4">

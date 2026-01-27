@@ -108,6 +108,8 @@ export default function RootLayout() {
                 <Stack.Screen name="challenges/create" />
                 <Stack.Screen name="settings/index" />
                 <Stack.Screen name="social/friends" />
+                <Stack.Screen name="workouts/history" />
+                <Stack.Screen name="users/[userId]" />
               </Stack>
             </ToastProvider>
           </ThemeProvider>

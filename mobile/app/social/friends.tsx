@@ -58,8 +58,7 @@ export default function FriendsScreen() {
   };
 
   const handleViewProfile = (friendId: string) => {
-    // TODO: Navigate to user profile when implemented
-    Alert.alert('Perfil', 'Ver perfil de usuario (próximamente)');
+    router.push(`/users/${friendId}`);
   };
 
   return (
