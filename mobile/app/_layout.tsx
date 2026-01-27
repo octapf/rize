@@ -197,6 +197,9 @@ export default function RootLayout() {
                 <Stack.Screen name="referrals/index" />
                 <Stack.Screen name="offline/index" />
                 <Stack.Screen name="coaching/personal" />
+                <Stack.Screen name="ai/recommendations" />
+                <Stack.Screen name="social/challenges" />
+                <Stack.Screen name="music/integration" />
               </Stack>
               </SocketProvider>
               </NotificationProvider>
