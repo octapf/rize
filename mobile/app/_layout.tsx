@@ -202,6 +202,8 @@ export default function RootLayout() {
                 <Stack.Screen name="music/integration" />
                 <Stack.Screen name="equipment/tracker" />
                 <Stack.Screen name="progress/advanced" />
+                <Stack.Screen name="habits/tracker" />
+                <Stack.Screen name="supplements/tracker" />
               </Stack>
               </SocketProvider>
               </NotificationProvider>
