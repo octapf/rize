@@ -116,6 +116,8 @@ export default function RootLayout() {
                 <Stack.Screen name="workouts/quick-start" />
                 <Stack.Screen name="settings/shortcuts" />
                 <Stack.Screen name="settings/index" />
+                <Stack.Screen name="timer/index" />
+                <Stack.Screen name="stats/log-weight" />
                 <Stack.Screen name="goals/index" />
                 <Stack.Screen name="calendar/index" />
                 <Stack.Screen name="notifications/index" />
