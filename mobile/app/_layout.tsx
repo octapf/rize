@@ -191,6 +191,10 @@ export default function RootLayout() {
                 <Stack.Screen name="nutrition/advanced-plan" />
                 <Stack.Screen name="settings/backup" />
                 <Stack.Screen name="settings/premium" />
+                <Stack.Screen name="gamification/index" />
+                <Stack.Screen name="competitions/index" />
+                <Stack.Screen name="marketplace/routines" />
+                <Stack.Screen name="referrals/index" />
               </Stack>
               </SocketProvider>
               </NotificationProvider>
