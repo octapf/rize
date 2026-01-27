@@ -222,6 +222,9 @@ export default function RootLayout() {
                 <Stack.Screen name="library/exercises" />
                 <Stack.Screen name="nutrition/macros" />
                 <Stack.Screen name="templates/goals" />
+                <Stack.Screen name="challenges/group" />
+                <Stack.Screen name="music/playlists" />
+                <Stack.Screen name="progress/dashboard" />
               </Stack>
               </SocketProvider>
               </NotificationProvider>
