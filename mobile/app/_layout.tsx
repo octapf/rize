@@ -154,6 +154,9 @@ export default function RootLayout() {
                 <Stack.Screen name="tools/index" />
                 <Stack.Screen name="tools/one-rep-max" />
                 <Stack.Screen name="tools/tdee" />
+                <Stack.Screen name="tools/body-fat" />
+                <Stack.Screen name="tools/macros" />
+                <Stack.Screen name="workouts/templates" />
                 <Stack.Screen name="progress/photos-comparison" />
                 <Stack.Screen name="rankings/leaderboard" />
                 <Stack.Screen name="goals/index" />

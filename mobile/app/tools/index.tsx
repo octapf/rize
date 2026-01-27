@@ -68,6 +68,8 @@ export default function ToolsScreen() {
       '/tools/plate-calculator',
       '/tools/one-rep-max',
       '/tools/tdee',
+      '/tools/body-fat',
+      '/tools/macros',
       '/timer'
     ].includes(route)) {
       router.push(route as any);
