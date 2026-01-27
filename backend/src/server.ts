@@ -15,6 +15,7 @@ import achievementsRoutes from './features/achievements/achievements.routes';
 import templateRoutes from './features/templates/template.routes';
 import routineRoutes from './features/routines/routine.routes';
 import recordsRoutes from './features/records/records.routes';
+import leaderboardRoutes from './features/leaderboard/leaderboard.routes';
 
 // Create Express app
 const app = express();
@@ -53,7 +54,7 @@ app.use('/api/v1/achievements', achievementsRoutes);
 app.use('/api/v1/templates', templateRoutes);
 app.use('/api/v1/routines', routineRoutes);
 app.use('/api/v1/records', recordsRoutes);
-app.use('/api/v1/templates', templateRoutes);
+app.use('/api/v1/leaderboard', leaderboardRoutes);
 
 // 404 handler
 app.use((_req, res) => {
