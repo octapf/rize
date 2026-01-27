@@ -9,6 +9,7 @@ import { useAuthStore } from '@/stores/authStore';
 import { ThemeProvider } from '@/contexts/ThemeContext';
 import { ToastProvider } from '@/contexts/ToastContext';
 import { ErrorBoundary } from '@/components/ErrorBoundary';
+import { AuthProvider } from '@/components/AuthProvider';
 
 // Prevent splash screen from hiding automatically
 SplashScreen.preventAutoHideAsync();
@@ -152,6 +153,7 @@ export default function RootLayout() {
                 <Stack.Screen name="workouts/history" />
                 <Stack.Screen name="users/[userId]" />
               </Stack>
+              </AuthProvider>
             </ToastProvider>
           </ThemeProvider>
         </QueryClientProvider>
