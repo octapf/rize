@@ -121,7 +121,7 @@ export default function HomeScreen() {
               </TouchableOpacity>
 
               <TouchableOpacity
-                onPress={() => router.push('/leaderboard')}
+                onPress={() => router.push('/rankings')}
                 className="flex-1"
               >
                 <Card className="p-4 bg-amber-50">

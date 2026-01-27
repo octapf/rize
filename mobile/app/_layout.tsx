@@ -103,9 +103,17 @@ export default function RootLayout() {
                 <Stack.Screen name="exercises/create" />
                 <Stack.Screen name="exercises/my" />
                 <Stack.Screen name="achievements/index" />
-                <Stack.Screen name="badges/index" />                <Stack.Screen name="progress/index" />
+                <Stack.Screen name="badges/index" />
+                <Stack.Screen name="progress/index" />
                 <Stack.Screen name="routines/index" />
-                <Stack.Screen name="exercises/[exerciseId]/progress" />                <Stack.Screen name="notifications/index" />
+                <Stack.Screen name="exercises/[exerciseId]/progress" />
+                <Stack.Screen name="exercises/create-custom" />
+                <Stack.Screen name="workouts/create-template" />
+                <Stack.Screen name="workouts/[workoutId]/details" />
+                <Stack.Screen name="rankings/index" />
+                <Stack.Screen name="achievements/[achievementId]/details" />
+                <Stack.Screen name="community/feed" />
+                <Stack.Screen name="notifications/index" />
                 <Stack.Screen name="challenges/index" />
                 <Stack.Screen name="challenges/create" />
                 <Stack.Screen name="settings/index" />
