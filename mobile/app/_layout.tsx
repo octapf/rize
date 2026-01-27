@@ -183,6 +183,9 @@ export default function RootLayout() {
                 <Stack.Screen name="integrations/index" />
                 <Stack.Screen name="integrations/data-export" />
                 <Stack.Screen name="coaching/index" />
+                <Stack.Screen name="nutrition/calorie-counter" />
+                <Stack.Screen name="nutrition/barcode-scanner" />
+                <Stack.Screen name="nutrition/photo-analyzer" />
               </Stack>
               </SocketProvider>
               </NotificationProvider>
