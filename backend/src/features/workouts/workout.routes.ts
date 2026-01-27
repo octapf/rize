@@ -13,6 +13,7 @@ import {
 } from './workout.validation';
 import {
   createWorkout,
+  createFromTemplate,
   getWorkouts,
   getWorkoutStats,
   getWorkoutById,
@@ -36,6 +37,9 @@ router.get('/', validate(z.object({ query: getWorkoutsQuerySchema })), getWorkou
 
 // POST /workouts - Create new workout
 router.post('/', validate(z.object({ body: createWorkoutSchema })), createWorkout);
+
+// POST /workouts/from-template/:templateId - Create workout from template
+router.post('/from-template/:templateId', createFromTemplate);
 
 // GET /workouts/:id - Get workout by ID
 router.get('/:id', validate(z.object({ params: deleteWorkoutSchema })), getWorkoutById);

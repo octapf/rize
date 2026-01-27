@@ -21,6 +21,24 @@ export const createWorkout = asyncHandler(async (req: Request, res: Response) =>
 });
 
 /**
+ * @route   POST /api/v1/workouts/from-template/:templateId
+ * @desc    Create workout from template
+ * @access  Private
+ */
+export const createFromTemplate = asyncHandler(async (req: Request, res: Response) => {
+  const userId = req.user!._id.toString();
+  const { templateId } = req.params;
+  const { name } = req.body;
+
+  const workout = await workoutService.createFromTemplate(userId, templateId, name);
+
+  res.status(201).json({
+    success: true,
+    data: workout,
+  });
+});
+
+/**
  * @route   GET /api/v1/workouts
  * @desc    Get user workouts with filters
  * @access  Private

@@ -2,7 +2,9 @@ import type { IWorkout } from '@/models/Workout';
 import { Workout } from '@/models/Workout';
 import { User } from '@/models/User';
 import { Exercise } from '@/models/Exercise';
+import { WorkoutTemplate } from '@/models/WorkoutTemplate';
 import { AppError } from '@/utils/errors';
+import { recordsService } from '@/features/records/records.service';
 import type { CreateWorkoutInput, UpdateWorkoutInput, GetWorkoutsQuery, CompleteSetInput, FinishWorkoutInput } from './workout.validation';
 
 /**
@@ -35,6 +37,42 @@ export class WorkoutService {
 
     // Update user stats and XP
     await this.updateUserStats(userId, xpEarned);
+
+    return workout;
+  }
+
+  /**
+   * Create workout from template
+   */
+  async createFromTemplate(userId: string, templateId: string, name?: string): Promise<IWorkout> {
+    const template = await WorkoutTemplate.findOne({
+      _id: templateId,
+      $or: [{ userId }, { isPublic: true }],
+    });
+
+    if (!template) {
+      throw new AppError('Template not found', 404, 'TEMPLATE_NOT_FOUND');
+    }
+
+    // Create workout from template
+    const workout = await this.createWorkout(userId, {
+      name: name || template.name,
+      exercises: template.exercises.map((ex) => ({
+        exerciseId: ex.exerciseId.toString(),
+        sets: ex.sets.map((set) => ({
+          ...set,
+          completed: false,
+        })),
+        notes: ex.notes,
+      })),
+      visibility: 'private',
+    });
+
+    // Increment template usage count
+    await WorkoutTemplate.findByIdAndUpdate(templateId, {
+      $inc: { usageCount: 1 },
+      lastUsedAt: new Date(),
+    });
 
     return workout;
   }
@@ -260,6 +298,14 @@ export class WorkoutService {
     }
 
     await workout.save();
+
+    // Check and update personal records
+    try {
+      await recordsService.checkAndUpdateRecords(workoutId, userId);
+    } catch (error) {
+      console.error('Error checking personal records:', error);
+      // Don't fail workout completion if records check fails
+    }
 
     return workout;
   }

@@ -12,6 +12,9 @@ import exerciseRoutes from './features/exercises/exercise.routes';
 import statsRoutes from './features/stats/stats.routes';
 import socialRoutes from './features/social/social.routes';
 import achievementsRoutes from './features/achievements/achievements.routes';
+import templateRoutes from './features/templates/template.routes';
+import routineRoutes from './features/routines/routine.routes';
+import recordsRoutes from './features/records/records.routes';
 
 // Create Express app
 const app = express();
@@ -47,6 +50,10 @@ app.use('/api/v1/exercises', exerciseRoutes);
 app.use('/api/v1/stats', statsRoutes);
 app.use('/api/v1/social', socialRoutes);
 app.use('/api/v1/achievements', achievementsRoutes);
+app.use('/api/v1/templates', templateRoutes);
+app.use('/api/v1/routines', routineRoutes);
+app.use('/api/v1/records', recordsRoutes);
+app.use('/api/v1/templates', templateRoutes);
 
 // 404 handler
 app.use((_req, res) => {

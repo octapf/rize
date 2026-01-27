@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -6,18 +6,41 @@ import {
   TouchableOpacity,
   Alert,
   ActivityIndicator,
+  TextInput,
+  Modal,
 } from 'react-native';
 import { router, useLocalSearchParams } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useWorkout, useDeleteWorkout } from '@/hooks/useWorkouts';
+import { useMutation, useQueryClient } from '@tanstack/react-query';
+import { templatesApi } from '@/services/api/templates.api';
 import { Card } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
+import { useToast } from '@/contexts/ToastContext';
 
 export default function WorkoutDetailScreen() {
   const { id } = useLocalSearchParams<{ id: string }>();
   const { data, isLoading } = useWorkout(id);
   const deleteWorkout = useDeleteWorkout();
+  const queryClient = useQueryClient();
+  const toast = useToast();
+  const [showSaveModal, setShowSaveModal] = useState(false);
+  const [templateName, setTemplateName] = useState('');
+
+  const saveAsTemplateMutation = useMutation({
+    mutationFn: (name: string) =>
+      templatesApi.createFromWorkout(id, { name }),
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ['templates'] });
+      toast.success('Plantilla creada exitosamente');
+      setShowSaveModal(false);
+      setTemplateName('');
+    },
+    onError: () => {
+      toast.error('Error al crear plantilla');
+    },
+  });
 
   const formatDate = (date: string) => {
     const d = new Date(date);
@@ -80,6 +103,20 @@ export default function WorkoutDetailScreen() {
 
   const handleStartWorkout = () => {
     router.push(`/workouts/active?id=${id}`);
+  };
+
+  const handleSaveAsTemplate = () => {
+    if (!data?.data) return;
+    setTemplateName(data.data.name);
+    setShowSaveModal(true);
+  };
+
+  const handleConfirmSaveTemplate = () => {
+    if (!templateName.trim()) {
+      toast.error('Por favor ingresa un nombre para la plantilla');
+      return;
+    }
+    saveAsTemplateMutation.mutate(templateName);
   };
 
   return (
@@ -299,7 +336,66 @@ export default function WorkoutDetailScreen() {
             </View>
           </Card>
         )}
+
+        {/* Save as Template Button */}
+        {workout.status === 'completed' && (
+          <TouchableOpacity
+            onPress={handleSaveAsTemplate}
+            className="bg-gradient-to-r from-purple-500 to-purple-600 p-4 rounded-xl flex-row items-center justify-center gap-2 mb-4"
+            style={{ elevation: 2 }}
+          >
+            <Ionicons name="bookmark" size={24} color="white" />
+            <Text className="text-white font-bold text-lg">
+              Guardar como Plantilla
+            </Text>
+          </TouchableOpacity>
+        )}
       </ScrollView>
+
+      {/* Save Template Modal */}
+      <Modal
+        visible={showSaveModal}
+        transparent
+        animationType="fade"
+        onRequestClose={() => setShowSaveModal(false)}
+      >
+        <View className="flex-1 bg-black/50 justify-center items-center p-6">
+          <View className="bg-white rounded-2xl p-6 w-full max-w-md">
+            <Text className="text-2xl font-bold text-gray-900 mb-4">
+              Guardar como Plantilla
+            </Text>
+            <Text className="text-gray-600 mb-4">
+              Dale un nombre a esta plantilla para reutilizarla en futuros entrenamientos
+            </Text>
+            <TextInput
+              value={templateName}
+              onChangeText={setTemplateName}
+              placeholder="Nombre de la plantilla"
+              className="border border-gray-300 rounded-xl px-4 py-3 mb-4"
+              autoFocus
+            />
+            <View className="flex-row gap-3">
+              <TouchableOpacity
+                onPress={() => setShowSaveModal(false)}
+                className="flex-1 bg-gray-200 py-3 rounded-xl"
+              >
+                <Text className="text-gray-700 font-bold text-center">
+                  Cancelar
+                </Text>
+              </TouchableOpacity>
+              <TouchableOpacity
+                onPress={handleConfirmSaveTemplate}
+                disabled={saveAsTemplateMutation.isPending}
+                className="flex-1 bg-purple-600 py-3 rounded-xl"
+              >
+                <Text className="text-white font-bold text-center">
+                  {saveAsTemplateMutation.isPending ? 'Guardando...' : 'Guardar'}
+                </Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+        </View>
+      </Modal>
     </View>
   );
 }
