@@ -225,6 +225,9 @@ export default function RootLayout() {
                 <Stack.Screen name="challenges/group" />
                 <Stack.Screen name="music/playlists" />
                 <Stack.Screen name="progress/dashboard" />
+                <Stack.Screen name="settings/app" />
+                <Stack.Screen name="health/injuries" />
+                <Stack.Screen name="supplements/stacks" />
               </Stack>
               </SocketProvider>
               </NotificationProvider>
