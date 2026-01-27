@@ -33,6 +33,7 @@ export interface IUser extends Document {
     };
   };
   lastLogin?: Date;
+  activeRoutine?: Schema.Types.ObjectId;
   createdAt: Date;
   comparePassword(candidatePassword: string): Promise<boolean>;
   calculateLevel(): number;
@@ -116,6 +117,10 @@ const userSchema = new Schema<IUser>(
       },
     },
     lastLogin: Date,
+    activeRoutine: {
+      type: Schema.Types.ObjectId,
+      ref: 'Routine',
+    },
   },
   {
     timestamps: true,
