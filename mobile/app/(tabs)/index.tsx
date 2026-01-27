@@ -28,6 +28,10 @@ export default function HomeScreen() {
   });
 
   const workouts = workoutsData?.data.workouts || [];
+
+  const handleSearch = () => {
+    router.push('/search');
+  };
   const userStats = statsData?.data;
 
   const stats = userStats
