@@ -146,7 +146,8 @@ export default function ChatScreen() {
   };
 
   const handleShareWorkout = () => {
-    Alert.alert('Compartir Entrenamiento', 'Función en desarrollo');
+    // Get last workout or let user select one
+    router.push('/workouts/share/last' as any);
   };
 
   const handleSendChallenge = () => {
