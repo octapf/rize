@@ -1,6 +1,7 @@
 import mongoose from 'mongoose';
 import { PersonalRecord, IPersonalRecord } from '@/models/PersonalRecord';
 import { Workout } from '@/models/Workout';
+import { notificationService } from '../notifications/notification.service';
 
 interface RecordUpdate {
   exerciseId: string;
@@ -142,6 +143,17 @@ export const recordsService = {
         improvement,
         achievedAt: new Date(),
       });
+
+      // Enviar notificación de nuevo record
+      const exercise = await mongoose.model('Exercise').findById(exerciseId);
+      if (exercise && (type === 'weight' || type === 'volume')) {
+        await notificationService.notifyPersonalRecord(
+          userId,
+          exercise.name.es || exercise.name.en,
+          value,
+          type
+        );
+      }
 
       return newRecord;
     }

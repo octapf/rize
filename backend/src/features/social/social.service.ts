@@ -4,6 +4,7 @@ import { WorkoutComment } from '@/models/WorkoutComment';
 import { Workout } from '@/models/Workout';
 import { User } from '@/models/User';
 import { AppError } from '@/utils/errors';
+import { notificationService } from '../notifications/notification.service';
 
 /**
  * Social Service - Friends, feed, likes, comments
@@ -68,6 +69,17 @@ export class SocialService {
 
     friendship.status = 'accepted';
     await friendship.save();
+
+    // Enviar notificación al usuario que envió la solicitud
+    const requester = await User.findById(friendship.requesterId);
+    const recipient = await User.findById(userId);
+    if (requester && recipient) {
+      await notificationService.notifyNewFollower(
+        friendship.requesterId.toString(),
+        recipient.username,
+        userId
+      );
+    }
 
     return friendship;
   }

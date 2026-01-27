@@ -3,6 +3,7 @@ import { UserAchievement } from '@/models/UserAchievement';
 import { User } from '@/models/User';
 import { Workout } from '@/models/Workout';
 import { Friendship } from '@/models/Friendship';
+import { notificationService } from '../notifications/notification.service';
 
 /**
  * Achievements Service - Manage user achievements and progress
@@ -78,6 +79,13 @@ export class AchievementsService {
         await User.findByIdAndUpdate(userId, {
           $inc: { xp: achievement.xpReward },
         });
+
+        // Enviar notificación
+        await notificationService.notifyAchievementUnlocked(
+          userId,
+          achievement.name.es,
+          achievement._id.toString()
+        );
 
         newlyUnlocked.push(achievement);
       }
