@@ -175,6 +175,8 @@ export default function RootLayout() {
                 <Stack.Screen name="workout/active" />
                 <Stack.Screen name="workout/summary" />
                 <Stack.Screen name="nutrition/meal-plan" />
+                <Stack.Screen name="programs/index" />
+                <Stack.Screen name="stats/body-measurements" />
               </Stack>
               </SocketProvider>
               </NotificationProvider>
