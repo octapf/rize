@@ -214,6 +214,8 @@ export default function RootLayout() {
                 <Stack.Screen name="programs/custom" />
                 <Stack.Screen name="classes/virtual" />
                 <Stack.Screen name="workouts/sharing" />
+                <Stack.Screen name="recovery/protocols" />
+                <Stack.Screen name="achievements/badges" />
               </Stack>
               </SocketProvider>
               </NotificationProvider>
