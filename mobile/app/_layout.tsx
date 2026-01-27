@@ -217,6 +217,11 @@ export default function RootLayout() {
                 <Stack.Screen name="recovery/protocols" />
                 <Stack.Screen name="achievements/badges" />
                 <Stack.Screen name="measurements/body" />
+                <Stack.Screen name="analysis/form" />
+                <Stack.Screen name="reminders/workouts" />
+                <Stack.Screen name="library/exercises" />
+                <Stack.Screen name="nutrition/macros" />
+                <Stack.Screen name="templates/goals" />
               </Stack>
               </SocketProvider>
               </NotificationProvider>
