@@ -7,6 +7,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { useQuery } from '@tanstack/react-query';
 import { useAuthStore } from '@/stores/authStore';
 import { workoutsApi } from '@/services/api/workouts.api';
+import { usersApi } from '@/services/api/users.api';
 import { Card } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
 import { QuickStats } from '@/components/QuickStats';
@@ -14,43 +15,31 @@ import { QuickStats } from '@/components/QuickStats';
 export default function HomeScreen() {
   const { user } = useAuthStore();
 
-  // Fetch user's workouts for stats
-  const { data: workoutsData, isLoading } = useQuery({
-    queryKey: ['workouts-stats'],
+  // Fetch user stats
+  const { data: statsData, isLoading: statsLoading } = useQuery({
+    queryKey: ['user-stats'],
+    queryFn: () => usersApi.getMyStats(),
+  });
+
+  // Fetch recent workouts
+  const { data: workoutsData, isLoading: workoutsLoading } = useQuery({
+    queryKey: ['workouts-recent'],
     queryFn: () => workoutsApi.getUserWorkouts(),
   });
 
   const workouts = workoutsData?.data.workouts || [];
+  const userStats = statsData?.data;
 
-  // Calculate stats
-  const now = new Date();
-  const weekAgo = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000);
-  const monthAgo = new Date(now.getTime() - 30 * 24 * 60 * 60 * 1000);
-
-  const workoutsThisWeek = workouts.filter((w: any) => 
-    w.completedAt && new Date(w.completedAt) >= weekAgo
-  ).length;
-
-  const totalVolume = workouts.reduce((sum: number, workout: any) => {
-    if (!workout.completedAt) return sum;
-    return sum + workout.exercises.reduce((exSum: number, ex: any) => {
-      return exSum + ex.sets.reduce((setSum: number, set: any) => {
-        if (set.completed && set.weight && set.reps) {
-          return setSum + (set.weight * set.reps);
-        }
-        return setSum;
-      }, 0);
-    }, 0);
-  }, 0);
-
-  const stats = {
-    workoutsThisWeek,
-    totalVolume: Math.round(totalVolume),
-    currentStreak: user?.streak || 0,
-    level: Math.floor((user?.xp || 0) / 100) + 1,
-    xp: user?.xp || 0,
-    recordsThisMonth: 0, // TODO: Calculate from records API
-  };
+  const stats = userStats
+    ? {
+        workoutsThisWeek: userStats.workouts.thisWeek,
+        totalVolume: userStats.volume.total,
+        currentStreak: userStats.user.streak,
+        level: userStats.user.level,
+        xp: userStats.user.xp,
+        recordsThisMonth: userStats.records.thisMonth,
+      }
+    : undefined;
 
   return (
     <SafeAreaView className="flex-1 bg-gray-50">
@@ -78,7 +67,7 @@ export default function HomeScreen() {
           <Text className="text-xl font-bold text-gray-900 mb-3">
             Tu Progreso
           </Text>
-          <QuickStats stats={stats} isLoading={isLoading} />
+          <QuickStats stats={stats} isLoading={statsLoading} />
         </View>
 
         {/* Quick Actions */}
@@ -207,7 +196,7 @@ export default function HomeScreen() {
             </TouchableOpacity>
           ))}
 
-          {workouts.length === 0 && !isLoading && (
+          {workouts.length === 0 && !workoutsLoading && (
             <Card className="p-8">
               <View className="items-center gap-3">
                 <Ionicons name="barbell-outline" size={48} color="#D1D5DB" />

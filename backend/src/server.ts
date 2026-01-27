@@ -18,6 +18,7 @@ import recordsRoutes from './features/records/records.routes';
 import leaderboardRoutes from './features/leaderboard/leaderboard.routes';
 import notificationRoutes from './features/notifications/notification.routes';
 import challengeRoutes from './features/challenges/challenge.routes';
+import userRoutes from './routes/user.routes';
 
 // Create Express app
 const app = express();
@@ -58,6 +59,7 @@ app.use('/api/v1/routines', routineRoutes);
 app.use('/api/v1/records', recordsRoutes);
 app.use('/api/v1/leaderboard', leaderboardRoutes);
 app.use('/api/v1/notifications', notificationRoutes);
+app.use('/api/v1/users', userRoutes);
 app.use('/api/v1/challenges', challengeRoutes);
 
 // 404 handler

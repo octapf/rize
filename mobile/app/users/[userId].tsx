@@ -12,44 +12,36 @@ import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { socialApi } from '@/services/api/social.api';
-import { workoutsApi } from '@/services/api/workouts.api';
+import { usersApi } from '@/services/api/users.api';
 import { useAuthStore } from '@/stores/authStore';
 import { Card } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
+import { format } from 'date-fns';
+import { es } from 'date-fns/locale';
 
 export default function UserProfileScreen() {
   const { userId } = useLocalSearchParams<{ userId: string }>();
   const { user: currentUser } = useAuthStore();
   const queryClient = useQueryClient();
 
-  // Fetch user data (placeholder - needs backend endpoint)
-  const { data: userData, isLoading: userLoading } = useQuery({
+  // Fetch user profile
+  const { data: profileData, isLoading: profileLoading } = useQuery({
     queryKey: ['user-profile', userId],
-    queryFn: async () => {
-      // TODO: Create backend endpoint for user public profile
-      // For now, we'll use friends list to get basic info
-      const friendsResponse = await socialApi.getFriends();
-      const friend = friendsResponse.data.friends.find((f: any) => f._id === userId);
-      return { data: friend };
-    },
+    queryFn: () => usersApi.getUserProfile(userId!),
     enabled: !!userId,
   });
 
-  // Fetch user's recent workouts (placeholder)
-  const { data: workoutsData } = useQuery({
-    queryKey: ['user-workouts', userId],
-    queryFn: async () => {
-      // TODO: Create backend endpoint for user public workouts
-      // For now return empty
-      return { data: { workouts: [] } };
-    },
-    enabled: !!userId,
+  // Fetch friendship status
+  const { data: friendsData } = useQuery({
+    queryKey: ['friends'],
+    queryFn: () => socialApi.getFriends(),
   });
 
   const sendFriendRequest = useMutation({
     mutationFn: (targetUserId: string) => socialApi.sendFriendRequest(targetUserId),
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['user-profile', userId] });
+      queryClient.invalidateQueries({ queryKey: ['friends'] });
       Alert.alert('Éxito', 'Solicitud enviada correctamente');
     },
     onError: () => {
@@ -58,11 +50,11 @@ export default function UserProfileScreen() {
   });
 
   const handleChallengeUser = () => {
-    if (!userData?.data) return;
+    if (!profileData?.data) return;
     
     Alert.alert(
       'Crear Reto',
-      `¿Quieres retar a @${userData.data.username}?`,
+      `¿Quieres retar a @${profileData.data.user.username}?`,
       [
         { text: 'Cancelar', style: 'cancel' },
         {
@@ -78,15 +70,14 @@ export default function UserProfileScreen() {
     );
   };
 
-  if (userLoading) {
+  if (profileLoading) {
     return (
       <View className="flex-1 bg-gray-50 items-center justify-center">
         <ActivityIndicator size="large" color="#10B981" />
       </View>
     );
   }
-
-  if (!userData?.data) {
+profileData?.data) {
     return (
       <View className="flex-1 bg-gray-50">
         <LinearGradient colors={['#10B981', '#059669']} className="px-6 pt-12 pb-6">
@@ -107,8 +98,15 @@ export default function UserProfileScreen() {
     );
   }
 
-  const user = userData.data;
-  const isFriend = true; // TODO: Check actual friendship status
+  const profile = profileData.data;
+  const user = profile.user;
+  const stats = profile.stats;
+  const recentWorkouts = profile.recentWorkouts;
+
+  // Check friendship status
+  const friends = friendsData?.data.friends || [];
+  const isFriend = friends.some((f: any) => f._id === userId);
+  const hasPendingRequest = false; // TODO: Check pending requests properly
   const hasPendingRequest = false; // TODO: Check pending requests
 
   return (
@@ -175,27 +173,21 @@ export default function UserProfileScreen() {
         </View>
 
         {/* Stats */}
-        <Card className="p-6">
-          <Text className="text-lg font-bold text-gray-900 mb-4">Estadísticas</Text>
-          
-          <View className="flex-row gap-4">
-            <View className="flex-1 items-center bg-emerald-50 py-4 rounded-xl">
-              <Text className="text-3xl font-bold text-emerald-600 mb-1">
-                {user.workoutCount || 0}
+        <Card clastats.workoutCount}
               </Text>
               <Text className="text-sm text-gray-600">Entrenamientos</Text>
             </View>
 
             <View className="flex-1 items-center bg-amber-50 py-4 rounded-xl">
               <Text className="text-3xl font-bold text-amber-600 mb-1">
-                {user.streak || 0}
+                {user.streak}
               </Text>
               <Text className="text-sm text-gray-600">Días Racha</Text>
             </View>
 
             <View className="flex-1 items-center bg-blue-50 py-4 rounded-xl">
               <Text className="text-3xl font-bold text-blue-600 mb-1">
-                {user.achievementCount || 0}
+                {stats.achievementCount}
               </Text>
               <Text className="text-sm text-gray-600">Logros</Text>
             </View>
@@ -209,22 +201,55 @@ export default function UserProfileScreen() {
                 <Text className="text-gray-700">Nivel</Text>
               </View>
               <Text className="text-gray-900 font-bold">
-                {Math.floor((user.xp || 0) / 100) + 1}
+                {user.level}
               </Text>
             </View>
 
             <View className="flex-row items-center justify-between">
               <View className="flex-row items-center gap-2">
-                <Ionicons name="calendar-outline" size={20} color="#6B7280" />
-                <Text className="text-gray-700">Miembro desde</Text>
+                <Ionicons name="speedometer-outline" size={20} color="#6B7280" />
+                <Text className="text-gray-700">Volumen Total</Text>
               </View>
               <Text className="text-gray-900 font-bold">
-                {user.createdAt
-                  ? new Date(user.createdAt).getFullYear()
-                  : new Date().getFullYear()}
+                {stats.totalVolume.toLocaleString()} kg
               </Text>
             </View>
+
+            <View className="flex-row items-center justify-between">
+              <View className="flex-row items-center gap-2">
+                <Ionicons name="trending-up-outline" size={20} color="#6B7280" />
+                <Text className="text-gray-700">Records</Text>
+              </View>
+              <Text className="text-gray-900 font-bold">
+                {stats.recordsCount}
+              </Text>
+            </Entrenamientos Recientes
+            </Text>
           </View>
+
+          {recentWorkouts.length === 0 ? (
+            <View className="py-6 items-center">
+              <Ionicons name="barbell-outline" size={48} color="#D1D5DB" />
+              <Text className="text-gray-400 mt-2">Sin actividad reciente</Text>
+            </View>
+          ) : (
+            <View className="gap-3">
+              {recentWorkouts.map((workout) => (
+                <View
+                  key={workout._id}
+                  className="bg-gray-50 p-3 rounded-lg"
+                >
+                  <Text className="text-gray-900 font-bold mb-1">
+                    {workout.name}
+                  </Text>
+                  <Text className="text-gray-500 text-sm">
+                    {format(new Date(workout.completedAt), "d 'de' MMMM", {
+                      locale: es,
+                    })} • {workout.exercises.length} ejercicio
+                    {workout.exercises.length !== 1 ? 's' : ''}
+                  </Text>
+                </View>
+              ))}
         </Card>
 
         {/* Recent Activity */}
