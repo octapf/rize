@@ -186,6 +186,8 @@ export default function RootLayout() {
                 <Stack.Screen name="nutrition/calorie-counter" />
                 <Stack.Screen name="nutrition/barcode-scanner" />
                 <Stack.Screen name="nutrition/photo-analyzer" />
+                <Stack.Screen name="stats/advanced-analytics" />
+                <Stack.Screen name="recovery/injuries" />
               </Stack>
               </SocketProvider>
               </NotificationProvider>
