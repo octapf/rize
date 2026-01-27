@@ -195,6 +195,8 @@ export default function RootLayout() {
                 <Stack.Screen name="competitions/index" />
                 <Stack.Screen name="marketplace/routines" />
                 <Stack.Screen name="referrals/index" />
+                <Stack.Screen name="offline/index" />
+                <Stack.Screen name="coaching/personal" />
               </Stack>
               </SocketProvider>
               </NotificationProvider>
