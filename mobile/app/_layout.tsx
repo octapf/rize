@@ -105,6 +105,7 @@ export default function RootLayout() {
                 <Stack.Screen name="achievements/index" />
                 <Stack.Screen name="notifications/index" />
                 <Stack.Screen name="challenges/index" />
+                <Stack.Screen name="challenges/create" />
               </Stack>
             </ToastProvider>
           </ThemeProvider>
