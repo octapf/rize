@@ -182,6 +182,46 @@ export default function ProfileScreen() {
           </Card>
         </TouchableOpacity>
 
+        {/* Goals */}
+        <TouchableOpacity onPress={() => router.push('/goals')}>
+          <Card className="p-4 bg-gradient-to-r from-cyan-50 to-blue-50">
+            <View className="flex-row items-center gap-4">
+              <View className="bg-cyan-500 w-12 h-12 rounded-xl items-center justify-center">
+                <Ionicons name="flag" size={28} color="white" />
+              </View>
+              <View className="flex-1">
+                <Text className="text-lg font-bold text-gray-900">
+                  Mis Objetivos
+                </Text>
+                <Text className="text-sm text-gray-600">
+                  Metas y progreso
+                </Text>
+              </View>
+              <Ionicons name="chevron-forward" size={24} color="#9CA3AF" />
+            </View>
+          </Card>
+        </TouchableOpacity>
+
+        {/* Calendar */}
+        <TouchableOpacity onPress={() => router.push('/calendar')}>
+          <Card className="p-4 bg-gradient-to-r from-orange-50 to-amber-50">
+            <View className="flex-row items-center gap-4">
+              <View className="bg-orange-500 w-12 h-12 rounded-xl items-center justify-center">
+                <Ionicons name="calendar" size={28} color="white" />
+              </View>
+              <View className="flex-1">
+                <Text className="text-lg font-bold text-gray-900">
+                  Calendario
+                </Text>
+                <Text className="text-sm text-gray-600">
+                  Vista mensual de entrenamientos
+                </Text>
+              </View>
+              <Ionicons name="chevron-forward" size={24} color="#9CA3AF" />
+            </View>
+          </Card>
+        </TouchableOpacity>
+
         {/* Routines */}
         <TouchableOpacity onPress={() => router.push('/routines')}>
           <Card className="p-4 bg-gradient-to-r from-purple-50 to-violet-50">
