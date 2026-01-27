@@ -134,6 +134,11 @@ export default function RootLayout() {
                 <Stack.Screen name="achievements/index" />
                 <Stack.Screen name="nutrition/index" />
                 <Stack.Screen name="messages/index" />
+                <Stack.Screen name="auth/login" options={{ headerShown: false }} />
+                <Stack.Screen name="auth/register" options={{ headerShown: false }} />
+                <Stack.Screen name="auth/forgot-password" options={{ headerShown: false }} />
+                <Stack.Screen name="auth/onboarding" options={{ headerShown: false }} />
+                <Stack.Screen name="index" options={{ headerShown: false }} />
                 <Stack.Screen name="goals/index" />
                 <Stack.Screen name="calendar/index" />
                 <Stack.Screen name="notifications/index" />
