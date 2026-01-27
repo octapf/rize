@@ -262,6 +262,46 @@ export default function ProfileScreen() {
           </Card>
         </TouchableOpacity>
 
+        {/* Community Feed */}
+        <TouchableOpacity onPress={() => router.push('/community/feed')}>
+          <Card className="p-4 bg-gradient-to-r from-pink-50 to-rose-50">
+            <View className="flex-row items-center gap-4">
+              <View className="bg-pink-500 w-12 h-12 rounded-xl items-center justify-center">
+                <Ionicons name="people" size={28} color="white" />
+              </View>
+              <View className="flex-1">
+                <Text className="text-lg font-bold text-gray-900">
+                  Feed de Comunidad
+                </Text>
+                <Text className="text-sm text-gray-600">
+                  Actividad de tus amigos
+                </Text>
+              </View>
+              <Ionicons name="chevron-forward" size={24} color="#9CA3AF" />
+            </View>
+          </Card>
+        </TouchableOpacity>
+
+        {/* Settings */}
+        <TouchableOpacity onPress={() => router.push('/settings')}>
+          <Card className="p-4 bg-gradient-to-r from-gray-50 to-slate-50">
+            <View className="flex-row items-center gap-4">
+              <View className="bg-gray-600 w-12 h-12 rounded-xl items-center justify-center">
+                <Ionicons name="settings" size={28} color="white" />
+              </View>
+              <View className="flex-1">
+                <Text className="text-lg font-bold text-gray-900">
+                  Configuración
+                </Text>
+                <Text className="text-sm text-gray-600">
+                  Preferencias y ajustes
+                </Text>
+              </View>
+              <Ionicons name="chevron-forward" size={24} color="#9CA3AF" />
+            </View>
+          </Card>
+        </TouchableOpacity>
+
         {/* Settings Section */}
         <Card className="p-4">
           <Text className="text-lg font-bold text-gray-900 mb-4">
