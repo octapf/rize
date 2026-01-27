@@ -204,6 +204,9 @@ export default function RootLayout() {
                 <Stack.Screen name="progress/advanced" />
                 <Stack.Screen name="habits/tracker" />
                 <Stack.Screen name="supplements/tracker" />
+                <Stack.Screen name="training/splits" />
+                <Stack.Screen name="recovery/tracking" />
+                <Stack.Screen name="integrations/wearables" />
               </Stack>
               </SocketProvider>
               </NotificationProvider>
