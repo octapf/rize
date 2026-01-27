@@ -148,6 +148,8 @@ export default function RootLayout() {
                 <Stack.Screen name="workouts/share/[id]" />
                 <Stack.Screen name="social/feed" />
                 <Stack.Screen name="stats/dashboard" />
+                <Stack.Screen name="notifications/list" />
+                <Stack.Screen name="tools/index" />
                 <Stack.Screen name="goals/index" />
                 <Stack.Screen name="calendar/index" />
                 <Stack.Screen name="notifications/index" />
