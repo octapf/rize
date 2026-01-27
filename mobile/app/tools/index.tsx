@@ -70,7 +70,7 @@ export default function ToolsScreen() {
       '/tools/tdee',
       '/tools/body-fat',
       '/tools/macros',
-      '/timer'
+      '/tools/rest-timer'
     ].includes(route)) {
       router.push(route as any);
     } else {

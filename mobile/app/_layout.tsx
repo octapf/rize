@@ -156,7 +156,9 @@ export default function RootLayout() {
                 <Stack.Screen name="tools/tdee" />
                 <Stack.Screen name="tools/body-fat" />
                 <Stack.Screen name="tools/macros" />
+                <Stack.Screen name="tools/rest-timer" />
                 <Stack.Screen name="workouts/templates" />
+                <Stack.Screen name="profile/index" />
                 <Stack.Screen name="progress/photos-comparison" />
                 <Stack.Screen name="rankings/leaderboard" />
                 <Stack.Screen name="goals/index" />
