@@ -235,6 +235,9 @@ export default function RootLayout() {
                 <Stack.Screen name="community/forum" />
                 <Stack.Screen name="exercises/variations" />
                 <Stack.Screen name="nutrition/hydration" />
+                <Stack.Screen name="nutrition/planning" />
+                <Stack.Screen name="gallery/transformation" />
+                <Stack.Screen name="analytics/history" />
               </Stack>
               </SocketProvider>
               </NotificationProvider>
