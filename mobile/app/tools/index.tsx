@@ -64,7 +64,12 @@ export default function ToolsScreen() {
   ];
 
   const handleToolPress = (route: string) => {
-    if (route === '/tools/plate-calculator' || route === '/timer') {
+    if ([
+      '/tools/plate-calculator',
+      '/tools/one-rep-max',
+      '/tools/tdee',
+      '/timer'
+    ].includes(route)) {
       router.push(route as any);
     } else {
       Alert.alert('Próximamente', 'Esta herramienta estará disponible pronto');

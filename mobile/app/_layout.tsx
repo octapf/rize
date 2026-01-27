@@ -11,6 +11,7 @@ import { ToastProvider } from '@/contexts/ToastContext';
 import { ErrorBoundary } from '@/components/ErrorBoundary';
 import { AuthProvider } from '@/components/AuthProvider';
 import { NotificationProvider } from '@/components/NotificationProvider';
+import { SocketProvider } from '@/components/SocketProvider';
 
 // Prevent splash screen from hiding automatically
 SplashScreen.preventAutoHideAsync();
@@ -94,8 +95,9 @@ export default function RootLayout() {
             <ToastProvider>
               <AuthProvider>
                 <NotificationProvider>
-                  <Stack screenOptions={{ headerShown: false }}>
-                    <Stack.Screen name="(tabs)" />
+                  <SocketProvider>
+                    <Stack screenOptions={{ headerShown: false }}>
+                      <Stack.Screen name="(tabs)" />
                 <Stack.Screen name="onboarding" />
                 <Stack.Screen name="login" />
                 <Stack.Screen name="register" />
@@ -150,6 +152,10 @@ export default function RootLayout() {
                 <Stack.Screen name="stats/dashboard" />
                 <Stack.Screen name="notifications/list" />
                 <Stack.Screen name="tools/index" />
+                <Stack.Screen name="tools/one-rep-max" />
+                <Stack.Screen name="tools/tdee" />
+                <Stack.Screen name="progress/photos-comparison" />
+                <Stack.Screen name="rankings/leaderboard" />
                 <Stack.Screen name="goals/index" />
                 <Stack.Screen name="calendar/index" />
                 <Stack.Screen name="notifications/index" />
@@ -161,6 +167,7 @@ export default function RootLayout() {
                 <Stack.Screen name="workouts/history" />
                 <Stack.Screen name="users/[userId]" />
               </Stack>
+              </SocketProvider>
               </NotificationProvider>
               </AuthProvider>
             </ToastProvider>
