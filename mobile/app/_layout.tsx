@@ -171,6 +171,8 @@ export default function RootLayout() {
                 <Stack.Screen name="social/search" />
                 <Stack.Screen name="workouts/history" />
                 <Stack.Screen name="users/[userId]" />
+                <Stack.Screen name="exercises/index" />
+                <Stack.Screen name="workout/active" />
               </Stack>
               </SocketProvider>
               </NotificationProvider>
