@@ -202,6 +202,26 @@ export default function ProfileScreen() {
           </Card>
         </TouchableOpacity>
 
+        {/* Measurements */}
+        <TouchableOpacity onPress={() => router.push('/stats/measurements')}>
+          <Card className="p-4 bg-gradient-to-r from-rose-50 to-pink-50">
+            <View className="flex-row items-center gap-4">
+              <View className="bg-rose-500 w-12 h-12 rounded-xl items-center justify-center">
+                <Ionicons name="resize" size={28} color="white" />
+              </View>
+              <View className="flex-1">
+                <Text className="text-lg font-bold text-gray-900">
+                  Medidas Corporales
+                </Text>
+                <Text className="text-sm text-gray-600">
+                  Track tu progreso físico
+                </Text>
+              </View>
+              <Ionicons name="chevron-forward" size={24} color="#9CA3AF" />
+            </View>
+          </Card>
+        </TouchableOpacity>
+
         {/* Calendar */}
         <TouchableOpacity onPress={() => router.push('/calendar')}>
           <Card className="p-4 bg-gradient-to-r from-orange-50 to-amber-50">

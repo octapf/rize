@@ -122,7 +122,12 @@ export default function RootLayout() {
                 <Stack.Screen name="exercises/library" />
                 <Stack.Screen name="records/index" />
                 <Stack.Screen name="workouts/history" />
+                <Stack.Screen name="workouts/active" />
                 <Stack.Screen name="friends/index" />
+                <Stack.Screen name="users/[id]" />
+                <Stack.Screen name="routines/index" />
+                <Stack.Screen name="stats/measurements" />
+                <Stack.Screen name="search/index" />
                 <Stack.Screen name="goals/index" />
                 <Stack.Screen name="calendar/index" />
                 <Stack.Screen name="notifications/index" />
