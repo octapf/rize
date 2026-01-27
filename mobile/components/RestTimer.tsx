@@ -11,6 +11,8 @@ import {
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
 import { Audio } from 'expo-av';
+import * as Haptics from 'expo-haptics';
+import { settingsService } from '@/services/settings.service';
 
 interface RestTimerProps {
   visible: boolean;
@@ -57,6 +59,7 @@ export const RestTimer: React.FC<RestTimerProps> = ({
             intervalRef.current = null;
           }
           playCompletionSound();
+          triggerCompletionHaptics();
           Vibration.vibrate([0, 500, 200, 500]);
           onComplete?.();
           return 0;
@@ -76,8 +79,9 @@ export const RestTimer: React.FC<RestTimerProps> = ({
           }),
         ]).start();
 
-        // Vibrate in last 3 seconds
+        // Vibrate in last 3 seconds (if haptics enabled)
         if (prev <= 3) {
+          triggerTickHaptic();
           Vibration.vibrate(100);
         }
 
@@ -92,8 +96,25 @@ export const RestTimer: React.FC<RestTimerProps> = ({
     };
   }, [visible, isPaused]);
 
+  const triggerTickHaptic = async () => {
+    const hapticEnabled = await settingsService.getSetting('hapticFeedback');
+    if (hapticEnabled) {
+      Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
+    }
+  };
+
+  const triggerCompletionHaptics = async () => {
+    const hapticEnabled = await settingsService.getSetting('hapticFeedback');
+    if (hapticEnabled) {
+      await Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
+    }
+  };
+
   const playCompletionSound = async () => {
     try {
+      const soundEnabled = await settingsService.getSetting('soundEffects');
+      if (!soundEnabled) return;
+
       const { sound } = await Audio.Sound.createAsync(
         require('@/assets/sounds/timer-complete.mp3'),
         { shouldPlay: true }
@@ -105,6 +126,7 @@ export const RestTimer: React.FC<RestTimerProps> = ({
   };
 
   const handleAddTime = (seconds: number) => {
+    Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
     setTimeLeft((prev) => prev + seconds);
     onAddTime?.(seconds);
   };

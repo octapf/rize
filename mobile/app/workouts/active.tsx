@@ -16,6 +16,7 @@ import { Card } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
 import RestTimer from '@/components/RestTimer';
 import PlateCalculator from '@/components/PlateCalculator';
+import { settingsService } from '@/services/settings.service';
 import type { Workout } from '@/services/api/workouts.api';
 
 export default function ActiveWorkoutScreen() {
@@ -27,10 +28,19 @@ export default function ActiveWorkoutScreen() {
   
   // Rest timer state
   const [showRestTimer, setShowRestTimer] = useState(false);
-  const [restDuration, setRestDuration] = useState(90); // 90 segundos por defecto
+  const [restDuration, setRestDuration] = useState(90); // Default, will be loaded from settings
   
   // Plate calculator state
   const [showPlateCalculator, setShowPlateCalculator] = useState(false);
+
+  // Load settings on mount
+  useEffect(() => {
+    const loadSettings = async () => {
+      const defaultDuration = await settingsService.getSetting('restTimerDefault');
+      setRestDuration(defaultDuration);
+    };
+    loadSettings();
+  }, []);
 
   useEffect(() => {
     if (data?.data) {
@@ -80,9 +90,12 @@ export default function ActiveWorkoutScreen() {
       );
       setWorkout(response.data);
       
-      // Si se completó la serie, mostrar rest timer
+      // Si se completó la serie, verificar auto-start rest timer
       if (!currentCompleted) {
-        setShowRestTimer(true);
+        const autoStart = await settingsService.getSetting('autoStartRestTimer');
+        if (autoStart) {
+          setShowRestTimer(true);
+        }
       }
     } catch (error) {
       Alert.alert('Error', 'No se pudo actualizar');

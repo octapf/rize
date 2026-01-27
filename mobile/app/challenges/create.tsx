@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   View,
   Text,
@@ -7,7 +7,7 @@ import {
   TouchableOpacity,
   Alert,
 } from 'react-native';
-import { router } from 'expo-router';
+import { router, useLocalSearchParams } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useQuery } from '@tanstack/react-query';
@@ -18,7 +18,8 @@ import { Button } from '@/components/ui/Button';
 import type { Challenge } from '@/services/api/challenges.api';
 
 export default function CreateChallengeScreen() {
-  const [selectedFriend, setSelectedFriend] = useState<string>('');
+  const { preSelectedFriend } = useLocalSearchParams<{ preSelectedFriend?: string }>();
+  const [selectedFriend, setSelectedFriend] = useState<string>(preSelectedFriend || '');
   const [selectedType, setSelectedType] = useState<Challenge['type']>('workout_count');
   const [targetValue, setTargetValue] = useState('');
   const [duration, setDuration] = useState('7');
@@ -29,6 +30,13 @@ export default function CreateChallengeScreen() {
   });
 
   const createChallenge = useCreateChallenge();
+
+  // Set pre-selected friend if provided
+  useEffect(() => {
+    if (preSelectedFriend) {
+      setSelectedFriend(preSelectedFriend);
+    }
+  }, [preSelectedFriend]);
 
   const challengeTypes = [
     {

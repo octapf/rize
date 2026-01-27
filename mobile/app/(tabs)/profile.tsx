@@ -29,6 +29,17 @@ export default function ProfileScreen() {
     <View className="flex-1 bg-gray-50">
       {/* Header */}
       <LinearGradient colors={['#10B981', '#059669']} className="px-6 pt-12 pb-6">
+        <View className="flex-row items-center justify-between mb-4">
+          <View className="w-10" />
+          <Text className="text-white text-xl font-bold">Perfil</Text>
+          <TouchableOpacity
+            onPress={() => router.push('/settings')}
+            className="bg-white/20 p-2 rounded-lg"
+          >
+            <Ionicons name="settings-outline" size={24} color="white" />
+          </TouchableOpacity>
+        </View>
+        
         <View className="items-center">
           <View className="bg-white w-24 h-24 rounded-full items-center justify-center mb-4">
             <Text className="text-emerald-600 text-4xl font-bold">
