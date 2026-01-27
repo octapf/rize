@@ -124,6 +124,26 @@ export default function ProfileScreen() {
           </Card>
         </TouchableOpacity>
 
+        {/* Badges Button */}
+        <TouchableOpacity onPress={() => router.push('/badges')}>
+          <Card className="p-4 bg-gradient-to-r from-amber-50 to-yellow-50">
+            <View className="flex-row items-center gap-4">
+              <View className="bg-amber-500 w-12 h-12 rounded-xl items-center justify-center">
+                <Ionicons name="medal" size={28} color="white" />
+              </View>
+              <View className="flex-1">
+                <Text className="text-lg font-bold text-gray-900">
+                  Mis Medallas
+                </Text>
+                <Text className="text-sm text-gray-600">
+                  Colecciona medallas únicas
+                </Text>
+              </View>
+              <Ionicons name="chevron-forward" size={24} color="#9CA3AF" />
+            </View>
+          </Card>
+        </TouchableOpacity>
+
         {/* Workout History Button */}
         <TouchableOpacity onPress={() => router.push('/workouts/history')}>
           <Card className="p-4 bg-gradient-to-r from-emerald-50 to-teal-50">
