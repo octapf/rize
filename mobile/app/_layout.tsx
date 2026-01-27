@@ -10,6 +10,7 @@ import { ThemeProvider } from '@/contexts/ThemeContext';
 import { ToastProvider } from '@/contexts/ToastContext';
 import { ErrorBoundary } from '@/components/ErrorBoundary';
 import { AuthProvider } from '@/components/AuthProvider';
+import { NotificationProvider } from '@/components/NotificationProvider';
 
 // Prevent splash screen from hiding automatically
 SplashScreen.preventAutoHideAsync();
@@ -91,8 +92,10 @@ export default function RootLayout() {
         <QueryClientProvider client={queryClient}>
           <ThemeProvider>
             <ToastProvider>
-              <Stack screenOptions={{ headerShown: false }}>
-                <Stack.Screen name="(tabs)" />
+              <AuthProvider>
+                <NotificationProvider>
+                  <Stack screenOptions={{ headerShown: false }}>
+                    <Stack.Screen name="(tabs)" />
                 <Stack.Screen name="onboarding" />
                 <Stack.Screen name="login" />
                 <Stack.Screen name="register" />
@@ -156,6 +159,7 @@ export default function RootLayout() {
                 <Stack.Screen name="workouts/history" />
                 <Stack.Screen name="users/[userId]" />
               </Stack>
+              </NotificationProvider>
               </AuthProvider>
             </ToastProvider>
           </ThemeProvider>
