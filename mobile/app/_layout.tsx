@@ -244,6 +244,10 @@ export default function RootLayout() {
                 <Stack.Screen name="equipment/alternatives" />
                 <Stack.Screen name="health/recovery" />
                 <Stack.Screen name="location/gyms" />
+                <Stack.Screen name="workouts/builder" />
+                <Stack.Screen name="calculators/one-rm" />
+                <Stack.Screen name="calculators/macros" />
+                <Stack.Screen name="tracking/measurements" />
               </Stack>
               </SocketProvider>
               </NotificationProvider>
