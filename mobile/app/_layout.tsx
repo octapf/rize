@@ -240,6 +240,10 @@ export default function RootLayout() {
                 <Stack.Screen name="analytics/history" />
                 <Stack.Screen name="health/sleep" />
                 <Stack.Screen name="reports/weekly" />
+                <Stack.Screen name="rest/activities" />
+                <Stack.Screen name="equipment/alternatives" />
+                <Stack.Screen name="health/recovery" />
+                <Stack.Screen name="location/gyms" />
               </Stack>
               </SocketProvider>
               </NotificationProvider>
