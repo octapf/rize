@@ -290,7 +290,9 @@ export default function RootLayout() {
                 <Stack.Screen name="tools/transformation-goals" />
                 <Stack.Screen name="tools/workout-comparison" />
                 <Stack.Screen name="tools/exercise-substitutions" />
+                <Stack.Screen name="tools/form-check" />
                 <Stack.Screen name="library/exercises" />
+                <Stack.Screen name="social/achievements-leaderboard" />
               </Stack>
               </SocketProvider>
               </NotificationProvider>
