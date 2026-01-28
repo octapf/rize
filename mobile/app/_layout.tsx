@@ -243,6 +243,8 @@ export default function RootLayout() {
                 <Stack.Screen name="nutrition/planning" />
                 <Stack.Screen name="gallery/transformation" />
                 <Stack.Screen name="analytics/history" />
+                <Stack.Screen name="analytics/form-analysis" />
+                <Stack.Screen name="analytics/pr-dashboard" />
                 <Stack.Screen name="analytics/trend-analysis" />
                 <Stack.Screen name="analytics/performance-insights" />
                 <Stack.Screen name="health/sleep" />
