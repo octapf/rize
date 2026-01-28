@@ -252,6 +252,7 @@ export default function RootLayout() {
                 <Stack.Screen name="calculators/macros" />
                 <Stack.Screen name="calculators/one-rep-max" />
                 <Stack.Screen name="programs/splits" />
+                <Stack.Screen name="programs/split-generator" />
                 <Stack.Screen name="programs/deload" />
                 <Stack.Screen name="programs/mobility" />
                 <Stack.Screen name="tests/fitness" />
@@ -272,7 +273,9 @@ export default function RootLayout() {
                 <Stack.Screen name="tracking/measurements" />
                 <Stack.Screen name="tracking/rpe" />
                 <Stack.Screen name="tracking/personal-records" />
+                <Stack.Screen name="tracking/progress-photos" />
                 <Stack.Screen name="nutrition/meal-planner" />
+                <Stack.Screen name="nutrition/meal-prep" />
                 <Stack.Screen name="nutrition/supplements" />
                 <Stack.Screen name="nutrition/water" />
                 <Stack.Screen name="programs/templates" />
