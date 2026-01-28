@@ -281,6 +281,8 @@ export default function RootLayout() {
                 <Stack.Screen name="tools/goals" />
                 <Stack.Screen name="tools/rest-timer" />
                 <Stack.Screen name="tools/exercise-database" />
+                <Stack.Screen name="tools/transformation-goals" />
+                <Stack.Screen name="tools/workout-comparison" />
                 <Stack.Screen name="library/exercises" />
               </Stack>
               </SocketProvider>
