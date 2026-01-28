@@ -251,6 +251,8 @@ export default function RootLayout() {
                 <Stack.Screen name="equipment/alternatives" />
                 <Stack.Screen name="health/recovery" />
                 <Stack.Screen name="location/gyms" />
+                <Stack.Screen name="data/export-import" />
+                <Stack.Screen name="data/cloud-backup" />
                 <Stack.Screen name="workouts/builder" />
                 <Stack.Screen name="calculators/one-rm" />
                 <Stack.Screen name="calculators/macros" />
