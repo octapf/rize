@@ -249,7 +249,9 @@ export default function RootLayout() {
                 <Stack.Screen name="calculators/macros" />
                 <Stack.Screen name="calculators/bodyfat" />
                 <Stack.Screen name="calculators/plates" />
+                <Stack.Screen name="calculators/macros" />
                 <Stack.Screen name="programs/splits" />
+                <Stack.Screen name="programs/deload" />
                 <Stack.Screen name="tests/fitness" />
                 <Stack.Screen name="routines/warmup" />
                 <Stack.Screen name="routines/cooldown" />
@@ -264,6 +266,7 @@ export default function RootLayout() {
                 <Stack.Screen name="tracking/workout-history" />
                 <Stack.Screen name="tracking/sleep" />
                 <Stack.Screen name="tracking/body-composition" />
+                <Stack.Screen name="tracking/journal" />
                 <Stack.Screen name="nutrition/meal-planner" />
                 <Stack.Screen name="nutrition/supplements" />
                 <Stack.Screen name="nutrition/water" />
