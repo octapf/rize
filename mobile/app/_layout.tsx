@@ -252,6 +252,8 @@ export default function RootLayout() {
                 <Stack.Screen name="programs/splits" />
                 <Stack.Screen name="tests/fitness" />
                 <Stack.Screen name="routines/warmup" />
+                <Stack.Screen name="routines/cooldown" />
+                <Stack.Screen name="tools/strength-standards" />
                 <Stack.Screen name="tracking/measurements" />
               </Stack>
               </SocketProvider>
