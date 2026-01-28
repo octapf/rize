@@ -201,6 +201,7 @@ export default function RootLayout() {
                 <Stack.Screen name="coaching/personal" />
                 <Stack.Screen name="ai/recommendations" />
                 <Stack.Screen name="social/challenges" />
+                <Stack.Screen name="social/leaderboards" />
                 <Stack.Screen name="music/integration" />
                 <Stack.Screen name="equipment/tracker" />
                 <Stack.Screen name="progress/advanced" />
