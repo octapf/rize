@@ -182,6 +182,8 @@ export default function RootLayout() {
                 <Stack.Screen name="videos/tutorial" />
                 <Stack.Screen name="videos/library" />
                 <Stack.Screen name="videos/form-check" />
+                <Stack.Screen name="features/gym-finder" />
+                <Stack.Screen name="features/voice-commands" />
                 <Stack.Screen name="integrations/index" />
                 <Stack.Screen name="integrations/data-export" />
                 <Stack.Screen name="coaching/index" />
