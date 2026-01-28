@@ -281,6 +281,8 @@ export default function RootLayout() {
                 <Stack.Screen name="nutrition/meal-prep" />
                 <Stack.Screen name="nutrition/supplements" />
                 <Stack.Screen name="nutrition/water" />
+                <Stack.Screen name="nutrition/nutrient-timing" />
+                <Stack.Screen name="nutrition/supplement-tracker" />
                 <Stack.Screen name="programs/templates" />
                 <Stack.Screen name="programs/schedule" />
                 <Stack.Screen name="programs/warmup-generator" />
