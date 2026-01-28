@@ -284,6 +284,7 @@ export default function RootLayout() {
                 <Stack.Screen name="programs/templates" />
                 <Stack.Screen name="programs/schedule" />
                 <Stack.Screen name="programs/warmup-generator" />
+                <Stack.Screen name="programs/workout-templates" />
                 <Stack.Screen name="tools/goals" />
                 <Stack.Screen name="tools/rest-timer" />
                 <Stack.Screen name="tools/exercise-database" />
@@ -291,6 +292,7 @@ export default function RootLayout() {
                 <Stack.Screen name="tools/workout-comparison" />
                 <Stack.Screen name="tools/exercise-substitutions" />
                 <Stack.Screen name="tools/form-check" />
+                <Stack.Screen name="tools/pre-workout-checklist" />
                 <Stack.Screen name="library/exercises" />
                 <Stack.Screen name="social/achievements-leaderboard" />
               </Stack>
