@@ -274,6 +274,8 @@ export default function RootLayout() {
                 <Stack.Screen name="tracking/rpe" />
                 <Stack.Screen name="tracking/personal-records" />
                 <Stack.Screen name="tracking/progress-photos" />
+                <Stack.Screen name="tracking/habits-v2" />
+                <Stack.Screen name="tracking/challenges" />
                 <Stack.Screen name="nutrition/meal-planner" />
                 <Stack.Screen name="nutrition/meal-prep" />
                 <Stack.Screen name="nutrition/supplements" />
