@@ -250,6 +250,8 @@ export default function RootLayout() {
                 <Stack.Screen name="calculators/bodyfat" />
                 <Stack.Screen name="calculators/plates" />
                 <Stack.Screen name="programs/splits" />
+                <Stack.Screen name="tests/fitness" />
+                <Stack.Screen name="routines/warmup" />
                 <Stack.Screen name="tracking/measurements" />
               </Stack>
               </SocketProvider>
