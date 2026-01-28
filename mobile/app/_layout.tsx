@@ -254,7 +254,10 @@ export default function RootLayout() {
                 <Stack.Screen name="routines/warmup" />
                 <Stack.Screen name="routines/cooldown" />
                 <Stack.Screen name="tools/strength-standards" />
+                <Stack.Screen name="tools/timer" />
                 <Stack.Screen name="tracking/measurements" />
+                <Stack.Screen name="tracking/habits" />
+                <Stack.Screen name="tracking/prs" />
               </Stack>
               </SocketProvider>
               </NotificationProvider>
