@@ -258,6 +258,8 @@ export default function RootLayout() {
                 <Stack.Screen name="tracking/measurements" />
                 <Stack.Screen name="tracking/habits" />
                 <Stack.Screen name="tracking/prs" />
+                <Stack.Screen name="tracking/progress-photos" />
+                <Stack.Screen name="library/exercises" />
               </Stack>
               </SocketProvider>
               </NotificationProvider>
