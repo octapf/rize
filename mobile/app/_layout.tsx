@@ -276,6 +276,7 @@ export default function RootLayout() {
                 <Stack.Screen name="tracking/progress-photos" />
                 <Stack.Screen name="tracking/habits-v2" />
                 <Stack.Screen name="tracking/challenges" />
+                <Stack.Screen name="tracking/recovery-score" />
                 <Stack.Screen name="nutrition/meal-planner" />
                 <Stack.Screen name="nutrition/meal-prep" />
                 <Stack.Screen name="nutrition/supplements" />
@@ -288,6 +289,7 @@ export default function RootLayout() {
                 <Stack.Screen name="tools/exercise-database" />
                 <Stack.Screen name="tools/transformation-goals" />
                 <Stack.Screen name="tools/workout-comparison" />
+                <Stack.Screen name="tools/exercise-substitutions" />
                 <Stack.Screen name="library/exercises" />
               </Stack>
               </SocketProvider>
