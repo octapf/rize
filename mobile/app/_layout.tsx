@@ -295,6 +295,8 @@ export default function RootLayout() {
                 <Stack.Screen name="tools/exercise-substitutions" />
                 <Stack.Screen name="tools/form-check" />
                 <Stack.Screen name="tools/pre-workout-checklist" />
+                <Stack.Screen name="tools/body-composition" />
+                <Stack.Screen name="tools/cardio-zones" />
                 <Stack.Screen name="library/exercises" />
                 <Stack.Screen name="social/achievements-leaderboard" />
               </Stack>
