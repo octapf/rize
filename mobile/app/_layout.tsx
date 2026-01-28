@@ -219,6 +219,7 @@ export default function RootLayout() {
                 <Stack.Screen name="classes/virtual" />
                 <Stack.Screen name="workouts/sharing" />
                 <Stack.Screen name="recovery/protocols" />
+                <Stack.Screen name="recovery/mobility-programs" />
                 <Stack.Screen name="achievements/badges" />
                 <Stack.Screen name="measurements/body" />
                 <Stack.Screen name="analysis/form" />
