@@ -263,6 +263,8 @@ export default function RootLayout() {
                 <Stack.Screen name="programs/splits" />
                 <Stack.Screen name="programs/split-generator" />
                 <Stack.Screen name="programs/deload" />
+                <Stack.Screen name="programs/periodization" />
+                <Stack.Screen name="programs/deload-planner" />
                 <Stack.Screen name="programs/mobility" />
                 <Stack.Screen name="timers/emom" />
                 <Stack.Screen name="timers/tabata" />
