@@ -265,6 +265,9 @@ export default function RootLayout() {
                 <Stack.Screen name="tracking/sleep" />
                 <Stack.Screen name="tracking/body-composition" />
                 <Stack.Screen name="nutrition/meal-planner" />
+                <Stack.Screen name="nutrition/supplements" />
+                <Stack.Screen name="programs/templates" />
+                <Stack.Screen name="tools/goals" />
                 <Stack.Screen name="library/exercises" />
               </Stack>
               </SocketProvider>
