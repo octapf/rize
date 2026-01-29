@@ -204,6 +204,8 @@ export default function RootLayout() {
                 <Stack.Screen name="tools/training-max" />
                 <Stack.Screen name="templates/workout-library" />
                 <Stack.Screen name="templates/template-builder" />
+                <Stack.Screen name="database/exercise-database" />
+                <Stack.Screen name="database/muscle-explorer" />
                 <Stack.Screen name="coaching/personal" />
                 <Stack.Screen name="ai/recommendations" />
                 <Stack.Screen name="social/challenges" />
