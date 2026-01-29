@@ -254,6 +254,8 @@ export default function RootLayout() {
                 <Stack.Screen name="advanced/auto-regulation" />
                 <Stack.Screen name="tracking/pr-tracker" />
                 <Stack.Screen name="tracking/volume-tracker" />
+                <Stack.Screen name="compete/competition-prep" />
+                <Stack.Screen name="compete/attempt-selection" />
                 <Stack.Screen name="coaching/personal" />
                 <Stack.Screen name="ai/recommendations" />
                 <Stack.Screen name="social/challenges" />
