@@ -200,6 +200,8 @@ export default function RootLayout() {
                 <Stack.Screen name="marketplace/routines" />
                 <Stack.Screen name="referrals/index" />
                 <Stack.Screen name="offline/index" />
+                <Stack.Screen name="tools/plate-calculator" />
+                <Stack.Screen name="tools/training-max" />
                 <Stack.Screen name="coaching/personal" />
                 <Stack.Screen name="ai/recommendations" />
                 <Stack.Screen name="social/challenges" />
