@@ -220,6 +220,8 @@ export default function RootLayout() {
                 <Stack.Screen name="warmup/cooldown-routines" />
                 <Stack.Screen name="optimizer/split-optimizer" />
                 <Stack.Screen name="optimizer/recovery-balance" />
+                <Stack.Screen name="injury/prevention-guide" />
+                <Stack.Screen name="injury/mobility-assessment" />
                 <Stack.Screen name="coaching/personal" />
                 <Stack.Screen name="ai/recommendations" />
                 <Stack.Screen name="social/challenges" />
