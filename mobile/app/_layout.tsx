@@ -240,6 +240,8 @@ export default function RootLayout() {
                 <Stack.Screen name="goals/progress-milestones" />
                 <Stack.Screen name="habits/habit-tracker" />
                 <Stack.Screen name="habits/consistency-metrics" />
+                <Stack.Screen name="mindset/mental-training" />
+                <Stack.Screen name="mindset/motivation-strategies" />
                 <Stack.Screen name="coaching/personal" />
                 <Stack.Screen name="ai/recommendations" />
                 <Stack.Screen name="social/challenges" />
