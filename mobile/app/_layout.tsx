@@ -262,6 +262,8 @@ export default function RootLayout() {
                 <Stack.Screen name="compete/post-comp-recovery" />
                 <Stack.Screen name="education/biomechanics" />
                 <Stack.Screen name="education/exercise-library" />
+                <Stack.Screen name="education/training-philosophy" />
+                <Stack.Screen name="education/common-mistakes" />
                 <Stack.Screen name="coaching/personal" />
                 <Stack.Screen name="ai/recommendations" />
                 <Stack.Screen name="social/challenges" />
