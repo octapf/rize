@@ -283,6 +283,8 @@ export default function RootLayout() {
                 <Stack.Screen name="recovery/tracking" />
                 <Stack.Screen name="recovery/injury-prevention" />
                 <Stack.Screen name="recovery/techniques" />
+                <Stack.Screen name="competition/powerlifting-guide" />
+                <Stack.Screen name="competition/peaking-protocol" />
                 <Stack.Screen name="integrations/wearables" />
                 <Stack.Screen name="integrations/healthkit" />
                 <Stack.Screen name="workouts/advanced-builder" />
