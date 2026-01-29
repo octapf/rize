@@ -216,6 +216,8 @@ export default function RootLayout() {
                 <Stack.Screen name="recomp/cutting-bulking" />
                 <Stack.Screen name="supplements/timing-guide" />
                 <Stack.Screen name="supplements/workout-stacks" />
+                <Stack.Screen name="warmup/dynamic-warmup" />
+                <Stack.Screen name="warmup/cooldown-routines" />
                 <Stack.Screen name="coaching/personal" />
                 <Stack.Screen name="ai/recommendations" />
                 <Stack.Screen name="social/challenges" />
