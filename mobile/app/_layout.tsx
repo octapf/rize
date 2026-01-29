@@ -234,6 +234,8 @@ export default function RootLayout() {
                 <Stack.Screen name="recovery/fatigue-management" />
                 <Stack.Screen name="technique/form-cues" />
                 <Stack.Screen name="technique/common-mistakes" />
+                <Stack.Screen name="technique/video-analysis" />
+                <Stack.Screen name="technique/self-coaching" />
                 <Stack.Screen name="programming/periodization-plans" />
                 <Stack.Screen name="programming/training-cycles" />
                 <Stack.Screen name="goals/goal-setting" />
