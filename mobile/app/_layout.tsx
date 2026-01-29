@@ -250,6 +250,8 @@ export default function RootLayout() {
                 <Stack.Screen name="assessment/movement-screening" />
                 <Stack.Screen name="supplements/guide" />
                 <Stack.Screen name="supplements/timing" />
+                <Stack.Screen name="advanced/training-techniques" />
+                <Stack.Screen name="advanced/auto-regulation" />
                 <Stack.Screen name="coaching/personal" />
                 <Stack.Screen name="ai/recommendations" />
                 <Stack.Screen name="social/challenges" />
