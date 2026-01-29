@@ -226,6 +226,8 @@ export default function RootLayout() {
                 <Stack.Screen name="nutrition/meal-timing" />
                 <Stack.Screen name="timers/workout-timer" />
                 <Stack.Screen name="timers/rest-timer" />
+                <Stack.Screen name="benchmarks/strength-standards" />
+                <Stack.Screen name="benchmarks/performance-benchmarks" />
                 <Stack.Screen name="coaching/personal" />
                 <Stack.Screen name="ai/recommendations" />
                 <Stack.Screen name="social/challenges" />
