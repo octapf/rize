@@ -210,6 +210,8 @@ export default function RootLayout() {
                 <Stack.Screen name="journal/workout-journal" />
                 <Stack.Screen name="progression/overload-tracker" />
                 <Stack.Screen name="progression/auto-progression" />
+                <Stack.Screen name="analysis/workout-comparison" />
+                <Stack.Screen name="analysis/historical-analysis" />
                 <Stack.Screen name="coaching/personal" />
                 <Stack.Screen name="ai/recommendations" />
                 <Stack.Screen name="social/challenges" />
