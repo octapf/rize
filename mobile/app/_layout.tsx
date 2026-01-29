@@ -230,6 +230,8 @@ export default function RootLayout() {
                 <Stack.Screen name="benchmarks/performance-benchmarks" />
                 <Stack.Screen name="cardio/cardio-protocols" />
                 <Stack.Screen name="cardio/hiit-templates" />
+                <Stack.Screen name="recovery/deload-protocol" />
+                <Stack.Screen name="recovery/fatigue-management" />
                 <Stack.Screen name="coaching/personal" />
                 <Stack.Screen name="ai/recommendations" />
                 <Stack.Screen name="social/challenges" />
