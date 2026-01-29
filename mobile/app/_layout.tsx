@@ -208,6 +208,8 @@ export default function RootLayout() {
                 <Stack.Screen name="database/muscle-explorer" />
                 <Stack.Screen name="journal/training-notes" />
                 <Stack.Screen name="journal/workout-journal" />
+                <Stack.Screen name="progression/overload-tracker" />
+                <Stack.Screen name="progression/auto-progression" />
                 <Stack.Screen name="coaching/personal" />
                 <Stack.Screen name="ai/recommendations" />
                 <Stack.Screen name="social/challenges" />
