@@ -244,6 +244,7 @@ export default function RootLayout() {
                 <Stack.Screen name="habits/consistency-metrics" />
                 <Stack.Screen name="mindset/mental-training" />
                 <Stack.Screen name="mindset/motivation-strategies" />
+                <Stack.Screen name="mindset/pre-lift-routine" />
                 <Stack.Screen name="physique/body-composition" />
                 <Stack.Screen name="physique/muscle-building" />
                 <Stack.Screen name="planning/workout-planner" />
