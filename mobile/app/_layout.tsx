@@ -260,6 +260,8 @@ export default function RootLayout() {
                 <Stack.Screen name="compete/peak-week" />
                 <Stack.Screen name="compete/meet-day-checklist" />
                 <Stack.Screen name="compete/post-comp-recovery" />
+                <Stack.Screen name="education/biomechanics" />
+                <Stack.Screen name="education/exercise-library" />
                 <Stack.Screen name="coaching/personal" />
                 <Stack.Screen name="ai/recommendations" />
                 <Stack.Screen name="social/challenges" />
