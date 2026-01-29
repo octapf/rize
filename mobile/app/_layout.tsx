@@ -276,6 +276,8 @@ export default function RootLayout() {
                 <Stack.Screen name="training/splits" />
                 <Stack.Screen name="training/periodization" />
                 <Stack.Screen name="training/deload" />
+                <Stack.Screen name="training/warmup" />
+                <Stack.Screen name="training/mobility" />
                 <Stack.Screen name="recovery/tracking" />
                 <Stack.Screen name="integrations/wearables" />
                 <Stack.Screen name="integrations/healthkit" />
