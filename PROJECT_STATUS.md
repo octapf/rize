@@ -1,8 +1,8 @@
 # RIZE - Estado del Proyecto 📊
 
-**Fecha:** 2026-02-02  
+**Fecha:** 2026-02-03  
 **Versión:** 0.2.0-alpha  
-**Estado:** Backend y mobile MVP implementados ✅ | Tests y offline en progreso
+**Estado:** Backend y mobile MVP implementados ✅ | Tests ampliados ✅ | Listo para validación
 
 ---
 
@@ -96,35 +96,38 @@
 - ✅ src/services/storage/mmkv.ts
 
 **Pendiente mobile**
-- ❌ syncStore (offline queue + flush al reconectar) — en progreso
+- ✅ syncStore (offline queue + flush al reconectar) — completado
+- ✅ SyncProvider integrado en app/_layout.tsx
 - ❌ Tests (componentes, stores, API client)
-- ⚠️ Assets: icon/splash con placeholders
+- ✅ Assets: placeholders y script de generación listos
 
 ### 🧪 Testing
-- ✅ Backend: jest + supertest configurados; tests de integración auth y workouts añadidos
-- ❌ Cobertura >90% backend pendiente
+- ✅ Backend: jest + supertest configurados
+- ✅ Tests de integración: auth, workouts, exercises, social, stats
+- ✅ Cobertura ampliada para exercises, social features, stats
 - ❌ Mobile: 0 tests (target: >80%)
 
 ---
 
 ## 🚧 En Progreso
 
-1. **Offline sync** - syncStore con cola de workouts y flush al reconectar
-2. **Tests backend** - ampliar a más features y cobertura
-3. **Placeholder assets** - icon y splash para builds
+Ninguna tarea en progreso actualmente.
 
 ---
 
 ## ⏳ Pendiente
 
 ### Alta prioridad
-1. **Configurar .env** - Backend (MongoDB URI, JWT secrets), Mobile (API URL)
-2. **Fuentes** - Barlow e Inter en mobile/assets/fonts (ver README en fonts)
-3. **Ejecutar y validar** - Backend: `npm run dev` | Mobile: `npx expo start` | Seed: `npm run seed` (en backend)
+
+1. **Configurar .env** - Backend (MongoDB URI, JWT secrets) y Mobile (API URL)
+   - ℹ️ Ver [ENV_SETUP.md](ENV_SETUP.md) para guía detallada
+2. **Instalar fuentes** - Barlow y Inter en mobile/assets/fonts
+   - ℹ️ Run: `cd mobile && npm run install-fonts`
+   - ℹ️ Ver [FONTS_SETUP.md](FONTS_SETUP.md) para instrucciones
+3. **Ejecutar y validar** - Backend → Mobile → Seed data → Probar flujo completo
 
 ### Mejoras
-- Backend: tests para exercises, social, stats (y subir cobertura)
-- Mobile: tests de componentes y hooks
+- Mobile: tests de componentes y hooks (target >80%)
 - E2E: flujo registro → login → crear workout
 - Animaciones: level up, achievement unlock
 - Assets finales: icon/splash de producción (ver mobile/assets/ASSETS_NEEDED.md)
@@ -135,27 +138,29 @@
 
 | Categoría            | Completado | Total | %   |
 |----------------------|------------|-------|-----|
-| Documentación        | 7          | 7     | 100 |
+| Documentación        | 9          | 9     | 100 |
 | Backend Config       | 15         | 15    | 100 |
 | Backend Models       | 11         | 11    | 100 |
 | Backend Features     | 12         | 12    | 100 |
+| Backend Tests        | 5          | 5     | 100 |
 | Mobile Config        | 10         | 10    | 100 |
 | Mobile Screens/API   | Sí         | -     | ~85 |
 | Mobile Components    | Sí         | -     | ~90 |
-| Testing Backend      | Parcial    | -     | En progreso |
+| Offline sync         | Sí         | -     | 100 |
 | Testing Mobile       | 0          | -     | 0   |
-| Offline sync         | En progreso| -     | -   |
+| Setup Scripts        | 2          | 2     | 100 |
 
-**Progreso global: ~75%**
+**Progreso global: ~85%**
 
 ---
 
 ## 🎯 Próximos pasos sugeridos
 
-1. **Validar flujo** - Registrar → login → crear workout y ver en lista/stats
-2. **Ampliar tests backend** - exercises, social; subir cobertura
-3. **Completar offline** - Probar sync en dispositivo sin red
-4. **Placeholder assets** - Generar icon/splash mínimos para EAS/TestFlight
+1. **Configurar entorno** - Ejecutar guía [ENV_SETUP.md](ENV_SETUP.md) y [FONTS_SETUP.md](FONTS_SETUP.md)
+2. **Validar flujo completo** - Registrar → login → crear workout → ver en lista/stats/feed
+3. **Tests mobile** - Componentes UI, hooks, stores (usar @testing-library/react-native)
+4. **E2E** - Flujo completo con Detox o Maestro
+5. **Assets finales** - Reemplazar placeholders con diseño final
 
 ---
 
