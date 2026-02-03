@@ -103,6 +103,19 @@ export function SkeletonList({ count = 3, ItemComponent = SkeletonWorkoutCard }:
   );
 }
 
+// Convenience exports for specific lists
+export function SkeletonWorkoutList({ count = 3 }: { count?: number }) {
+  return <SkeletonList count={count} ItemComponent={SkeletonWorkoutCard} />;
+}
+
+export function SkeletonExerciseList({ count = 3 }: { count?: number }) {
+  return <SkeletonList count={count} ItemComponent={SkeletonExerciseCard} />;
+}
+
+export function SkeletonStatList({ count = 3 }: { count?: number }) {
+  return <SkeletonList count={count} ItemComponent={SkeletonStatCard} />;
+}
+
 const styles = StyleSheet.create({
   skeleton: {
     backgroundColor: '#E4E4E7',

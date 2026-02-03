@@ -113,8 +113,11 @@ describe('useSocial Hooks', () => {
 
       await result.current.mutateAsync('user123');
 
-      expect(socialApi.sendFriendRequest).toHaveBeenCalledWith('user123');
-      expect(result.current.isSuccess).toBe(true);
+      expect(socialApi.sendFriendRequest).toHaveBeenCalledTimes(1);
+      expect((socialApi.sendFriendRequest as jest.Mock).mock.calls[0][0]).toBe('user123');
+      await waitFor(() => {
+        expect(result.current.isSuccess).toBe(true);
+      });
     });
 
     it('should invalidate friends query on success', async () => {
@@ -140,7 +143,8 @@ describe('useSocial Hooks', () => {
 
       await result.current.mutateAsync('request123');
 
-      expect(socialApi.acceptFriendRequest).toHaveBeenCalledWith('request123');
+      expect(socialApi.acceptFriendRequest).toHaveBeenCalledTimes(1);
+      expect((socialApi.acceptFriendRequest as jest.Mock).mock.calls[0][0]).toBe('request123');
     });
 
     it('should invalidate both friends and pending requests', async () => {
@@ -169,7 +173,8 @@ describe('useSocial Hooks', () => {
 
       await result.current.mutateAsync('request123');
 
-      expect(socialApi.rejectFriendRequest).toHaveBeenCalledWith('request123');
+      expect(socialApi.rejectFriendRequest).toHaveBeenCalledTimes(1);
+      expect((socialApi.rejectFriendRequest as jest.Mock).mock.calls[0][0]).toBe('request123');
     });
 
     it('should invalidate pending requests only', async () => {
@@ -226,7 +231,8 @@ describe('useSocial Hooks', () => {
 
       await result.current.mutateAsync('workout123');
 
-      expect(socialApi.likeWorkout).toHaveBeenCalledWith('workout123');
+      expect(socialApi.likeWorkout).toHaveBeenCalledTimes(1);
+      expect((socialApi.likeWorkout as jest.Mock).mock.calls[0][0]).toBe('workout123');
     });
 
     it('should invalidate feed on like', async () => {
@@ -252,7 +258,8 @@ describe('useSocial Hooks', () => {
 
       await result.current.mutateAsync('workout123');
 
-      expect(socialApi.unlikeWorkout).toHaveBeenCalledWith('workout123');
+      expect(socialApi.unlikeWorkout).toHaveBeenCalledTimes(1);
+      expect((socialApi.unlikeWorkout as jest.Mock).mock.calls[0][0]).toBe('workout123');
     });
 
     it('should invalidate feed on unlike', async () => {
@@ -350,7 +357,9 @@ describe('useSocial Hooks', () => {
         expect(error).toBeTruthy();
       }
 
-      expect(result.current.isError).toBe(true);
+      await waitFor(() => {
+        expect(result.current.isError).toBe(true);
+      });
     });
   });
 });

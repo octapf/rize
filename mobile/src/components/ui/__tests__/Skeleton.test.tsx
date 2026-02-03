@@ -25,27 +25,33 @@ describe('Skeleton', () => {
       const { UNSAFE_getByType } = render(<Skeleton />);
       
       const animatedView = UNSAFE_getByType(Animated.View);
-      expect(animatedView.props.style).toContainEqual(
-        expect.objectContaining({ width: '100%' })
-      );
+      const styles = animatedView.props.style;
+      const flattenedStyle = Array.isArray(styles) 
+        ? Object.assign({}, ...styles.filter(s => s)) 
+        : styles;
+      expect(flattenedStyle.width).toBe('100%');
     });
 
     it('should render with default height', () => {
       const { UNSAFE_getByType } = render(<Skeleton />);
       
       const animatedView = UNSAFE_getByType(Animated.View);
-      expect(animatedView.props.style).toContainEqual(
-        expect.objectContaining({ height: 16 })
-      );
+      const styles = animatedView.props.style;
+      const flattenedStyle = Array.isArray(styles) 
+        ? Object.assign({}, ...styles.filter(s => s)) 
+        : styles;
+      expect(flattenedStyle.height).toBe(16);
     });
 
     it('should render with default border radius', () => {
       const { UNSAFE_getByType } = render(<Skeleton />);
       
       const animatedView = UNSAFE_getByType(Animated.View);
-      expect(animatedView.props.style).toContainEqual(
-        expect.objectContaining({ borderRadius: 4 })
-      );
+      const styles = animatedView.props.style;
+      const flattenedStyle = Array.isArray(styles) 
+        ? Object.assign({}, ...styles.filter(s => s)) 
+        : styles;
+      expect(flattenedStyle.borderRadius).toBe(4);
     });
   });
 

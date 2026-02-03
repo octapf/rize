@@ -133,7 +133,9 @@ describe('useWorkouts Hooks', () => {
       await result.current.mutateAsync(mockWorkoutData);
 
       expect(workoutsApi.createWorkout).toHaveBeenCalledWith(mockWorkoutData);
-      expect(result.current.isSuccess).toBe(true);
+      await waitFor(() => {
+        expect(result.current.isSuccess).toBe(true);
+      });
     });
 
     it('should invalidate queries on success', async () => {
@@ -166,7 +168,9 @@ describe('useWorkouts Hooks', () => {
         expect(error).toBeTruthy();
       }
 
-      expect(result.current.isError).toBe(true);
+      await waitFor(() => {
+        expect(result.current.isError).toBe(true);
+      });
     });
   });
 
@@ -187,7 +191,9 @@ describe('useWorkouts Hooks', () => {
       await result.current.mutateAsync({ id: '123', data: updateData });
 
       expect(workoutsApi.updateWorkout).toHaveBeenCalledWith('123', updateData);
-      expect(result.current.isSuccess).toBe(true);
+      await waitFor(() => {
+        expect(result.current.isSuccess).toBe(true);
+      });
     });
 
     it('should invalidate specific workout query on success', async () => {
@@ -217,7 +223,9 @@ describe('useWorkouts Hooks', () => {
       await result.current.mutateAsync('123');
 
       expect(workoutsApi.deleteWorkout).toHaveBeenCalledWith('123');
-      expect(result.current.isSuccess).toBe(true);
+      await waitFor(() => {
+        expect(result.current.isSuccess).toBe(true);
+      });
     });
 
     it('should invalidate queries on delete success', async () => {
@@ -246,7 +254,9 @@ describe('useWorkouts Hooks', () => {
         expect(error).toBeTruthy();
       }
 
-      expect(result.current.isError).toBe(true);
+      await waitFor(() => {
+        expect(result.current.isError).toBe(true);
+      });
     });
   });
 
