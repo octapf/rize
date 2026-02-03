@@ -217,7 +217,7 @@ export default function MeetDayMindset() {
       },
       betweenAttempts: {
         timeline: '8-15 minutes between attempts typically',
-        what ToDo: [
+        whatToDo: [
           'Stay warm (light movement)',
           'Hydrate and small snack',
           'Review next attempt with coach/handler',
@@ -243,13 +243,13 @@ export default function MeetDayMindset() {
           {
             conservative: '9-for-9 approach',
             description: 'Every attempt is a success, build confidence',
-            best for: 'First meet, building experience, qualifying totals',
+            bestFor: 'First meet, building experience, qualifying totals',
             structure: '1st: 85-90% (certain), 2nd: 92-95% (confident), 3rd: 97-100% (PR attempt)',
           },
           {
             conservative: 'Aggressive approach',
             description: 'Go for PRs, accept potential misses',
-            best for: 'Experienced lifters, record attempts, peak performance',
+            bestFor: 'Experienced lifters, record attempts, peak performance',
             structure: '1st: 90-92% (solid), 2nd: 95-97% (stretch), 3rd: 100-102% (big PR)',
           },
           {

@@ -240,7 +240,7 @@ export default function WeightClassManagement() {
           'Stop eating 2-3h before lifting',
         ],
       },
-      between Attempts: {
+      betweenAttempts: {
         title: 'During Meet',
         actions: [
           'Sip water consistently',

@@ -372,7 +372,7 @@ export default function GymEtiquette() {
             'Drench in cologne (just as bad)',
             'Ignore your smell problem',
           ],
-          ifSomeone Smells: [
+          ifSomeoneSmells: [
             'Don\'t say anything to them',
             'Move to different area if possible',
             'Tell gym staff if it\'s really bad',
@@ -711,7 +711,7 @@ export default function GymEtiquette() {
               {rule.ifSomeone && selectedCategory === 'hygiene' && (
                 <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30">
                   <Text className="text-blue-400 font-bold mb-2">If Someone Else Smells:</Text>
-                  {rule['ifSomeone Smells'].map((item: string, iIdx: number) => (
+                  {rule.ifSomeoneSmells.map((item: string, iIdx: number) => (
                     <Text key={iIdx} className="text-blue-300 text-sm mb-1 last:mb-0">
                       • {item}
                     </Text>

@@ -118,7 +118,7 @@ export default function CommonMistakes() {
       {
         mistake: 'Bouncing Bar Off Chest',
         why: 'Trying to cheat past sticking point, ego',
-        consequence: 'Rib/sternum injury, doesn't count in comp, no strength',
+        consequence: 'Rib/sternum injury, doesn\'t count in comp, no strength',
         fix: [
           'Pause 1 second on chest',
           'Light touch, maintain tension',
@@ -175,7 +175,7 @@ export default function CommonMistakes() {
         consequence: 'Lumbar hyperextension, back pain, no benefit',
         fix: [
           'Just stand tall, neutral spine',
-          'Squeeze glutes, don't lean back',
+          'Squeeze glutes, don\'t lean back',
           'Hip thrusts to strengthen glutes',
           'Film lockout position',
         ],

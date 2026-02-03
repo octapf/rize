@@ -185,7 +185,7 @@ export default function CareerLongevity() {
             'Volume tolerance is individual',
             'Can decrease with age or stress',
           ],
-          signs Overtrained: [
+          signsOvertrained: [
             'Chronic fatigue',
             'Sleep disruption',
             'Constant soreness',
@@ -466,7 +466,7 @@ export default function CareerLongevity() {
           challenges: [
             'Time away from family',
             'Partner may not understand',
-            'Kids' schedules',
+            'Kids\' schedules',
             'Social obligations',
           ],
           solutions: [

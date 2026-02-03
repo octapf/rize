@@ -104,7 +104,7 @@ const TUTORIALS: Tutorial[] = [
       'Cat-Cow 10 reps para columna',
       '90/90 hip stretch 60 seg cada lado',
       'Shoulder dislocations con banda 15 reps',
-      'World's greatest stretch 5 reps/lado',
+      'World\'s greatest stretch 5 reps/lado',
     ],
   },
   {
