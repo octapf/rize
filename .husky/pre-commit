@@ -1,0 +1,36 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+echo "🔍 Running pre-commit checks..."
+
+# Check if we're in backend or mobile
+if git diff --cached --name-only | grep -q "^backend/"; then
+  echo "📦 Backend changes detected"
+  cd backend
+  
+  echo "  → Type checking..."
+  npm run type-check || exit 1
+  
+  echo "  → Linting..."
+  npm run lint || exit 1
+  
+  echo "  → Running tests..."
+  npm test || exit 1
+  
+  cd ..
+fi
+
+if git diff --cached --name-only | grep -q "^mobile/"; then
+  echo "📱 Mobile changes detected"
+  cd mobile
+  
+  echo "  → Type checking..."
+  npm run type-check || exit 1
+  
+  echo "  → Linting..."
+  npm run lint || exit 1
+  
+  cd ..
+fi
+
+echo "✅ Pre-commit checks passed!"

@@ -1,0 +1,67 @@
+name: Backend CI
+
+on:
+  push:
+    branches: [ main, develop ]
+    paths:
+      - 'backend/**'
+      - '.github/workflows/backend-ci.yml'
+  pull_request:
+    branches: [ main, develop ]
+    paths:
+      - 'backend/**'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    strategy:
+      matrix:
+        node-version: [18.x, 20.x]
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+        cache-dependency-path: backend/package-lock.json
+    
+    - name: Install dependencies
+      working-directory: ./backend
+      run: npm ci
+    
+    - name: Run linter
+      working-directory: ./backend
+      run: npm run lint --if-present
+    
+    - name: Run type check
+      working-directory: ./backend
+      run: npm run type-check --if-present
+    
+    - name: Run tests
+      working-directory: ./backend
+      run: npm test
+      env:
+        NODE_ENV: test
+        MONGODB_URI: ${{ secrets.MONGODB_URI_TEST }}
+        JWT_SECRET: test-jwt-secret-for-github-actions-min-32-chars
+        JWT_REFRESH_SECRET: test-jwt-refresh-secret-for-github-actions-32
+        CLOUDINARY_CLOUD_NAME: test
+        CLOUDINARY_API_KEY: test
+        CLOUDINARY_API_SECRET: test
+    
+    - name: Generate coverage report
+      working-directory: ./backend
+      run: npm run test:coverage --if-present
+      continue-on-error: true
+    
+    - name: Upload coverage to Codecov
+      uses: codecov/codecov-action@v4
+      with:
+        files: ./backend/coverage/lcov.info
+        flags: backend
+        fail_ci_if_error: false
+      continue-on-error: true

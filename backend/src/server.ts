@@ -6,6 +6,7 @@ import { connectDB } from './config/database';
 import { env } from './config/env';
 import { logger } from './utils/logger';
 import { errorHandler } from './middleware/errorHandler';
+import { setupSwagger } from './config/swagger';
 import authRoutes from './features/auth/auth.routes';
 import workoutRoutes from './features/workouts/workout.routes';
 import exerciseRoutes from './features/exercises/exercise.routes';
@@ -29,6 +30,11 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(mongoSanitize());
+
+// Swagger documentation (only in development)
+if (env.NODE_ENV === 'development') {
+  setupSwagger(app);
+}
 
 // Health check
 app.get('/health', (_req, res) => {
