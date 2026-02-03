@@ -227,9 +227,12 @@ export default function UserProfileScreen() {
               <Text className="text-gray-900 font-bold">
                 {stats.recordsCount}
               </Text>
-            </Entrenamientos Recientes
-            </Text>
+            </View>
           </View>
+
+          <Text className="text-lg font-bold text-gray-900 mt-8 mb-4">
+            Entrenamientos Recientes
+          </Text>
 
           {recentWorkouts.length === 0 ? (
             <View className="py-6 items-center">
@@ -254,7 +257,8 @@ export default function UserProfileScreen() {
                   </Text>
                 </View>
               ))}
-        </Card>
+            </View>
+          )}
 
         {/* Recent Activity */}
         <Card className="p-6">
