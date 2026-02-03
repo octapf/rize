@@ -231,6 +231,8 @@ cp .env.example .env
 npm run dev
 ```
 
+Opcional: cargar ejercicios predefinidos (una vez): `npm run seed`
+
 El servidor estará en `http://localhost:5000`
 
 ### Mobile Setup

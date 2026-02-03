@@ -12,6 +12,7 @@ import { ErrorBoundary } from '@/components/ErrorBoundary';
 import { AuthProvider } from '@/components/AuthProvider';
 import { NotificationProvider } from '@/components/NotificationProvider';
 import { SocketProvider } from '@/components/SocketProvider';
+import { SyncProvider } from '@/components/SyncProvider';
 
 // Prevent splash screen from hiding automatically
 SplashScreen.preventAutoHideAsync();
@@ -96,6 +97,7 @@ export default function RootLayout() {
               <AuthProvider>
                 <NotificationProvider>
                   <SocketProvider>
+                    <SyncProvider>
                     <Stack screenOptions={{ headerShown: false }}>
                       <Stack.Screen name="(tabs)" />
                 <Stack.Screen name="onboarding" />
@@ -399,6 +401,7 @@ export default function RootLayout() {
                 <Stack.Screen name="library/exercises" />
                 <Stack.Screen name="social/achievements-leaderboard" />
               </Stack>
+                    </SyncProvider>
               </SocketProvider>
               </NotificationProvider>
               </AuthProvider>

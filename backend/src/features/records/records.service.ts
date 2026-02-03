@@ -3,7 +3,7 @@ import { PersonalRecord, IPersonalRecord } from '@/models/PersonalRecord';
 import { Workout } from '@/models/Workout';
 import { notificationService } from '../notifications/notification.service';
 
-interface RecordUpdate {
+export interface RecordUpdate {
   exerciseId: string;
   type: 'weight' | 'reps' | 'volume' | 'duration' | 'distance';
   value: number;

@@ -1,6 +1,8 @@
 # Assets Necesarios para RIZE
 
-Por ahora hay placeholders temporales. Para producción, necesitás:
+**Placeholders:** Se generan con `npm run generate-assets` en la carpeta `mobile/` (crea icon, splash, adaptive-icon y favicon en verde #10B981). Requiere `pngjs` (devDependency).
+
+Para producción, reemplazá por assets finales:
 
 ## 1. Icon (1024x1024)
 - **Archivo**: `icon.png`

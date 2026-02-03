@@ -117,6 +117,17 @@ curl http://localhost:5000/health
 # Debería responder: {"status":"ok","timestamp":"..."}
 ```
 
+### Seed de datos (ejercicios predefinidos)
+
+Para tener ejercicios disponibles en la app (flexiones, dominadas, etc.), ejecuta el seed **una vez** con el backend apagado o en otra terminal:
+
+```bash
+cd backend
+npm run seed
+```
+
+Esto inserta 50+ ejercicios en la base de datos. Requiere que `MONGODB_URI` en `.env` esté configurado.
+
 ### Iniciar Mobile
 
 ```bash

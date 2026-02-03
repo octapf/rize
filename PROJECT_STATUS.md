@@ -1,8 +1,8 @@
 # RIZE - Estado del Proyecto 📊
 
-**Fecha:** $(Get-Date -Format "yyyy-MM-dd HH:mm")
-**Versión:** 0.1.0-alpha
-**Estado:** Setup inicial completado ✅
+**Fecha:** 2026-02-02  
+**Versión:** 0.2.0-alpha  
+**Estado:** Backend y mobile MVP implementados ✅ | Tests y offline en progreso
 
 ---
 
@@ -17,13 +17,15 @@
 - ✅ DESIGN_SYSTEM.md - Sistema de diseño completo
 - ✅ SETUP.md - Guía de instalación y configuración
 
-### 🔧 Backend (60%)
+### 🔧 Backend (~90%)
+
 **Configuración (100%)**
 - ✅ package.json con todas las dependencias
 - ✅ tsconfig.json con TypeScript strict
 - ✅ .env.example con variables de entorno
 - ✅ jest.config.js para testing
 - ✅ .gitignore
+- ✅ seed-exercises.ts + `npm run seed`
 
 **Infraestructura (100%)**
 - ✅ src/config/env.ts - Validación de variables
@@ -39,270 +41,131 @@
 - ✅ src/middleware/auth.ts - Autenticación JWT
 - ✅ src/middleware/validator.ts - Validación Zod
 
-**Modelos (30%)**
+**Modelos (100%)**
 - ✅ src/models/User.ts - Usuario con bcrypt, XP, niveles
 - ✅ src/models/Workout.ts - Entrenamiento con soft delete
 - ✅ src/models/Exercise.ts - Ejercicio con i18n
-- ❌ src/models/WorkoutLike.ts - Likes de entrenamientos
-- ❌ src/models/Comment.ts - Comentarios
-- ❌ src/models/Follow.ts - Seguidores
-- ❌ src/models/Achievement.ts - Logros
-- ❌ src/models/Notification.ts - Notificaciones
+- ✅ src/models/WorkoutLike.ts - Likes de entrenamientos
+- ✅ src/models/WorkoutComment.ts - Comentarios
+- ✅ src/models/Friendship.ts - Seguidores
+- ✅ src/models/Achievement.ts - Logros
+- ✅ src/models/UserAchievement.ts - Relación usuario-logro
+- ✅ src/models/Routine.ts - Rutinas
+- ✅ src/models/WorkoutTemplate.ts - Plantillas
+- ✅ src/models/PersonalRecord.ts - Records personales
+- Notificaciones: model en features/notifications
 
-**Features (25%)**
-- ✅ src/features/auth/ - Autenticación completa
-  - ✅ auth.validation.ts
-  - ✅ auth.service.ts
-  - ✅ auth.controller.ts
-  - ✅ auth.routes.ts
-- ❌ src/features/workouts/ - CRUD de entrenamientos
-- ❌ src/features/exercises/ - Gestión de ejercicios
-- ❌ src/features/social/ - Features sociales
-- ❌ src/features/achievements/ - Sistema de logros
+**Features (100%)**
+- ✅ src/features/auth/ - Autenticación (register, login, refresh, me, change-password)
+- ✅ src/features/workouts/ - CRUD, start/finish, sets, stats
+- ✅ src/features/exercises/ - Gestión y búsqueda de ejercicios
+- ✅ src/features/social/ - Follow, feed, likes, comentarios
+- ✅ src/features/achievements/ - Logros
+- ✅ src/features/routines/ - Rutinas
+- ✅ src/features/templates/ - Plantillas de workout
+- ✅ src/features/records/ - Records personales
+- ✅ src/features/stats/ - Estadísticas de usuario
+- ✅ src/features/leaderboard/ - Clasificación
+- ✅ src/features/notifications/ - Notificaciones
+- ✅ src/features/challenges/ - Desafíos
 
 **Server (100%)**
-- ✅ src/server.ts - Express app con rutas montadas
+- ✅ src/server.ts - Express app con todas las rutas montadas en /api/v1/*
 
-### 📱 Mobile (70%)
+### 📱 Mobile (~85%)
 
 **Configuración (100%)**
 - ✅ package.json con Expo + deps
 - ✅ app.json - Configuración Expo
-- ✅ tsconfig.json
-- ✅ tailwind.config.js - NativeWind con tema emerald
-- ✅ babel.config.js
-- ✅ jest.config.js
-- ✅ .env.example
-- ✅ .gitignore
+- ✅ tsconfig.json, tailwind.config.js, babel.config.js
+- ✅ jest.config.js, .env.example, .gitignore
 
-**Navegación (100%)**
-- ✅ app/_layout.tsx - Root layout con auth routing
-- ✅ app/(tabs)/_layout.tsx - Bottom tabs
-- ✅ app/login.tsx - Pantalla login
-- ✅ app/register.tsx - Pantalla registro
+**Navegación y pantallas**
+- ✅ app/ - Expo Router con tabs, auth, workouts, challenges, tools
+- ✅ Login, registro, Home, Stats, Social, Profile
+- ✅ Pantallas de workouts, plantillas, desafíos, herramientas (macros, body-fat)
 
-**Pantallas Base (100%)**
-- ✅ app/(tabs)/index.tsx - Home (placeholder)
-- ✅ app/(tabs)/stats.tsx - Stats (placeholder)
-- ✅ app/(tabs)/social.tsx - Social (placeholder)
-- ✅ app/(tabs)/profile.tsx - Profile (placeholder)
+**Componentes y servicios**
+- ✅ src/components/ui/ - Button, Input, Card, Avatar, Badge, Loading, Skeleton
+- ✅ src/components/ - AchievementCelebration, RestTimer, PlateCalculator, etc.
+- ✅ src/services/api/ - auth, workouts, exercises, social, stats, achievements, templates, routines, records, leaderboard, notifications, challenges, users
+- ✅ src/lib/api/ - client, workouts, exercises, social, users, notifications
+- ✅ src/stores/authStore.ts, workoutDraftStore.ts
+- ✅ src/hooks/ - useWorkouts, useExercises, useSocial, useStats, useAchievements, useChallenges, useNotifications, useSettings
+- ✅ src/contexts/ - Theme, Toast, Auth, Notification, Socket
+- ✅ src/services/storage/mmkv.ts
 
-**Componentes UI (100%)**
-- ✅ src/components/ui/Button.tsx - Componente botón
-- ✅ src/components/ui/Input.tsx - Input con validación
-- ✅ src/components/ui/Card.tsx - Tarjetas
-- ✅ src/components/ui/Avatar.tsx - Avatar con fallback
-- ✅ src/components/ui/Badge.tsx - Badges
-- ✅ src/components/ui/index.ts - Exportaciones
+**Pendiente mobile**
+- ❌ syncStore (offline queue + flush al reconectar) — en progreso
+- ❌ Tests (componentes, stores, API client)
+- ⚠️ Assets: icon/splash con placeholders
 
-**Servicios (100%)**
-- ✅ src/services/api/client.ts - Axios client con refresh
-- ✅ src/services/api/auth.api.ts - API de autenticación
-- ✅ src/services/storage/mmkv.ts - Storage seguro
-- ❌ src/services/api/workout.api.ts - API de workouts
-
-**State Management (50%)**
-- ✅ src/stores/authStore.ts - Store de autenticación
-- ❌ src/stores/workoutStore.ts - Store de workouts
-- ❌ src/stores/syncStore.ts - Offline sync
-
-**Utilidades (100%)**
-- ✅ src/lib/utils.ts - Funciones helper
-
-### 🧪 Testing (0%)
-- ❌ Backend: 0 tests escritos (target: >90% coverage)
-- ❌ Mobile: 0 tests escritos (target: >80% coverage)
+### 🧪 Testing
+- ✅ Backend: jest + supertest configurados; tests de integración auth y workouts añadidos
+- ❌ Cobertura >90% backend pendiente
+- ❌ Mobile: 0 tests (target: >80%)
 
 ---
 
 ## 🚧 En Progreso
 
-Ninguna tarea actualmente en progreso.
+1. **Offline sync** - syncStore con cola de workouts y flush al reconectar
+2. **Tests backend** - ampliar a más features y cobertura
+3. **Placeholder assets** - icon y splash para builds
 
 ---
 
 ## ⏳ Pendiente
 
-### Alta Prioridad
+### Alta prioridad
+1. **Configurar .env** - Backend (MongoDB URI, JWT secrets), Mobile (API URL)
+2. **Fuentes** - Barlow e Inter en mobile/assets/fonts (ver README en fonts)
+3. **Ejecutar y validar** - Backend: `npm run dev` | Mobile: `npx expo start` | Seed: `npm run seed` (en backend)
 
-1. **Descargar Fuentes** ⚠️
-   - Barlow (Medium, SemiBold, Bold) desde Google Fonts
-   - Inter (Regular, Medium, SemiBold) desde Google Fonts
-   - Colocar en `mobile/assets/fonts/`
-
-2. **Configurar .env Files** ⚠️
-   - Backend: MongoDB URI, JWT secrets
-   - Mobile: API URL (localhost o IP local)
-
-3. **Instalar Dependencias**
-   ```bash
-   # Backend
-   cd backend && npm install
-   
-   # Mobile
-   cd mobile && npm install
-   ```
-
-4. **Ejecutar Primera Vez**
-   - Iniciar MongoDB local o crear cluster Atlas
-   - Ejecutar backend: `cd backend && npm run dev`
-   - Ejecutar mobile: `cd mobile && npm start`
-
-### Características Faltantes
-
-#### Backend
-- [ ] Feature: Workouts CRUD
-  - [ ] workout.validation.ts
-  - [ ] workout.service.ts (con cálculo XP)
-  - [ ] workout.controller.ts
-  - [ ] workout.routes.ts
-  - [ ] workout.test.ts (TDD)
-
-- [ ] Feature: Exercises
-  - [ ] Seed de 50+ ejercicios predefinidos
-  - [ ] CRUD de ejercicios personalizados
-  - [ ] Búsqueda y filtrado
-  - [ ] Progressions (ejercicio anterior/siguiente)
-
-- [ ] Feature: Social
-  - [ ] Follow/Unfollow usuarios
-  - [ ] Feed de entrenamientos
-  - [ ] Likes en workouts
-  - [ ] Comentarios
-  - [ ] Notificaciones
-
-- [ ] Feature: Achievements
-  - [ ] Sistema de logros
-  - [ ] Triggers automáticos
-  - [ ] Badges/insignias
-
-- [ ] Seed Data Script
-  - [ ] Usuarios de prueba
-  - [ ] Ejercicios predefinidos
-  - [ ] Workouts de ejemplo
-
-#### Mobile
-- [ ] Implementar Pantallas Principales
-  - [ ] Home: Lista de workouts con pull-to-refresh
-  - [ ] Stats: Gráficos XP, streaks, progreso
-  - [ ] Social: Feed con workouts de seguidos
-  - [ ] Profile: Info usuario, stats, configuración
-
-- [ ] Feature: Workouts
-  - [ ] Pantalla crear workout
-  - [ ] Selector de ejercicios
-  - [ ] Timer de entrenamiento
-  - [ ] Cámara para fotos
-  - [ ] Vista detalle workout
-
-- [ ] Feature: Exercises
-  - [ ] Lista de ejercicios con búsqueda
-  - [ ] Filtros por categoría/dificultad
-  - [ ] Crear ejercicio personalizado
-  - [ ] Ver progressions
-
-- [ ] Animaciones
-  - [ ] Level up animation (Lottie)
-  - [ ] Achievement unlock
-  - [ ] Transitions con Reanimated
-
-- [ ] Offline Support
-  - [ ] Queue de acciones offline
-  - [ ] Sync automático al reconectar
-
-#### Testing
-- [ ] Backend: Tests unitarios de servicios
-- [ ] Backend: Tests de integración de rutas
-- [ ] Backend: Tests de modelos
-- [ ] Mobile: Tests de componentes UI
-- [ ] Mobile: Tests de stores
-- [ ] Mobile: Tests de API client
-- [ ] E2E: Flujo completo de registro → login → crear workout
+### Mejoras
+- Backend: tests para exercises, social, stats (y subir cobertura)
+- Mobile: tests de componentes y hooks
+- E2E: flujo registro → login → crear workout
+- Animaciones: level up, achievement unlock
+- Assets finales: icon/splash de producción (ver mobile/assets/ASSETS_NEEDED.md)
 
 ---
 
 ## 📈 Métricas
 
-| Categoría | Completado | Total | % |
-|-----------|------------|-------|---|
-| Documentación | 7 | 7 | 100% |
-| Backend Config | 15 | 15 | 100% |
-| Backend Models | 3 | 8 | 37.5% |
-| Backend Features | 1 | 5 | 20% |
-| Mobile Config | 10 | 10 | 100% |
-| Mobile Screens | 6 | 15+ | 40% |
-| Mobile Components | 5 | 10+ | 50% |
-| Testing | 0 | 50+ | 0% |
+| Categoría            | Completado | Total | %   |
+|----------------------|------------|-------|-----|
+| Documentación        | 7          | 7     | 100 |
+| Backend Config       | 15         | 15    | 100 |
+| Backend Models       | 11         | 11    | 100 |
+| Backend Features     | 12         | 12    | 100 |
+| Mobile Config        | 10         | 10    | 100 |
+| Mobile Screens/API   | Sí         | -     | ~85 |
+| Mobile Components    | Sí         | -     | ~90 |
+| Testing Backend      | Parcial    | -     | En progreso |
+| Testing Mobile       | 0          | -     | 0   |
+| Offline sync         | En progreso| -     | -   |
 
-**Progreso Global: ~50%**
-
----
-
-## 🎯 Próximos 3 Pasos
-
-1. **Instalar y ejecutar** - Seguir SETUP.md para poner en marcha
-2. **Implementar Workouts Backend** - Feature completo con TDD
-3. **Pantallas Mobile Workouts** - UI para crear y ver entrenamientos
+**Progreso global: ~75%**
 
 ---
 
-## 🚀 Para Producción (Roadmap)
+## 🎯 Próximos pasos sugeridos
 
-### v0.2.0 - MVP Básico
-- [ ] CRUD completo de workouts
-- [ ] Ejercicios predefinidos + custom
-- [ ] Sistema XP/niveles funcional
-- [ ] Autenticación funcional
-
-### v0.3.0 - Social Básico
-- [ ] Follow/unfollow
-- [ ] Feed de entrenamientos
-- [ ] Likes y comentarios
-
-### v0.4.0 - Gamificación
-- [ ] Achievements/logros
-- [ ] Streaks
-- [ ] Leaderboards
-
-### v1.0.0 - Producción
-- [ ] Tests >90% coverage backend
-- [ ] Tests >80% coverage mobile
-- [ ] Diseño final pulido
-- [ ] Performance optimizado
-- [ ] Deploy a Render + MongoDB Atlas
-- [ ] App en stores (TestFlight/Google Play Beta)
-
-### v1.1.0 - Premium
-- [ ] Pasarela de pago ($0.99/mes)
-- [ ] Features premium
-- [ ] Analytics completo
+1. **Validar flujo** - Registrar → login → crear workout y ver en lista/stats
+2. **Ampliar tests backend** - exercises, social; subir cobertura
+3. **Completar offline** - Probar sync en dispositivo sin red
+4. **Placeholder assets** - Generar icon/splash mínimos para EAS/TestFlight
 
 ---
 
-## 📝 Notas Técnicas
+## 📝 Notas técnicas
 
-### Stack Tecnológico
-- **Backend:** Node.js 18+, Express 4.x, MongoDB 6+, TypeScript
-- **Mobile:** React Native 0.73, Expo 50, TypeScript
-- **Auth:** JWT (access 15min + refresh 7d)
-- **Styling:** NativeWind (Tailwind for RN)
-- **State:** Zustand + React Query
-- **Storage:** MMKV (secure local storage)
-
-### Infraestructura (Free Tier)
-- **Backend:** Render.com (512MB, sleep after 15min)
-- **Database:** MongoDB Atlas M0 (512MB)
-- **Images:** Cloudinary (25GB free)
-- **Analytics:** Mixpanel (20M events free)
-- **Monitoring:** Sentry (5K events free)
-
-### Decisiones Arquitectónicas
-- **Backend:** Feature-based modular monolith
-- **Mobile:** Expo Router (file-based navigation)
-- **Testing:** TDD mandatory (tests before code)
-- **i18n:** Español (ES) como idioma principal
-- **Branding:** Emerald green (#10B981), nombre RIZE
+- **Backend:** Node 18+, Express 4, MongoDB 6+, TypeScript. Feature-based modular monolith.
+- **Mobile:** React Native, Expo, NativeWind, Zustand, React Query. Expo Router.
+- **Auth:** JWT access 15min + refresh 7d. Passwords con bcrypt.
+- **Seed:** En `backend/` ejecutar `npm run seed` para cargar ejercicios predefinidos (requiere MongoDB y .env).
 
 ---
 
-**Generado automáticamente por el setup inicial**
+**Última actualización:** 2026-02-02
