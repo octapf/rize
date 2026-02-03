@@ -1,5 +1,5 @@
-import Routine from '../models/Routine';
-import User from '../models/User';
+import { Routine } from '../models/Routine';
+import { User } from '../models/User';
 import { FilterQuery } from 'mongoose';
 
 interface CreateRoutineData {

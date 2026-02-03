@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { authenticate } from '@/middleware/auth';
+import { authMiddleware } from '@/middleware/auth';
 import {
   createChallenge,
   acceptChallenge,
@@ -12,7 +12,7 @@ import {
 const router = Router();
 
 // Todas las rutas requieren autenticación
-router.use(authenticate);
+router.use(authMiddleware);
 
 // POST /api/v1/challenges - Crear reto
 router.post('/', createChallenge);

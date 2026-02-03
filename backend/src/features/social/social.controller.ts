@@ -85,7 +85,7 @@ export const searchUsers = asyncHandler(async (req: Request, res: Response) => {
 
   const users = await socialService.searchUsers(query, userId, limit);
 
-  res.json({
+  return res.json({
     success: true,
     data: users,
   });

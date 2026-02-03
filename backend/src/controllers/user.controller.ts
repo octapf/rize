@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 import { userService } from '../services/user.service';
-import { asyncHandler } from '../middleware/asyncHandler';
+import { asyncHandler } from '@/utils/asyncHandler';
 import { z } from 'zod';
 
 // Validation schemas

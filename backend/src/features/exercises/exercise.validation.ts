@@ -11,7 +11,7 @@ export const getExercisesQuerySchema = z.object({
 
 export type GetExercisesQuery = z.infer<typeof getExercisesQuerySchema>;
 
-export const createExerciseSchema = z.object({
+const createExerciseBaseSchema = z.object({
   name: z.object({
     es: z.string().min(2).max(100),
     en: z.string().min(2).max(100),
@@ -24,7 +24,9 @@ export const createExerciseSchema = z.object({
     es: z.string().max(500),
     en: z.string().max(500),
   }).optional(),
-}).refine(
+});
+
+export const createExerciseSchema = createExerciseBaseSchema.refine(
   (data) => {
     if (data.type === 'time' && !data.unit) return false;
     if (data.type === 'distance' && !data.unit) return false;
@@ -39,7 +41,7 @@ export const createExerciseSchema = z.object({
 
 export type CreateExerciseInput = z.infer<typeof createExerciseSchema>;
 
-export const updateExerciseSchema = createExerciseSchema.partial();
+export const updateExerciseSchema = createExerciseBaseSchema.partial();
 
 export type UpdateExerciseInput = z.infer<typeof updateExerciseSchema>;
 

@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { authenticate } from '@/middleware/auth';
+import { authMiddleware } from '@/middleware/auth';
 import {
   getUserRecords,
   getExerciseRecords,
@@ -9,7 +9,7 @@ import {
 const router = Router();
 
 // All routes require authentication
-router.use(authenticate);
+router.use(authMiddleware);
 
 // Get all user records (grouped by exercise)
 router.get('/', getUserRecords);

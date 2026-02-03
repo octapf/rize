@@ -1,11 +1,11 @@
 import { Router } from 'express';
 import * as routineController from '../controllers/routine.controller';
-import { authenticate } from '../middleware/auth';
+import { authMiddleware } from '../middleware/auth';
 
 const router = Router();
 
 // All routes require authentication
-router.use(authenticate);
+router.use(authMiddleware);
 
 // CRUD operations
 router.post('/', routineController.createRoutine);

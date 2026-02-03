@@ -132,9 +132,11 @@ export class SocialService {
       .populate('recipientId', 'username xp');
 
     return friendships.map((f) => {
-      const friend = f.requesterId._id.toString() === userId ? f.recipientId : f.requesterId;
+      const req = f.requesterId as { _id?: { toString(): string }; toString(): string };
+      const friend = (req._id ? req._id.toString() : req.toString()) === userId ? f.recipientId : f.requesterId;
+      const friendDoc = friend as unknown as { _id: unknown };
       return {
-        userId: friend._id,
+        userId: friendDoc._id,
         username: (friend as any).username,
         xp: (friend as any).xp,
         friendshipId: f._id,
@@ -151,15 +153,18 @@ export class SocialService {
       status: 'pending',
     }).populate('requesterId', 'username xp');
 
-    return requests.map((r) => ({
-      requestId: r._id,
-      user: {
-        userId: r.requesterId._id,
-        username: (r.requesterId as any).username,
-        xp: (r.requesterId as any).xp,
-      },
-      createdAt: r.createdAt,
-    }));
+    return requests.map((r) => {
+      const req = r.requesterId as { _id?: unknown };
+      return {
+        requestId: r._id,
+        user: {
+          userId: req._id ?? r.requesterId,
+          username: (r.requesterId as any).username,
+          xp: (r.requesterId as any).xp,
+        },
+        createdAt: r.createdAt,
+      };
+    });
   }
 
   /**

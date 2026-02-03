@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
 import { z } from 'zod';
 import routineService from '../services/routine.service';
-import { asyncHandler } from '../middleware/async';
+import { asyncHandler } from '@/utils/asyncHandler';
 
 const createRoutineSchema = z.object({
   name: z.string().min(1),

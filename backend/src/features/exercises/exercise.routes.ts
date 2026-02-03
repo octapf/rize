@@ -1,7 +1,7 @@
 import { Router } from 'express';
 import { z } from 'zod';
 import { validate } from '@/middleware/validator';
-import { authenticate } from '@/middleware/auth';
+import { authMiddleware } from '@/middleware/auth';
 import { getExercisesQuerySchema, createExerciseSchema, updateExerciseSchema } from './exercise.validation';
 import {
   getExercises,
@@ -23,20 +23,20 @@ router.get('/:id', getExerciseById);
 // Rutas protegidas - requieren autenticación
 router.post(
   '/custom',
-  authenticate,
+  authMiddleware,
   validate(z.object({ body: createExerciseSchema })),
   createCustomExercise
 );
 
-router.get('/custom/my', authenticate, getUserCustomExercises);
+router.get('/custom/my', authMiddleware, getUserCustomExercises);
 
 router.patch(
   '/custom/:id',
-  authenticate,
+  authMiddleware,
   validate(z.object({ body: updateExerciseSchema })),
   updateCustomExercise
 );
 
-router.delete('/custom/:id', authenticate, deleteCustomExercise);
+router.delete('/custom/:id', authMiddleware, deleteCustomExercise);
 
 export default router;

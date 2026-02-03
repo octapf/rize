@@ -1,6 +1,5 @@
 import { Workout } from '@/models/Workout';
 import { User } from '@/models/User';
-import { AppError } from '@/utils/errors';
 
 /**
  * Stats Service - Advanced statistics and analytics

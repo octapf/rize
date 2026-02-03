@@ -1,7 +1,7 @@
-import { User } from '../models/user.model';
-import { Workout } from '../models/workout.model';
-import { Achievement } from '../models/achievement.model';
-import { Record } from '../models/record.model';
+import { User } from '../models/User';
+import { Workout } from '../models/Workout';
+import { Achievement } from '../models/Achievement';
+import { PersonalRecord } from '../models/PersonalRecord';
 
 class UserService {
   /**
@@ -55,7 +55,7 @@ class UserService {
     });
 
     // Get personal records count
-    const recordsCount = await Record.countDocuments({ userId });
+    const recordsCount = await PersonalRecord.countDocuments({ userId });
 
     return {
       user: {
@@ -110,7 +110,7 @@ class UserService {
     });
 
     // Get records this month
-    const recordsThisMonth = await Record.countDocuments({
+    const recordsThisMonth = await PersonalRecord.countDocuments({
       userId,
       achievedAt: { $gte: monthAgo },
     });
@@ -172,7 +172,7 @@ class UserService {
       },
       records: {
         thisMonth: recordsThisMonth,
-        total: await Record.countDocuments({ userId }),
+        total: await PersonalRecord.countDocuments({ userId }),
       },
       achievements: {
         total: await Achievement.countDocuments({ userId }),
@@ -309,7 +309,7 @@ class UserService {
     });
 
     // Get recent records
-    const recentRecords = await Record.find({ userId })
+    const recentRecords = await PersonalRecord.find({ userId })
       .sort({ achievedAt: -1 })
       .limit(5)
       .populate('exerciseId', 'name');

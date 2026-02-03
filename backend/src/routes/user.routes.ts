@@ -1,11 +1,11 @@
 import { Router } from 'express';
 import { userController } from '../controllers/user.controller';
-import { authenticate } from '../middleware/auth';
+import { authMiddleware } from '../middleware/auth';
 
 const router = Router();
 
 // All routes require authentication
-router.use(authenticate);
+router.use(authMiddleware);
 
 // Get current user's stats
 router.get('/me/stats', userController.getMyStats);

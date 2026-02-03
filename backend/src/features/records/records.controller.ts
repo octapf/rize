@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { asyncHandler } from '@/middleware/asyncHandler';
+import { asyncHandler } from '@/utils/asyncHandler';
 import { recordsService } from './records.service';
 
 export const getUserRecords = asyncHandler(async (req: Request, res: Response) => {

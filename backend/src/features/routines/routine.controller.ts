@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { asyncHandler } from '@/middleware/asyncHandler';
+import { asyncHandler } from '@/utils/asyncHandler';
 import { routineService } from './routine.service';
 import { CreateRoutineInput, UpdateRoutineInput, GetRoutinesQuery } from './routine.validation';
 

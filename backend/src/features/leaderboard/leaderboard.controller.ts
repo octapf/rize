@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { asyncHandler } from '@/middleware/asyncHandler';
+import { asyncHandler } from '@/utils/asyncHandler';
 import { leaderboardService } from './leaderboard.service';
 
 export const getTopByXP = asyncHandler(async (req: Request, res: Response) => {

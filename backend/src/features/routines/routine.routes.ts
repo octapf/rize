@@ -1,6 +1,6 @@
 import { Router } from 'express';
-import { authenticate } from '@/middleware/auth';
-import { validate } from '@/middleware/validate';
+import { authMiddleware } from '@/middleware/auth';
+import { validate } from '@/middleware/validator';
 import {
   createRoutineSchema,
   updateRoutineSchema,
@@ -19,7 +19,7 @@ import {
 const router = Router();
 
 // All routes require authentication
-router.use(authenticate);
+router.use(authMiddleware);
 
 // Get today's workout from active routine
 router.get('/today', getTodaysWorkout);

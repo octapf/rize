@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { authenticate } from '@/middleware/auth';
+import { authMiddleware } from '@/middleware/auth';
 import {
   getTopByXP,
   getTopByWorkouts,
@@ -12,7 +12,7 @@ import {
 const router = Router();
 
 // All routes require authentication
-router.use(authenticate);
+router.use(authMiddleware);
 
 // Global leaderboards
 router.get('/xp', getTopByXP);

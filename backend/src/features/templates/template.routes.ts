@@ -1,7 +1,7 @@
 import { Router } from 'express';
 import { z } from 'zod';
 import { validate } from '@/middleware/validator';
-import { authenticate } from '@/middleware/auth';
+import { authMiddleware } from '@/middleware/auth';
 import {
   createTemplateSchema,
   updateTemplateSchema,
@@ -24,11 +24,11 @@ const router = Router();
 router.get('/public', validate(z.object({ query: getTemplatesQuerySchema.shape.query })), getPublicTemplates);
 
 // Protected routes
-router.get('/', authenticate, validate(z.object({ query: getTemplatesQuerySchema.shape.query })), getTemplates);
-router.get('/:id', authenticate, getTemplateById);
-router.post('/', authenticate, validate(createTemplateSchema), createTemplate);
-router.post('/from-workout/:workoutId', authenticate, validate(createFromWorkoutSchema), createFromWorkout);
-router.patch('/:id', authenticate, validate(updateTemplateSchema), updateTemplate);
-router.delete('/:id', authenticate, deleteTemplate);
+router.get('/', authMiddleware, validate(z.object({ query: getTemplatesQuerySchema.shape.query })), getTemplates);
+router.get('/:id', authMiddleware, getTemplateById);
+router.post('/', authMiddleware, validate(createTemplateSchema), createTemplate);
+router.post('/from-workout/:workoutId', authMiddleware, validate(createFromWorkoutSchema), createFromWorkout);
+router.patch('/:id', authMiddleware, validate(updateTemplateSchema), updateTemplate);
+router.delete('/:id', authMiddleware, deleteTemplate);
 
 export default router;
