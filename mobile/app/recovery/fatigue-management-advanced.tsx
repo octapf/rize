@@ -619,7 +619,7 @@ export default function FatigueManagementAdvanced() {
               ⚠️ Dread going to gym (lost motivation)
             </Text>
             <Text className="text-red-300 text-sm mb-2">
-              ⚠️ Performance down >10% for multiple sessions
+              ⚠️ Performance down &gt;10% for multiple sessions
             </Text>
             <Text className="text-red-300 text-sm mb-2">
               ⚠️ Persistent soreness that won't go away

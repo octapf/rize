@@ -291,7 +291,7 @@ export default function SupplementTiming() {
           <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30 mb-6">
             <Text className="text-blue-400 font-bold mb-2">Timing Tips</Text>
             <Text className="text-blue-300 text-sm">
-              • Consistency > perfect timing{'\n'}
+              • Consistency &gt; perfect timing{'\n'}
               • Creatine = anytime (daily saturation){'\n'}
               • Caffeine = avoid late afternoon{'\n'}
               • Fat-soluble vitamins with meals{'\n'}

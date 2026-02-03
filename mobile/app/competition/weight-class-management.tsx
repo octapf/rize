@@ -811,7 +811,7 @@ export default function WeightClassManagement() {
               • Small strategic cuts okay, big cuts hurt performance
             </Text>
             <Text className="text-blue-300 text-sm mb-2">
-              • Body composition > scale weight
+              • Body composition &gt; scale weight
             </Text>
             <Text className="text-blue-300 text-sm">
               • When in doubt, move up and get stronger

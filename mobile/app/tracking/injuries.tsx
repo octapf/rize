@@ -489,7 +489,7 @@ export default function InjuryLog() {
                   • Calentamiento adecuado siempre{'\n'}
                   • No ignorar dolores persistentes{'\n'}
                   • Consulta profesional si es grave{'\n'}
-                  • Técnica perfecta > peso pesado{'\n'}
+                  • Técnica perfecta &gt; peso pesado{'\n'}
                   • Deload weeks cada 4-6 semanas
                 </Text>
               </View>

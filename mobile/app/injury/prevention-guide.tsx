@@ -289,7 +289,7 @@ export default function InjuryPrevention() {
             <Text className="text-purple-400 font-bold mb-2">General Prevention Rules</Text>
             <Text className="text-purple-300 text-sm">
               • Progressive overload SLOWLY{'\n'}
-              • Perfect form > heavy weight{'\n'}
+              • Perfect form &gt; heavy weight{'\n'}
               • Warm up properly (10-15 min){'\n'}
               • Balance muscle groups{'\n'}
               • Listen to your body{'\n'}

@@ -725,7 +725,7 @@ export default function CommonTechnicalFlaws() {
               • Fix ONE issue at a time - don't overwhelm
             </Text>
             <Text className="text-purple-300 text-sm mb-2">
-              • Drop weight if needed - ego < technique
+              • Drop weight if needed - ego &lt; technique
             </Text>
             <Text className="text-purple-300 text-sm mb-2">
               • Address root cause, not just symptom

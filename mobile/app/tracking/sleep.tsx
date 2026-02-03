@@ -104,7 +104,7 @@ export default function SleepTracker() {
     const [bedH, bedM] = bedtime.split(':').map(Number);
     const [wakeH, wakeM] = wakeTime.split(':').map(Number);
     
-    let bedMinutes = bedH * 60 + bedM;
+    const bedMinutes = bedH * 60 + bedM;
     let wakeMinutes = wakeH * 60 + wakeM;
     
     // If wake time is earlier than bed time, add 24 hours

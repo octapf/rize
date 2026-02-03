@@ -449,7 +449,7 @@ export default function LongTermSuccess() {
               • Consistency beats intensity over the long run
             </Text>
             <Text className="text-purple-300 text-sm mb-2">
-              • Injuries that sideline you > slow progress
+              • Injuries that sideline you &gt; slow progress
             </Text>
             <Text className="text-purple-300 text-sm mb-2">
               • Enjoy the process - it's the only way to sustain it

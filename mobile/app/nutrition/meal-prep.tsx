@@ -264,7 +264,7 @@ export default function MealPrep() {
                     • Usa contenedores de cristal{'\n'}
                     • Congela porciones extras{'\n'}
                     • Varía proteínas y carbos{'\n'}
-                    • Verduras frescas > congeladas
+                    • Verduras frescas &gt; congeladas
                   </Text>
                 </View>
               </View>

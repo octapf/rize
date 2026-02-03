@@ -311,7 +311,7 @@ export default function FormCues() {
             <Text className="text-amber-300 text-sm">
               • Film your sets from multiple angles{'\n'}
               • Master form before adding weight{'\n'}
-              • Quality reps > ego lifting{'\n'}
+              • Quality reps &gt; ego lifting{'\n'}
               • Hire a coach if struggling{'\n'}
               • Consistent cues build motor patterns
             </Text>

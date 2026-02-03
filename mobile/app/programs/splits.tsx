@@ -385,7 +385,7 @@ export default function TrainingSplits() {
                   Elige Tu Split
                 </Text>
                 <Text className="text-blue-300 text-sm">
-                  Selecciona según tu nivel, disponibilidad y objetivos. Consistencia > Perfección.
+                  Selecciona según tu nivel, disponibilidad y objetivos. Consistencia &gt; Perfección.
                 </Text>
               </View>
             </View>

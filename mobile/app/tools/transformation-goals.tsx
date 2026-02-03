@@ -304,7 +304,7 @@ export default function TransformationGoals() {
                 <Text className="text-white font-bold ml-3">Toma fotos cada semana</Text>
               </View>
               <Text className="text-zinc-400 text-sm">
-                Misma pose, misma luz, mismo ángulo. Las fotos > báscula.
+                Misma pose, misma luz, mismo ángulo. Las fotos &gt; báscula.
               </Text>
             </View>
 

@@ -152,7 +152,7 @@ export default function WorkoutTimer() {
               • Keep workouts 45-75 min{'\n'}
               • Log sets for tracking{'\n'}
               • Shorter = often better{'\n'}
-              • Quality > quantity
+              • Quality &gt; quantity
             </Text>
           </View>
         </View>

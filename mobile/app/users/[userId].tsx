@@ -77,7 +77,8 @@ export default function UserProfileScreen() {
       </View>
     );
   }
-profileData?.data) {
+
+  if (profileData?.data) {
     return (
       <View className="flex-1 bg-gray-50">
         <LinearGradient colors={['#10B981', '#059669']} className="px-6 pt-12 pb-6">
@@ -173,7 +174,10 @@ profileData?.data) {
         </View>
 
         {/* Stats */}
-        <Card clastats.workoutCount}
+        <View className="flex-row gap-3 mt-6">
+            <View className="flex-1 items-center bg-emerald-50 py-4 rounded-xl">
+              <Text className="text-3xl font-bold text-emerald-600 mb-1">
+                {stats.workoutCount}
               </Text>
               <Text className="text-sm text-gray-600">Entrenamientos</Text>
             </View>

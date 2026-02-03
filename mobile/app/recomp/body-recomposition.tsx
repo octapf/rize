@@ -298,7 +298,7 @@ export default function BodyRecomposition() {
             <Text className="text-blue-400 font-bold mb-2">Recomp Tips</Text>
             <Text className="text-blue-300 text-sm">
               • Track weight weekly, not daily{'\n'}
-              • Photos > scale weight{'\n'}
+              • Photos &gt; scale weight{'\n'}
               • Prioritize protein intake{'\n'}
               • Sleep is non-negotiable{'\n'}
               • Patience = 12-16 weeks minimum{'\n'}

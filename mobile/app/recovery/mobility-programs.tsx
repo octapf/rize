@@ -201,7 +201,7 @@ export default function MobilityPrograms() {
           <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30 mb-6">
             <Text className="text-blue-400 font-bold mb-2">Mobility Tips</Text>
             <Text className="text-blue-300 text-sm">
-              • 10 min daily > 1h weekly{'\n'}
+              • 10 min daily &gt; 1h weekly{'\n'}
               • Consistency is key{'\n'}
               • Hold stretches 30-90s{'\n'}
               • Breathe deeply during holds{'\n'}

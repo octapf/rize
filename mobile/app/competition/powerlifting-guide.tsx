@@ -422,7 +422,7 @@ export default function PowerliftingGuide() {
               • Go 9/9 (make all 9 attempts) - conservative openers
             </Text>
             <Text className="text-emerald-300 text-sm mb-2">
-              • Experience > total on first meet
+              • Experience &gt; total on first meet
             </Text>
             <Text className="text-emerald-300 text-sm mb-2">
               • Bring handler/coach if possible

@@ -246,7 +246,7 @@ export default function PeriodizationPlans() {
               • Deload every 3-6 weeks{'\n'}
               • Track all lifts meticulously{'\n'}
               • Adjust based on feedback{'\n'}
-              • Consistency > perfection
+              • Consistency &gt; perfection
             </Text>
           </View>
         </View>

@@ -107,7 +107,7 @@ const WARMUP_ROUTINES: WarmupRoutine[] = [
       { name: 'Scapular Retractions', duration: '2 min', reps: '15 reps', notes: 'En banco, solo escapulares' },
       { name: 'Light DB Press', duration: '2 min', reps: '2x10', notes: 'Mancuernas ligeras' },
       { name: 'Ramp-up Sets', duration: '5 min', reps: '50%, 60%, 70%, 80% x5-3', notes: 'Aproximación al peso de trabajo' },
-    },
+    ],
     benefits: ['Estabilidad escapular', 'Activación arco torácico', 'Preparación neurológica', 'Prevención lesiones hombro'],
     icon: '💪',
   },

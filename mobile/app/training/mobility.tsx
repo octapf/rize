@@ -432,7 +432,7 @@ export default function MobilityRoutines() {
               • Do mobility work when muscles are warm
             </Text>
             <Text className="text-blue-300 text-sm mb-2">
-              • Consistency > intensity (daily light work > weekly hard work)
+              • Consistency &gt; intensity (daily light work &gt; weekly hard work)
             </Text>
             <Text className="text-blue-300 text-sm mb-2">
               • Never force into pain (mild discomfort OK)

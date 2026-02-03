@@ -243,9 +243,9 @@ export default function WorkoutStacks() {
               • Start with lower doses{'\n'}
               • Assess tolerance before combining{'\n'}
               • Buy in bulk to save money{'\n'}
-              • DIY stacks > pre-made formulas{'\n'}
+              • DIY stacks &gt; pre-made formulas{'\n'}
               • Cycle stimulants (caffeine){'\n'}
-              • Quality > quantity of ingredients
+              • Quality &gt; quantity of ingredients
             </Text>
           </View>
         </View>

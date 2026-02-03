@@ -560,7 +560,7 @@ export default function EliteTrainingPrinciples() {
               ⚡ Injury management critical - one injury = 6-12 months lost
             </Text>
             <Text className="text-red-300 text-sm">
-              ⚡ Process > outcome - enjoy small improvements
+              ⚡ Process &gt; outcome - enjoy small improvements
             </Text>
           </View>
         </View>

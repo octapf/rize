@@ -207,7 +207,7 @@ export default function MuscleGroupExplorer() {
               • Progressive overload cada semana{'\n'}
               • Full ROM en cada rep{'\n'}
               • Mind-muscle connection{'\n'}
-              • Frequency > volume en beginners{'\n'}
+              • Frequency &gt; volume en beginners{'\n'}
               • Recovery 48h entre sesiones
             </Text>
           </View>

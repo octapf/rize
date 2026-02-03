@@ -303,7 +303,7 @@ export default function SplitOptimizer() {
           <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30 mb-6">
             <Text className="text-blue-400 font-bold mb-2">Split Selection Tips</Text>
             <Text className="text-blue-300 text-sm">
-              • Frequency > volume for naturals{'\n'}
+              • Frequency &gt; volume for naturals{'\n'}
               • 2x per week per muscle = optimal{'\n'}
               • Choose split you can sustain{'\n'}
               • 4-6 days ideal for intermediates{'\n'}

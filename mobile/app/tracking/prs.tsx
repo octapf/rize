@@ -450,7 +450,7 @@ export default function PersonalRecords() {
                   • Solo cuenta con técnica perfecta{'\n'}
                   • Graba tus PRs para verificar forma{'\n'}
                   • Descansa bien antes de intentos{'\n'}
-                  • Progreso consistente > PRs constantes
+                  • Progreso consistente &gt; PRs constantes
                 </Text>
               </View>
             </View>

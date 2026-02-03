@@ -287,7 +287,7 @@ export default function PersonalRecords() {
                   • No intentes PRs cuando estés fatigado{'\n'}
                   • Calentamiento específico es crucial{'\n'}
                   • Siempre con spotter en ejercicios pesados{'\n'}
-                  • Técnica perfecta > ego lifting{'\n'}
+                  • Técnica perfecta &gt; ego lifting{'\n'}
                   • Descansa bien la noche anterior{'\n'}
                   • Celebra cada logro, por pequeño que sea!
                 </Text>

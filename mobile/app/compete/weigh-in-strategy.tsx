@@ -295,7 +295,7 @@ export default function WeighIn() {
               • Stop if experiencing severe cramps/dizziness
             </Text>
             <Text className="text-amber-300 text-sm mb-2">
-              • Consider moving up a weight class if >5kg over
+              • Consider moving up a weight class if &gt;5kg over
             </Text>
             <Text className="text-amber-300 text-sm">
               • Prioritize performance over making weight

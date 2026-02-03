@@ -408,7 +408,7 @@ export default function HabitTracker() {
                 </Text>
                 <Text className="text-blue-300 text-sm">
                   • Empieza con 2-3 hábitos clave{'\n'}
-                  • Consistencia > Perfección{'\n'}
+                  • Consistencia &gt; Perfección{'\n'}
                   • Celebra rachas pequeñas{'\n'}
                   • Si fallas 1 día, retoma inmediatamente
                 </Text>

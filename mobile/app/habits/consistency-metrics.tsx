@@ -255,7 +255,7 @@ export default function ConsistencyMetrics() {
               • Small daily actions compound{'\n'}
               • Builds unbreakable habits{'\n'}
               • Prevents boom-bust cycles{'\n'}
-              • Long-term > short-term heroics
+              • Long-term &gt; short-term heroics
             </Text>
           </View>
 
