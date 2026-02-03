@@ -25,7 +25,13 @@ jest.mock('@/services/api/workouts.api', () => ({
 
 describe('useWorkouts Hooks', () => {
   let queryClient: QueryClient;
-  let wrapper: React.FC<{ children: React.ReactNode }>;
+  let wrapper: any;
+
+  const createWrapper = (client: QueryClient) => {
+    const Wrapper = ({ children }: any) =>
+      React.createElement(QueryClientProvider, { client }, children);
+    return Wrapper;
+  };
 
   beforeEach(() => {
     queryClient = new QueryClient({
@@ -34,9 +40,7 @@ describe('useWorkouts Hooks', () => {
         mutations: { retry: false },
       },
     });
-    wrapper = ({ children }) => (
-      <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
-    );
+    wrapper = createWrapper(queryClient);
     jest.clearAllMocks();
   });
 

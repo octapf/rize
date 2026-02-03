@@ -1,4 +1,4 @@
-import { useQuery, useMutation, useQueryClient } from '@tantml/react-query';
+import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { achievementsApi } from '@/services/api/achievements.api';
 
 export const useAchievements = () => {
