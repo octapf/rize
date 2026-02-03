@@ -14,7 +14,6 @@ export const leaderboardService = {
     return users.map((user, index) => ({
       rank: index + 1,
       userId: user._id,
-      name: user.name,
       username: user.username,
       xp: user.xp,
       level: user.level,
@@ -203,9 +202,8 @@ export const leaderboardService = {
     return users.map((user, index) => ({
       rank: index + 1,
       userId: user._id,
-      name: user.name,
       username: user.username,
-      streak: user.streak,
+      streak: user.stats?.currentStreak || 0,
       xp: user.xp,
       level: user.level,
       avatar: user.avatar,
@@ -219,7 +217,7 @@ export const leaderboardService = {
 
     // Streak Rank
     const streakRank = await User.countDocuments({
-      streak: { $gt: (await User.findById(userId))?.streak || 0 },
+      'stats.currentStreak': { $gt: (await User.findById(userId))?.stats?.currentStreak || 0 },
     });
 
     // Workouts this month
@@ -268,19 +266,19 @@ export const leaderboardService = {
 
   // Get friends leaderboard
   async getFriendsLeaderboard(userId: string, type: 'xp' | 'workouts' | 'volume' = 'xp'): Promise<any[]> {
-    const user = await User.findById(userId).select('following');
-    const friendIds = user?.following || [];
+    const user = await User.findById(userId);
+    // TODO: Add following/friends functionality to User model
+    const friendIds: any[] = [];
 
     if (type === 'xp') {
       const friends = await User.find({ _id: { $in: [...friendIds, userId] } })
-        .select('name username xp level avatar')
+        .select('username xp level avatar')
         .sort({ xp: -1 })
         .lean();
 
       return friends.map((friend, index) => ({
         rank: index + 1,
         userId: friend._id,
-        name: friend.name,
         username: friend.username,
         xp: friend.xp,
         level: friend.level,
@@ -297,7 +295,7 @@ export const leaderboardService = {
     const leaderboard = await Workout.aggregate([
       {
         $match: {
-          userId: { $in: [...friendIds.map((id) => id), userId] },
+          userId: { $in: [...friendIds.map((id: any) => id), userId] },
           status: 'completed',
           completedAt: { $gte: startOfMonth },
           isDeleted: false,

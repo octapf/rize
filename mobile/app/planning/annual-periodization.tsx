@@ -113,7 +113,7 @@ export default function AnnualPeriodization() {
       training: {
         intensity: '70-80% mostly',
         volume: 'High (20-30 sets per lift per week)',
-        exercise Selection: [
+        exerciseSelection: [
           'Competition lifts 1-2x per week',
           'Variations 2-3x per week (pause, tempo, deficit, etc.)',
           'Lots of accessories',

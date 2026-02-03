@@ -1,6 +1,7 @@
 import { User } from '../models/User';
 import { Workout } from '../models/Workout';
 import { Achievement } from '../models/Achievement';
+import { UserAchievement } from '../models/UserAchievement';
 import { PersonalRecord } from '../models/PersonalRecord';
 
 class UserService {
@@ -63,7 +64,7 @@ class UserService {
         username: user.username,
         email: user.email,
         xp: user.xp,
-        streak: user.streak,
+        streak: user.stats.currentStreak,
         level: Math.floor(user.xp / 100) + 1,
         createdAt: user.createdAt,
       },
@@ -155,7 +156,7 @@ class UserService {
       user: {
         xp: user.xp,
         level: Math.floor(user.xp / 100) + 1,
-        streak: user.streak,
+        streak: user.stats.currentStreak,
       },
       workouts: {
         thisWeek: workoutsThisWeek,
@@ -209,7 +210,7 @@ class UserService {
           email: user.email,
           xp: user.xp,
           level: Math.floor(user.xp / 100) + 1,
-          streak: user.streak,
+          streak: user.stats.currentStreak,
           workoutCount,
           achievementCount,
           createdAt: user.createdAt,
@@ -268,7 +269,7 @@ class UserService {
    * Get user's activity feed
    */
   async getUserActivityFeed(userId: string, limit = 10) {
-    const activities = [];
+    const activities: any[] = [];
 
     // Get recent workouts
     const recentWorkouts = await Workout.find({
@@ -292,7 +293,7 @@ class UserService {
     });
 
     // Get recent achievements
-    const recentAchievements = await Achievement.find({ userId })
+    const recentAchievements = await UserAchievement.find({ userId })
       .sort({ unlockedAt: -1 })
       .limit(5);
 
@@ -302,8 +303,8 @@ class UserService {
         date: achievement.unlockedAt,
         data: {
           achievementId: achievement._id,
-          achievementName: achievement.name,
-          xpEarned: achievement.xpReward,
+          achievementKey: achievement.achievementKey,
+          progress: achievement.progress,
         },
       });
     });

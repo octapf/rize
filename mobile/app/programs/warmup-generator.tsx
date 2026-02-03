@@ -7,7 +7,7 @@ import {
   Alert,
 } from 'react-native';
 import { router } from 'expo-router';
-import { Ionicons } from '@expo/vec @expo/vector-icons';
+import { Ionicons } from '@expo/vector-icons';
 
 interface WarmupExercise {
   name: string;

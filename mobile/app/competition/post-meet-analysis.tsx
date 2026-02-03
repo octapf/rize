@@ -7,7 +7,7 @@ import {
   TextInput,
 } from 'react-native';
 import { router } from 'expo-router';
-import { Ionicons } from '@expo/export-icons';
+import { Ionicons } from '@expo/vector-icons';
 
 export default function PostMeetAnalysis() {
   const [selectedSection, setSelectedSection] = useState('overview');

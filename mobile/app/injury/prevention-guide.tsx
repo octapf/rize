@@ -154,7 +154,7 @@ export default function InjuryPrevention() {
       ],
       techniqueKeys: [
         'Vary grip width and types',
-        'Don't lock out aggressively',
+        "Don't lock out aggressively",
         'Control tempo on curls',
         'Elbow position matters',
         'Warm up wrists and forearms',

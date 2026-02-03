@@ -6,16 +6,13 @@ import {
   RefreshControl,
   ActivityIndicator,
   TouchableOpacity,
-  TextInput,
   Alert,
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
-import { router } from 'expo-router';
 import { useFeed, useLikeWorkout, useUnlikeWorkout, useFriends, usePendingRequests } from '@/hooks/useSocial';
 import { useLeaderboard } from '@/hooks/useStats';
 import { Card } from '@/components/ui/Card';
-import { Button } from '@/components/ui/Button';
 
 export default function SocialScreen() {
   const [activeTab, setActiveTab] = useState<'feed' | 'friends' | 'leaderboard'>('feed');

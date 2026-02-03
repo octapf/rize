@@ -199,7 +199,7 @@ export default function MastersLifting() {
         {
           principle: 'Moderate Rep Ranges',
           explanation: 'Balance between heavy singles and high reps',
-          sweet Spot: [
+          sweetSpot: [
             'Main work: 3-5 reps (not 1-2)',
             'Occasional heavy singles okay',
             'Avoid constant maxing out',

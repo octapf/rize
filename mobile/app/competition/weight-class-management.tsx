@@ -81,7 +81,7 @@ export default function WeightClassManagement() {
             'Look at meet results in your area',
           ],
         },
-      },
+      ],
       mistakes: [
         'Cutting too much weight too often',
         'Staying in class you\'ve outgrown',
