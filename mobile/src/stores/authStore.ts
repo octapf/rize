@@ -56,6 +56,7 @@ export const useAuthStore = create<AuthState>((set, get) => ({
     try {
       const data = await authApi.login({ emailOrUsername, password });
       await get().setAuth(data);
+      set({ isLoading: false });
     } catch (error) {
       set({ isLoading: false });
       throw error;
@@ -68,6 +69,7 @@ export const useAuthStore = create<AuthState>((set, get) => ({
       const { name, ...apiData } = registerData;
       const data = await authApi.register(apiData);
       await get().setAuth(data);
+      set({ isLoading: false });
     } catch (error) {
       set({ isLoading: false });
       throw error;

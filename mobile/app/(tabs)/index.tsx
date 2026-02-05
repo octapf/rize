@@ -12,19 +12,21 @@ import { usersApi } from '@/services/api/users.api';
 import { Card } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
 import { QuickStats } from '@/components/QuickStats';
+import { useToastError } from '@/hooks/useToastError';
 
 export default function HomeScreen() {
   const { user, isAuthenticated } = useAuthStore();
+  const { toast } = useToastError();
 
   // Fetch user stats
-  const { data: statsData, isLoading: statsLoading } = useQuery({
+  const { data: statsData, isLoading: statsLoading, isError: statsError } = useQuery({
     queryKey: ['user-stats'],
     queryFn: () => usersApi.getMyStats(),
     enabled: isAuthenticated,
   });
 
   // Fetch recent workouts
-  const { data: workoutsData, isLoading: workoutsLoading } = useQuery({
+  const { data: workoutsData, isLoading: workoutsLoading, isError: workoutsError } = useQuery({
     queryKey: ['workouts-recent'],
     queryFn: () => workoutsApi.getUserWorkouts(),
     enabled: isAuthenticated,
@@ -32,6 +34,18 @@ export default function HomeScreen() {
 
   const workouts = workoutsData?.data.workouts || [];
   const userStats = statsData?.data;
+
+  React.useEffect(() => {
+    if (statsError) {
+      toast.error('No pudimos cargar tus estadísticas');
+    }
+  }, [statsError, toast]);
+
+  React.useEffect(() => {
+    if (workoutsError) {
+      toast.error('Error al cargar tus entrenamientos');
+    }
+  }, [workoutsError, toast]);
 
   const stats = userStats
     ? {

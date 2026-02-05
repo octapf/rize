@@ -157,11 +157,12 @@ function ToastItem({ toast }: { toast: Toast }) {
 const styles = StyleSheet.create({
   container: {
     position: 'absolute',
-    top: 60,
+    top: 100,
     left: 0,
     right: 0,
     alignItems: 'center',
     zIndex: 9999,
+    paddingHorizontal: 16,
   },
   toast: {
     flexDirection: 'row',
