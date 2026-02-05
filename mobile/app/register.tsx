@@ -65,8 +65,12 @@ export default function RegisterScreen() {
     if (!password) {
       newErrors.password = 'La contraseÃ±a es requerida';
     } else if (password.length < 8) {
-      newErrors.password = 'La contraseÃ±a debe tener al menos 8 caracteres';
-    }
+      newErrors.password = 'La contraseÃ±a debe tener al menos 8 caracteres';    } else if (!/[A-Z]/.test(password)) {
+      newErrors.password = 'La contraseña debe contener al menos una mayúscula';
+    } else if (!/[a-z]/.test(password)) {
+      newErrors.password = 'La contraseña debe contener al menos una minúscula';
+    } else if (!/[0-9]/.test(password)) {
+      newErrors.password = 'La contraseña debe contener al menos un número';    }
 
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);

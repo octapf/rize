@@ -6,7 +6,12 @@ import {
   LoginInput,
   RefreshTokenInput,
   ChangePasswordInput,
+  registerSchema,
+  loginSchema,
+  refreshTokenSchema,
+  changePasswordSchema,
 } from './auth.validation';
+import { ValidationError } from '@/utils/errors';
 
 export class AuthController {
   /**
@@ -14,7 +19,14 @@ export class AuthController {
    * Register a new user
    */
   register = asyncHandler(async (req: Request, res: Response) => {
-    const data: RegisterInput = req.body;
+    // Validate request body
+    const parseResult = registerSchema.safeParse(req.body);
+    if (!parseResult.success) {
+      const errors = parseResult.error.flatten().fieldErrors;
+      throw new ValidationError('Validación fallida', errors);
+    }
+
+    const data: RegisterInput = parseResult.data;
     const result = await authService.register(data);
 
     res.status(201).json({
@@ -28,7 +40,14 @@ export class AuthController {
    * Login an existing user
    */
   login = asyncHandler(async (req: Request, res: Response) => {
-    const data: LoginInput = req.body;
+    // Validate request body
+    const parseResult = loginSchema.safeParse(req.body);
+    if (!parseResult.success) {
+      const errors = parseResult.error.flatten().fieldErrors;
+      throw new ValidationError('Validación fallida', errors);
+    }
+
+    const data: LoginInput = parseResult.data;
     const result = await authService.login(data);
 
     res.status(200).json({

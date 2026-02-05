@@ -73,7 +73,19 @@ export default function RegisterScreen() {
       // Entrar directo a la cuenta
       router.replace('/(tabs)');
     } catch (error: any) {
-      const message = error.response?.data?.message || error.message || 'No se pudo crear la cuenta';
+      // Extract first validation error if available
+      let message = 'No se pudo crear la cuenta';
+      
+      if (error.response?.data?.error?.errors) {
+        const errors = error.response.data.error.errors;
+        const firstError = Object.values(errors)[0];
+        if (Array.isArray(firstError) && firstError[0]) {
+          message = firstError[0];
+        }
+      } else {
+        message = error.response?.data?.error?.message || error.message || message;
+      }
+      
       toast.error(message);
     } finally {
       setIsLoading(false);

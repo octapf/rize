@@ -25,6 +25,7 @@ export const errorHandler = (
         code: err.code,
         message: err.message,
         field: err.field,
+        errors: (err as any).errors, // Include validation errors if present
       },
     });
   }

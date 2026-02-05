@@ -12,7 +12,7 @@ export class AppError extends Error {
 }
 
 export class ValidationError extends AppError {
-  constructor(message: string, field?: string) {
+  constructor(message: string, public errors?: Record<string, any>, field?: string) {
     super(message, 400, 'VALIDATION_ERROR', field);
   }
 }
