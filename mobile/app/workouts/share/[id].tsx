@@ -130,7 +130,7 @@ export default function ShareWorkoutScreen() {
           <Card className="p-4">
             <View className="flex-row items-center justify-between">
               <View className="flex-row items-center gap-3">
-                <View className="bg-blue-500 w-12 h-12 rounded-full items-center justify-center">
+                <View className="bg-primary w-12 h-12 rounded-full items-center justify-center">
                   <Ionicons name="globe" size={24} color="white" />
                 </View>
                 <View>
@@ -144,7 +144,7 @@ export default function ShareWorkoutScreen() {
               </View>
               <View
                 className={`w-12 h-7 rounded-full items-center ${
-                  shareToFeed ? 'bg-blue-500 justify-end' : 'bg-gray-300 justify-start'
+                  shareToFeed ? 'bg-primary justify-end' : 'bg-gray-300 justify-start'
                 } px-1 flex-row`}
               >
                 <View className="w-5 h-5 bg-white rounded-full" />
@@ -167,10 +167,10 @@ export default function ShareWorkoutScreen() {
                   key={friend.id}
                   onPress={() => toggleFriend(friend.id)}
                   className={`flex-row items-center gap-3 p-3 rounded-lg ${
-                    isSelected ? 'bg-purple-100 border-2 border-purple-500' : 'bg-gray-100'
+                    isSelected ? 'bg-primary/10 border-2 border-primary' : 'bg-gray-100'
                   }`}
                 >
-                  <View className="w-10 h-10 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full items-center justify-center">
+                  <View className="w-10 h-10 bg-gradient-to-br from-primary to-[#7D0EBE] rounded-full items-center justify-center">
                     <Text className="text-white font-bold">
                       {friend.avatar}
                     </Text>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -276,16 +276,16 @@ export default function MotivationStrategies() {
             ))}
           </View>
 
-          <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30 mb-6">
-            <Text className="text-blue-400 font-bold mb-2">Motivation Truth</Text>
-            <Text className="text-blue-300 text-sm">
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
+            <Text className="text-primary/80 font-bold mb-2">Motivation Truth</Text>
+            <Text className="text-primary/60 text-sm">
               Motivation is unreliable. It comes and goes. Systems, habits, and environment design work when motivation doesn't. Build systems that work even on your worst days.
             </Text>
           </View>
 
-          <View className="bg-emerald-500/10 rounded-xl p-4 border border-emerald-500/30 mb-6">
-            <Text className="text-emerald-400 font-bold mb-2">Action Creates Motivation</Text>
-            <Text className="text-emerald-300 text-sm">
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
+            <Text className="text-primary font-bold mb-2">Action Creates Motivation</Text>
+            <Text className="text-primary/80 text-sm">
               Don't wait to feel motivated. Start the action, and motivation will follow. The hardest part is starting - once in motion, you'll keep going.
             </Text>
           </View>
@@ -294,3 +294,5 @@ export default function MotivationStrategies() {
     </View>
   );
 }
+
+

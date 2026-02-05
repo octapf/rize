@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -181,17 +181,17 @@ export default function WeighIn() {
               />
             </View>
 
-            <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30">
+            <View className="bg-primary/10 rounded-xl p-4 border border-primary/30">
               <View className="flex-row justify-between mb-2">
-                <Text className="text-blue-400 font-bold">Weight to lose:</Text>
-                <Text className="text-blue-400 text-2xl font-bold">{weightToLose}kg</Text>
+                <Text className="text-primary/80 font-bold">Weight to lose:</Text>
+                <Text className="text-primary/80 text-2xl font-bold">{weightToLose}kg</Text>
               </View>
-              <Text className="text-blue-300 text-sm">
+              <Text className="text-primary/60 text-sm">
                 {parseFloat(weightToLose) <= 2 
-                  ? '✓ Easy - minimal manipulation needed' 
+                  ? 'âœ“ Easy - minimal manipulation needed' 
                   : parseFloat(weightToLose) <= 5 
-                  ? '⚠ Moderate - water cut recommended' 
-                  : '⚠ Difficult - consider slow cut or weight class up'}
+                  ? 'âš  Moderate - water cut recommended' 
+                  : 'âš  Difficult - consider slow cut or weight class up'}
               </Text>
             </View>
           </View>
@@ -275,7 +275,7 @@ export default function WeighIn() {
             </Text>
             {rehydrationProtocol.map((step, idx) => (
               <View key={idx} className="flex-row items-start mb-3 last:mb-0">
-                <View className="w-6 h-6 rounded-full bg-emerald-500 items-center justify-center mr-2 mt-0.5">
+                <View className="w-6 h-6 rounded-full bg-primary items-center justify-center mr-2 mt-0.5">
                   <Text className="text-white text-xs font-bold">{idx + 1}</Text>
                 </View>
                 <Text className="text-zinc-300 flex-1">{step}</Text>
@@ -286,19 +286,19 @@ export default function WeighIn() {
           <View className="bg-amber-500/10 rounded-xl p-4 border border-amber-500/30 mb-6">
             <Text className="text-amber-400 font-bold mb-2">Safety First</Text>
             <Text className="text-amber-300 text-sm mb-2">
-              • Never attempt water cut without prior practice
+              â€¢ Never attempt water cut without prior practice
             </Text>
             <Text className="text-amber-300 text-sm mb-2">
-              • Monitor urine color (dark = too dehydrated)
+              â€¢ Monitor urine color (dark = too dehydrated)
             </Text>
             <Text className="text-amber-300 text-sm mb-2">
-              • Stop if experiencing severe cramps/dizziness
+              â€¢ Stop if experiencing severe cramps/dizziness
             </Text>
             <Text className="text-amber-300 text-sm mb-2">
-              • Consider moving up a weight class if &gt;5kg over
+              â€¢ Consider moving up a weight class if &gt;5kg over
             </Text>
             <Text className="text-amber-300 text-sm">
-              • Prioritize performance over making weight
+              â€¢ Prioritize performance over making weight
             </Text>
           </View>
         </View>
@@ -306,3 +306,4 @@ export default function WeighIn() {
     </View>
   );
 }
+

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -39,8 +39,8 @@ const NUTRITION_GOALS: NutritionGoal[] = [
   {
     id: 'cut',
     type: 'cut',
-    label: 'Definición',
-    description: 'Déficit calórico moderado para perder grasa',
+    label: 'DefiniciÃ³n',
+    description: 'DÃ©ficit calÃ³rico moderado para perder grasa',
     calorieAdjustment: -500,
     macroSplit: { protein: 40, carbs: 30, fats: 30 },
   },
@@ -48,7 +48,7 @@ const NUTRITION_GOALS: NutritionGoal[] = [
     id: 'bulk',
     type: 'bulk',
     label: 'Volumen',
-    description: 'Superávit calórico para ganar masa muscular',
+    description: 'SuperÃ¡vit calÃ³rico para ganar masa muscular',
     calorieAdjustment: 300,
     macroSplit: { protein: 30, carbs: 45, fats: 25 },
   },
@@ -56,15 +56,15 @@ const NUTRITION_GOALS: NutritionGoal[] = [
     id: 'maintain',
     type: 'maintain',
     label: 'Mantenimiento',
-    description: 'Calorías de mantenimiento',
+    description: 'CalorÃ­as de mantenimiento',
     calorieAdjustment: 0,
     macroSplit: { protein: 30, carbs: 40, fats: 30 },
   },
   {
     id: 'recomp',
     type: 'recomp',
-    label: 'Recomposición',
-    description: 'Ganar músculo y perder grasa simultáneamente',
+    label: 'RecomposiciÃ³n',
+    description: 'Ganar mÃºsculo y perder grasa simultÃ¡neamente',
     calorieAdjustment: -100,
     macroSplit: { protein: 40, carbs: 35, fats: 25 },
   },
@@ -73,13 +73,13 @@ const NUTRITION_GOALS: NutritionGoal[] = [
 const MEAL_TEMPLATES: MealTemplate[] = [
   {
     id: '1',
-    name: 'Desayuno Alto en Proteína',
+    name: 'Desayuno Alto en ProteÃ­na',
     time: '08:00',
     calories: 450,
     protein: 35,
     carbs: 40,
     fats: 12,
-    foods: ['3 huevos', '100g avena', '1 plátano', 'Café'],
+    foods: ['3 huevos', '100g avena', '1 plÃ¡tano', 'CafÃ©'],
     category: 'Desayuno',
   },
   {
@@ -95,18 +95,18 @@ const MEAL_TEMPLATES: MealTemplate[] = [
   },
   {
     id: '3',
-    name: 'Pre-Workout Energético',
+    name: 'Pre-Workout EnergÃ©tico',
     time: '16:30',
     calories: 300,
     protein: 25,
     carbs: 35,
     fats: 6,
-    foods: ['1 scoop whey', '1 plátano', 'Café', '30g avena'],
+    foods: ['1 scoop whey', '1 plÃ¡tano', 'CafÃ©', '30g avena'],
     category: 'Snack',
   },
   {
     id: '4',
-    name: 'Post-Workout Recuperación',
+    name: 'Post-Workout RecuperaciÃ³n',
     time: '19:00',
     calories: 550,
     protein: 40,
@@ -123,7 +123,7 @@ const MEAL_TEMPLATES: MealTemplate[] = [
     protein: 35,
     carbs: 25,
     fats: 15,
-    foods: ['150g salmón', 'Ensalada', 'Brócoli', 'Aceite oliva'],
+    foods: ['150g salmÃ³n', 'Ensalada', 'BrÃ³coli', 'Aceite oliva'],
     category: 'Cena',
   },
 ];
@@ -158,15 +158,15 @@ export default function AdvancedNutrition() {
   const generatePlan = () => {
     Alert.alert(
       'Generar Plan Semanal',
-      `Se generará un plan de 7 días basado en tu objetivo de ${selectedGoal.label} con ${targetCalories} kcal/día`,
+      `Se generarÃ¡ un plan de 7 dÃ­as basado en tu objetivo de ${selectedGoal.label} con ${targetCalories} kcal/dÃ­a`,
       [
         { text: 'Cancelar', style: 'cancel' },
         {
           text: 'Generar',
           onPress: () => {
             Alert.alert(
-              '¡Plan Generado!',
-              'Tu plan nutricional de 7 días está listo. Se ha sincronizado con tu calendario.'
+              'Â¡Plan Generado!',
+              'Tu plan nutricional de 7 dÃ­as estÃ¡ listo. Se ha sincronizado con tu calendario.'
             );
           },
         },
@@ -186,7 +186,7 @@ export default function AdvancedNutrition() {
             Plan Nutricional
           </Text>
           <TouchableOpacity onPress={generatePlan}>
-            <Ionicons name="sync-outline" size={24} color="#10B981" />
+            <Ionicons name="sync-outline" size={24} color="#9D12DE" />
           </TouchableOpacity>
         </View>
 
@@ -197,8 +197,8 @@ export default function AdvancedNutrition() {
             <Text className="text-white font-bold">{targetCalories} kcal</Text>
           </View>
           <View className="flex-row gap-2">
-            <View className="flex-1 bg-blue-500/20 rounded-lg p-2">
-              <Text className="text-blue-400 text-xs">P: {proteinGrams}g</Text>
+            <View className="flex-1 bg-primary/20 rounded-lg p-2">
+              <Text className="text-primary/80 text-xs">P: {proteinGrams}g</Text>
             </View>
             <View className="flex-1 bg-amber-500/20 rounded-lg p-2">
               <Text className="text-amber-400 text-xs">C: {carbsGrams}g</Text>
@@ -223,13 +223,13 @@ export default function AdvancedNutrition() {
                 onPress={() => setSelectedGoal(goal)}
                 className={`flex-1 min-w-[45%] rounded-xl p-4 border ${
                   selectedGoal.id === goal.id
-                    ? 'bg-emerald-500/20 border-emerald-500'
+                    ? 'bg-primary/20 border-primary'
                     : 'bg-zinc-900 border-zinc-800'
                 }`}
               >
                 <Text
                   className={`font-bold mb-1 ${
-                    selectedGoal.id === goal.id ? 'text-emerald-500' : 'text-white'
+                    selectedGoal.id === goal.id ? 'text-primary' : 'text-white'
                   }`}
                 >
                   {goal.label}
@@ -247,11 +247,11 @@ export default function AdvancedNutrition() {
                         : 'remove'
                     }
                     size={14}
-                    color={selectedGoal.id === goal.id ? '#10B981' : '#71717A'}
+                    color={selectedGoal.id === goal.id ? '#9D12DE' : '#71717A'}
                   />
                   <Text
                     className={`text-xs ml-1 ${
-                      selectedGoal.id === goal.id ? 'text-emerald-500' : 'text-zinc-500'
+                      selectedGoal.id === goal.id ? 'text-primary' : 'text-zinc-500'
                     }`}
                   >
                     {goal.calorieAdjustment > 0 ? '+' : ''}
@@ -265,12 +265,12 @@ export default function AdvancedNutrition() {
 
         {/* TDEE Calculator */}
         <View className="px-6 pt-6">
-          <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30">
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30">
             <View className="flex-row items-center justify-between mb-3">
               <View className="flex-1">
-                <Text className="text-blue-400 font-bold">TDEE Estimado</Text>
-                <Text className="text-blue-300 text-sm mt-1">
-                  Gasto energético total diario
+                <Text className="text-primary/80 font-bold">TDEE Estimado</Text>
+                <Text className="text-primary/60 text-sm mt-1">
+                  Gasto energÃ©tico total diario
                 </Text>
               </View>
               <View className="flex-row items-center">
@@ -281,14 +281,14 @@ export default function AdvancedNutrition() {
                     if (!isNaN(val)) setTdee(val);
                   }}
                   keyboardType="numeric"
-                  className="text-white text-2xl font-bold bg-blue-500/20 rounded-lg px-3 py-1 w-24 text-center"
+                  className="text-white text-2xl font-bold bg-primary/20 rounded-lg px-3 py-1 w-24 text-center"
                 />
-                <Text className="text-blue-400 ml-2">kcal</Text>
+                <Text className="text-primary/80 ml-2">kcal</Text>
               </View>
             </View>
             <TouchableOpacity
               onPress={() => router.push('/tools/tdee')}
-              className="bg-blue-500 rounded-lg p-2"
+              className="bg-primary rounded-lg p-2"
             >
               <Text className="text-white text-center font-semibold text-sm">
                 Calcular TDEE Preciso
@@ -300,19 +300,19 @@ export default function AdvancedNutrition() {
         {/* Macro Split */}
         <View className="px-6 pt-6">
           <Text className="text-white font-bold text-lg mb-3">
-            Distribución de Macros
+            DistribuciÃ³n de Macros
           </Text>
           <View className="bg-zinc-900 rounded-xl p-4 border border-zinc-800">
             <View className="mb-3">
               <View className="flex-row items-center justify-between mb-2">
-                <Text className="text-blue-400 font-semibold">Proteína</Text>
+                <Text className="text-primary/80 font-semibold">ProteÃ­na</Text>
                 <Text className="text-white font-bold">
                   {selectedGoal.macroSplit.protein}% ({proteinGrams}g)
                 </Text>
               </View>
               <View className="bg-zinc-800 h-2 rounded-full overflow-hidden">
                 <View
-                  className="h-full bg-blue-500 rounded-full"
+                  className="h-full bg-primary rounded-full"
                   style={{ width: `${selectedGoal.macroSplit.protein}%` }}
                 />
               </View>
@@ -354,8 +354,8 @@ export default function AdvancedNutrition() {
         <View className="px-6 pt-6">
           <View className="flex-row items-center justify-between mb-3">
             <Text className="text-white font-bold text-lg">Comidas de Hoy</Text>
-            <View className="bg-emerald-500/20 px-3 py-1 rounded-full">
-              <Text className="text-emerald-500 text-sm font-bold">
+            <View className="bg-primary/20 px-3 py-1 rounded-full">
+              <Text className="text-primary text-sm font-bold">
                 {currentCalories}/{targetCalories} kcal
               </Text>
             </View>
@@ -369,8 +369,8 @@ export default function AdvancedNutrition() {
               <View className="flex-row items-start justify-between mb-3">
                 <View className="flex-1">
                   <View className="flex-row items-center mb-1">
-                    <View className="bg-emerald-500/20 px-2 py-0.5 rounded">
-                      <Text className="text-emerald-500 text-xs font-bold">
+                    <View className="bg-primary/20 px-2 py-0.5 rounded">
+                      <Text className="text-primary text-xs font-bold">
                         {meal.category}
                       </Text>
                     </View>
@@ -387,7 +387,7 @@ export default function AdvancedNutrition() {
               <View className="bg-zinc-800 rounded-lg p-3 mb-3">
                 {meal.foods.map((food, index) => (
                   <View key={index} className="flex-row items-center mb-1 last:mb-0">
-                    <Ionicons name="checkmark" size={14} color="#10B981" />
+                    <Ionicons name="checkmark" size={14} color="#9D12DE" />
                     <Text className="text-zinc-300 text-sm ml-2">{food}</Text>
                   </View>
                 ))}
@@ -395,8 +395,8 @@ export default function AdvancedNutrition() {
 
               {/* Macros */}
               <View className="flex-row gap-3">
-                <View className="flex-1 bg-blue-500/10 rounded-lg p-2">
-                  <Text className="text-blue-400 text-xs">Proteína</Text>
+                <View className="flex-1 bg-primary/10 rounded-lg p-2">
+                  <Text className="text-primary/80 text-xs">ProteÃ­na</Text>
                   <Text className="text-white text-sm font-bold">{meal.protein}g</Text>
                 </View>
                 <View className="flex-1 bg-amber-500/10 rounded-lg p-2">
@@ -434,26 +434,26 @@ export default function AdvancedNutrition() {
                 <View className="flex-1">
                   <Text className="text-white font-bold">{template.name}</Text>
                   <Text className="text-zinc-400 text-sm mt-1">
-                    {template.category} • {template.time}
+                    {template.category} â€¢ {template.time}
                   </Text>
                 </View>
                 <View className="flex-row items-center">
-                  <Text className="text-emerald-500 font-bold text-lg">
+                  <Text className="text-primary font-bold text-lg">
                     {template.calories}
                   </Text>
                   <Text className="text-zinc-500 text-xs ml-1">kcal</Text>
                   <Ionicons
                     name="add-circle"
                     size={24}
-                    color="#10B981"
+                    color="#9D12DE"
                     style={{ marginLeft: 8 }}
                   />
                 </View>
               </View>
 
               <View className="flex-row gap-2">
-                <View className="bg-blue-500/10 px-2 py-1 rounded">
-                  <Text className="text-blue-400 text-xs">P: {template.protein}g</Text>
+                <View className="bg-primary/10 px-2 py-1 rounded">
+                  <Text className="text-primary/80 text-xs">P: {template.protein}g</Text>
                 </View>
                 <View className="bg-amber-500/10 px-2 py-1 rounded">
                   <Text className="text-amber-400 text-xs">C: {template.carbs}g</Text>
@@ -471,7 +471,7 @@ export default function AdvancedNutrition() {
           <View
             className={`rounded-xl p-4 border ${
               Math.abs(currentCalories - targetCalories) < 100
-                ? 'bg-emerald-500/10 border-emerald-500/30'
+                ? 'bg-primary/10 border-primary/30'
                 : 'bg-amber-500/10 border-amber-500/30'
             }`}
           >
@@ -485,31 +485,31 @@ export default function AdvancedNutrition() {
                 size={24}
                 color={
                   Math.abs(currentCalories - targetCalories) < 100
-                    ? '#10B981'
-                    : '#F59E0B'
+                    ? '#9D12DE'
+                    : '#FFEA00'
                 }
               />
               <View className="flex-1 ml-3">
                 <Text
                   className={`font-bold mb-2 ${
                     Math.abs(currentCalories - targetCalories) < 100
-                      ? 'text-emerald-500'
+                      ? 'text-primary'
                       : 'text-amber-500'
                   }`}
                 >
                   {Math.abs(currentCalories - targetCalories) < 100
-                    ? '¡Plan Óptimo!'
+                    ? 'Â¡Plan Ã“ptimo!'
                     : 'Ajusta tu Plan'}
                 </Text>
                 <Text
                   className={`text-sm leading-5 ${
                     Math.abs(currentCalories - targetCalories) < 100
-                      ? 'text-emerald-300'
+                      ? 'text-primary/80'
                       : 'text-amber-300'
                   }`}
                 >
                   {Math.abs(currentCalories - targetCalories) < 100
-                    ? `Estás dentro del rango objetivo. Macros: P ${currentProtein}g, C ${currentCarbs}g, G ${currentFats}g`
+                    ? `EstÃ¡s dentro del rango objetivo. Macros: P ${currentProtein}g, C ${currentCarbs}g, G ${currentFats}g`
                     : `Te ${
                         currentCalories > targetCalories ? 'sobran' : 'faltan'
                       } ${Math.abs(
@@ -522,10 +522,10 @@ export default function AdvancedNutrition() {
 
           <TouchableOpacity
             onPress={generatePlan}
-            className="bg-emerald-500 rounded-xl p-4 mt-3"
+            className="bg-primary rounded-xl p-4 mt-3"
           >
             <Text className="text-white text-center font-bold text-lg">
-              Generar Plan de 7 Días
+              Generar Plan de 7 DÃ­as
             </Text>
           </TouchableOpacity>
         </View>
@@ -533,3 +533,5 @@ export default function AdvancedNutrition() {
     </View>
   );
 }
+
+

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -52,7 +52,7 @@ export default function ProgressPhotosComparisonScreen() {
         date: new Date(),
       };
       setPhotos([newPhoto, ...photos]);
-      Alert.alert('Éxito', 'Foto agregada correctamente');
+      Alert.alert('Ã‰xito', 'Foto agregada correctamente');
     }
   };
 
@@ -61,7 +61,7 @@ export default function ProgressPhotosComparisonScreen() {
       setSelectedPhotos(selectedPhotos.filter((p) => p !== id));
     } else {
       if (selectedPhotos.length >= 4) {
-        Alert.alert('Límite', 'Máximo 4 fotos para comparar');
+        Alert.alert('LÃ­mite', 'MÃ¡ximo 4 fotos para comparar');
         return;
       }
       setSelectedPhotos([...selectedPhotos, id]);
@@ -92,7 +92,7 @@ export default function ProgressPhotosComparisonScreen() {
         onPress={() => togglePhotoSelection(item.id)}
         className="w-1/2 p-2"
       >
-        <Card className={`overflow-hidden ${isSelected ? 'border-4 border-blue-500' : ''}`}>
+        <Card className={`overflow-hidden ${isSelected ? 'border-4 border-primary' : ''}`}>
           <View className="relative">
             <Image
               source={{ uri: item.uri }}
@@ -100,7 +100,7 @@ export default function ProgressPhotosComparisonScreen() {
               resizeMode="cover"
             />
             {isSelected && (
-              <View className="absolute top-2 right-2 bg-blue-500 rounded-full p-1">
+              <View className="absolute top-2 right-2 bg-primary rounded-full p-1">
                 <Ionicons name="checkmark" size={20} color="white" />
               </View>
             )}
@@ -132,13 +132,13 @@ export default function ProgressPhotosComparisonScreen() {
 
     return (
       <View className="flex-1 bg-gray-50">
-        <LinearGradient colors={['#10B981', '#059669']} className="px-6 pt-12 pb-6">
+        <LinearGradient colors={['#9D12DE', '#7C3AED']} className="px-6 pt-12 pb-6">
           <View className="flex-row items-center justify-between">
             <TouchableOpacity onPress={() => setCompareMode(false)}>
               <Ionicons name="arrow-back" size={28} color="white" />
             </TouchableOpacity>
-            <Text className="text-2xl font-bold text-white">Comparación</Text>
-            <TouchableOpacity onPress={() => Alert.alert('Compartir', 'Función en desarrollo')}>
+            <Text className="text-2xl font-bold text-white">ComparaciÃ³n</Text>
+            <TouchableOpacity onPress={() => Alert.alert('Compartir', 'FunciÃ³n en desarrollo')}>
               <Ionicons name="share-outline" size={28} color="white" />
             </TouchableOpacity>
           </View>
@@ -149,13 +149,13 @@ export default function ProgressPhotosComparisonScreen() {
             <View className="flex-row justify-around">
               <View className="items-center">
                 <Text className="text-gray-600 text-sm">Tiempo</Text>
-                <Text className="text-emerald-700 font-bold text-2xl">{daysDiff}</Text>
-                <Text className="text-gray-600 text-xs">días</Text>
+                <Text className="text-primary font-bold text-2xl">{daysDiff}</Text>
+                <Text className="text-gray-600 text-xs">dÃ­as</Text>
               </View>
               {weightDiff !== null && (
                 <View className="items-center">
                   <Text className="text-gray-600 text-sm">Peso</Text>
-                  <Text className={`font-bold text-2xl ${weightDiff < 0 ? 'text-emerald-700' : 'text-amber-600'}`}>
+                  <Text className={`font-bold text-2xl ${weightDiff < 0 ? 'text-primary' : 'text-amber-600'}`}>
                     {weightDiff > 0 ? '+' : ''}{weightDiff} kg
                   </Text>
                   <Text className="text-gray-600 text-xs">diferencia</Text>
@@ -192,7 +192,7 @@ export default function ProgressPhotosComparisonScreen() {
 
   return (
     <View className="flex-1 bg-gray-50">
-      <LinearGradient colors={['#10B981', '#059669']} className="px-6 pt-12 pb-6">
+      <LinearGradient colors={['#9D12DE', '#7C3AED']} className="px-6 pt-12 pb-6">
         <View className="flex-row items-center justify-between mb-2">
           <TouchableOpacity onPress={() => router.back()}>
             <Ionicons name="arrow-back" size={28} color="white" />
@@ -203,7 +203,7 @@ export default function ProgressPhotosComparisonScreen() {
           </TouchableOpacity>
         </View>
         {selectedPhotos.length > 0 && (
-          <Text className="text-emerald-100 text-center">
+          <Text className="text-primary/50 text-center">
             {selectedPhotos.length} foto{selectedPhotos.length !== 1 ? 's' : ''} seleccionada{selectedPhotos.length !== 1 ? 's' : ''}
           </Text>
         )}
@@ -222,7 +222,7 @@ export default function ProgressPhotosComparisonScreen() {
               No hay fotos
             </Text>
             <Text className="text-gray-600 text-center mt-2">
-              Agrega fotos para seguir tu transformación
+              Agrega fotos para seguir tu transformaciÃ³n
             </Text>
           </View>
         }
@@ -231,7 +231,7 @@ export default function ProgressPhotosComparisonScreen() {
       {selectedPhotos.length >= 2 && (
         <View className="p-4 bg-white border-t border-gray-200">
           <TouchableOpacity onPress={handleCompare}>
-            <LinearGradient colors={['#10B981', '#059669']} className="py-4 rounded-lg">
+            <LinearGradient colors={['#9D12DE', '#7C3AED']} className="py-4 rounded-lg">
               <View className="flex-row items-center justify-center gap-2">
                 <Ionicons name="git-compare" size={24} color="white" />
                 <Text className="text-white font-bold text-lg">
@@ -245,3 +245,5 @@ export default function ProgressPhotosComparisonScreen() {
     </View>
   );
 }
+
+

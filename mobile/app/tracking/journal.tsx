@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -26,10 +26,10 @@ interface JournalEntry {
 }
 
 const MOOD_OPTIONS = [
-  { value: 'bad', emoji: '😞', label: 'Mal', color: 'red' },
-  { value: 'ok', emoji: '😐', label: 'OK', color: 'amber' },
-  { value: 'good', emoji: '🙂', label: 'Bien', color: 'blue' },
-  { value: 'great', emoji: '😃', label: 'Genial', color: 'emerald' },
+  { value: 'bad', emoji: 'ðŸ˜ž', label: 'Mal', color: 'red' },
+  { value: 'ok', emoji: 'ðŸ˜', label: 'OK', color: 'amber' },
+  { value: 'good', emoji: 'ðŸ™‚', label: 'Bien', color: 'blue' },
+  { value: 'great', emoji: 'ðŸ˜ƒ', label: 'Genial', color: 'emerald' },
 ];
 
 const MOCK_ENTRIES: JournalEntry[] = [
@@ -41,8 +41,8 @@ const MOCK_ENTRIES: JournalEntry[] = [
     energy: 5,
     sleep: 7.5,
     bodyWeight: 78.5,
-    notes: 'Excelente sesión! Nuevo PR en press banca 100kg x6. Me sentí muy fuerte hoy.',
-    achievements: ['PR en press banca', 'Técnica perfecta'],
+    notes: 'Excelente sesiÃ³n! Nuevo PR en press banca 100kg x6. Me sentÃ­ muy fuerte hoy.',
+    achievements: ['PR en press banca', 'TÃ©cnica perfecta'],
     challenges: ['Press militar un poco pesado'],
   },
   {
@@ -53,7 +53,7 @@ const MOCK_ENTRIES: JournalEntry[] = [
     energy: 4,
     sleep: 8,
     bodyWeight: 78.2,
-    notes: 'Peso muerto se sintió bien, dominadas mejorando.',
+    notes: 'Peso muerto se sintiÃ³ bien, dominadas mejorando.',
     achievements: ['10 dominadas limpias'],
   },
   {
@@ -63,8 +63,8 @@ const MOCK_ENTRIES: JournalEntry[] = [
     mood: 'ok',
     energy: 3,
     sleep: 6,
-    notes: 'Poco sueño, energía baja. Completé el workout pero difícil.',
-    challenges: ['Fatiga general', 'Bajo en energía'],
+    notes: 'Poco sueÃ±o, energÃ­a baja. CompletÃ© el workout pero difÃ­cil.',
+    challenges: ['Fatiga general', 'Bajo en energÃ­a'],
   },
 ];
 
@@ -100,13 +100,13 @@ export default function WorkoutJournal() {
     setEntries([entry, ...entries]);
     setNewEntry({ workoutType: '', mood: 'good', energy: 4, sleep: '', bodyWeight: '', notes: '' });
     setShowAddForm(false);
-    Alert.alert('Entrada Guardada! 📝', 'Registro añadido al diario');
+    Alert.alert('Entrada Guardada! ðŸ“', 'Registro aÃ±adido al diario');
   };
 
   const deleteEntry = (id: string) => {
     Alert.alert(
       'Eliminar Entrada',
-      '¿Estás seguro?',
+      'Â¿EstÃ¡s seguro?',
       [
         { text: 'Cancelar' },
         { text: 'Eliminar', style: 'destructive', onPress: () => setEntries(entries.filter((e) => e.id !== id)) },
@@ -172,7 +172,7 @@ export default function WorkoutJournal() {
 
               {/* Mood */}
               <View className="mb-4">
-                <Text className="text-zinc-400 text-sm mb-2">Estado de Ánimo</Text>
+                <Text className="text-zinc-400 text-sm mb-2">Estado de Ãnimo</Text>
                 <View className="flex-row gap-2">
                   {MOOD_OPTIONS.map((mood) => (
                     <TouchableOpacity
@@ -193,7 +193,7 @@ export default function WorkoutJournal() {
 
               {/* Energy */}
               <View className="mb-4">
-                <Text className="text-zinc-400 text-sm mb-2">Energía (1-5)</Text>
+                <Text className="text-zinc-400 text-sm mb-2">EnergÃ­a (1-5)</Text>
                 <View className="flex-row gap-2">
                   {[1, 2, 3, 4, 5].map((level) => (
                     <TouchableOpacity
@@ -214,7 +214,7 @@ export default function WorkoutJournal() {
               {/* Sleep & Weight */}
               <View className="flex-row gap-4 mb-4">
                 <View className="flex-1">
-                  <Text className="text-zinc-400 text-sm mb-2">Sueño (horas)</Text>
+                  <Text className="text-zinc-400 text-sm mb-2">SueÃ±o (horas)</Text>
                   <TextInput
                     className="bg-zinc-800 rounded-xl px-4 py-3 text-white text-lg font-bold"
                     placeholder="7.5"
@@ -242,7 +242,7 @@ export default function WorkoutJournal() {
                 <Text className="text-zinc-400 text-sm mb-2">Notas</Text>
                 <TextInput
                   className="bg-zinc-800 rounded-xl px-4 py-3 text-white"
-                  placeholder="¿Cómo fue el workout? PRs, sensaciones, etc."
+                  placeholder="Â¿CÃ³mo fue el workout? PRs, sensaciones, etc."
                   placeholderTextColor="#71717A"
                   multiline
                   numberOfLines={4}
@@ -253,7 +253,7 @@ export default function WorkoutJournal() {
 
               <TouchableOpacity
                 onPress={addEntry}
-                className="bg-emerald-500 rounded-xl p-4 flex-row items-center justify-center"
+                className="bg-primary rounded-xl p-4 flex-row items-center justify-center"
               >
                 <Ionicons name="checkmark-circle" size={20} color="white" />
                 <Text className="text-white font-bold ml-2">Guardar Entrada</Text>
@@ -267,15 +267,15 @@ export default function WorkoutJournal() {
                   <Text className="text-white font-bold text-lg mb-3">Esta Semana</Text>
                   <View className="flex-row gap-3">
                     <View className="flex-1 bg-amber-500/10 rounded-lg p-3 border border-amber-500/30">
-                      <Text className="text-amber-400 text-xs mb-1">Energía Promedio</Text>
+                      <Text className="text-amber-400 text-xs mb-1">EnergÃ­a Promedio</Text>
                       <Text className="text-white text-2xl font-bold">{stats.energy}/5</Text>
                     </View>
                     <View className="flex-1 bg-purple-500/10 rounded-lg p-3 border border-purple-500/30">
-                      <Text className="text-purple-400 text-xs mb-1">Sueño Promedio</Text>
+                      <Text className="text-purple-400 text-xs mb-1">SueÃ±o Promedio</Text>
                       <Text className="text-white text-2xl font-bold">{stats.sleep}h</Text>
                     </View>
-                    <View className="flex-1 bg-blue-500/10 rounded-lg p-3 border border-blue-500/30">
-                      <Text className="text-blue-400 text-xs mb-1">Entradas</Text>
+                    <View className="flex-1 bg-primary/10 rounded-lg p-3 border border-primary/30">
+                      <Text className="text-primary/80 text-xs mb-1">Entradas</Text>
                       <Text className="text-white text-2xl font-bold">{entries.length}</Text>
                     </View>
                   </View>
@@ -286,7 +286,7 @@ export default function WorkoutJournal() {
               <Text className="text-white font-bold text-lg mb-4">Entradas</Text>
               {entries.length === 0 ? (
                 <View className="bg-zinc-900 rounded-xl p-8 items-center border border-zinc-800">
-                  <Text className="text-6xl mb-3">📝</Text>
+                  <Text className="text-6xl mb-3">ðŸ“</Text>
                   <Text className="text-white font-bold text-lg mb-2">Sin Entradas</Text>
                   <Text className="text-zinc-400 text-center">
                     Empieza a llevar un diario de tus entrenamientos
@@ -321,18 +321,18 @@ export default function WorkoutJournal() {
                         </View>
                         <View className="bg-amber-500/10 rounded px-3 py-1 border border-amber-500/30">
                           <Text className="text-amber-400 text-xs font-bold">
-                            ⚡ Energía {entry.energy}/5
+                            âš¡ EnergÃ­a {entry.energy}/5
                           </Text>
                         </View>
                         <View className="bg-purple-500/10 rounded px-3 py-1 border border-purple-500/30">
                           <Text className="text-purple-400 text-xs font-bold">
-                            😴 {entry.sleep}h sueño
+                            ðŸ˜´ {entry.sleep}h sueÃ±o
                           </Text>
                         </View>
                         {entry.bodyWeight && (
-                          <View className="bg-blue-500/10 rounded px-3 py-1 border border-blue-500/30">
-                            <Text className="text-blue-400 text-xs font-bold">
-                              ⚖️ {entry.bodyWeight}kg
+                          <View className="bg-primary/10 rounded px-3 py-1 border border-primary/30">
+                            <Text className="text-primary/80 text-xs font-bold">
+                              âš–ï¸ {entry.bodyWeight}kg
                             </Text>
                           </View>
                         )}
@@ -346,11 +346,11 @@ export default function WorkoutJournal() {
                       {/* Achievements */}
                       {entry.achievements && entry.achievements.length > 0 && (
                         <View className="mb-2">
-                          <Text className="text-emerald-400 text-xs font-bold mb-1">LOGROS</Text>
+                          <Text className="text-primary text-xs font-bold mb-1">LOGROS</Text>
                           {entry.achievements.map((achievement, idx) => (
                             <View key={idx} className="flex-row items-center mb-1">
-                              <Ionicons name="trophy" size={12} color="#10B981" />
-                              <Text className="text-emerald-300 text-sm ml-2">{achievement}</Text>
+                              <Ionicons name="trophy" size={12} color="#9D12DE" />
+                              <Text className="text-primary/80 text-sm ml-2">{achievement}</Text>
                             </View>
                           ))}
                         </View>
@@ -359,10 +359,10 @@ export default function WorkoutJournal() {
                       {/* Challenges */}
                       {entry.challenges && entry.challenges.length > 0 && (
                         <View>
-                          <Text className="text-amber-400 text-xs font-bold mb-1">DESAFÍOS</Text>
+                          <Text className="text-amber-400 text-xs font-bold mb-1">DESAFÃOS</Text>
                           {entry.challenges.map((challenge, idx) => (
                             <View key={idx} className="flex-row items-center mb-1">
-                              <Ionicons name="warning" size={12} color="#F59E0B" />
+                              <Ionicons name="warning" size={12} color="#FFEA00" />
                               <Text className="text-amber-300 text-sm ml-2">{challenge}</Text>
                             </View>
                           ))}
@@ -376,19 +376,19 @@ export default function WorkoutJournal() {
           )}
 
           {/* Tips */}
-          <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30 mb-6">
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
             <View className="flex-row items-start">
-              <Ionicons name="book" size={20} color="#3B82F6" />
+              <Ionicons name="book" size={20} color="#9D12DE" />
               <View className="flex-1 ml-3">
-                <Text className="text-blue-400 font-bold mb-2">
-                  Por Qué Llevar un Diario
+                <Text className="text-primary/80 font-bold mb-2">
+                  Por QuÃ© Llevar un Diario
                 </Text>
-                <Text className="text-blue-300 text-sm">
-                  • Identifica patrones (sueño, energía, rendimiento){'\n'}
-                  • Documenta progreso a largo plazo{'\n'}
-                  • Detecta qué funciona y qué no{'\n'}
-                  • Motivación al ver mejoras{'\n'}
-                  • Ajusta plan según data real
+                <Text className="text-primary/60 text-sm">
+                  â€¢ Identifica patrones (sueÃ±o, energÃ­a, rendimiento){'\n'}
+                  â€¢ Documenta progreso a largo plazo{'\n'}
+                  â€¢ Detecta quÃ© funciona y quÃ© no{'\n'}
+                  â€¢ MotivaciÃ³n al ver mejoras{'\n'}
+                  â€¢ Ajusta plan segÃºn data real
                 </Text>
               </View>
             </View>
@@ -398,3 +398,5 @@ export default function WorkoutJournal() {
     </View>
   );
 }
+
+

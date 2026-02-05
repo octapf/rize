@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -225,7 +225,7 @@ export default function PowerliftingGuide() {
             'Time last warm-up 2-3 lifters before you',
             'Stay warm between attempts (15-20 min)',
           ],
-          example: 'Opener 140kg: 60kg x5, 80kg x3, 100kg x2, 120kg x1 → platform',
+          example: 'Opener 140kg: 60kg x5, 80kg x3, 100kg x2, 120kg x1 â†’ platform',
         },
         {
           aspect: 'Between Attempts',
@@ -259,7 +259,7 @@ export default function PowerliftingGuide() {
 
   const getColorClass = (color: string) => {
     const colors: { [key: string]: string } = {
-      blue: 'bg-blue-500',
+      blue: 'bg-primary',
       red: 'bg-red-500',
       purple: 'bg-purple-500',
       amber: 'bg-amber-500',
@@ -322,10 +322,10 @@ export default function PowerliftingGuide() {
             <View>
               {guideData.basics.sections.map((section, idx) => (
                 <View key={idx} className="bg-zinc-900 rounded-xl p-5 mb-6 border border-zinc-800">
-                  <Text className="text-blue-400 text-xl font-bold mb-4">{section.title}</Text>
+                  <Text className="text-primary/80 text-xl font-bold mb-4">{section.title}</Text>
                   {section.content.map((item, itemIdx) => (
                     <Text key={itemIdx} className="text-zinc-300 text-sm mb-2 last:mb-0">
-                      • {item}
+                      â€¢ {item}
                     </Text>
                   ))}
                 </View>
@@ -342,7 +342,7 @@ export default function PowerliftingGuide() {
                   <Text className="text-white font-bold mb-3">Commands:</Text>
                   {liftData.commands.map((cmd, cmdIdx) => (
                     <View key={cmdIdx} className="bg-zinc-800 rounded-xl p-4 mb-3 last:mb-4">
-                      <Text className="text-emerald-400 font-bold mb-1">"{cmd.command}"</Text>
+                      <Text className="text-primary font-bold mb-1">"{cmd.command}"</Text>
                       <Text className="text-zinc-400 text-sm mb-1">When: {cmd.when}</Text>
                       <Text className="text-white text-sm">Action: {cmd.action}</Text>
                     </View>
@@ -351,14 +351,14 @@ export default function PowerliftingGuide() {
                   <Text className="text-white font-bold mb-3">Rules:</Text>
                   {liftData.rules.map((rule, rIdx) => (
                     <Text key={rIdx} className="text-zinc-300 text-sm mb-2">
-                      ✓ {rule}
+                      âœ“ {rule}
                     </Text>
                   ))}
 
                   <Text className="text-red-400 font-bold mt-4 mb-3">Common Red Lights:</Text>
                   {liftData.redLights.map((red, redIdx) => (
                     <Text key={redIdx} className="text-red-300 text-sm mb-2">
-                      ✗ {red}
+                      âœ— {red}
                     </Text>
                   ))}
                 </View>
@@ -382,13 +382,13 @@ export default function PowerliftingGuide() {
                   <Text className="text-white font-bold mb-3">Training:</Text>
                   {phase.training.map((item, tIdx) => (
                     <Text key={tIdx} className="text-zinc-300 text-sm mb-2">
-                      • {item}
+                      â€¢ {item}
                     </Text>
                   ))}
 
-                  <View className="bg-emerald-500/10 rounded-xl p-3 border border-emerald-500/30 mt-4">
-                    <Text className="text-emerald-400 font-bold text-sm mb-1">Nutrition:</Text>
-                    <Text className="text-emerald-300 text-sm">{phase.nutrition}</Text>
+                  <View className="bg-primary/10 rounded-xl p-3 border border-primary/30 mt-4">
+                    <Text className="text-primary font-bold text-sm mb-1">Nutrition:</Text>
+                    <Text className="text-primary/80 text-sm">{phase.nutrition}</Text>
                   </View>
                 </View>
               ))}
@@ -403,7 +403,7 @@ export default function PowerliftingGuide() {
 
                   {strategy.guidelines.map((guideline, gIdx) => (
                     <Text key={gIdx} className="text-zinc-300 text-sm mb-2">
-                      • {guideline}
+                      â€¢ {guideline}
                     </Text>
                   ))}
 
@@ -416,22 +416,22 @@ export default function PowerliftingGuide() {
             </View>
           )}
 
-          <View className="bg-emerald-500/10 rounded-xl p-4 border border-emerald-500/30 mb-6">
-            <Text className="text-emerald-400 font-bold mb-2">First Meet Tips</Text>
-            <Text className="text-emerald-300 text-sm mb-2">
-              • Go 9/9 (make all 9 attempts) - conservative openers
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
+            <Text className="text-primary font-bold mb-2">First Meet Tips</Text>
+            <Text className="text-primary/80 text-sm mb-2">
+              â€¢ Go 9/9 (make all 9 attempts) - conservative openers
             </Text>
-            <Text className="text-emerald-300 text-sm mb-2">
-              • Experience &gt; total on first meet
+            <Text className="text-primary/80 text-sm mb-2">
+              â€¢ Experience &gt; total on first meet
             </Text>
-            <Text className="text-emerald-300 text-sm mb-2">
-              • Bring handler/coach if possible
+            <Text className="text-primary/80 text-sm mb-2">
+              â€¢ Bring handler/coach if possible
             </Text>
-            <Text className="text-emerald-300 text-sm mb-2">
-              • Practice commands in training
+            <Text className="text-primary/80 text-sm mb-2">
+              â€¢ Practice commands in training
             </Text>
-            <Text className="text-emerald-300 text-sm">
-              • Have fun - it's supposed to be enjoyable!
+            <Text className="text-primary/80 text-sm">
+              â€¢ Have fun - it's supposed to be enjoyable!
             </Text>
           </View>
         </View>
@@ -439,3 +439,5 @@ export default function PowerliftingGuide() {
     </View>
   );
 }
+
+

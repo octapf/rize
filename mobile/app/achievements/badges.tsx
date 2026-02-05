@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -36,12 +36,12 @@ const ACHIEVEMENTS: Achievement[] = [
     icon: 'fitness',
     unlocked: true,
     unlockedDate: '2025-01-01',
-    reward: { xp: 100, badge: '🥉' },
+    reward: { xp: 100, badge: 'ðŸ¥‰' },
   },
   {
     id: '2',
     name: 'Racha de Fuego',
-    description: 'Entrena 7 días seguidos',
+    description: 'Entrena 7 dÃ­as seguidos',
     category: 'consistencia',
     tier: 'silver',
     icon: 'flame',
@@ -49,18 +49,18 @@ const ACHIEVEMENTS: Achievement[] = [
     progress: 7,
     maxProgress: 7,
     unlockedDate: '2025-01-15',
-    reward: { xp: 500, badge: '🔥' },
+    reward: { xp: 500, badge: 'ðŸ”¥' },
   },
   {
     id: '3',
-    name: 'Centurión',
+    name: 'CenturiÃ³n',
     description: 'Alcanza 100kg en press de banca',
     category: 'fuerza',
     tier: 'gold',
     icon: 'barbell',
     unlocked: true,
     unlockedDate: '2025-01-20',
-    reward: { xp: 1000, badge: '🏆' },
+    reward: { xp: 1000, badge: 'ðŸ†' },
   },
   {
     id: '4',
@@ -72,7 +72,7 @@ const ACHIEVEMENTS: Achievement[] = [
     unlocked: false,
     progress: 28,
     maxProgress: 42,
-    reward: { xp: 1000, badge: '🏃' },
+    reward: { xp: 1000, badge: 'ðŸƒ' },
   },
   {
     id: '5',
@@ -84,7 +84,7 @@ const ACHIEVEMENTS: Achievement[] = [
     unlocked: false,
     progress: 143,
     maxProgress: 500,
-    reward: { xp: 2500, badge: '⭐' },
+    reward: { xp: 2500, badge: 'â­' },
   },
   {
     id: '6',
@@ -96,7 +96,7 @@ const ACHIEVEMENTS: Achievement[] = [
     unlocked: false,
     progress: 2.2,
     maxProgress: 3.0,
-    reward: { xp: 2500, badge: '💪' },
+    reward: { xp: 2500, badge: 'ðŸ’ª' },
   },
   {
     id: '7',
@@ -108,7 +108,7 @@ const ACHIEVEMENTS: Achievement[] = [
     unlocked: false,
     progress: 12,
     maxProgress: 50,
-    reward: { xp: 10000, badge: '💎' },
+    reward: { xp: 10000, badge: 'ðŸ’Ž' },
   },
   {
     id: '8',
@@ -120,7 +120,7 @@ const ACHIEVEMENTS: Achievement[] = [
     unlocked: false,
     progress: 6,
     maxProgress: 10,
-    reward: { xp: 1000, badge: '🎓' },
+    reward: { xp: 1000, badge: 'ðŸŽ“' },
   },
 ];
 
@@ -168,11 +168,11 @@ export default function AchievementBadges() {
       case 'fuerza':
         return '#EF4444';
       case 'resistencia':
-        return '#10B981';
+        return '#9D12DE';
       case 'consistencia':
-        return '#F59E0B';
+        return '#FFEA00';
       case 'social':
-        return '#3B82F6';
+        return '#9D12DE';
       case 'especial':
         return '#8B5CF6';
       default:
@@ -246,7 +246,7 @@ export default function AchievementBadges() {
         </View>
 
         {/* Progress Summary */}
-        <View className="bg-gradient-to-br from-emerald-500 to-blue-500 rounded-xl p-4 mb-4">
+        <View className="bg-gradient-to-br from-primary to-[#7D0EBE] rounded-xl p-4 mb-4">
           <View className="flex-row items-center justify-between mb-3">
             <View className="flex-1">
               <Text className="text-white/80 text-sm mb-1">Logros Desbloqueados</Text>
@@ -278,7 +278,7 @@ export default function AchievementBadges() {
                 onPress={() => setSelectedCategory(category.id)}
                 className={`flex-row items-center px-4 py-2 rounded-lg ${
                   selectedCategory === category.id
-                    ? 'bg-emerald-500'
+                    ? 'bg-primary'
                     : 'bg-zinc-900 border border-zinc-800'
                 }`}
               >
@@ -308,7 +308,7 @@ export default function AchievementBadges() {
                 onPress={() => setSelectedTier(tier.id)}
                 className={`px-4 py-2 rounded-lg ${
                   selectedTier === tier.id
-                    ? 'bg-emerald-500'
+                    ? 'bg-primary'
                     : 'bg-zinc-900 border border-zinc-800'
                 }`}
               >
@@ -337,7 +337,7 @@ export default function AchievementBadges() {
               key={achievement.id}
               onPress={() => viewAchievement(achievement)}
               className={`bg-zinc-900 rounded-xl p-4 mb-3 border-2 ${
-                achievement.unlocked ? 'border-emerald-500' : 'border-zinc-800'
+                achievement.unlocked ? 'border-primary' : 'border-zinc-800'
               }`}
             >
               <View className="flex-row items-start justify-between mb-3">
@@ -397,14 +397,14 @@ export default function AchievementBadges() {
                     <Text className="text-zinc-400 text-sm">
                       Progreso: {achievement.progress}/{achievement.maxProgress}
                     </Text>
-                    <Text className="text-emerald-500 font-bold text-sm">
+                    <Text className="text-primary font-bold text-sm">
                       {Math.round(((achievement.progress || 0) / achievement.maxProgress) * 100)}%
                     </Text>
                   </View>
                   <View className="bg-zinc-800 h-2 rounded-full overflow-hidden">
                     <View
                       className={`h-full rounded-full ${
-                        achievement.unlocked ? 'bg-emerald-500' : 'bg-zinc-600'
+                        achievement.unlocked ? 'bg-primary' : 'bg-zinc-600'
                       }`}
                       style={{
                         width: `${((achievement.progress || 0) / achievement.maxProgress) * 100}%`,
@@ -439,16 +439,16 @@ export default function AchievementBadges() {
                     onPress={() => shareAchievement(achievement)}
                     className="bg-zinc-800 rounded-lg p-2"
                   >
-                    <Ionicons name="share-social" size={16} color="#10B981" />
+                    <Ionicons name="share-social" size={16} color="#9D12DE" />
                   </TouchableOpacity>
                 )}
               </View>
 
               {achievement.unlocked && achievement.unlockedDate && (
-                <View className="bg-emerald-500/10 rounded-lg p-3 mt-3 border border-emerald-500/30">
+                <View className="bg-primary/10 rounded-lg p-3 mt-3 border border-primary/30">
                   <View className="flex-row items-center">
-                    <Ionicons name="checkmark-circle" size={16} color="#10B981" />
-                    <Text className="text-emerald-400 text-sm ml-2">
+                    <Ionicons name="checkmark-circle" size={16} color="#9D12DE" />
+                    <Text className="text-primary text-sm ml-2">
                       Desbloqueado el{' '}
                       {new Date(achievement.unlockedDate).toLocaleDateString('es-ES')}
                     </Text>
@@ -461,15 +461,15 @@ export default function AchievementBadges() {
 
         {/* Info Card */}
         <View className="px-6 pb-6 pt-4">
-          <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30">
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30">
             <View className="flex-row items-start">
-              <Ionicons name="information-circle" size={20} color="#3B82F6" />
+              <Ionicons name="information-circle" size={20} color="#9D12DE" />
               <View className="flex-1 ml-3">
-                <Text className="text-blue-400 font-bold mb-2">
+                <Text className="text-primary/80 font-bold mb-2">
                   Sistema de Logros
                 </Text>
-                <Text className="text-blue-300 text-sm">
-                  Desbloquea logros completando desafíos en diferentes categorías. Cada logro otorga XP y badges para mostrar tus logros.
+                <Text className="text-primary/60 text-sm">
+                  Desbloquea logros completando desafÃ­os en diferentes categorÃ­as. Cada logro otorga XP y badges para mostrar tus logros.
                 </Text>
               </View>
             </View>
@@ -479,3 +479,4 @@ export default function AchievementBadges() {
     </View>
   );
 }
+

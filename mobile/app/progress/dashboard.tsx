@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -37,7 +37,7 @@ const METRICS: ProgressMetric[] = [
     goal: 85.0,
     unit: 'kg',
     icon: 'scale',
-    color: '#3B82F6',
+    color: '#9D12DE',
     trend: 'up',
   },
   {
@@ -57,7 +57,7 @@ const METRICS: ProgressMetric[] = [
     goal: 72.0,
     unit: 'kg',
     icon: 'barbell',
-    color: '#10B981',
+    color: '#9D12DE',
     trend: 'up',
   },
   {
@@ -67,7 +67,7 @@ const METRICS: ProgressMetric[] = [
     goal: 500,
     unit: 'kg',
     icon: 'trophy',
-    color: '#F59E0B',
+    color: '#FFEA00',
     trend: 'up',
   },
 ];
@@ -85,7 +85,7 @@ export default function ProgressDashboard() {
   const periods = [
     { id: 'week', label: 'Semana' },
     { id: 'month', label: 'Mes' },
-    { id: 'year', label: 'Año' },
+    { id: 'year', label: 'AÃ±o' },
   ];
 
   const calculateProgress = (current: number, start: number, goal: number) => {
@@ -107,7 +107,7 @@ export default function ProgressDashboard() {
   const getTrendColor = (trend: string, isPositive: boolean) => {
     if (trend === 'stable') return '#71717A';
     return (trend === 'up' && isPositive) || (trend === 'down' && !isPositive)
-      ? '#10B981'
+      ? '#9D12DE'
       : '#EF4444';
   };
 
@@ -116,7 +116,7 @@ export default function ProgressDashboard() {
     const changePercent = ((change / metric.start) * 100).toFixed(1);
     
     Alert.alert(
-      `📊 ${metric.name}`,
+      `ðŸ“Š ${metric.name}`,
       `Inicio: ${metric.start} ${metric.unit}\nActual: ${metric.current} ${metric.unit}\nMeta: ${metric.goal} ${metric.unit}\n\nCambio: ${change > 0 ? '+' : ''}${change.toFixed(1)} ${metric.unit} (${changePercent}%)\n\nProgreso: ${calculateProgress(metric.current, metric.start, metric.goal).toFixed(0)}%`,
       [
         { text: 'Ver Historial' },
@@ -147,7 +147,7 @@ export default function ProgressDashboard() {
         </View>
 
         {/* Summary Card */}
-        <View className="bg-gradient-to-br from-emerald-500 to-blue-500 rounded-xl p-4 mb-4">
+        <View className="bg-gradient-to-br from-primary to-[#7D0EBE] rounded-xl p-4 mb-4">
           <View className="flex-row items-center justify-between mb-3">
             <View className="flex-1">
               <Text className="text-white/80 text-sm mb-1">Entrenamientos Este Mes</Text>
@@ -168,7 +168,7 @@ export default function ProgressDashboard() {
               <Text className="text-white font-bold">{(totalVolume / 1000).toFixed(0)}k kg</Text>
             </View>
             <View className="flex-1 bg-white/20 rounded-lg p-2">
-              <Text className="text-white/80 text-xs">Duración Avg</Text>
+              <Text className="text-white/80 text-xs">DuraciÃ³n Avg</Text>
               <Text className="text-white font-bold">
                 {Math.round(
                   WEEKLY_STATS.reduce((sum, w) => sum + w.avgDuration, 0) / WEEKLY_STATS.length
@@ -187,7 +187,7 @@ export default function ProgressDashboard() {
               onPress={() => setSelectedPeriod(period.id as any)}
               className={`flex-1 px-4 py-2 rounded-lg ${
                 selectedPeriod === period.id
-                  ? 'bg-emerald-500'
+                  ? 'bg-primary'
                   : 'bg-zinc-900 border border-zinc-800'
               }`}
             >
@@ -207,7 +207,7 @@ export default function ProgressDashboard() {
         <View className="px-6 pt-6">
           {/* Key Metrics */}
           <Text className="text-white font-bold text-lg mb-3">
-            Métricas Clave
+            MÃ©tricas Clave
           </Text>
 
           {METRICS.map((metric) => {
@@ -270,7 +270,7 @@ export default function ProgressDashboard() {
                     <Text className="text-zinc-400 text-sm">
                       Meta: {metric.goal} {metric.unit}
                     </Text>
-                    <Text className="text-emerald-500 font-bold text-sm">
+                    <Text className="text-primary font-bold text-sm">
                       {progress.toFixed(0)}%
                     </Text>
                   </View>
@@ -330,7 +330,7 @@ export default function ProgressDashboard() {
                   propsForDots: {
                     r: '6',
                     strokeWidth: '2',
-                    stroke: '#10B981',
+                    stroke: '#9D12DE',
                   },
                 }}
                 bezier
@@ -352,7 +352,7 @@ export default function ProgressDashboard() {
               <Text className="text-white font-bold text-2xl mb-1">
                 {(WEEKLY_STATS.reduce((sum, w) => sum + w.calories, 0) / 1000).toFixed(1)}k
               </Text>
-              <Text className="text-zinc-400 text-xs">Calorías quemadas</Text>
+              <Text className="text-zinc-400 text-xs">CalorÃ­as quemadas</Text>
             </View>
 
             <View className="flex-1 bg-zinc-900 rounded-xl p-4 border border-zinc-800">
@@ -370,7 +370,7 @@ export default function ProgressDashboard() {
 
         {/* Export / Share */}
         <View className="px-6 pb-6">
-          <TouchableOpacity className="bg-emerald-500 rounded-xl p-4 mb-4">
+          <TouchableOpacity className="bg-primary rounded-xl p-4 mb-4">
             <View className="flex-row items-center justify-center">
               <Ionicons name="share-social" size={20} color="white" />
               <Text className="text-white font-bold ml-2">
@@ -379,15 +379,15 @@ export default function ProgressDashboard() {
             </View>
           </TouchableOpacity>
 
-          <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30">
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30">
             <View className="flex-row items-start">
-              <Ionicons name="information-circle" size={20} color="#3B82F6" />
+              <Ionicons name="information-circle" size={20} color="#9D12DE" />
               <View className="flex-1 ml-3">
-                <Text className="text-blue-400 font-bold mb-2">
-                  Seguimiento Automático
+                <Text className="text-primary/80 font-bold mb-2">
+                  Seguimiento AutomÃ¡tico
                 </Text>
-                <Text className="text-blue-300 text-sm">
-                  Todas tus métricas se actualizan automáticamente. Revisa tu progreso semanalmente para mantener la motivación.
+                <Text className="text-primary/60 text-sm">
+                  Todas tus mÃ©tricas se actualizan automÃ¡ticamente. Revisa tu progreso semanalmente para mantener la motivaciÃ³n.
                 </Text>
               </View>
             </View>
@@ -397,3 +397,5 @@ export default function ProgressDashboard() {
     </View>
   );
 }
+
+

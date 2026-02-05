@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+﻿import React, { useState, useEffect } from 'react';
 import {
   View,
   Text,
@@ -36,7 +36,7 @@ export default function OfflineMode() {
   const [offlineWorkouts, setOfflineWorkouts] = useState<OfflineWorkout[]>([
     {
       id: '1',
-      name: 'Empuje - Día 1',
+      name: 'Empuje - DÃ­a 1',
       timestamp: '2025-01-20 18:30',
       exercises: 6,
       sets: 24,
@@ -44,7 +44,7 @@ export default function OfflineMode() {
     },
     {
       id: '2',
-      name: 'Tracción - Día 2',
+      name: 'TracciÃ³n - DÃ­a 2',
       timestamp: '2025-01-21 19:00',
       exercises: 5,
       sets: 20,
@@ -95,14 +95,14 @@ export default function OfflineMode() {
     if (!offlineMode) {
       Alert.alert(
         'Activar Modo Offline',
-        'Los datos se guardarán localmente y se sincronizarán cuando vuelvas a conectarte.',
+        'Los datos se guardarÃ¡n localmente y se sincronizarÃ¡n cuando vuelvas a conectarte.',
         [
           { text: 'Cancelar', style: 'cancel' },
           {
             text: 'Activar',
             onPress: () => {
               setOfflineMode(true);
-              Alert.alert('Modo Offline Activado', 'Puedes entrenar sin conexión');
+              Alert.alert('Modo Offline Activado', 'Puedes entrenar sin conexiÃ³n');
             },
           },
         ]
@@ -115,13 +115,13 @@ export default function OfflineMode() {
   const syncNow = async () => {
     Alert.alert(
       'Sincronizar Datos',
-      `¿Deseas sincronizar ${getTotalPendingItems()} elementos pendientes?`,
+      `Â¿Deseas sincronizar ${getTotalPendingItems()} elementos pendientes?`,
       [
         { text: 'Cancelar', style: 'cancel' },
         {
           text: 'Sincronizar',
           onPress: async () => {
-            // Simular sincronización
+            // Simular sincronizaciÃ³n
             Alert.alert('Sincronizando...', 'Por favor espera', [
               { text: 'OK', onPress: () => {
                 setTimeout(() => {
@@ -130,7 +130,7 @@ export default function OfflineMode() {
                   setOfflineWorkouts(updated);
                   saveOfflineData(updated);
                   setSyncQueue({ workouts: 0, nutrition: 0, measurements: 0, photos: 0 });
-                  Alert.alert('¡Sincronización Completa!', 'Todos los datos están actualizados');
+                  Alert.alert('Â¡SincronizaciÃ³n Completa!', 'Todos los datos estÃ¡n actualizados');
                 }, 2000);
               }},
             ]);
@@ -143,7 +143,7 @@ export default function OfflineMode() {
   const deleteOfflineData = () => {
     Alert.alert(
       'Eliminar Datos Offline',
-      '¿Estás seguro? Esta acción no se puede deshacer.',
+      'Â¿EstÃ¡s seguro? Esta acciÃ³n no se puede deshacer.',
       [
         { text: 'Cancelar', style: 'cancel' },
         {
@@ -172,7 +172,7 @@ export default function OfflineMode() {
   const viewWorkoutDetails = (workout: OfflineWorkout) => {
     Alert.alert(
       workout.name,
-      `Ejercicios: ${workout.exercises}\nSeries: ${workout.sets}\nFecha: ${workout.timestamp}\n\nEstado: ${workout.synced ? 'Sincronizado ✅' : 'Pendiente ⏳'}`,
+      `Ejercicios: ${workout.exercises}\nSeries: ${workout.sets}\nFecha: ${workout.timestamp}\n\nEstado: ${workout.synced ? 'Sincronizado âœ…' : 'Pendiente â³'}`,
       [{ text: 'OK' }]
     );
   };
@@ -188,10 +188,10 @@ export default function OfflineMode() {
           <Text className="text-white text-2xl font-bold flex-1 ml-3">
             Modo Offline
           </Text>
-          <View className={`px-3 py-1 rounded-full ${isOnline ? 'bg-emerald-500/20' : 'bg-red-500/20'}`}>
+          <View className={`px-3 py-1 rounded-full ${isOnline ? 'bg-primary/20' : 'bg-red-500/20'}`}>
             <View className="flex-row items-center">
-              <View className={`w-2 h-2 rounded-full mr-2 ${isOnline ? 'bg-emerald-500' : 'bg-red-500'}`} />
-              <Text className={`text-xs font-bold ${isOnline ? 'text-emerald-500' : 'text-red-500'}`}>
+              <View className={`w-2 h-2 rounded-full mr-2 ${isOnline ? 'bg-primary' : 'bg-red-500'}`} />
+              <Text className={`text-xs font-bold ${isOnline ? 'text-primary' : 'text-red-500'}`}>
                 {isOnline ? 'ONLINE' : 'OFFLINE'}
               </Text>
             </View>
@@ -208,7 +208,7 @@ export default function OfflineMode() {
           </View>
           <View className="bg-zinc-800 h-2 rounded-full overflow-hidden">
             <View
-              className="h-full bg-emerald-500 rounded-full"
+              className="h-full bg-primary rounded-full"
               style={{ width: `${(storageUsed / storageLimit) * 100}%` }}
             />
           </View>
@@ -226,13 +226,13 @@ export default function OfflineMode() {
               <View className="flex-1">
                 <Text className="text-white font-bold text-lg">Modo Offline</Text>
                 <Text className="text-zinc-400 text-sm mt-1">
-                  Guarda datos localmente cuando no hay conexión
+                  Guarda datos localmente cuando no hay conexiÃ³n
                 </Text>
               </View>
               <TouchableOpacity
                 onPress={toggleOfflineMode}
                 className={`w-14 h-8 rounded-full p-1 ${
-                  offlineMode ? 'bg-emerald-500' : 'bg-zinc-700'
+                  offlineMode ? 'bg-primary' : 'bg-zinc-700'
                 }`}
               >
                 <View
@@ -244,11 +244,11 @@ export default function OfflineMode() {
             </View>
 
             {offlineMode && (
-              <View className="bg-emerald-500/10 rounded-lg p-3">
+              <View className="bg-primary/10 rounded-lg p-3">
                 <View className="flex-row items-start">
-                  <Ionicons name="checkmark-circle" size={16} color="#10B981" />
-                  <Text className="text-emerald-400 text-xs ml-2 flex-1">
-                    Modo offline activado. Tus entrenamientos se guardarán localmente y se sincronizarán automáticamente.
+                  <Ionicons name="checkmark-circle" size={16} color="#9D12DE" />
+                  <Text className="text-primary text-xs ml-2 flex-1">
+                    Modo offline activado. Tus entrenamientos se guardarÃ¡n localmente y se sincronizarÃ¡n automÃ¡ticamente.
                   </Text>
                 </View>
               </View>
@@ -259,15 +259,15 @@ export default function OfflineMode() {
           <View className="bg-zinc-900 rounded-xl p-4 border border-zinc-800 mb-4">
             <View className="flex-row items-center justify-between">
               <View className="flex-1">
-                <Text className="text-white font-bold">Sincronización Automática</Text>
+                <Text className="text-white font-bold">SincronizaciÃ³n AutomÃ¡tica</Text>
                 <Text className="text-zinc-400 text-sm mt-1">
-                  Sincronizar cuando haya conexión WiFi
+                  Sincronizar cuando haya conexiÃ³n WiFi
                 </Text>
               </View>
               <TouchableOpacity
                 onPress={() => setAutoSync(!autoSync)}
                 className={`w-14 h-8 rounded-full p-1 ${
-                  autoSync ? 'bg-emerald-500' : 'bg-zinc-700'
+                  autoSync ? 'bg-primary' : 'bg-zinc-700'
                 }`}
               >
                 <View
@@ -292,7 +292,7 @@ export default function OfflineMode() {
                   </Text>
                 </View>
                 <View className="bg-amber-500/20 rounded-full p-3">
-                  <Ionicons name="cloud-upload" size={24} color="#F59E0B" />
+                  <Ionicons name="cloud-upload" size={24} color="#FFEA00" />
                 </View>
               </View>
 
@@ -310,7 +310,7 @@ export default function OfflineMode() {
                   <View className="flex-row items-center justify-between bg-zinc-900 rounded-lg p-2">
                     <View className="flex-row items-center">
                       <Ionicons name="restaurant" size={16} color="#71717A" />
-                      <Text className="text-zinc-300 text-sm ml-2">Nutrición</Text>
+                      <Text className="text-zinc-300 text-sm ml-2">NutriciÃ³n</Text>
                     </View>
                     <Text className="text-amber-500 font-bold">{syncQueue.nutrition}</Text>
                   </View>
@@ -352,7 +352,7 @@ export default function OfflineMode() {
                 No hay entrenamientos offline
               </Text>
               <Text className="text-zinc-500 text-sm mt-2 text-center">
-                Activa el modo offline para guardar datos sin conexión
+                Activa el modo offline para guardar datos sin conexiÃ³n
               </Text>
             </View>
           ) : (
@@ -374,12 +374,12 @@ export default function OfflineMode() {
                     </View>
                     <View
                       className={`px-3 py-1 rounded-full ${
-                        workout.synced ? 'bg-emerald-500/20' : 'bg-amber-500/20'
+                        workout.synced ? 'bg-primary/20' : 'bg-amber-500/20'
                       }`}
                     >
                       <Text
                         className={`text-xs font-bold ${
-                          workout.synced ? 'text-emerald-500' : 'text-amber-500'
+                          workout.synced ? 'text-primary' : 'text-amber-500'
                         }`}
                       >
                         {workout.synced ? 'SINCRONIZADO' : 'PENDIENTE'}
@@ -418,24 +418,24 @@ export default function OfflineMode() {
           </View>
 
           {/* Info Card */}
-          <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30 mb-6">
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
             <View className="flex-row items-start">
-              <Ionicons name="information-circle" size={20} color="#3B82F6" />
+              <Ionicons name="information-circle" size={20} color="#9D12DE" />
               <View className="flex-1 ml-3">
-                <Text className="text-blue-400 font-bold mb-2">
-                  ¿Cómo funciona el Modo Offline?
+                <Text className="text-primary/80 font-bold mb-2">
+                  Â¿CÃ³mo funciona el Modo Offline?
                 </Text>
-                <Text className="text-blue-300 text-sm mb-2">
-                  • Los datos se guardan localmente en tu dispositivo
+                <Text className="text-primary/60 text-sm mb-2">
+                  â€¢ Los datos se guardan localmente en tu dispositivo
                 </Text>
-                <Text className="text-blue-300 text-sm mb-2">
-                  • Se sincronizan automáticamente cuando hay conexión
+                <Text className="text-primary/60 text-sm mb-2">
+                  â€¢ Se sincronizan automÃ¡ticamente cuando hay conexiÃ³n
                 </Text>
-                <Text className="text-blue-300 text-sm mb-2">
-                  • Puedes entrenar sin internet
+                <Text className="text-primary/60 text-sm mb-2">
+                  â€¢ Puedes entrenar sin internet
                 </Text>
-                <Text className="text-blue-300 text-sm">
-                  • Los datos están encriptados y seguros
+                <Text className="text-primary/60 text-sm">
+                  â€¢ Los datos estÃ¡n encriptados y seguros
                 </Text>
               </View>
             </View>
@@ -445,3 +445,4 @@ export default function OfflineMode() {
     </View>
   );
 }
+

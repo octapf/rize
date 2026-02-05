@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -39,7 +39,7 @@ const MOCK_PHOTOS: ProgressPhoto[] = [
     date: new Date(2026, 0, 27),
     weight: 75,
     bodyFat: 15,
-    notes: 'Después de 8 semanas de cut',
+    notes: 'DespuÃ©s de 8 semanas de cut',
     photos: {
       front: 'https://via.placeholder.com/300x400/10b981/ffffff?text=Front',
       side: 'https://via.placeholder.com/300x400/3b82f6/ffffff?text=Side',
@@ -51,7 +51,7 @@ const MOCK_PHOTOS: ProgressPhoto[] = [
     date: new Date(2025, 11, 1),
     weight: 78,
     bodyFat: 17,
-    notes: 'Inicio de cut, peso máximo',
+    notes: 'Inicio de cut, peso mÃ¡ximo',
     photos: {
       front: 'https://via.placeholder.com/300x400/71717a/ffffff?text=Front',
       side: 'https://via.placeholder.com/300x400/71717a/ffffff?text=Side',
@@ -78,11 +78,11 @@ export default function ProgressPhotos() {
 
   const addPhoto = () => {
     Alert.alert(
-      'Añadir Foto de Progreso',
-      'Esta función abriría la cámara o galería',
+      'AÃ±adir Foto de Progreso',
+      'Esta funciÃ³n abrirÃ­a la cÃ¡mara o galerÃ­a',
       [
-        { text: 'Cámara' },
-        { text: 'Galería' },
+        { text: 'CÃ¡mara' },
+        { text: 'GalerÃ­a' },
         { text: 'Cancelar' },
       ]
     );
@@ -91,7 +91,7 @@ export default function ProgressPhotos() {
   const deletePhoto = (id: string) => {
     Alert.alert(
       'Eliminar Foto',
-      '¿Estás seguro? Esta acción no se puede deshacer.',
+      'Â¿EstÃ¡s seguro? Esta acciÃ³n no se puede deshacer.',
       [
         { text: 'Cancelar' },
         { text: 'Eliminar', style: 'destructive', onPress: () => setPhotos(photos.filter((p) => p.id !== id)) },
@@ -106,7 +106,7 @@ export default function ProgressPhotos() {
       if (comparePhotos.length < 2) {
         setComparePhotos([...comparePhotos, photoId]);
       } else {
-        Alert.alert('Máximo 2 fotos', 'Solo puedes comparar 2 fotos a la vez');
+        Alert.alert('MÃ¡ximo 2 fotos', 'Solo puedes comparar 2 fotos a la vez');
       }
     }
   };
@@ -150,7 +150,7 @@ export default function ProgressPhotos() {
         <View className="flex-row gap-2 mb-3">
           <TouchableOpacity
             onPress={() => setViewMode('timeline')}
-            className={`flex-1 rounded-lg p-2 ${viewMode === 'timeline' ? 'bg-emerald-500' : 'bg-zinc-900 border border-zinc-800'}`}
+            className={`flex-1 rounded-lg p-2 ${viewMode === 'timeline' ? 'bg-primary' : 'bg-zinc-900 border border-zinc-800'}`}
           >
             <Text className={`text-center font-bold ${viewMode === 'timeline' ? 'text-white' : 'text-zinc-400'}`}>
               Timeline
@@ -158,7 +158,7 @@ export default function ProgressPhotos() {
           </TouchableOpacity>
           <TouchableOpacity
             onPress={() => setViewMode('grid')}
-            className={`flex-1 rounded-lg p-2 ${viewMode === 'grid' ? 'bg-emerald-500' : 'bg-zinc-900 border border-zinc-800'}`}
+            className={`flex-1 rounded-lg p-2 ${viewMode === 'grid' ? 'bg-primary' : 'bg-zinc-900 border border-zinc-800'}`}
           >
             <Text className={`text-center font-bold ${viewMode === 'grid' ? 'text-white' : 'text-zinc-400'}`}>
               Grid
@@ -169,12 +169,12 @@ export default function ProgressPhotos() {
         {/* Compare Mode Toggle */}
         <TouchableOpacity
           onPress={() => { setCompareMode(!compareMode); setComparePhotos([]); }}
-          className={`rounded-lg p-3 ${compareMode ? 'bg-blue-500' : 'bg-zinc-900 border border-zinc-800'}`}
+          className={`rounded-lg p-3 ${compareMode ? 'bg-primary' : 'bg-zinc-900 border border-zinc-800'}`}
         >
           <View className="flex-row items-center justify-center">
             <Ionicons name="git-compare" size={20} color={compareMode ? 'white' : '#71717A'} />
             <Text className={`ml-2 font-bold ${compareMode ? 'text-white' : 'text-zinc-400'}`}>
-              {compareMode ? `Comparar (${comparePhotos.length}/2)` : 'Modo Comparación'}
+              {compareMode ? `Comparar (${comparePhotos.length}/2)` : 'Modo ComparaciÃ³n'}
             </Text>
           </View>
         </TouchableOpacity>
@@ -197,9 +197,9 @@ export default function ProgressPhotos() {
                     <Ionicons
                       name={getWeightChange()!.isGain ? 'arrow-up' : 'arrow-down'}
                       size={20}
-                      color={getWeightChange()!.isGain ? '#EF4444' : '#10B981'}
+                      color={getWeightChange()!.isGain ? '#EF4444' : '#9D12DE'}
                     />
-                    <Text className={`text-2xl font-bold ${getWeightChange()!.isGain ? 'text-red-400' : 'text-emerald-400'}`}>
+                    <Text className={`text-2xl font-bold ${getWeightChange()!.isGain ? 'text-red-400' : 'text-primary'}`}>
                       {getWeightChange()!.value.toFixed(1)}kg
                     </Text>
                   </View>
@@ -212,9 +212,9 @@ export default function ProgressPhotos() {
                     <Ionicons
                       name={getBodyFatChange()!.isGain ? 'arrow-up' : 'arrow-down'}
                       size={20}
-                      color={getBodyFatChange()!.isGain ? '#EF4444' : '#10B981'}
+                      color={getBodyFatChange()!.isGain ? '#EF4444' : '#9D12DE'}
                     />
-                    <Text className={`text-2xl font-bold ${getBodyFatChange()!.isGain ? 'text-red-400' : 'text-emerald-400'}`}>
+                    <Text className={`text-2xl font-bold ${getBodyFatChange()!.isGain ? 'text-red-400' : 'text-primary'}`}>
                       {getBodyFatChange()!.value.toFixed(1)}%
                     </Text>
                   </View>
@@ -225,8 +225,8 @@ export default function ProgressPhotos() {
 
           {/* Compare View */}
           {compareMode && comparePhotos.length === 2 && (
-            <View className="bg-zinc-900 rounded-xl p-4 mb-6 border border-blue-500">
-              <Text className="text-white font-bold text-lg mb-3">Comparación</Text>
+            <View className="bg-zinc-900 rounded-xl p-4 mb-6 border border-primary">
+              <Text className="text-white font-bold text-lg mb-3">ComparaciÃ³n</Text>
               <View className="flex-row gap-2">
                 {comparePhotos.map((photoId) => {
                   const photo = photos.find((p) => p.id === photoId);
@@ -242,7 +242,7 @@ export default function ProgressPhotos() {
                         {format(photo.date, "d MMM yyyy", { locale: es })}
                       </Text>
                       <Text className="text-zinc-400 text-sm text-center">
-                        {photo.weight}kg {photo.bodyFat && `• ${photo.bodyFat}% BF`}
+                        {photo.weight}kg {photo.bodyFat && `â€¢ ${photo.bodyFat}% BF`}
                       </Text>
                     </View>
                   );
@@ -258,7 +258,7 @@ export default function ProgressPhotos() {
                 key={photo.id}
                 className={`bg-zinc-900 rounded-xl p-4 mb-4 border ${
                   compareMode && comparePhotos.includes(photo.id)
-                    ? 'border-blue-500'
+                    ? 'border-primary'
                     : 'border-zinc-800'
                 }`}
               >
@@ -268,9 +268,9 @@ export default function ProgressPhotos() {
                       {format(photo.date, "d 'de' MMMM, yyyy", { locale: es })}
                     </Text>
                     <View className="flex-row items-center mt-1">
-                      <Text className="text-emerald-400 font-bold mr-3">{photo.weight} kg</Text>
+                      <Text className="text-primary font-bold mr-3">{photo.weight} kg</Text>
                       {photo.bodyFat && (
-                        <Text className="text-blue-400 font-bold">{photo.bodyFat}% BF</Text>
+                        <Text className="text-primary/80 font-bold">{photo.bodyFat}% BF</Text>
                       )}
                     </View>
                   </View>
@@ -279,7 +279,7 @@ export default function ProgressPhotos() {
                       <TouchableOpacity
                         onPress={() => toggleCompare(photo.id)}
                         className={`w-10 h-10 rounded-full items-center justify-center ${
-                          comparePhotos.includes(photo.id) ? 'bg-blue-500' : 'bg-zinc-800'
+                          comparePhotos.includes(photo.id) ? 'bg-primary' : 'bg-zinc-800'
                         }`}
                       >
                         <Ionicons
@@ -336,7 +336,7 @@ export default function ProgressPhotos() {
                   onPress={() => compareMode ? toggleCompare(photo.id) : setSelectedPhoto(photo)}
                   className={`w-[49%] border ${
                     compareMode && comparePhotos.includes(photo.id)
-                      ? 'border-blue-500'
+                      ? 'border-primary'
                       : 'border-zinc-800'
                   } rounded-lg overflow-hidden`}
                 >
@@ -357,19 +357,19 @@ export default function ProgressPhotos() {
           )}
 
           {/* Tips */}
-          <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30 mb-6">
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
             <View className="flex-row items-start">
-              <Ionicons name="camera" size={20} color="#3B82F6" />
+              <Ionicons name="camera" size={20} color="#9D12DE" />
               <View className="flex-1 ml-3">
-                <Text className="text-blue-400 font-bold mb-2">
+                <Text className="text-primary/80 font-bold mb-2">
                   Tips para Fotos de Progreso
                 </Text>
-                <Text className="text-blue-300 text-sm">
-                  • Misma iluminación cada vez{'\n'}
-                  • Misma hora del día (mañana en ayunas){'\n'}
-                  • Misma postura y ángulos{'\n'}
-                  • Cada 2-4 semanas es suficiente{'\n'}
-                  • Relájate, no poses
+                <Text className="text-primary/60 text-sm">
+                  â€¢ Misma iluminaciÃ³n cada vez{'\n'}
+                  â€¢ Misma hora del dÃ­a (maÃ±ana en ayunas){'\n'}
+                  â€¢ Misma postura y Ã¡ngulos{'\n'}
+                  â€¢ Cada 2-4 semanas es suficiente{'\n'}
+                  â€¢ RelÃ¡jate, no poses
                 </Text>
               </View>
             </View>
@@ -379,3 +379,4 @@ export default function ProgressPhotos() {
     </View>
   );
 }
+

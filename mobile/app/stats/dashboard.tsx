@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -21,7 +21,7 @@ export default function StatsDashboardScreen() {
 
   // Mock data
   const volumeData = {
-    labels: ['Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb', 'Dom'],
+    labels: ['Lun', 'Mar', 'MiÃ©', 'Jue', 'Vie', 'SÃ¡b', 'Dom'],
     datasets: [
       {
         data: [3200, 4100, 0, 5200, 4800, 0, 6100],
@@ -37,9 +37,9 @@ export default function StatsDashboardScreen() {
   };
 
   const workoutDistribution = [
-    { name: 'Fuerza', population: 45, color: '#3B82F6', legendFontColor: '#1F2937' },
-    { name: 'Cardio', population: 15, color: '#10B981', legendFontColor: '#1F2937' },
-    { name: 'HIIT', population: 20, color: '#F59E0B', legendFontColor: '#1F2937' },
+    { name: 'Fuerza', population: 45, color: '#9D12DE', legendFontColor: '#1F2937' },
+    { name: 'Cardio', population: 15, color: '#9D12DE', legendFontColor: '#1F2937' },
+    { name: 'HIIT', population: 20, color: '#FFEA00', legendFontColor: '#1F2937' },
     { name: 'Flexibilidad', population: 10, color: '#8B5CF6', legendFontColor: '#1F2937' },
     { name: 'Otros', population: 10, color: '#6B7280', legendFontColor: '#1F2937' },
   ];
@@ -55,26 +55,26 @@ export default function StatsDashboardScreen() {
     propsForDots: {
       r: '6',
       strokeWidth: '2',
-      stroke: '#3B82F6',
+      stroke: '#9D12DE',
     },
   };
 
   const stats = [
-    { label: 'Total Entrenamientos', value: '124', icon: 'fitness', color: '#3B82F6', change: '+12%' },
-    { label: 'Volumen Total', value: '85.2K kg', icon: 'barbell', color: '#10B981', change: '+8%' },
-    { label: 'Tiempo Total', value: '62h', icon: 'time', color: '#F59E0B', change: '+5%' },
-    { label: 'Racha Actual', value: '15 días', icon: 'flame', color: '#EF4444', change: '+3' },
+    { label: 'Total Entrenamientos', value: '124', icon: 'fitness', color: '#9D12DE', change: '+12%' },
+    { label: 'Volumen Total', value: '85.2K kg', icon: 'barbell', color: '#9D12DE', change: '+8%' },
+    { label: 'Tiempo Total', value: '62h', icon: 'time', color: '#FFEA00', change: '+5%' },
+    { label: 'Racha Actual', value: '15 dÃ­as', icon: 'flame', color: '#EF4444', change: '+3' },
   ];
 
   return (
     <View className="flex-1 bg-gray-50">
       {/* Header */}
-      <LinearGradient colors={['#3B82F6', '#2563EB']} className="px-6 pt-12 pb-6">
+      <LinearGradient colors={['#9D12DE', '#7C3AED']} className="px-6 pt-12 pb-6">
         <View className="flex-row items-center justify-between mb-4">
           <TouchableOpacity onPress={() => router.back()}>
             <Ionicons name="arrow-back" size={28} color="white" />
           </TouchableOpacity>
-          <Text className="text-2xl font-bold text-white">Estadísticas</Text>
+          <Text className="text-2xl font-bold text-white">EstadÃ­sticas</Text>
           <TouchableOpacity>
             <Ionicons name="share-outline" size={28} color="white" />
           </TouchableOpacity>
@@ -92,10 +92,10 @@ export default function StatsDashboardScreen() {
             >
               <Text
                 className={`text-center font-bold ${
-                  timeRange === range ? 'text-blue-600' : 'text-white'
+                  timeRange === range ? 'text-primary' : 'text-white'
                 }`}
               >
-                {range === 'week' ? 'Semana' : range === 'month' ? 'Mes' : 'Año'}
+                {range === 'week' ? 'Semana' : range === 'month' ? 'Mes' : 'AÃ±o'}
               </Text>
             </TouchableOpacity>
           ))}
@@ -114,8 +114,8 @@ export default function StatsDashboardScreen() {
                 >
                   <Ionicons name={stat.icon as any} size={22} color={stat.color} />
                 </View>
-                <View className="bg-emerald-100 px-2 py-1 rounded">
-                  <Text className="text-emerald-700 font-bold text-xs">
+                <View className="bg-primary/10 px-2 py-1 rounded">
+                  <Text className="text-primary font-bold text-xs">
                     {stat.change}
                   </Text>
                 </View>
@@ -147,7 +147,7 @@ export default function StatsDashboardScreen() {
         {/* Muscle Group Distribution */}
         <Card className="p-4 mb-4">
           <Text className="text-gray-900 font-bold text-lg mb-4">
-            Distribución por Grupo Muscular
+            DistribuciÃ³n por Grupo Muscular
           </Text>
           <BarChart
             data={muscleGroupData}
@@ -180,7 +180,7 @@ export default function StatsDashboardScreen() {
         {/* Progress Insights */}
         <Card className="p-4 mb-4">
           <View className="flex-row items-center gap-3 mb-4">
-            <View className="bg-blue-500 w-10 h-10 rounded-full items-center justify-center">
+            <View className="bg-primary w-10 h-10 rounded-full items-center justify-center">
               <Ionicons name="bulb" size={24} color="white" />
             </View>
             <Text className="flex-1 text-gray-900 font-bold text-lg">
@@ -190,8 +190,8 @@ export default function StatsDashboardScreen() {
 
           <View className="gap-3">
             <View className="flex-row items-start gap-3">
-              <View className="bg-emerald-100 p-2 rounded-full">
-                <Ionicons name="trending-up" size={20} color="#10B981" />
+              <View className="bg-primary/10 p-2 rounded-full">
+                <Ionicons name="trending-up" size={20} color="#9D12DE" />
               </View>
               <View className="flex-1">
                 <Text className="text-gray-900 font-semibold">
@@ -204,26 +204,26 @@ export default function StatsDashboardScreen() {
             </View>
 
             <View className="flex-row items-start gap-3">
-              <View className="bg-blue-100 p-2 rounded-full">
-                <Ionicons name="flame" size={20} color="#3B82F6" />
+              <View className="bg-primary/10 p-2 rounded-full">
+                <Ionicons name="flame" size={20} color="#9D12DE" />
               </View>
               <View className="flex-1">
                 <Text className="text-gray-900 font-semibold">
                   Racha impresionante
                 </Text>
                 <Text className="text-gray-600 text-sm">
-                  15 días consecutivos entrenando. ¡Sigue así!
+                  15 dÃ­as consecutivos entrenando. Â¡Sigue asÃ­!
                 </Text>
               </View>
             </View>
 
             <View className="flex-row items-start gap-3">
               <View className="bg-amber-100 p-2 rounded-full">
-                <Ionicons name="alert-circle" size={20} color="#F59E0B" />
+                <Ionicons name="alert-circle" size={20} color="#FFEA00" />
               </View>
               <View className="flex-1">
                 <Text className="text-gray-900 font-semibold">
-                  Día de descanso recomendado
+                  DÃ­a de descanso recomendado
                 </Text>
                 <Text className="text-gray-600 text-sm">
                   Has entrenado piernas 3 veces esta semana
@@ -237,18 +237,18 @@ export default function StatsDashboardScreen() {
         <Card className="p-4 mb-4">
           <View className="flex-row items-center justify-between mb-4">
             <Text className="text-gray-900 font-bold text-lg">
-              Récords Personales Recientes
+              RÃ©cords Personales Recientes
             </Text>
             <TouchableOpacity onPress={() => router.push('/records')}>
-              <Text className="text-blue-500 font-semibold">Ver todos</Text>
+              <Text className="text-primary font-semibold">Ver todos</Text>
             </TouchableOpacity>
           </View>
 
           <View className="gap-3">
             {[
-              { exercise: 'Bench Press', weight: '100kg', date: '3 días atrás' },
-              { exercise: 'Sentadilla', weight: '140kg', date: '1 semana atrás' },
-              { exercise: 'Peso Muerto', weight: '160kg', date: '2 semanas atrás' },
+              { exercise: 'Bench Press', weight: '100kg', date: '3 dÃ­as atrÃ¡s' },
+              { exercise: 'Sentadilla', weight: '140kg', date: '1 semana atrÃ¡s' },
+              { exercise: 'Peso Muerto', weight: '160kg', date: '2 semanas atrÃ¡s' },
             ].map((pr, index) => (
               <View
                 key={index}
@@ -280,3 +280,5 @@ export default function StatsDashboardScreen() {
     </View>
   );
 }
+
+

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -25,7 +25,7 @@ export default function ForgotPasswordScreen() {
     }
 
     if (!email.includes('@')) {
-      Alert.alert('Error', 'Email inválido');
+      Alert.alert('Error', 'Email invÃ¡lido');
       return;
     }
 
@@ -47,7 +47,7 @@ export default function ForgotPasswordScreen() {
     return (
       <View className="flex-1 bg-gray-50">
         <LinearGradient
-          colors={['#10B981', '#059669']}
+          colors={['#9D12DE', '#7C3AED']}
           className="flex-1 pt-16 px-6"
         >
           <TouchableOpacity
@@ -59,15 +59,15 @@ export default function ForgotPasswordScreen() {
 
           <View className="flex-1 items-center justify-center">
             <View className="w-24 h-24 bg-white rounded-full items-center justify-center mb-6">
-              <Ionicons name="mail" size={48} color="#10B981" />
+              <Ionicons name="mail" size={48} color="#9D12DE" />
             </View>
 
             <Text className="text-white text-3xl font-bold text-center mb-4">
               Email Enviado
             </Text>
 
-            <Text className="text-emerald-100 text-lg text-center mb-8 px-4">
-              Hemos enviado instrucciones para restablecer tu contraseña a{'\n'}
+            <Text className="text-primary/50 text-lg text-center mb-8 px-4">
+              Hemos enviado instrucciones para restablecer tu contraseÃ±a a{'\n'}
               <Text className="font-bold">{email}</Text>
             </Text>
 
@@ -82,7 +82,7 @@ export default function ForgotPasswordScreen() {
               onPress={() => router.back()}
               className="bg-white py-4 px-8 rounded-xl"
             >
-              <Text className="text-emerald-600 font-bold text-lg">
+              <Text className="text-primary font-bold text-lg">
                 Volver al Login
               </Text>
             </TouchableOpacity>
@@ -112,7 +112,7 @@ export default function ForgotPasswordScreen() {
       >
         {/* Header */}
         <LinearGradient
-          colors={['#F59E0B', '#D97706']}
+          colors={['#FFEA00', '#D97706']}
           className="pt-16 pb-12 px-6"
         >
           <TouchableOpacity
@@ -124,10 +124,10 @@ export default function ForgotPasswordScreen() {
 
           <View className="items-center">
             <View className="w-20 h-20 bg-white rounded-full items-center justify-center mb-4">
-              <Ionicons name="lock-closed" size={40} color="#F59E0B" />
+              <Ionicons name="lock-closed" size={40} color="#FFEA00" />
             </View>
             <Text className="text-white text-3xl font-bold text-center mb-2">
-              ¿Olvidaste tu{'\n'}contraseña?
+              Â¿Olvidaste tu{'\n'}contraseÃ±a?
             </Text>
             <Text className="text-amber-100 text-base text-center">
               No te preocupes, te ayudaremos
@@ -137,10 +137,10 @@ export default function ForgotPasswordScreen() {
 
         <View className="flex-1 px-6 pt-8">
           {/* Info */}
-          <View className="bg-blue-50 p-4 rounded-2xl mb-6 flex-row gap-3">
-            <Ionicons name="information-circle" size={24} color="#3B82F6" />
-            <Text className="text-blue-900 flex-1">
-              Te enviaremos un enlace para restablecer tu contraseña a tu email
+          <View className="bg-primary/5 p-4 rounded-2xl mb-6 flex-row gap-3">
+            <Ionicons name="information-circle" size={24} color="#9D12DE" />
+            <Text className="text-text flex-1">
+              Te enviaremos un enlace para restablecer tu contraseÃ±a a tu email
             </Text>
           </View>
 
@@ -169,7 +169,7 @@ export default function ForgotPasswordScreen() {
             activeOpacity={0.8}
           >
             <LinearGradient
-              colors={['#F59E0B', '#D97706']}
+              colors={['#FFEA00', '#D97706']}
               className="py-4 rounded-xl items-center"
             >
               <Text className="text-white text-lg font-bold">
@@ -180,19 +180,19 @@ export default function ForgotPasswordScreen() {
 
           {/* Back to Login */}
           <View className="flex-row items-center justify-center mt-6">
-            <Text className="text-gray-600">¿Recordaste tu contraseña? </Text>
+            <Text className="text-gray-600">Â¿Recordaste tu contraseÃ±a? </Text>
             <TouchableOpacity onPress={() => router.back()}>
-              <Text className="text-amber-600 font-bold">Inicia Sesión</Text>
+              <Text className="text-amber-600 font-bold">Inicia SesiÃ³n</Text>
             </TouchableOpacity>
           </View>
 
           {/* Help */}
           <View className="mt-12 p-6 bg-gray-100 rounded-2xl">
             <Text className="text-gray-900 font-bold text-center mb-2">
-              ¿Necesitas ayuda?
+              Â¿Necesitas ayuda?
             </Text>
             <Text className="text-gray-600 text-center text-sm mb-4">
-              Si tienes problemas para acceder a tu cuenta, contáctanos
+              Si tienes problemas para acceder a tu cuenta, contÃ¡ctanos
             </Text>
             <TouchableOpacity className="bg-gray-800 py-3 rounded-lg">
               <Text className="text-white font-semibold text-center">
@@ -205,3 +205,5 @@ export default function ForgotPasswordScreen() {
     </KeyboardAvoidingView>
   );
 }
+
+

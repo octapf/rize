@@ -85,16 +85,16 @@ export default function WorkoutDetailScreen() {
 
   if (isLoading) {
     return (
-      <View className="flex-1 bg-gray-50 items-center justify-center">
-        <ActivityIndicator size="large" color="#10B981" />
+      <View className="flex-1 bg-background items-center justify-center">
+        <ActivityIndicator size="large" color="#9D12DE" />
       </View>
     );
   }
 
   if (!data?.data) {
     return (
-      <View className="flex-1 bg-gray-50 items-center justify-center">
-        <Text className="text-gray-500">Entrenamiento no encontrado</Text>
+      <View className="flex-1 bg-background items-center justify-center">
+        <Text className="text-text/60">Entrenamiento no encontrado</Text>
       </View>
     );
   }
@@ -120,10 +120,10 @@ export default function WorkoutDetailScreen() {
   };
 
   return (
-    <View className="flex-1 bg-gray-50">
+    <View className="flex-1 bg-background">
       {/* Header con gradiente */}
       <LinearGradient
-        colors={['#10B981', '#059669']}
+        colors={['#9D12DE', '#7D0EBE']}
         className="px-6 pt-12 pb-6"
       >
         <View className="flex-row items-center justify-between">
@@ -140,10 +140,10 @@ export default function WorkoutDetailScreen() {
         {workout.status !== 'completed' && (
           <TouchableOpacity
             onPress={handleStartWorkout}
-            className="bg-white mt-4 py-3 rounded-xl flex-row items-center justify-center gap-2"
+            className="bg-[#2A2A2A] mt-4 py-3 rounded-xl flex-row items-center justify-center gap-2"
           >
-            <Ionicons name="play-circle" size={24} color="#10B981" />
-            <Text className="text-emerald-600 font-bold text-lg">
+            <Ionicons name="play-circle" size={24} color="#FFEA00" />
+            <Text className="text-highlight font-bold text-lg">
               {workout.status === 'in-progress' ? 'Continuar Entrenamiento' : 'Empezar Entrenamiento'}
             </Text>
           </TouchableOpacity>
@@ -152,30 +152,30 @@ export default function WorkoutDetailScreen() {
 
       <ScrollView className="flex-1" contentContainerClassName="p-6 gap-6">
         {/* Título y XP */}
-        <Card className="p-6 bg-gradient-to-br from-white to-emerald-50">
+        <Card className="p-6 bg-[#2A2A2A]">
           <View className="flex-row items-start justify-between mb-4">
             <View className="flex-1 pr-4">
-              <Text className="text-3xl font-bold text-gray-900 mb-2">
+              <Text className="text-3xl font-bold text-text mb-2">
                 {workout.name}
               </Text>
               <View className="flex-row items-center gap-2">
-                <Ionicons name="calendar" size={16} color="#6B7280" />
-                <Text className="text-sm text-gray-600 capitalize">
+                <Ionicons name="calendar" size={16} color="#9D12DE" />
+                <Text className="text-sm text-text/80 capitalize">
                   {formatDate(workout.date)}
                 </Text>
               </View>
             </View>
             <LinearGradient
-              colors={['#10B981', '#059669']}
+              colors={['#9D12DE', '#7D0EBE']}
               className="px-5 py-3 rounded-2xl"
               style={{ elevation: 3 }}
             >
               <View className="items-center">
-                <Ionicons name="flash" size={24} color="white" />
-                <Text className="text-white font-bold text-xl mt-1">
+                <Ionicons name="flash" size={24} color="#FFEA00" />
+                <Text className="text-highlight font-bold text-xl mt-1">
                   {workout.xpEarned}
                 </Text>
-                <Text className="text-emerald-100 text-xs font-semibold">XP</Text>
+                <Text className="text-white/80 text-xs font-semibold">XP</Text>
               </View>
             </LinearGradient>
           </View>
@@ -183,51 +183,51 @@ export default function WorkoutDetailScreen() {
 
         {/* Estadísticas */}
         <Card className="p-6">
-          <Text className="text-xl font-bold text-gray-900 mb-5">
+          <Text className="text-xl font-bold text-text mb-5">
             Estadísticas
           </Text>
           <View className="gap-4">
             <View className="flex-row items-center gap-4">
               <LinearGradient
-                colors={['#10B981', '#059669']}
+                colors={['#9D12DE', '#7D0EBE']}
                 className="p-4 rounded-2xl"
                 style={{ elevation: 2 }}
               >
                 <Ionicons name="barbell" size={28} color="white" />
               </LinearGradient>
               <View className="flex-1">
-                <Text className="text-sm text-gray-500 mb-1">Ejercicios</Text>
-                <Text className="text-2xl font-bold text-gray-900">
+                <Text className="text-sm text-text/60 mb-1">Ejercicios</Text>
+                <Text className="text-2xl font-bold text-text">
                   {workout.exercises.length}
                 </Text>
               </View>
             </View>
             <View className="flex-row items-center gap-4">
               <LinearGradient
-                colors={['#3B82F6', '#2563EB']}
+                colors={['#FFEA00', '#FFD700']}
                 className="p-4 rounded-2xl"
                 style={{ elevation: 2 }}
               >
-                <Ionicons name="time" size={28} color="white" />
+                <Ionicons name="time" size={28} color="#262626" />
               </LinearGradient>
               <View className="flex-1">
-                <Text className="text-sm text-gray-500 mb-1">Duración</Text>
-                <Text className="text-2xl font-bold text-gray-900">
+                <Text className="text-sm text-text/60 mb-1">Duración</Text>
+                <Text className="text-2xl font-bold text-text">
                   {formatDuration(workout.duration)}
                 </Text>
               </View>
             </View>
             <View className="flex-row items-center gap-4">
               <LinearGradient
-                colors={['#A855F7', '#9333EA']}
+                colors={['#9D12DE', '#7D0EBE']}
                 className="p-4 rounded-2xl"
                 style={{ elevation: 2 }}
               >
                 <Ionicons name="eye" size={28} color="white" />
               </LinearGradient>
               <View className="flex-1">
-                <Text className="text-sm text-gray-500 mb-1">Visibilidad</Text>
-                <Text className="text-2xl font-bold text-gray-900 capitalize">
+                <Text className="text-sm text-text/60 mb-1">Visibilidad</Text>
+                <Text className="text-2xl font-bold text-text capitalize">
                   {workout.visibility === 'private'
                     ? 'Privado'
                     : workout.visibility === 'friends'
@@ -241,14 +241,14 @@ export default function WorkoutDetailScreen() {
 
         {/* Notas */}
         {workout.notes && (
-          <Card className="p-6 bg-gradient-to-br from-amber-50 to-orange-50">
+          <Card className="p-6 bg-[#2A2A2A]">
             <View className="flex-row items-center gap-2 mb-3">
-              <View className="bg-amber-500 p-2 rounded-lg">
-                <Ionicons name="document-text" size={20} color="white" />
+              <View className="bg-highlight p-2 rounded-lg">
+                <Ionicons name="document-text" size={20} color="#262626" />
               </View>
-              <Text className="text-xl font-bold text-gray-900">Notas</Text>
+              <Text className="text-xl font-bold text-text">Notas</Text>
             </View>
-            <Text className="text-gray-700 leading-6 text-base">{workout.notes}</Text>
+            <Text className="text-text/80 leading-6 text-base">{workout.notes}</Text>
           </Card>
         )}
 
@@ -257,12 +257,12 @@ export default function WorkoutDetailScreen() {
           <Card className="p-6">
             <View className="flex-row items-center gap-2 mb-4">
               <LinearGradient
-                colors={['#10B981', '#059669']}
+                colors={['#9D12DE', '#7D0EBE']}
                 className="p-2 rounded-lg"
               >
                 <Ionicons name="barbell" size={20} color="white" />
               </LinearGradient>
-              <Text className="text-xl font-bold text-gray-900">Ejercicios</Text>
+              <Text className="text-xl font-bold text-text">Ejercicios</Text>
             </View>
             <View className="gap-4">
               {workout.exercises.map((exercise, index) => {
@@ -285,14 +285,14 @@ export default function WorkoutDetailScreen() {
                 return (
                   <View
                     key={index}
-                    className="bg-gradient-to-br from-gray-50 to-gray-100 p-4 rounded-xl border border-gray-200"
+                    className="bg-[#2A2A2A] p-4 rounded-xl border border-[#404040]"
                   >
                     <View className="flex-row items-center justify-between mb-3">
-                      <Text className="text-lg font-bold text-gray-900 flex-1">
+                      <Text className="text-lg font-bold text-text flex-1">
                         {exerciseData.name.es}
                       </Text>
-                      <View className="bg-emerald-100 px-3 py-1 rounded-full">
-                        <Text className="text-emerald-700 font-semibold text-xs uppercase">
+                      <View className="bg-primary/20 px-3 py-1 rounded-full">
+                        <Text className="text-primary font-semibold text-xs uppercase">
                           {exerciseData.category}
                         </Text>
                       </View>
@@ -300,23 +300,23 @@ export default function WorkoutDetailScreen() {
                     
                     <View className="flex-row items-center gap-4 flex-wrap">
                       <View className="flex-row items-center gap-2">
-                        <Ionicons name="layers" size={16} color="#6B7280" />
-                        <Text className="text-sm text-gray-600">
+                        <Ionicons name="layers" size={16} color="#9D12DE" />
+                        <Text className="text-sm text-text/70">
                           {totalSets} {totalSets === 1 ? 'serie' : 'series'}
                         </Text>
                       </View>
                       
                       <View className="flex-row items-center gap-2">
-                        <Ionicons name="repeat" size={16} color="#6B7280" />
-                        <Text className="text-sm text-gray-600">
+                        <Ionicons name="repeat" size={16} color="#9D12DE" />
+                        <Text className="text-sm text-text/70">
                           {repsInfo} reps
                         </Text>
                       </View>
                       
                       {avgWeight && (
                         <View className="flex-row items-center gap-2">
-                          <Ionicons name="barbell" size={16} color="#6B7280" />
-                          <Text className="text-sm text-gray-600">
+                          <Ionicons name="barbell" size={16} color="#FFEA00" />
+                          <Text className="text-sm text-text/70">
                             {avgWeight} kg avg
                           </Text>
                         </View>
@@ -324,8 +324,8 @@ export default function WorkoutDetailScreen() {
                     </View>
                     
                     {exercise.notes && (
-                      <View className="mt-3 pt-3 border-t border-gray-300">
-                        <Text className="text-sm text-gray-600 italic">
+                      <View className="mt-3 pt-3 border-t border-[#404040]">
+                        <Text className="text-sm text-text/60 italic">
                           {exercise.notes}
                         </Text>
                       </View>
@@ -341,7 +341,7 @@ export default function WorkoutDetailScreen() {
         {workout.status === 'completed' && (
           <TouchableOpacity
             onPress={handleSaveAsTemplate}
-            className="bg-gradient-to-r from-purple-500 to-purple-600 p-4 rounded-xl flex-row items-center justify-center gap-2 mb-4"
+            className="bg-primary p-4 rounded-xl flex-row items-center justify-center gap-2 mb-4"
             style={{ elevation: 2 }}
           >
             <Ionicons name="bookmark" size={24} color="white" />
@@ -360,33 +360,34 @@ export default function WorkoutDetailScreen() {
         onRequestClose={() => setShowSaveModal(false)}
       >
         <View className="flex-1 bg-black/50 justify-center items-center p-6">
-          <View className="bg-white rounded-2xl p-6 w-full max-w-md">
-            <Text className="text-2xl font-bold text-gray-900 mb-4">
+          <View className="bg-[#2A2A2A] rounded-2xl p-6 w-full max-w-md">
+            <Text className="text-2xl font-bold text-text mb-4">
               Guardar como Plantilla
             </Text>
-            <Text className="text-gray-600 mb-4">
+            <Text className="text-text/70 mb-4">
               Dale un nombre a esta plantilla para reutilizarla en futuros entrenamientos
             </Text>
             <TextInput
               value={templateName}
               onChangeText={setTemplateName}
               placeholder="Nombre de la plantilla"
-              className="border border-gray-300 rounded-xl px-4 py-3 mb-4"
+              className="border border-[#404040] bg-background rounded-xl px-4 py-3 mb-4 text-text"
+              placeholderTextColor="#9CA3AF"
               autoFocus
             />
             <View className="flex-row gap-3">
               <TouchableOpacity
                 onPress={() => setShowSaveModal(false)}
-                className="flex-1 bg-gray-200 py-3 rounded-xl"
+                className="flex-1 bg-[#404040] py-3 rounded-xl"
               >
-                <Text className="text-gray-700 font-bold text-center">
+                <Text className="text-text font-bold text-center">
                   Cancelar
                 </Text>
               </TouchableOpacity>
               <TouchableOpacity
                 onPress={handleConfirmSaveTemplate}
                 disabled={saveAsTemplateMutation.isPending}
-                className="flex-1 bg-purple-600 py-3 rounded-xl"
+                className="flex-1 bg-primary py-3 rounded-xl"
               >
                 <Text className="text-white font-bold text-center">
                   {saveAsTemplateMutation.isPending ? 'Guardando...' : 'Guardar'}

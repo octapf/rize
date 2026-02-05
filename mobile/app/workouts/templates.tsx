@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -31,11 +31,11 @@ const mockTemplates: WorkoutTemplate[] = [
   {
     id: '1',
     name: 'Push Day',
-    description: 'Entrenamiento de empuje enfocado en pecho, hombros y tríceps',
+    description: 'Entrenamiento de empuje enfocado en pecho, hombros y trÃ­ceps',
     exercises: 5,
     estimatedDuration: 60,
     difficulty: 'intermediate',
-    muscleGroups: ['Pecho', 'Hombros', 'Tríceps'],
+    muscleGroups: ['Pecho', 'Hombros', 'TrÃ­ceps'],
     isPublic: true,
     usageCount: 45,
     createdAt: new Date(2025, 11, 1),
@@ -43,11 +43,11 @@ const mockTemplates: WorkoutTemplate[] = [
   {
     id: '2',
     name: 'Pull Day',
-    description: 'Entrenamiento de jalón para espalda y bíceps',
+    description: 'Entrenamiento de jalÃ³n para espalda y bÃ­ceps',
     exercises: 5,
     estimatedDuration: 60,
     difficulty: 'intermediate',
-    muscleGroups: ['Espalda', 'Bíceps'],
+    muscleGroups: ['Espalda', 'BÃ­ceps'],
     isPublic: true,
     usageCount: 38,
     createdAt: new Date(2025, 11, 1),
@@ -55,11 +55,11 @@ const mockTemplates: WorkoutTemplate[] = [
   {
     id: '3',
     name: 'Leg Day',
-    description: 'Día de pierna completo con énfasis en cuádriceps y glúteos',
+    description: 'DÃ­a de pierna completo con Ã©nfasis en cuÃ¡driceps y glÃºteos',
     exercises: 6,
     estimatedDuration: 75,
     difficulty: 'advanced',
-    muscleGroups: ['Piernas', 'Glúteos'],
+    muscleGroups: ['Piernas', 'GlÃºteos'],
     isPublic: true,
     usageCount: 52,
     createdAt: new Date(2025, 11, 5),
@@ -67,7 +67,7 @@ const mockTemplates: WorkoutTemplate[] = [
   {
     id: '4',
     name: 'Upper Body',
-    description: 'Tren superior completo para días de cuerpo dividido',
+    description: 'Tren superior completo para dÃ­as de cuerpo dividido',
     exercises: 7,
     estimatedDuration: 80,
     difficulty: 'intermediate',
@@ -108,8 +108,8 @@ export default function WorkoutTemplatesScreen() {
 
   const getDifficultyColor = (difficulty: string) => {
     switch (difficulty) {
-      case 'beginner': return '#10B981';
-      case 'intermediate': return '#F59E0B';
+      case 'beginner': return '#9D12DE';
+      case 'intermediate': return '#FFEA00';
       case 'advanced': return '#EF4444';
       default: return '#6B7280';
     }
@@ -128,7 +128,7 @@ export default function WorkoutTemplatesScreen() {
     const template = templates.find(t => t.id === templateId);
     Alert.alert(
       'Usar Template',
-      `¿Iniciar entrenamiento con "${template?.name}"?`,
+      `Â¿Iniciar entrenamiento con "${template?.name}"?`,
       [
         { text: 'Cancelar', style: 'cancel' },
         {
@@ -142,7 +142,7 @@ export default function WorkoutTemplatesScreen() {
   };
 
   const handleSaveTemplate = (templateId: string) => {
-    Alert.alert('¡Guardado!', 'Template añadido a tus favoritos');
+    Alert.alert('Â¡Guardado!', 'Template aÃ±adido a tus favoritos');
   };
 
   const renderTemplate = (template: WorkoutTemplate) => {
@@ -160,8 +160,8 @@ export default function WorkoutTemplatesScreen() {
             {/* Muscle Groups */}
             <View className="flex-row flex-wrap gap-1 mb-3">
               {template.muscleGroups.map((muscle, i) => (
-                <View key={i} className="bg-blue-100 px-2 py-1 rounded-full">
-                  <Text className="text-blue-700 text-xs font-semibold">
+                <View key={i} className="bg-primary/10 px-2 py-1 rounded-full">
+                  <Text className="text-primary text-xs font-semibold">
                     {muscle}
                   </Text>
                 </View>
@@ -198,8 +198,8 @@ export default function WorkoutTemplatesScreen() {
 
               {template.isPublic && (
                 <View className="flex-row items-center gap-1">
-                  <Ionicons name="people" size={14} color="#10B981" />
-                  <Text className="text-emerald-600 text-xs font-semibold">
+                  <Ionicons name="people" size={14} color="#9D12DE" />
+                  <Text className="text-primary text-xs font-semibold">
                     {template.usageCount} usos
                   </Text>
                 </View>
@@ -212,7 +212,7 @@ export default function WorkoutTemplatesScreen() {
         <View className="flex-row gap-2">
           <TouchableOpacity
             onPress={() => handleUseTemplate(template.id)}
-            className="flex-1 bg-blue-500 py-2.5 rounded-lg"
+            className="flex-1 bg-primary py-2.5 rounded-lg"
           >
             <Text className="text-white font-semibold text-center">
               Usar Ahora
@@ -290,7 +290,7 @@ export default function WorkoutTemplatesScreen() {
             className={`px-4 py-2 rounded-lg ${filter === f ? 'bg-indigo-500' : 'bg-gray-200'}`}
           >
             <Text className={`font-semibold ${filter === f ? 'text-white' : 'text-gray-700'}`}>
-              {f === 'all' ? 'Todos' : f === 'mine' ? 'Míos' : 'Comunidad'}
+              {f === 'all' ? 'Todos' : f === 'mine' ? 'MÃ­os' : 'Comunidad'}
             </Text>
           </TouchableOpacity>
         ))}
@@ -304,7 +304,7 @@ export default function WorkoutTemplatesScreen() {
               No se encontraron templates
             </Text>
             <Text className="text-gray-600 text-center mt-2">
-              Intenta con otros términos de búsqueda
+              Intenta con otros tÃ©rminos de bÃºsqueda
             </Text>
           </Card>
         ) : (
@@ -319,3 +319,4 @@ export default function WorkoutTemplatesScreen() {
     </View>
   );
 }
+

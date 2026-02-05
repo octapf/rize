@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -255,12 +255,12 @@ export default function PostCompRecovery() {
                   {phaseData.steps.map((step, idx) => (
                     <View key={idx} className="bg-zinc-900 rounded-xl p-3 mb-2 last:mb-0">
                       <View className="flex-row items-center mb-2">
-                        <Ionicons name={step.icon} size={18} color="#10b981" />
-                        <Text className="text-emerald-400 font-bold ml-2">{step.category}</Text>
+                        <Ionicons name={step.icon} size={18} color="#9D12DE" />
+                        <Text className="text-primary font-bold ml-2">{step.category}</Text>
                       </View>
                       {step.actions.map((action, aidx) => (
                         <View key={aidx} className="flex-row items-start mb-1 last:mb-0">
-                          <Text className="text-zinc-500 mr-2">•</Text>
+                          <Text className="text-zinc-500 mr-2">â€¢</Text>
                           <Text className="text-zinc-300 text-sm flex-1">{action}</Text>
                         </View>
                       ))}
@@ -281,7 +281,7 @@ export default function PostCompRecovery() {
                 </View>
                 {aspect.tips.map((tip, tidx) => (
                   <View key={tidx} className="flex-row items-start mb-1 last:mb-0">
-                    <Text className="text-purple-400 mr-2">•</Text>
+                    <Text className="text-purple-400 mr-2">â€¢</Text>
                     <Text className="text-purple-200 text-sm flex-1">{tip}</Text>
                   </View>
                 ))}
@@ -301,8 +301,8 @@ export default function PostCompRecovery() {
                   Consequence: {item.consequence}
                 </Text>
                 <View className="flex-row items-start">
-                  <Ionicons name="checkmark-circle" size={16} color="#10b981" />
-                  <Text className="text-emerald-400 text-sm ml-2 flex-1">
+                  <Ionicons name="checkmark-circle" size={16} color="#9D12DE" />
+                  <Text className="text-primary text-sm ml-2 flex-1">
                     Fix: {item.fix}
                   </Text>
                 </View>
@@ -310,31 +310,31 @@ export default function PostCompRecovery() {
             ))}
           </View>
 
-          <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30 mb-6">
-            <Text className="text-blue-400 font-bold mb-2">Recovery Checklist</Text>
-            <Text className="text-blue-300 text-sm mb-2">
-              ✓ Immediate celebration and refuel
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
+            <Text className="text-primary/80 font-bold mb-2">Recovery Checklist</Text>
+            <Text className="text-primary/60 text-sm mb-2">
+              âœ“ Immediate celebration and refuel
             </Text>
-            <Text className="text-blue-300 text-sm mb-2">
-              ✓ 3 days complete rest
+            <Text className="text-primary/60 text-sm mb-2">
+              âœ“ 3 days complete rest
             </Text>
-            <Text className="text-blue-300 text-sm mb-2">
-              ✓ Week 1: Light movement only
+            <Text className="text-primary/60 text-sm mb-2">
+              âœ“ Week 1: Light movement only
             </Text>
-            <Text className="text-blue-300 text-sm mb-2">
-              ✓ Week 2: Gradual return to barbell
+            <Text className="text-primary/60 text-sm mb-2">
+              âœ“ Week 2: Gradual return to barbell
             </Text>
-            <Text className="text-blue-300 text-sm mb-2">
-              ✓ Weeks 3-4: Build into new cycle
+            <Text className="text-primary/60 text-sm mb-2">
+              âœ“ Weeks 3-4: Build into new cycle
             </Text>
-            <Text className="text-blue-300 text-sm">
-              ✓ Set new goals and move forward
+            <Text className="text-primary/60 text-sm">
+              âœ“ Set new goals and move forward
             </Text>
           </View>
 
-          <View className="bg-emerald-500/10 rounded-xl p-4 border border-emerald-500/30 mb-6">
-            <Text className="text-emerald-400 font-bold mb-2">Remember</Text>
-            <Text className="text-emerald-300 text-sm">
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
+            <Text className="text-primary font-bold mb-2">Remember</Text>
+            <Text className="text-primary/80 text-sm">
               Recovery is not wasted time - it's when you grow. The meet demanded everything
               from your body and mind. Honor that by recovering properly. Your next PR cycle
               starts with proper rest.
@@ -345,3 +345,5 @@ export default function PostCompRecovery() {
     </View>
   );
 }
+
+

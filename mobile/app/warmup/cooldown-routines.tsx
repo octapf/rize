@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -27,11 +27,11 @@ export default function CooldownRoutines() {
         { exercise: 'Arm Circles (slow)', duration: '30 sec each direction', notes: 'Gentle, controlled movement' },
       ],
       staticStretches: [
-        { muscle: 'Chest', exercise: 'Doorway Pec Stretch', duration: '45 sec each side', notes: 'Elbow at 90°, lean forward' },
+        { muscle: 'Chest', exercise: 'Doorway Pec Stretch', duration: '45 sec each side', notes: 'Elbow at 90Â°, lean forward' },
         { muscle: 'Lats', exercise: 'Lat Hang Stretch', duration: '30 sec', notes: 'Hang from bar, relax shoulders' },
         { muscle: 'Shoulders', exercise: 'Cross-body Shoulder Stretch', duration: '30 sec each', notes: 'Pull arm across chest' },
         { muscle: 'Triceps', exercise: 'Overhead Tricep Stretch', duration: '30 sec each', notes: 'Elbow behind head' },
-        { muscle: 'Hip Flexors', exercise: 'Kneeling Hip Flexor Stretch', duration: '45 sec each', notes: 'Front knee at 90°, squeeze glute' },
+        { muscle: 'Hip Flexors', exercise: 'Kneeling Hip Flexor Stretch', duration: '45 sec each', notes: 'Front knee at 90Â°, squeeze glute' },
         { muscle: 'Quads', exercise: 'Standing Quad Stretch', duration: '30 sec each', notes: 'Pull heel to glute, knee down' },
         { muscle: 'Hamstrings', exercise: 'Seated Hamstring Stretch', duration: '45 sec each', notes: 'Reach for toes, keep back straight' },
         { muscle: 'Glutes', exercise: 'Figure-4 Stretch', duration: '45 sec each', notes: 'Ankle on opposite knee, pull' },
@@ -121,7 +121,7 @@ export default function CooldownRoutines() {
 
       <ScrollView className="flex-1" showsVerticalScrollIndicator={false}>
         <View className="px-6 pt-6">
-          <View className="bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl p-6 mb-6">
+          <View className="bg-gradient-to-r from-primary to-[#7D0EBE] rounded-xl p-6 mb-6">
             <Text className="text-white text-2xl font-bold mb-2">Recovery Routines</Text>
             <Text className="text-white opacity-90 mb-4">
               Proper cool-down for optimal recovery
@@ -167,9 +167,9 @@ export default function CooldownRoutines() {
                 key={dur}
                 onPress={() => setDuration(dur)}
                 className={`flex-1 ${
-                  duration === dur ? 'bg-emerald-500' : 'bg-zinc-900'
+                  duration === dur ? 'bg-primary' : 'bg-zinc-900'
                 } rounded-xl py-3 border ${
-                  duration === dur ? 'border-emerald-400' : 'border-zinc-800'
+                  duration === dur ? 'border-primary' : 'border-zinc-800'
                 }`}
               >
                 <Text
@@ -183,10 +183,10 @@ export default function CooldownRoutines() {
             ))}
           </View>
 
-          <View className="bg-blue-500/10 rounded-xl p-4 mb-6 border border-blue-500/30">
+          <View className="bg-primary/10 rounded-xl p-4 mb-6 border border-primary/30">
             <View className="flex-row items-center mb-2">
-              <Ionicons name="walk" size={20} color="#3b82f6" />
-              <Text className="text-blue-400 font-bold ml-2">Phase 1: Active Recovery</Text>
+              <Ionicons name="walk" size={20} color="#9D12DE" />
+              <Text className="text-primary/80 font-bold ml-2">Phase 1: Active Recovery</Text>
             </View>
             <Text className="text-zinc-400 text-sm mb-3">Gradually lower heart rate</Text>
             
@@ -194,17 +194,17 @@ export default function CooldownRoutines() {
               <View key={idx} className="bg-zinc-900 rounded-lg p-3 mb-2">
                 <View className="flex-row justify-between items-center mb-1">
                   <Text className="text-white font-bold flex-1">{ex.exercise}</Text>
-                  <Text className="text-blue-400 font-bold">{ex.duration}</Text>
+                  <Text className="text-primary/80 font-bold">{ex.duration}</Text>
                 </View>
                 <Text className="text-zinc-500 text-xs">{ex.notes}</Text>
               </View>
             ))}
           </View>
 
-          <View className="bg-emerald-500/10 rounded-xl p-4 mb-6 border border-emerald-500/30">
+          <View className="bg-primary/10 rounded-xl p-4 mb-6 border border-primary/30">
             <View className="flex-row items-center mb-2">
-              <Ionicons name="body" size={20} color="#10b981" />
-              <Text className="text-emerald-400 font-bold ml-2">Phase 2: Static Stretching</Text>
+              <Ionicons name="body" size={20} color="#9D12DE" />
+              <Text className="text-primary font-bold ml-2">Phase 2: Static Stretching</Text>
             </View>
             <Text className="text-zinc-400 text-sm mb-3">Hold each stretch, don't bounce</Text>
             
@@ -212,10 +212,10 @@ export default function CooldownRoutines() {
               <View key={idx} className="bg-zinc-900 rounded-lg p-3 mb-2">
                 <View className="flex-row justify-between items-center mb-1">
                   <View className="flex-1">
-                    <Text className="text-emerald-400 text-xs font-bold">{stretch.muscle}</Text>
+                    <Text className="text-primary text-xs font-bold">{stretch.muscle}</Text>
                     <Text className="text-white font-bold">{stretch.exercise}</Text>
                   </View>
-                  <Text className="text-emerald-400 font-bold text-sm">{stretch.duration}</Text>
+                  <Text className="text-primary font-bold text-sm">{stretch.duration}</Text>
                 </View>
                 <Text className="text-zinc-500 text-xs">{stretch.notes}</Text>
               </View>
@@ -242,7 +242,7 @@ export default function CooldownRoutines() {
 
           <View className="bg-amber-500/10 rounded-xl p-4 mb-6 border border-amber-500/30">
             <View className="flex-row items-center mb-2">
-              <Ionicons name="fitness" size={20} color="#f59e0b" />
+              <Ionicons name="fitness" size={20} color="#FFEA00" />
               <Text className="text-amber-400 font-bold ml-2">Optional: Foam Rolling</Text>
             </View>
             <Text className="text-zinc-400 text-sm mb-3">Myofascial release for recovery</Text>
@@ -261,12 +261,12 @@ export default function CooldownRoutines() {
           <View className="bg-red-500/10 rounded-xl p-4 border border-red-500/30 mb-6">
             <Text className="text-red-400 font-bold mb-2">Cool-down Benefits</Text>
             <Text className="text-red-300 text-sm">
-              • Reduces DOMS (muscle soreness){'\n'}
-              • Improves flexibility over time{'\n'}
-              • Prevents blood pooling{'\n'}
-              • Aids in waste product removal{'\n'}
-              • Signals body to start recovery{'\n'}
-              • 10-15 min investment = faster recovery
+              â€¢ Reduces DOMS (muscle soreness){'\n'}
+              â€¢ Improves flexibility over time{'\n'}
+              â€¢ Prevents blood pooling{'\n'}
+              â€¢ Aids in waste product removal{'\n'}
+              â€¢ Signals body to start recovery{'\n'}
+              â€¢ 10-15 min investment = faster recovery
             </Text>
           </View>
         </View>
@@ -274,3 +274,4 @@ export default function CooldownRoutines() {
     </View>
   );
 }
+

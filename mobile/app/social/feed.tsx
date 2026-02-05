@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -24,20 +24,20 @@ const mockPosts: FeedPost[] = [
     userId: 'user1',
     user: {
       _id: 'user1',
-      name: 'Carlos García',
+      name: 'Carlos GarcÃ­a',
       username: 'carlosg',
       avatar: undefined,
     },
     type: 'workout',
-    content: '¡Terminé mi rutina de piernas! 💪 Nuevo PR en sentadillas',
+    content: 'Â¡TerminÃ© mi rutina de piernas! ðŸ’ª Nuevo PR en sentadillas',
     workoutId: 'w1',
     likes: ['me', 'user2'],
     comments: [
       {
         _id: 'c1',
         userId: 'user2',
-        user: { _id: 'user2', name: 'Ana López', username: 'ana', avatar: undefined },
-        text: '¡Felicidades! 🎉',
+        user: { _id: 'user2', name: 'Ana LÃ³pez', username: 'ana', avatar: undefined },
+        text: 'Â¡Felicidades! ðŸŽ‰',
         createdAt: new Date(2026, 0, 27, 10, 35).toISOString(),
       },
     ],
@@ -48,12 +48,12 @@ const mockPosts: FeedPost[] = [
     userId: 'user2',
     user: {
       _id: 'user2',
-      name: 'Ana López',
+      name: 'Ana LÃ³pez',
       username: 'ana',
       avatar: undefined,
     },
     type: 'achievement',
-    content: '¡Desbloqueé el logro "100 Workouts"! 🏆',
+    content: 'Â¡DesbloqueÃ© el logro "100 Workouts"! ðŸ†',
     achievementId: 'a1',
     likes: ['user1', 'user3'],
     comments: [],
@@ -64,12 +64,12 @@ const mockPosts: FeedPost[] = [
     userId: 'user3',
     user: {
       _id: 'user3',
-      name: 'Pedro Martínez',
+      name: 'Pedro MartÃ­nez',
       username: 'pedro',
       avatar: undefined,
     },
     type: 'pr',
-    content: 'Nuevo PR en Bench Press: 120kg! 🔥',
+    content: 'Nuevo PR en Bench Press: 120kg! ðŸ”¥',
     exerciseId: 'e1',
     likes: ['me'],
     comments: [],
@@ -112,19 +112,19 @@ export default function FeedScreen() {
 
   const handleLike = (postId: string) => {
     // Mock toggle for now
-    Alert.alert('Like', 'Función en desarrollo');
+    Alert.alert('Like', 'FunciÃ³n en desarrollo');
   };
 
   const handleComment = (postId: string) => {
     if (!commentText.trim()) return;
     // commentMutation.mutate({ postId, text: commentText });
-    Alert.alert('Comentar', 'Función en desarrollo');
+    Alert.alert('Comentar', 'FunciÃ³n en desarrollo');
     setCommentText('');
     setActiveCommentPost(null);
   };
 
   const handleShare = (postId: string) => {
-    Alert.alert('Compartir', 'Función en desarrollo');
+    Alert.alert('Compartir', 'FunciÃ³n en desarrollo');
   };
 
   const onRefresh = async () => {
@@ -136,9 +136,9 @@ export default function FeedScreen() {
   const getPostIcon = (type: string) => {
     switch (type) {
       case 'workout':
-        return { name: 'fitness', color: '#3B82F6' };
+        return { name: 'fitness', color: '#9D12DE' };
       case 'achievement':
-        return { name: 'trophy', color: '#F59E0B' };
+        return { name: 'trophy', color: '#FFEA00' };
       case 'pr':
         return { name: 'trending-up', color: '#EF4444' };
       case 'challenge':
@@ -171,7 +171,7 @@ export default function FeedScreen() {
               {item.user.name}
             </Text>
             <Text className="text-gray-500 text-sm">
-              @{item.user.username} • {formatDistanceToNow(new Date(item.createdAt), { 
+              @{item.user.username} â€¢ {formatDistanceToNow(new Date(item.createdAt), { 
                 addSuffix: true, 
                 locale: es 
               })}
@@ -265,7 +265,7 @@ export default function FeedScreen() {
               onPress={() => handleComment(item._id)}
               disabled={!commentText.trim()}
               className={`p-2 rounded-full ${
-                commentText.trim() ? 'bg-blue-500' : 'bg-gray-300'
+                commentText.trim() ? 'bg-primary' : 'bg-gray-300'
               }`}
             >
               <Ionicons name="send" size={18} color="white" />
@@ -279,7 +279,7 @@ export default function FeedScreen() {
   return (
     <View className="flex-1 bg-gray-50">
       {/* Header */}
-      <LinearGradient colors={['#3B82F6', '#2563EB']} className="px-6 pt-12 pb-6">
+      <LinearGradient colors={['#9D12DE', '#7C3AED']} className="px-6 pt-12 pb-6">
         <View className="flex-row items-center justify-between">
           <TouchableOpacity onPress={() => router.back()}>
             <Ionicons name="arrow-back" size={28} color="white" />
@@ -306,7 +306,7 @@ export default function FeedScreen() {
               No hay publicaciones
             </Text>
             <Text className="text-gray-600 text-center mt-2">
-              Sigue a más amigos para ver su actividad
+              Sigue a mÃ¡s amigos para ver su actividad
             </Text>
           </View>
         }
@@ -314,3 +314,4 @@ export default function FeedScreen() {
     </View>
   );
 }
+

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -14,8 +14,8 @@ import { useQuery } from '@tanstack/react-query';
 import { leaderboardApi, LeaderboardEntry } from '@/services/api/leaderboard.api';
 
 const LEADERBOARD_TYPES = [
-  { key: 'xp', label: 'XP Total', icon: 'flash', color: '#f59e0b' },
-  { key: 'workouts', label: 'Workouts (Mes)', icon: 'barbell', color: '#10b981' },
+  { key: 'xp', label: 'XP Total', icon: 'flash', color: '#FFEA00' },
+  { key: 'workouts', label: 'Workouts (Mes)', icon: 'barbell', color: '#9D12DE' },
   { key: 'volume', label: 'Volumen (Mes)', icon: 'speedometer', color: '#8b5cf6' },
   { key: 'streak', label: 'Racha', icon: 'flame', color: '#ef4444' },
 ];
@@ -90,7 +90,7 @@ export default function LeaderboardScreen() {
       case 'volume':
         return `${(entry.totalVolume || 0).toLocaleString()} kg`;
       case 'streak':
-        return `${entry.streak || 0} días`;
+        return `${entry.streak || 0} dÃ­as`;
       default:
         return '';
     }
@@ -127,7 +127,7 @@ export default function LeaderboardScreen() {
           )}
           {item.isCurrentUser && (
             <View style={styles.youBadge}>
-              <Text style={styles.youBadgeText}>TÚ</Text>
+              <Text style={styles.youBadgeText}>TÃš</Text>
             </View>
           )}
         </View>
@@ -157,7 +157,7 @@ export default function LeaderboardScreen() {
     <View style={styles.container}>
       <Stack.Screen
         options={{
-          title: 'Clasificación',
+          title: 'ClasificaciÃ³n',
           headerStyle: { backgroundColor: '#000' },
           headerTintColor: '#fff',
         }}
@@ -169,7 +169,7 @@ export default function LeaderboardScreen() {
           <Text style={styles.ranksTitle}>Tus Rankings</Text>
           <View style={styles.ranksGrid}>
             <View style={styles.rankItem}>
-              <Ionicons name="flash" size={20} color="#f59e0b" />
+              <Ionicons name="flash" size={20} color="#FFEA00" />
               <Text style={styles.rankLabel}>XP</Text>
               <Text style={styles.rankValue}>#{userRanks.xpRank}</Text>
             </View>
@@ -179,7 +179,7 @@ export default function LeaderboardScreen() {
               <Text style={styles.rankValue}>#{userRanks.streakRank}</Text>
             </View>
             <View style={styles.rankItem}>
-              <Ionicons name="barbell" size={20} color="#10b981" />
+              <Ionicons name="barbell" size={20} color="#9D12DE" />
               <Text style={styles.rankLabel}>Workouts</Text>
               <Text style={styles.rankValue}>#{userRanks.workoutsRank}</Text>
             </View>
@@ -256,7 +256,7 @@ export default function LeaderboardScreen() {
       {/* Leaderboard List */}
       {isLoading && (
         <View style={styles.centered}>
-          <Text style={styles.loadingText}>Cargando clasificación...</Text>
+          <Text style={styles.loadingText}>Cargando clasificaciÃ³n...</Text>
         </View>
       )}
 
@@ -265,7 +265,7 @@ export default function LeaderboardScreen() {
           <Ionicons name="trophy-outline" size={64} color="#666" />
           <Text style={styles.emptyText}>
             {selectedView === 'friends'
-              ? 'Aún no hay datos de tus amigos'
+              ? 'AÃºn no hay datos de tus amigos'
               : 'No hay datos disponibles'}
           </Text>
         </View>
@@ -344,7 +344,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#1a1a1a',
   },
   viewButtonActive: {
-    backgroundColor: '#10b981',
+    backgroundColor: '#9D12DE',
   },
   viewButtonText: {
     fontSize: 14,
@@ -395,7 +395,7 @@ const styles = StyleSheet.create({
   },
   entryCardHighlight: {
     borderWidth: 2,
-    borderColor: '#10b981',
+    borderColor: '#9D12DE',
     backgroundColor: '#0a2f1f',
   },
   rankContainer: {
@@ -427,7 +427,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
     bottom: -4,
     right: -4,
-    backgroundColor: '#10b981',
+    backgroundColor: '#9D12DE',
     paddingHorizontal: 6,
     paddingVertical: 2,
     borderRadius: 8,
@@ -447,7 +447,7 @@ const styles = StyleSheet.create({
     marginBottom: 2,
   },
   userNameHighlight: {
-    color: '#10b981',
+    color: '#9D12DE',
   },
   username: {
     fontSize: 12,
@@ -484,3 +484,4 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
 });
+

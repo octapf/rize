@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -72,7 +72,7 @@ export default function WorkoutComparison() {
 
       <ScrollView className="flex-1" showsVerticalScrollIndicator={false}>
         <View className="px-6 pt-6">
-          <View className="bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl p-6 mb-6">
+          <View className="bg-gradient-to-r from-primary to-[#7D0EBE] rounded-xl p-6 mb-6">
             <Text className="text-white text-2xl font-bold mb-2">Compare Workouts</Text>
             <Text className="text-white opacity-90 mb-4">
               Track improvements over time
@@ -92,7 +92,7 @@ export default function WorkoutComparison() {
                     key={w.key}
                     onPress={() => setWorkout1(w.key)}
                     className={`${
-                      workout1 === w.key ? 'bg-blue-500' : 'bg-zinc-900'
+                      workout1 === w.key ? 'bg-primary' : 'bg-zinc-900'
                     } rounded-xl p-3 mb-2 border ${
                       workout1 === w.key ? 'border-blue-400' : 'border-zinc-800'
                     }`}
@@ -100,7 +100,7 @@ export default function WorkoutComparison() {
                     <Text className={`${workout1 === w.key ? 'text-white' : 'text-zinc-400'} font-bold`}>
                       {w.label}
                     </Text>
-                    <Text className={`${workout1 === w.key ? 'text-blue-100' : 'text-zinc-500'} text-xs`}>
+                    <Text className={`${workout1 === w.key ? 'text-highlight' : 'text-zinc-500'} text-xs`}>
                       {w.date}
                     </Text>
                   </TouchableOpacity>
@@ -116,15 +116,15 @@ export default function WorkoutComparison() {
                     key={w.key}
                     onPress={() => setWorkout2(w.key)}
                     className={`${
-                      workout2 === w.key ? 'bg-emerald-500' : 'bg-zinc-900'
+                      workout2 === w.key ? 'bg-primary' : 'bg-zinc-900'
                     } rounded-xl p-3 mb-2 border ${
-                      workout2 === w.key ? 'border-emerald-400' : 'border-zinc-800'
+                      workout2 === w.key ? 'border-primary' : 'border-zinc-800'
                     }`}
                   >
                     <Text className={`${workout2 === w.key ? 'text-white' : 'text-zinc-400'} font-bold`}>
                       {w.label}
                     </Text>
-                    <Text className={`${workout2 === w.key ? 'text-emerald-100' : 'text-zinc-500'} text-xs`}>
+                    <Text className={`${workout2 === w.key ? 'text-primary/50' : 'text-zinc-500'} text-xs`}>
                       {w.date}
                     </Text>
                   </TouchableOpacity>
@@ -137,15 +137,15 @@ export default function WorkoutComparison() {
             <Text className="text-white font-bold text-lg mb-4">Overall Comparison</Text>
 
             <View className="flex-row gap-3 mb-4">
-              <View className="flex-1 bg-blue-500/10 rounded-lg p-3 border border-blue-500/30">
-                <Text className="text-blue-400 text-xs mb-1">{comparison.workout1.name}</Text>
+              <View className="flex-1 bg-primary/10 rounded-lg p-3 border border-primary/30">
+                <Text className="text-primary/80 text-xs mb-1">{comparison.workout1.name}</Text>
                 <Text className="text-white font-bold text-2xl">
                   {comparison.workout1.totalVolume.toLocaleString()}
                 </Text>
                 <Text className="text-zinc-400 text-xs">Total Volume (kg)</Text>
               </View>
-              <View className="flex-1 bg-emerald-500/10 rounded-lg p-3 border border-emerald-500/30">
-                <Text className="text-emerald-400 text-xs mb-1">{comparison.workout2.name}</Text>
+              <View className="flex-1 bg-primary/10 rounded-lg p-3 border border-primary/30">
+                <Text className="text-primary text-xs mb-1">{comparison.workout2.name}</Text>
                 <Text className="text-white font-bold text-2xl">
                   {comparison.workout2.totalVolume.toLocaleString()}
                 </Text>
@@ -153,18 +153,18 @@ export default function WorkoutComparison() {
               </View>
             </View>
 
-            <View className={`${volumeDiff >= 0 ? 'bg-emerald-500/10 border-emerald-500/30' : 'bg-red-500/10 border-red-500/30'} rounded-lg p-3 mb-3 border`}>
+            <View className={`${volumeDiff >= 0 ? 'bg-primary/10 border-primary/30' : 'bg-red-500/10 border-red-500/30'} rounded-lg p-3 mb-3 border`}>
               <View className="flex-row items-center justify-between">
-                <Text className={`${volumeDiff >= 0 ? 'text-emerald-400' : 'text-red-400'} font-bold`}>
+                <Text className={`${volumeDiff >= 0 ? 'text-primary' : 'text-red-400'} font-bold`}>
                   Volume Difference
                 </Text>
                 <View className="flex-row items-center">
                   <Ionicons
                     name={volumeDiff >= 0 ? 'trending-up' : 'trending-down'}
                     size={20}
-                    color={volumeDiff >= 0 ? '#10b981' : '#ef4444'}
+                    color={volumeDiff >= 0 ? '#9D12DE' : '#ef4444'}
                   />
-                  <Text className={`${volumeDiff >= 0 ? 'text-emerald-400' : 'text-red-400'} font-bold text-lg ml-2`}>
+                  <Text className={`${volumeDiff >= 0 ? 'text-primary' : 'text-red-400'} font-bold text-lg ml-2`}>
                     {volumeDiff >= 0 ? '+' : ''}{volumeDiff}kg ({volumeDiff >= 0 ? '+' : ''}{volumePercent}%)
                   </Text>
                 </View>
@@ -195,14 +195,14 @@ export default function WorkoutComparison() {
                 <Text className="text-white font-bold mb-3">{ex1.name}</Text>
 
                 <View className="flex-row gap-3 mb-2">
-                  <View className="flex-1 bg-blue-500/10 rounded-lg p-2 border border-blue-500/30">
-                    <Text className="text-blue-400 text-xs">Today</Text>
+                  <View className="flex-1 bg-primary/10 rounded-lg p-2 border border-primary/30">
+                    <Text className="text-primary/80 text-xs">Today</Text>
                     <Text className="text-white font-bold">
                       {ex1.sets}x{ex1.reps} @ {ex1.weight > 0 ? `${ex1.weight}kg` : 'BW'}
                     </Text>
                   </View>
-                  <View className="flex-1 bg-emerald-500/10 rounded-lg p-2 border border-emerald-500/30">
-                    <Text className="text-emerald-400 text-xs">Last Week</Text>
+                  <View className="flex-1 bg-primary/10 rounded-lg p-2 border border-primary/30">
+                    <Text className="text-primary text-xs">Last Week</Text>
                     <Text className="text-white font-bold">
                       {ex2.sets}x{ex2.reps} @ {ex2.weight > 0 ? `${ex2.weight}kg` : 'BW'}
                     </Text>
@@ -213,13 +213,13 @@ export default function WorkoutComparison() {
                   <Text className="text-zinc-400 text-sm">Changes:</Text>
                   <View className="flex-row items-center">
                     {weightDiff > 0 && (
-                      <View className="bg-emerald-500/20 rounded px-2 py-1 mr-2">
-                        <Text className="text-emerald-400 text-xs font-bold">+{weightDiff}kg</Text>
+                      <View className="bg-primary/20 rounded px-2 py-1 mr-2">
+                        <Text className="text-primary text-xs font-bold">+{weightDiff}kg</Text>
                       </View>
                     )}
                     {volumeDiff > 0 && (
-                      <View className="bg-blue-500/20 rounded px-2 py-1">
-                        <Text className="text-blue-400 text-xs font-bold">+{volumeDiff}kg vol</Text>
+                      <View className="bg-primary/20 rounded px-2 py-1">
+                        <Text className="text-primary/80 text-xs font-bold">+{volumeDiff}kg vol</Text>
                       </View>
                     )}
                     {weightDiff === 0 && volumeDiff === 0 && (
@@ -231,14 +231,14 @@ export default function WorkoutComparison() {
             );
           })}
 
-          <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30 mb-6">
-            <Text className="text-blue-400 font-bold mb-2">Comparison Insights</Text>
-            <Text className="text-blue-300 text-sm">
-              • Green = improvement{'\n'}
-              • Compare same workout types{'\n'}
-              • Look for consistent progress{'\n'}
-              • Stagnant? Time para deload{'\n'}
-              • Track trends, not individual sessions
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
+            <Text className="text-primary/80 font-bold mb-2">Comparison Insights</Text>
+            <Text className="text-primary/60 text-sm">
+              â€¢ Green = improvement{'\n'}
+              â€¢ Compare same workout types{'\n'}
+              â€¢ Look for consistent progress{'\n'}
+              â€¢ Stagnant? Time para deload{'\n'}
+              â€¢ Track trends, not individual sessions
             </Text>
           </View>
         </View>
@@ -246,3 +246,5 @@ export default function WorkoutComparison() {
     </View>
   );
 }
+
+

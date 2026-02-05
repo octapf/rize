@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -103,7 +103,7 @@ export default function WorkoutComparison() {
         color: 'blue',
       },
       {
-        label: 'Duración',
+        label: 'DuraciÃ³n',
         workoutA: workoutA.duration,
         workoutB: workoutB.duration,
         unit: 'min',
@@ -161,9 +161,9 @@ export default function WorkoutComparison() {
               <Ionicons name="arrow-back" size={24} color="white" />
             </TouchableOpacity>
             <Text className="text-white text-2xl font-bold flex-1 ml-3">
-              Comparación
+              ComparaciÃ³n
             </Text>
-            <TouchableOpacity onPress={() => Alert.alert('Guardado', 'Comparación guardada')}>
+            <TouchableOpacity onPress={() => Alert.alert('Guardado', 'ComparaciÃ³n guardada')}>
               <Ionicons name="bookmark" size={24} color="white" />
             </TouchableOpacity>
           </View>
@@ -172,7 +172,7 @@ export default function WorkoutComparison() {
         <ScrollView className="flex-1" showsVerticalScrollIndicator={false}>
           <View className="px-6 pt-6">
             {/* Winner */}
-            <View className="bg-gradient-to-r from-emerald-500 to-blue-500 rounded-xl p-6 mb-6">
+            <View className="bg-gradient-to-r from-primary to-[#7D0EBE] rounded-xl p-6 mb-6">
               <Text className="text-white opacity-90 text-sm mb-2">Mejor Workout</Text>
               <Text className="text-white text-3xl font-bold mb-4">
                 {workoutAWins > workoutBWins ? workoutA.name : workoutBWins > workoutAWins ? workoutB.name : 'Empate'}
@@ -193,10 +193,10 @@ export default function WorkoutComparison() {
 
             {/* Workouts Info */}
             <View className="flex-row gap-3 mb-6">
-              <View className="flex-1 bg-blue-500/10 rounded-xl p-4 border border-blue-500/30">
-                <Text className="text-blue-400 font-bold text-sm mb-2">Workout A</Text>
+              <View className="flex-1 bg-primary/10 rounded-xl p-4 border border-primary/30">
+                <Text className="text-primary/80 font-bold text-sm mb-2">Workout A</Text>
                 <Text className="text-white font-bold mb-1">{workoutA.name}</Text>
-                <Text className="text-blue-300 text-xs">{workoutA.type}</Text>
+                <Text className="text-primary/60 text-xs">{workoutA.type}</Text>
               </View>
               <View className="flex-1 bg-purple-500/10 rounded-xl p-4 border border-purple-500/30">
                 <Text className="text-purple-400 font-bold text-sm mb-2">Workout B</Text>
@@ -206,7 +206,7 @@ export default function WorkoutComparison() {
             </View>
 
             {/* Comparisons */}
-            <Text className="text-white font-bold text-lg mb-4">Métricas</Text>
+            <Text className="text-white font-bold text-lg mb-4">MÃ©tricas</Text>
             {comparisons.map((comparison, index) => (
               <View key={index} className="bg-zinc-900 rounded-xl p-4 mb-3 border border-zinc-800">
                 <View className="flex-row items-center mb-3">
@@ -217,34 +217,34 @@ export default function WorkoutComparison() {
                 </View>
 
                 <View className="flex-row gap-3">
-                  <View className={`flex-1 rounded-lg p-3 ${comparison.better === 'A' ? 'bg-emerald-500/20 border-2 border-emerald-500' : 'bg-zinc-800'}`}>
-                    <Text className={`text-xs mb-1 ${comparison.better === 'A' ? 'text-emerald-400' : 'text-zinc-400'}`}>
+                  <View className={`flex-1 rounded-lg p-3 ${comparison.better === 'A' ? 'bg-primary/20 border-2 border-primary' : 'bg-zinc-800'}`}>
+                    <Text className={`text-xs mb-1 ${comparison.better === 'A' ? 'text-primary' : 'text-zinc-400'}`}>
                       Workout A
                     </Text>
-                    <Text className={`font-bold text-2xl ${comparison.better === 'A' ? 'text-emerald-400' : 'text-white'}`}>
+                    <Text className={`font-bold text-2xl ${comparison.better === 'A' ? 'text-primary' : 'text-white'}`}>
                       {comparison.workoutA}
                       <Text className="text-sm"> {comparison.unit}</Text>
                     </Text>
                     {comparison.better === 'A' && (
                       <View className="flex-row items-center mt-1">
-                        <Ionicons name="checkmark-circle" size={16} color="#10B981" />
-                        <Text className="text-emerald-400 text-xs ml-1 font-bold">Mejor</Text>
+                        <Ionicons name="checkmark-circle" size={16} color="#9D12DE" />
+                        <Text className="text-primary text-xs ml-1 font-bold">Mejor</Text>
                       </View>
                     )}
                   </View>
 
-                  <View className={`flex-1 rounded-lg p-3 ${comparison.better === 'B' ? 'bg-emerald-500/20 border-2 border-emerald-500' : 'bg-zinc-800'}`}>
-                    <Text className={`text-xs mb-1 ${comparison.better === 'B' ? 'text-emerald-400' : 'text-zinc-400'}`}>
+                  <View className={`flex-1 rounded-lg p-3 ${comparison.better === 'B' ? 'bg-primary/20 border-2 border-primary' : 'bg-zinc-800'}`}>
+                    <Text className={`text-xs mb-1 ${comparison.better === 'B' ? 'text-primary' : 'text-zinc-400'}`}>
                       Workout B
                     </Text>
-                    <Text className={`font-bold text-2xl ${comparison.better === 'B' ? 'text-emerald-400' : 'text-white'}`}>
+                    <Text className={`font-bold text-2xl ${comparison.better === 'B' ? 'text-primary' : 'text-white'}`}>
                       {comparison.workoutB}
                       <Text className="text-sm"> {comparison.unit}</Text>
                     </Text>
                     {comparison.better === 'B' && (
                       <View className="flex-row items-center mt-1">
-                        <Ionicons name="checkmark-circle" size={16} color="#10B981" />
-                        <Text className="text-emerald-400 text-xs ml-1 font-bold">Mejor</Text>
+                        <Ionicons name="checkmark-circle" size={16} color="#9D12DE" />
+                        <Text className="text-primary text-xs ml-1 font-bold">Mejor</Text>
                       </View>
                     )}
                   </View>
@@ -262,17 +262,17 @@ export default function WorkoutComparison() {
             ))}
 
             {/* Insights */}
-            <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30 mb-6">
+            <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
               <View className="flex-row items-start">
-                <Ionicons name="bulb" size={20} color="#3B82F6" />
+                <Ionicons name="bulb" size={20} color="#9D12DE" />
                 <View className="flex-1 ml-3">
-                  <Text className="text-blue-400 font-bold mb-2">Insights</Text>
-                  <Text className="text-blue-300 text-sm">
+                  <Text className="text-primary/80 font-bold mb-2">Insights</Text>
+                  <Text className="text-primary/60 text-sm">
                     {workoutAWins > workoutBWins
-                      ? `${workoutA.name} tuvo mejor rendimiento general. Considera qué factores contribuyeron (sueño, nutrición, descanso).`
+                      ? `${workoutA.name} tuvo mejor rendimiento general. Considera quÃ© factores contribuyeron (sueÃ±o, nutriciÃ³n, descanso).`
                       : workoutBWins > workoutAWins
-                      ? `${workoutB.name} fue superior. Analiza qué cambió entre sesiones para replicar el éxito.`
-                      : 'Workouts muy parejos. Mantén la consistencia y progresa gradualmente.'}
+                      ? `${workoutB.name} fue superior. Analiza quÃ© cambiÃ³ entre sesiones para replicar el Ã©xito.`
+                      : 'Workouts muy parejos. MantÃ©n la consistencia y progresa gradualmente.'}
                   </Text>
                 </View>
               </View>
@@ -301,7 +301,7 @@ export default function WorkoutComparison() {
         <View className="px-6 pt-6">
           {/* Selection Status */}
           <View className="flex-row gap-3 mb-6">
-            <View className={`flex-1 rounded-xl p-4 ${workoutA ? 'bg-blue-500' : 'bg-zinc-900 border border-zinc-800'}`}>
+            <View className={`flex-1 rounded-xl p-4 ${workoutA ? 'bg-primary' : 'bg-zinc-900 border border-zinc-800'}`}>
               <Text className={`font-bold mb-1 ${workoutA ? 'text-white' : 'text-zinc-400'}`}>
                 Workout A
               </Text>
@@ -333,13 +333,13 @@ export default function WorkoutComparison() {
                 } else if (!workoutB && workout.id !== workoutA.id) {
                   selectWorkout(workout, 'B');
                 } else if (workoutA && workoutB) {
-                  Alert.alert('Info', 'Ya seleccionaste ambos workouts. Compáralos o resetea.');
+                  Alert.alert('Info', 'Ya seleccionaste ambos workouts. CompÃ¡ralos o resetea.');
                 }
               }}
               disabled={workoutA?.id === workout.id || workoutB?.id === workout.id}
               className={`mb-3 rounded-xl p-4 ${
                 workoutA?.id === workout.id
-                  ? 'bg-blue-500/20 border-2 border-blue-500'
+                  ? 'bg-primary/20 border-2 border-primary'
                   : workoutB?.id === workout.id
                   ? 'bg-purple-500/20 border-2 border-purple-500'
                   : 'bg-zinc-900 border border-zinc-800'
@@ -348,7 +348,7 @@ export default function WorkoutComparison() {
               <View className="flex-row items-center justify-between mb-2">
                 <Text className="text-white font-bold text-lg flex-1">{workout.name}</Text>
                 {(workoutA?.id === workout.id || workoutB?.id === workout.id) && (
-                  <Ionicons name="checkmark-circle" size={24} color={workoutA?.id === workout.id ? '#3B82F6' : '#A855F7'} />
+                  <Ionicons name="checkmark-circle" size={24} color={workoutA?.id === workout.id ? '#9D12DE' : '#A855F7'} />
                 )}
               </View>
 
@@ -364,7 +364,7 @@ export default function WorkoutComparison() {
                 </View>
                 {workout.rating && (
                   <View className="bg-amber-500/10 rounded px-2 py-1 border border-amber-500/30">
-                    <Text className="text-amber-400 text-xs font-bold">⭐ {workout.rating}/10</Text>
+                    <Text className="text-amber-400 text-xs font-bold">â­ {workout.rating}/10</Text>
                   </View>
                 )}
               </View>
@@ -375,7 +375,7 @@ export default function WorkoutComparison() {
           {workoutA && workoutB && (
             <TouchableOpacity
               onPress={compareWorkouts}
-              className="bg-emerald-500 rounded-xl p-5 flex-row items-center justify-center mb-4"
+              className="bg-primary rounded-xl p-5 flex-row items-center justify-center mb-4"
             >
               <Ionicons name="git-compare" size={24} color="white" />
               <Text className="text-white font-bold text-xl ml-2">Comparar Workouts</Text>
@@ -389,24 +389,24 @@ export default function WorkoutComparison() {
               className="bg-zinc-900 rounded-xl p-4 flex-row items-center justify-center mb-6 border border-zinc-800"
             >
               <Ionicons name="refresh" size={20} color="white" />
-              <Text className="text-white font-bold ml-2">Resetear Selección</Text>
+              <Text className="text-white font-bold ml-2">Resetear SelecciÃ³n</Text>
             </TouchableOpacity>
           )}
 
           {/* Info */}
-          <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30 mb-6">
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
             <View className="flex-row items-start">
-              <Ionicons name="information-circle" size={20} color="#3B82F6" />
+              <Ionicons name="information-circle" size={20} color="#9D12DE" />
               <View className="flex-1 ml-3">
-                <Text className="text-blue-400 font-bold mb-2">
-                  Por Qué Comparar
+                <Text className="text-primary/80 font-bold mb-2">
+                  Por QuÃ© Comparar
                 </Text>
-                <Text className="text-blue-300 text-sm">
-                  • Identifica qué workouts son más efectivos{'\n'}
-                  • Analiza progreso entre sesiones{'\n'}
-                  • Optimiza volumen y duración{'\n'}
-                  • Replica sesiones exitosas{'\n'}
-                  • Toma decisiones basadas en data
+                <Text className="text-primary/60 text-sm">
+                  â€¢ Identifica quÃ© workouts son mÃ¡s efectivos{'\n'}
+                  â€¢ Analiza progreso entre sesiones{'\n'}
+                  â€¢ Optimiza volumen y duraciÃ³n{'\n'}
+                  â€¢ Replica sesiones exitosas{'\n'}
+                  â€¢ Toma decisiones basadas en data
                 </Text>
               </View>
             </View>
@@ -416,3 +416,4 @@ export default function WorkoutComparison() {
     </View>
   );
 }
+

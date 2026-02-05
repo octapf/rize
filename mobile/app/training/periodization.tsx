@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -190,9 +190,9 @@ export default function PeriodizationTemplates() {
 
   const getColorClasses = (color: string) => {
     const colors: { [key: string]: { bg: string; border: string; text: string } } = {
-      blue: { bg: 'bg-blue-500', border: 'border-blue-400', text: 'text-blue-400' },
+      blue: { bg: 'bg-primary', border: 'border-primary', text: 'text-primary/80' },
       purple: { bg: 'bg-purple-500', border: 'border-purple-400', text: 'text-purple-400' },
-      emerald: { bg: 'bg-emerald-500', border: 'border-emerald-400', text: 'text-emerald-400' },
+      emerald: { bg: 'bg-primary', border: 'border-primary', text: 'text-primary' },
       red: { bg: 'bg-red-500', border: 'border-red-400', text: 'text-red-400' },
     };
     return colors[color];
@@ -282,13 +282,13 @@ export default function PeriodizationTemplates() {
                   </View>
                   <View className="flex-row justify-between">
                     <Text className="text-zinc-400 text-sm">Focus:</Text>
-                    <Text className="text-emerald-400 font-bold">{phase.focus}</Text>
+                    <Text className="text-primary font-bold">{phase.focus}</Text>
                   </View>
                 </View>
                 <View className="border-t border-zinc-700 pt-3">
                   {phase.notes.map((note, noteIdx) => (
                     <Text key={noteIdx} className="text-zinc-300 text-sm mb-1">
-                      • {note}
+                      â€¢ {note}
                     </Text>
                   ))}
                 </View>
@@ -298,14 +298,14 @@ export default function PeriodizationTemplates() {
 
           <View className="bg-zinc-900 rounded-xl p-5 mb-6 border border-zinc-800">
             <View className="flex-row items-center mb-4">
-              <View className="bg-emerald-500 rounded-full p-2 mr-3">
+              <View className="bg-primary rounded-full p-2 mr-3">
                 <Ionicons name="checkmark" size={20} color="white" />
               </View>
               <Text className="text-white font-bold text-lg">Pros</Text>
             </View>
             {currentTemplate.pros.map((pro, idx) => (
-              <Text key={idx} className="text-emerald-400 text-sm mb-2 last:mb-0">
-                ✓ {pro}
+              <Text key={idx} className="text-primary text-sm mb-2 last:mb-0">
+                âœ“ {pro}
               </Text>
             ))}
           </View>
@@ -319,24 +319,24 @@ export default function PeriodizationTemplates() {
             </View>
             {currentTemplate.cons.map((con, idx) => (
               <Text key={idx} className="text-amber-400 text-sm mb-2 last:mb-0">
-                ⚠ {con}
+                âš  {con}
               </Text>
             ))}
           </View>
 
-          <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30 mb-6">
-            <Text className="text-blue-400 font-bold mb-2">Implementation Tips</Text>
-            <Text className="text-blue-300 text-sm mb-2">
-              • Stick to one model for full cycle (don't program hop)
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
+            <Text className="text-primary/80 font-bold mb-2">Implementation Tips</Text>
+            <Text className="text-primary/60 text-sm mb-2">
+              â€¢ Stick to one model for full cycle (don't program hop)
             </Text>
-            <Text className="text-blue-300 text-sm mb-2">
-              • Track all lifts to ensure progression
+            <Text className="text-primary/60 text-sm mb-2">
+              â€¢ Track all lifts to ensure progression
             </Text>
-            <Text className="text-blue-300 text-sm mb-2">
-              • Don't skip deloads (recovery is when you grow)
+            <Text className="text-primary/60 text-sm mb-2">
+              â€¢ Don't skip deloads (recovery is when you grow)
             </Text>
-            <Text className="text-blue-300 text-sm">
-              • Adjust based on recovery and life stress
+            <Text className="text-primary/60 text-sm">
+              â€¢ Adjust based on recovery and life stress
             </Text>
           </View>
         </View>
@@ -344,3 +344,4 @@ export default function PeriodizationTemplates() {
     </View>
   );
 }
+

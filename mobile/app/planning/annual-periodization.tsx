@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -83,12 +83,12 @@ export default function AnnualPeriodization() {
         beginner: {
           meets: '1-2 per year',
           reasoning: 'Focus on building base, meets are learning experience',
-          structure: 'Long off-season → meet → long off-season → maybe 2nd meet',
+          structure: 'Long off-season â†’ meet â†’ long off-season â†’ maybe 2nd meet',
         },
         intermediate: {
           meets: '2-3 per year',
           reasoning: 'Can handle multiple peaks, build competition experience',
-          structure: 'Off-season → meet → short off-season → meet → long off-season',
+          structure: 'Off-season â†’ meet â†’ short off-season â†’ meet â†’ long off-season',
         },
         advanced: {
           meets: '3-4 per year',
@@ -439,8 +439,8 @@ export default function AnnualPeriodization() {
 
   const getColorClass = (color: string) => {
     const colors: { [key: string]: string } = {
-      blue: 'bg-blue-500',
-      emerald: 'bg-emerald-500',
+      blue: 'bg-primary',
+      emerald: 'bg-primary',
       purple: 'bg-purple-500',
       amber: 'bg-amber-500',
       cyan: 'bg-cyan-500',
@@ -464,7 +464,7 @@ export default function AnnualPeriodization() {
 
       <ScrollView className="flex-1" showsVerticalScrollIndicator={false}>
         <View className="px-6 pt-6">
-          <View className="bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl p-6 mb-6">
+          <View className="bg-gradient-to-r from-primary to-[#7D0EBE] rounded-xl p-6 mb-6">
             <Text className="text-white text-2xl font-bold mb-2">The Yearly Plan</Text>
             <Text className="text-white opacity-90">
               Structure your training year for maximum progress
@@ -503,24 +503,24 @@ export default function AnnualPeriodization() {
           {selectedPhase === 'overview' && (
             <View>
               <View className="bg-zinc-900 rounded-xl p-5 mb-6 border border-zinc-800">
-                <Text className="text-blue-400 text-xl font-bold mb-3">What Is Periodization?</Text>
+                <Text className="text-primary/80 text-xl font-bold mb-3">What Is Periodization?</Text>
                 <Text className="text-zinc-300 mb-4">{currentPhase.concept?.whatIs}</Text>
 
                 <Text className="text-white font-bold mb-2">Why Periodize?</Text>
                 {currentPhase.concept?.why.map((reason: string, idx: number) => (
-                  <Text key={idx} className="text-zinc-300 text-sm mb-1">• {reason}</Text>
+                  <Text key={idx} className="text-zinc-300 text-sm mb-1">â€¢ {reason}</Text>
                 ))}
               </View>
 
               <View className="bg-zinc-900 rounded-xl p-5 mb-6 border border-zinc-800">
-                <Text className="text-blue-400 text-xl font-bold mb-4">Typical Year Structure</Text>
+                <Text className="text-primary/80 text-xl font-bold mb-4">Typical Year Structure</Text>
                 {currentPhase.yearStructure?.phases.map((phase: any, idx: number) => (
                   <View key={idx} className="bg-zinc-800 rounded-xl p-4 mb-4 last:mb-0">
                     <Text className="text-white font-bold mb-2">{phase.name}</Text>
                     <Text className="text-zinc-300 text-sm mb-2">{phase.focus}</Text>
                     <View className="flex-row flex-wrap gap-2">
-                      <View className="bg-blue-500/20 rounded-lg px-2 py-1">
-                        <Text className="text-blue-300 text-xs">Intensity: {phase.intensity}</Text>
+                      <View className="bg-primary/20 rounded-lg px-2 py-1">
+                        <Text className="text-primary/60 text-xs">Intensity: {phase.intensity}</Text>
                       </View>
                       <View className="bg-purple-500/20 rounded-lg px-2 py-1">
                         <Text className="text-purple-300 text-xs">Volume: {phase.volume}</Text>
@@ -531,11 +531,11 @@ export default function AnnualPeriodization() {
               </View>
 
               <View className="bg-zinc-900 rounded-xl p-5 mb-6 border border-zinc-800">
-                <Text className="text-blue-400 text-xl font-bold mb-4">How Many Meets?</Text>
+                <Text className="text-primary/80 text-xl font-bold mb-4">How Many Meets?</Text>
                 {Object.entries(currentPhase.howManyMeets || {}).map(([level, data]: [string, any]) => (
                   <View key={level} className="mb-4 last:mb-0">
                     <Text className="text-white font-bold capitalize mb-1">{level}</Text>
-                    <Text className="text-emerald-400 text-sm mb-1">{data.meets}</Text>
+                    <Text className="text-primary text-sm mb-1">{data.meets}</Text>
                     <Text className="text-zinc-300 text-sm mb-1">{data.reasoning}</Text>
                     <Text className="text-zinc-400 text-sm italic">{data.structure}</Text>
                   </View>
@@ -556,7 +556,7 @@ export default function AnnualPeriodization() {
                 <View className="bg-zinc-900 rounded-xl p-5 mb-6 border border-zinc-800">
                   <Text className="text-white text-lg font-bold mb-3">Goals</Text>
                   {currentPhase.goals.map((goal: string, idx: number) => (
-                    <Text key={idx} className="text-zinc-300 mb-1">• {goal}</Text>
+                    <Text key={idx} className="text-zinc-300 mb-1">â€¢ {goal}</Text>
                   ))}
                 </View>
               )}
@@ -567,12 +567,12 @@ export default function AnnualPeriodization() {
                   
                   {Object.entries(currentPhase.training).map(([key, value]: [string, any]) => (
                     <View key={key} className="mb-3 last:mb-0">
-                      <Text className="text-blue-400 font-bold capitalize mb-1">{key}:</Text>
+                      <Text className="text-primary/80 font-bold capitalize mb-1">{key}:</Text>
                       {typeof value === 'string' ? (
                         <Text className="text-zinc-300 text-sm">{value}</Text>
                       ) : (
                         value.map((item: string, idx: number) => (
-                          <Text key={idx} className="text-zinc-300 text-sm mb-1">• {item}</Text>
+                          <Text key={idx} className="text-zinc-300 text-sm mb-1">â€¢ {item}</Text>
                         ))
                       )}
                     </View>
@@ -588,7 +588,7 @@ export default function AnnualPeriodization() {
                       <Text className="text-white font-bold mb-2">{week.week}</Text>
                       <Text className="text-zinc-300 text-sm mb-1">Volume: {week.volume}</Text>
                       <Text className="text-zinc-300 text-sm mb-1">Intensity: {week.intensity}</Text>
-                      <Text className="text-blue-400 text-sm">{week.focus}</Text>
+                      <Text className="text-primary/80 text-sm">{week.focus}</Text>
                     </View>
                   ))}
                 </View>
@@ -599,12 +599,12 @@ export default function AnnualPeriodization() {
                   <Text className="text-white text-lg font-bold mb-3">Nutrition</Text>
                   {Object.entries(currentPhase.nutrition).map(([key, value]: [string, any]) => (
                     <View key={key} className="mb-2 last:mb-0">
-                      <Text className="text-emerald-400 font-bold capitalize text-sm">{key}:</Text>
+                      <Text className="text-primary font-bold capitalize text-sm">{key}:</Text>
                       {typeof value === 'string' ? (
                         <Text className="text-zinc-300 text-sm">{value}</Text>
                       ) : (
                         value.map((item: string, idx: number) => (
-                          <Text key={idx} className="text-zinc-300 text-sm mb-1">• {item}</Text>
+                          <Text key={idx} className="text-zinc-300 text-sm mb-1">â€¢ {item}</Text>
                         ))
                       )}
                     </View>
@@ -616,7 +616,7 @@ export default function AnnualPeriodization() {
                 <View className="bg-purple-500/10 rounded-xl p-5 border border-purple-500/30 mb-6">
                   <Text className="text-purple-400 font-bold mb-3">Mental Approach</Text>
                   {currentPhase.mentalApproach.map((item: string, idx: number) => (
-                    <Text key={idx} className="text-purple-300 text-sm mb-1">• {item}</Text>
+                    <Text key={idx} className="text-purple-300 text-sm mb-1">â€¢ {item}</Text>
                   ))}
                 </View>
               )}
@@ -625,7 +625,7 @@ export default function AnnualPeriodization() {
                 <View className="bg-red-500/10 rounded-xl p-5 border border-red-500/30 mb-6">
                   <Text className="text-red-400 font-bold mb-3">Common Mistakes</Text>
                   {currentPhase.mistakes.map((mistake: string, idx: number) => (
-                    <Text key={idx} className="text-red-300 text-sm mb-1">✗ {mistake}</Text>
+                    <Text key={idx} className="text-red-300 text-sm mb-1">âœ— {mistake}</Text>
                   ))}
                 </View>
               )}
@@ -637,7 +637,7 @@ export default function AnnualPeriodization() {
               <View className="bg-cyan-500/10 rounded-xl p-5 border border-cyan-500/30 mb-6">
                 <Text className="text-cyan-400 font-bold text-lg mb-3">Why Recovery Matters</Text>
                 {currentPhase.whyNecessary?.map((reason: string, idx: number) => (
-                  <Text key={idx} className="text-cyan-300 text-sm mb-1">• {reason}</Text>
+                  <Text key={idx} className="text-cyan-300 text-sm mb-1">â€¢ {reason}</Text>
                 ))}
               </View>
 
@@ -648,15 +648,15 @@ export default function AnnualPeriodization() {
                   {option.examples && (
                     <View className="mb-3">
                       {option.examples.map((ex: string, idx: number) => (
-                        <Text key={idx} className="text-zinc-400 text-sm mb-1">• {ex}</Text>
+                        <Text key={idx} className="text-zinc-400 text-sm mb-1">â€¢ {ex}</Text>
                       ))}
                     </View>
                   )}
                   <View className="flex-row justify-between">
-                    {option.pros && <Text className="text-emerald-400 text-sm">✓ {option.pros}</Text>}
-                    {option.cons && <Text className="text-red-400 text-sm">✗ {option.cons}</Text>}
+                    {option.pros && <Text className="text-primary text-sm">âœ“ {option.pros}</Text>}
+                    {option.cons && <Text className="text-red-400 text-sm">âœ— {option.cons}</Text>}
                   </View>
-                  <Text className="text-blue-400 text-sm mt-2">Best for: {option.bestFor}</Text>
+                  <Text className="text-primary/80 text-sm mt-2">Best for: {option.bestFor}</Text>
                 </View>
               ))}
             </View>
@@ -671,12 +671,12 @@ export default function AnnualPeriodization() {
                   
                   <View className="bg-zinc-800 rounded-xl p-4 mb-3">
                     {scenario.approach.map((step: string, sIdx: number) => (
-                      <Text key={sIdx} className="text-zinc-300 text-sm mb-1 last:mb-0">• {step}</Text>
+                      <Text key={sIdx} className="text-zinc-300 text-sm mb-1 last:mb-0">â€¢ {step}</Text>
                     ))}
                   </View>
 
-                  <View className="bg-blue-500/10 rounded-xl p-3 border border-blue-500/30">
-                    <Text className="text-blue-300 text-sm">{scenario.note}</Text>
+                  <View className="bg-primary/10 rounded-xl p-3 border border-primary/30">
+                    <Text className="text-primary/60 text-sm">{scenario.note}</Text>
                   </View>
                 </View>
               ))}
@@ -684,25 +684,25 @@ export default function AnnualPeriodization() {
               <View className="bg-red-500/10 rounded-xl p-5 border border-red-500/30 mb-6">
                 <Text className="text-red-400 font-bold mb-3">Mistakes to Avoid</Text>
                 {currentPhase.mistakes?.map((mistake: string, idx: number) => (
-                  <Text key={idx} className="text-red-300 text-sm mb-1">✗ {mistake}</Text>
+                  <Text key={idx} className="text-red-300 text-sm mb-1">âœ— {mistake}</Text>
                 ))}
               </View>
             </View>
           )}
 
-          <View className="bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-xl p-5 border border-blue-500/30 mb-6">
-            <Text className="text-blue-400 font-bold text-lg mb-3">Remember</Text>
-            <Text className="text-blue-300 text-sm mb-2">
-              • Can't be strong and peaked year-round
+          <View className="bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-xl p-5 border border-primary/30 mb-6">
+            <Text className="text-primary/80 font-bold text-lg mb-3">Remember</Text>
+            <Text className="text-primary/60 text-sm mb-2">
+              â€¢ Can't be strong and peaked year-round
             </Text>
-            <Text className="text-blue-300 text-sm mb-2">
-              • Off-season builds the foundation
+            <Text className="text-primary/60 text-sm mb-2">
+              â€¢ Off-season builds the foundation
             </Text>
-            <Text className="text-blue-300 text-sm mb-2">
-              • Peaking is temporary - enjoy it then recover
+            <Text className="text-primary/60 text-sm mb-2">
+              â€¢ Peaking is temporary - enjoy it then recover
             </Text>
-            <Text className="text-blue-300 text-sm">
-              • Plan the year, execute the plan, adjust as needed
+            <Text className="text-primary/60 text-sm">
+              â€¢ Plan the year, execute the plan, adjust as needed
             </Text>
           </View>
         </View>
@@ -710,3 +710,5 @@ export default function AnnualPeriodization() {
     </View>
   );
 }
+
+

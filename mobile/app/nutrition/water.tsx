@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -60,14 +60,14 @@ export default function WaterTracker() {
     });
 
     if (log.consumed + amount >= log.target) {
-      Alert.alert('¡Meta Alcanzada! 💧', '¡Excelente hidratación hoy!');
+      Alert.alert('Â¡Meta Alcanzada! ðŸ’§', 'Â¡Excelente hidrataciÃ³n hoy!');
     }
   };
 
   const addCustomAmount = () => {
     const amount = parseInt(customAmount);
     if (!amount || amount <= 0) {
-      Alert.alert('Error', 'Ingresa una cantidad válida');
+      Alert.alert('Error', 'Ingresa una cantidad vÃ¡lida');
       return;
     }
     addWater(amount);
@@ -80,7 +80,7 @@ export default function WaterTracker() {
 
     Alert.alert(
       'Eliminar',
-      `¿Quitar ${intake.amount}ml?`,
+      `Â¿Quitar ${intake.amount}ml?`,
       [
         { text: 'Cancelar' },
         {
@@ -158,24 +158,24 @@ export default function WaterTracker() {
               
               {/* Progress Circle */}
               <View
-                className="absolute w-64 h-64 rounded-full border-8 border-blue-500"
+                className="absolute w-64 h-64 rounded-full border-8 border-primary"
                 style={{
-                  borderColor: progress >= 100 ? '#10B981' : '#3B82F6',
+                  borderColor: progress >= 100 ? '#9D12DE' : '#9D12DE',
                   opacity: 0.8,
                 }}
               />
 
               {/* Center Content */}
               <View className="items-center">
-                <Text className="text-6xl mb-2">💧</Text>
+                <Text className="text-6xl mb-2">ðŸ’§</Text>
                 <Text className="text-white text-4xl font-bold mb-1">
                   {log.consumed}ml
                 </Text>
                 <Text className="text-zinc-400 text-lg">
                   de {log.target}ml
                 </Text>
-                <View className="bg-blue-500/10 rounded-lg px-4 py-2 mt-3 border border-blue-500/30">
-                  <Text className="text-blue-400 font-bold text-xl">
+                <View className="bg-primary/10 rounded-lg px-4 py-2 mt-3 border border-primary/30">
+                  <Text className="text-primary/80 font-bold text-xl">
                     {progress.toFixed(0)}%
                   </Text>
                 </View>
@@ -185,24 +185,24 @@ export default function WaterTracker() {
 
           {/* Stats */}
           <View className="flex-row gap-3 mb-6">
-            <View className="flex-1 bg-blue-500/10 rounded-xl p-4 border border-blue-500/30">
-              <Text className="text-blue-400 text-sm mb-1">Vasos (250ml)</Text>
+            <View className="flex-1 bg-primary/10 rounded-xl p-4 border border-primary/30">
+              <Text className="text-primary/80 text-sm mb-1">Vasos (250ml)</Text>
               <Text className="text-white text-3xl font-bold">{getGlasses()}</Text>
             </View>
-            <View className="flex-1 bg-emerald-500/10 rounded-xl p-4 border border-emerald-500/30">
-              <Text className="text-emerald-400 text-sm mb-1">Restante</Text>
+            <View className="flex-1 bg-primary/10 rounded-xl p-4 border border-primary/30">
+              <Text className="text-primary text-sm mb-1">Restante</Text>
               <Text className="text-white text-3xl font-bold">{getRemaining()}ml</Text>
             </View>
           </View>
 
           {/* Quick Add Buttons */}
-          <Text className="text-white font-bold text-lg mb-3">Añadir Rápido</Text>
+          <Text className="text-white font-bold text-lg mb-3">AÃ±adir RÃ¡pido</Text>
           <View className="flex-row gap-2 mb-6">
             {QUICK_AMOUNTS.map((amount) => (
               <TouchableOpacity
                 key={amount}
                 onPress={() => addWater(amount)}
-                className="flex-1 bg-blue-500 rounded-xl p-4 items-center"
+                className="flex-1 bg-primary rounded-xl p-4 items-center"
               >
                 <Ionicons name="water" size={24} color="white" />
                 <Text className="text-white font-bold mt-2">{amount}ml</Text>
@@ -224,7 +224,7 @@ export default function WaterTracker() {
               />
               <TouchableOpacity
                 onPress={addCustomAmount}
-                className="bg-emerald-500 rounded-xl px-6 items-center justify-center"
+                className="bg-primary rounded-xl px-6 items-center justify-center"
               >
                 <Ionicons name="add" size={24} color="white" />
               </TouchableOpacity>
@@ -235,10 +235,10 @@ export default function WaterTracker() {
           <Text className="text-white font-bold text-lg mb-3">Registro de Hoy</Text>
           {log.intakes.length === 0 ? (
             <View className="bg-zinc-900 rounded-xl p-8 items-center border border-zinc-800 mb-6">
-              <Text className="text-6xl mb-3">💧</Text>
+              <Text className="text-6xl mb-3">ðŸ’§</Text>
               <Text className="text-white font-bold text-lg mb-2">Sin Registro</Text>
               <Text className="text-zinc-400 text-center">
-                Empieza a trackear tu hidratación
+                Empieza a trackear tu hidrataciÃ³n
               </Text>
             </View>
           ) : (
@@ -247,7 +247,7 @@ export default function WaterTracker() {
                 <View key={intake.id} className="bg-zinc-900 rounded-xl p-4 mb-3 border border-zinc-800">
                   <View className="flex-row items-center justify-between">
                     <View className="flex-row items-center flex-1">
-                      <View className="w-12 h-12 bg-blue-500 rounded-full items-center justify-center mr-3">
+                      <View className="w-12 h-12 bg-primary rounded-full items-center justify-center mr-3">
                         <Ionicons name="water" size={24} color="white" />
                       </View>
                       <View className="flex-1">
@@ -269,19 +269,19 @@ export default function WaterTracker() {
           )}
 
           {/* Hydration Tips */}
-          <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30 mb-6">
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
             <View className="flex-row items-start">
-              <Ionicons name="information-circle" size={20} color="#3B82F6" />
+              <Ionicons name="information-circle" size={20} color="#9D12DE" />
               <View className="flex-1 ml-3">
-                <Text className="text-blue-400 font-bold mb-2">
-                  Tips de Hidratación
+                <Text className="text-primary/80 font-bold mb-2">
+                  Tips de HidrataciÃ³n
                 </Text>
-                <Text className="text-blue-300 text-sm">
-                  • Meta general: 30-40ml por kg de peso{'\n'}
-                  • Más agua en días de entrenamiento{'\n'}
-                  • Bebe constantemente, no todo de golpe{'\n'}
-                  • Agua antes/durante/después del workout{'\n'}
-                  • Orina clara = buena hidratación
+                <Text className="text-primary/60 text-sm">
+                  â€¢ Meta general: 30-40ml por kg de peso{'\n'}
+                  â€¢ MÃ¡s agua en dÃ­as de entrenamiento{'\n'}
+                  â€¢ Bebe constantemente, no todo de golpe{'\n'}
+                  â€¢ Agua antes/durante/despuÃ©s del workout{'\n'}
+                  â€¢ Orina clara = buena hidrataciÃ³n
                 </Text>
               </View>
             </View>
@@ -308,3 +308,4 @@ export default function WaterTracker() {
     </View>
   );
 }
+

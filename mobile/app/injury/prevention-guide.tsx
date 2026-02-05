@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -42,7 +42,7 @@ export default function InjuryPrevention() {
         { name: 'Wall Slides', sets: '3', reps: '12', frequency: 'Daily', notes: 'Scapular control' },
       ],
       techniqueKeys: [
-        'Keep elbows at 45° on bench press (not 90°)',
+        'Keep elbows at 45Â° on bench press (not 90Â°)',
         'Full ROM but avoid end-range under load',
         'Warm up rotator cuff before upper sessions',
         'Balance push/pull ratio (2:3 or 1:2)',
@@ -244,18 +244,18 @@ export default function InjuryPrevention() {
             <Text className="text-amber-400 font-bold mb-3">Risk Factors</Text>
             {currentGuide.riskFactors.map((factor, idx) => (
               <Text key={idx} className="text-amber-300 text-sm mb-2">
-                ⚠️ {factor}
+                âš ï¸ {factor}
               </Text>
             ))}
           </View>
 
-          <View className="bg-emerald-500/10 rounded-xl p-4 mb-6 border border-emerald-500/30">
-            <Text className="text-emerald-400 font-bold mb-3">Prevention Exercises</Text>
+          <View className="bg-primary/10 rounded-xl p-4 mb-6 border border-primary/30">
+            <Text className="text-primary font-bold mb-3">Prevention Exercises</Text>
             {currentGuide.preventionExercises.map((ex, idx) => (
               <View key={idx} className="bg-zinc-900 rounded-lg p-3 mb-2">
                 <View className="flex-row justify-between items-center mb-2">
                   <Text className="text-white font-bold flex-1">{ex.name}</Text>
-                  <Text className="text-emerald-400 font-bold text-sm">
+                  <Text className="text-primary font-bold text-sm">
                     {ex.sets}x{ex.reps}
                   </Text>
                 </View>
@@ -267,20 +267,20 @@ export default function InjuryPrevention() {
             ))}
           </View>
 
-          <View className="bg-blue-500/10 rounded-xl p-4 mb-6 border border-blue-500/30">
-            <Text className="text-blue-400 font-bold mb-3">Technique Keys</Text>
+          <View className="bg-primary/10 rounded-xl p-4 mb-6 border border-primary/30">
+            <Text className="text-primary/80 font-bold mb-3">Technique Keys</Text>
             {currentGuide.techniqueKeys.map((key, idx) => (
-              <Text key={idx} className="text-blue-300 text-sm mb-2">
-                ✓ {key}
+              <Text key={idx} className="text-primary/60 text-sm mb-2">
+                âœ“ {key}
               </Text>
             ))}
           </View>
 
           <View className="bg-red-500/10 rounded-xl p-4 mb-6 border border-red-500/30">
-            <Text className="text-red-400 font-bold mb-3">⚠️ Warning Signs - See a Doctor</Text>
+            <Text className="text-red-400 font-bold mb-3">âš ï¸ Warning Signs - See a Doctor</Text>
             {currentGuide.warningsSigns.map((sign, idx) => (
               <Text key={idx} className="text-red-300 text-sm mb-2">
-                🚨 {sign}
+                ðŸš¨ {sign}
               </Text>
             ))}
           </View>
@@ -288,14 +288,14 @@ export default function InjuryPrevention() {
           <View className="bg-purple-500/10 rounded-xl p-4 border border-purple-500/30 mb-6">
             <Text className="text-purple-400 font-bold mb-2">General Prevention Rules</Text>
             <Text className="text-purple-300 text-sm">
-              • Progressive overload SLOWLY{'\n'}
-              • Perfect form &gt; heavy weight{'\n'}
-              • Warm up properly (10-15 min){'\n'}
-              • Balance muscle groups{'\n'}
-              • Listen to your body{'\n'}
-              • Deload every 6-8 weeks{'\n'}
-              • Sleep 7-9 hours nightly{'\n'}
-              • Pain ≠ gain (stop if sharp pain)
+              â€¢ Progressive overload SLOWLY{'\n'}
+              â€¢ Perfect form &gt; heavy weight{'\n'}
+              â€¢ Warm up properly (10-15 min){'\n'}
+              â€¢ Balance muscle groups{'\n'}
+              â€¢ Listen to your body{'\n'}
+              â€¢ Deload every 6-8 weeks{'\n'}
+              â€¢ Sleep 7-9 hours nightly{'\n'}
+              â€¢ Pain â‰  gain (stop if sharp pain)
             </Text>
           </View>
         </View>
@@ -303,3 +303,4 @@ export default function InjuryPrevention() {
     </View>
   );
 }
+

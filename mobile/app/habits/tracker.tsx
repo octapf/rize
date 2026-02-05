@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -36,7 +36,7 @@ const HABIT_TEMPLATES: HabitTemplate[] = [
   {
     id: '1',
     name: 'Beber 8 Vasos de Agua',
-    description: 'Mantente hidratado durante el día',
+    description: 'Mantente hidratado durante el dÃ­a',
     frequency: 'diario',
     category: 'salud',
     difficulty: 'facil',
@@ -45,7 +45,7 @@ const HABIT_TEMPLATES: HabitTemplate[] = [
   {
     id: '2',
     name: 'Dormir 8 Horas',
-    description: 'Descanso óptimo para recuperación',
+    description: 'Descanso Ã³ptimo para recuperaciÃ³n',
     frequency: 'diario',
     category: 'recuperacion',
     difficulty: 'media',
@@ -53,7 +53,7 @@ const HABIT_TEMPLATES: HabitTemplate[] = [
   },
   {
     id: '3',
-    name: 'Entrenar 5 Días',
+    name: 'Entrenar 5 DÃ­as',
     description: 'Consistencia en el gimnasio',
     frequency: 'semanal',
     category: 'entrenamiento',
@@ -63,7 +63,7 @@ const HABIT_TEMPLATES: HabitTemplate[] = [
   {
     id: '4',
     name: 'Cumplir Macros Diarios',
-    description: 'Proteína, carbohidratos y grasas balanceadas',
+    description: 'ProteÃ­na, carbohidratos y grasas balanceadas',
     frequency: 'diario',
     category: 'nutricion',
     difficulty: 'dificil',
@@ -97,7 +97,7 @@ const ACTIVE_HABITS: ActiveHabit[] = [
   {
     id: '3',
     templateId: '3',
-    name: 'Entrenar 5 Días',
+    name: 'Entrenar 5 DÃ­as',
     currentStreak: 3,
     bestStreak: 8,
     completedDays: 3,
@@ -114,13 +114,13 @@ export default function HabitTracker() {
   const getCategoryColor = (category: string) => {
     switch (category) {
       case 'salud':
-        return '#10B981';
+        return '#9D12DE';
       case 'nutricion':
-        return '#F59E0B';
+        return '#FFEA00';
       case 'entrenamiento':
         return '#EF4444';
       case 'recuperacion':
-        return '#3B82F6';
+        return '#9D12DE';
       default:
         return '#71717A';
     }
@@ -144,9 +144,9 @@ export default function HabitTracker() {
   const getDifficultyColor = (difficulty: string) => {
     switch (difficulty) {
       case 'facil':
-        return '#10B981';
+        return '#9D12DE';
       case 'media':
-        return '#F59E0B';
+        return '#FFEA00';
       case 'dificil':
         return '#EF4444';
       default:
@@ -156,27 +156,27 @@ export default function HabitTracker() {
 
   const completeHabit = (habit: ActiveHabit) => {
     if (habit.completedToday) {
-      Alert.alert('Ya Completado', 'Este hábito ya fue marcado como completado hoy');
+      Alert.alert('Ya Completado', 'Este hÃ¡bito ya fue marcado como completado hoy');
       return;
     }
 
     Alert.alert(
-      '¡Hábito Completado!',
-      `+50 XP\n\nRacha actual: ${habit.currentStreak + 1} días`,
+      'Â¡HÃ¡bito Completado!',
+      `+50 XP\n\nRacha actual: ${habit.currentStreak + 1} dÃ­as`,
       [{ text: 'OK' }]
     );
   };
 
   const addHabitFromTemplate = (template: HabitTemplate) => {
     Alert.alert(
-      'Agregar Hábito',
-      `${template.name}\n\nRecompensa: ${template.xpReward} XP\nDificultad: ${template.difficulty}\n\n¿Agregar a tus hábitos activos?`,
+      'Agregar HÃ¡bito',
+      `${template.name}\n\nRecompensa: ${template.xpReward} XP\nDificultad: ${template.difficulty}\n\nÂ¿Agregar a tus hÃ¡bitos activos?`,
       [
         { text: 'Cancelar', style: 'cancel' },
         {
           text: 'Agregar',
           onPress: () => {
-            Alert.alert('¡Agregado!', 'Nuevo hábito en seguimiento');
+            Alert.alert('Â¡Agregado!', 'Nuevo hÃ¡bito en seguimiento');
             setShowTemplates(false);
           },
         },
@@ -189,9 +189,9 @@ export default function HabitTracker() {
 
     Alert.alert(
       habit.name,
-      `Racha actual: ${habit.currentStreak} días\nMejor racha: ${habit.bestStreak} días\n\nCompletado: ${habit.completedDays}/${habit.totalDays} días\nTasa de éxito: ${completionRate}%`,
+      `Racha actual: ${habit.currentStreak} dÃ­as\nMejor racha: ${habit.bestStreak} dÃ­as\n\nCompletado: ${habit.completedDays}/${habit.totalDays} dÃ­as\nTasa de Ã©xito: ${completionRate}%`,
       [
-        { text: 'Ver Estadísticas' },
+        { text: 'Ver EstadÃ­sticas' },
         { text: 'Cerrar' },
       ]
     );
@@ -210,15 +210,15 @@ export default function HabitTracker() {
             <Ionicons name="arrow-back" size={24} color="white" />
           </TouchableOpacity>
           <Text className="text-white text-2xl font-bold flex-1 ml-3">
-            Rastreador de Hábitos
+            Rastreador de HÃ¡bitos
           </Text>
           <TouchableOpacity onPress={() => setShowTemplates(!showTemplates)}>
-            <Ionicons name="add-circle" size={24} color="#10B981" />
+            <Ionicons name="add-circle" size={24} color="#9D12DE" />
           </TouchableOpacity>
         </View>
 
         {/* Daily Progress */}
-        <View className="bg-gradient-to-br from-emerald-500 to-blue-500 rounded-xl p-4 mb-4">
+        <View className="bg-gradient-to-br from-primary to-[#7D0EBE] rounded-xl p-4 mb-4">
           <View className="flex-row items-center justify-between mb-3">
             <View className="flex-1">
               <Text className="text-white/80 text-sm mb-1">Progreso de Hoy</Text>
@@ -245,12 +245,12 @@ export default function HabitTracker() {
         {/* Stats */}
         <View className="flex-row gap-3">
           <View className="flex-1 bg-zinc-900 rounded-xl p-3 border border-zinc-800">
-            <Text className="text-zinc-400 text-xs">Hábitos Activos</Text>
+            <Text className="text-zinc-400 text-xs">HÃ¡bitos Activos</Text>
             <Text className="text-white text-2xl font-bold">{totalActiveHabits}</Text>
           </View>
           <View className="flex-1 bg-zinc-900 rounded-xl p-3 border border-zinc-800">
             <Text className="text-zinc-400 text-xs">Completados Hoy</Text>
-            <Text className="text-emerald-500 text-2xl font-bold">{completedToday}</Text>
+            <Text className="text-primary text-2xl font-bold">{completedToday}</Text>
           </View>
           <View className="flex-1 bg-zinc-900 rounded-xl p-3 border border-zinc-800">
             <Text className="text-zinc-400 text-xs">XP Total</Text>
@@ -265,10 +265,10 @@ export default function HabitTracker() {
           <View className="px-6 pt-6">
             <View className="flex-row items-center justify-between mb-3">
               <Text className="text-white font-bold text-lg">
-                Plantillas de Hábitos
+                Plantillas de HÃ¡bitos
               </Text>
               <TouchableOpacity onPress={() => setShowTemplates(false)}>
-                <Text className="text-emerald-500 font-semibold">Cerrar</Text>
+                <Text className="text-primary font-semibold">Cerrar</Text>
               </TouchableOpacity>
             </View>
 
@@ -311,8 +311,8 @@ export default function HabitTracker() {
                       {template.difficulty}
                     </Text>
                   </View>
-                  <View className="bg-blue-500/20 px-3 py-1 rounded-full">
-                    <Text className="text-blue-400 text-xs font-bold capitalize">
+                  <View className="bg-primary/20 px-3 py-1 rounded-full">
+                    <Text className="text-primary/80 text-xs font-bold capitalize">
                       {template.frequency}
                     </Text>
                   </View>
@@ -329,7 +329,7 @@ export default function HabitTracker() {
           /* Active Habits */
           <View className="px-6 pt-6">
             <Text className="text-white font-bold text-lg mb-3">
-              Mis Hábitos
+              Mis HÃ¡bitos
             </Text>
 
             {ACTIVE_HABITS.map((habit) => (
@@ -338,7 +338,7 @@ export default function HabitTracker() {
                 onLongPress={() => viewHabitDetails(habit)}
                 className={`rounded-xl p-4 mb-3 border ${
                   habit.completedToday
-                    ? 'bg-emerald-500/10 border-emerald-500/30'
+                    ? 'bg-primary/10 border-primary/30'
                     : 'bg-zinc-900 border-zinc-800'
                 }`}
               >
@@ -356,17 +356,17 @@ export default function HabitTracker() {
                         />
                       </View>
                       <View className="ml-3 flex-1">
-                        <Text className={`font-bold ${habit.completedToday ? 'text-emerald-500' : 'text-white'}`}>
+                        <Text className={`font-bold ${habit.completedToday ? 'text-primary' : 'text-white'}`}>
                           {habit.name}
                         </Text>
                         <Text className="text-zinc-400 text-sm">
-                          Racha: {habit.currentStreak} días 🔥
+                          Racha: {habit.currentStreak} dÃ­as ðŸ”¥
                         </Text>
                       </View>
                     </View>
                   </View>
                   {habit.completedToday ? (
-                    <View className="bg-emerald-500 rounded-full p-2">
+                    <View className="bg-primary rounded-full p-2">
                       <Ionicons name="checkmark" size={20} color="white" />
                     </View>
                   ) : (
@@ -383,7 +383,7 @@ export default function HabitTracker() {
                   <View className="flex-row items-center justify-between mb-1">
                     <Text className="text-zinc-400 text-xs">Progreso</Text>
                     <Text className="text-white text-xs font-bold">
-                      {habit.completedDays}/{habit.totalDays} días
+                      {habit.completedDays}/{habit.totalDays} dÃ­as
                     </Text>
                   </View>
                   <View className="bg-zinc-900 h-1.5 rounded-full overflow-hidden">
@@ -399,7 +399,7 @@ export default function HabitTracker() {
 
                 <View className="flex-row items-center justify-between">
                   <Text className="text-zinc-500 text-xs">
-                    Mejor racha: {habit.bestStreak} días
+                    Mejor racha: {habit.bestStreak} dÃ­as
                   </Text>
                   <Text className="text-zinc-400 text-xs">
                     {((habit.completedDays / habit.totalDays) * 100).toFixed(0)}% completado
@@ -411,7 +411,7 @@ export default function HabitTracker() {
             {/* Settings */}
             <View className="mt-4">
               <Text className="text-white font-bold text-lg mb-3">
-                Configuración
+                ConfiguraciÃ³n
               </Text>
 
               <View className="bg-zinc-900 rounded-xl p-4 border border-zinc-800">
@@ -419,13 +419,13 @@ export default function HabitTracker() {
                   <View className="flex-1">
                     <Text className="text-white font-semibold">Recordatorios Diarios</Text>
                     <Text className="text-zinc-400 text-sm mt-1">
-                      Recibe notificaciones para tus hábitos
+                      Recibe notificaciones para tus hÃ¡bitos
                     </Text>
                   </View>
                   <Switch
                     value={remindersEnabled}
                     onValueChange={setRemindersEnabled}
-                    trackColor={{ false: '#27272A', true: '#10B981' }}
+                    trackColor={{ false: '#27272A', true: '#9D12DE' }}
                     thumbColor="white"
                   />
                 </View>
@@ -437,3 +437,5 @@ export default function HabitTracker() {
     </View>
   );
 }
+
+

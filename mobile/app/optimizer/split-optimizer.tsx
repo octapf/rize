@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -144,7 +144,7 @@ export default function SplitOptimizer() {
                 key={freq}
                 onPress={() => setWorkoutsPerWeek(freq)}
                 className={`flex-1 ${
-                  workoutsPerWeek === freq ? 'bg-blue-500' : 'bg-zinc-900'
+                  workoutsPerWeek === freq ? 'bg-primary' : 'bg-zinc-900'
                 } rounded-xl py-4 border ${
                   workoutsPerWeek === freq ? 'border-blue-400' : 'border-zinc-800'
                 }`}
@@ -190,9 +190,9 @@ export default function SplitOptimizer() {
                 key={goal.key}
                 onPress={() => setPrimaryGoal(goal.key)}
                 className={`flex-1 ${
-                  primaryGoal === goal.key ? 'bg-emerald-500' : 'bg-zinc-900'
+                  primaryGoal === goal.key ? 'bg-primary' : 'bg-zinc-900'
                 } rounded-xl p-3 border ${
-                  primaryGoal === goal.key ? 'border-emerald-400' : 'border-zinc-800'
+                  primaryGoal === goal.key ? 'border-primary' : 'border-zinc-800'
                 }`}
               >
                 <Ionicons
@@ -211,15 +211,15 @@ export default function SplitOptimizer() {
             ))}
           </View>
 
-          <View className="bg-emerald-500/10 rounded-xl p-5 mb-6 border-2 border-emerald-500">
+          <View className="bg-primary/10 rounded-xl p-5 mb-6 border-2 border-primary">
             <View className="flex-row items-center mb-3">
-              <Ionicons name="star" size={24} color="#10b981" />
-              <Text className="text-emerald-400 font-bold text-lg ml-2">TOP RECOMMENDATION</Text>
+              <Ionicons name="star" size={24} color="#9D12DE" />
+              <Text className="text-primary font-bold text-lg ml-2">TOP RECOMMENDATION</Text>
             </View>
             <Text className="text-white font-bold text-2xl mb-2">{topSplit.name}</Text>
             <Text className="text-zinc-400 mb-4">{topSplit.bestFor}</Text>
 
-            <View className="bg-emerald-500 rounded-full px-4 py-2 self-start mb-4">
+            <View className="bg-primary rounded-full px-4 py-2 self-start mb-4">
               <Text className="text-white font-bold">{topSplit.rating}% Match</Text>
             </View>
 
@@ -227,7 +227,7 @@ export default function SplitOptimizer() {
             <View className="flex-row flex-wrap gap-2 mb-4">
               {topSplit.structure.map((day, idx) => (
                 <View key={idx} className="bg-zinc-900 rounded-lg px-3 py-2">
-                  <Text className="text-emerald-400 text-xs font-bold">Day {idx + 1}</Text>
+                  <Text className="text-primary text-xs font-bold">Day {idx + 1}</Text>
                   <Text className="text-white font-bold">{day}</Text>
                 </View>
               ))}
@@ -238,16 +238,16 @@ export default function SplitOptimizer() {
               {Object.entries(topSplit.frequency).map(([muscle, freq]) => (
                 <View key={muscle} className="flex-row items-center justify-between">
                   <Text className="text-zinc-300 capitalize">{muscle}</Text>
-                  <Text className="text-emerald-400 font-bold">{freq}x per week</Text>
+                  <Text className="text-primary font-bold">{freq}x per week</Text>
                 </View>
               ))}
             </View>
 
             <View className="flex-row gap-3">
               <View className="flex-1">
-                <Text className="text-emerald-400 font-bold text-xs mb-2">PROS</Text>
+                <Text className="text-primary font-bold text-xs mb-2">PROS</Text>
                 {topSplit.pros.map((pro, idx) => (
-                  <Text key={idx} className="text-emerald-300 text-sm mb-1">✓ {pro}</Text>
+                  <Text key={idx} className="text-primary/80 text-sm mb-1">âœ“ {pro}</Text>
                 ))}
               </View>
               <View className="flex-1">
@@ -270,7 +270,7 @@ export default function SplitOptimizer() {
                     <Text className="text-white font-bold text-lg">{split.name}</Text>
                     <Text className="text-zinc-400 text-sm">{split.bestFor}</Text>
                   </View>
-                  <View className="bg-blue-500 rounded-lg px-3 py-1">
+                  <View className="bg-primary rounded-lg px-3 py-1">
                     <Text className="text-white font-bold">{split.rating}%</Text>
                   </View>
                 </View>
@@ -284,31 +284,31 @@ export default function SplitOptimizer() {
                 </View>
 
                 <View className="flex-row gap-2">
-                  <View className="flex-1 bg-emerald-500/10 rounded p-2 border border-emerald-500/30">
-                    <Text className="text-emerald-400 text-xs font-bold mb-1">PROS</Text>
+                  <View className="flex-1 bg-primary/10 rounded p-2 border border-primary/30">
+                    <Text className="text-primary text-xs font-bold mb-1">PROS</Text>
                     {split.pros.slice(0, 2).map((pro, proIdx) => (
-                      <Text key={proIdx} className="text-emerald-300 text-xs">• {pro}</Text>
+                      <Text key={proIdx} className="text-primary/80 text-xs">â€¢ {pro}</Text>
                     ))}
                   </View>
                   <View className="flex-1 bg-amber-500/10 rounded p-2 border border-amber-500/30">
                     <Text className="text-amber-400 text-xs font-bold mb-1">CONS</Text>
                     {split.cons.slice(0, 2).map((con, conIdx) => (
-                      <Text key={conIdx} className="text-amber-300 text-xs">• {con}</Text>
+                      <Text key={conIdx} className="text-amber-300 text-xs">â€¢ {con}</Text>
                     ))}
                   </View>
                 </View>
               </View>
             ))}
 
-          <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30 mb-6">
-            <Text className="text-blue-400 font-bold mb-2">Split Selection Tips</Text>
-            <Text className="text-blue-300 text-sm">
-              • Frequency &gt; volume for naturals{'\n'}
-              • 2x per week per muscle = optimal{'\n'}
-              • Choose split you can sustain{'\n'}
-              • 4-6 days ideal for intermediates{'\n'}
-              • Beginners: start with 3-4 days{'\n'}
-              • Advanced: 5-6 days with proper recovery
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
+            <Text className="text-primary/80 font-bold mb-2">Split Selection Tips</Text>
+            <Text className="text-primary/60 text-sm">
+              â€¢ Frequency &gt; volume for naturals{'\n'}
+              â€¢ 2x per week per muscle = optimal{'\n'}
+              â€¢ Choose split you can sustain{'\n'}
+              â€¢ 4-6 days ideal for intermediates{'\n'}
+              â€¢ Beginners: start with 3-4 days{'\n'}
+              â€¢ Advanced: 5-6 days with proper recovery
             </Text>
           </View>
         </View>
@@ -316,3 +316,6 @@ export default function SplitOptimizer() {
     </View>
   );
 }
+
+
+

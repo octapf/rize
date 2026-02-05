@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -26,7 +26,7 @@ export default function MobilityRoutines() {
           reps: '30-45s/side',
           focus: 'Hip internal/external rotation',
           instructions: [
-            'Sit with front leg at 90°, back leg at 90°',
+            'Sit with front leg at 90Â°, back leg at 90Â°',
             'Keep chest tall, lean forward over front leg',
             'Feel stretch in front hip (external rotation)',
             'Switch sides, feel back hip (internal rotation)',
@@ -114,7 +114,7 @@ export default function MobilityRoutines() {
           reps: '10-12',
           focus: 'Scapular upward rotation',
           instructions: [
-            'Back against wall, arms at 90°',
+            'Back against wall, arms at 90Â°',
             'Press lower back flat to wall',
             'Slide arms up wall, maintain contact',
             'Lower slowly with control',
@@ -303,7 +303,7 @@ export default function MobilityRoutines() {
           reps: '10',
           focus: 'Scapular control + thoracic extension',
           instructions: [
-            'Back to wall, arms at 90°',
+            'Back to wall, arms at 90Â°',
             'Keep contact: head, upper back, lower back, arms',
             'Slide arms up and down',
             'Maintain all contact points',
@@ -318,9 +318,9 @@ export default function MobilityRoutines() {
 
   const getColorClass = (color: string) => {
     const colors: { [key: string]: string } = {
-      blue: 'bg-blue-500',
+      blue: 'bg-primary',
       red: 'bg-red-500',
-      emerald: 'bg-emerald-500',
+      emerald: 'bg-primary',
       purple: 'bg-purple-500',
     };
     return colors[color];
@@ -341,7 +341,7 @@ export default function MobilityRoutines() {
 
       <ScrollView className="flex-1" showsVerticalScrollIndicator={false}>
         <View className="px-6 pt-6">
-          <View className="bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl p-6 mb-6">
+          <View className="bg-gradient-to-r from-primary to-[#7D0EBE] rounded-xl p-6 mb-6">
             <Text className="text-white text-2xl font-bold mb-2">Improve Mobility</Text>
             <Text className="text-white opacity-90">
               Better movement, better lifts
@@ -388,11 +388,11 @@ export default function MobilityRoutines() {
               <View className="flex-row justify-between">
                 <View>
                   <Text className="text-zinc-400 text-sm">Frequency</Text>
-                  <Text className="text-emerald-400 font-bold">{currentRoutine.frequency}</Text>
+                  <Text className="text-primary font-bold">{currentRoutine.frequency}</Text>
                 </View>
                 <View>
                   <Text className="text-zinc-400 text-sm">Duration</Text>
-                  <Text className="text-blue-400 font-bold">{currentRoutine.duration}</Text>
+                  <Text className="text-primary/80 font-bold">{currentRoutine.duration}</Text>
                 </View>
               </View>
             </View>
@@ -402,12 +402,12 @@ export default function MobilityRoutines() {
                 <View className="flex-row justify-between items-start mb-2">
                   <Text className="text-white font-bold text-lg flex-1">{exercise.name}</Text>
                   <Text className={`text-${currentRoutine.color}-400 font-bold ml-2`}>
-                    {exercise.sets}×{exercise.reps}
+                    {exercise.sets}Ã—{exercise.reps}
                   </Text>
                 </View>
 
                 <View className="bg-zinc-900 rounded-xl p-3 mb-3">
-                  <Text className="text-emerald-400 text-sm font-bold mb-1">Focus:</Text>
+                  <Text className="text-primary text-sm font-bold mb-1">Focus:</Text>
                   <Text className="text-white text-sm">{exercise.focus}</Text>
                 </View>
 
@@ -420,44 +420,44 @@ export default function MobilityRoutines() {
                 ))}
 
                 <View className={`${getColorClass(currentRoutine.color)}/10 rounded-xl p-2 mt-3`}>
-                  <Text className="text-amber-400 text-xs italic">💡 {exercise.notes}</Text>
+                  <Text className="text-amber-400 text-xs italic">ðŸ’¡ {exercise.notes}</Text>
                 </View>
               </View>
             ))}
           </View>
 
-          <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30 mb-6">
-            <Text className="text-blue-400 font-bold mb-2">Mobility Tips</Text>
-            <Text className="text-blue-300 text-sm mb-2">
-              • Do mobility work when muscles are warm
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
+            <Text className="text-primary/80 font-bold mb-2">Mobility Tips</Text>
+            <Text className="text-primary/60 text-sm mb-2">
+              â€¢ Do mobility work when muscles are warm
             </Text>
-            <Text className="text-blue-300 text-sm mb-2">
-              • Consistency &gt; intensity (daily light work &gt; weekly hard work)
+            <Text className="text-primary/60 text-sm mb-2">
+              â€¢ Consistency &gt; intensity (daily light work &gt; weekly hard work)
             </Text>
-            <Text className="text-blue-300 text-sm mb-2">
-              • Never force into pain (mild discomfort OK)
+            <Text className="text-primary/60 text-sm mb-2">
+              â€¢ Never force into pain (mild discomfort OK)
             </Text>
-            <Text className="text-blue-300 text-sm mb-2">
-              • Hold stretches 30-45s minimum for real change
+            <Text className="text-primary/60 text-sm mb-2">
+              â€¢ Hold stretches 30-45s minimum for real change
             </Text>
-            <Text className="text-blue-300 text-sm">
-              • Focus on weak points (most people: hips, thoracic, ankles)
+            <Text className="text-primary/60 text-sm">
+              â€¢ Focus on weak points (most people: hips, thoracic, ankles)
             </Text>
           </View>
 
-          <View className="bg-emerald-500/10 rounded-xl p-4 border border-emerald-500/30 mb-6">
-            <Text className="text-emerald-400 font-bold mb-2">When to Mobilize</Text>
-            <Text className="text-emerald-300 text-sm mb-2">
-              • Morning: 5-10 min general mobility to wake up
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
+            <Text className="text-primary font-bold mb-2">When to Mobilize</Text>
+            <Text className="text-primary/80 text-sm mb-2">
+              â€¢ Morning: 5-10 min general mobility to wake up
             </Text>
-            <Text className="text-emerald-300 text-sm mb-2">
-              • Pre-workout: Target areas for that session
+            <Text className="text-primary/80 text-sm mb-2">
+              â€¢ Pre-workout: Target areas for that session
             </Text>
-            <Text className="text-emerald-300 text-sm mb-2">
-              • Post-workout: Static stretching when warm
+            <Text className="text-primary/80 text-sm mb-2">
+              â€¢ Post-workout: Static stretching when warm
             </Text>
-            <Text className="text-emerald-300 text-sm">
-              • Evening: Relaxing stretching before bed
+            <Text className="text-primary/80 text-sm">
+              â€¢ Evening: Relaxing stretching before bed
             </Text>
           </View>
         </View>
@@ -465,3 +465,5 @@ export default function MobilityRoutines() {
     </View>
   );
 }
+
+

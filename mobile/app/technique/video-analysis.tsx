@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -19,7 +19,7 @@ export default function VideoAnalysis() {
       angles: [
         {
           angle: 'Side View (Most Important)',
-          setup: '90° to lifter, camera at hip height',
+          setup: '90Â° to lifter, camera at hip height',
           checkpoints: [
             { checkpoint: 'Bar path', good: 'Vertical line over mid-foot', bad: 'Bar drifts forward or back' },
             { checkpoint: 'Hip/chest rise', good: 'Both rise together', bad: 'Hips shoot up first (stripper squat)' },
@@ -59,7 +59,7 @@ export default function VideoAnalysis() {
       angles: [
         {
           angle: 'Side View',
-          setup: '90° to lifter, camera at chest height',
+          setup: '90Â° to lifter, camera at chest height',
           checkpoints: [
             { checkpoint: 'Bar path', good: 'J-curve (down to chest, up to shoulders)', bad: 'Straight vertical' },
             { checkpoint: 'Arch maintenance', good: 'Arch stays through rep', bad: 'Flat back, butt comes up' },
@@ -83,7 +83,7 @@ export default function VideoAnalysis() {
           angle: 'Feet View',
           setup: 'From feet, camera at bench level',
           checkpoints: [
-            { checkpoint: 'Elbow angle', good: '45-75° from body', bad: 'Flared 90°' },
+            { checkpoint: 'Elbow angle', good: '45-75Â° from body', bad: 'Flared 90Â°' },
             { checkpoint: 'Forearm angle', good: 'Vertical at bottom', bad: 'Angled inward or outward' },
             { checkpoint: 'Wrist position', good: 'Neutral, stacked', bad: 'Bent back excessively' },
           ],
@@ -98,7 +98,7 @@ export default function VideoAnalysis() {
       angles: [
         {
           angle: 'Side View (Essential)',
-          setup: '90° to lifter, camera at hip height',
+          setup: '90Â° to lifter, camera at hip height',
           checkpoints: [
             { checkpoint: 'Bar position', good: 'Starts over mid-foot, stays there', bad: 'Starts over toes, drifts forward' },
             { checkpoint: 'Back position', good: 'Neutral spine throughout', bad: 'Rounded upper or lower back' },
@@ -128,7 +128,7 @@ export default function VideoAnalysis() {
       angles: [
         {
           angle: 'Side View',
-          setup: '90° to lifter, camera at shoulder height',
+          setup: '90Â° to lifter, camera at shoulder height',
           checkpoints: [
             { checkpoint: 'Bar path', good: 'Up and back, then vertical', bad: 'Pressing forward' },
             { checkpoint: 'Lower back', good: 'Neutral spine, no arch', bad: 'Hyperextension' },
@@ -155,10 +155,10 @@ export default function VideoAnalysis() {
 
   const getColorClass = (color: string) => {
     const colors: { [key: string]: string } = {
-      blue: 'bg-blue-500',
+      blue: 'bg-primary',
       red: 'bg-red-500',
       purple: 'bg-purple-500',
-      emerald: 'bg-emerald-500',
+      emerald: 'bg-primary',
     };
     return colors[color];
   };
@@ -223,7 +223,7 @@ export default function VideoAnalysis() {
             {generalTips.map((item, idx) => (
               <View key={idx} className="bg-zinc-800 rounded-xl p-4 mb-3 last:mb-0">
                 <View className="flex-row items-center mb-2">
-                  <Ionicons name={item.icon as any} size={24} color="#10b981" />
+                  <Ionicons name={item.icon as any} size={24} color="#9D12DE" />
                   <Text className="text-white font-bold ml-3">{item.tip}</Text>
                 </View>
                 <Text className="text-zinc-300 text-sm">{item.details}</Text>
@@ -278,13 +278,13 @@ export default function VideoAnalysis() {
                   <View key={checkIdx} className="bg-zinc-800 rounded-xl p-4 mb-3 last:mb-4">
                     <Text className="text-white font-bold mb-3">{check.checkpoint}</Text>
                     
-                    <View className="bg-emerald-500/10 rounded-xl p-3 border border-emerald-500/30 mb-2">
-                      <Text className="text-emerald-400 font-bold text-sm mb-1">✓ Good:</Text>
-                      <Text className="text-emerald-300 text-sm">{check.good}</Text>
+                    <View className="bg-primary/10 rounded-xl p-3 border border-primary/30 mb-2">
+                      <Text className="text-primary font-bold text-sm mb-1">âœ“ Good:</Text>
+                      <Text className="text-primary/80 text-sm">{check.good}</Text>
                     </View>
 
                     <View className="bg-red-500/10 rounded-xl p-3 border border-red-500/30">
-                      <Text className="text-red-400 font-bold text-sm mb-1">✗ Bad:</Text>
+                      <Text className="text-red-400 font-bold text-sm mb-1">âœ— Bad:</Text>
                       <Text className="text-red-300 text-sm">{check.bad}</Text>
                     </View>
                   </View>
@@ -292,7 +292,7 @@ export default function VideoAnalysis() {
 
                 <View className={`${getColorClass(currentGuide.color)}/10 rounded-xl p-3 border ${getColorClass(currentGuide.color)}/30`}>
                   <Text className={`text-${currentGuide.color}-400 text-sm italic`}>
-                    💡 {angle.notes}
+                    ðŸ’¡ {angle.notes}
                   </Text>
                 </View>
               </View>
@@ -318,22 +318,22 @@ export default function VideoAnalysis() {
             </Text>
           </View>
 
-          <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30 mb-6">
-            <Text className="text-blue-400 font-bold mb-2">Pro Tips</Text>
-            <Text className="text-blue-300 text-sm mb-2">
-              • What you feel ≠ what you see (video doesn't lie)
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
+            <Text className="text-primary/80 font-bold mb-2">Pro Tips</Text>
+            <Text className="text-primary/60 text-sm mb-2">
+              â€¢ What you feel â‰  what you see (video doesn't lie)
             </Text>
-            <Text className="text-blue-300 text-sm mb-2">
-              • Side view is most important for all lifts
+            <Text className="text-primary/60 text-sm mb-2">
+              â€¢ Side view is most important for all lifts
             </Text>
-            <Text className="text-blue-300 text-sm mb-2">
-              • Film EVERY session - make it a habit
+            <Text className="text-primary/60 text-sm mb-2">
+              â€¢ Film EVERY session - make it a habit
             </Text>
-            <Text className="text-blue-300 text-sm mb-2">
-              • Keep old videos to see long-term progress
+            <Text className="text-primary/60 text-sm mb-2">
+              â€¢ Keep old videos to see long-term progress
             </Text>
-            <Text className="text-blue-300 text-sm">
-              • Consider posting for experienced feedback
+            <Text className="text-primary/60 text-sm">
+              â€¢ Consider posting for experienced feedback
             </Text>
           </View>
         </View>
@@ -341,3 +341,5 @@ export default function VideoAnalysis() {
     </View>
   );
 }
+
+

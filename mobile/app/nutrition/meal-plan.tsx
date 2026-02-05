@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -46,7 +46,7 @@ const WEEKLY_PLAN: DayPlan[] = [
         protein: 40,
         carbs: 75,
         fats: 20,
-        foods: ['Avena con proteína', 'Plátano', 'Almendras', 'Café'],
+        foods: ['Avena con proteÃ­na', 'PlÃ¡tano', 'Almendras', 'CafÃ©'],
       },
       {
         id: '2',
@@ -56,7 +56,7 @@ const WEEKLY_PLAN: DayPlan[] = [
         protein: 60,
         carbs: 95,
         fats: 25,
-        foods: ['Pollo a la plancha (200g)', 'Arroz integral', 'Brócoli', 'Aguacate'],
+        foods: ['Pollo a la plancha (200g)', 'Arroz integral', 'BrÃ³coli', 'Aguacate'],
       },
       {
         id: '3',
@@ -66,7 +66,7 @@ const WEEKLY_PLAN: DayPlan[] = [
         protein: 30,
         carbs: 45,
         fats: 12,
-        foods: ['Batido de proteína', 'Avena', 'Mantequilla de maní'],
+        foods: ['Batido de proteÃ­na', 'Avena', 'Mantequilla de manÃ­'],
       },
       {
         id: '4',
@@ -76,17 +76,17 @@ const WEEKLY_PLAN: DayPlan[] = [
         protein: 50,
         carbs: 80,
         fats: 22,
-        foods: ['Salmón al horno (180g)', 'Batata', 'Espárragos', 'Aceite de oliva'],
+        foods: ['SalmÃ³n al horno (180g)', 'Batata', 'EspÃ¡rragos', 'Aceite de oliva'],
       },
       {
         id: '5',
-        name: 'Pre-Sueño',
+        name: 'Pre-SueÃ±o',
         time: '23:00',
         calories: 150,
         protein: 0,
         carbs: 25,
         fats: 6,
-        foods: ['Caseína', 'Nueces'],
+        foods: ['CaseÃ­na', 'Nueces'],
       },
     ],
   },
@@ -97,7 +97,7 @@ export default function MealPlan() {
   const [showAddMeal, setShowAddMeal] = useState(false);
 
   const currentPlan = WEEKLY_PLAN[selectedDay];
-  const days = ['Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb', 'Dom'];
+  const days = ['Lun', 'Mar', 'MiÃ©', 'Jue', 'Vie', 'SÃ¡b', 'Dom'];
 
   const getMacroPercentage = (macro: number, total: number) => {
     return ((macro / total) * 100).toFixed(0);
@@ -105,8 +105,8 @@ export default function MealPlan() {
 
   const addMeal = () => {
     Alert.alert(
-      'Próximamente',
-      'La funcionalidad de agregar comidas estará disponible pronto'
+      'PrÃ³ximamente',
+      'La funcionalidad de agregar comidas estarÃ¡ disponible pronto'
     );
     setShowAddMeal(false);
   };
@@ -123,7 +123,7 @@ export default function MealPlan() {
             Plan de Comidas
           </Text>
           <TouchableOpacity onPress={() => setShowAddMeal(true)}>
-            <Ionicons name="add-circle" size={28} color="#10B981" />
+            <Ionicons name="add-circle" size={28} color="#9D12DE" />
           </TouchableOpacity>
         </View>
 
@@ -139,7 +139,7 @@ export default function MealPlan() {
               onPress={() => setSelectedDay(index)}
               className={`mr-3 px-4 py-2 rounded-xl ${
                 selectedDay === index
-                  ? 'bg-emerald-500'
+                  ? 'bg-primary'
                   : 'bg-zinc-900'
               }`}
             >
@@ -160,16 +160,16 @@ export default function MealPlan() {
         <View className="bg-zinc-900 rounded-xl p-4 border border-zinc-800">
           <View className="flex-row items-center justify-between mb-3">
             <Text className="text-white font-bold text-lg">
-              Total del Día
+              Total del DÃ­a
             </Text>
-            <Text className="text-emerald-500 font-bold text-2xl">
+            <Text className="text-primary font-bold text-2xl">
               {currentPlan.totalCalories}
             </Text>
           </View>
 
           <View className="flex-row justify-between">
             <View className="flex-1 items-center">
-              <Text className="text-zinc-400 text-xs mb-1">Proteína</Text>
+              <Text className="text-zinc-400 text-xs mb-1">ProteÃ­na</Text>
               <Text className="text-red-500 text-xl font-bold">
                 {currentPlan.totalProtein}g
               </Text>
@@ -183,7 +183,7 @@ export default function MealPlan() {
 
             <View className="flex-1 items-center border-l border-zinc-800">
               <Text className="text-zinc-400 text-xs mb-1">Carbos</Text>
-              <Text className="text-blue-500 text-xl font-bold">
+              <Text className="text-primary text-xl font-bold">
                 {currentPlan.totalCarbs}g
               </Text>
               <Text className="text-zinc-500 text-xs">
@@ -231,10 +231,10 @@ export default function MealPlan() {
                   </View>
                 </View>
                 <View className="items-end">
-                  <Text className="text-emerald-500 font-bold text-2xl">
+                  <Text className="text-primary font-bold text-2xl">
                     {meal.calories}
                   </Text>
-                  <Text className="text-zinc-500 text-xs">calorías</Text>
+                  <Text className="text-zinc-500 text-xs">calorÃ­as</Text>
                 </View>
               </View>
 
@@ -244,8 +244,8 @@ export default function MealPlan() {
                   <Text className="text-red-500 text-xs">P</Text>
                   <Text className="text-white font-bold">{meal.protein}g</Text>
                 </View>
-                <View className="flex-1 bg-blue-500/10 rounded-lg p-2">
-                  <Text className="text-blue-500 text-xs">C</Text>
+                <View className="flex-1 bg-primary/10 rounded-lg p-2">
+                  <Text className="text-primary text-xs">C</Text>
                   <Text className="text-white font-bold">{meal.carbs}g</Text>
                 </View>
                 <View className="flex-1 bg-amber-500/10 rounded-lg p-2">
@@ -262,7 +262,7 @@ export default function MealPlan() {
                     key={index}
                     className="flex-row items-center mb-1"
                   >
-                    <View className="w-1.5 h-1.5 bg-emerald-500 rounded-full mr-2" />
+                    <View className="w-1.5 h-1.5 bg-primary rounded-full mr-2" />
                     <Text className="text-zinc-300 text-sm">{food}</Text>
                   </View>
                 ))}
@@ -276,9 +276,9 @@ export default function MealPlan() {
                     Editar
                   </Text>
                 </TouchableOpacity>
-                <TouchableOpacity className="flex-1 bg-emerald-500/20 rounded-lg p-2 flex-row items-center justify-center">
-                  <Ionicons name="checkmark" size={16} color="#10B981" />
-                  <Text className="text-emerald-500 text-sm font-semibold ml-1">
+                <TouchableOpacity className="flex-1 bg-primary/20 rounded-lg p-2 flex-row items-center justify-center">
+                  <Ionicons name="checkmark" size={16} color="#9D12DE" />
+                  <Text className="text-primary text-sm font-semibold ml-1">
                     Registrar
                   </Text>
                 </TouchableOpacity>
@@ -289,16 +289,16 @@ export default function MealPlan() {
 
         {/* Tips */}
         <View className="px-6 py-4">
-          <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30">
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30">
             <View className="flex-row items-start">
-              <Ionicons name="information-circle" size={24} color="#3B82F6" />
+              <Ionicons name="information-circle" size={24} color="#9D12DE" />
               <View className="flex-1 ml-3">
-                <Text className="text-blue-400 font-bold mb-1">
-                  Consejo del Día
+                <Text className="text-primary/80 font-bold mb-1">
+                  Consejo del DÃ­a
                 </Text>
-                <Text className="text-blue-300 text-sm leading-5">
-                  Distribuye tu proteína de manera uniforme durante el día para
-                  maximizar la síntesis de proteína muscular (20-40g por comida).
+                <Text className="text-primary/60 text-sm leading-5">
+                  Distribuye tu proteÃ­na de manera uniforme durante el dÃ­a para
+                  maximizar la sÃ­ntesis de proteÃ­na muscular (20-40g por comida).
                 </Text>
               </View>
             </View>
@@ -310,10 +310,11 @@ export default function MealPlan() {
 
       {/* Quick Actions */}
       <View className="absolute bottom-6 right-6">
-        <TouchableOpacity className="w-14 h-14 bg-emerald-500 rounded-full items-center justify-center shadow-lg">
+        <TouchableOpacity className="w-14 h-14 bg-primary rounded-full items-center justify-center shadow-lg">
           <Ionicons name="camera" size={28} color="white" />
         </TouchableOpacity>
       </View>
     </View>
   );
 }
+

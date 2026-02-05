@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+﻿import React, { useEffect, useState } from 'react';
 import {
   View,
   Text,
@@ -22,7 +22,7 @@ const mockNotifications: Notification[] = [
     userId: 'me',
     type: 'friend_request',
     title: 'Nueva solicitud de amistad',
-    body: 'Carlos García quiere ser tu amigo',
+    body: 'Carlos GarcÃ­a quiere ser tu amigo',
     data: { userId: 'user1' },
     read: false,
     createdAt: new Date(2026, 0, 27, 11, 30).toISOString(),
@@ -31,8 +31,8 @@ const mockNotifications: Notification[] = [
     _id: '2',
     userId: 'me',
     type: 'workout_like',
-    title: 'Le gustó tu entrenamiento',
-    body: 'Ana López le dio like a tu workout "Push Day"',
+    title: 'Le gustÃ³ tu entrenamiento',
+    body: 'Ana LÃ³pez le dio like a tu workout "Push Day"',
     data: { workoutId: 'w1', userId: 'user2' },
     read: false,
     createdAt: new Date(2026, 0, 27, 10, 15).toISOString(),
@@ -42,7 +42,7 @@ const mockNotifications: Notification[] = [
     userId: 'me',
     type: 'comment',
     title: 'Nuevo comentario',
-    body: 'Pedro comentó en tu publicación: "¡Excelente trabajo!"',
+    body: 'Pedro comentÃ³ en tu publicaciÃ³n: "Â¡Excelente trabajo!"',
     data: { postId: 'p1', userId: 'user3' },
     read: false,
     createdAt: new Date(2026, 0, 27, 9, 45).toISOString(),
@@ -51,7 +51,7 @@ const mockNotifications: Notification[] = [
     _id: '4',
     userId: 'me',
     type: 'achievement',
-    title: '¡Nuevo logro desbloqueado!',
+    title: 'Â¡Nuevo logro desbloqueado!',
     body: 'Has completado 100 entrenamientos',
     data: { achievementId: 'a1' },
     read: true,
@@ -61,8 +61,8 @@ const mockNotifications: Notification[] = [
     _id: '5',
     userId: 'me',
     type: 'challenge',
-    title: 'Nuevo desafío',
-    body: 'María te retó a "30 días de ejercicio"',
+    title: 'Nuevo desafÃ­o',
+    body: 'MarÃ­a te retÃ³ a "30 dÃ­as de ejercicio"',
     data: { challengeId: 'ch1', userId: 'user4' },
     read: true,
     createdAt: new Date(2026, 0, 26, 15, 30).toISOString(),
@@ -144,13 +144,13 @@ export default function NotificationsScreen() {
   const getNotificationIcon = (type: string) => {
     switch (type) {
       case 'friend_request':
-        return { name: 'person-add', color: '#3B82F6' };
+        return { name: 'person-add', color: '#9D12DE' };
       case 'workout_like':
         return { name: 'heart', color: '#EF4444' };
       case 'comment':
-        return { name: 'chatbubble', color: '#10B981' };
+        return { name: 'chatbubble', color: '#9D12DE' };
       case 'achievement':
-        return { name: 'trophy', color: '#F59E0B' };
+        return { name: 'trophy', color: '#FFEA00' };
       case 'challenge':
         return { name: 'flash', color: '#8B5CF6' };
       case 'message':
@@ -167,7 +167,7 @@ export default function NotificationsScreen() {
       <TouchableOpacity onPress={() => handleNotificationPress(item)}>
         <Card
           className={`p-4 mb-3 ${
-            !item.read ? 'bg-blue-50 border-l-4 border-blue-500' : ''
+            !item.read ? 'bg-primary/5 border-l-4 border-primary' : ''
           }`}
         >
           <View className="flex-row items-start gap-3">
@@ -194,7 +194,7 @@ export default function NotificationsScreen() {
             </View>
 
             {!item.read && (
-              <View className="w-3 h-3 bg-blue-500 rounded-full" />
+              <View className="w-3 h-3 bg-primary rounded-full" />
             )}
           </View>
         </Card>
@@ -205,7 +205,7 @@ export default function NotificationsScreen() {
   return (
     <View className="flex-1 bg-gray-50">
       {/* Header */}
-      <LinearGradient colors={['#3B82F6', '#2563EB']} className="px-6 pt-12 pb-6">
+      <LinearGradient colors={['#9D12DE', '#7C3AED']} className="px-6 pt-12 pb-6">
         <View className="flex-row items-center justify-between mb-2">
           <TouchableOpacity onPress={() => router.back()}>
             <Ionicons name="arrow-back" size={28} color="white" />
@@ -225,8 +225,8 @@ export default function NotificationsScreen() {
         </View>
 
         {unreadCount > 0 && (
-          <Text className="text-blue-100 text-center">
-            {unreadCount} notificación{unreadCount !== 1 ? 'es' : ''} sin leer
+          <Text className="text-highlight text-center">
+            {unreadCount} notificaciÃ³n{unreadCount !== 1 ? 'es' : ''} sin leer
           </Text>
         )}
       </LinearGradient>
@@ -254,3 +254,4 @@ export default function NotificationsScreen() {
     </View>
   );
 }
+

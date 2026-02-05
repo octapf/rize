@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -35,13 +35,13 @@ const mockGoals: Goal[] = [
     target: 100,
     current: 45,
     icon: 'barbell',
-    color: '#10B981',
+    color: '#9D12DE',
     completed: false,
   },
   {
     id: '2',
-    title: 'Racha de 30 Días',
-    description: 'Entrena 30 días consecutivos',
+    title: 'Racha de 30 DÃ­as',
+    description: 'Entrena 30 dÃ­as consecutivos',
     type: 'streak',
     target: 30,
     current: 12,
@@ -70,7 +70,7 @@ const mockGoals: Goal[] = [
     current: 78,
     deadline: new Date('2026-06-01'),
     icon: 'scale',
-    color: '#3B82F6',
+    color: '#9D12DE',
     completed: false,
   },
 ];
@@ -92,7 +92,7 @@ export default function GoalsScreen() {
   const handleDeleteGoal = (id: string) => {
     Alert.alert(
       'Eliminar Objetivo',
-      '¿Estás seguro de que quieres eliminar este objetivo?',
+      'Â¿EstÃ¡s seguro de que quieres eliminar este objetivo?',
       [
         { text: 'Cancelar', style: 'cancel' },
         {
@@ -136,7 +136,7 @@ export default function GoalsScreen() {
                   <Ionicons name="calendar" size={14} color="#6B7280" />
                   <Text className="text-gray-600 text-xs">
                     {daysRemaining > 0
-                      ? `${daysRemaining} días restantes`
+                      ? `${daysRemaining} dÃ­as restantes`
                       : 'Vencido'}
                   </Text>
                 </View>
@@ -188,7 +188,7 @@ export default function GoalsScreen() {
             </Text>
             {goal.type === 'workouts' && goal.deadline && daysRemaining && daysRemaining > 0 && (
               <Text className="text-gray-600 text-sm">
-                ~{Math.ceil((goal.target - goal.current) / daysRemaining)} por día
+                ~{Math.ceil((goal.target - goal.current) / daysRemaining)} por dÃ­a
               </Text>
             )}
           </View>
@@ -203,7 +203,7 @@ export default function GoalsScreen() {
   return (
     <View className="flex-1 bg-gray-50">
       {/* Header */}
-      <LinearGradient colors={['#3B82F6', '#2563EB']} className="px-6 pt-12 pb-6">
+      <LinearGradient colors={['#9D12DE', '#7C3AED']} className="px-6 pt-12 pb-6">
         <View className="flex-row items-center justify-between mb-4">
           <TouchableOpacity onPress={() => router.back()} className="p-2">
             <Ionicons name="arrow-back" size={28} color="white" />
@@ -254,7 +254,7 @@ export default function GoalsScreen() {
             </Text>
             <TouchableOpacity
               onPress={() => setShowCreateModal(true)}
-              className="mt-6 bg-blue-600 px-6 py-3 rounded-full"
+              className="mt-6 bg-primary px-6 py-3 rounded-full"
             >
               <Text className="text-white font-semibold">Crear Objetivo</Text>
             </TouchableOpacity>
@@ -265,7 +265,7 @@ export default function GoalsScreen() {
         {completedGoals.length > 0 && (
           <View className="mt-6">
             <Text className="text-lg font-bold text-gray-900 mb-3">
-              Completados 🎉
+              Completados ðŸŽ‰
             </Text>
             {completedGoals.map(renderGoalCard)}
           </View>
@@ -274,3 +274,4 @@ export default function GoalsScreen() {
     </View>
   );
 }
+

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -33,13 +33,13 @@ interface ProgressPhoto {
 }
 
 const measurementTypes = [
-  { id: 'neck', name: 'Cuello', icon: '🎯', unit: 'cm' },
-  { id: 'chest', name: 'Pecho', icon: '💪', unit: 'cm' },
-  { id: 'waist', name: 'Cintura', icon: '📏', unit: 'cm' },
-  { id: 'hips', name: 'Caderas', icon: '🎯', unit: 'cm' },
-  { id: 'biceps', name: 'Bíceps', icon: '💪', unit: 'cm' },
-  { id: 'thighs', name: 'Muslos', icon: '🦵', unit: 'cm' },
-  { id: 'calves', name: 'Pantorrillas', icon: '🦵', unit: 'cm' },
+  { id: 'neck', name: 'Cuello', icon: 'ðŸŽ¯', unit: 'cm' },
+  { id: 'chest', name: 'Pecho', icon: 'ðŸ’ª', unit: 'cm' },
+  { id: 'waist', name: 'Cintura', icon: 'ðŸ“', unit: 'cm' },
+  { id: 'hips', name: 'Caderas', icon: 'ðŸŽ¯', unit: 'cm' },
+  { id: 'biceps', name: 'BÃ­ceps', icon: 'ðŸ’ª', unit: 'cm' },
+  { id: 'thighs', name: 'Muslos', icon: 'ðŸ¦µ', unit: 'cm' },
+  { id: 'calves', name: 'Pantorrillas', icon: 'ðŸ¦µ', unit: 'cm' },
 ];
 
 const mockMeasurements: Measurement[] = [
@@ -59,7 +59,7 @@ export default function MeasurementsScreen() {
   const handleAddMeasurement = () => {
     const value = parseFloat(newValue);
     if (!value || value <= 0 || value > 300) {
-      Alert.alert('Error', 'Ingresa un valor válido');
+      Alert.alert('Error', 'Ingresa un valor vÃ¡lido');
       return;
     }
 
@@ -74,11 +74,11 @@ export default function MeasurementsScreen() {
     setMeasurements([...measurements, newMeasurement]);
     setNewValue('');
     setNewNotes('');
-    Alert.alert('¡Guardado!', 'Medida registrada correctamente');
+    Alert.alert('Â¡Guardado!', 'Medida registrada correctamente');
   };
 
   const handleAddPhoto = () => {
-    Alert.alert('Agregar Foto', 'Función de cámara en desarrollo');
+    Alert.alert('Agregar Foto', 'FunciÃ³n de cÃ¡mara en desarrollo');
   };
 
   const getCurrentMeasurements = () => {
@@ -298,7 +298,7 @@ export default function MeasurementsScreen() {
                   No hay fotos de progreso
                 </Text>
                 <Text className="text-gray-600 text-center mt-2">
-                  Captura tu transformación con fotos regulares
+                  Captura tu transformaciÃ³n con fotos regulares
                 </Text>
               </Card>
             ) : (
@@ -319,18 +319,18 @@ export default function MeasurementsScreen() {
             )}
 
             {/* Tips */}
-            <Card className="p-4 mt-4 bg-blue-50 border-blue-200">
+            <Card className="p-4 mt-4 bg-primary/5 border-primary/20">
               <View className="flex-row gap-3">
-                <Ionicons name="bulb" size={24} color="#3B82F6" />
+                <Ionicons name="bulb" size={24} color="#9D12DE" />
                 <View className="flex-1">
-                  <Text className="text-blue-900 font-semibold mb-1">
+                  <Text className="text-text font-semibold mb-1">
                     Consejos para fotos
                   </Text>
-                  <Text className="text-blue-700 text-sm">
-                    • Misma iluminación{'\n'}
-                    • Mismo ángulo y distancia{'\n'}
-                    • Misma hora del día{'\n'}
-                    • Fotos semanales o mensuales
+                  <Text className="text-text/70 text-sm">
+                    â€¢ Misma iluminaciÃ³n{'\n'}
+                    â€¢ Mismo Ã¡ngulo y distancia{'\n'}
+                    â€¢ Misma hora del dÃ­a{'\n'}
+                    â€¢ Fotos semanales o mensuales
                   </Text>
                 </View>
               </View>
@@ -341,3 +341,4 @@ export default function MeasurementsScreen() {
     </View>
   );
 }
+

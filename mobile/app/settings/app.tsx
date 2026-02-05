@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -76,10 +76,10 @@ export default function AppSettings() {
   const changeProfileVisibility = () => {
     Alert.alert(
       'Visibilidad de Perfil',
-      'Elige quién puede ver tu perfil',
+      'Elige quiÃ©n puede ver tu perfil',
       [
         {
-          text: 'Público',
+          text: 'PÃºblico',
           onPress: () => setPrivacy({ ...privacy, profileVisibility: 'public' }),
         },
         {
@@ -100,9 +100,9 @@ export default function AppSettings() {
       'Idioma',
       'Selecciona tu idioma preferido',
       [
-        { text: 'Español', onPress: () => setApp({ ...app, language: 'es' }) },
+        { text: 'EspaÃ±ol', onPress: () => setApp({ ...app, language: 'es' }) },
         { text: 'English', onPress: () => setApp({ ...app, language: 'en' }) },
-        { text: 'Português', onPress: () => setApp({ ...app, language: 'pt' }) },
+        { text: 'PortuguÃªs', onPress: () => setApp({ ...app, language: 'pt' }) },
         { text: 'Cancelar', style: 'cancel' },
       ]
     );
@@ -114,7 +114,7 @@ export default function AppSettings() {
       'Elige tu sistema preferido',
       [
         {
-          text: 'Métrico (kg, cm)',
+          text: 'MÃ©trico (kg, cm)',
           onPress: () => setApp({ ...app, metricSystem: 'metric' }),
         },
         {
@@ -132,15 +132,15 @@ export default function AppSettings() {
       'Descarga todos tus datos de entrenamiento',
       [
         { text: 'Cancelar', style: 'cancel' },
-        { text: 'Exportar', onPress: () => Alert.alert('Exportando...', 'Se enviará a tu email') },
+        { text: 'Exportar', onPress: () => Alert.alert('Exportando...', 'Se enviarÃ¡ a tu email') },
       ]
     );
   };
 
   const deleteAccount = () => {
     Alert.alert(
-      '⚠️ Eliminar Cuenta',
-      'Esta acción es permanente. Todos tus datos serán eliminados.\n\n¿Estás seguro?',
+      'âš ï¸ Eliminar Cuenta',
+      'Esta acciÃ³n es permanente. Todos tus datos serÃ¡n eliminados.\n\nÂ¿EstÃ¡s seguro?',
       [
         { text: 'Cancelar', style: 'cancel' },
         {
@@ -155,7 +155,7 @@ export default function AppSettings() {
   const getVisibilityLabel = (visibility: string) => {
     switch (visibility) {
       case 'public':
-        return 'Público';
+        return 'PÃºblico';
       case 'friends':
         return 'Solo Amigos';
       case 'private':
@@ -168,11 +168,11 @@ export default function AppSettings() {
   const getLanguageLabel = (lang: string) => {
     switch (lang) {
       case 'es':
-        return 'Español';
+        return 'EspaÃ±ol';
       case 'en':
         return 'English';
       case 'pt':
-        return 'Português';
+        return 'PortuguÃªs';
       default:
         return lang;
     }
@@ -187,7 +187,7 @@ export default function AppSettings() {
             <Ionicons name="arrow-back" size={24} color="white" />
           </TouchableOpacity>
           <Text className="text-white text-2xl font-bold flex-1 ml-3">
-            Configuración
+            ConfiguraciÃ³n
           </Text>
           <TouchableOpacity>
             <Ionicons name="help-circle-outline" size={24} color="white" />
@@ -203,7 +203,7 @@ export default function AppSettings() {
                 onPress={() => setActiveTab(tab.id as any)}
                 className={`flex-row items-center px-4 py-2 rounded-lg ${
                   activeTab === tab.id
-                    ? 'bg-emerald-500'
+                    ? 'bg-primary'
                     : 'bg-zinc-900 border border-zinc-800'
                 }`}
               >
@@ -250,7 +250,7 @@ export default function AppSettings() {
                 <View className="flex-1">
                   <Text className="text-white font-bold mb-1">Sistema de Medidas</Text>
                   <Text className="text-zinc-400 text-sm">
-                    {app.metricSystem === 'metric' ? 'Métrico (kg, cm)' : 'Imperial (lb, in)'}
+                    {app.metricSystem === 'metric' ? 'MÃ©trico (kg, cm)' : 'Imperial (lb, in)'}
                   </Text>
                 </View>
                 <Ionicons name="chevron-forward" size={20} color="#71717A" />
@@ -266,7 +266,7 @@ export default function AppSettings() {
                 <Switch
                   value={app.darkMode}
                   onValueChange={(value) => setApp({ ...app, darkMode: value })}
-                  trackColor={{ false: '#3F3F46', true: '#10B981' }}
+                  trackColor={{ false: '#3F3F46', true: '#9D12DE' }}
                   thumbColor={app.darkMode ? '#fff' : '#D4D4D8'}
                 />
               </View>
@@ -275,20 +275,20 @@ export default function AppSettings() {
                 <View className="flex-1">
                   <Text className="text-white font-bold mb-1">Auto-Play Videos</Text>
                   <Text className="text-zinc-400 text-sm">
-                    Reproduce videos automáticamente
+                    Reproduce videos automÃ¡ticamente
                   </Text>
                 </View>
                 <Switch
                   value={app.autoPlayVideos}
                   onValueChange={(value) => setApp({ ...app, autoPlayVideos: value })}
-                  trackColor={{ false: '#3F3F46', true: '#10B981' }}
+                  trackColor={{ false: '#3F3F46', true: '#9D12DE' }}
                   thumbColor={app.autoPlayVideos ? '#fff' : '#D4D4D8'}
                 />
               </View>
 
               <View className="flex-row items-center justify-between mb-4 pb-4 border-b border-zinc-800">
                 <View className="flex-1">
-                  <Text className="text-white font-bold mb-1">Guía de Voz</Text>
+                  <Text className="text-white font-bold mb-1">GuÃ­a de Voz</Text>
                   <Text className="text-zinc-400 text-sm">
                     Instrucciones por voz durante workouts
                   </Text>
@@ -296,22 +296,22 @@ export default function AppSettings() {
                 <Switch
                   value={app.voiceGuidance}
                   onValueChange={(value) => setApp({ ...app, voiceGuidance: value })}
-                  trackColor={{ false: '#3F3F46', true: '#10B981' }}
+                  trackColor={{ false: '#3F3F46', true: '#9D12DE' }}
                   thumbColor={app.voiceGuidance ? '#fff' : '#D4D4D8'}
                 />
               </View>
 
               <View className="flex-row items-center justify-between">
                 <View className="flex-1">
-                  <Text className="text-white font-bold mb-1">Vibración Háptica</Text>
+                  <Text className="text-white font-bold mb-1">VibraciÃ³n HÃ¡ptica</Text>
                   <Text className="text-zinc-400 text-sm">
-                    Feedback táctil en la app
+                    Feedback tÃ¡ctil en la app
                   </Text>
                 </View>
                 <Switch
                   value={app.hapticFeedback}
                   onValueChange={(value) => setApp({ ...app, hapticFeedback: value })}
-                  trackColor={{ false: '#3F3F46', true: '#10B981' }}
+                  trackColor={{ false: '#3F3F46', true: '#9D12DE' }}
                   thumbColor={app.hapticFeedback ? '#fff' : '#D4D4D8'}
                 />
               </View>
@@ -348,7 +348,7 @@ export default function AppSettings() {
                   onValueChange={(value) =>
                     setPrivacy({ ...privacy, showWorkouts: value })
                   }
-                  trackColor={{ false: '#3F3F46', true: '#10B981' }}
+                  trackColor={{ false: '#3F3F46', true: '#9D12DE' }}
                   thumbColor={privacy.showWorkouts ? '#fff' : '#D4D4D8'}
                 />
               </View>
@@ -357,7 +357,7 @@ export default function AppSettings() {
                 <View className="flex-1">
                   <Text className="text-white font-bold mb-1">Mostrar Progreso</Text>
                   <Text className="text-zinc-400 text-sm">
-                    Comparte tus métricas y logros
+                    Comparte tus mÃ©tricas y logros
                   </Text>
                 </View>
                 <Switch
@@ -365,16 +365,16 @@ export default function AppSettings() {
                   onValueChange={(value) =>
                     setPrivacy({ ...privacy, showProgress: value })
                   }
-                  trackColor={{ false: '#3F3F46', true: '#10B981' }}
+                  trackColor={{ false: '#3F3F46', true: '#9D12DE' }}
                   thumbColor={privacy.showProgress ? '#fff' : '#D4D4D8'}
                 />
               </View>
 
               <View className="flex-row items-center justify-between mb-4 pb-4 border-b border-zinc-800">
                 <View className="flex-1">
-                  <Text className="text-white font-bold mb-1">Mostrar Ubicación</Text>
+                  <Text className="text-white font-bold mb-1">Mostrar UbicaciÃ³n</Text>
                   <Text className="text-zinc-400 text-sm">
-                    Comparte tu ubicación de gym
+                    Comparte tu ubicaciÃ³n de gym
                   </Text>
                 </View>
                 <Switch
@@ -382,7 +382,7 @@ export default function AppSettings() {
                   onValueChange={(value) =>
                     setPrivacy({ ...privacy, showLocation: value })
                   }
-                  trackColor={{ false: '#3F3F46', true: '#10B981' }}
+                  trackColor={{ false: '#3F3F46', true: '#9D12DE' }}
                   thumbColor={privacy.showLocation ? '#fff' : '#D4D4D8'}
                 />
               </View>
@@ -399,7 +399,7 @@ export default function AppSettings() {
                   onValueChange={(value) =>
                     setPrivacy({ ...privacy, allowMessages: value })
                   }
-                  trackColor={{ false: '#3F3F46', true: '#10B981' }}
+                  trackColor={{ false: '#3F3F46', true: '#9D12DE' }}
                   thumbColor={privacy.allowMessages ? '#fff' : '#D4D4D8'}
                 />
               </View>
@@ -408,7 +408,7 @@ export default function AppSettings() {
                 <View className="flex-1">
                   <Text className="text-white font-bold mb-1">Aparecer en Leaderboards</Text>
                   <Text className="text-zinc-400 text-sm">
-                    Muestra tu ranking en desafíos
+                    Muestra tu ranking en desafÃ­os
                   </Text>
                 </View>
                 <Switch
@@ -416,7 +416,7 @@ export default function AppSettings() {
                   onValueChange={(value) =>
                     setPrivacy({ ...privacy, showOnLeaderboards: value })
                   }
-                  trackColor={{ false: '#3F3F46', true: '#10B981' }}
+                  trackColor={{ false: '#3F3F46', true: '#9D12DE' }}
                   thumbColor={privacy.showOnLeaderboards ? '#fff' : '#D4D4D8'}
                 />
               </View>
@@ -440,7 +440,7 @@ export default function AppSettings() {
                   onValueChange={(value) =>
                     setNotifications({ ...notifications, workoutReminders: value })
                   }
-                  trackColor={{ false: '#3F3F46', true: '#10B981' }}
+                  trackColor={{ false: '#3F3F46', true: '#9D12DE' }}
                   thumbColor={notifications.workoutReminders ? '#fff' : '#D4D4D8'}
                 />
               </View>
@@ -457,7 +457,7 @@ export default function AppSettings() {
                   onValueChange={(value) =>
                     setNotifications({ ...notifications, achievementAlerts: value })
                   }
-                  trackColor={{ false: '#3F3F46', true: '#10B981' }}
+                  trackColor={{ false: '#3F3F46', true: '#9D12DE' }}
                   thumbColor={notifications.achievementAlerts ? '#fff' : '#D4D4D8'}
                 />
               </View>
@@ -474,14 +474,14 @@ export default function AppSettings() {
                   onValueChange={(value) =>
                     setNotifications({ ...notifications, socialActivity: value })
                   }
-                  trackColor={{ false: '#3F3F46', true: '#10B981' }}
+                  trackColor={{ false: '#3F3F46', true: '#9D12DE' }}
                   thumbColor={notifications.socialActivity ? '#fff' : '#D4D4D8'}
                 />
               </View>
 
               <View className="flex-row items-center justify-between mb-4 pb-4 border-b border-zinc-800">
                 <View className="flex-1">
-                  <Text className="text-white font-bold mb-1">Actualizaciones de Desafíos</Text>
+                  <Text className="text-white font-bold mb-1">Actualizaciones de DesafÃ­os</Text>
                   <Text className="text-zinc-400 text-sm">
                     Progreso en challenges activos
                   </Text>
@@ -491,7 +491,7 @@ export default function AppSettings() {
                   onValueChange={(value) =>
                     setNotifications({ ...notifications, challengeUpdates: value })
                   }
-                  trackColor={{ false: '#3F3F46', true: '#10B981' }}
+                  trackColor={{ false: '#3F3F46', true: '#9D12DE' }}
                   thumbColor={notifications.challengeUpdates ? '#fff' : '#D4D4D8'}
                 />
               </View>
@@ -508,7 +508,7 @@ export default function AppSettings() {
                   onValueChange={(value) =>
                     setNotifications({ ...notifications, weeklyReports: value })
                   }
-                  trackColor={{ false: '#3F3F46', true: '#10B981' }}
+                  trackColor={{ false: '#3F3F46', true: '#9D12DE' }}
                   thumbColor={notifications.weeklyReports ? '#fff' : '#D4D4D8'}
                 />
               </View>
@@ -517,7 +517,7 @@ export default function AppSettings() {
                 <View className="flex-1">
                   <Text className="text-white font-bold mb-1">Frases Motivacionales</Text>
                   <Text className="text-zinc-400 text-sm">
-                    Inspiración diaria
+                    InspiraciÃ³n diaria
                   </Text>
                 </View>
                 <Switch
@@ -525,7 +525,7 @@ export default function AppSettings() {
                   onValueChange={(value) =>
                     setNotifications({ ...notifications, motivationalQuotes: value })
                   }
-                  trackColor={{ false: '#3F3F46', true: '#10B981' }}
+                  trackColor={{ false: '#3F3F46', true: '#9D12DE' }}
                   thumbColor={notifications.motivationalQuotes ? '#fff' : '#D4D4D8'}
                 />
               </View>
@@ -542,22 +542,22 @@ export default function AppSettings() {
             className="bg-zinc-900 rounded-xl p-4 border border-zinc-800 mb-3"
           >
             <View className="flex-row items-center">
-              <Ionicons name="download" size={20} color="#3B82F6" />
+              <Ionicons name="download" size={20} color="#9D12DE" />
               <Text className="text-white font-bold ml-3">Exportar Mis Datos</Text>
             </View>
           </TouchableOpacity>
 
           <TouchableOpacity className="bg-zinc-900 rounded-xl p-4 border border-zinc-800 mb-3">
             <View className="flex-row items-center">
-              <Ionicons name="help-circle" size={20} color="#10B981" />
+              <Ionicons name="help-circle" size={20} color="#9D12DE" />
               <Text className="text-white font-bold ml-3">Ayuda y Soporte</Text>
             </View>
           </TouchableOpacity>
 
           <TouchableOpacity className="bg-zinc-900 rounded-xl p-4 border border-zinc-800 mb-3">
             <View className="flex-row items-center">
-              <Ionicons name="document-text" size={20} color="#F59E0B" />
-              <Text className="text-white font-bold ml-3">Términos y Privacidad</Text>
+              <Ionicons name="document-text" size={20} color="#FFEA00" />
+              <Text className="text-white font-bold ml-3">TÃ©rminos y Privacidad</Text>
             </View>
           </TouchableOpacity>
 
@@ -575,3 +575,4 @@ export default function AppSettings() {
     </View>
   );
 }
+

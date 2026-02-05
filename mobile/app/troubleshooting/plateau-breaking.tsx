@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -108,9 +108,9 @@ export default function PlateauBreaking() {
           {
             variable: 'Exercise Selection',
             examples: [
-              'Squat: High bar → Low bar (or vice versa)',
-              'Bench: Flat → Incline focus',
-              'Deadlift: Conventional → Sumo (or vice versa)',
+              'Squat: High bar â†’ Low bar (or vice versa)',
+              'Bench: Flat â†’ Incline focus',
+              'Deadlift: Conventional â†’ Sumo (or vice versa)',
               'Add variations: Front squat, Close grip, Deficit pulls',
             ],
             when: 'Every 8-12 weeks or when stale',
@@ -128,8 +128,8 @@ export default function PlateauBreaking() {
           {
             variable: 'Volume (Sets)',
             examples: [
-              'Low volume (10-12 sets/week) → Moderate (16-18)',
-              'High volume (20+ sets) → Lower volume',
+              'Low volume (10-12 sets/week) â†’ Moderate (16-18)',
+              'High volume (20+ sets) â†’ Lower volume',
               'Add or remove a training day',
               'More sets, lower intensity',
             ],
@@ -138,8 +138,8 @@ export default function PlateauBreaking() {
           {
             variable: 'Intensity (%)',
             examples: [
-              'Heavy focus (85%+) → Moderate (70-80%)',
-              'Moderate work → Heavy singles',
+              'Heavy focus (85%+) â†’ Moderate (70-80%)',
+              'Moderate work â†’ Heavy singles',
               'Add overload work (105-110% partials)',
               'Sub-maximal volume: Everything @70-75%',
             ],
@@ -148,8 +148,8 @@ export default function PlateauBreaking() {
           {
             variable: 'Frequency',
             examples: [
-              '1x per week → 2x per week',
-              '3x per week → 2x per week',
+              '1x per week â†’ 2x per week',
+              '3x per week â†’ 2x per week',
               'High frequency wave: 4-5x week for 3 weeks',
               'Low frequency: 1x per week high volume',
             ],
@@ -158,8 +158,8 @@ export default function PlateauBreaking() {
           {
             variable: 'Tempo',
             examples: [
-              'Normal speed → 3-0-3 tempo (slow)',
-              'Controlled → Explosive (compensatory acceleration)',
+              'Normal speed â†’ 3-0-3 tempo (slow)',
+              'Controlled â†’ Explosive (compensatory acceleration)',
               'Pauses: 2 second pause all reps',
               'Eccentric overload: 5 second descent',
             ],
@@ -219,19 +219,19 @@ export default function PlateauBreaking() {
           {
             type: 'Reduced Volume',
             method: 'Keep intensity, cut sets in half',
-            example: 'Normally 5x5 @ 80% → 2x5 @ 80%',
+            example: 'Normally 5x5 @ 80% â†’ 2x5 @ 80%',
             when: 'Feeling beat up but strength good',
           },
           {
             type: 'Reduced Intensity',
             method: 'Keep sets, reduce weight 30-40%',
-            example: 'Normally 4x3 @ 85% → 4x3 @ 55%',
+            example: 'Normally 4x3 @ 85% â†’ 4x3 @ 55%',
             when: 'Joints sore, need to move light',
           },
           {
             type: 'Reduced Frequency',
             method: 'Fewer training days',
-            example: '4 days per week → 2 days per week',
+            example: '4 days per week â†’ 2 days per week',
             when: 'Systemically fatigued, need time off',
           },
           {
@@ -410,7 +410,7 @@ export default function PlateauBreaking() {
           'Body fat 18%+ (men) or 28%+ (women)',
           'Feel sluggish/unhealthy',
           '3-4 months before competition',
-          'Gained planned weight (e.g., 181 → 198 class)',
+          'Gained planned weight (e.g., 181 â†’ 198 class)',
         ],
       },
     },
@@ -467,8 +467,8 @@ export default function PlateauBreaking() {
 
   const getColorClass = (color: string) => {
     const colors: { [key: string]: string } = {
-      blue: 'bg-blue-500',
-      emerald: 'bg-emerald-500',
+      blue: 'bg-primary',
+      emerald: 'bg-primary',
       purple: 'bg-purple-500',
       amber: 'bg-amber-500',
       red: 'bg-red-500',
@@ -531,19 +531,19 @@ export default function PlateauBreaking() {
           {selectedStrategy === 'identify' && (
             <View>
               <View className="bg-zinc-900 rounded-xl p-5 mb-6 border border-zinc-800">
-                <Text className="text-blue-400 text-xl font-bold mb-4">{currentStrategy.real_vs_perceived?.title}</Text>
+                <Text className="text-primary/80 text-xl font-bold mb-4">{currentStrategy.real_vs_perceived?.title}</Text>
                 
                 <View className="bg-red-500/10 rounded-xl p-4 border border-red-500/30 mb-4">
                   <Text className="text-red-400 font-bold mb-2">Real Plateau:</Text>
                   {currentStrategy.real_vs_perceived?.real_plateau.map((sign: string, idx: number) => (
-                    <Text key={idx} className="text-red-300 text-sm mb-1">• {sign}</Text>
+                    <Text key={idx} className="text-red-300 text-sm mb-1">â€¢ {sign}</Text>
                   ))}
                 </View>
 
-                <View className="bg-emerald-500/10 rounded-xl p-4 border border-emerald-500/30">
-                  <Text className="text-emerald-400 font-bold mb-2">Not Actually Plateau:</Text>
+                <View className="bg-primary/10 rounded-xl p-4 border border-primary/30">
+                  <Text className="text-primary font-bold mb-2">Not Actually Plateau:</Text>
                   {currentStrategy.real_vs_perceived?.not_plateau.map((sign: string, idx: number) => (
-                    <Text key={idx} className="text-emerald-300 text-sm mb-1">• {sign}</Text>
+                    <Text key={idx} className="text-primary/80 text-sm mb-1">â€¢ {sign}</Text>
                   ))}
                 </View>
               </View>
@@ -556,12 +556,12 @@ export default function PlateauBreaking() {
                     
                     <Text className="text-zinc-400 font-bold text-sm mb-2">Signs:</Text>
                     {cat.signs.map((sign: string, sIdx: number) => (
-                      <Text key={sIdx} className="text-zinc-300 text-sm mb-1">• {sign}</Text>
+                      <Text key={sIdx} className="text-zinc-300 text-sm mb-1">â€¢ {sign}</Text>
                     ))}
 
-                    <View className="bg-emerald-500/10 rounded-xl p-3 border border-emerald-500/30 mt-3">
-                      <Text className="text-emerald-400 font-bold text-sm mb-1">Solution:</Text>
-                      <Text className="text-emerald-300 text-sm">{cat.solution}</Text>
+                    <View className="bg-primary/10 rounded-xl p-3 border border-primary/30 mt-3">
+                      <Text className="text-primary font-bold text-sm mb-1">Solution:</Text>
+                      <Text className="text-primary/80 text-sm">{cat.solution}</Text>
                     </View>
                   </View>
                 ))}
@@ -570,29 +570,29 @@ export default function PlateauBreaking() {
           )}
 
           {selectedStrategy !== 'identify' && (
-            <View className="bg-blue-500/10 rounded-xl p-6 border border-blue-500/30 mb-6">
-              <Text className="text-blue-400 font-bold text-lg mb-2">
+            <View className="bg-primary/10 rounded-xl p-6 border border-primary/30 mb-6">
+              <Text className="text-primary/80 font-bold text-lg mb-2">
                 {currentStrategy.name}
               </Text>
-              <Text className="text-blue-300 text-sm">
+              <Text className="text-primary/60 text-sm">
                 Detailed content for this strategy available in full app...
               </Text>
             </View>
           )}
 
-          <View className="bg-gradient-to-r from-emerald-500/20 to-teal-500/20 rounded-xl p-5 border border-emerald-500/30 mb-6">
-            <Text className="text-emerald-400 font-bold text-lg mb-3">Key Principles</Text>
-            <Text className="text-emerald-300 text-sm mb-2">
-              • Identify the root cause before changing everything
+          <View className="bg-gradient-to-r from-emerald-500/20 to-teal-500/20 rounded-xl p-5 border border-primary/30 mb-6">
+            <Text className="text-primary font-bold text-lg mb-3">Key Principles</Text>
+            <Text className="text-primary/80 text-sm mb-2">
+              â€¢ Identify the root cause before changing everything
             </Text>
-            <Text className="text-emerald-300 text-sm mb-2">
-              • Change ONE variable at a time when possible
+            <Text className="text-primary/80 text-sm mb-2">
+              â€¢ Change ONE variable at a time when possible
             </Text>
-            <Text className="text-emerald-300 text-sm mb-2">
-              • Give changes 4-6 weeks to work
+            <Text className="text-primary/80 text-sm mb-2">
+              â€¢ Give changes 4-6 weeks to work
             </Text>
-            <Text className="text-emerald-300 text-sm">
-              • Sometimes you need to get weaker short-term to get stronger long-term
+            <Text className="text-primary/80 text-sm">
+              â€¢ Sometimes you need to get weaker short-term to get stronger long-term
             </Text>
           </View>
         </View>
@@ -600,3 +600,5 @@ export default function PlateauBreaking() {
     </View>
   );
 }
+
+

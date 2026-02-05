@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -93,10 +93,10 @@ export default function PerformanceTesting() {
   ];
 
   const testTypes = [
-    { id: '1RM', label: '1RM', description: '1 repetición máxima' },
-    { id: '3RM', label: '3RM', description: '3 repeticiones máximas' },
-    { id: '5RM', label: '5RM', description: '5 repeticiones máximas' },
-    { id: 'AMRAP', label: 'AMRAP', description: 'Máx reps posibles' },
+    { id: '1RM', label: '1RM', description: '1 repeticiÃ³n mÃ¡xima' },
+    { id: '3RM', label: '3RM', description: '3 repeticiones mÃ¡ximas' },
+    { id: '5RM', label: '5RM', description: '5 repeticiones mÃ¡ximas' },
+    { id: 'AMRAP', label: 'AMRAP', description: 'MÃ¡x reps posibles' },
   ];
 
   const calculate1RM = () => {
@@ -104,11 +104,11 @@ export default function PerformanceTesting() {
     const reps = parseInt(calcReps);
 
     if (isNaN(weight) || isNaN(reps) || weight <= 0 || reps <= 0) {
-      Alert.alert('Error', 'Ingresa valores válidos');
+      Alert.alert('Error', 'Ingresa valores vÃ¡lidos');
       return;
     }
 
-    // Brzycki formula: 1RM = weight × (36 / (37 - reps))
+    // Brzycki formula: 1RM = weight Ã— (36 / (37 - reps))
     const estimated1RM = Math.round(weight * (36 / (37 - reps)));
     const estimated3RM = Math.round(estimated1RM * 0.93);
     const estimated5RM = Math.round(estimated1RM * 0.87);
@@ -149,7 +149,7 @@ export default function PerformanceTesting() {
             'Peso levantado (kg):',
             (weight) => {
               if (weight) {
-                Alert.alert('¡Test Registrado!', `${type} de ${exercise}: ${weight} kg`);
+                Alert.alert('Â¡Test Registrado!', `${type} de ${exercise}: ${weight} kg`);
               }
             }
           );
@@ -163,11 +163,11 @@ export default function PerformanceTesting() {
       case '1RM':
         return '#EF4444';
       case '3RM':
-        return '#F59E0B';
+        return '#FFEA00';
       case '5RM':
-        return '#10B981';
+        return '#9D12DE';
       case 'AMRAP':
-        return '#3B82F6';
+        return '#9D12DE';
       default:
         return '#71717A';
     }
@@ -191,12 +191,12 @@ export default function PerformanceTesting() {
             Tests de Rendimiento
           </Text>
           <TouchableOpacity onPress={logTest}>
-            <Ionicons name="add-circle" size={24} color="#10B981" />
+            <Ionicons name="add-circle" size={24} color="#9D12DE" />
           </TouchableOpacity>
         </View>
 
         {/* Strength Summary */}
-        <View className="bg-gradient-to-br from-emerald-500 to-blue-500 rounded-xl p-4 mb-4">
+        <View className="bg-gradient-to-br from-primary to-[#7D0EBE] rounded-xl p-4 mb-4">
           <View className="flex-row items-center justify-between">
             <View className="flex-1">
               <Text className="text-white/80 text-sm mb-1">Fuerza Total (1RM)</Text>
@@ -220,7 +220,7 @@ export default function PerformanceTesting() {
               key={tab.id}
               onPress={() => setSelectedTab(tab.id)}
               className={`flex-1 flex-row items-center justify-center py-3 rounded-lg ${
-                selectedTab === tab.id ? 'bg-emerald-500' : 'bg-zinc-900 border border-zinc-800'
+                selectedTab === tab.id ? 'bg-primary' : 'bg-zinc-900 border border-zinc-800'
               }`}
             >
               <Ionicons
@@ -284,14 +284,14 @@ export default function PerformanceTesting() {
                 <View className="flex-row gap-3 mb-3">
                   <View className="flex-1 bg-zinc-800 rounded-lg p-3">
                     <Text className="text-zinc-400 text-xs mb-1">Resultado</Text>
-                    <Text className="text-emerald-500 font-bold text-2xl">
+                    <Text className="text-primary font-bold text-2xl">
                       {test.result} kg
                     </Text>
                   </View>
                   {test.bodyweight && (
                     <View className="flex-1 bg-zinc-800 rounded-lg p-3">
                       <Text className="text-zinc-400 text-xs mb-1">Ratio</Text>
-                      <Text className="text-blue-500 font-bold text-2xl">
+                      <Text className="text-primary font-bold text-2xl">
                         {(test.result / test.bodyweight).toFixed(2)}x
                       </Text>
                     </View>
@@ -307,10 +307,10 @@ export default function PerformanceTesting() {
                 </View>
 
                 {test.notes && (
-                  <View className="bg-emerald-500/10 rounded-lg p-3 border border-emerald-500/30">
+                  <View className="bg-primary/10 rounded-lg p-3 border border-primary/30">
                     <View className="flex-row items-center">
-                      <Ionicons name="trophy" size={16} color="#10B981" />
-                      <Text className="text-emerald-400 text-sm ml-2">{test.notes}</Text>
+                      <Ionicons name="trophy" size={16} color="#9D12DE" />
+                      <Text className="text-primary text-sm ml-2">{test.notes}</Text>
                     </View>
                   </View>
                 )}
@@ -355,18 +355,18 @@ export default function PerformanceTesting() {
 
               <TouchableOpacity
                 onPress={calculate1RM}
-                className="bg-emerald-500 rounded-lg p-4"
+                className="bg-primary rounded-lg p-4"
               >
                 <Text className="text-white font-bold text-center text-lg">
-                  Calcular Máximos
+                  Calcular MÃ¡ximos
                 </Text>
               </TouchableOpacity>
             </View>
 
             {calculation && (
-              <View className="bg-zinc-900 rounded-xl p-4 mb-4 border border-emerald-500">
+              <View className="bg-zinc-900 rounded-xl p-4 mb-4 border border-primary">
                 <View className="flex-row items-center mb-4">
-                  <Ionicons name="analytics" size={24} color="#10B981" />
+                  <Ionicons name="analytics" size={24} color="#9D12DE" />
                   <Text className="text-white font-bold text-lg ml-2">
                     Resultados Estimados
                   </Text>
@@ -378,38 +378,38 @@ export default function PerformanceTesting() {
                   </Text>
                   <View className="h-px bg-zinc-700 my-2" />
                   <View className="flex-row items-baseline">
-                    <Text className="text-white/60 text-sm">Estimación usando </Text>
-                    <Text className="text-emerald-500 text-sm font-bold">
-                      Fórmula Brzycki
+                    <Text className="text-white/60 text-sm">EstimaciÃ³n usando </Text>
+                    <Text className="text-primary text-sm font-bold">
+                      FÃ³rmula Brzycki
                     </Text>
                   </View>
                 </View>
 
                 <View className="gap-3">
                   <View className="bg-red-500/10 border border-red-500/30 rounded-lg p-4">
-                    <Text className="text-red-500/60 text-xs mb-1">1 REP MÁXIMA</Text>
+                    <Text className="text-red-500/60 text-xs mb-1">1 REP MÃXIMA</Text>
                     <Text className="text-red-500 font-bold text-3xl">
                       {calculation.estimated1RM} kg
                     </Text>
                   </View>
 
                   <View className="bg-amber-500/10 border border-amber-500/30 rounded-lg p-4">
-                    <Text className="text-amber-500/60 text-xs mb-1">3 REPS MÁXIMAS</Text>
+                    <Text className="text-amber-500/60 text-xs mb-1">3 REPS MÃXIMAS</Text>
                     <Text className="text-amber-500 font-bold text-2xl">
                       {calculation.estimated3RM} kg
                     </Text>
                   </View>
 
-                  <View className="bg-emerald-500/10 border border-emerald-500/30 rounded-lg p-4">
-                    <Text className="text-emerald-500/60 text-xs mb-1">5 REPS MÁXIMAS</Text>
-                    <Text className="text-emerald-500 font-bold text-2xl">
+                  <View className="bg-primary/10 border border-primary/30 rounded-lg p-4">
+                    <Text className="text-primary/60 text-xs mb-1">5 REPS MÃXIMAS</Text>
+                    <Text className="text-primary font-bold text-2xl">
                       {calculation.estimated5RM} kg
                     </Text>
                   </View>
 
-                  <View className="bg-blue-500/10 border border-blue-500/30 rounded-lg p-4">
-                    <Text className="text-blue-500/60 text-xs mb-1">10 REPS MÁXIMAS</Text>
-                    <Text className="text-blue-500 font-bold text-2xl">
+                  <View className="bg-primary/10 border border-primary/30 rounded-lg p-4">
+                    <Text className="text-primary/60 text-xs mb-1">10 REPS MÃXIMAS</Text>
+                    <Text className="text-primary font-bold text-2xl">
                       {calculation.estimated10RM} kg
                     </Text>
                   </View>
@@ -418,15 +418,15 @@ export default function PerformanceTesting() {
             )}
 
             {/* Info Card */}
-            <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30">
+            <View className="bg-primary/10 rounded-xl p-4 border border-primary/30">
               <View className="flex-row items-start">
-                <Ionicons name="information-circle" size={20} color="#3B82F6" />
+                <Ionicons name="information-circle" size={20} color="#9D12DE" />
                 <View className="flex-1 ml-3">
-                  <Text className="text-blue-400 font-bold mb-2">
-                    Sobre el Cálculo
+                  <Text className="text-primary/80 font-bold mb-2">
+                    Sobre el CÃ¡lculo
                   </Text>
-                  <Text className="text-blue-300 text-sm">
-                    Esta calculadora usa la fórmula Brzycki para estimar tu 1RM. Los resultados son aproximaciones y pueden variar según tu experiencia y técnica.
+                  <Text className="text-primary/60 text-sm">
+                    Esta calculadora usa la fÃ³rmula Brzycki para estimar tu 1RM. Los resultados son aproximaciones y pueden variar segÃºn tu experiencia y tÃ©cnica.
                   </Text>
                 </View>
               </View>
@@ -459,7 +459,7 @@ export default function PerformanceTesting() {
                   propsForDots: {
                     r: '6',
                     strokeWidth: '2',
-                    stroke: '#10B981',
+                    stroke: '#9D12DE',
                   },
                 }}
                 bezier
@@ -472,11 +472,11 @@ export default function PerformanceTesting() {
               <View className="flex-row items-center justify-between mt-3">
                 <View className="flex-1">
                   <Text className="text-zinc-400 text-xs">Mejora Total</Text>
-                  <Text className="text-emerald-500 font-bold text-2xl">+15 kg</Text>
+                  <Text className="text-primary font-bold text-2xl">+15 kg</Text>
                 </View>
                 <View className="flex-1">
                   <Text className="text-zinc-400 text-xs">Ganancia Mensual</Text>
-                  <Text className="text-blue-500 font-bold text-2xl">+3.8 kg</Text>
+                  <Text className="text-primary font-bold text-2xl">+3.8 kg</Text>
                 </View>
               </View>
             </View>
@@ -494,14 +494,14 @@ export default function PerformanceTesting() {
                 <View className="flex-row items-center justify-between">
                   <Text className="text-white font-bold text-lg">{exercise}</Text>
                   <View className="flex-row items-center">
-                    <Ionicons name="trending-up" size={16} color="#10B981" />
-                    <Text className="text-emerald-500 font-bold ml-1">
+                    <Ionicons name="trending-up" size={16} color="#9D12DE" />
+                    <Text className="text-primary font-bold ml-1">
                       {index === 0 ? '+8' : index === 1 ? '+12' : '+5'} kg
                     </Text>
                   </View>
                 </View>
                 <Text className="text-zinc-400 text-sm mt-1">
-                  Últimos 4 meses
+                  Ãšltimos 4 meses
                 </Text>
               </View>
             ))}
@@ -511,3 +511,4 @@ export default function PerformanceTesting() {
     </View>
   );
 }
+

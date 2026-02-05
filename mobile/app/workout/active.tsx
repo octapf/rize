@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+﻿import React, { useState, useEffect } from 'react';
 import {
   View,
   Text,
@@ -138,7 +138,7 @@ export default function ActiveWorkout() {
 
   const finishWorkout = () => {
     Alert.alert(
-      '¿Finalizar Entrenamiento?',
+      'Â¿Finalizar Entrenamiento?',
       `Has completado ${totalSetsCompleted} de ${totalSets} series.\n\nTiempo total: ${formatTime(elapsedTime)}`,
       [
         { text: 'Cancelar', style: 'cancel' },
@@ -146,7 +146,7 @@ export default function ActiveWorkout() {
           text: 'Finalizar',
           style: 'destructive',
           onPress: () => {
-            Alert.alert('¡Entrenamiento guardado!', 'Excelente trabajo hoy 💪', [
+            Alert.alert('Â¡Entrenamiento guardado!', 'Excelente trabajo hoy ðŸ’ª', [
               { text: 'OK', onPress: () => router.back() },
             ]);
           },
@@ -193,8 +193,8 @@ export default function ActiveWorkout() {
           <TouchableOpacity
             onPress={() => {
               Alert.alert(
-                '¿Salir del entrenamiento?',
-                'Perderás todo el progreso no guardado',
+                'Â¿Salir del entrenamiento?',
+                'PerderÃ¡s todo el progreso no guardado',
                 [
                   { text: 'Cancelar', style: 'cancel' },
                   {
@@ -215,7 +215,7 @@ export default function ActiveWorkout() {
           </View>
 
           <TouchableOpacity onPress={finishWorkout}>
-            <Ionicons name="checkmark-circle" size={28} color="#10B981" />
+            <Ionicons name="checkmark-circle" size={28} color="#9D12DE" />
           </TouchableOpacity>
         </View>
 
@@ -231,7 +231,7 @@ export default function ActiveWorkout() {
           </View>
           <View className="h-2 bg-zinc-800 rounded-full overflow-hidden">
             <View
-              className="h-full bg-emerald-500"
+              className="h-full bg-primary"
               style={{ width: `${progressPercentage}%` }}
             />
           </View>
@@ -255,13 +255,13 @@ export default function ActiveWorkout() {
               onPress={() => setCurrentExerciseIndex(index)}
               className={`mr-3 px-4 py-3 rounded-xl ${
                 isActive
-                  ? 'bg-emerald-500/20 border-2 border-emerald-500'
+                  ? 'bg-primary/20 border-2 border-primary'
                   : 'bg-zinc-900'
               }`}
             >
               <Text
                 className={`font-bold ${
-                  isActive ? 'text-emerald-500' : 'text-white'
+                  isActive ? 'text-primary' : 'text-white'
                 }`}
               >
                 {exercise.name}
@@ -282,14 +282,14 @@ export default function ActiveWorkout() {
               {currentExercise.name}
             </Text>
             <TouchableOpacity onPress={() => setShowNotesModal(true)}>
-              <Ionicons name="create-outline" size={24} color="#10B981" />
+              <Ionicons name="create-outline" size={24} color="#9D12DE" />
             </TouchableOpacity>
           </View>
 
           <View className="flex-row items-center mb-2">
             <Ionicons name="barbell-outline" size={16} color="#71717A" />
             <Text className="text-zinc-400 text-sm ml-2">
-              {currentExercise.targetSets} series × {currentExercise.targetReps} reps
+              {currentExercise.targetSets} series Ã— {currentExercise.targetReps} reps
             </Text>
           </View>
 
@@ -309,13 +309,13 @@ export default function ActiveWorkout() {
           <View
             key={set.id}
             className={`bg-zinc-900 rounded-xl p-4 mb-3 border ${
-              set.completed ? 'border-emerald-500' : 'border-zinc-800'
+              set.completed ? 'border-primary' : 'border-zinc-800'
             }`}
           >
             <View className="flex-row items-center justify-between mb-3">
               <Text
                 className={`font-bold ${
-                  set.completed ? 'text-emerald-500' : 'text-white'
+                  set.completed ? 'text-primary' : 'text-white'
                 }`}
               >
                 Serie {index + 1}
@@ -325,7 +325,7 @@ export default function ActiveWorkout() {
                   toggleSetCompleted(currentExercise.id, set.id)
                 }
                 className={`w-8 h-8 rounded-full items-center justify-center ${
-                  set.completed ? 'bg-emerald-500' : 'bg-zinc-800'
+                  set.completed ? 'bg-primary' : 'bg-zinc-800'
                 }`}
               >
                 {set.completed && (
@@ -375,8 +375,8 @@ export default function ActiveWorkout() {
           onPress={addSet}
           className="bg-zinc-900 rounded-xl p-4 mb-4 border border-zinc-800 border-dashed flex-row items-center justify-center"
         >
-          <Ionicons name="add-circle-outline" size={24} color="#10B981" />
-          <Text className="text-emerald-500 font-bold ml-2">
+          <Ionicons name="add-circle-outline" size={24} color="#9D12DE" />
+          <Text className="text-primary font-bold ml-2">
             Agregar Serie
           </Text>
         </TouchableOpacity>
@@ -396,7 +396,7 @@ export default function ActiveWorkout() {
           {currentExerciseIndex < exercises.length - 1 && (
             <TouchableOpacity
               onPress={() => setCurrentExerciseIndex((prev) => prev + 1)}
-              className="flex-1 bg-emerald-500 rounded-xl p-4 flex-row items-center justify-center"
+              className="flex-1 bg-primary rounded-xl p-4 flex-row items-center justify-center"
             >
               <Text className="text-white font-bold mr-2">Siguiente</Text>
               <Ionicons name="arrow-forward" size={20} color="white" />
@@ -424,7 +424,7 @@ export default function ActiveWorkout() {
           <TextInput
             value={currentExercise.notes}
             onChangeText={(text) => saveNotes(text)}
-            placeholder="Escribe tus notas aquí..."
+            placeholder="Escribe tus notas aquÃ­..."
             placeholderTextColor="#52525B"
             multiline
             textAlignVertical="top"
@@ -433,7 +433,7 @@ export default function ActiveWorkout() {
 
           <TouchableOpacity
             onPress={() => setShowNotesModal(false)}
-            className="bg-emerald-500 rounded-xl p-4 items-center"
+            className="bg-primary rounded-xl p-4 items-center"
           >
             <Text className="text-white font-bold text-lg">Guardar</Text>
           </TouchableOpacity>
@@ -462,3 +462,4 @@ export default function ActiveWorkout() {
     </View>
   );
 }
+

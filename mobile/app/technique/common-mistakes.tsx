@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -77,11 +77,11 @@ export default function CommonMistakes() {
     ],
     bench: [
       {
-        mistake: 'Flared Elbows (90°)',
+        mistake: 'Flared Elbows (90Â°)',
         why: 'Trying to mimic bodybuilding fly, lack of education',
         consequence: 'Shoulder impingement, rotator cuff injury, less strength',
         fix: [
-          'Tuck elbows to 45-75° angle',
+          'Tuck elbows to 45-75Â° angle',
           'Cue "bend the bar" inward',
           'Retract scapula hard',
           'Lower to nipple line, not neck',
@@ -327,12 +327,12 @@ export default function CommonMistakes() {
                   <Text className={`text-${color}-300`}>{item.consequence}</Text>
                 </View>
 
-                <View className="bg-emerald-500/10 rounded-xl p-4 border border-emerald-500/30">
-                  <Text className="text-emerald-400 font-bold mb-2">How to Fix:</Text>
+                <View className="bg-primary/10 rounded-xl p-4 border border-primary/30">
+                  <Text className="text-primary font-bold mb-2">How to Fix:</Text>
                   {item.fix.map((fixItem, fixIdx) => (
                     <View key={fixIdx} className="flex-row items-start mb-1.5 last:mb-0">
-                      <Ionicons name="checkmark-circle" size={16} color="#10b981" />
-                      <Text className="text-emerald-300 ml-2 flex-1 text-sm">{fixItem}</Text>
+                      <Ionicons name="checkmark-circle" size={16} color="#9D12DE" />
+                      <Text className="text-primary/80 ml-2 flex-1 text-sm">{fixItem}</Text>
                     </View>
                   ))}
                 </View>
@@ -340,14 +340,14 @@ export default function CommonMistakes() {
             );
           })}
 
-          <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30 mb-6">
-            <Text className="text-blue-400 font-bold mb-2">General Tips</Text>
-            <Text className="text-blue-300 text-sm">
-              • Film every heavy set{'\n'}
-              • Get coaching/form checks{'\n'}
-              • Ego check at the door{'\n'}
-              • Master basics before advanced{'\n'}
-              • Consistency builds patterns
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
+            <Text className="text-primary/80 font-bold mb-2">General Tips</Text>
+            <Text className="text-primary/60 text-sm">
+              â€¢ Film every heavy set{'\n'}
+              â€¢ Get coaching/form checks{'\n'}
+              â€¢ Ego check at the door{'\n'}
+              â€¢ Master basics before advanced{'\n'}
+              â€¢ Consistency builds patterns
             </Text>
           </View>
         </View>
@@ -355,3 +355,5 @@ export default function CommonMistakes() {
     </View>
   );
 }
+
+

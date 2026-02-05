@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -86,8 +86,8 @@ export default function RecoveryScore() {
           suggestions: [
             'Intenta nuevos PRs',
             'Volumen alto permitido',
-            'Técnica perfecta, ve pesado',
-            'Aprovecha este pico de recuperación',
+            'TÃ©cnica perfecta, ve pesado',
+            'Aprovecha este pico de recuperaciÃ³n',
           ],
         };
       case 'moderate':
@@ -97,8 +97,8 @@ export default function RecoveryScore() {
           color: 'blue',
           icon: 'trending-up',
           suggestions: [
-            'Entrena con pesos submáximos',
-            'Enfócate en técnica',
+            'Entrena con pesos submÃ¡ximos',
+            'EnfÃ³cate en tÃ©cnica',
             'Volumen moderado',
             'No fuerces PRs hoy',
           ],
@@ -113,20 +113,20 @@ export default function RecoveryScore() {
             'Cardio ligero o caminata',
             'Movilidad extendida',
             'Pesos muy ligeros',
-            'Considera día de descanso activo',
+            'Considera dÃ­a de descanso activo',
           ],
         };
       default:
         return {
-          title: 'Día de Descanso',
-          description: 'Tu cuerpo necesita recuperación',
+          title: 'DÃ­a de Descanso',
+          description: 'Tu cuerpo necesita recuperaciÃ³n',
           color: 'red',
           icon: 'bed',
           suggestions: [
             'Descanso completo hoy',
-            'Sueño extra si es posible',
-            'Caminata suave máximo',
-            'Enfócate en nutrición',
+            'SueÃ±o extra si es posible',
+            'Caminata suave mÃ¡ximo',
+            'EnfÃ³cate en nutriciÃ³n',
           ],
         };
     }
@@ -218,16 +218,16 @@ export default function RecoveryScore() {
 
           {/* Input Form */}
           <View className="bg-zinc-900 rounded-xl p-5 mb-6 border border-zinc-800">
-            <Text className="text-white font-bold text-lg mb-4">Evalúa Tu Recuperación</Text>
+            <Text className="text-white font-bold text-lg mb-4">EvalÃºa Tu RecuperaciÃ³n</Text>
 
             {/* Sleep Hours */}
             <View className="mb-4">
               <View className="flex-row items-center justify-between mb-2">
                 <View className="flex-row items-center">
-                  <Ionicons name="moon" size={20} color="#3B82F6" />
-                  <Text className="text-white font-bold ml-2">Horas de Sueño</Text>
+                  <Ionicons name="moon" size={20} color="#9D12DE" />
+                  <Text className="text-white font-bold ml-2">Horas de SueÃ±o</Text>
                 </View>
-                <Text className="text-blue-400 font-bold text-xl">{sleepHours}h</Text>
+                <Text className="text-primary/80 font-bold text-xl">{sleepHours}h</Text>
               </View>
               <View className="flex-row gap-2">
                 {[5, 6, 7, 8, 9].map((hours) => (
@@ -235,7 +235,7 @@ export default function RecoveryScore() {
                     key={hours}
                     onPress={() => setSleepHours(hours)}
                     className={`flex-1 rounded-lg p-3 ${
-                      sleepHours === hours ? 'bg-blue-500' : 'bg-zinc-800'
+                      sleepHours === hours ? 'bg-primary' : 'bg-zinc-800'
                     }`}
                   >
                     <Text className={`text-center font-bold ${sleepHours === hours ? 'text-white' : 'text-zinc-400'}`}>
@@ -251,7 +251,7 @@ export default function RecoveryScore() {
               <View className="flex-row items-center justify-between mb-2">
                 <View className="flex-row items-center">
                   <Ionicons name="star" size={20} color="#A855F7" />
-                  <Text className="text-white font-bold ml-2">Calidad del Sueño</Text>
+                  <Text className="text-white font-bold ml-2">Calidad del SueÃ±o</Text>
                 </View>
                 <Text className="text-purple-400 font-bold text-xl">{sleepQuality}/5</Text>
               </View>
@@ -303,8 +303,8 @@ export default function RecoveryScore() {
             <View className="mb-4">
               <View className="flex-row items-center justify-between mb-2">
                 <View className="flex-row items-center">
-                  <Ionicons name="warning" size={20} color="#F59E0B" />
-                  <Text className="text-white font-bold ml-2">Nivel de Estrés</Text>
+                  <Ionicons name="warning" size={20} color="#FFEA00" />
+                  <Text className="text-white font-bold ml-2">Nivel de EstrÃ©s</Text>
                 </View>
                 <Text className="text-amber-400 font-bold text-xl">{stress}/5</Text>
               </View>
@@ -329,10 +329,10 @@ export default function RecoveryScore() {
             <View className="mb-4">
               <View className="flex-row items-center justify-between mb-2">
                 <View className="flex-row items-center">
-                  <Ionicons name="nutrition" size={20} color="#10B981" />
+                  <Ionicons name="nutrition" size={20} color="#9D12DE" />
                   <Text className="text-white font-bold ml-2">Calidad Nutricional</Text>
                 </View>
-                <Text className="text-emerald-400 font-bold text-xl">{nutrition}/5</Text>
+                <Text className="text-primary font-bold text-xl">{nutrition}/5</Text>
               </View>
               <View className="flex-row gap-2">
                 {[1, 2, 3, 4, 5].map((level) => (
@@ -340,7 +340,7 @@ export default function RecoveryScore() {
                     key={level}
                     onPress={() => setNutrition(level)}
                     className={`flex-1 rounded-lg p-3 ${
-                      nutrition === level ? 'bg-emerald-500' : 'bg-zinc-800'
+                      nutrition === level ? 'bg-primary' : 'bg-zinc-800'
                     }`}
                   >
                     <Text className={`text-center font-bold ${nutrition === level ? 'text-white' : 'text-zinc-400'}`}>
@@ -356,7 +356,7 @@ export default function RecoveryScore() {
               <View className="flex-row items-center justify-between mb-2">
                 <View className="flex-row items-center">
                   <Ionicons name="water" size={20} color="#06B6D4" />
-                  <Text className="text-white font-bold ml-2">Hidratación</Text>
+                  <Text className="text-white font-bold ml-2">HidrataciÃ³n</Text>
                 </View>
                 <Text className="text-cyan-400 font-bold text-xl">{hydration}/5</Text>
               </View>
@@ -397,7 +397,7 @@ export default function RecoveryScore() {
                 </Text>
                 {recommendationDetails.suggestions.map((suggestion, idx) => (
                   <Text key={idx} className={`text-${recommendationDetails.color}-300 text-sm mb-1`}>
-                    • {suggestion}
+                    â€¢ {suggestion}
                   </Text>
                 ))}
               </View>
@@ -409,7 +409,7 @@ export default function RecoveryScore() {
             <View className="flex-1 bg-zinc-900 rounded-xl p-4 border border-zinc-800">
               <Text className="text-zinc-400 text-xs mb-1">Promedio</Text>
               <Text className="text-white text-2xl font-bold">{averageScore}</Text>
-              <Text className="text-zinc-500 text-xs">últimos {entries.length} días</Text>
+              <Text className="text-zinc-500 text-xs">Ãºltimos {entries.length} dÃ­as</Text>
             </View>
             <View className="flex-1 bg-zinc-900 rounded-xl p-4 border border-zinc-800">
               <Text className="text-zinc-400 text-xs mb-1">Tendencia</Text>
@@ -417,10 +417,10 @@ export default function RecoveryScore() {
                 <Ionicons
                   name={trend === 'improving' ? 'trending-up' : trend === 'declining' ? 'trending-down' : 'remove'}
                   size={24}
-                  color={trend === 'improving' ? '#10B981' : trend === 'declining' ? '#EF4444' : '#71717A'}
+                  color={trend === 'improving' ? '#9D12DE' : trend === 'declining' ? '#EF4444' : '#71717A'}
                 />
                 <Text className={`font-bold ml-2 ${
-                  trend === 'improving' ? 'text-emerald-400' : trend === 'declining' ? 'text-red-400' : 'text-zinc-400'
+                  trend === 'improving' ? 'text-primary' : trend === 'declining' ? 'text-red-400' : 'text-zinc-400'
                 }`}>
                   {trend === 'improving' ? 'Mejorando' : trend === 'declining' ? 'Bajando' : 'Estable'}
                 </Text>
@@ -447,40 +447,40 @@ export default function RecoveryScore() {
 
                 <View className="flex-row gap-2 mb-2">
                   <View className="bg-zinc-800 rounded px-2 py-1">
-                    <Text className="text-zinc-400 text-xs">😴 {entry.sleepHours}h</Text>
+                    <Text className="text-zinc-400 text-xs">ðŸ˜´ {entry.sleepHours}h</Text>
                   </View>
                   <View className="bg-zinc-800 rounded px-2 py-1">
-                    <Text className="text-zinc-400 text-xs">⭐ {entry.sleepQuality}/5</Text>
+                    <Text className="text-zinc-400 text-xs">â­ {entry.sleepQuality}/5</Text>
                   </View>
                   <View className="bg-zinc-800 rounded px-2 py-1">
-                    <Text className="text-zinc-400 text-xs">💪 {entry.soreness}/5</Text>
+                    <Text className="text-zinc-400 text-xs">ðŸ’ª {entry.soreness}/5</Text>
                   </View>
                   <View className="bg-zinc-800 rounded px-2 py-1">
-                    <Text className="text-zinc-400 text-xs">😰 {entry.stress}/5</Text>
+                    <Text className="text-zinc-400 text-xs">ðŸ˜° {entry.stress}/5</Text>
                   </View>
                 </View>
 
                 <Text className={`text-${details.color}-400 text-sm font-bold`}>
-                  → {details.title}
+                  â†’ {details.title}
                 </Text>
               </View>
             );
           })}
 
           {/* Info */}
-          <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30 mb-6">
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
             <View className="flex-row items-start">
-              <Ionicons name="information-circle" size={20} color="#3B82F6" />
+              <Ionicons name="information-circle" size={20} color="#9D12DE" />
               <View className="flex-1 ml-3">
-                <Text className="text-blue-400 font-bold mb-2">
-                  Cómo Interpretar el Score
+                <Text className="text-primary/80 font-bold mb-2">
+                  CÃ³mo Interpretar el Score
                 </Text>
-                <Text className="text-blue-300 text-sm">
+                <Text className="text-primary/60 text-sm">
                   <Text className="font-bold">85-100:</Text> Alta intensidad OK{'\n'}
                   <Text className="font-bold">70-84:</Text> Entrena moderado{'\n'}
                   <Text className="font-bold">50-69:</Text> Intensidad ligera{'\n'}
                   <Text className="font-bold">&lt;50:</Text> Descanso necesario{'\n\n'}
-                  El score considera: sueño (40%), dolor (20%), estrés (15%), nutrición (15%), hidratación (10%)
+                  El score considera: sueÃ±o (40%), dolor (20%), estrÃ©s (15%), nutriciÃ³n (15%), hidrataciÃ³n (10%)
                 </Text>
               </View>
             </View>
@@ -490,3 +490,4 @@ export default function RecoveryScore() {
     </View>
   );
 }
+

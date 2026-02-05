@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -79,7 +79,7 @@ const DATA_CATEGORIES: DataCategory[] = [
   },
   {
     id: 'nutrition',
-    name: 'Nutrición',
+    name: 'NutriciÃ³n',
     description: 'Planes de comida y macros',
     icon: 'restaurant',
     selected: true,
@@ -103,8 +103,8 @@ const DATA_CATEGORIES: DataCategory[] = [
   },
   {
     id: 'stats',
-    name: 'Estadísticas',
-    description: 'PRs, récords, logros',
+    name: 'EstadÃ­sticas',
+    description: 'PRs, rÃ©cords, logros',
     icon: 'trophy',
     selected: true,
     itemCount: 512,
@@ -138,7 +138,7 @@ export default function DataExport() {
 
   const handleExport = () => {
     if (selectedCategories.length === 0) {
-      Alert.alert('Error', 'Selecciona al menos una categoría para exportar');
+      Alert.alert('Error', 'Selecciona al menos una categorÃ­a para exportar');
       return;
     }
 
@@ -146,7 +146,7 @@ export default function DataExport() {
 
     Alert.alert(
       'Exportando Datos',
-      `Se exportarán ${totalItems} elementos en formato ${format?.name}. Esto puede tardar unos minutos.`,
+      `Se exportarÃ¡n ${totalItems} elementos en formato ${format?.name}. Esto puede tardar unos minutos.`,
       [
         { text: 'Cancelar', style: 'cancel' },
         {
@@ -154,12 +154,12 @@ export default function DataExport() {
           onPress: () => {
             // Simulate export process
             Alert.alert(
-              '¡Exportación Exitosa!',
-              `Tu archivo ${format?.extension} está listo. Se ha guardado en tu carpeta de Descargas.`,
+              'Â¡ExportaciÃ³n Exitosa!',
+              `Tu archivo ${format?.extension} estÃ¡ listo. Se ha guardado en tu carpeta de Descargas.`,
               [
                 {
                   text: 'Compartir',
-                  onPress: () => Alert.alert('Compartir', 'Función de compartir'),
+                  onPress: () => Alert.alert('Compartir', 'FunciÃ³n de compartir'),
                 },
                 { text: 'OK' },
               ]
@@ -173,7 +173,7 @@ export default function DataExport() {
   const handleImport = () => {
     Alert.alert(
       'Importar Datos',
-      '¿Qué tipo de archivo deseas importar?',
+      'Â¿QuÃ© tipo de archivo deseas importar?',
       [
         {
           text: 'JSON',
@@ -204,7 +204,7 @@ export default function DataExport() {
         </View>
 
         <Text className="text-zinc-400 text-sm leading-5">
-          Exporta tus datos para crear backups o migrar a otras plataformas. También
+          Exporta tus datos para crear backups o migrar a otras plataformas. TambiÃ©n
           puedes importar datos desde otras apps.
         </Text>
       </View>
@@ -215,7 +215,7 @@ export default function DataExport() {
           <View className="flex-row gap-3 mb-6">
             <TouchableOpacity
               onPress={handleExport}
-              className="flex-1 bg-emerald-500 rounded-xl p-4 flex-row items-center justify-center"
+              className="flex-1 bg-primary rounded-xl p-4 flex-row items-center justify-center"
             >
               <Ionicons name="download" size={20} color="white" />
               <Text className="text-white font-bold ml-2">Exportar</Text>
@@ -233,7 +233,7 @@ export default function DataExport() {
         {/* Export Format */}
         <View className="px-6 mb-6">
           <Text className="text-white font-bold text-lg mb-3">
-            Formato de Exportación
+            Formato de ExportaciÃ³n
           </Text>
 
           {EXPORT_FORMATS.map((format) => (
@@ -242,19 +242,19 @@ export default function DataExport() {
               onPress={() => setSelectedFormat(format.id)}
               className={`bg-zinc-900 rounded-xl p-4 mb-3 flex-row items-center border ${
                 selectedFormat === format.id
-                  ? 'border-emerald-500'
+                  ? 'border-primary'
                   : 'border-zinc-800'
               }`}
             >
               <View
                 className={`w-12 h-12 rounded-xl items-center justify-center ${
-                  selectedFormat === format.id ? 'bg-emerald-500/20' : 'bg-zinc-800'
+                  selectedFormat === format.id ? 'bg-primary/20' : 'bg-zinc-800'
                 }`}
               >
                 <Ionicons
                   name={format.icon as any}
                   size={24}
-                  color={selectedFormat === format.id ? '#10B981' : '#A1A1AA'}
+                  color={selectedFormat === format.id ? '#9D12DE' : '#A1A1AA'}
                 />
               </View>
 
@@ -271,12 +271,12 @@ export default function DataExport() {
                   {format.description}
                 </Text>
                 <Text className="text-zinc-500 text-xs mt-1">
-                  {format.extension} • {format.size}
+                  {format.extension} â€¢ {format.size}
                 </Text>
               </View>
 
               {selectedFormat === format.id && (
-                <Ionicons name="checkmark-circle" size={24} color="#10B981" />
+                <Ionicons name="checkmark-circle" size={24} color="#9D12DE" />
               )}
             </TouchableOpacity>
           ))}
@@ -286,7 +286,7 @@ export default function DataExport() {
         <View className="px-6 mb-6">
           <View className="flex-row items-center justify-between mb-3">
             <Text className="text-white font-bold text-lg">
-              Categorías de Datos
+              CategorÃ­as de Datos
             </Text>
             <Text className="text-zinc-400 text-sm">
               {selectedCategories.length}/{categories.length} seleccionadas
@@ -298,18 +298,18 @@ export default function DataExport() {
               key={category.id}
               onPress={() => toggleCategory(category.id)}
               className={`bg-zinc-900 rounded-xl p-4 mb-3 flex-row items-center border ${
-                category.selected ? 'border-emerald-500/50' : 'border-zinc-800'
+                category.selected ? 'border-primary/50' : 'border-zinc-800'
               }`}
             >
               <View
                 className={`w-10 h-10 rounded-lg items-center justify-center ${
-                  category.selected ? 'bg-emerald-500/20' : 'bg-zinc-800'
+                  category.selected ? 'bg-primary/20' : 'bg-zinc-800'
                 }`}
               >
                 <Ionicons
                   name={category.icon as any}
                   size={20}
-                  color={category.selected ? '#10B981' : '#A1A1AA'}
+                  color={category.selected ? '#9D12DE' : '#A1A1AA'}
                 />
               </View>
 
@@ -326,8 +326,8 @@ export default function DataExport() {
               <Switch
                 value={category.selected}
                 onValueChange={() => toggleCategory(category.id)}
-                trackColor={{ false: '#3F3F46', true: '#10B98180' }}
-                thumbColor={category.selected ? '#10B981' : '#f4f3f4'}
+                trackColor={{ false: '#3F3F46', true: '#9D12DE80' }}
+                thumbColor={category.selected ? '#9D12DE' : '#f4f3f4'}
               />
             </TouchableOpacity>
           ))}
@@ -350,8 +350,8 @@ export default function DataExport() {
               <Switch
                 value={includeMedia}
                 onValueChange={setIncludeMedia}
-                trackColor={{ false: '#3F3F46', true: '#10B98180' }}
-                thumbColor={includeMedia ? '#10B981' : '#f4f3f4'}
+                trackColor={{ false: '#3F3F46', true: '#9D12DE80' }}
+                thumbColor={includeMedia ? '#9D12DE' : '#f4f3f4'}
               />
             </View>
           </View>
@@ -361,14 +361,14 @@ export default function DataExport() {
               <View className="flex-1">
                 <Text className="text-white font-semibold">Comprimir Datos</Text>
                 <Text className="text-zinc-400 text-sm mt-0.5">
-                  Reduce el tamaño del archivo ({compressData ? '-60%' : '0%'})
+                  Reduce el tamaÃ±o del archivo ({compressData ? '-60%' : '0%'})
                 </Text>
               </View>
               <Switch
                 value={compressData}
                 onValueChange={setCompressData}
-                trackColor={{ false: '#3F3F46', true: '#10B98180' }}
-                thumbColor={compressData ? '#10B981' : '#f4f3f4'}
+                trackColor={{ false: '#3F3F46', true: '#9D12DE80' }}
+                thumbColor={compressData ? '#9D12DE' : '#f4f3f4'}
               />
             </View>
           </View>
@@ -377,27 +377,27 @@ export default function DataExport() {
         {/* Export Summary */}
         {selectedCategories.length > 0 && (
           <View className="px-6 mb-6">
-            <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30">
+            <View className="bg-primary/10 rounded-xl p-4 border border-primary/30">
               <View className="flex-row items-start">
-                <Ionicons name="information-circle" size={24} color="#3B82F6" />
+                <Ionicons name="information-circle" size={24} color="#9D12DE" />
                 <View className="flex-1 ml-3">
-                  <Text className="text-blue-400 font-bold mb-2">
-                    Resumen de Exportación
+                  <Text className="text-primary/80 font-bold mb-2">
+                    Resumen de ExportaciÃ³n
                   </Text>
                   <View className="space-y-1">
-                    <Text className="text-blue-300 text-sm">
-                      • {totalItems.toLocaleString('es-ES')} elementos totales
+                    <Text className="text-primary/60 text-sm">
+                      â€¢ {totalItems.toLocaleString('es-ES')} elementos totales
                     </Text>
-                    <Text className="text-blue-300 text-sm">
-                      • {selectedCategories.length} categorías seleccionadas
+                    <Text className="text-primary/60 text-sm">
+                      â€¢ {selectedCategories.length} categorÃ­as seleccionadas
                     </Text>
-                    <Text className="text-blue-300 text-sm">
-                      • Tamaño estimado:{' '}
+                    <Text className="text-primary/60 text-sm">
+                      â€¢ TamaÃ±o estimado:{' '}
                       {EXPORT_FORMATS.find((f) => f.id === selectedFormat)?.size}
                     </Text>
                     {includeMedia && (
-                      <Text className="text-blue-300 text-sm">
-                        • Incluye 34 fotos y videos
+                      <Text className="text-primary/60 text-sm">
+                        â€¢ Incluye 34 fotos y videos
                       </Text>
                     )}
                   </View>
@@ -414,21 +414,21 @@ export default function DataExport() {
               Exportaciones Programadas
             </Text>
             <TouchableOpacity>
-              <Text className="text-emerald-500 font-semibold">+ Nueva</Text>
+              <Text className="text-primary font-semibold">+ Nueva</Text>
             </TouchableOpacity>
           </View>
 
           <View className="bg-zinc-900 rounded-xl p-4 border border-zinc-800">
             <View className="flex-row items-center">
-              <Ionicons name="time" size={20} color="#10B981" />
+              <Ionicons name="time" size={20} color="#9D12DE" />
               <View className="flex-1 ml-3">
                 <Text className="text-white font-semibold">Backup Semanal</Text>
                 <Text className="text-zinc-400 text-sm mt-0.5">
                   Cada domingo a las 23:00
                 </Text>
               </View>
-              <View className="bg-emerald-500/20 px-2 py-1 rounded">
-                <Text className="text-emerald-500 text-xs font-bold">Activo</Text>
+              <View className="bg-primary/20 px-2 py-1 rounded">
+                <Text className="text-primary text-xs font-bold">Activo</Text>
               </View>
             </View>
           </View>
@@ -437,3 +437,4 @@ export default function DataExport() {
     </View>
   );
 }
+

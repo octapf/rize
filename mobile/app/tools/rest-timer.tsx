@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+﻿import React, { useState, useEffect } from 'react';
 import {
   View,
   Text,
@@ -38,7 +38,7 @@ export default function RestTimerScreen() {
           if (prev <= 1) {
             setIsRunning(false);
             // TODO: Play notification sound
-            Alert.alert('¡Tiempo!', 'Descanso terminado. ¡A entrenar!');
+            Alert.alert('Â¡Tiempo!', 'Descanso terminado. Â¡A entrenar!');
             return 0;
           }
           return prev - 1;
@@ -110,15 +110,15 @@ export default function RestTimerScreen() {
                 className="w-72 h-72 rounded-full items-center justify-center"
                 style={{
                   backgroundColor: isRunning
-                    ? '#10B98120'
+                    ? '#9D12DE20'
                     : isPaused
-                    ? '#F59E0B20'
+                    ? '#FFEA0020'
                     : '#27272A',
                   borderWidth: 8,
                   borderColor: isRunning
-                    ? '#10B981'
+                    ? '#9D12DE'
                     : isPaused
-                    ? '#F59E0B'
+                    ? '#FFEA00'
                     : '#3F3F46',
                 }}
               >
@@ -170,9 +170,9 @@ export default function RestTimerScreen() {
             {!isRunning && !isPaused && (
               <TouchableOpacity
                 onPress={startTimer}
-                className="bg-emerald-500 px-12 py-4 rounded-2xl items-center flex-1"
+                className="bg-primary px-12 py-4 rounded-2xl items-center flex-1"
                 style={{
-                  shadowColor: '#10B981',
+                  shadowColor: '#9D12DE',
                   shadowOffset: { width: 0, height: 4 },
                   shadowOpacity: 0.3,
                   shadowRadius: 8,
@@ -196,7 +196,7 @@ export default function RestTimerScreen() {
             {isPaused && (
               <TouchableOpacity
                 onPress={startTimer}
-                className="bg-emerald-500 px-12 py-4 rounded-2xl items-center flex-1"
+                className="bg-primary px-12 py-4 rounded-2xl items-center flex-1"
               >
                 <Ionicons name="play" size={32} color="white" />
                 <Text className="text-white font-bold text-lg mt-1">Reanudar</Text>
@@ -227,7 +227,7 @@ export default function RestTimerScreen() {
                     onPress={() => selectDuration(timer.duration)}
                     className={`px-6 py-3 rounded-xl ${
                       selectedDuration === timer.duration
-                        ? 'bg-emerald-500'
+                        ? 'bg-primary'
                         : 'bg-zinc-900 border border-zinc-800'
                     }`}
                   >
@@ -246,18 +246,18 @@ export default function RestTimerScreen() {
 
           {/* Tips */}
           {!isRunning && !isPaused && (
-            <View className="bg-blue-500/10 border border-blue-500/30 rounded-xl p-4 mt-8">
+            <View className="bg-primary/10 border border-primary/30 rounded-xl p-4 mt-8">
               <View className="flex-row items-start">
-                <Ionicons name="information-circle" size={20} color="#3B82F6" style={{ marginRight: 8 }} />
+                <Ionicons name="information-circle" size={20} color="#9D12DE" style={{ marginRight: 8 }} />
                 <View className="flex-1">
-                  <Text className="text-blue-400 text-sm font-semibold mb-1">
+                  <Text className="text-primary/80 text-sm font-semibold mb-1">
                     Consejos de Descanso
                   </Text>
-                  <Text className="text-blue-300/80 text-xs leading-5">
-                    • Fuerza: 2-3 minutos{'\n'}
-                    • Hipertrofia: 60-90 segundos{'\n'}
-                    • Resistencia: 30-60 segundos{'\n'}
-                    • Mantente hidratado durante los descansos
+                  <Text className="text-primary/60/80 text-xs leading-5">
+                    â€¢ Fuerza: 2-3 minutos{'\n'}
+                    â€¢ Hipertrofia: 60-90 segundos{'\n'}
+                    â€¢ Resistencia: 30-60 segundos{'\n'}
+                    â€¢ Mantente hidratado durante los descansos
                   </Text>
                 </View>
               </View>
@@ -268,3 +268,4 @@ export default function RestTimerScreen() {
     </View>
   );
 }
+

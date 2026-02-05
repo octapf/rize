@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+﻿import React, { useState, useRef } from 'react';
 import {
   View,
   Text,
@@ -28,48 +28,48 @@ interface VideoTutorial {
 const TUTORIAL_DATA: { [key: string]: VideoTutorial } = {
   'pull-ups': {
     id: 'pull-ups',
-    title: 'Dominadas - Técnica Perfecta',
+    title: 'Dominadas - TÃ©cnica Perfecta',
     duration: '8:45',
     difficulty: 'intermediate',
-    description: 'Aprende la técnica correcta para realizar dominadas estrictas, maximizando la activación muscular y minimizando el riesgo de lesiones.',
+    description: 'Aprende la tÃ©cnica correcta para realizar dominadas estrictas, maximizando la activaciÃ³n muscular y minimizando el riesgo de lesiones.',
     keyPoints: [
-      'Agarre prono (palmas hacia adelante) ligeramente más ancho que los hombros',
-      'Iniciar el movimiento con retracción escapular (juntar omóplatos)',
-      'Tirar con los codos, no con los bíceps como músculo principal',
-      'Barbilla sobre la barra en la posición superior',
-      'Descenso controlado hasta extensión completa',
+      'Agarre prono (palmas hacia adelante) ligeramente mÃ¡s ancho que los hombros',
+      'Iniciar el movimiento con retracciÃ³n escapular (juntar omÃ³platos)',
+      'Tirar con los codos, no con los bÃ­ceps como mÃºsculo principal',
+      'Barbilla sobre la barra en la posiciÃ³n superior',
+      'Descenso controlado hasta extensiÃ³n completa',
       'Evitar balanceo y kipping (movimiento estricto)',
     ],
     commonMistakes: [
-      'No extender completamente los brazos en la posición inferior',
+      'No extender completamente los brazos en la posiciÃ³n inferior',
       'Usar impulso de piernas (kipping) en lugar de fuerza pura',
       'Hombros encogidos durante todo el movimiento',
       'No activar el core, causando arqueamiento de espalda',
-      'Descenso rápido sin control',
+      'Descenso rÃ¡pido sin control',
     ],
     videoUrl: 'https://example.com/videos/pull-ups-tutorial.mp4',
     thumbnailUrl: 'https://example.com/thumbnails/pull-ups.jpg',
   },
   'muscle-up': {
     id: 'muscle-up',
-    title: 'Muscle-Up - Progresión Completa',
+    title: 'Muscle-Up - ProgresiÃ³n Completa',
     duration: '12:30',
     difficulty: 'advanced',
-    description: 'Domina el muscle-up con esta progresión paso a paso, desde los pre-requisitos hasta la ejecución perfecta.',
+    description: 'Domina el muscle-up con esta progresiÃ³n paso a paso, desde los pre-requisitos hasta la ejecuciÃ³n perfecta.',
     keyPoints: [
       'Requisito: 15+ dominadas estrictas y 20+ fondos en paralelas',
       'Fase 1: Pull-up explosivo con pecho a la barra',
-      'Fase 2: Transición rápida llevando hombros sobre la barra',
-      'Fase 3: Press-out como un dip hasta extensión completa',
+      'Fase 2: TransiciÃ³n rÃ¡pida llevando hombros sobre la barra',
+      'Fase 3: Press-out como un dip hasta extensiÃ³n completa',
       'False grip opcional pero recomendado para principiantes',
-      'Timing explosivo en el tirón inicial',
+      'Timing explosivo en el tirÃ³n inicial',
     ],
     commonMistakes: [
       'Intentar el muscle-up sin fuerza base suficiente',
-      'Separar mucho los codos durante la transición',
+      'Separar mucho los codos durante la transiciÃ³n',
       'No generar suficiente impulso en el pull inicial',
-      'Perder tensión durante la transición',
-      'Posición de muñecas incorrecta',
+      'Perder tensiÃ³n durante la transiciÃ³n',
+      'PosiciÃ³n de muÃ±ecas incorrecta',
     ],
     videoUrl: 'https://example.com/videos/muscle-up-tutorial.mp4',
     thumbnailUrl: 'https://example.com/thumbnails/muscle-up.jpg',
@@ -89,9 +89,9 @@ export default function VideoTutorial() {
   const getDifficultyColor = (difficulty: string) => {
     switch (difficulty) {
       case 'beginner':
-        return '#10B981';
+        return '#9D12DE';
       case 'intermediate':
-        return '#F59E0B';
+        return '#FFEA00';
       case 'advanced':
         return '#EF4444';
       default:
@@ -223,8 +223,8 @@ export default function VideoTutorial() {
           </Text>
           {tutorial.keyPoints.map((point, index) => (
             <View key={index} className="flex-row mb-3">
-              <View className="w-6 h-6 rounded-full bg-emerald-500/20 items-center justify-center mr-3 mt-0.5">
-                <Ionicons name="checkmark" size={16} color="#10B981" />
+              <View className="w-6 h-6 rounded-full bg-primary/20 items-center justify-center mr-3 mt-0.5">
+                <Ionicons name="checkmark" size={16} color="#9D12DE" />
               </View>
               <Text className="text-zinc-300 flex-1 leading-6">{point}</Text>
             </View>
@@ -248,12 +248,12 @@ export default function VideoTutorial() {
 
         {/* Video Chapters */}
         <View className="px-6 py-4 border-b border-zinc-800">
-          <Text className="text-white font-bold text-lg mb-3">Capítulos</Text>
+          <Text className="text-white font-bold text-lg mb-3">CapÃ­tulos</Text>
           {[
-            { time: 0, title: 'Introducción', duration: '0:45' },
-            { time: 45, title: 'Posición Inicial', duration: '1:30' },
-            { time: 135, title: 'Fase Concéntrica', duration: '2:15' },
-            { time: 270, title: 'Fase Excéntrica', duration: '1:45' },
+            { time: 0, title: 'IntroducciÃ³n', duration: '0:45' },
+            { time: 45, title: 'PosiciÃ³n Inicial', duration: '1:30' },
+            { time: 135, title: 'Fase ConcÃ©ntrica', duration: '2:15' },
+            { time: 270, title: 'Fase ExcÃ©ntrica', duration: '1:45' },
             { time: 375, title: 'Errores Comunes', duration: '2:30' },
           ].map((chapter, index) => (
             <TouchableOpacity
@@ -262,8 +262,8 @@ export default function VideoTutorial() {
               className="bg-zinc-900 rounded-xl p-3 mb-2 flex-row items-center justify-between border border-zinc-800"
             >
               <View className="flex-row items-center flex-1">
-                <View className="w-10 h-10 rounded-lg bg-emerald-500/20 items-center justify-center mr-3">
-                  <Text className="text-emerald-500 font-bold">
+                <View className="w-10 h-10 rounded-lg bg-primary/20 items-center justify-center mr-3">
+                  <Text className="text-primary font-bold">
                     {index + 1}
                   </Text>
                 </View>
@@ -298,7 +298,7 @@ export default function VideoTutorial() {
               >
                 <View className="w-24 h-16 bg-zinc-800 rounded-lg mr-3">
                   <View className="flex-1 items-center justify-center">
-                    <Ionicons name="play-circle" size={32} color="#10B981" />
+                    <Ionicons name="play-circle" size={32} color="#9D12DE" />
                   </View>
                 </View>
                 <View className="flex-1">
@@ -329,7 +329,7 @@ export default function VideoTutorial() {
       <View className="absolute bottom-0 left-0 right-0 p-6 bg-zinc-950 border-t border-zinc-800">
         <TouchableOpacity
           onPress={() => router.push('/workout/active' as any)}
-          className="bg-emerald-500 rounded-xl p-4 flex-row items-center justify-center"
+          className="bg-primary rounded-xl p-4 flex-row items-center justify-center"
         >
           <Ionicons name="fitness" size={24} color="white" />
           <Text className="text-white font-bold text-lg ml-2">
@@ -340,3 +340,4 @@ export default function VideoTutorial() {
     </View>
   );
 }
+

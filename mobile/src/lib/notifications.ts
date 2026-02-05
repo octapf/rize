@@ -41,7 +41,15 @@ export async function registerForPushNotificationsAsync(): Promise<string | unde
       return;
     }
 
-    token = (await Notifications.getExpoPushTokenAsync()).data;
+    try {
+      // On web we need projectId or vapidPublicKey, which might be missing in dev/test
+      // Safely attempt to get the token
+      const tokenResult = await Notifications.getExpoPushTokenAsync();
+      token = tokenResult.data;
+    } catch (error) {
+       console.log("Push token error (expected in tests/web without vapid):", error);
+       return;
+    }
 
     // Register token with backend
     if (token) {

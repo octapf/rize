@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+﻿import React, { useState, useRef, useEffect } from 'react';
 import {
   View,
   Text,
@@ -28,7 +28,7 @@ interface Message {
 
 const mockUser = {
   id: '1',
-  name: 'Carlos García',
+  name: 'Carlos GarcÃ­a',
   avatar: 'C',
   isOnline: true,
   lastSeen: new Date(),
@@ -38,7 +38,7 @@ const mockMessages: Message[] = [
   {
     id: '1',
     senderId: '1',
-    text: '¡Hola! ¿Cómo te fue en el gym hoy?',
+    text: 'Â¡Hola! Â¿CÃ³mo te fue en el gym hoy?',
     timestamp: new Date(2026, 0, 26, 10, 30),
     read: true,
     type: 'text',
@@ -46,7 +46,7 @@ const mockMessages: Message[] = [
   {
     id: '2',
     senderId: 'me',
-    text: '¡Muy bien! Hice un PR en bench press 💪',
+    text: 'Â¡Muy bien! Hice un PR en bench press ðŸ’ª',
     timestamp: new Date(2026, 0, 26, 10, 32),
     read: true,
     type: 'text',
@@ -54,7 +54,7 @@ const mockMessages: Message[] = [
   {
     id: '3',
     senderId: '1',
-    text: '¡Felicidades! ¿Cuánto levantaste?',
+    text: 'Â¡Felicidades! Â¿CuÃ¡nto levantaste?',
     timestamp: new Date(2026, 0, 26, 10, 33),
     read: true,
     type: 'text',
@@ -70,7 +70,7 @@ const mockMessages: Message[] = [
   {
     id: '5',
     senderId: '1',
-    text: '¡Increíble! ¿Vamos juntos mañana?',
+    text: 'Â¡IncreÃ­ble! Â¿Vamos juntos maÃ±ana?',
     timestamp: new Date(2026, 0, 26, 10, 40),
     read: true,
     type: 'text',
@@ -133,7 +133,7 @@ export default function ChatScreen() {
       const response: Message = {
         id: (Date.now() + 1).toString(),
         senderId: userId,
-        text: '¡Genial! 👍',
+        text: 'Â¡Genial! ðŸ‘',
         timestamp: new Date(),
         read: false,
         type: 'text',
@@ -151,7 +151,7 @@ export default function ChatScreen() {
   };
 
   const handleSendChallenge = () => {
-    Alert.alert('Enviar Desafío', 'Función en desarrollo');
+    Alert.alert('Enviar DesafÃ­o', 'FunciÃ³n en desarrollo');
   };
 
   const formatMessageTime = (date: Date) => {
@@ -196,7 +196,7 @@ export default function ChatScreen() {
             <View
               className={`px-4 py-3 rounded-2xl ${
                 isMe
-                  ? 'bg-blue-500 rounded-br-sm'
+                  ? 'bg-primary rounded-br-sm'
                   : 'bg-gray-200 rounded-bl-sm'
               }`}
             >
@@ -208,7 +208,7 @@ export default function ChatScreen() {
             {isMe && (
               <View className="flex-row items-center justify-end gap-1 mt-1">
                 {item.read ? (
-                  <Ionicons name="checkmark-done" size={14} color="#3B82F6" />
+                  <Ionicons name="checkmark-done" size={14} color="#9D12DE" />
                 ) : (
                   <Ionicons name="checkmark" size={14} color="#9CA3AF" />
                 )}
@@ -221,9 +221,9 @@ export default function ChatScreen() {
   };
 
   return (
-    <View className="flex-1 bg-gray-50">
+    <View className="flex-1 bg-background">
       {/* Header */}
-      <LinearGradient colors={['#3B82F6', '#2563EB']} className="px-4 pt-12 pb-4">
+      <LinearGradient colors={['#9D12DE', '#7D0EBE']} className="px-4 pt-12 pb-4">
         <View className="flex-row items-center justify-between">
           <View className="flex-row items-center gap-3 flex-1">
             <TouchableOpacity onPress={() => router.back()}>
@@ -250,7 +250,7 @@ export default function ChatScreen() {
                   {mockUser.name}
                 </Text>
                 <Text className="text-blue-100 text-xs">
-                  {mockUser.isOnline ? 'En línea' : `Visto ${format(mockUser.lastSeen, 'HH:mm')}`}
+                  {mockUser.isOnline ? 'En lÃ­nea' : `Visto ${format(mockUser.lastSeen, 'HH:mm')}`}
                 </Text>
               </View>
             </TouchableOpacity>
@@ -291,7 +291,7 @@ export default function ChatScreen() {
           >
             <Ionicons name="flash" size={16} color="#EF4444" />
             <Text className="text-red-700 font-semibold text-sm">
-              Desafío
+              DesafÃ­o
             </Text>
           </TouchableOpacity>
         </View>
@@ -325,7 +325,7 @@ export default function ChatScreen() {
             onPress={handleSend}
             disabled={!inputText.trim()}
             className={`p-2 rounded-full ${
-              inputText.trim() ? 'bg-blue-500' : 'bg-gray-300'
+              inputText.trim() ? 'bg-primary' : 'bg-gray-300'
             }`}
           >
             <Ionicons
@@ -339,3 +339,4 @@ export default function ChatScreen() {
     </View>
   );
 }
+

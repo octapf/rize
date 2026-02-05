@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -89,7 +89,7 @@ export default function PRTracker() {
 
       <ScrollView className="flex-1" showsVerticalScrollIndicator={false}>
         <View className="px-6 pt-6">
-          <View className="bg-gradient-to-r from-emerald-500 to-blue-500 rounded-xl p-6 mb-6">
+          <View className="bg-gradient-to-r from-primary to-[#7D0EBE] rounded-xl p-6 mb-6">
             <Text className="text-white text-2xl font-bold mb-2">Personal Records</Text>
             <Text className="text-white opacity-90">
               Track your strength journey
@@ -103,9 +103,9 @@ export default function PRTracker() {
                   key={lift}
                   onPress={() => setSelectedLift(lift)}
                   className={`flex-1 ${
-                    selectedLift === lift ? 'bg-emerald-500' : 'bg-zinc-800'
+                    selectedLift === lift ? 'bg-primary' : 'bg-zinc-800'
                   } rounded-xl px-3 py-3 border ${
-                    selectedLift === lift ? 'border-emerald-400' : 'border-zinc-700'
+                    selectedLift === lift ? 'border-primary' : 'border-zinc-700'
                   }`}
                 >
                   <Text className="text-white font-bold text-center capitalize text-sm">
@@ -116,8 +116,8 @@ export default function PRTracker() {
             </View>
           </View>
 
-          <View className="bg-emerald-500/10 rounded-xl p-6 mb-6 border border-emerald-500/30">
-            <Text className="text-emerald-400 text-sm mb-2">Current PR</Text>
+          <View className="bg-primary/10 rounded-xl p-6 mb-6 border border-primary/30">
+            <Text className="text-primary text-sm mb-2">Current PR</Text>
             <Text className="text-white text-6xl font-bold mb-1">
               {latestPR.weight}kg
             </Text>
@@ -135,13 +135,13 @@ export default function PRTracker() {
               <View key={idx} className="flex-row items-center justify-between bg-zinc-800 rounded-xl p-4 mb-2 last:mb-0">
                 <View className="flex-1">
                   <Text className="text-white font-bold text-lg">
-                    {pr.weight}kg × {pr.reps}
+                    {pr.weight}kg Ã— {pr.reps}
                   </Text>
                   <Text className="text-zinc-400 text-sm">{pr.date}</Text>
                 </View>
                 {idx === 0 && (
-                  <View className="bg-emerald-500/20 rounded-full px-3 py-1">
-                    <Text className="text-emerald-400 font-bold text-xs">Latest</Text>
+                  <View className="bg-primary/20 rounded-full px-3 py-1">
+                    <Text className="text-primary font-bold text-xs">Latest</Text>
                   </View>
                 )}
               </View>
@@ -157,10 +157,10 @@ export default function PRTracker() {
                     <Ionicons
                       name={milestone.achieved ? 'checkmark-circle' : 'ellipse-outline'}
                       size={20}
-                      color={milestone.achieved ? '#10b981' : '#71717a'}
+                      color={milestone.achieved ? '#9D12DE' : '#71717a'}
                     />
                     <Text className={`font-bold ml-2 ${
-                      milestone.achieved ? 'text-emerald-400' : 'text-zinc-400'
+                      milestone.achieved ? 'text-primary' : 'text-zinc-400'
                     }`}>
                       {milestone.label}
                     </Text>
@@ -174,7 +174,7 @@ export default function PRTracker() {
                 <View className="bg-zinc-800 rounded-full h-2 overflow-hidden">
                   <View
                     className={`h-full ${
-                      milestone.achieved ? 'bg-emerald-500' : 'bg-blue-500'
+                      milestone.achieved ? 'bg-primary' : 'bg-primary'
                     }`}
                     style={{ width: `${getProgress(milestone.weight)}%` }}
                   />
@@ -188,26 +188,26 @@ export default function PRTracker() {
             ))}
           </View>
 
-          <TouchableOpacity className="bg-emerald-500 rounded-xl p-4 mb-6">
+          <TouchableOpacity className="bg-primary rounded-xl p-4 mb-6">
             <View className="flex-row items-center justify-center">
               <Ionicons name="add-circle" size={20} color="white" />
               <Text className="text-white font-bold ml-2">Log New PR</Text>
             </View>
           </TouchableOpacity>
 
-          <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30 mb-6">
-            <Text className="text-blue-400 font-bold mb-2">PR Tips</Text>
-            <Text className="text-blue-300 text-sm mb-2">
-              • Test PRs when fresh, not after volume work
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
+            <Text className="text-primary/80 font-bold mb-2">PR Tips</Text>
+            <Text className="text-primary/60 text-sm mb-2">
+              â€¢ Test PRs when fresh, not after volume work
             </Text>
-            <Text className="text-blue-300 text-sm mb-2">
-              • Film your lifts to verify form
+            <Text className="text-primary/60 text-sm mb-2">
+              â€¢ Film your lifts to verify form
             </Text>
-            <Text className="text-blue-300 text-sm mb-2">
-              • Rep PRs count too! 5RM progress = strength gains
+            <Text className="text-primary/60 text-sm mb-2">
+              â€¢ Rep PRs count too! 5RM progress = strength gains
             </Text>
-            <Text className="text-blue-300 text-sm">
-              • Don't test 1RM more than once per month
+            <Text className="text-primary/60 text-sm">
+              â€¢ Don't test 1RM more than once per month
             </Text>
           </View>
         </View>
@@ -215,3 +215,4 @@ export default function PRTracker() {
     </View>
   );
 }
+

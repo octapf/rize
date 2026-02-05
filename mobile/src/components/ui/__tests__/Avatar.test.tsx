@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { render } from '@testing-library/react-native';
 import { Avatar } from '../Avatar';
 
@@ -117,16 +117,16 @@ describe('Avatar', () => {
       );
 
       const avatar = getByTestId('avatar');
-      expect(avatar.props.className).toContain('bg-emerald-100');
+      expect(avatar.props.className).toContain('bg-primary/10');
     });
 
     it('should accept custom className', () => {
       const { getByTestId } = render(
-        <Avatar testID="avatar" fallbackText="Test" className="bg-blue-500" />
+        <Avatar testID="avatar" fallbackText="Test" className="bg-primary" />
       );
 
       const avatar = getByTestId('avatar');
-      expect(avatar.props.className).toContain('bg-blue-500');
+      expect(avatar.props.className).toContain('bg-primary');
     });
   });
 
@@ -204,3 +204,4 @@ describe('Avatar', () => {
     });
   });
 });
+

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -39,7 +39,7 @@ export default function OneRMCalculator() {
     const r = parseInt(reps);
 
     if (!w || w <= 0) {
-      Alert.alert('Error', 'Ingresa un peso válido');
+      Alert.alert('Error', 'Ingresa un peso vÃ¡lido');
       return;
     }
     if (!r || r <= 0 || r > 15) {
@@ -84,7 +84,7 @@ export default function OneRMCalculator() {
 
   const trainingZones = [
     {
-      name: 'Fuerza Máxima',
+      name: 'Fuerza MÃ¡xima',
       range: '90-100%',
       reps: '1-3',
       color: 'red',
@@ -102,14 +102,14 @@ export default function OneRMCalculator() {
       range: '70-85%',
       reps: '6-12',
       color: 'emerald',
-      description: 'Máximo crecimiento muscular',
+      description: 'MÃ¡ximo crecimiento muscular',
     },
     {
       name: 'Resistencia Muscular',
       range: '60-70%',
       reps: '12-20',
       color: 'blue',
-      description: 'Resistencia y definición',
+      description: 'Resistencia y definiciÃ³n',
     },
   ];
 
@@ -177,7 +177,7 @@ export default function OneRMCalculator() {
 
             {/* Formula Selection */}
             <View className="mb-4">
-              <Text className="text-zinc-400 text-sm mb-2">Fórmula</Text>
+              <Text className="text-zinc-400 text-sm mb-2">FÃ³rmula</Text>
               <View className="flex-row gap-2">
                 {(Object.keys(formulas) as Array<keyof typeof formulas>).map((f) => (
                   <TouchableOpacity
@@ -185,7 +185,7 @@ export default function OneRMCalculator() {
                     onPress={() => setFormula(f)}
                     className={`flex-1 rounded-lg p-3 ${
                       formula === f
-                        ? 'bg-emerald-500'
+                        ? 'bg-primary'
                         : 'bg-zinc-800'
                     }`}
                   >
@@ -204,7 +204,7 @@ export default function OneRMCalculator() {
             {/* Calculate Button */}
             <TouchableOpacity
               onPress={calculate1RM}
-              className="bg-emerald-500 rounded-xl p-4 flex-row items-center justify-center"
+              className="bg-primary rounded-xl p-4 flex-row items-center justify-center"
             >
               <Ionicons name="calculator" size={20} color="white" />
               <Text className="text-white font-bold ml-2">Calcular 1RM</Text>
@@ -214,13 +214,13 @@ export default function OneRMCalculator() {
           {/* 1RM Result */}
           {oneRM !== null && (
             <View className="bg-gradient-to-r from-emerald-500 to-emerald-600 rounded-xl p-6 mb-6">
-              <Text className="text-emerald-200 text-sm mb-2">TU 1RM ESTIMADO</Text>
+              <Text className="text-white/70 text-sm mb-2">TU 1RM ESTIMADO</Text>
               <View className="flex-row items-baseline">
                 <Text className="text-white text-6xl font-bold">{oneRM}</Text>
-                <Text className="text-emerald-200 text-2xl ml-2">kg</Text>
+                <Text className="text-white/70 text-2xl ml-2">kg</Text>
               </View>
-              <Text className="text-emerald-100 text-sm mt-2">
-                Fórmula: {formulaNames[formula]}
+              <Text className="text-primary/50 text-sm mt-2">
+                FÃ³rmula: {formulaNames[formula]}
               </Text>
             </View>
           )}
@@ -286,7 +286,7 @@ export default function OneRMCalculator() {
                     }`}
                   >
                     <Text className="text-white font-bold flex-1">{result.percentage}%</Text>
-                    <Text className="text-emerald-400 font-bold flex-1 text-center">
+                    <Text className="text-primary font-bold flex-1 text-center">
                       {result.weight} kg
                     </Text>
                     <Text className="text-zinc-400 flex-1 text-right">{result.reps}</Text>
@@ -297,15 +297,15 @@ export default function OneRMCalculator() {
           )}
 
           {/* Info Cards */}
-          <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30 mb-3">
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-3">
             <View className="flex-row items-start">
-              <Ionicons name="information-circle" size={20} color="#3B82F6" />
+              <Ionicons name="information-circle" size={20} color="#9D12DE" />
               <View className="flex-1 ml-3">
-                <Text className="text-blue-400 font-bold mb-2">
-                  ¿Qué es el 1RM?
+                <Text className="text-primary/80 font-bold mb-2">
+                  Â¿QuÃ© es el 1RM?
                 </Text>
-                <Text className="text-blue-300 text-sm">
-                  1 Rep Max: el peso máximo que puedes levantar por 1 repetición con buena técnica. Útil para programar entrenamientos basados en porcentajes.
+                <Text className="text-primary/60 text-sm">
+                  1 Rep Max: el peso mÃ¡ximo que puedes levantar por 1 repeticiÃ³n con buena tÃ©cnica. Ãštil para programar entrenamientos basados en porcentajes.
                 </Text>
               </View>
             </View>
@@ -313,13 +313,13 @@ export default function OneRMCalculator() {
 
           <View className="bg-amber-500/10 rounded-xl p-4 border border-amber-500/30 mb-6">
             <View className="flex-row items-start">
-              <Ionicons name="warning" size={20} color="#F59E0B" />
+              <Ionicons name="warning" size={20} color="#FFEA00" />
               <View className="flex-1 ml-3">
                 <Text className="text-amber-400 font-bold mb-2">
                   Nota Importante
                 </Text>
                 <Text className="text-amber-300 text-sm">
-                  Estas son estimaciones. Tu 1RM real puede variar según técnica, experiencia y condiciones. Usa para planificar, no para maxear sin preparación.
+                  Estas son estimaciones. Tu 1RM real puede variar segÃºn tÃ©cnica, experiencia y condiciones. Usa para planificar, no para maxear sin preparaciÃ³n.
                 </Text>
               </View>
             </View>
@@ -329,3 +329,5 @@ export default function OneRMCalculator() {
     </View>
   );
 }
+
+

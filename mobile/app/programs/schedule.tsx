@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -19,8 +19,8 @@ interface WorkoutSchedule {
   notes?: string;
 }
 
-const DAYS_OF_WEEK = ['Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb', 'Dom'];
-const FULL_DAYS = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'];
+const DAYS_OF_WEEK = ['Lun', 'Mar', 'MiÃ©', 'Jue', 'Vie', 'SÃ¡b', 'Dom'];
+const FULL_DAYS = ['Lunes', 'Martes', 'MiÃ©rcoles', 'Jueves', 'Viernes', 'SÃ¡bado', 'Domingo'];
 
 const WORKOUT_TYPES = [
   { id: 'push', label: 'Push', icon: 'arrow-up', color: 'blue' },
@@ -74,7 +74,7 @@ export default function WeeklySchedule() {
 
   const clearDay = (day: number) => {
     setSchedule(schedule.filter((s) => s.dayOfWeek !== day));
-    Alert.alert('Eliminado', 'Día limpiado del calendario');
+    Alert.alert('Eliminado', 'DÃ­a limpiado del calendario');
   };
 
   const weekDates = getWeekDates();
@@ -92,7 +92,7 @@ export default function WeeklySchedule() {
           <Text className="text-white text-2xl font-bold flex-1 ml-3">
             Weekly Schedule
           </Text>
-          <TouchableOpacity onPress={() => Alert.alert('Plantillas', 'Cargar plantilla de semana próximamente')}>
+          <TouchableOpacity onPress={() => Alert.alert('Plantillas', 'Cargar plantilla de semana prÃ³ximamente')}>
             <Ionicons name="calendar" size={24} color="white" />
           </TouchableOpacity>
         </View>
@@ -114,10 +114,10 @@ export default function WeeklySchedule() {
                     key={index}
                     onPress={() => setSelectedDay(index)}
                     className={`flex-1 items-center mx-0.5 rounded-lg p-2 ${
-                      isToday ? 'bg-emerald-500/20 border border-emerald-500' : 'bg-zinc-800'
+                      isToday ? 'bg-primary/20 border border-primary' : 'bg-zinc-800'
                     }`}
                   >
-                    <Text className={`text-xs mb-2 ${isToday ? 'text-emerald-400 font-bold' : 'text-zinc-400'}`}>
+                    <Text className={`text-xs mb-2 ${isToday ? 'text-primary font-bold' : 'text-zinc-400'}`}>
                       {day}
                     </Text>
                     {typeInfo ? (
@@ -172,28 +172,28 @@ export default function WeeklySchedule() {
                   }}
                   className="bg-red-500/10 rounded-lg p-3 border border-red-500/30 mt-3"
                 >
-                  <Text className="text-red-400 font-bold text-center">Limpiar Día</Text>
+                  <Text className="text-red-400 font-bold text-center">Limpiar DÃ­a</Text>
                 </TouchableOpacity>
               )}
             </View>
           )}
 
           {/* Detailed Schedule */}
-          <Text className="text-white font-bold text-lg mb-4">Planificación Detallada</Text>
+          <Text className="text-white font-bold text-lg mb-4">PlanificaciÃ³n Detallada</Text>
           {FULL_DAYS.map((dayName, index) => {
             const workout = getWorkoutForDay(index);
             const typeInfo = workout ? getTypeInfo(workout.workoutType) : null;
             const isToday = index === todayAdjusted;
 
             return (
-              <View key={index} className={`bg-zinc-900 rounded-xl p-4 mb-3 border ${isToday ? 'border-emerald-500' : 'border-zinc-800'}`}>
+              <View key={index} className={`bg-zinc-900 rounded-xl p-4 mb-3 border ${isToday ? 'border-primary' : 'border-zinc-800'}`}>
                 <View className="flex-row items-center justify-between mb-2">
                   <View className="flex-row items-center flex-1">
-                    <Text className={`text-lg font-bold mr-2 ${isToday ? 'text-emerald-400' : 'text-white'}`}>
+                    <Text className={`text-lg font-bold mr-2 ${isToday ? 'text-primary' : 'text-white'}`}>
                       {dayName}
                     </Text>
                     {isToday && (
-                      <View className="bg-emerald-500 rounded px-2 py-0.5">
+                      <View className="bg-primary rounded px-2 py-0.5">
                         <Text className="text-white text-xs font-bold">HOY</Text>
                       </View>
                     )}
@@ -212,12 +212,12 @@ export default function WeeklySchedule() {
                       <View className="flex-1">
                         <Text className="text-white font-bold text-lg">{typeInfo!.label}</Text>
                         {workout.time && (
-                          <Text className="text-zinc-400 text-sm">⏰ {workout.time}</Text>
+                          <Text className="text-zinc-400 text-sm">â° {workout.time}</Text>
                         )}
                       </View>
                       {workout.duration && (
-                        <View className="bg-blue-500/10 rounded px-2 py-1 border border-blue-500/30">
-                          <Text className="text-blue-400 text-xs font-bold">
+                        <View className="bg-primary/10 rounded px-2 py-1 border border-primary/30">
+                          <Text className="text-primary/80 text-xs font-bold">
                             {workout.duration} min
                           </Text>
                         </View>
@@ -243,20 +243,20 @@ export default function WeeklySchedule() {
           <View className="bg-zinc-900 rounded-xl p-4 mb-6 border border-zinc-800">
             <Text className="text-white font-bold text-lg mb-3">Resumen Semanal</Text>
             <View className="flex-row flex-wrap gap-3">
-              <View className="flex-1 min-w-[45%] bg-emerald-500/10 rounded-lg p-3 border border-emerald-500/30">
-                <Text className="text-emerald-400 text-xs mb-1">Días de Entrenamiento</Text>
+              <View className="flex-1 min-w-[45%] bg-primary/10 rounded-lg p-3 border border-primary/30">
+                <Text className="text-primary text-xs mb-1">DÃ­as de Entrenamiento</Text>
                 <Text className="text-white text-2xl font-bold">
                   {schedule.filter((s) => s.workoutType !== 'rest').length}
                 </Text>
               </View>
-              <View className="flex-1 min-w-[45%] bg-blue-500/10 rounded-lg p-3 border border-blue-500/30">
-                <Text className="text-blue-400 text-xs mb-1">Volumen Estimado</Text>
+              <View className="flex-1 min-w-[45%] bg-primary/10 rounded-lg p-3 border border-primary/30">
+                <Text className="text-primary/80 text-xs mb-1">Volumen Estimado</Text>
                 <Text className="text-white text-2xl font-bold">
                   {schedule.reduce((sum, s) => sum + (s.duration || 0), 0)} min
                 </Text>
               </View>
               <View className="flex-1 min-w-[45%] bg-amber-500/10 rounded-lg p-3 border border-amber-500/30">
-                <Text className="text-amber-400 text-xs mb-1">Días de Descanso</Text>
+                <Text className="text-amber-400 text-xs mb-1">DÃ­as de Descanso</Text>
                 <Text className="text-white text-2xl font-bold">
                   {schedule.filter((s) => s.workoutType === 'rest').length + (7 - schedule.length)}
                 </Text>
@@ -271,19 +271,19 @@ export default function WeeklySchedule() {
           </View>
 
           {/* Tips */}
-          <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30 mb-6">
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
             <View className="flex-row items-start">
-              <Ionicons name="calendar" size={20} color="#3B82F6" />
+              <Ionicons name="calendar" size={20} color="#9D12DE" />
               <View className="flex-1 ml-3">
-                <Text className="text-blue-400 font-bold mb-2">
-                  Tips de Planificación
+                <Text className="text-primary/80 font-bold mb-2">
+                  Tips de PlanificaciÃ³n
                 </Text>
-                <Text className="text-blue-300 text-sm">
-                  • Mínimo 1 día descanso entre grupos{'\n'}
-                  • Push/Pull/Legs es muy efectivo{'\n'}
-                  • Planifica según tu horario real{'\n'}
-                  • Sé consistente con los horarios{'\n'}
-                  • Ajusta según recuperación
+                <Text className="text-primary/60 text-sm">
+                  â€¢ MÃ­nimo 1 dÃ­a descanso entre grupos{'\n'}
+                  â€¢ Push/Pull/Legs es muy efectivo{'\n'}
+                  â€¢ Planifica segÃºn tu horario real{'\n'}
+                  â€¢ SÃ© consistente con los horarios{'\n'}
+                  â€¢ Ajusta segÃºn recuperaciÃ³n
                 </Text>
               </View>
             </View>
@@ -293,3 +293,4 @@ export default function WeeklySchedule() {
     </View>
   );
 }
+

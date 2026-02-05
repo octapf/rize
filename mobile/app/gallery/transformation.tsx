@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -50,10 +50,10 @@ const TRANSFORMATIONS: TransformationPhoto[] = [
     user: 'Carlos Beast',
     duration: 90,
     weightLoss: 18,
-    beforePhoto: '📸',
-    afterPhoto: '💪',
+    beforePhoto: 'ðŸ“¸',
+    afterPhoto: 'ðŸ’ª',
     date: '2025-01-15',
-    story: 'De 98kg a 80kg en 90 días. Deficit 500 kcal + 6x semana gym. Sentadilla pasó de 80kg a 140kg.',
+    story: 'De 98kg a 80kg en 90 dÃ­as. Deficit 500 kcal + 6x semana gym. Sentadilla pasÃ³ de 80kg a 140kg.',
     stats: {
       workouts: 72,
       diet: 'Flexible IIFYM',
@@ -71,8 +71,8 @@ const TRANSFORMATIONS: TransformationPhoto[] = [
     user: 'Ana Strong',
     duration: 120,
     muscleGain: 8,
-    beforePhoto: '👤',
-    afterPhoto: '🏋️',
+    beforePhoto: 'ðŸ‘¤',
+    afterPhoto: 'ðŸ‹ï¸',
     date: '2025-01-10',
     story: 'De 52kg a 60kg en 4 meses. Surplus 300 kcal + PPL 5x semana. Primera dominada en semana 6.',
     stats: {
@@ -92,13 +92,13 @@ const TRANSFORMATIONS: TransformationPhoto[] = [
     user: 'Miguel Fitness',
     duration: 180,
     weightLoss: 25,
-    beforePhoto: '😔',
-    afterPhoto: '😎',
+    beforePhoto: 'ðŸ˜”',
+    afterPhoto: 'ðŸ˜Ž',
     date: '2025-01-05',
-    story: '6 meses que cambiaron mi vida. De sedentario a maratonista. Perdí 25kg y gané confianza.',
+    story: '6 meses que cambiaron mi vida. De sedentario a maratonista. PerdÃ­ 25kg y ganÃ© confianza.',
     stats: {
       workouts: 108,
-      diet: 'Mediterránea + Cardio',
+      diet: 'MediterrÃ¡nea + Cardio',
       program: 'Cardio + Fuerza',
     },
     metrics: {
@@ -113,10 +113,10 @@ const TRANSFORMATIONS: TransformationPhoto[] = [
     user: 'Laura Warrior',
     duration: 60,
     muscleGain: 5,
-    beforePhoto: '🙂',
-    afterPhoto: '💃',
+    beforePhoto: 'ðŸ™‚',
+    afterPhoto: 'ðŸ’ƒ',
     date: '2024-12-28',
-    story: 'Recomposición corporal perfecta. Mismo peso pero -8% grasa corporal. Fuerza máxima +40%.',
+    story: 'RecomposiciÃ³n corporal perfecta. Mismo peso pero -8% grasa corporal. Fuerza mÃ¡xima +40%.',
     stats: {
       workouts: 48,
       diet: 'Carb Cycling',
@@ -133,10 +133,10 @@ const TRANSFORMATIONS: TransformationPhoto[] = [
 
 const MY_PROGRESS: MyProgress = {
   photos: [
-    { date: '2024-11-01', weight: 85, bodyFat: 20, photo: '📸' },
-    { date: '2024-12-01', weight: 83, bodyFat: 18.5, photo: '📸' },
-    { date: '2025-01-01', weight: 81, bodyFat: 17, photo: '📸' },
-    { date: '2025-01-27', weight: 79.5, bodyFat: 16, photo: '📸' },
+    { date: '2024-11-01', weight: 85, bodyFat: 20, photo: 'ðŸ“¸' },
+    { date: '2024-12-01', weight: 83, bodyFat: 18.5, photo: 'ðŸ“¸' },
+    { date: '2025-01-01', weight: 81, bodyFat: 17, photo: 'ðŸ“¸' },
+    { date: '2025-01-27', weight: 79.5, bodyFat: 16, photo: 'ðŸ“¸' },
   ],
   totalDays: 87,
   startDate: '2024-11-01',
@@ -150,7 +150,7 @@ export default function TransformationGallery() {
   const addProgress = () => {
     Alert.alert(
       'Nueva Foto de Progreso',
-      'Captura tu transformación',
+      'Captura tu transformaciÃ³n',
       [
         { text: 'Cancelar', style: 'cancel' },
         {
@@ -163,7 +163,7 @@ export default function TransformationGallery() {
 
   const shareTransformation = (transformation: TransformationPhoto) => {
     Alert.alert(
-      'Compartir Transformación',
+      'Compartir TransformaciÃ³n',
       `${transformation.user}: -${transformation.weightLoss || transformation.muscleGain}kg`,
       [
         { text: 'Instagram Stories' },
@@ -177,7 +177,7 @@ export default function TransformationGallery() {
   const viewTimeline = () => {
     Alert.alert(
       'Timeline Completo',
-      `${myProgress.photos.length} fotos en ${myProgress.totalDays} días`,
+      `${myProgress.photos.length} fotos en ${myProgress.totalDays} dÃ­as`,
       [{ text: 'OK' }]
     );
   };
@@ -195,7 +195,7 @@ export default function TransformationGallery() {
           </Text>
           {activeTab === 'mine' && (
             <TouchableOpacity onPress={addProgress}>
-              <Ionicons name="camera" size={28} color="#10B981" />
+              <Ionicons name="camera" size={28} color="#9D12DE" />
             </TouchableOpacity>
           )}
         </View>
@@ -205,7 +205,7 @@ export default function TransformationGallery() {
           <TouchableOpacity
             onPress={() => setActiveTab('community')}
             className={`flex-1 py-3 rounded-lg ${
-              activeTab === 'community' ? 'bg-emerald-500' : 'bg-zinc-900 border border-zinc-800'
+              activeTab === 'community' ? 'bg-primary' : 'bg-zinc-900 border border-zinc-800'
             }`}
           >
             <Text
@@ -219,7 +219,7 @@ export default function TransformationGallery() {
           <TouchableOpacity
             onPress={() => setActiveTab('mine')}
             className={`flex-1 py-3 rounded-lg ${
-              activeTab === 'mine' ? 'bg-emerald-500' : 'bg-zinc-900 border border-zinc-800'
+              activeTab === 'mine' ? 'bg-primary' : 'bg-zinc-900 border border-zinc-800'
             }`}
           >
             <Text
@@ -249,7 +249,7 @@ export default function TransformationGallery() {
                       {transformation.user}
                     </Text>
                     <Text className="text-zinc-400 text-sm">
-                      {transformation.duration} días de transformación
+                      {transformation.duration} dÃ­as de transformaciÃ³n
                     </Text>
                   </View>
                   <View className="items-end">
@@ -259,7 +259,7 @@ export default function TransformationGallery() {
                       </Text>
                     )}
                     {transformation.muscleGain && (
-                      <Text className="text-emerald-400 text-2xl font-bold">
+                      <Text className="text-primary text-2xl font-bold">
                         +{transformation.muscleGain}kg
                       </Text>
                     )}
@@ -282,9 +282,9 @@ export default function TransformationGallery() {
                     <View className="bg-zinc-800 rounded-lg aspect-square items-center justify-center mb-2">
                       <Text className="text-6xl">{transformation.afterPhoto}</Text>
                     </View>
-                    <View className="bg-emerald-500/10 rounded-lg px-2 py-1">
-                      <Text className="text-emerald-400 text-xs font-bold text-center">
-                        DESPUÉS
+                    <View className="bg-primary/10 rounded-lg px-2 py-1">
+                      <Text className="text-primary text-xs font-bold text-center">
+                        DESPUÃ‰S
                       </Text>
                     </View>
                   </View>
@@ -312,7 +312,7 @@ export default function TransformationGallery() {
                           {transformation.metrics.startBodyFat}%
                         </Text>
                         <Ionicons name="arrow-forward" size={16} color="#71717A" />
-                        <Text className="text-emerald-400 font-bold ml-2">
+                        <Text className="text-primary font-bold ml-2">
                           {transformation.metrics.endBodyFat}%
                         </Text>
                       </View>
@@ -327,7 +327,7 @@ export default function TransformationGallery() {
 
                 {/* Stats */}
                 <View className="mb-3">
-                  <Text className="text-zinc-400 text-xs mb-2">ESTADÍSTICAS</Text>
+                  <Text className="text-zinc-400 text-xs mb-2">ESTADÃSTICAS</Text>
                   <View className="flex-row gap-2">
                     <View className="flex-1 bg-zinc-800 rounded-lg p-2">
                       <Text className="text-zinc-400 text-xs">Workouts</Text>
@@ -352,16 +352,16 @@ export default function TransformationGallery() {
 
                 {/* Actions */}
                 <View className="flex-row gap-2">
-                  <TouchableOpacity className="flex-1 bg-emerald-500/10 rounded-lg p-3 border border-emerald-500/30 flex-row items-center justify-center">
-                    <Ionicons name="heart" size={18} color="#10B981" />
-                    <Text className="text-emerald-400 font-bold ml-2">Inspirador</Text>
+                  <TouchableOpacity className="flex-1 bg-primary/10 rounded-lg p-3 border border-primary/30 flex-row items-center justify-center">
+                    <Ionicons name="heart" size={18} color="#9D12DE" />
+                    <Text className="text-primary font-bold ml-2">Inspirador</Text>
                   </TouchableOpacity>
                   <TouchableOpacity
                     onPress={() => shareTransformation(transformation)}
-                    className="flex-1 bg-blue-500/10 rounded-lg p-3 border border-blue-500/30 flex-row items-center justify-center"
+                    className="flex-1 bg-primary/10 rounded-lg p-3 border border-primary/30 flex-row items-center justify-center"
                   >
-                    <Ionicons name="share-social" size={18} color="#3B82F6" />
-                    <Text className="text-blue-400 font-bold ml-2">Compartir</Text>
+                    <Ionicons name="share-social" size={18} color="#9D12DE" />
+                    <Text className="text-primary/80 font-bold ml-2">Compartir</Text>
                   </TouchableOpacity>
                 </View>
               </View>
@@ -374,10 +374,10 @@ export default function TransformationGallery() {
           <View className="px-6 pt-6">
             {/* Summary Card */}
             <View className="bg-zinc-900 rounded-xl p-4 border border-zinc-800 mb-6">
-              <Text className="text-zinc-400 text-sm mb-3">TU TRANSFORMACIÓN</Text>
+              <Text className="text-zinc-400 text-sm mb-3">TU TRANSFORMACIÃ“N</Text>
               <View className="flex-row items-center justify-between mb-4">
                 <View className="flex-1">
-                  <Text className="text-zinc-400 text-xs mb-1">DÍAS</Text>
+                  <Text className="text-zinc-400 text-xs mb-1">DÃAS</Text>
                   <Text className="text-white text-3xl font-bold">
                     {myProgress.totalDays}
                   </Text>
@@ -390,14 +390,14 @@ export default function TransformationGallery() {
                 </View>
                 <View className="flex-1">
                   <Text className="text-zinc-400 text-xs mb-1">GRASA</Text>
-                  <Text className="text-emerald-400 text-3xl font-bold">
+                  <Text className="text-primary text-3xl font-bold">
                     -{myProgress.photos[0].bodyFat - myProgress.photos[myProgress.photos.length - 1].bodyFat}%
                   </Text>
                 </View>
               </View>
               <TouchableOpacity
                 onPress={viewTimeline}
-                className="bg-emerald-500 rounded-lg p-3"
+                className="bg-primary rounded-lg p-3"
               >
                 <Text className="text-white font-bold text-center">
                   Ver Timeline Completo
@@ -430,7 +430,7 @@ export default function TransformationGallery() {
                   </View>
                   <View className="flex-row items-center justify-between">
                     <Text className="text-zinc-400 text-xs">Grasa</Text>
-                    <Text className="text-emerald-400 text-sm font-bold">
+                    <Text className="text-primary text-sm font-bold">
                       {photo.bodyFat}%
                     </Text>
                   </View>
@@ -438,7 +438,7 @@ export default function TransformationGallery() {
                   {/* Progress Indicator */}
                   {index > 0 && (
                     <View className="mt-2 pt-2 border-t border-zinc-800">
-                      <Text className="text-emerald-400 text-xs text-center">
+                      <Text className="text-primary text-xs text-center">
                         -{(myProgress.photos[index - 1].weight - photo.weight).toFixed(1)}kg
                       </Text>
                     </View>
@@ -450,7 +450,7 @@ export default function TransformationGallery() {
             {/* Comparison Tool */}
             <View className="bg-zinc-900 rounded-xl p-4 border border-zinc-800 mb-4">
               <Text className="text-white font-bold text-lg mb-3">
-                Comparación Antes/Después
+                ComparaciÃ³n Antes/DespuÃ©s
               </Text>
               <View className="flex-row gap-3 mb-4">
                 <View className="flex-1">
@@ -463,7 +463,7 @@ export default function TransformationGallery() {
                     </Text>
                   </View>
                   <Text className="text-zinc-400 text-xs text-center">
-                    {myProgress.photos[0].weight}kg • {myProgress.photos[0].bodyFat}%
+                    {myProgress.photos[0].weight}kg â€¢ {myProgress.photos[0].bodyFat}%
                   </Text>
                 </View>
                 <View className="flex-1">
@@ -472,20 +472,20 @@ export default function TransformationGallery() {
                       {myProgress.photos[myProgress.photos.length - 1].photo}
                     </Text>
                   </View>
-                  <View className="bg-emerald-500/10 rounded-lg px-2 py-1 mb-2">
-                    <Text className="text-emerald-400 text-xs font-bold text-center">
+                  <View className="bg-primary/10 rounded-lg px-2 py-1 mb-2">
+                    <Text className="text-primary text-xs font-bold text-center">
                       ACTUAL
                     </Text>
                   </View>
                   <Text className="text-white text-xs text-center font-bold">
-                    {myProgress.photos[myProgress.photos.length - 1].weight}kg •{' '}
+                    {myProgress.photos[myProgress.photos.length - 1].weight}kg â€¢{' '}
                     {myProgress.photos[myProgress.photos.length - 1].bodyFat}%
                   </Text>
                 </View>
               </View>
-              <TouchableOpacity className="bg-blue-500/10 rounded-lg p-3 border border-blue-500/30">
-                <Text className="text-blue-400 font-bold text-center">
-                  Compartir Mi Transformación
+              <TouchableOpacity className="bg-primary/10 rounded-lg p-3 border border-primary/30">
+                <Text className="text-primary/80 font-bold text-center">
+                  Compartir Mi TransformaciÃ³n
                 </Text>
               </TouchableOpacity>
             </View>
@@ -496,7 +496,7 @@ export default function TransformationGallery() {
         <View className="px-6 pb-6 pt-2">
           <View className="bg-amber-500/10 rounded-xl p-4 border border-amber-500/30">
             <View className="flex-row items-start">
-              <Ionicons name="camera" size={20} color="#F59E0B" />
+              <Ionicons name="camera" size={20} color="#FFEA00" />
               <View className="flex-1 ml-3">
                 <Text className="text-amber-400 font-bold mb-2">
                   Documenta Tu Viaje
@@ -512,3 +512,4 @@ export default function TransformationGallery() {
     </View>
   );
 }
+

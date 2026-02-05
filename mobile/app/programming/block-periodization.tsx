@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -497,8 +497,8 @@ export default function BlockPeriodization() {
 
   const getColorClass = (color: string) => {
     const colors: { [key: string]: string } = {
-      blue: 'bg-blue-500',
-      emerald: 'bg-emerald-500',
+      blue: 'bg-primary',
+      emerald: 'bg-primary',
       purple: 'bg-purple-500',
       amber: 'bg-amber-500',
       cyan: 'bg-cyan-500',
@@ -522,7 +522,7 @@ export default function BlockPeriodization() {
 
       <ScrollView className="flex-1" showsVerticalScrollIndicator={false}>
         <View className="px-6 pt-6">
-          <View className="bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl p-6 mb-6">
+          <View className="bg-gradient-to-r from-primary to-[#7D0EBE] rounded-xl p-6 mb-6">
             <Text className="text-white text-2xl font-bold mb-2">Sequential Training</Text>
             <Text className="text-white opacity-90">
               Focus one quality at a time for maximum gains
@@ -561,12 +561,12 @@ export default function BlockPeriodization() {
           {selectedBlock === 'overview' && (
             <View>
               <View className="bg-zinc-900 rounded-xl p-5 mb-6 border border-zinc-800">
-                <Text className="text-blue-400 text-xl font-bold mb-3">What Is Block Periodization?</Text>
+                <Text className="text-primary/80 text-xl font-bold mb-3">What Is Block Periodization?</Text>
                 <Text className="text-zinc-300 mb-2">{currentBlock.whatIs?.definition}</Text>
                 <Text className="text-zinc-400 text-sm mb-1">Creator: {currentBlock.whatIs?.creator}</Text>
                 <Text className="text-zinc-400 text-sm mb-3">Principle: {currentBlock.whatIs?.principle}</Text>
-                <View className="bg-blue-500/10 rounded-xl p-3 border border-blue-500/30">
-                  <Text className="text-blue-300 text-sm">{currentBlock.whatIs?.contrast}</Text>
+                <View className="bg-primary/10 rounded-xl p-3 border border-primary/30">
+                  <Text className="text-primary/60 text-sm">{currentBlock.whatIs?.contrast}</Text>
                 </View>
               </View>
 
@@ -576,8 +576,8 @@ export default function BlockPeriodization() {
                   <View key={idx} className="bg-zinc-800 rounded-xl p-4 mb-3 last:mb-0">
                     <Text className="text-white font-bold text-lg mb-2">{block.name}</Text>
                     <Text className="text-zinc-300 text-sm mb-1">Duration: {block.duration}</Text>
-                    <Text className="text-emerald-400 text-sm mb-1">Focus: {block.focus}</Text>
-                    <Text className="text-blue-400 text-sm mb-1">Intensity: {block.intensity}</Text>
+                    <Text className="text-primary text-sm mb-1">Focus: {block.focus}</Text>
+                    <Text className="text-primary/80 text-sm mb-1">Intensity: {block.intensity}</Text>
                     <Text className="text-purple-400 text-sm mb-2">Volume: {block.volume}</Text>
                     <View className="bg-amber-500/10 rounded-xl p-2 border border-amber-500/30">
                       <Text className="text-amber-300 text-sm">Goal: {block.goal}</Text>
@@ -586,17 +586,17 @@ export default function BlockPeriodization() {
                 ))}
               </View>
 
-              <View className="bg-emerald-500/10 rounded-xl p-5 border border-emerald-500/30 mb-6">
-                <Text className="text-emerald-400 font-bold text-lg mb-3">Advantages:</Text>
+              <View className="bg-primary/10 rounded-xl p-5 border border-primary/30 mb-6">
+                <Text className="text-primary font-bold text-lg mb-3">Advantages:</Text>
                 {currentBlock.advantages?.map((adv: string, idx: number) => (
-                  <Text key={idx} className="text-emerald-300 text-sm mb-1">✓ {adv}</Text>
+                  <Text key={idx} className="text-primary/80 text-sm mb-1">âœ“ {adv}</Text>
                 ))}
               </View>
 
               <View className="bg-red-500/10 rounded-xl p-5 border border-red-500/30 mb-6">
                 <Text className="text-red-400 font-bold text-lg mb-3">Disadvantages:</Text>
                 {currentBlock.disadvantages?.map((dis: string, idx: number) => (
-                  <Text key={idx} className="text-red-300 text-sm mb-1">✗ {dis}</Text>
+                  <Text key={idx} className="text-red-300 text-sm mb-1">âœ— {dis}</Text>
                 ))}
               </View>
             </View>
@@ -607,10 +607,10 @@ export default function BlockPeriodization() {
               <View className="bg-zinc-900 rounded-xl p-5 mb-6 border border-zinc-800">
                 <Text className="text-white text-xl font-bold mb-3">{currentBlock.purpose?.title}</Text>
                 {currentBlock.purpose?.goals?.map((goal: string, idx: number) => (
-                  <Text key={idx} className="text-zinc-300 mb-2">• {goal}</Text>
+                  <Text key={idx} className="text-zinc-300 mb-2">â€¢ {goal}</Text>
                 ))}
-                <View className="bg-blue-500/10 rounded-xl p-3 border border-blue-500/30 mt-3">
-                  <Text className="text-blue-300 text-sm italic">{currentBlock.purpose?.metaphor}</Text>
+                <View className="bg-primary/10 rounded-xl p-3 border border-primary/30 mt-3">
+                  <Text className="text-primary/60 text-sm italic">{currentBlock.purpose?.metaphor}</Text>
                 </View>
               </View>
 
@@ -631,9 +631,9 @@ export default function BlockPeriodization() {
 
               {currentBlock.exercise_selection && (
                 <View className="bg-zinc-900 rounded-xl p-5 mb-6 border border-zinc-800">
-                  <Text className="text-emerald-400 text-xl font-bold mb-4">{currentBlock.exercise_selection.title}</Text>
+                  <Text className="text-primary text-xl font-bold mb-4">{currentBlock.exercise_selection.title}</Text>
                   <View className="mb-4">
-                    <Text className="text-blue-400 mb-1">Competition: {currentBlock.exercise_selection.competition}</Text>
+                    <Text className="text-primary/80 mb-1">Competition: {currentBlock.exercise_selection.competition}</Text>
                     <Text className="text-purple-400 mb-1">Variations: {currentBlock.exercise_selection.variations}</Text>
                     <Text className="text-amber-400 mb-3">Accessories: {currentBlock.exercise_selection.accessories}</Text>
                   </View>
@@ -642,7 +642,7 @@ export default function BlockPeriodization() {
                     <View key={lift} className="bg-zinc-800 rounded-xl p-4 mb-3 last:mb-0">
                       <Text className="text-white font-bold mb-2 capitalize">{lift}:</Text>
                       {exercises.map((ex: string, idx: number) => (
-                        <Text key={idx} className="text-zinc-300 text-sm mb-1">• {ex}</Text>
+                        <Text key={idx} className="text-zinc-300 text-sm mb-1">â€¢ {ex}</Text>
                       ))}
                     </View>
                   ))}
@@ -693,7 +693,7 @@ export default function BlockPeriodization() {
                             <View className="mt-2">
                               <Text className="text-zinc-400 text-sm capitalize mb-1">{key}:</Text>
                               {value.map((item: string, idx: number) => (
-                                <Text key={idx} className="text-zinc-300 text-sm mb-1">• {item}</Text>
+                                <Text key={idx} className="text-zinc-300 text-sm mb-1">â€¢ {item}</Text>
                               ))}
                             </View>
                           ) : (
@@ -710,7 +710,7 @@ export default function BlockPeriodization() {
                 <View className="bg-red-500/10 rounded-xl p-5 border border-red-500/30 mb-6">
                   <Text className="text-red-400 font-bold text-lg mb-3">Common Mistakes:</Text>
                   {currentBlock.mistakes.map((mistake: string, idx: number) => (
-                    <Text key={idx} className="text-red-300 text-sm mb-1">✗ {mistake}</Text>
+                    <Text key={idx} className="text-red-300 text-sm mb-1">âœ— {mistake}</Text>
                   ))}
                 </View>
               )}
@@ -728,36 +728,36 @@ export default function BlockPeriodization() {
                     <View className="bg-cyan-500/10 rounded-xl p-4 border border-cyan-500/30 mb-3">
                       <Text className="text-cyan-400 font-bold mb-2">Structure:</Text>
                       {variation.structure.map((item: string, idx: number) => (
-                        <Text key={idx} className="text-cyan-300 text-sm mb-1">• {item}</Text>
+                        <Text key={idx} className="text-cyan-300 text-sm mb-1">â€¢ {item}</Text>
                       ))}
                     </View>
                   )}
 
                   {variation.changes && (
-                    <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30 mb-3">
-                      <Text className="text-blue-400 font-bold mb-2">Changes:</Text>
+                    <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-3">
+                      <Text className="text-primary/80 font-bold mb-2">Changes:</Text>
                       {variation.changes.map((item: string, idx: number) => (
-                        <Text key={idx} className="text-blue-300 text-sm mb-1">• {item}</Text>
+                        <Text key={idx} className="text-primary/60 text-sm mb-1">â€¢ {item}</Text>
                       ))}
                     </View>
                   )}
 
                   {variation.example && (
-                    <View className="bg-emerald-500/10 rounded-xl p-4 border border-emerald-500/30 mb-3">
-                      <Text className="text-emerald-400 font-bold mb-2">Example:</Text>
+                    <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-3">
+                      <Text className="text-primary font-bold mb-2">Example:</Text>
                       {Array.isArray(variation.example) ? (
                         variation.example.map((ex: string, idx: number) => (
-                          <Text key={idx} className="text-emerald-300 text-sm mb-1">• {ex}</Text>
+                          <Text key={idx} className="text-primary/80 text-sm mb-1">â€¢ {ex}</Text>
                         ))
                       ) : (
-                        <Text className="text-emerald-300 text-sm">{variation.example}</Text>
+                        <Text className="text-primary/80 text-sm">{variation.example}</Text>
                       )}
                     </View>
                   )}
 
                   <View className="flex-row justify-between">
-                    <Text className="text-emerald-400 text-sm">✓ {variation.benefit}</Text>
-                    {variation.drawback && <Text className="text-red-400 text-sm">✗ {variation.drawback}</Text>}
+                    <Text className="text-primary text-sm">âœ“ {variation.benefit}</Text>
+                    {variation.drawback && <Text className="text-red-400 text-sm">âœ— {variation.drawback}</Text>}
                   </View>
                 </View>
               ))}
@@ -771,23 +771,23 @@ export default function BlockPeriodization() {
                   <Text className="text-red-400 text-xl font-bold mb-4">{section.title}</Text>
 
                   {section.advice && section.advice.map((item: string, idx: number) => (
-                    <Text key={idx} className="text-zinc-300 mb-2">• {item}</Text>
+                    <Text key={idx} className="text-zinc-300 mb-2">â€¢ {item}</Text>
                   ))}
 
                   {section.principles && (
-                    <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30 mb-3">
-                      <Text className="text-blue-400 font-bold mb-2">Principles:</Text>
+                    <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-3">
+                      <Text className="text-primary/80 font-bold mb-2">Principles:</Text>
                       {section.principles.map((p: string, idx: number) => (
-                        <Text key={idx} className="text-blue-300 text-sm mb-1">• {p}</Text>
+                        <Text key={idx} className="text-primary/60 text-sm mb-1">â€¢ {p}</Text>
                       ))}
                     </View>
                   )}
 
                   {section.metrics && (
-                    <View className="bg-emerald-500/10 rounded-xl p-4 border border-emerald-500/30 mb-3">
-                      <Text className="text-emerald-400 font-bold mb-2">Track:</Text>
+                    <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-3">
+                      <Text className="text-primary font-bold mb-2">Track:</Text>
                       {section.metrics.map((m: string, idx: number) => (
-                        <Text key={idx} className="text-emerald-300 text-sm mb-1">• {m}</Text>
+                        <Text key={idx} className="text-primary/80 text-sm mb-1">â€¢ {m}</Text>
                       ))}
                     </View>
                   )}
@@ -796,12 +796,12 @@ export default function BlockPeriodization() {
                     <View key={idx} className="bg-zinc-800 rounded-xl p-4 mb-3 last:mb-0">
                       <Text className="text-red-400 font-bold mb-1">Issue: {problem.issue}</Text>
                       <Text className="text-amber-400 text-sm mb-1">Cause: {problem.cause}</Text>
-                      <Text className="text-emerald-400 text-sm">Fix: {problem.fix}</Text>
+                      <Text className="text-primary text-sm">Fix: {problem.fix}</Text>
                     </View>
                   ))}
 
                   {section.timeline && (
-                    <Text className="text-blue-400 text-sm mt-3">{section.timeline}</Text>
+                    <Text className="text-primary/80 text-sm mt-3">{section.timeline}</Text>
                   )}
 
                   {section.why && (
@@ -812,19 +812,19 @@ export default function BlockPeriodization() {
             </View>
           )}
 
-          <View className="bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-xl p-5 border border-blue-500/30 mb-6">
-            <Text className="text-blue-400 font-bold text-lg mb-3">Key Takeaways</Text>
-            <Text className="text-blue-300 text-sm mb-2">
-              • Block periodization = focused sequential development
+          <View className="bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-xl p-5 border border-primary/30 mb-6">
+            <Text className="text-primary/80 font-bold text-lg mb-3">Key Takeaways</Text>
+            <Text className="text-primary/60 text-sm mb-2">
+              â€¢ Block periodization = focused sequential development
             </Text>
-            <Text className="text-blue-300 text-sm mb-2">
-              • Build → Realize → Peak = complete cycle
+            <Text className="text-primary/60 text-sm mb-2">
+              â€¢ Build â†’ Realize â†’ Peak = complete cycle
             </Text>
-            <Text className="text-blue-300 text-sm mb-2">
-              • Each block has specific purpose - respect it
+            <Text className="text-primary/60 text-sm mb-2">
+              â€¢ Each block has specific purpose - respect it
             </Text>
-            <Text className="text-blue-300 text-sm">
-              • Track data and adjust for YOUR response
+            <Text className="text-primary/60 text-sm">
+              â€¢ Track data and adjust for YOUR response
             </Text>
           </View>
         </View>
@@ -832,3 +832,6 @@ export default function BlockPeriodization() {
     </View>
   );
 }
+
+
+

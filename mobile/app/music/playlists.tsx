@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -46,13 +46,13 @@ const PLAYLISTS: Playlist[] = [
   {
     id: '2',
     name: 'HIIT Energy',
-    description: 'EDM alto BPM para máxima intensidad',
+    description: 'EDM alto BPM para mÃ¡xima intensidad',
     genre: 'edm',
     bpm: 160,
     duration: 30,
     tracks: 10,
     workoutType: ['HIIT', 'Cardio', 'Tabata'],
-    coverColor: '#F59E0B',
+    coverColor: '#FFEA00',
     isPlaying: true,
   },
   {
@@ -70,7 +70,7 @@ const PLAYLISTS: Playlist[] = [
   {
     id: '4',
     name: 'Latin Fire',
-    description: 'Reggaetón y latin para cardio energético',
+    description: 'ReggaetÃ³n y latin para cardio energÃ©tico',
     genre: 'latin',
     bpm: 105,
     duration: 45,
@@ -88,7 +88,7 @@ const PLAYLISTS: Playlist[] = [
     duration: 20,
     tracks: 8,
     workoutType: ['Calentamiento', 'Movilidad', 'Yoga'],
-    coverColor: '#10B981',
+    coverColor: '#9D12DE',
     isPlaying: false,
   },
   {
@@ -100,7 +100,7 @@ const PLAYLISTS: Playlist[] = [
     duration: 90,
     tracks: 25,
     workoutType: ['Running', 'Ciclismo', 'Resistencia'],
-    coverColor: '#3B82F6',
+    coverColor: '#9D12DE',
     isPlaying: false,
   },
 ];
@@ -136,8 +136,8 @@ export default function WorkoutPlaylists() {
   const playPlaylist = (playlist: Playlist) => {
     togglePlaylist(playlist.id);
     Alert.alert(
-      `🎵 ${playlist.name}`,
-      `${playlist.tracks} canciones • ${playlist.duration} min\nBPM promedio: ${playlist.bpm}\n\n${playlist.description}`,
+      `ðŸŽµ ${playlist.name}`,
+      `${playlist.tracks} canciones â€¢ ${playlist.duration} min\nBPM promedio: ${playlist.bpm}\n\n${playlist.description}`,
       [
         { text: 'Reproducir' },
         { text: 'Agregar a Cola' },
@@ -150,7 +150,7 @@ export default function WorkoutPlaylists() {
   const createPlaylist = () => {
     Alert.alert(
       'Nueva Playlist',
-      '¿Cómo quieres crear tu playlist?',
+      'Â¿CÃ³mo quieres crear tu playlist?',
       [
         { text: 'Por Tipo de Entrenamiento' },
         { text: 'Por BPM Target' },
@@ -187,7 +187,7 @@ export default function WorkoutPlaylists() {
             <Ionicons name="arrow-back" size={24} color="white" />
           </TouchableOpacity>
           <Text className="text-white text-2xl font-bold flex-1 ml-3">
-            Música de Entrenamiento
+            MÃºsica de Entrenamiento
           </Text>
           <TouchableOpacity onPress={createPlaylist}>
             <Ionicons name="add-circle-outline" size={24} color="white" />
@@ -196,7 +196,7 @@ export default function WorkoutPlaylists() {
 
         {/* Now Playing */}
         {nowPlaying && (
-          <View className="bg-gradient-to-br from-emerald-500 to-blue-500 rounded-xl p-4 mb-4">
+          <View className="bg-gradient-to-br from-primary to-[#7D0EBE] rounded-xl p-4 mb-4">
             <View className="flex-row items-center justify-between mb-2">
               <View className="flex-1">
                 <Text className="text-white/80 text-xs mb-1">REPRODUCIENDO AHORA</Text>
@@ -204,7 +204,7 @@ export default function WorkoutPlaylists() {
                   {nowPlaying.name}
                 </Text>
                 <Text className="text-white/80 text-sm">
-                  {nowPlaying.tracks} canciones • {nowPlaying.bpm} BPM
+                  {nowPlaying.tracks} canciones â€¢ {nowPlaying.bpm} BPM
                 </Text>
               </View>
               <TouchableOpacity
@@ -223,7 +223,7 @@ export default function WorkoutPlaylists() {
         {/* Spotify Connect */}
         <TouchableOpacity
           onPress={connectSpotify}
-          className="bg-emerald-500 rounded-xl p-3 mb-4"
+          className="bg-primary rounded-xl p-3 mb-4"
         >
           <View className="flex-row items-center justify-center">
             <Ionicons name="musical-notes" size={20} color="white" />
@@ -242,7 +242,7 @@ export default function WorkoutPlaylists() {
                 onPress={() => setSelectedGenre(genre.id)}
                 className={`flex-row items-center px-4 py-2 rounded-lg ${
                   selectedGenre === genre.id
-                    ? 'bg-emerald-500'
+                    ? 'bg-primary'
                     : 'bg-zinc-900 border border-zinc-800'
                 }`}
               >
@@ -275,7 +275,7 @@ export default function WorkoutPlaylists() {
               key={playlist.id}
               onPress={() => playPlaylist(playlist)}
               className={`bg-zinc-900 rounded-xl p-4 mb-3 border-2 ${
-                playlist.isPlaying ? 'border-emerald-500' : 'border-zinc-800'
+                playlist.isPlaying ? 'border-primary' : 'border-zinc-800'
               }`}
             >
               <View className="flex-row items-center mb-3">
@@ -312,7 +312,7 @@ export default function WorkoutPlaylists() {
                     togglePlaylist(playlist.id);
                   }}
                   className={`${
-                    playlist.isPlaying ? 'bg-emerald-500' : 'bg-zinc-800'
+                    playlist.isPlaying ? 'bg-primary' : 'bg-zinc-800'
                   } rounded-full p-3`}
                 >
                   <Ionicons
@@ -329,7 +329,7 @@ export default function WorkoutPlaylists() {
                   <Text className="text-white font-bold">{playlist.tracks}</Text>
                 </View>
                 <View className="flex-1 bg-zinc-800 rounded-lg p-2">
-                  <Text className="text-zinc-400 text-xs">Duración</Text>
+                  <Text className="text-zinc-400 text-xs">DuraciÃ³n</Text>
                   <Text className="text-white font-bold">{playlist.duration} min</Text>
                 </View>
                 <View className="flex-1 bg-zinc-800 rounded-lg p-2">
@@ -357,7 +357,7 @@ export default function WorkoutPlaylists() {
         {/* Music Settings */}
         <View className="px-6 pt-4">
           <Text className="text-white font-bold text-lg mb-3">
-            Configuración de Música
+            ConfiguraciÃ³n de MÃºsica
           </Text>
 
           <View className="bg-zinc-900 rounded-xl p-4 border border-zinc-800 mb-4">
@@ -365,7 +365,7 @@ export default function WorkoutPlaylists() {
               <View className="flex-1">
                 <Text className="text-white font-bold mb-1">Auto-Play</Text>
                 <Text className="text-zinc-400 text-sm">
-                  Inicia música al comenzar workout
+                  Inicia mÃºsica al comenzar workout
                 </Text>
               </View>
               <Switch
@@ -373,7 +373,7 @@ export default function WorkoutPlaylists() {
                 onValueChange={(value) =>
                   setSettings({ ...settings, autoPlay: value })
                 }
-                trackColor={{ false: '#3F3F46', true: '#10B981' }}
+                trackColor={{ false: '#3F3F46', true: '#9D12DE' }}
                 thumbColor={settings.autoPlay ? '#fff' : '#D4D4D8'}
               />
             </View>
@@ -390,7 +390,7 @@ export default function WorkoutPlaylists() {
                 onValueChange={(value) =>
                   setSettings({ ...settings, bpmSync: value })
                 }
-                trackColor={{ false: '#3F3F46', true: '#10B981' }}
+                trackColor={{ false: '#3F3F46', true: '#9D12DE' }}
                 thumbColor={settings.bpmSync ? '#fff' : '#D4D4D8'}
               />
             </View>
@@ -407,7 +407,7 @@ export default function WorkoutPlaylists() {
                 onValueChange={(value) =>
                   setSettings({ ...settings, fadeInOut: value })
                 }
-                trackColor={{ false: '#3F3F46', true: '#10B981' }}
+                trackColor={{ false: '#3F3F46', true: '#9D12DE' }}
                 thumbColor={settings.fadeInOut ? '#fff' : '#D4D4D8'}
               />
             </View>
@@ -416,7 +416,7 @@ export default function WorkoutPlaylists() {
               <View className="flex-1">
                 <Text className="text-white font-bold mb-1">Audio Motivacional</Text>
                 <Text className="text-zinc-400 text-sm">
-                  Mensajes de ánimo durante el workout
+                  Mensajes de Ã¡nimo durante el workout
                 </Text>
               </View>
               <Switch
@@ -424,7 +424,7 @@ export default function WorkoutPlaylists() {
                 onValueChange={(value) =>
                   setSettings({ ...settings, motivationalAudio: value })
                 }
-                trackColor={{ false: '#3F3F46', true: '#10B981' }}
+                trackColor={{ false: '#3F3F46', true: '#9D12DE' }}
                 thumbColor={settings.motivationalAudio ? '#fff' : '#D4D4D8'}
               />
             </View>
@@ -433,15 +433,15 @@ export default function WorkoutPlaylists() {
 
         {/* Info Card */}
         <View className="px-6 pb-6">
-          <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30">
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30">
             <View className="flex-row items-start">
-              <Ionicons name="information-circle" size={20} color="#3B82F6" />
+              <Ionicons name="information-circle" size={20} color="#9D12DE" />
               <View className="flex-1 ml-3">
-                <Text className="text-blue-400 font-bold mb-2">
-                  Música = Rendimiento
+                <Text className="text-primary/80 font-bold mb-2">
+                  MÃºsica = Rendimiento
                 </Text>
-                <Text className="text-blue-300 text-sm">
-                  Estudios muestran que la música con BPM adecuado puede mejorar tu rendimiento hasta 15%. Selecciona playlists según tu tipo de entrenamiento.
+                <Text className="text-primary/60 text-sm">
+                  Estudios muestran que la mÃºsica con BPM adecuado puede mejorar tu rendimiento hasta 15%. Selecciona playlists segÃºn tu tipo de entrenamiento.
                 </Text>
               </View>
             </View>
@@ -451,3 +451,4 @@ export default function WorkoutPlaylists() {
     </View>
   );
 }
+

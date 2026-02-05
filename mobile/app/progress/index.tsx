@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -145,10 +145,10 @@ export default function ProgressScreen() {
   const volumeData = prepareVolumeData();
 
   const timeRanges = [
-    { id: '7d' as const, label: '7 días' },
-    { id: '30d' as const, label: '30 días' },
-    { id: '90d' as const, label: '90 días' },
-    { id: 'year' as const, label: '1 año' },
+    { id: '7d' as const, label: '7 dÃ­as' },
+    { id: '30d' as const, label: '30 dÃ­as' },
+    { id: '90d' as const, label: '90 dÃ­as' },
+    { id: 'year' as const, label: '1 aÃ±o' },
   ];
 
   const chartConfig = {
@@ -164,14 +164,14 @@ export default function ProgressScreen() {
     propsForDots: {
       r: '4',
       strokeWidth: '2',
-      stroke: '#10B981',
+      stroke: '#9D12DE',
     },
   };
 
   if (statsLoading || workoutsLoading) {
     return (
       <View className="flex-1 bg-gray-50 items-center justify-center">
-        <ActivityIndicator size="large" color="#10B981" />
+        <ActivityIndicator size="large" color="#9D12DE" />
       </View>
     );
   }
@@ -179,7 +179,7 @@ export default function ProgressScreen() {
   return (
     <View className="flex-1 bg-gray-50">
       {/* Header */}
-      <LinearGradient colors={['#10B981', '#059669']} className="px-6 pt-12 pb-6">
+      <LinearGradient colors={['#9D12DE', '#7C3AED']} className="px-6 pt-12 pb-6">
         <View className="flex-row items-center justify-between mb-4">
           <TouchableOpacity onPress={() => router.back()} className="p-2">
             <Ionicons name="arrow-back" size={28} color="white" />
@@ -214,7 +214,7 @@ export default function ProgressScreen() {
               onPress={() => setTimeRange(range.id)}
               className={`px-4 py-2 rounded-full ${
                 timeRange === range.id
-                  ? 'bg-emerald-500'
+                  ? 'bg-primary'
                   : 'bg-white border border-gray-200'
               }`}
             >
@@ -232,7 +232,7 @@ export default function ProgressScreen() {
         {/* Workout Frequency Chart */}
         <Card className="p-4">
           <View className="flex-row items-center gap-2 mb-4">
-            <Ionicons name="bar-chart" size={24} color="#10B981" />
+            <Ionicons name="bar-chart" size={24} color="#9D12DE" />
             <Text className="text-lg font-bold text-gray-900">
               Frecuencia de Entrenamientos
             </Text>
@@ -240,7 +240,7 @@ export default function ProgressScreen() {
           
           {workoutFrequency.data.every(d => d === 0) ? (
             <View className="py-8 items-center">
-              <Text className="text-gray-400">No hay datos en este período</Text>
+              <Text className="text-gray-400">No hay datos en este perÃ­odo</Text>
             </View>
           ) : (
             <BarChart
@@ -268,7 +268,7 @@ export default function ProgressScreen() {
 
           {volumeData.data.every(d => d === 0) ? (
             <View className="py-8 items-center">
-              <Text className="text-gray-400">No hay datos en este período</Text>
+              <Text className="text-gray-400">No hay datos en este perÃ­odo</Text>
             </View>
           ) : (
             <LineChart
@@ -297,19 +297,19 @@ export default function ProgressScreen() {
         <Card className="p-4">
           <View className="flex-row items-center justify-between mb-4">
             <View className="flex-row items-center gap-2">
-              <Ionicons name="trophy" size={24} color="#F59E0B" />
+              <Ionicons name="trophy" size={24} color="#FFEA00" />
               <Text className="text-lg font-bold text-gray-900">
                 Mejores Marcas
               </Text>
             </View>
             <TouchableOpacity>
-              <Text className="text-emerald-600 font-semibold">Ver Todas</Text>
+              <Text className="text-primary font-semibold">Ver Todas</Text>
             </TouchableOpacity>
           </View>
 
           <View className="gap-3">
             <View className="flex-row items-center justify-between py-3 border-b border-gray-200">
-              <Text className="text-gray-700">Volumen en un día</Text>
+              <Text className="text-gray-700">Volumen en un dÃ­a</Text>
               <Text className="text-gray-900 font-bold">
                 {Math.max(...volumeData.data, 0).toLocaleString()} kg
               </Text>
@@ -321,9 +321,9 @@ export default function ProgressScreen() {
               </Text>
             </View>
             <View className="flex-row items-center justify-between py-3">
-              <Text className="text-gray-700">Racha más larga</Text>
+              <Text className="text-gray-700">Racha mÃ¡s larga</Text>
               <Text className="text-gray-900 font-bold">
-                {stats?.user.streak || 0} días
+                {stats?.user.streak || 0} dÃ­as
               </Text>
             </View>
           </View>
@@ -332,7 +332,7 @@ export default function ProgressScreen() {
         {/* Training Time */}
         <Card className="p-4">
           <View className="flex-row items-center gap-2 mb-4">
-            <Ionicons name="time" size={24} color="#3B82F6" />
+            <Ionicons name="time" size={24} color="#9D12DE" />
             <Text className="text-lg font-bold text-gray-900">
               Tiempo de Entrenamiento
             </Text>
@@ -346,7 +346,7 @@ export default function ProgressScreen() {
               </Text>
             </View>
             <View className="flex-row items-center justify-between">
-              <Text className="text-gray-700">Promedio por sesión</Text>
+              <Text className="text-gray-700">Promedio por sesiÃ³n</Text>
               <Text className="text-gray-900 font-bold">
                 {stats?.workouts.total
                   ? Math.round((stats.time.total || 0) / stats.workouts.total)
@@ -360,3 +360,4 @@ export default function ProgressScreen() {
     </View>
   );
 }
+

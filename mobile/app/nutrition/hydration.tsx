@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -42,10 +42,10 @@ const WEEKLY_GOAL = 4000;
 const WEEK_DATA = [
   { day: 'Lun', consumed: 3800, goal: 4000 },
   { day: 'Mar', consumed: 4100, goal: 4000 },
-  { day: 'Mié', consumed: 3500, goal: 4000 },
+  { day: 'MiÃ©', consumed: 3500, goal: 4000 },
   { day: 'Jue', consumed: 3900, goal: 4000 },
   { day: 'Vie', consumed: 3400, goal: 4000 },
-  { day: 'Sáb', consumed: 3650, goal: 4000 },
+  { day: 'SÃ¡b', consumed: 3650, goal: 4000 },
   { day: 'Dom', consumed: 3200, goal: 4000 },
 ];
 
@@ -53,24 +53,24 @@ const QUICK_ADD_AMOUNTS = [250, 350, 500, 750, 1000];
 
 const HYDRATION_BENEFITS = [
   {
-    icon: '💪',
+    icon: 'ðŸ’ª',
     title: 'Rendimiento Muscular',
     description: 'Mejora fuerza y resistencia hasta 20%',
   },
   {
-    icon: '🧠',
-    title: 'Función Cognitiva',
+    icon: 'ðŸ§ ',
+    title: 'FunciÃ³n Cognitiva',
     description: 'Focus mental y toma de decisiones',
   },
   {
-    icon: '🔥',
+    icon: 'ðŸ”¥',
     title: 'Metabolismo',
-    description: 'Acelera quema de grasa y recuperación',
+    description: 'Acelera quema de grasa y recuperaciÃ³n',
   },
   {
-    icon: '🩺',
+    icon: 'ðŸ©º',
     title: 'Articulaciones',
-    description: 'Lubricación y prevención de lesiones',
+    description: 'LubricaciÃ³n y prevenciÃ³n de lesiones',
   },
 ];
 
@@ -92,7 +92,7 @@ export default function HydrationTracker() {
 
     if (hydration.consumed + amount >= hydration.goal) {
       Alert.alert(
-        '🎉 ¡Meta Alcanzada!',
+        'ðŸŽ‰ Â¡Meta Alcanzada!',
         `Has cumplido tu objetivo de ${hydration.goal}ml hoy`,
         [{ text: 'Awesome!' }]
       );
@@ -124,7 +124,7 @@ export default function HydrationTracker() {
       const lastLog = hydration.logs[hydration.logs.length - 1];
       Alert.alert(
         'Eliminar Registro',
-        `¿Quitar ${lastLog.amount}ml de las ${lastLog.time}?`,
+        `Â¿Quitar ${lastLog.amount}ml de las ${lastLog.time}?`,
         [
           { text: 'Cancelar', style: 'cancel' },
           {
@@ -155,7 +155,7 @@ export default function HydrationTracker() {
             <Ionicons name="arrow-back" size={24} color="white" />
           </TouchableOpacity>
           <Text className="text-white text-2xl font-bold flex-1 ml-3">
-            Hidratación
+            HidrataciÃ³n
           </Text>
           <TouchableOpacity onPress={removeLastLog}>
             <Ionicons name="trash-outline" size={24} color="#EF4444" />
@@ -167,13 +167,13 @@ export default function HydrationTracker() {
           <View className="relative w-48 h-48 items-center justify-center">
             <View className="absolute inset-0 rounded-full bg-zinc-800" />
             <View
-              className="absolute inset-0 rounded-full border-8 border-blue-500"
+              className="absolute inset-0 rounded-full border-8 border-primary"
               style={{
                 transform: [{ rotate: `${(progressPercent / 100) * 360}deg` }],
               }}
             />
             <View className="items-center">
-              <Text className="text-blue-400 text-6xl font-bold">
+              <Text className="text-primary/80 text-6xl font-bold">
                 {Math.round(progressPercent)}%
               </Text>
               <Text className="text-zinc-400 text-sm mt-2">
@@ -185,15 +185,15 @@ export default function HydrationTracker() {
           {remaining > 0 && (
             <View className="bg-amber-500/10 rounded-xl px-4 py-2 mt-4 border border-amber-500/30">
               <Text className="text-amber-400 text-sm font-bold">
-                🎯 Faltan {remaining}ml para tu meta
+                ðŸŽ¯ Faltan {remaining}ml para tu meta
               </Text>
             </View>
           )}
 
           {remaining === 0 && (
-            <View className="bg-emerald-500/10 rounded-xl px-4 py-2 mt-4 border border-emerald-500/30">
-              <Text className="text-emerald-400 text-sm font-bold">
-                ✅ ¡Meta del día completada!
+            <View className="bg-primary/10 rounded-xl px-4 py-2 mt-4 border border-primary/30">
+              <Text className="text-primary text-sm font-bold">
+                âœ… Â¡Meta del dÃ­a completada!
               </Text>
             </View>
           )}
@@ -203,13 +203,13 @@ export default function HydrationTracker() {
       <ScrollView className="flex-1" showsVerticalScrollIndicator={false}>
         {/* Quick Add */}
         <View className="px-6 pt-6">
-          <Text className="text-white font-bold text-lg mb-3">Agregar Rápido</Text>
+          <Text className="text-white font-bold text-lg mb-3">Agregar RÃ¡pido</Text>
           <View className="flex-row flex-wrap gap-2 mb-6">
             {QUICK_ADD_AMOUNTS.map((amount) => (
               <TouchableOpacity
                 key={amount}
                 onPress={() => addWater(amount)}
-                className="flex-1 min-w-[30%] bg-blue-500 rounded-xl p-4 items-center"
+                className="flex-1 min-w-[30%] bg-primary rounded-xl p-4 items-center"
               >
                 <Ionicons name="water" size={24} color="white" />
                 <Text className="text-white font-bold text-lg mt-1">{amount}ml</Text>
@@ -229,7 +229,7 @@ export default function HydrationTracker() {
           <View className="bg-zinc-900 rounded-xl p-4 border border-zinc-800 mb-6">
             {hydration.logs.length === 0 ? (
               <Text className="text-zinc-400 text-center py-4">
-                No hay registros aún. ¡Empieza a beber agua!
+                No hay registros aÃºn. Â¡Empieza a beber agua!
               </Text>
             ) : (
               hydration.logs.map((log, index) => (
@@ -238,10 +238,10 @@ export default function HydrationTracker() {
                   className="flex-row items-center justify-between py-3 border-b border-zinc-800 last:border-b-0"
                 >
                   <View className="flex-row items-center">
-                    <Ionicons name="water" size={20} color="#3B82F6" />
+                    <Ionicons name="water" size={20} color="#9D12DE" />
                     <Text className="text-white ml-3">{log.time}</Text>
                   </View>
-                  <Text className="text-blue-400 font-bold">{log.amount}ml</Text>
+                  <Text className="text-primary/80 font-bold">{log.amount}ml</Text>
                 </View>
               ))
             )}
@@ -269,7 +269,7 @@ export default function HydrationTracker() {
                     <View className="w-full h-full items-center justify-end px-1">
                       <View
                         className={`w-full rounded-t-lg ${
-                          day.consumed >= day.goal ? 'bg-emerald-500' : 'bg-blue-500'
+                          day.consumed >= day.goal ? 'bg-primary' : 'bg-primary'
                         }`}
                         style={{ height: `${heightPercent}%` }}
                       />
@@ -303,14 +303,14 @@ export default function HydrationTracker() {
 
         {/* Tip Card */}
         <View className="px-6 pb-6 pt-2">
-          <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30">
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30">
             <View className="flex-row items-start">
-              <Ionicons name="bulb" size={20} color="#3B82F6" />
+              <Ionicons name="bulb" size={20} color="#9D12DE" />
               <View className="flex-1 ml-3">
-                <Text className="text-blue-400 font-bold mb-2">
-                  Fórmula Óptima
+                <Text className="text-primary/80 font-bold mb-2">
+                  FÃ³rmula Ã“ptima
                 </Text>
-                <Text className="text-blue-300 text-sm">
+                <Text className="text-primary/60 text-sm">
                   Meta diaria: 35ml x kg de peso corporal + 500ml extra por cada hora de
                   entrenamiento intenso.
                 </Text>
@@ -322,3 +322,4 @@ export default function HydrationTracker() {
     </View>
   );
 }
+

@@ -10,18 +10,18 @@ export interface BadgeProps extends ViewProps {
 }
 
 const variantStyles: Record<BadgeVariant, string> = {
-  success: 'bg-emerald-100 border-emerald-200',
+  success: 'bg-primary/10 border-primary/20',
   warning: 'bg-yellow-100 border-yellow-200',
   error: 'bg-red-100 border-red-200',
-  info: 'bg-blue-100 border-blue-200',
+  info: 'bg-primary/10 border-primary/20',
   neutral: 'bg-gray-100 border-gray-200',
 };
 
 const textVariantStyles: Record<BadgeVariant, string> = {
-  success: 'text-emerald-700',
+  success: 'text-primary',
   warning: 'text-yellow-700',
   error: 'text-red-700',
-  info: 'text-blue-700',
+  info: 'text-primary',
   neutral: 'text-gray-700',
 };
 
@@ -42,7 +42,7 @@ export function Badge({
     >
       <Text
         className={cn(
-          'font-inter-medium text-xs',
+          'font-label text-xs',
           textVariantStyles[variant]
         )}
       >

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -69,11 +69,11 @@ const WEEKLY_SCHEDULE: WorkoutSchedule[] = [
   },
   {
     id: '3',
-    day: 'Miércoles',
+    day: 'MiÃ©rcoles',
     date: '2026-01-29',
     workout: null,
     restDay: true,
-    reason: 'Recuperación activa - IA detectó fatiga acumulada',
+    reason: 'RecuperaciÃ³n activa - IA detectÃ³ fatiga acumulada',
   },
   {
     id: '4',
@@ -103,7 +103,7 @@ const WEEKLY_SCHEDULE: WorkoutSchedule[] = [
   },
   {
     id: '6',
-    day: 'Sábado',
+    day: 'SÃ¡bado',
     date: '2026-02-01',
     workout: {
       name: 'Full Body - Conditioning',
@@ -137,18 +137,18 @@ const RECOMMENDATIONS: SmartRecommendation[] = [
     type: 'deload',
     title: 'Semana de Deload Recomendada',
     reason: '4 semanas de entrenamiento intenso. Volumen acumulativo alto (425k kg).',
-    action: 'Reducir volumen 40% próxima semana. Mantener intensidad, bajar series.',
+    action: 'Reducir volumen 40% prÃ³xima semana. Mantener intensidad, bajar series.',
   },
   {
     type: 'rest',
     title: 'Descanso Extra Sugerido',
-    reason: 'Sueño promedio 6.2h últimos 3 días. Recovery score bajo (68%).',
-    action: 'Agregar día de descanso activo el miércoles. Priorizar sueño 8h.',
+    reason: 'SueÃ±o promedio 6.2h Ãºltimos 3 dÃ­as. Recovery score bajo (68%).',
+    action: 'Agregar dÃ­a de descanso activo el miÃ©rcoles. Priorizar sueÃ±o 8h.',
   },
   {
     type: 'switch-focus',
     title: 'Cambiar Enfoque a Hipertrofia',
-    reason: 'PRs estancados últimas 2 semanas. Cuerpo adaptado a fuerza máxima.',
+    reason: 'PRs estancados Ãºltimas 2 semanas. Cuerpo adaptado a fuerza mÃ¡xima.',
     action: 'Block de hipertrofia 4 semanas: 8-12 reps, tempo controlado, volumen alto.',
   },
 ];
@@ -162,9 +162,9 @@ export default function SmartScheduling() {
   const getIntensityColor = (intensity: string) => {
     switch (intensity) {
       case 'light':
-        return 'bg-emerald-500';
+        return 'bg-primary';
       case 'moderate':
-        return 'bg-blue-500';
+        return 'bg-primary';
       case 'hard':
         return 'bg-amber-500';
       case 'extreme':
@@ -203,13 +203,13 @@ export default function SmartScheduling() {
 
   const applyRecommendation = (rec: SmartRecommendation) => {
     Alert.alert(
-      `Aplicar Recomendación`,
+      `Aplicar RecomendaciÃ³n`,
       `${rec.title}\n\n${rec.action}`,
       [
         { text: 'Cancelar', style: 'cancel' },
         {
           text: 'Aplicar',
-          onPress: () => Alert.alert('Aplicado', 'Calendario actualizado según IA'),
+          onPress: () => Alert.alert('Aplicado', 'Calendario actualizado segÃºn IA'),
         },
       ]
     );
@@ -218,7 +218,7 @@ export default function SmartScheduling() {
   const regenerateWeek = () => {
     Alert.alert(
       'Re-generar Semana',
-      '¿Permitir que IA cree nuevo calendario basado en tu progreso y recuperación?',
+      'Â¿Permitir que IA cree nuevo calendario basado en tu progreso y recuperaciÃ³n?',
       [
         { text: 'Cancelar', style: 'cancel' },
         {
@@ -230,7 +230,7 @@ export default function SmartScheduling() {
   };
 
   const getReadinessColor = (score: number) => {
-    if (score >= 80) return 'text-emerald-400';
+    if (score >= 80) return 'text-primary';
     if (score >= 60) return 'text-amber-400';
     return 'text-red-400';
   };
@@ -244,10 +244,10 @@ export default function SmartScheduling() {
             <Ionicons name="arrow-back" size={24} color="white" />
           </TouchableOpacity>
           <Text className="text-white text-2xl font-bold flex-1 ml-3">
-            Programación Inteligente
+            ProgramaciÃ³n Inteligente
           </Text>
           <TouchableOpacity onPress={regenerateWeek}>
-            <Ionicons name="refresh" size={24} color="#10B981" />
+            <Ionicons name="refresh" size={24} color="#9D12DE" />
           </TouchableOpacity>
         </View>
 
@@ -264,24 +264,24 @@ export default function SmartScheduling() {
               <Ionicons
                 name={RECOVERY_METRICS.overallReadiness >= 80 ? 'checkmark-circle' : 'alert-circle'}
                 size={48}
-                color={RECOVERY_METRICS.overallReadiness >= 80 ? '#10B981' : '#F59E0B'}
+                color={RECOVERY_METRICS.overallReadiness >= 80 ? '#9D12DE' : '#FFEA00'}
               />
               <Text className="text-zinc-400 text-xs mt-1">
-                {RECOVERY_METRICS.overallReadiness >= 80 ? 'Óptimo' : 'Precaución'}
+                {RECOVERY_METRICS.overallReadiness >= 80 ? 'Ã“ptimo' : 'PrecauciÃ³n'}
               </Text>
             </View>
           </View>
 
           <View className="space-y-2">
             <View className="flex-row items-center justify-between">
-              <Text className="text-zinc-400 text-sm">Calidad de Sueño</Text>
+              <Text className="text-zinc-400 text-sm">Calidad de SueÃ±o</Text>
               <View className="flex-row items-center">
                 <View className="flex-row">
                   {[...Array(10)].map((_, i) => (
                     <View
                       key={i}
                       className={`w-2 h-2 rounded-full mr-1 ${
-                        i < RECOVERY_METRICS.sleepQuality ? 'bg-blue-500' : 'bg-zinc-700'
+                        i < RECOVERY_METRICS.sleepQuality ? 'bg-primary' : 'bg-zinc-700'
                       }`}
                     />
                   ))}
@@ -291,14 +291,14 @@ export default function SmartScheduling() {
             </View>
 
             <View className="flex-row items-center justify-between">
-              <Text className="text-zinc-400 text-sm">Nivel de Energía</Text>
+              <Text className="text-zinc-400 text-sm">Nivel de EnergÃ­a</Text>
               <View className="flex-row items-center">
                 <View className="flex-row">
                   {[...Array(10)].map((_, i) => (
                     <View
                       key={i}
                       className={`w-2 h-2 rounded-full mr-1 ${
-                        i < RECOVERY_METRICS.energyLevel ? 'bg-emerald-500' : 'bg-zinc-700'
+                        i < RECOVERY_METRICS.energyLevel ? 'bg-primary' : 'bg-zinc-700'
                       }`}
                     />
                   ))}
@@ -325,7 +325,7 @@ export default function SmartScheduling() {
             </View>
 
             <View className="flex-row items-center justify-between">
-              <Text className="text-zinc-400 text-sm">Nivel de Estrés</Text>
+              <Text className="text-zinc-400 text-sm">Nivel de EstrÃ©s</Text>
               <View className="flex-row items-center">
                 <View className="flex-row">
                   {[...Array(10)].map((_, i) => (
@@ -347,34 +347,34 @@ export default function SmartScheduling() {
       <ScrollView className="flex-1" showsVerticalScrollIndicator={false}>
         {/* Settings */}
         <View className="px-6 pt-6">
-          <Text className="text-white font-bold text-lg mb-3">Configuración IA</Text>
+          <Text className="text-white font-bold text-lg mb-3">ConfiguraciÃ³n IA</Text>
           <View className="bg-zinc-900 rounded-xl p-4 border border-zinc-800 mb-6">
             <View className="flex-row items-center justify-between mb-3 pb-3 border-b border-zinc-800">
               <View className="flex-1">
-                <Text className="text-white font-bold mb-1">Auto-Programación</Text>
+                <Text className="text-white font-bold mb-1">Auto-ProgramaciÃ³n</Text>
                 <Text className="text-zinc-400 text-sm">
-                  IA genera entrenamientos automáticamente
+                  IA genera entrenamientos automÃ¡ticamente
                 </Text>
               </View>
               <Switch
                 value={autoSchedule}
                 onValueChange={setAutoSchedule}
-                trackColor={{ false: '#3F3F46', true: '#10B981' }}
+                trackColor={{ false: '#3F3F46', true: '#9D12DE' }}
                 thumbColor={autoSchedule ? '#fff' : '#D4D4D8'}
               />
             </View>
 
             <View className="flex-row items-center justify-between mb-3 pb-3 border-b border-zinc-800">
               <View className="flex-1">
-                <Text className="text-white font-bold mb-1">Adaptar a Recuperación</Text>
+                <Text className="text-white font-bold mb-1">Adaptar a RecuperaciÃ³n</Text>
                 <Text className="text-zinc-400 text-sm">
-                  Ajusta intensidad según readiness
+                  Ajusta intensidad segÃºn readiness
                 </Text>
               </View>
               <Switch
                 value={adaptToRecovery}
                 onValueChange={setAdaptToRecovery}
-                trackColor={{ false: '#3F3F46', true: '#10B981' }}
+                trackColor={{ false: '#3F3F46', true: '#9D12DE' }}
                 thumbColor={adaptToRecovery ? '#fff' : '#D4D4D8'}
               />
             </View>
@@ -389,7 +389,7 @@ export default function SmartScheduling() {
               <Switch
                 value={preventOvertraining}
                 onValueChange={setPreventOvertraining}
-                trackColor={{ false: '#3F3F46', true: '#10B981' }}
+                trackColor={{ false: '#3F3F46', true: '#9D12DE' }}
                 thumbColor={preventOvertraining ? '#fff' : '#D4D4D8'}
               />
             </View>
@@ -420,13 +420,13 @@ export default function SmartScheduling() {
               </View>
 
               {day.restDay ? (
-                <View className="bg-emerald-500/10 rounded-lg p-3 border border-emerald-500/30">
+                <View className="bg-primary/10 rounded-lg p-3 border border-primary/30">
                   <View className="flex-row items-center mb-2">
-                    <Ionicons name="bed" size={20} color="#10B981" />
-                    <Text className="text-emerald-400 font-bold ml-2">Día de Descanso</Text>
+                    <Ionicons name="bed" size={20} color="#9D12DE" />
+                    <Text className="text-primary font-bold ml-2">DÃ­a de Descanso</Text>
                   </View>
                   {day.reason && (
-                    <Text className="text-emerald-300 text-sm">{day.reason}</Text>
+                    <Text className="text-primary/80 text-sm">{day.reason}</Text>
                   )}
                 </View>
               ) : (
@@ -465,8 +465,8 @@ export default function SmartScheduling() {
                           </Text>
                         </View>
                       </View>
-                      <View className="bg-blue-500/10 rounded-lg px-3 py-1">
-                        <Text className="text-blue-400 text-xs">{day.workout.type}</Text>
+                      <View className="bg-primary/10 rounded-lg px-3 py-1">
+                        <Text className="text-primary/80 text-xs">{day.workout.type}</Text>
                       </View>
                     </View>
                   </>
@@ -498,20 +498,20 @@ export default function SmartScheduling() {
                       : 'swap-horizontal'
                   }
                   size={24}
-                  color="#3B82F6"
+                  color="#9D12DE"
                 />
                 <View className="flex-1 ml-3">
                   <Text className="text-white font-bold text-base mb-1">{rec.title}</Text>
                   <Text className="text-zinc-400 text-sm mb-2">{rec.reason}</Text>
-                  <View className="bg-blue-500/10 rounded-lg p-3 border border-blue-500/30">
-                    <Text className="text-blue-300 text-sm">{rec.action}</Text>
+                  <View className="bg-primary/10 rounded-lg p-3 border border-primary/30">
+                    <Text className="text-primary/60 text-sm">{rec.action}</Text>
                   </View>
                 </View>
               </View>
 
               <TouchableOpacity
                 onPress={() => applyRecommendation(rec)}
-                className="bg-emerald-500 rounded-lg p-3"
+                className="bg-primary rounded-lg p-3"
               >
                 <Text className="text-white font-bold text-center">Aplicar</Text>
               </TouchableOpacity>
@@ -527,8 +527,8 @@ export default function SmartScheduling() {
               <View className="flex-1 ml-3">
                 <Text className="text-purple-400 font-bold mb-2">IA Adaptativa</Text>
                 <Text className="text-purple-300 text-sm">
-                  La IA analiza tu progreso, recuperación y rendimiento para optimizar cada
-                  entrenamiento. Deja que la ciencia guíe tu camino.
+                  La IA analiza tu progreso, recuperaciÃ³n y rendimiento para optimizar cada
+                  entrenamiento. Deja que la ciencia guÃ­e tu camino.
                 </Text>
               </View>
             </View>
@@ -538,3 +538,5 @@ export default function SmartScheduling() {
     </View>
   );
 }
+
+

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -150,9 +150,9 @@ export default function AutoProgression() {
                 </View>
                 {selectedMode === mode.key && (
                   <Ionicons name="checkmark-circle" size={24} color={
-                    mode.color === 'blue' ? '#3b82f6' :
-                    mode.color === 'emerald' ? '#10b981' :
-                    mode.color === 'purple' ? '#a855f7' : '#f59e0b'
+                    mode.color === 'blue' ? '#9D12DE' :
+                    mode.color === 'emerald' ? '#9D12DE' :
+                    mode.color === 'purple' ? '#a855f7' : '#FFEA00'
                   } />
                 )}
               </View>
@@ -161,7 +161,7 @@ export default function AutoProgression() {
                 <Text className={`text-${mode.color}-400 font-bold mb-2`}>Rules:</Text>
                 {mode.rules.map((rule, idx) => (
                   <View key={idx} className="flex-row items-start mb-1">
-                    <Text className={`text-${mode.color}-400 mr-2`}>•</Text>
+                    <Text className={`text-${mode.color}-400 mr-2`}>â€¢</Text>
                     <Text className={`text-${mode.color}-300 text-sm flex-1`}>{rule}</Text>
                   </View>
                 ))}
@@ -181,28 +181,28 @@ export default function AutoProgression() {
                   <Text className="text-white font-bold">
                     {exercise.current.sets} x {exercise.current.reps}
                   </Text>
-                  <Text className="text-blue-400 font-bold text-lg">
+                  <Text className="text-primary/80 font-bold text-lg">
                     {exercise.current.weight}kg
                   </Text>
                 </View>
 
                 <View className="items-center justify-center">
-                  <Ionicons name="arrow-forward" size={24} color="#10b981" />
+                  <Ionicons name="arrow-forward" size={24} color="#9D12DE" />
                 </View>
 
-                <View className="flex-1 bg-emerald-500/10 rounded-lg p-3 border border-emerald-500/30">
-                  <Text className="text-emerald-400 text-xs mb-1 font-bold">NEXT WEEK</Text>
+                <View className="flex-1 bg-primary/10 rounded-lg p-3 border border-primary/30">
+                  <Text className="text-primary text-xs mb-1 font-bold">NEXT WEEK</Text>
                   <Text className="text-white font-bold">
                     {exercise.nextWeek.sets} x {exercise.nextWeek.reps}
                   </Text>
-                  <Text className="text-emerald-400 font-bold text-lg">
+                  <Text className="text-primary font-bold text-lg">
                     {exercise.nextWeek.weight}kg
                   </Text>
                 </View>
               </View>
 
-              <View className="bg-blue-500/10 rounded-lg px-3 py-2 border border-blue-500/30">
-                <Text className="text-blue-400 text-sm">
+              <View className="bg-primary/10 rounded-lg px-3 py-2 border border-primary/30">
+                <Text className="text-primary/80 text-sm">
                   Mode: <Text className="font-bold">{exercise.mode}</Text>
                 </Text>
               </View>
@@ -211,20 +211,20 @@ export default function AutoProgression() {
 
           <TouchableOpacity
             onPress={applyProgression}
-            className="bg-emerald-500 rounded-xl py-4 mb-6 flex-row items-center justify-center"
+            className="bg-primary rounded-xl py-4 mb-6 flex-row items-center justify-center"
           >
             <Ionicons name="flash" size={24} color="white" />
             <Text className="text-white font-bold ml-2 text-lg">Apply Auto Progression</Text>
           </TouchableOpacity>
 
-          <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30 mb-6">
-            <Text className="text-blue-400 font-bold mb-2">Auto Progression Benefits</Text>
-            <Text className="text-blue-300 text-sm">
-              • No guessing next workout{'\n'}
-              • Consistent progressive overload{'\n'}
-              • Automatic deload cuando needed{'\n'}
-              • Adapts to tu nivel{'\n'}
-              • Focus on lifting, not planning
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
+            <Text className="text-primary/80 font-bold mb-2">Auto Progression Benefits</Text>
+            <Text className="text-primary/60 text-sm">
+              â€¢ No guessing next workout{'\n'}
+              â€¢ Consistent progressive overload{'\n'}
+              â€¢ Automatic deload cuando needed{'\n'}
+              â€¢ Adapts to tu nivel{'\n'}
+              â€¢ Focus on lifting, not planning
             </Text>
           </View>
         </View>
@@ -232,3 +232,4 @@ export default function AutoProgression() {
     </View>
   );
 }
+

@@ -49,11 +49,11 @@ describe('Loading', () => {
   });
 
   describe('Color', () => {
-    it('should use default emerald color', () => {
+    it('should use default primary color', () => {
       const { UNSAFE_getByType } = render(<Loading />);
       
       const indicator = UNSAFE_getByType(ActivityIndicator);
-      expect(indicator.props.color).toBe('#10B981');
+      expect(indicator.props.color).toBe('#9D12DE');
     });
 
     it('should accept custom color', () => {

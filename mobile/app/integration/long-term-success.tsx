@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -84,7 +84,7 @@ export default function LongTermSuccess() {
         title: 'Think in Decades, Not Days',
         mindset: [
           'You have 30+ years of training ahead',
-          'Missing PRs for 6 months ≠ failure if you train 20 more years',
+          'Missing PRs for 6 months â‰  failure if you train 20 more years',
           'Injuries that sideline you = worse than slow progress',
           'Consistency over decades > heroic bursts',
         ],
@@ -130,7 +130,7 @@ export default function LongTermSuccess() {
           },
           {
             priority: 'Listen to Body',
-            principle: 'Tweak ≠ train through it',
+            principle: 'Tweak â‰  train through it',
             action: 'Back off when something hurts, modify exercises',
           },
           {
@@ -368,8 +368,8 @@ export default function LongTermSuccess() {
 
   const getColorClass = (color: string) => {
     const colors: { [key: string]: string } = {
-      blue: 'bg-blue-500',
-      emerald: 'bg-emerald-500',
+      blue: 'bg-primary',
+      emerald: 'bg-primary',
       purple: 'bg-purple-500',
       amber: 'bg-amber-500',
       red: 'bg-red-500',
@@ -430,12 +430,12 @@ export default function LongTermSuccess() {
           </ScrollView>
 
           {/* Content rendering placeholder */}
-          <View className="bg-blue-500/10 rounded-xl p-6 border border-blue-500/30 mb-6">
-            <Ionicons name={currentPrinciple.icon as any} size={32} color="#3b82f6" />
-            <Text className="text-blue-400 font-bold text-lg mt-3 mb-2">
+          <View className="bg-primary/10 rounded-xl p-6 border border-primary/30 mb-6">
+            <Ionicons name={currentPrinciple.icon as any} size={32} color="#9D12DE" />
+            <Text className="text-primary/80 font-bold text-lg mt-3 mb-2">
               {currentPrinciple.name}
             </Text>
-            <Text className="text-blue-300 text-sm">
+            <Text className="text-primary/60 text-sm">
               Detailed content for {currentPrinciple.name}...
             </Text>
           </View>
@@ -443,41 +443,41 @@ export default function LongTermSuccess() {
           <View className="bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-xl p-5 border border-purple-500/30 mb-6">
             <Text className="text-purple-400 font-bold text-lg mb-3">The Marathon, Not Sprint</Text>
             <Text className="text-purple-300 text-sm mb-2">
-              • Think in decades - you have 30+ years of training ahead
+              â€¢ Think in decades - you have 30+ years of training ahead
             </Text>
             <Text className="text-purple-300 text-sm mb-2">
-              • Consistency beats intensity over the long run
+              â€¢ Consistency beats intensity over the long run
             </Text>
             <Text className="text-purple-300 text-sm mb-2">
-              • Injuries that sideline you &gt; slow progress
+              â€¢ Injuries that sideline you &gt; slow progress
             </Text>
             <Text className="text-purple-300 text-sm mb-2">
-              • Enjoy the process - it's the only way to sustain it
+              â€¢ Enjoy the process - it's the only way to sustain it
             </Text>
             <Text className="text-purple-300 text-sm">
-              • Your "why" will carry you through hard times
+              â€¢ Your "why" will carry you through hard times
             </Text>
           </View>
 
-          <View className="bg-emerald-500/10 rounded-xl p-6 border border-emerald-500/30 mb-6">
-            <Ionicons name="checkmark-circle" size={32} color="#10b981" />
-            <Text className="text-emerald-400 font-bold text-lg mt-3 mb-3">
+          <View className="bg-primary/10 rounded-xl p-6 border border-primary/30 mb-6">
+            <Ionicons name="checkmark-circle" size={32} color="#9D12DE" />
+            <Text className="text-primary font-bold text-lg mt-3 mb-3">
               Keys to Longevity
             </Text>
-            <Text className="text-emerald-300 text-sm mb-2">
-              ✓ Perfect technique prevents injuries
+            <Text className="text-primary/80 text-sm mb-2">
+              âœ“ Perfect technique prevents injuries
             </Text>
-            <Text className="text-emerald-300 text-sm mb-2">
-              ✓ Regular deloads keep you fresh
+            <Text className="text-primary/80 text-sm mb-2">
+              âœ“ Regular deloads keep you fresh
             </Text>
-            <Text className="text-emerald-300 text-sm mb-2">
-              ✓ Vary training to prevent burnout
+            <Text className="text-primary/80 text-sm mb-2">
+              âœ“ Vary training to prevent burnout
             </Text>
-            <Text className="text-emerald-300 text-sm mb-2">
-              ✓ Listen to your body always
+            <Text className="text-primary/80 text-sm mb-2">
+              âœ“ Listen to your body always
             </Text>
-            <Text className="text-emerald-300 text-sm">
-              ✓ Remember - you're building strength for LIFE
+            <Text className="text-primary/80 text-sm">
+              âœ“ Remember - you're building strength for LIFE
             </Text>
           </View>
         </View>
@@ -485,3 +485,5 @@ export default function LongTermSuccess() {
     </View>
   );
 }
+
+

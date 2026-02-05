@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+﻿import React, { useState, useEffect } from 'react';
 import {
   View,
   Text,
@@ -66,7 +66,7 @@ export default function WorkoutTimer() {
 
       <ScrollView className="flex-1" showsVerticalScrollIndicator={false}>
         <View className="px-6 pt-6">
-          <View className="bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl p-6 mb-6">
+          <View className="bg-gradient-to-r from-primary to-[#7D0EBE] rounded-xl p-6 mb-6">
             <Text className="text-white text-2xl font-bold mb-2">Track Your Session</Text>
             <Text className="text-white opacity-90">
               Monitor workout duration
@@ -83,7 +83,7 @@ export default function WorkoutTimer() {
               {!isRunning ? (
                 <TouchableOpacity
                   onPress={handleStart}
-                  className="flex-1 bg-emerald-500 rounded-xl py-4 border border-emerald-400"
+                  className="flex-1 bg-primary rounded-xl py-4 border border-primary"
                 >
                   <View className="flex-row items-center justify-center">
                     <Ionicons name="play" size={24} color="white" />
@@ -121,9 +121,9 @@ export default function WorkoutTimer() {
                 <TouchableOpacity
                   key={ex}
                   onPress={() => logSet(ex)}
-                  className="bg-blue-500/20 rounded-lg px-4 py-2 border border-blue-500/40"
+                  className="bg-primary/20 rounded-lg px-4 py-2 border border-primary/40"
                 >
-                  <Text className="text-blue-400 font-bold">{ex}</Text>
+                  <Text className="text-primary/80 font-bold">{ex}</Text>
                 </TouchableOpacity>
               ))}
             </View>
@@ -146,13 +146,13 @@ export default function WorkoutTimer() {
             </View>
           )}
 
-          <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30 mb-6">
-            <Text className="text-blue-400 font-bold mb-2">Timer Tips</Text>
-            <Text className="text-blue-300 text-sm">
-              • Keep workouts 45-75 min{'\n'}
-              • Log sets for tracking{'\n'}
-              • Shorter = often better{'\n'}
-              • Quality &gt; quantity
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
+            <Text className="text-primary/80 font-bold mb-2">Timer Tips</Text>
+            <Text className="text-primary/60 text-sm">
+              â€¢ Keep workouts 45-75 min{'\n'}
+              â€¢ Log sets for tracking{'\n'}
+              â€¢ Shorter = often better{'\n'}
+              â€¢ Quality &gt; quantity
             </Text>
           </View>
         </View>
@@ -160,3 +160,4 @@ export default function WorkoutTimer() {
     </View>
   );
 }
+

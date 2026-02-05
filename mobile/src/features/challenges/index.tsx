@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -35,12 +35,12 @@ interface Challenge {
 const CHALLENGES: Challenge[] = [
   {
     id: '1',
-    name: '30 Días de Dominadas',
-    description: 'Completa al menos 10 dominadas cada día durante 30 días consecutivos',
+    name: '30 DÃ­as de Dominadas',
+    description: 'Completa al menos 10 dominadas cada dÃ­a durante 30 dÃ­as consecutivos',
     type: 'streak',
     goal: 30,
     current: 12,
-    unit: 'días',
+    unit: 'dÃ­as',
     startDate: new Date(2025, 0, 1),
     endDate: new Date(2025, 0, 31),
     participants: 234,
@@ -81,7 +81,7 @@ const CHALLENGES: Challenge[] = [
   {
     id: '4',
     name: 'Racha de Hierro',
-    description: 'Entrena 5 días a la semana durante 4 semanas',
+    description: 'Entrena 5 dÃ­as a la semana durante 4 semanas',
     type: 'streak',
     goal: 20,
     current: 8,
@@ -96,7 +96,7 @@ const CHALLENGES: Challenge[] = [
   {
     id: '5',
     name: '100 Flexiones Challenge',
-    description: 'Completa 100 flexiones en una sola sesión',
+    description: 'Completa 100 flexiones en una sola sesiÃ³n',
     type: 'skill',
     goal: 100,
     current: 0,
@@ -111,11 +111,11 @@ const CHALLENGES: Challenge[] = [
   {
     id: '6',
     name: 'Noviembre Sin Fallar',
-    description: 'Entrena todos los días de noviembre sin excepción',
+    description: 'Entrena todos los dÃ­as de noviembre sin excepciÃ³n',
     type: 'streak',
     goal: 30,
     current: 30,
-    unit: 'días',
+    unit: 'dÃ­as',
     startDate: new Date(2024, 10, 1),
     endDate: new Date(2024, 10, 30),
     participants: 187,
@@ -177,13 +177,13 @@ export default function Challenges() {
           : c
       )
     );
-    Alert.alert('¡Unido!', 'Te has unido al challenge. ¡Buena suerte!');
+    Alert.alert('Â¡Unido!', 'Te has unido al challenge. Â¡Buena suerte!');
   };
 
   const leaveChallenge = (challengeId: string) => {
     Alert.alert(
       'Abandonar Challenge',
-      '¿Estás seguro de que quieres abandonar este challenge?',
+      'Â¿EstÃ¡s seguro de que quieres abandonar este challenge?',
       [
         { text: 'Cancelar', style: 'cancel' },
         {
@@ -280,7 +280,7 @@ export default function Challenges() {
             <View className="flex-row items-center mr-4">
               <Ionicons name="time-outline" size={16} color="#71717A" />
               <Text className="text-zinc-500 text-xs ml-1">
-                {daysRemaining} días restantes
+                {daysRemaining} dÃ­as restantes
               </Text>
             </View>
           )}
@@ -294,23 +294,23 @@ export default function Challenges() {
 
         {/* Action Button */}
         {item.category === 'completed' ? (
-          <View className="bg-emerald-500/20 border border-emerald-500 py-3 rounded-lg items-center flex-row justify-center">
-            <Ionicons name="checkmark-circle" size={20} color="#10B981" />
-            <Text className="text-emerald-500 font-semibold ml-2">
+          <View className="bg-primary/20 border border-primary py-3 rounded-lg items-center flex-row justify-center">
+            <Ionicons name="checkmark-circle" size={20} color="#9D12DE" />
+            <Text className="text-primary font-semibold ml-2">
               Completado
             </Text>
           </View>
         ) : item.category === 'upcoming' ? (
           item.isJoined ? (
-            <View className="bg-blue-500/20 border border-blue-500 py-3 rounded-lg items-center">
-              <Text className="text-blue-500 font-semibold">
+            <View className="bg-primary/20 border border-primary py-3 rounded-lg items-center">
+              <Text className="text-primary font-semibold">
                 Unido - Comienza {format(item.startDate, 'd MMM', { locale: es })}
               </Text>
             </View>
           ) : (
             <TouchableOpacity
               onPress={() => joinChallenge(item.id)}
-              className="bg-blue-500 py-3 rounded-lg items-center flex-row justify-center"
+              className="bg-primary py-3 rounded-lg items-center flex-row justify-center"
             >
               <Ionicons name="add-circle-outline" size={20} color="white" />
               <Text className="text-white font-semibold ml-2">
@@ -321,7 +321,7 @@ export default function Challenges() {
         ) : item.isJoined ? (
           <View className="flex-row gap-2">
             <TouchableOpacity
-              className="flex-1 bg-emerald-500 py-3 rounded-lg items-center"
+              className="flex-1 bg-primary py-3 rounded-lg items-center"
               onPress={() => Alert.alert('Ver Detalles', 'Ir a detalles del challenge')}
             >
               <Text className="text-white font-semibold">Ver Progreso</Text>
@@ -336,10 +336,10 @@ export default function Challenges() {
         ) : (
           <TouchableOpacity
             onPress={() => joinChallenge(item.id)}
-            className="border-2 border-emerald-500 py-3 rounded-lg items-center flex-row justify-center"
+            className="border-2 border-primary py-3 rounded-lg items-center flex-row justify-center"
           >
-            <Ionicons name="add-circle-outline" size={20} color="#10B981" />
-            <Text className="text-emerald-500 font-semibold ml-2">
+            <Ionicons name="add-circle-outline" size={20} color="#9D12DE" />
+            <Text className="text-primary font-semibold ml-2">
               Unirse al Challenge
             </Text>
           </TouchableOpacity>
@@ -348,7 +348,7 @@ export default function Challenges() {
         {/* Joined Badge */}
         {item.isJoined && item.category !== 'completed' && (
           <View className="absolute top-4 right-4">
-            <View className="bg-emerald-500 px-2 py-1 rounded-full">
+            <View className="bg-primary px-2 py-1 rounded-full">
               <Text className="text-white text-xs font-bold">UNIDO</Text>
             </View>
           </View>
@@ -401,12 +401,12 @@ export default function Challenges() {
         <TouchableOpacity
           onPress={() => setActiveTab('active')}
           className={`flex-1 py-2 mr-1 rounded-lg ${
-            activeTab === 'active' ? 'bg-emerald-500/20' : 'bg-zinc-900'
+            activeTab === 'active' ? 'bg-primary/20' : 'bg-zinc-900'
           }`}
         >
           <Text
             className={`text-center font-semibold text-sm ${
-              activeTab === 'active' ? 'text-emerald-500' : 'text-zinc-400'
+              activeTab === 'active' ? 'text-primary' : 'text-zinc-400'
             }`}
           >
             Activos
@@ -415,15 +415,15 @@ export default function Challenges() {
         <TouchableOpacity
           onPress={() => setActiveTab('upcoming')}
           className={`flex-1 py-2 mx-1 rounded-lg ${
-            activeTab === 'upcoming' ? 'bg-blue-500/20' : 'bg-zinc-900'
+            activeTab === 'upcoming' ? 'bg-primary/20' : 'bg-zinc-900'
           }`}
         >
           <Text
             className={`text-center font-semibold text-sm ${
-              activeTab === 'upcoming' ? 'text-blue-500' : 'text-zinc-400'
+              activeTab === 'upcoming' ? 'text-primary' : 'text-zinc-400'
             }`}
           >
-            Próximos
+            PrÃ³ximos
           </Text>
         </TouchableOpacity>
         <TouchableOpacity
@@ -455,15 +455,15 @@ export default function Challenges() {
               {activeTab === 'active'
                 ? 'No hay challenges activos'
                 : activeTab === 'upcoming'
-                ? 'No hay challenges próximos'
-                : 'No has completado ningún challenge aún'}
+                ? 'No hay challenges prÃ³ximos'
+                : 'No has completado ningÃºn challenge aÃºn'}
             </Text>
             {activeTab === 'active' && (
               <TouchableOpacity
                 onPress={() => setActiveTab('upcoming')}
-                className="mt-4 bg-emerald-500 px-6 py-3 rounded-xl"
+                className="mt-4 bg-primary px-6 py-3 rounded-xl"
               >
-                <Text className="text-white font-semibold">Ver Próximos Challenges</Text>
+                <Text className="text-white font-semibold">Ver PrÃ³ximos Challenges</Text>
               </TouchableOpacity>
             )}
           </View>
@@ -473,3 +473,4 @@ export default function Challenges() {
     </View>
   );
 }
+

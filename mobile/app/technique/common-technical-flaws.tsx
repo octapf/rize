@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -47,7 +47,7 @@ export default function CommonTechnicalFlaws() {
               ],
             },
           ],
-          film_angle: 'Front view at 45° angle',
+          film_angle: 'Front view at 45Â° angle',
         },
         {
           flaw: 'Good Morning Squat (Hips Rise First)',
@@ -204,7 +204,7 @@ export default function CommonTechnicalFlaws() {
             'Stresses shoulders not chest/triceps',
           ],
           causes: [
-            'Flaring elbows too much (90°)',
+            'Flaring elbows too much (90Â°)',
             'Touching too low on chest',
             'Poor shoulder position - not retracted',
             'Trying to use chest too much',
@@ -212,7 +212,7 @@ export default function CommonTechnicalFlaws() {
           ],
           fixes: [
             {
-              immediate: 'Cue "tuck elbows" - aim for 45-75° angle',
+              immediate: 'Cue "tuck elbows" - aim for 45-75Â° angle',
               short_term: [
                 'Touch higher on chest (nipple line)',
                 'Film every set - side view',
@@ -586,14 +586,14 @@ export default function CommonTechnicalFlaws() {
     if (severity.includes('Critical')) return 'bg-red-500';
     if (severity.includes('High')) return 'bg-orange-500';
     if (severity.includes('Medium')) return 'bg-amber-500';
-    return 'bg-blue-500';
+    return 'bg-primary';
   };
 
   const getColorClass = (color: string) => {
     const colors: { [key: string]: string } = {
-      blue: 'bg-blue-500',
+      blue: 'bg-primary',
       red: 'bg-red-500',
-      emerald: 'bg-emerald-500',
+      emerald: 'bg-primary',
     };
     return colors[color];
   };
@@ -661,45 +661,45 @@ export default function CommonTechnicalFlaws() {
               <View className="bg-red-500/10 rounded-xl p-4 border border-red-500/30 mb-4">
                 <Text className="text-red-400 font-bold mb-2">Why It's Bad:</Text>
                 {flaw.why_bad.map((reason, rIdx) => (
-                  <Text key={rIdx} className="text-red-300 text-sm mb-1">• {reason}</Text>
+                  <Text key={rIdx} className="text-red-300 text-sm mb-1">â€¢ {reason}</Text>
                 ))}
               </View>
 
               <View className="bg-amber-500/10 rounded-xl p-4 border border-amber-500/30 mb-4">
                 <Text className="text-amber-400 font-bold mb-2">Common Causes:</Text>
                 {flaw.causes.map((cause, cIdx) => (
-                  <Text key={cIdx} className="text-amber-300 text-sm mb-1">• {cause}</Text>
+                  <Text key={cIdx} className="text-amber-300 text-sm mb-1">â€¢ {cause}</Text>
                 ))}
               </View>
 
               {flaw.note && (
-                <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30 mb-4">
-                  <Text className="text-blue-400 font-bold mb-1">Note:</Text>
-                  <Text className="text-blue-300 text-sm">{flaw.note}</Text>
+                <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-4">
+                  <Text className="text-primary/80 font-bold mb-1">Note:</Text>
+                  <Text className="text-primary/60 text-sm">{flaw.note}</Text>
                 </View>
               )}
 
-              <View className="bg-emerald-500/10 rounded-xl p-4 border border-emerald-500/30 mb-4">
-                <Text className="text-emerald-400 font-bold text-lg mb-3">How to Fix:</Text>
+              <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-4">
+                <Text className="text-primary font-bold text-lg mb-3">How to Fix:</Text>
                 
                 {flaw.fixes.map((fix, fIdx) => (
                   <View key={fIdx}>
                     <View className="mb-3">
-                      <Text className="text-emerald-400 font-bold mb-2">Immediate (Today):</Text>
-                      <Text className="text-emerald-300 text-sm">{fix.immediate}</Text>
+                      <Text className="text-primary font-bold mb-2">Immediate (Today):</Text>
+                      <Text className="text-primary/80 text-sm">{fix.immediate}</Text>
                     </View>
 
                     <View className="mb-3">
-                      <Text className="text-blue-400 font-bold mb-2">Short-term (This Week/Month):</Text>
+                      <Text className="text-primary/80 font-bold mb-2">Short-term (This Week/Month):</Text>
                       {fix.short_term.map((action, aIdx) => (
-                        <Text key={aIdx} className="text-blue-300 text-sm mb-1">• {action}</Text>
+                        <Text key={aIdx} className="text-primary/60 text-sm mb-1">â€¢ {action}</Text>
                       ))}
                     </View>
 
                     <View>
                       <Text className="text-purple-400 font-bold mb-2">Long-term (Build Foundation):</Text>
                       {fix.long_term.map((action, aIdx) => (
-                        <Text key={aIdx} className="text-purple-300 text-sm mb-1">• {action}</Text>
+                        <Text key={aIdx} className="text-purple-300 text-sm mb-1">â€¢ {action}</Text>
                       ))}
                     </View>
                   </View>
@@ -719,19 +719,19 @@ export default function CommonTechnicalFlaws() {
           <View className="bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-xl p-5 border border-purple-500/30 mb-6">
             <Text className="text-purple-400 font-bold text-lg mb-3">General Principles</Text>
             <Text className="text-purple-300 text-sm mb-2">
-              • Film yourself - you can't fix what you don't see
+              â€¢ Film yourself - you can't fix what you don't see
             </Text>
             <Text className="text-purple-300 text-sm mb-2">
-              • Fix ONE issue at a time - don't overwhelm
+              â€¢ Fix ONE issue at a time - don't overwhelm
             </Text>
             <Text className="text-purple-300 text-sm mb-2">
-              • Drop weight if needed - ego &lt; technique
+              â€¢ Drop weight if needed - ego &lt; technique
             </Text>
             <Text className="text-purple-300 text-sm mb-2">
-              • Address root cause, not just symptom
+              â€¢ Address root cause, not just symptom
             </Text>
             <Text className="text-purple-300 text-sm">
-              • Be patient - motor patterns take time to change
+              â€¢ Be patient - motor patterns take time to change
             </Text>
           </View>
         </View>
@@ -739,3 +739,5 @@ export default function CommonTechnicalFlaws() {
     </View>
   );
 }
+
+

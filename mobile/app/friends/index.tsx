@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -27,7 +27,7 @@ interface Friend {
 const mockFriends: Friend[] = [
   {
     id: '1',
-    name: 'Carlos García',
+    name: 'Carlos GarcÃ­a',
     username: '@carlosfit',
     level: 15,
     xp: 3450,
@@ -37,7 +37,7 @@ const mockFriends: Friend[] = [
   },
   {
     id: '2',
-    name: 'María López',
+    name: 'MarÃ­a LÃ³pez',
     username: '@mariastrong',
     level: 18,
     xp: 4200,
@@ -47,7 +47,7 @@ const mockFriends: Friend[] = [
   },
   {
     id: '3',
-    name: 'Juan Pérez',
+    name: 'Juan PÃ©rez',
     username: '@juanfitness',
     level: 12,
     xp: 2890,
@@ -58,7 +58,7 @@ const mockFriends: Friend[] = [
   },
   {
     id: '4',
-    name: 'Ana Martínez',
+    name: 'Ana MartÃ­nez',
     username: '@anagym',
     level: 20,
     xp: 5100,
@@ -69,7 +69,7 @@ const mockFriends: Friend[] = [
   },
   {
     id: '5',
-    name: 'Pedro Sánchez',
+    name: 'Pedro SÃ¡nchez',
     username: '@pedrolift',
     level: 14,
     xp: 3200,
@@ -114,7 +114,7 @@ export default function FriendsScreen() {
                 </Text>
               </View>
               {friend.status === 'online' && (
-                <View className="absolute bottom-0 right-0 w-4 h-4 bg-emerald-500 border-2 border-white rounded-full" />
+                <View className="absolute bottom-0 right-0 w-4 h-4 bg-primary border-2 border-white rounded-full" />
               )}
             </View>
 
@@ -124,8 +124,8 @@ export default function FriendsScreen() {
                 <Text className="text-gray-900 font-bold text-base">
                   {friend.name}
                 </Text>
-                <View className="bg-blue-100 px-2 py-0.5 rounded-full">
-                  <Text className="text-blue-700 font-bold text-xs">
+                <View className="bg-primary/10 px-2 py-0.5 rounded-full">
+                  <Text className="text-text/70 font-bold text-xs">
                     Lvl {friend.level}
                   </Text>
                 </View>
@@ -137,19 +137,19 @@ export default function FriendsScreen() {
 
               <View className="flex-row items-center gap-3">
                 <View className="flex-row items-center gap-1">
-                  <Ionicons name="flame" size={14} color="#F59E0B" />
+                  <Ionicons name="flame" size={14} color="#FFEA00" />
                   <Text className="text-gray-700 text-xs font-semibold">
                     {friend.streak}
                   </Text>
                 </View>
                 <View className="flex-row items-center gap-1">
-                  <Ionicons name="fitness" size={14} color="#10B981" />
+                  <Ionicons name="fitness" size={14} color="#9D12DE" />
                   <Text className="text-gray-700 text-xs font-semibold">
                     {friend.workouts}
                   </Text>
                 </View>
                 <View className="flex-row items-center gap-1">
-                  <Ionicons name="star" size={14} color="#3B82F6" />
+                  <Ionicons name="star" size={14} color="#9D12DE" />
                   <Text className="text-gray-700 text-xs font-semibold">
                     {friend.xp}
                   </Text>
@@ -194,7 +194,7 @@ export default function FriendsScreen() {
             <Text className="text-white text-2xl font-bold">{friends.length}</Text>
           </Card>
           <Card className="flex-1 p-3 bg-white/20 border-0">
-            <Text className="text-white/80 text-xs mb-1">En línea</Text>
+            <Text className="text-white/80 text-xs mb-1">En lÃ­nea</Text>
             <Text className="text-white text-2xl font-bold">{onlineFriends}</Text>
           </Card>
         </View>
@@ -231,7 +231,7 @@ export default function FriendsScreen() {
                   filter === f ? 'text-white' : 'text-gray-700'
                 }`}
               >
-                {f === 'all' ? 'Todos' : 'En línea'}
+                {f === 'all' ? 'Todos' : 'En lÃ­nea'}
               </Text>
             </TouchableOpacity>
           ))}
@@ -247,7 +247,7 @@ export default function FriendsScreen() {
             </Text>
             <Text className="text-gray-600 text-center mt-2">
               {searchQuery
-                ? 'Intenta con otra búsqueda'
+                ? 'Intenta con otra bÃºsqueda'
                 : 'Agrega amigos para ver su actividad'}
             </Text>
             <TouchableOpacity
@@ -264,3 +264,5 @@ export default function FriendsScreen() {
     </View>
   );
 }
+
+

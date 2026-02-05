@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -226,8 +226,8 @@ export default function SupplementTiming() {
           {currentProtocol.timeline.map((slot, idx) => (
             <View key={idx} className="bg-zinc-900 rounded-xl p-5 mb-4 border border-zinc-800">
               <View className="flex-row items-center mb-3">
-                <Ionicons name="time" size={20} color="#10b981" />
-                <Text className="text-emerald-400 font-bold text-lg ml-2">
+                <Ionicons name="time" size={20} color="#9D12DE" />
+                <Text className="text-primary font-bold text-lg ml-2">
                   {slot.time}
                 </Text>
               </View>
@@ -246,21 +246,21 @@ export default function SupplementTiming() {
             </View>
           ))}
 
-          <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30 mb-6">
-            <Text className="text-blue-400 font-bold mb-2">Protocol Notes</Text>
-            <Text className="text-blue-300 text-sm">{currentProtocol.notes}</Text>
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
+            <Text className="text-primary/80 font-bold mb-2">Protocol Notes</Text>
+            <Text className="text-primary/60 text-sm">{currentProtocol.notes}</Text>
           </View>
 
           <View className="bg-amber-500/10 rounded-xl p-4 border border-amber-500/30 mb-6">
             <Text className="text-amber-400 font-bold mb-2">Timing vs Totals</Text>
             <Text className="text-amber-300 text-sm mb-2">
-              • Daily totals matter MORE than timing for most supplements
+              â€¢ Daily totals matter MORE than timing for most supplements
             </Text>
             <Text className="text-amber-300 text-sm mb-2">
-              • Exceptions: Caffeine (pre-workout), Magnesium (before bed)
+              â€¢ Exceptions: Caffeine (pre-workout), Magnesium (before bed)
             </Text>
             <Text className="text-amber-300 text-sm">
-              • Don't stress perfect timing - consistency with daily totals wins
+              â€¢ Don't stress perfect timing - consistency with daily totals wins
             </Text>
           </View>
         </View>
@@ -268,3 +268,4 @@ export default function SupplementTiming() {
     </View>
   );
 }
+

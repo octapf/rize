@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -28,19 +28,19 @@ interface Shortcut {
 const defaultShortcuts: Shortcut[] = [
   {
     id: 'quick-workout',
-    name: 'Workout Rápido',
+    name: 'Workout RÃ¡pido',
     icon: 'flash',
     action: '/workouts/quick-start',
     enabled: true,
-    color: '#10B981',
+    color: '#9D12DE',
   },
   {
     id: 'last-workout',
-    name: 'Repetir Último',
+    name: 'Repetir Ãšltimo',
     icon: 'refresh',
     action: '/workouts/repeat-last',
     enabled: true,
-    color: '#3B82F6',
+    color: '#9D12DE',
   },
   {
     id: 'timer',
@@ -48,7 +48,7 @@ const defaultShortcuts: Shortcut[] = [
     icon: 'timer',
     action: '/timer',
     enabled: true,
-    color: '#F59E0B',
+    color: '#FFEA00',
   },
   {
     id: 'log-weight',
@@ -123,7 +123,7 @@ export default function ShortcutsScreen() {
   const resetToDefault = () => {
     Alert.alert(
       'Restablecer Atajos',
-      '¿Estás seguro de que quieres restablecer los atajos a los valores predeterminados?',
+      'Â¿EstÃ¡s seguro de que quieres restablecer los atajos a los valores predeterminados?',
       [
         { text: 'Cancelar', style: 'cancel' },
         {
@@ -143,24 +143,24 @@ export default function ShortcutsScreen() {
           <TouchableOpacity onPress={() => router.back()} className="p-2">
             <Ionicons name="arrow-back" size={28} color="white" />
           </TouchableOpacity>
-          <Text className="text-2xl font-bold text-white">Atajos Rápidos</Text>
+          <Text className="text-2xl font-bold text-white">Atajos RÃ¡pidos</Text>
           <TouchableOpacity onPress={resetToDefault} className="p-2">
             <Ionicons name="refresh" size={24} color="white" />
           </TouchableOpacity>
         </View>
 
         <Text className="text-purple-100 text-center">
-          Personaliza tus acciones rápidas
+          Personaliza tus acciones rÃ¡pidas
         </Text>
       </LinearGradient>
 
       <ScrollView className="flex-1" contentContainerClassName="p-6 gap-4">
         {/* Info Card */}
-        <Card className="p-4 bg-blue-50 border-blue-200">
+        <Card className="p-4 bg-primary/5 border-primary/20">
           <View className="flex-row items-start gap-3">
-            <Ionicons name="information-circle" size={24} color="#3B82F6" />
-            <Text className="flex-1 text-blue-900 text-sm">
-              Los atajos habilitados aparecerán en el widget de acceso rápido en la pantalla principal.
+            <Ionicons name="information-circle" size={24} color="#9D12DE" />
+            <Text className="flex-1 text-text/80 text-sm">
+              Los atajos habilitados aparecerÃ¡n en el widget de acceso rÃ¡pido en la pantalla principal.
               Activa solo los que uses frecuentemente.
             </Text>
           </View>
@@ -216,7 +216,7 @@ export default function ShortcutsScreen() {
 
           <Card className="p-4">
             <Text className="text-gray-700 font-semibold mb-3">
-              Acciones Rápidas
+              Acciones RÃ¡pidas
             </Text>
 
             {shortcuts.filter(s => s.enabled).length === 0 ? (
@@ -264,3 +264,4 @@ export default function ShortcutsScreen() {
     </View>
   );
 }
+

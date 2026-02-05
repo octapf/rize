@@ -1,6 +1,7 @@
 import { create } from 'zustand';
 import { storage } from '@/services/storage/mmkv';
 import { authApi, AuthResponse, UserResponse } from '@/services/api/auth.api';
+import { apiClient } from '@/services/api/client';
 
 interface User {
   id: string;
@@ -41,18 +42,46 @@ interface AuthState {
   setUser: (user: UserResponse) => void;
   logout: () => void;
   initAuth: () => void;
+  login: (emailOrUsername: string, password: string) => Promise<void>;
+  register: (data: { email: string; username: string; password: string; name?: string }) => Promise<void>;
 }
 
-export const useAuthStore = create<AuthState>((set) => ({
+export const useAuthStore = create<AuthState>((set, get) => ({
   user: null,
   isAuthenticated: false,
   isLoading: true,
+
+  login: async (emailOrUsername, password) => {
+    set({ isLoading: true });
+    try {
+      const data = await authApi.login({ emailOrUsername, password });
+      await get().setAuth(data);
+    } catch (error) {
+      set({ isLoading: false });
+      throw error;
+    }
+  },
+
+  register: async (registerData) => {
+    set({ isLoading: true });
+    try {
+      const { name, ...apiData } = registerData;
+      const data = await authApi.register(apiData);
+      await get().setAuth(data);
+    } catch (error) {
+      set({ isLoading: false });
+      throw error;
+    }
+  },
 
   setAuth: async (data: AuthResponse) => {
     await storage.set('accessToken', data.accessToken);
     await storage.set('refreshToken', data.refreshToken);
     await storage.set('user', JSON.stringify(data.user));
     
+    // Set token immediately in API client to avoid race conditions
+    apiClient.setAuthToken(data.accessToken);
+
     set({
       user: data.user,
       isAuthenticated: true,

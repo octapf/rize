@@ -178,7 +178,7 @@ export default function AchievementDetailsScreen() {
           <View className="bg-gray-200 h-4 rounded-full overflow-hidden mb-2">
             <View
               className={`h-full rounded-full ${
-                achievement.unlocked ? 'bg-emerald-500' : 'bg-blue-500'
+                achievement.unlocked ? 'bg-primary' : 'bg-primary/60'
               }`}
               style={{ width: `${progressPercentage}%` }}
             />
@@ -205,7 +205,7 @@ export default function AchievementDetailsScreen() {
 
           <Card className="flex-1 p-4">
             <View className="items-center">
-              <Ionicons name="people" size={24} color="#3B82F6" />
+              <Ionicons name="people" size={24} color="#9D12DE" />
               <Text className="text-gray-600 text-xs mt-2">Desbloqueado</Text>
               <Text className="text-gray-900 text-xl font-bold mt-1">
                 {achievement.usersUnlocked.toLocaleString()}
@@ -236,14 +236,14 @@ export default function AchievementDetailsScreen() {
 
         {/* Tips */}
         {!achievement.unlocked && (
-          <Card className="p-6 bg-blue-50 border-blue-200">
+          <Card className="p-6 bg-primary/10 border-primary/20">
             <View className="flex-row items-start gap-3">
-              <Ionicons name="information-circle" size={24} color="#3B82F6" />
+              <Ionicons name="information-circle" size={24} color="#9D12DE" />
               <View className="flex-1">
-                <Text className="text-blue-900 font-bold mb-2">
+                <Text className="text-text font-bold mb-2">
                   Consejos para desbloquear
                 </Text>
-                <Text className="text-blue-800">
+                <Text className="text-text/70">
                   {achievement.category === 'workouts'
                     ? 'Mantén una rutina constante de entrenamientos para alcanzar este logro.'
                     : achievement.category === 'streak'

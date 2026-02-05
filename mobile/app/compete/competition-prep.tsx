@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -278,22 +278,22 @@ export default function CompetitionPrep() {
                   <Text className="text-white font-bold mb-2">Training</Text>
                   {phase.training.map((item, tidx) => (
                     <View key={tidx} className="flex-row items-start mb-1 last:mb-0">
-                      <Text className={`text-${currentPrep.color}-400 mr-2`}>•</Text>
+                      <Text className={`text-${currentPrep.color}-400 mr-2`}>â€¢</Text>
                       <Text className="text-zinc-300 text-sm flex-1">{item}</Text>
                     </View>
                   ))}
                 </View>
 
                 {'nutrition' in phase && (
-                  <View className="bg-emerald-500/10 rounded-xl p-3 mt-2 border border-emerald-500/30">
-                    <Text className="text-emerald-400 font-bold text-sm mb-1">Nutrition</Text>
-                    <Text className="text-emerald-300 text-sm">{phase.nutrition}</Text>
+                  <View className="bg-primary/10 rounded-xl p-3 mt-2 border border-primary/30">
+                    <Text className="text-primary font-bold text-sm mb-1">Nutrition</Text>
+                    <Text className="text-primary/80 text-sm">{phase.nutrition}</Text>
                   </View>
                 )}
 
                 {'example' in phase && (
-                  <View className="bg-blue-500/10 rounded-xl p-3 mt-2 border border-blue-500/30">
-                    <Text className="text-blue-400 text-sm">{phase.example}</Text>
+                  <View className="bg-primary/10 rounded-xl p-3 mt-2 border border-primary/30">
+                    <Text className="text-primary/80 text-sm">{phase.example}</Text>
                   </View>
                 )}
               </View>
@@ -306,7 +306,7 @@ export default function CompetitionPrep() {
             </Text>
             {(selectedComp === 'powerlifting' ? currentPrep.meetDay : selectedComp === 'bodybuilding' ? currentPrep.showDay : currentPrep.compDay).map((item, idx) => (
               <View key={idx} className="flex-row items-start mb-2 last:mb-0">
-                <Ionicons name="checkmark-circle" size={18} color="#10b981" />
+                <Ionicons name="checkmark-circle" size={18} color="#9D12DE" />
                 <Text className="text-zinc-300 ml-2 flex-1">{item}</Text>
               </View>
             ))}
@@ -315,19 +315,19 @@ export default function CompetitionPrep() {
           <View className="bg-amber-500/10 rounded-xl p-4 border border-amber-500/30 mb-6">
             <Text className="text-amber-400 font-bold mb-2">General Prep Tips</Text>
             <Text className="text-amber-300 text-sm mb-2">
-              • Practice competition conditions in training
+              â€¢ Practice competition conditions in training
             </Text>
             <Text className="text-amber-300 text-sm mb-2">
-              • Don't try anything new in final 2 weeks
+              â€¢ Don't try anything new in final 2 weeks
             </Text>
             <Text className="text-amber-300 text-sm mb-2">
-              • Taper is crucial - trust the process
+              â€¢ Taper is crucial - trust the process
             </Text>
             <Text className="text-amber-300 text-sm mb-2">
-              • Sleep and stress management = performance
+              â€¢ Sleep and stress management = performance
             </Text>
             <Text className="text-amber-300 text-sm">
-              • Compete for experience first, results second
+              â€¢ Compete for experience first, results second
             </Text>
           </View>
         </View>
@@ -335,3 +335,5 @@ export default function CompetitionPrep() {
     </View>
   );
 }
+
+

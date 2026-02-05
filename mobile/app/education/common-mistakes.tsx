@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -303,18 +303,18 @@ export default function CommonMistakes() {
                 <Text className="text-amber-400 font-bold mb-2">Warning Signs</Text>
                 {error.signs.map((sign, sidx) => (
                   <View key={sidx} className="flex-row items-start mb-1">
-                    <Text className="text-amber-400 mr-2">⚠</Text>
+                    <Text className="text-amber-400 mr-2">âš </Text>
                     <Text className="text-amber-300 text-sm flex-1">{sign}</Text>
                   </View>
                 ))}
               </View>
 
-              <View className="bg-emerald-500/10 rounded-xl p-4 mb-3 border border-emerald-500/30">
-                <Text className="text-emerald-400 font-bold mb-2">How to Fix</Text>
+              <View className="bg-primary/10 rounded-xl p-4 mb-3 border border-primary/30">
+                <Text className="text-primary font-bold mb-2">How to Fix</Text>
                 {error.fix.map((f, fidx) => (
                   <View key={fidx} className="flex-row items-start mb-1 last:mb-0">
-                    <Text className="text-emerald-400 mr-2">✓</Text>
-                    <Text className="text-emerald-300 text-sm flex-1">{f}</Text>
+                    <Text className="text-primary mr-2">âœ“</Text>
+                    <Text className="text-primary/80 text-sm flex-1">{f}</Text>
                   </View>
                 ))}
               </View>
@@ -327,7 +327,7 @@ export default function CommonMistakes() {
                 <Text className={`text-xs font-bold ${
                   error.severity.includes('Critical') ? 'text-red-400' :
                   error.severity.includes('High') ? 'text-orange-400' :
-                  'text-yellow-400'
+                  'text-highlight'
                 }`}>
                   {error.severity}
                 </Text>
@@ -335,9 +335,9 @@ export default function CommonMistakes() {
             </View>
           ))}
 
-          <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30 mb-6">
-            <Text className="text-blue-400 font-bold mb-2">Remember</Text>
-            <Text className="text-blue-300 text-sm">
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
+            <Text className="text-primary/80 font-bold mb-2">Remember</Text>
+            <Text className="text-primary/60 text-sm">
               Everyone makes mistakes. The key is recognizing them early and correcting
               course. Study these common errors to save yourself months or years of
               wasted effort. Learn from others' pain points.
@@ -348,3 +348,5 @@ export default function CommonMistakes() {
     </View>
   );
 }
+
+

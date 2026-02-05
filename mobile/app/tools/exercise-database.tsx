@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -42,22 +42,22 @@ const EXERCISE_DATABASE: Exercise[] = [
     equipment: 'Barra',
     difficulty: 'intermediate',
     instructions: [
-      'Acuéstate en banco plano con pies firmes en el suelo',
-      'Agarre ligeramente más ancho que hombros',
-      'Baja barra a la línea del pezón controladamente',
+      'AcuÃ©state en banco plano con pies firmes en el suelo',
+      'Agarre ligeramente mÃ¡s ancho que hombros',
+      'Baja barra a la lÃ­nea del pezÃ³n controladamente',
       'Empuja explosivamente mientras exhalas',
-      'Mantén escápulas retraídas todo el movimiento',
+      'MantÃ©n escÃ¡pulas retraÃ­das todo el movimiento',
     ],
     tips: [
       'Arco lumbar natural, no excesivo',
-      'Codos a 45° del torso, no 90°',
+      'Codos a 45Â° del torso, no 90Â°',
       'Toca pecho en cada rep',
-      'Muñecas alineadas con antebrazo',
+      'MuÃ±ecas alineadas con antebrazo',
     ],
     commonMistakes: [
       'Rebotar la barra en el pecho',
-      'Despegar glúteos del banco',
-      'Codos muy abiertos (lesión hombro)',
+      'Despegar glÃºteos del banco',
+      'Codos muy abiertos (lesiÃ³n hombro)',
       'No tocar pecho (ROM incompleto)',
     ],
     variations: ['Press Inclinado', 'Press Declinado', 'Press con Mancuernas'],
@@ -72,21 +72,21 @@ const EXERCISE_DATABASE: Exercise[] = [
     instructions: [
       'Barra en traps (high bar) o deltoides posteriores (low bar)',
       'Pies ancho de hombros, puntas ligeramente hacia fuera',
-      'Inhala profundo, mantén core apretado',
+      'Inhala profundo, mantÃ©n core apretado',
       'Desciende rompiendo cadera primero',
-      'Baja hasta paralelo o más (caderas bajo rodillas)',
-      'Empuja a través de talones manteniendo pecho arriba',
+      'Baja hasta paralelo o mÃ¡s (caderas bajo rodillas)',
+      'Empuja a travÃ©s de talones manteniendo pecho arriba',
     ],
     tips: [
-      'Rodillas en línea con pies (no hacia dentro)',
-      'Mantén peso en talones y mediopié',
+      'Rodillas en lÃ­nea con pies (no hacia dentro)',
+      'MantÃ©n peso en talones y mediopiÃ©',
       'Mira al frente, no abajo ni arriba',
       'Core apretado todo el movimiento',
     ],
     commonMistakes: [
       'No bajar a paralelo',
       'Rodillas colapsando hacia dentro',
-      'Subir glúteos más rápido que el torso',
+      'Subir glÃºteos mÃ¡s rÃ¡pido que el torso',
       'Redondear espalda baja',
     ],
     variations: ['Front Squat', 'Bulgarian Split Squat', 'Squat con Pausa'],
@@ -103,14 +103,14 @@ const EXERCISE_DATABASE: Exercise[] = [
       'Agarre afuera de piernas, espalda neutral',
       'Inhala, aprieta lats, tensa todo el cuerpo',
       'Empuja suelo con piernas (no "tires" con espalda)',
-      'Extiende cadera y rodillas simultáneamente',
-      'Termina con glúteos apretados, no hiperextensión lumbar',
+      'Extiende cadera y rodillas simultÃ¡neamente',
+      'Termina con glÃºteos apretados, no hiperextensiÃ³n lumbar',
     ],
     tips: [
-      'La barra sube en línea recta, pegada a tibias',
+      'La barra sube en lÃ­nea recta, pegada a tibias',
       'Hombros ligeramente adelante de la barra al inicio',
-      'Mantén cuello neutral (no mires arriba)',
-      'Aprieta glúteos al finalizar, no arco excesivo',
+      'MantÃ©n cuello neutral (no mires arriba)',
+      'Aprieta glÃºteos al finalizar, no arco excesivo',
     ],
     commonMistakes: [
       'Redondear espalda baja',
@@ -128,14 +128,14 @@ const EXERCISE_DATABASE: Exercise[] = [
     equipment: 'Barra fija',
     difficulty: 'intermediate',
     instructions: [
-      'Cuelga de barra con agarre prono, ancho de hombros o más',
-      'Retrae escápulas antes de empezar a subir',
-      'Tira codos hacia abajo y atrás',
+      'Cuelga de barra con agarre prono, ancho de hombros o mÃ¡s',
+      'Retrae escÃ¡pulas antes de empezar a subir',
+      'Tira codos hacia abajo y atrÃ¡s',
       'Sube hasta barbilla sobre barra',
       'Desciende controladamente hasta brazos extendidos',
     ],
     tips: [
-      'Inicia el movimiento con escápulas, no brazos',
+      'Inicia el movimiento con escÃ¡pulas, no brazos',
       'Piensa "codos al piso" no "manos a la cara"',
       'Evita kipping (usar impulso)',
       'Full ROM: brazos extendidos abajo',
@@ -143,7 +143,7 @@ const EXERCISE_DATABASE: Exercise[] = [
     commonMistakes: [
       'No bajar hasta brazos extendidos',
       'Usar impulso excesivo',
-      'Hombros elevados (no retraer escápulas)',
+      'Hombros elevados (no retraer escÃ¡pulas)',
       'Hiperextender cuello para subir',
     ],
     variations: ['Chin-ups', 'Dominadas Neutras', 'Dominadas Asistidas'],
@@ -156,17 +156,17 @@ const EXERCISE_DATABASE: Exercise[] = [
     equipment: 'Barra',
     difficulty: 'intermediate',
     instructions: [
-      'De pie, barra en clavículas, agarre ancho de hombros',
+      'De pie, barra en clavÃ­culas, agarre ancho de hombros',
       'Codos ligeramente adelante de la barra',
-      'Aprieta glúteos y core para estabilidad',
+      'Aprieta glÃºteos y core para estabilidad',
       'Empuja barra verticalmente sobre la cabeza',
-      'Mueve cabeza ligeramente atrás al subir',
-      'Finaliza con biceps junto a orejas, barra sobre mediopié',
+      'Mueve cabeza ligeramente atrÃ¡s al subir',
+      'Finaliza con biceps junto a orejas, barra sobre mediopiÃ©',
     ],
     tips: [
       'No hiperextender espalda baja',
-      'Barra sube y baja en línea recta',
-      'Full lockout arriba con escápulas elevadas',
+      'Barra sube y baja en lÃ­nea recta',
+      'Full lockout arriba con escÃ¡pulas elevadas',
       'Respira arriba, no abajo',
     ],
     commonMistakes: [
@@ -185,16 +185,16 @@ const EXERCISE_DATABASE: Exercise[] = [
     equipment: 'Barra',
     difficulty: 'intermediate',
     instructions: [
-      'Bisagra de cadera, torso ~45° del suelo',
-      'Agarre prono, ligeramente más ancho que hombros',
-      'Brazos extendidos, escápulas protraídas al inicio',
-      'Tira codos hacia arriba y atrás',
+      'Bisagra de cadera, torso ~45Â° del suelo',
+      'Agarre prono, ligeramente mÃ¡s ancho que hombros',
+      'Brazos extendidos, escÃ¡pulas protraÃ­das al inicio',
+      'Tira codos hacia arriba y atrÃ¡s',
       'Toca barra en parte baja del pecho/abdomen superior',
       'Desciende controladamente',
     ],
     tips: [
-      'Mantén espalda neutral, no redondees',
-      'Aprieta dorsales y retrae escápulas arriba',
+      'MantÃ©n espalda neutral, no redondees',
+      'Aprieta dorsales y retrae escÃ¡pulas arriba',
       'No uses demasiado impulso',
       'Piensa en "separar la barra"',
     ],
@@ -239,11 +239,11 @@ export default function ExerciseDatabase() {
             {/* Info Card */}
             <View className="bg-zinc-900 rounded-xl p-4 mb-6 border border-zinc-800">
               <View className="flex-row flex-wrap gap-2 mb-3">
-                <View className="bg-blue-500/10 rounded px-3 py-1 border border-blue-500/30">
-                  <Text className="text-blue-400 text-xs font-bold">{selectedExercise.muscleGroup}</Text>
+                <View className="bg-primary/10 rounded px-3 py-1 border border-primary/30">
+                  <Text className="text-primary/80 text-xs font-bold">{selectedExercise.muscleGroup}</Text>
                 </View>
-                <View className="bg-emerald-500/10 rounded px-3 py-1 border border-emerald-500/30">
-                  <Text className="text-emerald-400 text-xs font-bold">{selectedExercise.category}</Text>
+                <View className="bg-primary/10 rounded px-3 py-1 border border-primary/30">
+                  <Text className="text-primary text-xs font-bold">{selectedExercise.category}</Text>
                 </View>
                 <View className="bg-purple-500/10 rounded px-3 py-1 border border-purple-500/30">
                   <Text className="text-purple-400 text-xs font-bold">{selectedExercise.equipment}</Text>
@@ -283,29 +283,29 @@ export default function ExerciseDatabase() {
             </View>
 
             {/* Instructions */}
-            <View className="bg-emerald-500/10 rounded-xl p-4 mb-6 border border-emerald-500/30">
-              <Text className="text-emerald-400 font-bold text-lg mb-3">
-                Ejecución Paso a Paso
+            <View className="bg-primary/10 rounded-xl p-4 mb-6 border border-primary/30">
+              <Text className="text-primary font-bold text-lg mb-3">
+                EjecuciÃ³n Paso a Paso
               </Text>
               {selectedExercise.instructions.map((instruction, idx) => (
                 <View key={idx} className="flex-row items-start mb-3">
-                  <View className="w-6 h-6 bg-emerald-500 rounded-full items-center justify-center mr-3 mt-0.5">
+                  <View className="w-6 h-6 bg-primary rounded-full items-center justify-center mr-3 mt-0.5">
                     <Text className="text-white text-xs font-bold">{idx + 1}</Text>
                   </View>
-                  <Text className="text-emerald-300 flex-1">{instruction}</Text>
+                  <Text className="text-primary/80 flex-1">{instruction}</Text>
                 </View>
               ))}
             </View>
 
             {/* Tips */}
-            <View className="bg-blue-500/10 rounded-xl p-4 mb-6 border border-blue-500/30">
-              <Text className="text-blue-400 font-bold text-lg mb-3">
+            <View className="bg-primary/10 rounded-xl p-4 mb-6 border border-primary/30">
+              <Text className="text-primary/80 font-bold text-lg mb-3">
                 Consejos Clave
               </Text>
               {selectedExercise.tips.map((tip, idx) => (
                 <View key={idx} className="flex-row items-start mb-2">
-                  <Ionicons name="checkmark-circle" size={20} color="#3B82F6" />
-                  <Text className="text-blue-300 flex-1 ml-2">{tip}</Text>
+                  <Ionicons name="checkmark-circle" size={20} color="#9D12DE" />
+                  <Text className="text-primary/60 flex-1 ml-2">{tip}</Text>
                 </View>
               ))}
             </View>
@@ -407,7 +407,7 @@ export default function ExerciseDatabase() {
           {/* Exercises */}
           {filteredExercises.length === 0 ? (
             <View className="bg-zinc-900 rounded-xl p-8 items-center border border-zinc-800">
-              <Text className="text-6xl mb-3">💪</Text>
+              <Text className="text-6xl mb-3">ðŸ’ª</Text>
               <Text className="text-white font-bold text-lg mb-2">Sin Resultados</Text>
               <Text className="text-zinc-400 text-center">
                 No se encontraron ejercicios
@@ -427,11 +427,11 @@ export default function ExerciseDatabase() {
                   <Ionicons name="chevron-forward" size={20} color="#71717A" />
                 </View>
                 <View className="flex-row flex-wrap gap-2">
-                  <View className="bg-blue-500/10 rounded px-2 py-1 border border-blue-500/30">
-                    <Text className="text-blue-400 text-xs font-bold">{exercise.muscleGroup}</Text>
+                  <View className="bg-primary/10 rounded px-2 py-1 border border-primary/30">
+                    <Text className="text-primary/80 text-xs font-bold">{exercise.muscleGroup}</Text>
                   </View>
-                  <View className="bg-emerald-500/10 rounded px-2 py-1 border border-emerald-500/30">
-                    <Text className="text-emerald-400 text-xs font-bold">{exercise.category}</Text>
+                  <View className="bg-primary/10 rounded px-2 py-1 border border-primary/30">
+                    <Text className="text-primary text-xs font-bold">{exercise.category}</Text>
                   </View>
                   <View className="bg-purple-500/10 rounded px-2 py-1 border border-purple-500/30">
                     <Text className="text-purple-400 text-xs font-bold">{exercise.equipment}</Text>
@@ -444,13 +444,13 @@ export default function ExerciseDatabase() {
           {/* Note */}
           <View className="bg-amber-500/10 rounded-xl p-4 border border-amber-500/30 mb-6 mt-4">
             <View className="flex-row items-start">
-              <Ionicons name="information-circle" size={20} color="#F59E0B" />
+              <Ionicons name="information-circle" size={20} color="#FFEA00" />
               <View className="flex-1 ml-3">
                 <Text className="text-amber-400 font-bold mb-2">
-                  Base de Datos en Expansión
+                  Base de Datos en ExpansiÃ³n
                 </Text>
                 <Text className="text-amber-300 text-sm">
-                  Esta es una selección de ejercicios fundamentales. Más ejercicios serán añadidos próximamente.
+                  Esta es una selecciÃ³n de ejercicios fundamentales. MÃ¡s ejercicios serÃ¡n aÃ±adidos prÃ³ximamente.
                 </Text>
               </View>
             </View>
@@ -460,3 +460,5 @@ export default function ExerciseDatabase() {
     </View>
   );
 }
+
+

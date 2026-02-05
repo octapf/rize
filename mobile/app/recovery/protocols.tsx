@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -33,22 +33,22 @@ interface RecoveryExercise {
 const RECOVERY_PROTOCOLS: RecoveryProtocol[] = [
   {
     id: '1',
-    name: 'Liberación Miofascial Completa',
+    name: 'LiberaciÃ³n Miofascial Completa',
     type: 'foam-rolling',
     duration: 25,
     difficulty: 'intermedio',
-    targetArea: ['espalda', 'piernas', 'glúteos', 'cuádriceps'],
+    targetArea: ['espalda', 'piernas', 'glÃºteos', 'cuÃ¡driceps'],
     bestFor: 'Post-entrenamiento de pierna o espalda',
     benefits: [
-      'Reduce tensión muscular',
-      'Mejora circulación',
+      'Reduce tensiÃ³n muscular',
+      'Mejora circulaciÃ³n',
       'Previene lesiones',
-      'Acelera recuperación',
+      'Acelera recuperaciÃ³n',
     ],
     exercises: [
       {
         id: '1',
-        name: 'Roll de Cuádriceps',
+        name: 'Roll de CuÃ¡driceps',
         duration: 60,
         sets: 2,
         notes: 'Movimiento lento, detente en puntos tensos 20-30 segundos',
@@ -62,7 +62,7 @@ const RECOVERY_PROTOCOLS: RecoveryProtocol[] = [
       },
       {
         id: '3',
-        name: 'Roll de Glúteos',
+        name: 'Roll de GlÃºteos',
         duration: 45,
         sets: 2,
         notes: 'Cruza pierna sobre rodilla, busca trigger points',
@@ -72,14 +72,14 @@ const RECOVERY_PROTOCOLS: RecoveryProtocol[] = [
         name: 'Roll de Espalda Alta',
         duration: 60,
         sets: 2,
-        notes: 'Evita zona lumbar, enfócate en dorsales',
+        notes: 'Evita zona lumbar, enfÃ³cate en dorsales',
       },
       {
         id: '5',
         name: 'Roll de Pantorrillas',
         duration: 45,
         sets: 2,
-        notes: 'Ambas piernas o una por vez para más presión',
+        notes: 'Ambas piernas o una por vez para mÃ¡s presiÃ³n',
       },
     ],
   },
@@ -110,14 +110,14 @@ const RECOVERY_PROTOCOLS: RecoveryProtocol[] = [
         name: 'World\'s Greatest Stretch',
         duration: 90,
         sets: 2,
-        notes: 'Mantén cada posición 3-5 segundos',
+        notes: 'MantÃ©n cada posiciÃ³n 3-5 segundos',
       },
       {
         id: '3',
-        name: 'Círculos de Cadera',
+        name: 'CÃ­rculos de Cadera',
         duration: 45,
         sets: 2,
-        notes: '10 círculos en cada dirección',
+        notes: '10 cÃ­rculos en cada direcciÃ³n',
       },
       {
         id: '4',
@@ -131,7 +131,7 @@ const RECOVERY_PROTOCOLS: RecoveryProtocol[] = [
         name: 'Movilidad de Tobillo',
         duration: 45,
         sets: 2,
-        notes: 'Rodilla hacia adelante sin despegar talón',
+        notes: 'Rodilla hacia adelante sin despegar talÃ³n',
       },
     ],
   },
@@ -142,19 +142,19 @@ const RECOVERY_PROTOCOLS: RecoveryProtocol[] = [
     duration: 20,
     difficulty: 'principiante',
     targetArea: ['todo el cuerpo'],
-    bestFor: 'Después de cualquier entrenamiento',
+    bestFor: 'DespuÃ©s de cualquier entrenamiento',
     benefits: [
       'Reduce dolor muscular',
       'Mejora flexibilidad',
-      'Acelera recuperación',
+      'Acelera recuperaciÃ³n',
       'Relaja el sistema nervioso',
     ],
     exercises: [
       {
         id: '1',
-        name: 'Estiramiento de Cuádriceps',
+        name: 'Estiramiento de CuÃ¡driceps',
         duration: 60,
-        notes: 'Mantén 30 segundos por pierna',
+        notes: 'MantÃ©n 30 segundos por pierna',
       },
       {
         id: '2',
@@ -184,34 +184,34 @@ const RECOVERY_PROTOCOLS: RecoveryProtocol[] = [
   },
   {
     id: '4',
-    name: 'Respiración y Relajación',
+    name: 'RespiraciÃ³n y RelajaciÃ³n',
     type: 'breathing',
     duration: 10,
     difficulty: 'principiante',
     targetArea: ['sistema nervioso'],
-    bestFor: 'Antes de dormir o reducir estrés',
+    bestFor: 'Antes de dormir o reducir estrÃ©s',
     benefits: [
-      'Reduce estrés',
-      'Mejora calidad de sueño',
-      'Activa sistema parasimpático',
-      'Mejora concentración',
+      'Reduce estrÃ©s',
+      'Mejora calidad de sueÃ±o',
+      'Activa sistema parasimpÃ¡tico',
+      'Mejora concentraciÃ³n',
     ],
     exercises: [
       {
         id: '1',
-        name: 'Respiración 4-7-8',
+        name: 'RespiraciÃ³n 4-7-8',
         duration: 180,
-        notes: 'Inhala 4 seg, sostén 7 seg, exhala 8 seg. Repite 4 veces',
+        notes: 'Inhala 4 seg, sostÃ©n 7 seg, exhala 8 seg. Repite 4 veces',
       },
       {
         id: '2',
         name: 'Box Breathing',
         duration: 180,
-        notes: 'Inhala 4, sostén 4, exhala 4, sostén 4. Repite',
+        notes: 'Inhala 4, sostÃ©n 4, exhala 4, sostÃ©n 4. Repite',
       },
       {
         id: '3',
-        name: 'Respiración Diafragmática',
+        name: 'RespiraciÃ³n DiafragmÃ¡tica',
         duration: 240,
         notes: 'Mano en abdomen, respira expandiendo solo el abdomen',
       },
@@ -228,7 +228,7 @@ export default function RecoveryProtocols() {
     { id: 'foam-rolling', label: 'Foam Rolling', icon: 'ellipse' },
     { id: 'mobility', label: 'Movilidad', icon: 'fitness' },
     { id: 'stretching', label: 'Estiramientos', icon: 'hand-left' },
-    { id: 'breathing', label: 'Respiración', icon: 'water' },
+    { id: 'breathing', label: 'RespiraciÃ³n', icon: 'water' },
   ];
 
   const getTypeColor = (type: string) => {
@@ -236,11 +236,11 @@ export default function RecoveryProtocols() {
       case 'foam-rolling':
         return '#EF4444';
       case 'mobility':
-        return '#F59E0B';
+        return '#FFEA00';
       case 'stretching':
-        return '#10B981';
+        return '#9D12DE';
       case 'breathing':
-        return '#3B82F6';
+        return '#9D12DE';
       case 'massage':
         return '#8B5CF6';
       case 'cold-therapy':
@@ -253,9 +253,9 @@ export default function RecoveryProtocols() {
   const getDifficultyColor = (difficulty: string) => {
     switch (difficulty) {
       case 'principiante':
-        return '#10B981';
+        return '#9D12DE';
       case 'intermedio':
-        return '#F59E0B';
+        return '#FFEA00';
       case 'avanzado':
         return '#EF4444';
       default:
@@ -267,13 +267,13 @@ export default function RecoveryProtocols() {
     setActiveProtocol(protocol.id);
     Alert.alert(
       'Iniciar Protocolo',
-      `${protocol.name}\n\n${protocol.duration} minutos\n${protocol.exercises.length} ejercicios\n\n¿Listo para comenzar?`,
+      `${protocol.name}\n\n${protocol.duration} minutos\n${protocol.exercises.length} ejercicios\n\nÂ¿Listo para comenzar?`,
       [
         { text: 'Cancelar', onPress: () => setActiveProtocol(null), style: 'cancel' },
         {
           text: 'Comenzar',
           onPress: () => {
-            Alert.alert('¡En marcha!', 'Sigue las instrucciones de cada ejercicio');
+            Alert.alert('Â¡En marcha!', 'Sigue las instrucciones de cada ejercicio');
           },
         },
       ]
@@ -293,7 +293,7 @@ export default function RecoveryProtocols() {
             <Ionicons name="arrow-back" size={24} color="white" />
           </TouchableOpacity>
           <Text className="text-white text-2xl font-bold flex-1 ml-3">
-            Protocolos de Recuperación
+            Protocolos de RecuperaciÃ³n
           </Text>
           <TouchableOpacity>
             <Ionicons name="bookmark-outline" size={24} color="white" />
@@ -301,7 +301,7 @@ export default function RecoveryProtocols() {
         </View>
 
         {/* Stats */}
-        <View className="bg-gradient-to-br from-emerald-500 to-blue-500 rounded-xl p-4 mb-4">
+        <View className="bg-gradient-to-br from-primary to-[#7D0EBE] rounded-xl p-4 mb-4">
           <View className="flex-row items-center justify-between">
             <View className="flex-1">
               <Text className="text-white/80 text-sm mb-1">Sesiones Este Mes</Text>
@@ -309,7 +309,7 @@ export default function RecoveryProtocols() {
                 18
               </Text>
               <Text className="text-white/80 text-sm">
-                6.2 horas de recuperación
+                6.2 horas de recuperaciÃ³n
               </Text>
             </View>
             <View className="bg-white/20 rounded-full p-4">
@@ -327,7 +327,7 @@ export default function RecoveryProtocols() {
                 onPress={() => setSelectedType(type.id)}
                 className={`flex-row items-center px-4 py-2 rounded-lg ${
                   selectedType === type.id
-                    ? 'bg-emerald-500'
+                    ? 'bg-primary'
                     : 'bg-zinc-900 border border-zinc-800'
                 }`}
               >
@@ -359,7 +359,7 @@ export default function RecoveryProtocols() {
             <View
               key={protocol.id}
               className={`bg-zinc-900 rounded-xl p-4 mb-4 border-2 ${
-                activeProtocol === protocol.id ? 'border-emerald-500' : 'border-zinc-800'
+                activeProtocol === protocol.id ? 'border-primary' : 'border-zinc-800'
               }`}
             >
               <View className="flex-row items-start justify-between mb-3">
@@ -427,7 +427,7 @@ export default function RecoveryProtocols() {
                 <Text className="text-white font-bold text-sm mb-2">Beneficios</Text>
                 {protocol.benefits.map((benefit, index) => (
                   <View key={index} className="flex-row items-center mb-1">
-                    <Ionicons name="checkmark-circle" size={14} color="#10B981" />
+                    <Ionicons name="checkmark-circle" size={14} color="#9D12DE" />
                     <Text className="text-zinc-300 text-sm ml-2">{benefit}</Text>
                   </View>
                 ))}
@@ -456,7 +456,7 @@ export default function RecoveryProtocols() {
                 ))}
                 {protocol.exercises.length > 3 && (
                   <Text className="text-zinc-500 text-xs mt-2">
-                    +{protocol.exercises.length - 3} más...
+                    +{protocol.exercises.length - 3} mÃ¡s...
                   </Text>
                 )}
               </View>
@@ -473,7 +473,7 @@ export default function RecoveryProtocols() {
               <TouchableOpacity
                 onPress={() => startProtocol(protocol)}
                 className={`${
-                  activeProtocol === protocol.id ? 'bg-emerald-500' : 'bg-zinc-800'
+                  activeProtocol === protocol.id ? 'bg-primary' : 'bg-zinc-800'
                 } rounded-lg p-3`}
               >
                 <View className="flex-row items-center justify-center">
@@ -493,15 +493,15 @@ export default function RecoveryProtocols() {
 
         {/* Info Card */}
         <View className="px-6 pb-6 pt-4">
-          <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30">
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30">
             <View className="flex-row items-start">
-              <Ionicons name="information-circle" size={20} color="#3B82F6" />
+              <Ionicons name="information-circle" size={20} color="#9D12DE" />
               <View className="flex-1 ml-3">
-                <Text className="text-blue-400 font-bold mb-2">
-                  Recuperación Activa
+                <Text className="text-primary/80 font-bold mb-2">
+                  RecuperaciÃ³n Activa
                 </Text>
-                <Text className="text-blue-300 text-sm">
-                  La recuperación es tan importante como el entrenamiento. Dedica 15-30 minutos diarios a estos protocolos para maximizar resultados y prevenir lesiones.
+                <Text className="text-primary/60 text-sm">
+                  La recuperaciÃ³n es tan importante como el entrenamiento. Dedica 15-30 minutos diarios a estos protocolos para maximizar resultados y prevenir lesiones.
                 </Text>
               </View>
             </View>
@@ -511,3 +511,4 @@ export default function RecoveryProtocols() {
     </View>
   );
 }
+

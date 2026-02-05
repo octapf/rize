@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -38,7 +38,7 @@ const MOCK_RECORDS: PersonalRecord[] = [
     unit: 'kg',
     date: new Date(2026, 0, 27),
     previousRecord: 115,
-    notes: 'Nueva marca personal! Técnica perfecta',
+    notes: 'Nueva marca personal! TÃ©cnica perfecta',
   },
   {
     id: '2',
@@ -78,7 +78,7 @@ const MOCK_RECORDS: PersonalRecord[] = [
     value: 12500,
     unit: 'kg',
     date: new Date(2026, 0, 5),
-    notes: 'Volumen total de la sesión',
+    notes: 'Volumen total de la sesiÃ³n',
   },
 ];
 
@@ -88,8 +88,8 @@ export default function PersonalRecords() {
 
   const deleteRecord = (id: string) => {
     Alert.alert(
-      'Eliminar Récord',
-      '¿Estás seguro?',
+      'Eliminar RÃ©cord',
+      'Â¿EstÃ¡s seguro?',
       [
         { text: 'Cancelar' },
         { text: 'Eliminar', style: 'destructive', onPress: () => setRecords(records.filter((r) => r.id !== id)) },
@@ -98,7 +98,7 @@ export default function PersonalRecords() {
   };
 
   const addNewRecord = () => {
-    Alert.alert('Próximamente', 'Formulario para añadir nuevo PR en desarrollo');
+    Alert.alert('PrÃ³ximamente', 'Formulario para aÃ±adir nuevo PR en desarrollo');
   };
 
   const getTypeLabel = (type: string): string => {
@@ -106,9 +106,9 @@ export default function PersonalRecords() {
       '1RM': '1 Rep Max',
       '3RM': '3 Reps Max',
       '5RM': '5 Reps Max',
-      'maxReps': 'Máx Repeticiones',
-      'maxWeight': 'Máximo Peso',
-      'maxVolume': 'Máximo Volumen',
+      'maxReps': 'MÃ¡x Repeticiones',
+      'maxWeight': 'MÃ¡ximo Peso',
+      'maxVolume': 'MÃ¡ximo Volumen',
     };
     return labels[type] || type;
   };
@@ -148,7 +148,7 @@ export default function PersonalRecords() {
         <View className="px-6 pt-6">
           {/* Stats */}
           <View className="flex-row gap-3 mb-6">
-            <View className="flex-1 bg-gradient-to-r from-emerald-500 to-blue-500 rounded-xl p-4">
+            <View className="flex-1 bg-gradient-to-r from-primary to-[#7D0EBE] rounded-xl p-4">
               <Text className="text-white opacity-90 text-sm mb-1">Total PRs</Text>
               <Text className="text-white text-4xl font-bold">{getTotalPRs()}</Text>
             </View>
@@ -191,8 +191,8 @@ export default function PersonalRecords() {
           {/* Records List */}
           {filteredRecords.length === 0 ? (
             <View className="bg-zinc-900 rounded-xl p-8 items-center border border-zinc-800">
-              <Text className="text-6xl mb-3">🏆</Text>
-              <Text className="text-white font-bold text-lg mb-2">Sin Récords</Text>
+              <Text className="text-6xl mb-3">ðŸ†</Text>
+              <Text className="text-white font-bold text-lg mb-2">Sin RÃ©cords</Text>
               <Text className="text-zinc-400 text-center">
                 Empieza a registrar tus logros personales
               </Text>
@@ -236,7 +236,7 @@ export default function PersonalRecords() {
 
                     {/* Value */}
                     <View className={`bg-${categoryInfo.color}-500 rounded-xl p-4 mb-3`}>
-                      <Text className="text-white opacity-90 text-sm mb-1">Récord Personal</Text>
+                      <Text className="text-white opacity-90 text-sm mb-1">RÃ©cord Personal</Text>
                       <View className="flex-row items-baseline">
                         <Text className="text-white text-5xl font-bold mr-2">
                           {record.value}
@@ -249,15 +249,15 @@ export default function PersonalRecords() {
 
                     {/* Improvement */}
                     {improvement && (
-                      <View className="bg-emerald-500/10 rounded-lg p-3 mb-3 border border-emerald-500/30">
+                      <View className="bg-primary/10 rounded-lg p-3 mb-3 border border-primary/30">
                         <View className="flex-row items-center justify-between">
                           <View className="flex-row items-center">
-                            <Ionicons name="trending-up" size={20} color="#10B981" />
-                            <Text className="text-emerald-400 font-bold ml-2">
+                            <Ionicons name="trending-up" size={20} color="#9D12DE" />
+                            <Text className="text-primary font-bold ml-2">
                               +{improvement}% mejora
                             </Text>
                           </View>
-                          <Text className="text-emerald-300 text-sm">
+                          <Text className="text-primary/80 text-sm">
                             Anterior: {record.previousRecord} {record.unit}
                           </Text>
                         </View>
@@ -278,18 +278,18 @@ export default function PersonalRecords() {
           {/* Tips */}
           <View className="bg-amber-500/10 rounded-xl p-4 border border-amber-500/30 mb-6 mt-4">
             <View className="flex-row items-start">
-              <Ionicons name="trophy" size={20} color="#F59E0B" />
+              <Ionicons name="trophy" size={20} color="#FFEA00" />
               <View className="flex-1 ml-3">
                 <Text className="text-amber-400 font-bold mb-2">
                   Tips para Nuevos PRs
                 </Text>
                 <Text className="text-amber-300 text-sm">
-                  • No intentes PRs cuando estés fatigado{'\n'}
-                  • Calentamiento específico es crucial{'\n'}
-                  • Siempre con spotter en ejercicios pesados{'\n'}
-                  • Técnica perfecta &gt; ego lifting{'\n'}
-                  • Descansa bien la noche anterior{'\n'}
-                  • Celebra cada logro, por pequeño que sea!
+                  â€¢ No intentes PRs cuando estÃ©s fatigado{'\n'}
+                  â€¢ Calentamiento especÃ­fico es crucial{'\n'}
+                  â€¢ Siempre con spotter en ejercicios pesados{'\n'}
+                  â€¢ TÃ©cnica perfecta &gt; ego lifting{'\n'}
+                  â€¢ Descansa bien la noche anterior{'\n'}
+                  â€¢ Celebra cada logro, por pequeÃ±o que sea!
                 </Text>
               </View>
             </View>
@@ -299,3 +299,5 @@ export default function PersonalRecords() {
     </View>
   );
 }
+
+

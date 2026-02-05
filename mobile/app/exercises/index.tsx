@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -27,8 +27,8 @@ const EXERCISES: Exercise[] = [
   {
     id: '1',
     name: 'Pull-ups',
-    category: 'Tracción',
-    muscleGroup: ['Espalda', 'Bíceps'],
+    category: 'TracciÃ³n',
+    muscleGroup: ['Espalda', 'BÃ­ceps'],
     equipment: 'Barra',
     difficulty: 'intermediate',
     description: 'Ejercicio fundamental de calistenia para la espalda',
@@ -36,7 +36,7 @@ const EXERCISES: Exercise[] = [
       'Agarra la barra con las palmas hacia adelante',
       'Cuelga con los brazos completamente extendidos',
       'Tira hacia arriba hasta que tu barbilla pase la barra',
-      'Baja de forma controlada hasta la posición inicial',
+      'Baja de forma controlada hasta la posiciÃ³n inicial',
     ],
     isCustom: false,
   },
@@ -44,15 +44,15 @@ const EXERCISES: Exercise[] = [
     id: '2',
     name: 'Push-ups',
     category: 'Empuje',
-    muscleGroup: ['Pecho', 'Tríceps', 'Hombros'],
+    muscleGroup: ['Pecho', 'TrÃ­ceps', 'Hombros'],
     equipment: 'Sin equipo',
     difficulty: 'beginner',
-    description: 'Ejercicio básico de empuje para el tren superior',
+    description: 'Ejercicio bÃ¡sico de empuje para el tren superior',
     instructions: [
-      'Colócate en posición de plancha con manos al ancho de hombros',
+      'ColÃ³cate en posiciÃ³n de plancha con manos al ancho de hombros',
       'Baja el cuerpo manteniendo el core activo',
       'Empuja hacia arriba hasta extender los brazos',
-      'Mantén el cuerpo recto durante todo el movimiento',
+      'MantÃ©n el cuerpo recto durante todo el movimiento',
     ],
     isCustom: false,
   },
@@ -60,15 +60,15 @@ const EXERCISES: Exercise[] = [
     id: '3',
     name: 'Squats',
     category: 'Piernas',
-    muscleGroup: ['Cuádriceps', 'Glúteos'],
+    muscleGroup: ['CuÃ¡driceps', 'GlÃºteos'],
     equipment: 'Sin equipo',
     difficulty: 'beginner',
     description: 'Ejercicio fundamental para piernas',
     instructions: [
-      'Párate con los pies al ancho de hombros',
+      'PÃ¡rate con los pies al ancho de hombros',
       'Baja como si te sentaras en una silla',
-      'Mantén el pecho hacia arriba y las rodillas sobre los pies',
-      'Empuja a través de los talones para volver',
+      'MantÃ©n el pecho hacia arriba y las rodillas sobre los pies',
+      'Empuja a travÃ©s de los talones para volver',
     ],
     isCustom: false,
   },
@@ -76,14 +76,14 @@ const EXERCISES: Exercise[] = [
     id: '4',
     name: 'Dips',
     category: 'Empuje',
-    muscleGroup: ['Tríceps', 'Pecho', 'Hombros'],
+    muscleGroup: ['TrÃ­ceps', 'Pecho', 'Hombros'],
     equipment: 'Paralelas',
     difficulty: 'intermediate',
     description: 'Ejercicio compuesto para el tren superior',
     instructions: [
-      'Sujétate en las barras paralelas',
+      'SujÃ©tate en las barras paralelas',
       'Baja flexionando los codos',
-      'Mantén el pecho ligeramente hacia adelante',
+      'MantÃ©n el pecho ligeramente hacia adelante',
       'Empuja hacia arriba hasta extender los brazos',
     ],
     isCustom: false,
@@ -98,7 +98,7 @@ const EXERCISES: Exercise[] = [
     description: 'Ejercicio avanzado que combina pull-up y dip',
     instructions: [
       'Comienza con un pull-up explosivo',
-      'En el punto más alto, lleva el pecho sobre la barra',
+      'En el punto mÃ¡s alto, lleva el pecho sobre la barra',
       'Transiciona a un dip empujando hacia arriba',
       'Extiende completamente los brazos en la parte superior',
     ],
@@ -108,12 +108,12 @@ const EXERCISES: Exercise[] = [
     id: '6',
     name: 'Pistol Squats',
     category: 'Piernas',
-    muscleGroup: ['Cuádriceps', 'Glúteos'],
+    muscleGroup: ['CuÃ¡driceps', 'GlÃºteos'],
     equipment: 'Sin equipo',
     difficulty: 'advanced',
     description: 'Sentadilla a una pierna',
     instructions: [
-      'Párate en una pierna',
+      'PÃ¡rate en una pierna',
       'Extiende la otra pierna hacia adelante',
       'Baja lentamente manteniendo el equilibrio',
       'Empuja hacia arriba con la pierna de apoyo',
@@ -123,32 +123,32 @@ const EXERCISES: Exercise[] = [
   {
     id: '7',
     name: 'Planche',
-    category: 'Estáticos',
+    category: 'EstÃ¡ticos',
     muscleGroup: ['Hombros', 'Core', 'Brazos'],
     equipment: 'Sin equipo',
     difficulty: 'advanced',
-    description: 'Ejercicio estático avanzado de equilibrio',
+    description: 'Ejercicio estÃ¡tico avanzado de equilibrio',
     instructions: [
-      'Colócate en posición de plancha',
+      'ColÃ³cate en posiciÃ³n de plancha',
       'Inclina el peso hacia adelante',
       'Levanta los pies del suelo',
-      'Mantén el cuerpo paralelo al suelo',
+      'MantÃ©n el cuerpo paralelo al suelo',
     ],
     isCustom: false,
   },
   {
     id: '8',
     name: 'Front Lever',
-    category: 'Estáticos',
+    category: 'EstÃ¡ticos',
     muscleGroup: ['Espalda', 'Core'],
     equipment: 'Barra',
     difficulty: 'advanced',
-    description: 'Ejercicio estático de suspensión horizontal',
+    description: 'Ejercicio estÃ¡tico de suspensiÃ³n horizontal',
     instructions: [
       'Cuelga de la barra',
       'Activa la espalda y el core',
       'Levanta el cuerpo hasta quedar horizontal',
-      'Mantén la posición con el cuerpo recto',
+      'MantÃ©n la posiciÃ³n con el cuerpo recto',
     ],
     isCustom: false,
   },
@@ -181,9 +181,9 @@ export default function ExerciseLibrary() {
   const getDifficultyColor = (difficulty: string) => {
     switch (difficulty) {
       case 'beginner':
-        return '#10B981';
+        return '#9D12DE';
       case 'intermediate':
-        return '#F59E0B';
+        return '#FFEA00';
       case 'advanced':
         return '#EF4444';
       default:
@@ -233,9 +233,9 @@ export default function ExerciseLibrary() {
           {item.muscleGroup.map((muscle, index) => (
             <View
               key={index}
-              className="bg-emerald-500/20 px-3 py-1 rounded-lg"
+              className="bg-primary/20 px-3 py-1 rounded-lg"
             >
-              <Text className="text-emerald-500 text-xs font-semibold">{muscle}</Text>
+              <Text className="text-primary text-xs font-semibold">{muscle}</Text>
             </View>
           ))}
         </View>
@@ -260,7 +260,7 @@ export default function ExerciseLibrary() {
             Biblioteca de Ejercicios
           </Text>
           <TouchableOpacity>
-            <Ionicons name="add-circle" size={28} color="#10B981" />
+            <Ionicons name="add-circle" size={28} color="#9D12DE" />
           </TouchableOpacity>
         </View>
 
@@ -314,13 +314,13 @@ export default function ExerciseLibrary() {
             onPress={() => setSelectedMuscle(muscle)}
             className={`mr-3 px-4 py-2 rounded-xl ${
               selectedMuscle === muscle
-                ? 'bg-emerald-500/20 border-2 border-emerald-500'
+                ? 'bg-primary/20 border-2 border-primary'
                 : 'bg-zinc-900'
             }`}
           >
             <Text
               className={`font-semibold ${
-                selectedMuscle === muscle ? 'text-emerald-500' : 'text-zinc-400'
+                selectedMuscle === muscle ? 'text-primary' : 'text-zinc-400'
               }`}
             >
               {muscle}
@@ -342,13 +342,13 @@ export default function ExerciseLibrary() {
             onPress={() => setSelectedEquipment(equipment)}
             className={`mr-3 px-4 py-2 rounded-xl ${
               selectedEquipment === equipment
-                ? 'bg-blue-500/20 border-2 border-blue-500'
+                ? 'bg-primary/20 border-2 border-primary'
                 : 'bg-zinc-900'
             }`}
           >
             <Text
               className={`font-semibold ${
-                selectedEquipment === equipment ? 'text-blue-500' : 'text-zinc-400'
+                selectedEquipment === equipment ? 'text-primary' : 'text-zinc-400'
               }`}
             >
               {equipment}
@@ -370,7 +370,7 @@ export default function ExerciseLibrary() {
               No se encontraron ejercicios
             </Text>
             <Text className="text-zinc-600 text-sm mt-2 text-center">
-              Intenta cambiar los filtros o buscar otro término
+              Intenta cambiar los filtros o buscar otro tÃ©rmino
             </Text>
           </View>
         }
@@ -379,3 +379,4 @@ export default function ExerciseLibrary() {
     </View>
   );
 }
+

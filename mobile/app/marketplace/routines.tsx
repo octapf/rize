@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -38,22 +38,22 @@ const TEMPLATES: Template[] = [
     duration: '12 semanas',
     category: 'Fuerza',
     workouts: 36,
-    image: '💪',
+    image: 'ðŸ’ª',
     isPremium: false,
     isOwned: false,
   },
   {
     id: '2',
-    name: 'Plan Definición Pro',
+    name: 'Plan DefiniciÃ³n Pro',
     creator: 'Ana Fitness',
     rating: 4.9,
     reviews: 567,
     price: 9.99,
     level: 'avanzado',
     duration: '8 semanas',
-    category: 'Definición',
+    category: 'DefiniciÃ³n',
     workouts: 48,
-    image: '🔥',
+    image: 'ðŸ”¥',
     isPremium: true,
     isOwned: true,
   },
@@ -68,14 +68,14 @@ const TEMPLATES: Template[] = [
     duration: '6 semanas',
     category: 'General',
     workouts: 18,
-    image: '🏋️',
+    image: 'ðŸ‹ï¸',
     isPremium: false,
     isOwned: false,
   },
   {
     id: '4',
     name: 'Push/Pull/Legs Premium',
-    creator: 'María PT',
+    creator: 'MarÃ­a PT',
     rating: 5.0,
     reviews: 432,
     price: 14.99,
@@ -83,7 +83,7 @@ const TEMPLATES: Template[] = [
     duration: '10 semanas',
     category: 'Hipertrofia',
     workouts: 60,
-    image: '⚡',
+    image: 'âš¡',
     isPremium: true,
     isOwned: false,
   },
@@ -98,7 +98,7 @@ const TEMPLATES: Template[] = [
     duration: '16 semanas',
     category: 'Fuerza',
     workouts: 48,
-    image: '🏆',
+    image: 'ðŸ†',
     isPremium: false,
     isOwned: false,
   },
@@ -109,15 +109,15 @@ export default function MarketplaceRoutines() {
   const [selectedLevel, setSelectedLevel] = useState('Todos');
   const [searchQuery, setSearchQuery] = useState('');
 
-  const categories = ['Todos', 'Fuerza', 'Hipertrofia', 'Definición', 'General'];
+  const categories = ['Todos', 'Fuerza', 'Hipertrofia', 'DefiniciÃ³n', 'General'];
   const levels = ['Todos', 'principiante', 'intermedio', 'avanzado'];
 
   const getLevelColor = (level: string) => {
     switch (level) {
       case 'principiante':
-        return '#10B981';
+        return '#9D12DE';
       case 'intermedio':
-        return '#F59E0B';
+        return '#FFEA00';
       case 'avanzado':
         return '#EF4444';
       default:
@@ -129,27 +129,27 @@ export default function MarketplaceRoutines() {
     if (template.price === 0) {
       Alert.alert(
         'Rutina Gratis',
-        '¿Deseas agregar esta rutina a tu biblioteca?',
+        'Â¿Deseas agregar esta rutina a tu biblioteca?',
         [
           { text: 'Cancelar', style: 'cancel' },
           {
             text: 'Agregar',
-            onPress: () => Alert.alert('¡Agregado!', 'Rutina disponible en tu biblioteca'),
+            onPress: () => Alert.alert('Â¡Agregado!', 'Rutina disponible en tu biblioteca'),
           },
         ]
       );
     } else {
       Alert.alert(
         'Comprar Rutina',
-        `Precio: $${template.price.toFixed(2)}\n\n¿Confirmar compra?`,
+        `Precio: $${template.price.toFixed(2)}\n\nÂ¿Confirmar compra?`,
         [
           { text: 'Cancelar', style: 'cancel' },
           {
             text: 'Comprar',
             onPress: () =>
               Alert.alert(
-                '¡Compra Exitosa!',
-                'La rutina está ahora en tu biblioteca'
+                'Â¡Compra Exitosa!',
+                'La rutina estÃ¡ ahora en tu biblioteca'
               ),
           },
         ]
@@ -211,7 +211,7 @@ export default function MarketplaceRoutines() {
       <ScrollView className="flex-1" showsVerticalScrollIndicator={false}>
         {/* Category Filter */}
         <View className="px-6 pt-4">
-          <Text className="text-white font-bold mb-3">Categoría</Text>
+          <Text className="text-white font-bold mb-3">CategorÃ­a</Text>
           <ScrollView
             horizontal
             showsHorizontalScrollIndicator={false}
@@ -223,7 +223,7 @@ export default function MarketplaceRoutines() {
                 onPress={() => setSelectedCategory(category)}
                 className={`mr-2 px-4 py-2 rounded-lg ${
                   selectedCategory === category
-                    ? 'bg-emerald-500'
+                    ? 'bg-primary'
                     : 'bg-zinc-900 border border-zinc-800'
                 }`}
               >
@@ -249,7 +249,7 @@ export default function MarketplaceRoutines() {
                 onPress={() => setSelectedLevel(level)}
                 className={`flex-1 px-3 py-2 rounded-lg ${
                   selectedLevel === level
-                    ? 'bg-emerald-500'
+                    ? 'bg-primary'
                     : 'bg-zinc-900 border border-zinc-800'
                 }`}
               >
@@ -293,7 +293,7 @@ export default function MarketplaceRoutines() {
                 className="bg-zinc-900 rounded-xl border border-zinc-800 mb-4 overflow-hidden"
               >
                 {/* Image Header */}
-                <View className="bg-gradient-to-br from-emerald-500 to-blue-500 p-6 items-center">
+                <View className="bg-gradient-to-br from-primary to-[#7D0EBE] p-6 items-center">
                   <Text className="text-6xl mb-2">{template.image}</Text>
                   {template.isPremium && (
                     <View className="bg-amber-500 rounded-full px-3 py-1">
@@ -316,13 +316,13 @@ export default function MarketplaceRoutines() {
                   {/* Rating */}
                   <View className="flex-row items-center mb-3">
                     <View className="flex-row items-center bg-zinc-800 rounded-lg px-2 py-1">
-                      <Ionicons name="star" size={14} color="#F59E0B" />
+                      <Ionicons name="star" size={14} color="#FFEA00" />
                       <Text className="text-white font-semibold ml-1 text-sm">
                         {template.rating.toFixed(1)}
                       </Text>
                     </View>
                     <Text className="text-zinc-500 text-sm ml-2">
-                      ({template.reviews} reseñas)
+                      ({template.reviews} reseÃ±as)
                     </Text>
                   </View>
 
@@ -341,8 +341,8 @@ export default function MarketplaceRoutines() {
                         {template.level.toUpperCase()}
                       </Text>
                     </View>
-                    <View className="bg-blue-500/20 px-3 py-1 rounded-lg">
-                      <Text className="text-blue-400 text-xs font-bold">
+                    <View className="bg-primary/20 px-3 py-1 rounded-lg">
+                      <Text className="text-primary/80 text-xs font-bold">
                         {template.duration}
                       </Text>
                     </View>
@@ -360,10 +360,10 @@ export default function MarketplaceRoutines() {
                   <View className="flex-row items-center justify-between">
                     <View>
                       {template.isOwned ? (
-                        <View className="bg-emerald-500/20 px-3 py-2 rounded-lg">
+                        <View className="bg-primary/20 px-3 py-2 rounded-lg">
                           <View className="flex-row items-center">
-                            <Ionicons name="checkmark-circle" size={16} color="#10B981" />
-                            <Text className="text-emerald-500 font-bold ml-1">
+                            <Ionicons name="checkmark-circle" size={16} color="#9D12DE" />
+                            <Text className="text-primary font-bold ml-1">
                               En tu biblioteca
                             </Text>
                           </View>
@@ -371,7 +371,7 @@ export default function MarketplaceRoutines() {
                       ) : (
                         <View>
                           {template.price === 0 ? (
-                            <Text className="text-emerald-500 font-bold text-xl">
+                            <Text className="text-primary font-bold text-xl">
                               GRATIS
                             </Text>
                           ) : (
@@ -379,7 +379,7 @@ export default function MarketplaceRoutines() {
                               <Text className="text-white font-bold text-2xl">
                                 ${template.price.toFixed(2)}
                               </Text>
-                              <Text className="text-zinc-500 text-xs">Pago único</Text>
+                              <Text className="text-zinc-500 text-xs">Pago Ãºnico</Text>
                             </View>
                           )}
                         </View>
@@ -397,7 +397,7 @@ export default function MarketplaceRoutines() {
                         <TouchableOpacity
                           onPress={() => purchaseTemplate(template)}
                           className={`rounded-lg px-6 py-3 ${
-                            template.price === 0 ? 'bg-emerald-500' : 'bg-blue-500'
+                            template.price === 0 ? 'bg-primary' : 'bg-primary'
                           }`}
                         >
                           <Text className="text-white font-semibold">
@@ -406,7 +406,7 @@ export default function MarketplaceRoutines() {
                         </TouchableOpacity>
                       )}
                       {template.isOwned && (
-                        <TouchableOpacity className="bg-emerald-500 rounded-lg px-6 py-3">
+                        <TouchableOpacity className="bg-primary rounded-lg px-6 py-3">
                           <Text className="text-white font-semibold">Ver Rutina</Text>
                         </TouchableOpacity>
                       )}
@@ -420,20 +420,20 @@ export default function MarketplaceRoutines() {
 
         {/* Bottom CTA */}
         <View className="px-6 pb-6">
-          <View className="bg-gradient-to-br from-emerald-500 to-blue-500 rounded-xl p-6">
+          <View className="bg-gradient-to-br from-primary to-[#7D0EBE] rounded-xl p-6">
             <View className="flex-row items-center justify-between mb-3">
               <View className="flex-1">
                 <Text className="text-white font-bold text-xl mb-2">
-                  ¿Eres entrenador?
+                  Â¿Eres entrenador?
                 </Text>
                 <Text className="text-white/80 text-sm">
                   Vende tus rutinas y monetiza tu conocimiento
                 </Text>
               </View>
-              <Text className="text-4xl">💰</Text>
+              <Text className="text-4xl">ðŸ’°</Text>
             </View>
             <TouchableOpacity className="bg-white rounded-lg p-3">
-              <Text className="text-emerald-500 font-bold text-center">
+              <Text className="text-primary font-bold text-center">
                 Convertirme en Creador
               </Text>
             </TouchableOpacity>
@@ -443,3 +443,5 @@ export default function MarketplaceRoutines() {
     </View>
   );
 }
+
+

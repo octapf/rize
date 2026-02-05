@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -43,19 +43,19 @@ const SAMPLE_PROGRAM: Program = {
   phases: [
     {
       id: '1',
-      name: 'Fase 1: Adaptación',
+      name: 'Fase 1: AdaptaciÃ³n',
       weeks: 3,
       focus: 'Volumen alto, intensidad media',
       intensity: '65-75% 1RM',
       volume: '4-5 series x 8-12 reps',
       exercises: 6,
-      description: 'Preparación muscular y técnica',
+      description: 'PreparaciÃ³n muscular y tÃ©cnica',
     },
     {
       id: '2',
       name: 'Fase 2: Hipertrofia',
       weeks: 4,
-      focus: 'Volumen máximo',
+      focus: 'Volumen mÃ¡ximo',
       intensity: '70-80% 1RM',
       volume: '4-6 series x 6-10 reps',
       exercises: 7,
@@ -69,17 +69,17 @@ const SAMPLE_PROGRAM: Program = {
       intensity: '80-90% 1RM',
       volume: '3-5 series x 3-6 reps',
       exercises: 5,
-      description: 'Desarrollo de fuerza máxima',
+      description: 'Desarrollo de fuerza mÃ¡xima',
     },
     {
       id: '4',
       name: 'Fase 4: Peaking',
       weeks: 2,
-      focus: 'Intensidad máxima, volumen bajo',
+      focus: 'Intensidad mÃ¡xima, volumen bajo',
       intensity: '90-95% 1RM',
       volume: '2-3 series x 1-3 reps',
       exercises: 4,
-      description: 'Pico de rendimiento y test de máximos',
+      description: 'Pico de rendimiento y test de mÃ¡ximos',
     },
   ],
 };
@@ -99,7 +99,7 @@ const PROGRAM_TEMPLATES = [
     type: 'hipertrofia',
     phases: 4,
     duration: 16,
-    description: 'Máximo crecimiento muscular',
+    description: 'MÃ¡ximo crecimiento muscular',
   },
   {
     id: '3',
@@ -107,7 +107,7 @@ const PROGRAM_TEMPLATES = [
     type: 'powerlifting',
     phases: 5,
     duration: 20,
-    description: 'Preparación para competencia',
+    description: 'PreparaciÃ³n para competencia',
   },
   {
     id: '4',
@@ -115,7 +115,7 @@ const PROGRAM_TEMPLATES = [
     type: 'resistencia',
     phases: 3,
     duration: 8,
-    description: 'Mejora capacidad aeróbica y muscular',
+    description: 'Mejora capacidad aerÃ³bica y muscular',
   },
 ];
 
@@ -129,15 +129,15 @@ export default function CustomPrograms() {
   ];
 
   const getPhaseColor = (phaseIndex: number, currentPhase: number) => {
-    if (phaseIndex + 1 < currentPhase) return '#10B981'; // completed
-    if (phaseIndex + 1 === currentPhase) return '#3B82F6'; // active
+    if (phaseIndex + 1 < currentPhase) return '#9D12DE'; // completed
+    if (phaseIndex + 1 === currentPhase) return '#9D12DE'; // active
     return '#71717A'; // upcoming
   };
 
   const getPhaseStatus = (phaseIndex: number, currentPhase: number) => {
     if (phaseIndex + 1 < currentPhase) return 'Completada';
     if (phaseIndex + 1 === currentPhase) return 'En Curso';
-    return 'Próxima';
+    return 'PrÃ³xima';
   };
 
   const getTypeColor = (type: string) => {
@@ -145,11 +145,11 @@ export default function CustomPrograms() {
       case 'fuerza':
         return '#EF4444';
       case 'hipertrofia':
-        return '#3B82F6';
+        return '#9D12DE';
       case 'powerlifting':
         return '#8B5CF6';
       case 'resistencia':
-        return '#10B981';
+        return '#9D12DE';
       default:
         return '#71717A';
     }
@@ -161,13 +161,13 @@ export default function CustomPrograms() {
 
     Alert.alert(
       'Crear Programa',
-      `${template.name}\n\n${template.duration} semanas • ${template.phases} fases\n\n${template.description}`,
+      `${template.name}\n\n${template.duration} semanas â€¢ ${template.phases} fases\n\n${template.description}`,
       [
         { text: 'Cancelar', style: 'cancel' },
         {
           text: 'Comenzar Ahora',
           onPress: () => {
-            Alert.alert('¡Programa Creado!', 'Tu programa personalizado está listo');
+            Alert.alert('Â¡Programa Creado!', 'Tu programa personalizado estÃ¡ listo');
           },
         },
       ]
@@ -201,7 +201,7 @@ export default function CustomPrograms() {
         </View>
 
         {/* Program Progress */}
-        <View className="bg-gradient-to-br from-emerald-500 to-blue-500 rounded-xl p-4 mb-4">
+        <View className="bg-gradient-to-br from-primary to-[#7D0EBE] rounded-xl p-4 mb-4">
           <Text className="text-white/80 text-sm mb-2">{SAMPLE_PROGRAM.name}</Text>
           <View className="flex-row items-end justify-between mb-3">
             <View className="flex-1">
@@ -233,7 +233,7 @@ export default function CustomPrograms() {
               key={tab.id}
               onPress={() => setSelectedTab(tab.id)}
               className={`flex-1 flex-row items-center justify-center py-3 rounded-lg ${
-                selectedTab === tab.id ? 'bg-emerald-500' : 'bg-zinc-900 border border-zinc-800'
+                selectedTab === tab.id ? 'bg-primary' : 'bg-zinc-900 border border-zinc-800'
               }`}
             >
               <Ionicons
@@ -267,14 +267,14 @@ export default function CustomPrograms() {
               return (
                 <View
                   key={phase.id}
-                  className="bg-zinc-900 rounded-xl p-4 mb-4 border-2 border-blue-500"
+                  className="bg-zinc-900 rounded-xl p-4 mb-4 border-2 border-primary"
                 >
                   <View className="flex-row items-center justify-between mb-3">
                     <View className="flex-1">
                       <View className="flex-row items-center mb-2">
-                        <View className="bg-blue-500/20 px-3 py-1 rounded-full">
-                          <Text className="text-blue-400 text-xs font-bold">
-                            FASE {index + 1} • EN CURSO
+                        <View className="bg-primary/20 px-3 py-1 rounded-full">
+                          <Text className="text-primary/80 text-xs font-bold">
+                            FASE {index + 1} â€¢ EN CURSO
                           </Text>
                         </View>
                       </View>
@@ -289,30 +289,30 @@ export default function CustomPrograms() {
 
                   <View className="bg-zinc-800 rounded-lg p-3 mb-3">
                     <View className="flex-row items-center justify-between mb-2">
-                      <Text className="text-zinc-400 text-sm">Duración</Text>
+                      <Text className="text-zinc-400 text-sm">DuraciÃ³n</Text>
                       <Text className="text-white font-bold">{phase.weeks} semanas</Text>
                     </View>
                     <View className="flex-row items-center justify-between mb-2">
                       <Text className="text-zinc-400 text-sm">Intensidad</Text>
-                      <Text className="text-emerald-500 font-bold">{phase.intensity}</Text>
+                      <Text className="text-primary font-bold">{phase.intensity}</Text>
                     </View>
                     <View className="flex-row items-center justify-between mb-2">
                       <Text className="text-zinc-400 text-sm">Volumen</Text>
-                      <Text className="text-blue-500 font-bold">{phase.volume}</Text>
+                      <Text className="text-primary font-bold">{phase.volume}</Text>
                     </View>
                     <View className="flex-row items-center justify-between">
-                      <Text className="text-zinc-400 text-sm">Ejercicios/Día</Text>
+                      <Text className="text-zinc-400 text-sm">Ejercicios/DÃ­a</Text>
                       <Text className="text-amber-500 font-bold">{phase.exercises}</Text>
                     </View>
                   </View>
 
-                  <View className="bg-blue-500/10 rounded-lg p-3 mb-3 border border-blue-500/30">
-                    <Text className="text-blue-400 font-bold mb-1">Enfoque</Text>
-                    <Text className="text-blue-300 text-sm">{phase.focus}</Text>
+                  <View className="bg-primary/10 rounded-lg p-3 mb-3 border border-primary/30">
+                    <Text className="text-primary/80 font-bold mb-1">Enfoque</Text>
+                    <Text className="text-primary/60 text-sm">{phase.focus}</Text>
                   </View>
 
                   <View className="flex-row gap-2">
-                    <TouchableOpacity className="flex-1 bg-emerald-500 rounded-lg p-3">
+                    <TouchableOpacity className="flex-1 bg-primary rounded-lg p-3">
                       <Text className="text-white font-bold text-center">
                         Ver Entrenamientos
                       </Text>
@@ -327,19 +327,19 @@ export default function CustomPrograms() {
 
             {/* Progress Stats */}
             <Text className="text-white font-bold text-lg mb-3">
-              Estadísticas del Programa
+              EstadÃ­sticas del Programa
             </Text>
 
             <View className="flex-row gap-3 mb-4">
               <View className="flex-1 bg-zinc-900 rounded-xl p-4 border border-zinc-800">
-                <Ionicons name="calendar" size={24} color="#10B981" />
-                <Text className="text-zinc-400 text-xs mt-2">Días Entrenados</Text>
+                <Ionicons name="calendar" size={24} color="#9D12DE" />
+                <Text className="text-zinc-400 text-xs mt-2">DÃ­as Entrenados</Text>
                 <Text className="text-white font-bold text-2xl">32</Text>
               </View>
               <View className="flex-1 bg-zinc-900 rounded-xl p-4 border border-zinc-800">
-                <Ionicons name="flame" size={24} color="#F59E0B" />
+                <Ionicons name="flame" size={24} color="#FFEA00" />
                 <Text className="text-zinc-400 text-xs mt-2">Racha Actual</Text>
-                <Text className="text-white font-bold text-2xl">8 días</Text>
+                <Text className="text-white font-bold text-2xl">8 dÃ­as</Text>
               </View>
             </View>
 
@@ -350,7 +350,7 @@ export default function CustomPrograms() {
                 <Text className="text-white font-bold text-2xl">+12 kg</Text>
               </View>
               <View className="flex-1 bg-zinc-900 rounded-xl p-4 border border-zinc-800">
-                <Ionicons name="barbell" size={24} color="#3B82F6" />
+                <Ionicons name="barbell" size={24} color="#9D12DE" />
                 <Text className="text-zinc-400 text-xs mt-2">Press Banca</Text>
                 <Text className="text-white font-bold text-2xl">+8 kg</Text>
               </View>
@@ -362,7 +362,7 @@ export default function CustomPrograms() {
         {selectedTab === 'phases' && (
           <View className="px-6 pt-6">
             <Text className="text-white font-bold text-lg mb-3">
-              Periodización ({SAMPLE_PROGRAM.phases.length} Fases)
+              PeriodizaciÃ³n ({SAMPLE_PROGRAM.phases.length} Fases)
             </Text>
 
             {SAMPLE_PROGRAM.phases.map((phase, index) => (
@@ -399,7 +399,7 @@ export default function CustomPrograms() {
                     </Text>
                   </View>
                   <View className="items-end">
-                    <Text className="text-zinc-400 text-xs">Duración</Text>
+                    <Text className="text-zinc-400 text-xs">DuraciÃ³n</Text>
                     <Text className="text-white font-bold text-xl">
                       {phase.weeks}w
                     </Text>
@@ -461,7 +461,7 @@ export default function CustomPrograms() {
 
                 <View className="flex-row gap-3 mb-3">
                   <View className="flex-1 bg-zinc-800 rounded-lg p-3">
-                    <Text className="text-zinc-400 text-xs">Duración</Text>
+                    <Text className="text-zinc-400 text-xs">DuraciÃ³n</Text>
                     <Text className="text-white font-bold text-lg">
                       {template.duration} sem
                     </Text>
@@ -476,7 +476,7 @@ export default function CustomPrograms() {
 
                 <TouchableOpacity
                   onPress={() => createProgram(template.id)}
-                  className="bg-emerald-500 rounded-lg p-3"
+                  className="bg-primary rounded-lg p-3"
                 >
                   <Text className="text-white font-bold text-center">
                     Comenzar Programa
@@ -489,14 +489,14 @@ export default function CustomPrograms() {
 
         {/* Info Card */}
         <View className="px-6 pb-6 pt-4">
-          <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30">
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30">
             <View className="flex-row items-start">
-              <Ionicons name="information-circle" size={20} color="#3B82F6" />
+              <Ionicons name="information-circle" size={20} color="#9D12DE" />
               <View className="flex-1 ml-3">
-                <Text className="text-blue-400 font-bold mb-2">
-                  Periodización Inteligente
+                <Text className="text-primary/80 font-bold mb-2">
+                  PeriodizaciÃ³n Inteligente
                 </Text>
-                <Text className="text-blue-300 text-sm">
+                <Text className="text-primary/60 text-sm">
                   Los programas periodizados alternan fases de volumen, intensidad y descanso para maximizar resultados y prevenir estancamiento.
                 </Text>
               </View>
@@ -507,3 +507,5 @@ export default function CustomPrograms() {
     </View>
   );
 }
+
+

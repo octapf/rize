@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+﻿import React, { useState, useEffect } from 'react';
 import {
   View,
   Text,
@@ -71,7 +71,7 @@ export default function RestTimer() {
 
       <ScrollView className="flex-1" showsVerticalScrollIndicator={false}>
         <View className="px-6 pt-6">
-          <View className="bg-gradient-to-r from-emerald-500 to-blue-500 rounded-xl p-6 mb-6">
+          <View className="bg-gradient-to-r from-primary to-[#7D0EBE] rounded-xl p-6 mb-6">
             <Text className="text-white text-2xl font-bold mb-2">Rest Periods</Text>
             <Text className="text-white opacity-90">
               Control recovery between sets
@@ -83,7 +83,7 @@ export default function RestTimer() {
               <View className="absolute w-64 h-64 rounded-full border-8 border-zinc-800" />
               <View
                 className={`absolute w-64 h-64 rounded-full border-8 ${
-                  isRunning ? 'border-emerald-500' : 'border-zinc-700'
+                  isRunning ? 'border-primary' : 'border-zinc-700'
                 }`}
                 style={{
                   transform: [{ rotate: `${(percentage / 100) * 360}deg` }],
@@ -97,7 +97,7 @@ export default function RestTimer() {
             {!isRunning ? (
               <TouchableOpacity
                 onPress={() => startTimer()}
-                className="bg-emerald-500 rounded-xl px-8 py-4 border border-emerald-400"
+                className="bg-primary rounded-xl px-8 py-4 border border-primary"
               >
                 <View className="flex-row items-center">
                   <Ionicons name="play" size={28} color="white" />
@@ -147,24 +147,24 @@ export default function RestTimer() {
             <Text className="text-zinc-400 text-center text-sm mt-2">seconds</Text>
           </View>
 
-          <View className="bg-blue-500/10 rounded-xl p-4 mb-6 border border-blue-500/30">
-            <Text className="text-blue-400 font-bold mb-3">Rest Guidelines</Text>
+          <View className="bg-primary/10 rounded-xl p-4 mb-6 border border-primary/30">
+            <Text className="text-primary/80 font-bold mb-3">Rest Guidelines</Text>
             <View className="space-y-2">
-              <View className="flex-row justify-between py-2 border-b border-blue-500/20">
-                <Text className="text-blue-300">Strength (1-5 reps)</Text>
-                <Text className="text-blue-400 font-bold">3-5 min</Text>
+              <View className="flex-row justify-between py-2 border-b border-primary/20">
+                <Text className="text-primary/60">Strength (1-5 reps)</Text>
+                <Text className="text-primary/80 font-bold">3-5 min</Text>
               </View>
-              <View className="flex-row justify-between py-2 border-b border-blue-500/20">
-                <Text className="text-blue-300">Hypertrophy (6-12 reps)</Text>
-                <Text className="text-blue-400 font-bold">60-90s</Text>
+              <View className="flex-row justify-between py-2 border-b border-primary/20">
+                <Text className="text-primary/60">Hypertrophy (6-12 reps)</Text>
+                <Text className="text-primary/80 font-bold">60-90s</Text>
               </View>
-              <View className="flex-row justify-between py-2 border-b border-blue-500/20">
-                <Text className="text-blue-300">Endurance (12+ reps)</Text>
-                <Text className="text-blue-400 font-bold">30-60s</Text>
+              <View className="flex-row justify-between py-2 border-b border-primary/20">
+                <Text className="text-primary/60">Endurance (12+ reps)</Text>
+                <Text className="text-primary/80 font-bold">30-60s</Text>
               </View>
               <View className="flex-row justify-between py-2">
-                <Text className="text-blue-300">Isolation exercises</Text>
-                <Text className="text-blue-400 font-bold">45-60s</Text>
+                <Text className="text-primary/60">Isolation exercises</Text>
+                <Text className="text-primary/80 font-bold">45-60s</Text>
               </View>
             </View>
           </View>
@@ -172,11 +172,11 @@ export default function RestTimer() {
           <View className="bg-amber-500/10 rounded-xl p-4 border border-amber-500/30 mb-6">
             <Text className="text-amber-400 font-bold mb-2">Rest Tips</Text>
             <Text className="text-amber-300 text-sm">
-              • Rest enough to recover{'\n'}
-              • Not so long that you cool down{'\n'}
-              • Compounds need more rest{'\n'}
-              • Stay active during rest{'\n'}
-              • Consistency matters
+              â€¢ Rest enough to recover{'\n'}
+              â€¢ Not so long that you cool down{'\n'}
+              â€¢ Compounds need more rest{'\n'}
+              â€¢ Stay active during rest{'\n'}
+              â€¢ Consistency matters
             </Text>
           </View>
         </View>
@@ -184,3 +184,4 @@ export default function RestTimer() {
     </View>
   );
 }
+

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -87,7 +87,7 @@ const PROGRESS_PHOTOS: ProgressPhoto[] = [
 const COMPARISONS: Comparison[] = [
   {
     id: '1',
-    name: 'Transformación 90 Días',
+    name: 'TransformaciÃ³n 90 DÃ­as',
     startDate: '2024-10-01',
     endDate: '2025-01-01',
     startWeight: 85.0,
@@ -122,7 +122,7 @@ export default function BodyTransformation() {
   const tabs = [
     { id: 'timeline' as const, label: 'Timeline', icon: 'time' },
     { id: 'comparisons' as const, label: 'Comparaciones', icon: 'git-compare' },
-    { id: 'angles' as const, label: 'Ángulos', icon: 'camera' },
+    { id: 'angles' as const, label: 'Ãngulos', icon: 'camera' },
   ];
 
   const angles = [
@@ -134,7 +134,7 @@ export default function BodyTransformation() {
   const takePhoto = () => {
     Alert.alert(
       'Nueva Foto de Progreso',
-      'Selecciona el ángulo para la foto',
+      'Selecciona el Ã¡ngulo para la foto',
       [
         { text: 'Frontal', onPress: () => capturePhoto('frontal') },
         { text: 'Lateral', onPress: () => capturePhoto('lateral') },
@@ -147,13 +147,13 @@ export default function BodyTransformation() {
   const capturePhoto = (angle: string) => {
     Alert.alert(
       'Capturar Foto',
-      `Ángulo: ${angle}\n\nConsejos:\n• Usa la misma iluminación\n• Misma posición de cámara\n• Misma hora del día`,
+      `Ãngulo: ${angle}\n\nConsejos:\nâ€¢ Usa la misma iluminaciÃ³n\nâ€¢ Misma posiciÃ³n de cÃ¡mara\nâ€¢ Misma hora del dÃ­a`,
       [
         { text: 'Cancelar', style: 'cancel' },
         {
           text: 'Tomar Foto',
           onPress: () => {
-            Alert.alert('¡Foto Guardada!', 'Tu foto de progreso ha sido registrada');
+            Alert.alert('Â¡Foto Guardada!', 'Tu foto de progreso ha sido registrada');
           },
         },
       ]
@@ -162,14 +162,14 @@ export default function BodyTransformation() {
 
   const createComparison = () => {
     Alert.alert(
-      'Nueva Comparación',
-      'Selecciona las fotos de antes y después para crear una comparación',
+      'Nueva ComparaciÃ³n',
+      'Selecciona las fotos de antes y despuÃ©s para crear una comparaciÃ³n',
       [
         { text: 'Cancelar', style: 'cancel' },
         {
           text: 'Seleccionar Fotos',
           onPress: () => {
-            Alert.alert('¡Comparación Creada!', 'Las fotos han sido comparadas');
+            Alert.alert('Â¡ComparaciÃ³n Creada!', 'Las fotos han sido comparadas');
           },
         },
       ]
@@ -178,7 +178,7 @@ export default function BodyTransformation() {
 
   const shareComparison = (comparison: Comparison) => {
     Alert.alert(
-      'Compartir Transformación',
+      'Compartir TransformaciÃ³n',
       `${comparison.name}\n\n${Math.abs(comparison.weightChange)} kg ${comparison.weightChange > 0 ? 'ganados' : 'perdidos'}`,
       [
         { text: 'Instagram Stories' },
@@ -200,15 +200,15 @@ export default function BodyTransformation() {
             <Ionicons name="arrow-back" size={24} color="white" />
           </TouchableOpacity>
           <Text className="text-white text-2xl font-bold flex-1 ml-3">
-            Transformación Corporal
+            TransformaciÃ³n Corporal
           </Text>
           <TouchableOpacity onPress={takePhoto}>
-            <Ionicons name="camera" size={24} color="#10B981" />
+            <Ionicons name="camera" size={24} color="#9D12DE" />
           </TouchableOpacity>
         </View>
 
         {/* Stats Summary */}
-        <View className="bg-gradient-to-br from-emerald-500 to-blue-500 rounded-xl p-4 mb-4">
+        <View className="bg-gradient-to-br from-primary to-[#7D0EBE] rounded-xl p-4 mb-4">
           <View className="flex-row items-center justify-between">
             <View className="flex-1">
               <Text className="text-white/80 text-sm mb-1">Progreso Total</Text>
@@ -216,7 +216,7 @@ export default function BodyTransformation() {
                 +3.6 kg
               </Text>
               <Text className="text-white/80 text-sm">
-                Últimos 27 días • -0.7% grasa
+                Ãšltimos 27 dÃ­as â€¢ -0.7% grasa
               </Text>
             </View>
             <View className="bg-white/20 rounded-full p-4">
@@ -232,7 +232,7 @@ export default function BodyTransformation() {
               key={tab.id}
               onPress={() => setSelectedTab(tab.id)}
               className={`flex-1 flex-row items-center justify-center py-3 rounded-lg ${
-                selectedTab === tab.id ? 'bg-emerald-500' : 'bg-zinc-900 border border-zinc-800'
+                selectedTab === tab.id ? 'bg-primary' : 'bg-zinc-900 border border-zinc-800'
               }`}
             >
               <Ionicons
@@ -282,8 +282,8 @@ export default function BodyTransformation() {
                         })}
                       </Text>
                       <View className="flex-row items-center gap-3">
-                        <View className="bg-blue-500/20 px-3 py-1 rounded-full">
-                          <Text className="text-blue-400 text-xs font-bold capitalize">
+                        <View className="bg-primary/20 px-3 py-1 rounded-full">
+                          <Text className="text-primary/80 text-xs font-bold capitalize">
                             {photo.angle}
                           </Text>
                         </View>
@@ -327,7 +327,7 @@ export default function BodyTransformation() {
                 Mis Comparaciones ({COMPARISONS.length})
               </Text>
               <TouchableOpacity onPress={createComparison}>
-                <Ionicons name="add-circle" size={24} color="#10B981" />
+                <Ionicons name="add-circle" size={24} color="#9D12DE" />
               </TouchableOpacity>
             </View>
 
@@ -354,8 +354,8 @@ export default function BodyTransformation() {
                       style={{ width: '100%', height: 280 }}
                       resizeMode="cover"
                     />
-                    <View className="absolute top-3 right-3 bg-emerald-500 px-3 py-1 rounded-full">
-                      <Text className="text-white text-xs font-bold">DESPUÉS</Text>
+                    <View className="absolute top-3 right-3 bg-primary px-3 py-1 rounded-full">
+                      <Text className="text-white text-xs font-bold">DESPUÃ‰S</Text>
                     </View>
                   </View>
                 </View>
@@ -369,7 +369,7 @@ export default function BodyTransformation() {
                     <Ionicons name="calendar-outline" size={14} color="#71717A" />
                     <Text className="text-zinc-400 text-sm">
                       {new Date(comparison.startDate).toLocaleDateString('es-ES', { day: 'numeric', month: 'short' })}
-                      {' → '}
+                      {' â†’ '}
                       {new Date(comparison.endDate).toLocaleDateString('es-ES', { day: 'numeric', month: 'short' })}
                     </Text>
                   </View>
@@ -379,7 +379,7 @@ export default function BodyTransformation() {
                       <Text className="text-zinc-400 text-xs mb-1">Cambio de Peso</Text>
                       <Text
                         className={`font-bold text-xl ${
-                          comparison.weightChange > 0 ? 'text-emerald-500' : 'text-blue-500'
+                          comparison.weightChange > 0 ? 'text-primary' : 'text-primary'
                         }`}
                       >
                         {comparison.weightChange > 0 ? '+' : ''}
@@ -391,7 +391,7 @@ export default function BodyTransformation() {
                         <Text className="text-zinc-400 text-xs mb-1">Cambio Grasa</Text>
                         <Text
                           className={`font-bold text-xl ${
-                            comparison.bodyFatChange < 0 ? 'text-emerald-500' : 'text-amber-500'
+                            comparison.bodyFatChange < 0 ? 'text-primary' : 'text-amber-500'
                           }`}
                         >
                           {comparison.bodyFatChange > 0 ? '+' : ''}
@@ -403,12 +403,12 @@ export default function BodyTransformation() {
 
                   <TouchableOpacity
                     onPress={() => shareComparison(comparison)}
-                    className="bg-emerald-500 rounded-lg p-3"
+                    className="bg-primary rounded-lg p-3"
                   >
                     <View className="flex-row items-center justify-center">
                       <Ionicons name="share-social" size={18} color="white" />
                       <Text className="text-white font-bold ml-2">
-                        Compartir Transformación
+                        Compartir TransformaciÃ³n
                       </Text>
                     </View>
                   </TouchableOpacity>
@@ -429,7 +429,7 @@ export default function BodyTransformation() {
                   onPress={() => setSelectedAngle(angle.id)}
                   className={`flex-1 flex-row items-center justify-center py-3 rounded-lg ${
                     selectedAngle === angle.id
-                      ? 'bg-emerald-500'
+                      ? 'bg-primary'
                       : 'bg-zinc-900 border border-zinc-800'
                   }`}
                 >
@@ -484,21 +484,21 @@ export default function BodyTransformation() {
 
         {/* Info Card */}
         <View className="px-6 pb-6 pt-4">
-          <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30">
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30">
             <View className="flex-row items-start">
-              <Ionicons name="information-circle" size={20} color="#3B82F6" />
+              <Ionicons name="information-circle" size={20} color="#9D12DE" />
               <View className="flex-1 ml-3">
-                <Text className="text-blue-400 font-bold mb-2">
+                <Text className="text-primary/80 font-bold mb-2">
                   Tips para Mejores Fotos
                 </Text>
-                <Text className="text-blue-300 text-sm mb-1">
-                  • Toma fotos a la misma hora cada semana
+                <Text className="text-primary/60 text-sm mb-1">
+                  â€¢ Toma fotos a la misma hora cada semana
                 </Text>
-                <Text className="text-blue-300 text-sm mb-1">
-                  • Usa la misma iluminación y posición
+                <Text className="text-primary/60 text-sm mb-1">
+                  â€¢ Usa la misma iluminaciÃ³n y posiciÃ³n
                 </Text>
-                <Text className="text-blue-300 text-sm">
-                  • Fotos cada 2 semanas para ver cambios reales
+                <Text className="text-primary/60 text-sm">
+                  â€¢ Fotos cada 2 semanas para ver cambios reales
                 </Text>
               </View>
             </View>
@@ -508,3 +508,5 @@ export default function BodyTransformation() {
     </View>
   );
 }
+
+

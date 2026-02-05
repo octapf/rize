@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -32,9 +32,9 @@ interface ForumPost {
 const FORUM_POSTS: ForumPost[] = [
   {
     id: '1',
-    author: { name: 'Carlos Pro', avatar: '💪', level: 24, verified: true },
-    title: '¿Cómo romper plateau en sentadilla?',
-    content: 'Llevo 3 semanas estancado en 140kg x 5. ¿Algún tip para superar esto?',
+    author: { name: 'Carlos Pro', avatar: 'ðŸ’ª', level: 24, verified: true },
+    title: 'Â¿CÃ³mo romper plateau en sentadilla?',
+    content: 'Llevo 3 semanas estancado en 140kg x 5. Â¿AlgÃºn tip para superar esto?',
     category: 'Fuerza',
     replies: 18,
     views: 342,
@@ -45,10 +45,10 @@ const FORUM_POSTS: ForumPost[] = [
   },
   {
     id: '2',
-    author: { name: 'Ana Fitness', avatar: '🏋️', level: 18, verified: false },
-    title: 'Mejor protocolo para definición',
-    content: 'Empezando corte. ¿Deficit 300 o 500 kcal? ¿Cardio o solo pesas?',
-    category: 'Nutrición',
+    author: { name: 'Ana Fitness', avatar: 'ðŸ‹ï¸', level: 18, verified: false },
+    title: 'Mejor protocolo para definiciÃ³n',
+    content: 'Empezando corte. Â¿Deficit 300 o 500 kcal? Â¿Cardio o solo pesas?',
+    category: 'NutriciÃ³n',
     replies: 31,
     views: 589,
     likes: 45,
@@ -58,10 +58,10 @@ const FORUM_POSTS: ForumPost[] = [
   },
   {
     id: '3',
-    author: { name: 'Miguel Beast', avatar: '🦁', level: 32, verified: true },
-    title: 'Creatina: ¿Fase de carga necesaria?',
-    content: 'Debate: ¿5g diarios desde día 1 o loading phase de 20g x 5 días?',
-    category: 'Suplementación',
+    author: { name: 'Miguel Beast', avatar: 'ðŸ¦', level: 32, verified: true },
+    title: 'Creatina: Â¿Fase de carga necesaria?',
+    content: 'Debate: Â¿5g diarios desde dÃ­a 1 o loading phase de 20g x 5 dÃ­as?',
+    category: 'SuplementaciÃ³n',
     replies: 24,
     views: 456,
     likes: 38,
@@ -71,9 +71,9 @@ const FORUM_POSTS: ForumPost[] = [
   },
   {
     id: '4',
-    author: { name: 'Laura Recovery', avatar: '🧘', level: 15, verified: false },
+    author: { name: 'Laura Recovery', avatar: 'ðŸ§˜', level: 15, verified: false },
     title: 'Dolor de hombro en press banca',
-    content: 'Molestia frontal del hombro al bajar barra. ¿Técnica o lesión?',
+    content: 'Molestia frontal del hombro al bajar barra. Â¿TÃ©cnica o lesiÃ³n?',
     category: 'Salud',
     replies: 12,
     views: 234,
@@ -84,10 +84,10 @@ const FORUM_POSTS: ForumPost[] = [
   },
   {
     id: '5',
-    author: { name: 'Pedro Iron', avatar: '⚡', level: 28, verified: true },
-    title: '[GUÍA] 5/3/1 para principiantes',
-    content: 'Tutorial completo del programa Wendler 5/3/1. Setup, progresión, deload.',
-    category: 'Programación',
+    author: { name: 'Pedro Iron', avatar: 'âš¡', level: 28, verified: true },
+    title: '[GUÃA] 5/3/1 para principiantes',
+    content: 'Tutorial completo del programa Wendler 5/3/1. Setup, progresiÃ³n, deload.',
+    category: 'ProgramaciÃ³n',
     replies: 67,
     views: 1248,
     likes: 142,
@@ -97,10 +97,10 @@ const FORUM_POSTS: ForumPost[] = [
   },
   {
     id: '6',
-    author: { name: 'Sofia Cardio', avatar: '🏃', level: 12, verified: false },
+    author: { name: 'Sofia Cardio', avatar: 'ðŸƒ', level: 12, verified: false },
     title: 'Combinar pesas y running',
-    content: '¿Cómo estructurar semana para no perder músculo entrenando maratón?',
-    category: 'Programación',
+    content: 'Â¿CÃ³mo estructurar semana para no perder mÃºsculo entrenando maratÃ³n?',
+    category: 'ProgramaciÃ³n',
     replies: 9,
     views: 167,
     likes: 14,
@@ -113,10 +113,10 @@ const FORUM_POSTS: ForumPost[] = [
 const CATEGORIES = [
   { id: 'all', name: 'Todos', icon: 'apps', color: 'text-zinc-400' },
   { id: 'Fuerza', name: 'Fuerza', icon: 'barbell', color: 'text-red-400' },
-  { id: 'Nutrición', name: 'Nutrición', icon: 'restaurant', color: 'text-emerald-400' },
-  { id: 'Suplementación', name: 'Suplementos', icon: 'flask', color: 'text-purple-400' },
-  { id: 'Salud', name: 'Salud', icon: 'medical', color: 'text-blue-400' },
-  { id: 'Programación', name: 'Programación', icon: 'calendar', color: 'text-amber-400' },
+  { id: 'NutriciÃ³n', name: 'NutriciÃ³n', icon: 'restaurant', color: 'text-primary' },
+  { id: 'SuplementaciÃ³n', name: 'Suplementos', icon: 'flask', color: 'text-purple-400' },
+  { id: 'Salud', name: 'Salud', icon: 'medical', color: 'text-primary/80' },
+  { id: 'ProgramaciÃ³n', name: 'ProgramaciÃ³n', icon: 'calendar', color: 'text-amber-400' },
 ];
 
 export default function CommunityForum() {
@@ -141,7 +141,7 @@ export default function CommunityForum() {
   const openPost = (post: ForumPost) => {
     Alert.alert(
       post.title,
-      `${post.content}\n\nPor: ${post.author.name}\n${post.replies} respuestas • ${post.views} vistas`,
+      `${post.content}\n\nPor: ${post.author.name}\n${post.replies} respuestas â€¢ ${post.views} vistas`,
       [
         { text: 'Cancelar', style: 'cancel' },
         { text: 'Ver Completo' },
@@ -193,7 +193,7 @@ export default function CommunityForum() {
             Foro Comunitario
           </Text>
           <TouchableOpacity onPress={createPost}>
-            <Ionicons name="add-circle" size={28} color="#10B981" />
+            <Ionicons name="add-circle" size={28} color="#9D12DE" />
           </TouchableOpacity>
         </View>
 
@@ -218,7 +218,7 @@ export default function CommunityForum() {
                 onPress={() => setFilter(category.id)}
                 className={`flex-row items-center px-4 py-2 rounded-lg ${
                   filter === category.id
-                    ? 'bg-emerald-500'
+                    ? 'bg-primary'
                     : 'bg-zinc-900 border border-zinc-800'
                 }`}
               >
@@ -252,7 +252,7 @@ export default function CommunityForum() {
               {/* Pinned Badge */}
               {post.pinned && (
                 <View className="flex-row items-center mb-2">
-                  <Ionicons name="pin" size={14} color="#F59E0B" />
+                  <Ionicons name="pin" size={14} color="#FFEA00" />
                   <Text className="text-amber-400 text-xs font-bold ml-1">FIJADO</Text>
                 </View>
               )}
@@ -260,14 +260,14 @@ export default function CommunityForum() {
               {/* Author */}
               <View className="flex-row items-center justify-between mb-3">
                 <View className="flex-row items-center flex-1">
-                  <View className="w-10 h-10 bg-emerald-500/20 rounded-full items-center justify-center">
+                  <View className="w-10 h-10 bg-primary/20 rounded-full items-center justify-center">
                     <Text className="text-2xl">{post.author.avatar}</Text>
                   </View>
                   <View className="ml-3 flex-1">
                     <View className="flex-row items-center">
                       <Text className="text-white font-bold">{post.author.name}</Text>
                       {post.author.verified && (
-                        <Ionicons name="checkmark-circle" size={14} color="#3B82F6" className="ml-1" />
+                        <Ionicons name="checkmark-circle" size={14} color="#9D12DE" className="ml-1" />
                       )}
                       <View className="bg-zinc-800 rounded px-2 py-0.5 ml-2">
                         <Text className="text-zinc-400 text-xs">Lvl {post.author.level}</Text>
@@ -280,12 +280,12 @@ export default function CommunityForum() {
                   className={`px-2 py-1 rounded-lg ${
                     post.category === 'Fuerza'
                       ? 'bg-red-500/10'
-                      : post.category === 'Nutrición'
-                      ? 'bg-emerald-500/10'
-                      : post.category === 'Suplementación'
+                      : post.category === 'NutriciÃ³n'
+                      ? 'bg-primary/10'
+                      : post.category === 'SuplementaciÃ³n'
                       ? 'bg-purple-500/10'
                       : post.category === 'Salud'
-                      ? 'bg-blue-500/10'
+                      ? 'bg-primary/10'
                       : 'bg-amber-500/10'
                   }`}
                 >
@@ -293,12 +293,12 @@ export default function CommunityForum() {
                     className={`text-xs ${
                       post.category === 'Fuerza'
                         ? 'text-red-400'
-                        : post.category === 'Nutrición'
-                        ? 'text-emerald-400'
-                        : post.category === 'Suplementación'
+                        : post.category === 'NutriciÃ³n'
+                        ? 'text-primary'
+                        : post.category === 'SuplementaciÃ³n'
                         ? 'text-purple-400'
                         : post.category === 'Salud'
-                        ? 'text-blue-400'
+                        ? 'text-primary/80'
                         : 'text-amber-400'
                     }`}
                   >
@@ -312,7 +312,7 @@ export default function CommunityForum() {
                 {post.title}
                 {post.solved && (
                   <View className="inline-flex ml-2">
-                    <Ionicons name="checkmark-done-circle" size={18} color="#10B981" />
+                    <Ionicons name="checkmark-done-circle" size={18} color="#9D12DE" />
                   </View>
                 )}
               </Text>
@@ -349,15 +349,15 @@ export default function CommunityForum() {
 
         {/* Community Guidelines */}
         <View className="px-6 pb-6 pt-2">
-          <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30">
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30">
             <View className="flex-row items-start">
-              <Ionicons name="people" size={20} color="#3B82F6" />
+              <Ionicons name="people" size={20} color="#9D12DE" />
               <View className="flex-1 ml-3">
-                <Text className="text-blue-400 font-bold mb-2">
+                <Text className="text-primary/80 font-bold mb-2">
                   Comunidad de Respeto
                 </Text>
-                <Text className="text-blue-300 text-sm">
-                  Comparte conocimiento, haz preguntas y ayuda a otros. Juntos somos más fuertes.
+                <Text className="text-primary/60 text-sm">
+                  Comparte conocimiento, haz preguntas y ayuda a otros. Juntos somos mÃ¡s fuertes.
                 </Text>
               </View>
             </View>
@@ -367,3 +367,4 @@ export default function CommunityForum() {
     </View>
   );
 }
+

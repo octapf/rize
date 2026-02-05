@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -42,7 +42,7 @@ export default function WorkoutBuilder() {
     { id: 'normal' as const, label: 'Normal', icon: 'barbell-outline' },
     { id: 'superset' as const, label: 'Superseries', icon: 'flash' },
     { id: 'dropset' as const, label: 'Dropsets', icon: 'trending-down' },
-    { id: 'pyramid' as const, label: 'Pirámides', icon: 'triangle-outline' },
+    { id: 'pyramid' as const, label: 'PirÃ¡mides', icon: 'triangle-outline' },
   ];
 
   const createSuperset = () => {
@@ -65,7 +65,7 @@ export default function WorkoutBuilder() {
               exercises: [exercises[0], exercises[1]],
             };
             setSupersetGroups([...supersetGroups, newSuperset]);
-            Alert.alert('¡Creado!', 'Superserie agregada al entrenamiento');
+            Alert.alert('Â¡Creado!', 'Superserie agregada al entrenamiento');
           },
         },
       ]
@@ -85,7 +85,7 @@ export default function WorkoutBuilder() {
               ...exercises[0],
               id: Date.now().toString(),
               sets: 1,
-              reps: '12 → 8 → 5',
+              reps: '12 â†’ 8 â†’ 5',
               notes: 'Reducir 20% peso en cada serie',
             };
             const newDropset: SupersetGroup = {
@@ -94,7 +94,7 @@ export default function WorkoutBuilder() {
               exercises: [dropsetExercise],
             };
             setSupersetGroups([...supersetGroups, newDropset]);
-            Alert.alert('¡Creado!', 'Dropset agregado al entrenamiento');
+            Alert.alert('Â¡Creado!', 'Dropset agregado al entrenamiento');
           },
         },
       ]
@@ -103,8 +103,8 @@ export default function WorkoutBuilder() {
 
   const createPyramid = () => {
     Alert.alert(
-      'Crear Pirámide',
-      'Selecciona un ejercicio para aplicar pirámide de reps/peso',
+      'Crear PirÃ¡mide',
+      'Selecciona un ejercicio para aplicar pirÃ¡mide de reps/peso',
       [
         { text: 'Cancelar', style: 'cancel' },
         {
@@ -114,7 +114,7 @@ export default function WorkoutBuilder() {
               ...exercises[0],
               id: Date.now().toString(),
               sets: 5,
-              reps: '15 → 12 → 10 → 8 → 6',
+              reps: '15 â†’ 12 â†’ 10 â†’ 8 â†’ 6',
               notes: 'Aumentar peso cada serie',
             };
             const newPyramid: SupersetGroup = {
@@ -123,7 +123,7 @@ export default function WorkoutBuilder() {
               exercises: [pyramidExercise],
             };
             setSupersetGroups([...supersetGroups, newPyramid]);
-            Alert.alert('¡Creado!', 'Pirámide ascendente agregada');
+            Alert.alert('Â¡Creado!', 'PirÃ¡mide ascendente agregada');
           },
         },
         {
@@ -133,7 +133,7 @@ export default function WorkoutBuilder() {
               ...exercises[0],
               id: Date.now().toString(),
               sets: 5,
-              reps: '6 → 8 → 10 → 12 → 15',
+              reps: '6 â†’ 8 â†’ 10 â†’ 12 â†’ 15',
               notes: 'Reducir peso cada serie',
             };
             const newPyramid: SupersetGroup = {
@@ -142,7 +142,7 @@ export default function WorkoutBuilder() {
               exercises: [pyramidExercise],
             };
             setSupersetGroups([...supersetGroups, newPyramid]);
-            Alert.alert('¡Creado!', 'Pirámide descendente agregada');
+            Alert.alert('Â¡Creado!', 'PirÃ¡mide descendente agregada');
           },
         },
       ]
@@ -171,8 +171,8 @@ export default function WorkoutBuilder() {
   const saveWorkout = () => {
     const totalExercises = exercises.length + supersetGroups.reduce((sum, g) => sum + g.exercises.length, 0);
     Alert.alert(
-      '¡Entrenamiento Guardado!',
-      `${workoutName}\n\n${totalExercises} ejercicios\n${supersetGroups.length} técnicas avanzadas`,
+      'Â¡Entrenamiento Guardado!',
+      `${workoutName}\n\n${totalExercises} ejercicios\n${supersetGroups.length} tÃ©cnicas avanzadas`,
       [
         { text: 'Ver Entrenamientos', onPress: () => router.back() },
         { text: 'Crear Otro' },
@@ -183,13 +183,13 @@ export default function WorkoutBuilder() {
   const getTechniqueColor = (type: string) => {
     switch (type) {
       case 'superset':
-        return '#F59E0B';
+        return '#FFEA00';
       case 'dropset':
         return '#EF4444';
       case 'pyramid':
         return '#8B5CF6';
       default:
-        return '#3B82F6';
+        return '#9D12DE';
     }
   };
 
@@ -218,7 +218,7 @@ export default function WorkoutBuilder() {
             Constructor Avanzado
           </Text>
           <TouchableOpacity onPress={saveWorkout}>
-            <Ionicons name="checkmark-circle" size={28} color="#10B981" />
+            <Ionicons name="checkmark-circle" size={28} color="#9D12DE" />
           </TouchableOpacity>
         </View>
 
@@ -232,7 +232,7 @@ export default function WorkoutBuilder() {
         />
 
         {/* Technique Selector */}
-        <Text className="text-white font-bold mb-2">Técnicas Avanzadas</Text>
+        <Text className="text-white font-bold mb-2">TÃ©cnicas Avanzadas</Text>
         <ScrollView horizontal showsHorizontalScrollIndicator={false}>
           <View className="flex-row gap-2">
             {techniques.map((tech) => (
@@ -241,7 +241,7 @@ export default function WorkoutBuilder() {
                 onPress={() => setSelectedTechnique(tech.id)}
                 className={`flex-row items-center px-4 py-2 rounded-lg ${
                   selectedTechnique === tech.id
-                    ? 'bg-emerald-500'
+                    ? 'bg-primary'
                     : 'bg-zinc-900 border border-zinc-800'
                 }`}
               >
@@ -268,7 +268,7 @@ export default function WorkoutBuilder() {
           {/* Quick Actions */}
           {selectedTechnique !== 'normal' && (
             <View className="bg-zinc-900 rounded-xl p-4 mb-4 border border-zinc-800">
-              <Text className="text-white font-bold mb-3">Crear Técnica</Text>
+              <Text className="text-white font-bold mb-3">Crear TÃ©cnica</Text>
               <View className="flex-row gap-2">
                 {selectedTechnique === 'superset' && (
                   <TouchableOpacity
@@ -299,7 +299,7 @@ export default function WorkoutBuilder() {
                   >
                     <View className="flex-row items-center justify-center">
                       <Ionicons name="triangle" size={18} color="white" />
-                      <Text className="text-white font-bold ml-2">Pirámide</Text>
+                      <Text className="text-white font-bold ml-2">PirÃ¡mide</Text>
                     </View>
                   </TouchableOpacity>
                 )}
@@ -311,7 +311,7 @@ export default function WorkoutBuilder() {
           {supersetGroups.length > 0 && (
             <>
               <Text className="text-white font-bold text-lg mb-3">
-                Técnicas Aplicadas
+                TÃ©cnicas Aplicadas
               </Text>
               {supersetGroups.map((group) => (
                 <View
@@ -375,7 +375,7 @@ export default function WorkoutBuilder() {
           <View className="flex-row items-center justify-between mb-3">
             <Text className="text-white font-bold text-lg">Ejercicios</Text>
             <TouchableOpacity onPress={addExercise}>
-              <Ionicons name="add-circle" size={24} color="#10B981" />
+              <Ionicons name="add-circle" size={24} color="#9D12DE" />
             </TouchableOpacity>
           </View>
 
@@ -415,21 +415,21 @@ export default function WorkoutBuilder() {
 
         {/* Info Cards */}
         <View className="px-6 pb-6">
-          <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30 mb-3">
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-3">
             <View className="flex-row items-start">
-              <Ionicons name="information-circle" size={20} color="#3B82F6" />
+              <Ionicons name="information-circle" size={20} color="#9D12DE" />
               <View className="flex-1 ml-3">
-                <Text className="text-blue-400 font-bold mb-2">
-                  Técnicas Avanzadas
+                <Text className="text-primary/80 font-bold mb-2">
+                  TÃ©cnicas Avanzadas
                 </Text>
-                <Text className="text-blue-300 text-sm mb-1">
-                  • Superseries: 2-3 ejercicios sin descanso
+                <Text className="text-primary/60 text-sm mb-1">
+                  â€¢ Superseries: 2-3 ejercicios sin descanso
                 </Text>
-                <Text className="text-blue-300 text-sm mb-1">
-                  • Dropsets: Reducir peso progresivamente
+                <Text className="text-primary/60 text-sm mb-1">
+                  â€¢ Dropsets: Reducir peso progresivamente
                 </Text>
-                <Text className="text-blue-300 text-sm">
-                  • Pirámides: Variar reps/peso por serie
+                <Text className="text-primary/60 text-sm">
+                  â€¢ PirÃ¡mides: Variar reps/peso por serie
                 </Text>
               </View>
             </View>
@@ -439,3 +439,4 @@ export default function WorkoutBuilder() {
     </View>
   );
 }
+

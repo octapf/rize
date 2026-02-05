@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -26,17 +26,17 @@ interface SleepEntry {
 }
 
 const QUALITY_OPTIONS = [
-  { value: 'poor', label: 'Mala', icon: '😫', color: 'red' },
-  { value: 'fair', label: 'Regular', icon: '😐', color: 'amber' },
-  { value: 'good', label: 'Buena', icon: '😊', color: 'blue' },
-  { value: 'excellent', label: 'Excelente', icon: '😴', color: 'emerald' },
+  { value: 'poor', label: 'Mala', icon: 'ðŸ˜«', color: 'red' },
+  { value: 'fair', label: 'Regular', icon: 'ðŸ˜', color: 'amber' },
+  { value: 'good', label: 'Buena', icon: 'ðŸ˜Š', color: 'blue' },
+  { value: 'excellent', label: 'Excelente', icon: 'ðŸ˜´', color: 'emerald' },
 ];
 
 const MOOD_OPTIONS = [
-  { value: 'bad', label: 'Mal', icon: '😞', color: 'red' },
-  { value: 'ok', label: 'OK', icon: '😐', color: 'amber' },
-  { value: 'good', label: 'Bien', icon: '🙂', color: 'blue' },
-  { value: 'great', label: 'Genial', icon: '😃', color: 'emerald' },
+  { value: 'bad', label: 'Mal', icon: 'ðŸ˜ž', color: 'red' },
+  { value: 'ok', label: 'OK', icon: 'ðŸ˜', color: 'amber' },
+  { value: 'good', label: 'Bien', icon: 'ðŸ™‚', color: 'blue' },
+  { value: 'great', label: 'Genial', icon: 'ðŸ˜ƒ', color: 'emerald' },
 ];
 
 const MOCK_ENTRIES: SleepEntry[] = [
@@ -49,7 +49,7 @@ const MOCK_ENTRIES: SleepEntry[] = [
     quality: 'good',
     mood: 'good',
     interruptions: 1,
-    notes: 'Buen descanso, solo una interrupción',
+    notes: 'Buen descanso, solo una interrupciÃ³n',
   },
   {
     id: '2',
@@ -60,7 +60,7 @@ const MOCK_ENTRIES: SleepEntry[] = [
     quality: 'fair',
     mood: 'ok',
     interruptions: 2,
-    notes: 'Me desperté un par de veces',
+    notes: 'Me despertÃ© un par de veces',
   },
   {
     id: '3',
@@ -83,7 +83,7 @@ const MOCK_ENTRIES: SleepEntry[] = [
     quality: 'poor',
     mood: 'bad',
     interruptions: 3,
-    notes: 'Muy poco sueño, día difícil',
+    notes: 'Muy poco sueÃ±o, dÃ­a difÃ­cil',
   },
 ];
 
@@ -138,13 +138,13 @@ export default function SleepTracker() {
     setEntries([entry, ...entries]);
     setNewEntry({ bedtime: '', wakeTime: '', quality: 'good', mood: 'good', interruptions: '', notes: '' });
     setShowAddForm(false);
-    Alert.alert('Sueño Registrado! 😴', 'Entrada guardada correctamente');
+    Alert.alert('SueÃ±o Registrado! ðŸ˜´', 'Entrada guardada correctamente');
   };
 
   const deleteEntry = (id: string) => {
     Alert.alert(
       'Eliminar Entrada',
-      '¿Estás seguro?',
+      'Â¿EstÃ¡s seguro?',
       [
         { text: 'Cancelar' },
         { text: 'Eliminar', style: 'destructive', onPress: () => setEntries(entries.filter((e) => e.id !== id)) },
@@ -206,7 +206,7 @@ export default function SleepTracker() {
         <View className="px-6 pt-6">
           {showAddForm ? (
             <View className="bg-zinc-900 rounded-xl p-6 mb-6 border border-zinc-800">
-              <Text className="text-white font-bold text-lg mb-4">Registrar Sueño</Text>
+              <Text className="text-white font-bold text-lg mb-4">Registrar SueÃ±o</Text>
 
               {/* Times */}
               <View className="flex-row gap-4 mb-4">
@@ -234,8 +234,8 @@ export default function SleepTracker() {
 
               {/* Calculated Hours */}
               {newEntry.bedtime && newEntry.wakeTime && (
-                <View className="bg-emerald-500/10 rounded-lg p-3 border border-emerald-500/30 mb-4">
-                  <Text className="text-emerald-400 font-bold text-center">
+                <View className="bg-primary/10 rounded-lg p-3 border border-primary/30 mb-4">
+                  <Text className="text-primary font-bold text-center">
                     Total: {calculateHours(newEntry.bedtime, newEntry.wakeTime).toFixed(1)} horas
                   </Text>
                 </View>
@@ -243,7 +243,7 @@ export default function SleepTracker() {
 
               {/* Quality */}
               <View className="mb-4">
-                <Text className="text-zinc-400 text-sm mb-2">Calidad del Sueño</Text>
+                <Text className="text-zinc-400 text-sm mb-2">Calidad del SueÃ±o</Text>
                 <View className="flex-row gap-2">
                   {QUALITY_OPTIONS.map((q) => (
                     <TouchableOpacity
@@ -264,7 +264,7 @@ export default function SleepTracker() {
 
               {/* Mood */}
               <View className="mb-4">
-                <Text className="text-zinc-400 text-sm mb-2">¿Cómo te Sientes?</Text>
+                <Text className="text-zinc-400 text-sm mb-2">Â¿CÃ³mo te Sientes?</Text>
                 <View className="flex-row gap-2">
                   {MOOD_OPTIONS.map((m) => (
                     <TouchableOpacity
@@ -301,7 +301,7 @@ export default function SleepTracker() {
                 <Text className="text-zinc-400 text-sm mb-2">Notas (opcional)</Text>
                 <TextInput
                   className="bg-zinc-800 rounded-xl px-4 py-3 text-white"
-                  placeholder="¿Cómo dormiste? ¿Sueños? ¿Estrés?"
+                  placeholder="Â¿CÃ³mo dormiste? Â¿SueÃ±os? Â¿EstrÃ©s?"
                   placeholderTextColor="#71717A"
                   multiline
                   numberOfLines={2}
@@ -312,7 +312,7 @@ export default function SleepTracker() {
 
               <TouchableOpacity
                 onPress={addEntry}
-                className="bg-emerald-500 rounded-xl p-4 flex-row items-center justify-center"
+                className="bg-primary rounded-xl p-4 flex-row items-center justify-center"
               >
                 <Ionicons name="checkmark-circle" size={20} color="white" />
                 <Text className="text-white font-bold ml-2">Guardar Entrada</Text>
@@ -324,12 +324,12 @@ export default function SleepTracker() {
               <View className="bg-zinc-900 rounded-xl p-4 mb-6 border border-zinc-800">
                 <Text className="text-white font-bold text-lg mb-3">Esta Semana</Text>
                 <View className="flex-row flex-wrap gap-3">
-                  <View className="flex-1 min-w-[45%] bg-emerald-500/10 rounded-lg p-3 border border-emerald-500/30">
-                    <Text className="text-emerald-400 text-xs mb-1">Promedio de Sueño</Text>
+                  <View className="flex-1 min-w-[45%] bg-primary/10 rounded-lg p-3 border border-primary/30">
+                    <Text className="text-primary text-xs mb-1">Promedio de SueÃ±o</Text>
                     <Text className="text-white text-2xl font-bold">{stats.avgHours.toFixed(1)}h</Text>
                   </View>
-                  <View className="flex-1 min-w-[45%] bg-blue-500/10 rounded-lg p-3 border border-blue-500/30">
-                    <Text className="text-blue-400 text-xs mb-1">Noches Registradas</Text>
+                  <View className="flex-1 min-w-[45%] bg-primary/10 rounded-lg p-3 border border-primary/30">
+                    <Text className="text-primary/80 text-xs mb-1">Noches Registradas</Text>
                     <Text className="text-white text-2xl font-bold">{stats.entries}</Text>
                   </View>
                   <View className="flex-1 min-w-[45%] bg-amber-500/10 rounded-lg p-3 border border-amber-500/30">
@@ -345,7 +345,7 @@ export default function SleepTracker() {
 
               {/* Sleep Quality Trend */}
               <View className="bg-zinc-900 rounded-xl p-4 mb-6 border border-zinc-800">
-                <Text className="text-white font-bold mb-3">Últimas 7 Noches</Text>
+                <Text className="text-white font-bold mb-3">Ãšltimas 7 Noches</Text>
                 <View className="flex-row items-end justify-between h-24">
                   {entries.slice(0, 7).reverse().map((entry, idx) => {
                     const qualityInfo = getQualityInfo(entry.quality);
@@ -367,10 +367,10 @@ export default function SleepTracker() {
               <Text className="text-white font-bold text-lg mb-4">Historial</Text>
               {entries.length === 0 ? (
                 <View className="bg-zinc-900 rounded-xl p-8 items-center border border-zinc-800">
-                  <Text className="text-6xl mb-3">😴</Text>
+                  <Text className="text-6xl mb-3">ðŸ˜´</Text>
                   <Text className="text-white font-bold text-lg mb-2">Sin Registros</Text>
                   <Text className="text-zinc-400 text-center">
-                    Empieza a trackear tu sueño
+                    Empieza a trackear tu sueÃ±o
                   </Text>
                 </View>
               ) : (
@@ -415,8 +415,8 @@ export default function SleepTracker() {
                             <Text className="text-zinc-300 text-sm ml-2">Despertaste a las {entry.wakeTime}</Text>
                           </View>
                         </View>
-                        <View className="flex-row items-center justify-center bg-emerald-500/10 rounded p-2 border border-emerald-500/30">
-                          <Text className="text-emerald-400 font-bold text-lg">
+                        <View className="flex-row items-center justify-center bg-primary/10 rounded p-2 border border-primary/30">
+                          <Text className="text-primary font-bold text-lg">
                             Total: {entry.totalHours.toFixed(1)} horas
                           </Text>
                         </View>
@@ -426,7 +426,7 @@ export default function SleepTracker() {
                       {entry.interruptions !== undefined && entry.interruptions > 0 && (
                         <View className="bg-amber-500/10 rounded-lg p-2 border border-amber-500/30 mb-2">
                           <Text className="text-amber-400 text-sm">
-                            ⚠️ {entry.interruptions} interrupción{entry.interruptions > 1 ? 'es' : ''}
+                            âš ï¸ {entry.interruptions} interrupciÃ³n{entry.interruptions > 1 ? 'es' : ''}
                           </Text>
                         </View>
                       )}
@@ -449,14 +449,14 @@ export default function SleepTracker() {
               <Ionicons name="moon" size={20} color="#A855F7" />
               <View className="flex-1 ml-3">
                 <Text className="text-purple-400 font-bold mb-2">
-                  Tips para Mejor Sueño
+                  Tips para Mejor SueÃ±o
                 </Text>
                 <Text className="text-purple-300 text-sm">
-                  • Duerme 7-9 horas consistentemente{'\n'}
-                  • Mantén horarios regulares{'\n'}
-                  • Evita pantallas 1h antes de dormir{'\n'}
-                  • Cuarto oscuro y fresco (18-20°C){'\n'}
-                  • Evita cafeína 6h antes de dormir
+                  â€¢ Duerme 7-9 horas consistentemente{'\n'}
+                  â€¢ MantÃ©n horarios regulares{'\n'}
+                  â€¢ Evita pantallas 1h antes de dormir{'\n'}
+                  â€¢ Cuarto oscuro y fresco (18-20Â°C){'\n'}
+                  â€¢ Evita cafeÃ­na 6h antes de dormir
                 </Text>
               </View>
             </View>
@@ -466,3 +466,4 @@ export default function SleepTracker() {
     </View>
   );
 }
+

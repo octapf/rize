@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -51,8 +51,8 @@ export default function PerformanceTesting() {
           'Warm-up as usual',
           'Choose weight you can do 3-8 reps',
           'Perform AMRAP (as many reps as possible)',
-          'Use Epley formula: 1RM = weight × (1 + reps/30)',
-          'Or Brzycki: 1RM = weight × (36 / (37 - reps))',
+          'Use Epley formula: 1RM = weight Ã— (1 + reps/30)',
+          'Or Brzycki: 1RM = weight Ã— (36 / (37 - reps))',
         ],
         safety: [
           'Safer than true 1RM testing',
@@ -284,19 +284,19 @@ export default function PerformanceTesting() {
             </View>
           ))}
 
-          <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30 mb-6">
-            <Text className="text-blue-400 font-bold mb-2">Testing Best Practices</Text>
-            <Text className="text-blue-300 text-sm mb-2">
-              • Test in same conditions each time (time of day, pre-test meal)
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
+            <Text className="text-primary/80 font-bold mb-2">Testing Best Practices</Text>
+            <Text className="text-primary/60 text-sm mb-2">
+              â€¢ Test in same conditions each time (time of day, pre-test meal)
             </Text>
-            <Text className="text-blue-300 text-sm mb-2">
-              • Warm-up adequately but don't fatigue
+            <Text className="text-primary/60 text-sm mb-2">
+              â€¢ Warm-up adequately but don't fatigue
             </Text>
-            <Text className="text-blue-300 text-sm mb-2">
-              • Record ALL results for future comparison
+            <Text className="text-primary/60 text-sm mb-2">
+              â€¢ Record ALL results for future comparison
             </Text>
-            <Text className="text-blue-300 text-sm">
-              • Re-test every 4-8 weeks to track progress
+            <Text className="text-primary/60 text-sm">
+              â€¢ Re-test every 4-8 weeks to track progress
             </Text>
           </View>
         </View>
@@ -304,3 +304,4 @@ export default function PerformanceTesting() {
     </View>
   );
 }
+

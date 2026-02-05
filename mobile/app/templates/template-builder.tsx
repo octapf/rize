@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -108,7 +108,7 @@ export default function TemplateBuilder() {
             Template Builder
           </Text>
           <TouchableOpacity onPress={saveTemplate}>
-            <Text className="text-blue-400 font-bold">Save</Text>
+            <Text className="text-primary/80 font-bold">Save</Text>
           </TouchableOpacity>
         </View>
       </View>
@@ -144,7 +144,7 @@ export default function TemplateBuilder() {
                 key={days}
                 onPress={() => setSelectedDays(days)}
                 className={`flex-1 ${
-                  selectedDays === days ? 'bg-blue-500' : 'bg-zinc-900'
+                  selectedDays === days ? 'bg-primary' : 'bg-zinc-900'
                 } rounded-xl py-4 border ${
                   selectedDays === days ? 'border-blue-400' : 'border-zinc-800'
                 }`}
@@ -173,7 +173,7 @@ export default function TemplateBuilder() {
                   <Text className="text-white font-bold mb-2">{preset.name}</Text>
                   <Text className="text-zinc-400 text-sm">{preset.days} days/week</Text>
                   <View className="mt-2">
-                    <Text className="text-blue-400 text-xs font-bold">TAP TO LOAD</Text>
+                    <Text className="text-primary/80 text-xs font-bold">TAP TO LOAD</Text>
                   </View>
                 </TouchableOpacity>
               ))}
@@ -185,7 +185,7 @@ export default function TemplateBuilder() {
           {exerciseCategories.map((category, catIdx) => (
             <View key={catIdx} className="mb-6">
               <View className="flex-row items-center mb-3">
-                <Ionicons name={category.icon as any} size={20} color="#3b82f6" />
+                <Ionicons name={category.icon as any} size={20} color="#9D12DE" />
                 <Text className="text-zinc-400 font-bold ml-2">{category.category}</Text>
               </View>
 
@@ -195,7 +195,7 @@ export default function TemplateBuilder() {
                   onPress={() => toggleExercise(exercise)}
                   className={`${
                     selectedExercises.includes(exercise)
-                      ? 'bg-blue-500/20 border-blue-500'
+                      ? 'bg-primary/20 border-primary'
                       : 'bg-zinc-900 border-zinc-800'
                   } rounded-xl p-4 mb-2 border flex-row items-center justify-between`}
                 >
@@ -207,21 +207,21 @@ export default function TemplateBuilder() {
                     {exercise}
                   </Text>
                   {selectedExercises.includes(exercise) && (
-                    <Ionicons name="checkmark-circle" size={24} color="#3b82f6" />
+                    <Ionicons name="checkmark-circle" size={24} color="#9D12DE" />
                   )}
                 </TouchableOpacity>
               ))}
             </View>
           ))}
 
-          <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30 mb-6">
-            <Text className="text-blue-400 font-bold mb-2">Template Builder Tips</Text>
-            <Text className="text-blue-300 text-sm">
-              • Include compound lifts first{'\n'}
-              • 4-6 exercises per session{'\n'}
-              • Balance push/pull ratio{'\n'}
-              • Progressive overload cada semana{'\n'}
-              • Save templates para reutilizar
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
+            <Text className="text-primary/80 font-bold mb-2">Template Builder Tips</Text>
+            <Text className="text-primary/60 text-sm">
+              â€¢ Include compound lifts first{'\n'}
+              â€¢ 4-6 exercises per session{'\n'}
+              â€¢ Balance push/pull ratio{'\n'}
+              â€¢ Progressive overload cada semana{'\n'}
+              â€¢ Save templates para reutilizar
             </Text>
           </View>
         </View>
@@ -229,3 +229,4 @@ export default function TemplateBuilder() {
     </View>
   );
 }
+

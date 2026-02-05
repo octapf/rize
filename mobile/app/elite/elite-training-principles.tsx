@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -470,8 +470,8 @@ export default function EliteTrainingPrinciples() {
   const getColorClass = (color: string) => {
     const colors: { [key: string]: string } = {
       amber: 'bg-amber-500',
-      blue: 'bg-blue-500',
-      emerald: 'bg-emerald-500',
+      blue: 'bg-primary',
+      emerald: 'bg-primary',
       purple: 'bg-purple-500',
       red: 'bg-red-500',
       cyan: 'bg-cyan-500',
@@ -533,7 +533,7 @@ export default function EliteTrainingPrinciples() {
 
           {/* Content placeholder */}
           <View className="bg-amber-500/10 rounded-xl p-6 border border-amber-500/30 mb-6">
-            <Ionicons name={currentPrinciple.icon as any} size={32} color="#f59e0b" />
+            <Ionicons name={currentPrinciple.icon as any} size={32} color="#FFEA00" />
             <Text className="text-amber-400 font-bold text-lg mt-3 mb-2">
               {currentPrinciple.name}
             </Text>
@@ -545,22 +545,22 @@ export default function EliteTrainingPrinciples() {
           <View className="bg-gradient-to-r from-red-500/20 to-orange-500/20 rounded-xl p-5 border border-red-500/30 mb-6">
             <Text className="text-red-400 font-bold text-lg mb-3">Elite Reality Check</Text>
             <Text className="text-red-300 text-sm mb-2">
-              ⚡ Requires 7-15+ years of consistent training
+              âš¡ Requires 7-15+ years of consistent training
             </Text>
             <Text className="text-red-300 text-sm mb-2">
-              ⚡ PRs come 1-2x per YEAR, not every cycle
+              âš¡ PRs come 1-2x per YEAR, not every cycle
             </Text>
             <Text className="text-red-300 text-sm mb-2">
-              ⚡ Lifestyle must fully support training
+              âš¡ Lifestyle must fully support training
             </Text>
             <Text className="text-red-300 text-sm mb-2">
-              ⚡ Recovery is as important as training
+              âš¡ Recovery is as important as training
             </Text>
             <Text className="text-red-300 text-sm mb-2">
-              ⚡ Injury management critical - one injury = 6-12 months lost
+              âš¡ Injury management critical - one injury = 6-12 months lost
             </Text>
             <Text className="text-red-300 text-sm">
-              ⚡ Process &gt; outcome - enjoy small improvements
+              âš¡ Process &gt; outcome - enjoy small improvements
             </Text>
           </View>
         </View>
@@ -568,3 +568,4 @@ export default function EliteTrainingPrinciples() {
     </View>
   );
 }
+

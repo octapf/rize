@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -56,34 +56,34 @@ const FORM_ERRORS: FormError[] = [
 const COACHES: Coach[] = [
   {
     id: '1',
-    name: 'Carlos Pérez',
+    name: 'Carlos PÃ©rez',
     specialty: 'Powerlifting',
     rating: 4.9,
     clients: 234,
     responseTime: '< 2 horas',
-    avatar: '💪',
+    avatar: 'ðŸ’ª',
     price: 29.99,
     available: true,
   },
   {
     id: '2',
-    name: 'Ana Martínez',
+    name: 'Ana MartÃ­nez',
     specialty: 'Hipertrofia',
     rating: 4.8,
     clients: 189,
     responseTime: '< 4 horas',
-    avatar: '🏋️',
+    avatar: 'ðŸ‹ï¸',
     price: 24.99,
     available: true,
   },
   {
     id: '3',
-    name: 'Luis García',
+    name: 'Luis GarcÃ­a',
     specialty: 'Calistenia',
     rating: 4.7,
     clients: 156,
     responseTime: '< 6 horas',
-    avatar: '🤸',
+    avatar: 'ðŸ¤¸',
     price: 19.99,
     available: false,
   },
@@ -105,15 +105,15 @@ export default function PersonalCoaching() {
       'Selecciona el origen del video',
       [
         {
-          text: 'Cámara',
+          text: 'CÃ¡mara',
           onPress: () => {
-            Alert.alert('Grabando...', 'Función de cámara próximamente');
+            Alert.alert('Grabando...', 'FunciÃ³n de cÃ¡mara prÃ³ximamente');
           },
         },
         {
-          text: 'Galería',
+          text: 'GalerÃ­a',
           onPress: () => {
-            Alert.alert('¡Video Subido!', 'Tu form check está en revisión. Recibirás feedback en 24-48 horas.');
+            Alert.alert('Â¡Video Subido!', 'Tu form check estÃ¡ en revisiÃ³n. RecibirÃ¡s feedback en 24-48 horas.');
           },
         },
         { text: 'Cancelar', style: 'cancel' },
@@ -124,7 +124,7 @@ export default function PersonalCoaching() {
   const viewFormCheckDetails = (error: FormError) => {
     Alert.alert(
       error.exercise,
-      `Problema detectado: ${error.issue}\n\nFecha: ${error.timestamp}\n\nEstado: ${error.reviewed ? 'Revisado ✅' : 'Pendiente ⏳'}`,
+      `Problema detectado: ${error.issue}\n\nFecha: ${error.timestamp}\n\nEstado: ${error.reviewed ? 'Revisado âœ…' : 'Pendiente â³'}`,
       [
         { text: 'Ver Video', onPress: () => Alert.alert('Reproducir Video', error.videoUrl || 'No disponible') },
         { text: 'Cerrar' },
@@ -134,21 +134,21 @@ export default function PersonalCoaching() {
 
   const hireCoach = (coach: Coach) => {
     if (!coach.available) {
-      Alert.alert('Coach No Disponible', `${coach.name} no está aceptando nuevos clientes en este momento.`);
+      Alert.alert('Coach No Disponible', `${coach.name} no estÃ¡ aceptando nuevos clientes en este momento.`);
       return;
     }
 
     Alert.alert(
       'Contratar Coach',
-      `${coach.name}\n${coach.specialty}\n\nPrecio: $${coach.price}/mes\n\n¿Deseas continuar?`,
+      `${coach.name}\n${coach.specialty}\n\nPrecio: $${coach.price}/mes\n\nÂ¿Deseas continuar?`,
       [
         { text: 'Cancelar', style: 'cancel' },
         {
           text: 'Contratar',
           onPress: () => {
             Alert.alert(
-              '¡Contratado!',
-              `${coach.name} te contactará en ${coach.responseTime}.\n\nRevisarás tu plan inicial juntos.`
+              'Â¡Contratado!',
+              `${coach.name} te contactarÃ¡ en ${coach.responseTime}.\n\nRevisarÃ¡s tu plan inicial juntos.`
             );
           },
         },
@@ -189,7 +189,7 @@ export default function PersonalCoaching() {
               key={tab.id}
               onPress={() => setSelectedTab(tab.id)}
               className={`flex-1 flex-row items-center justify-center py-3 rounded-lg ${
-                selectedTab === tab.id ? 'bg-emerald-500' : 'bg-zinc-900 border border-zinc-800'
+                selectedTab === tab.id ? 'bg-primary' : 'bg-zinc-900 border border-zinc-800'
               }`}
             >
               <Ionicons
@@ -216,7 +216,7 @@ export default function PersonalCoaching() {
             {/* Upload Button */}
             <TouchableOpacity
               onPress={submitFormCheck}
-              className="bg-gradient-to-br from-emerald-500 to-blue-500 rounded-xl p-6 mb-6"
+              className="bg-gradient-to-br from-primary to-[#7D0EBE] rounded-xl p-6 mb-6"
             >
               <View className="flex-row items-center justify-between">
                 <View className="flex-1">
@@ -266,12 +266,12 @@ export default function PersonalCoaching() {
                     </View>
                     <View
                       className={`px-3 py-1 rounded-full ${
-                        error.reviewed ? 'bg-emerald-500/20' : 'bg-amber-500/20'
+                        error.reviewed ? 'bg-primary/20' : 'bg-amber-500/20'
                       }`}
                     >
                       <Text
                         className={`text-xs font-bold ${
-                          error.reviewed ? 'text-emerald-500' : 'text-amber-500'
+                          error.reviewed ? 'text-primary' : 'text-amber-500'
                         }`}
                       >
                         {error.reviewed ? 'REVISADO' : 'PENDIENTE'}
@@ -309,21 +309,21 @@ export default function PersonalCoaching() {
             )}
 
             {/* Info */}
-            <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30 mt-4">
+            <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mt-4">
               <View className="flex-row items-start">
-                <Ionicons name="information-circle" size={20} color="#3B82F6" />
+                <Ionicons name="information-circle" size={20} color="#9D12DE" />
                 <View className="flex-1 ml-3">
-                  <Text className="text-blue-400 font-bold mb-2">
-                    ¿Cómo funciona?
+                  <Text className="text-primary/80 font-bold mb-2">
+                    Â¿CÃ³mo funciona?
                   </Text>
-                  <Text className="text-blue-300 text-sm mb-2">
-                    1. Graba tu ejercicio desde un ángulo lateral
+                  <Text className="text-primary/60 text-sm mb-2">
+                    1. Graba tu ejercicio desde un Ã¡ngulo lateral
                   </Text>
-                  <Text className="text-blue-300 text-sm mb-2">
+                  <Text className="text-primary/60 text-sm mb-2">
                     2. Sube el video y describe tus dudas
                   </Text>
-                  <Text className="text-blue-300 text-sm">
-                    3. Un coach revisará tu técnica y te dará feedback detallado
+                  <Text className="text-primary/60 text-sm">
+                    3. Un coach revisarÃ¡ tu tÃ©cnica y te darÃ¡ feedback detallado
                   </Text>
                 </View>
               </View>
@@ -344,7 +344,7 @@ export default function PersonalCoaching() {
                 className="bg-zinc-900 rounded-xl p-4 mb-4 border border-zinc-800"
               >
                 <View className="flex-row items-start mb-3">
-                  <View className="w-16 h-16 bg-gradient-to-br from-emerald-500 to-blue-500 rounded-full items-center justify-center">
+                  <View className="w-16 h-16 bg-gradient-to-br from-primary to-[#7D0EBE] rounded-full items-center justify-center">
                     <Text className="text-3xl">{coach.avatar}</Text>
                   </View>
 
@@ -355,19 +355,19 @@ export default function PersonalCoaching() {
                       </Text>
                       <View
                         className={`px-2 py-1 rounded ${
-                          coach.available ? 'bg-emerald-500/20' : 'bg-red-500/20'
+                          coach.available ? 'bg-primary/20' : 'bg-red-500/20'
                         }`}
                       >
                         <Text
                           className={`text-xs font-bold ${
-                            coach.available ? 'text-emerald-500' : 'text-red-500'
+                            coach.available ? 'text-primary' : 'text-red-500'
                           }`}
                         >
                           {coach.available ? 'DISPONIBLE' : 'OCUPADO'}
                         </Text>
                       </View>
                     </View>
-                    <Text className="text-emerald-500 font-semibold mt-1">
+                    <Text className="text-primary font-semibold mt-1">
                       {coach.specialty}
                     </Text>
                   </View>
@@ -377,7 +377,7 @@ export default function PersonalCoaching() {
                 <View className="flex-row gap-2 mb-3">
                   <View className="flex-1 bg-zinc-800 rounded-lg p-2">
                     <View className="flex-row items-center">
-                      <Ionicons name="star" size={14} color="#F59E0B" />
+                      <Ionicons name="star" size={14} color="#FFEA00" />
                       <Text className="text-white font-bold ml-1 text-sm">
                         {coach.rating}
                       </Text>
@@ -420,7 +420,7 @@ export default function PersonalCoaching() {
                     <TouchableOpacity
                       onPress={() => hireCoach(coach)}
                       className={`rounded-lg px-6 py-3 ${
-                        coach.available ? 'bg-emerald-500' : 'bg-zinc-700'
+                        coach.available ? 'bg-primary' : 'bg-zinc-700'
                       }`}
                       disabled={!coach.available}
                     >
@@ -448,7 +448,7 @@ export default function PersonalCoaching() {
               </Text>
               <TouchableOpacity
                 onPress={() => setSelectedTab('coaches')}
-                className="bg-emerald-500 rounded-lg px-6 py-3 mt-4"
+                className="bg-primary rounded-lg px-6 py-3 mt-4"
               >
                 <Text className="text-white font-semibold">Ver Coaches</Text>
               </TouchableOpacity>
@@ -459,3 +459,5 @@ export default function PersonalCoaching() {
     </View>
   );
 }
+
+

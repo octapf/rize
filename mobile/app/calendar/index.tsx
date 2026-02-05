@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -78,7 +78,7 @@ export default function CalendarScreen() {
         key={date.toString()}
         onPress={() => setSelectedDate(date)}
         className={`aspect-square items-center justify-center ${
-          isSelected ? 'bg-blue-500 rounded-lg' : ''
+          isSelected ? 'bg-primary rounded-lg' : ''
         }`}
       >
         <Text
@@ -88,7 +88,7 @@ export default function CalendarScreen() {
               : !isCurrentMonth
               ? 'text-gray-300'
               : isToday(date)
-              ? 'text-blue-600'
+              ? 'text-primary'
               : 'text-gray-900'
           }`}
         >
@@ -101,7 +101,7 @@ export default function CalendarScreen() {
               <View
                 key={i}
                 className={`w-1.5 h-1.5 rounded-full ${
-                  isSelected ? 'bg-white' : 'bg-emerald-500'
+                  isSelected ? 'bg-white' : 'bg-primary'
                 }`}
               />
             ))}
@@ -120,7 +120,7 @@ export default function CalendarScreen() {
   return (
     <View className="flex-1 bg-gray-50">
       {/* Header */}
-      <LinearGradient colors={['#10B981', '#059669']} className="px-6 pt-12 pb-6">
+      <LinearGradient colors={['#9D12DE', '#7C3AED']} className="px-6 pt-12 pb-6">
         <View className="flex-row items-center justify-between mb-4">
           <TouchableOpacity onPress={() => router.back()} className="p-2">
             <Ionicons name="arrow-back" size={28} color="white" />
@@ -189,11 +189,11 @@ export default function CalendarScreen() {
           {/* Legend */}
           <View className="flex-row items-center justify-center gap-4 mt-4 pt-4 border-t border-gray-200">
             <View className="flex-row items-center gap-2">
-              <View className="w-3 h-3 rounded-full bg-emerald-500" />
+              <View className="w-3 h-3 rounded-full bg-primary" />
               <Text className="text-gray-600 text-xs">Con entrenamiento</Text>
             </View>
             <View className="flex-row items-center gap-2">
-              <View className="w-3 h-3 rounded-full bg-blue-500" />
+              <View className="w-3 h-3 rounded-full bg-primary" />
               <Text className="text-gray-600 text-xs">Seleccionado</Text>
             </View>
           </View>
@@ -209,14 +209,14 @@ export default function CalendarScreen() {
             {selectedDayWorkout ? (
               <View>
                 <View className="flex-row items-center gap-2 mb-3">
-                  <View className="bg-emerald-500 w-10 h-10 rounded-full items-center justify-center">
+                  <View className="bg-primary w-10 h-10 rounded-full items-center justify-center">
                     <Ionicons name="checkmark" size={24} color="white" />
                   </View>
                   <View>
-                    <Text className="text-emerald-900 font-bold">
-                      Día completado
+                    <Text className="text-primary font-bold">
+                      DÃ­a completado
                     </Text>
-                    <Text className="text-emerald-700 text-sm">
+                    <Text className="text-primary text-sm">
                       {selectedDayWorkout.workoutCount}{' '}
                       {selectedDayWorkout.workoutCount === 1
                         ? 'entrenamiento'
@@ -227,9 +227,9 @@ export default function CalendarScreen() {
 
                 <TouchableOpacity
                   onPress={() => router.push('/workouts/history')}
-                  className="bg-emerald-50 border border-emerald-200 rounded-lg py-3"
+                  className="bg-emerald-50 border border-primary/20 rounded-lg py-3"
                 >
-                  <Text className="text-emerald-700 font-semibold text-center">
+                  <Text className="text-primary font-semibold text-center">
                     Ver Entrenamientos
                   </Text>
                 </TouchableOpacity>
@@ -248,7 +248,7 @@ export default function CalendarScreen() {
                 {!isBefore(selectedDate, new Date()) && (
                   <TouchableOpacity
                     onPress={() => router.push('/workouts/quick-start')}
-                    className="bg-blue-500 rounded-lg py-3"
+                    className="bg-primary rounded-lg py-3"
                   >
                     <Text className="text-white font-semibold text-center">
                       Iniciar Entrenamiento
@@ -268,10 +268,10 @@ export default function CalendarScreen() {
             </View>
             <View className="flex-1">
               <Text className="text-amber-900 font-bold text-lg">
-                Racha Actual: 7 días
+                Racha Actual: 7 dÃ­as
               </Text>
               <Text className="text-amber-700 text-sm">
-                ¡Sigue así! No pierdas tu racha
+                Â¡Sigue asÃ­! No pierdas tu racha
               </Text>
             </View>
           </View>
@@ -280,3 +280,5 @@ export default function CalendarScreen() {
     </View>
   );
 }
+
+

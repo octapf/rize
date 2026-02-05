@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -50,7 +50,7 @@ const WORKOUT_HISTORY: WorkoutSession[] = [
     totalVolume: 8650,
     calories: 420,
     intensity: 'high',
-    muscle_groups: ['Pecho', 'Hombros', 'Tríceps'],
+    muscle_groups: ['Pecho', 'Hombros', 'TrÃ­ceps'],
     notes: 'Nuevo PR en press banca: 120kg x 3',
   },
   {
@@ -62,7 +62,7 @@ const WORKOUT_HISTORY: WorkoutSession[] = [
     totalVolume: 7240,
     calories: 385,
     intensity: 'medium',
-    muscle_groups: ['Espalda', 'Bíceps'],
+    muscle_groups: ['Espalda', 'BÃ­ceps'],
   },
   {
     id: '3',
@@ -73,8 +73,8 @@ const WORKOUT_HISTORY: WorkoutSession[] = [
     totalVolume: 12450,
     calories: 520,
     intensity: 'high',
-    muscle_groups: ['Cuádriceps', 'Glúteos', 'Isquiotibiales'],
-    notes: 'Sentadilla profunda sintiéndose fuerte',
+    muscle_groups: ['CuÃ¡driceps', 'GlÃºteos', 'Isquiotibiales'],
+    notes: 'Sentadilla profunda sintiÃ©ndose fuerte',
   },
   {
     id: '4',
@@ -96,7 +96,7 @@ const WORKOUT_HISTORY: WorkoutSession[] = [
     totalVolume: 10240,
     calories: 465,
     intensity: 'high',
-    muscle_groups: ['Cuádriceps', 'Glúteos'],
+    muscle_groups: ['CuÃ¡driceps', 'GlÃºteos'],
   },
   {
     id: '6',
@@ -107,7 +107,7 @@ const WORKOUT_HISTORY: WorkoutSession[] = [
     totalVolume: 7140,
     calories: 340,
     intensity: 'medium',
-    muscle_groups: ['Pecho', 'Tríceps'],
+    muscle_groups: ['Pecho', 'TrÃ­ceps'],
   },
   {
     id: '7',
@@ -130,7 +130,7 @@ const WEEKLY_STATS: WeeklyStats[] = [
     totalVolume: 43570,
     totalCalories: 2095,
     avgDuration: 81,
-    topMuscleGroups: ['Pecho', 'Espalda', 'Cuádriceps'],
+    topMuscleGroups: ['Pecho', 'Espalda', 'CuÃ¡driceps'],
   },
   {
     week: 'Semana 3 Enero',
@@ -138,7 +138,7 @@ const WEEKLY_STATS: WeeklyStats[] = [
     totalVolume: 48240,
     totalCalories: 2340,
     avgDuration: 76,
-    topMuscleGroups: ['Espalda', 'Glúteos', 'Hombros'],
+    topMuscleGroups: ['Espalda', 'GlÃºteos', 'Hombros'],
   },
   {
     week: 'Semana 2 Enero',
@@ -146,7 +146,7 @@ const WEEKLY_STATS: WeeklyStats[] = [
     totalVolume: 41890,
     totalCalories: 2010,
     avgDuration: 79,
-    topMuscleGroups: ['Pecho', 'Cuádriceps', 'Bíceps'],
+    topMuscleGroups: ['Pecho', 'CuÃ¡driceps', 'BÃ­ceps'],
   },
 ];
 
@@ -174,7 +174,7 @@ export default function WorkoutHistory() {
   const viewWorkoutDetails = (workout: WorkoutSession) => {
     Alert.alert(
       workout.name,
-      `${workout.exercises} ejercicios • ${workout.duration} min\n${workout.totalVolume.toLocaleString()}kg volumen\n\n${workout.notes || 'Sin notas'}`,
+      `${workout.exercises} ejercicios â€¢ ${workout.duration} min\n${workout.totalVolume.toLocaleString()}kg volumen\n\n${workout.notes || 'Sin notas'}`,
       [{ text: 'OK' }]
     );
   };
@@ -186,7 +186,7 @@ export default function WorkoutHistory() {
       case 'medium':
         return 'text-amber-400';
       case 'low':
-        return 'text-emerald-400';
+        return 'text-primary';
       default:
         return 'text-zinc-400';
     }
@@ -239,7 +239,7 @@ export default function WorkoutHistory() {
                 onPress={() => setActiveTab(tab.id as any)}
                 className={`flex-row items-center px-4 py-2 rounded-lg ${
                   activeTab === tab.id
-                    ? 'bg-emerald-500'
+                    ? 'bg-primary'
                     : 'bg-zinc-900 border border-zinc-800'
                 }`}
               >
@@ -269,14 +269,14 @@ export default function WorkoutHistory() {
             <View className="bg-zinc-900 rounded-xl p-4 border border-zinc-800 mb-6">
               <View className="flex-row items-center justify-between">
                 <View className="flex-1">
-                  <Text className="text-zinc-400 text-xs mb-1">ÚLTIMO WORKOUT</Text>
+                  <Text className="text-zinc-400 text-xs mb-1">ÃšLTIMO WORKOUT</Text>
                   <Text className="text-white text-lg font-bold">
                     Hace {Math.floor((Date.now() - new Date(history[0].date).getTime()) / (1000 * 60 * 60))}h
                   </Text>
                 </View>
                 <View className="flex-1">
                   <Text className="text-zinc-400 text-xs mb-1">ESTA SEMANA</Text>
-                  <Text className="text-emerald-400 text-lg font-bold">
+                  <Text className="text-primary text-lg font-bold">
                     {weeklyStats[0].workouts} workouts
                   </Text>
                 </View>
@@ -310,7 +310,7 @@ export default function WorkoutHistory() {
                       ? 'bg-red-500/10 border border-red-500/30'
                       : workout.intensity === 'medium'
                       ? 'bg-amber-500/10 border border-amber-500/30'
-                      : 'bg-emerald-500/10 border border-emerald-500/30'
+                      : 'bg-primary/10 border border-primary/30'
                   }`}>
                     <Text className={`text-xs font-bold ${getIntensityColor(workout.intensity)}`}>
                       {getIntensityLabel(workout.intensity)}
@@ -323,7 +323,7 @@ export default function WorkoutHistory() {
                   <View className="flex-1 bg-zinc-800 rounded-lg p-2">
                     <View className="flex-row items-center mb-1">
                       <Ionicons name="time" size={14} color="#71717A" />
-                      <Text className="text-zinc-400 text-xs ml-1">Duración</Text>
+                      <Text className="text-zinc-400 text-xs ml-1">DuraciÃ³n</Text>
                     </View>
                     <Text className="text-white font-bold">{workout.duration} min</Text>
                   </View>
@@ -342,14 +342,14 @@ export default function WorkoutHistory() {
                       <Ionicons name="trending-up" size={14} color="#71717A" />
                       <Text className="text-zinc-400 text-xs ml-1">Volumen</Text>
                     </View>
-                    <Text className="text-emerald-400 font-bold">
+                    <Text className="text-primary font-bold">
                       {workout.totalVolume.toLocaleString()} kg
                     </Text>
                   </View>
                   <View className="flex-1 bg-zinc-800 rounded-lg p-2">
                     <View className="flex-row items-center mb-1">
                       <Ionicons name="flame" size={14} color="#71717A" />
-                      <Text className="text-zinc-400 text-xs ml-1">Calorías</Text>
+                      <Text className="text-zinc-400 text-xs ml-1">CalorÃ­as</Text>
                     </View>
                     <Text className="text-red-400 font-bold">{workout.calories} kcal</Text>
                   </View>
@@ -360,8 +360,8 @@ export default function WorkoutHistory() {
                   <Text className="text-zinc-400 text-xs mb-2">GRUPOS MUSCULARES</Text>
                   <View className="flex-row flex-wrap gap-2">
                     {workout.muscle_groups.map((muscle, index) => (
-                      <View key={index} className="bg-blue-500/10 rounded-lg px-2 py-1">
-                        <Text className="text-blue-400 text-xs">{muscle}</Text>
+                      <View key={index} className="bg-primary/10 rounded-lg px-2 py-1">
+                        <Text className="text-primary/80 text-xs">{muscle}</Text>
                       </View>
                     ))}
                   </View>
@@ -371,7 +371,7 @@ export default function WorkoutHistory() {
                 {workout.notes && (
                   <View className="bg-amber-500/10 rounded-lg p-2 border border-amber-500/30">
                     <View className="flex-row items-start">
-                      <Ionicons name="star" size={14} color="#F59E0B" />
+                      <Ionicons name="star" size={14} color="#FFEA00" />
                       <Text className="text-amber-300 text-xs ml-2 flex-1">
                         {workout.notes}
                       </Text>
@@ -400,8 +400,8 @@ export default function WorkoutHistory() {
                     <Text className="text-white text-2xl font-bold">{week.workouts}</Text>
                   </View>
                   <View className="flex-1 bg-zinc-800 rounded-lg p-3">
-                    <Text className="text-zinc-400 text-xs mb-1">AVG DURACIÓN</Text>
-                    <Text className="text-emerald-400 text-2xl font-bold">
+                    <Text className="text-zinc-400 text-xs mb-1">AVG DURACIÃ“N</Text>
+                    <Text className="text-primary text-2xl font-bold">
                       {week.avgDuration}m
                     </Text>
                   </View>
@@ -415,7 +415,7 @@ export default function WorkoutHistory() {
                     </Text>
                   </View>
                   <View className="flex-1 bg-zinc-800 rounded-lg p-3">
-                    <Text className="text-zinc-400 text-xs mb-1">CALORÍAS</Text>
+                    <Text className="text-zinc-400 text-xs mb-1">CALORÃAS</Text>
                     <Text className="text-red-400 text-lg font-bold">
                       {week.totalCalories}
                     </Text>
@@ -427,8 +427,8 @@ export default function WorkoutHistory() {
                   <Text className="text-zinc-400 text-xs mb-2">TOP GRUPOS MUSCULARES</Text>
                   <View className="flex-row flex-wrap gap-2">
                     {week.topMuscleGroups.map((muscle, i) => (
-                      <View key={i} className="bg-emerald-500/10 rounded-lg px-3 py-1">
-                        <Text className="text-emerald-400 text-sm">{muscle}</Text>
+                      <View key={i} className="bg-primary/10 rounded-lg px-3 py-1">
+                        <Text className="text-primary text-sm">{muscle}</Text>
                       </View>
                     ))}
                   </View>
@@ -467,12 +467,12 @@ export default function WorkoutHistory() {
                     <Text className="text-zinc-400 mb-2">Consistencia</Text>
                     <View className="h-2 bg-zinc-800 rounded-full overflow-hidden">
                       <View
-                        className="h-full bg-emerald-500 rounded-full"
+                        className="h-full bg-primary rounded-full"
                         style={{ width: `${monthlyTrends.consistency}%` }}
                       />
                     </View>
                   </View>
-                  <Text className="text-emerald-400 text-2xl font-bold ml-4">
+                  <Text className="text-primary text-2xl font-bold ml-4">
                     {monthlyTrends.consistency}%
                   </Text>
                 </View>
@@ -480,8 +480,8 @@ export default function WorkoutHistory() {
                 <View className="flex-row items-center justify-between mb-4 pb-4 border-b border-zinc-800">
                   <Text className="text-zinc-400">Aumento de Volumen</Text>
                   <View className="flex-row items-center">
-                    <Ionicons name="trending-up" size={20} color="#10B981" />
-                    <Text className="text-emerald-400 text-2xl font-bold ml-2">
+                    <Ionicons name="trending-up" size={20} color="#9D12DE" />
+                    <Text className="text-primary text-2xl font-bold ml-2">
                       +{monthlyTrends.volumeIncrease}%
                     </Text>
                   </View>
@@ -490,7 +490,7 @@ export default function WorkoutHistory() {
                 <View className="flex-row items-center justify-between">
                   <Text className="text-zinc-400">PRs Rotos</Text>
                   <View className="flex-row items-center">
-                    <Ionicons name="trophy" size={20} color="#F59E0B" />
+                    <Ionicons name="trophy" size={20} color="#FFEA00" />
                     <Text className="text-amber-400 text-2xl font-bold ml-2">
                       {monthlyTrends.prsBroken}
                     </Text>
@@ -499,15 +499,15 @@ export default function WorkoutHistory() {
               </View>
 
               {/* Insights */}
-              <View className="bg-emerald-500/10 rounded-lg p-3 border border-emerald-500/30">
+              <View className="bg-primary/10 rounded-lg p-3 border border-primary/30">
                 <View className="flex-row items-start">
-                  <Ionicons name="checkmark-circle" size={20} color="#10B981" />
+                  <Ionicons name="checkmark-circle" size={20} color="#9D12DE" />
                   <View className="flex-1 ml-3">
-                    <Text className="text-emerald-400 font-bold mb-1">
+                    <Text className="text-primary font-bold mb-1">
                       Excelente Mes
                     </Text>
-                    <Text className="text-emerald-300 text-sm">
-                      Tu consistencia está por encima del 90%. Sigue así para resultados óptimos.
+                    <Text className="text-primary/80 text-sm">
+                      Tu consistencia estÃ¡ por encima del 90%. Sigue asÃ­ para resultados Ã³ptimos.
                     </Text>
                   </View>
                 </View>
@@ -522,25 +522,25 @@ export default function WorkoutHistory() {
               
               <View className="mb-3">
                 <View className="flex-row items-start mb-2">
-                  <Ionicons name="arrow-forward" size={16} color="#10B981" />
+                  <Ionicons name="arrow-forward" size={16} color="#9D12DE" />
                   <Text className="text-zinc-300 text-sm ml-2 flex-1">
-                    Mantén tu consistencia del 91.7% o mejor
+                    MantÃ©n tu consistencia del 91.7% o mejor
                   </Text>
                 </View>
                 <View className="flex-row items-start mb-2">
-                  <Ionicons name="arrow-forward" size={16} color="#10B981" />
+                  <Ionicons name="arrow-forward" size={16} color="#9D12DE" />
                   <Text className="text-zinc-300 text-sm ml-2 flex-1">
                     Objetivo: 24 workouts completados (vs 22 este mes)
                   </Text>
                 </View>
                 <View className="flex-row items-start mb-2">
-                  <Ionicons name="arrow-forward" size={16} color="#10B981" />
+                  <Ionicons name="arrow-forward" size={16} color="#9D12DE" />
                   <Text className="text-zinc-300 text-sm ml-2 flex-1">
                     Aumenta volumen progresivamente (+5-8%)
                   </Text>
                 </View>
                 <View className="flex-row items-start">
-                  <Ionicons name="arrow-forward" size={16} color="#10B981" />
+                  <Ionicons name="arrow-forward" size={16} color="#9D12DE" />
                   <Text className="text-zinc-300 text-sm ml-2 flex-1">
                     Rompe al menos 5 PRs nuevos
                   </Text>
@@ -552,14 +552,14 @@ export default function WorkoutHistory() {
 
         {/* Info Card */}
         <View className="px-6 pb-6 pt-2">
-          <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30">
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30">
             <View className="flex-row items-start">
-              <Ionicons name="analytics" size={20} color="#3B82F6" />
+              <Ionicons name="analytics" size={20} color="#9D12DE" />
               <View className="flex-1 ml-3">
-                <Text className="text-blue-400 font-bold mb-2">
+                <Text className="text-primary/80 font-bold mb-2">
                   Datos = Resultados
                 </Text>
-                <Text className="text-blue-300 text-sm">
+                <Text className="text-primary/60 text-sm">
                   Analiza tu historial para identificar patrones y optimizar tu progreso
                 </Text>
               </View>
@@ -570,3 +570,5 @@ export default function WorkoutHistory() {
     </View>
   );
 }
+
+

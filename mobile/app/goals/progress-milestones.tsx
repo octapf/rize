@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -195,7 +195,7 @@ export default function ProgressMilestones() {
 
       <ScrollView className="flex-1" showsVerticalScrollIndicator={false}>
         <View className="px-6 pt-6">
-          <View className="bg-gradient-to-r from-emerald-500 to-blue-500 rounded-xl p-6 mb-6">
+          <View className="bg-gradient-to-r from-primary to-[#7D0EBE] rounded-xl p-6 mb-6">
             <Text className="text-white text-2xl font-bold mb-2">Track Your Wins</Text>
             <Text className="text-white opacity-90">
               Celebrate every achievement
@@ -278,26 +278,26 @@ export default function ProgressMilestones() {
             })}
           </View>
 
-          <View className="bg-emerald-500/10 rounded-xl p-4 border border-emerald-500/30 mb-6">
-            <Text className="text-emerald-400 font-bold mb-2">Milestone Benefits</Text>
-            <Text className="text-emerald-300 text-sm">
-              ✓ Keeps motivation high{'\n'}
-              ✓ Provides clear targets{'\n'}
-              ✓ Celebrates progress{'\n'}
-              ✓ Builds confidence{'\n'}
-              ✓ Documents journey
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
+            <Text className="text-primary font-bold mb-2">Milestone Benefits</Text>
+            <Text className="text-primary/80 text-sm">
+              âœ“ Keeps motivation high{'\n'}
+              âœ“ Provides clear targets{'\n'}
+              âœ“ Celebrates progress{'\n'}
+              âœ“ Builds confidence{'\n'}
+              âœ“ Documents journey
             </Text>
           </View>
 
-          <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30 mb-6">
-            <Text className="text-blue-400 font-bold mb-2">How to Use Milestones</Text>
-            <Text className="text-blue-300 text-sm">
-              • Pick 1-3 milestones to chase{'\n'}
-              • Break into smaller weekly goals{'\n'}
-              • Track attempts and near-misses{'\n'}
-              • Celebrate when you hit them{'\n'}
-              • Share wins with community{'\n'}
-              • Move to next challenge
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
+            <Text className="text-primary/80 font-bold mb-2">How to Use Milestones</Text>
+            <Text className="text-primary/60 text-sm">
+              â€¢ Pick 1-3 milestones to chase{'\n'}
+              â€¢ Break into smaller weekly goals{'\n'}
+              â€¢ Track attempts and near-misses{'\n'}
+              â€¢ Celebrate when you hit them{'\n'}
+              â€¢ Share wins with community{'\n'}
+              â€¢ Move to next challenge
             </Text>
           </View>
         </View>
@@ -305,3 +305,6 @@ export default function ProgressMilestones() {
     </View>
   );
 }
+
+
+

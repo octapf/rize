@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+﻿import React, { useState, useEffect, useRef } from 'react';
 import {
   View,
   Text,
@@ -29,7 +29,7 @@ export default function RestTimerScreen() {
             Vibration.vibrate([0, 500, 200, 500]);
             setIsRunning(false);
             setIsPaused(false);
-            Alert.alert('¡Descanso Terminado!', 'Es hora de volver a entrenar 💪', [
+            Alert.alert('Â¡Descanso Terminado!', 'Es hora de volver a entrenar ðŸ’ª', [
               { text: 'OK', onPress: () => resetTimer() }
             ]);
             return 0;
@@ -102,19 +102,19 @@ export default function RestTimerScreen() {
   // Color based on remaining time
   const getTimerColor = () => {
     if (seconds <= 10) return '#EF4444'; // Red
-    if (seconds <= 30) return '#F59E0B'; // Orange
-    return '#10B981'; // Green
+    if (seconds <= 30) return '#FFEA00'; // Orange
+    return '#9D12DE'; // Green
   };
 
   return (
     <View className="flex-1 bg-gray-50">
       {/* Header */}
-      <LinearGradient colors={['#10B981', '#059669']} className="px-6 pt-12 pb-6">
+      <LinearGradient colors={['#9D12DE', '#7C3AED']} className="px-6 pt-12 pb-6">
         <View className="flex-row items-center justify-between">
           <TouchableOpacity onPress={() => router.back()} className="p-2">
             <Ionicons name="arrow-back" size={28} color="white" />
           </TouchableOpacity>
-          <Text className="text-2xl font-bold text-white">Cronómetro de Descanso</Text>
+          <Text className="text-2xl font-bold text-white">CronÃ³metro de Descanso</Text>
           <View className="w-10" />
         </View>
       </LinearGradient>
@@ -169,7 +169,7 @@ export default function RestTimerScreen() {
             {!isRunning ? (
               <TouchableOpacity
                 onPress={startTimer}
-                className="bg-emerald-500 px-12 py-4 rounded-xl flex-row items-center gap-2"
+                className="bg-primary px-12 py-4 rounded-xl flex-row items-center gap-2"
               >
                 <Ionicons name="play" size={24} color="white" />
                 <Text className="text-white font-bold text-lg">Iniciar</Text>
@@ -179,7 +179,7 @@ export default function RestTimerScreen() {
                 {isPaused ? (
                   <TouchableOpacity
                     onPress={resumeTimer}
-                    className="bg-emerald-500 px-8 py-4 rounded-xl flex-row items-center gap-2"
+                    className="bg-primary px-8 py-4 rounded-xl flex-row items-center gap-2"
                   >
                     <Ionicons name="play" size={24} color="white" />
                     <Text className="text-white font-bold text-lg">Reanudar</Text>
@@ -240,7 +240,7 @@ export default function RestTimerScreen() {
                 key={time}
                 onPress={() => setPreset(time)}
                 className={`px-6 py-3 rounded-lg ${
-                  initialSeconds === time ? 'bg-emerald-500' : 'bg-gray-200'
+                  initialSeconds === time ? 'bg-primary' : 'bg-gray-200'
                 }`}
               >
                 <Text
@@ -256,14 +256,14 @@ export default function RestTimerScreen() {
         </Card>
 
         {/* Tips */}
-        <Card className="w-full p-4 mt-4 bg-blue-50 border-blue-200">
+        <Card className="w-full p-4 mt-4 bg-primary/5 border-primary/20">
           <View className="flex-row gap-3">
-            <Ionicons name="information-circle" size={24} color="#3B82F6" />
+            <Ionicons name="information-circle" size={24} color="#9D12DE" />
             <View className="flex-1">
-              <Text className="text-blue-900 font-semibold mb-1">
-                Recomendación
+              <Text className="text-text font-semibold mb-1">
+                RecomendaciÃ³n
               </Text>
-              <Text className="text-blue-700 text-sm">
+              <Text className="text-text/70 text-sm">
                 Descansa 1-2 min para hipertrofia, 3-5 min para fuerza
               </Text>
             </View>
@@ -273,3 +273,4 @@ export default function RestTimerScreen() {
     </View>
   );
 }
+

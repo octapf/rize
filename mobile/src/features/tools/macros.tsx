@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+﻿import React, { useState, useEffect } from 'react';
 import {
   View,
   Text,
@@ -27,24 +27,24 @@ const MACRO_SPLITS: Record<MacroSplit, MacroSplitConfig> = {
     protein: 30,
     carbs: 40,
     fats: 30,
-    description: 'Distribución equilibrada para mantenimiento general',
+    description: 'DistribuciÃ³n equilibrada para mantenimiento general',
   },
   'high-protein': {
-    name: 'Alto en Proteína',
+    name: 'Alto en ProteÃ­na',
     protein: 40,
     carbs: 30,
     fats: 30,
-    description: 'Ideal para ganar músculo o perder grasa',
+    description: 'Ideal para ganar mÃºsculo o perder grasa',
   },
   'low-carb': {
     name: 'Bajo en Carbos',
     protein: 35,
     carbs: 20,
     fats: 45,
-    description: 'Reduce carbohidratos para pérdida de grasa',
+    description: 'Reduce carbohidratos para pÃ©rdida de grasa',
   },
   keto: {
-    name: 'Cetogénica',
+    name: 'CetogÃ©nica',
     protein: 25,
     carbs: 5,
     fats: 70,
@@ -135,7 +135,7 @@ export default function MacrosCalculator() {
           </Text>
         </View>
         <Text className="text-zinc-400 text-sm">
-          Personaliza tu distribución de macronutrientes
+          Personaliza tu distribuciÃ³n de macronutrientes
         </Text>
       </View>
 
@@ -144,7 +144,7 @@ export default function MacrosCalculator() {
           {/* TDEE Input */}
           <View>
             <Text className="text-white text-base font-semibold mb-2">
-              Tu TDEE (Calorías de Mantenimiento)
+              Tu TDEE (CalorÃ­as de Mantenimiento)
             </Text>
             <Text className="text-zinc-400 text-sm mb-3">
               Si no conoces tu TDEE, usa la calculadora TDEE primero
@@ -182,7 +182,7 @@ export default function MacrosCalculator() {
                       goal === 'cut' ? 'text-red-500' : 'text-zinc-300'
                     }`}
                   >
-                    Definición (Cut)
+                    DefiniciÃ³n (Cut)
                   </Text>
                   <Text className="text-zinc-500 text-xs">-500 cal del TDEE</Text>
                 </View>
@@ -195,19 +195,19 @@ export default function MacrosCalculator() {
                 onPress={() => setGoal('maintain')}
                 className={`p-4 rounded-xl border-2 flex-row items-center ${
                   goal === 'maintain'
-                    ? 'bg-blue-500/20 border-blue-500'
+                    ? 'bg-primary/20 border-primary'
                     : 'bg-zinc-900 border-zinc-800'
                 }`}
               >
                 <Ionicons
                   name="remove"
                   size={24}
-                  color={goal === 'maintain' ? '#3B82F6' : '#71717A'}
+                  color={goal === 'maintain' ? '#9D12DE' : '#71717A'}
                 />
                 <View className="ml-3 flex-1">
                   <Text
                     className={`font-semibold ${
-                      goal === 'maintain' ? 'text-blue-500' : 'text-zinc-300'
+                      goal === 'maintain' ? 'text-primary' : 'text-zinc-300'
                     }`}
                   >
                     Mantenimiento
@@ -215,7 +215,7 @@ export default function MacrosCalculator() {
                   <Text className="text-zinc-500 text-xs">Igual al TDEE</Text>
                 </View>
                 {goal === 'maintain' && (
-                  <Ionicons name="checkmark-circle" size={24} color="#3B82F6" />
+                  <Ionicons name="checkmark-circle" size={24} color="#9D12DE" />
                 )}
               </TouchableOpacity>
 
@@ -252,7 +252,7 @@ export default function MacrosCalculator() {
           {/* Macro Split Selection */}
           <View>
             <Text className="text-white text-base font-semibold mb-3">
-              Distribución de Macros
+              DistribuciÃ³n de Macros
             </Text>
             <View className="space-y-3">
               {(Object.keys(MACRO_SPLITS) as MacroSplit[]).map((split) => {
@@ -264,14 +264,14 @@ export default function MacrosCalculator() {
                     onPress={() => setMacroSplit(split)}
                     className={`p-4 rounded-xl border-2 ${
                       isSelected
-                        ? 'bg-emerald-500/20 border-emerald-500'
+                        ? 'bg-primary/20 border-primary'
                         : 'bg-zinc-900 border-zinc-800'
                     }`}
                   >
                     <View className="flex-row items-center justify-between mb-2">
                       <Text
                         className={`font-semibold ${
-                          isSelected ? 'text-emerald-500' : 'text-zinc-300'
+                          isSelected ? 'text-primary' : 'text-zinc-300'
                         }`}
                       >
                         {config.name}
@@ -305,11 +305,11 @@ export default function MacrosCalculator() {
             <View className="bg-zinc-900 rounded-xl p-6 border border-zinc-800">
               {/* Target Calories */}
               <View className="items-center mb-6 pb-6 border-b border-zinc-800">
-                <Text className="text-zinc-400 text-sm mb-1">Calorías Objetivo</Text>
+                <Text className="text-zinc-400 text-sm mb-1">CalorÃ­as Objetivo</Text>
                 <Text className="text-white text-4xl font-bold">
                   {targetCalories.toLocaleString()}
                 </Text>
-                <Text className="text-zinc-500 text-sm mt-1">kcal/día</Text>
+                <Text className="text-zinc-500 text-sm mt-1">kcal/dÃ­a</Text>
               </View>
 
               {/* Macros Breakdown */}
@@ -319,7 +319,7 @@ export default function MacrosCalculator() {
                   <View className="flex-row justify-between items-center mb-2">
                     <View className="flex-row items-center">
                       <View className="w-3 h-3 rounded-full bg-red-500 mr-2" />
-                      <Text className="text-white font-semibold">Proteína</Text>
+                      <Text className="text-white font-semibold">ProteÃ­na</Text>
                     </View>
                     <Text className="text-white font-bold text-lg">
                       {macros.protein.grams}g
@@ -342,7 +342,7 @@ export default function MacrosCalculator() {
                 <View>
                   <View className="flex-row justify-between items-center mb-2">
                     <View className="flex-row items-center">
-                      <View className="w-3 h-3 rounded-full bg-blue-500 mr-2" />
+                      <View className="w-3 h-3 rounded-full bg-primary mr-2" />
                       <Text className="text-white font-semibold">Carbohidratos</Text>
                     </View>
                     <Text className="text-white font-bold text-lg">
@@ -351,7 +351,7 @@ export default function MacrosCalculator() {
                   </View>
                   <View className="bg-zinc-800 h-2 rounded-full overflow-hidden">
                     <View
-                      className="bg-blue-500 h-full"
+                      className="bg-primary h-full"
                       style={{
                         width: `${MACRO_SPLITS[macroSplit].carbs}%`,
                       }}
@@ -391,17 +391,17 @@ export default function MacrosCalculator() {
               {mealPlan && (
                 <View className="mt-6 pt-6 border-t border-zinc-800">
                   <Text className="text-white font-semibold mb-3">
-                    Por Comida (3 comidas/día)
+                    Por Comida (3 comidas/dÃ­a)
                   </Text>
                   <View className="flex-row justify-around">
                     <View className="items-center">
                       <Text className="text-red-500 font-bold text-xl">
                         {mealPlan.protein}g
                       </Text>
-                      <Text className="text-zinc-500 text-xs">Proteína</Text>
+                      <Text className="text-zinc-500 text-xs">ProteÃ­na</Text>
                     </View>
                     <View className="items-center">
-                      <Text className="text-blue-500 font-bold text-xl">
+                      <Text className="text-primary font-bold text-xl">
                         {mealPlan.carbs}g
                       </Text>
                       <Text className="text-zinc-500 text-xs">Carbos</Text>
@@ -419,18 +419,18 @@ export default function MacrosCalculator() {
           )}
 
           {/* Info Card */}
-          <View className="bg-emerald-500/10 border border-emerald-500/30 rounded-xl p-4">
+          <View className="bg-primary/10 border border-primary/30 rounded-xl p-4">
             <View className="flex-row items-start">
               <Ionicons name="bulb" size={20} color="#10B981" style={{ marginRight: 8 }} />
               <View className="flex-1">
-                <Text className="text-emerald-400 text-sm font-semibold mb-1">
+                <Text className="text-primary/80 text-sm font-semibold mb-1">
                   Consejos
                 </Text>
-                <Text className="text-emerald-300/80 text-xs leading-5">
-                  • Ajusta basado en tus resultados semanales{'\n'}
-                  • Mantén la proteína alta para preservar músculo{'\n'}
-                  • Las grasas ayudan con hormonas y saciedad{'\n'}
-                  • Los carbos dan energía para entrenar
+                <Text className="text-primary/70 text-xs leading-5">
+                  â€¢ Ajusta basado en tus resultados semanales{'\n'}
+                  â€¢ MantÃ©n la proteÃ­na alta para preservar mÃºsculo{'\n'}
+                  â€¢ Las grasas ayudan con hormonas y saciedad{'\n'}
+                  â€¢ Los carbos dan energÃ­a para entrenar
                 </Text>
               </View>
             </View>
@@ -440,3 +440,4 @@ export default function MacrosCalculator() {
     </View>
   );
 }
+

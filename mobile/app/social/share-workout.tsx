@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -44,14 +44,14 @@ export default function ShareWorkout() {
 
   // Mock friends data
   const friends: Friend[] = [
-    { id: '1', name: 'Carlos Méndez', avatar: '🏋️', isOnline: true, mutualFriends: 12 },
-    { id: '2', name: 'Ana García', avatar: '💪', isOnline: true, mutualFriends: 8 },
-    { id: '3', name: 'Luis Rodríguez', avatar: '🔥', isOnline: false, mutualFriends: 15 },
-    { id: '4', name: 'María López', avatar: '⚡', isOnline: true, mutualFriends: 6 },
-    { id: '5', name: 'Pedro Sánchez', avatar: '🎯', isOnline: false, mutualFriends: 10 },
-    { id: '6', name: 'Laura Martínez', avatar: '🌟', isOnline: true, mutualFriends: 9 },
-    { id: '7', name: 'Diego Torres', avatar: '💯', isOnline: false, mutualFriends: 7 },
-    { id: '8', name: 'Sofia Ramírez', avatar: '🚀', isOnline: true, mutualFriends: 11 },
+    { id: '1', name: 'Carlos MÃ©ndez', avatar: 'ðŸ‹ï¸', isOnline: true, mutualFriends: 12 },
+    { id: '2', name: 'Ana GarcÃ­a', avatar: 'ðŸ’ª', isOnline: true, mutualFriends: 8 },
+    { id: '3', name: 'Luis RodrÃ­guez', avatar: 'ðŸ”¥', isOnline: false, mutualFriends: 15 },
+    { id: '4', name: 'MarÃ­a LÃ³pez', avatar: 'âš¡', isOnline: true, mutualFriends: 6 },
+    { id: '5', name: 'Pedro SÃ¡nchez', avatar: 'ðŸŽ¯', isOnline: false, mutualFriends: 10 },
+    { id: '6', name: 'Laura MartÃ­nez', avatar: 'ðŸŒŸ', isOnline: true, mutualFriends: 9 },
+    { id: '7', name: 'Diego Torres', avatar: 'ðŸ’¯', isOnline: false, mutualFriends: 7 },
+    { id: '8', name: 'Sofia RamÃ­rez', avatar: 'ðŸš€', isOnline: true, mutualFriends: 11 },
   ];
 
   const toggleFriend = (friendId: string) => {
@@ -74,11 +74,11 @@ export default function ShareWorkout() {
     if (visibility !== 'private' && selectedFriends.length === 0) {
       Alert.alert(
         'Sin destinatarios',
-        '¿Quieres compartir este workout públicamente?',
+        'Â¿Quieres compartir este workout pÃºblicamente?',
         [
           { text: 'Cancelar', style: 'cancel' },
           { 
-            text: 'Compartir Público',
+            text: 'Compartir PÃºblico',
             onPress: () => processShare()
           }
         ]
@@ -96,8 +96,8 @@ export default function ShareWorkout() {
       .join(', ');
 
     Alert.alert(
-      '✅ Workout Compartido!',
-      `${workout.name}\n\nCompartido con: ${friendNames || 'Público'}\n\nVisibilidad: ${visibility}\nComentarios: ${allowComments ? 'Activados' : 'Desactivados'}`,
+      'âœ… Workout Compartido!',
+      `${workout.name}\n\nCompartido con: ${friendNames || 'PÃºblico'}\n\nVisibilidad: ${visibility}\nComentarios: ${allowComments ? 'Activados' : 'Desactivados'}`,
       [{ text: 'OK', onPress: () => router.back() }]
     );
   };
@@ -105,7 +105,7 @@ export default function ShareWorkout() {
   const shareExternal = async () => {
     try {
       const result = await Share.share({
-        message: `¡Mira mi workout! 💪\n\n${workout.name}\n${workout.exercises} ejercicios • ${workout.duration} min\n${workout.calories} calorías quemadas\n\n#Fitness #Workout #GymLife`,
+        message: `Â¡Mira mi workout! ðŸ’ª\n\n${workout.name}\n${workout.exercises} ejercicios â€¢ ${workout.duration} min\n${workout.calories} calorÃ­as quemadas\n\n#Fitness #Workout #GymLife`,
         title: workout.name,
       });
 
@@ -142,7 +142,7 @@ export default function ShareWorkout() {
             Compartir Workout
           </Text>
           <TouchableOpacity onPress={shareWorkout}>
-            <View className="bg-blue-500 rounded-xl px-4 py-2">
+            <View className="bg-primary rounded-xl px-4 py-2">
               <Text className="text-white font-bold">Enviar</Text>
             </View>
           </TouchableOpacity>
@@ -152,7 +152,7 @@ export default function ShareWorkout() {
       <ScrollView className="flex-1" showsVerticalScrollIndicator={false}>
         <View className="px-6 pt-6">
           {/* Workout Preview */}
-          <View className="bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl p-6 mb-6">
+          <View className="bg-gradient-to-r from-primary to-[#7D0EBE] rounded-xl p-6 mb-6">
             <Text className="text-white text-2xl font-bold mb-3">{workout.name}</Text>
             
             <View className="flex-row items-center mb-3">
@@ -203,7 +203,7 @@ export default function ShareWorkout() {
                 onPress={() => setVisibility('friends')}
                 className={`flex-1 rounded-xl p-4 border ${
                   visibility === 'friends'
-                    ? 'bg-blue-500 border-blue-500'
+                    ? 'bg-primary border-primary'
                     : 'bg-zinc-900 border-zinc-800'
                 }`}
               >
@@ -223,7 +223,7 @@ export default function ShareWorkout() {
                 onPress={() => setVisibility('public')}
                 className={`flex-1 rounded-xl p-4 border ${
                   visibility === 'public'
-                    ? 'bg-emerald-500 border-emerald-500'
+                    ? 'bg-primary border-primary'
                     : 'bg-zinc-900 border-zinc-800'
                 }`}
               >
@@ -235,7 +235,7 @@ export default function ShareWorkout() {
                 <Text className={`font-bold mt-2 ${
                   visibility === 'public' ? 'text-white' : 'text-zinc-400'
                 }`}>
-                  Público
+                  PÃºblico
                 </Text>
               </TouchableOpacity>
 
@@ -267,13 +267,13 @@ export default function ShareWorkout() {
             className="bg-zinc-900 rounded-xl p-4 flex-row items-center justify-between mb-6 border border-zinc-800"
           >
             <View className="flex-row items-center flex-1">
-              <Ionicons name="chatbubbles" size={24} color="#3B82F6" />
+              <Ionicons name="chatbubbles" size={24} color="#9D12DE" />
               <View className="ml-3 flex-1">
                 <Text className="text-white font-bold">Permitir Comentarios</Text>
                 <Text className="text-zinc-400 text-sm">Amigos pueden comentar</Text>
               </View>
             </View>
-            <View className={`w-12 h-6 rounded-full ${allowComments ? 'bg-blue-500' : 'bg-zinc-700'}`}>
+            <View className={`w-12 h-6 rounded-full ${allowComments ? 'bg-primary' : 'bg-zinc-700'}`}>
               <View className={`w-5 h-5 bg-white rounded-full mt-0.5 ${allowComments ? 'ml-6' : 'ml-1'}`} />
             </View>
           </TouchableOpacity>
@@ -285,7 +285,7 @@ export default function ShareWorkout() {
                 Compartir con Amigos ({selectedFriends.length})
               </Text>
               <TouchableOpacity onPress={selectAll}>
-                <Text className="text-blue-400 font-bold">
+                <Text className="text-primary/80 font-bold">
                   {selectedFriends.length === friends.length ? 'Deseleccionar' : 'Todos'}
                 </Text>
               </TouchableOpacity>
@@ -299,7 +299,7 @@ export default function ShareWorkout() {
                   key={friend.id}
                   onPress={() => toggleFriend(friend.id)}
                   className={`bg-zinc-900 rounded-xl p-4 mb-3 flex-row items-center border ${
-                    isSelected ? 'border-blue-500' : 'border-zinc-800'
+                    isSelected ? 'border-primary' : 'border-zinc-800'
                   }`}
                 >
                   <View className="w-12 h-12 bg-zinc-800 rounded-full items-center justify-center mr-3">
@@ -310,17 +310,17 @@ export default function ShareWorkout() {
                     <View className="flex-row items-center">
                       <Text className="text-white font-bold mr-2">{friend.name}</Text>
                       {friend.isOnline && (
-                        <View className="w-2 h-2 bg-emerald-500 rounded-full" />
+                        <View className="w-2 h-2 bg-primary rounded-full" />
                       )}
                     </View>
                     <Text className="text-zinc-400 text-sm">
-                      {friend.mutualFriends} amigos en común
+                      {friend.mutualFriends} amigos en comÃºn
                     </Text>
                   </View>
 
                   <View className={`w-6 h-6 rounded-full border-2 ${
                     isSelected
-                      ? 'bg-blue-500 border-blue-500'
+                      ? 'bg-primary border-primary'
                       : 'border-zinc-600'
                   } items-center justify-center`}>
                     {isSelected && <Ionicons name="checkmark" size={16} color="white" />}
@@ -342,19 +342,19 @@ export default function ShareWorkout() {
           </TouchableOpacity>
 
           {/* Tips */}
-          <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30 mb-6">
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
             <View className="flex-row items-start">
-              <Ionicons name="information-circle" size={20} color="#3B82F6" />
+              <Ionicons name="information-circle" size={20} color="#9D12DE" />
               <View className="flex-1 ml-3">
-                <Text className="text-blue-400 font-bold mb-2">
+                <Text className="text-primary/80 font-bold mb-2">
                   Tips para Compartir
                 </Text>
-                <Text className="text-blue-300 text-sm">
-                  • Inspira a otros con tus logros{'\n'}
-                  • Añade mensaje motivacional{'\n'}
-                  • Etiqueta amigos para accountability{'\n'}
-                  • Comparte públicamente para comunidad{'\n'}
-                  • Activa comentarios para feedback
+                <Text className="text-primary/60 text-sm">
+                  â€¢ Inspira a otros con tus logros{'\n'}
+                  â€¢ AÃ±ade mensaje motivacional{'\n'}
+                  â€¢ Etiqueta amigos para accountability{'\n'}
+                  â€¢ Comparte pÃºblicamente para comunidad{'\n'}
+                  â€¢ Activa comentarios para feedback
                 </Text>
               </View>
             </View>
@@ -364,3 +364,4 @@ export default function ShareWorkout() {
     </View>
   );
 }
+

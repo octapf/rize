@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -40,7 +40,7 @@ const GYMS: Gym[] = [
     amenities: ['Vestuarios', 'Duchas', 'Wifi', 'Estacionamiento', 'Personal Training'],
     address: 'Av. Principal 123, Col. Centro',
     phone: '+52 55 1234 5678',
-    image: '🏋️',
+    image: 'ðŸ‹ï¸',
   },
   {
     id: '2',
@@ -55,7 +55,7 @@ const GYMS: Gym[] = [
     amenities: ['Vestuarios', 'Duchas', 'Sauna', 'Wifi', 'Clases grupales', 'Estacionamiento'],
     address: 'Blvd. Reforma 456, Piso 2',
     phone: '+52 55 8765 4321',
-    image: '💪',
+    image: 'ðŸ’ª',
   },
   {
     id: '3',
@@ -70,7 +70,7 @@ const GYMS: Gym[] = [
     amenities: ['Vestuarios', 'Taquillas', 'Wifi', 'Powerlifting focused'],
     address: 'Calle Guerrero 789',
     phone: '+52 55 2345 6789',
-    image: '⚡',
+    image: 'âš¡',
   },
   {
     id: '4',
@@ -85,7 +85,7 @@ const GYMS: Gym[] = [
     amenities: ['Vestuarios', 'Duchas', 'Clases', 'Open Gym', 'Programming'],
     address: 'Zona Industrial 321',
     phone: '+52 55 3456 7890',
-    image: '🔥',
+    image: 'ðŸ”¥',
   },
   {
     id: '5',
@@ -97,10 +97,10 @@ const GYMS: Gym[] = [
     hours: 'Abierto 24 horas',
     isOpen: true,
     equipment: ['Squat Racks', 'Bench Press', 'Cables', 'Dumbbells', 'Cardio', 'Machines'],
-    amenities: ['Vestuarios', 'Duchas', 'Wifi', 'Acceso global', 'App móvil'],
+    amenities: ['Vestuarios', 'Duchas', 'Wifi', 'Acceso global', 'App mÃ³vil'],
     address: 'Plaza Comercial Norte, Local 12',
     phone: '+52 55 4567 8901',
-    image: '🌟',
+    image: 'ðŸŒŸ',
   },
 ];
 
@@ -142,7 +142,7 @@ export default function GymFinder() {
   const viewGymDetails = (gym: Gym) => {
     Alert.alert(
       gym.name,
-      `${gym.address}\n\nTeléfono: ${gym.phone}\n\nHorario: ${gym.hours}\n\nEquipo: ${gym.equipment.join(', ')}\n\nAmenidades: ${gym.amenities.join(', ')}`,
+      `${gym.address}\n\nTelÃ©fono: ${gym.phone}\n\nHorario: ${gym.hours}\n\nEquipo: ${gym.equipment.join(', ')}\n\nAmenidades: ${gym.amenities.join(', ')}`,
       [
         { text: 'Cerrar' },
         { text: 'Llamar', onPress: () => Alert.alert('Llamando...') },
@@ -152,7 +152,7 @@ export default function GymFinder() {
   };
 
   const saveGym = (gymId: string, gymName: string) => {
-    Alert.alert('Guardado', `${gymName} añadido a favoritos`);
+    Alert.alert('Guardado', `${gymName} aÃ±adido a favoritos`);
   };
 
   return (
@@ -199,7 +199,7 @@ export default function GymFinder() {
                   onPress={() => toggleEquipment(equipment)}
                   className={`px-3 py-2 rounded-lg ${
                     selectedEquipment.includes(equipment)
-                      ? 'bg-emerald-500'
+                      ? 'bg-primary'
                       : 'bg-zinc-800'
                   }`}
                 >
@@ -245,7 +245,7 @@ export default function GymFinder() {
               {/* Header */}
               <View className="flex-row items-start justify-between mb-3">
                 <View className="flex-row items-start flex-1">
-                  <View className="w-16 h-16 bg-emerald-500 rounded-xl items-center justify-center mr-3">
+                  <View className="w-16 h-16 bg-primary rounded-xl items-center justify-center mr-3">
                     <Text className="text-4xl">{gym.image}</Text>
                   </View>
                   <View className="flex-1">
@@ -253,16 +253,16 @@ export default function GymFinder() {
                     <View className="flex-row items-center mb-1">
                       <Ionicons name="location" size={12} color="#71717A" />
                       <Text className="text-zinc-400 text-xs ml-1">
-                        {gym.distance} km · {gym.priceRange}
+                        {gym.distance} km Â· {gym.priceRange}
                       </Text>
                     </View>
                     <View className="flex-row items-center">
-                      <Ionicons name="star" size={12} color="#F59E0B" />
+                      <Ionicons name="star" size={12} color="#FFEA00" />
                       <Text className="text-amber-400 text-xs ml-1 font-bold">
                         {gym.rating}
                       </Text>
                       <Text className="text-zinc-400 text-xs ml-1">
-                        ({gym.reviews} reseñas)
+                        ({gym.reviews} reseÃ±as)
                       </Text>
                     </View>
                   </View>
@@ -277,13 +277,13 @@ export default function GymFinder() {
                 <View
                   className={`px-2 py-1 rounded-lg ${
                     gym.isOpen
-                      ? 'bg-emerald-500/10 border border-emerald-500/30'
+                      ? 'bg-primary/10 border border-primary/30'
                       : 'bg-red-500/10 border border-red-500/30'
                   }`}
                 >
                   <Text
                     className={`text-xs font-bold ${
-                      gym.isOpen ? 'text-emerald-400' : 'text-red-400'
+                      gym.isOpen ? 'text-primary' : 'text-red-400'
                     }`}
                   >
                     {gym.isOpen ? 'ABIERTO' : 'CERRADO'}
@@ -303,9 +303,9 @@ export default function GymFinder() {
                     </View>
                   ))}
                   {gym.equipment.length > 4 && (
-                    <View className="bg-blue-500/10 rounded px-2 py-1">
-                      <Text className="text-blue-400 text-xs">
-                        +{gym.equipment.length - 4} más
+                    <View className="bg-primary/10 rounded px-2 py-1">
+                      <Text className="text-primary/80 text-xs">
+                        +{gym.equipment.length - 4} mÃ¡s
                       </Text>
                     </View>
                   )}
@@ -318,8 +318,8 @@ export default function GymFinder() {
                 <View className="flex-row flex-wrap gap-1">
                   {gym.amenities.map((amenity, index) => (
                     <View key={index} className="flex-row items-center">
-                      <Ionicons name="checkmark-circle" size={12} color="#10B981" />
-                      <Text className="text-emerald-400 text-xs ml-1">{amenity}</Text>
+                      <Ionicons name="checkmark-circle" size={12} color="#9D12DE" />
+                      <Text className="text-primary text-xs ml-1">{amenity}</Text>
                     </View>
                   ))}
                 </View>
@@ -329,14 +329,14 @@ export default function GymFinder() {
               <View className="flex-row gap-2">
                 <TouchableOpacity
                   onPress={() => Alert.alert('Direcciones', `Abriendo mapa a ${gym.name}`)}
-                  className="flex-1 bg-blue-500 rounded-lg p-3 flex-row items-center justify-center"
+                  className="flex-1 bg-primary rounded-lg p-3 flex-row items-center justify-center"
                 >
                   <Ionicons name="navigate" size={16} color="white" />
                   <Text className="text-white font-bold ml-2">Ir</Text>
                 </TouchableOpacity>
                 <TouchableOpacity
                   onPress={() => Alert.alert('Llamar', gym.phone)}
-                  className="flex-1 bg-emerald-500 rounded-lg p-3 flex-row items-center justify-center"
+                  className="flex-1 bg-primary rounded-lg p-3 flex-row items-center justify-center"
                 >
                   <Ionicons name="call" size={16} color="white" />
                   <Text className="text-white font-bold ml-2">Llamar</Text>
@@ -358,15 +358,15 @@ export default function GymFinder() {
 
         {/* Bottom Tip */}
         <View className="px-6 pb-6 pt-2">
-          <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30">
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30">
             <View className="flex-row items-start">
-              <Ionicons name="information-circle" size={20} color="#3B82F6" />
+              <Ionicons name="information-circle" size={20} color="#9D12DE" />
               <View className="flex-1 ml-3">
-                <Text className="text-blue-400 font-bold mb-2">
+                <Text className="text-primary/80 font-bold mb-2">
                   Encuentra tu Gym Ideal
                 </Text>
-                <Text className="text-blue-300 text-sm">
-                  Elige basado en equipo disponible, cercanía y ambiente. Muchos ofrecen pases de prueba gratuitos.
+                <Text className="text-primary/60 text-sm">
+                  Elige basado en equipo disponible, cercanÃ­a y ambiente. Muchos ofrecen pases de prueba gratuitos.
                 </Text>
               </View>
             </View>
@@ -376,3 +376,4 @@ export default function GymFinder() {
     </View>
   );
 }
+

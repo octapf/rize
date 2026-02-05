@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -33,7 +33,7 @@ const HABITS: Habit[] = [
   {
     id: '1',
     name: 'Agua',
-    icon: '💧',
+    icon: 'ðŸ’§',
     color: 'blue',
     goal: 3000,
     unit: 'ml',
@@ -45,10 +45,10 @@ const HABITS: Habit[] = [
   {
     id: '2',
     name: 'Entrenamiento',
-    icon: '🏋️',
+    icon: 'ðŸ‹ï¸',
     color: 'emerald',
     goal: 1,
-    unit: 'sesión',
+    unit: 'sesiÃ³n',
     currentValue: 1,
     streak: 4,
     bestStreak: 15,
@@ -56,8 +56,8 @@ const HABITS: Habit[] = [
   },
   {
     id: '3',
-    name: 'Proteína',
-    icon: '🥩',
+    name: 'ProteÃ­na',
+    icon: 'ðŸ¥©',
     color: 'red',
     goal: 150,
     unit: 'g',
@@ -69,7 +69,7 @@ const HABITS: Habit[] = [
   {
     id: '4',
     name: 'Pasos',
-    icon: '👟',
+    icon: 'ðŸ‘Ÿ',
     color: 'amber',
     goal: 10000,
     unit: 'pasos',
@@ -80,8 +80,8 @@ const HABITS: Habit[] = [
   },
   {
     id: '5',
-    name: 'Sueño',
-    icon: '😴',
+    name: 'SueÃ±o',
+    icon: 'ðŸ˜´',
     color: 'purple',
     goal: 8,
     unit: 'horas',
@@ -93,7 +93,7 @@ const HABITS: Habit[] = [
   {
     id: '6',
     name: 'Comidas',
-    icon: '🍽️',
+    icon: 'ðŸ½ï¸',
     color: 'orange',
     goal: 4,
     unit: 'comidas',
@@ -104,8 +104,8 @@ const HABITS: Habit[] = [
   },
   {
     id: '7',
-    name: 'Meditación',
-    icon: '🧘',
+    name: 'MeditaciÃ³n',
+    icon: 'ðŸ§˜',
     color: 'indigo',
     goal: 10,
     unit: 'min',
@@ -117,7 +117,7 @@ const HABITS: Habit[] = [
   {
     id: '8',
     name: 'Stretching',
-    icon: '🤸',
+    icon: 'ðŸ¤¸',
     color: 'pink',
     goal: 15,
     unit: 'min',
@@ -135,7 +135,7 @@ export default function HabitTracker() {
   const categories = [
     { id: 'all', label: 'Todos', icon: 'apps' },
     { id: 'fitness', label: 'Fitness', icon: 'barbell' },
-    { id: 'nutrition', label: 'Nutrición', icon: 'restaurant' },
+    { id: 'nutrition', label: 'NutriciÃ³n', icon: 'restaurant' },
     { id: 'wellness', label: 'Bienestar', icon: 'heart' },
   ];
 
@@ -184,7 +184,7 @@ export default function HabitTracker() {
         return h;
       })
     );
-    Alert.alert('Hábito Completado! 🎉', 'Sigue así, la consistencia es clave.');
+    Alert.alert('HÃ¡bito Completado! ðŸŽ‰', 'Sigue asÃ­, la consistencia es clave.');
   };
 
   const getProgress = (habit: Habit) => {
@@ -196,10 +196,10 @@ export default function HabitTracker() {
   };
 
   const getStreakEmoji = (streak: number) => {
-    if (streak >= 30) return '🔥🔥🔥';
-    if (streak >= 14) return '🔥🔥';
-    if (streak >= 7) return '🔥';
-    return '💪';
+    if (streak >= 30) return 'ðŸ”¥ðŸ”¥ðŸ”¥';
+    if (streak >= 14) return 'ðŸ”¥ðŸ”¥';
+    if (streak >= 7) return 'ðŸ”¥';
+    return 'ðŸ’ª';
   };
 
   return (
@@ -227,7 +227,7 @@ export default function HabitTracker() {
                 onPress={() => setSelectedCategory(cat.id as any)}
                 className={`flex-row items-center px-4 py-2 rounded-lg ${
                   selectedCategory === cat.id
-                    ? 'bg-emerald-500'
+                    ? 'bg-primary'
                     : 'bg-zinc-900 border border-zinc-800'
                 }`}
               >
@@ -252,17 +252,17 @@ export default function HabitTracker() {
       <ScrollView className="flex-1" showsVerticalScrollIndicator={false}>
         <View className="px-6 pt-6">
           {/* Summary Card */}
-          <View className="bg-gradient-to-br from-emerald-500 to-blue-500 rounded-xl p-6 mb-6">
+          <View className="bg-gradient-to-br from-primary to-[#7D0EBE] rounded-xl p-6 mb-6">
             <View className="flex-row items-center justify-between mb-4">
               <View>
                 <Text className="text-white text-sm mb-1">Hoy</Text>
                 <Text className="text-white text-3xl font-bold">
                   {getTotalCompleted()}/{habits.length}
                 </Text>
-                <Text className="text-white text-sm">Hábitos completados</Text>
+                <Text className="text-white text-sm">HÃ¡bitos completados</Text>
               </View>
               <View className="items-center">
-                <Text className="text-6xl">{getTotalCompleted() === habits.length ? '🏆' : '💪'}</Text>
+                <Text className="text-6xl">{getTotalCompleted() === habits.length ? 'ðŸ†' : 'ðŸ’ª'}</Text>
               </View>
             </View>
             <View className="h-2 bg-white/20 rounded-full overflow-hidden">
@@ -281,11 +281,11 @@ export default function HabitTracker() {
                 const today = isToday(day);
                 return (
                   <View key={index} className="items-center">
-                    <Text className={`text-xs mb-2 ${today ? 'text-emerald-400 font-bold' : 'text-zinc-500'}`}>
+                    <Text className={`text-xs mb-2 ${today ? 'text-primary font-bold' : 'text-zinc-500'}`}>
                       {format(day, 'EEE', { locale: es }).toUpperCase()}
                     </Text>
                     <View className={`w-10 h-10 rounded-full items-center justify-center ${
-                      today ? 'bg-emerald-500' : 'bg-zinc-800'
+                      today ? 'bg-primary' : 'bg-zinc-800'
                     }`}>
                       <Text className={`font-bold ${today ? 'text-white' : 'text-zinc-400'}`}>
                         {format(day, 'd')}
@@ -297,7 +297,7 @@ export default function HabitTracker() {
                         <View
                           key={i}
                           className={`w-1 h-1 rounded-full ${
-                            index < 5 ? 'bg-emerald-500' : 'bg-zinc-700'
+                            index < 5 ? 'bg-primary' : 'bg-zinc-700'
                           }`}
                         />
                       ))}
@@ -336,7 +336,7 @@ export default function HabitTracker() {
                         {habit.streak > 0 && (
                           <View className="flex-row items-center bg-amber-500/10 rounded px-2 py-0.5 border border-amber-500/30">
                             <Text className="text-amber-400 text-xs font-bold">
-                              {habit.streak} días {getStreakEmoji(habit.streak)}
+                              {habit.streak} dÃ­as {getStreakEmoji(habit.streak)}
                             </Text>
                           </View>
                         )}
@@ -344,7 +344,7 @@ export default function HabitTracker() {
                     </View>
                   </View>
                   {isComplete && (
-                    <Ionicons name="checkmark-circle" size={28} color="#10B981" />
+                    <Ionicons name="checkmark-circle" size={28} color="#9D12DE" />
                   )}
                 </View>
 
@@ -376,7 +376,7 @@ export default function HabitTracker() {
                   </TouchableOpacity>
                   <TouchableOpacity
                     onPress={() => markComplete(habit.id)}
-                    className={`bg-emerald-500 rounded-lg p-2 items-center justify-center ${
+                    className={`bg-primary rounded-lg p-2 items-center justify-center ${
                       !isComplete ? 'opacity-50' : ''
                     }`}
                     disabled={!isComplete}
@@ -390,7 +390,7 @@ export default function HabitTracker() {
                   <View className="mt-2 flex-row items-center">
                     <Ionicons name="trophy" size={14} color="#71717A" />
                     <Text className="text-zinc-500 text-xs ml-1">
-                      Mejor racha: {habit.bestStreak} días
+                      Mejor racha: {habit.bestStreak} dÃ­as
                     </Text>
                   </View>
                 )}
@@ -399,18 +399,18 @@ export default function HabitTracker() {
           })}
 
           {/* Tips */}
-          <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30 mb-6">
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
             <View className="flex-row items-start">
-              <Ionicons name="bulb" size={20} color="#3B82F6" />
+              <Ionicons name="bulb" size={20} color="#9D12DE" />
               <View className="flex-1 ml-3">
-                <Text className="text-blue-400 font-bold mb-2">
-                  Consejos para Hábitos
+                <Text className="text-primary/80 font-bold mb-2">
+                  Consejos para HÃ¡bitos
                 </Text>
-                <Text className="text-blue-300 text-sm">
-                  • Empieza con 2-3 hábitos clave{'\n'}
-                  • Consistencia &gt; Perfección{'\n'}
-                  • Celebra rachas pequeñas{'\n'}
-                  • Si fallas 1 día, retoma inmediatamente
+                <Text className="text-primary/60 text-sm">
+                  â€¢ Empieza con 2-3 hÃ¡bitos clave{'\n'}
+                  â€¢ Consistencia &gt; PerfecciÃ³n{'\n'}
+                  â€¢ Celebra rachas pequeÃ±as{'\n'}
+                  â€¢ Si fallas 1 dÃ­a, retoma inmediatamente
                 </Text>
               </View>
             </View>
@@ -420,3 +420,4 @@ export default function HabitTracker() {
     </View>
   );
 }
+

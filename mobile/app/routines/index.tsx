@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -20,10 +20,10 @@ import { useToast } from '@/contexts/ToastContext';
 const DAYS = [
   { key: 'monday', label: 'Lun', fullName: 'Lunes', icon: 'today' },
   { key: 'tuesday', label: 'Mar', fullName: 'Martes', icon: 'today' },
-  { key: 'wednesday', label: 'Mié', fullName: 'Miércoles', icon: 'today' },
+  { key: 'wednesday', label: 'MiÃ©', fullName: 'MiÃ©rcoles', icon: 'today' },
   { key: 'thursday', label: 'Jue', fullName: 'Jueves', icon: 'today' },
   { key: 'friday', label: 'Vie', fullName: 'Viernes', icon: 'today' },
-  { key: 'saturday', label: 'Sáb', fullName: 'Sábado', icon: 'today' },
+  { key: 'saturday', label: 'SÃ¡b', fullName: 'SÃ¡bado', icon: 'today' },
   { key: 'sunday', label: 'Dom', fullName: 'Domingo', icon: 'today' },
 ];
 
@@ -102,7 +102,7 @@ export default function RoutinesScreen() {
 
     Alert.alert(
       'Eliminar entrenamiento',
-      `¿Quitar el entrenamiento del ${DAYS.find((d) => d.key === day)?.fullName}?`,
+      `Â¿Quitar el entrenamiento del ${DAYS.find((d) => d.key === day)?.fullName}?`,
       [
         { text: 'Cancelar', style: 'cancel' },
         {
@@ -144,7 +144,7 @@ export default function RoutinesScreen() {
         {/* Header Info */}
         {activeRoutine && (
           <View style={styles.headerCard}>
-            <LinearGradient colors={['#10b981', '#059669']} style={styles.headerGradient}>
+            <LinearGradient colors={['#9D12DE', '#7C3AED']} style={styles.headerGradient}>
               <View style={styles.headerContent}>
                 <Ionicons name="calendar" size={32} color="#fff" />
                 <View style={{ flex: 1, marginLeft: 16 }}>
@@ -205,14 +205,14 @@ export default function RoutinesScreen() {
                     <View style={{ flex: 1 }}>
                       <Text style={styles.templateName}>{template.name}</Text>
                       <View style={styles.templateMeta}>
-                        <Ionicons name="barbell" size={14} color="#10b981" />
+                        <Ionicons name="barbell" size={14} color="#9D12DE" />
                         <Text style={styles.templateMetaText}>
                           {template.exercises?.length || 0} ejercicios
                         </Text>
                       </View>
                     </View>
                     <LinearGradient
-                      colors={['#10b981', '#059669']}
+                      colors={['#9D12DE', '#7C3AED']}
                       style={styles.playButton}
                     >
                       <Ionicons name="play" size={16} color="#fff" />
@@ -220,7 +220,7 @@ export default function RoutinesScreen() {
                   </View>
                 ) : (
                   <View style={styles.emptyDay}>
-                    <Text style={styles.emptyDayText}>Día de descanso</Text>
+                    <Text style={styles.emptyDayText}>DÃ­a de descanso</Text>
                   </View>
                 )}
               </TouchableOpacity>
@@ -240,7 +240,7 @@ export default function RoutinesScreen() {
               })
             }
           >
-            <LinearGradient colors={['#10b981', '#059669']} style={styles.createButtonGradient}>
+            <LinearGradient colors={['#9D12DE', '#7C3AED']} style={styles.createButtonGradient}>
               <Ionicons name="add-circle" size={24} color="#fff" />
               <Text style={styles.createButtonText}>Crear Rutina Semanal</Text>
             </LinearGradient>
@@ -277,10 +277,10 @@ export default function RoutinesScreen() {
                   <View style={{ flex: 1 }}>
                     <Text style={styles.templateItemName}>{item.name}</Text>
                     <Text style={styles.templateItemMeta}>
-                      {item.exercises?.length || 0} ejercicios • {item.category}
+                      {item.exercises?.length || 0} ejercicios â€¢ {item.category}
                     </Text>
                   </View>
-                  <Ionicons name="checkmark-circle" size={24} color="#10b981" />
+                  <Ionicons name="checkmark-circle" size={24} color="#9D12DE" />
                 </TouchableOpacity>
               )}
               ListEmptyComponent={
@@ -347,7 +347,7 @@ const styles = StyleSheet.create({
   activeBadgeText: {
     fontSize: 10,
     fontWeight: '700',
-    color: '#10b981',
+    color: '#9D12DE',
   },
   calendarContainer: {
     gap: 12,
@@ -366,7 +366,7 @@ const styles = StyleSheet.create({
     borderColor: '#333',
   },
   dayCardToday: {
-    borderColor: '#10b981',
+    borderColor: '#9D12DE',
     backgroundColor: '#0a2f1f',
   },
   dayHeader: {
@@ -386,10 +386,10 @@ const styles = StyleSheet.create({
     color: '#fff',
   },
   dayLabelToday: {
-    color: '#10b981',
+    color: '#9D12DE',
   },
   todayBadge: {
-    backgroundColor: '#10b981',
+    backgroundColor: '#9D12DE',
     paddingHorizontal: 8,
     paddingVertical: 2,
     borderRadius: 8,
@@ -510,7 +510,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   goToTemplatesButton: {
-    backgroundColor: '#10b981',
+    backgroundColor: '#9D12DE',
     paddingHorizontal: 24,
     paddingVertical: 12,
     borderRadius: 8,
@@ -521,3 +521,4 @@ const styles = StyleSheet.create({
     color: '#fff',
   },
 });
+

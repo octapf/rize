@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -40,20 +40,20 @@ const ACHIEVEMENTS: Achievement[] = [
   },
   {
     id: '2',
-    name: 'Centurión',
-    description: 'Entrena 100 días seguidos',
+    name: 'CenturiÃ³n',
+    description: 'Entrena 100 dÃ­as seguidos',
     icon: 'flame',
     color: 'red',
     category: 'consistency',
     achieved: false,
     progress: 67,
     target: 100,
-    unit: 'días',
+    unit: 'dÃ­as',
   },
   {
     id: '3',
-    name: '2× BW Bench',
-    description: 'Press banca con 2× tu peso corporal',
+    name: '2Ã— BW Bench',
+    description: 'Press banca con 2Ã— tu peso corporal',
     icon: 'barbell',
     color: 'emerald',
     category: 'strength',
@@ -76,15 +76,15 @@ const ACHIEVEMENTS: Achievement[] = [
   },
   {
     id: '5',
-    name: '30 Días Streak',
-    description: 'Entrena 30 días consecutivos',
+    name: '30 DÃ­as Streak',
+    description: 'Entrena 30 dÃ­as consecutivos',
     icon: 'calendar',
     color: 'purple',
     category: 'consistency',
     achieved: true,
     progress: 30,
     target: 30,
-    unit: 'días',
+    unit: 'dÃ­as',
     dateAchieved: new Date(2026, 0, 10),
   },
   {
@@ -114,7 +114,7 @@ interface LeaderboardEntry {
 const MOCK_LEADERBOARD: LeaderboardEntry[] = [
   { rank: 1, name: 'Carlos M.', value: 200, unit: 'kg' },
   { rank: 2, name: 'Miguel R.', value: 195, unit: 'kg' },
-  { rank: 3, name: 'Tú', value: 185, unit: 'kg', isCurrentUser: true },
+  { rank: 3, name: 'TÃº', value: 185, unit: 'kg', isCurrentUser: true },
   { rank: 4, name: 'David L.', value: 180, unit: 'kg' },
   { rank: 5, name: 'Pablo S.', value: 175, unit: 'kg' },
 ];
@@ -184,7 +184,7 @@ export default function AchievementsLeaderboard() {
           <TouchableOpacity
             onPress={() => setActiveTab('leaderboard')}
             className={`flex-1 rounded-xl p-4 ${
-              activeTab === 'leaderboard' ? 'bg-blue-500' : 'bg-zinc-900 border border-zinc-800'
+              activeTab === 'leaderboard' ? 'bg-primary' : 'bg-zinc-900 border border-zinc-800'
             }`}
           >
             <View className="flex-row items-center justify-center">
@@ -268,7 +268,7 @@ export default function AchievementsLeaderboard() {
                       </View>
                     </View>
                     {achievement.achieved && (
-                      <View className="bg-emerald-500 rounded-full p-2">
+                      <View className="bg-primary rounded-full p-2">
                         <Ionicons name="checkmark" size={20} color="white" />
                       </View>
                     )}
@@ -300,7 +300,7 @@ export default function AchievementsLeaderboard() {
                   {achievement.achieved && achievement.dateAchieved && (
                     <View className={`bg-${achievement.color}-500/20 rounded-lg p-2 mt-2`}>
                       <Text className={`text-${achievement.color}-400 text-xs font-bold`}>
-                        ✓ Desbloqueado: {achievement.dateAchieved.toLocaleDateString('es-ES')}
+                        âœ“ Desbloqueado: {achievement.dateAchieved.toLocaleDateString('es-ES')}
                       </Text>
                     </View>
                   )}
@@ -312,7 +312,7 @@ export default function AchievementsLeaderboard() {
               <View className="bg-zinc-900 rounded-xl p-8 border border-zinc-800 items-center">
                 <Ionicons name="trophy-outline" size={64} color="#52525B" />
                 <Text className="text-zinc-400 text-center mt-4">
-                  No hay logros en esta categoría
+                  No hay logros en esta categorÃ­a
                 </Text>
               </View>
             )}
@@ -328,7 +328,7 @@ export default function AchievementsLeaderboard() {
                     onPress={() => setLeaderboardType(type.key as any)}
                     className={`rounded-xl px-4 py-3 flex-row items-center ${
                       leaderboardType === type.key
-                        ? 'bg-blue-500'
+                        ? 'bg-primary'
                         : 'bg-zinc-900 border border-zinc-800'
                     }`}
                   >
@@ -355,7 +355,7 @@ export default function AchievementsLeaderboard() {
                   </View>
                   <View className="w-full bg-zinc-800 rounded-t-xl p-4 h-32 items-center justify-center">
                     <Text className="text-white font-bold text-sm text-center">{MOCK_LEADERBOARD[1].name}</Text>
-                    <Text className="text-emerald-400 font-bold text-xl mt-1">
+                    <Text className="text-primary font-bold text-xl mt-1">
                       {MOCK_LEADERBOARD[1].value} {MOCK_LEADERBOARD[1].unit}
                     </Text>
                   </View>
@@ -381,7 +381,7 @@ export default function AchievementsLeaderboard() {
                   </View>
                   <View className="w-full bg-zinc-800 rounded-t-xl p-4 h-24 items-center justify-center">
                     <Text className="text-white font-bold text-sm text-center">{MOCK_LEADERBOARD[2].name}</Text>
-                    <Text className="text-emerald-400 font-bold text-lg mt-1">
+                    <Text className="text-primary font-bold text-lg mt-1">
                       {MOCK_LEADERBOARD[2].value} {MOCK_LEADERBOARD[2].unit}
                     </Text>
                   </View>
@@ -396,7 +396,7 @@ export default function AchievementsLeaderboard() {
                 key={entry.rank}
                 className={`rounded-xl p-4 mb-3 flex-row items-center ${
                   entry.isCurrentUser
-                    ? 'bg-blue-500/10 border-2 border-blue-500/30'
+                    ? 'bg-primary/10 border-2 border-primary/30'
                     : 'bg-zinc-900 border border-zinc-800'
                 }`}
               >
@@ -409,12 +409,12 @@ export default function AchievementsLeaderboard() {
                 </View>
 
                 <View className="flex-1">
-                  <Text className={`font-bold ${entry.isCurrentUser ? 'text-blue-400' : 'text-white'}`}>
+                  <Text className={`font-bold ${entry.isCurrentUser ? 'text-primary/80' : 'text-white'}`}>
                     {entry.name}
                   </Text>
                 </View>
 
-                <Text className="text-emerald-400 font-bold text-xl">
+                <Text className="text-primary font-bold text-xl">
                   {entry.value} {entry.unit}
                 </Text>
               </View>
@@ -423,7 +423,7 @@ export default function AchievementsLeaderboard() {
             {/* Share Button */}
             <TouchableOpacity
               onPress={() => Alert.alert('Compartir', 'Compartir ranking en redes sociales')}
-              className="bg-blue-500 rounded-xl p-4 flex-row items-center justify-center mb-6 mt-4"
+              className="bg-primary rounded-xl p-4 flex-row items-center justify-center mb-6 mt-4"
             >
               <Ionicons name="share-social" size={24} color="white" />
               <Text className="text-white font-bold text-lg ml-2">Compartir Ranking</Text>
@@ -433,17 +433,17 @@ export default function AchievementsLeaderboard() {
 
         {/* Info */}
         <View className="px-6 mb-6">
-          <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30">
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30">
             <View className="flex-row items-start">
-              <Ionicons name="information-circle" size={20} color="#3B82F6" />
+              <Ionicons name="information-circle" size={20} color="#9D12DE" />
               <View className="flex-1 ml-3">
-                <Text className="text-blue-400 font-bold mb-2">
+                <Text className="text-primary/80 font-bold mb-2">
                   {activeTab === 'achievements' ? 'Sobre los Logros' : 'Sobre los Rankings'}
                 </Text>
-                <Text className="text-blue-300 text-sm">
+                <Text className="text-primary/60 text-sm">
                   {activeTab === 'achievements' 
-                    ? '• Desbloquea logros entrenando consistente\n• Cada logro = 100 puntos\n• Comparte tus logros con amigos\n• Nuevos logros cada mes'
-                    : '• Rankings actualizados diariamente\n• Compite con amigos del gym\n• Crea grupos privados\n• Filtra por peso corporal'}
+                    ? 'â€¢ Desbloquea logros entrenando consistente\nâ€¢ Cada logro = 100 puntos\nâ€¢ Comparte tus logros con amigos\nâ€¢ Nuevos logros cada mes'
+                    : 'â€¢ Rankings actualizados diariamente\nâ€¢ Compite con amigos del gym\nâ€¢ Crea grupos privados\nâ€¢ Filtra por peso corporal'}
                 </Text>
               </View>
             </View>
@@ -453,3 +453,4 @@ export default function AchievementsLeaderboard() {
     </View>
   );
 }
+

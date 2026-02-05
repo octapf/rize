@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { render } from '@testing-library/react-native';
 import { Card, CardHeader, CardContent, CardActions } from '../Card';
 import { Text } from 'react-native';
@@ -31,13 +31,13 @@ describe('Card', () => {
 
     it('should accept custom className', () => {
       const { getByTestId } = render(
-        <Card testID="card" className="bg-blue-500">
+        <Card testID="card" className="bg-primary">
           <Text>Content</Text>
         </Card>
       );
 
       const card = getByTestId('card');
-      expect(card.props.className).toContain('bg-blue-500');
+      expect(card.props.className).toContain('bg-primary');
     });
 
     it('should pass through additional props', () => {
@@ -197,3 +197,4 @@ describe('Card', () => {
     });
   });
 });
+

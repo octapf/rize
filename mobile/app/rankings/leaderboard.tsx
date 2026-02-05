@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -22,12 +22,12 @@ interface LeaderboardUser {
 }
 
 const mockLeaderboard: LeaderboardUser[] = [
-  { rank: 1, userId: '1', name: 'Carlos García', username: 'carlosg', score: 12540, change: 2 },
-  { rank: 2, userId: '2', name: 'Ana López', username: 'ana', score: 11230, change: -1 },
-  { rank: 3, userId: '3', name: 'Pedro Martínez', username: 'pedro', score: 10890, change: 1 },
-  { rank: 4, userId: '4', name: 'María Sánchez', username: 'maria', score: 9750, change: 0 },
-  { rank: 5, userId: 'me', name: 'Tú', username: 'tuuser', score: 8920, change: 3 },
-  { rank: 6, userId: '6', name: 'Luis Rodríguez', username: 'luis', score: 8450, change: -2 },
+  { rank: 1, userId: '1', name: 'Carlos GarcÃ­a', username: 'carlosg', score: 12540, change: 2 },
+  { rank: 2, userId: '2', name: 'Ana LÃ³pez', username: 'ana', score: 11230, change: -1 },
+  { rank: 3, userId: '3', name: 'Pedro MartÃ­nez', username: 'pedro', score: 10890, change: 1 },
+  { rank: 4, userId: '4', name: 'MarÃ­a SÃ¡nchez', username: 'maria', score: 9750, change: 0 },
+  { rank: 5, userId: 'me', name: 'TÃº', username: 'tuuser', score: 8920, change: 3 },
+  { rank: 6, userId: '6', name: 'Luis RodrÃ­guez', username: 'luis', score: 8450, change: -2 },
   { rank: 7, userId: '7', name: 'Sofia Torres', username: 'sofia', score: 7890, change: 1 },
   { rank: 8, userId: '8', name: 'Diego Ruiz', username: 'diego', score: 7320, change: -1 },
 ];
@@ -62,7 +62,7 @@ export default function LeaderboardScreen() {
       case 'workouts':
         return 'workouts';
       case 'streak':
-        return 'días';
+        return 'dÃ­as';
       default:
         return '';
     }
@@ -71,7 +71,7 @@ export default function LeaderboardScreen() {
   const getRankColor = (rank: number) => {
     switch (rank) {
       case 1:
-        return '#F59E0B';
+        return '#FFEA00';
       case 2:
         return '#9CA3AF';
       case 3:
@@ -95,7 +95,7 @@ export default function LeaderboardScreen() {
         onPress={() => !isMe && router.push(`/users/${item.userId}` as any)}
         disabled={isMe}
       >
-        <Card className={`p-4 mb-3 ${isMe ? 'bg-blue-50 border-2 border-blue-500' : ''}`}>
+        <Card className={`p-4 mb-3 ${isMe ? 'bg-primary/5 border-2 border-primary' : ''}`}>
           <View className="flex-row items-center gap-4">
             {/* Rank */}
             <View
@@ -110,7 +110,7 @@ export default function LeaderboardScreen() {
             </View>
 
             {/* Avatar */}
-            <View className="w-12 h-12 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full items-center justify-center">
+            <View className="w-12 h-12 bg-gradient-to-br from-primary to-[#7D0EBE] rounded-full items-center justify-center">
               <Text className="text-white font-bold text-lg">
                 {item.name[0]}
               </Text>
@@ -118,7 +118,7 @@ export default function LeaderboardScreen() {
 
             {/* Info */}
             <View className="flex-1">
-              <Text className={`text-base ${isMe ? 'font-bold text-blue-900' : 'font-semibold text-gray-900'}`}>
+              <Text className={`text-base ${isMe ? 'font-bold text-text' : 'font-semibold text-gray-900'}`}>
                 {item.name}
               </Text>
               <Text className="text-gray-600 text-sm">@{item.username}</Text>
@@ -135,9 +135,9 @@ export default function LeaderboardScreen() {
                     <Ionicons
                       name={item.change > 0 ? 'trending-up' : 'trending-down'}
                       size={16}
-                      color={item.change > 0 ? '#10B981' : '#EF4444'}
+                      color={item.change > 0 ? '#9D12DE' : '#EF4444'}
                     />
-                    <Text className={`text-xs font-bold ${item.change > 0 ? 'text-emerald-600' : 'text-red-600'}`}>
+                    <Text className={`text-xs font-bold ${item.change > 0 ? 'text-primary' : 'text-red-600'}`}>
                       {Math.abs(item.change)}
                     </Text>
                   </>
@@ -153,7 +153,7 @@ export default function LeaderboardScreen() {
   return (
     <View className="flex-1 bg-gray-50">
       {/* Header */}
-      <LinearGradient colors={['#F59E0B', '#D97706']} className="px-6 pt-12 pb-6">
+      <LinearGradient colors={['#FFEA00', '#D97706']} className="px-6 pt-12 pb-6">
         <View className="flex-row items-center justify-between mb-4">
           <TouchableOpacity onPress={() => router.back()}>
             <Ionicons name="arrow-back" size={28} color="white" />
@@ -179,7 +179,7 @@ export default function LeaderboardScreen() {
                   timeRange === range ? 'text-amber-600' : 'text-white'
                 }`}
               >
-                {range === 'week' ? 'Semana' : range === 'month' ? 'Mes' : 'Histórico'}
+                {range === 'week' ? 'Semana' : range === 'month' ? 'Mes' : 'HistÃ³rico'}
               </Text>
             </TouchableOpacity>
           ))}
@@ -211,7 +211,7 @@ export default function LeaderboardScreen() {
       <View className="p-4">
         <Card className="p-4 bg-gradient-to-r from-amber-50 to-orange-50">
           <Text className="text-gray-900 font-bold text-lg mb-4 text-center">
-            🏆 Top 3 - {getCategoryLabel()}
+            ðŸ† Top 3 - {getCategoryLabel()}
           </Text>
           <View className="flex-row justify-around items-end">
             {/* 2nd Place */}
@@ -228,7 +228,7 @@ export default function LeaderboardScreen() {
             {/* 1st Place */}
             {mockLeaderboard[0] && (
               <View className="items-center -mt-4">
-                <Ionicons name="trophy" size={32} color="#F59E0B" />
+                <Ionicons name="trophy" size={32} color="#FFEA00" />
                 <View className="w-20 h-20 bg-gradient-to-br from-amber-400 to-amber-600 rounded-full items-center justify-center mb-2">
                   <Text className="text-white font-bold text-3xl">1</Text>
                 </View>
@@ -268,3 +268,4 @@ export default function LeaderboardScreen() {
     </View>
   );
 }
+

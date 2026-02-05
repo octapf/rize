@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -16,15 +16,15 @@ export default function CloudBackup() {
   const backupHistory = [
     { id: '1', date: 'Hoy 3:24 AM', size: '2.5 MB', status: 'success' },
     { id: '2', date: 'Ayer 3:24 AM', size: '2.4 MB', status: 'success' },
-    { id: '3', date: 'Hace 2 días', size: '2.3 MB', status: 'success' },
-    { id: '4', date: 'Hace 3 días', size: '2.3 MB', status: 'success' },
-    { id: '5', date: 'Hace 4 días', size: '2.2 MB', status: 'failed' },
+    { id: '3', date: 'Hace 2 dÃ­as', size: '2.3 MB', status: 'success' },
+    { id: '4', date: 'Hace 3 dÃ­as', size: '2.3 MB', status: 'success' },
+    { id: '5', date: 'Hace 4 dÃ­as', size: '2.2 MB', status: 'failed' },
   ];
 
   const restoreBackup = (backupId: string) => {
     Alert.alert(
       'Restaurar Backup?',
-      'Esto sobrescribirá todos tus datos actuales.',
+      'Esto sobrescribirÃ¡ todos tus datos actuales.',
       [
         { text: 'Cancelar', style: 'cancel' },
         { text: 'Restaurar', style: 'destructive' }
@@ -50,11 +50,11 @@ export default function CloudBackup() {
           <View className="bg-gradient-to-r from-blue-500 to-cyan-500 rounded-xl p-6 mb-6">
             <Text className="text-white text-2xl font-bold mb-2">iCloud Backup</Text>
             <Text className="text-white opacity-90 mb-4">
-              Tus datos están seguros en la nube
+              Tus datos estÃ¡n seguros en la nube
             </Text>
             <View className="flex-row items-center">
               <Ionicons name="cloud-done" size={20} color="white" />
-              <Text className="text-white ml-2">Último backup: Hoy 3:24 AM</Text>
+              <Text className="text-white ml-2">Ãšltimo backup: Hoy 3:24 AM</Text>
             </View>
           </View>
 
@@ -63,13 +63,13 @@ export default function CloudBackup() {
             className="bg-zinc-900 rounded-xl p-4 flex-row items-center justify-between mb-4 border border-zinc-800"
           >
             <View className="flex-row items-center flex-1">
-              <Ionicons name="sync-circle" size={24} color="#3B82F6" />
+              <Ionicons name="sync-circle" size={24} color="#9D12DE" />
               <View className="ml-3 flex-1">
                 <Text className="text-white font-bold">Auto Backup</Text>
-                <Text className="text-zinc-400 text-sm">Respaldo automático diario</Text>
+                <Text className="text-zinc-400 text-sm">Respaldo automÃ¡tico diario</Text>
               </View>
             </View>
-            <View className={`w-12 h-6 rounded-full ${autoBackup ? 'bg-blue-500' : 'bg-zinc-700'}`}>
+            <View className={`w-12 h-6 rounded-full ${autoBackup ? 'bg-primary' : 'bg-zinc-700'}`}>
               <View className={`w-5 h-5 bg-white rounded-full mt-0.5 ${autoBackup ? 'ml-6' : 'ml-1'}`} />
             </View>
           </TouchableOpacity>
@@ -81,7 +81,7 @@ export default function CloudBackup() {
                 key={freq}
                 onPress={() => setBackupFrequency(freq)}
                 className={`flex-1 rounded-xl py-3 ${
-                  backupFrequency === freq ? 'bg-blue-500' : 'bg-zinc-900 border border-zinc-800'
+                  backupFrequency === freq ? 'bg-primary' : 'bg-zinc-900 border border-zinc-800'
                 }`}
               >
                 <Text className={`text-center font-bold ${
@@ -106,11 +106,11 @@ export default function CloudBackup() {
                   <Ionicons
                     name={backup.status === 'success' ? 'checkmark-circle' : 'close-circle'}
                     size={24}
-                    color={backup.status === 'success' ? '#10B981' : '#EF4444'}
+                    color={backup.status === 'success' ? '#9D12DE' : '#EF4444'}
                   />
                   {backup.status === 'success' && (
                     <TouchableOpacity onPress={() => restoreBackup(backup.id)}>
-                      <Ionicons name="download" size={20} color="#3B82F6" />
+                      <Ionicons name="download" size={20} color="#9D12DE" />
                     </TouchableOpacity>
                   )}
                 </View>
@@ -122,3 +122,4 @@ export default function CloudBackup() {
     </View>
   );
 }
+

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -29,18 +29,18 @@ const SPLITS: WorkoutSplit[] = [
   {
     id: '1',
     name: 'Push/Pull/Legs',
-    description: 'División clásica de 3 días con enfoque en patrones de movimiento',
+    description: 'DivisiÃ³n clÃ¡sica de 3 dÃ­as con enfoque en patrones de movimiento',
     days: 6,
     difficulty: 'intermedio',
     goal: 'hipertrofia',
     popularity: 95,
     schedule: [
-      { day: 'Lunes', focus: 'Push (Pecho/Hombros/Tríceps)', exercises: 8 },
-      { day: 'Martes', focus: 'Pull (Espalda/Bíceps)', exercises: 7 },
-      { day: 'Miércoles', focus: 'Legs (Piernas)', exercises: 6 },
+      { day: 'Lunes', focus: 'Push (Pecho/Hombros/TrÃ­ceps)', exercises: 8 },
+      { day: 'Martes', focus: 'Pull (Espalda/BÃ­ceps)', exercises: 7 },
+      { day: 'MiÃ©rcoles', focus: 'Legs (Piernas)', exercises: 6 },
       { day: 'Jueves', focus: 'Push', exercises: 8 },
       { day: 'Viernes', focus: 'Pull', exercises: 7 },
-      { day: 'Sábado', focus: 'Legs', exercises: 6 },
+      { day: 'SÃ¡bado', focus: 'Legs', exercises: 6 },
     ],
   },
   {
@@ -53,7 +53,7 @@ const SPLITS: WorkoutSplit[] = [
     popularity: 88,
     schedule: [
       { day: 'Lunes', focus: 'Full Body A', exercises: 6 },
-      { day: 'Miércoles', focus: 'Full Body B', exercises: 6 },
+      { day: 'MiÃ©rcoles', focus: 'Full Body B', exercises: 6 },
       { day: 'Viernes', focus: 'Full Body C', exercises: 6 },
     ],
   },
@@ -75,7 +75,7 @@ const SPLITS: WorkoutSplit[] = [
   {
     id: '4',
     name: 'Bro Split 5x',
-    description: 'Un grupo muscular por día, ideal para volumen',
+    description: 'Un grupo muscular por dÃ­a, ideal para volumen',
     days: 5,
     difficulty: 'avanzado',
     goal: 'hipertrofia',
@@ -83,7 +83,7 @@ const SPLITS: WorkoutSplit[] = [
     schedule: [
       { day: 'Lunes', focus: 'Pecho', exercises: 7 },
       { day: 'Martes', focus: 'Espalda', exercises: 7 },
-      { day: 'Miércoles', focus: 'Hombros', exercises: 6 },
+      { day: 'MiÃ©rcoles', focus: 'Hombros', exercises: 6 },
       { day: 'Jueves', focus: 'Piernas', exercises: 8 },
       { day: 'Viernes', focus: 'Brazos', exercises: 6 },
     ],
@@ -112,9 +112,9 @@ export default function WorkoutSplits() {
   const getDifficultyColor = (difficulty: string) => {
     switch (difficulty) {
       case 'principiante':
-        return '#10B981';
+        return '#9D12DE';
       case 'intermedio':
-        return '#F59E0B';
+        return '#FFEA00';
       case 'avanzado':
         return '#EF4444';
       default:
@@ -127,11 +127,11 @@ export default function WorkoutSplits() {
       case 'fuerza':
         return '#EF4444';
       case 'hipertrofia':
-        return '#3B82F6';
+        return '#9D12DE';
       case 'resistencia':
-        return '#10B981';
+        return '#9D12DE';
       case 'general':
-        return '#F59E0B';
+        return '#FFEA00';
       default:
         return '#71717A';
     }
@@ -140,13 +140,13 @@ export default function WorkoutSplits() {
   const selectSplit = (split: WorkoutSplit) => {
     Alert.alert(
       'Aplicar Rutina',
-      `${split.name}\n\n${split.days} días por semana\n\n¿Deseas aplicar esta rutina a tu programa?`,
+      `${split.name}\n\n${split.days} dÃ­as por semana\n\nÂ¿Deseas aplicar esta rutina a tu programa?`,
       [
         { text: 'Cancelar', style: 'cancel' },
         {
           text: 'Aplicar',
           onPress: () => {
-            Alert.alert('¡Rutina Aplicada!', 'Tu nueva rutina está lista para comenzar');
+            Alert.alert('Â¡Rutina Aplicada!', 'Tu nueva rutina estÃ¡ lista para comenzar');
           },
         },
       ]
@@ -198,7 +198,7 @@ export default function WorkoutSplits() {
                 onPress={() => setSelectedGoal(goal.id)}
                 className={`px-4 py-2 rounded-lg ${
                   selectedGoal === goal.id
-                    ? 'bg-emerald-500'
+                    ? 'bg-primary'
                     : 'bg-zinc-900 border border-zinc-800'
                 }`}
               >
@@ -223,7 +223,7 @@ export default function WorkoutSplits() {
                 onPress={() => setSelectedDifficulty(difficulty.id)}
                 className={`px-4 py-2 rounded-lg ${
                   selectedDifficulty === difficulty.id
-                    ? 'bg-emerald-500'
+                    ? 'bg-primary'
                     : 'bg-zinc-900 border border-zinc-800'
                 }`}
               >
@@ -286,7 +286,7 @@ export default function WorkoutSplits() {
                 </View>
                 <View className="bg-purple-500/20 px-3 py-1 rounded-full">
                   <Text className="text-purple-400 text-xs font-bold">
-                    {split.days} días/semana
+                    {split.days} dÃ­as/semana
                   </Text>
                 </View>
                 <View className="bg-amber-500/20 px-3 py-1 rounded-full">
@@ -305,7 +305,7 @@ export default function WorkoutSplits() {
                     className="flex-row items-center justify-between py-2 border-b border-zinc-700 last:border-b-0"
                   >
                     <View className="flex-1">
-                      <Text className="text-emerald-500 font-semibold text-sm">
+                      <Text className="text-primary font-semibold text-sm">
                         {day.day}
                       </Text>
                       <Text className="text-zinc-300 text-xs">{day.focus}</Text>
@@ -320,7 +320,7 @@ export default function WorkoutSplits() {
               {/* Actions */}
               <TouchableOpacity
                 onPress={() => selectSplit(split)}
-                className="bg-emerald-500 rounded-lg p-3"
+                className="bg-primary rounded-lg p-3"
               >
                 <Text className="text-white font-bold text-center">
                   Aplicar Esta Rutina
@@ -344,21 +344,21 @@ export default function WorkoutSplits() {
 
         {/* Info Card */}
         <View className="px-6 pb-6 pt-4">
-          <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30">
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30">
             <View className="flex-row items-start">
-              <Ionicons name="information-circle" size={20} color="#3B82F6" />
+              <Ionicons name="information-circle" size={20} color="#9D12DE" />
               <View className="flex-1 ml-3">
-                <Text className="text-blue-400 font-bold mb-2">
-                  ¿Qué rutina elegir?
+                <Text className="text-primary/80 font-bold mb-2">
+                  Â¿QuÃ© rutina elegir?
                 </Text>
-                <Text className="text-blue-300 text-sm mb-2">
-                  • Principiante: Full Body 3x semana
+                <Text className="text-primary/60 text-sm mb-2">
+                  â€¢ Principiante: Full Body 3x semana
                 </Text>
-                <Text className="text-blue-300 text-sm mb-2">
-                  • Intermedio: Push/Pull/Legs o Upper/Lower
+                <Text className="text-primary/60 text-sm mb-2">
+                  â€¢ Intermedio: Push/Pull/Legs o Upper/Lower
                 </Text>
-                <Text className="text-blue-300 text-sm">
-                  • Avanzado: Bro Split con alto volumen
+                <Text className="text-primary/60 text-sm">
+                  â€¢ Avanzado: Bro Split con alto volumen
                 </Text>
               </View>
             </View>
@@ -368,3 +368,4 @@ export default function WorkoutSplits() {
     </View>
   );
 }
+

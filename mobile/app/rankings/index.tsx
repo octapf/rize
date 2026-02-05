@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -17,8 +17,8 @@ import { useAuthStore } from '@/stores/authStore';
 type LeaderboardType = 'xp' | 'workouts' | 'volume' | 'streak';
 
 const leaderboardTypes = [
-  { id: 'xp' as const, label: 'XP', icon: 'trophy' as const, color: '#F59E0B' },
-  { id: 'workouts' as const, label: 'Entrenamientos', icon: 'barbell' as const, color: '#10B981' },
+  { id: 'xp' as const, label: 'XP', icon: 'trophy' as const, color: '#FFEA00' },
+  { id: 'workouts' as const, label: 'Entrenamientos', icon: 'barbell' as const, color: '#9D12DE' },
   { id: 'volume' as const, label: 'Volumen', icon: 'speedometer' as const, color: '#8B5CF6' },
   { id: 'streak' as const, label: 'Racha', icon: 'flame' as const, color: '#EF4444' },
 ];
@@ -84,9 +84,9 @@ export default function RankingsScreen() {
 
   const getRankIcon = (rank: number) => {
     switch (rank) {
-      case 1: return '🥇';
-      case 2: return '🥈';
-      case 3: return '🥉';
+      case 1: return 'ðŸ¥‡';
+      case 2: return 'ðŸ¥ˆ';
+      case 3: return 'ðŸ¥‰';
       default: return `#${rank}`;
     }
   };
@@ -96,7 +96,7 @@ export default function RankingsScreen() {
       case 'xp': return `${user.xp.toLocaleString()} XP`;
       case 'workouts': return `${user.workouts} workouts`;
       case 'volume': return `${(user.volume / 1000).toFixed(1)}k kg`;
-      case 'streak': return `${user.streak} días`;
+      case 'streak': return `${user.streak} dÃ­as`;
       default: return '';
     }
   };
@@ -107,7 +107,7 @@ export default function RankingsScreen() {
     <View className="flex-1 bg-gray-50">
       {/* Header */}
       <LinearGradient
-        colors={[currentCategory?.color || '#F59E0B', '#D97706']}
+        colors={[currentCategory?.color || '#FFEA00', '#D97706']}
         className="px-6 pt-12 pb-6"
       >
         <View className="flex-row items-center justify-between mb-4">
@@ -180,7 +180,7 @@ export default function RankingsScreen() {
                       {leaderboard[1].avatar}
                     </Text>
                   </View>
-                  <Text className="text-4xl mb-1">🥈</Text>
+                  <Text className="text-4xl mb-1">ðŸ¥ˆ</Text>
                   <View className="bg-gray-200 w-full h-24 rounded-t-xl items-center justify-center">
                     <Text className="text-gray-900 font-bold text-center" numberOfLines={1}>
                       {leaderboard[1].username}
@@ -193,13 +193,13 @@ export default function RankingsScreen() {
 
                 {/* 1st Place */}
                 <View className="flex-1 items-center">
-                  <View className="bg-yellow-400 w-20 h-20 rounded-full items-center justify-center mb-2 border-4 border-yellow-500 -mt-8">
+                  <View className="bg-highlight w-20 h-20 rounded-full items-center justify-center mb-2 border-4 border-yellow-500 -mt-8">
                     <Text className="text-yellow-900 text-3xl font-bold">
                       {leaderboard[0].avatar}
                     </Text>
                   </View>
-                  <Text className="text-5xl mb-1">🥇</Text>
-                  <View className="bg-yellow-400 w-full h-32 rounded-t-xl items-center justify-center">
+                  <Text className="text-5xl mb-1">ðŸ¥‡</Text>
+                  <View className="bg-highlight w-full h-32 rounded-t-xl items-center justify-center">
                     <Text className="text-yellow-900 font-bold text-center" numberOfLines={1}>
                       {leaderboard[0].username}
                     </Text>
@@ -216,7 +216,7 @@ export default function RankingsScreen() {
                       {leaderboard[2].avatar}
                     </Text>
                   </View>
-                  <Text className="text-4xl mb-1">🥉</Text>
+                  <Text className="text-4xl mb-1">ðŸ¥‰</Text>
                   <View className="bg-orange-300 w-full h-20 rounded-t-xl items-center justify-center">
                     <Text className="text-orange-900 font-bold text-center" numberOfLines={1}>
                       {leaderboard[2].username}
@@ -244,7 +244,7 @@ export default function RankingsScreen() {
                 >
                   <Card
                     className={`p-4 ${
-                      isCurrentUser ? 'border-2 border-emerald-500 bg-emerald-50' : ''
+                      isCurrentUser ? 'border-2 border-primary bg-emerald-50' : ''
                     }`}
                   >
                     <View className="flex-row items-center gap-4">
@@ -264,7 +264,7 @@ export default function RankingsScreen() {
                       {/* Avatar */}
                       <View
                         className={`w-12 h-12 rounded-full items-center justify-center ${
-                          isCurrentUser ? 'bg-emerald-500' : 'bg-gray-200'
+                          isCurrentUser ? 'bg-primary' : 'bg-gray-200'
                         }`}
                       >
                         <Text
@@ -280,11 +280,11 @@ export default function RankingsScreen() {
                       <View className="flex-1">
                         <Text
                           className={`font-bold ${
-                            isCurrentUser ? 'text-emerald-900' : 'text-gray-900'
+                            isCurrentUser ? 'text-primary' : 'text-gray-900'
                           }`}
                         >
                           {userItem.username}
-                          {isCurrentUser && ' (Tú)'}
+                          {isCurrentUser && ' (TÃº)'}
                         </Text>
                         <Text className="text-gray-600 text-sm">
                           {getStatValue(userItem)}
@@ -304,25 +304,25 @@ export default function RankingsScreen() {
           {user && !leaderboard.some(u => u._id === user._id) && (
             <View className="mt-4">
               <Text className="text-gray-600 text-sm text-center mb-2">
-                Tu posición
+                Tu posiciÃ³n
               </Text>
-              <Card className="p-4 border-2 border-emerald-500 bg-emerald-50">
+              <Card className="p-4 border-2 border-primary bg-emerald-50">
                 <View className="flex-row items-center gap-4">
-                  <View className="w-12 h-12 rounded-full items-center justify-center bg-emerald-500/20">
-                    <Text className="font-bold text-lg text-emerald-700">
+                  <View className="w-12 h-12 rounded-full items-center justify-center bg-primary/20">
+                    <Text className="font-bold text-lg text-primary">
                       #24
                     </Text>
                   </View>
-                  <View className="w-12 h-12 rounded-full items-center justify-center bg-emerald-500">
+                  <View className="w-12 h-12 rounded-full items-center justify-center bg-primary">
                     <Text className="text-xl font-bold text-white">
                       {user.username[0].toUpperCase()}
                     </Text>
                   </View>
                   <View className="flex-1">
-                    <Text className="font-bold text-emerald-900">
-                      {user.username} (Tú)
+                    <Text className="font-bold text-primary">
+                      {user.username} (TÃº)
                     </Text>
-                    <Text className="text-emerald-700 text-sm">
+                    <Text className="text-primary text-sm">
                       {user.xp.toLocaleString()} XP
                     </Text>
                   </View>
@@ -335,3 +335,5 @@ export default function RankingsScreen() {
     </View>
   );
 }
+
+

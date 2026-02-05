@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -35,7 +35,7 @@ export default function DataExportImport() {
 
   const exportData = (format: string) => {
     Alert.alert(
-      '📥 Exporting Data',
+      'ðŸ“¥ Exporting Data',
       `Generando archivo ${format.toUpperCase()}...\n\nTiempo estimado: 30s`,
       [{ text: 'OK' }]
     );
@@ -43,7 +43,7 @@ export default function DataExportImport() {
 
   const importData = () => {
     Alert.alert(
-      '📤 Import Data',
+      'ðŸ“¤ Import Data',
       'Selecciona archivo JSON o CSV para importar',
       [
         { text: 'Cancelar', style: 'cancel' },
@@ -53,7 +53,7 @@ export default function DataExportImport() {
   };
 
   const createBackup = () => {
-    Alert.alert('Backup Creado ✅', 'Todos tus datos han sido respaldados en iCloud');
+    Alert.alert('Backup Creado âœ…', 'Todos tus datos han sido respaldados en iCloud');
   };
 
   return (
@@ -111,7 +111,7 @@ export default function DataExportImport() {
                 <Ionicons
                   name={cat.selected ? 'checkmark-circle' : 'ellipse-outline'}
                   size={24}
-                  color={cat.selected ? '#10B981' : '#71717A'}
+                  color={cat.selected ? '#9D12DE' : '#71717A'}
                 />
               </View>
             </View>
@@ -122,19 +122,19 @@ export default function DataExportImport() {
           {backupOptions.map((option) => (
             <View key={option.key} className="bg-zinc-900 rounded-xl p-4 mb-3 border border-zinc-800">
               <View className="flex-row items-center">
-                <Ionicons name={option.icon as any} size={24} color={option.enabled ? '#3B82F6' : '#71717A'} />
+                <Ionicons name={option.icon as any} size={24} color={option.enabled ? '#9D12DE' : '#71717A'} />
                 <View className="ml-3 flex-1">
                   <Text className={`font-bold ${option.enabled ? 'text-white' : 'text-zinc-500'}`}>
                     {option.label}
                   </Text>
                   {option.lastBackup && (
-                    <Text className="text-zinc-400 text-sm">Último backup: {option.lastBackup}</Text>
+                    <Text className="text-zinc-400 text-sm">Ãšltimo backup: {option.lastBackup}</Text>
                   )}
                 </View>
                 <Ionicons
                   name={option.enabled ? 'checkmark-circle' : 'close-circle'}
                   size={24}
-                  color={option.enabled ? '#10B981' : '#71717A'}
+                  color={option.enabled ? '#9D12DE' : '#71717A'}
                 />
               </View>
             </View>
@@ -143,7 +143,7 @@ export default function DataExportImport() {
           <View className="flex-row gap-3 mb-6 mt-4">
             <TouchableOpacity
               onPress={importData}
-              className="flex-1 bg-blue-500 rounded-xl p-4 flex-row items-center justify-center"
+              className="flex-1 bg-primary rounded-xl p-4 flex-row items-center justify-center"
             >
               <Ionicons name="cloud-upload" size={20} color="white" />
               <Text className="text-white font-bold ml-2">Import</Text>
@@ -151,23 +151,23 @@ export default function DataExportImport() {
 
             <TouchableOpacity
               onPress={createBackup}
-              className="flex-1 bg-emerald-500 rounded-xl p-4 flex-row items-center justify-center"
+              className="flex-1 bg-primary rounded-xl p-4 flex-row items-center justify-center"
             >
               <Ionicons name="shield-checkmark" size={20} color="white" />
               <Text className="text-white font-bold ml-2">Backup Now</Text>
             </TouchableOpacity>
           </View>
 
-          <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30 mb-6">
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
             <View className="flex-row items-start">
-              <Ionicons name="information-circle" size={20} color="#3B82F6" />
+              <Ionicons name="information-circle" size={20} color="#9D12DE" />
               <View className="flex-1 ml-3">
-                <Text className="text-blue-400 font-bold mb-2">Data Security</Text>
-                <Text className="text-blue-300 text-sm">
-                  • Encriptación end-to-end{'\n'}
-                  • Backups automáticos diarios{'\n'}
-                  • Exporta antes de cambiar dispositivo{'\n'}
-                  • Import preserva historial completo
+                <Text className="text-primary/80 font-bold mb-2">Data Security</Text>
+                <Text className="text-primary/60 text-sm">
+                  â€¢ EncriptaciÃ³n end-to-end{'\n'}
+                  â€¢ Backups automÃ¡ticos diarios{'\n'}
+                  â€¢ Exporta antes de cambiar dispositivo{'\n'}
+                  â€¢ Import preserva historial completo
                 </Text>
               </View>
             </View>
@@ -177,3 +177,4 @@ export default function DataExportImport() {
     </View>
   );
 }
+

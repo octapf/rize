@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import {
   View,
   Text,
@@ -24,7 +24,7 @@ export default function StatsScreen() {
   if (isLoading) {
     return (
       <View className="flex-1 bg-gray-50 items-center justify-center">
-        <ActivityIndicator size="large" color="#10B981" />
+        <ActivityIndicator size="large" color="#9D12DE" />
       </View>
     );
   }
@@ -35,9 +35,9 @@ export default function StatsScreen() {
   return (
     <View className="flex-1 bg-gray-50">
       {/* Header */}
-      <LinearGradient colors={['#10B981', '#059669']} className="px-6 pt-12 pb-6">
-        <Text className="text-3xl font-bold text-white mb-2">Estadísticas</Text>
-        <Text className="text-emerald-100">Tu progreso y logros</Text>
+      <LinearGradient colors={['#9D12DE', '#7C3AED']} className="px-6 pt-12 pb-6">
+        <Text className="text-3xl font-bold text-white mb-2">EstadÃ­sticas</Text>
+        <Text className="text-primary/50">Tu progreso y logros</Text>
       </LinearGradient>
 
       <ScrollView className="flex-1" contentContainerClassName="p-6 gap-6">
@@ -61,7 +61,7 @@ export default function StatsScreen() {
           {/* XP Progress to next level */}
           <View className="mt-4">
             <View className="flex-row justify-between mb-2">
-              <Text className="text-white/80 text-xs">Próximo nivel</Text>
+              <Text className="text-white/80 text-xs">PrÃ³ximo nivel</Text>
               <Text className="text-white text-xs font-semibold">
                 {((stats?.user.xp || 0) % 100)}/100 XP
               </Text>
@@ -80,9 +80,9 @@ export default function StatsScreen() {
           <View className="flex-row items-center justify-between">
             <View className="flex-1">
               <Text className="text-white/90 text-sm mb-1">Racha Actual</Text>
-              <Text className="text-white text-4xl font-bold">{streak} días</Text>
+              <Text className="text-white text-4xl font-bold">{streak} dÃ­as</Text>
               <Text className="text-orange-100 text-sm mt-1">
-                ¡Sigue así! 🔥
+                Â¡Sigue asÃ­! ðŸ”¥
               </Text>
             </View>
             <View className="bg-white/20 p-4 rounded-2xl">
@@ -97,24 +97,24 @@ export default function StatsScreen() {
             Esta Semana
           </Text>
           <View className="flex-row gap-3">
-            <Card className="flex-1 p-4 bg-gradient-to-br from-blue-50 to-blue-100">
-              <View className="bg-blue-500 w-12 h-12 rounded-xl items-center justify-center mb-3">
+            <Card className="flex-1 p-4 bg-primary/10">
+              <View className="bg-primary w-12 h-12 rounded-xl items-center justify-center mb-3">
                 <Ionicons name="barbell" size={24} color="white" />
               </View>
-              <Text className="text-2xl font-bold text-gray-900">
+              <Text className="text-2xl font-bold text-text">
                 {stats?.weekly.workouts || 0}
               </Text>
-              <Text className="text-sm text-gray-600">Entrenamientos</Text>
+              <Text className="text-sm text-text/70">Entrenamientos</Text>
             </Card>
 
-            <Card className="flex-1 p-4 bg-gradient-to-br from-emerald-50 to-emerald-100">
-              <View className="bg-emerald-500 w-12 h-12 rounded-xl items-center justify-center mb-3">
+            <Card className="flex-1 p-4 bg-primary/10">
+              <View className="bg-primary w-12 h-12 rounded-xl items-center justify-center mb-3">
                 <Ionicons name="flash" size={24} color="white" />
               </View>
-              <Text className="text-2xl font-bold text-gray-900">
+              <Text className="text-2xl font-bold text-text">
                 {stats?.weekly.xpEarned || 0}
               </Text>
-              <Text className="text-sm text-gray-600">XP ganado</Text>
+              <Text className="text-sm text-text/70">XP ganado</Text>
             </Card>
           </View>
         </View>
@@ -122,14 +122,14 @@ export default function StatsScreen() {
         {/* Overall Stats */}
         <View>
           <Text className="text-xl font-bold text-gray-900 mb-4">
-            Estadísticas Totales
+            EstadÃ­sticas Totales
           </Text>
           <Card className="p-4">
             <View className="gap-4">
               <View className="flex-row items-center justify-between">
                 <View className="flex-row items-center gap-3">
-                  <View className="bg-emerald-100 p-3 rounded-xl">
-                    <Ionicons name="fitness" size={24} color="#10B981" />
+                  <View className="bg-primary/10 p-3 rounded-xl">
+                    <Ionicons name="fitness" size={24} color="#9D12DE" />
                   </View>
                   <View>
                     <Text className="text-sm text-gray-600">Entrenamientos Totales</Text>
@@ -160,8 +160,8 @@ export default function StatsScreen() {
 
               <View className="flex-row items-center justify-between">
                 <View className="flex-row items-center gap-3">
-                  <View className="bg-blue-100 p-3 rounded-xl">
-                    <Ionicons name="time" size={24} color="#3B82F6" />
+                  <View className="bg-primary/10 p-3 rounded-xl">
+                    <Ionicons name="time" size={24} color="#9D12DE" />
                   </View>
                   <View>
                     <Text className="text-sm text-gray-600">Tiempo Total</Text>
@@ -195,14 +195,14 @@ export default function StatsScreen() {
         {stats?.chart && stats.chart.length > 0 && (
           <View>
             <Text className="text-xl font-bold text-gray-900 mb-4">
-              Últimos 30 Días
+              Ãšltimos 30 DÃ­as
             </Text>
             <Card className="p-4">
               <View className="flex-row justify-around items-end h-32">
                 {stats.chart.slice(-14).map((day, index) => (
                   <View key={index} className="items-center gap-2">
                     <View
-                      className="bg-emerald-500 rounded-t"
+                      className="bg-primary rounded-t"
                       style={{
                         width: 12,
                         height: Math.max((day.count / 3) * 100, 4),
@@ -221,3 +221,4 @@ export default function StatsScreen() {
     </View>
   );
 }
+

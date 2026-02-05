@@ -72,16 +72,16 @@ export default function UserProfileScreen() {
 
   if (profileLoading) {
     return (
-      <View className="flex-1 bg-gray-50 items-center justify-center">
-        <ActivityIndicator size="large" color="#10B981" />
+      <View className="flex-1 bg-background items-center justify-center">
+        <ActivityIndicator size="large" color="#9D12DE" />
       </View>
     );
   }
 
-  if (profileData?.data) {
+  if (!profileData?.data) {
     return (
-      <View className="flex-1 bg-gray-50">
-        <LinearGradient colors={['#10B981', '#059669']} className="px-6 pt-12 pb-6">
+      <View className="flex-1 bg-background">
+        <LinearGradient colors={['#9D12DE', '#7D0EBE']} className="px-6 pt-12 pb-6">
           <View className="flex-row items-center justify-between">
             <TouchableOpacity onPress={() => router.back()} className="p-2">
               <Ionicons name="arrow-back" size={28} color="white" />
@@ -90,10 +90,10 @@ export default function UserProfileScreen() {
             <View className="w-10" />
           </View>
         </LinearGradient>
-        
+
         <View className="flex-1 items-center justify-center p-6">
           <Ionicons name="person-outline" size={64} color="#9CA3AF" />
-          <Text className="text-gray-500 mt-4">Usuario no encontrado</Text>
+          <Text className="text-text/60 mt-4">Usuario no encontrado</Text>
         </View>
       </View>
     );
@@ -108,12 +108,12 @@ export default function UserProfileScreen() {
   const friends = friendsData?.data.friends || [];
   const isFriend = friends.some((f: any) => f._id === userId);
   const hasPendingRequest = false; // TODO: Check pending requests properly
-  const hasPendingRequest = false; // TODO: Check pending requests
+
 
   return (
-    <View className="flex-1 bg-gray-50">
+    <View className="flex-1 bg-background">
       {/* Header */}
-      <LinearGradient colors={['#10B981', '#059669']} className="px-6 pt-12 pb-6">
+      <LinearGradient colors={['#9D12DE', '#7D0EBE']} className="px-6 pt-12 pb-6">
         <View className="flex-row items-center justify-between mb-6">
           <TouchableOpacity onPress={() => router.back()} className="p-2">
             <Ionicons name="arrow-back" size={28} color="white" />
@@ -125,7 +125,7 @@ export default function UserProfileScreen() {
         {/* User Info */}
         <View className="items-center">
           <View className="bg-white w-24 h-24 rounded-full items-center justify-center mb-4">
-            <Text className="text-emerald-600 text-4xl font-bold">
+            <Text className="text-primary text-4xl font-bold">
               {user.username?.[0]?.toUpperCase() || 'U'}
             </Text>
           </View>
@@ -175,8 +175,8 @@ export default function UserProfileScreen() {
 
         {/* Stats */}
         <View className="flex-row gap-3 mt-6">
-            <View className="flex-1 items-center bg-emerald-50 py-4 rounded-xl">
-              <Text className="text-3xl font-bold text-emerald-600 mb-1">
+            <View className="flex-1 items-center bg-primary/10 py-4 rounded-xl">
+              <Text className="text-3xl font-bold text-primary mb-1">
                 {stats.workoutCount}
               </Text>
               <Text className="text-sm text-gray-600">Entrenamientos</Text>
@@ -189,8 +189,8 @@ export default function UserProfileScreen() {
               <Text className="text-sm text-gray-600">Días Racha</Text>
             </View>
 
-            <View className="flex-1 items-center bg-blue-50 py-4 rounded-xl">
-              <Text className="text-3xl font-bold text-blue-600 mb-1">
+            <View className="flex-1 items-center bg-primary/10 py-4 rounded-xl">
+              <Text className="text-3xl font-bold text-primary mb-1">
                 {stats.achievementCount}
               </Text>
               <Text className="text-sm text-gray-600">Logros</Text>
@@ -267,7 +267,7 @@ export default function UserProfileScreen() {
               Actividad Reciente
             </Text>
             <TouchableOpacity>
-              <Text className="text-emerald-600 font-semibold">Ver Todo</Text>
+              <Text className="text-primary font-semibold">Ver Todo</Text>
             </TouchableOpacity>
           </View>
 
@@ -292,7 +292,7 @@ export default function UserProfileScreen() {
             <View className="flex-row items-center justify-between mb-4">
               <Text className="text-lg font-bold text-gray-900">Logros</Text>
               <TouchableOpacity>
-                <Text className="text-emerald-600 font-semibold">Ver Todo</Text>
+                <Text className="text-primary font-semibold">Ver Todo</Text>
               </TouchableOpacity>
             </View>
 

@@ -1,9 +1,10 @@
-import React from 'react';
+﻿import React from 'react';
 import { View, Text, ScrollView, TouchableOpacity } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
+import Animated, { FadeInDown } from 'react-native-reanimated';
 import { useQuery } from '@tanstack/react-query';
 import { useAuthStore } from '@/stores/authStore';
 import { workoutsApi } from '@/services/api/workouts.api';
@@ -42,49 +43,49 @@ export default function HomeScreen() {
     : undefined;
 
   return (
-    <SafeAreaView className="flex-1 bg-gray-50">
+    <SafeAreaView className="flex-1 bg-[#262626]">
       {/* Header */}
-      <LinearGradient colors={['#10B981', '#059669']} className="px-6 py-6">
+      <View className="px-6 py-6 border-b border-white/5 bg-[#262626]">
         <View className="flex-row items-center justify-between">
           <View>
-            <Text className="text-emerald-100 text-sm">Bienvenido</Text>
+            <Text className="text-[#FFEA00] text-sm font-medium">Bienvenido</Text>
             <Text className="text-white text-2xl font-bold">
               @{user?.username || 'Usuario'}
             </Text>
           </View>
           <TouchableOpacity
             onPress={() => router.push('/social/friends')}
-            className="bg-white/20 p-3 rounded-xl"
+            className="bg-white/10 p-3 rounded-xl border border-white/10"
           >
-            <Ionicons name="people" size={24} color="white" />
+            <Ionicons name="people" size={24} color="#FFF" />
           </TouchableOpacity>
         </View>
-      </LinearGradient>
+      </View>
 
       <ScrollView className="flex-1" contentContainerClassName="p-6 gap-6">
         {/* Quick Actions */}
         {stats && (
-          <View className="mb-6">
-            <Text className="text-lg font-bold text-gray-900 mb-3">
-              Acciones Rápidas
+          <Animated.View entering={FadeInDown.delay(100)} className="mb-6">
+            <Text className="text-lg font-bold text-white mb-3">
+              Acciones RÃ¡pidas
             </Text>
 
             <View className="flex-row flex-wrap gap-2">
               <TouchableOpacity
                 onPress={() => router.push('/workouts/quick-start')}
-                className="bg-emerald-500 px-4 py-2 rounded-full flex-row items-center gap-2"
+                className="bg-[#9D12DE] px-4 py-2 rounded-full flex-row items-center gap-2 shadow-lg shadow-purple-500/20"
               >
-                <Ionicons name="flash" size={16} color="white" />
+                <Ionicons name="flash" size={16} color="#FFEA00" />
                 <Text className="text-white font-semibold">
-                  Inicio Rápido
+                  Inicio RÃ¡pido
                 </Text>
               </TouchableOpacity>
 
               <TouchableOpacity
                 onPress={() => router.push('/progress')}
-                className="bg-blue-500 px-4 py-2 rounded-full flex-row items-center gap-2"
+                className="bg-[#9D12DE]/80 px-4 py-2 rounded-full flex-row items-center gap-2"
               >
-                <Ionicons name="analytics" size={16} color="white" />
+                <Ionicons name="analytics" size={16} color="#FFEA00" />
                 <Text className="text-white font-semibold">
                   Mi Progreso
                 </Text>
@@ -92,7 +93,7 @@ export default function HomeScreen() {
 
               <TouchableOpacity
                 onPress={() => router.push('/settings/shortcuts')}
-                className="bg-purple-500 px-4 py-2 rounded-full flex-row items-center gap-2"
+                className="bg-[#333333] px-4 py-2 rounded-full flex-row items-center gap-2 border border-white/10"
               >
                 <Ionicons name="settings" size={16} color="white" />
                 <Text className="text-white font-semibold">
@@ -100,47 +101,44 @@ export default function HomeScreen() {
                 </Text>
               </TouchableOpacity>
             </View>
-          </View>
+          </Animated.View>
         )}
 
         {/* Quick Stats */}
-        <View>
-          <Text className="text-xl font-bold text-gray-900 mb-3">
+        <Animated.View entering={FadeInDown.delay(200)}>
+          <Text className="text-xl font-bold text-white mb-3">
             Tu Progreso
           </Text>
           <QuickStats stats={stats} isLoading={statsLoading} />
-        </View>
+        </Animated.View>
 
         {/* Quick Actions */}
-        <View>
-          <Text className="text-xl font-bold text-gray-900 mb-3">
-            Acciones Rápidas
+        <Animated.View entering={FadeInDown.delay(300)}>
+          <Text className="text-xl font-bold text-white mb-3">
+            Acciones RÃ¡pidas
           </Text>
 
           <View className="gap-3">
             <TouchableOpacity onPress={() => router.push('/workouts/create')}>
-              <Card className="p-0 overflow-hidden">
-                <LinearGradient
-                  colors={['#10B981', '#059669']}
-                  className="p-4"
-                >
+              <Card className="p-0 overflow-hidden bg-[#9D12DE] border-white/10">
+                <View className="p-4 bg-[#9D12DE]">
                   <View className="flex-row items-center justify-between">
                     <View className="flex-row items-center gap-3 flex-1">
                       <View className="bg-white/20 p-3 rounded-xl">
-                        <Ionicons name="add-circle" size={32} color="white" />
+                        <Ionicons name="add-circle" size={32} color="#FFEA00" />
                       </View>
                       <View className="flex-1">
                         <Text className="text-white text-lg font-bold">
                           Nuevo Entrenamiento
                         </Text>
-                        <Text className="text-emerald-100 text-sm">
-                          Comienza tu sesión ahora
+                        <Text className="text-purple-200 text-sm">
+                          Comienza tu sesiÃ³n ahora
                         </Text>
                       </View>
                     </View>
-                    <Ionicons name="chevron-forward" size={24} color="white" />
+                    <Ionicons name="chevron-forward" size={24} color="#FFEA00" />
                   </View>
-                </LinearGradient>
+                </View>
               </Card>
             </TouchableOpacity>
 
@@ -149,12 +147,12 @@ export default function HomeScreen() {
                 onPress={() => router.push('/exercises/library')}
                 className="flex-1"
               >
-                <Card className="p-4 bg-blue-50">
+                <Card className="p-4 bg-[#333333] border-white/10">
                   <View className="items-center gap-2">
-                    <View className="bg-blue-500 p-3 rounded-xl">
-                      <Ionicons name="library" size={28} color="white" />
+                    <View className="bg-[#9D12DE]/20 p-3 rounded-xl">
+                      <Ionicons name="library" size={28} color="#9D12DE" />
                     </View>
-                    <Text className="text-gray-900 font-bold text-center">
+                    <Text className="text-white font-bold text-center">
                       Biblioteca
                     </Text>
                   </View>
@@ -165,12 +163,12 @@ export default function HomeScreen() {
                 onPress={() => router.push('/rankings')}
                 className="flex-1"
               >
-                <Card className="p-4 bg-amber-50">
+                <Card className="p-4 bg-[#333333] border-white/10">
                   <View className="items-center gap-2">
-                    <View className="bg-amber-500 p-3 rounded-xl">
-                      <Ionicons name="trophy" size={28} color="white" />
+                    <View className="bg-highlight/20 p-3 rounded-xl">
+                      <Ionicons name="trophy" size={28} color="#FFEA00" />
                     </View>
-                    <Text className="text-gray-900 font-bold text-center">
+                    <Text className="text-white font-bold text-center">
                       Rankings
                     </Text>
                   </View>
@@ -178,16 +176,16 @@ export default function HomeScreen() {
               </TouchableOpacity>
             </View>
           </View>
-        </View>
+        </Animated.View>
 
         {/* Recent Activity */}
-        <View>
+        <Animated.View entering={FadeInDown.delay(400)}>
           <View className="flex-row items-center justify-between mb-3">
-            <Text className="text-xl font-bold text-gray-900">
+            <Text className="text-xl font-bold text-white">
               Actividad Reciente
             </Text>
             <TouchableOpacity onPress={() => router.push('/workouts/history')}>
-              <Text className="text-emerald-600 font-semibold">Ver Todo</Text>
+              <Text className="text-[#9D12DE] font-semibold">Ver Todo</Text>
             </TouchableOpacity>
           </View>
 
@@ -196,13 +194,13 @@ export default function HomeScreen() {
               key={workout._id}
               onPress={() => router.push(`/workouts/${workout._id}`)}
             >
-              <Card className="p-4 mb-3">
+              <Card className="p-4 mb-3 bg-[#333333] border-white/10">
                 <View className="flex-row items-center justify-between">
                   <View className="flex-1">
-                    <Text className="text-gray-900 font-bold mb-1">
+                    <Text className="text-white font-bold mb-1">
                       {workout.name}
                     </Text>
-                    <Text className="text-gray-500 text-sm">
+                    <Text className="text-gray-400 text-sm">
                       {workout.exercises.length} ejercicio
                       {workout.exercises.length !== 1 ? 's' : ''}
                     </Text>
@@ -210,19 +208,19 @@ export default function HomeScreen() {
                   <View
                     className={`px-3 py-1 rounded-full ${
                       workout.status === 'completed'
-                        ? 'bg-emerald-100'
+                        ? 'bg-[#9D12DE]/20'
                         : workout.status === 'in-progress'
-                        ? 'bg-blue-100'
-                        : 'bg-gray-100'
+                        ? 'bg-[#FFEA00]/20'
+                        : 'bg-white/10'
                     }`}
                   >
                     <Text
                       className={`text-xs font-semibold ${
                         workout.status === 'completed'
-                          ? 'text-emerald-700'
+                          ? 'text-[#9D12DE]'
                           : workout.status === 'in-progress'
-                          ? 'text-blue-700'
-                          : 'text-gray-700'
+                          ? 'text-[#FFEA00]'
+                          : 'text-gray-400'
                       }`}
                     >
                       {workout.status === 'completed'
@@ -238,11 +236,11 @@ export default function HomeScreen() {
           ))}
 
           {workouts.length === 0 && !workoutsLoading && (
-            <Card className="p-8">
+            <Card className="p-8 bg-[#333333] border-white/10">
               <View className="items-center gap-3">
-                <Ionicons name="barbell-outline" size={48} color="#D1D5DB" />
-                <Text className="text-gray-500 text-center">
-                  Aún no tienes entrenamientos
+                <Ionicons name="barbell-outline" size={48} color="#9D12DE" />
+                <Text className="text-gray-400 text-center">
+                  AÃºn no tienes entrenamientos
                 </Text>
                 <Button
                   onPress={() => router.push('/workouts/create')}
@@ -254,9 +252,10 @@ export default function HomeScreen() {
               </View>
             </Card>
           )}
-        </View>
+        </Animated.View>
       </ScrollView>
     </SafeAreaView>
   );
 }
+
 

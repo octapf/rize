@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -54,17 +54,17 @@ export default function ReferralSystem() {
 
   const copyReferralCode = () => {
     setCopiedCode(true);
-    Alert.alert('¡Copiado!', 'Código copiado al portapapeles');
+    Alert.alert('Â¡Copiado!', 'CÃ³digo copiado al portapapeles');
     setTimeout(() => setCopiedCode(false), 2000);
   };
 
   const shareReferralCode = async () => {
     try {
       await Share.share({
-        message: `¡Únete a RIZE conmigo! 🏋️\n\nUsa mi código: ${referralCode}\n\n✅ 1 mes Premium gratis\n✅ Planes personalizados con IA\n✅ Estadísticas avanzadas\n\nDescarga: https://rize.app/download`,
+        message: `Â¡Ãšnete a RIZE conmigo! ðŸ‹ï¸\n\nUsa mi cÃ³digo: ${referralCode}\n\nâœ… 1 mes Premium gratis\nâœ… Planes personalizados con IA\nâœ… EstadÃ­sticas avanzadas\n\nDescarga: https://rize.app/download`,
       });
     } catch (error) {
-      Alert.alert('Error', 'No se pudo compartir el código');
+      Alert.alert('Error', 'No se pudo compartir el cÃ³digo');
     }
   };
 
@@ -78,15 +78,15 @@ export default function ReferralSystem() {
     } else {
       Alert.alert(
         'Retirar Saldo',
-        `¿Deseas retirar $${availableBalance.toFixed(2)} a tu cuenta PayPal?`,
+        `Â¿Deseas retirar $${availableBalance.toFixed(2)} a tu cuenta PayPal?`,
         [
           { text: 'Cancelar', style: 'cancel' },
           {
             text: 'Retirar',
             onPress: () =>
               Alert.alert(
-                '¡Solicitud Enviada!',
-                'Recibirás el pago en 2-3 días hábiles'
+                'Â¡Solicitud Enviada!',
+                'RecibirÃ¡s el pago en 2-3 dÃ­as hÃ¡biles'
               ),
           },
         ]
@@ -97,11 +97,11 @@ export default function ReferralSystem() {
   const getStatusColor = (status: string) => {
     switch (status) {
       case 'premium':
-        return '#F59E0B';
+        return '#FFEA00';
       case 'active':
-        return '#10B981';
+        return '#9D12DE';
       case 'registered':
-        return '#3B82F6';
+        return '#9D12DE';
       default:
         return '#71717A';
     }
@@ -137,7 +137,7 @@ export default function ReferralSystem() {
         </View>
 
         {/* Balance Card */}
-        <View className="bg-gradient-to-br from-emerald-500 to-blue-500 rounded-xl p-6 mb-4">
+        <View className="bg-gradient-to-br from-primary to-[#7D0EBE] rounded-xl p-6 mb-4">
           <View className="flex-row items-center justify-between mb-4">
             <View className="flex-1">
               <Text className="text-white/80 text-sm mb-1">Saldo Disponible</Text>
@@ -155,7 +155,7 @@ export default function ReferralSystem() {
               onPress={withdrawBalance}
               className="flex-1 bg-white rounded-lg p-3"
             >
-              <Text className="text-emerald-500 font-bold text-center">Retirar</Text>
+              <Text className="text-primary font-bold text-center">Retirar</Text>
             </TouchableOpacity>
             <TouchableOpacity className="flex-1 bg-white/20 rounded-lg p-3">
               <Text className="text-white font-bold text-center">Historial</Text>
@@ -171,7 +171,7 @@ export default function ReferralSystem() {
           </View>
           <View className="flex-1 bg-zinc-900 rounded-xl p-3 border border-zinc-800">
             <Text className="text-zinc-400 text-xs">Activos</Text>
-            <Text className="text-emerald-500 text-2xl font-bold">
+            <Text className="text-primary text-2xl font-bold">
               {activeReferrals}
             </Text>
           </View>
@@ -188,13 +188,13 @@ export default function ReferralSystem() {
         {/* Referral Code Section */}
         <View className="px-6 pt-6">
           <Text className="text-white font-bold text-lg mb-3">
-            Tu Código de Referido
+            Tu CÃ³digo de Referido
           </Text>
 
           <View className="bg-zinc-900 rounded-xl p-4 border border-zinc-800 mb-4">
             <View className="flex-row items-center justify-between mb-3">
               <View className="flex-1">
-                <Text className="text-zinc-400 text-sm mb-1">Código Personal</Text>
+                <Text className="text-zinc-400 text-sm mb-1">CÃ³digo Personal</Text>
                 <Text className="text-white font-mono text-xl font-bold">
                   {referralCode}
                 </Text>
@@ -202,7 +202,7 @@ export default function ReferralSystem() {
               <TouchableOpacity
                 onPress={copyReferralCode}
                 className={`rounded-lg p-3 ${
-                  copiedCode ? 'bg-emerald-500' : 'bg-zinc-800'
+                  copiedCode ? 'bg-primary' : 'bg-zinc-800'
                 }`}
               >
                 <Ionicons
@@ -215,10 +215,10 @@ export default function ReferralSystem() {
 
             <TouchableOpacity
               onPress={shareReferralCode}
-              className="bg-emerald-500 rounded-lg p-3 flex-row items-center justify-center"
+              className="bg-primary rounded-lg p-3 flex-row items-center justify-center"
             >
               <Ionicons name="share-social" size={20} color="white" />
-              <Text className="text-white font-bold ml-2">Compartir Código</Text>
+              <Text className="text-white font-bold ml-2">Compartir CÃ³digo</Text>
             </TouchableOpacity>
           </View>
 
@@ -229,8 +229,8 @@ export default function ReferralSystem() {
             <View className="mb-3">
               <View className="flex-row items-center justify-between mb-2">
                 <View className="flex-row items-center flex-1">
-                  <View className="bg-blue-500/20 rounded-lg p-2">
-                    <Ionicons name="person-add" size={20} color="#3B82F6" />
+                  <View className="bg-primary/20 rounded-lg p-2">
+                    <Ionicons name="person-add" size={20} color="#9D12DE" />
                   </View>
                   <View className="ml-3 flex-1">
                     <Text className="text-white font-semibold">Registro</Text>
@@ -239,13 +239,13 @@ export default function ReferralSystem() {
                     </Text>
                   </View>
                 </View>
-                <Text className="text-emerald-500 font-bold">$1.00</Text>
+                <Text className="text-primary font-bold">$1.00</Text>
               </View>
 
               <View className="flex-row items-center justify-between mb-2">
                 <View className="flex-row items-center flex-1">
-                  <View className="bg-emerald-500/20 rounded-lg p-2">
-                    <Ionicons name="checkmark-circle" size={20} color="#10B981" />
+                  <View className="bg-primary/20 rounded-lg p-2">
+                    <Ionicons name="checkmark-circle" size={20} color="#9D12DE" />
                   </View>
                   <View className="ml-3 flex-1">
                     <Text className="text-white font-semibold">Primer Entrenamiento</Text>
@@ -254,30 +254,30 @@ export default function ReferralSystem() {
                     </Text>
                   </View>
                 </View>
-                <Text className="text-emerald-500 font-bold">$2.50</Text>
+                <Text className="text-primary font-bold">$2.50</Text>
               </View>
 
               <View className="flex-row items-center justify-between">
                 <View className="flex-row items-center flex-1">
                   <View className="bg-amber-500/20 rounded-lg p-2">
-                    <Ionicons name="star" size={20} color="#F59E0B" />
+                    <Ionicons name="star" size={20} color="#FFEA00" />
                   </View>
                   <View className="ml-3 flex-1">
                     <Text className="text-white font-semibold">Se hace Premium</Text>
                     <Text className="text-zinc-400 text-xs">
-                      Suscripción mensual/anual
+                      SuscripciÃ³n mensual/anual
                     </Text>
                   </View>
                 </View>
-                <Text className="text-emerald-500 font-bold">$5.00</Text>
+                <Text className="text-primary font-bold">$5.00</Text>
               </View>
             </View>
 
-            <View className="bg-blue-500/10 rounded-lg p-3 mt-3">
+            <View className="bg-primary/10 rounded-lg p-3 mt-3">
               <View className="flex-row items-start">
-                <Ionicons name="information-circle" size={16} color="#3B82F6" />
-                <Text className="text-blue-400 text-xs ml-2 flex-1">
-                  Mínimo de retiro: $10.00 • Pago vía PayPal en 2-3 días hábiles
+                <Ionicons name="information-circle" size={16} color="#9D12DE" />
+                <Text className="text-primary/80 text-xs ml-2 flex-1">
+                  MÃ­nimo de retiro: $10.00 â€¢ Pago vÃ­a PayPal en 2-3 dÃ­as hÃ¡biles
                 </Text>
               </View>
             </View>
@@ -292,10 +292,10 @@ export default function ReferralSystem() {
             <View className="bg-zinc-900 rounded-xl p-8 border border-zinc-800 items-center mb-6">
               <Ionicons name="people-outline" size={48} color="#71717A" />
               <Text className="text-zinc-400 font-bold mt-4">
-                Aún no tienes referidos
+                AÃºn no tienes referidos
               </Text>
               <Text className="text-zinc-500 text-sm mt-2 text-center">
-                Comparte tu código y empieza a ganar
+                Comparte tu cÃ³digo y empieza a ganar
               </Text>
             </View>
           ) : (
@@ -346,7 +346,7 @@ export default function ReferralSystem() {
                     </View>
 
                     <View className="items-end">
-                      <Text className="text-emerald-500 font-bold text-xl">
+                      <Text className="text-primary font-bold text-xl">
                         +${referral.reward.toFixed(2)}
                       </Text>
                     </View>
@@ -369,7 +369,7 @@ export default function ReferralSystem() {
                   Por cada amigo referido, ambos ganan recompensas
                 </Text>
               </View>
-              <Text className="text-4xl">🎁</Text>
+              <Text className="text-4xl">ðŸŽ</Text>
             </View>
             <TouchableOpacity
               onPress={shareReferralCode}
@@ -387,7 +387,7 @@ export default function ReferralSystem() {
           <TouchableOpacity className="bg-zinc-900 rounded-xl p-4 border border-zinc-800">
             <View className="flex-row items-center justify-between">
               <Text className="text-zinc-400 text-sm">
-                Términos y Condiciones
+                TÃ©rminos y Condiciones
               </Text>
               <Ionicons name="chevron-forward" size={20} color="#71717A" />
             </View>
@@ -397,3 +397,4 @@ export default function ReferralSystem() {
     </View>
   );
 }
+

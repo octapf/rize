@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -110,13 +110,13 @@ export default function BodyComposition() {
     setEntries([entry, ...entries]);
     setNewEntry({ weight: '', bodyFat: '', muscleMass: '', visceralFat: '', bmr: '', notes: '' });
     setShowAddForm(false);
-    Alert.alert('Entrada Guardada! 📊', 'Composición corporal registrada');
+    Alert.alert('Entrada Guardada! ðŸ“Š', 'ComposiciÃ³n corporal registrada');
   };
 
   const deleteEntry = (id: string) => {
     Alert.alert(
       'Eliminar Entrada',
-      '¿Estás seguro?',
+      'Â¿EstÃ¡s seguro?',
       [
         { text: 'Cancelar' },
         { text: 'Eliminar', style: 'destructive', onPress: () => setEntries(entries.filter((e) => e.id !== id)) },
@@ -169,7 +169,7 @@ export default function BodyComposition() {
         <View className="px-6 pt-6">
           {showAddForm ? (
             <View className="bg-zinc-900 rounded-xl p-6 mb-6 border border-zinc-800">
-              <Text className="text-white font-bold text-lg mb-4">Nueva Medición</Text>
+              <Text className="text-white font-bold text-lg mb-4">Nueva MediciÃ³n</Text>
 
               {/* Weight & Body Fat */}
               <View className="flex-row gap-4 mb-4">
@@ -199,16 +199,16 @@ export default function BodyComposition() {
 
               {/* Calculated Values */}
               {newEntry.weight && newEntry.bodyFat && (
-                <View className="bg-blue-500/10 rounded-lg p-3 border border-blue-500/30 mb-4">
+                <View className="bg-primary/10 rounded-lg p-3 border border-primary/30 mb-4">
                   <View className="flex-row justify-between mb-1">
-                    <Text className="text-blue-400 text-sm">Masa Grasa:</Text>
-                    <Text className="text-blue-300 font-bold">
+                    <Text className="text-primary/80 text-sm">Masa Grasa:</Text>
+                    <Text className="text-primary/60 font-bold">
                       {getFatMass(parseFloat(newEntry.weight), parseFloat(newEntry.bodyFat)).toFixed(1)} kg
                     </Text>
                   </View>
                   <View className="flex-row justify-between">
-                    <Text className="text-blue-400 text-sm">Masa Magra:</Text>
-                    <Text className="text-blue-300 font-bold">
+                    <Text className="text-primary/80 text-sm">Masa Magra:</Text>
+                    <Text className="text-primary/60 font-bold">
                       {getLeanMass(parseFloat(newEntry.weight), parseFloat(newEntry.bodyFat)).toFixed(1)} kg
                     </Text>
                   </View>
@@ -220,7 +220,7 @@ export default function BodyComposition() {
                 <Text className="text-zinc-400 text-sm mb-2">Masa Muscular (kg) - opcional</Text>
                 <TextInput
                   className="bg-zinc-800 rounded-xl px-4 py-3 text-white text-lg font-bold"
-                  placeholder="Autodetectado si vacío"
+                  placeholder="Autodetectado si vacÃ­o"
                   placeholderTextColor="#71717A"
                   keyboardType="decimal-pad"
                   value={newEntry.muscleMass}
@@ -242,7 +242,7 @@ export default function BodyComposition() {
                   />
                 </View>
                 <View className="flex-1">
-                  <Text className="text-zinc-400 text-sm mb-2">TMB (kcal/día)</Text>
+                  <Text className="text-zinc-400 text-sm mb-2">TMB (kcal/dÃ­a)</Text>
                   <TextInput
                     className="bg-zinc-800 rounded-xl px-4 py-3 text-white text-lg font-bold"
                     placeholder="1800"
@@ -270,10 +270,10 @@ export default function BodyComposition() {
 
               <TouchableOpacity
                 onPress={addEntry}
-                className="bg-emerald-500 rounded-xl p-4 flex-row items-center justify-center"
+                className="bg-primary rounded-xl p-4 flex-row items-center justify-center"
               >
                 <Ionicons name="checkmark-circle" size={20} color="white" />
-                <Text className="text-white font-bold ml-2">Guardar Medición</Text>
+                <Text className="text-white font-bold ml-2">Guardar MediciÃ³n</Text>
               </TouchableOpacity>
             </View>
           ) : (
@@ -281,21 +281,21 @@ export default function BodyComposition() {
               {/* Latest Stats */}
               {entries.length > 0 && (
                 <View className="bg-zinc-900 rounded-xl p-4 mb-6 border border-zinc-800">
-                  <Text className="text-white font-bold text-lg mb-3">Última Medición</Text>
+                  <Text className="text-white font-bold text-lg mb-3">Ãšltima MediciÃ³n</Text>
                   <Text className="text-zinc-400 text-sm mb-3">
                     {format(entries[0].date, "d 'de' MMMM, yyyy", { locale: es })}
                   </Text>
                   <View className="flex-row flex-wrap gap-3">
-                    <View className="flex-1 min-w-[45%] bg-blue-500/10 rounded-lg p-3 border border-blue-500/30">
-                      <Text className="text-blue-400 text-xs mb-1">Peso</Text>
+                    <View className="flex-1 min-w-[45%] bg-primary/10 rounded-lg p-3 border border-primary/30">
+                      <Text className="text-primary/80 text-xs mb-1">Peso</Text>
                       <Text className="text-white text-2xl font-bold">{entries[0].weight} kg</Text>
                     </View>
                     <View className="flex-1 min-w-[45%] bg-red-500/10 rounded-lg p-3 border border-red-500/30">
                       <Text className="text-red-400 text-xs mb-1">% Grasa</Text>
                       <Text className="text-white text-2xl font-bold">{entries[0].bodyFat}%</Text>
                     </View>
-                    <View className="flex-1 min-w-[45%] bg-emerald-500/10 rounded-lg p-3 border border-emerald-500/30">
-                      <Text className="text-emerald-400 text-xs mb-1">Masa Muscular</Text>
+                    <View className="flex-1 min-w-[45%] bg-primary/10 rounded-lg p-3 border border-primary/30">
+                      <Text className="text-primary text-xs mb-1">Masa Muscular</Text>
                       <Text className="text-white text-2xl font-bold">{entries[0].muscleMass.toFixed(1)} kg</Text>
                     </View>
                     <View className="flex-1 min-w-[45%] bg-purple-500/10 rounded-lg p-3 border border-purple-500/30">
@@ -312,7 +312,7 @@ export default function BodyComposition() {
               {progress && (
                 <View className="bg-zinc-900 rounded-xl p-4 mb-6 border border-zinc-800">
                   <Text className="text-white font-bold text-lg mb-3">
-                    Progreso ({progress.days} días)
+                    Progreso ({progress.days} dÃ­as)
                   </Text>
                   <View className="space-y-3">
                     <View className="flex-row items-center justify-between">
@@ -321,9 +321,9 @@ export default function BodyComposition() {
                         <Ionicons
                           name={progress.weightChange >= 0 ? 'arrow-up' : 'arrow-down'}
                           size={16}
-                          color={progress.weightChange >= 0 ? '#10B981' : '#EF4444'}
+                          color={progress.weightChange >= 0 ? '#9D12DE' : '#EF4444'}
                         />
-                        <Text className={`font-bold ml-1 ${progress.weightChange >= 0 ? 'text-emerald-400' : 'text-red-400'}`}>
+                        <Text className={`font-bold ml-1 ${progress.weightChange >= 0 ? 'text-primary' : 'text-red-400'}`}>
                           {Math.abs(progress.weightChange).toFixed(1)} kg
                         </Text>
                       </View>
@@ -334,9 +334,9 @@ export default function BodyComposition() {
                         <Ionicons
                           name={progress.bodyFatChange <= 0 ? 'arrow-down' : 'arrow-up'}
                           size={16}
-                          color={progress.bodyFatChange <= 0 ? '#10B981' : '#EF4444'}
+                          color={progress.bodyFatChange <= 0 ? '#9D12DE' : '#EF4444'}
                         />
-                        <Text className={`font-bold ml-1 ${progress.bodyFatChange <= 0 ? 'text-emerald-400' : 'text-red-400'}`}>
+                        <Text className={`font-bold ml-1 ${progress.bodyFatChange <= 0 ? 'text-primary' : 'text-red-400'}`}>
                           {Math.abs(progress.bodyFatChange).toFixed(1)}%
                         </Text>
                       </View>
@@ -347,9 +347,9 @@ export default function BodyComposition() {
                         <Ionicons
                           name={progress.muscleMassChange >= 0 ? 'arrow-up' : 'arrow-down'}
                           size={16}
-                          color={progress.muscleMassChange >= 0 ? '#10B981' : '#EF4444'}
+                          color={progress.muscleMassChange >= 0 ? '#9D12DE' : '#EF4444'}
                         />
-                        <Text className={`font-bold ml-1 ${progress.muscleMassChange >= 0 ? 'text-emerald-400' : 'text-red-400'}`}>
+                        <Text className={`font-bold ml-1 ${progress.muscleMassChange >= 0 ? 'text-primary' : 'text-red-400'}`}>
                           {Math.abs(progress.muscleMassChange).toFixed(1)} kg
                         </Text>
                       </View>
@@ -369,7 +369,7 @@ export default function BodyComposition() {
                       <View key={entry.id} className="flex-1 items-center justify-end mx-0.5">
                         <Text className="text-zinc-500 text-xs mb-1">{entry.bodyFat.toFixed(1)}%</Text>
                         <View
-                          className="w-full bg-blue-500 rounded-t"
+                          className="w-full bg-primary rounded-t"
                           style={{ height: `${heightPercent}%` }}
                         />
                         <Text className="text-zinc-400 text-xs mt-1">{entry.weight}kg</Text>
@@ -383,10 +383,10 @@ export default function BodyComposition() {
               <Text className="text-white font-bold text-lg mb-4">Historial</Text>
               {entries.length === 0 ? (
                 <View className="bg-zinc-900 rounded-xl p-8 items-center border border-zinc-800">
-                  <Text className="text-6xl mb-3">📊</Text>
+                  <Text className="text-6xl mb-3">ðŸ“Š</Text>
                   <Text className="text-white font-bold text-lg mb-2">Sin Mediciones</Text>
                   <Text className="text-zinc-400 text-center">
-                    Registra tu composición corporal
+                    Registra tu composiciÃ³n corporal
                   </Text>
                 </View>
               ) : (
@@ -432,15 +432,15 @@ export default function BodyComposition() {
                       {entry.bmr && (
                         <View className="flex-row justify-between">
                           <Text className="text-zinc-400">TMB</Text>
-                          <Text className="text-white font-bold">{entry.bmr} kcal/día</Text>
+                          <Text className="text-white font-bold">{entry.bmr} kcal/dÃ­a</Text>
                         </View>
                       )}
                     </View>
 
                     {/* Notes */}
                     {entry.notes && (
-                      <View className="bg-blue-500/10 rounded-lg p-3 border border-blue-500/30">
-                        <Text className="text-blue-300 text-sm">{entry.notes}</Text>
+                      <View className="bg-primary/10 rounded-lg p-3 border border-primary/30">
+                        <Text className="text-primary/60 text-sm">{entry.notes}</Text>
                       </View>
                     )}
                   </View>
@@ -450,19 +450,19 @@ export default function BodyComposition() {
           )}
 
           {/* Tips */}
-          <View className="bg-emerald-500/10 rounded-xl p-4 border border-emerald-500/30 mb-6">
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
             <View className="flex-row items-start">
-              <Ionicons name="analytics" size={20} color="#10B981" />
+              <Ionicons name="analytics" size={20} color="#9D12DE" />
               <View className="flex-1 ml-3">
-                <Text className="text-emerald-400 font-bold mb-2">
+                <Text className="text-primary font-bold mb-2">
                   Tips para Mediciones Precisas
                 </Text>
-                <Text className="text-emerald-300 text-sm">
-                  • Mide siempre a la misma hora (AM en ayunas){'\n'}
-                  • Después de ir al baño{'\n'}
-                  • Antes de entrenar{'\n'}
-                  • Mismas condiciones semanales{'\n'}
-                  • Usa báscula de bioimpedancia confiable
+                <Text className="text-primary/80 text-sm">
+                  â€¢ Mide siempre a la misma hora (AM en ayunas){'\n'}
+                  â€¢ DespuÃ©s de ir al baÃ±o{'\n'}
+                  â€¢ Antes de entrenar{'\n'}
+                  â€¢ Mismas condiciones semanales{'\n'}
+                  â€¢ Usa bÃ¡scula de bioimpedancia confiable
                 </Text>
               </View>
             </View>
@@ -472,3 +472,5 @@ export default function BodyComposition() {
     </View>
   );
 }
+
+

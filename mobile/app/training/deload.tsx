@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -26,7 +26,7 @@ export default function DeloadProtocols() {
       bestFor: 'Most lifters, general fatigue',
       implementation: [
         'Keep same exercises and weights',
-        'Cut sets by 50% (4 sets → 2 sets)',
+        'Cut sets by 50% (4 sets â†’ 2 sets)',
         'Keep reps the same',
         'Maintain frequency (still train 3-5x/week)',
         'Focus on technique and speed',
@@ -126,8 +126,8 @@ export default function DeloadProtocols() {
 
   const getColorClasses = (color: string) => {
     const colors: { [key: string]: { bg: string; border: string; text: string } } = {
-      blue: { bg: 'bg-blue-500', border: 'border-blue-400', text: 'text-blue-400' },
-      emerald: { bg: 'bg-emerald-500', border: 'border-emerald-400', text: 'text-emerald-400' },
+      blue: { bg: 'bg-primary', border: 'border-primary', text: 'text-primary/80' },
+      emerald: { bg: 'bg-primary', border: 'border-primary', text: 'text-primary' },
       purple: { bg: 'bg-purple-500', border: 'border-purple-400', text: 'text-purple-400' },
       amber: { bg: 'bg-amber-500', border: 'border-amber-400', text: 'text-amber-400' },
     };
@@ -187,7 +187,7 @@ export default function DeloadProtocols() {
 
       <ScrollView className="flex-1" showsVerticalScrollIndicator={false}>
         <View className="px-6 pt-6">
-          <View className="bg-gradient-to-r from-emerald-500 to-blue-500 rounded-xl p-6 mb-6">
+          <View className="bg-gradient-to-r from-primary to-[#7D0EBE] rounded-xl p-6 mb-6">
             <Text className="text-white text-2xl font-bold mb-2">Strategic Recovery</Text>
             <Text className="text-white opacity-90">
               Planned deloads for long-term gains
@@ -197,16 +197,16 @@ export default function DeloadProtocols() {
           <View className="bg-amber-500/10 rounded-xl p-4 border border-amber-500/30 mb-6">
             <Text className="text-amber-400 font-bold mb-2">Why Deload?</Text>
             <Text className="text-amber-300 text-sm mb-2">
-              • Training creates fatigue faster than you recover
+              â€¢ Training creates fatigue faster than you recover
             </Text>
             <Text className="text-amber-300 text-sm mb-2">
-              • Accumulated fatigue masks strength gains
+              â€¢ Accumulated fatigue masks strength gains
             </Text>
             <Text className="text-amber-300 text-sm mb-2">
-              • Deloads allow supercompensation (rebound)
+              â€¢ Deloads allow supercompensation (rebound)
             </Text>
             <Text className="text-amber-300 text-sm">
-              • You don't lose gains in one week
+              â€¢ You don't lose gains in one week
             </Text>
           </View>
 
@@ -252,7 +252,7 @@ export default function DeloadProtocols() {
               <Text className="text-white font-bold mb-2">{currentProtocol.description}</Text>
               <View className="mt-3">
                 <Text className="text-zinc-400 text-sm mb-1">Duration: <Text className="text-white font-bold">{currentProtocol.duration}</Text></Text>
-                <Text className="text-zinc-400 text-sm">Best for: <Text className="text-emerald-400 font-bold">{currentProtocol.bestFor}</Text></Text>
+                <Text className="text-zinc-400 text-sm">Best for: <Text className="text-primary font-bold">{currentProtocol.bestFor}</Text></Text>
               </View>
             </View>
 
@@ -280,7 +280,7 @@ export default function DeloadProtocols() {
             <Text className="text-white font-bold mb-3">Key Points</Text>
             {currentProtocol.notes.map((note, idx) => (
               <Text key={idx} className="text-zinc-300 text-sm mb-2 last:mb-4">
-                • {note}
+                â€¢ {note}
               </Text>
             ))}
 
@@ -303,7 +303,7 @@ export default function DeloadProtocols() {
                     <Text className="text-white text-xs font-bold">{item.severity}</Text>
                   </View>
                 </View>
-                <Text className="text-emerald-400 text-sm">→ {item.action}</Text>
+                <Text className="text-primary text-sm">â†’ {item.action}</Text>
               </View>
             ))}
           </View>
@@ -315,7 +315,7 @@ export default function DeloadProtocols() {
                 <Text className="text-white font-bold mb-2">{schedule.program}</Text>
                 <View className="flex-row justify-between mb-1">
                   <Text className="text-zinc-400 text-sm">Frequency:</Text>
-                  <Text className="text-blue-400 font-bold">{schedule.frequency}</Text>
+                  <Text className="text-primary/80 font-bold">{schedule.frequency}</Text>
                 </View>
                 <View className="flex-row justify-between mb-2">
                   <Text className="text-zinc-400 text-sm">Type:</Text>
@@ -329,32 +329,32 @@ export default function DeloadProtocols() {
           <View className="bg-red-500/10 rounded-xl p-4 border border-red-500/30 mb-6">
             <Text className="text-red-400 font-bold mb-2">Common Mistakes</Text>
             <Text className="text-red-300 text-sm mb-2">
-              ✗ Training hard during deload ("don't want to lose gains")
+              âœ— Training hard during deload ("don't want to lose gains")
             </Text>
             <Text className="text-red-300 text-sm mb-2">
-              ✗ Deloading for 2+ weeks (too long)
+              âœ— Deloading for 2+ weeks (too long)
             </Text>
             <Text className="text-red-300 text-sm mb-2">
-              ✗ Skipping deloads entirely (accumulated fatigue)
+              âœ— Skipping deloads entirely (accumulated fatigue)
             </Text>
             <Text className="text-red-300 text-sm">
-              ✗ Deloading too frequently (undermines progress)
+              âœ— Deloading too frequently (undermines progress)
             </Text>
           </View>
 
-          <View className="bg-emerald-500/10 rounded-xl p-4 border border-emerald-500/30 mb-6">
-            <Text className="text-emerald-400 font-bold mb-2">Pro Tips</Text>
-            <Text className="text-emerald-300 text-sm mb-2">
-              ✓ Plan deloads in advance (every 4-6 weeks)
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
+            <Text className="text-primary font-bold mb-2">Pro Tips</Text>
+            <Text className="text-primary/80 text-sm mb-2">
+              âœ“ Plan deloads in advance (every 4-6 weeks)
             </Text>
-            <Text className="text-emerald-300 text-sm mb-2">
-              ✓ Use deload week to work on technique
+            <Text className="text-primary/80 text-sm mb-2">
+              âœ“ Use deload week to work on technique
             </Text>
-            <Text className="text-emerald-300 text-sm mb-2">
-              ✓ Expect to feel stronger after deload
+            <Text className="text-primary/80 text-sm mb-2">
+              âœ“ Expect to feel stronger after deload
             </Text>
-            <Text className="text-emerald-300 text-sm">
-              ✓ Deload is not rest - you still train
+            <Text className="text-primary/80 text-sm">
+              âœ“ Deload is not rest - you still train
             </Text>
           </View>
         </View>
@@ -362,3 +362,5 @@ export default function DeloadProtocols() {
     </View>
   );
 }
+
+

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -31,7 +31,7 @@ export default function HealthKitSync() {
   const exportToHealth = () => {
     Alert.alert(
       'Exportar a Health App',
-      'Tus workouts se exportarán automáticamente a HealthKit.',
+      'Tus workouts se exportarÃ¡n automÃ¡ticamente a HealthKit.',
       [{ text: 'OK' }]
     );
   };
@@ -59,7 +59,7 @@ export default function HealthKitSync() {
             <View className="flex-row items-center">
               <Ionicons name="heart-circle" size={24} color="white" />
               <Text className="text-white ml-2">
-                {dataCategories.filter(d => d.enabled).length} categorías activas
+                {dataCategories.filter(d => d.enabled).length} categorÃ­as activas
               </Text>
             </View>
           </View>
@@ -69,13 +69,13 @@ export default function HealthKitSync() {
             className="bg-zinc-900 rounded-xl p-4 flex-row items-center justify-between mb-4 border border-zinc-800"
           >
             <View className="flex-row items-center flex-1">
-              <Ionicons name="sync" size={24} color="#3B82F6" />
+              <Ionicons name="sync" size={24} color="#9D12DE" />
               <View className="ml-3 flex-1">
-                <Text className="text-white font-bold">Sincronización Activa</Text>
+                <Text className="text-white font-bold">SincronizaciÃ³n Activa</Text>
                 <Text className="text-zinc-400 text-sm">Importar datos de HealthKit</Text>
               </View>
             </View>
-            <View className={`w-12 h-6 rounded-full ${syncEnabled ? 'bg-blue-500' : 'bg-zinc-700'}`}>
+            <View className={`w-12 h-6 rounded-full ${syncEnabled ? 'bg-primary' : 'bg-zinc-700'}`}>
               <View className={`w-5 h-5 bg-white rounded-full mt-0.5 ${syncEnabled ? 'ml-6' : 'ml-1'}`} />
             </View>
           </TouchableOpacity>
@@ -85,18 +85,18 @@ export default function HealthKitSync() {
             className="bg-zinc-900 rounded-xl p-4 flex-row items-center justify-between mb-6 border border-zinc-800"
           >
             <View className="flex-row items-center flex-1">
-              <Ionicons name="cloud-upload" size={24} color="#10B981" />
+              <Ionicons name="cloud-upload" size={24} color="#9D12DE" />
               <View className="ml-3 flex-1">
                 <Text className="text-white font-bold">Auto-Sync</Text>
-                <Text className="text-zinc-400 text-sm">Exportar workouts automáticamente</Text>
+                <Text className="text-zinc-400 text-sm">Exportar workouts automÃ¡ticamente</Text>
               </View>
             </View>
-            <View className={`w-12 h-6 rounded-full ${autoSync ? 'bg-emerald-500' : 'bg-zinc-700'}`}>
+            <View className={`w-12 h-6 rounded-full ${autoSync ? 'bg-primary' : 'bg-zinc-700'}`}>
               <View className={`w-5 h-5 bg-white rounded-full mt-0.5 ${autoSync ? 'ml-6' : 'ml-1'}`} />
             </View>
           </TouchableOpacity>
 
-          <Text className="text-white font-bold text-lg mb-4">Categorías de Datos</Text>
+          <Text className="text-white font-bold text-lg mb-4">CategorÃ­as de Datos</Text>
 
           {dataCategories.map((category) => (
             <View
@@ -105,7 +105,7 @@ export default function HealthKitSync() {
             >
               <View className="flex-row items-center justify-between">
                 <View className="flex-row items-center flex-1">
-                  <Ionicons name={category.icon as any} size={24} color={category.enabled ? '#3B82F6' : '#71717A'} />
+                  <Ionicons name={category.icon as any} size={24} color={category.enabled ? '#9D12DE' : '#71717A'} />
                   <View className="ml-3 flex-1">
                     <Text className={`font-bold ${category.enabled ? 'text-white' : 'text-zinc-500'}`}>
                       {category.label}
@@ -118,7 +118,7 @@ export default function HealthKitSync() {
                 <Ionicons
                   name={category.enabled ? 'checkmark-circle' : 'close-circle'}
                   size={24}
-                  color={category.enabled ? '#10B981' : '#71717A'}
+                  color={category.enabled ? '#9D12DE' : '#71717A'}
                 />
               </View>
             </View>
@@ -127,7 +127,7 @@ export default function HealthKitSync() {
           <View className="flex-row gap-3 mb-6 mt-4">
             <TouchableOpacity
               onPress={syncNow}
-              className="flex-1 bg-blue-500 rounded-xl p-4 flex-row items-center justify-center"
+              className="flex-1 bg-primary rounded-xl p-4 flex-row items-center justify-center"
             >
               <Ionicons name="cloud-download" size={20} color="white" />
               <Text className="text-white font-bold ml-2">Sync Now</Text>
@@ -135,24 +135,24 @@ export default function HealthKitSync() {
 
             <TouchableOpacity
               onPress={exportToHealth}
-              className="flex-1 bg-emerald-500 rounded-xl p-4 flex-row items-center justify-center"
+              className="flex-1 bg-primary rounded-xl p-4 flex-row items-center justify-center"
             >
               <Ionicons name="cloud-upload" size={20} color="white" />
               <Text className="text-white font-bold ml-2">Export</Text>
             </TouchableOpacity>
           </View>
 
-          <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30 mb-6">
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
             <View className="flex-row items-start">
-              <Ionicons name="information-circle" size={20} color="#3B82F6" />
+              <Ionicons name="information-circle" size={20} color="#9D12DE" />
               <View className="flex-1 ml-3">
-                <Text className="text-blue-400 font-bold mb-2">Sync Bidireccional</Text>
-                <Text className="text-blue-300 text-sm">
-                  • Importa datos de HealthKit automáticamente{'\n'}
-                  • Exporta workouts a la app Salud{'\n'}
-                  • Sincronización en tiempo real{'\n'}
-                  • Datos encriptados end-to-end{'\n'}
-                  • Compatible con todos los wearables de Apple
+                <Text className="text-primary/80 font-bold mb-2">Sync Bidireccional</Text>
+                <Text className="text-primary/60 text-sm">
+                  â€¢ Importa datos de HealthKit automÃ¡ticamente{'\n'}
+                  â€¢ Exporta workouts a la app Salud{'\n'}
+                  â€¢ SincronizaciÃ³n en tiempo real{'\n'}
+                  â€¢ Datos encriptados end-to-end{'\n'}
+                  â€¢ Compatible con todos los wearables de Apple
                 </Text>
               </View>
             </View>
@@ -162,3 +162,4 @@ export default function HealthKitSync() {
     </View>
   );
 }
+

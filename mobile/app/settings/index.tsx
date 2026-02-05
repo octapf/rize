@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -111,12 +111,12 @@ export default function SettingsScreen() {
   return (
     <View className="flex-1 bg-gray-50">
       {/* Header */}
-      <LinearGradient colors={['#10B981', '#059669']} className="px-6 pt-12 pb-6">
+      <LinearGradient colors={['#9D12DE', '#7C3AED']} className="px-6 pt-12 pb-6">
         <View className="flex-row items-center justify-between">
           <TouchableOpacity onPress={() => router.back()} className="p-2">
             <Ionicons name="arrow-back" size={28} color="white" />
           </TouchableOpacity>
-          <Text className="text-2xl font-bold text-white">Configuración</Text>
+          <Text className="text-2xl font-bold text-white">ConfiguraciÃ³n</Text>
           <View className="w-10" />
         </View>
       </LinearGradient>
@@ -139,14 +139,14 @@ export default function SettingsScreen() {
                     onPress={() => handleRestTimerChange(option.value)}
                     className={`flex-1 py-2 rounded-lg border-2 ${
                       restTimerDefault === option.value
-                        ? 'bg-emerald-50 border-emerald-500'
+                        ? 'bg-emerald-50 border-primary'
                         : 'bg-white border-gray-200'
                     }`}
                   >
                     <Text
                       className={`text-center font-semibold ${
                         restTimerDefault === option.value
-                          ? 'text-emerald-600'
+                          ? 'text-primary'
                           : 'text-gray-600'
                       }`}
                     >
@@ -161,7 +161,7 @@ export default function SettingsScreen() {
             <View className="flex-row items-center justify-between py-3 border-t border-gray-200">
               <View className="flex-1">
                 <Text className="text-gray-900 font-medium">
-                  Iniciar timer automáticamente
+                  Iniciar timer automÃ¡ticamente
                 </Text>
                 <Text className="text-gray-500 text-sm">
                   Al completar una serie
@@ -174,7 +174,7 @@ export default function SettingsScreen() {
                   saveSetting(SETTINGS_KEYS.AUTO_START_REST_TIMER, value.toString());
                 }}
                 trackColor={{ false: '#D1D5DB', true: '#86EFAC' }}
-                thumbColor={autoStartRestTimer ? '#10B981' : '#F3F4F6'}
+                thumbColor={autoStartRestTimer ? '#9D12DE' : '#F3F4F6'}
               />
             </View>
           </Card>
@@ -202,7 +202,7 @@ export default function SettingsScreen() {
                   saveSetting(SETTINGS_KEYS.NOTIFICATIONS_ENABLED, value.toString());
                 }}
                 trackColor={{ false: '#D1D5DB', true: '#86EFAC' }}
-                thumbColor={notificationsEnabled ? '#10B981' : '#F3F4F6'}
+                thumbColor={notificationsEnabled ? '#9D12DE' : '#F3F4F6'}
               />
             </View>
 
@@ -211,7 +211,7 @@ export default function SettingsScreen() {
               <>
                 <View className="flex-row items-center justify-between py-3 border-b border-gray-200">
                   <View className="flex-1 flex-row items-center gap-3">
-                    <Ionicons name="trophy" size={20} color="#F59E0B" />
+                    <Ionicons name="trophy" size={20} color="#FFEA00" />
                     <Text className="text-gray-900">Logros</Text>
                   </View>
                   <Switch
@@ -221,13 +221,13 @@ export default function SettingsScreen() {
                       saveSetting(SETTINGS_KEYS.NOTIFICATIONS_ACHIEVEMENTS, value.toString());
                     }}
                     trackColor={{ false: '#D1D5DB', true: '#86EFAC' }}
-                    thumbColor={notifAchievements ? '#10B981' : '#F3F4F6'}
+                    thumbColor={notifAchievements ? '#9D12DE' : '#F3F4F6'}
                   />
                 </View>
 
                 <View className="flex-row items-center justify-between py-3 border-b border-gray-200">
                   <View className="flex-1 flex-row items-center gap-3">
-                    <Ionicons name="trending-up" size={20} color="#10B981" />
+                    <Ionicons name="trending-up" size={20} color="#9D12DE" />
                     <Text className="text-gray-900">Records personales</Text>
                   </View>
                   <Switch
@@ -237,7 +237,7 @@ export default function SettingsScreen() {
                       saveSetting(SETTINGS_KEYS.NOTIFICATIONS_RECORDS, value.toString());
                     }}
                     trackColor={{ false: '#D1D5DB', true: '#86EFAC' }}
-                    thumbColor={notifRecords ? '#10B981' : '#F3F4F6'}
+                    thumbColor={notifRecords ? '#9D12DE' : '#F3F4F6'}
                   />
                 </View>
 
@@ -253,13 +253,13 @@ export default function SettingsScreen() {
                       saveSetting(SETTINGS_KEYS.NOTIFICATIONS_CHALLENGES, value.toString());
                     }}
                     trackColor={{ false: '#D1D5DB', true: '#86EFAC' }}
-                    thumbColor={notifChallenges ? '#10B981' : '#F3F4F6'}
+                    thumbColor={notifChallenges ? '#9D12DE' : '#F3F4F6'}
                   />
                 </View>
 
                 <View className="flex-row items-center justify-between py-3 border-b border-gray-200">
                   <View className="flex-1 flex-row items-center gap-3">
-                    <Ionicons name="people" size={20} color="#3B82F6" />
+                    <Ionicons name="people" size={20} color="#9D12DE" />
                     <Text className="text-gray-900">Social</Text>
                   </View>
                   <Switch
@@ -269,7 +269,7 @@ export default function SettingsScreen() {
                       saveSetting(SETTINGS_KEYS.NOTIFICATIONS_SOCIAL, value.toString());
                     }}
                     trackColor={{ false: '#D1D5DB', true: '#86EFAC' }}
-                    thumbColor={notifSocial ? '#10B981' : '#F3F4F6'}
+                    thumbColor={notifSocial ? '#9D12DE' : '#F3F4F6'}
                   />
                 </View>
 
@@ -285,7 +285,7 @@ export default function SettingsScreen() {
                       saveSetting(SETTINGS_KEYS.NOTIFICATIONS_REMINDERS, value.toString());
                     }}
                     trackColor={{ false: '#D1D5DB', true: '#86EFAC' }}
-                    thumbColor={notifReminders ? '#10B981' : '#F3F4F6'}
+                    thumbColor={notifReminders ? '#9D12DE' : '#F3F4F6'}
                   />
                 </View>
               </>
@@ -312,13 +312,13 @@ export default function SettingsScreen() {
                   saveSetting(SETTINGS_KEYS.SOUND_EFFECTS, value.toString());
                 }}
                 trackColor={{ false: '#D1D5DB', true: '#86EFAC' }}
-                thumbColor={soundEffects ? '#10B981' : '#F3F4F6'}
+                thumbColor={soundEffects ? '#9D12DE' : '#F3F4F6'}
               />
             </View>
 
             <View className="flex-row items-center justify-between pt-3">
               <View className="flex-1">
-                <Text className="text-gray-900 font-medium">Feedback háptico</Text>
+                <Text className="text-gray-900 font-medium">Feedback hÃ¡ptico</Text>
                 <Text className="text-gray-500 text-sm">
                   Vibraciones al interactuar
                 </Text>
@@ -330,7 +330,7 @@ export default function SettingsScreen() {
                   saveSetting(SETTINGS_KEYS.HAPTIC_FEEDBACK, value.toString());
                 }}
                 trackColor={{ false: '#D1D5DB', true: '#86EFAC' }}
-                thumbColor={hapticFeedback ? '#10B981' : '#F3F4F6'}
+                thumbColor={hapticFeedback ? '#9D12DE' : '#F3F4F6'}
               />
             </View>
           </Card>
@@ -344,7 +344,7 @@ export default function SettingsScreen() {
             <TouchableOpacity className="flex-row items-center justify-between py-3 border-b border-gray-200">
               <View className="flex-row items-center gap-3">
                 <Ionicons name="lock-closed-outline" size={24} color="#6B7280" />
-                <Text className="text-gray-900">Cambiar contraseña</Text>
+                <Text className="text-gray-900">Cambiar contraseÃ±a</Text>
               </View>
               <Ionicons name="chevron-forward" size={20} color="#9CA3AF" />
             </TouchableOpacity>
@@ -361,7 +361,7 @@ export default function SettingsScreen() {
               onPress={() => {
                 Alert.alert(
                   'Eliminar cuenta',
-                  '¿Estás seguro? Esta acción no se puede deshacer.',
+                  'Â¿EstÃ¡s seguro? Esta acciÃ³n no se puede deshacer.',
                   [
                     { text: 'Cancelar', style: 'cancel' },
                     { text: 'Eliminar', style: 'destructive' },
@@ -381,21 +381,21 @@ export default function SettingsScreen() {
 
         {/* About */}
         <View>
-          <Text className="text-lg font-bold text-gray-900 mb-3">Información</Text>
+          <Text className="text-lg font-bold text-gray-900 mb-3">InformaciÃ³n</Text>
 
           <Card className="p-4">
             <View className="flex-row items-center justify-between py-3 border-b border-gray-200">
-              <Text className="text-gray-900">Versión</Text>
+              <Text className="text-gray-900">VersiÃ³n</Text>
               <Text className="text-gray-600">1.0.0</Text>
             </View>
 
             <TouchableOpacity className="flex-row items-center justify-between py-3 border-b border-gray-200">
-              <Text className="text-gray-900">Términos y condiciones</Text>
+              <Text className="text-gray-900">TÃ©rminos y condiciones</Text>
               <Ionicons name="chevron-forward" size={20} color="#9CA3AF" />
             </TouchableOpacity>
 
             <TouchableOpacity className="flex-row items-center justify-between py-3">
-              <Text className="text-gray-900">Política de privacidad</Text>
+              <Text className="text-gray-900">PolÃ­tica de privacidad</Text>
               <Ionicons name="chevron-forward" size={20} color="#9CA3AF" />
             </TouchableOpacity>
           </Card>
@@ -404,3 +404,4 @@ export default function SettingsScreen() {
     </View>
   );
 }
+

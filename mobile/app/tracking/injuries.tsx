@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -26,25 +26,25 @@ interface InjuryLog {
 }
 
 const BODY_PARTS = [
-  { id: 'shoulder', label: 'Hombro', icon: '🦾' },
-  { id: 'elbow', label: 'Codo', icon: '💪' },
-  { id: 'wrist', label: 'Muñeca', icon: '🤚' },
-  { id: 'back', label: 'Espalda', icon: '🏋️' },
-  { id: 'hip', label: 'Cadera', icon: '🦴' },
-  { id: 'knee', label: 'Rodilla', icon: '🦵' },
-  { id: 'ankle', label: 'Tobillo', icon: '🦶' },
-  { id: 'other', label: 'Otro', icon: '💊' },
+  { id: 'shoulder', label: 'Hombro', icon: 'ðŸ¦¾' },
+  { id: 'elbow', label: 'Codo', icon: 'ðŸ’ª' },
+  { id: 'wrist', label: 'MuÃ±eca', icon: 'ðŸ¤š' },
+  { id: 'back', label: 'Espalda', icon: 'ðŸ‹ï¸' },
+  { id: 'hip', label: 'Cadera', icon: 'ðŸ¦´' },
+  { id: 'knee', label: 'Rodilla', icon: 'ðŸ¦µ' },
+  { id: 'ankle', label: 'Tobillo', icon: 'ðŸ¦¶' },
+  { id: 'other', label: 'Otro', icon: 'ðŸ’Š' },
 ];
 
 const TREATMENTS = [
   'Reposo',
   'Hielo',
-  'Compresión',
-  'Elevación',
+  'CompresiÃ³n',
+  'ElevaciÃ³n',
   'Fisioterapia',
   'Estiramientos',
   'Foam Rolling',
-  'Medicación',
+  'MedicaciÃ³n',
   'Reducir carga',
   'Modificar ejercicios',
 ];
@@ -144,7 +144,7 @@ export default function InjuryLog() {
 
   const addLog = () => {
     if (!newLog.description) {
-      Alert.alert('Error', 'Ingresa una descripción');
+      Alert.alert('Error', 'Ingresa una descripciÃ³n');
       return;
     }
 
@@ -170,7 +170,7 @@ export default function InjuryLog() {
       affectedExercises: '',
     });
     setShowAddForm(false);
-    Alert.alert('Registro Guardado', 'Lesión/molestia registrada');
+    Alert.alert('Registro Guardado', 'LesiÃ³n/molestia registrada');
   };
 
   const updateStatus = (id: string, newStatus: 'active' | 'recovering' | 'resolved') => {
@@ -184,7 +184,7 @@ export default function InjuryLog() {
   const deleteLog = (id: string) => {
     Alert.alert(
       'Eliminar Registro',
-      '¿Estás seguro?',
+      'Â¿EstÃ¡s seguro?',
       [
         { text: 'Cancelar' },
         { text: 'Eliminar', style: 'destructive', onPress: () => setLogs(logs.filter((l) => l.id !== id)) },
@@ -219,7 +219,7 @@ export default function InjuryLog() {
               key={status}
               onPress={() => setFilter(status as any)}
               className={`px-4 py-2 rounded-lg ${
-                filter === status ? 'bg-emerald-500' : 'bg-zinc-900 border border-zinc-800'
+                filter === status ? 'bg-primary' : 'bg-zinc-900 border border-zinc-800'
               }`}
             >
               <Text className={`font-semibold text-sm ${filter === status ? 'text-white' : 'text-zinc-400'}`}>
@@ -245,11 +245,11 @@ export default function InjuryLog() {
                       key={type}
                       onPress={() => setNewLog({ ...newLog, type })}
                       className={`flex-1 py-2 rounded-lg ${
-                        newLog.type === type ? 'bg-emerald-500' : 'bg-zinc-800'
+                        newLog.type === type ? 'bg-primary' : 'bg-zinc-800'
                       }`}
                     >
                       <Text className={`text-center font-bold ${newLog.type === type ? 'text-white' : 'text-zinc-400'}`}>
-                        {type === 'pain' ? 'Dolor' : type === 'injury' ? 'Lesión' : 'Movilidad'}
+                        {type === 'pain' ? 'Dolor' : type === 'injury' ? 'LesiÃ³n' : 'Movilidad'}
                       </Text>
                     </TouchableOpacity>
                   ))}
@@ -265,7 +265,7 @@ export default function InjuryLog() {
                       key={bp.id}
                       onPress={() => setNewLog({ ...newLog, bodyPart: bp.id })}
                       className={`px-3 py-2 rounded-lg ${
-                        newLog.bodyPart === bp.id ? 'bg-emerald-500' : 'bg-zinc-800'
+                        newLog.bodyPart === bp.id ? 'bg-primary' : 'bg-zinc-800'
                       }`}
                     >
                       <Text className={newLog.bodyPart === bp.id ? 'text-white font-bold' : 'text-zinc-400'}>
@@ -298,7 +298,7 @@ export default function InjuryLog() {
 
               {/* Description */}
               <View className="mb-4">
-                <Text className="text-zinc-400 text-sm mb-2">Descripción</Text>
+                <Text className="text-zinc-400 text-sm mb-2">DescripciÃ³n</Text>
                 <TextInput
                   className="bg-zinc-800 rounded-xl px-4 py-3 text-white"
                   placeholder="Describe el problema..."
@@ -319,7 +319,7 @@ export default function InjuryLog() {
                       key={treatment}
                       onPress={() => toggleTreatment(treatment)}
                       className={`px-3 py-2 rounded-lg ${
-                        newLog.treatment.includes(treatment) ? 'bg-blue-500' : 'bg-zinc-800'
+                        newLog.treatment.includes(treatment) ? 'bg-primary' : 'bg-zinc-800'
                       }`}
                     >
                       <Text className={newLog.treatment.includes(treatment) ? 'text-white font-bold' : 'text-zinc-400'}>
@@ -344,7 +344,7 @@ export default function InjuryLog() {
 
               <TouchableOpacity
                 onPress={addLog}
-                className="bg-emerald-500 rounded-xl p-4 flex-row items-center justify-center"
+                className="bg-primary rounded-xl p-4 flex-row items-center justify-center"
               >
                 <Ionicons name="checkmark-circle" size={20} color="white" />
                 <Text className="text-white font-bold ml-2">Guardar Registro</Text>
@@ -360,7 +360,7 @@ export default function InjuryLog() {
                     <Text className="text-white text-3xl font-bold">{getActiveIssues()}</Text>
                   </View>
                   <View className="items-center">
-                    <Text className="text-6xl">{getActiveIssues() === 0 ? '✅' : '⚠️'}</Text>
+                    <Text className="text-6xl">{getActiveIssues() === 0 ? 'âœ…' : 'âš ï¸'}</Text>
                   </View>
                 </View>
               </View>
@@ -368,7 +368,7 @@ export default function InjuryLog() {
               {/* Logs List */}
               {filteredLogs.length === 0 ? (
                 <View className="bg-zinc-900 rounded-xl p-8 items-center border border-zinc-800">
-                  <Text className="text-6xl mb-3">💊</Text>
+                  <Text className="text-6xl mb-3">ðŸ’Š</Text>
                   <Text className="text-white font-bold text-lg mb-2">Sin Registros</Text>
                   <Text className="text-zinc-400 text-center">
                     Registra lesiones y molestias para mejor tracking
@@ -421,8 +421,8 @@ export default function InjuryLog() {
                           <Text className="text-zinc-400 text-xs mb-2">TRATAMIENTO</Text>
                           <View className="flex-row flex-wrap gap-2">
                             {log.treatment.map((t, idx) => (
-                              <View key={idx} className="bg-blue-500/10 rounded px-2 py-1 border border-blue-500/30">
-                                <Text className="text-blue-400 text-xs">{t}</Text>
+                              <View key={idx} className="bg-primary/10 rounded px-2 py-1 border border-primary/30">
+                                <Text className="text-primary/80 text-xs">{t}</Text>
                               </View>
                             ))}
                           </View>
@@ -456,7 +456,7 @@ export default function InjuryLog() {
                           )}
                           <TouchableOpacity
                             onPress={() => updateStatus(log.id, 'resolved')}
-                            className="flex-1 bg-emerald-500 rounded-lg p-2"
+                            className="flex-1 bg-primary rounded-lg p-2"
                           >
                             <Text className="text-white text-sm font-bold text-center">Marcar Resuelto</Text>
                           </TouchableOpacity>
@@ -467,7 +467,7 @@ export default function InjuryLog() {
                       <View className="mt-3 pt-3 border-t border-zinc-800">
                         <Text className="text-zinc-500 text-xs">
                           Registrado: {format(log.date, "d MMM yyyy", { locale: es })}
-                          {log.resolvedDate && ` • Resuelto: ${format(log.resolvedDate, "d MMM yyyy", { locale: es })}`}
+                          {log.resolvedDate && ` â€¢ Resuelto: ${format(log.resolvedDate, "d MMM yyyy", { locale: es })}`}
                         </Text>
                       </View>
                     </View>
@@ -483,14 +483,14 @@ export default function InjuryLog() {
               <Ionicons name="medical" size={20} color="#EF4444" />
               <View className="flex-1 ml-3">
                 <Text className="text-red-400 font-bold mb-2">
-                  Prevención de Lesiones
+                  PrevenciÃ³n de Lesiones
                 </Text>
                 <Text className="text-red-300 text-sm">
-                  • Calentamiento adecuado siempre{'\n'}
-                  • No ignorar dolores persistentes{'\n'}
-                  • Consulta profesional si es grave{'\n'}
-                  • Técnica perfecta &gt; peso pesado{'\n'}
-                  • Deload weeks cada 4-6 semanas
+                  â€¢ Calentamiento adecuado siempre{'\n'}
+                  â€¢ No ignorar dolores persistentes{'\n'}
+                  â€¢ Consulta profesional si es grave{'\n'}
+                  â€¢ TÃ©cnica perfecta &gt; peso pesado{'\n'}
+                  â€¢ Deload weeks cada 4-6 semanas
                 </Text>
               </View>
             </View>
@@ -500,3 +500,4 @@ export default function InjuryLog() {
     </View>
   );
 }
+

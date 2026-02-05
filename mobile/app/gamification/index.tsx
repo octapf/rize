@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -39,7 +39,7 @@ const QUESTS: Quest[] = [
   {
     id: '1',
     title: 'Racha Semanal',
-    description: 'Entrena 5 días esta semana',
+    description: 'Entrena 5 dÃ­as esta semana',
     progress: 3,
     target: 5,
     xp: 250,
@@ -60,7 +60,7 @@ const QUESTS: Quest[] = [
   },
   {
     id: '3',
-    title: 'Súper Serie',
+    title: 'SÃºper Serie',
     description: 'Completa un workout de 60+ min',
     progress: 45,
     target: 60,
@@ -71,7 +71,7 @@ const QUESTS: Quest[] = [
   },
   {
     id: '4',
-    title: 'Desafío Premium',
+    title: 'DesafÃ­o Premium',
     description: 'Completa 10 ejercicios avanzados',
     progress: 6,
     target: 10,
@@ -96,7 +96,7 @@ const ACHIEVEMENTS: Achievement[] = [
   {
     id: '2',
     title: 'Racha de Fuego',
-    description: 'Entrena 7 días seguidos',
+    description: 'Entrena 7 dÃ­as seguidos',
     tier: 'silver',
     unlocked: true,
     unlockedAt: '2025-01-20',
@@ -105,7 +105,7 @@ const ACHIEVEMENTS: Achievement[] = [
   },
   {
     id: '3',
-    title: 'Fuerza Titánica',
+    title: 'Fuerza TitÃ¡nica',
     description: 'Levanta 10,000 kg totales',
     tier: 'gold',
     unlocked: false,
@@ -149,9 +149,9 @@ export default function Gamification() {
   const getTypeColor = (type: string) => {
     switch (type) {
       case 'daily':
-        return '#3B82F6';
+        return '#9D12DE';
       case 'weekly':
-        return '#10B981';
+        return '#9D12DE';
       case 'special':
         return '#8B5CF6';
       default:
@@ -230,7 +230,7 @@ export default function Gamification() {
               key={quest.id}
               className={`rounded-xl p-4 mb-3 border ${
                 quest.completed
-                  ? 'bg-emerald-500/10 border-emerald-500/30'
+                  ? 'bg-primary/10 border-primary/30'
                   : 'bg-zinc-900 border-zinc-800'
               }`}
             >
@@ -273,7 +273,7 @@ export default function Gamification() {
                 <View className="bg-zinc-800 h-2 rounded-full overflow-hidden">
                   <View
                     className={`h-full rounded-full ${
-                      quest.completed ? 'bg-emerald-500' : 'bg-blue-500'
+                      quest.completed ? 'bg-primary' : 'bg-primary'
                     }`}
                     style={{ width: `${(quest.progress / quest.target) * 100}%` }}
                   />
@@ -282,9 +282,9 @@ export default function Gamification() {
 
               {quest.completed && (
                 <View className="flex-row items-center justify-center mt-2">
-                  <Ionicons name="checkmark-circle" size={16} color="#10B981" />
-                  <Text className="text-emerald-500 font-semibold text-sm ml-2">
-                    ¡Completado!
+                  <Ionicons name="checkmark-circle" size={16} color="#9D12DE" />
+                  <Text className="text-primary font-semibold text-sm ml-2">
+                    Â¡Completado!
                   </Text>
                 </View>
               )}
@@ -338,7 +338,7 @@ export default function Gamification() {
                 </View>
                 <View className="bg-zinc-800 h-2 rounded-full overflow-hidden">
                   <View
-                    className="h-full bg-emerald-500 rounded-full"
+                    className="h-full bg-primary rounded-full"
                     style={{ width: `${(quest.progress / quest.target) * 100}%` }}
                   />
                 </View>
@@ -446,8 +446,8 @@ export default function Gamification() {
 
                   {achievement.unlocked ? (
                     <View className="flex-row items-center">
-                      <Ionicons name="checkmark-circle" size={14} color="#10B981" />
-                      <Text className="text-emerald-500 text-xs ml-1">
+                      <Ionicons name="checkmark-circle" size={14} color="#9D12DE" />
+                      <Text className="text-primary text-xs ml-1">
                         Desbloqueado el {achievement.unlockedAt}
                       </Text>
                     </View>
@@ -477,3 +477,4 @@ export default function Gamification() {
     </View>
   );
 }
+

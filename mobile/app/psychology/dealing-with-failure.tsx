@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -491,8 +491,8 @@ export default function DealingWithFailure() {
     const colors: { [key: string]: string } = {
       red: 'bg-red-500',
       amber: 'bg-amber-500',
-      blue: 'bg-blue-500',
-      emerald: 'bg-emerald-500',
+      blue: 'bg-primary',
+      emerald: 'bg-primary',
       purple: 'bg-purple-500',
       cyan: 'bg-cyan-500',
     };
@@ -564,23 +564,23 @@ export default function DealingWithFailure() {
                     <View className="bg-red-500/10 rounded-xl p-4 border border-red-500/30 mb-3">
                       <Text className="text-red-400 font-bold mb-2">Scenarios:</Text>
                       {category.scenarios.map((scenario: string, sIdx: number) => (
-                        <Text key={sIdx} className="text-red-300 text-sm mb-1">• {scenario}</Text>
+                        <Text key={sIdx} className="text-red-300 text-sm mb-1">â€¢ {scenario}</Text>
                       ))}
                     </View>
                   )}
 
                   {category.reality && (
-                    <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30 mb-3">
-                      <Text className="text-blue-400 font-bold mb-2">Reality:</Text>
+                    <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-3">
+                      <Text className="text-primary/80 font-bold mb-2">Reality:</Text>
                       {category.reality.map((item: string, rIdx: number) => (
-                        <Text key={rIdx} className="text-blue-300 text-sm mb-1">• {item}</Text>
+                        <Text key={rIdx} className="text-primary/60 text-sm mb-1">â€¢ {item}</Text>
                       ))}
                     </View>
                   )}
 
                   {category.normalcy && (
-                    <View className="bg-emerald-500/10 rounded-xl p-3 border border-emerald-500/30">
-                      <Text className="text-emerald-400 text-sm font-bold">{category.normalcy}</Text>
+                    <View className="bg-primary/10 rounded-xl p-3 border border-primary/30">
+                      <Text className="text-primary text-sm font-bold">{category.normalcy}</Text>
                     </View>
                   )}
 
@@ -606,34 +606,34 @@ export default function DealingWithFailure() {
                     <View className="bg-amber-500/10 rounded-xl p-4 border border-amber-500/30 mb-4">
                       <Text className="text-amber-400 font-bold mb-2">Normal Emotions:</Text>
                       {section.emotions.map((emotion: string, eIdx: number) => (
-                        <Text key={eIdx} className="text-amber-300 text-sm mb-1">• {emotion}</Text>
+                        <Text key={eIdx} className="text-amber-300 text-sm mb-1">â€¢ {emotion}</Text>
                       ))}
                     </View>
                   )}
 
                   {section.allow && (
-                    <View className="bg-emerald-500/10 rounded-xl p-4 border border-emerald-500/30 mb-4">
-                      <Text className="text-emerald-400 font-bold mb-2">✓ Allow Yourself To:</Text>
+                    <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-4">
+                      <Text className="text-primary font-bold mb-2">âœ“ Allow Yourself To:</Text>
                       {section.allow.map((item: string, aIdx: number) => (
-                        <Text key={aIdx} className="text-emerald-300 text-sm mb-1">• {item}</Text>
+                        <Text key={aIdx} className="text-primary/80 text-sm mb-1">â€¢ {item}</Text>
                       ))}
                     </View>
                   )}
 
                   {section.avoid && (
                     <View className="bg-red-500/10 rounded-xl p-4 border border-red-500/30 mb-4">
-                      <Text className="text-red-400 font-bold mb-2">✗ Avoid:</Text>
+                      <Text className="text-red-400 font-bold mb-2">âœ— Avoid:</Text>
                       {section.avoid.map((item: string, avIdx: number) => (
-                        <Text key={avIdx} className="text-red-300 text-sm mb-1">• {item}</Text>
+                        <Text key={avIdx} className="text-red-300 text-sm mb-1">â€¢ {item}</Text>
                       ))}
                     </View>
                   )}
 
                   {section.dos && (
-                    <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30 mb-4">
-                      <Text className="text-blue-400 font-bold mb-2">Do:</Text>
+                    <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-4">
+                      <Text className="text-primary/80 font-bold mb-2">Do:</Text>
                       {section.dos.map((item: string, dIdx: number) => (
-                        <Text key={dIdx} className="text-blue-300 text-sm mb-1">✓ {item}</Text>
+                        <Text key={dIdx} className="text-primary/60 text-sm mb-1">âœ“ {item}</Text>
                       ))}
                     </View>
                   )}
@@ -642,7 +642,7 @@ export default function DealingWithFailure() {
                     <View className="bg-red-500/10 rounded-xl p-4 border border-red-500/30">
                       <Text className="text-red-400 font-bold mb-2">Don't:</Text>
                       {section.donts.map((item: string, dnIdx: number) => (
-                        <Text key={dnIdx} className="text-red-300 text-sm mb-1">✗ {item}</Text>
+                        <Text key={dnIdx} className="text-red-300 text-sm mb-1">âœ— {item}</Text>
                       ))}
                     </View>
                   )}
@@ -654,66 +654,66 @@ export default function DealingWithFailure() {
           {selectedSection === 'processing' && (
             <View>
               <View className="bg-zinc-900 rounded-xl p-5 mb-6 border border-zinc-800">
-                <Text className="text-blue-400 text-xl font-bold mb-4">{currentSection.timeline?.description}</Text>
+                <Text className="text-primary/80 text-xl font-bold mb-4">{currentSection.timeline?.description}</Text>
                 {Object.entries(currentSection.timeline || {}).filter(([key]) => key !== 'description').map(([key, value]: [string, any]) => (
-                  <View key={key} className="bg-blue-500/10 rounded-xl p-3 border border-blue-500/30 mb-2 last:mb-0">
-                    <Text className="text-blue-400 font-bold text-sm capitalize">{key}:</Text>
-                    <Text className="text-blue-300 text-sm">{value}</Text>
+                  <View key={key} className="bg-primary/10 rounded-xl p-3 border border-primary/30 mb-2 last:mb-0">
+                    <Text className="text-primary/80 font-bold text-sm capitalize">{key}:</Text>
+                    <Text className="text-primary/60 text-sm">{value}</Text>
                   </View>
                 ))}
               </View>
 
               <View className="bg-zinc-900 rounded-xl p-5 mb-6 border border-zinc-800">
-                <Text className="text-blue-400 text-xl font-bold mb-4">{currentSection.analysis?.title}</Text>
+                <Text className="text-primary/80 text-xl font-bold mb-4">{currentSection.analysis?.title}</Text>
                 
                 {currentSection.analysis?.questions.map((q: any, idx: number) => (
                   <View key={idx} className="bg-zinc-800 rounded-xl p-4 mb-4 last:mb-0">
                     <Text className="text-white font-bold mb-3">{q.question}</Text>
                     
                     {q.examples && q.examples.map((ex: string, eIdx: number) => (
-                      <Text key={eIdx} className="text-zinc-300 text-sm mb-1">• {ex}</Text>
+                      <Text key={eIdx} className="text-zinc-300 text-sm mb-1">â€¢ {ex}</Text>
                     ))}
 
                     {q.indicators && q.indicators.map((ind: string, iIdx: number) => (
-                      <Text key={iIdx} className="text-zinc-300 text-sm mb-1">• {ind}</Text>
+                      <Text key={iIdx} className="text-zinc-300 text-sm mb-1">â€¢ {ind}</Text>
                     ))}
 
                     {q.controllable && (
                       <View className="mt-2">
-                        <Text className="text-emerald-400 font-bold text-sm mb-1">✓ Controllable:</Text>
+                        <Text className="text-primary font-bold text-sm mb-1">âœ“ Controllable:</Text>
                         {q.controllable.map((item: string, cIdx: number) => (
-                          <Text key={cIdx} className="text-emerald-300 text-sm mb-1">• {item}</Text>
+                          <Text key={cIdx} className="text-primary/80 text-sm mb-1">â€¢ {item}</Text>
                         ))}
                       </View>
                     )}
 
                     {q.uncontrollable && (
                       <View className="mt-2">
-                        <Text className="text-red-400 font-bold text-sm mb-1">✗ Uncontrollable:</Text>
+                        <Text className="text-red-400 font-bold text-sm mb-1">âœ— Uncontrollable:</Text>
                         {q.uncontrollable.map((item: string, uIdx: number) => (
-                          <Text key={uIdx} className="text-red-300 text-sm mb-1">• {item}</Text>
+                          <Text key={uIdx} className="text-red-300 text-sm mb-1">â€¢ {item}</Text>
                         ))}
                       </View>
                     )}
                   </View>
                 ))}
 
-                <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30 mt-4">
-                  <Text className="text-blue-400 font-bold mb-2">Analysis Process:</Text>
+                <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mt-4">
+                  <Text className="text-primary/80 font-bold mb-2">Analysis Process:</Text>
                   {currentSection.analysis?.process.map((step: string, pIdx: number) => (
-                    <Text key={pIdx} className="text-blue-300 text-sm mb-1">• {step}</Text>
+                    <Text key={pIdx} className="text-primary/60 text-sm mb-1">â€¢ {step}</Text>
                   ))}
                 </View>
               </View>
 
               {currentSection.perspectives?.map((persp: any, idx: number) => (
                 <View key={idx} className="bg-zinc-900 rounded-xl p-5 mb-6 border border-zinc-800">
-                  <Text className="text-emerald-400 text-lg font-bold mb-3">{persp.perspective}</Text>
+                  <Text className="text-primary text-lg font-bold mb-3">{persp.perspective}</Text>
                   {persp.statements && persp.statements.map((stmt: string, sIdx: number) => (
-                    <Text key={sIdx} className="text-emerald-300 text-sm mb-2 italic">• {stmt}</Text>
+                    <Text key={sIdx} className="text-primary/80 text-sm mb-2 italic">â€¢ {stmt}</Text>
                   ))}
                   {persp.truths && persp.truths.map((truth: string, tIdx: number) => (
-                    <Text key={tIdx} className="text-zinc-300 text-sm mb-2">• {truth}</Text>
+                    <Text key={tIdx} className="text-zinc-300 text-sm mb-2">â€¢ {truth}</Text>
                   ))}
                 </View>
               ))}
@@ -724,40 +724,40 @@ export default function DealingWithFailure() {
             <View>
               {currentSection.commonLessons?.map((lesson: any, idx: number) => (
                 <View key={idx} className="bg-zinc-900 rounded-xl p-5 mb-6 border border-zinc-800">
-                  <Text className="text-emerald-400 text-xl font-bold mb-3">{lesson.lesson}</Text>
+                  <Text className="text-primary text-xl font-bold mb-3">{lesson.lesson}</Text>
                   
                   <View className="bg-red-500/10 rounded-xl p-3 border border-red-500/30 mb-3">
                     <Text className="text-red-400 font-bold text-sm mb-1">Problem:</Text>
                     <Text className="text-red-300 text-sm">{lesson.problem}</Text>
                   </View>
 
-                  <View className="bg-emerald-500/10 rounded-xl p-3 border border-emerald-500/30 mb-3">
-                    <Text className="text-emerald-400 font-bold text-sm mb-2">Solution:</Text>
+                  <View className="bg-primary/10 rounded-xl p-3 border border-primary/30 mb-3">
+                    <Text className="text-primary font-bold text-sm mb-2">Solution:</Text>
                     {lesson.solution.map((sol: string, sIdx: number) => (
-                      <Text key={sIdx} className="text-emerald-300 text-sm mb-1">• {sol}</Text>
+                      <Text key={sIdx} className="text-primary/80 text-sm mb-1">â€¢ {sol}</Text>
                     ))}
                   </View>
 
-                  <View className="bg-blue-500/10 rounded-xl p-3 border border-blue-500/30">
-                    <Text className="text-blue-400 font-bold text-sm">Prevention: {lesson.prevention}</Text>
+                  <View className="bg-primary/10 rounded-xl p-3 border border-primary/30">
+                    <Text className="text-primary/80 font-bold text-sm">Prevention: {lesson.prevention}</Text>
                   </View>
                 </View>
               ))}
 
               <View className="bg-zinc-900 rounded-xl p-5 mb-6 border border-zinc-800">
-                <Text className="text-emerald-400 text-xl font-bold mb-4">{currentSection.implementation?.title}</Text>
+                <Text className="text-primary text-xl font-bold mb-4">{currentSection.implementation?.title}</Text>
                 
-                <View className="bg-emerald-500/10 rounded-xl p-4 border border-emerald-500/30 mb-4">
-                  <Text className="text-emerald-400 font-bold mb-2">Steps:</Text>
+                <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-4">
+                  <Text className="text-primary font-bold mb-2">Steps:</Text>
                   {currentSection.implementation?.steps.map((step: string, sIdx: number) => (
-                    <Text key={sIdx} className="text-emerald-300 text-sm mb-1">{sIdx + 1}. {step}</Text>
+                    <Text key={sIdx} className="text-primary/80 text-sm mb-1">{sIdx + 1}. {step}</Text>
                   ))}
                 </View>
 
                 <View className="bg-red-500/10 rounded-xl p-4 border border-red-500/30">
                   <Text className="text-red-400 font-bold mb-2">Mistakes to Avoid:</Text>
                   {currentSection.implementation?.mistakes.map((mistake: string, mIdx: number) => (
-                    <Text key={mIdx} className="text-red-300 text-sm mb-1">✗ {mistake}</Text>
+                    <Text key={mIdx} className="text-red-300 text-sm mb-1">âœ— {mistake}</Text>
                   ))}
                 </View>
               </View>
@@ -776,12 +776,12 @@ export default function DealingWithFailure() {
                       {strat.from && (
                         <View className="mb-2">
                           <Text className="text-red-400 text-sm">From: {strat.from}</Text>
-                          <Text className="text-emerald-400 text-sm">To: {strat.to}</Text>
+                          <Text className="text-primary text-sm">To: {strat.to}</Text>
                         </View>
                       )}
                       {strat.practice && <Text className="text-purple-300 text-sm mb-2">{strat.practice}</Text>}
                       {strat.actions && strat.actions.map((action: string, aIdx: number) => (
-                        <Text key={aIdx} className="text-purple-300 text-sm mb-1">• {action}</Text>
+                        <Text key={aIdx} className="text-purple-300 text-sm mb-1">â€¢ {action}</Text>
                       ))}
                       {strat.examples && strat.examples.map((ex: string, eIdx: number) => (
                         <Text key={eIdx} className="text-purple-300 text-sm mb-1 italic">"{ex}"</Text>
@@ -792,11 +792,11 @@ export default function DealingWithFailure() {
                   {section.approach && section.approach.map((phase: any, pIdx: number) => (
                     <View key={pIdx} className="bg-zinc-800 rounded-xl p-4 mb-3 last:mb-0">
                       <Text className="text-white font-bold mb-2">{phase.phase}</Text>
-                      <Text className="text-blue-400 text-sm mb-2">Focus: {phase.focus}</Text>
+                      <Text className="text-primary/80 text-sm mb-2">Focus: {phase.focus}</Text>
                       <View className="bg-purple-500/10 rounded-xl p-3 border border-purple-500/30">
                         <Text className="text-purple-400 font-bold text-sm mb-1">Training:</Text>
                         {phase.training.map((item: string, tIdx: number) => (
-                          <Text key={tIdx} className="text-purple-300 text-sm mb-1">• {item}</Text>
+                          <Text key={tIdx} className="text-purple-300 text-sm mb-1">â€¢ {item}</Text>
                         ))}
                       </View>
                     </View>
@@ -804,18 +804,18 @@ export default function DealingWithFailure() {
 
                   {section.small && (
                     <View className="mt-3">
-                      <Text className="text-emerald-400 font-bold mb-2">Small Wins:</Text>
+                      <Text className="text-primary font-bold mb-2">Small Wins:</Text>
                       {section.small.map((item: string, idx: number) => (
-                        <Text key={idx} className="text-emerald-300 text-sm mb-1">✓ {item}</Text>
+                        <Text key={idx} className="text-primary/80 text-sm mb-1">âœ“ {item}</Text>
                       ))}
                     </View>
                   )}
 
                   {section.medium && (
                     <View className="mt-3">
-                      <Text className="text-blue-400 font-bold mb-2">Medium Milestones:</Text>
+                      <Text className="text-primary/80 font-bold mb-2">Medium Milestones:</Text>
                       {section.medium.map((item: string, idx: number) => (
-                        <Text key={idx} className="text-blue-300 text-sm mb-1">✓ {item}</Text>
+                        <Text key={idx} className="text-primary/60 text-sm mb-1">âœ“ {item}</Text>
                       ))}
                     </View>
                   )}
@@ -824,7 +824,7 @@ export default function DealingWithFailure() {
                     <View className="mt-3">
                       <Text className="text-purple-400 font-bold mb-2">Major Achievements:</Text>
                       {section.large.map((item: string, idx: number) => (
-                        <Text key={idx} className="text-purple-300 text-sm mb-1">✓ {item}</Text>
+                        <Text key={idx} className="text-purple-300 text-sm mb-1">âœ“ {item}</Text>
                       ))}
                     </View>
                   )}
@@ -840,14 +840,14 @@ export default function DealingWithFailure() {
                   <Text className="text-cyan-400 text-xl font-bold mb-4">{section.title}</Text>
 
                   {section.truths && section.truths.map((truth: string, idx: number) => (
-                    <Text key={idx} className="text-cyan-300 mb-2">• {truth}</Text>
+                    <Text key={idx} className="text-cyan-300 mb-2">â€¢ {truth}</Text>
                   ))}
 
                   {section.examples && section.examples.map((ex: any, eIdx: number) => (
                     <View key={eIdx} className="bg-cyan-500/10 rounded-xl p-4 border border-cyan-500/30 mb-3 last:mb-0">
                       <Text className="text-cyan-400 font-bold mb-1">{ex.lifter}</Text>
                       <Text className="text-cyan-300 text-sm mb-1">Failures: {ex.failures}</Text>
-                      <Text className="text-emerald-400 text-sm">Result: {ex.result}</Text>
+                      <Text className="text-primary text-sm">Result: {ex.result}</Text>
                     </View>
                   ))}
 
@@ -855,7 +855,7 @@ export default function DealingWithFailure() {
                     <View key={pIdx} className="bg-zinc-800 rounded-xl p-4 mb-3 last:mb-0">
                       <Text className="text-white font-bold mb-2">{persp.view}</Text>
                       <Text className="text-amber-400 text-sm mb-1">Feeling: {persp.feeling}</Text>
-                      <Text className="text-blue-400 text-sm">Focus: {persp.focus}</Text>
+                      <Text className="text-primary/80 text-sm">Focus: {persp.focus}</Text>
                     </View>
                   ))}
 
@@ -863,7 +863,7 @@ export default function DealingWithFailure() {
                     <View className="bg-cyan-500/10 rounded-xl p-4 border border-cyan-500/30">
                       <Text className="text-cyan-400 font-bold mb-2">Ask Yourself:</Text>
                       {section.ask.map((q: string, qIdx: number) => (
-                        <Text key={qIdx} className="text-cyan-300 text-sm mb-1">• {q}</Text>
+                        <Text key={qIdx} className="text-cyan-300 text-sm mb-1">â€¢ {q}</Text>
                       ))}
                     </View>
                   )}
@@ -876,18 +876,18 @@ export default function DealingWithFailure() {
             <View>
               {currentSection.options?.map((option: any, idx: number) => (
                 <View key={idx} className="bg-zinc-900 rounded-xl p-5 mb-6 border border-zinc-800">
-                  <Text className="text-emerald-400 text-xl font-bold mb-2">{option.option}</Text>
+                  <Text className="text-primary text-xl font-bold mb-2">{option.option}</Text>
                   <Text className="text-zinc-300 mb-4">When: {option.when}</Text>
 
-                  <View className="bg-emerald-500/10 rounded-xl p-4 border border-emerald-500/30 mb-3">
-                    <Text className="text-emerald-400 font-bold mb-2">Approach:</Text>
+                  <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-3">
+                    <Text className="text-primary font-bold mb-2">Approach:</Text>
                     {option.approach.map((item: string, aIdx: number) => (
-                      <Text key={aIdx} className="text-emerald-300 text-sm mb-1">• {item}</Text>
+                      <Text key={aIdx} className="text-primary/80 text-sm mb-1">â€¢ {item}</Text>
                     ))}
                   </View>
 
-                  <View className="bg-blue-500/10 rounded-xl p-3 border border-blue-500/30">
-                    <Text className="text-blue-400 font-bold text-sm">Mindset: {option.mindset}</Text>
+                  <View className="bg-primary/10 rounded-xl p-3 border border-primary/30">
+                    <Text className="text-primary/80 font-bold text-sm">Mindset: {option.mindset}</Text>
                   </View>
                 </View>
               ))}
@@ -895,7 +895,7 @@ export default function DealingWithFailure() {
               <View className="bg-zinc-900 rounded-xl p-5 mb-6 border border-zinc-800">
                 <Text className="text-amber-400 text-xl font-bold mb-4">{currentSection.decision?.title}</Text>
                 {currentSection.decision?.questions.map((q: string, idx: number) => (
-                  <Text key={idx} className="text-amber-300 mb-2">• {q}</Text>
+                  <Text key={idx} className="text-amber-300 mb-2">â€¢ {q}</Text>
                 ))}
                 <View className="bg-amber-500/10 rounded-xl p-3 border border-amber-500/30 mt-3">
                   <Text className="text-amber-400 font-bold text-sm">{currentSection.decision?.rule}</Text>
@@ -907,16 +907,16 @@ export default function DealingWithFailure() {
           <View className="bg-gradient-to-r from-red-500/20 to-emerald-500/20 rounded-xl p-5 border border-red-500/30 mb-6">
             <Text className="text-red-400 font-bold text-lg mb-3">Remember</Text>
             <Text className="text-red-300 text-sm mb-2">
-              • Failure is not permanent - it's a moment, not an identity
+              â€¢ Failure is not permanent - it's a moment, not an identity
             </Text>
             <Text className="text-red-300 text-sm mb-2">
-              • Every champion has failed - it's what they did after that matters
+              â€¢ Every champion has failed - it's what they did after that matters
             </Text>
             <Text className="text-red-300 text-sm mb-2">
-              • You are stronger for experiencing this
+              â€¢ You are stronger for experiencing this
             </Text>
             <Text className="text-red-300 text-sm">
-              • The comeback is always better than the setback
+              â€¢ The comeback is always better than the setback
             </Text>
           </View>
         </View>
@@ -924,3 +924,5 @@ export default function DealingWithFailure() {
     </View>
   );
 }
+
+

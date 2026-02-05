@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -38,7 +38,7 @@ const mockFeed: FeedItem[] = [
     user: { _id: '1', username: 'FitnessKing', avatar: 'F' },
     timestamp: new Date(Date.now() - 1000 * 60 * 30),
     data: {
-      name: 'Día de Pecho',
+      name: 'DÃ­a de Pecho',
       exercises: 5,
       volume: 3200,
       duration: 65,
@@ -54,7 +54,7 @@ const mockFeed: FeedItem[] = [
     timestamp: new Date(Date.now() - 1000 * 60 * 60 * 2),
     data: {
       name: 'Racha Semanal',
-      icon: '🔥',
+      icon: 'ðŸ”¥',
       tier: 'silver',
     },
     likes: 45,
@@ -138,23 +138,23 @@ export default function CommunityFeedScreen() {
           return (
             <View className="bg-emerald-50 p-4 rounded-xl mt-3">
               <View className="flex-row items-center gap-2 mb-2">
-                <Ionicons name="barbell" size={20} color="#10B981" />
-                <Text className="text-emerald-900 font-bold text-lg">
+                <Ionicons name="barbell" size={20} color="#9D12DE" />
+                <Text className="text-primary font-bold text-lg">
                   {item.data.name}
                 </Text>
               </View>
               <View className="flex-row gap-4">
                 <View>
-                  <Text className="text-emerald-700 text-sm">Ejercicios</Text>
-                  <Text className="text-emerald-900 font-bold">{item.data.exercises}</Text>
+                  <Text className="text-primary text-sm">Ejercicios</Text>
+                  <Text className="text-primary font-bold">{item.data.exercises}</Text>
                 </View>
                 <View>
-                  <Text className="text-emerald-700 text-sm">Volumen</Text>
-                  <Text className="text-emerald-900 font-bold">{item.data.volume} kg</Text>
+                  <Text className="text-primary text-sm">Volumen</Text>
+                  <Text className="text-primary font-bold">{item.data.volume} kg</Text>
                 </View>
                 <View>
-                  <Text className="text-emerald-700 text-sm">Duración</Text>
-                  <Text className="text-emerald-900 font-bold">{item.data.duration}m</Text>
+                  <Text className="text-primary text-sm">DuraciÃ³n</Text>
+                  <Text className="text-primary font-bold">{item.data.duration}m</Text>
                 </View>
               </View>
             </View>
@@ -185,14 +185,14 @@ export default function CommunityFeedScreen() {
               <View className="flex-row items-center gap-2 mb-2">
                 <Ionicons name="trending-up" size={20} color="#8B5CF6" />
                 <Text className="text-purple-900 font-bold text-lg">
-                  ¡Nuevo Récord Personal!
+                  Â¡Nuevo RÃ©cord Personal!
                 </Text>
               </View>
               <Text className="text-purple-800 text-base">
-                <Text className="font-bold">{item.data.exercise}</Text>: {item.data.weight} kg × {item.data.reps} reps
+                <Text className="font-bold">{item.data.exercise}</Text>: {item.data.weight} kg Ã— {item.data.reps} reps
               </Text>
               <Text className="text-purple-600 text-sm mt-1">
-                +{item.data.improvement} kg más que el récord anterior
+                +{item.data.improvement} kg mÃ¡s que el rÃ©cord anterior
               </Text>
             </View>
           );
@@ -207,7 +207,7 @@ export default function CommunityFeedScreen() {
                 </Text>
               </View>
               <Text className="text-red-800">
-                {item.data.status === 'won' ? '🏆 Victoria' : 'En progreso'} contra{' '}
+                {item.data.status === 'won' ? 'ðŸ† Victoria' : 'En progreso'} contra{' '}
                 <Text className="font-bold">{item.data.opponent}</Text>
               </Text>
             </View>
@@ -225,7 +225,7 @@ export default function CommunityFeedScreen() {
           onPress={() => router.push(`/users/${item.user._id}`)}
           className="flex-row items-center gap-3 mb-3"
         >
-          <View className="bg-emerald-500 w-12 h-12 rounded-full items-center justify-center">
+          <View className="bg-primary w-12 h-12 rounded-full items-center justify-center">
             <Text className="text-white text-xl font-bold">
               {item.user.avatar}
             </Text>
@@ -273,7 +273,7 @@ export default function CommunityFeedScreen() {
   return (
     <View className="flex-1 bg-gray-50">
       {/* Header */}
-      <LinearGradient colors={['#10B981', '#059669']} className="px-6 pt-12 pb-6">
+      <LinearGradient colors={['#9D12DE', '#7C3AED']} className="px-6 pt-12 pb-6">
         <View className="flex-row items-center justify-between">
           <TouchableOpacity onPress={() => router.back()} className="p-2">
             <Ionicons name="arrow-back" size={28} color="white" />
@@ -290,7 +290,7 @@ export default function CommunityFeedScreen() {
           <RefreshControl
             refreshing={refreshing}
             onRefresh={handleRefresh}
-            tintColor="#10B981"
+            tintColor="#9D12DE"
           />
         }
       >
@@ -299,3 +299,5 @@ export default function CommunityFeedScreen() {
     </View>
   );
 }
+
+

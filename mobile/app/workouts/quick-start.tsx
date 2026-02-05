@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -31,28 +31,28 @@ export default function QuickStartScreen() {
               _id: '1',
               name: 'Push Day',
               exercises: 5,
-              icon: '💪',
+              icon: 'ðŸ’ª',
               estimatedTime: 60,
             },
             {
               _id: '2',
               name: 'Pull Day',
               exercises: 6,
-              icon: '🏋️',
+              icon: 'ðŸ‹ï¸',
               estimatedTime: 70,
             },
             {
               _id: '3',
               name: 'Leg Day',
               exercises: 5,
-              icon: '🦵',
+              icon: 'ðŸ¦µ',
               estimatedTime: 75,
             },
             {
               _id: '4',
               name: 'Full Body',
               exercises: 8,
-              icon: '🔥',
+              icon: 'ðŸ”¥',
               estimatedTime: 90,
             },
           ],
@@ -99,16 +99,16 @@ export default function QuickStartScreen() {
   return (
     <View className="flex-1 bg-gray-50">
       {/* Header */}
-      <LinearGradient colors={['#10B981', '#059669']} className="px-6 pt-12 pb-6">
+      <LinearGradient colors={['#9D12DE', '#7C3AED']} className="px-6 pt-12 pb-6">
         <View className="flex-row items-center justify-between mb-4">
           <TouchableOpacity onPress={() => router.back()} className="p-2">
             <Ionicons name="arrow-back" size={28} color="white" />
           </TouchableOpacity>
-          <Text className="text-2xl font-bold text-white">Inicio Rápido</Text>
+          <Text className="text-2xl font-bold text-white">Inicio RÃ¡pido</Text>
           <View className="w-10" />
         </View>
 
-        <Text className="text-emerald-100 text-center">
+        <Text className="text-primary/50 text-center">
           Comienza tu entrenamiento en segundos
         </Text>
       </LinearGradient>
@@ -122,7 +122,7 @@ export default function QuickStartScreen() {
           <TextInput
             value={workoutName}
             onChangeText={setWorkoutName}
-            placeholder="Ej: Pecho y Tríceps"
+            placeholder="Ej: Pecho y TrÃ­ceps"
             className="bg-gray-50 rounded-lg px-4 py-3 text-gray-900"
             placeholderTextColor="#9CA3AF"
           />
@@ -131,7 +131,7 @@ export default function QuickStartScreen() {
         {/* Quick Templates */}
         <View>
           <Text className="text-lg font-bold text-gray-900 mb-3">
-            Plantillas Rápidas
+            Plantillas RÃ¡pidas
           </Text>
           <View className="gap-3">
             {templates.map((template) => (
@@ -143,7 +143,7 @@ export default function QuickStartScreen() {
                 <Card
                   className={`p-4 ${
                     selectedTemplate === template._id
-                      ? 'border-2 border-emerald-500 bg-emerald-50'
+                      ? 'border-2 border-primary bg-primary/10'
                       : ''
                   }`}
                 >
@@ -153,7 +153,7 @@ export default function QuickStartScreen() {
                       <Text
                         className={`font-bold text-lg ${
                           selectedTemplate === template._id
-                            ? 'text-emerald-900'
+                            ? 'text-primary'
                             : 'text-gray-900'
                         }`}
                       >
@@ -178,7 +178,7 @@ export default function QuickStartScreen() {
                       <Ionicons
                         name="checkmark-circle"
                         size={28}
-                        color="#10B981"
+                        color="#9D12DE"
                       />
                     )}
                   </View>
@@ -191,7 +191,7 @@ export default function QuickStartScreen() {
         {/* Quick Actions */}
         <View>
           <Text className="text-lg font-bold text-gray-900 mb-3">
-            Acciones Rápidas
+            Acciones RÃ¡pidas
           </Text>
 
           <View className="gap-3">
@@ -201,7 +201,7 @@ export default function QuickStartScreen() {
               disabled={startWorkoutMutation.isPending}
             >
               <LinearGradient
-                colors={['#10B981', '#059669']}
+                colors={['#9D12DE', '#7C3AED']}
                 className="rounded-xl p-4 flex-row items-center justify-between"
               >
                 {startWorkoutMutation.isPending ? (
@@ -216,7 +216,7 @@ export default function QuickStartScreen() {
                         <Text className="text-white font-bold text-lg">
                           Comenzar Ahora
                         </Text>
-                        <Text className="text-emerald-100 text-sm">
+                        <Text className="text-primary/50 text-sm">
                           {selectedTemplate
                             ? 'Con plantilla seleccionada'
                             : 'Workout personalizado'}
@@ -242,7 +242,7 @@ export default function QuickStartScreen() {
                     </View>
                     <View>
                       <Text className="text-gray-900 font-bold">
-                        Workout Vacío
+                        Workout VacÃ­o
                       </Text>
                       <Text className="text-gray-600 text-sm">
                         Agregar ejercicios manualmente
@@ -259,8 +259,8 @@ export default function QuickStartScreen() {
               <Card className="p-4 border-2 border-gray-200">
                 <View className="flex-row items-center justify-between">
                   <View className="flex-row items-center gap-3">
-                    <View className="bg-blue-100 w-12 h-12 rounded-full items-center justify-center">
-                      <Ionicons name="library" size={24} color="#3B82F6" />
+                    <View className="bg-primary/10 w-12 h-12 rounded-full items-center justify-center">
+                      <Ionicons name="library" size={24} color="#9D12DE" />
                     </View>
                     <View>
                       <Text className="text-gray-900 font-bold">
@@ -281,3 +281,5 @@ export default function QuickStartScreen() {
     </View>
   );
 }
+
+

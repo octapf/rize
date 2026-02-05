@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -30,16 +30,16 @@ interface DayPlan {
 
 const SAMPLE_MEALS: { [key: string]: Meal[] } = {
   breakfast: [
-    { name: 'Avena con Proteína', protein: 30, carbs: 50, fats: 10, calories: 410 },
+    { name: 'Avena con ProteÃ­na', protein: 30, carbs: 50, fats: 10, calories: 410 },
     { name: 'Huevos Revueltos + Tostadas', protein: 25, carbs: 35, fats: 15, calories: 365 },
     { name: 'Smoothie Proteico', protein: 35, carbs: 45, fats: 8, calories: 388 },
-    { name: 'Pancakes de Proteína', protein: 28, carbs: 40, fats: 12, calories: 372 },
+    { name: 'Pancakes de ProteÃ­na', protein: 28, carbs: 40, fats: 12, calories: 372 },
   ],
   lunch: [
-    { name: 'Pollo + Arroz + Brócoli', protein: 45, carbs: 60, fats: 12, calories: 532 },
-    { name: 'Salmón + Quinoa + Espárragos', protein: 40, carbs: 55, fats: 18, calories: 538 },
+    { name: 'Pollo + Arroz + BrÃ³coli', protein: 45, carbs: 60, fats: 12, calories: 532 },
+    { name: 'SalmÃ³n + Quinoa + EspÃ¡rragos', protein: 40, carbs: 55, fats: 18, calories: 538 },
     { name: 'Carne + Papas + Ensalada', protein: 50, carbs: 65, fats: 15, calories: 590 },
-    { name: 'Atún + Pasta + Verduras', protein: 42, carbs: 70, fats: 10, calories: 530 },
+    { name: 'AtÃºn + Pasta + Verduras', protein: 42, carbs: 70, fats: 10, calories: 530 },
   ],
   dinner: [
     { name: 'Pechuga + Batata + Vegetales', protein: 40, carbs: 50, fats: 10, calories: 450 },
@@ -48,10 +48,10 @@ const SAMPLE_MEALS: { [key: string]: Meal[] } = {
     { name: 'Pollo al Curry + Arroz', protein: 42, carbs: 52, fats: 16, calories: 512 },
   ],
   snacks: [
-    { name: 'Proteína + Banana', protein: 25, carbs: 30, fats: 3, calories: 247 },
+    { name: 'ProteÃ­na + Banana', protein: 25, carbs: 30, fats: 3, calories: 247 },
     { name: 'Yogurt Griego + Frutos Secos', protein: 20, carbs: 25, fats: 12, calories: 284 },
     { name: 'Batido Post-Workout', protein: 30, carbs: 40, fats: 5, calories: 315 },
-    { name: 'Tortitas de Arroz + Mantequilla de Maní', protein: 15, carbs: 35, fats: 14, calories: 322 },
+    { name: 'Tortitas de Arroz + Mantequilla de ManÃ­', protein: 15, carbs: 35, fats: 14, calories: 322 },
   ],
 };
 
@@ -61,7 +61,7 @@ export default function MealPrep() {
   const [shoppingList, setShoppingList] = useState<string[]>([]);
   const [showGenerator, setShowGenerator] = useState(true);
 
-  const days = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'];
+  const days = ['Lunes', 'Martes', 'MiÃ©rcoles', 'Jueves', 'Viernes', 'SÃ¡bado', 'Domingo'];
 
   const generateWeekPlan = () => {
     const plan: DayPlan[] = days.map((day) => ({
@@ -77,7 +77,7 @@ export default function MealPrep() {
     setWeekPlan(plan);
     setShowGenerator(false);
     generateShoppingList(plan);
-    Alert.alert('Plan Generado! 🍽️', 'Meal prep de 7 días creado');
+    Alert.alert('Plan Generado! ðŸ½ï¸', 'Meal prep de 7 dÃ­as creado');
   };
 
   const generateShoppingList = (plan: DayPlan[]) => {
@@ -85,20 +85,20 @@ export default function MealPrep() {
     
     // Ingredients simulation based on meals
     const commonIngredients = [
-      '🍗 2kg Pechuga de Pollo',
-      '🐟 1kg Salmón/Pescado',
-      '🥩 1kg Carne Magra',
-      '🥚 2 docenas Huevos',
-      '🍚 2kg Arroz/Quinoa',
-      '🥔 2kg Papas/Batata',
-      '🥦 Brócoli, Espinacas, Ensaladas',
-      '🍌 Frutas variadas',
-      '🥜 Frutos secos y mantequillas',
-      '🥛 Yogurt griego, Leche',
-      '🍝 Pasta integral',
-      '🫘 Legumbres (garbanzos, lentejas)',
-      '🧈 Aceite de oliva',
-      '🧂 Especias y condimentos',
+      'ðŸ— 2kg Pechuga de Pollo',
+      'ðŸŸ 1kg SalmÃ³n/Pescado',
+      'ðŸ¥© 1kg Carne Magra',
+      'ðŸ¥š 2 docenas Huevos',
+      'ðŸš 2kg Arroz/Quinoa',
+      'ðŸ¥” 2kg Papas/Batata',
+      'ðŸ¥¦ BrÃ³coli, Espinacas, Ensaladas',
+      'ðŸŒ Frutas variadas',
+      'ðŸ¥œ Frutos secos y mantequillas',
+      'ðŸ¥› Yogurt griego, Leche',
+      'ðŸ Pasta integral',
+      'ðŸ«˜ Legumbres (garbanzos, lentejas)',
+      'ðŸ§ˆ Aceite de oliva',
+      'ðŸ§‚ Especias y condimentos',
     ];
 
     setShoppingList(commonIngredients);
@@ -165,14 +165,14 @@ export default function MealPrep() {
         <ScrollView className="flex-1" showsVerticalScrollIndicator={false}>
           <View className="px-6 pt-6">
             {/* Hero */}
-            <View className="bg-gradient-to-r from-emerald-500 to-blue-500 rounded-xl p-6 mb-6">
+            <View className="bg-gradient-to-r from-primary to-[#7D0EBE] rounded-xl p-6 mb-6">
               <Text className="text-white text-3xl font-bold mb-2">Plan Semanal</Text>
               <Text className="text-white opacity-90 mb-4">
-                Genera tu meal prep de 7 días con macros balanceados
+                Genera tu meal prep de 7 dÃ­as con macros balanceados
               </Text>
               <View className="flex-row items-center">
                 <Ionicons name="restaurant" size={20} color="white" />
-                <Text className="text-white ml-2 font-bold">4 comidas/día × 7 días</Text>
+                <Text className="text-white ml-2 font-bold">4 comidas/dÃ­a Ã— 7 dÃ­as</Text>
               </View>
             </View>
 
@@ -181,22 +181,22 @@ export default function MealPrep() {
             
             <View className="gap-3 mb-6">
               <View className="bg-zinc-900 rounded-xl p-4 border border-zinc-800 flex-row items-center">
-                <View className="w-12 h-12 bg-emerald-500 rounded-xl items-center justify-center">
+                <View className="w-12 h-12 bg-primary rounded-xl items-center justify-center">
                   <Ionicons name="calendar" size={24} color="white" />
                 </View>
                 <View className="flex-1 ml-4">
-                  <Text className="text-white font-bold text-lg">7 Días Completos</Text>
+                  <Text className="text-white font-bold text-lg">7 DÃ­as Completos</Text>
                   <Text className="text-zinc-400 text-sm">Desayuno, comida, cena y snacks</Text>
                 </View>
               </View>
 
               <View className="bg-zinc-900 rounded-xl p-4 border border-zinc-800 flex-row items-center">
-                <View className="w-12 h-12 bg-blue-500 rounded-xl items-center justify-center">
+                <View className="w-12 h-12 bg-primary rounded-xl items-center justify-center">
                   <Ionicons name="analytics" size={24} color="white" />
                 </View>
                 <View className="flex-1 ml-4">
                   <Text className="text-white font-bold text-lg">Macros Calculados</Text>
-                  <Text className="text-zinc-400 text-sm">Proteína, carbos y grasas por comida</Text>
+                  <Text className="text-zinc-400 text-sm">ProteÃ­na, carbos y grasas por comida</Text>
                 </View>
               </View>
 
@@ -224,27 +224,27 @@ export default function MealPrep() {
             {/* Generate Button */}
             <TouchableOpacity
               onPress={generateWeekPlan}
-              className="bg-gradient-to-r from-emerald-500 to-blue-500 rounded-xl p-6 flex-row items-center justify-center mb-6"
+              className="bg-gradient-to-r from-primary to-[#7D0EBE] rounded-xl p-6 flex-row items-center justify-center mb-6"
             >
               <Ionicons name="flash" size={28} color="white" />
               <Text className="text-white font-bold text-xl ml-2">Generar Plan Semanal</Text>
             </TouchableOpacity>
 
             {/* Benefits */}
-            <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30 mb-6">
+            <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
               <View className="flex-row items-start">
-                <Ionicons name="bulb" size={20} color="#3B82F6" />
+                <Ionicons name="bulb" size={20} color="#9D12DE" />
                 <View className="flex-1 ml-3">
-                  <Text className="text-blue-400 font-bold mb-2">
-                    Por Qué Meal Prep
+                  <Text className="text-primary/80 font-bold mb-2">
+                    Por QuÃ© Meal Prep
                   </Text>
-                  <Text className="text-blue-300 text-sm">
-                    • Ahorra 5-10 horas por semana{'\n'}
-                    • Control total de macros{'\n'}
-                    • Evita decisiones impulsivas{'\n'}
-                    • Más barato que comer fuera{'\n'}
-                    • Consistencia = resultados{'\n'}
-                    • Menos estrés diario
+                  <Text className="text-primary/60 text-sm">
+                    â€¢ Ahorra 5-10 horas por semana{'\n'}
+                    â€¢ Control total de macros{'\n'}
+                    â€¢ Evita decisiones impulsivas{'\n'}
+                    â€¢ MÃ¡s barato que comer fuera{'\n'}
+                    â€¢ Consistencia = resultados{'\n'}
+                    â€¢ Menos estrÃ©s diario
                   </Text>
                 </View>
               </View>
@@ -253,18 +253,18 @@ export default function MealPrep() {
             {/* Tips */}
             <View className="bg-amber-500/10 rounded-xl p-4 border border-amber-500/30 mb-6">
               <View className="flex-row items-start">
-                <Ionicons name="flame" size={20} color="#F59E0B" />
+                <Ionicons name="flame" size={20} color="#FFEA00" />
                 <View className="flex-1 ml-3">
                   <Text className="text-amber-400 font-bold mb-2">
                     Tips de Meal Prep
                   </Text>
                   <Text className="text-amber-300 text-sm">
-                    • Cocina domingo para lun-mie{'\n'}
-                    • Cocina miércoles para jue-dom{'\n'}
-                    • Usa contenedores de cristal{'\n'}
-                    • Congela porciones extras{'\n'}
-                    • Varía proteínas y carbos{'\n'}
-                    • Verduras frescas &gt; congeladas
+                    â€¢ Cocina domingo para lun-mie{'\n'}
+                    â€¢ Cocina miÃ©rcoles para jue-dom{'\n'}
+                    â€¢ Usa contenedores de cristal{'\n'}
+                    â€¢ Congela porciones extras{'\n'}
+                    â€¢ VarÃ­a proteÃ­nas y carbos{'\n'}
+                    â€¢ Verduras frescas &gt; congeladas
                   </Text>
                 </View>
               </View>
@@ -297,15 +297,15 @@ export default function MealPrep() {
       <ScrollView className="flex-1" showsVerticalScrollIndicator={false}>
         <View className="px-6 pt-6">
           {/* Week Averages */}
-          <View className="bg-gradient-to-r from-emerald-500 to-blue-500 rounded-xl p-5 mb-6">
+          <View className="bg-gradient-to-r from-primary to-[#7D0EBE] rounded-xl p-5 mb-6">
             <Text className="text-white font-bold text-lg mb-4">Promedio Diario</Text>
             <View className="flex-row gap-2">
               <View className="flex-1 bg-white/20 rounded-lg p-3">
-                <Text className="text-white opacity-90 text-xs mb-1">Calorías</Text>
+                <Text className="text-white opacity-90 text-xs mb-1">CalorÃ­as</Text>
                 <Text className="text-white font-bold text-xl">{averages.calories}</Text>
               </View>
               <View className="flex-1 bg-white/20 rounded-lg p-3">
-                <Text className="text-white opacity-90 text-xs mb-1">Proteína</Text>
+                <Text className="text-white opacity-90 text-xs mb-1">ProteÃ­na</Text>
                 <Text className="text-white font-bold text-xl">{averages.protein}g</Text>
               </View>
               <View className="flex-1 bg-white/20 rounded-lg p-3">
@@ -320,7 +320,7 @@ export default function MealPrep() {
           </View>
 
           {/* Days */}
-          <Text className="text-white font-bold text-lg mb-4">Días de la Semana</Text>
+          <Text className="text-white font-bold text-lg mb-4">DÃ­as de la Semana</Text>
           {weekPlan.map((dayPlan, index) => {
             const totals = getDayTotals(dayPlan);
             
@@ -328,8 +328,8 @@ export default function MealPrep() {
               <View key={index} className="bg-zinc-900 rounded-xl p-4 mb-4 border border-zinc-800">
                 <View className="flex-row items-center justify-between mb-3">
                   <Text className="text-white font-bold text-xl">{dayPlan.day}</Text>
-                  <View className="bg-emerald-500/10 rounded-lg px-3 py-1 border border-emerald-500/30">
-                    <Text className="text-emerald-400 font-bold text-xs">{totals.calories} kcal</Text>
+                  <View className="bg-primary/10 rounded-lg px-3 py-1 border border-primary/30">
+                    <Text className="text-primary font-bold text-xs">{totals.calories} kcal</Text>
                   </View>
                 </View>
 
@@ -338,7 +338,7 @@ export default function MealPrep() {
                   {/* Breakfast */}
                   <View className="bg-zinc-800 rounded-lg p-3">
                     <View className="flex-row items-center mb-2">
-                      <Ionicons name="sunny" size={16} color="#F59E0B" />
+                      <Ionicons name="sunny" size={16} color="#FFEA00" />
                       <Text className="text-amber-400 font-bold ml-2">Desayuno</Text>
                     </View>
                     {dayPlan.meals.breakfast.map((meal, idx) => (
@@ -354,8 +354,8 @@ export default function MealPrep() {
                   {/* Lunch */}
                   <View className="bg-zinc-800 rounded-lg p-3">
                     <View className="flex-row items-center mb-2">
-                      <Ionicons name="restaurant" size={16} color="#3B82F6" />
-                      <Text className="text-blue-400 font-bold ml-2">Comida</Text>
+                      <Ionicons name="restaurant" size={16} color="#9D12DE" />
+                      <Text className="text-primary/80 font-bold ml-2">Comida</Text>
                     </View>
                     {dayPlan.meals.lunch.map((meal, idx) => (
                       <View key={idx}>
@@ -386,8 +386,8 @@ export default function MealPrep() {
                   {/* Snacks */}
                   <View className="bg-zinc-800 rounded-lg p-3">
                     <View className="flex-row items-center mb-2">
-                      <Ionicons name="nutrition" size={16} color="#10B981" />
-                      <Text className="text-emerald-400 font-bold ml-2">Snacks</Text>
+                      <Ionicons name="nutrition" size={16} color="#9D12DE" />
+                      <Text className="text-primary font-bold ml-2">Snacks</Text>
                     </View>
                     {dayPlan.meals.snacks.map((meal, idx) => (
                       <View key={idx}>
@@ -420,7 +420,7 @@ export default function MealPrep() {
             <View className="gap-2">
               {shoppingList.map((item, index) => (
                 <View key={index} className="flex-row items-center bg-zinc-800 rounded-lg p-3">
-                  <Ionicons name="checkbox" size={20} color="#10B981" />
+                  <Ionicons name="checkbox" size={20} color="#9D12DE" />
                   <Text className="text-white ml-3">{item}</Text>
                 </View>
               ))}
@@ -431,7 +431,7 @@ export default function MealPrep() {
           <View className="flex-row gap-3 mb-6">
             <TouchableOpacity
               onPress={() => Alert.alert('Compartido', 'Plan compartido')}
-              className="flex-1 bg-blue-500 rounded-xl p-4 flex-row items-center justify-center"
+              className="flex-1 bg-primary rounded-xl p-4 flex-row items-center justify-center"
             >
               <Ionicons name="share" size={20} color="white" />
               <Text className="text-white font-bold ml-2">Compartir</Text>
@@ -449,3 +449,5 @@ export default function MealPrep() {
     </View>
   );
 }
+
+

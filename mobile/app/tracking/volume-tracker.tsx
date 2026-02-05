@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -74,7 +74,7 @@ export default function VolumeTracker() {
 
       <ScrollView className="flex-1" showsVerticalScrollIndicator={false}>
         <View className="px-6 pt-6">
-          <View className="bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl p-6 mb-6">
+          <View className="bg-gradient-to-r from-primary to-[#7D0EBE] rounded-xl p-6 mb-6">
             <Text className="text-white text-2xl font-bold mb-2">Training Volume</Text>
             <Text className="text-white opacity-90">
               Monitor weekly set volume
@@ -88,7 +88,7 @@ export default function VolumeTracker() {
                   key={period}
                   onPress={() => setSelectedPeriod(period)}
                   className={`flex-1 ${
-                    selectedPeriod === period ? 'bg-blue-500' : 'bg-zinc-800'
+                    selectedPeriod === period ? 'bg-primary' : 'bg-zinc-800'
                   } rounded-xl px-3 py-2 border ${
                     selectedPeriod === period ? 'border-blue-400' : 'border-zinc-700'
                   }`}
@@ -101,8 +101,8 @@ export default function VolumeTracker() {
             </View>
           </View>
 
-          <View className="bg-blue-500/10 rounded-xl p-6 mb-6 border border-blue-500/30">
-            <Text className="text-blue-400 text-sm mb-2">
+          <View className="bg-primary/10 rounded-xl p-6 mb-6 border border-primary/30">
+            <Text className="text-primary/80 text-sm mb-2">
               Total Sets This {selectedPeriod.charAt(0).toUpperCase() + selectedPeriod.slice(1)}
             </Text>
             <Text className="text-white text-6xl font-bold">{totalSets}</Text>
@@ -127,10 +127,10 @@ export default function VolumeTracker() {
                           <Ionicons
                             name={data.change > 0 ? 'trending-up' : 'trending-down'}
                             size={16}
-                            color={data.change > 0 ? '#10b981' : '#ef4444'}
+                            color={data.change > 0 ? '#9D12DE' : '#ef4444'}
                           />
                           <Text className={`text-xs ml-1 ${
-                            data.change > 0 ? 'text-emerald-400' : 'text-red-400'
+                            data.change > 0 ? 'text-primary' : 'text-red-400'
                           }`}>
                             {Math.abs(data.change)}
                           </Text>
@@ -170,7 +170,7 @@ export default function VolumeTracker() {
                     <Text className="text-white font-bold">{week.week}</Text>
                     <Text className="text-zinc-400 text-sm">{week.intensity}</Text>
                   </View>
-                  <Text className="text-blue-400 font-bold text-xl">{week.volume}</Text>
+                  <Text className="text-primary/80 font-bold text-xl">{week.volume}</Text>
                 </View>
               ))}
             </View>
@@ -178,14 +178,14 @@ export default function VolumeTracker() {
 
           <View className="bg-zinc-900 rounded-xl p-5 mb-6 border border-zinc-800">
             <Text className="text-white font-bold text-lg mb-4">Volume Guidelines</Text>
-            <View className="bg-emerald-500/10 rounded-xl p-3 mb-2 border border-emerald-500/30">
-              <Text className="text-emerald-400 font-bold mb-1">Maintenance (MV)</Text>
+            <View className="bg-primary/10 rounded-xl p-3 mb-2 border border-primary/30">
+              <Text className="text-primary font-bold mb-1">Maintenance (MV)</Text>
               <Text className="text-zinc-300 text-sm">
                 Minimum sets to maintain muscle: ~10 sets/week
               </Text>
             </View>
-            <View className="bg-blue-500/10 rounded-xl p-3 mb-2 border border-blue-500/30">
-              <Text className="text-blue-400 font-bold mb-1">Optimal (MEV-MAV)</Text>
+            <View className="bg-primary/10 rounded-xl p-3 mb-2 border border-primary/30">
+              <Text className="text-primary/80 font-bold mb-1">Optimal (MEV-MAV)</Text>
               <Text className="text-zinc-300 text-sm">
                 Growth zone: 12-20 sets/week per muscle
               </Text>
@@ -201,20 +201,20 @@ export default function VolumeTracker() {
           <View className="bg-amber-500/10 rounded-xl p-4 border border-amber-500/30 mb-6">
             <Text className="text-amber-400 font-bold mb-2">Volume Management</Text>
             <Text className="text-amber-300 text-sm mb-2">
-              • Start at minimum effective volume (MEV)
+              â€¢ Start at minimum effective volume (MEV)
             </Text>
             <Text className="text-amber-300 text-sm mb-2">
-              • Add 1-2 sets per week when progress stalls
+              â€¢ Add 1-2 sets per week when progress stalls
             </Text>
             <Text className="text-amber-300 text-sm mb-2">
-              • Deload when approaching maximum recoverable volume (MRV)
+              â€¢ Deload when approaching maximum recoverable volume (MRV)
             </Text>
             <Text className="text-amber-300 text-sm">
-              • Track volume to avoid junk volume
+              â€¢ Track volume to avoid junk volume
             </Text>
           </View>
 
-          <TouchableOpacity className="bg-blue-500 rounded-xl p-4 mb-6">
+          <TouchableOpacity className="bg-primary rounded-xl p-4 mb-6">
             <View className="flex-row items-center justify-center">
               <Ionicons name="analytics" size={20} color="white" />
               <Text className="text-white font-bold ml-2">View Detailed Analytics</Text>
@@ -225,3 +225,4 @@ export default function VolumeTracker() {
     </View>
   );
 }
+

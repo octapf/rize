@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import {
   View,
   Text,
@@ -29,7 +29,7 @@ const getTypeLabel = (type: string, unit?: string) => {
   if (type === 'reps') return 'Repeticiones';
   if (type === 'time') return unit === 'minutes' ? 'Minutos' : 'Segundos';
   if (type === 'distance') {
-    if (unit === 'kilometers') return 'Kilómetros';
+    if (unit === 'kilometers') return 'KilÃ³metros';
     if (unit === 'miles') return 'Millas';
     return 'Metros';
   }
@@ -48,7 +48,7 @@ export default function MyExercisesScreen() {
     mutationFn: (id: string) => exercisesApi.deleteCustomExercise(id),
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['exercises'] });
-      Alert.alert('Éxito', 'Ejercicio eliminado');
+      Alert.alert('Ã‰xito', 'Ejercicio eliminado');
     },
     onError: (error: any) => {
       Alert.alert('Error', error.response?.data?.error?.message || 'Error al eliminar');
@@ -58,7 +58,7 @@ export default function MyExercisesScreen() {
   const handleDelete = (exercise: Exercise) => {
     Alert.alert(
       'Eliminar Ejercicio',
-      `¿Estás seguro de que quieres eliminar "${exercise.name.es}"?`,
+      `Â¿EstÃ¡s seguro de que quieres eliminar "${exercise.name.es}"?`,
       [
         { text: 'Cancelar', style: 'cancel' },
         {
@@ -73,7 +73,7 @@ export default function MyExercisesScreen() {
   const renderExercise = ({ item }: { item: Exercise }) => (
     <View style={styles.exerciseCard}>
       <View style={styles.exerciseIcon}>
-        <Ionicons name={getCategoryIcon(item.category)} size={24} color="#10b981" />
+        <Ionicons name={getCategoryIcon(item.category)} size={24} color="#9D12DE" />
       </View>
 
       <View style={styles.exerciseInfo}>
@@ -81,9 +81,9 @@ export default function MyExercisesScreen() {
         <Text style={styles.exerciseSubtitle}>{item.name.en}</Text>
         <View style={styles.exerciseMeta}>
           <Text style={styles.metaText}>
-            {item.category.toUpperCase()} • Dificultad {item.difficulty}
+            {item.category.toUpperCase()} â€¢ Dificultad {item.difficulty}
           </Text>
-          <Text style={styles.metaText}>• {getTypeLabel(item.type, item.unit)}</Text>
+          <Text style={styles.metaText}>â€¢ {getTypeLabel(item.type, item.unit)}</Text>
         </View>
       </View>
 
@@ -104,7 +104,7 @@ export default function MyExercisesScreen() {
           title: 'Mis Ejercicios',
           headerRight: () => (
             <TouchableOpacity onPress={() => router.push('/exercises/create')}>
-              <Ionicons name="add" size={28} color="#10b981" />
+              <Ionicons name="add" size={28} color="#9D12DE" />
             </TouchableOpacity>
           ),
         }}
@@ -175,7 +175,7 @@ const styles = StyleSheet.create({
     marginBottom: 24,
   },
   createButton: {
-    backgroundColor: '#10b981',
+    backgroundColor: '#9D12DE',
     paddingHorizontal: 24,
     paddingVertical: 12,
     borderRadius: 8,
@@ -200,7 +200,7 @@ const styles = StyleSheet.create({
     width: 48,
     height: 48,
     borderRadius: 24,
-    backgroundColor: '#10b98120',
+    backgroundColor: '#9D12DE20',
     justifyContent: 'center',
     alignItems: 'center',
     marginRight: 12,
@@ -232,3 +232,4 @@ const styles = StyleSheet.create({
     padding: 8,
   },
 });
+

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -26,8 +26,8 @@ interface Goal {
 
 const GOAL_CATEGORIES = [
   { value: 'strength', label: 'Fuerza', icon: 'barbell', color: 'red' },
-  { value: 'body', label: 'Físico', icon: 'body', color: 'blue' },
-  { value: 'habit', label: 'Hábito', icon: 'checkmark-circle', color: 'emerald' },
+  { value: 'body', label: 'FÃ­sico', icon: 'body', color: 'blue' },
+  { value: 'habit', label: 'HÃ¡bito', icon: 'checkmark-circle', color: 'emerald' },
   { value: 'performance', label: 'Rendimiento', icon: 'speedometer', color: 'purple' },
 ];
 
@@ -41,7 +41,7 @@ const MOCK_GOALS: Goal[] = [
     unit: 'kg',
     deadline: new Date(2026, 5, 1),
     status: 'active',
-    notes: '1RM actual: 100kg, progresión lineal',
+    notes: '1RM actual: 100kg, progresiÃ³n lineal',
   },
   {
     id: '2',
@@ -82,7 +82,7 @@ const MOCK_GOALS: Goal[] = [
     currentValue: 10,
     unit: 'reps',
     status: 'completed',
-    notes: '¡Logrado el 20 de enero!',
+    notes: 'Â¡Logrado el 20 de enero!',
   },
 ];
 
@@ -129,7 +129,7 @@ export default function GoalTracker() {
 
   const addGoal = () => {
     if (!newGoal.title || !newGoal.targetValue || !newGoal.currentValue) {
-      Alert.alert('Error', 'Completa título, meta actual y objetivo');
+      Alert.alert('Error', 'Completa tÃ­tulo, meta actual y objetivo');
       return;
     }
 
@@ -147,7 +147,7 @@ export default function GoalTracker() {
     setGoals([goal, ...goals]);
     setNewGoal({ title: '', category: 'strength', targetValue: '', currentValue: '', unit: 'kg', notes: '' });
     setShowAddForm(false);
-    Alert.alert('Meta Creada! 🎯', 'Ahora a trabajar para lograrla');
+    Alert.alert('Meta Creada! ðŸŽ¯', 'Ahora a trabajar para lograrla');
   };
 
   const updateProgress = (id: string, newValue: number) => {
@@ -160,7 +160,7 @@ export default function GoalTracker() {
         (g.unit === '%' || g.unit === 'min') && newValue <= g.targetValue
       ) {
         updated.status = 'completed';
-        Alert.alert('¡Meta Lograda! 🎉', `Completaste: ${g.title}`);
+        Alert.alert('Â¡Meta Lograda! ðŸŽ‰', `Completaste: ${g.title}`);
       }
       return updated;
     }));
@@ -169,7 +169,7 @@ export default function GoalTracker() {
   const deleteGoal = (id: string) => {
     Alert.alert(
       'Eliminar Meta',
-      '¿Estás seguro?',
+      'Â¿EstÃ¡s seguro?',
       [
         { text: 'Cancelar' },
         { text: 'Eliminar', style: 'destructive', onPress: () => setGoals(goals.filter((g) => g.id !== id)) },
@@ -204,7 +204,7 @@ export default function GoalTracker() {
               key={status}
               onPress={() => setFilter(status)}
               className={`px-4 py-2 rounded-lg ${
-                filter === status ? 'bg-emerald-500' : 'bg-zinc-900 border border-zinc-800'
+                filter === status ? 'bg-primary' : 'bg-zinc-900 border border-zinc-800'
               }`}
             >
               <Text className={`font-semibold text-sm ${filter === status ? 'text-white' : 'text-zinc-400'}`}>
@@ -223,7 +223,7 @@ export default function GoalTracker() {
 
               {/* Title */}
               <View className="mb-4">
-                <Text className="text-zinc-400 text-sm mb-2">Título</Text>
+                <Text className="text-zinc-400 text-sm mb-2">TÃ­tulo</Text>
                 <TextInput
                   className="bg-zinc-800 rounded-xl px-4 py-3 text-white text-lg font-bold"
                   placeholder="Ej: Sentadilla 150kg, Bajar a 10% grasa..."
@@ -235,7 +235,7 @@ export default function GoalTracker() {
 
               {/* Category */}
               <View className="mb-4">
-                <Text className="text-zinc-400 text-sm mb-2">Categoría</Text>
+                <Text className="text-zinc-400 text-sm mb-2">CategorÃ­a</Text>
                 <View className="flex-row flex-wrap gap-2">
                   {GOAL_CATEGORIES.map((cat) => (
                     <TouchableOpacity
@@ -290,12 +290,12 @@ export default function GoalTracker() {
               <View className="mb-4">
                 <Text className="text-zinc-400 text-sm mb-2">Unidad</Text>
                 <View className="flex-row flex-wrap gap-2">
-                  {['kg', 'reps', '%', 'min', 'semanas', 'días'].map((unit) => (
+                  {['kg', 'reps', '%', 'min', 'semanas', 'dÃ­as'].map((unit) => (
                     <TouchableOpacity
                       key={unit}
                       onPress={() => setNewGoal({ ...newGoal, unit })}
                       className={`px-3 py-2 rounded-lg ${
-                        newGoal.unit === unit ? 'bg-emerald-500' : 'bg-zinc-800'
+                        newGoal.unit === unit ? 'bg-primary' : 'bg-zinc-800'
                       }`}
                     >
                       <Text className={newGoal.unit === unit ? 'text-white font-bold' : 'text-zinc-400'}>
@@ -322,7 +322,7 @@ export default function GoalTracker() {
 
               <TouchableOpacity
                 onPress={addGoal}
-                className="bg-emerald-500 rounded-xl p-4 flex-row items-center justify-center"
+                className="bg-primary rounded-xl p-4 flex-row items-center justify-center"
               >
                 <Ionicons name="checkmark-circle" size={20} color="white" />
                 <Text className="text-white font-bold ml-2">Crear Meta</Text>
@@ -333,7 +333,7 @@ export default function GoalTracker() {
               {/* Goals List */}
               {filteredGoals.length === 0 ? (
                 <View className="bg-zinc-900 rounded-xl p-8 items-center border border-zinc-800">
-                  <Text className="text-6xl mb-3">🎯</Text>
+                  <Text className="text-6xl mb-3">ðŸŽ¯</Text>
                   <Text className="text-white font-bold text-lg mb-2">Sin Metas</Text>
                   <Text className="text-zinc-400 text-center">
                     Define metas para mantenerte enfocado
@@ -359,7 +359,7 @@ export default function GoalTracker() {
                             <View className="flex-row gap-2">
                               <View className={`bg-${goal.status === 'completed' ? 'emerald' : goal.status === 'paused' ? 'amber' : 'blue'}-500/10 rounded px-2 py-0.5 border border-${goal.status === 'completed' ? 'emerald' : goal.status === 'paused' ? 'amber' : 'blue'}-500/30`}>
                                 <Text className={`text-${goal.status === 'completed' ? 'emerald' : goal.status === 'paused' ? 'amber' : 'blue'}-400 text-xs font-bold`}>
-                                  {goal.status === 'completed' ? '✓ Completada' : goal.status === 'paused' ? '⏸ Pausada' : '🔥 Activa'}
+                                  {goal.status === 'completed' ? 'âœ“ Completada' : goal.status === 'paused' ? 'â¸ Pausada' : 'ðŸ”¥ Activa'}
                                 </Text>
                               </View>
                             </View>
@@ -391,7 +391,7 @@ export default function GoalTracker() {
                       {daysLeft !== null && (
                         <View className={`bg-${daysLeft < 7 ? 'red' : daysLeft < 30 ? 'amber' : 'blue'}-500/10 rounded-lg p-2 border border-${daysLeft < 7 ? 'red' : daysLeft < 30 ? 'amber' : 'blue'}-500/30 mb-3`}>
                           <Text className={`text-${daysLeft < 7 ? 'red' : daysLeft < 30 ? 'amber' : 'blue'}-400 text-sm`}>
-                            ⏰ {daysLeft > 0 ? `${daysLeft} días restantes` : daysLeft === 0 ? '¡Hoy es el deadline!' : `Venció hace ${Math.abs(daysLeft)} días`}
+                            â° {daysLeft > 0 ? `${daysLeft} dÃ­as restantes` : daysLeft === 0 ? 'Â¡Hoy es el deadline!' : `VenciÃ³ hace ${Math.abs(daysLeft)} dÃ­as`}
                           </Text>
                         </View>
                       )}
@@ -412,13 +412,13 @@ export default function GoalTracker() {
                               const increment = goal.unit === 'kg' ? 2.5 : goal.unit === 'reps' ? 1 : goal.unit === '%' ? -0.5 : goal.unit === 'min' ? -0.5 : 1;
                               updateProgress(goal.id, goal.currentValue + increment);
                             }}
-                            className="bg-emerald-500 rounded-lg px-4 py-2"
+                            className="bg-primary rounded-lg px-4 py-2"
                           >
                             <Text className="text-white font-bold">+</Text>
                           </TouchableOpacity>
                           <TouchableOpacity
                             onPress={() => toggleStatus(goal.id, 'completed')}
-                            className="flex-1 bg-blue-500 rounded-lg p-2"
+                            className="flex-1 bg-primary rounded-lg p-2"
                           >
                             <Text className="text-white text-sm font-bold text-center">Marcar Completada</Text>
                           </TouchableOpacity>
@@ -434,17 +434,17 @@ export default function GoalTracker() {
           {/* Tips */}
           <View className="bg-amber-500/10 rounded-xl p-4 border border-amber-500/30 mb-6">
             <View className="flex-row items-start">
-              <Ionicons name="trophy" size={20} color="#F59E0B" />
+              <Ionicons name="trophy" size={20} color="#FFEA00" />
               <View className="flex-1 ml-3">
                 <Text className="text-amber-400 font-bold mb-2">
                   Tips para Lograr Metas
                 </Text>
                 <Text className="text-amber-300 text-sm">
-                  • Metas SMART: específicas y medibles{'\n'}
-                  • Deadline realista pero desafiante{'\n'}
-                  • Divide en mini-metas semanales{'\n'}
-                  • Trackea progreso constantemente{'\n'}
-                  • Ajusta estrategia si es necesario
+                  â€¢ Metas SMART: especÃ­ficas y medibles{'\n'}
+                  â€¢ Deadline realista pero desafiante{'\n'}
+                  â€¢ Divide en mini-metas semanales{'\n'}
+                  â€¢ Trackea progreso constantemente{'\n'}
+                  â€¢ Ajusta estrategia si es necesario
                 </Text>
               </View>
             </View>
@@ -454,3 +454,4 @@ export default function GoalTracker() {
     </View>
   );
 }
+

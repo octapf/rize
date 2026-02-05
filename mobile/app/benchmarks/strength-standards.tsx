@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -66,7 +66,7 @@ export default function StrengthStandards() {
 
       <ScrollView className="flex-1" showsVerticalScrollIndicator={false}>
         <View className="px-6 pt-6">
-          <View className="bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl p-6 mb-6">
+          <View className="bg-gradient-to-r from-primary to-[#7D0EBE] rounded-xl p-6 mb-6">
             <Text className="text-white text-2xl font-bold mb-2">Compare Your Lifts</Text>
             <Text className="text-white opacity-90">
               See where you stand
@@ -94,7 +94,7 @@ export default function StrengthStandards() {
                 <TouchableOpacity
                   onPress={() => setGender('male')}
                   className={`flex-1 ${
-                    gender === 'male' ? 'bg-blue-500' : 'bg-zinc-800'
+                    gender === 'male' ? 'bg-primary' : 'bg-zinc-800'
                   } rounded-xl py-3 border ${
                     gender === 'male' ? 'border-blue-400' : 'border-zinc-700'
                   }`}
@@ -124,9 +124,9 @@ export default function StrengthStandards() {
                     key={ex.id}
                     onPress={() => setSelectedExercise(ex.id)}
                     className={`${
-                      selectedExercise === ex.id ? 'bg-emerald-500' : 'bg-zinc-800'
+                      selectedExercise === ex.id ? 'bg-primary' : 'bg-zinc-800'
                     } rounded-xl px-4 py-3 border ${
-                      selectedExercise === ex.id ? 'border-emerald-400' : 'border-zinc-700'
+                      selectedExercise === ex.id ? 'border-primary' : 'border-zinc-700'
                     }`}
                   >
                     <View className="flex-row items-center">
@@ -175,19 +175,19 @@ export default function StrengthStandards() {
             })}
           </View>
 
-          <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30 mb-6">
-            <Text className="text-blue-400 font-bold mb-2">What the Levels Mean</Text>
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
+            <Text className="text-primary/80 font-bold mb-2">What the Levels Mean</Text>
             <View className="space-y-2">
-              <Text className="text-blue-300 text-sm">
+              <Text className="text-primary/60 text-sm">
                 <Text className="font-bold">Beginner:</Text> First 6 months training
               </Text>
-              <Text className="text-blue-300 text-sm">
+              <Text className="text-primary/60 text-sm">
                 <Text className="font-bold">Intermediate:</Text> 1-2 years consistent training
               </Text>
-              <Text className="text-blue-300 text-sm">
+              <Text className="text-primary/60 text-sm">
                 <Text className="font-bold">Advanced:</Text> 3-5 years dedicated training
               </Text>
-              <Text className="text-blue-300 text-sm">
+              <Text className="text-primary/60 text-sm">
                 <Text className="font-bold">Elite:</Text> 5+ years, competitive level
               </Text>
             </View>
@@ -197,3 +197,5 @@ export default function StrengthStandards() {
     </View>
   );
 }
+
+

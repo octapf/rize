@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -52,15 +52,15 @@ interface Interaction {
 const SUPPLEMENTS: Supplement[] = [
   {
     id: '1',
-    name: 'Proteína Whey',
-    category: 'Proteína',
+    name: 'ProteÃ­na Whey',
+    category: 'ProteÃ­na',
     dosage: '30g (1 scoop)',
     timing: 'post-workout',
     frequency: 'daily',
-    benefits: ['Recuperación muscular', 'Síntesis proteica', 'Saciedad'],
+    benefits: ['RecuperaciÃ³n muscular', 'SÃ­ntesis proteica', 'Saciedad'],
     enabled: true,
-    icon: '💪',
-    color: 'bg-blue-500',
+    icon: 'ðŸ’ª',
+    color: 'bg-primary',
   },
   {
     id: '2',
@@ -69,21 +69,21 @@ const SUPPLEMENTS: Supplement[] = [
     dosage: '5g',
     timing: 'post-workout',
     frequency: 'daily',
-    benefits: ['Fuerza', 'Potencia', 'Masa muscular', 'Recuperación'],
+    benefits: ['Fuerza', 'Potencia', 'Masa muscular', 'RecuperaciÃ³n'],
     enabled: true,
-    icon: '⚡',
+    icon: 'âš¡',
     color: 'bg-amber-500',
   },
   {
     id: '3',
-    name: 'Cafeína',
+    name: 'CafeÃ­na',
     category: 'Estimulante',
     dosage: '200mg',
     timing: 'pre-workout',
     frequency: 'workout-days',
-    benefits: ['Energía', 'Focus', 'Rendimiento', 'Termogénesis'],
+    benefits: ['EnergÃ­a', 'Focus', 'Rendimiento', 'TermogÃ©nesis'],
     enabled: true,
-    icon: '☕',
+    icon: 'â˜•',
     color: 'bg-red-500',
   },
   {
@@ -95,7 +95,7 @@ const SUPPLEMENTS: Supplement[] = [
     frequency: 'workout-days',
     benefits: ['Resistencia muscular', 'Buffer de lactato', 'Volumen'],
     enabled: true,
-    icon: '🔥',
+    icon: 'ðŸ”¥',
     color: 'bg-orange-500',
   },
   {
@@ -107,7 +107,7 @@ const SUPPLEMENTS: Supplement[] = [
     frequency: 'daily',
     benefits: ['Antiinflamatorio', 'Salud cardiovascular', 'Articulaciones'],
     enabled: true,
-    icon: '🐟',
+    icon: 'ðŸŸ',
     color: 'bg-cyan-500',
   },
   {
@@ -119,31 +119,31 @@ const SUPPLEMENTS: Supplement[] = [
     frequency: 'daily',
     benefits: ['Huesos', 'Sistema inmune', 'Testosterona'],
     enabled: true,
-    icon: '☀️',
+    icon: 'â˜€ï¸',
     color: 'bg-yellow-500',
   },
   {
     id: '7',
     name: 'Magnesio',
-    category: 'Recuperación',
+    category: 'RecuperaciÃ³n',
     dosage: '400mg',
     timing: 'night',
     frequency: 'daily',
-    benefits: ['Sueño', 'Recuperación', 'Relajación muscular'],
+    benefits: ['SueÃ±o', 'RecuperaciÃ³n', 'RelajaciÃ³n muscular'],
     enabled: false,
-    icon: '🌙',
+    icon: 'ðŸŒ™',
     color: 'bg-indigo-500',
   },
   {
     id: '8',
     name: 'ZMA',
-    category: 'Recuperación',
+    category: 'RecuperaciÃ³n',
     dosage: '1 serving',
     timing: 'night',
     frequency: 'daily',
-    benefits: ['Testosterona', 'Sueño profundo', 'Recuperación'],
+    benefits: ['Testosterona', 'SueÃ±o profundo', 'RecuperaciÃ³n'],
     enabled: false,
-    icon: '💤',
+    icon: 'ðŸ’¤',
     color: 'bg-purple-500',
   },
 ];
@@ -151,25 +151,25 @@ const SUPPLEMENTS: Supplement[] = [
 const STACKS: SupplementStack[] = [
   {
     id: '1',
-    name: 'Stack Básico',
+    name: 'Stack BÃ¡sico',
     goal: 'Fundamentos esenciales',
-    supplements: ['Proteína Whey', 'Creatina Monohidrato', 'Omega-3', 'Vitamina D3'],
+    supplements: ['ProteÃ­na Whey', 'Creatina Monohidrato', 'Omega-3', 'Vitamina D3'],
     totalCost: 85,
     monthlyServing: 30,
   },
   {
     id: '2',
     name: 'Stack Performance',
-    goal: 'Máximo rendimiento en gym',
-    supplements: ['Proteína Whey', 'Creatina Monohidrato', 'Cafeína', 'Beta-Alanina'],
+    goal: 'MÃ¡ximo rendimiento en gym',
+    supplements: ['ProteÃ­na Whey', 'Creatina Monohidrato', 'CafeÃ­na', 'Beta-Alanina'],
     totalCost: 95,
     monthlyServing: 30,
   },
   {
     id: '3',
-    name: 'Stack Recuperación',
-    goal: 'Optimizar descanso y recuperación',
-    supplements: ['Proteína Whey', 'Omega-3', 'Magnesio', 'ZMA'],
+    name: 'Stack RecuperaciÃ³n',
+    goal: 'Optimizar descanso y recuperaciÃ³n',
+    supplements: ['ProteÃ­na Whey', 'Omega-3', 'Magnesio', 'ZMA'],
     totalCost: 90,
     monthlyServing: 30,
   },
@@ -178,27 +178,27 @@ const STACKS: SupplementStack[] = [
 const INTERACTIONS: Interaction[] = [
   {
     supplement1: 'Creatina Monohidrato',
-    supplement2: 'Cafeína',
+    supplement2: 'CafeÃ­na',
     type: 'negative',
-    description: 'La cafeína puede reducir la absorción de creatina. Separar por 2-3 horas.',
+    description: 'La cafeÃ­na puede reducir la absorciÃ³n de creatina. Separar por 2-3 horas.',
   },
   {
-    supplement1: 'Proteína Whey',
+    supplement1: 'ProteÃ­na Whey',
     supplement2: 'Creatina Monohidrato',
     type: 'positive',
-    description: 'Sinergia positiva. La proteína ayuda a transportar creatina al músculo.',
+    description: 'Sinergia positiva. La proteÃ­na ayuda a transportar creatina al mÃºsculo.',
   },
   {
     supplement1: 'Omega-3',
     supplement2: 'Vitamina D3',
     type: 'positive',
-    description: 'Mejor absorción cuando se toman juntos con comida grasa.',
+    description: 'Mejor absorciÃ³n cuando se toman juntos con comida grasa.',
   },
   {
     supplement1: 'Magnesio',
     supplement2: 'ZMA',
     type: 'neutral',
-    description: 'ZMA ya contiene magnesio. Evitar duplicar dosificación.',
+    description: 'ZMA ya contiene magnesio. Evitar duplicar dosificaciÃ³n.',
   },
 ];
 
@@ -222,7 +222,7 @@ export default function SupplementStacks() {
 
   const getTimingSchedule = (): TimingSchedule[] => {
     const schedule: TimingSchedule[] = [
-      { time: 'Mañana (06:00)', supplements: [] },
+      { time: 'MaÃ±ana (06:00)', supplements: [] },
       { time: 'Pre-Entreno (17:30)', supplements: [] },
       { time: 'Post-Entreno (19:00)', supplements: [] },
       { time: 'Con Comida (13:00)', supplements: [] },
@@ -236,7 +236,7 @@ export default function SupplementStacks() {
       
       switch (supp.timing) {
         case 'morning':
-          timeSlot = schedule.find((s) => s.time.includes('Mañana'));
+          timeSlot = schedule.find((s) => s.time.includes('MaÃ±ana'));
           break;
         case 'pre-workout':
           timeSlot = schedule.find((s) => s.time.includes('Pre-Entreno'));
@@ -268,18 +268,18 @@ export default function SupplementStacks() {
   const getInteractionType = (type: string) => {
     switch (type) {
       case 'positive':
-        return { icon: 'checkmark-circle', color: 'text-emerald-400' };
+        return { icon: 'checkmark-circle', color: 'text-primary' };
       case 'negative':
         return { icon: 'warning', color: 'text-red-400' };
       default:
-        return { icon: 'information-circle', color: 'text-blue-400' };
+        return { icon: 'information-circle', color: 'text-primary/80' };
     }
   };
 
   const applyStack = (stack: SupplementStack) => {
     Alert.alert(
       `Aplicar ${stack.name}`,
-      `¿Activar estos suplementos:\n${stack.supplements.join('\n')}`,
+      `Â¿Activar estos suplementos:\n${stack.supplements.join('\n')}`,
       [
         { text: 'Cancelar', style: 'cancel' },
         {
@@ -307,10 +307,10 @@ export default function SupplementStacks() {
             <Ionicons name="arrow-back" size={24} color="white" />
           </TouchableOpacity>
           <Text className="text-white text-2xl font-bold flex-1 ml-3">
-            Suplementación
+            SuplementaciÃ³n
           </Text>
           <TouchableOpacity>
-            <Ionicons name="add-circle" size={28} color="#10B981" />
+            <Ionicons name="add-circle" size={28} color="#9D12DE" />
           </TouchableOpacity>
         </View>
 
@@ -323,7 +323,7 @@ export default function SupplementStacks() {
                 onPress={() => setActiveTab(tab.id as any)}
                 className={`flex-row items-center px-4 py-2 rounded-lg ${
                   activeTab === tab.id
-                    ? 'bg-emerald-500'
+                    ? 'bg-primary'
                     : 'bg-zinc-900 border border-zinc-800'
                 }`}
               >
@@ -377,7 +377,7 @@ export default function SupplementStacks() {
                 className="bg-zinc-900 rounded-xl p-4 mb-4 border border-zinc-800"
               >
                 <View className="flex-row items-center mb-3">
-                  <Ionicons name="time" size={20} color="#10B981" />
+                  <Ionicons name="time" size={20} color="#9D12DE" />
                   <Text className="text-white font-bold text-lg ml-2">
                     {timeSlot.time}
                   </Text>
@@ -396,8 +396,8 @@ export default function SupplementStacks() {
                           <Text className="text-zinc-400 text-sm">{supp.dosage}</Text>
                         </View>
                       </View>
-                      <TouchableOpacity className="bg-emerald-500/20 rounded-lg p-2">
-                        <Ionicons name="checkmark" size={20} color="#10B981" />
+                      <TouchableOpacity className="bg-primary/20 rounded-lg p-2">
+                        <Ionicons name="checkmark" size={20} color="#9D12DE" />
                       </TouchableOpacity>
                     </View>
                   </View>
@@ -424,7 +424,7 @@ export default function SupplementStacks() {
                       <Text className="text-zinc-400 text-sm mb-1">
                         {supp.category}
                       </Text>
-                      <Text className="text-emerald-400 text-sm font-bold">
+                      <Text className="text-primary text-sm font-bold">
                         {supp.dosage}
                       </Text>
                     </View>
@@ -432,15 +432,15 @@ export default function SupplementStacks() {
                   <Switch
                     value={supp.enabled}
                     onValueChange={() => toggleSupplement(supp.id)}
-                    trackColor={{ false: '#3F3F46', true: '#10B981' }}
+                    trackColor={{ false: '#3F3F46', true: '#9D12DE' }}
                     thumbColor={supp.enabled ? '#fff' : '#D4D4D8'}
                   />
                 </View>
 
                 <View className="flex-row flex-wrap gap-2 mb-3">
                   {supp.benefits.map((benefit, index) => (
-                    <View key={index} className="bg-emerald-500/10 rounded-lg px-2 py-1">
-                      <Text className="text-emerald-400 text-xs">{benefit}</Text>
+                    <View key={index} className="bg-primary/10 rounded-lg px-2 py-1">
+                      <Text className="text-primary text-xs">{benefit}</Text>
                     </View>
                   ))}
                 </View>
@@ -486,7 +486,7 @@ export default function SupplementStacks() {
                       >
                         <Text className="text-2xl mr-3">{supp?.icon}</Text>
                         <Text className="text-white flex-1">{suppName}</Text>
-                        <Ionicons name="checkmark-circle" size={20} color="#10B981" />
+                        <Ionicons name="checkmark-circle" size={20} color="#9D12DE" />
                       </View>
                     );
                   })}
@@ -500,16 +500,16 @@ export default function SupplementStacks() {
                     </Text>
                   </View>
                   <View className="items-end">
-                    <Text className="text-zinc-400 text-xs">DURACIÓN</Text>
+                    <Text className="text-zinc-400 text-xs">DURACIÃ“N</Text>
                     <Text className="text-white text-2xl font-bold">
-                      {stack.monthlyServing} días
+                      {stack.monthlyServing} dÃ­as
                     </Text>
                   </View>
                 </View>
 
                 <TouchableOpacity
                   onPress={() => applyStack(stack)}
-                  className="bg-emerald-500 rounded-lg p-3"
+                  className="bg-primary rounded-lg p-3"
                 >
                   <Text className="text-white font-bold text-center">
                     Aplicar Stack
@@ -523,15 +523,15 @@ export default function SupplementStacks() {
         {/* Interactions Tab */}
         {activeTab === 'interactions' && (
           <View className="px-6 pt-6">
-            <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30 mb-6">
+            <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
               <View className="flex-row items-start">
-                <Ionicons name="information-circle" size={20} color="#3B82F6" />
+                <Ionicons name="information-circle" size={20} color="#9D12DE" />
                 <View className="flex-1 ml-3">
-                  <Text className="text-blue-400 font-bold mb-2">
+                  <Text className="text-primary/80 font-bold mb-2">
                     Interacciones entre Suplementos
                   </Text>
-                  <Text className="text-blue-300 text-sm">
-                    Conoce cómo interactúan tus suplementos para optimizar resultados
+                  <Text className="text-primary/60 text-sm">
+                    Conoce cÃ³mo interactÃºan tus suplementos para optimizar resultados
                   </Text>
                 </View>
               </View>
@@ -557,7 +557,7 @@ export default function SupplementStacks() {
                         ? 'SINERGIA POSITIVA'
                         : interaction.type === 'negative'
                         ? 'INTERFERENCIA'
-                        : 'ATENCIÓN'}
+                        : 'ATENCIÃ“N'}
                     </Text>
                   </View>
 
@@ -578,13 +578,13 @@ export default function SupplementStacks() {
         <View className="px-6 pb-6 pt-2">
           <View className="bg-amber-500/10 rounded-xl p-4 border border-amber-500/30">
             <View className="flex-row items-start">
-              <Ionicons name="warning" size={20} color="#F59E0B" />
+              <Ionicons name="warning" size={20} color="#FFEA00" />
               <View className="flex-1 ml-3">
                 <Text className="text-amber-400 font-bold mb-2">
-                  Consulta Médica
+                  Consulta MÃ©dica
                 </Text>
                 <Text className="text-amber-300 text-sm">
-                  Siempre consulta con un profesional antes de comenzar suplementación
+                  Siempre consulta con un profesional antes de comenzar suplementaciÃ³n
                 </Text>
               </View>
             </View>
@@ -594,3 +594,4 @@ export default function SupplementStacks() {
     </View>
   );
 }
+

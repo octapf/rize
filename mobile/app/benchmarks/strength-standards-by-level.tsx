@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -183,10 +183,10 @@ export default function StrengthStandardsByLevel() {
 
   const getColorClass = (color: string) => {
     const colors: { [key: string]: string } = {
-      blue: 'bg-blue-500',
+      blue: 'bg-primary',
       pink: 'bg-pink-500',
       zinc: 'bg-zinc-500',
-      green: 'bg-green-500',
+      green: 'bg-primary',
       purple: 'bg-purple-500',
       amber: 'bg-amber-500',
       red: 'bg-red-500',
@@ -250,7 +250,7 @@ export default function StrengthStandardsByLevel() {
 
       <ScrollView className="flex-1" showsVerticalScrollIndicator={false}>
         <View className="px-6 pt-6">
-          <View className="bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl p-6 mb-6">
+          <View className="bg-gradient-to-r from-primary to-[#7D0EBE] rounded-xl p-6 mb-6">
             <Text className="text-white text-2xl font-bold mb-2">Where Do You Stand?</Text>
             <Text className="text-white opacity-90">
               Performance benchmarks by experience level
@@ -264,7 +264,7 @@ export default function StrengthStandardsByLevel() {
               <TouchableOpacity
                 onPress={() => setSelectedGender('male')}
                 className={`flex-1 ${
-                  selectedGender === 'male' ? 'bg-blue-500' : 'bg-zinc-800'
+                  selectedGender === 'male' ? 'bg-primary' : 'bg-zinc-800'
                 } rounded-xl p-4 border ${
                   selectedGender === 'male' ? 'border-blue-300' : 'border-zinc-700'
                 }`}
@@ -299,7 +299,7 @@ export default function StrengthStandardsByLevel() {
                 />
                 <TouchableOpacity
                   onPress={() => setUnit(unit === 'lbs' ? 'kg' : 'lbs')}
-                  className="bg-blue-500 rounded-xl px-6 py-3"
+                  className="bg-primary rounded-xl px-6 py-3"
                 >
                   <Text className="text-white font-bold">{unit}</Text>
                 </TouchableOpacity>
@@ -307,9 +307,9 @@ export default function StrengthStandardsByLevel() {
             </View>
 
             {bw > 0 && (
-              <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30">
-                <Text className="text-blue-400 text-sm">
-                  {unit === 'lbs' ? `≈ ${bwKg.toFixed(1)} kg` : `≈ ${bwLbs.toFixed(1)} lbs`}
+              <View className="bg-primary/10 rounded-xl p-4 border border-primary/30">
+                <Text className="text-primary/80 text-sm">
+                  {unit === 'lbs' ? `â‰ˆ ${bwKg.toFixed(1)} kg` : `â‰ˆ ${bwLbs.toFixed(1)} lbs`}
                 </Text>
               </View>
             )}
@@ -349,8 +349,8 @@ export default function StrengthStandardsByLevel() {
                       </View>
                       <View className="h-px bg-zinc-700 my-2" />
                       <View className="flex-row justify-between">
-                        <Text className="text-emerald-400 font-bold">Total:</Text>
-                        <Text className="text-emerald-400 font-bold">
+                        <Text className="text-primary font-bold">Total:</Text>
+                        <Text className="text-primary font-bold">
                           {formatWeight(level.total(bwLbs))}
                         </Text>
                       </View>
@@ -371,18 +371,18 @@ export default function StrengthStandardsByLevel() {
                 {currentGender.weight_classes.map((wc: any, idx: number) => (
                   <View key={idx} className="flex-row justify-between items-center bg-zinc-800 rounded-xl px-4 py-3 mb-2 border border-zinc-700">
                     <Text className="text-white font-bold">{wc.class}</Text>
-                    <Text className="text-emerald-400 font-mono">{wc.typical_total}</Text>
+                    <Text className="text-primary font-mono">{wc.typical_total}</Text>
                   </View>
                 ))}
               </View>
             </>
           ) : (
-            <View className="bg-blue-500/10 rounded-xl p-6 border border-blue-500/30 mb-6">
-              <Ionicons name="information-circle" size={32} color="#3b82f6" />
-              <Text className="text-blue-400 font-bold text-lg mt-3 mb-2">
+            <View className="bg-primary/10 rounded-xl p-6 border border-primary/30 mb-6">
+              <Ionicons name="information-circle" size={32} color="#9D12DE" />
+              <Text className="text-primary/80 font-bold text-lg mt-3 mb-2">
                 Enter Your Bodyweight
               </Text>
-              <Text className="text-blue-300 text-sm">
+              <Text className="text-primary/60 text-sm">
                 Input your bodyweight above to see strength standards for your weight class
               </Text>
             </View>
@@ -398,9 +398,9 @@ export default function StrengthStandardsByLevel() {
               </Text>
             </View>
 
-            <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30 mb-3">
-              <Text className="text-blue-400 font-bold mb-2">Raw vs Equipped</Text>
-              <Text className="text-blue-300 text-sm">
+            <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-3">
+              <Text className="text-primary/80 font-bold mb-2">Raw vs Equipped</Text>
+              <Text className="text-primary/60 text-sm">
                 These standards are for RAW lifting (belt, wrist wraps, sleeves). Equipped lifting has different standards.
               </Text>
             </View>
@@ -412,9 +412,9 @@ export default function StrengthStandardsByLevel() {
               </Text>
             </View>
 
-            <View className="bg-emerald-500/10 rounded-xl p-4 border border-emerald-500/30">
-              <Text className="text-emerald-400 font-bold mb-2">Compare to Yourself</Text>
-              <Text className="text-emerald-300 text-sm">
+            <View className="bg-primary/10 rounded-xl p-4 border border-primary/30">
+              <Text className="text-primary font-bold mb-2">Compare to Yourself</Text>
+              <Text className="text-primary/80 text-sm">
                 Most important comparison is YOU vs last year. Constant improvement matters more than hitting exact numbers.
               </Text>
             </View>
@@ -422,15 +422,18 @@ export default function StrengthStandardsByLevel() {
 
           <View className="bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-xl p-5 border border-purple-500/30 mb-6">
             <Text className="text-purple-400 font-bold text-lg mb-3">Wilks Score Reference</Text>
-            <Text className="text-purple-300 text-sm mb-2">• 250-300: Novice</Text>
-            <Text className="text-purple-300 text-sm mb-2">• 300-350: Intermediate</Text>
-            <Text className="text-purple-300 text-sm mb-2">• 350-400: Advanced</Text>
-            <Text className="text-purple-300 text-sm mb-2">• 400-450: Competitive</Text>
-            <Text className="text-purple-300 text-sm mb-2">• 450-500: Elite</Text>
-            <Text className="text-purple-300 text-sm">• 500+: World Class</Text>
+            <Text className="text-purple-300 text-sm mb-2">â€¢ 250-300: Novice</Text>
+            <Text className="text-purple-300 text-sm mb-2">â€¢ 300-350: Intermediate</Text>
+            <Text className="text-purple-300 text-sm mb-2">â€¢ 350-400: Advanced</Text>
+            <Text className="text-purple-300 text-sm mb-2">â€¢ 400-450: Competitive</Text>
+            <Text className="text-purple-300 text-sm mb-2">â€¢ 450-500: Elite</Text>
+            <Text className="text-purple-300 text-sm">â€¢ 500+: World Class</Text>
           </View>
         </View>
       </ScrollView>
     </View>
   );
 }
+
+
+

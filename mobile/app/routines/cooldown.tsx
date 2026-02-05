@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -46,13 +46,13 @@ const COOLDOWN_ROUTINES: CooldownRoutine[] = [
         duration: '2 min',
         target: 'Columna vertebral, core',
         instructions: 'En cuatro patas, alternar entre arquear espalda (vaca) y redondear (gato). 10 repeticiones lentas.',
-        tips: 'Sincroniza con respiración: inhala vaca, exhala gato',
+        tips: 'Sincroniza con respiraciÃ³n: inhala vaca, exhala gato',
       },
       {
         name: 'Pigeon Pose',
         duration: '2 min',
-        target: 'Flexores cadera, glúteos',
-        instructions: 'Pierna doblada adelante, otra extendida atrás. Inclinarse hacia adelante. 1 min por lado.',
+        target: 'Flexores cadera, glÃºteos',
+        instructions: 'Pierna doblada adelante, otra extendida atrÃ¡s. Inclinarse hacia adelante. 1 min por lado.',
         tips: 'Si duele mucho, coloca almohada bajo cadera',
       },
       {
@@ -60,27 +60,27 @@ const COOLDOWN_ROUTINES: CooldownRoutine[] = [
         duration: '2 min',
         target: 'Isquiotibiales',
         instructions: 'Sentado, una pierna extendida, alcanzar dedos del pie. 1 min por lado.',
-        tips: 'Mantén espalda recta, no redondees',
+        tips: 'MantÃ©n espalda recta, no redondees',
       },
       {
         name: 'Quad Stretch',
         duration: '2 min',
-        target: 'Cuádriceps',
-        instructions: 'De pie, llevar talón a glúteo, mantener rodillas juntas. 1 min por lado.',
-        tips: 'Apóyate en pared si pierdes balance',
+        target: 'CuÃ¡driceps',
+        instructions: 'De pie, llevar talÃ³n a glÃºteo, mantener rodillas juntas. 1 min por lado.',
+        tips: 'ApÃ³yate en pared si pierdes balance',
       },
       {
         name: 'Shoulder Stretch',
         duration: '2 min',
         target: 'Hombros, pecho',
         instructions: 'Brazo cruzado al pecho, presionar con otro brazo. 1 min por lado.',
-        tips: 'Mantén hombros relajados',
+        tips: 'MantÃ©n hombros relajados',
       },
       {
         name: 'Tricep Stretch',
         duration: '2 min',
-        target: 'Tríceps',
-        instructions: 'Brazo sobre cabeza, codo doblado atrás, presionar con otra mano. 1 min por lado.',
+        target: 'TrÃ­ceps',
+        instructions: 'Brazo sobre cabeza, codo doblado atrÃ¡s, presionar con otra mano. 1 min por lado.',
         tips: 'No arquees espalda baja',
       },
       {
@@ -91,42 +91,42 @@ const COOLDOWN_ROUTINES: CooldownRoutine[] = [
         tips: 'Hombros pegados al suelo',
       },
     ],
-    benefits: ['Reduce dolor muscular', 'Mejora flexibilidad', 'Acelera recuperación', 'Calma sistema nervioso'],
-    icon: '🧘‍♂️',
+    benefits: ['Reduce dolor muscular', 'Mejora flexibilidad', 'Acelera recuperaciÃ³n', 'Calma sistema nervioso'],
+    icon: 'ðŸ§˜â€â™‚ï¸',
   },
   {
     id: '2',
     name: 'Cooldown Tren Superior',
     duration: 10,
-    focus: 'Post-entrenamiento de empuje/tirón',
+    focus: 'Post-entrenamiento de empuje/tirÃ³n',
     type: 'upper',
     stretches: [
       {
         name: 'Doorway Pec Stretch',
         duration: '2 min',
         target: 'Pectorales',
-        instructions: 'Brazo en marco de puerta, rotar cuerpo opuesto. Probar ángulos diferentes. 1 min por lado.',
-        tips: 'Variación: alto/medio/bajo para diferentes fibras',
+        instructions: 'Brazo en marco de puerta, rotar cuerpo opuesto. Probar Ã¡ngulos diferentes. 1 min por lado.',
+        tips: 'VariaciÃ³n: alto/medio/bajo para diferentes fibras',
       },
       {
         name: 'Lat Stretch',
         duration: '2 min',
         target: 'Dorsales',
-        instructions: 'Agarrar poste, inclinarse hacia atrás manteniendo brazos rectos. 1 min por lado.',
+        instructions: 'Agarrar poste, inclinarse hacia atrÃ¡s manteniendo brazos rectos. 1 min por lado.',
         tips: 'Siente estiramiento en costado',
       },
       {
         name: 'Behind Back Shoulder Stretch',
         duration: '2 min',
         target: 'Hombros anteriores',
-        instructions: 'Manos entrelazadas detrás espalda baja, elevar brazos suavemente.',
-        tips: 'Pecho hacia afuera, escápulas juntas',
+        instructions: 'Manos entrelazadas detrÃ¡s espalda baja, elevar brazos suavemente.',
+        tips: 'Pecho hacia afuera, escÃ¡pulas juntas',
       },
       {
         name: 'Overhead Tricep Stretch',
         duration: '1 min',
-        target: 'Tríceps',
-        instructions: 'Codo doblado atrás de cabeza, presionar con mano opuesta. 30 seg/lado.',
+        target: 'TrÃ­ceps',
+        instructions: 'Codo doblado atrÃ¡s de cabeza, presionar con mano opuesta. 30 seg/lado.',
         tips: 'Core activado para proteger lumbar',
       },
       {
@@ -134,18 +134,18 @@ const COOLDOWN_ROUTINES: CooldownRoutine[] = [
         duration: '1 min',
         target: 'Antebrazos',
         instructions: 'Brazo extendido, palma hacia abajo, tirar dedos con otra mano. 30 seg/lado.',
-        tips: 'Importante si entrenaste bíceps/espalda',
+        tips: 'Importante si entrenaste bÃ­ceps/espalda',
       },
       {
         name: 'Neck Stretches',
         duration: '2 min',
         target: 'Trapecio, cuello',
         instructions: 'Inclinar cabeza a lado, presionar suavemente. Todas direcciones.',
-        tips: 'Muy suave, nunca rotar rápido',
+        tips: 'Muy suave, nunca rotar rÃ¡pido',
       },
     ],
-    benefits: ['Previene rigidez hombros', 'Reduce tensión cuello', 'Mejora postura', 'Libera trapecio'],
-    icon: '💪',
+    benefits: ['Previene rigidez hombros', 'Reduce tensiÃ³n cuello', 'Mejora postura', 'Libera trapecio'],
+    icon: 'ðŸ’ª',
   },
   {
     id: '3',
@@ -157,9 +157,9 @@ const COOLDOWN_ROUTINES: CooldownRoutine[] = [
       {
         name: 'Standing Quad Stretch',
         duration: '2 min',
-        target: 'Cuádriceps',
-        instructions: 'De pie, talón a glúteo, rodillas juntas. 1 min/lado.',
-        tips: 'Squeeze glúteos para mayor estiramiento',
+        target: 'CuÃ¡driceps',
+        instructions: 'De pie, talÃ³n a glÃºteo, rodillas juntas. 1 min/lado.',
+        tips: 'Squeeze glÃºteos para mayor estiramiento',
       },
       {
         name: 'Seated Hamstring Stretch',
@@ -172,22 +172,22 @@ const COOLDOWN_ROUTINES: CooldownRoutine[] = [
         name: '90/90 Hip Stretch',
         duration: '3 min',
         target: 'Rotadores cadera',
-        instructions: 'Sentado con piernas en 90°, cambiar de lado. Inclinarse adelante. 1.5 min/lado.',
-        tips: 'Estiramiento más importante para squatters',
+        instructions: 'Sentado con piernas en 90Â°, cambiar de lado. Inclinarse adelante. 1.5 min/lado.',
+        tips: 'Estiramiento mÃ¡s importante para squatters',
       },
       {
         name: 'Pigeon Pose',
         duration: '2 min',
-        target: 'Glúteos, flexores cadera',
-        instructions: 'Rodilla doblada adelante, pierna atrás extendida. 1 min/lado.',
+        target: 'GlÃºteos, flexores cadera',
+        instructions: 'Rodilla doblada adelante, pierna atrÃ¡s extendida. 1 min/lado.',
         tips: 'Respira profundo, relaja en la incomodidad',
       },
       {
         name: 'Calf Stretch',
         duration: '2 min',
-        target: 'Gemelos, sóleo',
-        instructions: 'Contra pared, pierna atrás recta (gemelo), luego doblada (sóleo). 30 seg × 2/lado.',
-        tips: 'Talón pegado al suelo siempre',
+        target: 'Gemelos, sÃ³leo',
+        instructions: 'Contra pared, pierna atrÃ¡s recta (gemelo), luego doblada (sÃ³leo). 30 seg Ã— 2/lado.',
+        tips: 'TalÃ³n pegado al suelo siempre',
       },
       {
         name: 'Butterfly Stretch',
@@ -197,8 +197,8 @@ const COOLDOWN_ROUTINES: CooldownRoutine[] = [
         tips: 'Espalda recta, no redondees',
       },
     ],
-    benefits: ['Previene DOMS intenso', 'Mantiene movilidad cadera', 'Reduce tensión lumbar', 'Acelera recuperación'],
-    icon: '🦵',
+    benefits: ['Previene DOMS intenso', 'Mantiene movilidad cadera', 'Reduce tensiÃ³n lumbar', 'Acelera recuperaciÃ³n'],
+    icon: 'ðŸ¦µ',
   },
   {
     id: '4',
@@ -210,47 +210,47 @@ const COOLDOWN_ROUTINES: CooldownRoutine[] = [
       {
         name: 'Light Walk',
         duration: '3 min',
-        target: 'Circulación general',
+        target: 'CirculaciÃ³n general',
         instructions: 'Caminar a paso muy ligero, brazos relajados.',
-        tips: 'Bajar frecuencia cardíaca gradualmente',
+        tips: 'Bajar frecuencia cardÃ­aca gradualmente',
       },
       {
         name: 'Arm Circles',
         duration: '1 min',
         target: 'Hombros',
-        instructions: 'Círculos grandes con brazos, 30 seg cada dirección.',
+        instructions: 'CÃ­rculos grandes con brazos, 30 seg cada direcciÃ³n.',
         tips: 'Movimientos controlados y suaves',
       },
       {
         name: 'Leg Swings',
         duration: '2 min',
         target: 'Caderas',
-        instructions: 'Balancear pierna adelante-atrás y lateral. 30 seg × 2/lado.',
-        tips: 'Mantén core tenso para estabilidad',
+        instructions: 'Balancear pierna adelante-atrÃ¡s y lateral. 30 seg Ã— 2/lado.',
+        tips: 'MantÃ©n core tenso para estabilidad',
       },
       {
         name: 'World\'s Greatest Stretch',
         duration: '2 min',
         target: 'Todo el cuerpo',
-        instructions: 'Posición de lunge, rotar hacia pierna adelantada, alcanzar cielo. 1 min/lado.',
-        tips: 'Movimiento dinámico, no static hold',
+        instructions: 'PosiciÃ³n de lunge, rotar hacia pierna adelantada, alcanzar cielo. 1 min/lado.',
+        tips: 'Movimiento dinÃ¡mico, no static hold',
       },
       {
         name: 'Deep Breathing',
         duration: '2 min',
         target: 'Sistema nervioso',
         instructions: 'Acostado o sentado, 4 seg inhala (nariz), 6 seg exhala (boca). 10 repeticiones.',
-        tips: 'Activa parasimpático, acelera recuperación',
+        tips: 'Activa parasimpÃ¡tico, acelera recuperaciÃ³n',
       },
     ],
-    benefits: ['Reduce lactato', 'Mejora circulación', 'Previene mareos post-workout', 'Calma SNC'],
-    icon: '🚶',
+    benefits: ['Reduce lactato', 'Mejora circulaciÃ³n', 'Previene mareos post-workout', 'Calma SNC'],
+    icon: 'ðŸš¶',
   },
   {
     id: '5',
     name: 'Foam Rolling (8 min)',
     duration: 8,
-    focus: 'Liberación miofascial',
+    focus: 'LiberaciÃ³n miofascial',
     type: 'active-recovery',
     stretches: [
       {
@@ -263,22 +263,22 @@ const COOLDOWN_ROUTINES: CooldownRoutine[] = [
       {
         name: 'Quad Roll',
         duration: '2 min',
-        target: 'Cuádriceps',
+        target: 'CuÃ¡driceps',
         instructions: 'Boca abajo, roller bajo muslos, rodar lentamente. 1 min/lado.',
-        tips: 'Busca nudos, mantén 20-30 seg',
+        tips: 'Busca nudos, mantÃ©n 20-30 seg',
       },
       {
         name: 'Upper Back Roll',
         duration: '2 min',
         target: 'Dorsales, trapecios',
-        instructions: 'Boca arriba, roller entre escápulas, brazos cruzados pecho.',
+        instructions: 'Boca arriba, roller entre escÃ¡pulas, brazos cruzados pecho.',
         tips: 'No rodar cuello ni lumbar directamente',
       },
       {
         name: 'Glute Roll',
         duration: '1 min',
-        target: 'Glúteos',
-        instructions: 'Sentado en roller, inclinar hacia lado, rodar glúteo. 30 seg/lado.',
+        target: 'GlÃºteos',
+        instructions: 'Sentado en roller, inclinar hacia lado, rodar glÃºteo. 30 seg/lado.',
         tips: 'Muy doloroso en TFL/piriforme',
       },
       {
@@ -286,11 +286,11 @@ const COOLDOWN_ROUTINES: CooldownRoutine[] = [
         duration: '1 min',
         target: 'Gemelos',
         instructions: 'Piernas sobre roller, elevar cadera, rodar. 30 seg/lado.',
-        tips: 'Rotar pierna para cubrir toda área',
+        tips: 'Rotar pierna para cubrir toda Ã¡rea',
       },
     ],
-    benefits: ['Reduce adherencias fasciales', 'Mejora movilidad', 'Acelera recuperación', 'Reduce DOMS'],
-    icon: '🎯',
+    benefits: ['Reduce adherencias fasciales', 'Mejora movilidad', 'Acelera recuperaciÃ³n', 'Reduce DOMS'],
+    icon: 'ðŸŽ¯',
   },
 ];
 
@@ -322,7 +322,7 @@ export default function CooldownRoutines() {
       setCurrentStretch(currentStretch + 1);
     } else {
       Alert.alert(
-        'Cooldown Completado! 🎉',
+        'Cooldown Completado! ðŸŽ‰',
         'Excelente trabajo. Recuerda hidratarte y descansar bien.',
         [
           { text: 'Cerrar', onPress: () => { setSelectedRoutine(null); setCurrentStretch(0); } },
@@ -362,7 +362,7 @@ export default function CooldownRoutines() {
                 onPress={() => setFilter(f.id as any)}
                 className={`flex-row items-center px-4 py-2 rounded-lg ${
                   filter === f.id
-                    ? 'bg-blue-500'
+                    ? 'bg-primary'
                     : 'bg-zinc-900 border border-zinc-800'
                 }`}
               >
@@ -389,15 +389,15 @@ export default function CooldownRoutines() {
           {!selectedRoutine ? (
             <>
               {/* Info Card */}
-              <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30 mb-6">
+              <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
                 <View className="flex-row items-start">
-                  <Ionicons name="information-circle" size={20} color="#3B82F6" />
+                  <Ionicons name="information-circle" size={20} color="#9D12DE" />
                   <View className="flex-1 ml-3">
-                    <Text className="text-blue-400 font-bold mb-2">
-                      Por Qué Cool Down Es Importante
+                    <Text className="text-primary/80 font-bold mb-2">
+                      Por QuÃ© Cool Down Es Importante
                     </Text>
-                    <Text className="text-blue-300 text-sm">
-                      Reducir frecuencia cardíaca gradualmente, eliminar lactato, prevenir DOMS y mejorar flexibilidad cuando músculos están calientes.
+                    <Text className="text-primary/60 text-sm">
+                      Reducir frecuencia cardÃ­aca gradualmente, eliminar lactato, prevenir DOMS y mejorar flexibilidad cuando mÃºsculos estÃ¡n calientes.
                     </Text>
                   </View>
                 </View>
@@ -413,7 +413,7 @@ export default function CooldownRoutines() {
                 >
                   <View className="flex-row items-start justify-between mb-3">
                     <View className="flex-row items-start flex-1">
-                      <View className="w-14 h-14 bg-blue-500 rounded-xl items-center justify-center mr-3">
+                      <View className="w-14 h-14 bg-primary rounded-xl items-center justify-center mr-3">
                         <Text className="text-3xl">{routine.icon}</Text>
                       </View>
                       <View className="flex-1">
@@ -423,8 +423,8 @@ export default function CooldownRoutines() {
                         <Text className="text-zinc-400 text-sm">{routine.focus}</Text>
                       </View>
                     </View>
-                    <View className="bg-blue-500/10 rounded-lg px-3 py-1 border border-blue-500/30">
-                      <Text className="text-blue-400 text-xs font-bold">{routine.duration} MIN</Text>
+                    <View className="bg-primary/10 rounded-lg px-3 py-1 border border-primary/30">
+                      <Text className="text-primary/80 text-xs font-bold">{routine.duration} MIN</Text>
                     </View>
                   </View>
 
@@ -433,14 +433,14 @@ export default function CooldownRoutines() {
                     <Text className="text-zinc-400 text-xs mb-2">ESTIRAMIENTOS ({routine.stretches.length})</Text>
                     {routine.stretches.slice(0, 3).map((stretch, index) => (
                       <View key={index} className="flex-row items-center mb-1">
-                        <View className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-2" />
+                        <View className="w-1.5 h-1.5 bg-primary rounded-full mr-2" />
                         <Text className="text-zinc-300 text-sm flex-1">{stretch.name}</Text>
                         <Text className="text-zinc-500 text-xs">{stretch.duration}</Text>
                       </View>
                     ))}
                     {routine.stretches.length > 3 && (
-                      <Text className="text-blue-400 text-sm ml-3.5">
-                        +{routine.stretches.length - 3} más
+                      <Text className="text-primary/80 text-sm ml-3.5">
+                        +{routine.stretches.length - 3} mÃ¡s
                       </Text>
                     )}
                   </View>
@@ -448,8 +448,8 @@ export default function CooldownRoutines() {
                   {/* Benefits */}
                   <View className="flex-row flex-wrap gap-2">
                     {routine.benefits.slice(0, 2).map((benefit, index) => (
-                      <View key={index} className="bg-blue-500/10 rounded px-2 py-1">
-                        <Text className="text-blue-400 text-xs">{benefit}</Text>
+                      <View key={index} className="bg-primary/10 rounded px-2 py-1">
+                        <Text className="text-primary/80 text-xs">{benefit}</Text>
                       </View>
                     ))}
                   </View>
@@ -468,7 +468,7 @@ export default function CooldownRoutines() {
                 </View>
                 <View className="h-2 bg-zinc-800 rounded-full overflow-hidden">
                   <View
-                    className="h-full bg-blue-500 rounded-full"
+                    className="h-full bg-primary rounded-full"
                     style={{
                       width: `${((currentStretch + 1) / selectedRoutine.stretches.length) * 100}%`,
                     }}
@@ -480,7 +480,7 @@ export default function CooldownRoutines() {
               <View className="bg-zinc-900 rounded-xl p-6 mb-6 border border-zinc-800">
                 <View className="mb-4">
                   <View className="flex-row items-center justify-between mb-2">
-                    <View className="bg-blue-500 rounded-lg px-3 py-1">
+                    <View className="bg-primary rounded-lg px-3 py-1">
                       <Text className="text-white font-bold text-sm">
                         {selectedRoutine.stretches[currentStretch].duration}
                       </Text>
@@ -492,7 +492,7 @@ export default function CooldownRoutines() {
                   <Text className="text-white font-bold text-2xl mb-2">
                     {selectedRoutine.stretches[currentStretch].name}
                   </Text>
-                  <Text className="text-blue-400 font-semibold">
+                  <Text className="text-primary/80 font-semibold">
                     {selectedRoutine.stretches[currentStretch].target}
                   </Text>
                 </View>
@@ -502,10 +502,10 @@ export default function CooldownRoutines() {
                   <Text className="text-white mb-3">
                     {selectedRoutine.stretches[currentStretch].instructions}
                   </Text>
-                  <View className="bg-blue-500/10 rounded-lg p-3 border border-blue-500/30">
+                  <View className="bg-primary/10 rounded-lg p-3 border border-primary/30">
                     <View className="flex-row items-start">
-                      <Ionicons name="bulb" size={16} color="#3B82F6" />
-                      <Text className="text-blue-300 text-sm ml-2 flex-1">
+                      <Ionicons name="bulb" size={16} color="#9D12DE" />
+                      <Text className="text-primary/60 text-sm ml-2 flex-1">
                         {selectedRoutine.stretches[currentStretch].tips}
                       </Text>
                     </View>
@@ -526,7 +526,7 @@ export default function CooldownRoutines() {
                   </TouchableOpacity>
                   <TouchableOpacity
                     onPress={nextStretch}
-                    className="flex-1 bg-blue-500 rounded-xl p-4 flex-row items-center justify-center"
+                    className="flex-1 bg-primary rounded-xl p-4 flex-row items-center justify-center"
                   >
                     <Text className="text-white font-bold mr-2">
                       {currentStretch === selectedRoutine.stretches.length - 1 ? 'Finalizar' : 'Siguiente'}
@@ -548,25 +548,25 @@ export default function CooldownRoutines() {
                     key={index}
                     onPress={() => setCurrentStretch(index)}
                     className={`flex-row items-center p-3 rounded-lg mb-2 ${
-                      index === currentStretch ? 'bg-blue-500' : index < currentStretch ? 'bg-emerald-500/20' : 'bg-zinc-800'
+                      index === currentStretch ? 'bg-primary' : index < currentStretch ? 'bg-primary/20' : 'bg-zinc-800'
                     }`}
                   >
                     <View className={`w-8 h-8 rounded-full items-center justify-center mr-3 ${
-                      index === currentStretch ? 'bg-white' : index < currentStretch ? 'bg-emerald-500' : 'bg-zinc-700'
+                      index === currentStretch ? 'bg-white' : index < currentStretch ? 'bg-primary' : 'bg-zinc-700'
                     }`}>
                       {index < currentStretch ? (
                         <Ionicons name="checkmark" size={18} color="white" />
                       ) : (
-                        <Text className={`font-bold ${index === currentStretch ? 'text-blue-500' : 'text-zinc-400'}`}>
+                        <Text className={`font-bold ${index === currentStretch ? 'text-primary' : 'text-zinc-400'}`}>
                           {index + 1}
                         </Text>
                       )}
                     </View>
                     <View className="flex-1">
-                      <Text className={`font-semibold ${index === currentStretch ? 'text-white' : index < currentStretch ? 'text-emerald-400' : 'text-zinc-400'}`}>
+                      <Text className={`font-semibold ${index === currentStretch ? 'text-white' : index < currentStretch ? 'text-primary' : 'text-zinc-400'}`}>
                         {stretch.name}
                       </Text>
-                      <Text className={`text-xs ${index === currentStretch ? 'text-blue-200' : 'text-zinc-500'}`}>
+                      <Text className={`text-xs ${index === currentStretch ? 'text-primary/40' : 'text-zinc-500'}`}>
                         {stretch.target}
                       </Text>
                     </View>
@@ -592,3 +592,4 @@ export default function CooldownRoutines() {
     </View>
   );
 }
+

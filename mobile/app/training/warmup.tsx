@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -237,10 +237,10 @@ export default function WarmupProtocols() {
 
   const getColorClass = (color: string) => {
     const colors: { [key: string]: string } = {
-      blue: 'bg-blue-500',
+      blue: 'bg-primary',
       red: 'bg-red-500',
       purple: 'bg-purple-500',
-      emerald: 'bg-emerald-500',
+      emerald: 'bg-primary',
     };
     return colors[color];
   };
@@ -313,7 +313,7 @@ export default function WarmupProtocols() {
               <View key={idx} className="mb-5 last:mb-0">
                 <View className="flex-row items-center justify-between mb-3">
                   <Text className="text-white font-bold text-lg">{idx + 1}. {phase.phase}</Text>
-                  <Text className="text-emerald-400 text-sm font-bold">{phase.duration}</Text>
+                  <Text className="text-primary text-sm font-bold">{phase.duration}</Text>
                 </View>
 
                 {phase.exercises.map((exercise, exIdx) => (
@@ -321,7 +321,7 @@ export default function WarmupProtocols() {
                     <View className="flex-row justify-between items-start mb-2">
                       <Text className="text-white font-bold flex-1">{exercise.name}</Text>
                       <Text className={`text-${currentProtocol.color}-400 font-bold ml-2`}>
-                        {exercise.sets}×{exercise.reps}
+                        {exercise.sets}Ã—{exercise.reps}
                       </Text>
                     </View>
                     <Text className="text-zinc-400 text-sm italic">{exercise.notes}</Text>
@@ -335,7 +335,7 @@ export default function WarmupProtocols() {
             <Text className="text-white font-bold text-lg mb-3">Important Notes</Text>
             {currentProtocol.notes.map((note, idx) => (
               <View key={idx} className="flex-row items-start mb-2 last:mb-0">
-                <Text className={`text-${currentProtocol.color}-400 mr-2`}>•</Text>
+                <Text className={`text-${currentProtocol.color}-400 mr-2`}>â€¢</Text>
                 <Text className="text-zinc-300 text-sm flex-1">{note}</Text>
               </View>
             ))}
@@ -344,19 +344,19 @@ export default function WarmupProtocols() {
           <View className="bg-amber-500/10 rounded-xl p-4 border border-amber-500/30 mb-6">
             <Text className="text-amber-400 font-bold mb-2">General Principles</Text>
             <Text className="text-amber-300 text-sm mb-2">
-              • Never jump straight to working sets
+              â€¢ Never jump straight to working sets
             </Text>
             <Text className="text-amber-300 text-sm mb-2">
-              • Increase weight gradually (jumps get smaller as weight increases)
+              â€¢ Increase weight gradually (jumps get smaller as weight increases)
             </Text>
             <Text className="text-amber-300 text-sm mb-2">
-              • Don't fatigue yourself in warm-up (stop well before failure)
+              â€¢ Don't fatigue yourself in warm-up (stop well before failure)
             </Text>
             <Text className="text-amber-300 text-sm mb-2">
-              • More warm-up for older lifters or injury-prone
+              â€¢ More warm-up for older lifters or injury-prone
             </Text>
             <Text className="text-amber-300 text-sm">
-              • Adjust based on how you feel (stiff = more mobility)
+              â€¢ Adjust based on how you feel (stiff = more mobility)
             </Text>
           </View>
 
@@ -377,3 +377,4 @@ export default function WarmupProtocols() {
     </View>
   );
 }
+

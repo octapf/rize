@@ -4,13 +4,22 @@ import Constants from 'expo-constants';
 
 const API_URL = Constants.expoConfig?.extra?.apiUrl || process.env.EXPO_PUBLIC_API_URL || 'http://localhost:5000';
 
+// Normalize base URL to avoid double stacking /api or /api/v1
+const normalizedApiUrl = API_URL.replace(/\/+$/, '');
+const baseURL = normalizedApiUrl.endsWith('/api/v1')
+  ? normalizedApiUrl
+  : normalizedApiUrl.endsWith('/api')
+    ? `${normalizedApiUrl}/v1`
+    : `${normalizedApiUrl}/api/v1`;
+
 export class ApiClient {
   private client: AxiosInstance;
+  private token: string | null = null;
   private refreshPromise: Promise<string> | null = null;
 
   constructor() {
     this.client = axios.create({
-      baseURL: `${API_URL}/api/v1`,
+      baseURL,
       timeout: 10000,
       headers: {
         'Content-Type': 'application/json',
@@ -24,7 +33,12 @@ export class ApiClient {
     // Request interceptor - Add auth token
     this.client.interceptors.request.use(
       async (config: InternalAxiosRequestConfig) => {
-        const token = await storage.getString('accessToken');
+        // Prefer memory token first (fastest/sync), then storage
+        let token = this.token;
+        if (!token) {
+            token = await storage.getString('accessToken');
+        }
+
         if (token && config.headers) {
           config.headers.Authorization = `Bearer ${token}`;
         }
@@ -114,6 +128,11 @@ export class ApiClient {
 
   delete<T = any>(url: string, config = {}) {
     return this.client.delete<T>(url, config);
+  }
+
+  setAuthToken(token: string) {
+    this.token = token;
+    this.client.defaults.headers.common['Authorization'] = `Bearer ${token}`;
   }
 }
 

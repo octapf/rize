@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -18,7 +18,7 @@ export default function ConsistencyMetrics() {
       icon: 'checkmark-circle' as const,
       color: 'blue',
       description: 'Percentage of planned workouts completed',
-      calculation: '(Completed Workouts / Planned Workouts) × 100',
+      calculation: '(Completed Workouts / Planned Workouts) Ã— 100',
       targets: [
         { level: 'Excellent', range: '90-100%', impact: 'Maximum progress' },
         { level: 'Good', range: '80-89%', impact: 'Solid progress' },
@@ -48,9 +48,9 @@ export default function ConsistencyMetrics() {
       description: 'Week-to-week volume stability',
       calculation: 'Standard deviation of weekly volume',
       targets: [
-        { level: 'Very Stable', range: '±5%', impact: 'Excellent programming' },
-        { level: 'Stable', range: '±10%', impact: 'Good programming' },
-        { level: 'Variable', range: '±20%', impact: 'Consider planning' },
+        { level: 'Very Stable', range: 'Â±5%', impact: 'Excellent programming' },
+        { level: 'Stable', range: 'Â±10%', impact: 'Good programming' },
+        { level: 'Variable', range: 'Â±20%', impact: 'Consider planning' },
         { level: 'Erratic', range: '>20%', impact: 'Needs structure' },
       ],
     },
@@ -60,7 +60,7 @@ export default function ConsistencyMetrics() {
       icon: 'nutrition' as const,
       color: 'purple',
       description: 'Hitting macro/calorie targets',
-      calculation: '(Days within ±5% targets / Total Days) × 100',
+      calculation: '(Days within Â±5% targets / Total Days) Ã— 100',
       targets: [
         { level: 'Elite', range: '95-100%', impact: 'Max results' },
         { level: 'Excellent', range: '85-94%', impact: 'Great results' },
@@ -74,7 +74,7 @@ export default function ConsistencyMetrics() {
       icon: 'moon' as const,
       color: 'amber',
       description: '7+ hours sleep per night',
-      calculation: '(Nights with 7+ hours / Total Nights) × 100',
+      calculation: '(Nights with 7+ hours / Total Nights) Ã— 100',
       targets: [
         { level: 'Optimal', range: '90-100%', impact: 'Peak recovery' },
         { level: 'Good', range: '75-89%', impact: 'Adequate recovery' },
@@ -128,12 +128,12 @@ export default function ConsistencyMetrics() {
             <Text className="text-white font-bold text-lg mb-4">Overall Stats (Last 30 Days)</Text>
             
             <View className="flex-row flex-wrap gap-3">
-              <View className="flex-1 min-w-[45%] bg-blue-500/10 rounded-xl p-3 border border-blue-500/30">
-                <Text className="text-blue-400 text-sm mb-1">Adherence Rate</Text>
+              <View className="flex-1 min-w-[45%] bg-primary/10 rounded-xl p-3 border border-primary/30">
+                <Text className="text-primary/80 text-sm mb-1">Adherence Rate</Text>
                 <Text className="text-white font-bold text-2xl">{overallStats.adherenceRate}%</Text>
               </View>
-              <View className="flex-1 min-w-[45%] bg-emerald-500/10 rounded-xl p-3 border border-emerald-500/30">
-                <Text className="text-emerald-400 text-sm mb-1">Current Streak</Text>
+              <View className="flex-1 min-w-[45%] bg-primary/10 rounded-xl p-3 border border-primary/30">
+                <Text className="text-primary text-sm mb-1">Current Streak</Text>
                 <Text className="text-white font-bold text-2xl">{overallStats.currentStreak} days</Text>
               </View>
               <View className="flex-1 min-w-[45%] bg-purple-500/10 rounded-xl p-3 border border-purple-500/30">
@@ -248,26 +248,26 @@ export default function ConsistencyMetrics() {
             })}
           </View>
 
-          <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30 mb-6">
-            <Text className="text-blue-400 font-bold mb-2">Why Consistency Matters</Text>
-            <Text className="text-blue-300 text-sm">
-              • 80% adherence beats 100% intensity{'\n'}
-              • Small daily actions compound{'\n'}
-              • Builds unbreakable habits{'\n'}
-              • Prevents boom-bust cycles{'\n'}
-              • Long-term &gt; short-term heroics
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
+            <Text className="text-primary/80 font-bold mb-2">Why Consistency Matters</Text>
+            <Text className="text-primary/60 text-sm">
+              â€¢ 80% adherence beats 100% intensity{'\n'}
+              â€¢ Small daily actions compound{'\n'}
+              â€¢ Builds unbreakable habits{'\n'}
+              â€¢ Prevents boom-bust cycles{'\n'}
+              â€¢ Long-term &gt; short-term heroics
             </Text>
           </View>
 
-          <View className="bg-emerald-500/10 rounded-xl p-4 border border-emerald-500/30 mb-6">
-            <Text className="text-emerald-400 font-bold mb-2">Improving Consistency</Text>
-            <Text className="text-emerald-300 text-sm">
-              • Schedule workouts like meetings{'\n'}
-              • Remove friction (prep gear night before){'\n'}
-              • Never miss twice in a row{'\n'}
-              • Track immediately{'\n'}
-              • Accountability partner{'\n'}
-              • Forgive missed days, refocus
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
+            <Text className="text-primary font-bold mb-2">Improving Consistency</Text>
+            <Text className="text-primary/80 text-sm">
+              â€¢ Schedule workouts like meetings{'\n'}
+              â€¢ Remove friction (prep gear night before){'\n'}
+              â€¢ Never miss twice in a row{'\n'}
+              â€¢ Track immediately{'\n'}
+              â€¢ Accountability partner{'\n'}
+              â€¢ Forgive missed days, refocus
             </Text>
           </View>
         </View>
@@ -275,3 +275,5 @@ export default function ConsistencyMetrics() {
     </View>
   );
 }
+
+

@@ -28,8 +28,8 @@ describe('Badge', () => {
       );
 
       const badge = getByTestId('badge');
-      expect(badge.props.className).toContain('bg-emerald-100');
-      expect(badge.props.className).toContain('border-emerald-200');
+      expect(badge.props.className).toContain('bg-primary/10');
+      expect(badge.props.className).toContain('border-primary/20');
     });
 
     it('should render warning variant', () => {
@@ -58,8 +58,8 @@ describe('Badge', () => {
       );
 
       const badge = getByTestId('badge');
-      expect(badge.props.className).toContain('bg-blue-100');
-      expect(badge.props.className).toContain('border-blue-200');
+      expect(badge.props.className).toContain('bg-primary/10');
+      expect(badge.props.className).toContain('border-primary/20');
     });
 
     it('should render neutral variant by default', () => {
@@ -90,7 +90,7 @@ describe('Badge', () => {
       );
 
       const text = getByText('Success');
-      expect(text.props.className).toContain('text-emerald-700');
+      expect(text.props.className).toContain('text-primary');
     });
 
     it('should apply warning text color', () => {
@@ -117,7 +117,7 @@ describe('Badge', () => {
       );
 
       const text = getByText('Info');
-      expect(text.props.className).toContain('text-blue-700');
+      expect(text.props.className).toContain('text-primary');
     });
 
     it('should apply neutral text color', () => {
@@ -135,7 +135,7 @@ describe('Badge', () => {
       );
 
       const text = getByText('Test');
-      expect(text.props.className).toContain('font-inter-medium');
+      expect(text.props.className).toContain('font-label');
       expect(text.props.className).toContain('text-xs');
     });
   });

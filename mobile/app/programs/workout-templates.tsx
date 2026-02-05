@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -36,15 +36,15 @@ const PRE_BUILT_TEMPLATES: WorkoutTemplate[] = [
   {
     id: '1',
     name: 'Push Day (Hipertrofia)',
-    description: 'Enfoque en pecho, hombros y tríceps con volumen alto',
-    muscleGroup: 'Pecho/Hombros/Tríceps',
+    description: 'Enfoque en pecho, hombros y trÃ­ceps con volumen alto',
+    muscleGroup: 'Pecho/Hombros/TrÃ­ceps',
     exercises: [
       { name: 'Press Banca Barra', sets: 4, reps: '8-10', rest: 120 },
       { name: 'Press Inclinado Mancuernas', sets: 4, reps: '10-12', rest: 90 },
       { name: 'Aperturas en Polea', sets: 3, reps: '12-15', rest: 60 },
       { name: 'Press Militar', sets: 4, reps: '8-10', rest: 90 },
       { name: 'Elevaciones Laterales', sets: 3, reps: '12-15', rest: 60 },
-      { name: 'Extensiones Tríceps', sets: 3, reps: '12-15', rest: 60 },
+      { name: 'Extensiones TrÃ­ceps', sets: 3, reps: '12-15', rest: 60 },
     ],
     estimatedDuration: 75,
     difficulty: 'intermedio',
@@ -56,8 +56,8 @@ const PRE_BUILT_TEMPLATES: WorkoutTemplate[] = [
   {
     id: '2',
     name: 'Pull Day (Fuerza)',
-    description: 'Ejercicios de espalda y bíceps enfocados en fuerza',
-    muscleGroup: 'Espalda/Bíceps',
+    description: 'Ejercicios de espalda y bÃ­ceps enfocados en fuerza',
+    muscleGroup: 'Espalda/BÃ­ceps',
     exercises: [
       { name: 'Peso Muerto', sets: 5, reps: '5', rest: 180 },
       { name: 'Dominadas', sets: 4, reps: '6-8', rest: 120 },
@@ -83,7 +83,7 @@ const PRE_BUILT_TEMPLATES: WorkoutTemplate[] = [
       { name: 'Prensa de Piernas', sets: 4, reps: '10-12', rest: 120 },
       { name: 'Peso Muerto Rumano', sets: 4, reps: '8-10', rest: 120 },
       { name: 'Zancadas con Mancuernas', sets: 3, reps: '12/pierna', rest: 90 },
-      { name: 'Extensiones de Cuádriceps', sets: 3, reps: '12-15', rest: 60 },
+      { name: 'Extensiones de CuÃ¡driceps', sets: 3, reps: '12-15', rest: 60 },
       { name: 'Curl Femoral', sets: 3, reps: '12-15', rest: 60 },
       { name: 'Elevaciones de Gemelos', sets: 4, reps: '15-20', rest: 60 },
     ],
@@ -97,7 +97,7 @@ const PRE_BUILT_TEMPLATES: WorkoutTemplate[] = [
   {
     id: '4',
     name: 'Full Body (Principiante)',
-    description: 'Rutina completa para comenzar con los básicos',
+    description: 'Rutina completa para comenzar con los bÃ¡sicos',
     muscleGroup: 'Cuerpo Completo',
     exercises: [
       { name: 'Sentadilla Goblet', sets: 3, reps: '10-12', rest: 90 },
@@ -145,8 +145,8 @@ export default function WorkoutTemplates() {
     setTemplates(updatedTemplates);
     
     Alert.alert(
-      'Workout Iniciado! 🏋️',
-      `${template.name}\n${template.exercises.length} ejercicios • ~${template.estimatedDuration} min`,
+      'Workout Iniciado! ðŸ‹ï¸',
+      `${template.name}\n${template.exercises.length} ejercicios â€¢ ~${template.estimatedDuration} min`,
       [
         { text: 'Cancelar', style: 'cancel' },
         { 
@@ -172,13 +172,13 @@ export default function WorkoutTemplates() {
     };
     
     setTemplates([newTemplate, ...templates]);
-    Alert.alert('Template Duplicado ✓', 'Ahora puedes editarlo');
+    Alert.alert('Template Duplicado âœ“', 'Ahora puedes editarlo');
   };
 
   const deleteTemplate = (id: string) => {
     Alert.alert(
       'Eliminar Template',
-      '¿Estás seguro? Esta acción no se puede deshacer.',
+      'Â¿EstÃ¡s seguro? Esta acciÃ³n no se puede deshacer.',
       [
         { text: 'Cancelar', style: 'cancel' },
         {
@@ -235,7 +235,7 @@ export default function WorkoutTemplates() {
           <View className="bg-gradient-to-r from-purple-500 to-blue-500 rounded-xl p-6 mb-6">
             <Text className="text-white text-2xl font-bold mb-2">Workout Templates</Text>
             <Text className="text-white opacity-90 mb-4">
-              Guarda tus workouts favoritos y empieza rápido
+              Guarda tus workouts favoritos y empieza rÃ¡pido
             </Text>
             <View className="flex-row items-center">
               <Ionicons name="flash" size={20} color="white" />
@@ -291,7 +291,7 @@ export default function WorkoutTemplates() {
             <View className="bg-zinc-900 rounded-xl p-8 border border-zinc-800 items-center">
               <Ionicons name="document-text-outline" size={64} color="#52525B" />
               <Text className="text-zinc-400 text-center mt-4">
-                {searchQuery ? 'No se encontraron templates' : 'No hay templates en esta categoría'}
+                {searchQuery ? 'No se encontraron templates' : 'No hay templates en esta categorÃ­a'}
               </Text>
             </View>
           ) : (
@@ -313,12 +313,12 @@ export default function WorkoutTemplates() {
                       <Text className="text-zinc-400 text-sm mb-2">{template.description}</Text>
                       <View className="flex-row items-center gap-3">
                         <View className="flex-row items-center">
-                          <Ionicons name="body" size={14} color="#10B981" />
-                          <Text className="text-emerald-400 text-xs ml-1">{template.muscleGroup}</Text>
+                          <Ionicons name="body" size={14} color="#9D12DE" />
+                          <Text className="text-primary text-xs ml-1">{template.muscleGroup}</Text>
                         </View>
                         <View className="flex-row items-center">
-                          <Ionicons name="list" size={14} color="#3B82F6" />
-                          <Text className="text-blue-400 text-xs ml-1">{template.exercises.length} ejercicios</Text>
+                          <Ionicons name="list" size={14} color="#9D12DE" />
+                          <Text className="text-primary/80 text-xs ml-1">{template.exercises.length} ejercicios</Text>
                         </View>
                         <View className="flex-row items-center">
                           <Ionicons name="time" size={14} color="#A855F7" />
@@ -334,13 +334,13 @@ export default function WorkoutTemplates() {
                       <View key={idx} className="flex-row items-center justify-between mb-2 last:mb-0">
                         <Text className="text-zinc-300 text-sm flex-1">{exercise.name}</Text>
                         <Text className="text-zinc-500 text-xs">
-                          {exercise.sets}×{exercise.reps}
+                          {exercise.sets}Ã—{exercise.reps}
                         </Text>
                       </View>
                     ))}
                     {template.exercises.length > 3 && (
                       <Text className="text-zinc-500 text-xs text-center mt-2">
-                        +{template.exercises.length - 3} más
+                        +{template.exercises.length - 3} mÃ¡s
                       </Text>
                     )}
                   </View>
@@ -349,14 +349,14 @@ export default function WorkoutTemplates() {
                   {template.usageCount > 0 && (
                     <View className="flex-row items-center gap-3 mb-3">
                       <View className="flex-row items-center">
-                        <Ionicons name="checkmark-circle" size={14} color="#10B981" />
-                        <Text className="text-emerald-400 text-xs ml-1">
+                        <Ionicons name="checkmark-circle" size={14} color="#9D12DE" />
+                        <Text className="text-primary text-xs ml-1">
                           Usado {template.usageCount} {template.usageCount === 1 ? 'vez' : 'veces'}
                         </Text>
                       </View>
                       {template.lastUsed && (
                         <Text className="text-zinc-500 text-xs">
-                          Última vez: {template.lastUsed.toLocaleDateString('es-ES')}
+                          Ãšltima vez: {template.lastUsed.toLocaleDateString('es-ES')}
                         </Text>
                       )}
                     </View>
@@ -394,19 +394,19 @@ export default function WorkoutTemplates() {
           )}
 
           {/* Tips */}
-          <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30 mb-6 mt-2">
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6 mt-2">
             <View className="flex-row items-start">
-              <Ionicons name="bulb" size={20} color="#3B82F6" />
+              <Ionicons name="bulb" size={20} color="#9D12DE" />
               <View className="flex-1 ml-3">
-                <Text className="text-blue-400 font-bold mb-2">
+                <Text className="text-primary/80 font-bold mb-2">
                   Tips para Templates
                 </Text>
-                <Text className="text-blue-300 text-sm">
-                  • Duplica pre-built templates para personalizarlos{'\n'}
-                  • Guarda tus workouts favoritos como templates{'\n'}
-                  • Ajusta sets/reps según tu nivel{'\n'}
-                  • Templates = menos tiempo planificando{'\n'}
-                  • Usa "Empezar" para quick-start workout
+                <Text className="text-primary/60 text-sm">
+                  â€¢ Duplica pre-built templates para personalizarlos{'\n'}
+                  â€¢ Guarda tus workouts favoritos como templates{'\n'}
+                  â€¢ Ajusta sets/reps segÃºn tu nivel{'\n'}
+                  â€¢ Templates = menos tiempo planificando{'\n'}
+                  â€¢ Usa "Empezar" para quick-start workout
                 </Text>
               </View>
             </View>
@@ -420,7 +420,7 @@ export default function WorkoutTemplates() {
           <View className="bg-zinc-900 rounded-xl p-6 m-6 w-4/5">
             <Text className="text-white font-bold text-xl mb-4">Crear Template</Text>
             <Text className="text-zinc-400 mb-4">
-              Función disponible próximamente
+              FunciÃ³n disponible prÃ³ximamente
             </Text>
             <TouchableOpacity
               onPress={() => setShowCreateForm(false)}
@@ -434,3 +434,4 @@ export default function WorkoutTemplates() {
     </View>
   );
 }
+

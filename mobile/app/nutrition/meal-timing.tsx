@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -182,7 +182,7 @@ export default function MealTiming() {
               key={time.key}
               onPress={() => setTrainingTime(time.key)}
               className={`${
-                trainingTime === time.key ? 'bg-blue-500' : 'bg-zinc-900'
+                trainingTime === time.key ? 'bg-primary' : 'bg-zinc-900'
               } rounded-xl p-4 mb-3 border ${
                 trainingTime === time.key ? 'border-blue-400' : 'border-zinc-800'
               }`}
@@ -227,34 +227,34 @@ export default function MealTiming() {
             ))}
           </View>
 
-          <View className="bg-blue-500/10 rounded-xl p-4 mb-4 border border-blue-500/30">
+          <View className="bg-primary/10 rounded-xl p-4 mb-4 border border-primary/30">
             <View className="flex-row items-center mb-2">
-              <Ionicons name="timer" size={20} color="#3b82f6" />
-              <Text className="text-blue-400 font-bold ml-2">Pre-Workout</Text>
+              <Ionicons name="timer" size={20} color="#9D12DE" />
+              <Text className="text-primary/80 font-bold ml-2">Pre-Workout</Text>
             </View>
             <Text className="text-zinc-400 text-sm mb-3">{protocol.preWorkout.timing}</Text>
             
             <View className="bg-zinc-900 rounded-lg p-3 mb-2">
               <Text className="text-white font-bold mb-1">{protocol.preWorkout.meal}</Text>
-              <Text className="text-emerald-400 text-sm mb-1">{protocol.preWorkout.example}</Text>
+              <Text className="text-primary text-sm mb-1">{protocol.preWorkout.example}</Text>
               <Text className="text-zinc-500 text-xs">{protocol.preWorkout.macros}</Text>
             </View>
-            <Text className="text-blue-300 text-sm italic">💡 {protocol.preWorkout.why}</Text>
+            <Text className="text-primary/60 text-sm italic">ðŸ’¡ {protocol.preWorkout.why}</Text>
           </View>
 
-          <View className="bg-emerald-500/10 rounded-xl p-4 mb-4 border border-emerald-500/30">
+          <View className="bg-primary/10 rounded-xl p-4 mb-4 border border-primary/30">
             <View className="flex-row items-center mb-2">
-              <Ionicons name="fitness" size={20} color="#10b981" />
-              <Text className="text-emerald-400 font-bold ml-2">Intra-Workout</Text>
+              <Ionicons name="fitness" size={20} color="#9D12DE" />
+              <Text className="text-primary font-bold ml-2">Intra-Workout</Text>
             </View>
             <Text className="text-zinc-400 text-sm mb-3">{protocol.intraWorkout.timing}</Text>
             
             <View className="bg-zinc-900 rounded-lg p-3 mb-2">
               <Text className="text-white font-bold mb-1">{protocol.intraWorkout.meal}</Text>
-              <Text className="text-emerald-400 text-sm mb-1">{protocol.intraWorkout.example}</Text>
+              <Text className="text-primary text-sm mb-1">{protocol.intraWorkout.example}</Text>
               <Text className="text-zinc-500 text-xs">{protocol.intraWorkout.macros}</Text>
             </View>
-            <Text className="text-emerald-300 text-sm italic">💡 {protocol.intraWorkout.why}</Text>
+            <Text className="text-primary/80 text-sm italic">ðŸ’¡ {protocol.intraWorkout.why}</Text>
           </View>
 
           <View className="bg-purple-500/10 rounded-xl p-4 mb-4 border border-purple-500/30">
@@ -266,36 +266,36 @@ export default function MealTiming() {
             
             <View className="bg-zinc-900 rounded-lg p-3 mb-2">
               <Text className="text-white font-bold mb-1">{protocol.postWorkout.meal}</Text>
-              <Text className="text-emerald-400 text-sm mb-1">{protocol.postWorkout.example}</Text>
+              <Text className="text-primary text-sm mb-1">{protocol.postWorkout.example}</Text>
               <Text className="text-zinc-500 text-xs">{protocol.postWorkout.macros}</Text>
             </View>
-            <Text className="text-purple-300 text-sm italic">💡 {protocol.postWorkout.why}</Text>
+            <Text className="text-purple-300 text-sm italic">ðŸ’¡ {protocol.postWorkout.why}</Text>
           </View>
 
           <View className="bg-amber-500/10 rounded-xl p-4 mb-6 border border-amber-500/30">
             <View className="flex-row items-center mb-2">
-              <Ionicons name="moon" size={20} color="#f59e0b" />
+              <Ionicons name="moon" size={20} color="#FFEA00" />
               <Text className="text-amber-400 font-bold ml-2">Rest of Day</Text>
             </View>
             <Text className="text-zinc-400 text-sm mb-3">{protocol.restOfDay.timing}</Text>
             
             <View className="bg-zinc-900 rounded-lg p-3 mb-2">
               <Text className="text-white font-bold mb-1">{protocol.restOfDay.meal}</Text>
-              <Text className="text-emerald-400 text-sm mb-1">{protocol.restOfDay.example}</Text>
+              <Text className="text-primary text-sm mb-1">{protocol.restOfDay.example}</Text>
               <Text className="text-zinc-500 text-xs">{protocol.restOfDay.macros}</Text>
             </View>
-            <Text className="text-amber-300 text-sm italic">💡 {protocol.restOfDay.why}</Text>
+            <Text className="text-amber-300 text-sm italic">ðŸ’¡ {protocol.restOfDay.why}</Text>
           </View>
 
           <View className="bg-red-500/10 rounded-xl p-4 border border-red-500/30 mb-6">
             <Text className="text-red-400 font-bold mb-2">Meal Timing Reality Check</Text>
             <Text className="text-red-300 text-sm">
-              • Total daily macros &gt; meal timing{'\n'}
-              • 2-4h "anabolic window" not 30 min{'\n'}
-              • Pre-workout more important than post{'\n'}
-              • Consistency beats perfect timing{'\n'}
-              • Listen to your body{'\n'}
-              • Find what works for YOUR schedule
+              â€¢ Total daily macros &gt; meal timing{'\n'}
+              â€¢ 2-4h "anabolic window" not 30 min{'\n'}
+              â€¢ Pre-workout more important than post{'\n'}
+              â€¢ Consistency beats perfect timing{'\n'}
+              â€¢ Listen to your body{'\n'}
+              â€¢ Find what works for YOUR schedule
             </Text>
           </View>
         </View>
@@ -303,3 +303,5 @@ export default function MealTiming() {
     </View>
   );
 }
+
+

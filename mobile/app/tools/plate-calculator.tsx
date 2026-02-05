@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -20,9 +20,9 @@ interface Plate {
 
 const PLATES_KG = [
   { weight: 25, color: '#EF4444' },
-  { weight: 20, color: '#3B82F6' },
-  { weight: 15, color: '#F59E0B' },
-  { weight: 10, color: '#10B981' },
+  { weight: 20, color: '#9D12DE' },
+  { weight: 15, color: '#FFEA00' },
+  { weight: 10, color: '#9D12DE' },
   { weight: 5, color: '#FFFFFF' },
   { weight: 2.5, color: '#6B7280' },
   { weight: 1.25, color: '#9CA3AF' },
@@ -30,8 +30,8 @@ const PLATES_KG = [
 
 const PLATES_LBS = [
   { weight: 45, color: '#EF4444' },
-  { weight: 35, color: '#3B82F6' },
-  { weight: 25, color: '#10B981' },
+  { weight: 35, color: '#9D12DE' },
+  { weight: 25, color: '#9D12DE' },
   { weight: 10, color: '#FFFFFF' },
   { weight: 5, color: '#6B7280' },
   { weight: 2.5, color: '#9CA3AF' },
@@ -55,7 +55,7 @@ export default function PlateCalculatorScreen() {
     const target = parseFloat(targetWeight);
 
     if (!target || target <= 0) {
-      Alert.alert('Error', 'Ingresa un peso válido');
+      Alert.alert('Error', 'Ingresa un peso vÃ¡lido');
       return;
     }
 
@@ -86,7 +86,7 @@ export default function PlateCalculatorScreen() {
 
     if (remaining > 0.1) {
       Alert.alert(
-        'Aproximación',
+        'AproximaciÃ³n',
         `No se puede lograr el peso exacto con los discos disponibles.\nDiferencia: ${(remaining * 2).toFixed(2)}${unit}`
       );
     }
@@ -120,7 +120,7 @@ export default function PlateCalculatorScreen() {
         </View>
 
         <Text className="text-purple-100 text-center">
-          Calcula qué discos usar para tu peso objetivo
+          Calcula quÃ© discos usar para tu peso objetivo
         </Text>
       </LinearGradient>
 
@@ -152,7 +152,7 @@ export default function PlateCalculatorScreen() {
           <Text className="text-gray-900 font-bold mb-3">Tipo de Barra</Text>
           <View className="gap-2">
             {[
-              { id: 'standard', label: `Olímpica (${BAR_WEIGHTS[unit].standard}${unit})`, icon: 'barbell' },
+              { id: 'standard', label: `OlÃ­mpica (${BAR_WEIGHTS[unit].standard}${unit})`, icon: 'barbell' },
               { id: 'women', label: `Mujer (${BAR_WEIGHTS[unit].women}${unit})`, icon: 'barbell' },
               { id: 'ez', label: `EZ Bar (${BAR_WEIGHTS[unit].ez}${unit})`, icon: 'barbell' },
             ].map((type) => (
@@ -223,7 +223,7 @@ export default function PlateCalculatorScreen() {
 
             {result.length === 0 ? (
               <View className="items-center py-4">
-                <Ionicons name="checkmark-circle" size={48} color="#10B981" />
+                <Ionicons name="checkmark-circle" size={48} color="#9D12DE" />
                 <Text className="text-gray-900 font-bold text-lg mt-2">
                   Solo la barra
                 </Text>
@@ -264,7 +264,7 @@ export default function PlateCalculatorScreen() {
                       </View>
                       <View className="bg-purple-100 px-3 py-1 rounded-full">
                         <Text className="text-purple-700 font-bold">
-                          ×{plate.count}
+                          Ã—{plate.count}
                         </Text>
                       </View>
                     </View>
@@ -319,18 +319,18 @@ export default function PlateCalculatorScreen() {
         )}
 
         {/* Info */}
-        <Card className="p-4 bg-blue-50 border-blue-200">
+        <Card className="p-4 bg-primary/5 border-primary/20">
           <View className="flex-row gap-3">
-            <Ionicons name="information-circle" size={24} color="#3B82F6" />
+            <Ionicons name="information-circle" size={24} color="#9D12DE" />
             <View className="flex-1">
-              <Text className="text-blue-900 font-semibold mb-1">
+              <Text className="text-text font-semibold mb-1">
                 Consejos
               </Text>
-              <Text className="text-blue-700 text-sm">
-                • Los discos se colocan simétricos en ambos lados{'\n'}
-                • Empieza siempre con los discos más pesados{'\n'}
-                • Usa collares para asegurar los discos{'\n'}
-                • Verifica el peso total antes de levantar
+              <Text className="text-text/70 text-sm">
+                â€¢ Los discos se colocan simÃ©tricos en ambos lados{'\n'}
+                â€¢ Empieza siempre con los discos mÃ¡s pesados{'\n'}
+                â€¢ Usa collares para asegurar los discos{'\n'}
+                â€¢ Verifica el peso total antes de levantar
               </Text>
             </View>
           </View>
@@ -339,3 +339,4 @@ export default function PlateCalculatorScreen() {
     </View>
   );
 }
+

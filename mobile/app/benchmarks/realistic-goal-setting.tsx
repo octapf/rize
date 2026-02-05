@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -233,42 +233,42 @@ export default function RealisticGoalSetting() {
         components: [
           {
             letter: 'S - Specific',
-            powerlifting: 'Not "get stronger" → "Add 20 lbs to squat"',
+            powerlifting: 'Not "get stronger" â†’ "Add 20 lbs to squat"',
             examples: [
-              '✓ Hit 405 lb squat by end of year',
-              '✗ Squat more',
+              'âœ“ Hit 405 lb squat by end of year',
+              'âœ— Squat more',
             ],
           },
           {
             letter: 'M - Measurable',
             powerlifting: 'Numbers you can track',
             examples: [
-              '✓ Increase training max 5 lbs per month',
-              '✗ Feel stronger',
+              'âœ“ Increase training max 5 lbs per month',
+              'âœ— Feel stronger',
             ],
           },
           {
             letter: 'A - Achievable',
             powerlifting: 'Based on your level and timeframe',
             examples: [
-              '✓ Intermediate: +30 lbs squat in 6 months',
-              '✗ Advanced: +100 lbs squat in 6 months',
+              'âœ“ Intermediate: +30 lbs squat in 6 months',
+              'âœ— Advanced: +100 lbs squat in 6 months',
             ],
           },
           {
             letter: 'R - Relevant',
             powerlifting: 'Aligns with bigger picture',
             examples: [
-              '✓ Increase bench to be competitive in weight class',
-              '✗ Random exercise PR that doesn\'t transfer',
+              'âœ“ Increase bench to be competitive in weight class',
+              'âœ— Random exercise PR that doesn\'t transfer',
             ],
           },
           {
             letter: 'T - Time-bound',
             powerlifting: 'Specific deadline',
             examples: [
-              '✓ 1500 lb total at November meet',
-              '✗ Get to 1500 lb total someday',
+              'âœ“ 1500 lb total at November meet',
+              'âœ— Get to 1500 lb total someday',
             ],
           },
         ],
@@ -521,7 +521,7 @@ export default function RealisticGoalSetting() {
       mindset: {
         title: 'Mindset About Changing Goals',
         truths: [
-          'Changing goals ≠ failure',
+          'Changing goals â‰  failure',
           'Flexibility is strength, not weakness',
           'Life happens - goals should adapt',
           'Better to hit adjusted goal than miss unrealistic one',
@@ -535,8 +535,8 @@ export default function RealisticGoalSetting() {
 
   const getColorClass = (color: string) => {
     const colors: { [key: string]: string } = {
-      blue: 'bg-blue-500',
-      emerald: 'bg-emerald-500',
+      blue: 'bg-primary',
+      emerald: 'bg-primary',
       purple: 'bg-purple-500',
       amber: 'bg-amber-500',
       red: 'bg-red-500',
@@ -599,19 +599,19 @@ export default function RealisticGoalSetting() {
           {selectedPhase === 'assessment' && (
             <View>
               <View className="bg-zinc-900 rounded-xl p-5 mb-6 border border-zinc-800">
-                <Text className="text-blue-400 text-xl font-bold mb-4">{currentPhase.why_important?.title}</Text>
+                <Text className="text-primary/80 text-xl font-bold mb-4">{currentPhase.why_important?.title}</Text>
                 {currentPhase.why_important?.reasons.map((reason: string, idx: number) => (
-                  <Text key={idx} className="text-blue-300 text-sm mb-2">• {reason}</Text>
+                  <Text key={idx} className="text-primary/60 text-sm mb-2">â€¢ {reason}</Text>
                 ))}
               </View>
 
               <View className="bg-zinc-900 rounded-xl p-5 mb-6 border border-zinc-800">
-                <Text className="text-emerald-400 text-xl font-bold mb-4">{currentPhase.what_to_track?.title}</Text>
+                <Text className="text-primary text-xl font-bold mb-4">{currentPhase.what_to_track?.title}</Text>
                 {currentPhase.what_to_track?.categories.map((cat: any, idx: number) => (
-                  <View key={idx} className="bg-emerald-500/10 rounded-xl p-4 border border-emerald-500/30 mb-4 last:mb-0">
-                    <Text className="text-emerald-400 font-bold mb-2">{cat.category}:</Text>
+                  <View key={idx} className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-4 last:mb-0">
+                    <Text className="text-primary font-bold mb-2">{cat.category}:</Text>
                     {cat.items.map((item: string, iIdx: number) => (
-                      <Text key={iIdx} className="text-emerald-300 text-sm mb-1">✓ {item}</Text>
+                      <Text key={iIdx} className="text-primary/80 text-sm mb-1">âœ“ {item}</Text>
                     ))}
                   </View>
                 ))}
@@ -624,14 +624,14 @@ export default function RealisticGoalSetting() {
                     <Text className="text-white font-bold text-lg mb-1">{level.level}</Text>
                     <Text className="text-zinc-400 text-sm mb-3">{level.timeframe}</Text>
                     
-                    <Text className="text-blue-400 font-bold text-sm mb-2">Characteristics:</Text>
+                    <Text className="text-primary/80 font-bold text-sm mb-2">Characteristics:</Text>
                     {level.characteristics.map((char: string, cIdx: number) => (
-                      <Text key={cIdx} className="text-zinc-300 text-sm mb-1">• {char}</Text>
+                      <Text key={cIdx} className="text-zinc-300 text-sm mb-1">â€¢ {char}</Text>
                     ))}
                     
-                    <View className="bg-emerald-500/10 rounded-xl p-3 border border-emerald-500/30 mt-3">
-                      <Text className="text-emerald-400 font-bold text-sm">Expected Progress:</Text>
-                      <Text className="text-emerald-300 text-sm">{level.expectation}</Text>
+                    <View className="bg-primary/10 rounded-xl p-3 border border-primary/30 mt-3">
+                      <Text className="text-primary font-bold text-sm">Expected Progress:</Text>
+                      <Text className="text-primary/80 text-sm">{level.expectation}</Text>
                     </View>
                   </View>
                 ))}
@@ -642,19 +642,19 @@ export default function RealisticGoalSetting() {
           {selectedPhase === 'timeframes' && (
             <View>
               <View className="bg-zinc-900 rounded-xl p-5 mb-6 border border-zinc-800">
-                <Text className="text-emerald-400 text-xl font-bold mb-4">{currentPhase.by_experience?.title}</Text>
+                <Text className="text-primary text-xl font-bold mb-4">{currentPhase.by_experience?.title}</Text>
                 {currentPhase.by_experience?.stages.map((stage: any, idx: number) => (
-                  <View key={idx} className="bg-emerald-500/10 rounded-xl p-4 border border-emerald-500/30 mb-4 last:mb-0">
-                    <Text className="text-emerald-400 font-bold text-lg mb-3">{stage.stage}</Text>
+                  <View key={idx} className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-4 last:mb-0">
+                    <Text className="text-primary font-bold text-lg mb-3">{stage.stage}</Text>
                     
                     <View className="bg-zinc-800 rounded-xl p-3 mb-3">
-                      <Text className="text-white text-sm mb-1">Squat: <Text className="text-emerald-400 font-bold">{stage.squat}</Text></Text>
-                      <Text className="text-white text-sm mb-1">Bench: <Text className="text-blue-400 font-bold">{stage.bench}</Text></Text>
+                      <Text className="text-white text-sm mb-1">Squat: <Text className="text-primary font-bold">{stage.squat}</Text></Text>
+                      <Text className="text-white text-sm mb-1">Bench: <Text className="text-primary/80 font-bold">{stage.bench}</Text></Text>
                       <Text className="text-white text-sm">Deadlift: <Text className="text-purple-400 font-bold">{stage.deadlift}</Text></Text>
                     </View>
 
                     {stage.notes.map((note: string, nIdx: number) => (
-                      <Text key={nIdx} className="text-zinc-300 text-sm mb-1">• {note}</Text>
+                      <Text key={nIdx} className="text-zinc-300 text-sm mb-1">â€¢ {note}</Text>
                     ))}
                   </View>
                 ))}
@@ -666,8 +666,8 @@ export default function RealisticGoalSetting() {
                   <View key={idx} className="bg-amber-500/10 rounded-xl p-4 border border-amber-500/30 mb-3 last:mb-0">
                     <Text className="text-amber-400 font-bold mb-2">{phase.phase}</Text>
                     <Text className="text-white text-sm mb-1">Goal: {phase.goal}</Text>
-                    <Text className="text-blue-400 text-sm mb-1">Focus: {phase.focus}</Text>
-                    <Text className="text-emerald-400 text-sm">Realistic: {phase.realistic}</Text>
+                    <Text className="text-primary/80 text-sm mb-1">Focus: {phase.focus}</Text>
+                    <Text className="text-primary text-sm">Realistic: {phase.realistic}</Text>
                   </View>
                 ))}
               </View>
@@ -676,27 +676,27 @@ export default function RealisticGoalSetting() {
 
           {/* Additional phases rendered similarly... */}
           {selectedPhase !== 'assessment' && selectedPhase !== 'timeframes' && (
-            <View className="bg-blue-500/10 rounded-xl p-6 border border-blue-500/30">
-              <Text className="text-blue-400 font-bold text-lg mb-2">Content for {currentPhase.name}</Text>
-              <Text className="text-blue-300 text-sm">
+            <View className="bg-primary/10 rounded-xl p-6 border border-primary/30">
+              <Text className="text-primary/80 font-bold text-lg mb-2">Content for {currentPhase.name}</Text>
+              <Text className="text-primary/60 text-sm">
                 Detailed content for this section is being rendered...
               </Text>
             </View>
           )}
 
-          <View className="bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-xl p-5 border border-blue-500/30 mb-6">
-            <Text className="text-blue-400 font-bold text-lg mb-3">Golden Rules</Text>
-            <Text className="text-blue-300 text-sm mb-2">
-              • Better to exceed conservative goal than miss aggressive one
+          <View className="bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-xl p-5 border border-primary/30 mb-6">
+            <Text className="text-primary/80 font-bold text-lg mb-3">Golden Rules</Text>
+            <Text className="text-primary/60 text-sm mb-2">
+              â€¢ Better to exceed conservative goal than miss aggressive one
             </Text>
-            <Text className="text-blue-300 text-sm mb-2">
-              • Progress isn't linear - expect plateaus
+            <Text className="text-primary/60 text-sm mb-2">
+              â€¢ Progress isn't linear - expect plateaus
             </Text>
-            <Text className="text-blue-300 text-sm mb-2">
-              • Life happens - build buffer into timelines
+            <Text className="text-primary/60 text-sm mb-2">
+              â€¢ Life happens - build buffer into timelines
             </Text>
-            <Text className="text-blue-300 text-sm">
-              • Focus on process, outcomes will follow
+            <Text className="text-primary/60 text-sm">
+              â€¢ Focus on process, outcomes will follow
             </Text>
           </View>
         </View>
@@ -704,3 +704,5 @@ export default function RealisticGoalSetting() {
     </View>
   );
 }
+
+

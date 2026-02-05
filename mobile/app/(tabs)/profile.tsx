@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { View, Text, ScrollView, TouchableOpacity } from 'react-native';
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
@@ -28,7 +28,7 @@ export default function ProfileScreen() {
   return (
     <View className="flex-1 bg-gray-50">
       {/* Header */}
-      <LinearGradient colors={['#10B981', '#059669']} className="px-6 pt-12 pb-6">
+      <LinearGradient colors={['#9D12DE', '#7C3AED']} className="px-6 pt-12 pb-6">
         <View className="flex-row items-center justify-between mb-4">
           <View className="w-10" />
           <Text className="text-white text-xl font-bold">Perfil</Text>
@@ -42,15 +42,15 @@ export default function ProfileScreen() {
         
         <View className="items-center">
           <View className="bg-white w-24 h-24 rounded-full items-center justify-center mb-4">
-            <Text className="text-emerald-600 text-4xl font-bold">
+            <Text className="text-primary text-4xl font-bold">
               {user?.username?.[0]?.toUpperCase() || 'U'}
             </Text>
           </View>
           <Text className="text-white text-2xl font-bold">{user?.username}</Text>
-          <Text className="text-emerald-100">{user?.email}</Text>
+          <Text className="text-primary/50">{user?.email}</Text>
           <View className="bg-white/20 px-4 py-2 rounded-full mt-3">
             <Text className="text-white font-semibold">
-              Nivel {Math.floor((user?.xp || 0) / 100) + 1} • {user?.xp || 0} XP
+              Nivel {Math.floor((user?.xp || 0) / 100) + 1} â€¢ {user?.xp || 0} XP
             </Text>
           </View>
         </View>
@@ -61,7 +61,7 @@ export default function ProfileScreen() {
         <TouchableOpacity onPress={() => router.push('/notifications')}>
           <Card className="p-4 bg-gradient-to-r from-blue-50 to-indigo-50">
             <View className="flex-row items-center gap-4">
-              <View className="bg-blue-500 w-12 h-12 rounded-xl items-center justify-center relative">
+              <View className="bg-primary w-12 h-12 rounded-xl items-center justify-center relative">
                 <Ionicons name="notifications" size={28} color="white" />
                 {unreadCount > 0 && (
                   <View className="absolute -top-1 -right-1 bg-red-500 rounded-full min-w-[20px] h-5 items-center justify-center px-1">
@@ -96,7 +96,7 @@ export default function ProfileScreen() {
                   Mis Retos
                 </Text>
                 <Text className="text-sm text-gray-600">
-                  Desafía a tus amigos
+                  DesafÃ­a a tus amigos
                 </Text>
               </View>
               <Ionicons name="chevron-forward" size={24} color="#9CA3AF" />
@@ -154,7 +154,7 @@ export default function ProfileScreen() {
                   Mis Medallas
                 </Text>
                 <Text className="text-sm text-gray-600">
-                  Colecciona medallas únicas
+                  Colecciona medallas Ãºnicas
                 </Text>
               </View>
               <Ionicons name="chevron-forward" size={24} color="#9CA3AF" />
@@ -166,7 +166,7 @@ export default function ProfileScreen() {
         <TouchableOpacity onPress={() => router.push('/progress')}>
           <Card className="p-4 bg-gradient-to-r from-blue-50 to-indigo-50">
             <View className="flex-row items-center gap-4">
-              <View className="bg-blue-500 w-12 h-12 rounded-xl items-center justify-center">
+              <View className="bg-primary w-12 h-12 rounded-xl items-center justify-center">
                 <Ionicons name="analytics" size={28} color="white" />
               </View>
               <View className="flex-1">
@@ -174,7 +174,7 @@ export default function ProfileScreen() {
                   Mi Progreso
                 </Text>
                 <Text className="text-sm text-gray-600">
-                  Gráficos y estadísticas
+                  GrÃ¡ficos y estadÃ­sticas
                 </Text>
               </View>
               <Ionicons name="chevron-forward" size={24} color="#9CA3AF" />
@@ -194,7 +194,7 @@ export default function ProfileScreen() {
                   Medidas Corporales
                 </Text>
                 <Text className="text-sm text-gray-600">
-                  Track tu progreso físico
+                  Track tu progreso fÃ­sico
                 </Text>
               </View>
               <Ionicons name="chevron-forward" size={24} color="#9CA3AF" />
@@ -234,7 +234,7 @@ export default function ProfileScreen() {
                   Medidas Corporales
                 </Text>
                 <Text className="text-sm text-gray-600">
-                  Track tu progreso físico
+                  Track tu progreso fÃ­sico
                 </Text>
               </View>
               <Ionicons name="chevron-forward" size={24} color="#9CA3AF" />
@@ -286,7 +286,7 @@ export default function ProfileScreen() {
         <TouchableOpacity onPress={() => router.push('/workouts/history')}>
           <Card className="p-4 bg-gradient-to-r from-emerald-50 to-teal-50">
             <View className="flex-row items-center gap-4">
-              <View className="bg-emerald-500 w-12 h-12 rounded-xl items-center justify-center">
+              <View className="bg-primary w-12 h-12 rounded-xl items-center justify-center">
                 <Ionicons name="calendar" size={28} color="white" />
               </View>
               <View className="flex-1">
@@ -351,7 +351,7 @@ export default function ProfileScreen() {
               </View>
               <View className="flex-1">
                 <Text className="text-lg font-bold text-gray-900">
-                  Récords Personales
+                  RÃ©cords Personales
                 </Text>
                 <Text className="text-sm text-gray-600">
                   Tus mejores marcas
@@ -386,12 +386,12 @@ export default function ProfileScreen() {
         <TouchableOpacity onPress={() => router.push('/nutrition')}>
           <Card className="p-4 bg-gradient-to-r from-green-50 to-emerald-50">
             <View className="flex-row items-center gap-4">
-              <View className="bg-green-500 w-12 h-12 rounded-xl items-center justify-center">
+              <View className="bg-primary w-12 h-12 rounded-xl items-center justify-center">
                 <Ionicons name="nutrition" size={28} color="white" />
               </View>
               <View className="flex-1">
                 <Text className="text-lg font-bold text-gray-900">
-                  Nutrición
+                  NutriciÃ³n
                 </Text>
                 <Text className="text-sm text-gray-600">
                   Track tus macros
@@ -406,7 +406,7 @@ export default function ProfileScreen() {
         <TouchableOpacity onPress={() => router.push('/messages')}>
           <Card className="p-4 bg-gradient-to-r from-blue-50 to-cyan-50">
             <View className="flex-row items-center gap-4">
-              <View className="bg-blue-500 w-12 h-12 rounded-xl items-center justify-center">
+              <View className="bg-primary w-12 h-12 rounded-xl items-center justify-center">
                 <Ionicons name="chatbubbles" size={28} color="white" />
               </View>
               <View className="flex-1">
@@ -426,15 +426,15 @@ export default function ProfileScreen() {
         <TouchableOpacity onPress={() => router.push('/stats/dashboard')}>
           <Card className="p-4 bg-gradient-to-r from-blue-50 to-indigo-50">
             <View className="flex-row items-center gap-4">
-              <View className="bg-blue-500 w-12 h-12 rounded-xl items-center justify-center">
+              <View className="bg-primary w-12 h-12 rounded-xl items-center justify-center">
                 <Ionicons name="stats-chart" size={28} color="white" />
               </View>
               <View className="flex-1">
                 <Text className="text-lg font-bold text-gray-900">
-                  Dashboard de Estadísticas
+                  Dashboard de EstadÃ­sticas
                 </Text>
                 <Text className="text-sm text-gray-600">
-                  Análisis detallado de tu progreso
+                  AnÃ¡lisis detallado de tu progreso
                 </Text>
               </View>
               <Ionicons name="chevron-forward" size={24} color="#9CA3AF" />
@@ -491,7 +491,7 @@ export default function ProfileScreen() {
               </View>
               <View className="flex-1">
                 <Text className="text-lg font-bold text-gray-900">
-                  Configuración
+                  ConfiguraciÃ³n
                 </Text>
                 <Text className="text-sm text-gray-600">
                   Preferencias y ajustes
@@ -505,7 +505,7 @@ export default function ProfileScreen() {
         {/* Settings Section */}
         <Card className="p-4">
           <Text className="text-lg font-bold text-gray-900 mb-4">
-            Configuración
+            ConfiguraciÃ³n
           </Text>
 
           <TouchableOpacity className="flex-row items-center justify-between py-3 border-b border-gray-200">
@@ -555,9 +555,10 @@ export default function ProfileScreen() {
 
         {/* Logout Button */}
         <Button variant="secondary" onPress={handleLogout}>
-          Cerrar Sesión
+          Cerrar SesiÃ³n
         </Button>
       </ScrollView>
     </View>
   );
 }
+

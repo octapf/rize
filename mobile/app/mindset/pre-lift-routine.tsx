@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -34,7 +34,7 @@ export default function PreLiftRoutine() {
             { action: 'Bar settles in groove on back', mental: 'Feel it lock in place' },
             { action: 'Hands grip, squeeze tight', mental: 'Engage upper back' },
             { action: 'Elbows drive under and back', mental: 'Create shelf for bar' },
-            { action: 'Big breath, brace HARD', mental: '360° pressure in core' },
+            { action: 'Big breath, brace HARD', mental: '360Â° pressure in core' },
             { action: 'Stand with bar', mental: 'Bar should feel light' },
           ],
           keys: ['Tightness', 'Breathing', 'Upper back engaged'],
@@ -160,7 +160,7 @@ export default function PreLiftRoutine() {
             { action: 'Grip bar outside legs', mental: 'Arms straight, locked elbows' },
             { action: 'Pull slack out of bar', mental: 'Tension on bar before lift starts' },
             { action: 'Chest up, lats engaged', mental: '"Bend the bar" cue, protect back' },
-            { action: 'BIG breath, brace HARD', mental: '360° core pressure, lock it in' },
+            { action: 'BIG breath, brace HARD', mental: '360Â° core pressure, lock it in' },
           ],
           keys: ['Slack out', 'Lats tight', 'Braced fully'],
         },
@@ -252,9 +252,9 @@ export default function PreLiftRoutine() {
 
   const getColorClass = (color: string) => {
     const colors: { [key: string]: string } = {
-      blue: 'bg-blue-500',
+      blue: 'bg-primary',
       red: 'bg-red-500',
-      emerald: 'bg-emerald-500',
+      emerald: 'bg-primary',
       purple: 'bg-purple-500',
     };
     return colors[color];
@@ -275,7 +275,7 @@ export default function PreLiftRoutine() {
 
       <ScrollView className="flex-1" showsVerticalScrollIndicator={false}>
         <View className="px-6 pt-6">
-          <View className="bg-gradient-to-r from-purple-500 to-blue-500 rounded-xl p-6 mb-6">
+          <View className="bg-gradient-to-r from-primary to-[#7D0EBE] rounded-xl p-6 mb-6">
             <Text className="text-white text-2xl font-bold mb-2">Perfect Your Routine</Text>
             <Text className="text-white opacity-90">
               Consistent pre-lift rituals for max performance
@@ -322,15 +322,15 @@ export default function PreLiftRoutine() {
                   {phase.actions.map((action, aIdx) => (
                     <View key={aIdx} className="bg-zinc-800 rounded-xl p-4 mb-3 last:mb-4">
                       <Text className="text-white font-bold mb-1">{action.action}</Text>
-                      <Text className="text-emerald-400 text-sm">{action.mental}</Text>
+                      <Text className="text-primary text-sm">{action.mental}</Text>
                     </View>
                   ))}
 
-                  <View className="bg-blue-500/10 rounded-xl p-3 border border-blue-500/30">
-                    <Text className="text-blue-400 font-bold text-sm mb-2">Key Points:</Text>
+                  <View className="bg-primary/10 rounded-xl p-3 border border-primary/30">
+                    <Text className="text-primary/80 font-bold text-sm mb-2">Key Points:</Text>
                     {phase.keys.map((key, kIdx) => (
-                      <Text key={kIdx} className="text-blue-300 text-sm mb-1 last:mb-0">
-                        ✓ {key}
+                      <Text key={kIdx} className="text-primary/60 text-sm mb-1 last:mb-0">
+                        âœ“ {key}
                       </Text>
                     ))}
                   </View>
@@ -338,9 +338,9 @@ export default function PreLiftRoutine() {
               ))}
 
               {currentLift.timing && (
-                <View className="bg-emerald-500/10 rounded-xl p-4 border border-emerald-500/30 mb-6">
-                  <Text className="text-emerald-400 font-bold mb-1">Timing:</Text>
-                  <Text className="text-emerald-300 text-sm">{currentLift.timing}</Text>
+                <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
+                  <Text className="text-primary font-bold mb-1">Timing:</Text>
+                  <Text className="text-primary/80 text-sm">{currentLift.timing}</Text>
                 </View>
               )}
 
@@ -349,7 +349,7 @@ export default function PreLiftRoutine() {
                   <Text className="text-red-400 text-xl font-bold mb-4">Common Mistakes to Avoid:</Text>
                   {currentLift.commonMistakes.map((mistake, idx) => (
                     <Text key={idx} className="text-zinc-300 mb-2 last:mb-0">
-                      ✗ {mistake}
+                      âœ— {mistake}
                     </Text>
                   ))}
                 </View>
@@ -367,7 +367,7 @@ export default function PreLiftRoutine() {
                   <Text className="text-white font-bold mb-3">Implementation:</Text>
                   {principle.implementation.map((item, iIdx) => (
                     <Text key={iIdx} className="text-zinc-300 text-sm mb-2 last:mb-0">
-                      • {item}
+                      â€¢ {item}
                     </Text>
                   ))}
                 </View>
@@ -378,19 +378,19 @@ export default function PreLiftRoutine() {
           <View className="bg-gradient-to-r from-amber-500/20 to-orange-500/20 rounded-xl p-4 border border-amber-500/30 mb-6">
             <Text className="text-amber-400 font-bold mb-2">Building Your Routine</Text>
             <Text className="text-amber-300 text-sm mb-2">
-              • Practice routine on EVERY warmup set
+              â€¢ Practice routine on EVERY warmup set
             </Text>
             <Text className="text-amber-300 text-sm mb-2">
-              • Same routine training and competition
+              â€¢ Same routine training and competition
             </Text>
             <Text className="text-amber-300 text-sm mb-2">
-              • 30-60 seconds total - not too long
+              â€¢ 30-60 seconds total - not too long
             </Text>
             <Text className="text-amber-300 text-sm mb-2">
-              • Consistency creates confidence
+              â€¢ Consistency creates confidence
             </Text>
             <Text className="text-amber-300 text-sm">
-              • Your routine is YOUR ritual - make it yours
+              â€¢ Your routine is YOUR ritual - make it yours
             </Text>
           </View>
         </View>
@@ -398,3 +398,5 @@ export default function PreLiftRoutine() {
     </View>
   );
 }
+
+

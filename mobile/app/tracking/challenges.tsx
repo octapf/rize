@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -29,51 +29,51 @@ interface Challenge {
 
 const CHALLENGE_TEMPLATES: Omit<Challenge, 'id' | 'startDate' | 'endDate' | 'completedDays' | 'status'>[] = [
   {
-    name: '30 Días de Entrenamiento',
-    description: 'Entrena al menos 30 minutos cada día durante 30 días',
+    name: '30 DÃ­as de Entrenamiento',
+    description: 'Entrena al menos 30 minutos cada dÃ­a durante 30 dÃ­as',
     duration: 30,
     type: 'fitness',
     icon: 'barbell',
     color: 'red',
     dailyTasks: [
-      'Completar sesión de entrenamiento (30+ min)',
+      'Completar sesiÃ³n de entrenamiento (30+ min)',
       'Calentar adecuadamente',
       'Registrar el workout',
     ],
-    reward: '💪 Fuerza ganada, hábito consolidado',
+    reward: 'ðŸ’ª Fuerza ganada, hÃ¡bito consolidado',
   },
   {
-    name: 'Proteína en Cada Comida',
-    description: '30g+ proteína en cada comida durante 30 días',
+    name: 'ProteÃ­na en Cada Comida',
+    description: '30g+ proteÃ­na en cada comida durante 30 dÃ­as',
     duration: 30,
     type: 'nutrition',
     icon: 'nutrition',
     color: 'emerald',
     dailyTasks: [
-      '30g+ proteína en desayuno',
-      '40g+ proteína en comida',
-      '40g+ proteína en cena',
+      '30g+ proteÃ­na en desayuno',
+      '40g+ proteÃ­na en comida',
+      '40g+ proteÃ­na en cena',
       'Trackear macros',
     ],
-    reward: '🥩 Mejor composición corporal, saciedad',
+    reward: 'ðŸ¥© Mejor composiciÃ³n corporal, saciedad',
   },
   {
     name: '10k Pasos Diarios',
-    description: 'Camina mínimo 10,000 pasos cada día',
+    description: 'Camina mÃ­nimo 10,000 pasos cada dÃ­a',
     duration: 30,
     type: 'fitness',
     icon: 'walk',
     color: 'blue',
     dailyTasks: [
       'Alcanzar 10,000 pasos',
-      'Caminar después de comidas',
-      'Revisar contador al final del día',
+      'Caminar despuÃ©s de comidas',
+      'Revisar contador al final del dÃ­a',
     ],
-    reward: '🚶 Mejor salud cardiovascular, recuperación activa',
+    reward: 'ðŸš¶ Mejor salud cardiovascular, recuperaciÃ³n activa',
   },
   {
-    name: '8 Horas de Sueño',
-    description: 'Dormir 8 horas completas cada noche durante 30 días',
+    name: '8 Horas de SueÃ±o',
+    description: 'Dormir 8 horas completas cada noche durante 30 dÃ­as',
     duration: 30,
     type: 'recovery',
     icon: 'moon',
@@ -82,13 +82,13 @@ const CHALLENGE_TEMPLATES: Omit<Challenge, 'id' | 'startDate' | 'endDate' | 'com
       'Acostarse antes de las 11 PM',
       'Dormir 8 horas seguidas',
       'Sin pantallas 1h antes de dormir',
-      'Habitación oscura y fresca',
+      'HabitaciÃ³n oscura y fresca',
     ],
-    reward: '😴 Mejor recuperación, hormona de crecimiento óptima',
+    reward: 'ðŸ˜´ Mejor recuperaciÃ³n, hormona de crecimiento Ã³ptima',
   },
   {
     name: 'Sin Alcohol',
-    description: 'Cero alcohol durante 30 días',
+    description: 'Cero alcohol durante 30 dÃ­as',
     duration: 30,
     type: 'mindset',
     icon: 'close-circle',
@@ -98,21 +98,21 @@ const CHALLENGE_TEMPLATES: Omit<Challenge, 'id' | 'startDate' | 'endDate' | 'com
       'Beber 3L+ de agua',
       'Elegir alternativas saludables',
     ],
-    reward: '🧠 Mejor sueño, recuperación y composición corporal',
+    reward: 'ðŸ§  Mejor sueÃ±o, recuperaciÃ³n y composiciÃ³n corporal',
   },
   {
     name: 'Movilidad Diaria',
-    description: '15 minutos de movilidad cada mañana',
+    description: '15 minutos de movilidad cada maÃ±ana',
     duration: 30,
     type: 'recovery',
     icon: 'body',
     color: 'cyan',
     dailyTasks: [
       '15 min de movilidad matutina',
-      'Enfocarse en áreas tensas',
-      'Respiración profunda',
+      'Enfocarse en Ã¡reas tensas',
+      'RespiraciÃ³n profunda',
     ],
-    reward: '🧘 Mejor ROM, menos dolor, mejor postura',
+    reward: 'ðŸ§˜ Mejor ROM, menos dolor, mejor postura',
   },
 ];
 
@@ -134,8 +134,8 @@ export default function Challenges() {
   const types = [
     { key: 'all', label: 'Todos', icon: 'apps' },
     { key: 'fitness', label: 'Fitness', icon: 'barbell' },
-    { key: 'nutrition', label: 'Nutrición', icon: 'nutrition' },
-    { key: 'recovery', label: 'Recuperación', icon: 'moon' },
+    { key: 'nutrition', label: 'NutriciÃ³n', icon: 'nutrition' },
+    { key: 'recovery', label: 'RecuperaciÃ³n', icon: 'moon' },
     { key: 'mindset', label: 'Mindset', icon: 'bulb' },
   ];
 
@@ -158,7 +158,7 @@ export default function Challenges() {
     };
 
     setChallenges([...challenges, newChallenge]);
-    Alert.alert('Challenge Iniciado! 🚀', `${template.name} - ${template.duration} días`);
+    Alert.alert('Challenge Iniciado! ðŸš€', `${template.name} - ${template.duration} dÃ­as`);
   };
 
   const getDaysRemaining = (challenge: Challenge) => {
@@ -209,9 +209,9 @@ export default function Challenges() {
     if (!wasCompleted) {
       const newTotal = challenge.completedDays.length + 1;
       if (newTotal === challenge.duration) {
-        Alert.alert('🎉 CHALLENGE COMPLETADO! 🎉', `Has completado ${challenge.name}!\n\n${challenge.reward}`);
+        Alert.alert('ðŸŽ‰ CHALLENGE COMPLETADO! ðŸŽ‰', `Has completado ${challenge.name}!\n\n${challenge.reward}`);
       } else {
-        Alert.alert('Día Completado! ✓', `Día ${currentDay}/${challenge.duration}`);
+        Alert.alert('DÃ­a Completado! âœ“', `DÃ­a ${currentDay}/${challenge.duration}`);
       }
     }
   };
@@ -219,7 +219,7 @@ export default function Challenges() {
   const abandonChallenge = (challengeId: string) => {
     Alert.alert(
       'Abandonar Challenge',
-      '¿Seguro? Se perderá todo el progreso',
+      'Â¿Seguro? Se perderÃ¡ todo el progreso',
       [
         { text: 'Cancelar' },
         {
@@ -252,11 +252,11 @@ export default function Challenges() {
         <View className="px-6 pt-6">
           {/* Stats */}
           <View className="flex-row gap-3 mb-6">
-            <View className="flex-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl p-4">
+            <View className="flex-1 bg-gradient-to-r from-primary to-[#7D0EBE] rounded-xl p-4">
               <Text className="text-white opacity-90 text-xs mb-1">Activos</Text>
               <Text className="text-white text-3xl font-bold">{activeChallenges.length}</Text>
             </View>
-            <View className="flex-1 bg-gradient-to-r from-emerald-500 to-blue-500 rounded-xl p-4">
+            <View className="flex-1 bg-gradient-to-r from-primary to-[#7D0EBE] rounded-xl p-4">
               <Text className="text-white opacity-90 text-xs mb-1">Completados</Text>
               <Text className="text-white text-3xl font-bold">{completedChallenges.length}</Text>
             </View>
@@ -289,15 +289,15 @@ export default function Challenges() {
 
                     {/* Progress */}
                     <View className="flex-row gap-2 mb-4">
-                      <View className="flex-1 bg-blue-500/10 rounded-lg p-3 border border-blue-500/30">
-                        <Text className="text-blue-400 text-xs mb-1">Día Actual</Text>
-                        <Text className="text-blue-400 font-bold text-2xl">
+                      <View className="flex-1 bg-primary/10 rounded-lg p-3 border border-primary/30">
+                        <Text className="text-primary/80 text-xs mb-1">DÃ­a Actual</Text>
+                        <Text className="text-primary/80 font-bold text-2xl">
                           {currentDay}/{challenge.duration}
                         </Text>
                       </View>
-                      <View className="flex-1 bg-emerald-500/10 rounded-lg p-3 border border-emerald-500/30">
-                        <Text className="text-emerald-400 text-xs mb-1">Completado</Text>
-                        <Text className="text-emerald-400 font-bold text-2xl">
+                      <View className="flex-1 bg-primary/10 rounded-lg p-3 border border-primary/30">
+                        <Text className="text-primary text-xs mb-1">Completado</Text>
+                        <Text className="text-primary font-bold text-2xl">
                           {completionRate}%
                         </Text>
                       </View>
@@ -321,10 +321,10 @@ export default function Challenges() {
 
                     {/* Daily Tasks */}
                     <View className="bg-zinc-800 rounded-lg p-3 mb-4">
-                      <Text className="text-white font-bold mb-2">Tareas del Día</Text>
+                      <Text className="text-white font-bold mb-2">Tareas del DÃ­a</Text>
                       {challenge.dailyTasks.map((task, idx) => (
                         <View key={idx} className="flex-row items-start mb-1 last:mb-0">
-                          <Ionicons name="checkmark-circle" size={16} color="#10B981" />
+                          <Ionicons name="checkmark-circle" size={16} color="#9D12DE" />
                           <Text className="text-zinc-300 text-sm ml-2 flex-1">{task}</Text>
                         </View>
                       ))}
@@ -336,7 +336,7 @@ export default function Challenges() {
                         onPress={() => markDayComplete(challenge.id)}
                         className={`flex-1 rounded-xl p-4 flex-row items-center justify-center ${
                           isDayComplete
-                            ? 'bg-emerald-500'
+                            ? 'bg-primary'
                             : `bg-${challenge.color}-500/10 border-2 border-${challenge.color}-500/30`
                         }`}
                       >
@@ -346,7 +346,7 @@ export default function Challenges() {
                           color={isDayComplete ? 'white' : '#71717A'}
                         />
                         <Text className={`font-bold ml-2 ${isDayComplete ? 'text-white' : 'text-zinc-400'}`}>
-                          {isDayComplete ? 'Completado ✓' : 'Completar Hoy'}
+                          {isDayComplete ? 'Completado âœ“' : 'Completar Hoy'}
                         </Text>
                       </TouchableOpacity>
                       <TouchableOpacity
@@ -359,7 +359,7 @@ export default function Challenges() {
 
                     {/* Reward */}
                     <View className="mt-3 bg-amber-500/10 rounded-lg p-3 border border-amber-500/30">
-                      <Text className="text-amber-400 text-xs mb-1">🏆 Recompensa al Completar:</Text>
+                      <Text className="text-amber-400 text-xs mb-1">ðŸ† Recompensa al Completar:</Text>
                       <Text className="text-amber-300 text-sm">{challenge.reward}</Text>
                     </View>
                   </View>
@@ -387,8 +387,8 @@ export default function Challenges() {
 
               <View className="flex-row items-center mb-3">
                 <Ionicons name="calendar" size={16} color="#71717A" />
-                <Text className="text-zinc-400 text-sm ml-2">{template.duration} días</Text>
-                <Ionicons name="trophy" size={16} color="#F59E0B" className="ml-4" />
+                <Text className="text-zinc-400 text-sm ml-2">{template.duration} dÃ­as</Text>
+                <Ionicons name="trophy" size={16} color="#FFEA00" className="ml-4" />
                 <Text className="text-zinc-400 text-sm ml-2 flex-1" numberOfLines={1}>
                   {template.reward}
                 </Text>
@@ -405,20 +405,20 @@ export default function Challenges() {
           ))}
 
           {/* Tips */}
-          <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30 mb-6 mt-4">
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6 mt-4">
             <View className="flex-row items-start">
-              <Ionicons name="bulb" size={20} color="#3B82F6" />
+              <Ionicons name="bulb" size={20} color="#9D12DE" />
               <View className="flex-1 ml-3">
-                <Text className="text-blue-400 font-bold mb-2">
+                <Text className="text-primary/80 font-bold mb-2">
                   Tips para Challenges
                 </Text>
-                <Text className="text-blue-300 text-sm">
-                  • Empieza con 1 challenge a la vez{'\n'}
-                  • Prepara todo la noche anterior{'\n'}
-                  • Comparte con amigos para accountability{'\n'}
-                  • Si fallas 1 día, continúa al siguiente{'\n'}
-                  • Celebra hitos: día 7, 14, 21, 30{'\n'}
-                  • 30 días = nuevo hábito consolidado
+                <Text className="text-primary/60 text-sm">
+                  â€¢ Empieza con 1 challenge a la vez{'\n'}
+                  â€¢ Prepara todo la noche anterior{'\n'}
+                  â€¢ Comparte con amigos para accountability{'\n'}
+                  â€¢ Si fallas 1 dÃ­a, continÃºa al siguiente{'\n'}
+                  â€¢ Celebra hitos: dÃ­a 7, 14, 21, 30{'\n'}
+                  â€¢ 30 dÃ­as = nuevo hÃ¡bito consolidado
                 </Text>
               </View>
             </View>
@@ -428,3 +428,4 @@ export default function Challenges() {
     </View>
   );
 }
+

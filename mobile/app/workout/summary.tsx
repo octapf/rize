@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import {
   View,
   Text,
@@ -50,9 +50,9 @@ const WORKOUT_SUMMARY = {
     },
   ] as CompletedSet[],
   achievements: [
-    { icon: 'trophy', text: 'Nuevo récord personal', color: '#F59E0B' },
-    { icon: 'flame', text: 'Racha de 7 días', color: '#EF4444' },
-    { icon: 'star', text: '+50 XP ganados', color: '#10B981' },
+    { icon: 'trophy', text: 'Nuevo rÃ©cord personal', color: '#FFEA00' },
+    { icon: 'flame', text: 'Racha de 7 dÃ­as', color: '#9D12DE' },
+    { icon: 'star', text: '+50 XP ganados', color: '#9D12DE' },
   ],
   personalRecords: [
     { exercise: 'Pull-ups', type: 'Peso', value: '20kg', improvement: '+2.5kg' },
@@ -79,12 +79,12 @@ export default function WorkoutSummary() {
 
   const shareWorkout = async () => {
     try {
-      const message = `💪 ${WORKOUT_SUMMARY.workoutName}\n\n` +
-        `⏱️ Duración: ${formatDuration(WORKOUT_SUMMARY.duration)}\n` +
-        `✅ Series: ${WORKOUT_SUMMARY.completedSets}/${WORKOUT_SUMMARY.totalSets}\n` +
-        `📊 Volumen: ${(WORKOUT_SUMMARY.totalVolume / 1000).toFixed(1)}T\n\n` +
+      const message = `ðŸ’ª ${WORKOUT_SUMMARY.workoutName}\n\n` +
+        `â±ï¸ DuraciÃ³n: ${formatDuration(WORKOUT_SUMMARY.duration)}\n` +
+        `âœ… Series: ${WORKOUT_SUMMARY.completedSets}/${WORKOUT_SUMMARY.totalSets}\n` +
+        `ðŸ“Š Volumen: ${(WORKOUT_SUMMARY.totalVolume / 1000).toFixed(1)}T\n\n` +
         `Ejercicios:\n${WORKOUT_SUMMARY.exercises
-          .map((ex) => `• ${ex.exerciseName}: ${ex.sets}x${ex.reps}${ex.weight > 0 ? ` @ ${ex.weight}kg` : ''}`)
+          .map((ex) => `â€¢ ${ex.exerciseName}: ${ex.sets}x${ex.reps}${ex.weight > 0 ? ` @ ${ex.weight}kg` : ''}`)
           .join('\n')}\n\n` +
         `#Rize #Calistenia`;
 
@@ -100,11 +100,11 @@ export default function WorkoutSummary() {
     <View className="flex-1 bg-zinc-950">
       {/* Header with Animation Space */}
       <View className="pt-12 pb-6 px-6 items-center border-b border-zinc-800">
-        <View className="w-24 h-24 bg-emerald-500/20 rounded-full items-center justify-center mb-4">
-          <Ionicons name="checkmark-circle" size={64} color="#10B981" />
+        <View className="w-24 h-24 bg-[#9D12DE]/20 rounded-full items-center justify-center mb-4">
+          <Ionicons name="checkmark-circle" size={64} color="#9D12DE" />
         </View>
         <Text className="text-white text-3xl font-bold mb-2">
-          ¡Excelente Trabajo!
+          Â¡Excelente Trabajo!
         </Text>
         <Text className="text-zinc-400 text-center">
           Has completado tu entrenamiento de {WORKOUT_SUMMARY.workoutName}
@@ -114,16 +114,16 @@ export default function WorkoutSummary() {
       <ScrollView className="flex-1" showsVerticalScrollIndicator={false}>
         {/* Main Stats */}
         <View className="px-6 py-4">
-          <View className="bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-2xl p-6 mb-4">
+          <View className="bg-[#9D12DE] rounded-2xl p-6 mb-4">
             <View className="flex-row justify-between mb-6">
               <View>
-                <Text className="text-emerald-100 text-sm mb-1">Duración</Text>
+                <Text className="text-purple-100 text-sm mb-1">DuraciÃ³n</Text>
                 <Text className="text-white text-3xl font-bold">
                   {formatDuration(WORKOUT_SUMMARY.duration)}
                 </Text>
               </View>
               <View>
-                <Text className="text-emerald-100 text-sm mb-1 text-right">
+                <Text className="text-purple-100 text-sm mb-1 text-right">
                   Completado
                 </Text>
                 <Text className="text-white text-3xl font-bold text-right">
@@ -137,13 +137,13 @@ export default function WorkoutSummary() {
                 <Text className="text-white text-2xl font-bold">
                   {WORKOUT_SUMMARY.completedSets}
                 </Text>
-                <Text className="text-emerald-100 text-xs">Series</Text>
+                <Text className="text-purple-100 text-xs">Series</Text>
               </View>
               <View className="flex-1 items-center bg-white/10 rounded-xl p-3 ml-2">
                 <Text className="text-white text-2xl font-bold">
                   {(WORKOUT_SUMMARY.totalVolume / 1000).toFixed(1)}T
                 </Text>
-                <Text className="text-emerald-100 text-xs">Volumen</Text>
+                <Text className="text-purple-100 text-xs">Volumen</Text>
               </View>
             </View>
           </View>
@@ -179,7 +179,7 @@ export default function WorkoutSummary() {
           {WORKOUT_SUMMARY.personalRecords.length > 0 && (
             <View className="mb-4">
               <Text className="text-white font-bold text-lg mb-3">
-                🏆 Nuevos Récords
+                ðŸ† Nuevos RÃ©cords
               </Text>
               {WORKOUT_SUMMARY.personalRecords.map((pr, index) => (
                 <View
@@ -195,7 +195,7 @@ export default function WorkoutSummary() {
                     </View>
                   </View>
                   <View className="flex-row items-end">
-                    <Text className="text-emerald-500 text-2xl font-bold">
+                    <Text className="text-primary text-2xl font-bold">
                       {pr.value}
                     </Text>
                     <Text className="text-zinc-400 text-sm ml-2 mb-1">
@@ -243,7 +243,7 @@ export default function WorkoutSummary() {
                   )}
                 </View>
                 <View className="mt-2 pt-2 border-t border-zinc-800">
-                  <Text className="text-emerald-500 text-sm font-semibold">
+                  <Text className="text-primary text-sm font-semibold">
                     Volumen: {(exercise.sets * exercise.reps * exercise.weight).toLocaleString()}kg
                   </Text>
                 </View>
@@ -303,7 +303,7 @@ export default function WorkoutSummary() {
 
         <TouchableOpacity
           onPress={() => router.replace('/(tabs)')}
-          className="bg-emerald-500 rounded-xl p-4 items-center"
+          className="bg-[#9D12DE] rounded-xl p-4 items-center"
         >
           <Text className="text-white font-bold text-lg">Finalizar</Text>
         </TouchableOpacity>
@@ -311,3 +311,4 @@ export default function WorkoutSummary() {
     </View>
   );
 }
+

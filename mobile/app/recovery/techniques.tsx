@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -38,7 +38,7 @@ export default function RecoveryTechniques() {
         },
         {
           tip: 'Cool Temperature',
-          details: '15-19°C ideal for deep sleep. Body temp drops to sleep',
+          details: '15-19Â°C ideal for deep sleep. Body temp drops to sleep',
           priority: 'High',
         },
         {
@@ -294,8 +294,8 @@ export default function RecoveryTechniques() {
   const getColorClass = (color: string) => {
     const colors: { [key: string]: string } = {
       purple: 'bg-purple-500',
-      emerald: 'bg-emerald-500',
-      blue: 'bg-blue-500',
+      emerald: 'bg-primary',
+      blue: 'bg-primary',
       red: 'bg-red-500',
       amber: 'bg-amber-500',
     };
@@ -370,8 +370,8 @@ export default function RecoveryTechniques() {
             <Text className="text-white font-bold mb-3">Benefits:</Text>
             <View className="bg-zinc-800 rounded-xl p-4 mb-4">
               {currentTechnique.benefits.map((benefit, idx) => (
-                <Text key={idx} className="text-emerald-400 text-sm mb-2 last:mb-0">
-                  ✓ {benefit}
+                <Text key={idx} className="text-primary text-sm mb-2 last:mb-0">
+                  âœ“ {benefit}
                 </Text>
               ))}
             </View>
@@ -430,19 +430,19 @@ export default function RecoveryTechniques() {
             </View>
           </View>
 
-          <View className="bg-emerald-500/10 rounded-xl p-4 border border-emerald-500/30 mb-6">
-            <Text className="text-emerald-400 font-bold mb-2">Remember</Text>
-            <Text className="text-emerald-300 text-sm mb-2">
-              • You don't grow in the gym, you grow during recovery
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
+            <Text className="text-primary font-bold mb-2">Remember</Text>
+            <Text className="text-primary/80 text-sm mb-2">
+              â€¢ You don't grow in the gym, you grow during recovery
             </Text>
-            <Text className="text-emerald-300 text-sm mb-2">
-              • More training ≠ more gains. Recovery is when adaptation happens
+            <Text className="text-primary/80 text-sm mb-2">
+              â€¢ More training â‰  more gains. Recovery is when adaptation happens
             </Text>
-            <Text className="text-emerald-300 text-sm mb-2">
-              • Sleep and nutrition are 90% of recovery
+            <Text className="text-primary/80 text-sm mb-2">
+              â€¢ Sleep and nutrition are 90% of recovery
             </Text>
-            <Text className="text-emerald-300 text-sm">
-              • Fancy recovery tools are nice, but not necessary
+            <Text className="text-primary/80 text-sm">
+              â€¢ Fancy recovery tools are nice, but not necessary
             </Text>
           </View>
         </View>
@@ -450,3 +450,5 @@ export default function RecoveryTechniques() {
     </View>
   );
 }
+
+

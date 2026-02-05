@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -52,17 +52,17 @@ export default function AdvancedProgress() {
     { id: 'fuerza', label: 'Fuerza' },
     { id: 'volumen', label: 'Volumen' },
     { id: 'cardio', label: 'Cardio' },
-    { id: 'composicion', label: 'Composición' },
+    { id: 'composicion', label: 'ComposiciÃ³n' },
   ];
 
   const getTrendColor = (trend: string) => {
     switch (trend) {
       case 'up':
-        return '#10B981';
+        return '#9D12DE';
       case 'down':
         return '#EF4444';
       case 'stable':
-        return '#F59E0B';
+        return '#FFEA00';
       default:
         return '#71717A';
     }
@@ -85,9 +85,9 @@ export default function AdvancedProgress() {
     Alert.alert(
       metric.name,
       `Valor Actual: ${metric.value} ${metric.unit}\nCambio: ${metric.change > 0 ? '+' : ''}${metric.change} ${metric.unit}\n\nTendencia: ${
-        metric.trend === 'up' ? 'Mejorando ✅' : metric.trend === 'down' ? 'Bajando ⬇️' : 'Estable ➡️'
+        metric.trend === 'up' ? 'Mejorando âœ…' : metric.trend === 'down' ? 'Bajando â¬‡ï¸' : 'Estable âž¡ï¸'
       }`,
-      [{ text: 'Ver Histórico' }, { text: 'Cerrar' }]
+      [{ text: 'Ver HistÃ³rico' }, { text: 'Cerrar' }]
     );
   };
 
@@ -114,7 +114,7 @@ export default function AdvancedProgress() {
         </View>
 
         {/* Best Improvement Highlight */}
-        <View className="bg-gradient-to-br from-emerald-500 to-blue-500 rounded-xl p-4 mb-4">
+        <View className="bg-gradient-to-br from-primary to-[#7D0EBE] rounded-xl p-4 mb-4">
           <View className="flex-row items-center justify-between">
             <View className="flex-1">
               <Text className="text-white/80 text-sm mb-1">Mayor Mejora</Text>
@@ -140,7 +140,7 @@ export default function AdvancedProgress() {
                 onPress={() => setSelectedCategory(category.id)}
                 className={`px-4 py-2 rounded-lg ${
                   selectedCategory === category.id
-                    ? 'bg-emerald-500'
+                    ? 'bg-primary'
                     : 'bg-zinc-900 border border-zinc-800'
                 }`}
               >
@@ -161,7 +161,7 @@ export default function AdvancedProgress() {
         {/* Chart Section */}
         <View className="px-6 pt-6">
           <Text className="text-white font-bold text-lg mb-3">
-            Progresión 1RM Sentadilla
+            ProgresiÃ³n 1RM Sentadilla
           </Text>
 
           <View className="bg-zinc-900 rounded-xl p-4 mb-6 border border-zinc-800">
@@ -182,7 +182,7 @@ export default function AdvancedProgress() {
                 propsForDots: {
                   r: '6',
                   strokeWidth: '2',
-                  stroke: '#10B981',
+                  stroke: '#9D12DE',
                 },
               }}
               bezier
@@ -193,13 +193,13 @@ export default function AdvancedProgress() {
             />
             <View className="flex-row items-center justify-between mt-2">
               <Text className="text-zinc-400 text-sm">Inicio: 130 kg</Text>
-              <Text className="text-emerald-500 font-bold">Actual: 140 kg (+10 kg)</Text>
+              <Text className="text-primary font-bold">Actual: 140 kg (+10 kg)</Text>
             </View>
           </View>
 
           {/* Metrics Grid */}
           <Text className="text-white font-bold text-lg mb-3">
-            Todas las Métricas
+            Todas las MÃ©tricas
           </Text>
 
           <View className="mb-6">
@@ -212,8 +212,8 @@ export default function AdvancedProgress() {
                 <View className="flex-row items-center justify-between">
                   <View className="flex-1">
                     <View className="flex-row items-center mb-2">
-                      <View className="w-10 h-10 bg-emerald-500/20 rounded-full items-center justify-center">
-                        <Ionicons name={metric.icon as any} size={20} color="#10B981" />
+                      <View className="w-10 h-10 bg-primary/20 rounded-full items-center justify-center">
+                        <Ionicons name={metric.icon as any} size={20} color="#9D12DE" />
                       </View>
                       <View className="ml-3 flex-1">
                         <Text className="text-white font-bold">{metric.name}</Text>
@@ -260,15 +260,15 @@ export default function AdvancedProgress() {
             Insights de IA
           </Text>
 
-          <View className="bg-emerald-500/10 rounded-xl p-4 mb-3 border border-emerald-500/30">
+          <View className="bg-primary/10 rounded-xl p-4 mb-3 border border-primary/30">
             <View className="flex-row items-start">
-              <Ionicons name="bulb" size={20} color="#10B981" />
+              <Ionicons name="bulb" size={20} color="#9D12DE" />
               <View className="flex-1 ml-3">
-                <Text className="text-emerald-400 font-bold mb-1">
+                <Text className="text-primary font-bold mb-1">
                   Progreso Excelente en Fuerza
                 </Text>
-                <Text className="text-emerald-300 text-sm">
-                  Tu 1RM en sentadilla ha aumentado 10kg en 3 semanas. Continúa con este ritmo.
+                <Text className="text-primary/80 text-sm">
+                  Tu 1RM en sentadilla ha aumentado 10kg en 3 semanas. ContinÃºa con este ritmo.
                 </Text>
               </View>
             </View>
@@ -276,27 +276,27 @@ export default function AdvancedProgress() {
 
           <View className="bg-amber-500/10 rounded-xl p-4 mb-3 border border-amber-500/30">
             <View className="flex-row items-start">
-              <Ionicons name="warning" size={20} color="#F59E0B" />
+              <Ionicons name="warning" size={20} color="#FFEA00" />
               <View className="flex-1 ml-3">
                 <Text className="text-amber-400 font-bold mb-1">
-                  Atención al Cardio
+                  AtenciÃ³n al Cardio
                 </Text>
                 <Text className="text-amber-300 text-sm">
-                  Tu VO2 Max ha bajado 2 puntos. Considera agregar más trabajo cardiovascular.
+                  Tu VO2 Max ha bajado 2 puntos. Considera agregar mÃ¡s trabajo cardiovascular.
                 </Text>
               </View>
             </View>
           </View>
 
-          <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30">
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30">
             <View className="flex-row items-start">
-              <Ionicons name="information-circle" size={20} color="#3B82F6" />
+              <Ionicons name="information-circle" size={20} color="#9D12DE" />
               <View className="flex-1 ml-3">
-                <Text className="text-blue-400 font-bold mb-1">
-                  Balance Muscular Óptimo
+                <Text className="text-primary/80 font-bold mb-1">
+                  Balance Muscular Ã“ptimo
                 </Text>
-                <Text className="text-blue-300 text-sm">
-                  Tu composición corporal está mejorando. -0.8% grasa con +1.2kg masa muscular.
+                <Text className="text-primary/60 text-sm">
+                  Tu composiciÃ³n corporal estÃ¡ mejorando. -0.8% grasa con +1.2kg masa muscular.
                 </Text>
               </View>
             </View>
@@ -306,3 +306,6 @@ export default function AdvancedProgress() {
     </View>
   );
 }
+
+
+

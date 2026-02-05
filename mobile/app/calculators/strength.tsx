@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -178,7 +178,7 @@ export default function StrengthCalculators() {
                   </View>
                   <View className="flex-row justify-between">
                     <Text className="text-zinc-400 text-sm">Reps: {p.reps}</Text>
-                    <Text className="text-emerald-400 text-sm">{p.use}</Text>
+                    <Text className="text-primary text-sm">{p.use}</Text>
                   </View>
                 </View>
               ))}
@@ -203,7 +203,7 @@ export default function StrengthCalculators() {
             {standards && (
               <View>
                 <View className="mb-4">
-                  <Text className="text-blue-400 font-bold mb-3">Squat Standards (kg)</Text>
+                  <Text className="text-primary/80 font-bold mb-3">Squat Standards (kg)</Text>
                   <View className="bg-zinc-800 rounded-xl p-3">
                     {Object.entries(standards.squat).map(([level, weight]) => (
                       <View key={level} className="flex-row justify-between mb-2 last:mb-0">
@@ -244,16 +244,16 @@ export default function StrengthCalculators() {
           <View className="bg-amber-500/10 rounded-xl p-4 border border-amber-500/30 mb-6">
             <Text className="text-amber-400 font-bold mb-2">Important Notes</Text>
             <Text className="text-amber-300 text-sm mb-2">
-              • 1RM calculators are estimates, not exact measurements
+              â€¢ 1RM calculators are estimates, not exact measurements
             </Text>
             <Text className="text-amber-300 text-sm mb-2">
-              • Most accurate for 3-8 rep range
+              â€¢ Most accurate for 3-8 rep range
             </Text>
             <Text className="text-amber-300 text-sm mb-2">
-              • Standards vary by federation, gender, and age
+              â€¢ Standards vary by federation, gender, and age
             </Text>
             <Text className="text-amber-300 text-sm">
-              • Use as general guidelines, not absolute truth
+              â€¢ Use as general guidelines, not absolute truth
             </Text>
           </View>
         </View>
@@ -261,3 +261,4 @@ export default function StrengthCalculators() {
     </View>
   );
 }
+

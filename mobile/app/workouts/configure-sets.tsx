@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+﻿import React, { useState, useEffect } from 'react';
 import {
   View,
   Text,
@@ -107,19 +107,19 @@ export default function ConfigureSetsScreen() {
   };
 
   const handleConfirm = () => {
-    // Validar según tipo
+    // Validar segÃºn tipo
     let allValid = false;
 
     if (exerciseType === 'reps') {
       allValid = sets.every((set) => set.reps && parseInt(set.reps) > 0);
       if (!allValid) {
-        Alert.alert('Error', 'Todas las series deben tener al menos 1 repetición');
+        Alert.alert('Error', 'Todas las series deben tener al menos 1 repeticiÃ³n');
         return;
       }
     } else if (exerciseType === 'time') {
       allValid = sets.every((set) => set.duration && parseFloat(set.duration) > 0);
       if (!allValid) {
-        Alert.alert('Error', 'Todas las series deben tener duración mayor a 0');
+        Alert.alert('Error', 'Todas las series deben tener duraciÃ³n mayor a 0');
         return;
       }
     } else if (exerciseType === 'distance') {
@@ -160,7 +160,7 @@ export default function ConfigureSetsScreen() {
   return (
     <View className="flex-1 bg-gray-50">
       {/* Header */}
-      <LinearGradient colors={['#10B981', '#059669']} className="px-6 pt-12 pb-6">
+      <LinearGradient colors={['#9D12DE', '#7C3AED']} className="px-6 pt-12 pb-6">
         <View className="flex-row items-center gap-4 mb-4">
           <TouchableOpacity onPress={() => router.back()} className="p-2 -ml-2">
             <Ionicons name="arrow-back" size={28} color="white" />
@@ -169,7 +169,7 @@ export default function ConfigureSetsScreen() {
             <Text className="text-3xl font-bold text-white mb-1">
               Configurar Series
             </Text>
-            <Text className="text-emerald-100 text-sm">
+            <Text className="text-primary/50 text-sm">
               {params.exerciseName || 'Ejercicio'}
             </Text>
           </View>
@@ -178,20 +178,20 @@ export default function ConfigureSetsScreen() {
 
       <ScrollView className="flex-1" contentContainerClassName="p-6 gap-4">
         {/* Info */}
-        <Card className="p-4 bg-blue-50 border border-blue-200">
+        <Card className="p-4 bg-primary/5 border border-primary/20">
           <View className="flex-row gap-3">
-            <View className="bg-blue-500 p-2 rounded-lg h-fit">
+            <View className="bg-primary p-2 rounded-lg h-fit">
               <Ionicons name="information-circle" size={24} color="white" />
             </View>
             <View className="flex-1">
-              <Text className="text-blue-900 font-semibold mb-1">
+              <Text className="text-text font-semibold mb-1">
                 Configura tus series
               </Text>
-              <Text className="text-blue-700 text-sm">
+              <Text className="text-text/70 text-sm">
                 {exerciseType === 'reps' &&
                   'Agrega las series que planeas hacer. El peso es opcional.'}
                 {exerciseType === 'time' &&
-                  `Configura la duración de cada serie en ${getUnitLabel()}.`}
+                  `Configura la duraciÃ³n de cada serie en ${getUnitLabel()}.`}
                 {exerciseType === 'distance' &&
                   `Configura la distancia de cada serie en ${getUnitLabel()}.`}
               </Text>
@@ -252,7 +252,7 @@ export default function ConfigureSetsScreen() {
               {exerciseType === 'time' && (
                 <View className="flex-1">
                   <Text className="text-sm font-semibold text-gray-700 mb-2">
-                    Duración ({getUnitLabel()}) *
+                    DuraciÃ³n ({getUnitLabel()}) *
                   </Text>
                   <TextInput
                     value={set.duration}
@@ -285,10 +285,10 @@ export default function ConfigureSetsScreen() {
 
         {/* Add Set Button */}
         <TouchableOpacity onPress={addSet} activeOpacity={0.7}>
-          <Card className="p-4 border-2 border-dashed border-emerald-300 bg-emerald-50">
+          <Card className="p-4 border-2 border-dashed border-primary/30 bg-primary/10">
             <View className="flex-row items-center justify-center gap-2">
-              <Ionicons name="add-circle" size={24} color="#10B981" />
-              <Text className="text-emerald-600 font-bold text-base">
+              <Ionicons name="add-circle" size={24} color="#9D12DE" />
+              <Text className="text-primary font-bold text-base">
                 Agregar Serie
               </Text>
             </View>
@@ -299,7 +299,7 @@ export default function ConfigureSetsScreen() {
         <Card className="p-4 bg-gray-100">
           <View className="flex-row items-center justify-between">
             <Text className="text-gray-700 font-semibold">Total Series:</Text>
-            <Text className="text-2xl font-bold text-emerald-600">
+            <Text className="text-2xl font-bold text-primary">
               {sets.length}
             </Text>
           </View>
@@ -315,3 +315,4 @@ export default function ConfigureSetsScreen() {
     </View>
   );
 }
+

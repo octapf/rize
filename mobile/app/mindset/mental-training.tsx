@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -249,7 +249,7 @@ export default function MentalTraining() {
             <Text className="text-white font-bold text-lg mb-3">Benefits</Text>
             {currentTechnique.benefits.map((benefit, idx) => (
               <View key={idx} className="flex-row items-start mb-2 last:mb-0">
-                <Ionicons name="checkmark-circle" size={18} color="#10b981" />
+                <Ionicons name="checkmark-circle" size={18} color="#9D12DE" />
                 <Text className="text-zinc-300 ml-2 flex-1">{benefit}</Text>
               </View>
             ))}
@@ -292,15 +292,15 @@ export default function MentalTraining() {
             <Text className="text-white font-bold text-lg mb-3">Pro Tips</Text>
             {currentTechnique.tips.map((tip, idx) => (
               <View key={idx} className="flex-row items-start mb-2 last:mb-0">
-                <Ionicons name="bulb" size={16} color="#f59e0b" />
+                <Ionicons name="bulb" size={16} color="#FFEA00" />
                 <Text className="text-zinc-300 ml-2 flex-1">{tip}</Text>
               </View>
             ))}
           </View>
 
           {'examples' in currentTechnique && (
-            <View className="bg-emerald-500/10 rounded-xl p-5 mb-6 border border-emerald-500/30">
-              <Text className="text-emerald-400 font-bold text-lg mb-3">Examples</Text>
+            <View className="bg-primary/10 rounded-xl p-5 mb-6 border border-primary/30">
+              <Text className="text-primary font-bold text-lg mb-3">Examples</Text>
               {currentTechnique.examples.map((ex, idx) => (
                 <View key={idx} className="bg-zinc-900 rounded-xl p-3 mb-3 last:mb-0">
                   <View className="flex-row items-start mb-2">
@@ -308,17 +308,17 @@ export default function MentalTraining() {
                     <Text className="text-red-400 ml-2 flex-1 line-through">{ex.negative}</Text>
                   </View>
                   <View className="flex-row items-start">
-                    <Ionicons name="checkmark-circle" size={16} color="#10b981" />
-                    <Text className="text-emerald-400 ml-2 flex-1 font-bold">{ex.positive}</Text>
+                    <Ionicons name="checkmark-circle" size={16} color="#9D12DE" />
+                    <Text className="text-primary ml-2 flex-1 font-bold">{ex.positive}</Text>
                   </View>
                 </View>
               ))}
             </View>
           )}
 
-          <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30 mb-6">
-            <Text className="text-blue-400 font-bold mb-2">The Mental Game</Text>
-            <Text className="text-blue-300 text-sm">
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
+            <Text className="text-primary/80 font-bold mb-2">The Mental Game</Text>
+            <Text className="text-primary/60 text-sm">
               Elite lifters train their mind as hard as their body. Mental skills are SKILLS - they require practice, not just knowledge. Start with one technique and master it.
             </Text>
           </View>
@@ -327,3 +327,4 @@ export default function MentalTraining() {
     </View>
   );
 }
+

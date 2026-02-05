@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -25,15 +25,15 @@ interface RPEEntry {
 
 const RPE_SCALE = [
   { value: 10, label: 'Max Esfuerzo', description: 'Imposible hacer otra rep', color: 'red', reps: '0 RIR' },
-  { value: 9.5, label: 'Casi Max', description: 'Quizás 1 rep más', color: 'red', reps: '0-1 RIR' },
-  { value: 9, label: 'Muy Duro', description: '1 rep más seguro', color: 'orange', reps: '1 RIR' },
-  { value: 8.5, label: 'Duro+', description: '1-2 reps más', color: 'orange', reps: '1-2 RIR' },
-  { value: 8, label: 'Duro', description: '2 reps más', color: 'amber', reps: '2 RIR' },
-  { value: 7.5, label: 'Moderado+', description: '2-3 reps más', color: 'amber', reps: '2-3 RIR' },
-  { value: 7, label: 'Moderado', description: '3 reps más', color: 'yellow', reps: '3 RIR' },
-  { value: 6, label: 'Moderado-', description: '4 reps más', color: 'lime', reps: '4 RIR' },
-  { value: 5, label: 'Fácil', description: '5+ reps más', color: 'emerald', reps: '5+ RIR' },
-  { value: 4, label: 'Muy Fácil', description: 'Calentamiento', color: 'blue', reps: 'Warmup' },
+  { value: 9.5, label: 'Casi Max', description: 'QuizÃ¡s 1 rep mÃ¡s', color: 'red', reps: '0-1 RIR' },
+  { value: 9, label: 'Muy Duro', description: '1 rep mÃ¡s seguro', color: 'orange', reps: '1 RIR' },
+  { value: 8.5, label: 'Duro+', description: '1-2 reps mÃ¡s', color: 'orange', reps: '1-2 RIR' },
+  { value: 8, label: 'Duro', description: '2 reps mÃ¡s', color: 'amber', reps: '2 RIR' },
+  { value: 7.5, label: 'Moderado+', description: '2-3 reps mÃ¡s', color: 'amber', reps: '2-3 RIR' },
+  { value: 7, label: 'Moderado', description: '3 reps mÃ¡s', color: 'yellow', reps: '3 RIR' },
+  { value: 6, label: 'Moderado-', description: '4 reps mÃ¡s', color: 'lime', reps: '4 RIR' },
+  { value: 5, label: 'FÃ¡cil', description: '5+ reps mÃ¡s', color: 'emerald', reps: '5+ RIR' },
+  { value: 4, label: 'Muy FÃ¡cil', description: 'Calentamiento', color: 'blue', reps: 'Warmup' },
 ];
 
 const COMMON_EXERCISES = [
@@ -54,7 +54,7 @@ const MOCK_ENTRIES: RPEEntry[] = [
     reps: 6,
     weight: 100,
     rpe: 8.5,
-    notes: 'Última serie muy dura',
+    notes: 'Ãšltima serie muy dura',
   },
   {
     id: '2',
@@ -108,13 +108,13 @@ export default function RPETracker() {
     setEntries([entry, ...entries]);
     setNewEntry({ exercise: '', sets: '', reps: '', weight: '', rpe: 8, notes: '' });
     setShowAddForm(false);
-    Alert.alert('Entrada Guardada! 📊', 'RPE registrado');
+    Alert.alert('Entrada Guardada! ðŸ“Š', 'RPE registrado');
   };
 
   const deleteEntry = (id: string) => {
     Alert.alert(
       'Eliminar Entrada',
-      '¿Estás seguro?',
+      'Â¿EstÃ¡s seguro?',
       [
         { text: 'Cancelar' },
         { text: 'Eliminar', style: 'destructive', onPress: () => setEntries(entries.filter((e) => e.id !== id)) },
@@ -162,7 +162,7 @@ export default function RPETracker() {
     }
 
     return {
-      message: 'Mantén peso actual, progresando bien',
+      message: 'MantÃ©n peso actual, progresando bien',
       color: 'blue',
       icon: 'checkmark-circle',
     };
@@ -201,7 +201,7 @@ export default function RPETracker() {
                       key={ex}
                       onPress={() => setNewEntry({ ...newEntry, exercise: ex })}
                       className={`px-3 py-2 rounded-lg ${
-                        newEntry.exercise === ex ? 'bg-blue-500' : 'bg-zinc-800'
+                        newEntry.exercise === ex ? 'bg-primary' : 'bg-zinc-800'
                       }`}
                     >
                       <Text className={`text-sm font-bold ${newEntry.exercise === ex ? 'text-white' : 'text-zinc-400'}`}>
@@ -298,7 +298,7 @@ export default function RPETracker() {
                 <Text className="text-zinc-400 text-sm mb-2">Notas (opcional)</Text>
                 <TextInput
                   className="bg-zinc-800 rounded-lg px-4 py-3 text-white"
-                  placeholder="Ej: Última serie muy dura..."
+                  placeholder="Ej: Ãšltima serie muy dura..."
                   placeholderTextColor="#71717A"
                   multiline
                   value={newEntry.notes}
@@ -308,7 +308,7 @@ export default function RPETracker() {
 
               <TouchableOpacity
                 onPress={addEntry}
-                className="bg-emerald-500 rounded-xl p-4 flex-row items-center justify-center"
+                className="bg-primary rounded-xl p-4 flex-row items-center justify-center"
               >
                 <Ionicons name="checkmark-circle" size={20} color="white" />
                 <Text className="text-white font-bold ml-2">Guardar RPE</Text>
@@ -317,13 +317,13 @@ export default function RPETracker() {
           ) : (
             <>
               {/* Average RPE */}
-              <View className="bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl p-6 mb-6">
+              <View className="bg-gradient-to-r from-primary to-[#7D0EBE] rounded-xl p-6 mb-6">
                 <Text className="text-white opacity-90 text-sm mb-1">RPE Promedio</Text>
                 <Text className="text-white text-6xl font-bold mb-2">
                   {getAverageRPE() || '-'}
                 </Text>
                 <Text className="text-white opacity-90">
-                  Últimas {entries.length} sesiones registradas
+                  Ãšltimas {entries.length} sesiones registradas
                 </Text>
               </View>
 
@@ -331,7 +331,7 @@ export default function RPETracker() {
               <Text className="text-white font-bold text-lg mb-4">Historial</Text>
               {entries.length === 0 ? (
                 <View className="bg-zinc-900 rounded-xl p-8 items-center border border-zinc-800">
-                  <Text className="text-6xl mb-3">📊</Text>
+                  <Text className="text-6xl mb-3">ðŸ“Š</Text>
                   <Text className="text-white font-bold text-lg mb-2">Sin Entradas</Text>
                   <Text className="text-zinc-400 text-center">
                     Empieza a trackear tu esfuerzo percibido
@@ -383,7 +383,7 @@ export default function RPETracker() {
                         {/* RPE Info */}
                         <View className={`bg-${rpeInfo.color}-500/10 rounded-lg p-3 mb-3 border border-${rpeInfo.color}-500/30`}>
                           <Text className={`text-${rpeInfo.color}-400 font-bold text-sm mb-1`}>
-                            {rpeInfo.label} • {rpeInfo.reps}
+                            {rpeInfo.label} â€¢ {rpeInfo.reps}
                           </Text>
                           <Text className={`text-${rpeInfo.color}-300 text-xs`}>
                             {rpeInfo.description}
@@ -433,20 +433,20 @@ export default function RPETracker() {
           </View>
 
           {/* Tips */}
-          <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30 mb-6">
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
             <View className="flex-row items-start">
-              <Ionicons name="bulb" size={20} color="#3B82F6" />
+              <Ionicons name="bulb" size={20} color="#9D12DE" />
               <View className="flex-1 ml-3">
-                <Text className="text-blue-400 font-bold mb-2">
-                  Cómo Usar RPE
+                <Text className="text-primary/80 font-bold mb-2">
+                  CÃ³mo Usar RPE
                 </Text>
-                <Text className="text-blue-300 text-sm">
-                  • Objetivo hipertrofia: RPE 7-9{'\n'}
-                  • Objetivo fuerza: RPE 7-8.5{'\n'}
-                  • Siempre deja 1-2 reps en reserva{'\n'}
-                  • RPE 10 solo en tests de max{'\n'}
-                  • Trackea para ajustar peso/volumen{'\n'}
-                  • Aprende a ser honesto contigo mismo
+                <Text className="text-primary/60 text-sm">
+                  â€¢ Objetivo hipertrofia: RPE 7-9{'\n'}
+                  â€¢ Objetivo fuerza: RPE 7-8.5{'\n'}
+                  â€¢ Siempre deja 1-2 reps en reserva{'\n'}
+                  â€¢ RPE 10 solo en tests de max{'\n'}
+                  â€¢ Trackea para ajustar peso/volumen{'\n'}
+                  â€¢ Aprende a ser honesto contigo mismo
                 </Text>
               </View>
             </View>
@@ -469,3 +469,4 @@ function getColorHex(color: string): string {
   };
   return colors[color] || '3B82F6';
 }
+

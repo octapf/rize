@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -42,7 +42,7 @@ const PROGRAMS: Program[] = [
     level: 'beginner',
     goal: 'Fuerza base',
     workoutsPerWeek: 3,
-    description: 'Programa diseñado para construir una base sólida de fuerza y técnica en ejercicios fundamentales de calistenia.',
+    description: 'Programa diseÃ±ado para construir una base sÃ³lida de fuerza y tÃ©cnica en ejercicios fundamentales de calistenia.',
     weeks: [
       {
         weekNumber: 1,
@@ -61,7 +61,7 @@ const PROGRAMS: Program[] = [
     level: 'intermediate',
     goal: 'Hipertrofia',
     workoutsPerWeek: 6,
-    description: 'Rutina clásica dividida en empuje, tracción y piernas para maximizar el crecimiento muscular.',
+    description: 'Rutina clÃ¡sica dividida en empuje, tracciÃ³n y piernas para maximizar el crecimiento muscular.',
     weeks: [
       {
         weekNumber: 1,
@@ -99,18 +99,18 @@ const PROGRAMS: Program[] = [
   },
   {
     id: '4',
-    name: 'Pérdida de Grasa',
+    name: 'PÃ©rdida de Grasa',
     duration: '10 semanas',
     level: 'intermediate',
-    goal: 'Definición',
+    goal: 'DefiniciÃ³n',
     workoutsPerWeek: 4,
-    description: 'Combinación de fuerza y cardio metabólico para maximizar la quema de grasa mientras preservas músculo.',
+    description: 'CombinaciÃ³n de fuerza y cardio metabÃ³lico para maximizar la quema de grasa mientras preservas mÃºsculo.',
     weeks: [
       {
         weekNumber: 1,
         workouts: [
-          { day: 1, name: 'Upper Body HIIT', exercises: 8, duration: '40min', type: 'Metabólico' },
-          { day: 2, name: 'Lower Body HIIT', exercises: 8, duration: '40min', type: 'Metabólico' },
+          { day: 1, name: 'Upper Body HIIT', exercises: 8, duration: '40min', type: 'MetabÃ³lico' },
+          { day: 2, name: 'Lower Body HIIT', exercises: 8, duration: '40min', type: 'MetabÃ³lico' },
           { day: 4, name: 'Full Body Circuit', exercises: 10, duration: '45min', type: 'Circuito' },
           { day: 6, name: 'HIIT Cardio', exercises: 6, duration: '35min', type: 'Cardio' },
         ],
@@ -133,9 +133,9 @@ export default function TrainingPrograms() {
   const getLevelColor = (level: string) => {
     switch (level) {
       case 'beginner':
-        return '#10B981';
+        return '#9D12DE';
       case 'intermediate':
-        return '#F59E0B';
+        return '#FFEA00';
       case 'advanced':
         return '#EF4444';
       default:
@@ -159,13 +159,13 @@ export default function TrainingPrograms() {
   const startProgram = (program: Program) => {
     Alert.alert(
       'Iniciar Programa',
-      `¿Quieres comenzar "${program.name}"?\n\nDuración: ${program.duration}\nEntrenos por semana: ${program.workoutsPerWeek}`,
+      `Â¿Quieres comenzar "${program.name}"?\n\nDuraciÃ³n: ${program.duration}\nEntrenos por semana: ${program.workoutsPerWeek}`,
       [
         { text: 'Cancelar', style: 'cancel' },
         {
           text: 'Comenzar',
           onPress: () => {
-            Alert.alert('¡Programa Iniciado!', 'Ahora puedes ver tu progreso en la sección de rutinas.');
+            Alert.alert('Â¡Programa Iniciado!', 'Ahora puedes ver tu progreso en la secciÃ³n de rutinas.');
           },
         },
       ]
@@ -184,7 +184,7 @@ export default function TrainingPrograms() {
             Programas de Entrenamiento
           </Text>
           <TouchableOpacity>
-            <Ionicons name="add-circle" size={28} color="#10B981" />
+            <Ionicons name="add-circle" size={28} color="#9D12DE" />
           </TouchableOpacity>
         </View>
 
@@ -219,7 +219,7 @@ export default function TrainingPrograms() {
             onPress={() => setSelectedLevel(level)}
             className={`mr-3 px-4 py-2 rounded-xl ${
               selectedLevel === level
-                ? 'bg-emerald-500'
+                ? 'bg-primary'
                 : 'bg-zinc-900'
             }`}
           >
@@ -304,9 +304,9 @@ export default function TrainingPrograms() {
                     {program.weeks[0].workouts.slice(0, 3).map((workout, index) => (
                       <View
                         key={index}
-                        className="bg-emerald-500/10 px-3 py-1 rounded-lg"
+                        className="bg-primary/10 px-3 py-1 rounded-lg"
                       >
-                        <Text className="text-emerald-500 text-xs font-semibold">
+                        <Text className="text-primary text-xs font-semibold">
                           {workout.name}
                         </Text>
                       </View>
@@ -314,7 +314,7 @@ export default function TrainingPrograms() {
                     {program.weeks[0].workouts.length > 3 && (
                       <View className="bg-zinc-800 px-3 py-1 rounded-lg">
                         <Text className="text-zinc-400 text-xs font-semibold">
-                          +{program.weeks[0].workouts.length - 3} más
+                          +{program.weeks[0].workouts.length - 3} mÃ¡s
                         </Text>
                       </View>
                     )}
@@ -324,7 +324,7 @@ export default function TrainingPrograms() {
                 {/* CTA */}
                 <TouchableOpacity
                   onPress={() => startProgram(program)}
-                  className="bg-emerald-500 rounded-lg p-3 mt-3 flex-row items-center justify-center"
+                  className="bg-primary rounded-lg p-3 mt-3 flex-row items-center justify-center"
                 >
                   <Ionicons name="play" size={20} color="white" />
                   <Text className="text-white font-bold ml-2">Comenzar Programa</Text>
@@ -340,7 +340,7 @@ export default function TrainingPrograms() {
                 No se encontraron programas
               </Text>
               <Text className="text-zinc-600 text-sm mt-2 text-center">
-                Intenta cambiar los filtros o buscar otro término
+                Intenta cambiar los filtros o buscar otro tÃ©rmino
               </Text>
             </View>
           )}
@@ -349,3 +349,4 @@ export default function TrainingPrograms() {
     </View>
   );
 }
+

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -151,13 +151,13 @@ export default function BodyFatCalculator() {
   const getCategory = (bf: number, g: Gender) => {
     if (g === 'male') {
       if (bf < 6) return { label: 'Esencial', color: 'blue', range: '2-5%' };
-      if (bf < 14) return { label: 'Atlético', color: 'emerald', range: '6-13%' };
+      if (bf < 14) return { label: 'AtlÃ©tico', color: 'emerald', range: '6-13%' };
       if (bf < 18) return { label: 'Fitness', color: 'green', range: '14-17%' };
       if (bf < 25) return { label: 'Promedio', color: 'amber', range: '18-24%' };
       return { label: 'Obesidad', color: 'red', range: '25%+' };
     } else {
       if (bf < 14) return { label: 'Esencial', color: 'blue', range: '10-13%' };
-      if (bf < 21) return { label: 'Atlético', color: 'emerald', range: '14-20%' };
+      if (bf < 21) return { label: 'AtlÃ©tico', color: 'emerald', range: '14-20%' };
       if (bf < 25) return { label: 'Fitness', color: 'green', range: '21-24%' };
       if (bf < 32) return { label: 'Promedio', color: 'amber', range: '25-31%' };
       return { label: 'Obesidad', color: 'red', range: '32%+' };
@@ -204,18 +204,18 @@ export default function BodyFatCalculator() {
         <View className="px-6 pt-6">
           {/* Method Selection */}
           <View className="bg-zinc-900 rounded-xl p-6 mb-6 border border-zinc-800">
-            <Text className="text-white text-lg font-bold mb-4">Método de Cálculo</Text>
+            <Text className="text-white text-lg font-bold mb-4">MÃ©todo de CÃ¡lculo</Text>
             
             <TouchableOpacity
               onPress={() => setMethod('navy')}
-              className={`rounded-lg p-3 mb-2 ${method === 'navy' ? 'bg-blue-500' : 'bg-zinc-800'}`}
+              className={`rounded-lg p-3 mb-2 ${method === 'navy' ? 'bg-primary' : 'bg-zinc-800'}`}
             >
               <View className="flex-row items-center justify-between">
                 <View className="flex-1">
                   <Text className={`font-bold ${method === 'navy' ? 'text-white' : 'text-zinc-300'}`}>
                     Navy Method (US Navy)
                   </Text>
-                  <Text className={`text-sm ${method === 'navy' ? 'text-blue-100' : 'text-zinc-400'}`}>
+                  <Text className={`text-sm ${method === 'navy' ? 'text-highlight' : 'text-zinc-400'}`}>
                     Circunferencias: Cuello, Cintura{gender === 'female' ? ', Cadera' : ''}
                   </Text>
                 </View>
@@ -225,14 +225,14 @@ export default function BodyFatCalculator() {
 
             <TouchableOpacity
               onPress={() => setMethod('jackson3')}
-              className={`rounded-lg p-3 mb-2 ${method === 'jackson3' ? 'bg-emerald-500' : 'bg-zinc-800'}`}
+              className={`rounded-lg p-3 mb-2 ${method === 'jackson3' ? 'bg-primary' : 'bg-zinc-800'}`}
             >
               <View className="flex-row items-center justify-between">
                 <View className="flex-1">
                   <Text className={`font-bold ${method === 'jackson3' ? 'text-white' : 'text-zinc-300'}`}>
                     Jackson-Pollock 3 Pliegues
                   </Text>
-                  <Text className={`text-sm ${method === 'jackson3' ? 'text-emerald-100' : 'text-zinc-400'}`}>
+                  <Text className={`text-sm ${method === 'jackson3' ? 'text-primary/50' : 'text-zinc-400'}`}>
                     Requiere calibrador de pliegues (3 sitios)
                   </Text>
                 </View>
@@ -250,7 +250,7 @@ export default function BodyFatCalculator() {
                     Jackson-Pollock 7 Pliegues
                   </Text>
                   <Text className={`text-sm ${method === 'jackson7' ? 'text-amber-100' : 'text-zinc-400'}`}>
-                    Más preciso, requiere calibrador (7 sitios)
+                    MÃ¡s preciso, requiere calibrador (7 sitios)
                   </Text>
                 </View>
                 {method === 'jackson7' && <Ionicons name="checkmark-circle" size={24} color="white" />}
@@ -260,7 +260,7 @@ export default function BodyFatCalculator() {
 
           {/* Basic Info */}
           <View className="bg-zinc-900 rounded-xl p-6 mb-6 border border-zinc-800">
-            <Text className="text-white text-lg font-bold mb-4">Información Básica</Text>
+            <Text className="text-white text-lg font-bold mb-4">InformaciÃ³n BÃ¡sica</Text>
 
             {/* Gender */}
             <View className="mb-4">
@@ -268,7 +268,7 @@ export default function BodyFatCalculator() {
               <View className="flex-row gap-2">
                 <TouchableOpacity
                   onPress={() => setGender('male')}
-                  className={`flex-1 rounded-lg p-3 ${gender === 'male' ? 'bg-blue-500' : 'bg-zinc-800'}`}
+                  className={`flex-1 rounded-lg p-3 ${gender === 'male' ? 'bg-primary' : 'bg-zinc-800'}`}
                 >
                   <Text className={`text-center font-bold ${gender === 'male' ? 'text-white' : 'text-zinc-400'}`}>
                     Hombre
@@ -356,7 +356,7 @@ export default function BodyFatCalculator() {
 
               {gender === 'female' && (
                 <View>
-                  <Text className="text-zinc-400 text-sm mb-2">Cadera (punto más ancho)</Text>
+                  <Text className="text-zinc-400 text-sm mb-2">Cadera (punto mÃ¡s ancho)</Text>
                   <TextInput
                     className="bg-zinc-800 rounded-lg px-4 py-3 text-white"
                     placeholder="95"
@@ -373,7 +373,7 @@ export default function BodyFatCalculator() {
           {method === 'jackson3' && (
             <View className="bg-zinc-900 rounded-xl p-6 mb-6 border border-zinc-800">
               <Text className="text-white text-lg font-bold mb-4">
-                Pliegues Cutáneos (mm) - 3 Sitios
+                Pliegues CutÃ¡neos (mm) - 3 Sitios
               </Text>
               
               {gender === 'male' ? (
@@ -404,7 +404,7 @@ export default function BodyFatCalculator() {
               ) : (
                 <>
                   <View className="mb-4">
-                    <Text className="text-zinc-400 text-sm mb-2">Tríceps</Text>
+                    <Text className="text-zinc-400 text-sm mb-2">TrÃ­ceps</Text>
                     <TextInput
                       className="bg-zinc-800 rounded-lg px-4 py-3 text-white"
                       placeholder="15"
@@ -444,10 +444,10 @@ export default function BodyFatCalculator() {
           {method === 'jackson7' && (
             <View className="bg-zinc-900 rounded-xl p-6 mb-6 border border-zinc-800">
               <Text className="text-white text-lg font-bold mb-4">
-                Pliegues Cutáneos (mm) - 7 Sitios
+                Pliegues CutÃ¡neos (mm) - 7 Sitios
               </Text>
               
-              {['Pecho', 'Abdomen', 'Muslo', 'Tríceps', 'Suprailiaco', 'Midaxilar', 'Subescapular'].map((name, index) => {
+              {['Pecho', 'Abdomen', 'Muslo', 'TrÃ­ceps', 'Suprailiaco', 'Midaxilar', 'Subescapular'].map((name, index) => {
                 const fields = [chest, abdomen, thigh, tricep, suprailiac, midaxillary, subscapular];
                 const setters = [setChest, setAbdomen, setThigh, setTricep, setSuprailiac, setMidaxillary, setSubscapular];
                 
@@ -471,7 +471,7 @@ export default function BodyFatCalculator() {
           {/* Calculate Button */}
           <TouchableOpacity
             onPress={calculate}
-            className="bg-emerald-500 rounded-xl p-4 mb-6 flex-row items-center justify-center"
+            className="bg-primary rounded-xl p-4 mb-6 flex-row items-center justify-center"
           >
             <Ionicons name="calculator" size={20} color="white" />
             <Text className="text-white font-bold ml-2">Calcular % Grasa</Text>
@@ -503,27 +503,27 @@ export default function BodyFatCalculator() {
                   <Text className="text-red-400 text-xs mb-1">MASA GRASA</Text>
                   <Text className="text-red-400 font-bold text-2xl">{result.fatMass} kg</Text>
                 </View>
-                <View className="flex-1 bg-emerald-500/10 rounded-xl p-4 border border-emerald-500/30">
-                  <Text className="text-emerald-400 text-xs mb-1">MASA MAGRA</Text>
-                  <Text className="text-emerald-400 font-bold text-2xl">{result.leanMass} kg</Text>
+                <View className="flex-1 bg-primary/10 rounded-xl p-4 border border-primary/30">
+                  <Text className="text-primary text-xs mb-1">MASA MAGRA</Text>
+                  <Text className="text-primary font-bold text-2xl">{result.leanMass} kg</Text>
                 </View>
               </View>
             </>
           )}
 
           {/* Info Card */}
-          <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30 mb-6">
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
             <View className="flex-row items-start">
-              <Ionicons name="information-circle" size={20} color="#3B82F6" />
+              <Ionicons name="information-circle" size={20} color="#9D12DE" />
               <View className="flex-1 ml-3">
-                <Text className="text-blue-400 font-bold mb-2">
-                  Precisión de Métodos
+                <Text className="text-primary/80 font-bold mb-2">
+                  PrecisiÃ³n de MÃ©todos
                 </Text>
-                <Text className="text-blue-300 text-sm">
-                  • Navy: Fácil, ~±3-4% error{'\n'}
-                  • Jackson-Pollock 3: Preciso, ~±2-3%{'\n'}
-                  • Jackson-Pollock 7: Muy preciso, ~±1-2%{'\n\n'}
-                  DEXA scan es el gold standard (~±1%)
+                <Text className="text-primary/60 text-sm">
+                  â€¢ Navy: FÃ¡cil, ~Â±3-4% error{'\n'}
+                  â€¢ Jackson-Pollock 3: Preciso, ~Â±2-3%{'\n'}
+                  â€¢ Jackson-Pollock 7: Muy preciso, ~Â±1-2%{'\n\n'}
+                  DEXA scan es el gold standard (~Â±1%)
                 </Text>
               </View>
             </View>
@@ -533,3 +533,4 @@ export default function BodyFatCalculator() {
     </View>
   );
 }
+

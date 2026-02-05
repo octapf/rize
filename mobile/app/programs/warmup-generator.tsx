@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -56,21 +56,21 @@ export default function WarmupGenerator() {
     const plan: WarmupPlan[] = [
       // Phase 1: General Movement
       {
-        phase: 'Activación General',
+        phase: 'ActivaciÃ³n General',
         duration: '3-5 min',
         color: 'emerald',
         exercises: getGeneralMovement(selectedType),
       },
       // Phase 2: Dynamic Stretching
       {
-        phase: 'Movilidad Dinámica',
+        phase: 'Movilidad DinÃ¡mica',
         duration: '3-4 min',
         color: 'blue',
         exercises: getDynamicStretches(selectedType),
       },
       // Phase 3: Activation
       {
-        phase: 'Activación Muscular',
+        phase: 'ActivaciÃ³n Muscular',
         duration: '2-3 min',
         color: 'purple',
         exercises: getActivation(selectedType),
@@ -80,7 +80,7 @@ export default function WarmupGenerator() {
     // Phase 4: Specific Warmup (if main lift selected)
     if (selectedLift && workingWeight) {
       plan.push({
-        phase: 'Calentamiento Específico',
+        phase: 'Calentamiento EspecÃ­fico',
         duration: '5-7 min',
         color: 'amber',
         exercises: getSpecificWarmup(selectedLift, workingWeight),
@@ -106,7 +106,7 @@ export default function WarmupGenerator() {
 
     return [
       ...common,
-      { name: 'Arm Circles', sets: 1, reps: '10 adelante/atrás' },
+      { name: 'Arm Circles', sets: 1, reps: '10 adelante/atrÃ¡s' },
       { name: 'Torso Twists', sets: 1, reps: '15' },
     ];
   };
@@ -114,9 +114,9 @@ export default function WarmupGenerator() {
   const getDynamicStretches = (type: string): WarmupExercise[] => {
     if (type === 'lower' || type === 'fullbody') {
       return [
-        { name: 'World\'s Greatest Stretch', sets: 1, reps: '5 cada lado', notes: 'Mantén 2 seg' },
+        { name: 'World\'s Greatest Stretch', sets: 1, reps: '5 cada lado', notes: 'MantÃ©n 2 seg' },
         { name: 'Walking Lunges', sets: 1, reps: '10 cada pierna' },
-        { name: 'Leg Swings (frontal y lateral)', sets: 1, reps: '10 cada dirección' },
+        { name: 'Leg Swings (frontal y lateral)', sets: 1, reps: '10 cada direcciÃ³n' },
         { name: '90/90 Hip Rotations', sets: 1, reps: '8 cada lado' },
       ];
     }
@@ -134,7 +134,7 @@ export default function WarmupGenerator() {
       { name: 'Cat-Cow', sets: 1, reps: '10' },
       { name: 'Thread the Needle', sets: 1, reps: '6 cada lado' },
       { name: 'Band Pull-Aparts', sets: 2, reps: '15' },
-      { name: 'Dead Hangs', sets: 1, reps: '20 seg', notes: 'Activa escápulas' },
+      { name: 'Dead Hangs', sets: 1, reps: '20 seg', notes: 'Activa escÃ¡pulas' },
     ];
   };
 
@@ -143,7 +143,7 @@ export default function WarmupGenerator() {
       return [
         { name: 'Glute Bridges', sets: 2, reps: '15', notes: 'Pausa arriba 2 seg' },
         { name: 'Clamshells', sets: 2, reps: '12 cada lado', notes: 'Con banda si tienes' },
-        { name: 'Monster Walks', sets: 2, reps: '10 pasos cada dirección', notes: 'Banda en rodillas' },
+        { name: 'Monster Walks', sets: 2, reps: '10 pasos cada direcciÃ³n', notes: 'Banda en rodillas' },
       ];
     }
 
@@ -157,8 +157,8 @@ export default function WarmupGenerator() {
 
     return [
       { name: 'Band Rows', sets: 2, reps: '15' },
-      { name: 'Scapular Retractions', sets: 2, reps: '12', notes: 'Enfócate en apretar' },
-      { name: 'Y-T-W Raises', sets: 1, reps: '8 cada posición' },
+      { name: 'Scapular Retractions', sets: 2, reps: '12', notes: 'EnfÃ³cate en apretar' },
+      { name: 'Y-T-W Raises', sets: 1, reps: '8 cada posiciÃ³n' },
     ];
   };
 
@@ -170,11 +170,11 @@ export default function WarmupGenerator() {
     const set3 = Math.round(working * 0.85 / 2.5) * 2.5;
 
     return [
-      { name: lift, sets: 1, reps: '10', weight: `${bar}kg (barra sola)`, notes: 'Enfócate en técnica' },
+      { name: lift, sets: 1, reps: '10', weight: `${bar}kg (barra sola)`, notes: 'EnfÃ³cate en tÃ©cnica' },
       { name: lift, sets: 1, reps: '8', weight: `${set1}kg`, notes: '50% del peso de trabajo' },
       { name: lift, sets: 1, reps: '5', weight: `${set2}kg`, notes: '70% del peso de trabajo' },
       { name: lift, sets: 1, reps: '3', weight: `${set3}kg`, notes: '85% del peso de trabajo' },
-      { name: lift, sets: 1, reps: '1', weight: `${working}kg`, notes: 'Peso de trabajo - ¡Listo!' },
+      { name: lift, sets: 1, reps: '1', weight: `${working}kg`, notes: 'Peso de trabajo - Â¡Listo!' },
     ];
   };
 
@@ -206,8 +206,8 @@ export default function WarmupGenerator() {
         <ScrollView className="flex-1" showsVerticalScrollIndicator={false}>
           <View className="px-6 pt-6">
             {/* Total Duration */}
-            <View className="bg-gradient-to-r from-emerald-500 to-blue-500 rounded-xl p-6 mb-6">
-              <Text className="text-white opacity-90 text-sm mb-1">Duración Total</Text>
+            <View className="bg-gradient-to-r from-primary to-[#7D0EBE] rounded-xl p-6 mb-6">
+              <Text className="text-white opacity-90 text-sm mb-1">DuraciÃ³n Total</Text>
               <Text className="text-white text-5xl font-bold mb-2">
                 {selectedLift ? '18-20' : '10-12'} min
               </Text>
@@ -246,7 +246,7 @@ export default function WarmupGenerator() {
                           {exercise.name}
                         </Text>
                         <Text className={`text-${phase.color}-400 font-bold`}>
-                          {exercise.sets} × {exercise.reps}
+                          {exercise.sets} Ã— {exercise.reps}
                         </Text>
                       </View>
                       {exercise.weight && (
@@ -256,7 +256,7 @@ export default function WarmupGenerator() {
                       )}
                       {exercise.notes && (
                         <Text className="text-zinc-500 text-sm italic">
-                          💡 {exercise.notes}
+                          ðŸ’¡ {exercise.notes}
                         </Text>
                       )}
                     </View>
@@ -267,8 +267,8 @@ export default function WarmupGenerator() {
 
             {/* Start Workout */}
             <TouchableOpacity
-              onPress={() => Alert.alert('Workout Iniciado! 💪', 'Calentamiento completado')}
-              className="bg-emerald-500 rounded-xl p-5 flex-row items-center justify-center mb-6"
+              onPress={() => Alert.alert('Workout Iniciado! ðŸ’ª', 'Calentamiento completado')}
+              className="bg-primary rounded-xl p-5 flex-row items-center justify-center mb-6"
             >
               <Ionicons name="play-circle" size={24} color="white" />
               <Text className="text-white font-bold text-xl ml-2">Comenzar Entrenamiento</Text>
@@ -329,7 +329,7 @@ export default function WarmupGenerator() {
             Levantamiento Principal (Opcional)
           </Text>
           <Text className="text-zinc-400 text-sm mb-3">
-            Para generar series de aproximación específicas
+            Para generar series de aproximaciÃ³n especÃ­ficas
           </Text>
           <View className="flex-row flex-wrap gap-2 mb-4">
             {MAIN_LIFTS.map((lift) => (
@@ -338,7 +338,7 @@ export default function WarmupGenerator() {
                 onPress={() => setSelectedLift(selectedLift === lift ? null : lift)}
                 className={`px-4 py-2 rounded-lg ${
                   selectedLift === lift
-                    ? 'bg-blue-500'
+                    ? 'bg-primary'
                     : 'bg-zinc-900 border border-zinc-800'
                 }`}
               >
@@ -360,7 +360,7 @@ export default function WarmupGenerator() {
                     onPress={() => setWorkingWeight(weight)}
                     className={`px-4 py-2 rounded-lg ${
                       workingWeight === weight
-                        ? 'bg-emerald-500'
+                        ? 'bg-primary'
                         : 'bg-zinc-800'
                     }`}
                   >
@@ -378,7 +378,7 @@ export default function WarmupGenerator() {
             onPress={generateWarmup}
             disabled={!selectedType}
             className={`rounded-xl p-5 flex-row items-center justify-center mb-6 ${
-              selectedType ? 'bg-emerald-500' : 'bg-zinc-800'
+              selectedType ? 'bg-primary' : 'bg-zinc-800'
             }`}
           >
             <Ionicons name="flame" size={24} color="white" />
@@ -388,20 +388,20 @@ export default function WarmupGenerator() {
           </TouchableOpacity>
 
           {/* Info */}
-          <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30 mb-6">
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
             <View className="flex-row items-start">
-              <Ionicons name="information-circle" size={20} color="#3B82F6" />
+              <Ionicons name="information-circle" size={20} color="#9D12DE" />
               <View className="flex-1 ml-3">
-                <Text className="text-blue-400 font-bold mb-2">
-                  Por Qué Calentar
+                <Text className="text-primary/80 font-bold mb-2">
+                  Por QuÃ© Calentar
                 </Text>
-                <Text className="text-blue-300 text-sm">
-                  • Previene lesiones (↓90% riesgo){'\n'}
-                  • Mejor rendimiento en el workout{'\n'}
-                  • Activa sistema nervioso{'\n'}
-                  • Aumenta flujo sanguíneo{'\n'}
-                  • Prepara articulaciones y tendones{'\n'}
-                  • Tiempo invertido: 10-15 min
+                <Text className="text-primary/60 text-sm">
+                  â€¢ Previene lesiones (â†“90% riesgo){'\n'}
+                  â€¢ Mejor rendimiento en el workout{'\n'}
+                  â€¢ Activa sistema nervioso{'\n'}
+                  â€¢ Aumenta flujo sanguÃ­neo{'\n'}
+                  â€¢ Prepara articulaciones y tendones{'\n'}
+                  â€¢ Tiempo invertido: 10-15 min
                 </Text>
               </View>
             </View>
@@ -422,3 +422,5 @@ function getColorHex(color: string): string {
   };
   return colors[color] || '3B82F6';
 }
+
+

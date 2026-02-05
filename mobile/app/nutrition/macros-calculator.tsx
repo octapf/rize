@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -74,7 +74,7 @@ export default function MacrosCalculator() {
 
       <ScrollView className="flex-1" showsVerticalScrollIndicator={false}>
         <View className="px-6 pt-6">
-          <View className="bg-gradient-to-r from-emerald-500 to-blue-500 rounded-xl p-6 mb-6">
+          <View className="bg-gradient-to-r from-primary to-[#7D0EBE] rounded-xl p-6 mb-6">
             <Text className="text-white text-2xl font-bold mb-2">Calculate Macros</Text>
             <Text className="text-white opacity-90 mb-4">
               Personalized nutrition targets
@@ -119,7 +119,7 @@ export default function MacrosCalculator() {
               key={activity.key}
               onPress={() => setActivityLevel(activity.key)}
               className={`${
-                activityLevel === activity.key ? 'bg-blue-500' : 'bg-zinc-900'
+                activityLevel === activity.key ? 'bg-primary' : 'bg-zinc-900'
               } rounded-xl p-4 mb-3 border ${
                 activityLevel === activity.key ? 'border-blue-400' : 'border-zinc-800'
               }`}
@@ -135,7 +135,7 @@ export default function MacrosCalculator() {
                   </Text>
                   <Text
                     className={`${
-                      activityLevel === activity.key ? 'text-blue-100' : 'text-zinc-500'
+                      activityLevel === activity.key ? 'text-highlight' : 'text-zinc-500'
                     } text-sm`}
                   >
                     {activity.desc}
@@ -178,8 +178,8 @@ export default function MacrosCalculator() {
             ))}
           </View>
 
-          <View className="bg-emerald-500/10 rounded-xl p-5 mb-6 border-2 border-emerald-500">
-            <Text className="text-emerald-400 font-bold text-lg mb-4">Your Daily Targets</Text>
+          <View className="bg-primary/10 rounded-xl p-5 mb-6 border-2 border-primary">
+            <Text className="text-primary font-bold text-lg mb-4">Your Daily Targets</Text>
 
             <View className="bg-zinc-900 rounded-lg p-4 mb-4">
               <View className="flex-row justify-between items-center mb-2">
@@ -188,17 +188,17 @@ export default function MacrosCalculator() {
               </View>
               <View className="flex-row justify-between items-center">
                 <Text className="text-zinc-400">Target Calories</Text>
-                <Text className="text-emerald-400 font-bold text-2xl">{targetCalories} cal</Text>
+                <Text className="text-primary font-bold text-2xl">{targetCalories} cal</Text>
               </View>
             </View>
 
             <Text className="text-zinc-400 font-bold mb-3">MACROS</Text>
 
-            <View className="bg-blue-500/20 rounded-lg p-4 mb-3 border border-blue-500/40">
+            <View className="bg-primary/20 rounded-lg p-4 mb-3 border border-primary/40">
               <View className="flex-row justify-between items-center mb-2">
                 <View className="flex-1">
-                  <Text className="text-blue-400 font-bold text-lg">Protein</Text>
-                  <Text className="text-blue-300 text-xs">{macroSplit.proteinPercent}% of calories</Text>
+                  <Text className="text-primary/80 font-bold text-lg">Protein</Text>
+                  <Text className="text-primary/60 text-xs">{macroSplit.proteinPercent}% of calories</Text>
                 </View>
                 <View className="items-end">
                   <Text className="text-white font-bold text-2xl">{protein}g</Text>
@@ -207,7 +207,7 @@ export default function MacrosCalculator() {
               </View>
               <View className="bg-zinc-900 rounded-full h-2">
                 <View
-                  className="bg-blue-500 rounded-full h-2"
+                  className="bg-primary rounded-full h-2"
                   style={{ width: `${macroSplit.proteinPercent}%` }}
                 />
               </View>
@@ -275,15 +275,15 @@ export default function MacrosCalculator() {
             </View>
           </View>
 
-          <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30 mb-6">
-            <Text className="text-blue-400 font-bold mb-2">Macro Tips</Text>
-            <Text className="text-blue-300 text-sm">
-              • Hit protein target daily (most important){'\n'}
-              • Carbs & fats are flexible{'\n'}
-              • Track weekly averages, not daily{'\n'}
-              • Adjust based on 2-week results{'\n'}
-              • Fiber: 25-35g per day{'\n'}
-              • Water: 3-4 liters daily
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
+            <Text className="text-primary/80 font-bold mb-2">Macro Tips</Text>
+            <Text className="text-primary/60 text-sm">
+              â€¢ Hit protein target daily (most important){'\n'}
+              â€¢ Carbs & fats are flexible{'\n'}
+              â€¢ Track weekly averages, not daily{'\n'}
+              â€¢ Adjust based on 2-week results{'\n'}
+              â€¢ Fiber: 25-35g per day{'\n'}
+              â€¢ Water: 3-4 liters daily
             </Text>
           </View>
         </View>
@@ -291,3 +291,5 @@ export default function MacrosCalculator() {
     </View>
   );
 }
+
+

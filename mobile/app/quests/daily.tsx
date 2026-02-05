@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -40,32 +40,32 @@ const DAILY_QUESTS: DailyQuest[] = [
   {
     id: '1',
     title: 'Completa tu Workout',
-    description: 'Finaliza tu entrenamiento programado del día',
+    description: 'Finaliza tu entrenamiento programado del dÃ­a',
     xp: 100,
     category: 'workout',
     completed: true,
-    icon: '💪',
+    icon: 'ðŸ’ª',
     color: 'bg-red-500',
   },
   {
     id: '2',
     title: 'Alcanza tus Macros',
-    description: 'Cumple con proteínas, carbos y grasas del día',
+    description: 'Cumple con proteÃ­nas, carbos y grasas del dÃ­a',
     xp: 75,
     category: 'nutrition',
     completed: true,
-    icon: '🍎',
-    color: 'bg-emerald-500',
+    icon: 'ðŸŽ',
+    color: 'bg-primary',
   },
   {
     id: '3',
     title: 'Duerme 8 Horas',
-    description: 'Registra al menos 8 horas de sueño',
+    description: 'Registra al menos 8 horas de sueÃ±o',
     xp: 50,
     category: 'recovery',
     completed: false,
-    icon: '😴',
-    color: 'bg-blue-500',
+    icon: 'ðŸ˜´',
+    color: 'bg-primary',
   },
   {
     id: '4',
@@ -74,17 +74,17 @@ const DAILY_QUESTS: DailyQuest[] = [
     xp: 25,
     category: 'social',
     completed: false,
-    icon: '📸',
+    icon: 'ðŸ“¸',
     color: 'bg-purple-500',
   },
   {
     id: '5',
     title: 'Supera un PR',
-    description: 'Establece un nuevo récord personal',
+    description: 'Establece un nuevo rÃ©cord personal',
     xp: 150,
     category: 'challenge',
     completed: false,
-    icon: '🏆',
+    icon: 'ðŸ†',
     color: 'bg-amber-500',
   },
 ];
@@ -95,23 +95,23 @@ const STREAKS: Streak[] = [
     current: 12,
     best: 28,
     active: true,
-    icon: '🔥',
+    icon: 'ðŸ”¥',
     color: 'bg-orange-500',
   },
   {
-    name: 'Nutrición Perfecta',
+    name: 'NutriciÃ³n Perfecta',
     current: 5,
     best: 14,
     active: true,
-    icon: '🥗',
-    color: 'bg-emerald-500',
+    icon: 'ðŸ¥—',
+    color: 'bg-primary',
   },
   {
-    name: 'Sueño Óptimo',
+    name: 'SueÃ±o Ã“ptimo',
     current: 3,
     best: 9,
     active: true,
-    icon: '🌙',
+    icon: 'ðŸŒ™',
     color: 'bg-indigo-500',
   },
   {
@@ -119,7 +119,7 @@ const STREAKS: Streak[] = [
     current: 0,
     best: 7,
     active: false,
-    icon: '💯',
+    icon: 'ðŸ’¯',
     color: 'bg-purple-500',
   },
 ];
@@ -134,10 +134,10 @@ const LEVEL_PROGRESS: LevelProgress = {
 const WEEKLY_BONUS = [
   { day: 'Lun', completed: true },
   { day: 'Mar', completed: true },
-  { day: 'Mié', completed: true },
+  { day: 'MiÃ©', completed: true },
   { day: 'Jue', completed: false },
   { day: 'Vie', completed: false },
-  { day: 'Sáb', completed: false },
+  { day: 'SÃ¡b', completed: false },
   { day: 'Dom', completed: false },
 ];
 
@@ -153,7 +153,7 @@ export default function DailyQuests() {
         )
       );
       Alert.alert(
-        `✅ Quest Completada!`,
+        `âœ… Quest Completada!`,
         `+${quest.xp} XP ganados\n\n"${quest.title}"`,
         [{ text: 'Awesome!' }]
       );
@@ -179,7 +179,7 @@ export default function DailyQuests() {
             Quests Diarias
           </Text>
           <TouchableOpacity>
-            <Ionicons name="trophy" size={24} color="#F59E0B" />
+            <Ionicons name="trophy" size={24} color="#FFEA00" />
           </TouchableOpacity>
         </View>
 
@@ -212,20 +212,20 @@ export default function DailyQuests() {
               <Text className="text-zinc-400 text-sm">
                 {LEVEL_PROGRESS.currentXP} / {LEVEL_PROGRESS.xpToNextLevel} XP
               </Text>
-              <Text className="text-emerald-400 text-sm font-bold">
+              <Text className="text-primary text-sm font-bold">
                 {LEVEL_PROGRESS.xpToNextLevel - LEVEL_PROGRESS.currentXP} restante
               </Text>
             </View>
             <View className="h-3 bg-zinc-800 rounded-full overflow-hidden">
               <View
-                className="h-full bg-gradient-to-r from-emerald-500 to-blue-500 rounded-full"
+                className="h-full bg-gradient-to-r from-primary to-[#7D0EBE] rounded-full"
                 style={{ width: `${progressPercent}%` }}
               />
             </View>
           </View>
 
           <Text className="text-zinc-400 text-xs text-center">
-            ¡{Math.round(progressPercent)}% hacia el Nivel {LEVEL_PROGRESS.currentLevel + 1}!
+            Â¡{Math.round(progressPercent)}% hacia el Nivel {LEVEL_PROGRESS.currentLevel + 1}!
           </Text>
         </View>
 
@@ -240,11 +240,11 @@ export default function DailyQuests() {
             </View>
             <View className="flex-1 items-center">
               <Text className="text-zinc-400 text-xs mb-1">XP GANADO</Text>
-              <Text className="text-emerald-400 text-3xl font-bold">+{totalXPToday}</Text>
+              <Text className="text-primary text-3xl font-bold">+{totalXPToday}</Text>
             </View>
             <View className="flex-1 items-end">
               <Text className="text-zinc-400 text-xs mb-1">RACHA</Text>
-              <Text className="text-amber-400 text-3xl font-bold">12🔥</Text>
+              <Text className="text-amber-400 text-3xl font-bold">12ðŸ”¥</Text>
             </View>
           </View>
         </View>
@@ -260,7 +260,7 @@ export default function DailyQuests() {
               onPress={() => completeQuest(quest.id)}
               activeOpacity={0.7}
               className={`bg-zinc-900 rounded-xl p-4 mb-3 border ${
-                quest.completed ? 'border-emerald-500/30' : 'border-zinc-800'
+                quest.completed ? 'border-primary/30' : 'border-zinc-800'
               }`}
             >
               <View className="flex-row items-start">
@@ -282,7 +282,7 @@ export default function DailyQuests() {
                       {quest.title}
                     </Text>
                     {quest.completed ? (
-                      <Ionicons name="checkmark-circle" size={24} color="#10B981" />
+                      <Ionicons name="checkmark-circle" size={24} color="#9D12DE" />
                     ) : (
                       <View className="bg-zinc-800 rounded-lg px-2 py-1">
                         <Text className="text-amber-400 text-xs font-bold">+{quest.xp} XP</Text>
@@ -304,9 +304,9 @@ export default function DailyQuests() {
                         quest.category === 'workout'
                           ? 'bg-red-500/10'
                           : quest.category === 'nutrition'
-                          ? 'bg-emerald-500/10'
+                          ? 'bg-primary/10'
                           : quest.category === 'recovery'
-                          ? 'bg-blue-500/10'
+                          ? 'bg-primary/10'
                           : quest.category === 'social'
                           ? 'bg-purple-500/10'
                           : 'bg-amber-500/10'
@@ -317,9 +317,9 @@ export default function DailyQuests() {
                           quest.category === 'workout'
                             ? 'text-red-400'
                             : quest.category === 'nutrition'
-                            ? 'text-emerald-400'
+                            ? 'text-primary'
                             : quest.category === 'recovery'
-                            ? 'text-blue-400'
+                            ? 'text-primary/80'
                             : quest.category === 'social'
                             ? 'text-purple-400'
                             : 'text-amber-400'
@@ -338,14 +338,14 @@ export default function DailyQuests() {
           <View className="bg-zinc-900 rounded-xl p-4 border border-zinc-800 mb-6 mt-3">
             <Text className="text-white font-bold text-lg mb-3">Bonus Semanal</Text>
             <Text className="text-zinc-400 text-sm mb-4">
-              Completa todas las quests 7 días seguidos para ganar 500 XP bonus
+              Completa todas las quests 7 dÃ­as seguidos para ganar 500 XP bonus
             </Text>
             <View className="flex-row items-center justify-between">
               {WEEKLY_BONUS.map((day, index) => (
                 <View key={index} className="items-center">
                   <View
                     className={`w-10 h-10 rounded-full items-center justify-center mb-1 ${
-                      day.completed ? 'bg-emerald-500' : 'bg-zinc-800'
+                      day.completed ? 'bg-primary' : 'bg-zinc-800'
                     }`}
                   >
                     {day.completed ? (
@@ -375,7 +375,7 @@ export default function DailyQuests() {
                   <View className="flex-1">
                     <Text className="text-white font-bold">{streak.name}</Text>
                     <Text className="text-zinc-400 text-sm">
-                      Mejor: {streak.best} días
+                      Mejor: {streak.best} dÃ­as
                     </Text>
                   </View>
                 </View>
@@ -387,14 +387,14 @@ export default function DailyQuests() {
                   >
                     {streak.current}
                   </Text>
-                  <Text className="text-zinc-400 text-xs">días</Text>
+                  <Text className="text-zinc-400 text-xs">dÃ­as</Text>
                 </View>
               </View>
 
               {streak.active && (
-                <View className="bg-emerald-500/10 rounded-lg p-2 border border-emerald-500/30">
-                  <Text className="text-emerald-400 text-xs text-center">
-                    ✨ ¡Racha Activa! ¡No la rompas!
+                <View className="bg-primary/10 rounded-lg p-2 border border-primary/30">
+                  <Text className="text-primary text-xs text-center">
+                    âœ¨ Â¡Racha Activa! Â¡No la rompas!
                   </Text>
                 </View>
               )}
@@ -402,7 +402,7 @@ export default function DailyQuests() {
               {!streak.active && (
                 <View className="bg-zinc-800 rounded-lg p-2">
                   <Text className="text-zinc-400 text-xs text-center">
-                    Racha perdida. ¡Empieza de nuevo hoy!
+                    Racha perdida. Â¡Empieza de nuevo hoy!
                   </Text>
                 </View>
               )}
@@ -414,14 +414,14 @@ export default function DailyQuests() {
         <View className="px-6 pb-6 pt-2">
           <View className="bg-amber-500/10 rounded-xl p-4 border border-amber-500/30">
             <View className="flex-row items-start">
-              <Ionicons name="game-controller" size={20} color="#F59E0B" />
+              <Ionicons name="game-controller" size={20} color="#FFEA00" />
               <View className="flex-1 ml-3">
                 <Text className="text-amber-400 font-bold mb-2">
                   Gamifica tu Progreso
                 </Text>
                 <Text className="text-amber-300 text-sm">
-                  Completa quests, mantén rachas y sube de nivel. Convierte cada
-                  entrenamiento en una victoria épica.
+                  Completa quests, mantÃ©n rachas y sube de nivel. Convierte cada
+                  entrenamiento en una victoria Ã©pica.
                 </Text>
               </View>
             </View>
@@ -431,3 +431,4 @@ export default function DailyQuests() {
     </View>
   );
 }
+

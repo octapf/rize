@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -47,7 +47,7 @@ const MOCK_PRS: PersonalRecord[] = [
     reps: 1,
     date: new Date(2025, 11, 15),
     notes: 'Profundidad perfecta, sin rebote',
-    icon: '🏋️',
+    icon: 'ðŸ‹ï¸',
   },
   {
     id: '2',
@@ -57,7 +57,7 @@ const MOCK_PRS: PersonalRecord[] = [
     reps: 1,
     date: new Date(2025, 11, 10),
     notes: 'Con pausa en pecho',
-    icon: '💪',
+    icon: 'ðŸ’ª',
   },
   {
     id: '3',
@@ -67,7 +67,7 @@ const MOCK_PRS: PersonalRecord[] = [
     reps: 1,
     date: new Date(2025, 11, 20),
     notes: 'Convencional, sin straps',
-    icon: '🏋️‍♂️',
+    icon: 'ðŸ‹ï¸â€â™‚ï¸',
   },
   {
     id: '4',
@@ -77,7 +77,7 @@ const MOCK_PRS: PersonalRecord[] = [
     reps: 1,
     date: new Date(2025, 11, 5),
     notes: 'Estricto, sin leg drive',
-    icon: '🦾',
+    icon: 'ðŸ¦¾',
   },
   {
     id: '5',
@@ -87,7 +87,7 @@ const MOCK_PRS: PersonalRecord[] = [
     reps: 8,
     date: new Date(2025, 11, 12),
     notes: 'Con +20kg, rango completo',
-    icon: '💪',
+    icon: 'ðŸ’ª',
   },
   {
     id: '6',
@@ -97,7 +97,7 @@ const MOCK_PRS: PersonalRecord[] = [
     reps: 1,
     date: new Date(2025, 11, 8),
     notes: 'Sin rebote, clean grip',
-    icon: '🏋️',
+    icon: 'ðŸ‹ï¸',
   },
   {
     id: '7',
@@ -107,7 +107,7 @@ const MOCK_PRS: PersonalRecord[] = [
     reps: 5,
     date: new Date(2025, 11, 18),
     notes: 'Pendlay row, desde suelo',
-    icon: '💪',
+    icon: 'ðŸ’ª',
   },
 ];
 
@@ -149,13 +149,13 @@ export default function PersonalRecords() {
     setPrs([pr, ...prs]);
     setNewPR({ exercise: '', category: 'other', weight: '', reps: '1', notes: '' });
     setShowAddModal(false);
-    Alert.alert('PR Guardado! 🎉', `Nuevo récord en ${pr.exercise}: ${pr.weight}kg x${pr.reps}`);
+    Alert.alert('PR Guardado! ðŸŽ‰', `Nuevo rÃ©cord en ${pr.exercise}: ${pr.weight}kg x${pr.reps}`);
   };
 
   const deletePR = (id: string) => {
     Alert.alert(
       'Eliminar PR',
-      '¿Estás seguro?',
+      'Â¿EstÃ¡s seguro?',
       [
         { text: 'Cancelar' },
         { text: 'Eliminar', style: 'destructive', onPress: () => setPrs(prs.filter((pr) => pr.id !== id)) },
@@ -165,13 +165,13 @@ export default function PersonalRecords() {
 
   const getCategoryIcon = (category: string): string => {
     const icons: Record<string, string> = {
-      squat: '🏋️',
-      bench: '💪',
-      deadlift: '🏋️‍♂️',
-      press: '🦾',
-      other: '💪',
+      squat: 'ðŸ‹ï¸',
+      bench: 'ðŸ’ª',
+      deadlift: 'ðŸ‹ï¸â€â™‚ï¸',
+      press: 'ðŸ¦¾',
+      other: 'ðŸ’ª',
     };
-    return icons[category] || '💪';
+    return icons[category] || 'ðŸ’ª';
   };
 
   const getCategoryColor = (category: string): string => {
@@ -235,7 +235,7 @@ export default function PersonalRecords() {
                 onPress={() => setFilter(cat.id)}
                 className={`flex-row items-center px-4 py-2 rounded-lg ${
                   filter === cat.id
-                    ? 'bg-emerald-500'
+                    ? 'bg-primary'
                     : 'bg-zinc-900 border border-zinc-800'
                 }`}
               >
@@ -275,14 +275,14 @@ export default function PersonalRecords() {
               </View>
 
               <View className="mb-4">
-                <Text className="text-zinc-400 text-sm mb-2">Categoría</Text>
+                <Text className="text-zinc-400 text-sm mb-2">CategorÃ­a</Text>
                 <View className="flex-row flex-wrap gap-2">
                   {EXERCISE_CATEGORIES.filter((c) => c.id !== 'all').map((cat) => (
                     <TouchableOpacity
                       key={cat.id}
                       onPress={() => setNewPR({ ...newPR, category: cat.id as any })}
                       className={`px-3 py-2 rounded-lg ${
-                        newPR.category === cat.id ? 'bg-emerald-500' : 'bg-zinc-800'
+                        newPR.category === cat.id ? 'bg-primary' : 'bg-zinc-800'
                       }`}
                     >
                       <Text className={newPR.category === cat.id ? 'text-white font-bold' : 'text-zinc-400'}>
@@ -333,7 +333,7 @@ export default function PersonalRecords() {
 
               <TouchableOpacity
                 onPress={addPR}
-                className="bg-emerald-500 rounded-xl p-4 flex-row items-center justify-center"
+                className="bg-primary rounded-xl p-4 flex-row items-center justify-center"
               >
                 <Ionicons name="checkmark-circle" size={20} color="white" />
                 <Text className="text-white font-bold ml-2">Guardar PR</Text>
@@ -373,10 +373,10 @@ export default function PersonalRecords() {
                 <Text className="text-white font-bold text-lg mb-3">Historial de PRs</Text>
                 {sortedPRs.length === 0 ? (
                   <View className="bg-zinc-900 rounded-xl p-8 items-center border border-zinc-800">
-                    <Text className="text-6xl mb-3">🏆</Text>
+                    <Text className="text-6xl mb-3">ðŸ†</Text>
                     <Text className="text-white font-bold text-lg mb-2">Sin PRs Registrados</Text>
                     <Text className="text-zinc-400 text-center">
-                      Agrega tus récords personales para trackear tu progreso
+                      Agrega tus rÃ©cords personales para trackear tu progreso
                     </Text>
                   </View>
                 ) : (
@@ -412,13 +412,13 @@ export default function PersonalRecords() {
                           <View className={`flex-1 bg-${color}-500/10 rounded-lg p-3 border border-${color}-500/30`}>
                             <Text className="text-zinc-400 text-xs mb-1">Peso x Reps</Text>
                             <Text className="text-white font-bold text-xl">
-                              {pr.weight}kg × {pr.reps}
+                              {pr.weight}kg Ã— {pr.reps}
                             </Text>
                           </View>
                           {pr.reps > 1 && (
-                            <View className="flex-1 bg-emerald-500/10 rounded-lg p-3 border border-emerald-500/30">
+                            <View className="flex-1 bg-primary/10 rounded-lg p-3 border border-primary/30">
                               <Text className="text-zinc-400 text-xs mb-1">1RM Estimado</Text>
-                              <Text className="text-emerald-400 font-bold text-xl">
+                              <Text className="text-primary font-bold text-xl">
                                 {estimated1RM} kg
                               </Text>
                             </View>
@@ -447,10 +447,10 @@ export default function PersonalRecords() {
                   Tips para PRs
                 </Text>
                 <Text className="text-purple-300 text-sm">
-                  • Solo cuenta con técnica perfecta{'\n'}
-                  • Graba tus PRs para verificar forma{'\n'}
-                  • Descansa bien antes de intentos{'\n'}
-                  • Progreso consistente &gt; PRs constantes
+                  â€¢ Solo cuenta con tÃ©cnica perfecta{'\n'}
+                  â€¢ Graba tus PRs para verificar forma{'\n'}
+                  â€¢ Descansa bien antes de intentos{'\n'}
+                  â€¢ Progreso consistente &gt; PRs constantes
                 </Text>
               </View>
             </View>
@@ -460,3 +460,4 @@ export default function PersonalRecords() {
     </View>
   );
 }
+

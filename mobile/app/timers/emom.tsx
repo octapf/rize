@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+﻿import React, { useState, useEffect } from 'react';
 import {
   View,
   Text,
@@ -58,11 +58,11 @@ export default function EMOMTimer() {
               {currentRound}/{rounds}
             </Text>
 
-            <View className="w-48 h-48 bg-blue-500 rounded-full items-center justify-center mb-6">
+            <View className="w-48 h-48 bg-primary rounded-full items-center justify-center mb-6">
               <Text className="text-white text-7xl font-bold">{timeLeft}</Text>
             </View>
 
-            <Text className="text-zinc-400 text-lg mb-2">Próximo ejercicio:</Text>
+            <Text className="text-zinc-400 text-lg mb-2">PrÃ³ximo ejercicio:</Text>
             <Text className="text-white text-2xl font-bold text-center">
               {exercises[currentRound % exercises.length]}
             </Text>
@@ -71,7 +71,7 @@ export default function EMOMTimer() {
           <View className="flex-row gap-3 mb-6">
             <TouchableOpacity
               onPress={isRunning ? pause : start}
-              className="flex-1 bg-blue-500 rounded-xl p-4 flex-row items-center justify-center"
+              className="flex-1 bg-primary rounded-xl p-4 flex-row items-center justify-center"
             >
               <Ionicons name={isRunning ? 'pause' : 'play'} size={24} color="white" />
               <Text className="text-white font-bold ml-2">
@@ -88,13 +88,13 @@ export default function EMOMTimer() {
             </TouchableOpacity>
           </View>
 
-          <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30 mb-6">
-            <Text className="text-blue-400 font-bold mb-2">Cómo Funciona EMOM</Text>
-            <Text className="text-blue-300 text-sm">
-              • Cada minuto haz el ejercicio asignado{'\n'}
-              • Lo que sobre del minuto = descanso{'\n'}
-              • Trabaja rápido para más rest{'\n'}
-              • Mejora velocidad y resistencia
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
+            <Text className="text-primary/80 font-bold mb-2">CÃ³mo Funciona EMOM</Text>
+            <Text className="text-primary/60 text-sm">
+              â€¢ Cada minuto haz el ejercicio asignado{'\n'}
+              â€¢ Lo que sobre del minuto = descanso{'\n'}
+              â€¢ Trabaja rÃ¡pido para mÃ¡s rest{'\n'}
+              â€¢ Mejora velocidad y resistencia
             </Text>
           </View>
         </View>
@@ -102,3 +102,4 @@ export default function EMOMTimer() {
     </View>
   );
 }
+

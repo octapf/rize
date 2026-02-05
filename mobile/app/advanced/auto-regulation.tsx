@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -37,10 +37,10 @@ export default function AutoRegulation() {
       example: {
         scenario: 'Programmed: 4 sets of 5 @ RPE 8',
         execution: [
-          'Set 1: 100kg × 5 @ RPE 7 → too easy, add weight',
-          'Set 2: 105kg × 5 @ RPE 8 → perfect, maintain',
-          'Set 3: 105kg × 5 @ RPE 8.5 → slightly harder, fatigue accumulating',
-          'Set 4: 105kg × 5 @ RPE 9 → harder but completed, good session',
+          'Set 1: 100kg Ã— 5 @ RPE 7 â†’ too easy, add weight',
+          'Set 2: 105kg Ã— 5 @ RPE 8 â†’ perfect, maintain',
+          'Set 3: 105kg Ã— 5 @ RPE 8.5 â†’ slightly harder, fatigue accumulating',
+          'Set 4: 105kg Ã— 5 @ RPE 9 â†’ harder but completed, good session',
         ],
       },
     },
@@ -93,7 +93,7 @@ export default function AutoRegulation() {
         'Objective measure (no guessing RPE)',
         'Detects fatigue/readiness',
       ],
-      example: 'Squat: First rep 0.6 m/s → stop set when rep hits 0.48 m/s (20% drop)',
+      example: 'Squat: First rep 0.6 m/s â†’ stop set when rep hits 0.48 m/s (20% drop)',
     },
     {
       id: 'amrap',
@@ -108,9 +108,9 @@ export default function AutoRegulation() {
         'Use to estimate 1RM or adjust program',
       ],
       formulas: [
-        'Epley: 1RM = weight × (1 + reps/30)',
-        'Brzycki: 1RM = weight × (36 / (37 - reps))',
-        'Wathan: 1RM = weight × (48.8 + 53.8×e^(-0.075×reps))',
+        'Epley: 1RM = weight Ã— (1 + reps/30)',
+        'Brzycki: 1RM = weight Ã— (36 / (37 - reps))',
+        'Wathan: 1RM = weight Ã— (48.8 + 53.8Ã—e^(-0.075Ã—reps))',
       ],
       frequency: 'Test AMRAP every 3-4 weeks max',
       cautions: [
@@ -141,8 +141,8 @@ export default function AutoRegulation() {
       ],
       bestFor: 'Experienced lifters who know their bodies well',
       example: {
-        goodDay: 'Feel great → hit 140kg squat daily max → back off at 120kg',
-        badDay: 'Feel weak → only 125kg squat feels heavy → back off at 105kg',
+        goodDay: 'Feel great â†’ hit 140kg squat daily max â†’ back off at 120kg',
+        badDay: 'Feel weak â†’ only 125kg squat feels heavy â†’ back off at 105kg',
       },
     },
   ];
@@ -164,7 +164,7 @@ export default function AutoRegulation() {
 
       <ScrollView className="flex-1" showsVerticalScrollIndicator={false}>
         <View className="px-6 pt-6">
-          <View className="bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl p-6 mb-6">
+          <View className="bg-gradient-to-r from-primary to-[#7D0EBE] rounded-xl p-6 mb-6">
             <Text className="text-white text-2xl font-bold mb-2">Smart Training</Text>
             <Text className="text-white opacity-90">
               Adjust based on readiness
@@ -267,8 +267,8 @@ export default function AutoRegulation() {
           )}
 
           {'example' in currentMethod && 'execution' in currentMethod.example && (
-            <View className="bg-emerald-500/10 rounded-xl p-5 mb-6 border border-emerald-500/30">
-              <Text className="text-emerald-400 font-bold text-lg mb-3">Example</Text>
+            <View className="bg-primary/10 rounded-xl p-5 mb-6 border border-primary/30">
+              <Text className="text-primary font-bold text-lg mb-3">Example</Text>
               <Text className="text-zinc-300 mb-3">{currentMethod.example.scenario}</Text>
               {currentMethod.example.execution.map((step, idx) => (
                 <Text key={idx} className="text-zinc-300 text-sm mb-1 last:mb-0">
@@ -290,19 +290,19 @@ export default function AutoRegulation() {
             </View>
           )}
 
-          <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30 mb-6">
-            <Text className="text-blue-400 font-bold mb-2">Why Auto-Regulate?</Text>
-            <Text className="text-blue-300 text-sm mb-2">
-              • Not every day is the same - sleep, stress, nutrition vary
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
+            <Text className="text-primary/80 font-bold mb-2">Why Auto-Regulate?</Text>
+            <Text className="text-primary/60 text-sm mb-2">
+              â€¢ Not every day is the same - sleep, stress, nutrition vary
             </Text>
-            <Text className="text-blue-300 text-sm mb-2">
-              • Prevents overtraining on bad days
+            <Text className="text-primary/60 text-sm mb-2">
+              â€¢ Prevents overtraining on bad days
             </Text>
-            <Text className="text-blue-300 text-sm mb-2">
-              • Allows pushing harder on good days
+            <Text className="text-primary/60 text-sm mb-2">
+              â€¢ Allows pushing harder on good days
             </Text>
-            <Text className="text-blue-300 text-sm">
-              • More sustainable long-term than rigid programming
+            <Text className="text-primary/60 text-sm">
+              â€¢ More sustainable long-term than rigid programming
             </Text>
           </View>
         </View>
@@ -310,3 +310,5 @@ export default function AutoRegulation() {
     </View>
   );
 }
+
+

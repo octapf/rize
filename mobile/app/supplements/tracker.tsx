@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -43,7 +43,7 @@ const SUPPLEMENTS: Supplement[] = [
     brand: 'MyProtein',
     category: 'creatina',
     dosage: '5g',
-    timing: 'Diario (mañana)',
+    timing: 'Diario (maÃ±ana)',
     quantity: 45,
     unit: 'porciones',
     daysRemaining: 45,
@@ -60,11 +60,11 @@ const SUPPLEMENTS: Supplement[] = [
     unit: 'porciones',
     daysRemaining: 16,
     active: true,
-    notes: 'Solo días de pierna',
+    notes: 'Solo dÃ­as de pierna',
   },
   {
     id: '4',
-    name: 'Multivitamínico',
+    name: 'MultivitamÃ­nico',
     brand: 'Centrum',
     category: 'vitaminas',
     dosage: '1 tableta',
@@ -82,7 +82,7 @@ export default function SupplementTracker() {
 
   const categories = [
     { id: 'all', label: 'Todos', icon: 'apps' },
-    { id: 'proteina', label: 'Proteína', icon: 'fitness' },
+    { id: 'proteina', label: 'ProteÃ­na', icon: 'fitness' },
     { id: 'pre-workout', label: 'Pre-Workout', icon: 'flash' },
     { id: 'vitaminas', label: 'Vitaminas', icon: 'medkit' },
     { id: 'creatina', label: 'Creatina', icon: 'water' },
@@ -92,13 +92,13 @@ export default function SupplementTracker() {
   const getCategoryColor = (category: string) => {
     switch (category) {
       case 'proteina':
-        return '#10B981';
+        return '#9D12DE';
       case 'pre-workout':
         return '#EF4444';
       case 'vitaminas':
-        return '#F59E0B';
+        return '#FFEA00';
       case 'creatina':
-        return '#3B82F6';
+        return '#9D12DE';
       case 'otros':
         return '#71717A';
       default:
@@ -114,7 +114,7 @@ export default function SupplementTracker() {
         { text: 'Cancelar', style: 'cancel' },
         {
           text: 'Agregar',
-          onPress: () => Alert.alert('¡Agregado!', 'Suplemento agregado exitosamente'),
+          onPress: () => Alert.alert('Â¡Agregado!', 'Suplemento agregado exitosamente'),
         },
       ]
     );
@@ -129,7 +129,7 @@ export default function SupplementTracker() {
         {
           text: 'Registrar',
           onPress: () => {
-            Alert.alert('¡Registrado!', `${supplement.name} - ${supplement.dosage}`);
+            Alert.alert('Â¡Registrado!', `${supplement.name} - ${supplement.dosage}`);
           },
         },
       ]
@@ -139,7 +139,7 @@ export default function SupplementTracker() {
   const editSupplement = (supplement: Supplement) => {
     Alert.alert(
       supplement.name,
-      'Selecciona una acción',
+      'Selecciona una acciÃ³n',
       [
         {
           text: 'Actualizar Cantidad',
@@ -150,7 +150,7 @@ export default function SupplementTracker() {
         },
         {
           text: 'Editar Horario',
-          onPress: () => Alert.alert('Horario', 'Función próximamente'),
+          onPress: () => Alert.alert('Horario', 'FunciÃ³n prÃ³ximamente'),
         },
         {
           text: supplement.active ? 'Desactivar' : 'Activar',
@@ -159,7 +159,7 @@ export default function SupplementTracker() {
         {
           text: 'Eliminar',
           style: 'destructive',
-          onPress: () => Alert.alert('Confirmar', '¿Eliminar este suplemento?', [
+          onPress: () => Alert.alert('Confirmar', 'Â¿Eliminar este suplemento?', [
             { text: 'Cancelar', style: 'cancel' },
             { text: 'Eliminar', style: 'destructive', onPress: () => Alert.alert('Eliminado', 'Suplemento eliminado') },
           ]),
@@ -190,7 +190,7 @@ export default function SupplementTracker() {
             Suplementos
           </Text>
           <TouchableOpacity onPress={addSupplement}>
-            <Ionicons name="add-circle" size={24} color="#10B981" />
+            <Ionicons name="add-circle" size={24} color="#9D12DE" />
           </TouchableOpacity>
         </View>
 
@@ -198,7 +198,7 @@ export default function SupplementTracker() {
         <View className="flex-row gap-3 mb-4">
           <View className="flex-1 bg-zinc-900 rounded-xl p-3 border border-zinc-800">
             <Text className="text-zinc-400 text-xs">Activos</Text>
-            <Text className="text-emerald-500 text-2xl font-bold">{activeSupplements}</Text>
+            <Text className="text-primary text-2xl font-bold">{activeSupplements}</Text>
           </View>
           <View className="flex-1 bg-zinc-900 rounded-xl p-3 border border-zinc-800">
             <Text className="text-zinc-400 text-xs">Stock Bajo</Text>
@@ -236,7 +236,7 @@ export default function SupplementTracker() {
                 onPress={() => setSelectedCategory(category.id)}
                 className={`flex-row items-center px-4 py-2 rounded-lg ${
                   selectedCategory === category.id
-                    ? 'bg-emerald-500'
+                    ? 'bg-primary'
                     : 'bg-zinc-900 border border-zinc-800'
                 }`}
               >
@@ -264,13 +264,13 @@ export default function SupplementTracker() {
           {lowStock > 0 && (
             <View className="bg-amber-500/10 rounded-xl p-4 mb-4 border border-amber-500/30">
               <View className="flex-row items-start">
-                <Ionicons name="warning" size={20} color="#F59E0B" />
+                <Ionicons name="warning" size={20} color="#FFEA00" />
                 <View className="flex-1 ml-3">
                   <Text className="text-amber-500 font-bold mb-1">
                     Stock Bajo
                   </Text>
                   <Text className="text-amber-300 text-sm">
-                    {lowStock} suplemento{lowStock > 1 ? 's' : ''} con menos de 10 días restantes
+                    {lowStock} suplemento{lowStock > 1 ? 's' : ''} con menos de 10 dÃ­as restantes
                   </Text>
                 </View>
               </View>
@@ -318,12 +318,12 @@ export default function SupplementTracker() {
                   </View>
                   <View
                     className={`px-3 py-1 rounded-full ${
-                      supplement.active ? 'bg-emerald-500/20' : 'bg-zinc-800'
+                      supplement.active ? 'bg-primary/20' : 'bg-zinc-800'
                     }`}
                   >
                     <Text
                       className={`text-xs font-bold ${
-                        supplement.active ? 'text-emerald-500' : 'text-zinc-500'
+                        supplement.active ? 'text-primary' : 'text-zinc-500'
                       }`}
                     >
                       {supplement.active ? 'ACTIVO' : 'PAUSADO'}
@@ -356,26 +356,26 @@ export default function SupplementTracker() {
                     className="h-full rounded-full"
                     style={{
                       width: `${Math.min((supplement.daysRemaining / 60) * 100, 100)}%`,
-                      backgroundColor: supplement.daysRemaining <= 10 ? '#F59E0B' : '#10B981',
+                      backgroundColor: supplement.daysRemaining <= 10 ? '#FFEA00' : '#9D12DE',
                     }}
                   />
                 </View>
 
                 <View className="flex-row items-center justify-between">
                   <Text className="text-zinc-500 text-xs">
-                    ~{supplement.daysRemaining} días restantes
+                    ~{supplement.daysRemaining} dÃ­as restantes
                   </Text>
                   <TouchableOpacity
                     onPress={() => logSupplementIntake(supplement)}
-                    className="bg-emerald-500 rounded-lg px-4 py-2"
+                    className="bg-primary rounded-lg px-4 py-2"
                   >
                     <Text className="text-white font-semibold text-sm">Registrar Toma</Text>
                   </TouchableOpacity>
                 </View>
 
                 {supplement.notes && (
-                  <View className="bg-blue-500/10 rounded-lg p-2 mt-2">
-                    <Text className="text-blue-400 text-xs">💡 {supplement.notes}</Text>
+                  <View className="bg-primary/10 rounded-lg p-2 mt-2">
+                    <Text className="text-primary/80 text-xs">ðŸ’¡ {supplement.notes}</Text>
                   </View>
                 )}
               </TouchableOpacity>
@@ -386,3 +386,4 @@ export default function SupplementTracker() {
     </View>
   );
 }
+

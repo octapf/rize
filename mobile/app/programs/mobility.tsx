@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -55,8 +55,8 @@ const MOBILITY_ROUTINES: MobilityRoutine[] = [
         bodyPart: 'Caderas/Hombros',
         duration: 30,
         sets: 2,
-        demonstration: 'Estocada profunda + rotación torso',
-        benefits: ['Apertura caderas', 'Rotación torácica'],
+        demonstration: 'Estocada profunda + rotaciÃ³n torso',
+        benefits: ['Apertura caderas', 'RotaciÃ³n torÃ¡cica'],
       },
       {
         id: '1-3',
@@ -64,15 +64,15 @@ const MOBILITY_ROUTINES: MobilityRoutine[] = [
         bodyPart: 'Hombros',
         duration: 45,
         sets: 1,
-        demonstration: 'Círculos grandes con los brazos',
-        benefits: ['Movilidad hombro', 'Activación escapular'],
+        demonstration: 'CÃ­rculos grandes con los brazos',
+        benefits: ['Movilidad hombro', 'ActivaciÃ³n escapular'],
       },
     ],
   },
   {
     id: '2',
     name: 'Pre-Entrenamiento',
-    targetArea: 'Calentamiento Dinámico',
+    targetArea: 'Calentamiento DinÃ¡mico',
     duration: 15,
     difficulty: 'intermediate',
     icon: 'fitness',
@@ -84,8 +84,8 @@ const MOBILITY_ROUTINES: MobilityRoutine[] = [
         bodyPart: 'Caderas',
         duration: 30,
         sets: 2,
-        demonstration: 'Balancea pierna adelante/atrás y lado a lado',
-        benefits: ['ROM cadera', 'Preparación tren inferior'],
+        demonstration: 'Balancea pierna adelante/atrÃ¡s y lado a lado',
+        benefits: ['ROM cadera', 'PreparaciÃ³n tren inferior'],
       },
       {
         id: '2-2',
@@ -93,8 +93,8 @@ const MOBILITY_ROUTINES: MobilityRoutine[] = [
         bodyPart: 'Hombros',
         duration: 45,
         sets: 2,
-        demonstration: 'Separa banda elástica a la altura del pecho',
-        benefits: ['Activación dorsales', 'Salud hombro'],
+        demonstration: 'Separa banda elÃ¡stica a la altura del pecho',
+        benefits: ['ActivaciÃ³n dorsales', 'Salud hombro'],
       },
       {
         id: '2-3',
@@ -102,7 +102,7 @@ const MOBILITY_ROUTINES: MobilityRoutine[] = [
         bodyPart: 'Tobillos/Caderas',
         duration: 60,
         sets: 1,
-        demonstration: 'Mantén sentadilla profunda',
+        demonstration: 'MantÃ©n sentadilla profunda',
         benefits: ['Movilidad tobillo', 'Apertura caderas'],
       },
       {
@@ -112,13 +112,13 @@ const MOBILITY_ROUTINES: MobilityRoutine[] = [
         duration: 45,
         sets: 2,
         demonstration: 'Camina manos hacia delante y vuelve',
-        benefits: ['Flexibilidad isquios', 'Activación core'],
+        benefits: ['Flexibilidad isquios', 'ActivaciÃ³n core'],
       },
     ],
   },
   {
     id: '3',
-    name: 'Hombros & Torácico',
+    name: 'Hombros & TorÃ¡cico',
     targetArea: 'Tren Superior',
     duration: 12,
     difficulty: 'intermediate',
@@ -128,11 +128,11 @@ const MOBILITY_ROUTINES: MobilityRoutine[] = [
       {
         id: '3-1',
         name: 'Thread the Needle',
-        bodyPart: 'Rotación torácica',
+        bodyPart: 'RotaciÃ³n torÃ¡cica',
         duration: 45,
         sets: 2,
         demonstration: 'Cuatro patas, pasa brazo por debajo rotando',
-        benefits: ['Rotación torácica', 'Movilidad hombro'],
+        benefits: ['RotaciÃ³n torÃ¡cica', 'Movilidad hombro'],
       },
       {
         id: '3-2',
@@ -141,7 +141,7 @@ const MOBILITY_ROUTINES: MobilityRoutine[] = [
         duration: 60,
         sets: 1,
         demonstration: 'Pasa palo/banda por encima de la cabeza',
-        benefits: ['ROM hombro', 'Flexibilidad cápsula'],
+        benefits: ['ROM hombro', 'Flexibilidad cÃ¡psula'],
       },
       {
         id: '3-3',
@@ -169,8 +169,8 @@ const MOBILITY_ROUTINES: MobilityRoutine[] = [
         bodyPart: 'Caderas',
         duration: 90,
         sets: 1,
-        demonstration: 'Sentado, ambas piernas en 90°, alterna',
-        benefits: ['Rotación interna/externa cadera'],
+        demonstration: 'Sentado, ambas piernas en 90Â°, alterna',
+        benefits: ['RotaciÃ³n interna/externa cadera'],
       },
       {
         id: '4-2',
@@ -179,7 +179,7 @@ const MOBILITY_ROUTINES: MobilityRoutine[] = [
         duration: 60,
         sets: 2,
         demonstration: 'Rodilla al frente pasando punta del pie',
-        benefits: ['Dorsiflexión tobillo', 'Preparación sentadilla'],
+        benefits: ['DorsiflexiÃ³n tobillo', 'PreparaciÃ³n sentadilla'],
       },
       {
         id: '4-3',
@@ -195,7 +195,7 @@ const MOBILITY_ROUTINES: MobilityRoutine[] = [
   {
     id: '5',
     name: 'Post-Entrenamiento',
-    targetArea: 'Recuperación',
+    targetArea: 'RecuperaciÃ³n',
     duration: 10,
     difficulty: 'beginner',
     icon: 'bed',
@@ -208,7 +208,7 @@ const MOBILITY_ROUTINES: MobilityRoutine[] = [
         duration: 90,
         sets: 1,
         demonstration: 'Sentado sobre talones, brazos estirados al frente',
-        benefits: ['Relajación espalda', 'Estiramiento hombros'],
+        benefits: ['RelajaciÃ³n espalda', 'Estiramiento hombros'],
       },
       {
         id: '5-2',
@@ -216,8 +216,8 @@ const MOBILITY_ROUTINES: MobilityRoutine[] = [
         bodyPart: 'Caderas',
         duration: 60,
         sets: 2,
-        demonstration: 'Pierna adelante doblada, otra estirada atrás',
-        benefits: ['Apertura caderas', 'Flexibilidad glúteos'],
+        demonstration: 'Pierna adelante doblada, otra estirada atrÃ¡s',
+        benefits: ['Apertura caderas', 'Flexibilidad glÃºteos'],
       },
       {
         id: '5-3',
@@ -226,7 +226,7 @@ const MOBILITY_ROUTINES: MobilityRoutine[] = [
         duration: 45,
         sets: 2,
         demonstration: 'Boca abajo, levanta torso con brazos',
-        benefits: ['Extensión lumbar', 'Flexibilidad psoas'],
+        benefits: ['ExtensiÃ³n lumbar', 'Flexibilidad psoas'],
       },
     ],
   },
@@ -249,7 +249,7 @@ export default function MobilityRoutines() {
     if (currentExerciseIdx < selectedRoutine.exercises.length - 1) {
       setCurrentExerciseIdx(currentExerciseIdx + 1);
     } else {
-      Alert.alert('¡Rutina Completada! 🎉', 'Excelente trabajo con tu movilidad');
+      Alert.alert('Â¡Rutina Completada! ðŸŽ‰', 'Excelente trabajo con tu movilidad');
       setIsRunning(false);
       setSelectedRoutine(null);
       setCurrentExerciseIdx(0);
@@ -259,7 +259,7 @@ export default function MobilityRoutines() {
   const stopRoutine = () => {
     Alert.alert(
       'Detener Rutina',
-      '¿Estás seguro?',
+      'Â¿EstÃ¡s seguro?',
       [
         { text: 'Continuar' },
         {
@@ -296,7 +296,7 @@ export default function MobilityRoutines() {
           {/* Progress */}
           <View className="mb-2">
             <View className="h-2 bg-zinc-800 rounded-full overflow-hidden">
-              <View className="h-full bg-emerald-500 rounded-full" style={{ width: `${progress}%` }} />
+              <View className="h-full bg-primary rounded-full" style={{ width: `${progress}%` }} />
             </View>
           </View>
           <Text className="text-zinc-400 text-sm text-center">
@@ -319,26 +319,26 @@ export default function MobilityRoutines() {
             <View className="flex-row items-center">
               <Ionicons name="time" size={20} color="white" />
               <Text className="text-white opacity-90 text-lg ml-2">
-                {currentExercise.duration}s × {currentExercise.sets} series
+                {currentExercise.duration}s Ã— {currentExercise.sets} series
               </Text>
             </View>
           </View>
 
           {/* Demonstration */}
           <View className="bg-zinc-900 rounded-xl p-6 mb-6 border border-zinc-800">
-            <Text className="text-white font-bold text-lg mb-3">Ejecución</Text>
+            <Text className="text-white font-bold text-lg mb-3">EjecuciÃ³n</Text>
             <Text className="text-zinc-300 text-base leading-6">
               {currentExercise.demonstration}
             </Text>
           </View>
 
           {/* Benefits */}
-          <View className="bg-emerald-500/10 rounded-xl p-6 mb-6 border border-emerald-500/30">
-            <Text className="text-emerald-400 font-bold text-lg mb-3">Beneficios</Text>
+          <View className="bg-primary/10 rounded-xl p-6 mb-6 border border-primary/30">
+            <Text className="text-primary font-bold text-lg mb-3">Beneficios</Text>
             {currentExercise.benefits.map((benefit, idx) => (
               <View key={idx} className="flex-row items-center mb-2">
-                <Ionicons name="checkmark-circle" size={20} color="#10B981" />
-                <Text className="text-emerald-300 ml-2">{benefit}</Text>
+                <Ionicons name="checkmark-circle" size={20} color="#9D12DE" />
+                <Text className="text-primary/80 ml-2">{benefit}</Text>
               </View>
             ))}
           </View>
@@ -346,7 +346,7 @@ export default function MobilityRoutines() {
           {/* Next Button */}
           <TouchableOpacity
             onPress={nextExercise}
-            className="bg-emerald-500 rounded-xl p-5 flex-row items-center justify-center mb-6"
+            className="bg-primary rounded-xl p-5 flex-row items-center justify-center mb-6"
           >
             <Text className="text-white font-bold text-xl mr-2">
               {currentExerciseIdx < selectedRoutine.exercises.length - 1 ? 'Siguiente Ejercicio' : 'Finalizar'}
@@ -431,20 +431,20 @@ export default function MobilityRoutines() {
           ))}
 
           {/* Tips */}
-          <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30 mb-6">
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
             <View className="flex-row items-start">
-              <Ionicons name="bulb" size={20} color="#3B82F6" />
+              <Ionicons name="bulb" size={20} color="#9D12DE" />
               <View className="flex-1 ml-3">
-                <Text className="text-blue-400 font-bold mb-2">
+                <Text className="text-primary/80 font-bold mb-2">
                   Importancia de la Movilidad
                 </Text>
-                <Text className="text-blue-300 text-sm">
-                  • Previene lesiones y dolores{'\n'}
-                  • Mejora rango de movimiento en ejercicios{'\n'}
-                  • Recuperación más rápida{'\n'}
-                  • Mejor postura y calidad de vida{'\n'}
-                  • 10-15 min diarios hacen gran diferencia{'\n'}
-                  • Hazlo antes Y después de entrenar
+                <Text className="text-primary/60 text-sm">
+                  â€¢ Previene lesiones y dolores{'\n'}
+                  â€¢ Mejora rango de movimiento en ejercicios{'\n'}
+                  â€¢ RecuperaciÃ³n mÃ¡s rÃ¡pida{'\n'}
+                  â€¢ Mejor postura y calidad de vida{'\n'}
+                  â€¢ 10-15 min diarios hacen gran diferencia{'\n'}
+                  â€¢ Hazlo antes Y despuÃ©s de entrenar
                 </Text>
               </View>
             </View>
@@ -454,3 +454,5 @@ export default function MobilityRoutines() {
     </View>
   );
 }
+
+

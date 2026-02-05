@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -117,7 +117,7 @@ export default function GoalSetting() {
 
       <ScrollView className="flex-1" showsVerticalScrollIndicator={false}>
         <View className="px-6 pt-6">
-          <View className="bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl p-6 mb-6">
+          <View className="bg-gradient-to-r from-primary to-[#7D0EBE] rounded-xl p-6 mb-6">
             <Text className="text-white text-2xl font-bold mb-2">SMART Goals</Text>
             <Text className="text-white opacity-90">
               Set goals that you'll actually achieve
@@ -167,12 +167,12 @@ export default function GoalSetting() {
                     <Text className="text-red-400 ml-2 flex-1 line-through">{example.bad}</Text>
                   </View>
                   <View className="flex-row items-start mb-2">
-                    <Ionicons name="checkmark-circle" size={18} color="#10b981" />
-                    <Text className="text-emerald-400 ml-2 flex-1 font-bold">{example.good}</Text>
+                    <Ionicons name="checkmark-circle" size={18} color="#9D12DE" />
+                    <Text className="text-primary ml-2 flex-1 font-bold">{example.good}</Text>
                   </View>
                   <View className={`bg-${category.color}-500/20 rounded-lg p-2 border border-${category.color}-500/40`}>
                     <Text className={`text-${category.color}-300 text-xs`}>
-                      ✓ {example.why}
+                      âœ“ {example.why}
                     </Text>
                   </View>
                 </View>
@@ -180,21 +180,21 @@ export default function GoalSetting() {
             </View>
           ))}
 
-          <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30 mb-6">
-            <Text className="text-blue-400 font-bold mb-2">Goal-Setting Tips</Text>
-            <Text className="text-blue-300 text-sm">
-              • Write goals down physically{'\n'}
-              • Share with accountability partner{'\n'}
-              • Review weekly{'\n'}
-              • Celebrate milestones{'\n'}
-              • Adjust if needed, don't quit{'\n'}
-              • One major goal at a time
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
+            <Text className="text-primary/80 font-bold mb-2">Goal-Setting Tips</Text>
+            <Text className="text-primary/60 text-sm">
+              â€¢ Write goals down physically{'\n'}
+              â€¢ Share with accountability partner{'\n'}
+              â€¢ Review weekly{'\n'}
+              â€¢ Celebrate milestones{'\n'}
+              â€¢ Adjust if needed, don't quit{'\n'}
+              â€¢ One major goal at a time
             </Text>
           </View>
 
-          <View className="bg-emerald-500/10 rounded-xl p-4 border border-emerald-500/30 mb-6">
-            <Text className="text-emerald-400 font-bold mb-2">Breaking Down Goals</Text>
-            <Text className="text-emerald-300 text-sm mb-3">
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
+            <Text className="text-primary font-bold mb-2">Breaking Down Goals</Text>
+            <Text className="text-primary/80 text-sm mb-3">
               Example: Squat 150kg by Dec 31 (16 weeks)
             </Text>
             <View className="space-y-2">
@@ -220,11 +220,11 @@ export default function GoalSetting() {
             <Text className="text-amber-400 font-bold mb-2">Common Mistakes</Text>
             <View className="space-y-2">
               <Text className="text-amber-300 text-sm">
-                ❌ Too many goals at once{'\n'}
-                ❌ Unrealistic timelines{'\n'}
-                ❌ Vague/unmeasurable targets{'\n'}
-                ❌ No plan to achieve them{'\n'}
-                ❌ Not tracking progress
+                âŒ Too many goals at once{'\n'}
+                âŒ Unrealistic timelines{'\n'}
+                âŒ Vague/unmeasurable targets{'\n'}
+                âŒ No plan to achieve them{'\n'}
+                âŒ Not tracking progress
               </Text>
             </View>
           </View>
@@ -233,3 +233,6 @@ export default function GoalSetting() {
     </View>
   );
 }
+
+
+

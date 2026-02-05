@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Ensure full height for React Native Web */
+html, body, #root {
+  height: 100%;
+}

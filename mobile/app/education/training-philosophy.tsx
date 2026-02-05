@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -30,35 +30,35 @@ export default function TrainingPhilosophy() {
         {
           method: 'Add Weight',
           description: 'Most common form of progression',
-          example: 'Bench 100kg × 5 → 102.5kg × 5',
+          example: 'Bench 100kg Ã— 5 â†’ 102.5kg Ã— 5',
           frequency: 'Weekly for beginners, monthly for advanced',
           notes: 'Smallest increments possible (2.5kg for upper, 5kg for lower)',
         },
         {
           method: 'Add Reps',
           description: 'Increase volume at same weight',
-          example: '100kg × 5 reps → 100kg × 6 reps',
+          example: '100kg Ã— 5 reps â†’ 100kg Ã— 6 reps',
           frequency: 'Session to session',
           notes: 'Once you hit top of rep range, add weight and drop reps',
         },
         {
           method: 'Add Sets',
           description: 'Increase total training volume',
-          example: '3 sets × 8 reps → 4 sets × 8 reps',
+          example: '3 sets Ã— 8 reps â†’ 4 sets Ã— 8 reps',
           frequency: 'Weekly or bi-weekly',
           notes: 'Be careful of excessive volume accumulation',
         },
         {
           method: 'Improve Form',
           description: 'Better technique = more muscle tension',
-          example: 'Half reps → full ROM, tempo control',
+          example: 'Half reps â†’ full ROM, tempo control',
           frequency: 'Constantly',
           notes: 'Often overlooked but crucial for long-term progress',
         },
         {
           method: 'Increase Frequency',
           description: 'Train muscle groups more often',
-          example: 'Chest 1x/week → 2x/week',
+          example: 'Chest 1x/week â†’ 2x/week',
           frequency: 'Every mesocycle',
           notes: 'More frequent stimulus can drive more growth',
         },
@@ -121,7 +121,7 @@ export default function TrainingPhilosophy() {
         },
       ],
       application: [
-        'If planned 5×5 @ 80% feels RPE 9, reduce load',
+        'If planned 5Ã—5 @ 80% feels RPE 9, reduce load',
         'If everything feels easy, push a bit harder',
         'Bad sleep/stress = reduce volume or intensity',
         'Feeling great = optional backoff sets',
@@ -181,7 +181,7 @@ export default function TrainingPhilosophy() {
         'Prioritize exercises that match goals',
         'If competing, train competition movements frequently',
         'General fitness? More variety is fine',
-        'Periodize specificity: general → specific → peak',
+        'Periodize specificity: general â†’ specific â†’ peak',
         'Test what you train (don\'t test random exercises)',
       ],
       mistakes: [
@@ -201,21 +201,21 @@ export default function TrainingPhilosophy() {
         {
           method: 'Exercise Variation',
           description: 'Rotate similar movement patterns',
-          example: 'Back squat → front squat → safety bar squat',
+          example: 'Back squat â†’ front squat â†’ safety bar squat',
           frequency: 'Every 4-6 weeks',
           notes: 'Keep main lift, vary accessories',
         },
         {
           method: 'Loading Schemes',
           description: 'Change sets, reps, intensity',
-          example: 'Strength block (5×5) → hypertrophy (4×10)',
+          example: 'Strength block (5Ã—5) â†’ hypertrophy (4Ã—10)',
           frequency: 'Every mesocycle (4-6 weeks)',
           notes: 'Classic periodization approach',
         },
         {
           method: 'Volume Cycling',
           description: 'Accumulation and intensification phases',
-          example: 'High volume, low intensity → low volume, high intensity',
+          example: 'High volume, low intensity â†’ low volume, high intensity',
           frequency: 'Mesocycle to mesocycle',
           notes: 'Prevents burnout and overreaching',
         },
@@ -386,8 +386,8 @@ export default function TrainingPhilosophy() {
                 <Text className="text-zinc-300 mb-3">{method.description}</Text>
 
                 <View className="bg-zinc-900 rounded-xl p-3 mb-2">
-                  <Text className="text-blue-400 text-sm font-bold mb-1">Example</Text>
-                  <Text className="text-blue-300 text-sm">{method.example}</Text>
+                  <Text className="text-primary/80 text-sm font-bold mb-1">Example</Text>
+                  <Text className="text-primary/60 text-sm">{method.example}</Text>
                 </View>
 
                 <View className="flex-row justify-between mb-2">
@@ -406,7 +406,7 @@ export default function TrainingPhilosophy() {
             <Text className="text-white font-bold text-lg mb-3">Practical Application</Text>
             {currentPhilosophy.application.map((app, idx) => (
               <View key={idx} className="flex-row items-start mb-2 last:mb-0">
-                <Ionicons name="checkmark-circle" size={18} color="#10b981" />
+                <Ionicons name="checkmark-circle" size={18} color="#9D12DE" />
                 <Text className="text-zinc-300 ml-2 flex-1">{app}</Text>
               </View>
             ))}
@@ -422,9 +422,9 @@ export default function TrainingPhilosophy() {
             ))}
           </View>
 
-          <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30 mb-6">
-            <Text className="text-blue-400 font-bold mb-2">Integration</Text>
-            <Text className="text-blue-300 text-sm">
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
+            <Text className="text-primary/80 font-bold mb-2">Integration</Text>
+            <Text className="text-primary/60 text-sm">
               All these principles work together. Progressive overload drives gains,
               autoregulation prevents burnout, specificity ensures gains transfer,
               variation prevents staleness, and recovery enables adaptation. Master
@@ -436,4 +436,5 @@ export default function TrainingPhilosophy() {
     </View>
   );
 }
+
 

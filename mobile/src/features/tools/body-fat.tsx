@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -57,13 +57,13 @@ export default function BodyFatCalculator() {
   const getBodyFatCategory = (bf: number, isMale: boolean): { category: string; color: string; description: string } => {
     if (isMale) {
       if (bf < 6) return { category: 'Esencial', color: '#EF4444', description: 'Peligrosamente bajo' };
-      if (bf < 14) return { category: 'Atlético', color: '#10B981', description: 'Óptimo para deportistas' };
+      if (bf < 14) return { category: 'AtlÃ©tico', color: '#10B981', description: 'Ã“ptimo para deportistas' };
       if (bf < 18) return { category: 'Fitness', color: '#3B82F6', description: 'Saludable y tonificado' };
       if (bf < 25) return { category: 'Promedio', color: '#F59E0B', description: 'Dentro del rango normal' };
       return { category: 'Alto', color: '#EF4444', description: 'Considera reducir grasa corporal' };
     } else {
       if (bf < 14) return { category: 'Esencial', color: '#EF4444', description: 'Peligrosamente bajo' };
-      if (bf < 21) return { category: 'Atlético', color: '#10B981', description: 'Óptimo para deportistas' };
+      if (bf < 21) return { category: 'AtlÃ©tico', color: '#10B981', description: 'Ã“ptimo para deportistas' };
       if (bf < 25) return { category: 'Fitness', color: '#3B82F6', description: 'Saludable y tonificado' };
       if (bf < 32) return { category: 'Promedio', color: '#F59E0B', description: 'Dentro del rango normal' };
       return { category: 'Alto', color: '#EF4444', description: 'Considera reducir grasa corporal' };
@@ -93,7 +93,7 @@ export default function BodyFatCalculator() {
           </Text>
         </View>
         <Text className="text-zinc-400 text-sm">
-          Método Navy - Basado en medidas corporales
+          MÃ©todo Navy - Basado en medidas corporales
         </Text>
       </View>
 
@@ -101,25 +101,25 @@ export default function BodyFatCalculator() {
         <View className="p-6 space-y-6">
           {/* Gender Selection */}
           <View>
-            <Text className="text-white text-base font-semibold mb-3">Sexo Biológico</Text>
+            <Text className="text-white text-base font-semibold mb-3">Sexo BiolÃ³gico</Text>
             <View className="flex-row gap-3">
               <TouchableOpacity
                 onPress={() => setGender('male')}
                 className={`flex-1 p-4 rounded-xl border-2 ${
                   gender === 'male'
-                    ? 'bg-blue-500/20 border-blue-500'
+                    ? 'bg-primary/20 border-primary'
                     : 'bg-zinc-900 border-zinc-800'
                 }`}
               >
                 <Ionicons
                   name="male"
                   size={32}
-                  color={gender === 'male' ? '#3B82F6' : '#71717A'}
+                  color={gender === 'male' ? '#9D12DE' : '#71717A'}
                   style={{ alignSelf: 'center' }}
                 />
                 <Text
                   className={`text-center mt-2 font-semibold ${
-                    gender === 'male' ? 'text-blue-500' : 'text-zinc-500'
+                    gender === 'male' ? 'text-primary' : 'text-zinc-500'
                   }`}
                 >
                   Hombre
@@ -194,7 +194,7 @@ export default function BodyFatCalculator() {
 
               {gender === 'female' && (
                 <View>
-                  <Text className="text-zinc-400 text-sm mb-2">Cadera (parte más ancha)</Text>
+                  <Text className="text-zinc-400 text-sm mb-2">Cadera (parte mÃ¡s ancha)</Text>
                   <TextInput
                     value={hip}
                     onChangeText={setHip}
@@ -209,18 +209,18 @@ export default function BodyFatCalculator() {
           </View>
 
           {/* Info Card */}
-          <View className="bg-blue-500/10 border border-blue-500/30 rounded-xl p-4">
+          <View className="bg-primary/10 border border-primary/30 rounded-xl p-4">
             <View className="flex-row items-start">
-              <Ionicons name="information-circle" size={20} color="#3B82F6" style={{ marginRight: 8 }} />
+              <Ionicons name="information-circle" size={20} color="#9D12DE" style={{ marginRight: 8 }} />
               <View className="flex-1">
-                <Text className="text-blue-400 text-sm font-semibold mb-1">
-                  Cómo medir correctamente
+                <Text className="text-primary text-sm font-semibold mb-1">
+                  CÃ³mo medir correctamente
                 </Text>
-                <Text className="text-blue-300/80 text-xs leading-5">
-                  • Usa una cinta métrica flexible{'\n'}
-                  • Mide en la mañana antes de desayunar{'\n'}
-                  • Mantén la cinta ajustada pero no apretada{'\n'}
-                  • Repite 2-3 veces para asegurar precisión
+                <Text className="text-text/70 text-xs leading-5">
+                  â€¢ Usa una cinta mÃ©trica flexible{'\n'}
+                  â€¢ Mide en la maÃ±ana antes de desayunar{'\n'}
+                  â€¢ MantÃ©n la cinta ajustada pero no apretada{'\n'}
+                  â€¢ Repite 2-3 veces para asegurar precisiÃ³n
                 </Text>
               </View>
             </View>
@@ -229,9 +229,9 @@ export default function BodyFatCalculator() {
           {/* Calculate Button */}
           <TouchableOpacity
             onPress={calculateBodyFat}
-            className="bg-gradient-to-r from-emerald-600 to-emerald-700 py-4 rounded-xl active:opacity-80"
+            className="bg-gradient-to-r from-primary to-[#7D0EBE] py-4 rounded-xl active:opacity-80"
             style={{
-              shadowColor: '#10B981',
+              shadowColor: '#9D12DE',
               shadowOffset: { width: 0, height: 4 },
               shadowOpacity: 0.3,
               shadowRadius: 8,
@@ -273,7 +273,7 @@ export default function BodyFatCalculator() {
                       <Text className="text-zinc-300">2-5%</Text>
                     </View>
                     <View className="flex-row justify-between py-2 border-b border-zinc-800">
-                      <Text className="text-zinc-400">Atlético</Text>
+                      <Text className="text-zinc-400">AtlÃ©tico</Text>
                       <Text className="text-zinc-300">6-13%</Text>
                     </View>
                     <View className="flex-row justify-between py-2 border-b border-zinc-800">
@@ -296,7 +296,7 @@ export default function BodyFatCalculator() {
                       <Text className="text-zinc-300">10-13%</Text>
                     </View>
                     <View className="flex-row justify-between py-2 border-b border-zinc-800">
-                      <Text className="text-zinc-400">Atlético</Text>
+                      <Text className="text-zinc-400">AtlÃ©tico</Text>
                       <Text className="text-zinc-300">14-20%</Text>
                     </View>
                     <View className="flex-row justify-between py-2 border-b border-zinc-800">
@@ -333,3 +333,4 @@ export default function BodyFatCalculator() {
     </View>
   );
 }
+

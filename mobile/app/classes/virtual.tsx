@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -30,7 +30,7 @@ const LIVE_CLASSES: VirtualClass[] = [
   {
     id: '1',
     title: 'HIIT Extremo Full Body',
-    instructor: 'Carlos Martínez',
+    instructor: 'Carlos MartÃ­nez',
     type: 'hiit',
     duration: 45,
     difficulty: 'avanzado',
@@ -45,7 +45,7 @@ const LIVE_CLASSES: VirtualClass[] = [
   {
     id: '2',
     title: 'Yoga Flow Matutino',
-    instructor: 'Ana Rodríguez',
+    instructor: 'Ana RodrÃ­guez',
     type: 'yoga',
     duration: 60,
     difficulty: 'intermedio',
@@ -55,7 +55,7 @@ const LIVE_CLASSES: VirtualClass[] = [
     maxParticipants: 150,
     thumbnail: 'https://via.placeholder.com/400x200/10B981/FFFFFF?text=Yoga',
     equipment: ['Colchoneta', 'Bloque'],
-    description: 'Secuencia de yoga para empezar el día con energía',
+    description: 'Secuencia de yoga para empezar el dÃ­a con energÃ­a',
   },
 ];
 
@@ -63,7 +63,7 @@ const UPCOMING_CLASSES: VirtualClass[] = [
   {
     id: '3',
     title: 'Spinning de Alta Intensidad',
-    instructor: 'Luis Gómez',
+    instructor: 'Luis GÃ³mez',
     type: 'spinning',
     duration: 50,
     difficulty: 'avanzado',
@@ -72,13 +72,13 @@ const UPCOMING_CLASSES: VirtualClass[] = [
     participants: 0,
     maxParticipants: 100,
     thumbnail: 'https://via.placeholder.com/400x200/F59E0B/FFFFFF?text=Spinning',
-    equipment: ['Bicicleta estática'],
-    description: 'Clase de cycling con música motivadora',
+    equipment: ['Bicicleta estÃ¡tica'],
+    description: 'Clase de cycling con mÃºsica motivadora',
   },
   {
     id: '4',
     title: 'Entrenamiento Funcional',
-    instructor: 'María López',
+    instructor: 'MarÃ­a LÃ³pez',
     type: 'functional',
     duration: 40,
     difficulty: 'intermedio',
@@ -88,12 +88,12 @@ const UPCOMING_CLASSES: VirtualClass[] = [
     maxParticipants: 150,
     thumbnail: 'https://via.placeholder.com/400x200/3B82F6/FFFFFF?text=Funcional',
     equipment: ['Kettlebell', 'TRX', 'Colchoneta'],
-    description: 'Movimientos funcionales para mejorar tu día a día',
+    description: 'Movimientos funcionales para mejorar tu dÃ­a a dÃ­a',
   },
   {
     id: '5',
     title: 'Fuerza con Pesas',
-    instructor: 'Pedro Sánchez',
+    instructor: 'Pedro SÃ¡nchez',
     type: 'strength',
     duration: 55,
     difficulty: 'avanzado',
@@ -103,7 +103,7 @@ const UPCOMING_CLASSES: VirtualClass[] = [
     maxParticipants: 120,
     thumbnail: 'https://via.placeholder.com/400x200/8B5CF6/FFFFFF?text=Fuerza',
     equipment: ['Barra', 'Discos', 'Banco'],
-    description: 'Construcción de fuerza y masa muscular',
+    description: 'ConstrucciÃ³n de fuerza y masa muscular',
   },
 ];
 
@@ -112,7 +112,7 @@ export default function GroupClasses() {
 
   const tabs = [
     { id: 'live' as const, label: 'En Vivo', icon: 'radio' },
-    { id: 'upcoming' as const, label: 'Próximas', icon: 'calendar' },
+    { id: 'upcoming' as const, label: 'PrÃ³ximas', icon: 'calendar' },
     { id: 'ondemand' as const, label: 'On Demand', icon: 'play-circle' },
   ];
 
@@ -121,11 +121,11 @@ export default function GroupClasses() {
       case 'hiit':
         return '#EF4444';
       case 'yoga':
-        return '#10B981';
+        return '#9D12DE';
       case 'spinning':
-        return '#F59E0B';
+        return '#FFEA00';
       case 'functional':
-        return '#3B82F6';
+        return '#9D12DE';
       case 'strength':
         return '#8B5CF6';
       case 'pilates':
@@ -138,9 +138,9 @@ export default function GroupClasses() {
   const getDifficultyColor = (difficulty: string) => {
     switch (difficulty) {
       case 'principiante':
-        return '#10B981';
+        return '#9D12DE';
       case 'intermedio':
-        return '#F59E0B';
+        return '#FFEA00';
       case 'avanzado':
         return '#EF4444';
       default:
@@ -152,13 +152,13 @@ export default function GroupClasses() {
     if (classItem.isLive) {
       Alert.alert(
         'Unirse a Clase en Vivo',
-        `${classItem.title}\n\nInstructor: ${classItem.instructor}\n${classItem.participants}/${classItem.maxParticipants} participantes\n\n¿Deseas unirte ahora?`,
+        `${classItem.title}\n\nInstructor: ${classItem.instructor}\n${classItem.participants}/${classItem.maxParticipants} participantes\n\nÂ¿Deseas unirte ahora?`,
         [
           { text: 'Cancelar', style: 'cancel' },
           {
             text: 'Unirse',
             onPress: () => {
-              Alert.alert('¡Conectado!', 'Estás en la clase en vivo');
+              Alert.alert('Â¡Conectado!', 'EstÃ¡s en la clase en vivo');
             },
           },
         ]
@@ -166,13 +166,13 @@ export default function GroupClasses() {
     } else {
       Alert.alert(
         'Reservar Clase',
-        `${classItem.title}\n\nHorario: ${classItem.scheduledTime}\n\n¿Deseas reservar tu lugar?`,
+        `${classItem.title}\n\nHorario: ${classItem.scheduledTime}\n\nÂ¿Deseas reservar tu lugar?`,
         [
           { text: 'Cancelar', style: 'cancel' },
           {
             text: 'Reservar',
             onPress: () => {
-              Alert.alert('¡Reservado!', 'Recibirás un recordatorio antes de la clase');
+              Alert.alert('Â¡Reservado!', 'RecibirÃ¡s un recordatorio antes de la clase');
             },
           },
         ]
@@ -197,7 +197,7 @@ export default function GroupClasses() {
         </View>
 
         {/* Stats */}
-        <View className="bg-gradient-to-br from-emerald-500 to-blue-500 rounded-xl p-4 mb-4">
+        <View className="bg-gradient-to-br from-primary to-[#7D0EBE] rounded-xl p-4 mb-4">
           <View className="flex-row items-center justify-between">
             <View className="flex-1">
               <Text className="text-white/80 text-sm mb-1">Clases Este Mes</Text>
@@ -221,7 +221,7 @@ export default function GroupClasses() {
               key={tab.id}
               onPress={() => setSelectedTab(tab.id)}
               className={`flex-1 flex-row items-center justify-center py-3 rounded-lg ${
-                selectedTab === tab.id ? 'bg-emerald-500' : 'bg-zinc-900 border border-zinc-800'
+                selectedTab === tab.id ? 'bg-primary' : 'bg-zinc-900 border border-zinc-800'
               }`}
             >
               <Ionicons
@@ -322,8 +322,8 @@ export default function GroupClasses() {
                     </View>
                     {classItem.isLive && (
                       <View className="flex-row items-center">
-                        <Ionicons name="people" size={16} color="#10B981" />
-                        <Text className="text-emerald-500 text-sm ml-1 font-bold">
+                        <Ionicons name="people" size={16} color="#9D12DE" />
+                        <Text className="text-primary text-sm ml-1 font-bold">
                           {classItem.participants}
                         </Text>
                       </View>
@@ -344,7 +344,7 @@ export default function GroupClasses() {
                   <TouchableOpacity
                     onPress={() => joinClass(classItem)}
                     className={`${
-                      classItem.isLive ? 'bg-red-500' : 'bg-emerald-500'
+                      classItem.isLive ? 'bg-red-500' : 'bg-primary'
                     } rounded-lg p-3`}
                   >
                     <View className="flex-row items-center justify-center">
@@ -368,7 +368,7 @@ export default function GroupClasses() {
         {selectedTab === 'upcoming' && (
           <View className="px-6 pt-6">
             <Text className="text-white font-bold text-lg mb-3">
-              Próximas Clases Hoy ({UPCOMING_CLASSES.length})
+              PrÃ³ximas Clases Hoy ({UPCOMING_CLASSES.length})
             </Text>
 
             {UPCOMING_CLASSES.map((classItem) => (
@@ -396,7 +396,7 @@ export default function GroupClasses() {
                     </View>
                   </View>
                   <View className="items-end">
-                    <Text className="text-emerald-500 font-bold text-2xl">
+                    <Text className="text-primary font-bold text-2xl">
                       {classItem.scheduledTime}
                     </Text>
                     <Text className="text-zinc-400 text-xs">
@@ -437,7 +437,7 @@ export default function GroupClasses() {
 
                 <TouchableOpacity
                   onPress={() => joinClass(classItem)}
-                  className="bg-emerald-500 rounded-lg p-3"
+                  className="bg-primary rounded-lg p-3"
                 >
                   <Text className="text-white font-bold text-center">
                     Reservar Lugar
@@ -457,9 +457,9 @@ export default function GroupClasses() {
                 Biblioteca On Demand
               </Text>
               <Text className="text-zinc-500 text-sm mt-2 text-center">
-                Accede a más de 500 clases grabadas cuando quieras
+                Accede a mÃ¡s de 500 clases grabadas cuando quieras
               </Text>
-              <TouchableOpacity className="bg-emerald-500 rounded-lg px-6 py-3 mt-4">
+              <TouchableOpacity className="bg-primary rounded-lg px-6 py-3 mt-4">
                 <Text className="text-white font-bold">Explorar Biblioteca</Text>
               </TouchableOpacity>
             </View>
@@ -468,21 +468,21 @@ export default function GroupClasses() {
 
         {/* Info Card */}
         <View className="px-6 pb-6 pt-4">
-          <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30">
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30">
             <View className="flex-row items-start">
-              <Ionicons name="information-circle" size={20} color="#3B82F6" />
+              <Ionicons name="information-circle" size={20} color="#9D12DE" />
               <View className="flex-1 ml-3">
-                <Text className="text-blue-400 font-bold mb-2">
+                <Text className="text-primary/80 font-bold mb-2">
                   Tips para Clases Virtuales
                 </Text>
-                <Text className="text-blue-300 text-sm mb-1">
-                  • Prepara tu equipamiento antes de la clase
+                <Text className="text-primary/60 text-sm mb-1">
+                  â€¢ Prepara tu equipamiento antes de la clase
                 </Text>
-                <Text className="text-blue-300 text-sm mb-1">
-                  • Busca un espacio con buena conexión
+                <Text className="text-primary/60 text-sm mb-1">
+                  â€¢ Busca un espacio con buena conexiÃ³n
                 </Text>
-                <Text className="text-blue-300 text-sm">
-                  • Llega 5 minutos antes para calentar
+                <Text className="text-primary/60 text-sm">
+                  â€¢ Llega 5 minutos antes para calentar
                 </Text>
               </View>
             </View>
@@ -492,3 +492,5 @@ export default function GroupClasses() {
     </View>
   );
 }
+
+

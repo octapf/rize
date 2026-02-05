@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -30,8 +30,8 @@ interface Plan {
 const PREMIUM_FEATURES: PremiumFeature[] = [
   {
     id: '1',
-    name: 'Análisis con IA',
-    description: 'Análisis avanzado de fotos de comida y técnica',
+    name: 'AnÃ¡lisis con IA',
+    description: 'AnÃ¡lisis avanzado de fotos de comida y tÃ©cnica',
     icon: 'sparkles',
     category: 'IA',
   },
@@ -58,8 +58,8 @@ const PREMIUM_FEATURES: PremiumFeature[] = [
   },
   {
     id: '5',
-    name: 'Estadísticas Avanzadas',
-    description: 'Gráficos y métricas detalladas',
+    name: 'EstadÃ­sticas Avanzadas',
+    description: 'GrÃ¡ficos y mÃ©tricas detalladas',
     icon: 'analytics',
     category: 'Analytics',
   },
@@ -73,7 +73,7 @@ const PREMIUM_FEATURES: PremiumFeature[] = [
   {
     id: '7',
     name: 'Soporte Prioritario',
-    description: 'Atención al cliente 24/7',
+    description: 'AtenciÃ³n al cliente 24/7',
     icon: 'chatbubbles',
     category: 'Soporte',
   },
@@ -98,21 +98,21 @@ const PLANS: Plan[] = [
     id: 'yearly',
     name: 'Anual',
     price: 79.99,
-    period: 'año',
+    period: 'aÃ±o',
     discount: 33,
     popular: true,
     features: [
       'Todas las funciones premium',
       '2 meses gratis',
       'Cancela cuando quieras',
-      'Ahorra $40/año',
+      'Ahorra $40/aÃ±o',
     ],
   },
   {
     id: 'lifetime',
     name: 'De por Vida',
     price: 199.99,
-    period: 'único pago',
+    period: 'Ãºnico pago',
     features: [
       'Todas las funciones premium',
       'Acceso de por vida',
@@ -127,16 +127,16 @@ export default function Premium() {
 
   const handleSubscribe = () => {
     Alert.alert(
-      'Confirmar Suscripción',
-      `¿Suscribirte al plan ${selectedPlan.name} por $${selectedPlan.price}?`,
+      'Confirmar SuscripciÃ³n',
+      `Â¿Suscribirte al plan ${selectedPlan.name} por $${selectedPlan.price}?`,
       [
         { text: 'Cancelar', style: 'cancel' },
         {
           text: 'Suscribirse',
           onPress: () => {
             Alert.alert(
-              '¡Bienvenido a Premium!',
-              'Tu suscripción está activa. Disfruta de todas las funciones premium.'
+              'Â¡Bienvenido a Premium!',
+              'Tu suscripciÃ³n estÃ¡ activa. Disfruta de todas las funciones premium.'
             );
           },
         },
@@ -145,7 +145,7 @@ export default function Premium() {
   };
 
   const restorePurchases = () => {
-    Alert.alert('Restaurando compras...', 'Verificando tu suscripción', [
+    Alert.alert('Restaurando compras...', 'Verificando tu suscripciÃ³n', [
       {
         text: 'OK',
         onPress: () => {
@@ -213,7 +213,7 @@ export default function Premium() {
             >
               {plan.popular && (
                 <View className="absolute -top-2 right-4 bg-amber-500 px-3 py-1 rounded-full">
-                  <Text className="text-white text-xs font-bold">MÁS POPULAR</Text>
+                  <Text className="text-white text-xs font-bold">MÃS POPULAR</Text>
                 </View>
               )}
 
@@ -227,8 +227,8 @@ export default function Premium() {
                     {plan.name}
                   </Text>
                   {plan.discount && (
-                    <View className="bg-emerald-500/20 px-2 py-0.5 rounded mt-1 self-start">
-                      <Text className="text-emerald-500 text-xs font-bold">
+                    <View className="bg-primary/20 px-2 py-0.5 rounded mt-1 self-start">
+                      <Text className="text-primary text-xs font-bold">
                         Ahorra {plan.discount}%
                       </Text>
                     </View>
@@ -252,7 +252,7 @@ export default function Premium() {
                     <Ionicons
                       name="checkmark-circle"
                       size={16}
-                      color={selectedPlan.id === plan.id ? '#F59E0B' : '#10B981'}
+                      color={selectedPlan.id === plan.id ? '#FFEA00' : '#9D12DE'}
                     />
                     <Text
                       className={`ml-2 text-sm ${
@@ -284,7 +284,7 @@ export default function Premium() {
                 style={{ width: '48%' }}
               >
                 <View className="bg-amber-500/20 w-12 h-12 rounded-xl items-center justify-center mb-3">
-                  <Ionicons name={feature.icon as any} size={24} color="#F59E0B" />
+                  <Ionicons name={feature.icon as any} size={24} color="#FFEA00" />
                 </View>
                 <Text className="text-white font-bold mb-1">{feature.name}</Text>
                 <Text className="text-zinc-400 text-xs leading-4">
@@ -304,15 +304,15 @@ export default function Premium() {
           <View className="bg-zinc-900 rounded-xl p-4 border border-zinc-800 mb-3">
             <View className="flex-row items-center mb-2">
               {[1, 2, 3, 4, 5].map((star) => (
-                <Ionicons key={star} name="star" size={16} color="#F59E0B" />
+                <Ionicons key={star} name="star" size={16} color="#FFEA00" />
               ))}
             </View>
             <Text className="text-white font-semibold mb-2">
               "Vale cada centavo"
             </Text>
             <Text className="text-zinc-300 text-sm leading-5 mb-2">
-              El análisis con IA me ayudó a corregir mi técnica y evitar lesiones.
-              Los planes personalizados son increíbles.
+              El anÃ¡lisis con IA me ayudÃ³ a corregir mi tÃ©cnica y evitar lesiones.
+              Los planes personalizados son increÃ­bles.
             </Text>
             <Text className="text-zinc-500 text-xs">- Carlos M.</Text>
           </View>
@@ -320,14 +320,14 @@ export default function Premium() {
           <View className="bg-zinc-900 rounded-xl p-4 border border-zinc-800 mb-3">
             <View className="flex-row items-center mb-2">
               {[1, 2, 3, 4, 5].map((star) => (
-                <Ionicons key={star} name="star" size={16} color="#F59E0B" />
+                <Ionicons key={star} name="star" size={16} color="#FFEA00" />
               ))}
             </View>
             <Text className="text-white font-semibold mb-2">
-              "La mejor inversión"
+              "La mejor inversiÃ³n"
             </Text>
             <Text className="text-zinc-300 text-sm leading-5 mb-2">
-              Las estadísticas avanzadas me permitieron optimizar mi
+              Las estadÃ­sticas avanzadas me permitieron optimizar mi
               entrenamiento. Resultados visibles en 3 meses.
             </Text>
             <Text className="text-zinc-500 text-xs">- Ana R.</Text>
@@ -342,30 +342,30 @@ export default function Premium() {
 
           <View className="bg-zinc-900 rounded-xl p-4 border border-zinc-800 mb-3">
             <Text className="text-white font-semibold mb-2">
-              ¿Puedo cancelar en cualquier momento?
+              Â¿Puedo cancelar en cualquier momento?
             </Text>
             <Text className="text-zinc-300 text-sm leading-5">
-              Sí, puedes cancelar tu suscripción cuando quieras sin penalización.
-              Tendrás acceso hasta el final del período pagado.
+              SÃ­, puedes cancelar tu suscripciÃ³n cuando quieras sin penalizaciÃ³n.
+              TendrÃ¡s acceso hasta el final del perÃ­odo pagado.
             </Text>
           </View>
 
           <View className="bg-zinc-900 rounded-xl p-4 border border-zinc-800 mb-3">
             <Text className="text-white font-semibold mb-2">
-              ¿Hay garantía de devolución?
+              Â¿Hay garantÃ­a de devoluciÃ³n?
             </Text>
             <Text className="text-zinc-300 text-sm leading-5">
-              Ofrecemos garantía de 7 días. Si no estás satisfecho, te devolvemos
+              Ofrecemos garantÃ­a de 7 dÃ­as. Si no estÃ¡s satisfecho, te devolvemos
               el 100% de tu dinero, sin preguntas.
             </Text>
           </View>
 
           <View className="bg-zinc-900 rounded-xl p-4 border border-zinc-800">
             <Text className="text-white font-semibold mb-2">
-              ¿Qué métodos de pago aceptan?
+              Â¿QuÃ© mÃ©todos de pago aceptan?
             </Text>
             <Text className="text-zinc-300 text-sm leading-5">
-              Aceptamos tarjetas de crédito/débito, PayPal, Apple Pay y Google Pay.
+              Aceptamos tarjetas de crÃ©dito/dÃ©bito, PayPal, Apple Pay y Google Pay.
               Todos los pagos son seguros y cifrados.
             </Text>
           </View>
@@ -384,10 +384,11 @@ export default function Premium() {
         </TouchableOpacity>
 
         <Text className="text-zinc-500 text-xs text-center mt-3">
-          Al suscribirte, aceptas nuestros Términos de Servicio y Política de
-          Privacidad. La suscripción se renueva automáticamente.
+          Al suscribirte, aceptas nuestros TÃ©rminos de Servicio y PolÃ­tica de
+          Privacidad. La suscripciÃ³n se renueva automÃ¡ticamente.
         </Text>
       </View>
     </View>
   );
 }
+

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -87,7 +87,7 @@ export default function TrainingNotes() {
 
       <ScrollView className="flex-1" showsVerticalScrollIndicator={false}>
         <View className="px-6 pt-6">
-          <View className="bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl p-6 mb-6">
+          <View className="bg-gradient-to-r from-primary to-[#7D0EBE] rounded-xl p-6 mb-6">
             <Text className="text-white text-2xl font-bold mb-2">Workout Journal</Text>
             <Text className="text-white opacity-90 mb-4">
               Track thoughts and observations
@@ -120,9 +120,9 @@ export default function TrainingNotes() {
                     className={`bg-${template.color}-500/20 rounded-lg px-3 py-2 flex-row items-center border border-${template.color}-500/30`}
                   >
                     <Ionicons name={template.icon as any} size={16} color={
-                      template.color === 'emerald' ? '#10b981' :
-                      template.color === 'amber' ? '#f59e0b' :
-                      template.color === 'blue' ? '#3b82f6' :
+                      template.color === 'emerald' ? '#9D12DE' :
+                      template.color === 'amber' ? '#FFEA00' :
+                      template.color === 'blue' ? '#9D12DE' :
                       template.color === 'red' ? '#ef4444' : '#a855f7'
                     } />
                     <Text className={`text-${template.color}-400 ml-2 text-sm font-bold`}>
@@ -133,7 +133,7 @@ export default function TrainingNotes() {
               </View>
             </ScrollView>
 
-            <TouchableOpacity className="bg-blue-500 rounded-xl py-3">
+            <TouchableOpacity className="bg-primary rounded-xl py-3">
               <Text className="text-white font-bold text-center">Save Note</Text>
             </TouchableOpacity>
           </View>
@@ -152,8 +152,8 @@ export default function TrainingNotes() {
                     <Text className="text-zinc-400 ml-1 text-sm">{workout.duration}</Text>
                   </View>
                 </View>
-                <View className="bg-blue-500/20 rounded-full px-3 py-1">
-                  <Text className="text-blue-400 text-xs font-bold">{workout.notes.length} notes</Text>
+                <View className="bg-primary/20 rounded-full px-3 py-1">
+                  <Text className="text-primary/80 text-xs font-bold">{workout.notes.length} notes</Text>
                 </View>
               </View>
 
@@ -167,8 +167,8 @@ export default function TrainingNotes() {
                       name={getMoodIcon(note.mood) as any}
                       size={20}
                       color={
-                        note.mood === 'great' ? '#10b981' :
-                        note.mood === 'neutral' ? '#3b82f6' : '#f59e0b'
+                        note.mood === 'great' ? '#9D12DE' :
+                        note.mood === 'neutral' ? '#9D12DE' : '#FFEA00'
                       }
                     />
                     <Text className="text-white ml-3 flex-1">{note.text}</Text>
@@ -181,20 +181,20 @@ export default function TrainingNotes() {
                 onPress={() => setSelectedWorkout(workout.id)}
                 className="bg-zinc-800 rounded-lg py-2 mt-2 flex-row items-center justify-center"
               >
-                <Ionicons name="add" size={18} color="#3b82f6" />
-                <Text className="text-blue-400 font-bold ml-1">Add Note</Text>
+                <Ionicons name="add" size={18} color="#9D12DE" />
+                <Text className="text-primary/80 font-bold ml-1">Add Note</Text>
               </TouchableOpacity>
             </View>
           ))}
 
-          <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30 mb-6">
-            <Text className="text-blue-400 font-bold mb-2">Journaling Benefits</Text>
-            <Text className="text-blue-300 text-sm">
-              • Track what works y what doesn't{'\n'}
-              • Identify patterns en performance{'\n'}
-              • Remember form cues{'\n'}
-              • Monitor energy levels{'\n'}
-              • Improve future workouts
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
+            <Text className="text-primary/80 font-bold mb-2">Journaling Benefits</Text>
+            <Text className="text-primary/60 text-sm">
+              â€¢ Track what works y what doesn't{'\n'}
+              â€¢ Identify patterns en performance{'\n'}
+              â€¢ Remember form cues{'\n'}
+              â€¢ Monitor energy levels{'\n'}
+              â€¢ Improve future workouts
             </Text>
           </View>
         </View>
@@ -202,3 +202,5 @@ export default function TrainingNotes() {
     </View>
   );
 }
+
+

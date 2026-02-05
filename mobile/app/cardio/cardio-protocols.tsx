@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -262,14 +262,14 @@ export default function CardioProtocols() {
             </View>
           ))}
 
-          <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30 mb-6">
-            <Text className="text-blue-400 font-bold mb-2">Weekly Structure</Text>
-            <Text className="text-blue-300 text-sm">
-              • Mix different intensities{'\n'}
-              • 80/20 rule: 80% easy, 20% hard{'\n'}
-              • Don't go hard every day{'\n'}
-              • Recovery is essential{'\n'}
-              • Progress gradually
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
+            <Text className="text-primary/80 font-bold mb-2">Weekly Structure</Text>
+            <Text className="text-primary/60 text-sm">
+              â€¢ Mix different intensities{'\n'}
+              â€¢ 80/20 rule: 80% easy, 20% hard{'\n'}
+              â€¢ Don't go hard every day{'\n'}
+              â€¢ Recovery is essential{'\n'}
+              â€¢ Progress gradually
             </Text>
           </View>
         </View>
@@ -277,3 +277,4 @@ export default function CardioProtocols() {
     </View>
   );
 }
+

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -35,14 +35,14 @@ interface SupplementLog {
 const SUPPLEMENT_LIBRARY = [
   { name: 'Whey Protein', category: 'protein', defaultDosage: '30', unit: 'g', timings: ['Post-Workout', 'Desayuno'] },
   { name: 'Creatina Monohidrato', category: 'performance', defaultDosage: '5', unit: 'g', timings: ['Post-Workout', 'Cualquier Momento'] },
-  { name: 'Cafeína', category: 'performance', defaultDosage: '200', unit: 'mg', timings: ['Pre-Workout', 'Mañana'] },
+  { name: 'CafeÃ­na', category: 'performance', defaultDosage: '200', unit: 'mg', timings: ['Pre-Workout', 'MaÃ±ana'] },
   { name: 'Beta-Alanina', category: 'performance', defaultDosage: '3', unit: 'g', timings: ['Pre-Workout'] },
   { name: 'BCAAs', category: 'recovery', defaultDosage: '10', unit: 'g', timings: ['Intra-Workout', 'Pre-Workout'] },
   { name: 'Omega-3 (EPA/DHA)', category: 'health', defaultDosage: '2', unit: 'g', timings: ['Con Comida'] },
-  { name: 'Vitamina D3', category: 'health', defaultDosage: '4000', unit: 'IU', timings: ['Mañana', 'Con Comida'] },
+  { name: 'Vitamina D3', category: 'health', defaultDosage: '4000', unit: 'IU', timings: ['MaÃ±ana', 'Con Comida'] },
   { name: 'Magnesio', category: 'recovery', defaultDosage: '400', unit: 'mg', timings: ['Noche', 'Antes de Dormir'] },
   { name: 'ZMA', category: 'recovery', defaultDosage: '1', unit: 'dosis', timings: ['Antes de Dormir'] },
-  { name: 'Ashwagandha', category: 'recovery', defaultDosage: '600', unit: 'mg', timings: ['Noche', 'Mañana'] },
+  { name: 'Ashwagandha', category: 'recovery', defaultDosage: '600', unit: 'mg', timings: ['Noche', 'MaÃ±ana'] },
   { name: 'L-Citrulina', category: 'performance', defaultDosage: '6', unit: 'g', timings: ['Pre-Workout'] },
   { name: 'Glutamina', category: 'recovery', defaultDosage: '5', unit: 'g', timings: ['Post-Workout', 'Antes de Dormir'] },
 ];
@@ -71,7 +71,7 @@ const MOCK_STACK: Supplement[] = [
   },
   {
     id: '3',
-    name: 'Cafeína',
+    name: 'CafeÃ­na',
     category: 'performance',
     dosage: '200',
     unit: 'mg',
@@ -98,9 +98,9 @@ export default function SupplementTracker() {
 
   const categories = [
     { key: 'all', label: 'Todos', icon: 'apps', color: 'blue' },
-    { key: 'protein', label: 'Proteína', icon: 'nutrition', color: 'emerald' },
+    { key: 'protein', label: 'ProteÃ­na', icon: 'nutrition', color: 'emerald' },
     { key: 'performance', label: 'Performance', icon: 'flash', color: 'red' },
-    { key: 'recovery', label: 'Recuperación', icon: 'bed', color: 'purple' },
+    { key: 'recovery', label: 'RecuperaciÃ³n', icon: 'bed', color: 'purple' },
     { key: 'health', label: 'Salud', icon: 'heart', color: 'pink' },
   ];
 
@@ -121,7 +121,7 @@ export default function SupplementTracker() {
     
     setStack([...stack, newSupplement]);
     setShowAddForm(false);
-    Alert.alert('Suplemento Agregado ✓', `${supplement.name} añadido a tu stack`);
+    Alert.alert('Suplemento Agregado âœ“', `${supplement.name} aÃ±adido a tu stack`);
   };
 
   const toggleActive = (id: string) => {
@@ -134,13 +134,13 @@ export default function SupplementTracker() {
     setStack(stack.map(s => 
       s.id === id ? { ...s, effectiveness: rating } : s
     ));
-    Alert.alert('Rating Guardado ✓', `Efectividad: ${rating}/5 ⭐`);
+    Alert.alert('Rating Guardado âœ“', `Efectividad: ${rating}/5 â­`);
   };
 
   const removeSupplement = (id: string) => {
     Alert.alert(
       'Eliminar Suplemento',
-      '¿Estás seguro?',
+      'Â¿EstÃ¡s seguro?',
       [
         { text: 'Cancelar', style: 'cancel' },
         {
@@ -210,14 +210,14 @@ export default function SupplementTracker() {
                       <Ionicons name={icon as any} size={20} color="white" />
                     </View>
                     <Text className="text-white font-bold flex-1">{supp.name}</Text>
-                    <Ionicons name="add-circle" size={24} color="#10B981" />
+                    <Ionicons name="add-circle" size={24} color="#9D12DE" />
                   </View>
                   
                   <View className="flex-row items-center gap-3 ml-13">
                     <Text className="text-zinc-400 text-sm">
                       {supp.defaultDosage} {supp.unit}
                     </Text>
-                    <Text className="text-zinc-500 text-sm">•</Text>
+                    <Text className="text-zinc-500 text-sm">â€¢</Text>
                     <Text className="text-zinc-400 text-sm">
                       {supp.timings.join(', ')}
                     </Text>
@@ -243,7 +243,7 @@ export default function SupplementTracker() {
             Suplementos
           </Text>
           <TouchableOpacity onPress={() => setShowAddForm(true)}>
-            <View className="bg-emerald-500 rounded-full p-2">
+            <View className="bg-primary rounded-full p-2">
               <Ionicons name="add" size={24} color="white" />
             </View>
           </TouchableOpacity>
@@ -280,7 +280,7 @@ export default function SupplementTracker() {
             </View>
             <View className="flex-1 bg-zinc-900 rounded-xl p-4 border border-zinc-800">
               <Text className="text-zinc-400 text-xs mb-1">Efectividad</Text>
-              <Text className="text-emerald-400 font-bold text-2xl">
+              <Text className="text-primary font-bold text-2xl">
                 {avgEffectiveness > 0 ? `${avgEffectiveness}/5` : '-'}
               </Text>
             </View>
@@ -317,11 +317,11 @@ export default function SupplementTracker() {
             <View className="bg-zinc-900 rounded-xl p-8 border border-zinc-800 items-center">
               <Ionicons name="medical-outline" size={64} color="#52525B" />
               <Text className="text-zinc-400 text-center mt-4 mb-4">
-                No hay suplementos en esta categoría
+                No hay suplementos en esta categorÃ­a
               </Text>
               <TouchableOpacity
                 onPress={() => setShowAddForm(true)}
-                className="bg-emerald-500 rounded-lg px-6 py-3"
+                className="bg-primary rounded-lg px-6 py-3"
               >
                 <Text className="text-white font-bold">Agregar Suplemento</Text>
               </TouchableOpacity>
@@ -355,7 +355,7 @@ export default function SupplementTracker() {
                       <Ionicons 
                         name={supplement.isActive ? 'checkmark-circle' : 'ellipse-outline'} 
                         size={28} 
-                        color={supplement.isActive ? '#10B981' : '#52525B'} 
+                        color={supplement.isActive ? '#9D12DE' : '#52525B'} 
                       />
                     </TouchableOpacity>
                   </View>
@@ -363,8 +363,8 @@ export default function SupplementTracker() {
                   {/* Dosage & Timing */}
                   <View className="bg-zinc-800 rounded-lg p-3 mb-3">
                     <View className="flex-row items-center mb-2">
-                      <Ionicons name="flask" size={16} color="#10B981" />
-                      <Text className="text-emerald-400 font-bold ml-2">
+                      <Ionicons name="flask" size={16} color="#9D12DE" />
+                      <Text className="text-primary font-bold ml-2">
                         {supplement.dosage} {supplement.unit}
                       </Text>
                     </View>
@@ -422,20 +422,20 @@ export default function SupplementTracker() {
           )}
 
           {/* Tips */}
-          <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30 mb-6 mt-2">
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6 mt-2">
             <View className="flex-row items-start">
-              <Ionicons name="bulb" size={20} color="#3B82F6" />
+              <Ionicons name="bulb" size={20} color="#9D12DE" />
               <View className="flex-1 ml-3">
-                <Text className="text-blue-400 font-bold mb-2">
-                  Tips de Suplementación
+                <Text className="text-primary/80 font-bold mb-2">
+                  Tips de SuplementaciÃ³n
                 </Text>
-                <Text className="text-blue-300 text-sm">
-                  • Creatina: 5g diario, cualquier momento{'\n'}
-                  • Cafeína: 3-6 mg/kg, 30-60 min pre-workout{'\n'}
-                  • Omega-3: con comidas grasas para absorción{'\n'}
-                  • Whey: 20-40g post-workout{'\n'}
-                  • Vitamina D: mañana con grasas{'\n'}
-                  • Magnesio/ZMA: noche para mejor sueño
+                <Text className="text-primary/60 text-sm">
+                  â€¢ Creatina: 5g diario, cualquier momento{'\n'}
+                  â€¢ CafeÃ­na: 3-6 mg/kg, 30-60 min pre-workout{'\n'}
+                  â€¢ Omega-3: con comidas grasas para absorciÃ³n{'\n'}
+                  â€¢ Whey: 20-40g post-workout{'\n'}
+                  â€¢ Vitamina D: maÃ±ana con grasas{'\n'}
+                  â€¢ Magnesio/ZMA: noche para mejor sueÃ±o
                 </Text>
               </View>
             </View>
@@ -445,3 +445,4 @@ export default function SupplementTracker() {
     </View>
   );
 }
+

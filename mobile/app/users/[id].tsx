@@ -81,7 +81,7 @@ export default function UserProfileScreen() {
   return (
     <View className="flex-1 bg-gray-50">
       {/* Header */}
-      <LinearGradient colors={['#3B82F6', '#2563EB']} className="px-6 pt-12 pb-6">
+      <LinearGradient colors={['#9D12DE', '#7D0EBE']} className="px-6 pt-12 pb-6">
         <View className="flex-row items-center justify-between mb-4">
           <TouchableOpacity onPress={() => router.back()} className="p-2">
             <Ionicons name="arrow-back" size={28} color="white" />

@@ -32,21 +32,21 @@ export function Input({
   return (
     <View className={cn('w-full', containerClassName)}>
       {label && (
-        <Text className="font-inter-medium text-sm text-gray-700 mb-1.5">
+        <Text className="font-label text-sm text-gray-700 mb-1.5">
           {label}
         </Text>
       )}
       <View
         className={cn(
           'flex-row items-center bg-white border rounded-lg px-3 h-12',
-          isFocused && !error ? 'border-emerald-600' : 'border-gray-300',
+          isFocused && !error ? 'border-primary' : 'border-gray-300',
           error && 'border-red-500'
         )}
       >
         {leftIcon && <View className="mr-2">{leftIcon}</View>}
         <TextInput
           className={cn(
-            'flex-1 font-inter-regular text-base text-gray-900',
+            'flex-1 font-body text-base text-gray-900',
             className
           )}
           placeholderTextColor="#9CA3AF"
@@ -57,12 +57,12 @@ export function Input({
         {rightIcon && <View className="ml-2">{rightIcon}</View>}
       </View>
       {error && (
-        <Text className="font-inter-regular text-xs text-red-600 mt-1">
+        <Text className="font-body text-xs text-red-600 mt-1">
           {error}
         </Text>
       )}
       {helperText && !error && (
-        <Text className="font-inter-regular text-xs text-gray-500 mt-1">
+        <Text className="font-body text-xs text-gray-500 mt-1">
           {helperText}
         </Text>
       )}

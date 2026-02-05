@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -184,9 +184,9 @@ export default function WarmupGenerator() {
                 key={dur}
                 onPress={() => setDuration(dur)}
                 className={`flex-1 ${
-                  duration === dur ? 'bg-emerald-500' : 'bg-zinc-900'
+                  duration === dur ? 'bg-primary' : 'bg-zinc-900'
                 } rounded-xl py-3 border ${
-                  duration === dur ? 'border-emerald-400' : 'border-zinc-800'
+                  duration === dur ? 'border-primary' : 'border-zinc-800'
                 }`}
               >
                 <Text
@@ -202,7 +202,7 @@ export default function WarmupGenerator() {
 
           <View className="bg-amber-500/10 rounded-xl p-4 mb-6 border border-amber-500/30">
             <View className="flex-row items-center mb-2">
-              <Ionicons name="time" size={20} color="#f59e0b" />
+              <Ionicons name="time" size={20} color="#FFEA00" />
               <Text className="text-amber-400 font-bold ml-2">Phase 1: General Warm-up (2-3 min)</Text>
             </View>
             <Text className="text-zinc-400 text-sm mb-3">Increase heart rate and body temperature</Text>
@@ -218,10 +218,10 @@ export default function WarmupGenerator() {
             ))}
           </View>
 
-          <View className="bg-blue-500/10 rounded-xl p-4 mb-6 border border-blue-500/30">
+          <View className="bg-primary/10 rounded-xl p-4 mb-6 border border-primary/30">
             <View className="flex-row items-center mb-2">
-              <Ionicons name="body" size={20} color="#3b82f6" />
-              <Text className="text-blue-400 font-bold ml-2">Phase 2: Mobility Drills (3-5 min)</Text>
+              <Ionicons name="body" size={20} color="#9D12DE" />
+              <Text className="text-primary/80 font-bold ml-2">Phase 2: Mobility Drills (3-5 min)</Text>
             </View>
             <Text className="text-zinc-400 text-sm mb-3">Joint-specific mobility work</Text>
             
@@ -229,7 +229,7 @@ export default function WarmupGenerator() {
               <View key={idx} className="bg-zinc-900 rounded-lg p-3 mb-2">
                 <View className="flex-row justify-between items-center mb-1">
                   <Text className="text-white font-bold flex-1">{ex.exercise}</Text>
-                  <Text className="text-blue-400 font-bold">
+                  <Text className="text-primary/80 font-bold">
                     {ex.sets}x{ex.reps || ex.duration}
                   </Text>
                 </View>
@@ -238,10 +238,10 @@ export default function WarmupGenerator() {
             ))}
           </View>
 
-          <View className="bg-emerald-500/10 rounded-xl p-4 mb-6 border border-emerald-500/30">
+          <View className="bg-primary/10 rounded-xl p-4 mb-6 border border-primary/30">
             <View className="flex-row items-center mb-2">
-              <Ionicons name="flash" size={20} color="#10b981" />
-              <Text className="text-emerald-400 font-bold ml-2">Phase 3: Activation (2-3 min)</Text>
+              <Ionicons name="flash" size={20} color="#9D12DE" />
+              <Text className="text-primary font-bold ml-2">Phase 3: Activation (2-3 min)</Text>
             </View>
             <Text className="text-zinc-400 text-sm mb-3">Wake up target muscles</Text>
             
@@ -249,7 +249,7 @@ export default function WarmupGenerator() {
               <View key={idx} className="bg-zinc-900 rounded-lg p-3 mb-2">
                 <View className="flex-row justify-between items-center mb-1">
                   <Text className="text-white font-bold flex-1">{ex.exercise}</Text>
-                  <Text className="text-emerald-400 font-bold">
+                  <Text className="text-primary font-bold">
                     {ex.sets}x{ex.reps || ex.duration}
                   </Text>
                 </View>
@@ -284,12 +284,12 @@ export default function WarmupGenerator() {
           <View className="bg-red-500/10 rounded-xl p-4 border border-red-500/30 mb-6">
             <Text className="text-red-400 font-bold mb-2">Warm-up Rules</Text>
             <Text className="text-red-300 text-sm">
-              • Never skip warm-up{'\n'}
-              • 10-15 min minimum{'\n'}
-              • Break a sweat before lifting{'\n'}
-              • Focus on workout-specific movements{'\n'}
-              • Ramping sets prime your nervous system{'\n'}
-              • Warm up = better performance + injury prevention
+              â€¢ Never skip warm-up{'\n'}
+              â€¢ 10-15 min minimum{'\n'}
+              â€¢ Break a sweat before lifting{'\n'}
+              â€¢ Focus on workout-specific movements{'\n'}
+              â€¢ Ramping sets prime your nervous system{'\n'}
+              â€¢ Warm up = better performance + injury prevention
             </Text>
           </View>
         </View>
@@ -297,3 +297,4 @@ export default function WarmupGenerator() {
     </View>
   );
 }
+

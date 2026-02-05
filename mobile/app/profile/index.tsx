@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -38,7 +38,7 @@ export default function UserProfile() {
   const [isEditModalVisible, setEditModalVisible] = useState(false);
   const [name, setName] = useState('Carlos Rodriguez');
   const [username, setUsername] = useState('@carlosfit');
-  const [bio, setBio] = useState('Atleta de calistenia 💪 | Nivel 15 | Amante del fitness');
+  const [bio, setBio] = useState('Atleta de calistenia ðŸ’ª | Nivel 15 | Amante del fitness');
   const [avatarUri, setAvatarUri] = useState<string | null>(null);
 
   // Mock data
@@ -58,10 +58,10 @@ export default function UserProfile() {
       id: '1',
       type: 'workout',
       title: 'Pull Day Completado',
-      subtitle: '12 ejercicios • 65 min',
+      subtitle: '12 ejercicios â€¢ 65 min',
       timestamp: new Date(2025, 0, 27, 10, 30),
       icon: 'fitness',
-      color: '#10B981',
+      color: '#9D12DE',
     },
     {
       id: '2',
@@ -70,7 +70,7 @@ export default function UserProfile() {
       subtitle: '+750 XP',
       timestamp: new Date(2025, 0, 26, 18, 15),
       icon: 'trophy',
-      color: '#F59E0B',
+      color: '#FFEA00',
     },
     {
       id: '3',
@@ -84,18 +84,18 @@ export default function UserProfile() {
     {
       id: '4',
       type: 'friend',
-      title: 'Nueva amistad con María López',
+      title: 'Nueva amistad con MarÃ­a LÃ³pez',
       subtitle: 'Ahora son amigos',
       timestamp: new Date(2025, 0, 24, 14, 20),
       icon: 'people',
-      color: '#3B82F6',
+      color: '#9D12DE',
     },
   ];
 
   const topAchievements = [
-    { id: '1', name: 'Racha de 30 Días', icon: 'flame', color: '#EF4444' },
-    { id: '2', name: 'Muscle Up King', icon: 'trophy', color: '#F59E0B' },
-    { id: '3', name: '100 Toneladas', icon: 'barbell', color: '#10B981' },
+    { id: '1', name: 'Racha de 30 DÃ­as', icon: 'flame', color: '#EF4444' },
+    { id: '2', name: 'Muscle Up King', icon: 'trophy', color: '#FFEA00' },
+    { id: '3', name: '100 Toneladas', icon: 'barbell', color: '#9D12DE' },
   ];
 
   const pickImage = async () => {
@@ -114,7 +114,7 @@ export default function UserProfile() {
   const saveProfile = () => {
     // TODO: API call to update profile
     setEditModalVisible(false);
-    Alert.alert('Éxito', 'Perfil actualizado correctamente');
+    Alert.alert('Ã‰xito', 'Perfil actualizado correctamente');
   };
 
   const levelProgress = (stats.xp / stats.nextLevelXP) * 100;
@@ -150,8 +150,8 @@ export default function UserProfile() {
               </View>
             </View>
             <Text className="text-white text-2xl font-bold mt-3">{name}</Text>
-            <Text className="text-emerald-200 text-base">{username}</Text>
-            <Text className="text-emerald-100 text-sm text-center mt-2 max-w-xs">
+            <Text className="text-white/70 text-base">{username}</Text>
+            <Text className="text-primary/50 text-sm text-center mt-2 max-w-xs">
               {bio}
             </Text>
           </View>
@@ -159,10 +159,10 @@ export default function UserProfile() {
           {/* Level Progress */}
           <View className="mt-4">
             <View className="flex-row justify-between items-center mb-2">
-              <Text className="text-emerald-100 text-sm font-semibold">
+              <Text className="text-primary/50 text-sm font-semibold">
                 Nivel {stats.level}
               </Text>
-              <Text className="text-emerald-100 text-sm">
+              <Text className="text-primary/50 text-sm">
                 {stats.xp.toLocaleString()} / {stats.nextLevelXP.toLocaleString()} XP
               </Text>
             </View>
@@ -180,14 +180,14 @@ export default function UserProfile() {
           <View className="bg-zinc-900 rounded-xl p-4 border border-zinc-800">
             <View className="flex-row flex-wrap">
               <View className="w-1/3 items-center py-3 border-r border-zinc-800">
-                <Ionicons name="fitness-outline" size={24} color="#10B981" />
+                <Ionicons name="fitness-outline" size={24} color="#9D12DE" />
                 <Text className="text-white text-xl font-bold mt-1">
                   {stats.workouts}
                 </Text>
                 <Text className="text-zinc-400 text-xs">Workouts</Text>
               </View>
               <View className="w-1/3 items-center py-3 border-r border-zinc-800">
-                <Ionicons name="barbell-outline" size={24} color="#10B981" />
+                <Ionicons name="barbell-outline" size={24} color="#9D12DE" />
                 <Text className="text-white text-xl font-bold mt-1">
                   {(stats.volume / 1000).toFixed(1)}T
                 </Text>
@@ -201,21 +201,21 @@ export default function UserProfile() {
                 <Text className="text-zinc-400 text-xs">Racha</Text>
               </View>
               <View className="w-1/3 items-center py-3 border-r border-t border-zinc-800">
-                <Ionicons name="people-outline" size={24} color="#3B82F6" />
+                <Ionicons name="people-outline" size={24} color="#9D12DE" />
                 <Text className="text-white text-xl font-bold mt-1">
                   {stats.friends}
                 </Text>
                 <Text className="text-zinc-400 text-xs">Amigos</Text>
               </View>
               <View className="w-1/3 items-center py-3 border-r border-t border-zinc-800">
-                <Ionicons name="trophy-outline" size={24} color="#F59E0B" />
+                <Ionicons name="trophy-outline" size={24} color="#FFEA00" />
                 <Text className="text-white text-xl font-bold mt-1">
                   {stats.achievements}
                 </Text>
                 <Text className="text-zinc-400 text-xs">Logros</Text>
               </View>
               <View className="w-1/3 items-center py-3 border-t border-zinc-800">
-                <Ionicons name="star-outline" size={24} color="#F59E0B" />
+                <Ionicons name="star-outline" size={24} color="#FFEA00" />
                 <Text className="text-white text-xl font-bold mt-1">
                   {stats.xp.toLocaleString()}
                 </Text>
@@ -252,9 +252,9 @@ export default function UserProfile() {
           </View>
           <TouchableOpacity
             onPress={() => router.push('/achievements')}
-            className="mt-3 py-3 border-2 border-emerald-500 rounded-xl items-center"
+            className="mt-3 py-3 border-2 border-primary rounded-xl items-center"
           >
-            <Text className="text-emerald-500 font-semibold">
+            <Text className="text-primary font-semibold">
               Ver Todos los Logros ({stats.achievements})
             </Text>
           </TouchableOpacity>
@@ -320,7 +320,7 @@ export default function UserProfile() {
                       </Text>
                     </View>
                   )}
-                  <View className="absolute -bottom-2 -right-2 bg-emerald-500 rounded-full w-8 h-8 items-center justify-center">
+                  <View className="absolute -bottom-2 -right-2 bg-primary rounded-full w-8 h-8 items-center justify-center">
                     <Ionicons name="camera" size={16} color="white" />
                   </View>
                 </TouchableOpacity>
@@ -353,11 +353,11 @@ export default function UserProfile() {
 
               {/* Bio */}
               <View className="mb-6">
-                <Text className="text-zinc-400 text-sm mb-2">Biografía</Text>
+                <Text className="text-zinc-400 text-sm mb-2">BiografÃ­a</Text>
                 <TextInput
                   value={bio}
                   onChangeText={setBio}
-                  placeholder="Cuéntanos sobre ti..."
+                  placeholder="CuÃ©ntanos sobre ti..."
                   placeholderTextColor="#52525B"
                   multiline
                   numberOfLines={3}
@@ -373,7 +373,7 @@ export default function UserProfile() {
               {/* Save Button */}
               <TouchableOpacity
                 onPress={saveProfile}
-                className="bg-emerald-500 py-4 rounded-xl items-center"
+                className="bg-primary py-4 rounded-xl items-center"
               >
                 <Text className="text-white font-bold text-lg">Guardar Cambios</Text>
               </TouchableOpacity>
@@ -384,3 +384,5 @@ export default function UserProfile() {
     </View>
   );
 }
+
+

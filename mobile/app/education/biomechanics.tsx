@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -123,12 +123,12 @@ export default function Biomechanics() {
           duration: '2-3 seconds',
           mechanics: [
             'Pull bar to chest (don\'t just lower)',
-            'Elbows 45-75° from torso',
+            'Elbows 45-75Â° from torso',
             'Touch lower chest/sternum',
             'Maintain arch and leg drive',
             'Inhale and hold',
           ],
-          common_errors: ['Bar drifts toward face', 'Elbows flare 90°', 'Bouncing', 'Losing tightness'],
+          common_errors: ['Bar drifts toward face', 'Elbows flare 90Â°', 'Bouncing', 'Losing tightness'],
         },
         {
           phase: 'Ascent (Concentric)',
@@ -356,7 +356,7 @@ export default function Biomechanics() {
 
       <ScrollView className="flex-1" showsVerticalScrollIndicator={false}>
         <View className="px-6 pt-6">
-          <View className="bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl p-6 mb-6">
+          <View className="bg-gradient-to-r from-primary to-[#7D0EBE] rounded-xl p-6 mb-6">
             <Text className="text-white text-2xl font-bold mb-2">Movement Science</Text>
             <Text className="text-white opacity-90">
               Understand how lifts work
@@ -371,7 +371,7 @@ export default function Biomechanics() {
                   key={lift}
                   onPress={() => setSelectedLift(lift)}
                   className={`flex-1 ${
-                    selectedLift === lift ? 'bg-blue-500' : 'bg-zinc-800'
+                    selectedLift === lift ? 'bg-primary' : 'bg-zinc-800'
                   } rounded-xl px-3 py-3 border ${
                     selectedLift === lift ? 'border-blue-400' : 'border-zinc-700'
                   }`}
@@ -407,13 +407,13 @@ export default function Biomechanics() {
             {currentLift.primary_movers.map((mover, idx) => (
               <View key={idx} className="bg-zinc-800 rounded-xl p-4 mb-3 last:mb-0">
                 <View className="flex-row justify-between items-center mb-2">
-                  <Text className="text-emerald-400 font-bold">{mover.muscle}</Text>
-                  <Text className="text-emerald-400 font-bold">{mover.contribution}</Text>
+                  <Text className="text-primary font-bold">{mover.muscle}</Text>
+                  <Text className="text-primary font-bold">{mover.contribution}</Text>
                 </View>
                 <Text className="text-zinc-400 text-sm">{mover.role}</Text>
                 <View className="mt-2 h-2 bg-zinc-700 rounded-full overflow-hidden">
                   <View 
-                    className="h-full bg-emerald-500 rounded-full"
+                    className="h-full bg-primary rounded-full"
                     style={{ width: mover.contribution }}
                   />
                 </View>
@@ -436,7 +436,7 @@ export default function Biomechanics() {
                   <Text className="text-white font-bold mb-2">Mechanics</Text>
                   {phase.mechanics.map((mech, midx) => (
                     <View key={midx} className="flex-row items-start mb-1 last:mb-0">
-                      <Text className="text-emerald-400 mr-2">•</Text>
+                      <Text className="text-primary mr-2">â€¢</Text>
                       <Text className="text-zinc-300 text-sm flex-1">{mech}</Text>
                     </View>
                   ))}
@@ -446,7 +446,7 @@ export default function Biomechanics() {
                   <Text className="text-red-400 font-bold text-sm mb-1">Common Errors</Text>
                   {phase.common_errors.map((error, eidx) => (
                     <Text key={eidx} className="text-red-300 text-sm mb-1 last:mb-0">
-                      × {error}
+                      Ã— {error}
                     </Text>
                   ))}
                 </View>
@@ -458,12 +458,12 @@ export default function Biomechanics() {
             <Text className="text-white font-bold text-lg mb-4">Leverage Factors</Text>
             {currentLift.leverage_factors.map((factor, idx) => (
               <View key={idx} className="bg-zinc-800 rounded-xl p-4 mb-3 last:mb-0">
-                <Text className="text-blue-400 font-bold mb-2">{factor.factor}</Text>
+                <Text className="text-primary/80 font-bold mb-2">{factor.factor}</Text>
                 <Text className="text-zinc-300 text-sm mb-2">
                   Impact: {factor.impact}
                 </Text>
-                <Text className="text-emerald-400 text-sm">
-                  ✓ Adaptation: {factor.adaptation}
+                <Text className="text-primary text-sm">
+                  âœ“ Adaptation: {factor.adaptation}
                 </Text>
               </View>
             ))}
@@ -477,26 +477,26 @@ export default function Biomechanics() {
                 <Text className="text-zinc-300 text-sm mb-2">
                   Cause: {stick.cause}
                 </Text>
-                <Text className="text-emerald-400 text-sm">
+                <Text className="text-primary text-sm">
                   Fix: {stick.fix}
                 </Text>
               </View>
             ))}
           </View>
 
-          <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30 mb-6">
-            <Text className="text-blue-400 font-bold mb-2">Key Principles</Text>
-            <Text className="text-blue-300 text-sm mb-2">
-              • Biomechanics determine optimal technique for YOUR body
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
+            <Text className="text-primary/80 font-bold mb-2">Key Principles</Text>
+            <Text className="text-primary/60 text-sm mb-2">
+              â€¢ Biomechanics determine optimal technique for YOUR body
             </Text>
-            <Text className="text-blue-300 text-sm mb-2">
-              • Leverage differences explain why form varies between lifters
+            <Text className="text-primary/60 text-sm mb-2">
+              â€¢ Leverage differences explain why form varies between lifters
             </Text>
-            <Text className="text-blue-300 text-sm mb-2">
-              • Address weak points with specific accessories
+            <Text className="text-primary/60 text-sm mb-2">
+              â€¢ Address weak points with specific accessories
             </Text>
-            <Text className="text-blue-300 text-sm">
-              • Film your lifts to identify mechanical inefficiencies
+            <Text className="text-primary/60 text-sm">
+              â€¢ Film your lifts to identify mechanical inefficiencies
             </Text>
           </View>
         </View>
@@ -504,3 +504,5 @@ export default function Biomechanics() {
     </View>
   );
 }
+
+

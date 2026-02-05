@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -32,12 +32,12 @@ export default function CardioZoneCalculator() {
     const restingNum = parseInt(restingHR);
 
     if (!ageNum || ageNum < 10 || ageNum > 100) {
-      Alert.alert('Error', 'Ingresa una edad válida (10-100)');
+      Alert.alert('Error', 'Ingresa una edad vÃ¡lida (10-100)');
       return;
     }
 
     if (method === 'karvonen' && (!restingNum || restingNum < 30 || restingNum > 100)) {
-      Alert.alert('Error', 'Ingresa una FC en reposo válida (30-100)');
+      Alert.alert('Error', 'Ingresa una FC en reposo vÃ¡lida (30-100)');
       return;
     }
 
@@ -49,53 +49,53 @@ export default function CardioZoneCalculator() {
       calculatedZones = [
         {
           zone: 1,
-          name: 'Recuperación',
+          name: 'RecuperaciÃ³n',
           rangeMin: Math.round(maxHR * 0.50),
           rangeMax: Math.round(maxHR * 0.60),
           percentage: '50-60%',
-          description: 'Recuperación activa, calentamiento',
+          description: 'RecuperaciÃ³n activa, calentamiento',
           color: 'blue',
-          benefits: ['Mejora recuperación', 'Quema grasas suave', 'Mejora circulación'],
+          benefits: ['Mejora recuperaciÃ³n', 'Quema grasas suave', 'Mejora circulaciÃ³n'],
         },
         {
           zone: 2,
-          name: 'Aeróbico Ligero',
+          name: 'AerÃ³bico Ligero',
           rangeMin: Math.round(maxHR * 0.60),
           rangeMax: Math.round(maxHR * 0.70),
           percentage: '60-70%',
           description: 'Zona de quema de grasas, cardio base',
           color: 'emerald',
-          benefits: ['Quema grasa óptima', 'Mejora resistencia', 'Metabolismo aeróbico'],
+          benefits: ['Quema grasa Ã³ptima', 'Mejora resistencia', 'Metabolismo aerÃ³bico'],
         },
         {
           zone: 3,
-          name: 'Aeróbico',
+          name: 'AerÃ³bico',
           rangeMin: Math.round(maxHR * 0.70),
           rangeMax: Math.round(maxHR * 0.80),
           percentage: '70-80%',
           description: 'Mejora cardiovascular, resistencia',
           color: 'amber',
-          benefits: ['Mejora VO2max', 'Capacidad aeróbica', 'Resistencia muscular'],
+          benefits: ['Mejora VO2max', 'Capacidad aerÃ³bica', 'Resistencia muscular'],
         },
         {
           zone: 4,
-          name: 'Umbral Anaeróbico',
+          name: 'Umbral AnaerÃ³bico',
           rangeMin: Math.round(maxHR * 0.80),
           rangeMax: Math.round(maxHR * 0.90),
           percentage: '80-90%',
           description: 'Alta intensidad, mejora rendimiento',
           color: 'orange',
-          benefits: ['Aumenta umbral láctico', 'Mejora velocidad', 'Alta quema calórica'],
+          benefits: ['Aumenta umbral lÃ¡ctico', 'Mejora velocidad', 'Alta quema calÃ³rica'],
         },
         {
           zone: 5,
-          name: 'Máximo Esfuerzo',
+          name: 'MÃ¡ximo Esfuerzo',
           rangeMin: Math.round(maxHR * 0.90),
           rangeMax: maxHR,
           percentage: '90-100%',
-          description: 'Sprint, HIIT, máxima intensidad',
+          description: 'Sprint, HIIT, mÃ¡xima intensidad',
           color: 'red',
-          benefits: ['Máxima potencia', 'VO2max pico', 'Solo intervalos cortos'],
+          benefits: ['MÃ¡xima potencia', 'VO2max pico', 'Solo intervalos cortos'],
         },
       ];
     } else {
@@ -105,53 +105,53 @@ export default function CardioZoneCalculator() {
       calculatedZones = [
         {
           zone: 1,
-          name: 'Recuperación',
+          name: 'RecuperaciÃ³n',
           rangeMin: Math.round((hrReserve * 0.50) + restingNum),
           rangeMax: Math.round((hrReserve * 0.60) + restingNum),
           percentage: '50-60% HRR',
-          description: 'Recuperación activa, calentamiento',
+          description: 'RecuperaciÃ³n activa, calentamiento',
           color: 'blue',
-          benefits: ['Mejora recuperación', 'Quema grasas suave', 'Mejora circulación'],
+          benefits: ['Mejora recuperaciÃ³n', 'Quema grasas suave', 'Mejora circulaciÃ³n'],
         },
         {
           zone: 2,
-          name: 'Aeróbico Ligero',
+          name: 'AerÃ³bico Ligero',
           rangeMin: Math.round((hrReserve * 0.60) + restingNum),
           rangeMax: Math.round((hrReserve * 0.70) + restingNum),
           percentage: '60-70% HRR',
           description: 'Zona de quema de grasas, cardio base',
           color: 'emerald',
-          benefits: ['Quema grasa óptima', 'Mejora resistencia', 'Metabolismo aeróbico'],
+          benefits: ['Quema grasa Ã³ptima', 'Mejora resistencia', 'Metabolismo aerÃ³bico'],
         },
         {
           zone: 3,
-          name: 'Aeróbico',
+          name: 'AerÃ³bico',
           rangeMin: Math.round((hrReserve * 0.70) + restingNum),
           rangeMax: Math.round((hrReserve * 0.80) + restingNum),
           percentage: '70-80% HRR',
           description: 'Mejora cardiovascular, resistencia',
           color: 'amber',
-          benefits: ['Mejora VO2max', 'Capacidad aeróbica', 'Resistencia muscular'],
+          benefits: ['Mejora VO2max', 'Capacidad aerÃ³bica', 'Resistencia muscular'],
         },
         {
           zone: 4,
-          name: 'Umbral Anaeróbico',
+          name: 'Umbral AnaerÃ³bico',
           rangeMin: Math.round((hrReserve * 0.80) + restingNum),
           rangeMax: Math.round((hrReserve * 0.90) + restingNum),
           percentage: '80-90% HRR',
           description: 'Alta intensidad, mejora rendimiento',
           color: 'orange',
-          benefits: ['Aumenta umbral láctico', 'Mejora velocidad', 'Alta quema calórica'],
+          benefits: ['Aumenta umbral lÃ¡ctico', 'Mejora velocidad', 'Alta quema calÃ³rica'],
         },
         {
           zone: 5,
-          name: 'Máximo Esfuerzo',
+          name: 'MÃ¡ximo Esfuerzo',
           rangeMin: Math.round((hrReserve * 0.90) + restingNum),
           rangeMax: maxHR,
           percentage: '90-100% HRR',
-          description: 'Sprint, HIIT, máxima intensidad',
+          description: 'Sprint, HIIT, mÃ¡xima intensidad',
           color: 'red',
-          benefits: ['Máxima potencia', 'VO2max pico', 'Solo intervalos cortos'],
+          benefits: ['MÃ¡xima potencia', 'VO2max pico', 'Solo intervalos cortos'],
         },
       ];
     }
@@ -185,29 +185,29 @@ export default function CardioZoneCalculator() {
             </Text>
             <View className="flex-row items-center">
               <Ionicons name="heart" size={20} color="white" />
-              <Text className="text-white ml-2">FC Máxima estimada: {maxHR} bpm</Text>
+              <Text className="text-white ml-2">FC MÃ¡xima estimada: {maxHR} bpm</Text>
             </View>
           </View>
 
           {/* Method Selection */}
-          <Text className="text-white font-bold text-lg mb-4">Método de Cálculo</Text>
+          <Text className="text-white font-bold text-lg mb-4">MÃ©todo de CÃ¡lculo</Text>
           
           <TouchableOpacity
             onPress={() => setMethod('simple')}
             className={`rounded-xl p-4 mb-3 ${
               method === 'simple'
-                ? 'bg-blue-500/10 border-2 border-blue-500/30'
+                ? 'bg-primary/10 border-2 border-primary/30'
                 : 'bg-zinc-900 border border-zinc-800'
             }`}
           >
             <View className="flex-row items-center justify-between">
               <View className="flex-1">
                 <Text className={`font-bold mb-1 ${method === 'simple' ? 'text-white' : 'text-zinc-400'}`}>
-                  Método Simple
+                  MÃ©todo Simple
                 </Text>
-                <Text className="text-zinc-500 text-sm">% de FC máxima (220 - edad)</Text>
+                <Text className="text-zinc-500 text-sm">% de FC mÃ¡xima (220 - edad)</Text>
               </View>
-              {method === 'simple' && <Ionicons name="checkmark-circle" size={24} color="#3B82F6" />}
+              {method === 'simple' && <Ionicons name="checkmark-circle" size={24} color="#9D12DE" />}
             </View>
           </TouchableOpacity>
 
@@ -222,9 +222,9 @@ export default function CardioZoneCalculator() {
             <View className="flex-row items-center justify-between">
               <View className="flex-1">
                 <Text className={`font-bold mb-1 ${method === 'karvonen' ? 'text-white' : 'text-zinc-400'}`}>
-                  Método Karvonen
+                  MÃ©todo Karvonen
                 </Text>
-                <Text className="text-zinc-500 text-sm">HRR (más preciso, requiere FC reposo)</Text>
+                <Text className="text-zinc-500 text-sm">HRR (mÃ¡s preciso, requiere FC reposo)</Text>
               </View>
               {method === 'karvonen' && <Ionicons name="checkmark-circle" size={24} color="#A855F7" />}
             </View>
@@ -235,7 +235,7 @@ export default function CardioZoneCalculator() {
           
           <View className="flex-row gap-3 mb-6">
             <View className="flex-1">
-              <Text className="text-zinc-400 text-sm mb-2">Edad (años)</Text>
+              <Text className="text-zinc-400 text-sm mb-2">Edad (aÃ±os)</Text>
               <TextInput
                 value={age}
                 onChangeText={setAge}
@@ -264,7 +264,7 @@ export default function CardioZoneCalculator() {
           {method === 'karvonen' && (
             <View className="bg-purple-500/10 rounded-xl p-4 mb-6 border border-purple-500/30">
               <Text className="text-purple-400 text-sm">
-                💡 Mide tu FC en reposo al despertar, antes de levantarte de la cama
+                ðŸ’¡ Mide tu FC en reposo al despertar, antes de levantarte de la cama
               </Text>
             </View>
           )}
@@ -314,7 +314,7 @@ export default function CardioZoneCalculator() {
                     <Text className={`text-${zone.color}-400 font-bold text-xs mb-2`}>Beneficios:</Text>
                     {zone.benefits.map((benefit, idx) => (
                       <Text key={idx} className={`text-${zone.color}-300 text-sm`}>
-                        • {benefit}
+                        â€¢ {benefit}
                       </Text>
                     ))}
                   </View>
@@ -326,41 +326,41 @@ export default function CardioZoneCalculator() {
                 <Text className="text-white font-bold text-lg mb-4">Recomendaciones de Entrenamiento</Text>
                 
                 <View className="mb-3">
-                  <Text className="text-emerald-400 font-bold mb-1">Pérdida de Grasa:</Text>
-                  <Text className="text-zinc-400 text-sm">Zona 2 (60-70%) • 45-60 min • 3-4x/semana</Text>
+                  <Text className="text-primary font-bold mb-1">PÃ©rdida de Grasa:</Text>
+                  <Text className="text-zinc-400 text-sm">Zona 2 (60-70%) â€¢ 45-60 min â€¢ 3-4x/semana</Text>
                 </View>
 
                 <View className="mb-3">
-                  <Text className="text-blue-400 font-bold mb-1">Resistencia Cardiovascular:</Text>
-                  <Text className="text-zinc-400 text-sm">Zona 3 (70-80%) • 30-45 min • 2-3x/semana</Text>
+                  <Text className="text-primary/80 font-bold mb-1">Resistencia Cardiovascular:</Text>
+                  <Text className="text-zinc-400 text-sm">Zona 3 (70-80%) â€¢ 30-45 min â€¢ 2-3x/semana</Text>
                 </View>
 
                 <View className="mb-3">
                   <Text className="text-amber-400 font-bold mb-1">Mejora Rendimiento:</Text>
-                  <Text className="text-zinc-400 text-sm">Zona 4 (80-90%) • 20-30 min • 1-2x/semana</Text>
+                  <Text className="text-zinc-400 text-sm">Zona 4 (80-90%) â€¢ 20-30 min â€¢ 1-2x/semana</Text>
                 </View>
 
                 <View>
                   <Text className="text-red-400 font-bold mb-1">HIIT / Sprint:</Text>
-                  <Text className="text-zinc-400 text-sm">Zona 5 (90-100%) • Intervalos 30s-2min • 1x/semana</Text>
+                  <Text className="text-zinc-400 text-sm">Zona 5 (90-100%) â€¢ Intervalos 30s-2min â€¢ 1x/semana</Text>
                 </View>
               </View>
             </>
           )}
 
           {/* Tips */}
-          <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30 mb-6">
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
             <View className="flex-row items-start">
-              <Ionicons name="information-circle" size={20} color="#3B82F6" />
+              <Ionicons name="information-circle" size={20} color="#9D12DE" />
               <View className="flex-1 ml-3">
-                <Text className="text-blue-400 font-bold mb-2">Tips Importantes</Text>
-                <Text className="text-blue-300 text-sm">
-                  • Usa monitor de FC o smartwatch{'\n'}
-                  • 80% del cardio en Zona 2 (base aeróbica){'\n'}
-                  • Karvonen method = más preciso{'\n'}
-                  • Zona 5 solo en intervalos cortos{'\n'}
-                  • Calienta en Zona 1 antes de entrenar{'\n'}
-                  • Re-calcula cada 6-12 meses
+                <Text className="text-primary/80 font-bold mb-2">Tips Importantes</Text>
+                <Text className="text-primary/60 text-sm">
+                  â€¢ Usa monitor de FC o smartwatch{'\n'}
+                  â€¢ 80% del cardio en Zona 2 (base aerÃ³bica){'\n'}
+                  â€¢ Karvonen method = mÃ¡s preciso{'\n'}
+                  â€¢ Zona 5 solo en intervalos cortos{'\n'}
+                  â€¢ Calienta en Zona 1 antes de entrenar{'\n'}
+                  â€¢ Re-calcula cada 6-12 meses
                 </Text>
               </View>
             </View>
@@ -370,3 +370,4 @@ export default function CardioZoneCalculator() {
     </View>
   );
 }
+

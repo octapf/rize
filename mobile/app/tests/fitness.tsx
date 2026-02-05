@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -28,14 +28,14 @@ interface FitnessTest {
 const FITNESS_TESTS: FitnessTest[] = [
   {
     id: '1',
-    name: 'Push-ups Máximos',
+    name: 'Push-ups MÃ¡ximos',
     category: 'endurance',
-    description: 'Cuántos push-ups puedes hacer sin parar',
+    description: 'CuÃ¡ntos push-ups puedes hacer sin parar',
     instructions: [
-      'Posición de plancha, manos alineadas con hombros',
+      'PosiciÃ³n de plancha, manos alineadas con hombros',
       'Descender hasta pecho casi toca suelo',
       'Empujar hasta brazos extendidos',
-      'Contar repeticiones hasta fallo técnico',
+      'Contar repeticiones hasta fallo tÃ©cnico',
       'Mantener core tenso todo el tiempo',
     ],
     equipment: ['Ninguno'],
@@ -43,12 +43,12 @@ const FITNESS_TESTS: FitnessTest[] = [
       male: { excellent: '50+', good: '35-49', average: '20-34', poor: '<20' },
       female: { excellent: '35+', good: '20-34', average: '10-19', poor: '<10' },
     },
-    icon: '💪',
+    icon: 'ðŸ’ª',
     color: 'emerald',
   },
   {
     id: '2',
-    name: 'Pull-ups Máximas',
+    name: 'Pull-ups MÃ¡ximas',
     category: 'strength',
     description: 'Dominadas estrictas sin kipping',
     instructions: [
@@ -63,58 +63,58 @@ const FITNESS_TESTS: FitnessTest[] = [
       male: { excellent: '15+', good: '10-14', average: '5-9', poor: '<5' },
       female: { excellent: '8+', good: '4-7', average: '1-3', poor: '0' },
     },
-    icon: '🏋️',
+    icon: 'ðŸ‹ï¸',
     color: 'blue',
   },
   {
     id: '3',
-    name: 'Plank Hold Máximo',
+    name: 'Plank Hold MÃ¡ximo',
     category: 'endurance',
-    description: 'Tiempo máximo en plancha frontal',
+    description: 'Tiempo mÃ¡ximo en plancha frontal',
     instructions: [
-      'Posición de plancha con antebrazos',
+      'PosiciÃ³n de plancha con antebrazos',
       'Cuerpo completamente recto (hombros-cadera-tobillos)',
-      'Core activado, glúteos apretados',
+      'Core activado, glÃºteos apretados',
       'Cronometrar hasta fallo de forma',
-      'Si cadera cae más de 5cm = fin',
+      'Si cadera cae mÃ¡s de 5cm = fin',
     ],
-    equipment: ['Cronómetro'],
+    equipment: ['CronÃ³metro'],
     standards: {
       male: { excellent: '3:00+', good: '2:00-2:59', average: '1:00-1:59', poor: '<1:00' },
       female: { excellent: '2:30+', good: '1:30-2:29', average: '0:45-1:29', poor: '<0:45' },
     },
-    icon: '⏱️',
+    icon: 'â±ï¸',
     color: 'amber',
   },
   {
     id: '4',
     name: 'Cooper Test (12 min)',
     category: 'endurance',
-    description: 'Distancia máxima corriendo en 12 minutos',
+    description: 'Distancia mÃ¡xima corriendo en 12 minutos',
     instructions: [
       'Calentar 10 minutos antes',
-      'Correr/caminar máxima distancia en 12 min',
+      'Correr/caminar mÃ¡xima distancia en 12 min',
       'Mantener pace sostenible',
       'Usar pista o GPS para medir distancia',
       'Anotar metros totales',
     ],
-    equipment: ['Cronómetro', 'GPS/Pista'],
+    equipment: ['CronÃ³metro', 'GPS/Pista'],
     standards: {
       male: { excellent: '2800m+', good: '2400-2799m', average: '2000-2399m', poor: '<2000m' },
       female: { excellent: '2500m+', good: '2100-2499m', average: '1800-2099m', poor: '<1800m' },
     },
-    icon: '🏃',
+    icon: 'ðŸƒ',
     color: 'red',
   },
   {
     id: '5',
     name: 'Vertical Jump',
     category: 'power',
-    description: 'Salto vertical máximo',
+    description: 'Salto vertical mÃ¡ximo',
     instructions: [
       'Marcar altura de pie con brazo extendido',
       'Saltar verticalmente con impulso de brazos',
-      'Tocar punto más alto posible',
+      'Tocar punto mÃ¡s alto posible',
       'Medir diferencia entre marcas',
       'Mejor de 3 intentos',
     ],
@@ -123,7 +123,7 @@ const FITNESS_TESTS: FitnessTest[] = [
       male: { excellent: '60cm+', good: '50-59cm', average: '40-49cm', poor: '<40cm' },
       female: { excellent: '50cm+', good: '40-49cm', average: '30-39cm', poor: '<30cm' },
     },
-    icon: '⬆️',
+    icon: 'â¬†ï¸',
     color: 'purple',
   },
   {
@@ -135,15 +135,15 @@ const FITNESS_TESTS: FitnessTest[] = [
       'Sentarse con piernas extendidas',
       'Pies contra caja/pared',
       'Alcanzar hacia adelante sin doblar rodillas',
-      'Mantener 2 segundos en máximo alcance',
+      'Mantener 2 segundos en mÃ¡ximo alcance',
       'Medir distancia pasando dedos de pies',
     ],
-    equipment: ['Caja de medición o regla'],
+    equipment: ['Caja de mediciÃ³n o regla'],
     standards: {
       male: { excellent: '+10cm', good: '0-9cm', average: '-10-(-1)cm', poor: '<-10cm' },
       female: { excellent: '+15cm', good: '+5-14cm', average: '-5-4cm', poor: '<-5cm' },
     },
-    icon: '🧘',
+    icon: 'ðŸ§˜',
     color: 'indigo',
   },
   {
@@ -163,7 +163,7 @@ const FITNESS_TESTS: FitnessTest[] = [
       male: { excellent: 'Nivel 13+', good: 'Nivel 10-12', average: 'Nivel 7-9', poor: '<Nivel 7' },
       female: { excellent: 'Nivel 11+', good: 'Nivel 8-10', average: 'Nivel 5-7', poor: '<Nivel 5' },
     },
-    icon: '🔊',
+    icon: 'ðŸ”Š',
     color: 'cyan',
   },
   {
@@ -176,14 +176,14 @@ const FITNESS_TESTS: FitnessTest[] = [
       'Encontrar 1RM de sentadilla',
       'Dividir 1RM entre peso corporal',
       'Profundidad al menos paralelo',
-      'Con técnica perfecta',
+      'Con tÃ©cnica perfecta',
     ],
     equipment: ['Barra', 'Rack', 'Discos'],
     standards: {
       male: { excellent: '2.0x+', good: '1.5-1.9x', average: '1.0-1.4x', poor: '<1.0x' },
       female: { excellent: '1.5x+', good: '1.0-1.4x', average: '0.7-0.9x', poor: '<0.7x' },
     },
-    icon: '🏋️',
+    icon: 'ðŸ‹ï¸',
     color: 'emerald',
   },
 ];
@@ -259,7 +259,7 @@ export default function FitnessTests() {
                 onPress={() => setFilter(c.id as any)}
                 className={`flex-row items-center px-4 py-2 rounded-lg ${
                   filter === c.id
-                    ? 'bg-emerald-500'
+                    ? 'bg-primary'
                     : 'bg-zinc-900 border border-zinc-800'
                 }`}
               >
@@ -286,14 +286,14 @@ export default function FitnessTests() {
           {!selectedTest ? (
             <>
               {/* Info Card */}
-              <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30 mb-6">
+              <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
                 <View className="flex-row items-start">
-                  <Ionicons name="information-circle" size={20} color="#3B82F6" />
+                  <Ionicons name="information-circle" size={20} color="#9D12DE" />
                   <View className="flex-1 ml-3">
-                    <Text className="text-blue-400 font-bold mb-2">
+                    <Text className="text-primary/80 font-bold mb-2">
                       Mide Tu Progreso
                     </Text>
-                    <Text className="text-blue-300 text-sm">
+                    <Text className="text-primary/60 text-sm">
                       Realiza estos tests cada 4-8 semanas para trackear mejoras en fuerza, resistencia, potencia y flexibilidad.
                     </Text>
                   </View>
@@ -334,14 +334,14 @@ export default function FitnessTests() {
 
                   {/* Standards Preview */}
                   <View className="bg-zinc-800 rounded-lg p-2">
-                    <Text className="text-zinc-400 text-xs mb-1">ESTÁNDARES (HOMBRE)</Text>
+                    <Text className="text-zinc-400 text-xs mb-1">ESTÃNDARES (HOMBRE)</Text>
                     <View className="flex-row justify-between">
                       <View className="items-center">
-                        <Text className="text-emerald-400 text-xs font-bold">Excelente</Text>
+                        <Text className="text-primary text-xs font-bold">Excelente</Text>
                         <Text className="text-white text-sm">{test.standards.male.excellent}</Text>
                       </View>
                       <View className="items-center">
-                        <Text className="text-blue-400 text-xs font-bold">Bueno</Text>
+                        <Text className="text-primary/80 text-xs font-bold">Bueno</Text>
                         <Text className="text-white text-sm">{test.standards.male.good}</Text>
                       </View>
                       <View className="items-center">
@@ -375,12 +375,12 @@ export default function FitnessTests() {
 
                 {/* Gender Selection */}
                 <View className="mb-4">
-                  <Text className="text-zinc-400 text-sm mb-2">Sexo (para estándares)</Text>
+                  <Text className="text-zinc-400 text-sm mb-2">Sexo (para estÃ¡ndares)</Text>
                   <View className="flex-row gap-2">
                     <TouchableOpacity
                       onPress={() => setGender('male')}
                       className={`flex-1 rounded-lg p-3 ${
-                        gender === 'male' ? 'bg-blue-500' : 'bg-zinc-800'
+                        gender === 'male' ? 'bg-primary' : 'bg-zinc-800'
                       }`}
                     >
                       <Text className={`text-center font-bold ${
@@ -409,7 +409,7 @@ export default function FitnessTests() {
                   <Text className="text-white font-bold mb-3">Instrucciones</Text>
                   {selectedTest.instructions.map((instruction, index) => (
                     <View key={index} className="flex-row items-start mb-2">
-                      <View className="w-6 h-6 bg-emerald-500 rounded-full items-center justify-center mr-2 mt-0.5">
+                      <View className="w-6 h-6 bg-primary rounded-full items-center justify-center mr-2 mt-0.5">
                         <Text className="text-white text-xs font-bold">{index + 1}</Text>
                       </View>
                       <Text className="text-zinc-300 text-sm flex-1">{instruction}</Text>
@@ -419,7 +419,7 @@ export default function FitnessTests() {
 
                 {/* Standards Table */}
                 <View className="mb-4">
-                  <Text className="text-white font-bold mb-3">Estándares de Evaluación</Text>
+                  <Text className="text-white font-bold mb-3">EstÃ¡ndares de EvaluaciÃ³n</Text>
                   <View className="bg-zinc-800 rounded-lg overflow-hidden">
                     {['excellent', 'good', 'average', 'poor'].map((level, index) => {
                       const colors = {
@@ -477,7 +477,7 @@ export default function FitnessTests() {
                   </TouchableOpacity>
                   <TouchableOpacity
                     onPress={saveResult}
-                    className="flex-1 bg-emerald-500 rounded-xl p-4 flex-row items-center justify-center"
+                    className="flex-1 bg-primary rounded-xl p-4 flex-row items-center justify-center"
                   >
                     <Ionicons name="checkmark-circle" size={20} color="white" />
                     <Text className="text-white font-bold ml-2">Guardar</Text>
@@ -488,16 +488,16 @@ export default function FitnessTests() {
               {/* Tips */}
               <View className="bg-amber-500/10 rounded-xl p-4 border border-amber-500/30 mb-6">
                 <View className="flex-row items-start">
-                  <Ionicons name="bulb" size={20} color="#F59E0B" />
+                  <Ionicons name="bulb" size={20} color="#FFEA00" />
                   <View className="flex-1 ml-3">
                     <Text className="text-amber-400 font-bold mb-2">
                       Tips para Tests
                     </Text>
                     <Text className="text-amber-300 text-sm">
-                      • Realiza siempre en las mismas condiciones{'\n'}
-                      • Descansa bien el día anterior{'\n'}
-                      • Calienta adecuadamente{'\n'}
-                      • Registra resultados para comparar
+                      â€¢ Realiza siempre en las mismas condiciones{'\n'}
+                      â€¢ Descansa bien el dÃ­a anterior{'\n'}
+                      â€¢ Calienta adecuadamente{'\n'}
+                      â€¢ Registra resultados para comparar
                     </Text>
                   </View>
                 </View>
@@ -509,3 +509,4 @@ export default function FitnessTests() {
     </View>
   );
 }
+

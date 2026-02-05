@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -40,7 +40,7 @@ export default function FriendsScreen() {
   const handleChallengeUser = (friendId: string, username: string) => {
     Alert.alert(
       'Crear Reto',
-      `¿Quieres retar a @${username}?`,
+      `Â¿Quieres retar a @${username}?`,
       [
         { text: 'Cancelar', style: 'cancel' },
         {
@@ -64,7 +64,7 @@ export default function FriendsScreen() {
   return (
     <View className="flex-1 bg-gray-50">
       {/* Header */}
-      <LinearGradient colors={['#10B981', '#059669']} className="px-6 pt-12 pb-6">
+      <LinearGradient colors={['#9D12DE', '#7C3AED']} className="px-6 pt-12 pb-6">
         <View className="flex-row items-center justify-between mb-4">
           <TouchableOpacity onPress={() => router.back()} className="p-2">
             <Ionicons name="arrow-back" size={28} color="white" />
@@ -107,8 +107,8 @@ export default function FriendsScreen() {
               <Card key={request._id} className="p-4 mb-3">
                 <View className="flex-row items-center justify-between">
                   <View className="flex-row items-center gap-3 flex-1">
-                    <View className="bg-emerald-100 w-12 h-12 rounded-full items-center justify-center">
-                      <Text className="text-emerald-600 text-xl font-bold">
+                    <View className="bg-primary/10 w-12 h-12 rounded-full items-center justify-center">
+                      <Text className="text-primary text-xl font-bold">
                         {request.requester.username[0].toUpperCase()}
                       </Text>
                     </View>
@@ -122,7 +122,7 @@ export default function FriendsScreen() {
                     </View>
                   </View>
                   <View className="flex-row gap-2">
-                    <TouchableOpacity className="bg-emerald-500 p-2 rounded-lg">
+                    <TouchableOpacity className="bg-primary p-2 rounded-lg">
                       <Ionicons name="checkmark" size={20} color="white" />
                     </TouchableOpacity>
                     <TouchableOpacity className="bg-red-500 p-2 rounded-lg">
@@ -143,7 +143,7 @@ export default function FriendsScreen() {
             </Text>
             {filteredFriends.length > 0 && (
               <TouchableOpacity>
-                <Text className="text-emerald-600 font-semibold">
+                <Text className="text-primary font-semibold">
                   Ver Todos
                 </Text>
               </TouchableOpacity>
@@ -161,7 +161,7 @@ export default function FriendsScreen() {
                 <Text className="text-center text-gray-500 font-medium">
                   {searchQuery
                     ? 'No se encontraron amigos'
-                    : 'Aún no tienes amigos'}
+                    : 'AÃºn no tienes amigos'}
                 </Text>
                 {!searchQuery && (
                   <Button
@@ -182,8 +182,8 @@ export default function FriendsScreen() {
                     onPress={() => handleViewProfile(friend._id)}
                     className="flex-row items-center gap-3 flex-1"
                   >
-                    <View className="bg-emerald-100 w-14 h-14 rounded-full items-center justify-center">
-                      <Text className="text-emerald-600 text-2xl font-bold">
+                    <View className="bg-primary/10 w-14 h-14 rounded-full items-center justify-center">
+                      <Text className="text-primary text-2xl font-bold">
                         {friend.username[0].toUpperCase()}
                       </Text>
                     </View>
@@ -192,7 +192,7 @@ export default function FriendsScreen() {
                         @{friend.username}
                       </Text>
                       <Text className="text-gray-500 text-sm">
-                        Nivel {Math.floor((friend.xp || 0) / 100) + 1} • {friend.xp || 0} XP
+                        Nivel {Math.floor((friend.xp || 0) / 100) + 1} â€¢ {friend.xp || 0} XP
                       </Text>
                     </View>
                   </TouchableOpacity>
@@ -241,7 +241,7 @@ export default function FriendsScreen() {
           <TouchableOpacity onPress={() => router.push('/social/search')}>
             <Card className="p-4 bg-gradient-to-r from-blue-50 to-indigo-50">
               <View className="flex-row items-center gap-4">
-                <View className="bg-blue-500 w-12 h-12 rounded-xl items-center justify-center">
+                <View className="bg-primary w-12 h-12 rounded-xl items-center justify-center">
                   <Ionicons name="search" size={28} color="white" />
                 </View>
                 <View className="flex-1">
@@ -280,3 +280,4 @@ export default function FriendsScreen() {
     </View>
   );
 }
+

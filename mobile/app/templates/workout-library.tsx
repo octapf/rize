@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -120,7 +120,7 @@ export default function WorkoutTemplates() {
 
       <ScrollView className="flex-1" showsVerticalScrollIndicator={false}>
         <View className="px-6 pt-6">
-          <View className="bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl p-6 mb-6">
+          <View className="bg-gradient-to-r from-primary to-[#7D0EBE] rounded-xl p-6 mb-6">
             <Text className="text-white text-2xl font-bold mb-2">Template Library</Text>
             <Text className="text-white opacity-90 mb-4">
               Proven workout programs
@@ -151,7 +151,7 @@ export default function WorkoutTemplates() {
                   key={cat.key}
                   onPress={() => setSelectedCategory(cat.key)}
                   className={`${
-                    selectedCategory === cat.key ? 'bg-blue-500' : 'bg-zinc-900'
+                    selectedCategory === cat.key ? 'bg-primary' : 'bg-zinc-900'
                   } rounded-xl px-6 py-3 border ${
                     selectedCategory === cat.key ? 'border-blue-400' : 'border-zinc-800'
                   }`}
@@ -181,22 +181,22 @@ export default function WorkoutTemplates() {
               </View>
 
               <View className="flex-row items-center mb-3">
-                <Ionicons name="star" size={16} color="#f59e0b" />
+                <Ionicons name="star" size={16} color="#FFEA00" />
                 <Text className="text-amber-400 ml-1 font-bold">{template.rating}</Text>
-                <Text className="text-zinc-500 ml-1">• {template.downloads.toLocaleString()} downloads</Text>
+                <Text className="text-zinc-500 ml-1">â€¢ {template.downloads.toLocaleString()} downloads</Text>
               </View>
 
               <View className="flex-row gap-2 mb-4">
-                <View className="bg-blue-500/20 rounded-lg px-3 py-2">
-                  <Text className="text-blue-400 text-sm font-bold">{template.duration}</Text>
+                <View className="bg-primary/20 rounded-lg px-3 py-2">
+                  <Text className="text-primary/80 text-sm font-bold">{template.duration}</Text>
                 </View>
-                <View className="bg-emerald-500/20 rounded-lg px-3 py-2">
-                  <Text className="text-emerald-400 text-sm font-bold">{template.exercises} exercises</Text>
+                <View className="bg-primary/20 rounded-lg px-3 py-2">
+                  <Text className="text-primary text-sm font-bold">{template.exercises} exercises</Text>
                 </View>
               </View>
 
               <View className="flex-row gap-2">
-                <TouchableOpacity className="flex-1 bg-blue-500 rounded-xl py-3 flex-row items-center justify-center">
+                <TouchableOpacity className="flex-1 bg-primary rounded-xl py-3 flex-row items-center justify-center">
                   <Ionicons name="download" size={18} color="white" />
                   <Text className="text-white font-bold ml-2">Use Template</Text>
                 </TouchableOpacity>
@@ -207,19 +207,19 @@ export default function WorkoutTemplates() {
             </View>
           ))}
 
-          <TouchableOpacity className="bg-emerald-500 rounded-xl py-4 flex-row items-center justify-center mb-6">
+          <TouchableOpacity className="bg-primary rounded-xl py-4 flex-row items-center justify-center mb-6">
             <Ionicons name="add-circle" size={24} color="white" />
             <Text className="text-white font-bold ml-2 text-lg">Create Custom Template</Text>
           </TouchableOpacity>
 
-          <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30 mb-6">
-            <Text className="text-blue-400 font-bold mb-2">Template Tips</Text>
-            <Text className="text-blue-300 text-sm">
-              • Follow program 8-12 semanas mínimo{'\n'}
-              • No mezcles templates diferentes{'\n'}
-              • Track progress cada semana{'\n'}
-              • Adjust pesos con linear progression{'\n'}
-              • Deload cuando sea necesario
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
+            <Text className="text-primary/80 font-bold mb-2">Template Tips</Text>
+            <Text className="text-primary/60 text-sm">
+              â€¢ Follow program 8-12 semanas mÃ­nimo{'\n'}
+              â€¢ No mezcles templates diferentes{'\n'}
+              â€¢ Track progress cada semana{'\n'}
+              â€¢ Adjust pesos con linear progression{'\n'}
+              â€¢ Deload cuando sea necesario
             </Text>
           </View>
         </View>
@@ -227,3 +227,4 @@ export default function WorkoutTemplates() {
     </View>
   );
 }
+

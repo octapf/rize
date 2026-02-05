@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -144,13 +144,13 @@ export default function BodyCompositionCalculator() {
         health,
       });
     } catch (error) {
-      Alert.alert('Error', 'Verifica que todos los campos estén completos');
+      Alert.alert('Error', 'Verifica que todos los campos estÃ©n completos');
     }
   };
 
   const methods = [
-    { key: 'navy', label: 'Navy Method', description: 'Mide circunferencias (más fácil)', icon: 'analytics' },
-    { key: 'jp3', label: 'Jackson-Pollock 3', description: '3 pliegues cutáneos (preciso)', icon: 'fitness' },
+    { key: 'navy', label: 'Navy Method', description: 'Mide circunferencias (mÃ¡s fÃ¡cil)', icon: 'analytics' },
+    { key: 'jp3', label: 'Jackson-Pollock 3', description: '3 pliegues cutÃ¡neos (preciso)', icon: 'fitness' },
     { key: 'jp7', label: 'Jackson-Pollock 7', description: '7 pliegues (muy preciso)', icon: 'medal' },
   ];
 
@@ -174,25 +174,25 @@ export default function BodyCompositionCalculator() {
           <View className="bg-gradient-to-r from-blue-500 to-cyan-500 rounded-xl p-6 mb-6">
             <Text className="text-white text-2xl font-bold mb-2">Calcula Tu % Grasa</Text>
             <Text className="text-white opacity-90">
-              Métodos científicamente validados para estimar tu composición corporal
+              MÃ©todos cientÃ­ficamente validados para estimar tu composiciÃ³n corporal
             </Text>
           </View>
 
           {/* Method Selection */}
-          <Text className="text-white font-bold text-lg mb-4">Método de Cálculo</Text>
+          <Text className="text-white font-bold text-lg mb-4">MÃ©todo de CÃ¡lculo</Text>
           {methods.map((m) => (
             <TouchableOpacity
               key={m.key}
               onPress={() => setMethod(m.key as any)}
               className={`rounded-xl p-4 mb-3 ${
                 method === m.key
-                  ? 'bg-blue-500/10 border-2 border-blue-500/30'
+                  ? 'bg-primary/10 border-2 border-primary/30'
                   : 'bg-zinc-900 border border-zinc-800'
               }`}
             >
               <View className="flex-row items-center mb-2">
                 <View className={`w-10 h-10 rounded-xl items-center justify-center mr-3 ${
-                  method === m.key ? 'bg-blue-500' : 'bg-zinc-800'
+                  method === m.key ? 'bg-primary' : 'bg-zinc-800'
                 }`}>
                   <Ionicons name={m.icon as any} size={20} color="white" />
                 </View>
@@ -203,20 +203,20 @@ export default function BodyCompositionCalculator() {
                   <Text className="text-zinc-500 text-sm">{m.description}</Text>
                 </View>
                 {method === m.key && (
-                  <Ionicons name="checkmark-circle" size={24} color="#3B82F6" />
+                  <Ionicons name="checkmark-circle" size={24} color="#9D12DE" />
                 )}
               </View>
             </TouchableOpacity>
           ))}
 
           {/* Gender & Basic Info */}
-          <Text className="text-white font-bold text-lg mb-4 mt-6">Información Básica</Text>
+          <Text className="text-white font-bold text-lg mb-4 mt-6">InformaciÃ³n BÃ¡sica</Text>
           
           <View className="flex-row gap-3 mb-4">
             <TouchableOpacity
               onPress={() => setGender('male')}
               className={`flex-1 rounded-xl p-4 ${
-                gender === 'male' ? 'bg-blue-500' : 'bg-zinc-900 border border-zinc-800'
+                gender === 'male' ? 'bg-primary' : 'bg-zinc-900 border border-zinc-800'
               }`}
             >
               <Text className={`font-bold text-center ${gender === 'male' ? 'text-white' : 'text-zinc-400'}`}>
@@ -237,7 +237,7 @@ export default function BodyCompositionCalculator() {
 
           <View className="flex-row gap-3 mb-4">
             <View className="flex-1">
-              <Text className="text-zinc-400 text-sm mb-2">Edad (años)</Text>
+              <Text className="text-zinc-400 text-sm mb-2">Edad (aÃ±os)</Text>
               <TextInput
                 value={age}
                 onChangeText={setAge}
@@ -275,9 +275,9 @@ export default function BodyCompositionCalculator() {
           {method === 'navy' && (
             <>
               <Text className="text-white font-bold text-lg mb-4 mt-4">Mediciones (cm)</Text>
-              <View className="bg-blue-500/10 rounded-xl p-4 mb-4 border border-blue-500/30">
-                <Text className="text-blue-400 text-sm mb-2">
-                  💡 Mide con cinta métrica en la parte más ancha/estrecha de cada zona
+              <View className="bg-primary/10 rounded-xl p-4 mb-4 border border-primary/30">
+                <Text className="text-primary/80 text-sm mb-2">
+                  ðŸ’¡ Mide con cinta mÃ©trica en la parte mÃ¡s ancha/estrecha de cada zona
                 </Text>
               </View>
               
@@ -317,10 +317,10 @@ export default function BodyCompositionCalculator() {
 
           {(method === 'jp3' || method === 'jp7') && (
             <>
-              <Text className="text-white font-bold text-lg mb-4 mt-4">Pliegues Cutáneos (mm)</Text>
+              <Text className="text-white font-bold text-lg mb-4 mt-4">Pliegues CutÃ¡neos (mm)</Text>
               <View className="bg-purple-500/10 rounded-xl p-4 mb-4 border border-purple-500/30">
                 <Text className="text-purple-400 text-sm mb-2">
-                  💡 Usa calibrador de pliegues (caliper) - pellizca piel sin músculo
+                  ðŸ’¡ Usa calibrador de pliegues (caliper) - pellizca piel sin mÃºsculo
                 </Text>
               </View>
 
@@ -357,7 +357,7 @@ export default function BodyCompositionCalculator() {
               {method === 'jp7' && (
                 <View className="flex-row gap-3 mb-4">
                   <View className="flex-1">
-                    <Text className="text-zinc-400 text-sm mb-2">Tríceps</Text>
+                    <Text className="text-zinc-400 text-sm mb-2">TrÃ­ceps</Text>
                     <TextInput
                       value={tricep}
                       onChangeText={setTricep}
@@ -405,7 +405,7 @@ export default function BodyCompositionCalculator() {
           {/* Calculate Button */}
           <TouchableOpacity
             onPress={calculateBodyComposition}
-            className="bg-blue-500 rounded-xl p-5 flex-row items-center justify-center mb-6"
+            className="bg-primary rounded-xl p-5 flex-row items-center justify-center mb-6"
           >
             <Ionicons name="calculator" size={24} color="white" />
             <Text className="text-white font-bold text-lg ml-2">Calcular</Text>
@@ -432,8 +432,8 @@ export default function BodyCompositionCalculator() {
               </View>
 
               <View className="flex-row gap-3 mb-4">
-                <View className="flex-1 bg-emerald-500/10 rounded-xl p-4 border border-emerald-500/30">
-                  <Text className="text-emerald-400 text-xs mb-1">Masa Magra</Text>
+                <View className="flex-1 bg-primary/10 rounded-xl p-4 border border-primary/30">
+                  <Text className="text-primary text-xs mb-1">Masa Magra</Text>
                   <Text className="text-white font-bold text-2xl">{result.leanMass} kg</Text>
                 </View>
                 <View className="flex-1 bg-red-500/10 rounded-xl p-4 border border-red-500/30">
@@ -447,19 +447,19 @@ export default function BodyCompositionCalculator() {
                 <Text className="text-white font-bold mb-3">Rangos de Referencia ({gender === 'male' ? 'Hombre' : 'Mujer'})</Text>
                 {gender === 'male' ? (
                   <>
-                    <Text className="text-zinc-400 text-sm mb-1">• 2-5%: Esencial (mínimo)</Text>
-                    <Text className="text-emerald-400 text-sm mb-1">• 6-13%: Atleta</Text>
-                    <Text className="text-blue-400 text-sm mb-1">• 14-17%: Fitness</Text>
-                    <Text className="text-amber-400 text-sm mb-1">• 18-24%: Promedio</Text>
-                    <Text className="text-red-400 text-sm">• 25%+: Obesidad</Text>
+                    <Text className="text-zinc-400 text-sm mb-1">â€¢ 2-5%: Esencial (mÃ­nimo)</Text>
+                    <Text className="text-primary text-sm mb-1">â€¢ 6-13%: Atleta</Text>
+                    <Text className="text-primary/80 text-sm mb-1">â€¢ 14-17%: Fitness</Text>
+                    <Text className="text-amber-400 text-sm mb-1">â€¢ 18-24%: Promedio</Text>
+                    <Text className="text-red-400 text-sm">â€¢ 25%+: Obesidad</Text>
                   </>
                 ) : (
                   <>
-                    <Text className="text-zinc-400 text-sm mb-1">• 10-13%: Esencial (mínimo)</Text>
-                    <Text className="text-emerald-400 text-sm mb-1">• 14-20%: Atleta</Text>
-                    <Text className="text-blue-400 text-sm mb-1">• 21-24%: Fitness</Text>
-                    <Text className="text-amber-400 text-sm mb-1">• 25-31%: Promedio</Text>
-                    <Text className="text-red-400 text-sm">• 32%+: Obesidad</Text>
+                    <Text className="text-zinc-400 text-sm mb-1">â€¢ 10-13%: Esencial (mÃ­nimo)</Text>
+                    <Text className="text-primary text-sm mb-1">â€¢ 14-20%: Atleta</Text>
+                    <Text className="text-primary/80 text-sm mb-1">â€¢ 21-24%: Fitness</Text>
+                    <Text className="text-amber-400 text-sm mb-1">â€¢ 25-31%: Promedio</Text>
+                    <Text className="text-red-400 text-sm">â€¢ 32%+: Obesidad</Text>
                   </>
                 )}
               </View>
@@ -467,18 +467,18 @@ export default function BodyCompositionCalculator() {
           )}
 
           {/* Tips */}
-          <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30 mb-6">
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
             <View className="flex-row items-start">
-              <Ionicons name="information-circle" size={20} color="#3B82F6" />
+              <Ionicons name="information-circle" size={20} color="#9D12DE" />
               <View className="flex-1 ml-3">
-                <Text className="text-blue-400 font-bold mb-2">Tips Importantes</Text>
-                <Text className="text-blue-300 text-sm">
-                  • Navy Method: ±4% error (más fácil){'\n'}
-                  • JP3: ±3% error (buena precisión){'\n'}
-                  • JP7: ±2% error (máxima precisión){'\n'}
-                  • Mide siempre a la misma hora{'\n'}
-                  • Re-mide cada 2-4 semanas{'\n'}
-                  • % grasa &gt; báscula para progreso
+                <Text className="text-primary/80 font-bold mb-2">Tips Importantes</Text>
+                <Text className="text-primary/60 text-sm">
+                  â€¢ Navy Method: Â±4% error (mÃ¡s fÃ¡cil){'\n'}
+                  â€¢ JP3: Â±3% error (buena precisiÃ³n){'\n'}
+                  â€¢ JP7: Â±2% error (mÃ¡xima precisiÃ³n){'\n'}
+                  â€¢ Mide siempre a la misma hora{'\n'}
+                  â€¢ Re-mide cada 2-4 semanas{'\n'}
+                  â€¢ % grasa &gt; bÃ¡scula para progreso
                 </Text>
               </View>
             </View>
@@ -488,3 +488,4 @@ export default function BodyCompositionCalculator() {
     </View>
   );
 }
+

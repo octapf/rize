@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -26,7 +26,7 @@ interface SupplementLog {
 }
 
 const TIMING_OPTIONS = [
-  { value: 'morning', label: 'Mañana', icon: 'sunny', color: 'amber' },
+  { value: 'morning', label: 'MaÃ±ana', icon: 'sunny', color: 'amber' },
   { value: 'preworkout', label: 'Pre-Workout', icon: 'fitness', color: 'blue' },
   { value: 'postworkout', label: 'Post-Workout', icon: 'barbell', color: 'emerald' },
   { value: 'evening', label: 'Tarde', icon: 'partly-sunny', color: 'orange' },
@@ -34,12 +34,12 @@ const TIMING_OPTIONS = [
 ];
 
 const MOCK_SUPPLEMENTS: Supplement[] = [
-  { id: '1', name: 'Proteína Whey', dosage: '30g', timing: 'postworkout', purpose: 'Síntesis proteica', taken: true },
+  { id: '1', name: 'ProteÃ­na Whey', dosage: '30g', timing: 'postworkout', purpose: 'SÃ­ntesis proteica', taken: true },
   { id: '2', name: 'Creatina', dosage: '5g', timing: 'postworkout', purpose: 'Fuerza y volumen', taken: true },
-  { id: '3', name: 'Vitamina D3', dosage: '2000 IU', timing: 'morning', purpose: 'Salud ósea', taken: true },
+  { id: '3', name: 'Vitamina D3', dosage: '2000 IU', timing: 'morning', purpose: 'Salud Ã³sea', taken: true },
   { id: '4', name: 'Omega-3', dosage: '1000mg', timing: 'morning', purpose: 'Salud cardiovascular', taken: false },
-  { id: '5', name: 'Magnesio', dosage: '400mg', timing: 'bedtime', purpose: 'Recuperación y sueño', taken: false },
-  { id: '6', name: 'Cafeína', dosage: '200mg', timing: 'preworkout', purpose: 'Energía y foco', taken: true },
+  { id: '5', name: 'Magnesio', dosage: '400mg', timing: 'bedtime', purpose: 'RecuperaciÃ³n y sueÃ±o', taken: false },
+  { id: '6', name: 'CafeÃ­na', dosage: '200mg', timing: 'preworkout', purpose: 'EnergÃ­a y foco', taken: true },
 ];
 
 export default function SupplementTracker() {
@@ -83,13 +83,13 @@ export default function SupplementTracker() {
     setSupplements([...supplements, supplement]);
     setNewSupplement({ name: '', dosage: '', timing: 'morning', purpose: '' });
     setShowAddForm(false);
-    Alert.alert('Suplemento Añadido! 💊', 'Suplemento agregado a tu lista');
+    Alert.alert('Suplemento AÃ±adido! ðŸ’Š', 'Suplemento agregado a tu lista');
   };
 
   const deleteSupplement = (id: string) => {
     Alert.alert(
       'Eliminar Suplemento',
-      '¿Estás seguro?',
+      'Â¿EstÃ¡s seguro?',
       [
         { text: 'Cancelar' },
         { text: 'Eliminar', style: 'destructive', onPress: () => setSupplements(supplements.filter((s) => s.id !== id)) },
@@ -126,7 +126,7 @@ export default function SupplementTracker() {
             <TouchableOpacity
               onPress={() => setFilter('all')}
               className={`flex-row items-center px-4 py-2 rounded-lg ${
-                filter === 'all' ? 'bg-emerald-500' : 'bg-zinc-900 border border-zinc-800'
+                filter === 'all' ? 'bg-primary' : 'bg-zinc-900 border border-zinc-800'
               }`}
             >
               <Ionicons name="apps" size={18} color={filter === 'all' ? 'white' : '#71717A'} />
@@ -139,7 +139,7 @@ export default function SupplementTracker() {
                 key={timing.value}
                 onPress={() => setFilter(timing.value)}
                 className={`flex-row items-center px-4 py-2 rounded-lg ${
-                  filter === timing.value ? 'bg-emerald-500' : 'bg-zinc-900 border border-zinc-800'
+                  filter === timing.value ? 'bg-primary' : 'bg-zinc-900 border border-zinc-800'
                 }`}
               >
                 <Ionicons
@@ -167,7 +167,7 @@ export default function SupplementTracker() {
                 <Text className="text-zinc-400 text-sm mb-2">Nombre</Text>
                 <TextInput
                   className="bg-zinc-800 rounded-xl px-4 py-3 text-white text-lg font-bold"
-                  placeholder="Ej: Proteína Whey, Creatina, etc."
+                  placeholder="Ej: ProteÃ­na Whey, Creatina, etc."
                   placeholderTextColor="#71717A"
                   value={newSupplement.name}
                   onChangeText={(text) => setNewSupplement({ ...newSupplement, name: text })}
@@ -188,7 +188,7 @@ export default function SupplementTracker() {
 
               {/* Timing */}
               <View className="mb-4">
-                <Text className="text-zinc-400 text-sm mb-2">Momento del Día</Text>
+                <Text className="text-zinc-400 text-sm mb-2">Momento del DÃ­a</Text>
                 <View className="flex-row flex-wrap gap-2">
                   {TIMING_OPTIONS.map((timing) => (
                     <TouchableOpacity
@@ -215,10 +215,10 @@ export default function SupplementTracker() {
 
               {/* Purpose */}
               <View className="mb-4">
-                <Text className="text-zinc-400 text-sm mb-2">Propósito (opcional)</Text>
+                <Text className="text-zinc-400 text-sm mb-2">PropÃ³sito (opcional)</Text>
                 <TextInput
                   className="bg-zinc-800 rounded-xl px-4 py-3 text-white"
-                  placeholder="Para qué lo tomas..."
+                  placeholder="Para quÃ© lo tomas..."
                   placeholderTextColor="#71717A"
                   value={newSupplement.purpose}
                   onChangeText={(text) => setNewSupplement({ ...newSupplement, purpose: text })}
@@ -227,10 +227,10 @@ export default function SupplementTracker() {
 
               <TouchableOpacity
                 onPress={addSupplement}
-                className="bg-emerald-500 rounded-xl p-4 flex-row items-center justify-center"
+                className="bg-primary rounded-xl p-4 flex-row items-center justify-center"
               >
                 <Ionicons name="checkmark-circle" size={20} color="white" />
-                <Text className="text-white font-bold ml-2">Añadir Suplemento</Text>
+                <Text className="text-white font-bold ml-2">AÃ±adir Suplemento</Text>
               </TouchableOpacity>
             </View>
           ) : (
@@ -239,13 +239,13 @@ export default function SupplementTracker() {
               <View className="bg-zinc-900 rounded-xl p-4 mb-6 border border-zinc-800">
                 <View className="flex-row items-center justify-between mb-3">
                   <Text className="text-white font-bold text-lg">Hoy</Text>
-                  <View className="bg-emerald-500 rounded-lg px-3 py-1">
+                  <View className="bg-primary rounded-lg px-3 py-1">
                     <Text className="text-white font-bold">{compliance.toFixed(0)}% Completado</Text>
                   </View>
                 </View>
                 <View className="h-3 bg-zinc-800 rounded-full overflow-hidden">
                   <View
-                    className="h-full bg-emerald-500 rounded-full"
+                    className="h-full bg-primary rounded-full"
                     style={{ width: `${compliance}%` }}
                   />
                 </View>
@@ -273,10 +273,10 @@ export default function SupplementTracker() {
                         <View className="flex-row items-start justify-between">
                           <View className="flex-1">
                             <Text className="text-white font-bold text-lg mb-1">{supplement.name}</Text>
-                            <Text className="text-emerald-400 font-bold mb-2">{supplement.dosage}</Text>
+                            <Text className="text-primary font-bold mb-2">{supplement.dosage}</Text>
                             {supplement.purpose && (
-                              <View className="bg-blue-500/10 rounded-lg p-2 border border-blue-500/30">
-                                <Text className="text-blue-400 text-sm">{supplement.purpose}</Text>
+                              <View className="bg-primary/10 rounded-lg p-2 border border-primary/30">
+                                <Text className="text-primary/80 text-sm">{supplement.purpose}</Text>
                               </View>
                             )}
                           </View>
@@ -284,7 +284,7 @@ export default function SupplementTracker() {
                             <TouchableOpacity
                               onPress={() => toggleTaken(supplement.id)}
                               className={`w-12 h-12 rounded-xl items-center justify-center ${
-                                supplement.taken ? 'bg-emerald-500' : 'bg-zinc-800'
+                                supplement.taken ? 'bg-primary' : 'bg-zinc-800'
                               }`}
                             >
                               <Ionicons
@@ -309,10 +309,10 @@ export default function SupplementTracker() {
 
               {filteredSupplements.length === 0 && (
                 <View className="bg-zinc-900 rounded-xl p-8 items-center border border-zinc-800">
-                  <Text className="text-6xl mb-3">💊</Text>
+                  <Text className="text-6xl mb-3">ðŸ’Š</Text>
                   <Text className="text-white font-bold text-lg mb-2">Sin Suplementos</Text>
                   <Text className="text-zinc-400 text-center">
-                    Añade suplementos para trackear tu ingesta
+                    AÃ±ade suplementos para trackear tu ingesta
                   </Text>
                 </View>
               )}
@@ -320,19 +320,19 @@ export default function SupplementTracker() {
           )}
 
           {/* Tips */}
-          <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30 mb-6">
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
             <View className="flex-row items-start">
-              <Ionicons name="information-circle" size={20} color="#3B82F6" />
+              <Ionicons name="information-circle" size={20} color="#9D12DE" />
               <View className="flex-1 ml-3">
-                <Text className="text-blue-400 font-bold mb-2">
-                  Tips de Suplementación
+                <Text className="text-primary/80 font-bold mb-2">
+                  Tips de SuplementaciÃ³n
                 </Text>
-                <Text className="text-blue-300 text-sm">
-                  • Prioriza comida real primero{'\n'}
-                  • Creatina: 5g diario, cualquier momento{'\n'}
-                  • Proteína: cuando no llegues a meta{'\n'}
-                  • Cafeína pre-workout: 3-6mg/kg peso{'\n'}
-                  • Consulta médico antes de nuevos supps
+                <Text className="text-primary/60 text-sm">
+                  â€¢ Prioriza comida real primero{'\n'}
+                  â€¢ Creatina: 5g diario, cualquier momento{'\n'}
+                  â€¢ ProteÃ­na: cuando no llegues a meta{'\n'}
+                  â€¢ CafeÃ­na pre-workout: 3-6mg/kg peso{'\n'}
+                  â€¢ Consulta mÃ©dico antes de nuevos supps
                 </Text>
               </View>
             </View>
@@ -342,3 +342,4 @@ export default function SupplementTracker() {
     </View>
   );
 }
+

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -27,10 +27,10 @@ const REMINDERS: Reminder[] = [
     id: '1',
     name: 'Entrenamiento Matutino',
     type: 'workout',
-    days: ['Lunes', 'Miércoles', 'Viernes'],
+    days: ['Lunes', 'MiÃ©rcoles', 'Viernes'],
     time: '06:00',
     enabled: true,
-    message: '¡Hora de entrenar! Tu rutina Push te espera 💪',
+    message: 'Â¡Hora de entrenar! Tu rutina Push te espera ðŸ’ª',
     icon: 'fitness',
     frequency: 'weekly',
   },
@@ -38,7 +38,7 @@ const REMINDERS: Reminder[] = [
     id: '2',
     name: 'Entrenamiento Vespertino',
     type: 'workout',
-    days: ['Martes', 'Jueves', 'Sábado'],
+    days: ['Martes', 'Jueves', 'SÃ¡bado'],
     time: '18:00',
     enabled: true,
     message: 'Entrenamiento de la tarde programado',
@@ -47,12 +47,12 @@ const REMINDERS: Reminder[] = [
   },
   {
     id: '3',
-    name: 'Día de Descanso',
+    name: 'DÃ­a de Descanso',
     type: 'rest',
     days: ['Domingo'],
     time: '09:00',
     enabled: true,
-    message: 'Hoy es día de recuperación activa. Movilidad o caminata ligera 🧘',
+    message: 'Hoy es dÃ­a de recuperaciÃ³n activa. Movilidad o caminata ligera ðŸ§˜',
     icon: 'bed',
     frequency: 'weekly',
   },
@@ -63,18 +63,18 @@ const REMINDERS: Reminder[] = [
     days: ['Domingo'],
     time: '10:00',
     enabled: true,
-    message: '¡Meal prep! Prepara tus comidas para la semana 🥗',
+    message: 'Â¡Meal prep! Prepara tus comidas para la semana ðŸ¥—',
     icon: 'restaurant',
     frequency: 'weekly',
   },
   {
     id: '5',
-    name: 'Hidratación',
+    name: 'HidrataciÃ³n',
     type: 'water',
-    days: ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'],
+    days: ['Lunes', 'Martes', 'MiÃ©rcoles', 'Jueves', 'Viernes', 'SÃ¡bado', 'Domingo'],
     time: '10:00',
     enabled: false,
-    message: '💧 Bebe agua - Meta diaria: 3L',
+    message: 'ðŸ’§ Bebe agua - Meta diaria: 3L',
     icon: 'water',
     frequency: 'daily',
   },
@@ -82,7 +82,7 @@ const REMINDERS: Reminder[] = [
     id: '6',
     name: 'Suplementos Pre-Entreno',
     type: 'supplement',
-    days: ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],
+    days: ['Lunes', 'Martes', 'MiÃ©rcoles', 'Jueves', 'Viernes', 'SÃ¡bado'],
     time: '17:30',
     enabled: true,
     message: 'Toma tu pre-workout 30 min antes de entrenar',
@@ -91,12 +91,12 @@ const REMINDERS: Reminder[] = [
   },
   {
     id: '7',
-    name: 'Rutina de Sueño',
+    name: 'Rutina de SueÃ±o',
     type: 'sleep',
-    days: ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'],
+    days: ['Lunes', 'Martes', 'MiÃ©rcoles', 'Jueves', 'Viernes', 'SÃ¡bado', 'Domingo'],
     time: '22:00',
     enabled: true,
-    message: '😴 Hora de dormir para 8h de sueño de calidad',
+    message: 'ðŸ˜´ Hora de dormir para 8h de sueÃ±o de calidad',
     icon: 'moon',
     frequency: 'daily',
   },
@@ -113,7 +113,7 @@ export default function WorkoutReminders() {
     { id: 'meal', label: 'Comidas', icon: 'restaurant' },
     { id: 'water', label: 'Agua', icon: 'water' },
     { id: 'supplement', label: 'Suplementos', icon: 'flask' },
-    { id: 'sleep', label: 'Sueño', icon: 'moon' },
+    { id: 'sleep', label: 'SueÃ±o', icon: 'moon' },
   ];
 
   const getTypeColor = (type: string) => {
@@ -121,11 +121,11 @@ export default function WorkoutReminders() {
       case 'workout':
         return '#EF4444';
       case 'rest':
-        return '#10B981';
+        return '#9D12DE';
       case 'meal':
-        return '#F59E0B';
+        return '#FFEA00';
       case 'water':
-        return '#3B82F6';
+        return '#9D12DE';
       case 'supplement':
         return '#8B5CF6';
       case 'sleep':
@@ -149,7 +149,7 @@ export default function WorkoutReminders() {
       reminder.name,
       [
         { text: 'Cambiar Hora' },
-        { text: 'Cambiar Días' },
+        { text: 'Cambiar DÃ­as' },
         { text: 'Cambiar Mensaje' },
         { text: 'Eliminar', style: 'destructive' },
         { text: 'Cancelar', style: 'cancel' },
@@ -197,7 +197,7 @@ export default function WorkoutReminders() {
         </View>
 
         {/* Stats Card */}
-        <View className="bg-gradient-to-br from-emerald-500 to-blue-500 rounded-xl p-4 mb-4">
+        <View className="bg-gradient-to-br from-primary to-[#7D0EBE] rounded-xl p-4 mb-4">
           <View className="flex-row items-center justify-between mb-3">
             <View className="flex-1">
               <Text className="text-white/80 text-sm mb-1">Recordatorios Activos</Text>
@@ -217,7 +217,7 @@ export default function WorkoutReminders() {
               <View className="flex-row items-center">
                 <Ionicons name="time" size={16} color="white" />
                 <Text className="text-white text-sm ml-2">
-                  Próximo: {nextReminder.name} a las {nextReminder.time}
+                  PrÃ³ximo: {nextReminder.name} a las {nextReminder.time}
                 </Text>
               </View>
             </View>
@@ -233,7 +233,7 @@ export default function WorkoutReminders() {
                 onPress={() => setSelectedType(type.id)}
                 className={`flex-row items-center px-4 py-2 rounded-lg ${
                   selectedType === type.id
-                    ? 'bg-emerald-500'
+                    ? 'bg-primary'
                     : 'bg-zinc-900 border border-zinc-800'
                 }`}
               >
@@ -267,7 +267,7 @@ export default function WorkoutReminders() {
               key={reminder.id}
               onPress={() => editReminder(reminder)}
               className={`bg-zinc-900 rounded-xl p-4 mb-3 border-2 ${
-                reminder.enabled ? 'border-emerald-500' : 'border-zinc-800'
+                reminder.enabled ? 'border-primary' : 'border-zinc-800'
               }`}
             >
               <View className="flex-row items-start justify-between mb-3">
@@ -292,7 +292,7 @@ export default function WorkoutReminders() {
                 <Switch
                   value={reminder.enabled}
                   onValueChange={() => toggleReminder(reminder.id)}
-                  trackColor={{ false: '#3F3F46', true: '#10B981' }}
+                  trackColor={{ false: '#3F3F46', true: '#9D12DE' }}
                   thumbColor={reminder.enabled ? '#fff' : '#D4D4D8'}
                 />
               </View>
@@ -348,19 +348,19 @@ export default function WorkoutReminders() {
 
         {/* Smart Suggestions */}
         <View className="px-6 pb-6 pt-4">
-          <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30 mb-4">
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-4">
             <View className="flex-row items-start">
-              <Ionicons name="bulb" size={20} color="#3B82F6" />
+              <Ionicons name="bulb" size={20} color="#9D12DE" />
               <View className="flex-1 ml-3">
-                <Text className="text-blue-400 font-bold mb-2">
+                <Text className="text-primary/80 font-bold mb-2">
                   Sugerencias Inteligentes
                 </Text>
-                <Text className="text-blue-300 text-sm mb-2">
-                  • Recordatorio de agua cada 2 horas durante el día{'\n'}
-                  • Reminder de stretching en días de descanso{'\n'}
-                  • Notificación de meal prep los domingos
+                <Text className="text-primary/60 text-sm mb-2">
+                  â€¢ Recordatorio de agua cada 2 horas durante el dÃ­a{'\n'}
+                  â€¢ Reminder de stretching en dÃ­as de descanso{'\n'}
+                  â€¢ NotificaciÃ³n de meal prep los domingos
                 </Text>
-                <TouchableOpacity className="bg-blue-500 rounded-lg p-2 mt-2">
+                <TouchableOpacity className="bg-primary rounded-lg p-2 mt-2">
                   <Text className="text-white font-bold text-center text-sm">
                     Activar Sugerencias
                   </Text>
@@ -371,13 +371,13 @@ export default function WorkoutReminders() {
 
           <View className="bg-amber-500/10 rounded-xl p-4 border border-amber-500/30">
             <View className="flex-row items-start">
-              <Ionicons name="information-circle" size={20} color="#F59E0B" />
+              <Ionicons name="information-circle" size={20} color="#FFEA00" />
               <View className="flex-1 ml-3">
                 <Text className="text-amber-400 font-bold mb-2">
                   Consistencia es Clave
                 </Text>
                 <Text className="text-amber-300 text-sm">
-                  Los recordatorios te ayudan a construir hábitos. Mantén las notificaciones activadas para mejores resultados.
+                  Los recordatorios te ayudan a construir hÃ¡bitos. MantÃ©n las notificaciones activadas para mejores resultados.
                 </Text>
               </View>
             </View>
@@ -387,3 +387,4 @@ export default function WorkoutReminders() {
     </View>
   );
 }
+

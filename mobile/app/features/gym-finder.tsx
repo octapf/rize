@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -32,7 +32,7 @@ export default function GymFinder() {
       rating: 4.8,
       reviews: 342,
       equipment: ['Squat Racks', 'Deadlift Platform', 'Heavy Dumbbells'],
-      price: '€49/mes',
+      price: 'â‚¬49/mes',
       hours: '24/7',
       type: 'powerlifting',
     },
@@ -43,7 +43,7 @@ export default function GymFinder() {
       rating: 4.9,
       reviews: 187,
       equipment: ['Olympic Lifting', 'Rigs', 'Assault Bikes'],
-      price: '€89/mes',
+      price: 'â‚¬89/mes',
       hours: '6:00 - 22:00',
       type: 'crossfit',
     },
@@ -54,7 +54,7 @@ export default function GymFinder() {
       rating: 4.6,
       reviews: 521,
       equipment: ['Cable Machines', 'Free Weights', 'Cardio'],
-      price: '€39/mes',
+      price: 'â‚¬39/mes',
       hours: '6:00 - 23:00',
       type: 'bodybuilding',
     },
@@ -65,7 +65,7 @@ export default function GymFinder() {
       rating: 4.7,
       reviews: 234,
       equipment: ['Competition Equipment', 'Chains', 'Bands'],
-      price: '€59/mes',
+      price: 'â‚¬59/mes',
       hours: '5:00 - 24:00',
       type: 'powerlifting',
     },
@@ -79,11 +79,11 @@ export default function GymFinder() {
   });
 
   const favoriteGym = (gymName: string) => {
-    Alert.alert('Favorito', `${gymName} añadido a favoritos`);
+    Alert.alert('Favorito', `${gymName} aÃ±adido a favoritos`);
   };
 
   const getDirections = (gymName: string) => {
-    Alert.alert('Navegación', `Abriendo Maps para ${gymName}`);
+    Alert.alert('NavegaciÃ³n', `Abriendo Maps para ${gymName}`);
   };
 
   return (
@@ -132,7 +132,7 @@ export default function GymFinder() {
                 key={dist}
                 onPress={() => setFilterDistance(dist)}
                 className={`flex-1 ${
-                  filterDistance === dist ? 'bg-blue-500' : 'bg-zinc-900'
+                  filterDistance === dist ? 'bg-primary' : 'bg-zinc-900'
                 } rounded-xl py-3 border ${
                   filterDistance === dist ? 'border-blue-400' : 'border-zinc-800'
                 }`}
@@ -156,7 +156,7 @@ export default function GymFinder() {
                   key={filter.key}
                   onPress={() => setFilterEquipment(filter.key)}
                   className={`${
-                    filterEquipment === filter.key ? 'bg-blue-500' : 'bg-zinc-900'
+                    filterEquipment === filter.key ? 'bg-primary' : 'bg-zinc-900'
                   } rounded-xl px-6 py-3 border ${
                     filterEquipment === filter.key ? 'border-blue-400' : 'border-zinc-800'
                   }`}
@@ -181,11 +181,11 @@ export default function GymFinder() {
                 <View className="flex-1">
                   <Text className="text-white font-bold text-lg mb-1">{gym.name}</Text>
                   <View className="flex-row items-center mb-2">
-                    <Ionicons name="location" size={16} color="#3b82f6" />
-                    <Text className="text-blue-400 ml-1 text-sm">{gym.distance} km away</Text>
+                    <Ionicons name="location" size={16} color="#9D12DE" />
+                    <Text className="text-primary/80 ml-1 text-sm">{gym.distance} km away</Text>
                   </View>
                   <View className="flex-row items-center">
-                    <Ionicons name="star" size={16} color="#f59e0b" />
+                    <Ionicons name="star" size={16} color="#FFEA00" />
                     <Text className="text-amber-400 ml-1 font-bold">{gym.rating}</Text>
                     <Text className="text-zinc-500 ml-1 text-sm">({gym.reviews} reviews)</Text>
                   </View>
@@ -199,8 +199,8 @@ export default function GymFinder() {
                 <Text className="text-zinc-400 text-sm mb-2">Equipment:</Text>
                 <View className="flex-row flex-wrap gap-2">
                   {gym.equipment.map((eq, idx) => (
-                    <View key={idx} className="bg-blue-500/20 rounded-lg px-3 py-1">
-                      <Text className="text-blue-400 text-xs">{eq}</Text>
+                    <View key={idx} className="bg-primary/20 rounded-lg px-3 py-1">
+                      <Text className="text-primary/80 text-xs">{eq}</Text>
                     </View>
                   ))}
                 </View>
@@ -208,24 +208,24 @@ export default function GymFinder() {
 
               <View className="flex-row items-center justify-between mb-3">
                 <View className="flex-row items-center">
-                  <Ionicons name="cash" size={16} color="#10b981" />
-                  <Text className="text-emerald-400 ml-1 font-bold">{gym.price}</Text>
+                  <Ionicons name="cash" size={16} color="#9D12DE" />
+                  <Text className="text-primary ml-1 font-bold">{gym.price}</Text>
                 </View>
                 <View className="flex-row items-center">
-                  <Ionicons name="time" size={16} color="#3b82f6" />
-                  <Text className="text-blue-400 ml-1">{gym.hours}</Text>
+                  <Ionicons name="time" size={16} color="#9D12DE" />
+                  <Text className="text-primary/80 ml-1">{gym.hours}</Text>
                 </View>
               </View>
 
               <View className="flex-row gap-2">
                 <TouchableOpacity
                   onPress={() => getDirections(gym.name)}
-                  className="flex-1 bg-blue-500 rounded-xl py-3 flex-row items-center justify-center"
+                  className="flex-1 bg-primary rounded-xl py-3 flex-row items-center justify-center"
                 >
                   <Ionicons name="navigate" size={18} color="white" />
                   <Text className="text-white font-bold ml-2">Directions</Text>
                 </TouchableOpacity>
-                <TouchableOpacity className="flex-1 bg-emerald-500 rounded-xl py-3 flex-row items-center justify-center">
+                <TouchableOpacity className="flex-1 bg-primary rounded-xl py-3 flex-row items-center justify-center">
                   <Ionicons name="call" size={18} color="white" />
                   <Text className="text-white font-bold ml-2">Contact</Text>
                 </TouchableOpacity>
@@ -233,14 +233,14 @@ export default function GymFinder() {
             </View>
           ))}
 
-          <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30 mb-6">
-            <Text className="text-blue-400 font-bold mb-2">Gym Selection Tips</Text>
-            <Text className="text-blue-300 text-sm">
-              • Visita antes de registrarte{'\n'}
-              • Verifica equipamiento disponible{'\n'}
-              • Pregunta por horarios de peak{'\n'}
-              • Lee reviews de otros usuarios{'\n'}
-              • Compara precios y contratos
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
+            <Text className="text-primary/80 font-bold mb-2">Gym Selection Tips</Text>
+            <Text className="text-primary/60 text-sm">
+              â€¢ Visita antes de registrarte{'\n'}
+              â€¢ Verifica equipamiento disponible{'\n'}
+              â€¢ Pregunta por horarios de peak{'\n'}
+              â€¢ Lee reviews de otros usuarios{'\n'}
+              â€¢ Compara precios y contratos
             </Text>
           </View>
         </View>
@@ -248,3 +248,4 @@ export default function GymFinder() {
     </View>
   );
 }
+

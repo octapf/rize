@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -151,7 +151,7 @@ export default function MuscleGroupExplorer() {
             <Text className="text-white font-bold text-lg mb-3">Anatomy</Text>
             {currentMuscle.mainMuscles.map((muscle, idx) => (
               <View key={idx} className="flex-row items-center mb-2">
-                <Ionicons name="ellipse" size={8} color="#3b82f6" />
+                <Ionicons name="ellipse" size={8} color="#9D12DE" />
                 <Text className="text-zinc-300 ml-3">{muscle}</Text>
               </View>
             ))}
@@ -161,19 +161,19 @@ export default function MuscleGroupExplorer() {
             <Text className="text-white font-bold text-lg mb-3">Functions</Text>
             {currentMuscle.functions.map((func, idx) => (
               <View key={idx} className="flex-row items-center mb-2">
-                <Ionicons name="checkmark-circle" size={20} color="#10b981" />
+                <Ionicons name="checkmark-circle" size={20} color="#9D12DE" />
                 <Text className="text-zinc-300 ml-3">{func}</Text>
               </View>
             ))}
           </View>
 
           <View className="flex-row gap-3 mb-6">
-            <View className="flex-1 bg-blue-500/10 rounded-xl p-4 border border-blue-500/30">
-              <Text className="text-blue-400 text-sm mb-1">Weekly Volume</Text>
+            <View className="flex-1 bg-primary/10 rounded-xl p-4 border border-primary/30">
+              <Text className="text-primary/80 text-sm mb-1">Weekly Volume</Text>
               <Text className="text-white font-bold text-lg">{currentMuscle.weeklyVolume}</Text>
             </View>
-            <View className="flex-1 bg-emerald-500/10 rounded-xl p-4 border border-emerald-500/30">
-              <Text className="text-emerald-400 text-sm mb-1">Frequency</Text>
+            <View className="flex-1 bg-primary/10 rounded-xl p-4 border border-primary/30">
+              <Text className="text-primary text-sm mb-1">Frequency</Text>
               <Text className="text-white font-bold text-lg">{currentMuscle.frequency}</Text>
             </View>
           </View>
@@ -201,14 +201,14 @@ export default function MuscleGroupExplorer() {
             </View>
           ))}
 
-          <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30 mb-6">
-            <Text className="text-blue-400 font-bold mb-2">Training Tips</Text>
-            <Text className="text-blue-300 text-sm">
-              • Progressive overload cada semana{'\n'}
-              • Full ROM en cada rep{'\n'}
-              • Mind-muscle connection{'\n'}
-              • Frequency &gt; volume en beginners{'\n'}
-              • Recovery 48h entre sesiones
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
+            <Text className="text-primary/80 font-bold mb-2">Training Tips</Text>
+            <Text className="text-primary/60 text-sm">
+              â€¢ Progressive overload cada semana{'\n'}
+              â€¢ Full ROM en cada rep{'\n'}
+              â€¢ Mind-muscle connection{'\n'}
+              â€¢ Frequency &gt; volume en beginners{'\n'}
+              â€¢ Recovery 48h entre sesiones
             </Text>
           </View>
         </View>
@@ -216,3 +216,4 @@ export default function MuscleGroupExplorer() {
     </View>
   );
 }
+

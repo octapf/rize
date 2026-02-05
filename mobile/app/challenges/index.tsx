@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -56,11 +56,11 @@ export default function ChallengesScreen() {
   const getChallengeTypeInfo = (type: Challenge['type']) => {
     switch (type) {
       case 'workout_count':
-        return { icon: 'barbell' as const, label: 'Entrenamientos', color: '#10b981' };
+        return { icon: 'barbell' as const, label: 'Entrenamientos', color: '#9D12DE' };
       case 'volume':
         return { icon: 'speedometer' as const, label: 'Volumen Total', color: '#8b5cf6' };
       case 'specific_exercise':
-        return { icon: 'fitness' as const, label: 'Ejercicio', color: '#f59e0b' };
+        return { icon: 'fitness' as const, label: 'Ejercicio', color: '#FFEA00' };
       case 'streak':
         return { icon: 'flame' as const, label: 'Racha', color: '#ef4444' };
     }
@@ -69,13 +69,13 @@ export default function ChallengesScreen() {
   const getStatusInfo = (status: Challenge['status']) => {
     switch (status) {
       case 'pending':
-        return { label: 'Pendiente', color: '#f59e0b', bg: '#fef3c7' };
+        return { label: 'Pendiente', color: '#FFEA00', bg: '#fef3c7' };
       case 'accepted':
-        return { label: 'En curso', color: '#10b981', bg: '#d1fae5' };
+        return { label: 'En curso', color: '#9D12DE', bg: '#d1fae5' };
       case 'rejected':
         return { label: 'Rechazado', color: '#6b7280', bg: '#f3f4f6' };
       case 'completed':
-        return { label: 'Completado', color: '#3b82f6', bg: '#dbeafe' };
+        return { label: 'Completado', color: '#9D12DE', bg: '#dbeafe' };
       case 'expired':
         return { label: 'Expirado', color: '#ef4444', bg: '#fee2e2' };
     }
@@ -89,7 +89,7 @@ export default function ChallengesScreen() {
       return `${challenge.targetValue} kg`;
     }
     if (challenge.type === 'streak') {
-      return `${challenge.targetValue} días`;
+      return `${challenge.targetValue} dÃ­as`;
     }
     return challenge.targetValue.toString();
   };
@@ -102,7 +102,7 @@ export default function ChallengesScreen() {
       return `${value.toFixed(0)} kg`;
     }
     if (challenge.type === 'streak') {
-      return `${value} días`;
+      return `${value} dÃ­as`;
     }
     return value.toString();
   };
@@ -192,7 +192,7 @@ export default function ChallengesScreen() {
                   </Text>
                 )}
                 <Text className="text-xs text-gray-500 mt-2">
-                  Duración: {selectedChallenge.duration} días
+                  DuraciÃ³n: {selectedChallenge.duration} dÃ­as
                 </Text>
               </Card>
 
@@ -201,11 +201,11 @@ export default function ChallengesScreen() {
                 <>
                   {/* Time Remaining */}
                   {selectedChallenge.status === 'accepted' && selectedChallenge.endDate && (
-                    <Card className="p-4 mb-4 bg-emerald-50 border-emerald-200">
+                    <Card className="p-4 mb-4 bg-emerald-50 border-primary/20">
                       <View className="flex-row items-center gap-2">
-                        <Ionicons name="time-outline" size={20} color="#10B981" />
-                        <Text className="text-sm font-semibold text-emerald-700">
-                          {getDaysRemaining(selectedChallenge.endDate)} días restantes
+                        <Ionicons name="time-outline" size={20} color="#9D12DE" />
+                        <Text className="text-sm font-semibold text-primary">
+                          {getDaysRemaining(selectedChallenge.endDate)} dÃ­as restantes
                         </Text>
                       </View>
                     </Card>
@@ -215,13 +215,13 @@ export default function ChallengesScreen() {
                   <View className="mb-4">
                     <View className="flex-row items-center justify-between mb-2">
                       <Text className="text-sm font-semibold text-gray-900">Tu progreso</Text>
-                      <Text className="text-sm font-bold text-emerald-600">
+                      <Text className="text-sm font-bold text-primary">
                         {formatProgress(myProgress, selectedChallenge)}
                       </Text>
                     </View>
                     <View className="h-3 bg-gray-200 rounded-full overflow-hidden">
                       <View
-                        className="h-full bg-emerald-500 rounded-full"
+                        className="h-full bg-primary rounded-full"
                         style={{ width: `${Math.min(progressPercentage, 100)}%` }}
                       />
                     </View>
@@ -236,13 +236,13 @@ export default function ChallengesScreen() {
                       <Text className="text-sm font-semibold text-gray-900">
                         Progreso de @{opponent.username}
                       </Text>
-                      <Text className="text-sm font-bold text-blue-600">
+                      <Text className="text-sm font-bold text-primary">
                         {formatProgress(opponentProgress, selectedChallenge)}
                       </Text>
                     </View>
                     <View className="h-3 bg-gray-200 rounded-full overflow-hidden">
                       <View
-                        className="h-full bg-blue-500 rounded-full"
+                        className="h-full bg-primary rounded-full"
                         style={{ width: `${Math.min(opponentPercentage, 100)}%` }}
                       />
                     </View>
@@ -255,11 +255,11 @@ export default function ChallengesScreen() {
                   {selectedChallenge.status === 'completed' && selectedChallenge.winner && (
                     <Card className="p-4 mb-4 bg-amber-50 border-amber-200">
                       <View className="flex-row items-center gap-2">
-                        <Ionicons name="trophy" size={24} color="#F59E0B" />
+                        <Ionicons name="trophy" size={24} color="#FFEA00" />
                         <Text className="text-sm font-semibold text-amber-700">
                           {selectedChallenge.winner === (isChallenger ? selectedChallenge.challengerId._id : selectedChallenge.challengedId._id)
-                            ? '¡Ganaste!'
-                            : `Ganó @${opponent.username}`}
+                            ? 'Â¡Ganaste!'
+                            : `GanÃ³ @${opponent.username}`}
                         </Text>
                       </View>
                     </Card>
@@ -375,7 +375,7 @@ export default function ChallengesScreen() {
             <Ionicons name="flash-off-outline" size={64} color="#D1D5DB" />
             <Text className="text-gray-500 text-lg mt-4">No tienes retos</Text>
             <Text className="text-gray-400 text-sm mt-2">
-              ¡Crea uno y desafía a tus amigos!
+              Â¡Crea uno y desafÃ­a a tus amigos!
             </Text>
           </View>
         )}
@@ -431,9 +431,9 @@ export default function ChallengesScreen() {
 
                     {challenge.status === 'accepted' && challenge.endDate && (
                       <View className="flex-row items-center gap-2 mt-1">
-                        <Ionicons name="time-outline" size={16} color="#10B981" />
-                        <Text className="text-sm text-emerald-600 font-semibold">
-                          {getDaysRemaining(challenge.endDate)} días restantes
+                        <Ionicons name="time-outline" size={16} color="#9D12DE" />
+                        <Text className="text-sm text-primary font-semibold">
+                          {getDaysRemaining(challenge.endDate)} dÃ­as restantes
                         </Text>
                       </View>
                     )}
@@ -449,3 +449,5 @@ export default function ChallengesScreen() {
     </View>
   );
 }
+
+

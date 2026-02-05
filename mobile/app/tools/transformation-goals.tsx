@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -49,7 +49,7 @@ const MOCK_GOAL: BodyTransformationGoal = {
   photoCheckIns: 8,
   weeklyCheckIns: 12,
   status: 'active',
-  notes: 'Objetivo: +0.5kg por semana, proteína 2g/kg',
+  notes: 'Objetivo: +0.5kg por semana, proteÃ­na 2g/kg',
 };
 
 export default function TransformationGoals() {
@@ -97,7 +97,7 @@ export default function TransformationGoals() {
             const newWeight = parseFloat(value || '0');
             if (newWeight > 0) {
               setGoal({ ...goal, currentWeight: newWeight, weeklyCheckIns: goal.weeklyCheckIns + 1 });
-              Alert.alert('Peso Actualizado! ⚖️', `Nuevo peso: ${newWeight}kg`);
+              Alert.alert('Peso Actualizado! âš–ï¸', `Nuevo peso: ${newWeight}kg`);
             }
           },
         },
@@ -110,7 +110,7 @@ export default function TransformationGoals() {
   const addPhotoCheckIn = () => {
     Alert.alert(
       'Foto de Progreso',
-      'Funcionalidad de cámara en desarrollo',
+      'Funcionalidad de cÃ¡mara en desarrollo',
       [
         {
           text: 'OK',
@@ -135,7 +135,7 @@ export default function TransformationGoals() {
               const newMeasurements = [...goal.measurements];
               newMeasurements[index] = { ...measurement, current: newValue };
               setGoal({ ...goal, measurements: newMeasurements });
-              Alert.alert('Medida Actualizada! 📏');
+              Alert.alert('Medida Actualizada! ðŸ“');
             }
           },
         },
@@ -182,7 +182,7 @@ export default function TransformationGoals() {
             </View>
             <View className="bg-white/20 rounded-lg p-3">
               <Text className="text-white font-bold text-lg">
-                {getDaysRemaining()} días restantes
+                {getDaysRemaining()} dÃ­as restantes
               </Text>
               <Text className="text-white opacity-90 text-sm">
                 {getWeeksElapsed()} semanas transcurridas
@@ -196,15 +196,15 @@ export default function TransformationGoals() {
             
             {/* Current vs Target */}
             <View className="flex-row justify-between mb-4">
-              <View className="flex-1 bg-blue-500/10 rounded-lg p-4 mr-2 border border-blue-500/30">
-                <Text className="text-blue-400 text-xs mb-1">Actual</Text>
+              <View className="flex-1 bg-primary/10 rounded-lg p-4 mr-2 border border-primary/30">
+                <Text className="text-primary/80 text-xs mb-1">Actual</Text>
                 <Text className="text-white text-3xl font-bold">{goal.currentWeight}</Text>
-                <Text className="text-blue-300 text-sm">kg</Text>
+                <Text className="text-primary/60 text-sm">kg</Text>
               </View>
-              <View className="flex-1 bg-emerald-500/10 rounded-lg p-4 ml-2 border border-emerald-500/30">
-                <Text className="text-emerald-400 text-xs mb-1">Objetivo</Text>
+              <View className="flex-1 bg-primary/10 rounded-lg p-4 ml-2 border border-primary/30">
+                <Text className="text-primary text-xs mb-1">Objetivo</Text>
                 <Text className="text-white text-3xl font-bold">{goal.targetWeight}</Text>
-                <Text className="text-emerald-300 text-sm">kg</Text>
+                <Text className="text-primary/80 text-sm">kg</Text>
               </View>
             </View>
 
@@ -226,11 +226,11 @@ export default function TransformationGoals() {
             <View className="flex-row gap-2 mb-4">
               <View className="flex-1 bg-zinc-800 rounded-lg p-3">
                 <Text className="text-zinc-400 text-xs mb-1">Cambio Total</Text>
-                <Text className="text-emerald-400 font-bold text-lg">+{getWeightChange()} kg</Text>
+                <Text className="text-primary font-bold text-lg">+{getWeightChange()} kg</Text>
               </View>
               <View className="flex-1 bg-zinc-800 rounded-lg p-3">
                 <Text className="text-zinc-400 text-xs mb-1">Ritmo Semanal</Text>
-                <Text className="text-blue-400 font-bold text-lg">+{getWeeklyRate()} kg/sem</Text>
+                <Text className="text-primary/80 font-bold text-lg">+{getWeeklyRate()} kg/sem</Text>
               </View>
               <View className="flex-1 bg-zinc-800 rounded-lg p-3">
                 <Text className="text-zinc-400 text-xs mb-1">Restante</Text>
@@ -243,7 +243,7 @@ export default function TransformationGoals() {
             {/* Update Button */}
             <TouchableOpacity
               onPress={updateCurrentWeight}
-              className="bg-blue-500 rounded-xl p-4 flex-row items-center justify-center"
+              className="bg-primary rounded-xl p-4 flex-row items-center justify-center"
             >
               <Ionicons name="add-circle" size={20} color="white" />
               <Text className="text-white font-bold ml-2">Actualizar Peso</Text>
@@ -263,7 +263,7 @@ export default function TransformationGoals() {
                 <View className="flex-row items-center justify-between mb-2">
                   <Text className="text-white font-bold">{measurement.bodyPart}</Text>
                   <Text className="text-zinc-400 text-sm">
-                    {measurement.current} → {measurement.target} {measurement.unit}
+                    {measurement.current} â†’ {measurement.target} {measurement.unit}
                   </Text>
                 </View>
                 <View className="h-2 bg-zinc-800 rounded-full overflow-hidden">
@@ -304,7 +304,7 @@ export default function TransformationGoals() {
                 <Text className="text-white font-bold ml-3">Toma fotos cada semana</Text>
               </View>
               <Text className="text-zinc-400 text-sm">
-                Misma pose, misma luz, mismo ángulo. Las fotos &gt; báscula.
+                Misma pose, misma luz, mismo Ã¡ngulo. Las fotos &gt; bÃ¡scula.
               </Text>
             </View>
 
@@ -322,12 +322,12 @@ export default function TransformationGoals() {
             <Text className="text-white font-bold text-lg mb-4">Check-ins Semanales</Text>
             
             <View className="flex-row gap-3 mb-4">
-              <View className="flex-1 bg-emerald-500/10 rounded-lg p-4 border border-emerald-500/30">
-                <Text className="text-emerald-400 text-xs mb-1">Total Check-ins</Text>
+              <View className="flex-1 bg-primary/10 rounded-lg p-4 border border-primary/30">
+                <Text className="text-primary text-xs mb-1">Total Check-ins</Text>
                 <Text className="text-white text-3xl font-bold">{goal.weeklyCheckIns}</Text>
               </View>
-              <View className="flex-1 bg-blue-500/10 rounded-lg p-4 border border-blue-500/30">
-                <Text className="text-blue-400 text-xs mb-1">Consistencia</Text>
+              <View className="flex-1 bg-primary/10 rounded-lg p-4 border border-primary/30">
+                <Text className="text-primary/80 text-xs mb-1">Consistencia</Text>
                 <Text className="text-white text-3xl font-bold">
                   {Math.round((goal.weeklyCheckIns / getWeeksElapsed()) * 100)}%
                 </Text>
@@ -336,10 +336,10 @@ export default function TransformationGoals() {
 
             <View className="bg-zinc-800 rounded-lg p-4">
               <Text className="text-zinc-300 text-sm mb-2">
-                ✓ Mide peso y medidas corporales{'\n'}
-                ✓ Toma fotos de progreso{'\n'}
-                ✓ Evalúa energía y rendimiento{'\n'}
-                ✓ Ajusta plan según resultados
+                âœ“ Mide peso y medidas corporales{'\n'}
+                âœ“ Toma fotos de progreso{'\n'}
+                âœ“ EvalÃºa energÃ­a y rendimiento{'\n'}
+                âœ“ Ajusta plan segÃºn resultados
               </Text>
             </View>
           </View>
@@ -348,7 +348,7 @@ export default function TransformationGoals() {
           {goal.notes && (
             <View className="bg-amber-500/10 rounded-xl p-4 border border-amber-500/30 mb-6">
               <View className="flex-row items-start">
-                <Ionicons name="document-text" size={20} color="#F59E0B" />
+                <Ionicons name="document-text" size={20} color="#FFEA00" />
                 <View className="flex-1 ml-3">
                   <Text className="text-amber-400 font-bold mb-2">Notas del Plan</Text>
                   <Text className="text-amber-300 text-sm">{goal.notes}</Text>
@@ -358,20 +358,20 @@ export default function TransformationGoals() {
           )}
 
           {/* Tips */}
-          <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30 mb-6">
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
             <View className="flex-row items-start">
-              <Ionicons name="bulb" size={20} color="#3B82F6" />
+              <Ionicons name="bulb" size={20} color="#9D12DE" />
               <View className="flex-1 ml-3">
-                <Text className="text-blue-400 font-bold mb-2">
-                  Tips de Transformación
+                <Text className="text-primary/80 font-bold mb-2">
+                  Tips de TransformaciÃ³n
                 </Text>
-                <Text className="text-blue-300 text-sm">
-                  • Sé paciente, 12-16 semanas mínimo{'\n'}
-                  • Fotos semanales son clave{'\n'}
-                  • Ajusta cada 2-3 semanas según progreso{'\n'}
-                  • Duerme 7-9h diarias{'\n'}
-                  • Proteína alta (1.8-2.2g/kg){'\n'}
-                  • Confía en el proceso!
+                <Text className="text-primary/60 text-sm">
+                  â€¢ SÃ© paciente, 12-16 semanas mÃ­nimo{'\n'}
+                  â€¢ Fotos semanales son clave{'\n'}
+                  â€¢ Ajusta cada 2-3 semanas segÃºn progreso{'\n'}
+                  â€¢ Duerme 7-9h diarias{'\n'}
+                  â€¢ ProteÃ­na alta (1.8-2.2g/kg){'\n'}
+                  â€¢ ConfÃ­a en el proceso!
                 </Text>
               </View>
             </View>
@@ -381,3 +381,5 @@ export default function TransformationGoals() {
     </View>
   );
 }
+
+

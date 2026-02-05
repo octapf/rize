@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -35,7 +35,7 @@ interface StrengthStandard {
 const STRENGTH_STANDARDS: StrengthStandard[] = [
   {
     lift: 'Sentadilla',
-    icon: '🏋️',
+    icon: 'ðŸ‹ï¸',
     standards: {
       male: { beginner: 0.75, novice: 1.0, intermediate: 1.5, advanced: 2.0, elite: 2.5 },
       female: { beginner: 0.5, novice: 0.75, intermediate: 1.0, advanced: 1.5, elite: 1.75 },
@@ -43,7 +43,7 @@ const STRENGTH_STANDARDS: StrengthStandard[] = [
   },
   {
     lift: 'Press de Banca',
-    icon: '💪',
+    icon: 'ðŸ’ª',
     standards: {
       male: { beginner: 0.5, novice: 0.75, intermediate: 1.0, advanced: 1.5, elite: 2.0 },
       female: { beginner: 0.3, novice: 0.5, intermediate: 0.75, advanced: 1.0, elite: 1.25 },
@@ -51,7 +51,7 @@ const STRENGTH_STANDARDS: StrengthStandard[] = [
   },
   {
     lift: 'Peso Muerto',
-    icon: '🏋️‍♂️',
+    icon: 'ðŸ‹ï¸â€â™‚ï¸',
     standards: {
       male: { beginner: 1.0, novice: 1.5, intermediate: 2.0, advanced: 2.5, elite: 3.0 },
       female: { beginner: 0.75, novice: 1.0, intermediate: 1.5, advanced: 2.0, elite: 2.5 },
@@ -59,7 +59,7 @@ const STRENGTH_STANDARDS: StrengthStandard[] = [
   },
   {
     lift: 'Press Militar',
-    icon: '🦾',
+    icon: 'ðŸ¦¾',
     standards: {
       male: { beginner: 0.35, novice: 0.5, intermediate: 0.75, advanced: 1.0, elite: 1.35 },
       female: { beginner: 0.2, novice: 0.35, intermediate: 0.5, advanced: 0.75, elite: 1.0 },
@@ -110,7 +110,7 @@ export default function StrengthStandards() {
       novice: 'Novato',
       intermediate: 'Intermedio',
       advanced: 'Avanzado',
-      elite: 'Élite',
+      elite: 'Ã‰lite',
       'N/A': 'Sin Datos',
     };
     return labels[level] || 'N/A';
@@ -173,7 +173,7 @@ export default function StrengthStandards() {
                   Compara Tu Fuerza
                 </Text>
                 <Text className="text-purple-300 text-sm">
-                  Basado en estándares de powerlifting. Los valores son 1RM como ratio de peso corporal.
+                  Basado en estÃ¡ndares de powerlifting. Los valores son 1RM como ratio de peso corporal.
                 </Text>
               </View>
             </View>
@@ -190,7 +190,7 @@ export default function StrengthStandards() {
                 <TouchableOpacity
                   onPress={() => setGender('male')}
                   className={`flex-1 rounded-lg p-3 ${
-                    gender === 'male' ? 'bg-blue-500' : 'bg-zinc-800'
+                    gender === 'male' ? 'bg-primary' : 'bg-zinc-800'
                   }`}
                 >
                   <Text className={`text-center font-bold ${
@@ -278,10 +278,10 @@ export default function StrengthStandards() {
 
                 {/* Progress to Next */}
                 {progress && (
-                  <View className="bg-emerald-500/10 rounded-lg p-3 border border-emerald-500/30">
+                  <View className="bg-primary/10 rounded-lg p-3 border border-primary/30">
                     <View className="flex-row items-center">
-                      <Ionicons name="arrow-up" size={16} color="#10B981" />
-                      <Text className="text-emerald-400 text-sm ml-2">
+                      <Ionicons name="arrow-up" size={16} color="#9D12DE" />
+                      <Text className="text-primary text-sm ml-2">
                         +{progress.needed}kg para {progress.next}
                       </Text>
                     </View>
@@ -290,7 +290,7 @@ export default function StrengthStandards() {
 
                 {/* Standards Table */}
                 <View className="mt-4">
-                  <Text className="text-zinc-400 text-xs mb-2">ESTÁNDARES (KG)</Text>
+                  <Text className="text-zinc-400 text-xs mb-2">ESTÃNDARES (KG)</Text>
                   <View className="bg-zinc-800 rounded-lg overflow-hidden">
                     {['beginner', 'novice', 'intermediate', 'advanced', 'elite'].map((lvl, index) => {
                       const standardValue = standard.standards[gender][lvl as keyof typeof standard.standards.male];
@@ -311,7 +311,7 @@ export default function StrengthStandards() {
                             <Text className="text-zinc-400 text-xs mr-2">{standardValue}x</Text>
                             <Text className="text-white font-bold">{weightKg} kg</Text>
                             {level === lvl && (
-                              <Ionicons name="checkmark-circle" size={16} color="#10B981" className="ml-2" />
+                              <Ionicons name="checkmark-circle" size={16} color="#9D12DE" className="ml-2" />
                             )}
                           </View>
                         </View>
@@ -348,18 +348,18 @@ export default function StrengthStandards() {
           </View>
 
           {/* Tips */}
-          <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30 mb-6">
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
             <View className="flex-row items-start">
-              <Ionicons name="information-circle" size={20} color="#3B82F6" />
+              <Ionicons name="information-circle" size={20} color="#9D12DE" />
               <View className="flex-1 ml-3">
-                <Text className="text-blue-400 font-bold mb-2">
+                <Text className="text-primary/80 font-bold mb-2">
                   Notas Importantes
                 </Text>
-                <Text className="text-blue-300 text-sm">
-                  • Estos son estándares generales{'\n'}
-                  • Varían según edad y experiencia{'\n'}
-                  • Peso corporal influye (más pesado = ratios más bajos típicamente){'\n'}
-                  • Enfócate en progreso personal, no solo comparaciones
+                <Text className="text-primary/60 text-sm">
+                  â€¢ Estos son estÃ¡ndares generales{'\n'}
+                  â€¢ VarÃ­an segÃºn edad y experiencia{'\n'}
+                  â€¢ Peso corporal influye (mÃ¡s pesado = ratios mÃ¡s bajos tÃ­picamente){'\n'}
+                  â€¢ EnfÃ³cate en progreso personal, no solo comparaciones
                 </Text>
               </View>
             </View>
@@ -369,3 +369,4 @@ export default function StrengthStandards() {
     </View>
   );
 }
+

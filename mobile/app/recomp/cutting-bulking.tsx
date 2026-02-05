@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -233,24 +233,24 @@ export default function CuttingBulking() {
           {currentPhase.strategies.map((strategy, idx) => (
             <View key={idx} className="bg-zinc-900 rounded-xl p-4 mb-3 border border-zinc-800">
               <Text className="text-white font-bold text-lg mb-2">{strategy.title}</Text>
-              <View className="bg-blue-500/10 rounded-lg p-3 mb-3 border border-blue-500/30">
+              <View className="bg-primary/10 rounded-lg p-3 mb-3 border border-primary/30">
                 <View className="flex-row justify-between mb-2">
-                  <Text className="text-blue-400">Calorie Adjustment</Text>
+                  <Text className="text-primary/80">Calorie Adjustment</Text>
                   <Text className="text-white font-bold">{strategy.surplus || strategy.deficit}</Text>
                 </View>
                 <View className="flex-row justify-between mb-2">
-                  <Text className="text-blue-400">Duration</Text>
+                  <Text className="text-primary/80">Duration</Text>
                   <Text className="text-white font-bold">{strategy.duration}</Text>
                 </View>
                 <View className="flex-row justify-between">
-                  <Text className="text-blue-400">Expected Rate</Text>
+                  <Text className="text-primary/80">Expected Rate</Text>
                   <Text className="text-white font-bold">{strategy.muscleGain || strategy.fatLoss}</Text>
                 </View>
               </View>
               <View className="flex-row gap-2">
-                <View className="flex-1 bg-emerald-500/10 rounded-lg p-2 border border-emerald-500/30">
-                  <Text className="text-emerald-400 text-xs font-bold mb-1">PRO</Text>
-                  <Text className="text-emerald-300 text-xs">{strategy.pros}</Text>
+                <View className="flex-1 bg-primary/10 rounded-lg p-2 border border-primary/30">
+                  <Text className="text-primary text-xs font-bold mb-1">PRO</Text>
+                  <Text className="text-primary/80 text-xs">{strategy.pros}</Text>
                 </View>
                 <View className="flex-1 bg-red-500/10 rounded-lg p-2 border border-red-500/30">
                   <Text className="text-red-400 text-xs font-bold mb-1">CON</Text>
@@ -272,7 +272,7 @@ export default function CuttingBulking() {
               <View key={idx} className="bg-zinc-800 rounded-lg p-3 mb-2">
                 <View className="flex-row justify-between items-center mb-1">
                   <Text className="text-white font-bold">{day.day}</Text>
-                  <Text className="text-blue-400 font-bold">{day.calories} cal</Text>
+                  <Text className="text-primary/80 font-bold">{day.calories} cal</Text>
                 </View>
                 <View className="flex-row items-center justify-between">
                   <View className="flex-row items-center">
@@ -292,12 +292,12 @@ export default function CuttingBulking() {
           <View className="bg-purple-500/10 rounded-xl p-4 border border-purple-500/30 mb-6">
             <Text className="text-purple-400 font-bold mb-2">Cycling Tips</Text>
             <Text className="text-purple-300 text-sm">
-              • Bulk when lean (12-15% BF men){'\n'}
-              • Cut when necessary (18-20% BF men){'\n'}
-              • Diet breaks prevent metabolic adaptation{'\n'}
-              • Track weekly averages, not daily{'\n'}
-              • Adjust based on 2-week trends{'\n'}
-              • Patience: cycles take 3-6 months
+              â€¢ Bulk when lean (12-15% BF men){'\n'}
+              â€¢ Cut when necessary (18-20% BF men){'\n'}
+              â€¢ Diet breaks prevent metabolic adaptation{'\n'}
+              â€¢ Track weekly averages, not daily{'\n'}
+              â€¢ Adjust based on 2-week trends{'\n'}
+              â€¢ Patience: cycles take 3-6 months
             </Text>
           </View>
         </View>
@@ -305,3 +305,5 @@ export default function CuttingBulking() {
     </View>
   );
 }
+
+

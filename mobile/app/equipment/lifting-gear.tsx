@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -372,8 +372,8 @@ export default function EquipmentGuide() {
 
   const getColorClass = (color: string) => {
     const colors: { [key: string]: string } = {
-      emerald: 'bg-emerald-500',
-      blue: 'bg-blue-500',
+      emerald: 'bg-primary',
+      blue: 'bg-primary',
       purple: 'bg-purple-500',
       red: 'bg-red-500',
     };
@@ -395,7 +395,7 @@ export default function EquipmentGuide() {
 
       <ScrollView className="flex-1" showsVerticalScrollIndicator={false}>
         <View className="px-6 pt-6">
-          <View className="bg-gradient-to-r from-emerald-500 to-blue-500 rounded-xl p-6 mb-6">
+          <View className="bg-gradient-to-r from-primary to-[#7D0EBE] rounded-xl p-6 mb-6">
             <Text className="text-white text-2xl font-bold mb-2">Gear Up Smart</Text>
             <Text className="text-white opacity-90">
               Essential equipment guide for powerlifters
@@ -448,7 +448,7 @@ export default function EquipmentGuide() {
                   <Text className="text-white font-bold mb-2">Why use it:</Text>
                   {item.why.map((reason, rIdx) => (
                     <Text key={rIdx} className="text-zinc-300 text-sm mb-1">
-                      • {reason}
+                      â€¢ {reason}
                     </Text>
                   ))}
                 </View>
@@ -458,7 +458,7 @@ export default function EquipmentGuide() {
                     <Text className="text-white font-bold mb-3">Types:</Text>
                     {item.types.map((type, tIdx) => (
                       <View key={tIdx} className="bg-zinc-800 rounded-xl p-4 mb-3 last:mb-0">
-                        <Text className="text-emerald-400 font-bold mb-2">{type.type}</Text>
+                        <Text className="text-primary font-bold mb-2">{type.type}</Text>
                         <Text className="text-zinc-300 text-sm mb-1">
                           <Text className="text-zinc-400">Width:</Text> {type.width}
                         </Text>
@@ -474,9 +474,9 @@ export default function EquipmentGuide() {
                 )}
 
                 {item.sizing && (
-                  <View className="bg-blue-500/10 rounded-xl p-3 border border-blue-500/30 mb-4">
-                    <Text className="text-blue-400 font-bold text-sm mb-1">Sizing:</Text>
-                    <Text className="text-blue-300 text-sm">{item.sizing}</Text>
+                  <View className="bg-primary/10 rounded-xl p-3 border border-primary/30 mb-4">
+                    <Text className="text-primary/80 font-bold text-sm mb-1">Sizing:</Text>
+                    <Text className="text-primary/60 text-sm">{item.sizing}</Text>
                   </View>
                 )}
 
@@ -485,16 +485,16 @@ export default function EquipmentGuide() {
                     <Text className="text-white font-bold mb-2">How to use:</Text>
                     {item.usage.map((use, uIdx) => (
                       <Text key={uIdx} className="text-zinc-300 text-sm mb-1">
-                        ✓ {use}
+                        âœ“ {use}
                       </Text>
                     ))}
                   </View>
                 )}
 
                 {item.recommended && (
-                  <View className="bg-emerald-500/10 rounded-xl p-3 border border-emerald-500/30">
-                    <Text className="text-emerald-400 font-bold text-sm mb-1">Recommended:</Text>
-                    <Text className="text-emerald-300 text-sm">{item.recommended}</Text>
+                  <View className="bg-primary/10 rounded-xl p-3 border border-primary/30">
+                    <Text className="text-primary font-bold text-sm mb-1">Recommended:</Text>
+                    <Text className="text-primary/80 text-sm">{item.recommended}</Text>
                   </View>
                 )}
               </View>
@@ -515,14 +515,14 @@ export default function EquipmentGuide() {
                   <Text className="text-red-400 font-bold mb-2">Why avoid:</Text>
                   {item.why.map((reason, rIdx) => (
                     <Text key={rIdx} className="text-zinc-300 text-sm mb-1">
-                      ✗ {reason}
+                      âœ— {reason}
                     </Text>
                   ))}
                 </View>
 
-                <View className="bg-emerald-500/10 rounded-xl p-3 border border-emerald-500/30">
-                  <Text className="text-emerald-400 font-bold text-sm mb-1">Use instead:</Text>
-                  <Text className="text-emerald-300 text-sm">{item.alternative}</Text>
+                <View className="bg-primary/10 rounded-xl p-3 border border-primary/30">
+                  <Text className="text-primary font-bold text-sm mb-1">Use instead:</Text>
+                  <Text className="text-primary/80 text-sm">{item.alternative}</Text>
                 </View>
               </View>
             ))
@@ -531,19 +531,19 @@ export default function EquipmentGuide() {
           <View className="bg-gradient-to-r from-amber-500/20 to-orange-500/20 rounded-xl p-4 border border-amber-500/30 mb-6">
             <Text className="text-amber-400 font-bold mb-2">Equipment Philosophy</Text>
             <Text className="text-amber-300 text-sm mb-2">
-              • Equipment should enhance training, not replace skill
+              â€¢ Equipment should enhance training, not replace skill
             </Text>
             <Text className="text-amber-300 text-sm mb-2">
-              • Start minimal - belt and shoes are enough
+              â€¢ Start minimal - belt and shoes are enough
             </Text>
             <Text className="text-amber-300 text-sm mb-2">
-              • Save equipment for heavy sets (80%+ 1RM)
+              â€¢ Save equipment for heavy sets (80%+ 1RM)
             </Text>
             <Text className="text-amber-300 text-sm mb-2">
-              • Build raw strength first before relying on gear
+              â€¢ Build raw strength first before relying on gear
             </Text>
             <Text className="text-amber-300 text-sm">
-              • Quality over quantity - buy once, cry once
+              â€¢ Quality over quantity - buy once, cry once
             </Text>
           </View>
         </View>
@@ -551,3 +551,6 @@ export default function EquipmentGuide() {
     </View>
   );
 }
+
+
+

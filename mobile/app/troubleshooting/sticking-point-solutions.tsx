@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -450,9 +450,9 @@ export default function StickingPointSolutions() {
 
   const getColorClass = (color: string) => {
     const colors: { [key: string]: string } = {
-      blue: 'bg-blue-500',
+      blue: 'bg-primary',
       red: 'bg-red-500',
-      emerald: 'bg-emerald-500',
+      emerald: 'bg-primary',
     };
     return colors[color];
   };
@@ -515,27 +515,27 @@ export default function StickingPointSolutions() {
               <View className="bg-red-500/10 rounded-xl p-4 border border-red-500/30 mb-4">
                 <Text className="text-red-400 font-bold mb-2">Why You're Stuck:</Text>
                 {point.why_stuck.map((reason, rIdx) => (
-                  <Text key={rIdx} className="text-red-300 text-sm mb-1">• {reason}</Text>
+                  <Text key={rIdx} className="text-red-300 text-sm mb-1">â€¢ {reason}</Text>
                 ))}
               </View>
 
               <View className="mb-4">
-                <Text className="text-emerald-400 font-bold text-lg mb-3">Exercises to Fix It:</Text>
+                <Text className="text-primary font-bold text-lg mb-3">Exercises to Fix It:</Text>
                 {point.exercises.map((ex, eIdx) => (
-                  <View key={eIdx} className="bg-emerald-500/10 rounded-xl p-4 border border-emerald-500/30 mb-3 last:mb-0">
-                    <Text className="text-emerald-400 font-bold mb-2">{ex.name}</Text>
+                  <View key={eIdx} className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-3 last:mb-0">
+                    <Text className="text-primary font-bold mb-2">{ex.name}</Text>
                     <Text className="text-zinc-300 text-sm mb-2">{ex.description}</Text>
                     
                     <View className="flex-row items-center mb-2">
-                      <Ionicons name="fitness" size={14} color="#10b981" />
-                      <Text className="text-emerald-400 text-sm ml-2 font-bold">
+                      <Ionicons name="fitness" size={14} color="#9D12DE" />
+                      <Text className="text-primary text-sm ml-2 font-bold">
                         {ex.sets_reps}
                       </Text>
                     </View>
 
-                    <View className="bg-blue-500/10 rounded-xl p-3 border border-blue-500/30">
-                      <Text className="text-blue-400 font-bold text-sm mb-1">Why it works:</Text>
-                      <Text className="text-blue-300 text-sm">{ex.why}</Text>
+                    <View className="bg-primary/10 rounded-xl p-3 border border-primary/30">
+                      <Text className="text-primary/80 font-bold text-sm mb-1">Why it works:</Text>
+                      <Text className="text-primary/60 text-sm">{ex.why}</Text>
                     </View>
                   </View>
                 ))}
@@ -544,7 +544,7 @@ export default function StickingPointSolutions() {
               <View className="bg-purple-500/10 rounded-xl p-4 border border-purple-500/30">
                 <Text className="text-purple-400 font-bold mb-2">Technique Fixes:</Text>
                 {point.technique_fixes.map((fix, fIdx) => (
-                  <Text key={fIdx} className="text-purple-300 text-sm mb-1">✓ {fix}</Text>
+                  <Text key={fIdx} className="text-purple-300 text-sm mb-1">âœ“ {fix}</Text>
                 ))}
               </View>
             </View>
@@ -553,19 +553,19 @@ export default function StickingPointSolutions() {
           <View className="bg-gradient-to-r from-amber-500/20 to-orange-500/20 rounded-xl p-5 border border-amber-500/30 mb-6">
             <Text className="text-amber-400 font-bold text-lg mb-3">Programming Tips</Text>
             <Text className="text-amber-300 text-sm mb-2">
-              • Pick 1-2 exercises for your specific weak point
+              â€¢ Pick 1-2 exercises for your specific weak point
             </Text>
             <Text className="text-amber-300 text-sm mb-2">
-              • Do them 2x per week after main work
+              â€¢ Do them 2x per week after main work
             </Text>
             <Text className="text-amber-300 text-sm mb-2">
-              • Give it 4-6 weeks to work - be patient
+              â€¢ Give it 4-6 weeks to work - be patient
             </Text>
             <Text className="text-amber-300 text-sm mb-2">
-              • Film to confirm weak point is actually weak point
+              â€¢ Film to confirm weak point is actually weak point
             </Text>
             <Text className="text-amber-300 text-sm">
-              • Once fixed, maintain with lighter work
+              â€¢ Once fixed, maintain with lighter work
             </Text>
           </View>
         </View>
@@ -573,3 +573,4 @@ export default function StickingPointSolutions() {
     </View>
   );
 }
+

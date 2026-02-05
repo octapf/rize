@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -57,7 +57,7 @@ const TODAY_DATA: DailyMacros = {
     {
       id: '1',
       meal: 'Desayuno',
-      food: 'Avena con Proteína',
+      food: 'Avena con ProteÃ­na',
       portion: '100g avena + 1 scoop whey',
       calories: 480,
       protein: 42,
@@ -79,8 +79,8 @@ const TODAY_DATA: DailyMacros = {
     {
       id: '3',
       meal: 'Snack Pre-Entreno',
-      food: 'Plátano + Mantequilla Maní',
-      portion: '1 plátano + 20g PB',
+      food: 'PlÃ¡tano + Mantequilla ManÃ­',
+      portion: '1 plÃ¡tano + 20g PB',
       calories: 240,
       protein: 6,
       carbs: 38,
@@ -123,7 +123,7 @@ const TODAY_DATA: DailyMacros = {
     {
       id: '7',
       meal: 'Snack Tarde',
-      food: 'Batido Proteína',
+      food: 'Batido ProteÃ­na',
       portion: '1 scoop + agua',
       calories: 120,
       protein: 25,
@@ -134,7 +134,7 @@ const TODAY_DATA: DailyMacros = {
     {
       id: '8',
       meal: 'Cena',
-      food: 'Salmón a la Plancha',
+      food: 'SalmÃ³n a la Plancha',
       portion: '200g',
       calories: 410,
       protein: 46,
@@ -183,9 +183,9 @@ export default function MacroTracker() {
 
   const getProgressColor = (current: number, goal: number) => {
     const percentage = (current / goal) * 100;
-    if (percentage >= 90 && percentage <= 110) return '#10B981';
-    if (percentage >= 80 && percentage < 90) return '#3B82F6';
-    if (percentage < 80) return '#F59E0B';
+    if (percentage >= 90 && percentage <= 110) return '#9D12DE';
+    if (percentage >= 80 && percentage < 90) return '#9D12DE';
+    if (percentage < 80) return '#FFEA00';
     return '#EF4444';
   };
 
@@ -195,7 +195,7 @@ export default function MacroTracker() {
       'Busca en nuestra base de datos o crea personalizado',
       [
         { text: 'Buscar Alimento' },
-        { text: 'Escanear Código de Barras' },
+        { text: 'Escanear CÃ³digo de Barras' },
         { text: 'Manual' },
         { text: 'Cancelar', style: 'cancel' },
       ]
@@ -207,7 +207,7 @@ export default function MacroTracker() {
       'Editar Entrada',
       `${entry.food} - ${entry.portion}`,
       [
-        { text: 'Editar Porción' },
+        { text: 'Editar PorciÃ³n' },
         { text: 'Duplicar' },
         { text: 'Eliminar', style: 'destructive' },
         { text: 'Cancelar', style: 'cancel' },
@@ -242,10 +242,10 @@ export default function MacroTracker() {
         </View>
 
         {/* Quick Stats */}
-        <View className="bg-gradient-to-br from-emerald-500 to-blue-500 rounded-xl p-4 mb-4">
+        <View className="bg-gradient-to-br from-primary to-[#7D0EBE] rounded-xl p-4 mb-4">
           <View className="flex-row items-center justify-between mb-3">
             <View>
-              <Text className="text-white/80 text-sm mb-1">Calorías Hoy</Text>
+              <Text className="text-white/80 text-sm mb-1">CalorÃ­as Hoy</Text>
               <Text className="text-white font-bold text-4xl">
                 {TODAY_DATA.totals.calories}
               </Text>
@@ -277,7 +277,7 @@ export default function MacroTracker() {
           {/* Protein */}
           <View className="flex-1 bg-red-500/20 rounded-lg p-3 border border-red-500/30">
             <View className="flex-row items-center justify-between mb-2">
-              <Text className="text-red-400 font-bold text-xs">PROTEÍNA</Text>
+              <Text className="text-red-400 font-bold text-xs">PROTEÃNA</Text>
               <Ionicons name="flame" size={14} color="#EF4444" />
             </View>
             <Text className="text-white font-bold text-2xl mb-1">
@@ -298,7 +298,7 @@ export default function MacroTracker() {
           <View className="flex-1 bg-amber-500/20 rounded-lg p-3 border border-amber-500/30">
             <View className="flex-row items-center justify-between mb-2">
               <Text className="text-amber-400 font-bold text-xs">CARBOS</Text>
-              <Ionicons name="nutrition" size={14} color="#F59E0B" />
+              <Ionicons name="nutrition" size={14} color="#FFEA00" />
             </View>
             <Text className="text-white font-bold text-2xl mb-1">
               {TODAY_DATA.totals.carbs}g
@@ -315,21 +315,21 @@ export default function MacroTracker() {
           </View>
 
           {/* Fats */}
-          <View className="flex-1 bg-blue-500/20 rounded-lg p-3 border border-blue-500/30">
+          <View className="flex-1 bg-primary/20 rounded-lg p-3 border border-primary/30">
             <View className="flex-row items-center justify-between mb-2">
-              <Text className="text-blue-400 font-bold text-xs">GRASAS</Text>
-              <Ionicons name="water" size={14} color="#3B82F6" />
+              <Text className="text-primary/80 font-bold text-xs">GRASAS</Text>
+              <Ionicons name="water" size={14} color="#9D12DE" />
             </View>
             <Text className="text-white font-bold text-2xl mb-1">
               {TODAY_DATA.totals.fats}g
             </Text>
             <View className="bg-blue-900/30 h-1.5 rounded-full overflow-hidden">
               <View
-                className="h-full bg-blue-500 rounded-full"
+                className="h-full bg-primary rounded-full"
                 style={{ width: `${calculateProgress(TODAY_DATA.totals.fats, TODAY_DATA.goals.fats)}%` }}
               />
             </View>
-            <Text className="text-blue-400 text-xs mt-1">
+            <Text className="text-primary/80 text-xs mt-1">
               {TODAY_DATA.goals.fats}g meta
             </Text>
           </View>
@@ -343,7 +343,7 @@ export default function MacroTracker() {
               onPress={() => setActiveTab(tab.id as any)}
               className={`flex-1 flex-row items-center justify-center px-4 py-2 rounded-lg ${
                 activeTab === tab.id
-                  ? 'bg-emerald-500'
+                  ? 'bg-primary'
                   : 'bg-zinc-900 border border-zinc-800'
               }`}
             >
@@ -373,7 +373,7 @@ export default function MacroTracker() {
               </Text>
               <TouchableOpacity
                 onPress={addFood}
-                className="bg-emerald-500 rounded-lg px-4 py-2"
+                className="bg-primary rounded-lg px-4 py-2"
               >
                 <View className="flex-row items-center">
                   <Ionicons name="add" size={18} color="white" />
@@ -399,7 +399,7 @@ export default function MacroTracker() {
                     <View>
                       <Text className="text-white font-bold text-lg">{meal}</Text>
                       <Text className="text-zinc-400 text-sm">
-                        {mealTotals.calories} kcal • {mealTotals.protein}P {mealTotals.carbs}C{' '}
+                        {mealTotals.calories} kcal â€¢ {mealTotals.protein}P {mealTotals.carbs}C{' '}
                         {mealTotals.fats}F
                       </Text>
                     </View>
@@ -434,8 +434,8 @@ export default function MacroTracker() {
                             {entry.carbs}g C
                           </Text>
                         </View>
-                        <View className="bg-blue-500/20 px-3 py-1 rounded-full">
-                          <Text className="text-blue-400 text-xs font-bold">
+                        <View className="bg-primary/20 px-3 py-1 rounded-full">
+                          <Text className="text-primary/80 text-xs font-bold">
                             {entry.fats}g F
                           </Text>
                         </View>
@@ -463,12 +463,12 @@ export default function MacroTracker() {
 
             <TouchableOpacity
               onPress={addFood}
-              className="bg-emerald-500 rounded-xl p-4 mb-3"
+              className="bg-primary rounded-xl p-4 mb-3"
             >
               <View className="flex-row items-center justify-center">
                 <Ionicons name="barcode" size={20} color="white" />
                 <Text className="text-white font-bold ml-2">
-                  Escanear Código de Barras
+                  Escanear CÃ³digo de Barras
                 </Text>
               </View>
             </TouchableOpacity>
@@ -485,14 +485,14 @@ export default function MacroTracker() {
         )}
 
         <View className="px-6 pb-6 pt-4">
-          <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30">
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30">
             <View className="flex-row items-start">
-              <Ionicons name="information-circle" size={20} color="#3B82F6" />
+              <Ionicons name="information-circle" size={20} color="#9D12DE" />
               <View className="flex-1 ml-3">
-                <Text className="text-blue-400 font-bold mb-2">
+                <Text className="text-primary/80 font-bold mb-2">
                   Tracking Preciso
                 </Text>
-                <Text className="text-blue-300 text-sm">
+                <Text className="text-primary/60 text-sm">
                   Usa una balanza digital para pesar alimentos y obtener macros precisos. Mide alimentos crudos para mayor exactitud.
                 </Text>
               </View>
@@ -503,3 +503,5 @@ export default function MacroTracker() {
     </View>
   );
 }
+
+

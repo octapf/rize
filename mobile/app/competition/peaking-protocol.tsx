@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -213,9 +213,9 @@ export default function PeakingProtocol() {
   const currentWeek = peakingData[selectedWeek as keyof typeof peakingData];
 
   const getIntensityColor = (intensity: string) => {
-    if (intensity.includes('60-70') || intensity.includes('50-60')) return 'text-emerald-400';
+    if (intensity.includes('60-70') || intensity.includes('50-60')) return 'text-primary';
     if (intensity.includes('80-90')) return 'text-amber-400';
-    return 'text-blue-400';
+    return 'text-primary/80';
   };
 
   return (
@@ -321,9 +321,9 @@ export default function PeakingProtocol() {
                 </View>
               ))}
 
-              <View className="bg-blue-500/10 rounded-xl p-3 border border-blue-500/30">
-                <Text className="text-blue-400 font-bold text-sm mb-1">Notes:</Text>
-                <Text className="text-blue-300 text-sm">{day.notes}</Text>
+              <View className="bg-primary/10 rounded-xl p-3 border border-primary/30">
+                <Text className="text-primary/80 font-bold text-sm mb-1">Notes:</Text>
+                <Text className="text-primary/60 text-sm">{day.notes}</Text>
               </View>
             </View>
           ))}
@@ -332,7 +332,7 @@ export default function PeakingProtocol() {
             <Text className="text-white font-bold text-lg mb-4">Week Goals:</Text>
             {currentWeek.goals.map((goal, idx) => (
               <Text key={idx} className="text-zinc-300 mb-2 last:mb-0">
-                ✓ {goal}
+                âœ“ {goal}
               </Text>
             ))}
           </View>
@@ -340,37 +340,37 @@ export default function PeakingProtocol() {
           <View className="bg-gradient-to-r from-red-500/20 to-purple-500/20 rounded-xl p-4 border border-red-500/30 mb-6">
             <Text className="text-red-400 font-bold mb-2">Critical Peak Principles</Text>
             <Text className="text-red-300 text-sm mb-2">
-              • Deload hard week 4 - let fatigue dissipate completely
+              â€¢ Deload hard week 4 - let fatigue dissipate completely
             </Text>
             <Text className="text-red-300 text-sm mb-2">
-              • Week 3 test openers - should feel confident and fast
+              â€¢ Week 3 test openers - should feel confident and fast
             </Text>
             <Text className="text-red-300 text-sm mb-2">
-              • Week 2 is LIGHT - resist urge to "do more"
+              â€¢ Week 2 is LIGHT - resist urge to "do more"
             </Text>
             <Text className="text-red-300 text-sm mb-2">
-              • Meet week do almost nothing - trust the process
+              â€¢ Meet week do almost nothing - trust the process
             </Text>
             <Text className="text-red-300 text-sm">
-              • Sleep 8+ hours every night - this is when strength peaks
+              â€¢ Sleep 8+ hours every night - this is when strength peaks
             </Text>
           </View>
 
-          <View className="bg-emerald-500/10 rounded-xl p-4 border border-emerald-500/30 mb-6">
-            <Text className="text-emerald-400 font-bold mb-2">Supercompensation Science</Text>
-            <Text className="text-emerald-300 text-sm mb-2">
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
+            <Text className="text-primary font-bold mb-2">Supercompensation Science</Text>
+            <Text className="text-primary/80 text-sm mb-2">
               Training creates fatigue that masks your true strength. The peak removes fatigue so your adaptation can express itself.
             </Text>
-            <Text className="text-emerald-300 text-sm mb-2">
+            <Text className="text-primary/80 text-sm mb-2">
               Week 4: Fatigue drops rapidly, fitness maintained
             </Text>
-            <Text className="text-emerald-300 text-sm mb-2">
+            <Text className="text-primary/80 text-sm mb-2">
               Week 3: Fatigue mostly gone, test openers
             </Text>
-            <Text className="text-emerald-300 text-sm mb-2">
+            <Text className="text-primary/80 text-sm mb-2">
               Week 2-1: Complete freshness, peak strength emerges
             </Text>
-            <Text className="text-emerald-300 text-sm">
+            <Text className="text-primary/80 text-sm">
               Meet Day: Maximum expression of your training!
             </Text>
           </View>
@@ -379,3 +379,5 @@ export default function PeakingProtocol() {
     </View>
   );
 }
+
+

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -18,9 +18,9 @@ const rarityColors = {
     text: 'text-gray-700',
   },
   rare: {
-    bg: 'from-blue-400 to-blue-600',
-    border: 'border-blue-400',
-    text: 'text-blue-700',
+    bg: 'from-primary to-[#7D0EBE]',
+    border: 'border-primary',
+    text: 'text-primary',
   },
   epic: {
     bg: 'from-purple-400 to-purple-600',
@@ -55,7 +55,7 @@ export default function AchievementsScreen() {
   if (isLoading) {
     return (
       <View className="flex-1 bg-gray-50 items-center justify-center">
-        <ActivityIndicator size="large" color="#10B981" />
+        <ActivityIndicator size="large" color="#9D12DE" />
       </View>
     );
   }
@@ -81,9 +81,9 @@ export default function AchievementsScreen() {
   return (
     <View className="flex-1 bg-gray-50">
       {/* Header */}
-      <LinearGradient colors={['#10B981', '#059669']} className="px-6 pt-12 pb-6">
+      <LinearGradient colors={['#9D12DE', '#7C3AED']} className="px-6 pt-12 pb-6">
         <Text className="text-3xl font-bold text-white mb-2">Logros</Text>
-        <Text className="text-emerald-100 mb-4">
+        <Text className="text-primary/50 mb-4">
           {totalUnlocked}/{totalAchievements} desbloqueados
         </Text>
 
@@ -109,7 +109,7 @@ export default function AchievementsScreen() {
           >
             <Text
               className={`text-center font-semibold ${
-                filter === 'all' ? 'text-emerald-600' : 'text-white'
+                filter === 'all' ? 'text-primary' : 'text-white'
               }`}
             >
               Todos
@@ -123,7 +123,7 @@ export default function AchievementsScreen() {
           >
             <Text
               className={`text-center font-semibold ${
-                filter === 'unlocked' ? 'text-emerald-600' : 'text-white'
+                filter === 'unlocked' ? 'text-primary' : 'text-white'
               }`}
             >
               Desbloqueados
@@ -137,7 +137,7 @@ export default function AchievementsScreen() {
           >
             <Text
               className={`text-center font-semibold ${
-                filter === 'locked' ? 'text-emerald-600' : 'text-white'
+                filter === 'locked' ? 'text-primary' : 'text-white'
               }`}
             >
               Bloqueados
@@ -187,7 +187,7 @@ export default function AchievementsScreen() {
                               achievement.rarity === 'common'
                                 ? ['#9CA3AF', '#6B7280']
                                 : achievement.rarity === 'rare'
-                                ? ['#60A5FA', '#2563EB']
+                                ? ['#C084FC', '#7C3AED']
                                 : achievement.rarity === 'epic'
                                 ? ['#A78BFA', '#7C3AED']
                                 : ['#FBBF24', '#F97316']
@@ -231,7 +231,7 @@ export default function AchievementsScreen() {
                               achievement.rarity === 'common'
                                 ? 'bg-gray-100'
                                 : achievement.rarity === 'rare'
-                                ? 'bg-blue-100'
+                                ? 'bg-primary/10'
                                 : achievement.rarity === 'epic'
                                 ? 'bg-purple-100'
                                 : 'bg-yellow-100'
@@ -241,16 +241,16 @@ export default function AchievementsScreen() {
                               className={`text-xs font-semibold ${colors.text}`}
                             >
                               {achievement.rarity === 'common'
-                                ? 'Común'
+                                ? 'ComÃºn'
                                 : achievement.rarity === 'rare'
                                 ? 'Raro'
                                 : achievement.rarity === 'epic'
-                                ? 'Épico'
+                                ? 'Ã‰pico'
                                 : 'Legendario'}
                             </Text>
                           </View>
-                          <View className="bg-emerald-100 px-2 py-1 rounded-full">
-                            <Text className="text-xs font-semibold text-emerald-700">
+                          <View className="bg-primary/10 px-2 py-1 rounded-full">
+                            <Text className="text-xs font-semibold text-primary">
                               +{achievement.xpReward} XP
                             </Text>
                           </View>
@@ -269,7 +269,7 @@ export default function AchievementsScreen() {
                             </View>
                             <View className="h-2 bg-gray-200 rounded-full overflow-hidden">
                               <View
-                                className="h-full bg-emerald-500 rounded-full"
+                                className="h-full bg-primary rounded-full"
                                 style={{
                                   width: `${achievement.percentage || 0}%`,
                                 }}
@@ -300,3 +300,5 @@ export default function AchievementsScreen() {
     </View>
   );
 }
+
+

@@ -85,17 +85,17 @@ export default function ExerciseDetailScreen() {
 
   const getDifficultyColor = (difficulty: string) => {
     switch (difficulty.toLowerCase()) {
-      case 'principiante': return '#10B981';
-      case 'intermedio': return '#F59E0B';
+      case 'principiante': return '#9D12DE';
+      case 'intermedio': return '#FFEA00';
       case 'avanzado': return '#EF4444';
-      default: return '#6B7280';
+      default: return '#9D12DE';
     }
   };
 
   return (
-    <View className="flex-1 bg-gray-50">
+    <View className="flex-1 bg-background">
       {/* Header */}
-      <LinearGradient colors={['#10B981', '#059669']} className="px-6 pt-12 pb-6">
+      <LinearGradient colors={['#9D12DE', '#7D0EBE']} className="px-6 pt-12 pb-6">
         <View className="flex-row items-center justify-between mb-4">
           <TouchableOpacity onPress={() => router.back()} className="p-2">
             <Ionicons name="arrow-back" size={28} color="white" />
@@ -130,10 +130,10 @@ export default function ExerciseDetailScreen() {
 
         <TouchableOpacity
           onPress={handleAddToWorkout}
-          className="bg-white py-3 rounded-lg flex-row items-center justify-center gap-2"
+          className="bg-[#2A2A2A] py-3 rounded-lg flex-row items-center justify-center gap-2"
         >
-          <Ionicons name="add-circle" size={24} color="#10B981" />
-          <Text className="text-emerald-600 font-bold text-base">
+          <Ionicons name="add-circle" size={24} color="#FFEA00" />
+          <Text className="text-highlight font-bold text-base">
             Añadir a Entrenamiento
           </Text>
         </TouchableOpacity>
@@ -169,7 +169,7 @@ export default function ExerciseDetailScreen() {
               <View className="gap-3">
                 {exercise.instructions.map((instruction, i) => (
                   <View key={i} className="flex-row gap-3">
-                    <View className="w-6 h-6 bg-emerald-500 rounded-full items-center justify-center">
+                    <View className="w-6 h-6 bg-primary rounded-full items-center justify-center">
                       <Text className="text-white font-bold text-xs">{i + 1}</Text>
                     </View>
                     <Text className="text-gray-700 flex-1">{instruction}</Text>
@@ -179,16 +179,16 @@ export default function ExerciseDetailScreen() {
             </Card>
 
             {/* Tips */}
-            <Card className="p-4 bg-blue-50 border-blue-200">
+            <Card className="p-4 bg-primary/10 border-primary/20">
               <View className="flex-row items-center gap-2 mb-3">
-                <Ionicons name="bulb" size={24} color="#3B82F6" />
-                <Text className="text-blue-900 font-bold text-lg">Consejos</Text>
+                <Ionicons name="bulb" size={24} color="#FFEA00" />
+                <Text className="text-text font-bold text-lg">Consejos</Text>
               </View>
               <View className="gap-2">
                 {exercise.tips.map((tip, i) => (
                   <View key={i} className="flex-row gap-2">
-                    <Text className="text-blue-700">•</Text>
-                    <Text className="text-blue-700 flex-1">{tip}</Text>
+                    <Text className="text-text/70">•</Text>
+                    <Text className="text-text/70 flex-1">{tip}</Text>
                   </View>
                 ))}
               </View>

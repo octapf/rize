@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -15,25 +15,25 @@ import { Card } from '@/components/ui/Card';
 export default function EditProfileScreen() {
   const [name, setName] = useState('Usuario');
   const [username, setUsername] = useState('@usuario');
-  const [bio, setBio] = useState('Fitness enthusiast 💪');
+  const [bio, setBio] = useState('Fitness enthusiast ðŸ’ª');
   const [email, setEmail] = useState('usuario@example.com');
   const [age, setAge] = useState('25');
   const [height, setHeight] = useState('175');
   const [targetWeight, setTargetWeight] = useState('75');
 
   const handleSave = () => {
-    Alert.alert('¡Guardado!', 'Tu perfil ha sido actualizado');
+    Alert.alert('Â¡Guardado!', 'Tu perfil ha sido actualizado');
     router.back();
   };
 
   const handleChangeAvatar = () => {
-    Alert.alert('Cambiar Avatar', 'Función de galería en desarrollo');
+    Alert.alert('Cambiar Avatar', 'FunciÃ³n de galerÃ­a en desarrollo');
   };
 
   return (
     <View className="flex-1 bg-gray-50">
       {/* Header */}
-      <LinearGradient colors={['#3B82F6', '#2563EB']} className="px-6 pt-12 pb-6">
+      <LinearGradient colors={['#9D12DE', '#7C3AED']} className="px-6 pt-12 pb-6">
         <View className="flex-row items-center justify-between mb-4">
           <TouchableOpacity onPress={() => router.back()} className="p-2">
             <Ionicons name="arrow-back" size={28} color="white" />
@@ -57,7 +57,7 @@ export default function EditProfileScreen() {
               className="absolute bottom-0 right-0 bg-white p-2 rounded-full"
               style={{ elevation: 4, shadowColor: '#000', shadowOffset: { width: 0, height: 2 }, shadowOpacity: 0.25, shadowRadius: 3.84 }}
             >
-              <Ionicons name="camera" size={20} color="#3B82F6" />
+              <Ionicons name="camera" size={20} color="#9D12DE" />
             </TouchableOpacity>
           </View>
         </View>
@@ -67,7 +67,7 @@ export default function EditProfileScreen() {
         {/* Basic Info */}
         <Card className="p-4 mb-4">
           <Text className="text-gray-900 font-bold text-lg mb-4">
-            Información Básica
+            InformaciÃ³n BÃ¡sica
           </Text>
 
           <View className="gap-4">
@@ -98,7 +98,7 @@ export default function EditProfileScreen() {
                 value={bio}
                 onChangeText={setBio}
                 className="bg-gray-50 border border-gray-300 rounded-lg px-4 py-3 text-gray-900"
-                placeholder="Cuéntanos sobre ti"
+                placeholder="CuÃ©ntanos sobre ti"
                 multiline
                 numberOfLines={3}
               />
@@ -121,7 +121,7 @@ export default function EditProfileScreen() {
         {/* Physical Stats */}
         <Card className="p-4 mb-4">
           <Text className="text-gray-900 font-bold text-lg mb-4">
-            Estadísticas Físicas
+            EstadÃ­sticas FÃ­sicas
           </Text>
 
           <View className="gap-4">
@@ -168,13 +168,13 @@ export default function EditProfileScreen() {
 
           <View className="gap-3">
             <TouchableOpacity className="flex-row items-center justify-between p-3 bg-gray-50 rounded-lg">
-              <Text className="text-gray-900 font-semibold">Perfil Público</Text>
-              <Ionicons name="toggle" size={32} color="#10B981" />
+              <Text className="text-gray-900 font-semibold">Perfil PÃºblico</Text>
+              <Ionicons name="toggle" size={32} color="#9D12DE" />
             </TouchableOpacity>
 
             <TouchableOpacity className="flex-row items-center justify-between p-3 bg-gray-50 rounded-lg">
-              <Text className="text-gray-900 font-semibold">Mostrar Estadísticas</Text>
-              <Ionicons name="toggle" size={32} color="#10B981" />
+              <Text className="text-gray-900 font-semibold">Mostrar EstadÃ­sticas</Text>
+              <Ionicons name="toggle" size={32} color="#9D12DE" />
             </TouchableOpacity>
 
             <TouchableOpacity className="flex-row items-center justify-between p-3 bg-gray-50 rounded-lg">
@@ -193,7 +193,7 @@ export default function EditProfileScreen() {
           <View className="gap-2">
             <TouchableOpacity className="bg-white border border-red-300 py-3 rounded-lg">
               <Text className="text-red-600 font-semibold text-center">
-                Cambiar Contraseña
+                Cambiar ContraseÃ±a
               </Text>
             </TouchableOpacity>
 
@@ -208,3 +208,4 @@ export default function EditProfileScreen() {
     </View>
   );
 }
+

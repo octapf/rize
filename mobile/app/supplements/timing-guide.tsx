@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -214,7 +214,7 @@ export default function SupplementTiming() {
                   key={cat.key}
                   onPress={() => setSelectedCategory(cat.key)}
                   className={`${
-                    selectedCategory === cat.key ? 'bg-blue-500' : 'bg-zinc-900'
+                    selectedCategory === cat.key ? 'bg-primary' : 'bg-zinc-900'
                   } rounded-xl px-4 py-3 border ${
                     selectedCategory === cat.key ? 'border-blue-400' : 'border-zinc-800'
                   }`}
@@ -238,9 +238,9 @@ export default function SupplementTiming() {
                   name={supp.icon as any}
                   size={24}
                   color={
-                    supp.color === 'amber' ? '#f59e0b' :
-                    supp.color === 'blue' ? '#3b82f6' :
-                    supp.color === 'emerald' ? '#10b981' :
+                    supp.color === 'amber' ? '#FFEA00' :
+                    supp.color === 'blue' ? '#9D12DE' :
+                    supp.color === 'emerald' ? '#9D12DE' :
                     supp.color === 'purple' ? '#a855f7' : '#ef4444'
                   }
                 />
@@ -261,7 +261,7 @@ export default function SupplementTiming() {
                   <Text className="text-white font-bold flex-1 text-right ml-2">{supp.benefits}</Text>
                 </View>
                 <View className={`bg-${supp.color}-500/20 rounded-lg p-2 mt-2`}>
-                  <Text className={`text-${supp.color}-300 text-sm`}>💡 {supp.notes}</Text>
+                  <Text className={`text-${supp.color}-300 text-sm`}>ðŸ’¡ {supp.notes}</Text>
                 </View>
               </View>
             </View>
@@ -272,15 +272,15 @@ export default function SupplementTiming() {
           {dailySchedule.map((schedule, idx) => (
             <View key={idx} className="bg-zinc-900 rounded-xl p-4 mb-3 border border-zinc-800">
               <View className="flex-row items-center mb-3">
-                <Ionicons name="time" size={20} color="#3b82f6" />
-                <Text className="text-blue-400 font-bold ml-2">{schedule.time}</Text>
+                <Ionicons name="time" size={20} color="#9D12DE" />
+                <Text className="text-primary/80 font-bold ml-2">{schedule.time}</Text>
               </View>
 
               {schedule.items.map((item, itemIdx) => (
                 <View key={itemIdx} className="bg-zinc-800 rounded-lg p-3 mb-2">
                   <View className="flex-row justify-between items-center mb-1">
                     <Text className="text-white font-bold">{item.name}</Text>
-                    <Text className="text-emerald-400 font-bold">{item.dose}</Text>
+                    <Text className="text-primary font-bold">{item.dose}</Text>
                   </View>
                   <Text className="text-zinc-400 text-sm">{item.note}</Text>
                 </View>
@@ -288,15 +288,15 @@ export default function SupplementTiming() {
             </View>
           ))}
 
-          <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30 mb-6">
-            <Text className="text-blue-400 font-bold mb-2">Timing Tips</Text>
-            <Text className="text-blue-300 text-sm">
-              • Consistency &gt; perfect timing{'\n'}
-              • Creatine = anytime (daily saturation){'\n'}
-              • Caffeine = avoid late afternoon{'\n'}
-              • Fat-soluble vitamins with meals{'\n'}
-              • Pre-workout 30-45 min before{'\n'}
-              • Post-workout window = 2-4 hours (not 30 min)
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
+            <Text className="text-primary/80 font-bold mb-2">Timing Tips</Text>
+            <Text className="text-primary/60 text-sm">
+              â€¢ Consistency &gt; perfect timing{'\n'}
+              â€¢ Creatine = anytime (daily saturation){'\n'}
+              â€¢ Caffeine = avoid late afternoon{'\n'}
+              â€¢ Fat-soluble vitamins with meals{'\n'}
+              â€¢ Pre-workout 30-45 min before{'\n'}
+              â€¢ Post-workout window = 2-4 hours (not 30 min)
             </Text>
           </View>
         </View>
@@ -304,3 +304,4 @@ export default function SupplementTiming() {
     </View>
   );
 }
+

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -137,8 +137,8 @@ export default function PeakWeek() {
         },
       ],
       tips: [
-        'Water manipulation: 10L Mon → 8L Tue → 6L Wed → 4L Thu → 2L Fri → sips Sat',
-        'Sodium manipulation: High Mon-Wed → Low Thu-Sat',
+        'Water manipulation: 10L Mon â†’ 8L Tue â†’ 6L Wed â†’ 4L Thu â†’ 2L Fri â†’ sips Sat',
+        'Sodium manipulation: High Mon-Wed â†’ Low Thu-Sat',
         'Carb depletion first 3 days, then load last 2-3 days',
         'Practice peak week 4-6 weeks before show',
         'Every body responds differently - adjust based on practice',
@@ -310,12 +310,12 @@ export default function PeakWeek() {
                       <Text className="text-white text-sm">{day.intensity}</Text>
                     </View>
                   </View>
-                  <Text className="text-blue-400 text-sm mt-2">Focus: {day.focus}</Text>
+                  <Text className="text-primary/80 text-sm mt-2">Focus: {day.focus}</Text>
                 </View>
 
-                <View className="bg-emerald-500/10 rounded-xl p-3 mb-2 border border-emerald-500/30">
-                  <Text className="text-emerald-400 font-bold text-sm mb-1">Nutrition</Text>
-                  <Text className="text-emerald-300 text-sm">{day.nutrition}</Text>
+                <View className="bg-primary/10 rounded-xl p-3 mb-2 border border-primary/30">
+                  <Text className="text-primary font-bold text-sm mb-1">Nutrition</Text>
+                  <Text className="text-primary/80 text-sm">{day.nutrition}</Text>
                 </View>
 
                 <View className="bg-purple-500/10 rounded-xl p-3 border border-purple-500/30">
@@ -330,7 +330,7 @@ export default function PeakWeek() {
             <Text className="text-white font-bold text-lg mb-3">Peak Week Tips</Text>
             {currentPlan.tips.map((tip, idx) => (
               <View key={idx} className="flex-row items-start mb-2 last:mb-0">
-                <Ionicons name="checkmark-circle" size={18} color="#10b981" />
+                <Ionicons name="checkmark-circle" size={18} color="#9D12DE" />
                 <Text className="text-zinc-300 ml-2 flex-1">{tip}</Text>
               </View>
             ))}
@@ -344,24 +344,24 @@ export default function PeakWeek() {
                   <Ionicons name={item.icon} size={20} color="#ef4444" />
                   <Text className="text-red-400 font-bold ml-2 flex-1">{item.mistake}</Text>
                 </View>
-                <Text className="text-emerald-400 text-sm">✓ {item.fix}</Text>
+                <Text className="text-primary text-sm">âœ“ {item.fix}</Text>
               </View>
             ))}
           </View>
 
-          <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30 mb-6">
-            <Text className="text-blue-400 font-bold mb-2">Remember</Text>
-            <Text className="text-blue-300 text-sm mb-2">
-              • Peak week can't fix poor preparation
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
+            <Text className="text-primary/80 font-bold mb-2">Remember</Text>
+            <Text className="text-primary/60 text-sm mb-2">
+              â€¢ Peak week can't fix poor preparation
             </Text>
-            <Text className="text-blue-300 text-sm mb-2">
-              • The work is done - now you just recover
+            <Text className="text-primary/60 text-sm mb-2">
+              â€¢ The work is done - now you just recover
             </Text>
-            <Text className="text-blue-300 text-sm mb-2">
-              • Trust your training and your plan
+            <Text className="text-primary/60 text-sm mb-2">
+              â€¢ Trust your training and your plan
             </Text>
-            <Text className="text-blue-300 text-sm">
-              • When in doubt, do LESS not more
+            <Text className="text-primary/60 text-sm">
+              â€¢ When in doubt, do LESS not more
             </Text>
           </View>
         </View>
@@ -369,3 +369,5 @@ export default function PeakWeek() {
     </View>
   );
 }
+
+

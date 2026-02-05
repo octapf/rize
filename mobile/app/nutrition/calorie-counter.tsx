@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -41,7 +41,7 @@ const FOOD_DATABASE: Food[] = [
     protein: 31,
     carbs: 0,
     fats: 3.6,
-    category: 'Proteínas',
+    category: 'ProteÃ­nas',
     verified: true,
   },
   {
@@ -68,7 +68,7 @@ const FOOD_DATABASE: Food[] = [
   },
   {
     id: '4',
-    name: 'Plátano',
+    name: 'PlÃ¡tano',
     serving: '1 mediano (118g)',
     calories: 105,
     protein: 1.3,
@@ -85,7 +85,7 @@ const FOOD_DATABASE: Food[] = [
     protein: 6,
     carbs: 0.4,
     fats: 5,
-    category: 'Proteínas',
+    category: 'ProteÃ­nas',
     verified: true,
   },
   {
@@ -107,7 +107,7 @@ const FOOD_DATABASE: Food[] = [
     protein: 8,
     carbs: 12,
     fats: 8,
-    category: 'Lácteos',
+    category: 'LÃ¡cteos',
     verified: true,
   },
   {
@@ -180,7 +180,7 @@ export default function CalorieCounter() {
   const addFood = (food: Food) => {
     Alert.prompt(
       `Agregar ${food.name}`,
-      `¿Cuántas porciones de ${food.serving}?`,
+      `Â¿CuÃ¡ntas porciones de ${food.serving}?`,
       [
         { text: 'Cancelar', style: 'cancel' },
         {
@@ -188,7 +188,7 @@ export default function CalorieCounter() {
           onPress: (servings) => {
             const servingAmount = parseFloat(servings || '1');
             if (isNaN(servingAmount) || servingAmount <= 0) {
-              Alert.alert('Error', 'Ingresa una cantidad válida');
+              Alert.alert('Error', 'Ingresa una cantidad vÃ¡lida');
               return;
             }
 
@@ -205,7 +205,7 @@ export default function CalorieCounter() {
 
             setTodayEntries((prev) => [...prev, newEntry]);
             Alert.alert(
-              '¡Agregado!',
+              'Â¡Agregado!',
               `${servingAmount} ${food.serving} de ${food.name} agregado a ${selectedMeal}`
             );
           },
@@ -218,8 +218,8 @@ export default function CalorieCounter() {
 
   const scanBarcode = () => {
     Alert.alert(
-      'Escanear Código de Barras',
-      'Abriendo cámara...',
+      'Escanear CÃ³digo de Barras',
+      'Abriendo cÃ¡mara...',
       [
         {
           text: 'Cancelar',
@@ -253,11 +253,11 @@ export default function CalorieCounter() {
   const takePhoto = () => {
     Alert.alert(
       'Foto de Comida',
-      'Toma una foto de tu comida para análisis con IA',
+      'Toma una foto de tu comida para anÃ¡lisis con IA',
       [
         { text: 'Cancelar', style: 'cancel' },
         {
-          text: 'Abrir Cámara',
+          text: 'Abrir CÃ¡mara',
           onPress: () =>
             Alert.alert('IA Analyzing...', 'Detectando alimentos en la imagen...'),
         },
@@ -274,7 +274,7 @@ export default function CalorieCounter() {
             <Ionicons name="arrow-back" size={24} color="white" />
           </TouchableOpacity>
           <Text className="text-white text-2xl font-bold flex-1 ml-3">
-            Contador de Calorías
+            Contador de CalorÃ­as
           </Text>
           <TouchableOpacity onPress={() => router.push('/nutrition/meal-plan')}>
             <Ionicons name="calendar-outline" size={24} color="white" />
@@ -284,7 +284,7 @@ export default function CalorieCounter() {
         {/* Daily Summary */}
         <View className="bg-zinc-900 rounded-xl p-4 border border-zinc-800">
           <View className="flex-row items-center justify-between mb-3">
-            <Text className="text-zinc-400 text-sm">Calorías Hoy</Text>
+            <Text className="text-zinc-400 text-sm">CalorÃ­as Hoy</Text>
             <Text className="text-zinc-400 text-sm">
               {totalCalories} / {calorieGoal}
             </Text>
@@ -293,7 +293,7 @@ export default function CalorieCounter() {
           {/* Progress Bar */}
           <View className="bg-zinc-800 h-3 rounded-full overflow-hidden mb-4">
             <View
-              className="h-full bg-emerald-500 rounded-full"
+              className="h-full bg-primary rounded-full"
               style={{ width: `${Math.min((totalCalories / calorieGoal) * 100, 100)}%` }}
             />
           </View>
@@ -301,7 +301,7 @@ export default function CalorieCounter() {
           {/* Macros Grid */}
           <View className="flex-row gap-2">
             <View className="flex-1 bg-zinc-800 rounded-lg p-2">
-              <Text className="text-blue-400 text-xs font-semibold">Proteína</Text>
+              <Text className="text-primary/80 text-xs font-semibold">ProteÃ­na</Text>
               <Text className="text-white font-bold text-sm">
                 {totalProtein.toFixed(0)}g
               </Text>
@@ -337,7 +337,7 @@ export default function CalorieCounter() {
               key={meal}
               onPress={() => setSelectedMeal(meal)}
               className={`mr-3 px-5 py-2 rounded-xl ${
-                selectedMeal === meal ? 'bg-emerald-500' : 'bg-zinc-900'
+                selectedMeal === meal ? 'bg-primary' : 'bg-zinc-900'
               }`}
             >
               <Text
@@ -359,14 +359,14 @@ export default function CalorieCounter() {
             onPress={scanBarcode}
             className="flex-1 bg-zinc-900 rounded-xl p-4 flex-row items-center justify-center border border-zinc-800"
           >
-            <Ionicons name="barcode-outline" size={20} color="#10B981" />
+            <Ionicons name="barcode-outline" size={20} color="#9D12DE" />
             <Text className="text-white font-semibold ml-2">Escanear</Text>
           </TouchableOpacity>
           <TouchableOpacity
             onPress={takePhoto}
             className="flex-1 bg-zinc-900 rounded-xl p-4 flex-row items-center justify-center border border-zinc-800"
           >
-            <Ionicons name="camera-outline" size={20} color="#10B981" />
+            <Ionicons name="camera-outline" size={20} color="#9D12DE" />
             <Text className="text-white font-semibold ml-2">Foto</Text>
           </TouchableOpacity>
         </View>
@@ -412,7 +412,7 @@ export default function CalorieCounter() {
                       <Ionicons
                         name="checkmark-circle"
                         size={16}
-                        color="#10B981"
+                        color="#9D12DE"
                         style={{ marginLeft: 6 }}
                       />
                     )}
@@ -433,7 +433,7 @@ export default function CalorieCounter() {
               {/* Macros */}
               <View className="flex-row gap-3 pt-3 border-t border-zinc-800">
                 <View className="flex-1">
-                  <Text className="text-blue-400 text-xs">Proteína</Text>
+                  <Text className="text-primary/80 text-xs">ProteÃ­na</Text>
                   <Text className="text-white text-sm font-semibold">
                     {food.protein}g
                   </Text>
@@ -465,13 +465,13 @@ export default function CalorieCounter() {
             {todayEntries.map((entry) => (
               <View
                 key={entry.id}
-                className="bg-emerald-500/10 rounded-xl p-4 mb-3 border border-emerald-500/30"
+                className="bg-primary/10 rounded-xl p-4 mb-3 border border-primary/30"
               >
                 <View className="flex-row items-start justify-between">
                   <View className="flex-1">
                     <View className="flex-row items-center mb-1">
-                      <View className="bg-emerald-500/20 px-2 py-0.5 rounded">
-                        <Text className="text-emerald-500 text-xs font-bold">
+                      <View className="bg-primary/20 px-2 py-0.5 rounded">
+                        <Text className="text-primary text-xs font-bold">
                           {entry.meal}
                         </Text>
                       </View>
@@ -485,7 +485,7 @@ export default function CalorieCounter() {
                     </Text>
                   </View>
                   <View className="items-end">
-                    <Text className="text-emerald-500 font-bold text-lg">
+                    <Text className="text-primary font-bold text-lg">
                       {(entry.food.calories * entry.servings).toFixed(0)}
                     </Text>
                     <Text className="text-zinc-400 text-xs">kcal</Text>
@@ -505,10 +505,11 @@ export default function CalorieCounter() {
             'Funcionalidad para crear alimentos personalizados'
           )
         }
-        className="absolute bottom-6 right-6 bg-emerald-500 w-14 h-14 rounded-full items-center justify-center shadow-lg"
+        className="absolute bottom-6 right-6 bg-primary w-14 h-14 rounded-full items-center justify-center shadow-lg"
       >
         <Ionicons name="add" size={28} color="white" />
       </TouchableOpacity>
     </View>
   );
 }
+

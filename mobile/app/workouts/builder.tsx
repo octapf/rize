@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -38,11 +38,11 @@ const QUICK_TEMPLATES: WorkoutTemplate[] = [
       { id: '2', name: 'Press Inclinado', sets: 3, reps: '8-10', rest: 120, notes: '', category: 'Pecho' },
       { id: '3', name: 'Press Militar', sets: 4, reps: '6-8', rest: 120, notes: '', category: 'Hombros' },
       { id: '4', name: 'Elevaciones Laterales', sets: 3, reps: '12-15', rest: 60, notes: '', category: 'Hombros' },
-      { id: '5', name: 'Tríceps en Polea', sets: 3, reps: '10-12', rest: 60, notes: '', category: 'Tríceps' },
+      { id: '5', name: 'TrÃ­ceps en Polea', sets: 3, reps: '10-12', rest: 60, notes: '', category: 'TrÃ­ceps' },
     ],
     totalExercises: 5,
     estimatedTime: 75,
-    targetMuscles: ['Pecho', 'Hombros', 'Tríceps'],
+    targetMuscles: ['Pecho', 'Hombros', 'TrÃ­ceps'],
   },
   {
     id: '2',
@@ -52,25 +52,25 @@ const QUICK_TEMPLATES: WorkoutTemplate[] = [
       { id: '2', name: 'Dominadas', sets: 4, reps: '8-10', rest: 120, notes: '', category: 'Espalda' },
       { id: '3', name: 'Remo con Barra', sets: 4, reps: '8-10', rest: 120, notes: '', category: 'Espalda' },
       { id: '4', name: 'Face Pulls', sets: 3, reps: '15-20', rest: 60, notes: '', category: 'Hombros' },
-      { id: '5', name: 'Curl con Barra', sets: 3, reps: '10-12', rest: 60, notes: '', category: 'Bíceps' },
+      { id: '5', name: 'Curl con Barra', sets: 3, reps: '10-12', rest: 60, notes: '', category: 'BÃ­ceps' },
     ],
     totalExercises: 5,
     estimatedTime: 75,
-    targetMuscles: ['Espalda', 'Bíceps', 'Hombros'],
+    targetMuscles: ['Espalda', 'BÃ­ceps', 'Hombros'],
   },
   {
     id: '3',
     name: 'Leg Day',
     exercises: [
-      { id: '1', name: 'Sentadilla', sets: 4, reps: '6-8', rest: 180, notes: '', category: 'Cuádriceps' },
-      { id: '2', name: 'Prensa', sets: 3, reps: '10-12', rest: 120, notes: '', category: 'Cuádriceps' },
+      { id: '1', name: 'Sentadilla', sets: 4, reps: '6-8', rest: 180, notes: '', category: 'CuÃ¡driceps' },
+      { id: '2', name: 'Prensa', sets: 3, reps: '10-12', rest: 120, notes: '', category: 'CuÃ¡driceps' },
       { id: '3', name: 'Peso Muerto Rumano', sets: 4, reps: '8-10', rest: 120, notes: '', category: 'Isquios' },
       { id: '4', name: 'Curl Femoral', sets: 3, reps: '12-15', rest: 90, notes: '', category: 'Isquios' },
       { id: '5', name: 'Elevaciones de Gemelos', sets: 4, reps: '15-20', rest: 60, notes: '', category: 'Gemelos' },
     ],
     totalExercises: 5,
     estimatedTime: 75,
-    targetMuscles: ['Cuádriceps', 'Isquios', 'Gemelos'],
+    targetMuscles: ['CuÃ¡driceps', 'Isquios', 'Gemelos'],
   },
 ];
 
@@ -111,7 +111,7 @@ export default function WorkoutBuilder() {
   const removeExercise = (id: string) => {
     Alert.alert(
       'Eliminar Ejercicio',
-      '¿Seguro que quieres eliminar este ejercicio?',
+      'Â¿Seguro que quieres eliminar este ejercicio?',
       [
         { text: 'Cancelar', style: 'cancel' },
         {
@@ -166,9 +166,9 @@ export default function WorkoutBuilder() {
       Alert.alert('Error', 'Agrega ejercicios primero');
       return;
     }
-    Alert.alert('Iniciar Workout', 'Esto iniciará el tracker de workout en vivo', [
+    Alert.alert('Iniciar Workout', 'Esto iniciarÃ¡ el tracker de workout en vivo', [
       { text: 'Cancelar', style: 'cancel' },
-      { text: 'Comenzar', onPress: () => Alert.alert('¡A entrenar!') },
+      { text: 'Comenzar', onPress: () => Alert.alert('Â¡A entrenar!') },
     ]);
   };
 
@@ -219,7 +219,7 @@ export default function WorkoutBuilder() {
           {/* Quick Templates */}
           {showTemplates && exercises.length === 0 && (
             <View className="mb-6">
-              <Text className="text-white text-lg font-bold mb-3">Templates Rápidos</Text>
+              <Text className="text-white text-lg font-bold mb-3">Templates RÃ¡pidos</Text>
               {QUICK_TEMPLATES.map((template) => (
                 <TouchableOpacity
                   key={template.id}
@@ -233,15 +233,15 @@ export default function WorkoutBuilder() {
                         {template.name}
                       </Text>
                       <Text className="text-zinc-400 text-sm">
-                        {template.totalExercises} ejercicios · ~{template.estimatedTime} min
+                        {template.totalExercises} ejercicios Â· ~{template.estimatedTime} min
                       </Text>
                     </View>
                     <Ionicons name="chevron-forward" size={20} color="#71717A" />
                   </View>
                   <View className="flex-row flex-wrap gap-2 mt-2">
                     {template.targetMuscles.map((muscle, index) => (
-                      <View key={index} className="bg-emerald-500/10 rounded px-2 py-1">
-                        <Text className="text-emerald-400 text-xs">{muscle}</Text>
+                      <View key={index} className="bg-primary/10 rounded px-2 py-1">
+                        <Text className="text-primary text-xs">{muscle}</Text>
                       </View>
                     ))}
                   </View>
@@ -259,13 +259,13 @@ export default function WorkoutBuilder() {
               </View>
               <View className="flex-1 bg-zinc-900 rounded-xl p-3 border border-zinc-800">
                 <Text className="text-zinc-400 text-xs mb-1">TIEMPO EST.</Text>
-                <Text className="text-emerald-400 font-bold text-xl">
+                <Text className="text-primary font-bold text-xl">
                   {calculateEstimatedTime()} min
                 </Text>
               </View>
               <View className="flex-1 bg-zinc-900 rounded-xl p-3 border border-zinc-800">
                 <Text className="text-zinc-400 text-xs mb-1">SERIES</Text>
-                <Text className="text-blue-400 font-bold text-xl">
+                <Text className="text-primary/80 font-bold text-xl">
                   {exercises.reduce((sum, ex) => sum + ex.sets, 0)}
                 </Text>
               </View>
@@ -284,7 +284,7 @@ export default function WorkoutBuilder() {
                   <View className="flex-row items-start justify-between mb-3">
                     <View className="flex-1">
                       <View className="flex-row items-center mb-1">
-                        <View className="w-6 h-6 bg-emerald-500 rounded-full items-center justify-center mr-2">
+                        <View className="w-6 h-6 bg-primary rounded-full items-center justify-center mr-2">
                           <Text className="text-white text-xs font-bold">{index + 1}</Text>
                         </View>
                         <Text className="text-white font-bold text-lg">{exercise.name}</Text>
@@ -310,7 +310,7 @@ export default function WorkoutBuilder() {
                         <TouchableOpacity
                           onPress={() => updateExercise(exercise.id, 'sets', exercise.sets + 1)}
                         >
-                          <Ionicons name="add-circle" size={20} color="#10B981" />
+                          <Ionicons name="add-circle" size={20} color="#9D12DE" />
                         </TouchableOpacity>
                       </View>
                     </View>
@@ -340,20 +340,20 @@ export default function WorkoutBuilder() {
             onPress={addExercise}
             className="bg-zinc-900 rounded-xl p-4 mb-6 border-2 border-dashed border-zinc-700 flex-row items-center justify-center"
           >
-            <Ionicons name="add-circle" size={24} color="#10B981" />
-            <Text className="text-emerald-400 font-bold ml-2">Agregar Ejercicio</Text>
+            <Ionicons name="add-circle" size={24} color="#9D12DE" />
+            <Text className="text-primary font-bold ml-2">Agregar Ejercicio</Text>
           </TouchableOpacity>
 
           {/* Info Card */}
-          <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30 mb-6">
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
             <View className="flex-row items-start">
-              <Ionicons name="information-circle" size={20} color="#3B82F6" />
+              <Ionicons name="information-circle" size={20} color="#9D12DE" />
               <View className="flex-1 ml-3">
-                <Text className="text-blue-400 font-bold mb-2">
+                <Text className="text-primary/80 font-bold mb-2">
                   Crea Workouts Personalizados
                 </Text>
-                <Text className="text-blue-300 text-sm">
-                  Diseña entrenamientos según tus objetivos. Guárdalos como templates para reutilizar.
+                <Text className="text-primary/60 text-sm">
+                  DiseÃ±a entrenamientos segÃºn tus objetivos. GuÃ¡rdalos como templates para reutilizar.
                 </Text>
               </View>
             </View>
@@ -367,14 +367,14 @@ export default function WorkoutBuilder() {
           <View className="flex-row gap-2">
             <TouchableOpacity
               onPress={saveWorkout}
-              className="flex-1 bg-blue-500 rounded-xl p-4 flex-row items-center justify-center"
+              className="flex-1 bg-primary rounded-xl p-4 flex-row items-center justify-center"
             >
               <Ionicons name="save" size={20} color="white" />
               <Text className="text-white font-bold ml-2">Guardar</Text>
             </TouchableOpacity>
             <TouchableOpacity
               onPress={startWorkout}
-              className="flex-1 bg-emerald-500 rounded-xl p-4 flex-row items-center justify-center"
+              className="flex-1 bg-primary rounded-xl p-4 flex-row items-center justify-center"
             >
               <Ionicons name="play" size={20} color="white" />
               <Text className="text-white font-bold ml-2">Iniciar</Text>
@@ -385,3 +385,4 @@ export default function WorkoutBuilder() {
     </View>
   );
 }
+

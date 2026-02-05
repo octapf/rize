@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -17,14 +17,14 @@ interface Plate {
 }
 
 const AVAILABLE_PLATES = [
-  { weight: 25, color: 'bg-red-500', label: '25kg', emoji: '🔴' },
-  { weight: 20, color: 'bg-blue-500', label: '20kg', emoji: '🔵' },
-  { weight: 15, color: 'bg-amber-500', label: '15kg', emoji: '🟡' },
-  { weight: 10, color: 'bg-emerald-500', label: '10kg', emoji: '🟢' },
-  { weight: 5, color: 'bg-white', label: '5kg', emoji: '⚪' },
-  { weight: 2.5, color: 'bg-zinc-400', label: '2.5kg', emoji: '⚫' },
-  { weight: 1.25, color: 'bg-purple-500', label: '1.25kg', emoji: '🟣' },
-  { weight: 0.5, color: 'bg-pink-500', label: '0.5kg', emoji: '🔴' },
+  { weight: 25, color: 'bg-red-500', label: '25kg', emoji: 'ðŸ”´' },
+  { weight: 20, color: 'bg-primary', label: '20kg', emoji: 'ðŸ”µ' },
+  { weight: 15, color: 'bg-amber-500', label: '15kg', emoji: 'ðŸŸ¡' },
+  { weight: 10, color: 'bg-primary', label: '10kg', emoji: 'ðŸŸ¢' },
+  { weight: 5, color: 'bg-white', label: '5kg', emoji: 'âšª' },
+  { weight: 2.5, color: 'bg-zinc-400', label: '2.5kg', emoji: 'âš«' },
+  { weight: 1.25, color: 'bg-purple-500', label: '1.25kg', emoji: 'ðŸŸ£' },
+  { weight: 0.5, color: 'bg-pink-500', label: '0.5kg', emoji: 'ðŸ”´' },
 ];
 
 export default function PlateCalculator() {
@@ -37,11 +37,11 @@ export default function PlateCalculator() {
     const bar = parseFloat(barWeight);
 
     if (!target || target <= 0) {
-      Alert.alert('Error', 'Ingresa un peso objetivo válido');
+      Alert.alert('Error', 'Ingresa un peso objetivo vÃ¡lido');
       return;
     }
     if (!bar || bar <= 0) {
-      Alert.alert('Error', 'Ingresa un peso de barra válido');
+      Alert.alert('Error', 'Ingresa un peso de barra vÃ¡lido');
       return;
     }
     if (target < bar) {
@@ -76,7 +76,7 @@ export default function PlateCalculator() {
     if (remainingWeight > 0.01) {
       Alert.alert(
         'Peso Aproximado',
-        `No se puede lograr exactamente ${target}kg.\nMás cercano: ${(target - remainingWeight * 2).toFixed(2)}kg\n\n¿Continuar con esta configuración?`,
+        `No se puede lograr exactamente ${target}kg.\nMÃ¡s cercano: ${(target - remainingWeight * 2).toFixed(2)}kg\n\nÂ¿Continuar con esta configuraciÃ³n?`,
         [
           { text: 'Cancelar', style: 'cancel' },
           { text: 'Aceptar', onPress: () => setResult(plates) },
@@ -123,7 +123,7 @@ export default function PlateCalculator() {
         <View className="px-6 pt-6">
           {/* Input Section */}
           <View className="bg-zinc-900 rounded-xl p-6 mb-6 border border-zinc-800">
-            <Text className="text-white text-lg font-bold mb-4">Configuración</Text>
+            <Text className="text-white text-lg font-bold mb-4">ConfiguraciÃ³n</Text>
 
             {/* Target Weight */}
             <View className="mb-4">
@@ -143,7 +143,7 @@ export default function PlateCalculator() {
 
             {/* Quick Weights */}
             <View className="mb-4">
-              <Text className="text-zinc-400 text-sm mb-2">Pesos Rápidos</Text>
+              <Text className="text-zinc-400 text-sm mb-2">Pesos RÃ¡pidos</Text>
               <View className="flex-row flex-wrap gap-2">
                 {quickWeights.map((weight) => (
                   <TouchableOpacity
@@ -166,7 +166,7 @@ export default function PlateCalculator() {
                     key={weight}
                     onPress={() => setBarWeight(weight.toString())}
                     className={`flex-1 rounded-lg p-3 ${
-                      barWeight === weight.toString() ? 'bg-emerald-500' : 'bg-zinc-800'
+                      barWeight === weight.toString() ? 'bg-primary' : 'bg-zinc-800'
                     }`}
                   >
                     <Text
@@ -185,7 +185,7 @@ export default function PlateCalculator() {
           {/* Calculate Button */}
           <TouchableOpacity
             onPress={calculatePlates}
-            className="bg-emerald-500 rounded-xl p-4 mb-6 flex-row items-center justify-center"
+            className="bg-primary rounded-xl p-4 mb-6 flex-row items-center justify-center"
           >
             <Ionicons name="calculator" size={20} color="white" />
             <Text className="text-white font-bold ml-2">Calcular Discos</Text>
@@ -196,12 +196,12 @@ export default function PlateCalculator() {
             <>
               {/* Total Weight */}
               <View className="bg-gradient-to-r from-emerald-500 to-emerald-600 rounded-xl p-6 mb-6">
-                <Text className="text-emerald-200 text-sm mb-2">PESO TOTAL</Text>
+                <Text className="text-white/70 text-sm mb-2">PESO TOTAL</Text>
                 <View className="flex-row items-baseline">
                   <Text className="text-white text-6xl font-bold">{getTotalWeight()}</Text>
-                  <Text className="text-emerald-200 text-2xl ml-2">kg</Text>
+                  <Text className="text-white/70 text-2xl ml-2">kg</Text>
                 </View>
-                <Text className="text-emerald-100 text-sm mt-2">
+                <Text className="text-primary/50 text-sm mt-2">
                   Barra: {barWeight}kg + Discos: {(getTotalWeight() - parseFloat(barWeight)).toFixed(2)}kg
                 </Text>
               </View>
@@ -230,14 +230,14 @@ export default function PlateCalculator() {
                         </View>
                         <View>
                           <Text className="text-white font-bold">
-                            {plate.weight}kg × {plate.count}
+                            {plate.weight}kg Ã— {plate.count}
                           </Text>
                           <Text className="text-zinc-400 text-sm">
                             {(plate.weight * plate.count).toFixed(2)}kg por lado
                           </Text>
                         </View>
                       </View>
-                      <Text className="text-emerald-400 font-bold text-xl">
+                      <Text className="text-primary font-bold text-xl">
                         {plate.count}
                       </Text>
                     </View>
@@ -248,7 +248,7 @@ export default function PlateCalculator() {
               {/* Visual Representation */}
               <View className="bg-zinc-900 rounded-xl p-6 mb-6 border border-zinc-800">
                 <Text className="text-white text-lg font-bold mb-4">
-                  Visualización
+                  VisualizaciÃ³n
                 </Text>
                 
                 <View className="items-center">
@@ -294,19 +294,19 @@ export default function PlateCalculator() {
               </View>
 
               {/* Summary */}
-              <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30 mb-6">
+              <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
                 <View className="flex-row items-start">
-                  <Ionicons name="checkmark-circle" size={20} color="#3B82F6" />
+                  <Ionicons name="checkmark-circle" size={20} color="#9D12DE" />
                   <View className="flex-1 ml-3">
-                    <Text className="text-blue-400 font-bold mb-2">
+                    <Text className="text-primary/80 font-bold mb-2">
                       Resumen de Carga
                     </Text>
-                    <Text className="text-blue-300 text-sm">
-                      • Total de discos: {result.reduce((sum, p) => sum + p.count * 2, 0)} unidades
+                    <Text className="text-primary/60 text-sm">
+                      â€¢ Total de discos: {result.reduce((sum, p) => sum + p.count * 2, 0)} unidades
                       {'\n'}
-                      • Discos por lado: {result.reduce((sum, p) => sum + p.count, 0)} unidades
+                      â€¢ Discos por lado: {result.reduce((sum, p) => sum + p.count, 0)} unidades
                       {'\n'}
-                      • Peso en discos: {(getTotalWeight() - parseFloat(barWeight)).toFixed(2)}kg
+                      â€¢ Peso en discos: {(getTotalWeight() - parseFloat(barWeight)).toFixed(2)}kg
                     </Text>
                   </View>
                 </View>
@@ -334,19 +334,19 @@ export default function PlateCalculator() {
           {/* Tips */}
           <View className="bg-amber-500/10 rounded-xl p-4 border border-amber-500/30 mb-6">
             <View className="flex-row items-start">
-              <Ionicons name="bulb" size={20} color="#F59E0B" />
+              <Ionicons name="bulb" size={20} color="#FFEA00" />
               <View className="flex-1 ml-3">
                 <Text className="text-amber-400 font-bold mb-2">
                   Tips de Carga
                 </Text>
                 <Text className="text-amber-300 text-sm">
-                  • Carga discos grandes primero (25kg, 20kg)
+                  â€¢ Carga discos grandes primero (25kg, 20kg)
                   {'\n'}
-                  • Usa collares para asegurar discos
+                  â€¢ Usa collares para asegurar discos
                   {'\n'}
-                  • Carga ambos lados uniformemente
+                  â€¢ Carga ambos lados uniformemente
                   {'\n'}
-                  • Micro-discos (0.5kg) para ajustes finos
+                  â€¢ Micro-discos (0.5kg) para ajustes finos
                 </Text>
               </View>
             </View>
@@ -356,3 +356,5 @@ export default function PlateCalculator() {
     </View>
   );
 }
+
+

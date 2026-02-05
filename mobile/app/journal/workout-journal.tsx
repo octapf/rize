@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -57,7 +57,7 @@ export default function WorkoutJournaling() {
         key={i}
         name={i < rating ? 'star' : 'star-outline'}
         size={20}
-        color={i < rating ? '#f59e0b' : '#71717a'}
+        color={i < rating ? '#FFEA00' : '#71717a'}
       />
     ));
   };
@@ -107,7 +107,7 @@ export default function WorkoutJournaling() {
                   key={entry.date}
                   onPress={() => setSelectedDate(entry.date)}
                   className={`${
-                    selectedDate === entry.date ? 'bg-blue-500' : 'bg-zinc-900'
+                    selectedDate === entry.date ? 'bg-primary' : 'bg-zinc-900'
                   } rounded-xl px-6 py-3 border ${
                     selectedDate === entry.date ? 'border-blue-400' : 'border-zinc-800'
                   }`}
@@ -121,7 +121,7 @@ export default function WorkoutJournaling() {
                   </Text>
                   <Text
                     className={`${
-                      selectedDate === entry.date ? 'text-blue-100' : 'text-zinc-500'
+                      selectedDate === entry.date ? 'text-highlight' : 'text-zinc-500'
                     } text-xs`}
                   >
                     {entry.workout}
@@ -142,17 +142,17 @@ export default function WorkoutJournaling() {
 
             <View className="flex-row gap-3 mb-4">
               <View className="flex-1 bg-zinc-800 rounded-lg p-3">
-                <Ionicons name="time" size={20} color="#3b82f6" />
+                <Ionicons name="time" size={20} color="#9D12DE" />
                 <Text className="text-white font-bold mt-1">{currentEntry.duration}</Text>
                 <Text className="text-zinc-400 text-xs">Duration</Text>
               </View>
               <View className="flex-1 bg-zinc-800 rounded-lg p-3">
-                <Ionicons name="barbell" size={20} color="#10b981" />
+                <Ionicons name="barbell" size={20} color="#9D12DE" />
                 <Text className="text-white font-bold mt-1">{currentEntry.totalVolume.toLocaleString()}kg</Text>
                 <Text className="text-zinc-400 text-xs">Volume</Text>
               </View>
               <View className="flex-1 bg-zinc-800 rounded-lg p-3">
-                <Ionicons name="fitness" size={20} color="#f59e0b" />
+                <Ionicons name="fitness" size={20} color="#FFEA00" />
                 <Text className="text-white font-bold mt-1">{currentEntry.exercises}</Text>
                 <Text className="text-zinc-400 text-xs">Exercises</Text>
               </View>
@@ -161,8 +161,8 @@ export default function WorkoutJournaling() {
             <View className={`bg-${getEnergyColor(currentEntry.energy)}-500/10 rounded-lg p-3 mb-4 border border-${getEnergyColor(currentEntry.energy)}-500/30`}>
               <View className="flex-row items-center">
                 <Ionicons name="flash" size={20} color={
-                  currentEntry.energy === 'high' ? '#10b981' :
-                  currentEntry.energy === 'medium' ? '#f59e0b' : '#ef4444'
+                  currentEntry.energy === 'high' ? '#9D12DE' :
+                  currentEntry.energy === 'medium' ? '#FFEA00' : '#ef4444'
                 } />
                 <Text className={`text-${getEnergyColor(currentEntry.energy)}-400 font-bold ml-2`}>
                   Energy: {currentEntry.energy.toUpperCase()}
@@ -176,12 +176,12 @@ export default function WorkoutJournaling() {
             <Text className="text-zinc-300 leading-6">{currentEntry.journal}</Text>
           </View>
 
-          <View className="bg-emerald-500/10 rounded-xl p-5 mb-4 border border-emerald-500/30">
-            <Text className="text-emerald-400 font-bold mb-3">Highlights</Text>
+          <View className="bg-primary/10 rounded-xl p-5 mb-4 border border-primary/30">
+            <Text className="text-primary font-bold mb-3">Highlights</Text>
             {currentEntry.highlights.map((highlight, idx) => (
               <View key={idx} className="flex-row items-center mb-2">
-                <Ionicons name="checkmark-circle" size={20} color="#10b981" />
-                <Text className="text-emerald-300 ml-2">{highlight}</Text>
+                <Ionicons name="checkmark-circle" size={20} color="#9D12DE" />
+                <Text className="text-primary/80 ml-2">{highlight}</Text>
               </View>
             ))}
           </View>
@@ -190,25 +190,25 @@ export default function WorkoutJournaling() {
             <Text className="text-amber-400 font-bold mb-3">Areas to Improve</Text>
             {currentEntry.improvements.map((improvement, idx) => (
               <View key={idx} className="flex-row items-center mb-2">
-                <Ionicons name="alert-circle" size={20} color="#f59e0b" />
+                <Ionicons name="alert-circle" size={20} color="#FFEA00" />
                 <Text className="text-amber-300 ml-2">{improvement}</Text>
               </View>
             ))}
           </View>
 
-          <TouchableOpacity className="bg-blue-500 rounded-xl py-4 mb-6 flex-row items-center justify-center">
+          <TouchableOpacity className="bg-primary rounded-xl py-4 mb-6 flex-row items-center justify-center">
             <Ionicons name="create" size={24} color="white" />
             <Text className="text-white font-bold ml-2 text-lg">Edit Entry</Text>
           </TouchableOpacity>
 
-          <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30 mb-6">
-            <Text className="text-blue-400 font-bold mb-2">Journaling Tips</Text>
-            <Text className="text-blue-300 text-sm">
-              • Write immediately post-workout{'\n'}
-              • Be honest sobre energy y effort{'\n'}
-              • Note form cues que ayudaron{'\n'}
-              • Track sleep/nutrition impact{'\n'}
-              • Review monthly para patterns
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
+            <Text className="text-primary/80 font-bold mb-2">Journaling Tips</Text>
+            <Text className="text-primary/60 text-sm">
+              â€¢ Write immediately post-workout{'\n'}
+              â€¢ Be honest sobre energy y effort{'\n'}
+              â€¢ Note form cues que ayudaron{'\n'}
+              â€¢ Track sleep/nutrition impact{'\n'}
+              â€¢ Review monthly para patterns
             </Text>
           </View>
         </View>
@@ -216,3 +216,5 @@ export default function WorkoutJournaling() {
     </View>
   );
 }
+
+

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -78,14 +78,14 @@ export default function WorkoutHistoryScreen() {
 
   const filters = [
     { label: 'Todos', value: 'all' as const },
-    { label: 'Última Semana', value: 'week' as const },
-    { label: 'Último Mes', value: 'month' as const },
+    { label: 'Ãšltima Semana', value: 'week' as const },
+    { label: 'Ãšltimo Mes', value: 'month' as const },
   ];
 
   return (
     <View className="flex-1 bg-gray-50">
       {/* Header */}
-      <LinearGradient colors={['#10B981', '#059669']} className="px-6 pt-12 pb-6">
+      <LinearGradient colors={['#9D12DE', '#7C3AED']} className="px-6 pt-12 pb-6">
         <View className="flex-row items-center justify-between mb-4">
           <TouchableOpacity onPress={() => router.back()} className="p-2">
             <Ionicons name="arrow-back" size={28} color="white" />
@@ -109,7 +109,7 @@ export default function WorkoutHistoryScreen() {
               <Text
                 className={`font-semibold ${
                   selectedFilter === filter.value
-                    ? 'text-emerald-600'
+                    ? 'text-primary'
                     : 'text-white'
                 }`}
               >
@@ -123,14 +123,14 @@ export default function WorkoutHistoryScreen() {
       <ScrollView className="flex-1" contentContainerClassName="p-6 gap-4">
         {isLoading ? (
           <View className="py-12">
-            <ActivityIndicator size="large" color="#10B981" />
+            <ActivityIndicator size="large" color="#9D12DE" />
           </View>
         ) : filteredWorkouts.length === 0 ? (
           <Card className="p-8">
             <View className="items-center gap-3">
               <Ionicons name="fitness-outline" size={48} color="#9CA3AF" />
               <Text className="text-center text-gray-500 font-medium">
-                No hay entrenamientos en este período
+                No hay entrenamientos en este perÃ­odo
               </Text>
             </View>
           </Card>
@@ -172,15 +172,15 @@ export default function WorkoutHistoryScreen() {
                       </Text>
                     </View>
 
-                    <View className="bg-emerald-100 p-2 rounded-lg">
-                      <Ionicons name="checkmark-circle" size={24} color="#10B981" />
+                    <View className="bg-primary/10 p-2 rounded-lg">
+                      <Ionicons name="checkmark-circle" size={24} color="#9D12DE" />
                     </View>
                   </View>
 
                   {/* Stats */}
                   <View className="flex-row gap-3 py-3 border-t border-gray-200">
                     <View className="flex-1 items-center">
-                      <Text className="text-gray-500 text-xs mb-1">Duración</Text>
+                      <Text className="text-gray-500 text-xs mb-1">DuraciÃ³n</Text>
                       <View className="flex-row items-center gap-1">
                         <Ionicons name="time-outline" size={16} color="#6B7280" />
                         <Text className="text-gray-900 font-bold">
@@ -230,7 +230,7 @@ export default function WorkoutHistoryScreen() {
                       {workout.exercises.length > 3 && (
                         <View className="bg-gray-100 px-3 py-1 rounded-full">
                           <Text className="text-xs text-gray-700 font-medium">
-                            +{workout.exercises.length - 3} más
+                            +{workout.exercises.length - 3} mÃ¡s
                           </Text>
                         </View>
                       )}
@@ -257,3 +257,4 @@ export default function WorkoutHistoryScreen() {
     </View>
   );
 }
+

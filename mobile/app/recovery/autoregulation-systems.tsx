@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -301,7 +301,7 @@ export default function AutoregulationSystems() {
         cons: [
           'Equipment cost ($200-800+)',
           'Setup time',
-          'Lift-specific (squat velocity ≠ bench velocity)',
+          'Lift-specific (squat velocity â‰  bench velocity)',
           'Learning curve to interpret data',
         ],
       },
@@ -461,8 +461,8 @@ export default function AutoregulationSystems() {
 
   const getColorClass = (color: string) => {
     const colors: { [key: string]: string } = {
-      blue: 'bg-blue-500',
-      emerald: 'bg-emerald-500',
+      blue: 'bg-primary',
+      emerald: 'bg-primary',
       purple: 'bg-purple-500',
       amber: 'bg-amber-500',
       red: 'bg-red-500',
@@ -524,9 +524,9 @@ export default function AutoregulationSystems() {
 
           {/* Interactive RPE Calculator */}
           {selectedSystem === 'rpe' && (
-            <View className="bg-emerald-500/10 rounded-xl p-5 border border-emerald-500/30 mb-6">
-              <Text className="text-emerald-400 font-bold text-lg mb-3">RPE Calculator</Text>
-              <Text className="text-emerald-300 text-sm mb-3">
+            <View className="bg-primary/10 rounded-xl p-5 border border-primary/30 mb-6">
+              <Text className="text-primary font-bold text-lg mb-3">RPE Calculator</Text>
+              <Text className="text-primary/80 text-sm mb-3">
                 How many reps did you have left?
               </Text>
               <TextInput
@@ -535,11 +535,11 @@ export default function AutoregulationSystems() {
                 placeholder="e.g., 2 reps"
                 placeholderTextColor="#6b7280"
                 keyboardType="numeric"
-                className="bg-zinc-900 border border-emerald-500/50 rounded-lg px-4 py-3 text-white mb-3"
+                className="bg-zinc-900 border border-primary/50 rounded-lg px-4 py-3 text-white mb-3"
               />
               {rpeInput && !isNaN(Number(rpeInput)) && (
-                <View className="bg-emerald-500/20 rounded-lg p-4">
-                  <Text className="text-emerald-300 font-bold">
+                <View className="bg-primary/20 rounded-lg p-4">
+                  <Text className="text-primary/80 font-bold">
                     RPE: {10 - Number(rpeInput)} (RIR: {rpeInput})
                   </Text>
                 </View>
@@ -548,12 +548,12 @@ export default function AutoregulationSystems() {
           )}
 
           {/* Content placeholder */}
-          <View className="bg-blue-500/10 rounded-xl p-6 border border-blue-500/30 mb-6">
-            <Ionicons name={currentSystem.icon as any} size={32} color="#3b82f6" />
-            <Text className="text-blue-400 font-bold text-lg mt-3 mb-2">
+          <View className="bg-primary/10 rounded-xl p-6 border border-primary/30 mb-6">
+            <Ionicons name={currentSystem.icon as any} size={32} color="#9D12DE" />
+            <Text className="text-primary/80 font-bold text-lg mt-3 mb-2">
               {currentSystem.name}
             </Text>
-            <Text className="text-blue-300 text-sm">
+            <Text className="text-primary/60 text-sm">
               Detailed content for {currentSystem.name}...
             </Text>
           </View>
@@ -561,22 +561,22 @@ export default function AutoregulationSystems() {
           <View className="bg-gradient-to-r from-amber-500/20 to-orange-500/20 rounded-xl p-5 border border-amber-500/30 mb-6">
             <Text className="text-amber-400 font-bold text-lg mb-3">Quick Reference</Text>
             <Text className="text-amber-300 text-sm mb-2">
-              • RPE 10 = Max effort, nothing left
+              â€¢ RPE 10 = Max effort, nothing left
             </Text>
             <Text className="text-amber-300 text-sm mb-2">
-              • RPE 9 = 1 rep left in tank
+              â€¢ RPE 9 = 1 rep left in tank
             </Text>
             <Text className="text-amber-300 text-sm mb-2">
-              • RPE 8 = 2 reps left (most working sets)
+              â€¢ RPE 8 = 2 reps left (most working sets)
             </Text>
             <Text className="text-amber-300 text-sm mb-2">
-              • RIR = 10 minus RPE (same thing, different framing)
+              â€¢ RIR = 10 minus RPE (same thing, different framing)
             </Text>
             <Text className="text-amber-300 text-sm mb-2">
-              • VBT = Bar speed determines load
+              â€¢ VBT = Bar speed determines load
             </Text>
             <Text className="text-amber-300 text-sm">
-              • Takes 4-6 weeks to calibrate RPE/RIR - be patient
+              â€¢ Takes 4-6 weeks to calibrate RPE/RIR - be patient
             </Text>
           </View>
         </View>
@@ -584,3 +584,5 @@ export default function AutoregulationSystems() {
     </View>
   );
 }
+
+

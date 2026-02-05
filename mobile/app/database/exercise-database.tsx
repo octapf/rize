@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -148,23 +148,23 @@ export default function ExerciseDatabase() {
             </Text>
             <View className="flex-row items-center">
               <Ionicons name="barbell" size={20} color="white" />
-              <Text className="text-white ml-2">{stats.total} exercises • {stats.variations} variations</Text>
+              <Text className="text-white ml-2">{stats.total} exercises â€¢ {stats.variations} variations</Text>
             </View>
           </View>
 
           <View className="flex-row gap-3 mb-6">
             <View className="flex-1 bg-zinc-900 rounded-xl p-3 border border-zinc-800">
-              <Ionicons name="fitness" size={24} color="#3b82f6" />
+              <Ionicons name="fitness" size={24} color="#9D12DE" />
               <Text className="text-2xl font-bold text-white mt-2">{stats.total}</Text>
               <Text className="text-zinc-400 text-sm">Exercises</Text>
             </View>
             <View className="flex-1 bg-zinc-900 rounded-xl p-3 border border-zinc-800">
-              <Ionicons name="videocam" size={24} color="#10b981" />
+              <Ionicons name="videocam" size={24} color="#9D12DE" />
               <Text className="text-2xl font-bold text-white mt-2">{stats.withVideo}</Text>
               <Text className="text-zinc-400 text-sm">With Video</Text>
             </View>
             <View className="flex-1 bg-zinc-900 rounded-xl p-3 border border-zinc-800">
-              <Ionicons name="copy" size={24} color="#f59e0b" />
+              <Ionicons name="copy" size={24} color="#FFEA00" />
               <Text className="text-2xl font-bold text-white mt-2">{stats.variations}</Text>
               <Text className="text-zinc-400 text-sm">Variations</Text>
             </View>
@@ -191,7 +191,7 @@ export default function ExerciseDatabase() {
                   key={muscle.key}
                   onPress={() => setSelectedMuscle(muscle.key)}
                   className={`${
-                    selectedMuscle === muscle.key ? 'bg-blue-500' : 'bg-zinc-900'
+                    selectedMuscle === muscle.key ? 'bg-primary' : 'bg-zinc-900'
                   } rounded-xl px-6 py-3 border ${
                     selectedMuscle === muscle.key ? 'border-blue-400' : 'border-zinc-800'
                   }`}
@@ -216,9 +216,9 @@ export default function ExerciseDatabase() {
                   key={eq.key}
                   onPress={() => setSelectedEquipment(eq.key)}
                   className={`${
-                    selectedEquipment === eq.key ? 'bg-emerald-500' : 'bg-zinc-900'
+                    selectedEquipment === eq.key ? 'bg-primary' : 'bg-zinc-900'
                   } rounded-xl px-6 py-3 border ${
-                    selectedEquipment === eq.key ? 'border-emerald-400' : 'border-zinc-800'
+                    selectedEquipment === eq.key ? 'border-primary' : 'border-zinc-800'
                   }`}
                 >
                   <Text
@@ -247,13 +247,13 @@ export default function ExerciseDatabase() {
                     <View className={`bg-${getDifficultyColor(exercise.difficulty)}-500 rounded-full px-3 py-1`}>
                       <Text className="text-white text-xs font-bold">{exercise.difficulty}</Text>
                     </View>
-                    <View className="bg-blue-500/20 rounded-full px-3 py-1">
-                      <Text className="text-blue-400 text-xs font-bold">{exercise.equipment}</Text>
+                    <View className="bg-primary/20 rounded-full px-3 py-1">
+                      <Text className="text-primary/80 text-xs font-bold">{exercise.equipment}</Text>
                     </View>
                   </View>
                 </View>
                 {exercise.videoUrl && (
-                  <Ionicons name="play-circle" size={32} color="#3b82f6" />
+                  <Ionicons name="play-circle" size={32} color="#9D12DE" />
                 )}
               </View>
 
@@ -266,7 +266,7 @@ export default function ExerciseDatabase() {
               </Text>
 
               <View className="flex-row items-center justify-between pt-3 border-t border-zinc-800">
-                <Text className="text-emerald-400 text-sm font-bold">
+                <Text className="text-primary text-sm font-bold">
                   {exercise.variations} variations available
                 </Text>
                 <Ionicons name="chevron-forward" size={20} color="#71717a" />
@@ -274,14 +274,14 @@ export default function ExerciseDatabase() {
             </TouchableOpacity>
           ))}
 
-          <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30 mb-6">
-            <Text className="text-blue-400 font-bold mb-2">Exercise Database Tips</Text>
-            <Text className="text-blue-300 text-sm">
-              • Watch form videos antes de intentar{'\n'}
-              • Start con light weight para learn technique{'\n'}
-              • Explore variations para variety{'\n'}
-              • Check secondary muscles trabajados{'\n'}
-              • Save favorites para quick access
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
+            <Text className="text-primary/80 font-bold mb-2">Exercise Database Tips</Text>
+            <Text className="text-primary/60 text-sm">
+              â€¢ Watch form videos antes de intentar{'\n'}
+              â€¢ Start con light weight para learn technique{'\n'}
+              â€¢ Explore variations para variety{'\n'}
+              â€¢ Check secondary muscles trabajados{'\n'}
+              â€¢ Save favorites para quick access
             </Text>
           </View>
         </View>
@@ -289,3 +289,5 @@ export default function ExerciseDatabase() {
     </View>
   );
 }
+
+

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -57,7 +57,7 @@ export default function SocialScreen() {
   return (
     <View className="flex-1 bg-gray-50">
       {/* Header */}
-      <LinearGradient colors={['#10B981', '#059669']} className="px-6 pt-12 pb-6">
+      <LinearGradient colors={['#9D12DE', '#7C3AED']} className="px-6 pt-12 pb-6">
         <Text className="text-3xl font-bold text-white mb-4">Social</Text>
         
         {/* Tabs */}
@@ -70,7 +70,7 @@ export default function SocialScreen() {
           >
             <Text
               className={`text-center font-semibold ${
-                activeTab === 'feed' ? 'text-emerald-600' : 'text-white'
+                activeTab === 'feed' ? 'text-primary' : 'text-white'
               }`}
             >
               Feed
@@ -84,7 +84,7 @@ export default function SocialScreen() {
           >
             <Text
               className={`text-center font-semibold ${
-                activeTab === 'friends' ? 'text-emerald-600' : 'text-white'
+                activeTab === 'friends' ? 'text-primary' : 'text-white'
               }`}
             >
               Amigos
@@ -101,7 +101,7 @@ export default function SocialScreen() {
           >
             <Text
               className={`text-center font-semibold ${
-                activeTab === 'leaderboard' ? 'text-emerald-600' : 'text-white'
+                activeTab === 'leaderboard' ? 'text-primary' : 'text-white'
               }`}
             >
               Ranking
@@ -121,15 +121,15 @@ export default function SocialScreen() {
         >
           {feedLoading && !feedData ? (
             <View className="py-20">
-              <ActivityIndicator size="large" color="#10B981" />
+              <ActivityIndicator size="large" color="#9D12DE" />
             </View>
           ) : feedData?.data && feedData.data.length > 0 ? (
             feedData.data.map((workout) => (
               <Card key={workout._id} className="p-4">
                 {/* User Info */}
                 <View className="flex-row items-center gap-3 mb-3">
-                  <View className="bg-emerald-100 w-12 h-12 rounded-full items-center justify-center">
-                    <Text className="text-emerald-700 font-bold text-lg">
+                  <View className="bg-primary/10 w-12 h-12 rounded-full items-center justify-center">
+                    <Text className="text-primary font-bold text-lg">
                       {workout.userId.username[0].toUpperCase()}
                     </Text>
                   </View>
@@ -217,8 +217,8 @@ export default function SocialScreen() {
                 <Card key={request.requestId} className="p-4 mb-3">
                   <View className="flex-row items-center justify-between">
                     <View className="flex-row items-center gap-3">
-                      <View className="bg-blue-100 w-12 h-12 rounded-full items-center justify-center">
-                        <Text className="text-blue-700 font-bold text-lg">
+                      <View className="bg-primary/10 w-12 h-12 rounded-full items-center justify-center">
+                        <Text className="text-primary font-bold text-lg">
                           {request.user.username[0].toUpperCase()}
                         </Text>
                       </View>
@@ -232,7 +232,7 @@ export default function SocialScreen() {
                       </View>
                     </View>
                     <View className="flex-row gap-2">
-                      <TouchableOpacity className="bg-emerald-500 px-4 py-2 rounded-lg">
+                      <TouchableOpacity className="bg-primary px-4 py-2 rounded-lg">
                         <Text className="text-white font-semibold">Aceptar</Text>
                       </TouchableOpacity>
                       <TouchableOpacity className="bg-gray-200 px-4 py-2 rounded-lg">
@@ -254,8 +254,8 @@ export default function SocialScreen() {
               <Card key={friend.friendshipId} className="p-4 mb-3">
                 <View className="flex-row items-center justify-between">
                   <View className="flex-row items-center gap-3">
-                    <View className="bg-emerald-100 w-12 h-12 rounded-full items-center justify-center">
-                      <Text className="text-emerald-700 font-bold text-lg">
+                    <View className="bg-primary/10 w-12 h-12 rounded-full items-center justify-center">
+                      <Text className="text-primary font-bold text-lg">
                         {friend.username[0].toUpperCase()}
                       </Text>
                     </View>
@@ -264,7 +264,7 @@ export default function SocialScreen() {
                         {friend.username}
                       </Text>
                       <Text className="text-xs text-gray-500">
-                        Nivel {Math.floor(friend.xp / 100) + 1} • {friend.xp} XP
+                        Nivel {Math.floor(friend.xp / 100) + 1} â€¢ {friend.xp} XP
                       </Text>
                     </View>
                   </View>
@@ -275,7 +275,7 @@ export default function SocialScreen() {
             <Card className="p-8 items-center">
               <Ionicons name="person-add-outline" size={48} color="#9CA3AF" />
               <Text className="text-gray-500 mt-4 text-center">
-                Aún no tienes amigos{'\n'}Busca usuarios para agregar
+                AÃºn no tienes amigos{'\n'}Busca usuarios para agregar
               </Text>
             </Card>
           )}
@@ -296,7 +296,7 @@ export default function SocialScreen() {
                 <View
                   className={`w-10 h-10 rounded-full items-center justify-center ${
                     index === 0
-                      ? 'bg-yellow-400'
+                      ? 'bg-highlight'
                       : index === 1
                       ? 'bg-gray-300'
                       : index === 2
@@ -328,3 +328,5 @@ export default function SocialScreen() {
     </View>
   );
 }
+
+

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -150,7 +150,7 @@ export default function WorkoutPlanner() {
 
       <ScrollView className="flex-1" showsVerticalScrollIndicator={false}>
         <View className="px-6 pt-6">
-          <View className="bg-gradient-to-r from-emerald-500 to-blue-500 rounded-xl p-6 mb-6">
+          <View className="bg-gradient-to-r from-primary to-[#7D0EBE] rounded-xl p-6 mb-6">
             <Text className="text-white text-2xl font-bold mb-2">Plan Your Training</Text>
             <Text className="text-white opacity-90">
               Customized split recommendations
@@ -165,9 +165,9 @@ export default function WorkoutPlanner() {
                   key={goal}
                   onPress={() => setSelectedGoal(goal)}
                   className={`${
-                    selectedGoal === goal ? 'bg-emerald-500' : 'bg-zinc-800'
+                    selectedGoal === goal ? 'bg-primary' : 'bg-zinc-800'
                   } rounded-xl px-4 py-2 border ${
-                    selectedGoal === goal ? 'border-emerald-400' : 'border-zinc-700'
+                    selectedGoal === goal ? 'border-primary' : 'border-zinc-700'
                   }`}
                 >
                   <Text className="text-white font-bold capitalize">{goal}</Text>
@@ -184,7 +184,7 @@ export default function WorkoutPlanner() {
                   key={exp}
                   onPress={() => setExperienceLevel(exp)}
                   className={`flex-1 ${
-                    experienceLevel === exp ? 'bg-blue-500' : 'bg-zinc-800'
+                    experienceLevel === exp ? 'bg-primary' : 'bg-zinc-800'
                   } rounded-xl px-3 py-2 border ${
                     experienceLevel === exp ? 'border-blue-400' : 'border-zinc-700'
                   }`}
@@ -216,8 +216,8 @@ export default function WorkoutPlanner() {
 
           {template && (
             <>
-              <View className="bg-emerald-500/10 rounded-xl p-5 mb-6 border border-emerald-500/30">
-                <Text className="text-emerald-400 font-bold text-xl mb-2">
+              <View className="bg-primary/10 rounded-xl p-5 mb-6 border border-primary/30">
+                <Text className="text-primary font-bold text-xl mb-2">
                   {template.name}
                 </Text>
                 <Text className="text-zinc-300 mb-4">{template.description}</Text>
@@ -225,8 +225,8 @@ export default function WorkoutPlanner() {
                 <View className="space-y-2">
                   {template.days.map((day, idx) => (
                     <View key={idx} className="bg-zinc-900 rounded-xl p-3 flex-row items-center">
-                      <View className="w-8 h-8 rounded-full bg-emerald-500/20 items-center justify-center border border-emerald-500/40">
-                        <Text className="text-emerald-400 font-bold">{idx + 1}</Text>
+                      <View className="w-8 h-8 rounded-full bg-primary/20 items-center justify-center border border-primary/40">
+                        <Text className="text-primary font-bold">{idx + 1}</Text>
                       </View>
                       <Text className="text-white font-bold ml-3">{day}</Text>
                     </View>
@@ -259,8 +259,8 @@ export default function WorkoutPlanner() {
                   <Text className="text-white font-bold">{structure.restTime}</Text>
                 </View>
 
-                <View className="bg-blue-500/10 rounded-lg p-3 border border-blue-500/30">
-                  <Text className="text-blue-400 text-sm">{structure.notes}</Text>
+                <View className="bg-primary/10 rounded-lg p-3 border border-primary/30">
+                  <Text className="text-primary/80 text-sm">{structure.notes}</Text>
                 </View>
               </View>
 
@@ -269,7 +269,7 @@ export default function WorkoutPlanner() {
                 {Object.entries(volume).map(([muscle, sets]) => (
                   <View key={muscle} className="flex-row justify-between items-center mb-2 last:mb-0">
                     <Text className="text-zinc-300 capitalize">{muscle}</Text>
-                    <Text className="text-emerald-400 font-bold">{sets}</Text>
+                    <Text className="text-primary font-bold">{sets}</Text>
                   </View>
                 ))}
               </View>
@@ -285,19 +285,19 @@ export default function WorkoutPlanner() {
             </View>
           )}
 
-          <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30 mb-6">
-            <Text className="text-blue-400 font-bold mb-2">Program Design Tips</Text>
-            <Text className="text-blue-300 text-sm mb-2">
-              • Start with minimum effective volume
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
+            <Text className="text-primary/80 font-bold mb-2">Program Design Tips</Text>
+            <Text className="text-primary/60 text-sm mb-2">
+              â€¢ Start with minimum effective volume
             </Text>
-            <Text className="text-blue-300 text-sm mb-2">
-              • Progress by adding weight, reps, or sets
+            <Text className="text-primary/60 text-sm mb-2">
+              â€¢ Progress by adding weight, reps, or sets
             </Text>
-            <Text className="text-blue-300 text-sm mb-2">
-              • Deload every 4-6 weeks
+            <Text className="text-primary/60 text-sm mb-2">
+              â€¢ Deload every 4-6 weeks
             </Text>
-            <Text className="text-blue-300 text-sm">
-              • Track all workouts to monitor progress
+            <Text className="text-primary/60 text-sm">
+              â€¢ Track all workouts to monitor progress
             </Text>
           </View>
         </View>
@@ -305,3 +305,5 @@ export default function WorkoutPlanner() {
     </View>
   );
 }
+
+

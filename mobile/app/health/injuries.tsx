@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -48,7 +48,7 @@ const INJURY_RECORDS: InjuryRecord[] = [
     type: 'pain',
     severity: 3,
     date: '2025-01-25T10:00:00',
-    notes: 'Dolor al presionar por encima de la cabeza. Posible inflamación del manguito rotador.',
+    notes: 'Dolor al presionar por encima de la cabeza. Posible inflamaciÃ³n del manguito rotador.',
     status: 'active',
     affectedExercises: ['Press militar', 'Press banca inclinado', 'Dominadas'],
   },
@@ -58,7 +58,7 @@ const INJURY_RECORDS: InjuryRecord[] = [
     type: 'discomfort',
     severity: 2,
     date: '2025-01-22T15:30:00',
-    notes: 'Molestia leve durante sentadillas profundas. Mejoró con stretching.',
+    notes: 'Molestia leve durante sentadillas profundas. MejorÃ³ con stretching.',
     status: 'healing',
     affectedExercises: ['Sentadilla profunda', 'Pistol squats', 'Lunges'],
   },
@@ -68,7 +68,7 @@ const INJURY_RECORDS: InjuryRecord[] = [
     type: 'pain',
     severity: 4,
     date: '2025-01-15T08:00:00',
-    notes: 'Dolor agudo después de peso muerto con mala técnica. Reposo total 7 días.',
+    notes: 'Dolor agudo despuÃ©s de peso muerto con mala tÃ©cnica. Reposo total 7 dÃ­as.',
     status: 'recovered',
     affectedExercises: ['Peso muerto', 'Sentadilla', 'Good mornings'],
   },
@@ -80,10 +80,10 @@ const MOBILITY_SCORES: MobilityScore[] = [
     score: 32,
     maxScore: 40,
     tests: [
-      { name: 'Rotación externa', result: '85°', passed: true },
-      { name: 'Rotación interna', result: '60°', passed: false },
-      { name: 'Flexión overhead', result: 'Completa', passed: true },
-      { name: 'Abducción horizontal', result: 'Limitada', passed: false },
+      { name: 'RotaciÃ³n externa', result: '85Â°', passed: true },
+      { name: 'RotaciÃ³n interna', result: '60Â°', passed: false },
+      { name: 'FlexiÃ³n overhead', result: 'Completa', passed: true },
+      { name: 'AbducciÃ³n horizontal', result: 'Limitada', passed: false },
     ],
   },
   {
@@ -91,10 +91,10 @@ const MOBILITY_SCORES: MobilityScore[] = [
     score: 38,
     maxScore: 40,
     tests: [
-      { name: 'Flexión de cadera', result: '>90°', passed: true },
+      { name: 'FlexiÃ³n de cadera', result: '>90Â°', passed: true },
       { name: 'Sentadilla profunda', result: 'ATG', passed: true },
       { name: 'Split squat', result: 'Balanceado', passed: true },
-      { name: 'Rotación externa', result: 'Normal', passed: true },
+      { name: 'RotaciÃ³n externa', result: 'Normal', passed: true },
     ],
   },
   {
@@ -102,10 +102,10 @@ const MOBILITY_SCORES: MobilityScore[] = [
     score: 28,
     maxScore: 40,
     tests: [
-      { name: 'Dorsiflexión', result: '35°', passed: false },
+      { name: 'DorsiflexiÃ³n', result: '35Â°', passed: false },
       { name: 'Prueba rodilla-pared', result: '8cm', passed: false },
       { name: 'Equilibrio single-leg', result: '20 seg', passed: true },
-      { name: 'Plantarflexión', result: 'Normal', passed: true },
+      { name: 'PlantarflexiÃ³n', result: 'Normal', passed: true },
     ],
   },
 ];
@@ -128,7 +128,7 @@ const ASYMMETRIES: AsymmetryDetection[] = [
     severity: 'normal',
   },
   {
-    bodyPart: 'Sentadilla Búlgara',
+    bodyPart: 'Sentadilla BÃºlgara',
     leftValue: 30,
     rightValue: 35,
     difference: 5,
@@ -152,16 +152,16 @@ export default function InjuryPrevention() {
   const tabs = [
     { id: 'injuries', label: 'Lesiones', icon: 'bandage' },
     { id: 'mobility', label: 'Movilidad', icon: 'body' },
-    { id: 'asymmetry', label: 'Asimetrías', icon: 'git-compare' },
+    { id: 'asymmetry', label: 'AsimetrÃ­as', icon: 'git-compare' },
   ];
 
   const addInjury = () => {
     Alert.alert(
-      'Registrar Lesión/Dolor',
+      'Registrar LesiÃ³n/Dolor',
       'Documenta cualquier molestia para seguimiento',
       [
         { text: 'Cancelar', style: 'cancel' },
-        { text: 'Registrar', onPress: () => Alert.alert('Lesión registrada') },
+        { text: 'Registrar', onPress: () => Alert.alert('LesiÃ³n registrada') },
       ]
     );
   };
@@ -169,7 +169,7 @@ export default function InjuryPrevention() {
   const updateInjuryStatus = (id: string) => {
     Alert.alert(
       'Actualizar Estado',
-      '¿Cómo está evolucionando?',
+      'Â¿CÃ³mo estÃ¡ evolucionando?',
       [
         {
           text: 'Activa',
@@ -204,7 +204,7 @@ export default function InjuryPrevention() {
   };
 
   const getSeverityColor = (severity: number) => {
-    if (severity <= 2) return 'text-emerald-400';
+    if (severity <= 2) return 'text-primary';
     if (severity <= 3) return 'text-amber-400';
     return 'text-red-400';
   };
@@ -222,7 +222,7 @@ export default function InjuryPrevention() {
       case 'healing':
         return 'bg-amber-500/10 border-amber-500/30 text-amber-400';
       case 'recovered':
-        return 'bg-emerald-500/10 border-emerald-500/30 text-emerald-400';
+        return 'bg-primary/10 border-primary/30 text-primary';
       default:
         return 'bg-zinc-800 border-zinc-700 text-zinc-400';
     }
@@ -231,9 +231,9 @@ export default function InjuryPrevention() {
   const getAsymmetrySeverityColor = (severity: string) => {
     switch (severity) {
       case 'normal':
-        return 'text-emerald-400';
+        return 'text-primary';
       case 'minor':
-        return 'text-blue-400';
+        return 'text-primary/80';
       case 'moderate':
         return 'text-amber-400';
       case 'severe':
@@ -272,10 +272,10 @@ export default function InjuryPrevention() {
             <Ionicons name="arrow-back" size={24} color="white" />
           </TouchableOpacity>
           <Text className="text-white text-2xl font-bold flex-1 ml-3">
-            Prevención de Lesiones
+            PrevenciÃ³n de Lesiones
           </Text>
           <TouchableOpacity onPress={addInjury}>
-            <Ionicons name="add-circle" size={28} color="#10B981" />
+            <Ionicons name="add-circle" size={28} color="#9D12DE" />
           </TouchableOpacity>
         </View>
 
@@ -288,7 +288,7 @@ export default function InjuryPrevention() {
                 onPress={() => setActiveTab(tab.id as any)}
                 className={`flex-row items-center px-4 py-2 rounded-lg ${
                   activeTab === tab.id
-                    ? 'bg-emerald-500'
+                    ? 'bg-primary'
                     : 'bg-zinc-900 border border-zinc-800'
                 }`}
               >
@@ -331,7 +331,7 @@ export default function InjuryPrevention() {
                 </View>
                 <View className="flex-1">
                   <Text className="text-zinc-400 text-xs mb-1">Recuperadas</Text>
-                  <Text className="text-emerald-400 text-2xl font-bold">
+                  <Text className="text-primary text-2xl font-bold">
                     {injuries.filter((i) => i.status === 'recovered').length}
                   </Text>
                 </View>
@@ -403,13 +403,13 @@ export default function InjuryPrevention() {
 
                 {/* Actions */}
                 <View className="flex-row gap-2">
-                  <TouchableOpacity className="flex-1 bg-blue-500/10 rounded-lg p-3 border border-blue-500/30">
-                    <Text className="text-blue-400 text-sm font-bold text-center">
+                  <TouchableOpacity className="flex-1 bg-primary/10 rounded-lg p-3 border border-primary/30">
+                    <Text className="text-primary/80 text-sm font-bold text-center">
                       Ver Protocolo
                     </Text>
                   </TouchableOpacity>
-                  <TouchableOpacity className="flex-1 bg-emerald-500/10 rounded-lg p-3 border border-emerald-500/30">
-                    <Text className="text-emerald-400 text-sm font-bold text-center">
+                  <TouchableOpacity className="flex-1 bg-primary/10 rounded-lg p-3 border border-primary/30">
+                    <Text className="text-primary text-sm font-bold text-center">
                       Actualizar
                     </Text>
                   </TouchableOpacity>
@@ -437,7 +437,7 @@ export default function InjuryPrevention() {
               </View>
               <View className="h-2 bg-zinc-800 rounded-full overflow-hidden">
                 <View
-                  className="h-full bg-emerald-500 rounded-full"
+                  className="h-full bg-primary rounded-full"
                   style={{
                     width: `${
                       (MOBILITY_SCORES.reduce((sum, s) => sum + s.score, 0) /
@@ -466,7 +466,7 @@ export default function InjuryPrevention() {
                     </Text>
                   </View>
                   <View className="items-center">
-                    <Text className="text-emerald-400 text-3xl font-bold">
+                    <Text className="text-primary text-3xl font-bold">
                       {Math.round((mobility.score / mobility.maxScore) * 100)}%
                     </Text>
                   </View>
@@ -475,7 +475,7 @@ export default function InjuryPrevention() {
                 {/* Progress Bar */}
                 <View className="h-2 bg-zinc-800 rounded-full overflow-hidden mb-4">
                   <View
-                    className="h-full bg-emerald-500 rounded-full"
+                    className="h-full bg-primary rounded-full"
                     style={{
                       width: `${(mobility.score / mobility.maxScore) * 100}%`,
                     }}
@@ -497,16 +497,16 @@ export default function InjuryPrevention() {
                       <Ionicons
                         name={test.passed ? 'checkmark-circle' : 'close-circle'}
                         size={20}
-                        color={test.passed ? '#10B981' : '#EF4444'}
+                        color={test.passed ? '#9D12DE' : '#EF4444'}
                       />
                     </View>
                   ))}
                 </View>
 
                 {/* Action */}
-                <TouchableOpacity className="bg-emerald-500/10 rounded-lg p-3 border border-emerald-500/30 mt-4">
-                  <Text className="text-emerald-400 text-sm font-bold text-center">
-                    Realizar Evaluación
+                <TouchableOpacity className="bg-primary/10 rounded-lg p-3 border border-primary/30 mt-4">
+                  <Text className="text-primary text-sm font-bold text-center">
+                    Realizar EvaluaciÃ³n
                   </Text>
                 </TouchableOpacity>
               </View>
@@ -518,16 +518,16 @@ export default function InjuryPrevention() {
         {activeTab === 'asymmetry' && (
           <View className="px-6 pt-6">
             {/* Info Card */}
-            <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30 mb-6">
+            <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
               <View className="flex-row items-start">
-                <Ionicons name="information-circle" size={20} color="#3B82F6" />
+                <Ionicons name="information-circle" size={20} color="#9D12DE" />
                 <View className="flex-1 ml-3">
-                  <Text className="text-blue-400 font-bold mb-2">
-                    Detección de Asimetrías
+                  <Text className="text-primary/80 font-bold mb-2">
+                    DetecciÃ³n de AsimetrÃ­as
                   </Text>
-                  <Text className="text-blue-300 text-sm">
+                  <Text className="text-primary/60 text-sm">
                     Las diferencias mayores al 10% pueden aumentar riesgo de lesiones.
-                    Trabaja el lado débil individualmente.
+                    Trabaja el lado dÃ©bil individualmente.
                   </Text>
                 </View>
               </View>
@@ -550,7 +550,7 @@ export default function InjuryPrevention() {
                         asymmetry.severity
                       )}`}
                     >
-                      {getAsymmetrySeverityLabel(asymmetry.severity)} •{' '}
+                      {getAsymmetrySeverityLabel(asymmetry.severity)} â€¢{' '}
                       {asymmetry.differencePercent.toFixed(1)}% diferencia
                     </Text>
                   </View>
@@ -586,7 +586,7 @@ export default function InjuryPrevention() {
                     <View className="flex-1">
                       <View className="h-3 bg-zinc-800 rounded-full overflow-hidden">
                         <View
-                          className="h-full bg-blue-500 rounded-full"
+                          className="h-full bg-primary rounded-full"
                           style={{
                             width: `${
                               (asymmetry.leftValue /
@@ -600,7 +600,7 @@ export default function InjuryPrevention() {
                     <View className="flex-1">
                       <View className="h-3 bg-zinc-800 rounded-full overflow-hidden">
                         <View
-                          className="h-full bg-emerald-500 rounded-full"
+                          className="h-full bg-primary rounded-full"
                           style={{
                             width: `${
                               (asymmetry.rightValue /
@@ -618,11 +618,11 @@ export default function InjuryPrevention() {
                 {asymmetry.severity !== 'normal' && (
                   <View className="bg-amber-500/10 rounded-lg p-3 border border-amber-500/30">
                     <View className="flex-row items-start">
-                      <Ionicons name="warning" size={16} color="#F59E0B" />
+                      <Ionicons name="warning" size={16} color="#FFEA00" />
                       <Text className="text-amber-300 text-sm ml-2 flex-1">
                         {asymmetry.leftValue < asymmetry.rightValue
-                          ? 'Trabaja más el lado izquierdo con ejercicios unilaterales'
-                          : 'Trabaja más el lado derecho con ejercicios unilaterales'}
+                          ? 'Trabaja mÃ¡s el lado izquierdo con ejercicios unilaterales'
+                          : 'Trabaja mÃ¡s el lado derecho con ejercicios unilaterales'}
                       </Text>
                     </View>
                   </View>
@@ -634,15 +634,15 @@ export default function InjuryPrevention() {
 
         {/* Bottom Tip */}
         <View className="px-6 pb-6 pt-2">
-          <View className="bg-emerald-500/10 rounded-xl p-4 border border-emerald-500/30">
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30">
             <View className="flex-row items-start">
-              <Ionicons name="fitness" size={20} color="#10B981" />
+              <Ionicons name="fitness" size={20} color="#9D12DE" />
               <View className="flex-1 ml-3">
-                <Text className="text-emerald-400 font-bold mb-2">
-                  Prevención es Clave
+                <Text className="text-primary font-bold mb-2">
+                  PrevenciÃ³n es Clave
                 </Text>
-                <Text className="text-emerald-300 text-sm">
-                  Movilidad + Técnica + Progresión Inteligente = Cero Lesiones
+                <Text className="text-primary/80 text-sm">
+                  Movilidad + TÃ©cnica + ProgresiÃ³n Inteligente = Cero Lesiones
                 </Text>
               </View>
             </View>
@@ -652,3 +652,5 @@ export default function InjuryPrevention() {
     </View>
   );
 }
+
+

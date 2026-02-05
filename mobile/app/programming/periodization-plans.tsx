@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -133,7 +133,7 @@ export default function PeriodizationPlans() {
 
       <ScrollView className="flex-1" showsVerticalScrollIndicator={false}>
         <View className="px-6 pt-6">
-          <View className="bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl p-6 mb-6">
+          <View className="bg-gradient-to-r from-primary to-[#7D0EBE] rounded-xl p-6 mb-6">
             <Text className="text-white text-2xl font-bold mb-2">Training Cycles</Text>
             <Text className="text-white opacity-90">
               Structure long-term progress
@@ -203,8 +203,8 @@ export default function PeriodizationPlans() {
                     <Text className="text-white font-bold">{phase.weeks}</Text>
                   </View>
                   <View className="flex-row justify-between">
-                    <Text className="text-zinc-400 text-sm">Sets × Reps:</Text>
-                    <Text className="text-white font-bold">{phase.sets} × {phase.reps}</Text>
+                    <Text className="text-zinc-400 text-sm">Sets Ã— Reps:</Text>
+                    <Text className="text-white font-bold">{phase.sets} Ã— {phase.reps}</Text>
                   </View>
                   <View className="flex-row justify-between">
                     <Text className="text-zinc-400 text-sm">Intensity:</Text>
@@ -219,12 +219,12 @@ export default function PeriodizationPlans() {
             ))}
           </View>
 
-          <View className="bg-emerald-500/10 rounded-xl p-5 mb-4 border border-emerald-500/30">
-            <Text className="text-emerald-400 font-bold mb-3">Pros</Text>
+          <View className="bg-primary/10 rounded-xl p-5 mb-4 border border-primary/30">
+            <Text className="text-primary font-bold mb-3">Pros</Text>
             {currentPlan.pros.map((pro, idx) => (
               <View key={idx} className="flex-row items-center mb-2 last:mb-0">
-                <Ionicons name="checkmark-circle" size={18} color="#10b981" />
-                <Text className="text-emerald-300 ml-2">{pro}</Text>
+                <Ionicons name="checkmark-circle" size={18} color="#9D12DE" />
+                <Text className="text-primary/80 ml-2">{pro}</Text>
               </View>
             ))}
           </View>
@@ -239,14 +239,14 @@ export default function PeriodizationPlans() {
             ))}
           </View>
 
-          <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30 mb-6">
-            <Text className="text-blue-400 font-bold mb-2">Key Principles</Text>
-            <Text className="text-blue-300 text-sm">
-              • Progressive overload is mandatory{'\n'}
-              • Deload every 3-6 weeks{'\n'}
-              • Track all lifts meticulously{'\n'}
-              • Adjust based on feedback{'\n'}
-              • Consistency &gt; perfection
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
+            <Text className="text-primary/80 font-bold mb-2">Key Principles</Text>
+            <Text className="text-primary/60 text-sm">
+              â€¢ Progressive overload is mandatory{'\n'}
+              â€¢ Deload every 3-6 weeks{'\n'}
+              â€¢ Track all lifts meticulously{'\n'}
+              â€¢ Adjust based on feedback{'\n'}
+              â€¢ Consistency &gt; perfection
             </Text>
           </View>
         </View>
@@ -254,3 +254,6 @@ export default function PeriodizationPlans() {
     </View>
   );
 }
+
+
+

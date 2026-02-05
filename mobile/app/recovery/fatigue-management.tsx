@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -98,7 +98,7 @@ export default function FatigueManagement() {
       strategies: [
         { tip: 'Aim for 7-9 hours nightly', priority: 'Critical' },
         { tip: 'Same sleep/wake schedule', priority: 'High' },
-        { tip: 'Dark, cool room (65-68°F)', priority: 'High' },
+        { tip: 'Dark, cool room (65-68Â°F)', priority: 'High' },
         { tip: 'No screens 1hr before bed', priority: 'Medium' },
         { tip: 'Magnesium supplement', priority: 'Medium' },
       ],
@@ -222,7 +222,7 @@ export default function FatigueManagement() {
                 {recommendation.level}
               </Text>
               <Text className="text-white text-lg font-bold mb-3">
-                → {recommendation.action}
+                â†’ {recommendation.action}
               </Text>
               {recommendation.details.map((detail, idx) => (
                 <View key={idx} className="flex-row items-center mb-1">
@@ -261,9 +261,9 @@ export default function FatigueManagement() {
             </View>
           ))}
 
-          <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30 mb-6">
-            <Text className="text-blue-400 font-bold mb-2">Remember</Text>
-            <Text className="text-blue-300 text-sm">
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
+            <Text className="text-primary/80 font-bold mb-2">Remember</Text>
+            <Text className="text-primary/60 text-sm">
               Fatigue is cumulative. Small daily habits compound over time. Recovery IS training.
             </Text>
           </View>
@@ -272,3 +272,4 @@ export default function FatigueManagement() {
     </View>
   );
 }
+

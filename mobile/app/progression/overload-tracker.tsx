@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -70,21 +70,21 @@ export default function ProgressiveOverload() {
     {
       name: 'Volume Progression',
       desc: 'Increase sets or reps',
-      example: '3x8 → 3x9 → 3x10',
+      example: '3x8 â†’ 3x9 â†’ 3x10',
       icon: 'add-circle',
       color: 'emerald',
     },
     {
       name: 'Density',
       desc: 'Same work, less rest',
-      example: '90s rest → 60s rest',
+      example: '90s rest â†’ 60s rest',
       icon: 'time',
       color: 'purple',
     },
     {
       name: 'Frequency',
       desc: 'Train more often',
-      example: '2x/week → 3x/week',
+      example: '2x/week â†’ 3x/week',
       icon: 'calendar',
       color: 'amber',
     },
@@ -127,7 +127,7 @@ export default function ProgressiveOverload() {
                 key={exercise.key}
                 onPress={() => setSelectedExercise(exercise.key)}
                 className={`flex-1 ${
-                  selectedExercise === exercise.key ? 'bg-blue-500' : 'bg-zinc-900'
+                  selectedExercise === exercise.key ? 'bg-primary' : 'bg-zinc-900'
                 } rounded-xl p-3 border ${
                   selectedExercise === exercise.key ? 'border-blue-400' : 'border-zinc-800'
                 }`}
@@ -149,13 +149,13 @@ export default function ProgressiveOverload() {
                 <Text className="text-white font-bold text-xl">{currentExercise.name}</Text>
                 <Text className="text-zinc-400 text-sm">{currentExercise.method}</Text>
               </View>
-              <View className="bg-emerald-500 rounded-full px-4 py-2">
+              <View className="bg-primary rounded-full px-4 py-2">
                 <Text className="text-white font-bold">{currentExercise.increment}</Text>
               </View>
             </View>
 
-            <View className="bg-blue-500/10 rounded-lg p-3 mb-4 border border-blue-500/30">
-              <Text className="text-blue-400 font-bold mb-1">Next Target</Text>
+            <View className="bg-primary/10 rounded-lg p-3 mb-4 border border-primary/30">
+              <Text className="text-primary/80 font-bold mb-1">Next Target</Text>
               <Text className="text-white text-lg">
                 {currentExercise.nextTarget.sets} x {currentExercise.nextTarget.reps} @ {currentExercise.nextTarget.weight > 0 ? `${currentExercise.nextTarget.weight}kg` : 'BW'}
               </Text>
@@ -171,7 +171,7 @@ export default function ProgressiveOverload() {
             >
               <View className="flex-row items-center justify-between mb-3">
                 <View className="flex-row items-center">
-                  <View className="w-8 h-8 bg-blue-500 rounded-full items-center justify-center mr-3">
+                  <View className="w-8 h-8 bg-primary rounded-full items-center justify-center mr-3">
                     <Text className="text-white font-bold">{idx + 1}</Text>
                   </View>
                   <View>
@@ -182,7 +182,7 @@ export default function ProgressiveOverload() {
                   </View>
                 </View>
                 <View>
-                  <Text className="text-emerald-400 font-bold text-right">{week.volume}</Text>
+                  <Text className="text-primary font-bold text-right">{week.volume}</Text>
                   <Text className="text-zinc-500 text-xs text-right">
                     {week.weight > 0 ? 'kg' : 'reps'}
                   </Text>
@@ -191,8 +191,8 @@ export default function ProgressiveOverload() {
 
               {idx > 0 && (
                 <View className="flex-row items-center pt-3 border-t border-zinc-800">
-                  <Ionicons name="trending-up" size={16} color="#10b981" />
-                  <Text className="text-emerald-400 text-sm ml-2">
+                  <Ionicons name="trending-up" size={16} color="#9D12DE" />
+                  <Text className="text-primary text-sm ml-2">
                     +{week.volume - currentExercise.progression[idx - 1].volume} {week.weight > 0 ? 'kg' : 'reps'} from last week
                   </Text>
                 </View>
@@ -200,7 +200,7 @@ export default function ProgressiveOverload() {
             </View>
           ))}
 
-          <View className="bg-emerald-500 rounded-xl p-4 mb-6">
+          <View className="bg-primary rounded-xl p-4 mb-6">
             <View className="flex-row items-center justify-between">
               <View>
                 <Text className="text-white text-sm opacity-80 mb-1">Total Volume Gain</Text>
@@ -236,14 +236,14 @@ export default function ProgressiveOverload() {
             </View>
           ))}
 
-          <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30 mb-6">
-            <Text className="text-blue-400 font-bold mb-2">Progressive Overload Tips</Text>
-            <Text className="text-blue-300 text-sm">
-              • Small consistent increases &gt; big jumps{'\n'}
-              • Track ALL variables (weight/sets/reps/rest){'\n'}
-              • Deload every 6-8 weeks{'\n'}
-              • Can't progress? Check recovery{'\n'}
-              • Progressive overload = muscle growth
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
+            <Text className="text-primary/80 font-bold mb-2">Progressive Overload Tips</Text>
+            <Text className="text-primary/60 text-sm">
+              â€¢ Small consistent increases &gt; big jumps{'\n'}
+              â€¢ Track ALL variables (weight/sets/reps/rest){'\n'}
+              â€¢ Deload every 6-8 weeks{'\n'}
+              â€¢ Can't progress? Check recovery{'\n'}
+              â€¢ Progressive overload = muscle growth
             </Text>
           </View>
         </View>
@@ -251,3 +251,4 @@ export default function ProgressiveOverload() {
     </View>
   );
 }
+

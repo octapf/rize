@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -115,7 +115,7 @@ const MEASUREMENT_HISTORY: MeasurementHistory[] = [
 ];
 
 const CALIPER_SITES = [
-  { id: '1', name: 'Tríceps', value: 12, unit: 'mm', icon: 'bonfire' },
+  { id: '1', name: 'TrÃ­ceps', value: 12, unit: 'mm', icon: 'bonfire' },
   { id: '2', name: 'Subescapular', value: 18, unit: 'mm', icon: 'body' },
   { id: '3', name: 'Suprailiaco', value: 22, unit: 'mm', icon: 'analytics' },
   { id: '4', name: 'Abdominal', value: 24, unit: 'mm', icon: 'ellipse-outline' },
@@ -138,8 +138,8 @@ export default function BodyMeasurements() {
 
   const addMeasurement = (bodyPart: string) => {
     Alert.alert(
-      'Nueva Medición',
-      `Ingresa la medición para ${bodyPart}`,
+      'Nueva MediciÃ³n',
+      `Ingresa la mediciÃ³n para ${bodyPart}`,
       [
         {
           text: 'Cancelar',
@@ -148,7 +148,7 @@ export default function BodyMeasurements() {
         {
           text: 'Guardar',
           onPress: () => {
-            Alert.alert('Guardado', `Medición de ${bodyPart} registrada`);
+            Alert.alert('Guardado', `MediciÃ³n de ${bodyPart} registrada`);
           },
         },
       ]
@@ -188,7 +188,7 @@ export default function BodyMeasurements() {
         </View>
 
         {/* Summary Card */}
-        <View className="bg-gradient-to-br from-emerald-500 to-blue-500 rounded-xl p-4 mb-4">
+        <View className="bg-gradient-to-br from-primary to-[#7D0EBE] rounded-xl p-4 mb-4">
           <View className="flex-row items-center justify-between">
             <View className="flex-1">
               <Text className="text-white/80 text-sm mb-1">Progreso Este Mes</Text>
@@ -196,7 +196,7 @@ export default function BodyMeasurements() {
                 +3.2 cm
               </Text>
               <Text className="text-white/80 text-sm">
-                Músculo ganado en áreas clave
+                MÃºsculo ganado en Ã¡reas clave
               </Text>
             </View>
             <View className="bg-white/20 rounded-full p-4">
@@ -214,7 +214,7 @@ export default function BodyMeasurements() {
                 onPress={() => setActiveTab(tab.id as any)}
                 className={`flex-row items-center px-4 py-2 rounded-lg ${
                   activeTab === tab.id
-                    ? 'bg-emerald-500'
+                    ? 'bg-primary'
                     : 'bg-zinc-900 border border-zinc-800'
                 }`}
               >
@@ -252,8 +252,8 @@ export default function BodyMeasurements() {
               >
                 <View className="flex-row items-center justify-between mb-3">
                   <View className="flex-row items-center flex-1">
-                    <View className="bg-emerald-500/20 w-12 h-12 rounded-full items-center justify-center">
-                      <Ionicons name={item.icon as any} size={24} color="#10B981" />
+                    <View className="bg-primary/20 w-12 h-12 rounded-full items-center justify-center">
+                      <Ionicons name={item.icon as any} size={24} color="#9D12DE" />
                     </View>
                     <View className="ml-3 flex-1">
                       <Text className="text-white font-bold text-base">
@@ -276,7 +276,7 @@ export default function BodyMeasurements() {
                   <View
                     className={`flex-row items-center px-3 py-1 rounded-full ${
                       item.change > 0
-                        ? 'bg-emerald-500/20'
+                        ? 'bg-primary/20'
                         : item.change < 0
                         ? 'bg-red-500/20'
                         : 'bg-zinc-800'
@@ -293,7 +293,7 @@ export default function BodyMeasurements() {
                       size={14}
                       color={
                         item.change > 0
-                          ? '#10B981'
+                          ? '#9D12DE'
                           : item.change < 0
                           ? '#EF4444'
                           : '#71717A'
@@ -302,7 +302,7 @@ export default function BodyMeasurements() {
                     <Text
                       className={`ml-1 text-sm font-bold ${
                         item.change > 0
-                          ? 'text-emerald-500'
+                          ? 'text-primary'
                           : item.change < 0
                           ? 'text-red-500'
                           : 'text-zinc-400'
@@ -314,7 +314,7 @@ export default function BodyMeasurements() {
                   </View>
                   <TouchableOpacity
                     onPress={() => addMeasurement(item.bodyPart)}
-                    className="bg-emerald-500 rounded-lg px-3 py-1"
+                    className="bg-primary rounded-lg px-3 py-1"
                   >
                     <Text className="text-white font-bold text-sm">Actualizar</Text>
                   </TouchableOpacity>
@@ -323,17 +323,17 @@ export default function BodyMeasurements() {
             ))}
 
             {/* Total Summary */}
-            <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30 mb-4">
+            <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-4">
               <View className="flex-row items-center justify-between">
                 <View>
-                  <Text className="text-blue-400 text-sm mb-1">
+                  <Text className="text-primary/80 text-sm mb-1">
                     Circunferencia Total
                   </Text>
-                  <Text className="text-blue-400 font-bold text-3xl">
+                  <Text className="text-primary/80 font-bold text-3xl">
                     {totalCircumference} cm
                   </Text>
                 </View>
-                <Ionicons name="stats-chart" size={32} color="#3B82F6" />
+                <Ionicons name="stats-chart" size={32} color="#9D12DE" />
               </View>
             </View>
           </View>
@@ -353,7 +353,7 @@ export default function BodyMeasurements() {
             </View>
 
             <Text className="text-white font-bold text-lg mb-3">
-              Sitios de Medición (7 pliegues)
+              Sitios de MediciÃ³n (7 pliegues)
             </Text>
 
             {CALIPER_SITES.map((site) => (
@@ -364,7 +364,7 @@ export default function BodyMeasurements() {
                 <View className="flex-row items-center justify-between">
                   <View className="flex-row items-center flex-1">
                     <View className="bg-amber-500/20 w-12 h-12 rounded-full items-center justify-center">
-                      <Ionicons name={site.icon as any} size={24} color="#F59E0B" />
+                      <Ionicons name={site.icon as any} size={24} color="#FFEA00" />
                     </View>
                     <Text className="text-white font-bold text-base ml-3">
                       {site.name}
@@ -380,24 +380,24 @@ export default function BodyMeasurements() {
               </View>
             ))}
 
-            <TouchableOpacity className="bg-emerald-500 rounded-xl p-4 mb-4">
+            <TouchableOpacity className="bg-primary rounded-xl p-4 mb-4">
               <View className="flex-row items-center justify-center">
                 <Ionicons name="add-circle" size={20} color="white" />
                 <Text className="text-white font-bold ml-2">
-                  Nueva Medición Completa
+                  Nueva MediciÃ³n Completa
                 </Text>
               </View>
             </TouchableOpacity>
 
             {/* Info Card */}
-            <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30">
+            <View className="bg-primary/10 rounded-xl p-4 border border-primary/30">
               <View className="flex-row items-start">
-                <Ionicons name="information-circle" size={20} color="#3B82F6" />
+                <Ionicons name="information-circle" size={20} color="#9D12DE" />
                 <View className="flex-1 ml-3">
-                  <Text className="text-blue-400 font-bold mb-2">
+                  <Text className="text-primary/80 font-bold mb-2">
                     Protocolo de 7 Pliegues
                   </Text>
-                  <Text className="text-blue-300 text-sm">
+                  <Text className="text-primary/60 text-sm">
                     Usa un calibrador de pliegues para medir en los 7 sitios indicados. Realiza 3 mediciones por sitio y usa el promedio.
                   </Text>
                 </View>
@@ -417,7 +417,7 @@ export default function BodyMeasurements() {
               <View key={item.bodyPart} className="mb-6">
                 <View className="flex-row items-center justify-between mb-3">
                   <View className="flex-row items-center">
-                    <Ionicons name={item.icon as any} size={20} color="#10B981" />
+                    <Ionicons name={item.icon as any} size={20} color="#9D12DE" />
                     <Text className="text-white font-bold text-base ml-2">
                       {item.bodyPart}
                     </Text>
@@ -425,7 +425,7 @@ export default function BodyMeasurements() {
                   <View
                     className={`flex-row items-center px-3 py-1 rounded-full ${
                       item.change > 0
-                        ? 'bg-emerald-500/20'
+                        ? 'bg-primary/20'
                         : item.change < 0
                         ? 'bg-red-500/20'
                         : 'bg-zinc-800'
@@ -434,11 +434,11 @@ export default function BodyMeasurements() {
                     <Ionicons
                       name={item.change > 0 ? 'trending-up' : 'trending-down'}
                       size={14}
-                      color={item.change > 0 ? '#10B981' : '#EF4444'}
+                      color={item.change > 0 ? '#9D12DE' : '#EF4444'}
                     />
                     <Text
                       className={`ml-1 text-sm font-bold ${
-                        item.change > 0 ? 'text-emerald-500' : 'text-red-500'
+                        item.change > 0 ? 'text-primary' : 'text-red-500'
                       }`}
                     >
                       {item.change > 0 ? '+' : ''}
@@ -451,7 +451,7 @@ export default function BodyMeasurements() {
                   <View
                     key={measurement.id}
                     className={`bg-zinc-900 rounded-lg p-3 mb-2 border border-zinc-800 ${
-                      index === item.measurements.length - 1 ? 'border-emerald-500' : ''
+                      index === item.measurements.length - 1 ? 'border-primary' : ''
                     }`}
                   >
                     <View className="flex-row items-center justify-between">
@@ -464,8 +464,8 @@ export default function BodyMeasurements() {
                         </Text>
                       </View>
                       {index === item.measurements.length - 1 && (
-                        <View className="bg-emerald-500/20 px-3 py-1 rounded-full">
-                          <Text className="text-emerald-500 text-xs font-bold">
+                        <View className="bg-primary/20 px-3 py-1 rounded-full">
+                          <Text className="text-primary text-xs font-bold">
                             Actual
                           </Text>
                         </View>
@@ -481,13 +481,13 @@ export default function BodyMeasurements() {
         <View className="px-6 pb-6 pt-2">
           <View className="bg-amber-500/10 rounded-xl p-4 border border-amber-500/30">
             <View className="flex-row items-start">
-              <Ionicons name="analytics" size={20} color="#F59E0B" />
+              <Ionicons name="analytics" size={20} color="#FFEA00" />
               <View className="flex-1 ml-3">
                 <Text className="text-amber-400 font-bold mb-2">
                   Mide Siempre en las Mismas Condiciones
                 </Text>
                 <Text className="text-amber-300 text-sm">
-                  Para resultados precisos, mide siempre a la misma hora del día, en ayunas, y después de ir al baño.
+                  Para resultados precisos, mide siempre a la misma hora del dÃ­a, en ayunas, y despuÃ©s de ir al baÃ±o.
                 </Text>
               </View>
             </View>
@@ -497,3 +497,5 @@ export default function BodyMeasurements() {
     </View>
   );
 }
+
+

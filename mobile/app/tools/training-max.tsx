@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -92,7 +92,7 @@ export default function TrainingMaxCalculator() {
                 key={formula.key}
                 onPress={() => setSelectedFormula(formula.key as any)}
                 className={`flex-1 ${
-                  selectedFormula === formula.key ? 'bg-blue-500' : 'bg-zinc-900'
+                  selectedFormula === formula.key ? 'bg-primary' : 'bg-zinc-900'
                 } rounded-xl p-3 border ${
                   selectedFormula === formula.key ? 'border-blue-400' : 'border-zinc-800'
                 }`}
@@ -106,7 +106,7 @@ export default function TrainingMaxCalculator() {
                 </Text>
                 <Text
                   className={`${
-                    selectedFormula === formula.key ? 'text-blue-100' : 'text-zinc-500'
+                    selectedFormula === formula.key ? 'text-highlight' : 'text-zinc-500'
                   } text-xs text-center`}
                 >
                   {formula.desc}
@@ -151,13 +151,13 @@ export default function TrainingMaxCalculator() {
             <Text className="text-white text-center text-xl opacity-90">kg</Text>
           </View>
 
-          <View className="bg-blue-500/10 rounded-xl p-4 mb-6 border border-blue-500/30">
+          <View className="bg-primary/10 rounded-xl p-4 mb-6 border border-primary/30">
             <View className="flex-row items-center justify-between">
               <View>
-                <Text className="text-blue-400 text-sm mb-1">Training Max (90%)</Text>
-                <Text className="text-blue-300 text-xs">For Wendler 5/3/1</Text>
+                <Text className="text-primary/80 text-sm mb-1">Training Max (90%)</Text>
+                <Text className="text-primary/60 text-xs">For Wendler 5/3/1</Text>
               </View>
-              <Text className="text-blue-400 text-3xl font-bold">
+              <Text className="text-primary/80 text-3xl font-bold">
                 {trainingMax.toFixed(1)}kg
               </Text>
             </View>
@@ -202,14 +202,14 @@ export default function TrainingMaxCalculator() {
             </TouchableOpacity>
           ))}
 
-          <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30 mb-6">
-            <Text className="text-blue-400 font-bold mb-2">1RM Tips</Text>
-            <Text className="text-blue-300 text-sm">
-              • Best accuracy con 3-5 reps{'\n'}
-              • No uses failure sets (deload primero){'\n'}
-              • Test 1RM cada 8-12 semanas{'\n'}
-              • Training Max = 90% de 1RM real{'\n'}
-              • Recalcula con cada PR
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
+            <Text className="text-primary/80 font-bold mb-2">1RM Tips</Text>
+            <Text className="text-primary/60 text-sm">
+              â€¢ Best accuracy con 3-5 reps{'\n'}
+              â€¢ No uses failure sets (deload primero){'\n'}
+              â€¢ Test 1RM cada 8-12 semanas{'\n'}
+              â€¢ Training Max = 90% de 1RM real{'\n'}
+              â€¢ Recalcula con cada PR
             </Text>
           </View>
         </View>
@@ -217,3 +217,4 @@ export default function TrainingMaxCalculator() {
     </View>
   );
 }
+

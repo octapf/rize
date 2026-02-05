@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+﻿import React, { useState, useEffect } from 'react';
 import {
   View,
   Text,
@@ -43,13 +43,13 @@ interface CoachingInsight {
 const RECOMMENDATIONS: WorkoutRecommendation[] = [
   {
     id: '1',
-    title: 'Aumentar volumen de tracción',
-    reason: 'Has progresado consistentemente en dominadas las últimas 4 semanas',
+    title: 'Aumentar volumen de tracciÃ³n',
+    reason: 'Has progresado consistentemente en dominadas las Ãºltimas 4 semanas',
     type: 'increase',
     priority: 'high',
     action: '+2 series de pull-ups',
     icon: 'trending-up',
-    color: '#10B981',
+    color: '#9D12DE',
   },
   {
     id: '2',
@@ -59,17 +59,17 @@ const RECOMMENDATIONS: WorkoutRecommendation[] = [
     priority: 'high',
     action: 'Reducir 20-30% volumen esta semana',
     icon: 'warning',
-    color: '#F59E0B',
+    color: '#FFEA00',
   },
   {
     id: '3',
-    title: 'Mantén intensidad actual',
-    reason: 'Estás progresando a un ritmo sostenible en piernas',
+    title: 'MantÃ©n intensidad actual',
+    reason: 'EstÃ¡s progresando a un ritmo sostenible en piernas',
     type: 'maintain',
     priority: 'medium',
     action: 'Continuar con el plan actual',
     icon: 'checkmark-circle',
-    color: '#3B82F6',
+    color: '#9D12DE',
   },
   {
     id: '4',
@@ -77,7 +77,7 @@ const RECOMMENDATIONS: WorkoutRecommendation[] = [
     reason: 'No has recuperado fuerza en press desde hace 2 semanas',
     type: 'decrease',
     priority: 'medium',
-    action: '2 sesiones semanales → 1 sesión',
+    action: '2 sesiones semanales â†’ 1 sesiÃ³n',
     icon: 'trending-down',
     color: '#EF4444',
   },
@@ -85,7 +85,7 @@ const RECOMMENDATIONS: WorkoutRecommendation[] = [
 
 const RECOVERY_METRICS: RecoveryMetric[] = [
   {
-    name: 'Calidad de sueño',
+    name: 'Calidad de sueÃ±o',
     value: 7.2,
     maxValue: 10,
     status: 'good',
@@ -99,14 +99,14 @@ const RECOVERY_METRICS: RecoveryMetric[] = [
     icon: 'body',
   },
   {
-    name: 'Energía general',
+    name: 'EnergÃ­a general',
     value: 6.8,
     maxValue: 10,
     status: 'good',
     icon: 'flash',
   },
   {
-    name: 'Estrés percibido',
+    name: 'EstrÃ©s percibido',
     value: 6.2,
     maxValue: 10,
     status: 'moderate',
@@ -118,28 +118,28 @@ const INSIGHTS: CoachingInsight[] = [
   {
     id: '1',
     category: 'Volumen',
-    message: 'Tu volumen semanal (68 series) está dentro del rango óptimo para hipertrofia',
+    message: 'Tu volumen semanal (68 series) estÃ¡ dentro del rango Ã³ptimo para hipertrofia',
     impact: 'positive',
     icon: 'analytics',
   },
   {
     id: '2',
-    category: 'Recuperación',
-    message: 'Descansaste solo 6h promedio esta semana. Intenta 7-9h para mejor recuperación',
+    category: 'RecuperaciÃ³n',
+    message: 'Descansaste solo 6h promedio esta semana. Intenta 7-9h para mejor recuperaciÃ³n',
     impact: 'negative',
     icon: 'bed',
   },
   {
     id: '3',
-    category: 'Progresión',
-    message: 'Has aumentado el peso en 3 ejercicios clave este mes. ¡Excelente progreso!',
+    category: 'ProgresiÃ³n',
+    message: 'Has aumentado el peso en 3 ejercicios clave este mes. Â¡Excelente progreso!',
     impact: 'positive',
     icon: 'trophy',
   },
   {
     id: '4',
     category: 'Balance',
-    message: 'Ratio tracción/empuje está equilibrado (1.1:1)',
+    message: 'Ratio tracciÃ³n/empuje estÃ¡ equilibrado (1.1:1)',
     impact: 'positive',
     icon: 'scale',
   },
@@ -151,7 +151,7 @@ export default function VirtualCoach() {
 
   const tabs = [
     { id: 'recommendations' as const, label: 'Recomendaciones', icon: 'bulb' },
-    { id: 'recovery' as const, label: 'Recuperación', icon: 'heart' },
+    { id: 'recovery' as const, label: 'RecuperaciÃ³n', icon: 'heart' },
     { id: 'insights' as const, label: 'Insights', icon: 'analytics' },
   ];
 
@@ -170,9 +170,9 @@ export default function VirtualCoach() {
   const getStatusColor = (status: string) => {
     switch (status) {
       case 'good':
-        return '#10B981';
+        return '#9D12DE';
       case 'moderate':
-        return '#F59E0B';
+        return '#FFEA00';
       case 'poor':
         return '#EF4444';
       default:
@@ -187,7 +187,7 @@ export default function VirtualCoach() {
       case 'medium':
         return 'bg-amber-500/20';
       case 'low':
-        return 'bg-blue-500/20';
+        return 'bg-primary/20';
       default:
         return 'bg-zinc-500/20';
     }
@@ -200,7 +200,7 @@ export default function VirtualCoach() {
       case 'medium':
         return 'text-amber-500';
       case 'low':
-        return 'text-blue-500';
+        return 'text-primary';
       default:
         return 'text-zinc-500';
     }
@@ -223,18 +223,18 @@ export default function VirtualCoach() {
         </View>
 
         {/* Performance Score */}
-        <View className="bg-gradient-to-r from-emerald-500/20 to-blue-500/20 rounded-xl p-4 border border-emerald-500/30">
+        <View className="bg-gradient-to-r from-emerald-500/20 to-blue-500/20 rounded-xl p-4 border border-primary/30">
           <View className="flex-row items-center justify-between mb-2">
             <View>
               <Text className="text-zinc-400 text-sm">Performance Score</Text>
               <View className="flex-row items-end">
                 <Text className="text-white text-4xl font-bold">{performanceScore}</Text>
-                <Text className="text-emerald-500 text-lg font-bold mb-1 ml-2">
+                <Text className="text-primary text-lg font-bold mb-1 ml-2">
                   /100
                 </Text>
               </View>
             </View>
-            <View className="bg-emerald-500 w-16 h-16 rounded-full items-center justify-center">
+            <View className="bg-primary w-16 h-16 rounded-full items-center justify-center">
               <Ionicons name="trophy" size={32} color="white" />
             </View>
           </View>
@@ -251,18 +251,18 @@ export default function VirtualCoach() {
             key={tab.id}
             onPress={() => setSelectedTab(tab.id)}
             className={`flex-1 pb-3 border-b-2 ${
-              selectedTab === tab.id ? 'border-emerald-500' : 'border-transparent'
+              selectedTab === tab.id ? 'border-primary' : 'border-transparent'
             }`}
           >
             <View className="flex-row items-center justify-center">
               <Ionicons
                 name={tab.icon as any}
                 size={18}
-                color={selectedTab === tab.id ? '#10B981' : '#71717A'}
+                color={selectedTab === tab.id ? '#9D12DE' : '#71717A'}
               />
               <Text
                 className={`ml-2 font-semibold ${
-                  selectedTab === tab.id ? 'text-emerald-500' : 'text-zinc-400'
+                  selectedTab === tab.id ? 'text-primary' : 'text-zinc-400'
                 }`}
               >
                 {tab.label}
@@ -280,8 +280,8 @@ export default function VirtualCoach() {
               <Text className="text-white font-bold text-lg">
                 Ajustes Recomendados
               </Text>
-              <View className="bg-emerald-500/20 px-3 py-1 rounded-full">
-                <Text className="text-emerald-500 text-sm font-bold">
+              <View className="bg-primary/20 px-3 py-1 rounded-full">
+                <Text className="text-primary text-sm font-bold">
                   {RECOMMENDATIONS.length} nuevas
                 </Text>
               </View>
@@ -310,7 +310,7 @@ export default function VirtualCoach() {
                     </Text>
                     <View className="bg-zinc-800 rounded-lg p-3">
                       <Text className="text-zinc-300 text-sm font-semibold">
-                        Acción sugerida:
+                        AcciÃ³n sugerida:
                       </Text>
                       <Text className="text-white text-sm mt-1">{rec.action}</Text>
                     </View>
@@ -325,16 +325,16 @@ export default function VirtualCoach() {
                   </View>
                   <TouchableOpacity
                     onPress={() =>
-                      Alert.alert('Aplicar cambio', `¿Aplicar "${rec.action}"?`, [
+                      Alert.alert('Aplicar cambio', `Â¿Aplicar "${rec.action}"?`, [
                         { text: 'Cancelar', style: 'cancel' },
                         {
                           text: 'Aplicar',
                           onPress: () =>
-                            Alert.alert('¡Listo!', 'Cambio aplicado a tu plan'),
+                            Alert.alert('Â¡Listo!', 'Cambio aplicado a tu plan'),
                         },
                       ])
                     }
-                    className="bg-emerald-500 px-4 py-2 rounded-lg"
+                    className="bg-primary px-4 py-2 rounded-lg"
                   >
                     <Text className="text-white font-semibold text-sm">Aplicar</Text>
                   </TouchableOpacity>
@@ -348,7 +348,7 @@ export default function VirtualCoach() {
         {selectedTab === 'recovery' && (
           <View className="px-6 py-4">
             <Text className="text-white font-bold text-lg mb-4">
-              Estado de Recuperación
+              Estado de RecuperaciÃ³n
             </Text>
 
             {/* Recovery Metrics */}
@@ -389,14 +389,14 @@ export default function VirtualCoach() {
             {/* Deload Suggestion */}
             <View className="bg-amber-500/10 rounded-xl p-4 border border-amber-500/30 mt-3">
               <View className="flex-row items-start">
-                <Ionicons name="warning" size={24} color="#F59E0B" />
+                <Ionicons name="warning" size={24} color="#FFEA00" />
                 <View className="flex-1 ml-3">
                   <Text className="text-amber-500 font-bold mb-2">
                     Considera un Deload
                   </Text>
                   <Text className="text-amber-300 text-sm leading-5">
-                    Tu puntuación de recuperación está por debajo del 70%. Un deload
-                    de una semana te ayudará a volver más fuerte.
+                    Tu puntuaciÃ³n de recuperaciÃ³n estÃ¡ por debajo del 70%. Un deload
+                    de una semana te ayudarÃ¡ a volver mÃ¡s fuerte.
                   </Text>
                   <TouchableOpacity className="bg-amber-500 rounded-lg p-3 mt-3">
                     <Text className="text-white font-semibold text-center">
@@ -410,15 +410,15 @@ export default function VirtualCoach() {
             {/* Sleep Tracker */}
             <View className="bg-zinc-900 rounded-xl p-4 border border-zinc-800 mt-3">
               <View className="flex-row items-center justify-between mb-3">
-                <Text className="text-white font-bold">Tendencia de Sueño</Text>
-                <Text className="text-zinc-400 text-sm">Últimos 7 días</Text>
+                <Text className="text-white font-bold">Tendencia de SueÃ±o</Text>
+                <Text className="text-zinc-400 text-sm">Ãšltimos 7 dÃ­as</Text>
               </View>
               <View className="flex-row items-end justify-between">
                 {[6.5, 7, 6, 7.5, 8, 6.5, 7.2].map((hours, index) => (
                   <View key={index} className="items-center">
                     <View
                       className={`w-8 rounded-t ${
-                        hours >= 7 ? 'bg-emerald-500' : 'bg-red-500'
+                        hours >= 7 ? 'bg-primary' : 'bg-red-500'
                       }`}
                       style={{ height: hours * 10 }}
                     />
@@ -436,13 +436,13 @@ export default function VirtualCoach() {
         {selectedTab === 'insights' && (
           <View className="px-6 py-4">
             <Text className="text-white font-bold text-lg mb-4">
-              Análisis Inteligente
+              AnÃ¡lisis Inteligente
             </Text>
 
             {/* Performance Chart */}
             <View className="bg-zinc-900 rounded-xl p-4 mb-4 border border-zinc-800">
               <Text className="text-white font-bold mb-3">
-                Evolución de Performance
+                EvoluciÃ³n de Performance
               </Text>
               <LineChart
                 data={performanceData}
@@ -461,7 +461,7 @@ export default function VirtualCoach() {
                   propsForDots: {
                     r: '6',
                     strokeWidth: '2',
-                    stroke: '#10B981',
+                    stroke: '#9D12DE',
                   },
                 }}
                 bezier
@@ -478,10 +478,10 @@ export default function VirtualCoach() {
                 key={insight.id}
                 className={`rounded-xl p-4 mb-3 border ${
                   insight.impact === 'positive'
-                    ? 'bg-emerald-500/10 border-emerald-500/30'
+                    ? 'bg-primary/10 border-primary/30'
                     : insight.impact === 'negative'
                     ? 'bg-red-500/10 border-red-500/30'
-                    : 'bg-blue-500/10 border-blue-500/30'
+                    : 'bg-primary/10 border-primary/30'
                 }`}
               >
                 <View className="flex-row items-start">
@@ -490,20 +490,20 @@ export default function VirtualCoach() {
                     size={24}
                     color={
                       insight.impact === 'positive'
-                        ? '#10B981'
+                        ? '#9D12DE'
                         : insight.impact === 'negative'
                         ? '#EF4444'
-                        : '#3B82F6'
+                        : '#9D12DE'
                     }
                   />
                   <View className="flex-1 ml-3">
                     <Text
                       className={`font-bold mb-1 ${
                         insight.impact === 'positive'
-                          ? 'text-emerald-500'
+                          ? 'text-primary'
                           : insight.impact === 'negative'
                           ? 'text-red-500'
-                          : 'text-blue-500'
+                          : 'text-primary'
                       }`}
                     >
                       {insight.category}
@@ -511,10 +511,10 @@ export default function VirtualCoach() {
                     <Text
                       className={`text-sm leading-5 ${
                         insight.impact === 'positive'
-                          ? 'text-emerald-300'
+                          ? 'text-primary/80'
                           : insight.impact === 'negative'
                           ? 'text-red-300'
-                          : 'text-blue-300'
+                          : 'text-primary/60'
                       }`}
                     >
                       {insight.message}
@@ -529,3 +529,5 @@ export default function VirtualCoach() {
     </View>
   );
 }
+
+

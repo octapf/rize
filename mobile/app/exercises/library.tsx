@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -18,9 +18,9 @@ import type { Exercise } from '@/services/api/exercises.api';
 const categories = [
   { id: 'all', label: 'Todos', icon: 'apps', color: '#6B7280' },
   { id: 'push', label: 'Empuje', icon: 'arrow-up', color: '#EF4444' },
-  { id: 'pull', label: 'Jalón', icon: 'arrow-down', color: '#3B82F6' },
-  { id: 'legs', label: 'Piernas', icon: 'walk', color: '#F59E0B' },
-  { id: 'core', label: 'Core', icon: 'body', color: '#10B981' },
+  { id: 'pull', label: 'JalÃ³n', icon: 'arrow-down', color: '#9D12DE' },
+  { id: 'legs', label: 'Piernas', icon: 'walk', color: '#FFEA00' },
+  { id: 'core', label: 'Core', icon: 'body', color: '#9D12DE' },
   { id: 'skills', label: 'Skills', icon: 'trophy', color: '#A855F7' },
   { id: 'cardio', label: 'Cardio', icon: 'heart', color: '#EC4899' },
   { id: 'flexibility', label: 'Flexibilidad', icon: 'flower', color: '#8B5CF6' },
@@ -42,8 +42,8 @@ export default function ExerciseLibraryScreen() {
   });
 
   const getDifficultyColor = (difficulty: number) => {
-    if (difficulty <= 3) return '#10B981';
-    if (difficulty <= 6) return '#F59E0B';
+    if (difficulty <= 3) return '#9D12DE';
+    if (difficulty <= 6) return '#FFEA00';
     return '#EF4444';
   };
 
@@ -77,7 +77,7 @@ export default function ExerciseLibraryScreen() {
   return (
     <View className="flex-1 bg-gray-50">
       {/* Header */}
-      <LinearGradient colors={['#10B981', '#059669']} className="px-6 pt-12 pb-6">
+      <LinearGradient colors={['#9D12DE', '#7C3AED']} className="px-6 pt-12 pb-6">
         <View className="flex-row items-center justify-between mb-4">
           {isSelectMode && (
             <TouchableOpacity onPress={() => router.back()} className="p-2 -ml-2">
@@ -88,7 +88,7 @@ export default function ExerciseLibraryScreen() {
             <Text className="text-3xl font-bold text-white mb-1">
               {isSelectMode ? 'Seleccionar Ejercicios' : 'Biblioteca'}
             </Text>
-            <Text className="text-emerald-100 text-sm">
+            <Text className="text-primary/50 text-sm">
               {isSelectMode && selectedExercises.length > 0
                 ? `${selectedExercises.length} seleccionado${
                     selectedExercises.length > 1 ? 's' : ''
@@ -136,7 +136,7 @@ export default function ExerciseLibraryScreen() {
             <View
               className={`px-4 py-2 rounded-full flex-row items-center gap-2 ${
                 selectedCategory === cat.id
-                  ? 'bg-emerald-500'
+                  ? 'bg-primary'
                   : 'bg-gray-100 border border-gray-300'
               }`}
             >
@@ -161,7 +161,7 @@ export default function ExerciseLibraryScreen() {
       <ScrollView className="flex-1" contentContainerClassName="p-4 gap-3">
         {isLoading && (
           <View className="py-20">
-            <ActivityIndicator size="large" color="#10B981" />
+            <ActivityIndicator size="large" color="#9D12DE" />
           </View>
         )}
 
@@ -189,7 +189,7 @@ export default function ExerciseLibraryScreen() {
                 onPress={() => handleExercisePress(exercise)}
                 activeOpacity={0.7}
               >
-                <Card className={`p-4 ${isSelected ? 'border-2 border-emerald-500' : ''}`}>
+                <Card className={`p-4 ${isSelected ? 'border-2 border-primary' : ''}`}>
                   <View className="flex-row items-start gap-3">
                     {/* Icon */}
                     <View
@@ -197,7 +197,7 @@ export default function ExerciseLibraryScreen() {
                       style={{
                         backgroundColor:
                           categories.find((c) => c.id === exercise.category)
-                            ?.color + '20' || '#10B98120',
+                            ?.color + '20' || '#9D12DE20',
                       }}
                     >
                       <Ionicons
@@ -208,7 +208,7 @@ export default function ExerciseLibraryScreen() {
                         size={24}
                         color={
                           categories.find((c) => c.id === exercise.category)
-                            ?.color || '#10B981'
+                            ?.color || '#9D12DE'
                         }
                       />
                     </View>
@@ -241,7 +241,7 @@ export default function ExerciseLibraryScreen() {
                           </Text>
                         </View>
                         <View className="flex-row items-center gap-1">
-                          <Ionicons name="star" size={14} color="#F59E0B" />
+                          <Ionicons name="star" size={14} color="#FFEA00" />
                           <Text className="text-sm text-gray-600">
                             {exercise.difficulty.toFixed(1)}
                           </Text>
@@ -253,7 +253,7 @@ export default function ExerciseLibraryScreen() {
                     {isSelectMode ? (
                       <View
                         className={`w-8 h-8 rounded-full items-center justify-center ${
-                          isSelected ? 'bg-emerald-500' : 'bg-gray-200'
+                          isSelected ? 'bg-primary' : 'bg-gray-200'
                         }`}
                       >
                         {isSelected && (
@@ -261,7 +261,7 @@ export default function ExerciseLibraryScreen() {
                         )}
                       </View>
                     ) : (
-                      <Ionicons name="chevron-forward" size={24} color="#10B981" />
+                      <Ionicons name="chevron-forward" size={24} color="#9D12DE" />
                     )}
                   </View>
                 </Card>
@@ -275,7 +275,7 @@ export default function ExerciseLibraryScreen() {
         <View className="p-4 bg-white border-t border-gray-200">
           <TouchableOpacity onPress={handleConfirmSelection} activeOpacity={0.8}>
             <LinearGradient
-              colors={['#10B981', '#059669']}
+              colors={['#9D12DE', '#7C3AED']}
               className="py-4 rounded-2xl items-center"
             >
               <Text className="text-white text-lg font-bold">
@@ -289,3 +289,4 @@ export default function ExerciseLibraryScreen() {
     </View>
   );
 }
+

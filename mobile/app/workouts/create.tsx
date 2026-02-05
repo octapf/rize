@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+﻿import React, { useState, useEffect } from 'react';
 import {
   View,
   Text,
@@ -53,7 +53,7 @@ export default function CreateWorkoutScreen() {
         exercises: exercisesData.length > 0 ? exercisesData : undefined,
       });
 
-      Alert.alert('Éxito', 'Entrenamiento creado correctamente');
+      Alert.alert('Ã‰xito', 'Entrenamiento creado correctamente');
       clear(); // Limpiar el draft
       router.back();
     } catch (error: any) {
@@ -68,7 +68,7 @@ export default function CreateWorkoutScreen() {
     <View className="flex-1 bg-gray-50">
       {/* Header con gradiente */}
       <LinearGradient
-        colors={['#10B981', '#059669']}
+        colors={['#9D12DE', '#7C3AED']}
         className="px-6 pt-12 pb-6"
       >
         <View className="flex-row items-center justify-between">
@@ -86,8 +86,8 @@ export default function CreateWorkoutScreen() {
         {/* Nombre */}
         <View>
           <View className="flex-row items-center gap-2 mb-3">
-            <View className="bg-emerald-100 p-2 rounded-lg">
-              <Ionicons name="create" size={20} color="#10B981" />
+            <View className="bg-primary/10 p-2 rounded-lg">
+              <Ionicons name="create" size={20} color="#9D12DE" />
             </View>
             <Text className="text-base font-bold text-gray-900">
               Nombre del entrenamiento *
@@ -97,7 +97,7 @@ export default function CreateWorkoutScreen() {
             value={name}
             onChangeText={setName}
             placeholder="Ej: Rutina de espalda"
-            className="bg-white border-2 border-gray-200 rounded-xl px-4 py-4 text-base focus:border-emerald-500"
+            className="bg-white border-2 border-gray-200 rounded-xl px-4 py-4 text-base focus:border-primary"
             maxLength={100}
             placeholderTextColor="#9CA3AF"
           />
@@ -106,14 +106,14 @@ export default function CreateWorkoutScreen() {
           </Text>
         </View>
 
-        {/* Duración */}
+        {/* DuraciÃ³n */}
         <View>
           <View className="flex-row items-center gap-2 mb-3">
-            <View className="bg-blue-100 p-2 rounded-lg">
-              <Ionicons name="time" size={20} color="#3B82F6" />
+            <View className="bg-primary/10 p-2 rounded-lg">
+              <Ionicons name="time" size={20} color="#9D12DE" />
             </View>
             <Text className="text-base font-bold text-gray-900">
-              Duración (minutos)
+              DuraciÃ³n (minutos)
             </Text>
           </View>
           <TextInput
@@ -121,7 +121,7 @@ export default function CreateWorkoutScreen() {
             onChangeText={setDuration}
             placeholder="30"
             keyboardType="number-pad"
-            className="bg-white border-2 border-gray-200 rounded-xl px-4 py-4 text-base focus:border-blue-500"
+            className="bg-white border-2 border-gray-200 rounded-xl px-4 py-4 text-base focus:border-primary"
             placeholderTextColor="#9CA3AF"
           />
         </View>
@@ -130,8 +130,8 @@ export default function CreateWorkoutScreen() {
         <View>
           <View className="flex-row items-center justify-between mb-3">
             <View className="flex-row items-center gap-2">
-              <View className="bg-emerald-100 p-2 rounded-lg">
-                <Ionicons name="barbell" size={20} color="#10B981" />
+              <View className="bg-primary/10 p-2 rounded-lg">
+                <Ionicons name="barbell" size={20} color="#9D12DE" />
               </View>
               <Text className="text-base font-bold text-gray-900">
                 Ejercicios ({exercises.length})
@@ -139,7 +139,7 @@ export default function CreateWorkoutScreen() {
             </View>
             <TouchableOpacity
               onPress={() => router.push('/exercises/library?mode=select')}
-              className="bg-emerald-500 px-4 py-2 rounded-full flex-row items-center gap-2"
+              className="bg-primary px-4 py-2 rounded-full flex-row items-center gap-2"
             >
               <Ionicons name="add" size={20} color="white" />
               <Text className="text-white font-semibold">Agregar</Text>
@@ -161,15 +161,15 @@ export default function CreateWorkoutScreen() {
           ) : (
             exercises.map((item, index) => (
               <Card key={item.exercise._id} className="p-4 flex-row items-center gap-3 mb-3">
-                <View className="bg-emerald-100 p-3 rounded-xl">
-                  <Ionicons name="barbell" size={24} color="#10B981" />
+                <View className="bg-primary/10 p-3 rounded-xl">
+                  <Ionicons name="barbell" size={24} color="#9D12DE" />
                 </View>
                 <View className="flex-1">
                   <Text className="text-base font-bold text-gray-900 mb-1">
                     {item.exercise.name.es}
                   </Text>
                   <Text className="text-sm text-gray-600">
-                    {item.sets.length} serie{item.sets.length > 1 ? 's' : ''} •{' '}
+                    {item.sets.length} serie{item.sets.length > 1 ? 's' : ''} â€¢{' '}
                     {item.sets.map((s) => s.reps).join('-')} reps
                   </Text>
                 </View>
@@ -205,7 +205,7 @@ export default function CreateWorkoutScreen() {
           <TextInput
             value={notes}
             onChangeText={setNotes}
-            placeholder="Añade notas sobre tu entrenamiento..."
+            placeholder="AÃ±ade notas sobre tu entrenamiento..."
             multiline
             numberOfLines={4}
             textAlignVertical="top"
@@ -219,30 +219,30 @@ export default function CreateWorkoutScreen() {
         </View>
 
         {/* Info */}
-        <View className="bg-gradient-to-br from-blue-50 to-indigo-50 p-5 rounded-2xl border border-blue-200">
+        <View className="bg-primary/10 p-5 rounded-2xl border border-primary/20">
           <View className="flex-row items-start gap-3">
-            <View className="bg-blue-500 p-2 rounded-full mt-1">
+            <View className="bg-primary p-2 rounded-full mt-1">
               <Ionicons name="information" size={20} color="white" />
             </View>
             <View className="flex-1">
-              <Text className="text-base font-bold text-blue-900 mb-1">
-                Versión Simplificada
+              <Text className="text-base font-bold text-text mb-1">
+                VersiÃ³n Simplificada
               </Text>
-              <Text className="text-sm text-blue-800 leading-5">
-                Por ahora solo registra el entrenamiento básico. En la próxima actualización podrás añadir series, repeticiones y peso para cada ejercicio.
+              <Text className="text-sm text-text/70 leading-5">
+                Por ahora solo registra el entrenamiento bÃ¡sico. En la prÃ³xima actualizaciÃ³n podrÃ¡s aÃ±adir series, repeticiones y peso para cada ejercicio.
               </Text>
             </View>
           </View>
         </View>
 
-        {/* Botón crear */}
+        {/* BotÃ³n crear */}
         <TouchableOpacity
           onPress={handleCreate}
           disabled={createWorkout.isPending || !name.trim()}
           activeOpacity={0.8}
         >
           <LinearGradient
-            colors={createWorkout.isPending || !name.trim() ? ['#9CA3AF', '#6B7280'] : ['#10B981', '#059669']}
+            colors={createWorkout.isPending || !name.trim() ? ['#9CA3AF', '#6B7280'] : ['#9D12DE', '#7C3AED']}
             className="py-4 rounded-2xl items-center justify-center flex-row gap-2"
             style={{ elevation: 3 }}
           >
@@ -263,3 +263,4 @@ export default function CreateWorkoutScreen() {
     </View>
   );
 }
+

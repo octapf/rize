@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -60,7 +60,7 @@ export default function MeetDayChecklist() {
     },
     {
       time: '30 min before flight',
-      tasks: ['Start lift-specific warm-up', 'Bar → 50% → 70% → 85%', 'Opener weight once in warm-up room', 'Submit opener to platform'],
+      tasks: ['Start lift-specific warm-up', 'Bar â†’ 50% â†’ 70% â†’ 85%', 'Opener weight once in warm-up room', 'Submit opener to platform'],
       icon: 'barbell' as const,
     },
     {
@@ -180,21 +180,21 @@ export default function MeetDayChecklist() {
               if (items.length === 0) return null;
               return (
                 <View key={category} className="mb-4 last:mb-0">
-                  <Text className="text-emerald-400 font-bold mb-2">{category}</Text>
+                  <Text className="text-primary font-bold mb-2">{category}</Text>
                   {items.map((item) => (
                     <TouchableOpacity
                       key={item.id}
                       onPress={() => toggleItem(item.id)}
                       className={`flex-row items-center p-3 rounded-xl mb-2 ${
-                        item.done ? 'bg-emerald-500/20 border border-emerald-500/30' : 'bg-zinc-800'
+                        item.done ? 'bg-primary/20 border border-primary/30' : 'bg-zinc-800'
                       }`}
                     >
                       <Ionicons
                         name={item.done ? 'checkmark-circle' : 'ellipse-outline'}
                         size={24}
-                        color={item.done ? '#10b981' : '#52525b'}
+                        color={item.done ? '#9D12DE' : '#52525b'}
                       />
-                      <Text className={`ml-3 flex-1 ${item.done ? 'text-emerald-300 line-through' : 'text-white'}`}>
+                      <Text className={`ml-3 flex-1 ${item.done ? 'text-primary/80 line-through' : 'text-white'}`}>
                         {item.task}
                       </Text>
                     </TouchableOpacity>
@@ -209,13 +209,13 @@ export default function MeetDayChecklist() {
             {timeline.map((segment, idx) => (
               <View key={idx} className="mb-4 last:mb-0">
                 <View className="flex-row items-center mb-2">
-                  <Ionicons name={segment.icon} size={24} color="#3b82f6" />
-                  <Text className="text-blue-400 font-bold text-lg ml-2">{segment.time}</Text>
+                  <Ionicons name={segment.icon} size={24} color="#9D12DE" />
+                  <Text className="text-primary/80 font-bold text-lg ml-2">{segment.time}</Text>
                 </View>
                 <View className="bg-zinc-800 rounded-xl p-3">
                   {segment.tasks.map((task, tidx) => (
                     <View key={tidx} className="flex-row items-start mb-1 last:mb-0">
-                      <Text className="text-blue-400 mr-2">•</Text>
+                      <Text className="text-primary/80 mr-2">â€¢</Text>
                       <Text className="text-zinc-300 text-sm flex-1">{task}</Text>
                     </View>
                   ))}
@@ -241,7 +241,7 @@ export default function MeetDayChecklist() {
             ))}
             <View className="bg-amber-500/10 rounded-xl p-3 mt-3 border border-amber-500/30">
               <Text className="text-amber-400 text-sm">
-                ⚠ Don't take opener in warm-up room for squat/deadlift - save CNS
+                âš  Don't take opener in warm-up room for squat/deadlift - save CNS
               </Text>
             </View>
           </View>
@@ -250,22 +250,22 @@ export default function MeetDayChecklist() {
             <Text className="text-white font-bold text-lg mb-4">Between Lifts</Text>
             
             <View className="mb-4">
-              <Text className="text-purple-400 font-bold mb-2">Squat → Bench</Text>
+              <Text className="text-purple-400 font-bold mb-2">Squat â†’ Bench</Text>
               <View className="bg-zinc-800 rounded-xl p-3">
                 {betweenLifts.squat_to_bench.map((item, idx) => (
                   <Text key={idx} className="text-zinc-300 text-sm mb-1 last:mb-0">
-                    • {item}
+                    â€¢ {item}
                   </Text>
                 ))}
               </View>
             </View>
 
             <View>
-              <Text className="text-purple-400 font-bold mb-2">Bench → Deadlift</Text>
+              <Text className="text-purple-400 font-bold mb-2">Bench â†’ Deadlift</Text>
               <View className="bg-zinc-800 rounded-xl p-3">
                 {betweenLifts.bench_to_deadlift.map((item, idx) => (
                   <Text key={idx} className="text-zinc-300 text-sm mb-1 last:mb-0">
-                    • {item}
+                    â€¢ {item}
                   </Text>
                 ))}
               </View>
@@ -276,29 +276,29 @@ export default function MeetDayChecklist() {
             <Text className="text-white font-bold text-lg mb-4">Mental Preparation</Text>
             {mentalPrep.map((strat, idx) => (
               <View key={idx} className="bg-zinc-800 rounded-xl p-4 mb-3 last:mb-0">
-                <Text className="text-emerald-400 font-bold mb-2">{strat.strategy}</Text>
+                <Text className="text-primary font-bold mb-2">{strat.strategy}</Text>
                 <Text className="text-zinc-400 text-sm mb-1">When: {strat.when}</Text>
                 <Text className="text-zinc-300 text-sm">{strat.how}</Text>
               </View>
             ))}
           </View>
 
-          <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30 mb-6">
-            <Text className="text-blue-400 font-bold mb-2">Final Reminders</Text>
-            <Text className="text-blue-300 text-sm mb-2">
-              • Trust your openers - they should be easy
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
+            <Text className="text-primary/80 font-bold mb-2">Final Reminders</Text>
+            <Text className="text-primary/60 text-sm mb-2">
+              â€¢ Trust your openers - they should be easy
             </Text>
-            <Text className="text-blue-300 text-sm mb-2">
-              • Don't change attempts in warm-up room due to nerves
+            <Text className="text-primary/60 text-sm mb-2">
+              â€¢ Don't change attempts in warm-up room due to nerves
             </Text>
-            <Text className="text-blue-300 text-sm mb-2">
-              • Listen to commands carefully - no early starts
+            <Text className="text-primary/60 text-sm mb-2">
+              â€¢ Listen to commands carefully - no early starts
             </Text>
-            <Text className="text-blue-300 text-sm mb-2">
-              • Stay hydrated and fueled between flights
+            <Text className="text-primary/60 text-sm mb-2">
+              â€¢ Stay hydrated and fueled between flights
             </Text>
-            <Text className="text-blue-300 text-sm">
-              • Have fun - you've earned this moment
+            <Text className="text-primary/60 text-sm">
+              â€¢ Have fun - you've earned this moment
             </Text>
           </View>
         </View>
@@ -306,3 +306,5 @@ export default function MeetDayChecklist() {
     </View>
   );
 }
+
+

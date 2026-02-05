@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -35,9 +35,9 @@ const mockConversations: Conversation[] = [
   {
     id: '1',
     userId: '1',
-    userName: 'Carlos García',
+    userName: 'Carlos GarcÃ­a',
     userAvatar: 'C',
-    lastMessage: '¡Excelente entrenamiento hoy! 💪',
+    lastMessage: 'Â¡Excelente entrenamiento hoy! ðŸ’ª',
     timestamp: new Date(2026, 0, 26, 14, 30),
     unreadCount: 2,
     isOnline: true,
@@ -45,9 +45,9 @@ const mockConversations: Conversation[] = [
   {
     id: '2',
     userId: '2',
-    userName: 'María López',
+    userName: 'MarÃ­a LÃ³pez',
     userAvatar: 'M',
-    lastMessage: '¿Vamos al gym mañana?',
+    lastMessage: 'Â¿Vamos al gym maÃ±ana?',
     timestamp: new Date(2026, 0, 26, 10, 15),
     unreadCount: 0,
     isOnline: true,
@@ -55,7 +55,7 @@ const mockConversations: Conversation[] = [
   {
     id: '3',
     userId: '3',
-    userName: 'Juan Pérez',
+    userName: 'Juan PÃ©rez',
     userAvatar: 'J',
     lastMessage: 'Gracias por los consejos',
     timestamp: new Date(2026, 0, 25, 18, 45),
@@ -89,8 +89,8 @@ export default function MessagesScreen() {
 
   const handleDeleteConversation = (conversationId: string) => {
     Alert.alert(
-      'Eliminar Conversación',
-      '¿Estás seguro? No podrás recuperar los mensajes.',
+      'Eliminar ConversaciÃ³n',
+      'Â¿EstÃ¡s seguro? No podrÃ¡s recuperar los mensajes.',
       [
         { text: 'Cancelar', style: 'cancel' },
         {
@@ -105,7 +105,7 @@ export default function MessagesScreen() {
   return (
     <View className="flex-1 bg-gray-50">
       {/* Header */}
-      <LinearGradient colors={['#3B82F6', '#2563EB']} className="px-6 pt-12 pb-6">
+      <LinearGradient colors={['#9D12DE', '#7C3AED']} className="px-6 pt-12 pb-6">
         <View className="flex-row items-center justify-between mb-4">
           <TouchableOpacity onPress={() => router.back()} className="p-2">
             <Ionicons name="arrow-back" size={28} color="white" />
@@ -137,7 +137,7 @@ export default function MessagesScreen() {
               No hay conversaciones
             </Text>
             <Text className="text-gray-600 text-center mt-2">
-              Inicia una conversación con tus amigos
+              Inicia una conversaciÃ³n con tus amigos
             </Text>
           </Card>
         ) : (
@@ -158,7 +158,7 @@ export default function MessagesScreen() {
                       </Text>
                     </View>
                     {conversation.isOnline && (
-                      <View className="absolute bottom-0 right-0 w-4 h-4 bg-emerald-500 border-2 border-white rounded-full" />
+                      <View className="absolute bottom-0 right-0 w-4 h-4 bg-primary border-2 border-white rounded-full" />
                     )}
                     {conversation.unreadCount > 0 && (
                       <View className="absolute -top-1 -right-1 bg-red-500 rounded-full min-w-[20px] h-5 items-center justify-center px-1">
@@ -205,3 +205,4 @@ export default function MessagesScreen() {
     </View>
   );
 }
+

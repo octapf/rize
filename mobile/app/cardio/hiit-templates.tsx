@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -200,25 +200,25 @@ export default function HIITTemplates() {
             ))}
           </View>
 
-          <View className="bg-emerald-500/10 rounded-xl p-4 border border-emerald-500/30 mb-6">
-            <Text className="text-emerald-400 font-bold mb-2">HIIT Benefits</Text>
-            <Text className="text-emerald-300 text-sm">
-              ✓ Burns calories fast{'\n'}
-              ✓ Improves VO2 max{'\n'}
-              ✓ Time-efficient{'\n'}
-              ✓ EPOC effect (afterburn){'\n'}
-              ✓ Preserves muscle mass
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
+            <Text className="text-primary font-bold mb-2">HIIT Benefits</Text>
+            <Text className="text-primary/80 text-sm">
+              âœ“ Burns calories fast{'\n'}
+              âœ“ Improves VO2 max{'\n'}
+              âœ“ Time-efficient{'\n'}
+              âœ“ EPOC effect (afterburn){'\n'}
+              âœ“ Preserves muscle mass
             </Text>
           </View>
 
           <View className="bg-red-500/10 rounded-xl p-4 border border-red-500/30 mb-6">
             <Text className="text-red-400 font-bold mb-2">Safety Guidelines</Text>
             <Text className="text-red-300 text-sm">
-              • Warm up 5-10 minutes{'\n'}
-              • Start with 2-3 sessions/week{'\n'}
-              • Don't do HIIT on leg days{'\n'}
-              • Recovery is critical{'\n'}
-              • Stop if form breaks down
+              â€¢ Warm up 5-10 minutes{'\n'}
+              â€¢ Start with 2-3 sessions/week{'\n'}
+              â€¢ Don't do HIIT on leg days{'\n'}
+              â€¢ Recovery is critical{'\n'}
+              â€¢ Stop if form breaks down
             </Text>
           </View>
         </View>
@@ -226,3 +226,5 @@ export default function HIITTemplates() {
     </View>
   );
 }
+
+

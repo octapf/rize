@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -25,8 +25,8 @@ interface VideoLibraryItem {
 const VIDEO_LIBRARY: VideoLibraryItem[] = [
   {
     id: '1',
-    title: 'Dominadas - Técnica Perfecta',
-    category: 'Tracción',
+    title: 'Dominadas - TÃ©cnica Perfecta',
+    category: 'TracciÃ³n',
     duration: '8:45',
     difficulty: 'intermediate',
     views: 12500,
@@ -36,7 +36,7 @@ const VIDEO_LIBRARY: VideoLibraryItem[] = [
   },
   {
     id: '2',
-    title: 'Muscle-Up - Progresión Completa',
+    title: 'Muscle-Up - ProgresiÃ³n Completa',
     category: 'Avanzado',
     duration: '12:30',
     difficulty: 'advanced',
@@ -58,8 +58,8 @@ const VIDEO_LIBRARY: VideoLibraryItem[] = [
   },
   {
     id: '4',
-    title: 'Planche - Fundamentos y Preparación',
-    category: 'Estáticos',
+    title: 'Planche - Fundamentos y PreparaciÃ³n',
+    category: 'EstÃ¡ticos',
     duration: '15:45',
     difficulty: 'advanced',
     views: 6700,
@@ -69,8 +69,8 @@ const VIDEO_LIBRARY: VideoLibraryItem[] = [
   },
   {
     id: '5',
-    title: 'Front Lever - Guía Paso a Paso',
-    category: 'Estáticos',
+    title: 'Front Lever - GuÃ­a Paso a Paso',
+    category: 'EstÃ¡ticos',
     duration: '11:20',
     difficulty: 'advanced',
     views: 7300,
@@ -92,7 +92,7 @@ const VIDEO_LIBRARY: VideoLibraryItem[] = [
   {
     id: '7',
     title: 'Handstand - Equilibrio y Control',
-    category: 'Estáticos',
+    category: 'EstÃ¡ticos',
     duration: '14:00',
     difficulty: 'intermediate',
     views: 9200,
@@ -113,7 +113,7 @@ const VIDEO_LIBRARY: VideoLibraryItem[] = [
   },
 ];
 
-const CATEGORIES = ['Todos', 'Tracción', 'Empuje', 'Piernas', 'Estáticos', 'Avanzado'];
+const CATEGORIES = ['Todos', 'TracciÃ³n', 'Empuje', 'Piernas', 'EstÃ¡ticos', 'Avanzado'];
 const DIFFICULTY_FILTERS = ['Todos', 'beginner', 'intermediate', 'advanced'];
 
 export default function VideoLibrary() {
@@ -138,9 +138,9 @@ export default function VideoLibrary() {
   const getDifficultyColor = (difficulty: string) => {
     switch (difficulty) {
       case 'beginner':
-        return '#10B981';
+        return '#9D12DE';
       case 'intermediate':
-        return '#F59E0B';
+        return '#FFEA00';
       case 'advanced':
         return '#EF4444';
       default:
@@ -181,7 +181,7 @@ export default function VideoLibrary() {
         {/* Thumbnail */}
         <View className="w-full bg-zinc-800" style={{ height: 180 }}>
           <View className="flex-1 items-center justify-center">
-            <Ionicons name="play-circle" size={64} color="#10B981" />
+            <Ionicons name="play-circle" size={64} color="#9D12DE" />
           </View>
           {item.isPremium && (
             <View className="absolute top-3 right-3 bg-amber-500 px-3 py-1 rounded-full">
@@ -267,7 +267,7 @@ export default function VideoLibrary() {
           <Text className="text-zinc-400 text-xs">Videos</Text>
         </View>
         <View className="flex-1 items-center border-l border-zinc-800">
-          <Text className="text-emerald-500 text-2xl font-bold">
+          <Text className="text-primary text-2xl font-bold">
             {VIDEO_LIBRARY.filter((v) => v.isPremium).length}
           </Text>
           <Text className="text-zinc-400 text-xs">Premium</Text>
@@ -293,7 +293,7 @@ export default function VideoLibrary() {
             onPress={() => setSelectedCategory(category)}
             className={`mr-3 px-4 py-2 rounded-xl ${
               selectedCategory === category
-                ? 'bg-emerald-500'
+                ? 'bg-primary'
                 : 'bg-zinc-900'
             }`}
           >
@@ -321,13 +321,13 @@ export default function VideoLibrary() {
             onPress={() => setSelectedDifficulty(difficulty)}
             className={`mr-3 px-4 py-2 rounded-xl ${
               selectedDifficulty === difficulty
-                ? 'bg-blue-500/20 border-2 border-blue-500'
+                ? 'bg-primary/20 border-2 border-primary'
                 : 'bg-zinc-900'
             }`}
           >
             <Text
               className={`font-semibold ${
-                selectedDifficulty === difficulty ? 'text-blue-500' : 'text-zinc-400'
+                selectedDifficulty === difficulty ? 'text-primary' : 'text-zinc-400'
               }`}
             >
               {difficulty === 'Todos'
@@ -349,7 +349,7 @@ export default function VideoLibrary() {
             <Ionicons
               name="star"
               size={16}
-              color={showPremiumOnly ? '#F59E0B' : '#71717A'}
+              color={showPremiumOnly ? '#FFEA00' : '#71717A'}
             />
             <Text
               className={`font-semibold ml-1 ${
@@ -375,7 +375,7 @@ export default function VideoLibrary() {
               No se encontraron videos
             </Text>
             <Text className="text-zinc-600 text-sm mt-2 text-center">
-              Intenta cambiar los filtros o buscar otro término
+              Intenta cambiar los filtros o buscar otro tÃ©rmino
             </Text>
           </View>
         }
@@ -384,3 +384,4 @@ export default function VideoLibrary() {
     </View>
   );
 }
+

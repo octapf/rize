@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -455,8 +455,8 @@ export default function MeetPreparationChecklist() {
 
   const getColorClass = (color: string) => {
     const colors: { [key: string]: string } = {
-      blue: 'bg-blue-500',
-      emerald: 'bg-emerald-500',
+      blue: 'bg-primary',
+      emerald: 'bg-primary',
       purple: 'bg-purple-500',
       amber: 'bg-amber-500',
       red: 'bg-red-500',
@@ -532,19 +532,19 @@ export default function MeetPreparationChecklist() {
           <View className="bg-gradient-to-r from-amber-500/20 to-orange-500/20 rounded-xl p-5 border border-amber-500/30 mb-6">
             <Text className="text-amber-400 font-bold text-lg mb-3">Golden Rules</Text>
             <Text className="text-amber-300 text-sm mb-2">
-              🎯 Opener = 90-95% of max (should feel like RPE 7-8)
+              ðŸŽ¯ Opener = 90-95% of max (should feel like RPE 7-8)
             </Text>
             <Text className="text-amber-300 text-sm mb-2">
-              🎯 Nothing new on meet day (gear, warm-up, food)
+              ðŸŽ¯ Nothing new on meet day (gear, warm-up, food)
             </Text>
             <Text className="text-amber-300 text-sm mb-2">
-              🎯 Specificity increases as meet approaches
+              ðŸŽ¯ Specificity increases as meet approaches
             </Text>
             <Text className="text-amber-300 text-sm mb-2">
-              🎯 Read your federation rule book 2-3 weeks out
+              ðŸŽ¯ Read your federation rule book 2-3 weeks out
             </Text>
             <Text className="text-amber-300 text-sm">
-              🎯 Have fun - this is why you train!
+              ðŸŽ¯ Have fun - this is why you train!
             </Text>
           </View>
         </View>
@@ -552,3 +552,4 @@ export default function MeetPreparationChecklist() {
     </View>
   );
 }
+

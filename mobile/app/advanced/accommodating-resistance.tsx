@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -343,9 +343,9 @@ export default function AccommodatingResistance() {
 
   const getColorClass = (color: string) => {
     const colors: { [key: string]: string } = {
-      blue: 'bg-blue-500',
+      blue: 'bg-primary',
       purple: 'bg-purple-500',
-      emerald: 'bg-emerald-500',
+      emerald: 'bg-primary',
       amber: 'bg-amber-500',
     };
     return colors[color];
@@ -366,7 +366,7 @@ export default function AccommodatingResistance() {
 
       <ScrollView className="flex-1" showsVerticalScrollIndicator={false}>
         <View className="px-6 pt-6">
-          <View className="bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl p-6 mb-6">
+          <View className="bg-gradient-to-r from-primary to-[#7D0EBE] rounded-xl p-6 mb-6">
             <Text className="text-white text-2xl font-bold mb-2">Bands & Chains</Text>
             <Text className="text-white opacity-90">
               Variable resistance for explosive strength
@@ -410,13 +410,13 @@ export default function AccommodatingResistance() {
                   
                   {section.content && section.content.map((item, iIdx) => (
                     <Text key={iIdx} className="text-zinc-300 mb-2 last:mb-0">
-                      • {item}
+                      â€¢ {item}
                     </Text>
                   ))}
 
                   {section.items && section.items.map((item, iIdx) => (
                     <View key={iIdx} className="bg-zinc-800 rounded-xl p-4 mb-3 last:mb-0">
-                      <Text className="text-emerald-400 font-bold mb-1">{item.band || item.type}</Text>
+                      <Text className="text-primary font-bold mb-1">{item.band || item.type}</Text>
                       <Text className="text-zinc-300 text-sm mb-1">{item.tension || item.weight}</Text>
                       <Text className="text-zinc-400 text-xs">{item.use}</Text>
                     </View>
@@ -426,7 +426,7 @@ export default function AccommodatingResistance() {
                     <>
                       {section.steps.map((step, sIdx) => (
                         <View key={sIdx} className="bg-zinc-800 rounded-xl p-4 mb-2">
-                          <Text className="text-blue-400 font-bold text-sm mb-1">{step.step}</Text>
+                          <Text className="text-primary/80 font-bold text-sm mb-1">{step.step}</Text>
                           <Text className="text-zinc-300 text-xs">{step.detail}</Text>
                         </View>
                       ))}
@@ -446,7 +446,7 @@ export default function AccommodatingResistance() {
                   <Text className="text-white text-xl font-bold mb-4">Training Protocols</Text>
                   {currentType.protocols.map((protocol, idx) => (
                     <View key={idx} className="bg-zinc-800 rounded-xl p-4 mb-4 last:mb-0">
-                      <Text className="text-emerald-400 font-bold mb-2">{protocol.method}</Text>
+                      <Text className="text-primary font-bold mb-2">{protocol.method}</Text>
                       <Text className="text-zinc-300 text-sm mb-3">{protocol.purpose}</Text>
                       
                       <View className="mb-2">
@@ -464,8 +464,8 @@ export default function AccommodatingResistance() {
                         <Text className="text-white text-sm">{protocol.rest}</Text>
                       </View>
                       
-                      <View className="bg-blue-500/10 rounded-xl p-2 border border-blue-500/30 mt-2">
-                        <Text className="text-blue-300 text-xs">{protocol.notes}</Text>
+                      <View className="bg-primary/10 rounded-xl p-2 border border-primary/30 mt-2">
+                        <Text className="text-primary/60 text-xs">{protocol.notes}</Text>
                       </View>
                     </View>
                   ))}
@@ -480,17 +480,17 @@ export default function AccommodatingResistance() {
                 <Text className="text-white text-xl font-bold mb-4">Bands vs Chains Comparison</Text>
                 {currentType.comparison?.map((item, idx) => (
                   <View key={idx} className="bg-zinc-800 rounded-xl p-4 mb-3 last:mb-0">
-                    <Text className="text-emerald-400 font-bold mb-3">{item.aspect}</Text>
+                    <Text className="text-primary font-bold mb-3">{item.aspect}</Text>
                     <View className="mb-2">
-                      <Text className="text-blue-400 text-sm font-bold">Bands:</Text>
+                      <Text className="text-primary/80 text-sm font-bold">Bands:</Text>
                       <Text className="text-zinc-300 text-sm">{item.bands}</Text>
                     </View>
                     <View className="mb-2">
                       <Text className="text-purple-400 text-sm font-bold">Chains:</Text>
                       <Text className="text-zinc-300 text-sm">{item.chains}</Text>
                     </View>
-                    <View className="bg-emerald-500/10 rounded-xl p-2 border border-emerald-500/30">
-                      <Text className="text-emerald-400 text-xs font-bold">Winner: {item.winner}</Text>
+                    <View className="bg-primary/10 rounded-xl p-2 border border-primary/30">
+                      <Text className="text-primary text-xs font-bold">Winner: {item.winner}</Text>
                     </View>
                   </View>
                 ))}
@@ -521,10 +521,10 @@ export default function AccommodatingResistance() {
                       <Text className="text-white font-bold">{cycle.phase}</Text>
                     </View>
                     
-                    <Text className="text-emerald-400 font-bold mb-2">{cycle.goal}</Text>
+                    <Text className="text-primary font-bold mb-2">{cycle.goal}</Text>
                     
                     <View className="mb-2">
-                      <Text className="text-blue-400 text-sm">Bands: {cycle.bands}</Text>
+                      <Text className="text-primary/80 text-sm">Bands: {cycle.bands}</Text>
                     </View>
                     <View className="mb-2">
                       <Text className="text-purple-400 text-sm">Chains: {cycle.chains}</Text>
@@ -544,7 +544,7 @@ export default function AccommodatingResistance() {
                 <Text className="text-white text-xl font-bold mb-4">Frequency Guidelines</Text>
                 {currentType.frequencies?.map((freq, idx) => (
                   <View key={idx} className="bg-zinc-800 rounded-xl p-4 mb-3 last:mb-0">
-                    <Text className="text-emerald-400 font-bold mb-2">{freq.experience}</Text>
+                    <Text className="text-primary font-bold mb-2">{freq.experience}</Text>
                     <Text className="text-white text-sm mb-1">
                       <Text className="text-zinc-400">Recommendation:</Text> {freq.recommendation}
                     </Text>
@@ -553,11 +553,11 @@ export default function AccommodatingResistance() {
                 ))}
               </View>
 
-              <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30 mb-6">
-                <Text className="text-blue-400 font-bold mb-3">Pro Tips:</Text>
+              <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
+                <Text className="text-primary/80 font-bold mb-3">Pro Tips:</Text>
                 {currentType.tips?.map((tip, idx) => (
-                  <Text key={idx} className="text-blue-300 text-sm mb-2 last:mb-0">
-                    • {tip}
+                  <Text key={idx} className="text-primary/60 text-sm mb-2 last:mb-0">
+                    â€¢ {tip}
                   </Text>
                 ))}
               </View>
@@ -567,16 +567,16 @@ export default function AccommodatingResistance() {
           <View className="bg-gradient-to-r from-red-500/20 to-purple-500/20 rounded-xl p-4 border border-red-500/30 mb-6">
             <Text className="text-red-400 font-bold mb-2">Important Notes</Text>
             <Text className="text-red-300 text-sm mb-2">
-              • Advanced technique - NOT for beginners
+              â€¢ Advanced technique - NOT for beginners
             </Text>
             <Text className="text-red-300 text-sm mb-2">
-              • Use in cycles (6-10 weeks), then return to straight weight
+              â€¢ Use in cycles (6-10 weeks), then return to straight weight
             </Text>
             <Text className="text-red-300 text-sm mb-2">
-              • Setup is critical - uneven tension = injury risk
+              â€¢ Setup is critical - uneven tension = injury risk
             </Text>
             <Text className="text-red-300 text-sm">
-              • Film your lifts to ensure bar speed is appropriate
+              â€¢ Film your lifts to ensure bar speed is appropriate
             </Text>
           </View>
         </View>
@@ -584,3 +584,5 @@ export default function AccommodatingResistance() {
     </View>
   );
 }
+
+

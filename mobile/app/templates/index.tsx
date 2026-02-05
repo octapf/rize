@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -68,7 +68,7 @@ export default function TemplatesScreen() {
   const handleDelete = (template: WorkoutTemplate) => {
     Alert.alert(
       'Eliminar Plantilla',
-      `¿Estás seguro de que quieres eliminar "${template.name}"?`,
+      `Â¿EstÃ¡s seguro de que quieres eliminar "${template.name}"?`,
       [
         { text: 'Cancelar', style: 'cancel' },
         {
@@ -81,7 +81,7 @@ export default function TemplatesScreen() {
   };
 
   const handleUseTemplate = (template: WorkoutTemplate) => {
-    Alert.alert('Usar Plantilla', `¿Crear workout desde "${template.name}"?`, [
+    Alert.alert('Usar Plantilla', `Â¿Crear workout desde "${template.name}"?`, [
       { text: 'Cancelar', style: 'cancel' },
       {
         text: 'Crear',
@@ -121,25 +121,25 @@ export default function TemplatesScreen() {
 
         <View style={styles.cardMeta}>
           <View style={styles.metaBadge}>
-            <Ionicons name="barbell" size={14} color="#10b981" />
+            <Ionicons name="barbell" size={14} color="#9D12DE" />
             <Text style={styles.metaText}>
               {exerciseCount} ejercicio{exerciseCount !== 1 ? 's' : ''}
             </Text>
           </View>
           <View style={styles.metaBadge}>
-            <Ionicons name="list" size={14} color="#3b82f6" />
+            <Ionicons name="list" size={14} color="#9D12DE" />
             <Text style={styles.metaText}>{totalSets} series</Text>
           </View>
           {item.usageCount > 0 && (
             <View style={styles.metaBadge}>
-              <Ionicons name="repeat" size={14} color="#f59e0b" />
+              <Ionicons name="repeat" size={14} color="#FFEA00" />
               <Text style={styles.metaText}>{item.usageCount} usos</Text>
             </View>
           )}
         </View>
 
         <TouchableOpacity style={styles.useButton}>
-          <LinearGradient colors={['#10b981', '#059669']} style={styles.useButtonGradient}>
+          <LinearGradient colors={['#9D12DE', '#7C3AED']} style={styles.useButtonGradient}>
             <Ionicons name="add-circle" size={18} color="#fff" />
             <Text style={styles.useButtonText}>Usar Plantilla</Text>
           </LinearGradient>
@@ -163,7 +163,7 @@ export default function TemplatesScreen() {
               <Ionicons
                 name={showPublic ? 'person' : 'globe'}
                 size={24}
-                color="#10b981"
+                color="#9D12DE"
               />
             </TouchableOpacity>
           ),
@@ -216,7 +216,7 @@ export default function TemplatesScreen() {
           <Ionicons name="document-text-outline" size={64} color="#666" />
           <Text style={styles.emptyText}>
             {showPublic
-              ? 'No hay plantillas públicas'
+              ? 'No hay plantillas pÃºblicas'
               : 'No tienes plantillas guardadas'}
           </Text>
           {!showPublic && (
@@ -269,8 +269,8 @@ const styles = StyleSheet.create({
     borderColor: '#333',
   },
   categoryChipActive: {
-    backgroundColor: '#10b981',
-    borderColor: '#10b981',
+    backgroundColor: '#9D12DE',
+    borderColor: '#9D12DE',
   },
   categoryText: {
     color: '#666',
@@ -367,3 +367,4 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
 });
+

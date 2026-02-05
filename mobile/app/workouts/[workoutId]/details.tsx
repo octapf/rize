@@ -212,7 +212,7 @@ export default function WorkoutDetailsScreen() {
 
           <Card className="flex-1 p-4">
             <View className="items-center">
-              <Ionicons name="time" size={24} color="#3B82F6" />
+              <Ionicons name="time" size={24} color="#FFEA00" />
               <Text className="text-gray-600 text-xs mt-2">Duración</Text>
               <Text className="text-gray-900 text-lg font-bold mt-1">
                 {durationText}

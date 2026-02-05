@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -46,11 +46,11 @@ const CHALLENGES: Challenge[] = [
     myProgress: 18,
     myRank: 142,
     leaderboard: [
-      { rank: 1, name: 'Carlos F.', avatar: '🏆', value: 27, unit: 'workouts' },
-      { rank: 2, name: 'Ana M.', avatar: '🥈', value: 26, unit: 'workouts' },
-      { rank: 3, name: 'Pedro S.', avatar: '🥉', value: 25, unit: 'workouts' },
-      { rank: 4, name: 'Laura G.', avatar: '💪', value: 24, unit: 'workouts' },
-      { rank: 5, name: 'Miguel R.', avatar: '🔥', value: 23, unit: 'workouts' },
+      { rank: 1, name: 'Carlos F.', avatar: 'ðŸ†', value: 27, unit: 'workouts' },
+      { rank: 2, name: 'Ana M.', avatar: 'ðŸ¥ˆ', value: 26, unit: 'workouts' },
+      { rank: 3, name: 'Pedro S.', avatar: 'ðŸ¥‰', value: 25, unit: 'workouts' },
+      { rank: 4, name: 'Laura G.', avatar: 'ðŸ’ª', value: 24, unit: 'workouts' },
+      { rank: 5, name: 'Miguel R.', avatar: 'ðŸ”¥', value: 23, unit: 'workouts' },
     ],
   },
   {
@@ -67,18 +67,18 @@ const CHALLENGES: Challenge[] = [
     myProgress: 12450,
     myRank: 2,
     leaderboard: [
-      { rank: 1, name: 'Iron Warriors', avatar: '⚔️', value: 68420, unit: 'kg' },
-      { rank: 2, name: 'Beast Mode', avatar: '🦁', value: 62180, unit: 'kg' },
-      { rank: 3, name: 'Titans Gym', avatar: '⚡', value: 58930, unit: 'kg' },
-      { rank: 4, name: 'Alpha Squad', avatar: '🐺', value: 54210, unit: 'kg' },
-      { rank: 5, name: 'Phoenix Rise', avatar: '🔥', value: 51820, unit: 'kg' },
+      { rank: 1, name: 'Iron Warriors', avatar: 'âš”ï¸', value: 68420, unit: 'kg' },
+      { rank: 2, name: 'Beast Mode', avatar: 'ðŸ¦', value: 62180, unit: 'kg' },
+      { rank: 3, name: 'Titans Gym', avatar: 'âš¡', value: 58930, unit: 'kg' },
+      { rank: 4, name: 'Alpha Squad', avatar: 'ðŸº', value: 54210, unit: 'kg' },
+      { rank: 5, name: 'Phoenix Rise', avatar: 'ðŸ”¥', value: 51820, unit: 'kg' },
     ],
   },
   {
     id: '3',
-    name: 'Maratón Virtual 42K',
+    name: 'MaratÃ³n Virtual 42K',
     type: 'individual',
-    goal: 'Corre/Camina 42km en 30 días',
+    goal: 'Corre/Camina 42km en 30 dÃ­as',
     metric: 'distance',
     startDate: '2025-01-20',
     endDate: '2025-02-20',
@@ -88,18 +88,18 @@ const CHALLENGES: Challenge[] = [
     myProgress: 28.5,
     myRank: 87,
     leaderboard: [
-      { rank: 1, name: 'Running Pro', avatar: '🏃', value: 42.0, unit: 'km' },
-      { rank: 2, name: 'Marathon Girl', avatar: '👟', value: 41.2, unit: 'km' },
-      { rank: 3, name: 'Speed Demon', avatar: '⚡', value: 39.8, unit: 'km' },
-      { rank: 4, name: 'Endurance King', avatar: '👑', value: 38.5, unit: 'km' },
-      { rank: 5, name: 'Trail Runner', avatar: '⛰️', value: 37.2, unit: 'km' },
+      { rank: 1, name: 'Running Pro', avatar: 'ðŸƒ', value: 42.0, unit: 'km' },
+      { rank: 2, name: 'Marathon Girl', avatar: 'ðŸ‘Ÿ', value: 41.2, unit: 'km' },
+      { rank: 3, name: 'Speed Demon', avatar: 'âš¡', value: 39.8, unit: 'km' },
+      { rank: 4, name: 'Endurance King', avatar: 'ðŸ‘‘', value: 38.5, unit: 'km' },
+      { rank: 5, name: 'Trail Runner', avatar: 'â›°ï¸', value: 37.2, unit: 'km' },
     ],
   },
   {
     id: '4',
     name: 'Quema Extrema',
     type: 'community',
-    goal: 'Quema 50,000 calorías colectivas',
+    goal: 'Quema 50,000 calorÃ­as colectivas',
     metric: 'calories',
     startDate: '2025-02-01',
     endDate: '2025-02-28',
@@ -114,7 +114,7 @@ const CHALLENGES: Challenge[] = [
     id: '5',
     name: 'Consistency Champion',
     type: 'individual',
-    goal: 'Entrena 60 minutos diarios por 21 días',
+    goal: 'Entrena 60 minutos diarios por 21 dÃ­as',
     metric: 'time',
     startDate: '2025-01-05',
     endDate: '2025-01-26',
@@ -124,9 +124,9 @@ const CHALLENGES: Challenge[] = [
     myProgress: 21,
     myRank: 12,
     leaderboard: [
-      { rank: 1, name: 'Consistent Joe', avatar: '💎', value: 21, unit: 'días' },
-      { rank: 2, name: 'Daily Grind', avatar: '🔥', value: 21, unit: 'días' },
-      { rank: 3, name: 'Never Skip', avatar: '💪', value: 21, unit: 'días' },
+      { rank: 1, name: 'Consistent Joe', avatar: 'ðŸ’Ž', value: 21, unit: 'dÃ­as' },
+      { rank: 2, name: 'Daily Grind', avatar: 'ðŸ”¥', value: 21, unit: 'dÃ­as' },
+      { rank: 3, name: 'Never Skip', avatar: 'ðŸ’ª', value: 21, unit: 'dÃ­as' },
     ],
   },
 ];
@@ -145,18 +145,18 @@ export default function GroupChallenges() {
 
   const statuses = [
     { id: 'active', label: 'Activos' },
-    { id: 'upcoming', label: 'Próximos' },
+    { id: 'upcoming', label: 'PrÃ³ximos' },
     { id: 'completed', label: 'Completados' },
   ];
 
   const getTypeColor = (type: string) => {
     switch (type) {
       case 'team':
-        return '#3B82F6';
+        return '#9D12DE';
       case 'individual':
         return '#8B5CF6';
       case 'community':
-        return '#10B981';
+        return '#9D12DE';
       default:
         return '#71717A';
     }
@@ -165,9 +165,9 @@ export default function GroupChallenges() {
   const getStatusColor = (status: string) => {
     switch (status) {
       case 'active':
-        return '#10B981';
+        return '#9D12DE';
       case 'upcoming':
-        return '#F59E0B';
+        return '#FFEA00';
       case 'completed':
         return '#71717A';
       default:
@@ -179,19 +179,19 @@ export default function GroupChallenges() {
     if (challenge.status === 'upcoming') {
       Alert.alert(
         'Pre-registro',
-        `${challenge.name}\n\nComienza: ${new Date(challenge.startDate).toLocaleDateString('es-ES')}\n\n¿Quieres registrarte?`,
+        `${challenge.name}\n\nComienza: ${new Date(challenge.startDate).toLocaleDateString('es-ES')}\n\nÂ¿Quieres registrarte?`,
         [
           { text: 'Cancelar', style: 'cancel' },
-          { text: 'Registrarse', onPress: () => Alert.alert('¡Registrado!', 'Te notificaremos cuando comience') },
+          { text: 'Registrarse', onPress: () => Alert.alert('Â¡Registrado!', 'Te notificaremos cuando comience') },
         ]
       );
     } else if (challenge.status === 'active') {
       Alert.alert(
-        'Unirse al Desafío',
-        `${challenge.name}\n\n${challenge.goal}\n\nParticipantes: ${challenge.participants}\n\n¿Listo para el desafío?`,
+        'Unirse al DesafÃ­o',
+        `${challenge.name}\n\n${challenge.goal}\n\nParticipantes: ${challenge.participants}\n\nÂ¿Listo para el desafÃ­o?`,
         [
           { text: 'Cancelar', style: 'cancel' },
-          { text: 'Unirse', onPress: () => Alert.alert('¡Dentro!', 'Tu progreso se registrará automáticamente') },
+          { text: 'Unirse', onPress: () => Alert.alert('Â¡Dentro!', 'Tu progreso se registrarÃ¡ automÃ¡ticamente') },
         ]
       );
     }
@@ -200,8 +200,8 @@ export default function GroupChallenges() {
   const viewLeaderboard = (challenge: Challenge) => {
     setSelectedChallenge(challenge.id);
     Alert.alert(
-      `🏆 ${challenge.name}`,
-      `Tu posición: #${challenge.myRank}\nProgreso: ${challenge.myProgress}/${challenge.goal}\n\nVer tabla completa de posiciones`,
+      `ðŸ† ${challenge.name}`,
+      `Tu posiciÃ³n: #${challenge.myRank}\nProgreso: ${challenge.myProgress}/${challenge.goal}\n\nVer tabla completa de posiciones`,
       [
         { text: 'Ver Todos' },
         { text: 'Compartir' },
@@ -227,7 +227,7 @@ export default function GroupChallenges() {
             <Ionicons name="arrow-back" size={24} color="white" />
           </TouchableOpacity>
           <Text className="text-white text-2xl font-bold flex-1 ml-3">
-            Desafíos de Grupo
+            DesafÃ­os de Grupo
           </Text>
           <TouchableOpacity>
             <Ionicons name="add-circle-outline" size={24} color="white" />
@@ -235,10 +235,10 @@ export default function GroupChallenges() {
         </View>
 
         {/* Stats */}
-        <View className="bg-gradient-to-br from-emerald-500 to-blue-500 rounded-xl p-4 mb-4">
+        <View className="bg-gradient-to-br from-primary to-[#7D0EBE] rounded-xl p-4 mb-4">
           <View className="flex-row items-center justify-between">
             <View className="flex-1">
-              <Text className="text-white/80 text-sm mb-1">Desafíos Activos</Text>
+              <Text className="text-white/80 text-sm mb-1">DesafÃ­os Activos</Text>
               <Text className="text-white font-bold text-4xl mb-1">
                 {activeChallenges}
               </Text>
@@ -261,7 +261,7 @@ export default function GroupChallenges() {
                 onPress={() => setSelectedType(type.id)}
                 className={`flex-row items-center px-4 py-2 rounded-lg ${
                   selectedType === type.id
-                    ? 'bg-emerald-500'
+                    ? 'bg-primary'
                     : 'bg-zinc-900 border border-zinc-800'
                 }`}
               >
@@ -290,7 +290,7 @@ export default function GroupChallenges() {
               onPress={() => setSelectedStatus(status.id)}
               className={`flex-1 px-4 py-2 rounded-lg ${
                 selectedStatus === status.id
-                  ? 'bg-emerald-500'
+                  ? 'bg-primary'
                   : 'bg-zinc-900 border border-zinc-800'
               }`}
             >
@@ -309,14 +309,14 @@ export default function GroupChallenges() {
       <ScrollView className="flex-1" showsVerticalScrollIndicator={false}>
         <View className="px-6 pt-6">
           <Text className="text-white font-bold text-lg mb-3">
-            {filteredChallenges.length} Desafíos
+            {filteredChallenges.length} DesafÃ­os
           </Text>
 
           {filteredChallenges.map((challenge) => (
             <View
               key={challenge.id}
               className={`bg-zinc-900 rounded-xl p-4 mb-4 border-2 ${
-                selectedChallenge === challenge.id ? 'border-emerald-500' : 'border-zinc-800'
+                selectedChallenge === challenge.id ? 'border-primary' : 'border-zinc-800'
               }`}
             >
               {/* Header */}
@@ -382,24 +382,24 @@ export default function GroupChallenges() {
 
               {/* Progress (if active) */}
               {challenge.status === 'active' && challenge.myProgress > 0 && (
-                <View className="bg-emerald-500/10 rounded-lg p-3 border border-emerald-500/30 mb-3">
+                <View className="bg-primary/10 rounded-lg p-3 border border-primary/30 mb-3">
                   <View className="flex-row items-center justify-between mb-2">
-                    <Text className="text-emerald-400 font-bold">Tu Progreso</Text>
-                    <Text className="text-emerald-400 font-bold">
+                    <Text className="text-primary font-bold">Tu Progreso</Text>
+                    <Text className="text-primary font-bold">
                       #{challenge.myRank}
                     </Text>
                   </View>
                   <View className="flex-row items-center justify-between mb-2">
-                    <Text className="text-emerald-300 text-sm">
+                    <Text className="text-primary/80 text-sm">
                       {challenge.myProgress} {challenge.leaderboard[0]?.unit || ''}
                     </Text>
-                    <Text className="text-emerald-400 font-bold text-lg">
+                    <Text className="text-primary font-bold text-lg">
                       {Math.round((challenge.myProgress / 20) * 100)}%
                     </Text>
                   </View>
                   <View className="bg-emerald-900/30 h-2 rounded-full overflow-hidden">
                     <View
-                      className="h-full bg-emerald-500 rounded-full"
+                      className="h-full bg-primary rounded-full"
                       style={{ width: `${(challenge.myProgress / 20) * 100}%` }}
                     />
                   </View>
@@ -414,7 +414,7 @@ export default function GroupChallenges() {
                     className="flex-row items-center justify-between mb-3"
                   >
                     <Text className="text-white font-bold text-sm">
-                      🏆 Tabla de Posiciones
+                      ðŸ† Tabla de Posiciones
                     </Text>
                     <Ionicons name="chevron-forward" size={18} color="#71717A" />
                   </TouchableOpacity>
@@ -433,7 +433,7 @@ export default function GroupChallenges() {
                           </Text>
                         </View>
                       </View>
-                      <Text className="text-emerald-500 font-bold">
+                      <Text className="text-primary font-bold">
                         {entry.value} {entry.unit}
                       </Text>
                     </View>
@@ -445,7 +445,7 @@ export default function GroupChallenges() {
               {challenge.prize && (
                 <View className="bg-amber-500/10 rounded-lg p-3 border border-amber-500/30 mb-3">
                   <View className="flex-row items-center">
-                    <Ionicons name="gift" size={16} color="#F59E0B" />
+                    <Ionicons name="gift" size={16} color="#FFEA00" />
                     <Text className="text-amber-400 font-bold text-sm ml-2">
                       Premio: {challenge.prize}
                     </Text>
@@ -458,7 +458,7 @@ export default function GroupChallenges() {
                 <TouchableOpacity
                   onPress={() => joinChallenge(challenge)}
                   className={`${
-                    challenge.myProgress > 0 ? 'bg-emerald-500' : 'bg-zinc-800'
+                    challenge.myProgress > 0 ? 'bg-primary' : 'bg-zinc-800'
                   } rounded-lg p-3`}
                 >
                   <View className="flex-row items-center justify-center">
@@ -472,7 +472,7 @@ export default function GroupChallenges() {
                         ? 'Ya Participando'
                         : challenge.status === 'upcoming'
                         ? 'Pre-registrarse'
-                        : 'Unirse al Desafío'}
+                        : 'Unirse al DesafÃ­o'}
                     </Text>
                   </View>
                 </TouchableOpacity>
@@ -483,15 +483,15 @@ export default function GroupChallenges() {
 
         {/* Info Card */}
         <View className="px-6 pb-6 pt-4">
-          <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30">
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30">
             <View className="flex-row items-start">
-              <Ionicons name="information-circle" size={20} color="#3B82F6" />
+              <Ionicons name="information-circle" size={20} color="#9D12DE" />
               <View className="flex-1 ml-3">
-                <Text className="text-blue-400 font-bold mb-2">
+                <Text className="text-primary/80 font-bold mb-2">
                   Compite y Gana
                 </Text>
-                <Text className="text-blue-300 text-sm">
-                  Únete a desafíos individuales o forma equipo. Gana badges, XP y premios exclusivos. ¡El progreso se sincroniza automáticamente!
+                <Text className="text-primary/60 text-sm">
+                  Ãšnete a desafÃ­os individuales o forma equipo. Gana badges, XP y premios exclusivos. Â¡El progreso se sincroniza automÃ¡ticamente!
                 </Text>
               </View>
             </View>
@@ -501,3 +501,6 @@ export default function GroupChallenges() {
     </View>
   );
 }
+
+
+

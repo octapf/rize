@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -279,7 +279,7 @@ export default function MovementScreening() {
             <Text className="text-white font-bold text-lg mb-3">Setup</Text>
             {currentMovement.setup.map((step, idx) => (
               <View key={idx} className="flex-row items-start mb-2 last:mb-0">
-                <Ionicons name="checkmark-circle" size={18} color="#10b981" />
+                <Ionicons name="checkmark-circle" size={18} color="#9D12DE" />
                 <Text className="text-zinc-300 ml-2 flex-1">{step}</Text>
               </View>
             ))}
@@ -321,24 +321,24 @@ export default function MovementScreening() {
             {currentMovement.corrections.map((corr, idx) => (
               <View key={idx} className="bg-zinc-900 rounded-xl p-3 mb-3 last:mb-0">
                 <Text className="text-red-400 font-bold mb-1">{corr.issue}</Text>
-                <Text className="text-emerald-400 text-sm">{corr.fix}</Text>
+                <Text className="text-primary text-sm">{corr.fix}</Text>
               </View>
             ))}
           </View>
 
-          <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30 mb-6">
-            <Text className="text-blue-400 font-bold mb-2">Screening Tips</Text>
-            <Text className="text-blue-300 text-sm mb-2">
-              • Record video to review form
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
+            <Text className="text-primary/80 font-bold mb-2">Screening Tips</Text>
+            <Text className="text-primary/60 text-sm mb-2">
+              â€¢ Record video to review form
             </Text>
-            <Text className="text-blue-300 text-sm mb-2">
-              • Test both sides for asymmetries
+            <Text className="text-primary/60 text-sm mb-2">
+              â€¢ Test both sides for asymmetries
             </Text>
-            <Text className="text-blue-300 text-sm mb-2">
-              • Re-screen every 4-6 weeks to track improvements
+            <Text className="text-primary/60 text-sm mb-2">
+              â€¢ Re-screen every 4-6 weeks to track improvements
             </Text>
-            <Text className="text-blue-300 text-sm">
-              • Score of 1 = address limitation before heavy loading
+            <Text className="text-primary/60 text-sm">
+              â€¢ Score of 1 = address limitation before heavy loading
             </Text>
           </View>
         </View>
@@ -346,3 +346,4 @@ export default function MovementScreening() {
     </View>
   );
 }
+

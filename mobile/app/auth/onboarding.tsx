@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+﻿import React, { useState, useRef } from 'react';
 import {
   View,
   Text,
@@ -28,17 +28,17 @@ interface OnboardingStep {
 const steps: OnboardingStep[] = [
   {
     id: '1',
-    title: '¡Bienvenido a RIZE!',
-    subtitle: 'Tu compañero definitivo para alcanzar tus metas fitness',
+    title: 'Â¡Bienvenido a RIZE!',
+    subtitle: 'Tu compaÃ±ero definitivo para alcanzar tus metas fitness',
     icon: 'fitness',
-    color1: '#3B82F6',
-    color2: '#2563EB',
+    color1: '#9D12DE',
+    color2: '#7C3AED',
     type: 'info',
   },
   {
     id: '2',
     title: 'Configura tu perfil',
-    subtitle: 'Cuéntanos un poco sobre ti para personalizar tu experiencia',
+    subtitle: 'CuÃ©ntanos un poco sobre ti para personalizar tu experiencia',
     icon: 'person',
     color1: '#8B5CF6',
     color2: '#7C3AED',
@@ -49,16 +49,16 @@ const steps: OnboardingStep[] = [
     title: 'Define tus objetivos',
     subtitle: 'Establece metas claras y alcanzables',
     icon: 'trophy',
-    color1: '#10B981',
-    color2: '#059669',
+    color1: '#9D12DE',
+    color2: '#7C3AED',
     type: 'input',
   },
   {
     id: '4',
-    title: '¡Listo para comenzar!',
+    title: 'Â¡Listo para comenzar!',
     subtitle: 'Empieza tu viaje fitness hoy mismo',
     icon: 'rocket',
-    color1: '#F59E0B',
+    color1: '#FFEA00',
     color2: '#D97706',
     type: 'info',
   },
@@ -119,7 +119,7 @@ export default function OnboardingScreen() {
 
       router.replace('/(tabs)');
     } catch (error) {
-      Alert.alert('Error', 'No se pudo completar la configuración');
+      Alert.alert('Error', 'No se pudo completar la configuraciÃ³n');
     }
   };
 
@@ -204,7 +204,7 @@ export default function OnboardingScreen() {
               <View className="gap-2">
                 {[
                   { id: 'lose', label: 'Perder peso', icon: 'trending-down' },
-                  { id: 'gain', label: 'Ganar músculo', icon: 'trending-up' },
+                  { id: 'gain', label: 'Ganar mÃºsculo', icon: 'trending-up' },
                   { id: 'maintain', label: 'Mantener', icon: 'remove' },
                 ].map((option) => (
                   <TouchableOpacity
@@ -245,7 +245,7 @@ export default function OnboardingScreen() {
             <View
               key={index}
               className={`flex-1 h-1 rounded-full ${
-                index <= currentStep ? 'bg-blue-500' : 'bg-gray-300'
+                index <= currentStep ? 'bg-primary' : 'bg-gray-300'
               }`}
             />
           ))}
@@ -275,7 +275,7 @@ export default function OnboardingScreen() {
             className="py-4 rounded-xl items-center"
           >
             <Text className="text-white text-lg font-bold">
-              {currentStep === steps.length - 1 ? '¡Comenzar!' : 'Continuar'}
+              {currentStep === steps.length - 1 ? 'Â¡Comenzar!' : 'Continuar'}
             </Text>
           </LinearGradient>
         </TouchableOpacity>
@@ -294,3 +294,4 @@ export default function OnboardingScreen() {
     </View>
   );
 }
+

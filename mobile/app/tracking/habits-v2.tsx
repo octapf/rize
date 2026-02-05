@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -24,9 +24,9 @@ interface Habit {
 }
 
 const HABIT_TEMPLATES = [
-  { name: '8h de Sueño', icon: 'moon', color: 'blue', category: 'recovery' },
+  { name: '8h de SueÃ±o', icon: 'moon', color: 'blue', category: 'recovery' },
   { name: '3L de Agua', icon: 'water', color: 'cyan', category: 'nutrition' },
-  { name: 'Proteína en Cada Comida', icon: 'restaurant', color: 'emerald', category: 'nutrition' },
+  { name: 'ProteÃ­na en Cada Comida', icon: 'restaurant', color: 'emerald', category: 'nutrition' },
   { name: 'Entrenamiento', icon: 'barbell', color: 'red', category: 'fitness' },
   { name: '10k Pasos', icon: 'walk', color: 'purple', category: 'fitness' },
   { name: 'Movilidad 15min', icon: 'body', color: 'amber', category: 'recovery' },
@@ -37,7 +37,7 @@ const HABIT_TEMPLATES = [
 const MOCK_HABITS: Habit[] = [
   {
     id: '1',
-    name: '8h de Sueño',
+    name: '8h de SueÃ±o',
     icon: 'moon',
     color: 'blue',
     targetDays: 7,
@@ -95,8 +95,8 @@ export default function HabitTracker() {
   const categories = [
     { key: 'all', label: 'Todos', icon: 'apps', color: 'white' },
     { key: 'fitness', label: 'Fitness', icon: 'barbell', color: '#EF4444' },
-    { key: 'nutrition', label: 'Nutrición', icon: 'nutrition', color: '#10B981' },
-    { key: 'recovery', label: 'Recuperación', icon: 'moon', color: '#3B82F6' },
+    { key: 'nutrition', label: 'NutriciÃ³n', icon: 'nutrition', color: '#9D12DE' },
+    { key: 'recovery', label: 'RecuperaciÃ³n', icon: 'moon', color: '#9D12DE' },
     { key: 'mindset', label: 'Mindset', icon: 'bulb', color: '#A855F7' },
   ];
 
@@ -146,7 +146,7 @@ export default function HabitTracker() {
     }));
 
     if (!isCompletedToday(habits.find(h => h.id === habitId)!)) {
-      Alert.alert('Hábito Completado! 🎉', 'Sigue así, la consistencia es clave');
+      Alert.alert('HÃ¡bito Completado! ðŸŽ‰', 'Sigue asÃ­, la consistencia es clave');
     }
   };
 
@@ -165,13 +165,13 @@ export default function HabitTracker() {
     };
     setHabits([...habits, newHabit]);
     setShowAddForm(false);
-    Alert.alert('Hábito Agregado! 💪', `${template.name} agregado a tu tracker`);
+    Alert.alert('HÃ¡bito Agregado! ðŸ’ª', `${template.name} agregado a tu tracker`);
   };
 
   const deleteHabit = (habitId: string) => {
     Alert.alert(
-      'Eliminar Hábito',
-      '¿Seguro? Se perderá todo el historial',
+      'Eliminar HÃ¡bito',
+      'Â¿Seguro? Se perderÃ¡ todo el historial',
       [
         { text: 'Cancelar' },
         {
@@ -215,7 +215,7 @@ export default function HabitTracker() {
               <Ionicons name="arrow-back" size={24} color="white" />
             </TouchableOpacity>
             <Text className="text-white text-2xl font-bold flex-1 ml-3">
-              Agregar Hábito
+              Agregar HÃ¡bito
             </Text>
           </View>
         </View>
@@ -237,17 +237,17 @@ export default function HabitTracker() {
                   <Text className="text-white font-bold text-lg">{template.name}</Text>
                   <Text className="text-zinc-400 text-sm capitalize">{template.category}</Text>
                 </View>
-                <Ionicons name="add-circle" size={28} color="#10B981" />
+                <Ionicons name="add-circle" size={28} color="#9D12DE" />
               </TouchableOpacity>
             ))}
 
             {/* Custom Habit */}
             <TouchableOpacity
-              onPress={() => Alert.alert('Próximamente', 'Crear hábito personalizado')}
+              onPress={() => Alert.alert('PrÃ³ximamente', 'Crear hÃ¡bito personalizado')}
               className="bg-purple-500/10 rounded-xl p-5 border-2 border-purple-500/30 flex-row items-center justify-center mt-4"
             >
               <Ionicons name="add" size={24} color="#A855F7" />
-              <Text className="text-purple-400 font-bold text-lg ml-2">Hábito Personalizado</Text>
+              <Text className="text-purple-400 font-bold text-lg ml-2">HÃ¡bito Personalizado</Text>
             </TouchableOpacity>
           </View>
         </ScrollView>
@@ -276,7 +276,7 @@ export default function HabitTracker() {
         <View className="px-6 pt-6">
           {/* Stats */}
           <View className="flex-row gap-3 mb-6">
-            <View className="flex-1 bg-gradient-to-r from-emerald-500 to-blue-500 rounded-xl p-4">
+            <View className="flex-1 bg-gradient-to-r from-primary to-[#7D0EBE] rounded-xl p-4">
               <Text className="text-white opacity-90 text-xs mb-1">Completados</Text>
               <Text className="text-white text-3xl font-bold">{stats.totalCompleted}</Text>
             </View>
@@ -285,7 +285,7 @@ export default function HabitTracker() {
               <Text className="text-white text-3xl font-bold">{stats.totalStreaks}</Text>
             </View>
             <View className="flex-1 bg-gradient-to-r from-amber-500 to-red-500 rounded-xl p-4">
-              <Text className="text-white opacity-90 text-xs mb-1">Récord</Text>
+              <Text className="text-white opacity-90 text-xs mb-1">RÃ©cord</Text>
               <Text className="text-white text-3xl font-bold">{stats.longestStreak}</Text>
             </View>
           </View>
@@ -299,7 +299,7 @@ export default function HabitTracker() {
                   onPress={() => setSelectedCategory(cat.key)}
                   className={`rounded-xl px-4 py-2 flex-row items-center ${
                     selectedCategory === cat.key
-                      ? 'bg-emerald-500'
+                      ? 'bg-primary'
                       : 'bg-zinc-900 border border-zinc-800'
                   }`}
                 >
@@ -318,7 +318,7 @@ export default function HabitTracker() {
 
           {/* Habits List */}
           <Text className="text-white font-bold text-lg mb-3">
-            Mis Hábitos ({filteredHabits.length})
+            Mis HÃ¡bitos ({filteredHabits.length})
           </Text>
 
           {filteredHabits.map((habit) => {
@@ -345,21 +345,21 @@ export default function HabitTracker() {
 
                 {/* Streaks */}
                 <View className="flex-row gap-2 mb-4">
-                  <View className="flex-1 bg-emerald-500/10 rounded-lg p-3 border border-emerald-500/30">
-                    <Text className="text-emerald-400 text-xs mb-1">Streak Actual</Text>
-                    <Text className="text-emerald-400 font-bold text-2xl">
-                      {habit.currentStreak} 🔥
+                  <View className="flex-1 bg-primary/10 rounded-lg p-3 border border-primary/30">
+                    <Text className="text-primary text-xs mb-1">Streak Actual</Text>
+                    <Text className="text-primary font-bold text-2xl">
+                      {habit.currentStreak} ðŸ”¥
                     </Text>
                   </View>
                   <View className="flex-1 bg-amber-500/10 rounded-lg p-3 border border-amber-500/30">
-                    <Text className="text-amber-400 text-xs mb-1">Récord</Text>
+                    <Text className="text-amber-400 text-xs mb-1">RÃ©cord</Text>
                     <Text className="text-amber-400 font-bold text-2xl">
-                      {habit.longestStreak} 🏆
+                      {habit.longestStreak} ðŸ†
                     </Text>
                   </View>
-                  <View className="flex-1 bg-blue-500/10 rounded-lg p-3 border border-blue-500/30">
-                    <Text className="text-blue-400 text-xs mb-1">Esta Semana</Text>
-                    <Text className="text-blue-400 font-bold text-2xl">
+                  <View className="flex-1 bg-primary/10 rounded-lg p-3 border border-primary/30">
+                    <Text className="text-primary/80 text-xs mb-1">Esta Semana</Text>
+                    <Text className="text-primary/80 font-bold text-2xl">
                       {weekCompletion}%
                     </Text>
                   </View>
@@ -390,7 +390,7 @@ export default function HabitTracker() {
                   onPress={() => toggleHabit(habit.id)}
                   className={`rounded-xl p-4 flex-row items-center justify-center ${
                     completedToday
-                      ? 'bg-emerald-500'
+                      ? 'bg-primary'
                       : `bg-${habit.color}-500/10 border-2 border-${habit.color}-500/30`
                   }`}
                 >
@@ -400,7 +400,7 @@ export default function HabitTracker() {
                     color={completedToday ? 'white' : '#71717A'}
                   />
                   <Text className={`font-bold text-lg ml-2 ${completedToday ? 'text-white' : 'text-zinc-400'}`}>
-                    {completedToday ? 'Completado Hoy! ✓' : 'Marcar como Completado'}
+                    {completedToday ? 'Completado Hoy! âœ“' : 'Marcar como Completado'}
                   </Text>
                 </TouchableOpacity>
               </View>
@@ -411,29 +411,29 @@ export default function HabitTracker() {
             <View className="bg-zinc-900 rounded-xl p-8 border border-zinc-800 items-center">
               <Ionicons name="add-circle-outline" size={64} color="#52525B" />
               <Text className="text-zinc-400 text-center mt-4 mb-2">
-                No tienes hábitos en esta categoría
+                No tienes hÃ¡bitos en esta categorÃ­a
               </Text>
               <TouchableOpacity onPress={() => setShowAddForm(true)}>
-                <Text className="text-emerald-400 font-bold">Agregar Hábito</Text>
+                <Text className="text-primary font-bold">Agregar HÃ¡bito</Text>
               </TouchableOpacity>
             </View>
           )}
 
           {/* Tips */}
-          <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30 mb-6 mt-4">
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6 mt-4">
             <View className="flex-row items-start">
-              <Ionicons name="bulb" size={20} color="#3B82F6" />
+              <Ionicons name="bulb" size={20} color="#9D12DE" />
               <View className="flex-1 ml-3">
-                <Text className="text-blue-400 font-bold mb-2">
-                  Tips para Construir Hábitos
+                <Text className="text-primary/80 font-bold mb-2">
+                  Tips para Construir HÃ¡bitos
                 </Text>
-                <Text className="text-blue-300 text-sm">
-                  • Empieza con 1-3 hábitos máximo{'\n'}
-                  • Sé específico (3L agua vs "beber agua"){'\n'}
-                  • Enlaza hábitos (café → journaling){'\n'}
-                  • Celebra streaks pequeños (3, 7, 14 días){'\n'}
-                  • No rompas la cadena 2 días seguidos{'\n'}
-                  • 21 días = hábito, 90 días = lifestyle
+                <Text className="text-primary/60 text-sm">
+                  â€¢ Empieza con 1-3 hÃ¡bitos mÃ¡ximo{'\n'}
+                  â€¢ SÃ© especÃ­fico (3L agua vs "beber agua"){'\n'}
+                  â€¢ Enlaza hÃ¡bitos (cafÃ© â†’ journaling){'\n'}
+                  â€¢ Celebra streaks pequeÃ±os (3, 7, 14 dÃ­as){'\n'}
+                  â€¢ No rompas la cadena 2 dÃ­as seguidos{'\n'}
+                  â€¢ 21 dÃ­as = hÃ¡bito, 90 dÃ­as = lifestyle
                 </Text>
               </View>
             </View>
@@ -443,3 +443,4 @@ export default function HabitTracker() {
     </View>
   );
 }
+

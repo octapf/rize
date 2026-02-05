@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -38,19 +38,19 @@ interface MeasurementHistory {
 
 export default function BodyMeasurements() {
   const [measurements] = useState<Measurement[]>([
-    { bodyPart: 'Cuello', current: 38.5, previous: 39.0, change: -0.5, unit: 'cm', icon: '👔', color: 'blue' },
-    { bodyPart: 'Hombros', current: 118, previous: 116, change: 2.0, unit: 'cm', icon: '💪', color: 'emerald' },
-    { bodyPart: 'Pecho', current: 104, previous: 102, change: 2.0, unit: 'cm', icon: '🫀', color: 'emerald' },
-    { bodyPart: 'Cintura', current: 82, previous: 85, change: -3.0, unit: 'cm', icon: '⭕', color: 'emerald' },
-    { bodyPart: 'Cadera', current: 98, previous: 99, change: -1.0, unit: 'cm', icon: '🍑', color: 'emerald' },
-    { bodyPart: 'Bícep Izq', current: 38.5, previous: 37.5, change: 1.0, unit: 'cm', icon: '💪', color: 'blue' },
-    { bodyPart: 'Bícep Der', current: 39.0, previous: 38.0, change: 1.0, unit: 'cm', icon: '💪', color: 'blue' },
-    { bodyPart: 'Antebrazo Izq', current: 29.5, previous: 29.0, change: 0.5, unit: 'cm', icon: '🤜', color: 'amber' },
-    { bodyPart: 'Antebrazo Der', current: 30.0, previous: 29.5, change: 0.5, unit: 'cm', icon: '🤛', color: 'amber' },
-    { bodyPart: 'Muslo Izq', current: 58, previous: 56, change: 2.0, unit: 'cm', icon: '🦵', color: 'emerald' },
-    { bodyPart: 'Muslo Der', current: 58.5, previous: 56.5, change: 2.0, unit: 'cm', icon: '🦵', color: 'emerald' },
-    { bodyPart: 'Gemelo Izq', current: 38, previous: 37, change: 1.0, unit: 'cm', icon: '🦿', color: 'blue' },
-    { bodyPart: 'Gemelo Der', current: 38.5, previous: 37.5, change: 1.0, unit: 'cm', icon: '🦿', color: 'blue' },
+    { bodyPart: 'Cuello', current: 38.5, previous: 39.0, change: -0.5, unit: 'cm', icon: 'ðŸ‘”', color: 'blue' },
+    { bodyPart: 'Hombros', current: 118, previous: 116, change: 2.0, unit: 'cm', icon: 'ðŸ’ª', color: 'emerald' },
+    { bodyPart: 'Pecho', current: 104, previous: 102, change: 2.0, unit: 'cm', icon: 'ðŸ«€', color: 'emerald' },
+    { bodyPart: 'Cintura', current: 82, previous: 85, change: -3.0, unit: 'cm', icon: 'â­•', color: 'emerald' },
+    { bodyPart: 'Cadera', current: 98, previous: 99, change: -1.0, unit: 'cm', icon: 'ðŸ‘', color: 'emerald' },
+    { bodyPart: 'BÃ­cep Izq', current: 38.5, previous: 37.5, change: 1.0, unit: 'cm', icon: 'ðŸ’ª', color: 'blue' },
+    { bodyPart: 'BÃ­cep Der', current: 39.0, previous: 38.0, change: 1.0, unit: 'cm', icon: 'ðŸ’ª', color: 'blue' },
+    { bodyPart: 'Antebrazo Izq', current: 29.5, previous: 29.0, change: 0.5, unit: 'cm', icon: 'ðŸ¤œ', color: 'amber' },
+    { bodyPart: 'Antebrazo Der', current: 30.0, previous: 29.5, change: 0.5, unit: 'cm', icon: 'ðŸ¤›', color: 'amber' },
+    { bodyPart: 'Muslo Izq', current: 58, previous: 56, change: 2.0, unit: 'cm', icon: 'ðŸ¦µ', color: 'emerald' },
+    { bodyPart: 'Muslo Der', current: 58.5, previous: 56.5, change: 2.0, unit: 'cm', icon: 'ðŸ¦µ', color: 'emerald' },
+    { bodyPart: 'Gemelo Izq', current: 38, previous: 37, change: 1.0, unit: 'cm', icon: 'ðŸ¦¿', color: 'blue' },
+    { bodyPart: 'Gemelo Der', current: 38.5, previous: 37.5, change: 1.0, unit: 'cm', icon: 'ðŸ¦¿', color: 'blue' },
   ]);
 
   const [history] = useState<MeasurementHistory[]>([
@@ -90,8 +90,8 @@ export default function BodyMeasurements() {
 
   const addMeasurement = () => {
     Alert.alert(
-      'Nueva Medición',
-      'Función para registrar todas las medidas corporales con fecha',
+      'Nueva MediciÃ³n',
+      'FunciÃ³n para registrar todas las medidas corporales con fecha',
       [{ text: 'Entendido' }]
     );
   };
@@ -99,7 +99,7 @@ export default function BodyMeasurements() {
   const viewHistory = (bodyPart: string) => {
     Alert.alert(
       `Historial: ${bodyPart}`,
-      'Gráfico de evolución en el tiempo',
+      'GrÃ¡fico de evoluciÃ³n en el tiempo',
       [{ text: 'Cerrar' }]
     );
   };
@@ -116,8 +116,8 @@ export default function BodyMeasurements() {
   };
 
   const getAsymmetry = () => {
-    const bicepDiff = Math.abs(measurements.find(m => m.bodyPart === 'Bícep Izq')!.current - 
-                                measurements.find(m => m.bodyPart === 'Bícep Der')!.current);
+    const bicepDiff = Math.abs(measurements.find(m => m.bodyPart === 'BÃ­cep Izq')!.current - 
+                                measurements.find(m => m.bodyPart === 'BÃ­cep Der')!.current);
     const thighDiff = Math.abs(measurements.find(m => m.bodyPart === 'Muslo Izq')!.current - 
                                measurements.find(m => m.bodyPart === 'Muslo Der')!.current);
     const calfDiff = Math.abs(measurements.find(m => m.bodyPart === 'Gemelo Izq')!.current - 
@@ -150,15 +150,15 @@ export default function BodyMeasurements() {
         <View className="px-6 pt-6">
           {/* Summary Cards */}
           <View className="flex-row gap-2 mb-6">
-            <View className="flex-1 bg-emerald-500/10 rounded-xl p-3 border border-emerald-500/30">
-              <Text className="text-emerald-400 text-xs mb-1">GANANCIA</Text>
-              <Text className="text-emerald-400 font-bold text-xl">+{totalChange.gains.toFixed(1)} cm</Text>
-              <Text className="text-emerald-300 text-xs">Total músculo</Text>
+            <View className="flex-1 bg-primary/10 rounded-xl p-3 border border-primary/30">
+              <Text className="text-primary text-xs mb-1">GANANCIA</Text>
+              <Text className="text-primary font-bold text-xl">+{totalChange.gains.toFixed(1)} cm</Text>
+              <Text className="text-primary/80 text-xs">Total mÃºsculo</Text>
             </View>
-            <View className="flex-1 bg-blue-500/10 rounded-xl p-3 border border-blue-500/30">
-              <Text className="text-blue-400 text-xs mb-1">PÉRDIDA</Text>
-              <Text className="text-blue-400 font-bold text-xl">-{totalChange.losses.toFixed(1)} cm</Text>
-              <Text className="text-blue-300 text-xs">Cintura/grasa</Text>
+            <View className="flex-1 bg-primary/10 rounded-xl p-3 border border-primary/30">
+              <Text className="text-primary/80 text-xs mb-1">PÃ‰RDIDA</Text>
+              <Text className="text-primary/80 font-bold text-xl">-{totalChange.losses.toFixed(1)} cm</Text>
+              <Text className="text-primary/60 text-xs">Cintura/grasa</Text>
             </View>
           </View>
 
@@ -166,25 +166,25 @@ export default function BodyMeasurements() {
           {(asymmetry.bicep > 1 || asymmetry.thigh > 1 || asymmetry.calf > 1) && (
             <View className="bg-amber-500/10 rounded-xl p-4 mb-6 border border-amber-500/30">
               <View className="flex-row items-start">
-                <Ionicons name="warning" size={20} color="#F59E0B" />
+                <Ionicons name="warning" size={20} color="#FFEA00" />
                 <View className="flex-1 ml-3">
                   <Text className="text-amber-400 font-bold mb-2">
-                    Asimetrías Detectadas
+                    AsimetrÃ­as Detectadas
                   </Text>
                   <View className="space-y-1">
                     {asymmetry.bicep > 0.5 && (
                       <Text className="text-amber-300 text-sm">
-                        • Bíceps: {asymmetry.bicep.toFixed(1)} cm diferencia
+                        â€¢ BÃ­ceps: {asymmetry.bicep.toFixed(1)} cm diferencia
                       </Text>
                     )}
                     {asymmetry.thigh > 0.5 && (
                       <Text className="text-amber-300 text-sm">
-                        • Muslos: {asymmetry.thigh.toFixed(1)} cm diferencia
+                        â€¢ Muslos: {asymmetry.thigh.toFixed(1)} cm diferencia
                       </Text>
                     )}
                     {asymmetry.calf > 0.5 && (
                       <Text className="text-amber-300 text-sm">
-                        • Gemelos: {asymmetry.calf.toFixed(1)} cm diferencia
+                        â€¢ Gemelos: {asymmetry.calf.toFixed(1)} cm diferencia
                       </Text>
                     )}
                   </View>
@@ -221,11 +221,11 @@ export default function BodyMeasurements() {
                       <Ionicons
                         name={measurement.change >= 0 ? 'trending-up' : 'trending-down'}
                         size={14}
-                        color={measurement.change >= 0 ? '#10B981' : '#EF4444'}
+                        color={measurement.change >= 0 ? '#9D12DE' : '#EF4444'}
                       />
                       <Text
                         className={`text-sm ml-1 ${
-                          measurement.change >= 0 ? 'text-emerald-400' : 'text-red-400'
+                          measurement.change >= 0 ? 'text-primary' : 'text-red-400'
                         }`}
                       >
                         {measurement.change >= 0 ? '+' : ''}{measurement.change} cm
@@ -238,7 +238,7 @@ export default function BodyMeasurements() {
                 <View className="bg-zinc-800 h-2 rounded-full overflow-hidden">
                   <View
                     className={`h-full ${
-                      measurement.change >= 0 ? 'bg-emerald-500' : 'bg-red-500'
+                      measurement.change >= 0 ? 'bg-primary' : 'bg-red-500'
                     }`}
                     style={{
                       width: `${Math.min(Math.abs((measurement.change / measurement.previous) * 100), 100)}%`,
@@ -251,32 +251,32 @@ export default function BodyMeasurements() {
 
           {/* Measurement Guide */}
           <View className="bg-zinc-900 rounded-xl p-6 mb-6 border border-zinc-800">
-            <Text className="text-white text-lg font-bold mb-4">Guía de Medición</Text>
+            <Text className="text-white text-lg font-bold mb-4">GuÃ­a de MediciÃ³n</Text>
             
             <View className="space-y-3">
               <View>
-                <Text className="text-emerald-400 font-bold mb-1">✓ Mismo horario</Text>
+                <Text className="text-primary font-bold mb-1">âœ“ Mismo horario</Text>
                 <Text className="text-zinc-400 text-sm">
-                  Mide siempre a la misma hora (ej: mañana en ayunas)
+                  Mide siempre a la misma hora (ej: maÃ±ana en ayunas)
                 </Text>
               </View>
 
               <View>
-                <Text className="text-emerald-400 font-bold mb-1">✓ Cinta métrica flexible</Text>
+                <Text className="text-primary font-bold mb-1">âœ“ Cinta mÃ©trica flexible</Text>
                 <Text className="text-zinc-400 text-sm">
                   Usa cinta de sastre, no muy apretada ni floja
                 </Text>
               </View>
 
               <View>
-                <Text className="text-emerald-400 font-bold mb-1">✓ Músculos relajados</Text>
+                <Text className="text-primary font-bold mb-1">âœ“ MÃºsculos relajados</Text>
                 <Text className="text-zinc-400 text-sm">
-                  No flexiones (excepto para medida de bíceps contraído)
+                  No flexiones (excepto para medida de bÃ­ceps contraÃ­do)
                 </Text>
               </View>
 
               <View>
-                <Text className="text-emerald-400 font-bold mb-1">✓ Frecuencia</Text>
+                <Text className="text-primary font-bold mb-1">âœ“ Frecuencia</Text>
                 <Text className="text-zinc-400 text-sm">
                   Mide cada 2-4 semanas para ver progreso real
                 </Text>
@@ -285,15 +285,15 @@ export default function BodyMeasurements() {
           </View>
 
           {/* Info Card */}
-          <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30 mb-6">
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
             <View className="flex-row items-start">
-              <Ionicons name="information-circle" size={20} color="#3B82F6" />
+              <Ionicons name="information-circle" size={20} color="#9D12DE" />
               <View className="flex-1 ml-3">
-                <Text className="text-blue-400 font-bold mb-2">
+                <Text className="text-primary/80 font-bold mb-2">
                   Medidas vs Peso
                 </Text>
-                <Text className="text-blue-300 text-sm">
-                  Las medidas corporales son más precisas que la báscula. Puedes ganar músculo y perder grasa sin cambiar peso, pero las medidas lo reflejarán.
+                <Text className="text-primary/60 text-sm">
+                  Las medidas corporales son mÃ¡s precisas que la bÃ¡scula. Puedes ganar mÃºsculo y perder grasa sin cambiar peso, pero las medidas lo reflejarÃ¡n.
                 </Text>
               </View>
             </View>
@@ -305,12 +305,14 @@ export default function BodyMeasurements() {
       <View className="px-6 pb-6 pt-4 border-t border-zinc-800">
         <TouchableOpacity
           onPress={addMeasurement}
-          className="bg-emerald-500 rounded-xl p-4 flex-row items-center justify-center"
+          className="bg-primary rounded-xl p-4 flex-row items-center justify-center"
         >
           <Ionicons name="add-circle" size={20} color="white" />
-          <Text className="text-white font-bold ml-2">Registrar Nueva Medición</Text>
+          <Text className="text-white font-bold ml-2">Registrar Nueva MediciÃ³n</Text>
         </TouchableOpacity>
       </View>
     </View>
   );
 }
+
+

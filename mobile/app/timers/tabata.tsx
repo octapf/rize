@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -55,7 +55,7 @@ export default function TabataTimer() {
           </View>
 
           <View className={`rounded-xl p-8 mb-6 items-center border-2 ${
-            isWorking ? 'bg-red-500 border-red-600' : 'bg-emerald-500 border-emerald-600'
+            isWorking ? 'bg-red-500 border-red-600' : 'bg-primary border-emerald-600'
           }`}>
             <Text className="text-white text-xl mb-2">Round {currentRound + 1}/{rounds}</Text>
             <Text className="text-white text-8xl font-bold mb-4">{timeLeft}</Text>
@@ -73,7 +73,7 @@ export default function TabataTimer() {
             >
               <Text className="text-white font-bold text-lg mb-2">{preset.name}</Text>
               <Text className="text-zinc-400 text-sm">
-                {preset.work}s work • {preset.rest}s rest • {preset.rounds} rounds
+                {preset.work}s work â€¢ {preset.rest}s rest â€¢ {preset.rounds} rounds
               </Text>
             </TouchableOpacity>
           ))}
@@ -102,3 +102,4 @@ export default function TabataTimer() {
     </View>
   );
 }
+

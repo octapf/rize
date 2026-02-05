@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -185,8 +185,8 @@ export default function PerformanceBenchmarks() {
                       </View>
                     </View>
                     <View className="flex-row items-center">
-                      <Ionicons name="trophy" size={16} color="#3b82f6" />
-                      <Text className="text-blue-400 ml-2">{test.target}</Text>
+                      <Ionicons name="trophy" size={16} color="#9D12DE" />
+                      <Text className="text-primary/80 ml-2">{test.target}</Text>
                     </View>
                   </View>
                 );
@@ -194,14 +194,14 @@ export default function PerformanceBenchmarks() {
             </View>
           ))}
 
-          <View className="bg-emerald-500/10 rounded-xl p-4 border border-emerald-500/30 mb-6">
-            <Text className="text-emerald-400 font-bold mb-2">Testing Tips</Text>
-            <Text className="text-emerald-300 text-sm">
-              • Warm up properly before tests{'\n'}
-              • Test when fresh (early week){'\n'}
-              • Retest every 8-12 weeks{'\n'}
-              • Track progress over time{'\n'}
-              • Don't test all at once
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
+            <Text className="text-primary font-bold mb-2">Testing Tips</Text>
+            <Text className="text-primary/80 text-sm">
+              â€¢ Warm up properly before tests{'\n'}
+              â€¢ Test when fresh (early week){'\n'}
+              â€¢ Retest every 8-12 weeks{'\n'}
+              â€¢ Track progress over time{'\n'}
+              â€¢ Don't test all at once
             </Text>
           </View>
         </View>
@@ -209,3 +209,5 @@ export default function PerformanceBenchmarks() {
     </View>
   );
 }
+
+

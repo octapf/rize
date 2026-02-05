@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -41,7 +41,7 @@ interface GroceryItem {
   checked: boolean;
 }
 
-const WEEK_DAYS = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'];
+const WEEK_DAYS = ['Lunes', 'Martes', 'MiÃ©rcoles', 'Jueves', 'Viernes', 'SÃ¡bado', 'Domingo'];
 
 const SAMPLE_PLAN: MealPlan = {
   id: '1',
@@ -53,14 +53,14 @@ const SAMPLE_PLAN: MealPlan = {
   meals: [
     {
       id: '1',
-      name: 'Desayuno Alto en Proteína',
+      name: 'Desayuno Alto en ProteÃ­na',
       type: 'desayuno',
       time: '08:00',
       calories: 520,
       protein: 42,
       carbs: 55,
       fats: 12,
-      foods: ['4 claras + 2 huevos', '80g avena', '1 plátano', 'Café'],
+      foods: ['4 claras + 2 huevos', '80g avena', '1 plÃ¡tano', 'CafÃ©'],
     },
     {
       id: '2',
@@ -104,7 +104,7 @@ const SAMPLE_PLAN: MealPlan = {
       protein: 48,
       carbs: 42,
       fats: 15,
-      foods: ['180g salmón', '150g batata', 'Brócoli al vapor', 'Ensalada'],
+      foods: ['180g salmÃ³n', '150g batata', 'BrÃ³coli al vapor', 'Ensalada'],
     },
     {
       id: '6',
@@ -115,22 +115,22 @@ const SAMPLE_PLAN: MealPlan = {
       protein: 25,
       carbs: 8,
       fats: 5,
-      foods: ['30g caseína', '10 almendras'],
+      foods: ['30g caseÃ­na', '10 almendras'],
     },
   ],
 };
 
 const GROCERY_LIST: GroceryItem[] = [
   { id: '1', name: 'Pechuga de pollo', category: 'proteinas', quantity: '1.4 kg', checked: false },
-  { id: '2', name: 'Salmón fresco', category: 'proteinas', quantity: '900g', checked: false },
+  { id: '2', name: 'SalmÃ³n fresco', category: 'proteinas', quantity: '900g', checked: false },
   { id: '3', name: 'Huevos', category: 'proteinas', quantity: '2 docenas', checked: false },
   { id: '4', name: 'Whey protein', category: 'proteinas', quantity: '1 bote', checked: false },
   { id: '5', name: 'Arroz integral', category: 'carbohidratos', quantity: '1 kg', checked: false },
   { id: '6', name: 'Avena', category: 'carbohidratos', quantity: '500g', checked: false },
   { id: '7', name: 'Batata', category: 'carbohidratos', quantity: '1 kg', checked: false },
-  { id: '8', name: 'Brócoli', category: 'vegetales', quantity: '500g', checked: false },
+  { id: '8', name: 'BrÃ³coli', category: 'vegetales', quantity: '500g', checked: false },
   { id: '9', name: 'Lechuga', category: 'vegetales', quantity: '2 unidades', checked: false },
-  { id: '10', name: 'Plátanos', category: 'frutas', quantity: '7 unidades', checked: false },
+  { id: '10', name: 'PlÃ¡tanos', category: 'frutas', quantity: '7 unidades', checked: false },
   { id: '11', name: 'Manzanas', category: 'frutas', quantity: '7 unidades', checked: false },
   { id: '12', name: 'Yogurt griego', category: 'lacteos', quantity: '1.5 kg', checked: false },
   { id: '13', name: 'Almendras', category: 'otros', quantity: '200g', checked: false },
@@ -148,20 +148,20 @@ export default function MealPlanning() {
   ];
 
   const mealTypeColors = {
-    desayuno: '#F59E0B',
-    snack1: '#10B981',
+    desayuno: '#FFEA00',
+    snack1: '#9D12DE',
     almuerzo: '#EF4444',
-    snack2: '#10B981',
-    cena: '#3B82F6',
+    snack2: '#9D12DE',
+    cena: '#9D12DE',
     post: '#8B5CF6',
   };
 
   const categoryColors = {
     proteinas: '#EF4444',
-    carbohidratos: '#F59E0B',
-    vegetales: '#10B981',
+    carbohidratos: '#FFEA00',
+    vegetales: '#9D12DE',
     frutas: '#EC4899',
-    lacteos: '#3B82F6',
+    lacteos: '#9D12DE',
     otros: '#71717A',
   };
 
@@ -174,13 +174,13 @@ export default function MealPlanning() {
   const copyToAllDays = () => {
     Alert.alert(
       'Copiar Plan',
-      '¿Deseas copiar el plan de Lunes a todos los días de la semana?',
+      'Â¿Deseas copiar el plan de Lunes a todos los dÃ­as de la semana?',
       [
         { text: 'Cancelar', style: 'cancel' },
         {
           text: 'Copiar',
           onPress: () => {
-            Alert.alert('¡Copiado!', 'Plan aplicado a toda la semana');
+            Alert.alert('Â¡Copiado!', 'Plan aplicado a toda la semana');
           },
         },
       ]
@@ -189,7 +189,7 @@ export default function MealPlanning() {
 
   const generateGroceryList = () => {
     Alert.alert(
-      '¡Lista Generada!',
+      'Â¡Lista Generada!',
       `${groceryList.length} productos agregados a tu lista de compras basados en tu plan semanal`
     );
   };
@@ -220,10 +220,10 @@ export default function MealPlanning() {
             <Ionicons name="arrow-back" size={24} color="white" />
           </TouchableOpacity>
           <Text className="text-white text-2xl font-bold flex-1 ml-3">
-            Planificación de Comidas
+            PlanificaciÃ³n de Comidas
           </Text>
           <TouchableOpacity>
-            <Ionicons name="add-circle" size={24} color="#10B981" />
+            <Ionicons name="add-circle" size={24} color="#9D12DE" />
           </TouchableOpacity>
         </View>
 
@@ -234,7 +234,7 @@ export default function MealPlanning() {
               key={tab.id}
               onPress={() => setSelectedTab(tab.id)}
               className={`flex-1 flex-row items-center justify-center py-3 rounded-lg ${
-                selectedTab === tab.id ? 'bg-emerald-500' : 'bg-zinc-900 border border-zinc-800'
+                selectedTab === tab.id ? 'bg-primary' : 'bg-zinc-900 border border-zinc-800'
               }`}
             >
               <Ionicons
@@ -270,7 +270,7 @@ export default function MealPlanning() {
                   onPress={() => setSelectedDay(day)}
                   className={`px-4 py-2 rounded-lg ${
                     selectedDay === day
-                      ? 'bg-emerald-500'
+                      ? 'bg-primary'
                       : 'bg-zinc-900 border border-zinc-800'
                   }`}
                 >
@@ -289,14 +289,14 @@ export default function MealPlanning() {
           <ScrollView className="flex-1" showsVerticalScrollIndicator={false}>
             <View className="px-6 pt-6">
               {/* Daily Summary */}
-              <View className="bg-gradient-to-br from-emerald-500 to-blue-500 rounded-xl p-4 mb-4">
+              <View className="bg-gradient-to-br from-primary to-[#7D0EBE] rounded-xl p-4 mb-4">
                 <Text className="text-white/80 text-sm mb-2">{selectedDay}</Text>
                 <View className="flex-row items-end justify-between">
                   <View className="flex-1">
                     <Text className="text-white font-bold text-3xl mb-1">
                       {SAMPLE_PLAN.totalCalories}
                     </Text>
-                    <Text className="text-white/80 text-sm">Calorías totales</Text>
+                    <Text className="text-white/80 text-sm">CalorÃ­as totales</Text>
                   </View>
                   <TouchableOpacity
                     onPress={copyToAllDays}
@@ -313,7 +313,7 @@ export default function MealPlanning() {
 
                 <View className="flex-row gap-4 mt-4">
                   <View className="flex-1">
-                    <Text className="text-white/60 text-xs">Proteína</Text>
+                    <Text className="text-white/60 text-xs">ProteÃ­na</Text>
                     <Text className="text-white font-bold text-lg">
                       {SAMPLE_PLAN.totalProtein}g
                     </Text>
@@ -335,7 +335,7 @@ export default function MealPlanning() {
 
               {/* Meals */}
               <Text className="text-white font-bold text-lg mb-3">
-                Comidas del Día ({SAMPLE_PLAN.meals.length})
+                Comidas del DÃ­a ({SAMPLE_PLAN.meals.length})
               </Text>
 
               {SAMPLE_PLAN.meals.map((meal) => (
@@ -367,7 +367,7 @@ export default function MealPlanning() {
                   <View className="bg-zinc-800 rounded-lg p-3 mb-3">
                     {meal.foods.map((food, index) => (
                       <Text key={index} className="text-zinc-300 text-sm mb-1">
-                        • {food}
+                        â€¢ {food}
                       </Text>
                     ))}
                   </View>
@@ -375,7 +375,7 @@ export default function MealPlanning() {
                   {/* Macros */}
                   <View className="flex-row gap-3">
                     <View className="flex-1 bg-zinc-800 rounded-lg p-2">
-                      <Text className="text-zinc-400 text-xs">Proteína</Text>
+                      <Text className="text-zinc-400 text-xs">ProteÃ­na</Text>
                       <Text className="text-red-500 font-bold">{meal.protein}g</Text>
                     </View>
                     <View className="flex-1 bg-zinc-800 rounded-lg p-2">
@@ -384,7 +384,7 @@ export default function MealPlanning() {
                     </View>
                     <View className="flex-1 bg-zinc-800 rounded-lg p-2">
                       <Text className="text-zinc-400 text-xs">Grasas</Text>
-                      <Text className="text-blue-500 font-bold">{meal.fats}g</Text>
+                      <Text className="text-primary font-bold">{meal.fats}g</Text>
                     </View>
                   </View>
                 </View>
@@ -402,11 +402,11 @@ export default function MealPlanning() {
             <View className="bg-zinc-900 rounded-xl p-4 mb-4 border border-zinc-800">
               <View className="flex-row items-center justify-between mb-3">
                 <Text className="text-white font-bold">Progreso de Compras</Text>
-                <Text className="text-emerald-500 font-bold">{completionPercentage}%</Text>
+                <Text className="text-primary font-bold">{completionPercentage}%</Text>
               </View>
               <View className="bg-zinc-800 h-2 rounded-full overflow-hidden">
                 <View
-                  className="h-full bg-emerald-500 rounded-full"
+                  className="h-full bg-primary rounded-full"
                   style={{ width: `${completionPercentage}%` }}
                 />
               </View>
@@ -415,7 +415,7 @@ export default function MealPlanning() {
                   {checkedCount} de {groceryList.length} completados
                 </Text>
                 <TouchableOpacity onPress={shareGroceryList}>
-                  <Ionicons name="share-outline" size={20} color="#10B981" />
+                  <Ionicons name="share-outline" size={20} color="#9D12DE" />
                 </TouchableOpacity>
               </View>
             </View>
@@ -423,7 +423,7 @@ export default function MealPlanning() {
             {/* Generate Button */}
             <TouchableOpacity
               onPress={generateGroceryList}
-              className="bg-emerald-500 rounded-lg p-4 mb-4"
+              className="bg-primary rounded-lg p-4 mb-4"
             >
               <View className="flex-row items-center justify-center">
                 <Ionicons name="sparkles" size={20} color="white" />
@@ -448,7 +448,7 @@ export default function MealPlanning() {
                       key={item.id}
                       onPress={() => toggleGroceryItem(item.id)}
                       className={`bg-zinc-900 rounded-xl p-4 mb-2 border ${
-                        item.checked ? 'border-emerald-500' : 'border-zinc-800'
+                        item.checked ? 'border-primary' : 'border-zinc-800'
                       }`}
                     >
                       <View className="flex-row items-center justify-between">
@@ -456,7 +456,7 @@ export default function MealPlanning() {
                           <View
                             className={`w-6 h-6 rounded-full border-2 items-center justify-center mr-3 ${
                               item.checked
-                                ? 'bg-emerald-500 border-emerald-500'
+                                ? 'bg-primary border-primary'
                                 : 'border-zinc-600'
                             }`}
                           >
@@ -491,3 +491,5 @@ export default function MealPlanning() {
     </View>
   );
 }
+
+

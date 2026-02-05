@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -28,15 +28,15 @@ const METRICS: AnalyticsMetric[] = [
     value: '68 series',
     change: 12,
     icon: 'barbell',
-    color: '#10B981',
+    color: '#9D12DE',
   },
   {
     id: 'frequency',
     name: 'Frecuencia',
-    value: '5 días/sem',
+    value: '5 dÃ­as/sem',
     change: 0,
     icon: 'calendar',
-    color: '#3B82F6',
+    color: '#9D12DE',
   },
   {
     id: 'intensity',
@@ -44,7 +44,7 @@ const METRICS: AnalyticsMetric[] = [
     value: '78% 1RM',
     change: 3,
     icon: 'flash',
-    color: '#F59E0B',
+    color: '#FFEA00',
   },
   {
     id: 'tonnage',
@@ -63,7 +63,7 @@ export default function AdvancedAnalytics() {
   const periods = [
     { id: 'week' as const, label: 'Semana' },
     { id: 'month' as const, label: 'Mes' },
-    { id: 'year' as const, label: 'Año' },
+    { id: 'year' as const, label: 'AÃ±o' },
   ];
 
   // Volume trend data
@@ -81,23 +81,23 @@ export default function AdvancedAnalytics() {
   // Exercise distribution
   const exerciseDistribution = [
     {
-      name: 'Tracción',
+      name: 'TracciÃ³n',
       population: 35,
-      color: '#10B981',
+      color: '#9D12DE',
       legendFontColor: '#71717A',
       legendFontSize: 12,
     },
     {
       name: 'Empuje',
       population: 32,
-      color: '#3B82F6',
+      color: '#9D12DE',
       legendFontColor: '#71717A',
       legendFontSize: 12,
     },
     {
       name: 'Piernas',
       population: 25,
-      color: '#F59E0B',
+      color: '#FFEA00',
       legendFontColor: '#71717A',
       legendFontSize: 12,
     },
@@ -145,7 +145,7 @@ export default function AdvancedAnalytics() {
     propsForDots: {
       r: '6',
       strokeWidth: '2',
-      stroke: '#10B981',
+      stroke: '#9D12DE',
     },
   };
 
@@ -172,7 +172,7 @@ export default function AdvancedAnalytics() {
               key={period.id}
               onPress={() => setSelectedPeriod(period.id)}
               className={`flex-1 py-2 rounded-lg ${
-                selectedPeriod === period.id ? 'bg-emerald-500' : 'bg-zinc-900'
+                selectedPeriod === period.id ? 'bg-primary' : 'bg-zinc-900'
               }`}
             >
               <Text
@@ -191,7 +191,7 @@ export default function AdvancedAnalytics() {
         {/* Key Metrics */}
         <View className="px-6 pt-6">
           <Text className="text-white font-bold text-lg mb-3">
-            Métricas Clave
+            MÃ©tricas Clave
           </Text>
           <View className="flex-row flex-wrap gap-3">
             {METRICS.map((metric) => (
@@ -217,11 +217,11 @@ export default function AdvancedAnalytics() {
                     <Ionicons
                       name={metric.change > 0 ? 'trending-up' : 'trending-down'}
                       size={14}
-                      color={metric.change > 0 ? '#10B981' : '#EF4444'}
+                      color={metric.change > 0 ? '#9D12DE' : '#EF4444'}
                     />
                     <Text
                       className={`text-xs ml-1 ${
-                        metric.change > 0 ? 'text-emerald-500' : 'text-red-500'
+                        metric.change > 0 ? 'text-primary' : 'text-red-500'
                       }`}
                     >
                       {metric.change > 0 ? '+' : ''}
@@ -259,7 +259,7 @@ export default function AdvancedAnalytics() {
         {/* Exercise Distribution */}
         <View className="px-6 pt-6">
           <Text className="text-white font-bold text-lg mb-3">
-            Distribución de Ejercicios
+            DistribuciÃ³n de Ejercicios
           </Text>
           <View className="bg-zinc-900 rounded-xl p-4 border border-zinc-800">
             <PieChart
@@ -304,7 +304,7 @@ export default function AdvancedAnalytics() {
         {/* Performance Score */}
         <View className="px-6 pt-6">
           <Text className="text-white font-bold text-lg mb-3">
-            Evolución de Performance
+            EvoluciÃ³n de Performance
           </Text>
           <View className="bg-zinc-900 rounded-xl p-4 border border-zinc-800">
             <LineChart
@@ -337,31 +337,31 @@ export default function AdvancedAnalytics() {
             Insights de Entrenamiento
           </Text>
 
-          <View className="bg-emerald-500/10 rounded-xl p-4 border border-emerald-500/30 mb-3">
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-3">
             <View className="flex-row items-start">
-              <Ionicons name="checkmark-circle" size={24} color="#10B981" />
+              <Ionicons name="checkmark-circle" size={24} color="#9D12DE" />
               <View className="flex-1 ml-3">
-                <Text className="text-emerald-500 font-bold mb-1">
+                <Text className="text-primary font-bold mb-1">
                   Progreso Consistente
                 </Text>
-                <Text className="text-emerald-300 text-sm leading-5">
-                  Has incrementado tu volumen un 12% este mes. Mantén este ritmo
+                <Text className="text-primary/80 text-sm leading-5">
+                  Has incrementado tu volumen un 12% este mes. MantÃ©n este ritmo
                   para seguir progresando.
                 </Text>
               </View>
             </View>
           </View>
 
-          <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30 mb-3">
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-3">
             <View className="flex-row items-start">
-              <Ionicons name="information-circle" size={24} color="#3B82F6" />
+              <Ionicons name="information-circle" size={24} color="#9D12DE" />
               <View className="flex-1 ml-3">
-                <Text className="text-blue-500 font-bold mb-1">
+                <Text className="text-primary font-bold mb-1">
                   Balance Muscular
                 </Text>
-                <Text className="text-blue-300 text-sm leading-5">
-                  Tu ratio tracción/empuje está equilibrado (1.09:1). Ideal para
-                  desarrollo simétrico.
+                <Text className="text-primary/60 text-sm leading-5">
+                  Tu ratio tracciÃ³n/empuje estÃ¡ equilibrado (1.09:1). Ideal para
+                  desarrollo simÃ©trico.
                 </Text>
               </View>
             </View>
@@ -369,13 +369,13 @@ export default function AdvancedAnalytics() {
 
           <View className="bg-amber-500/10 rounded-xl p-4 border border-amber-500/30">
             <View className="flex-row items-start">
-              <Ionicons name="bulb" size={24} color="#F59E0B" />
+              <Ionicons name="bulb" size={24} color="#FFEA00" />
               <View className="flex-1 ml-3">
                 <Text className="text-amber-500 font-bold mb-1">
                   Oportunidad de Mejora
                 </Text>
                 <Text className="text-amber-300 text-sm leading-5">
-                  Tu volumen de core (8%) está por debajo del óptimo (15-20%).
+                  Tu volumen de core (8%) estÃ¡ por debajo del Ã³ptimo (15-20%).
                   Considera agregar 2-3 ejercicios de core por semana.
                 </Text>
               </View>
@@ -386,7 +386,7 @@ export default function AdvancedAnalytics() {
         {/* Export Options */}
         <View className="px-6 pb-6">
           <TouchableOpacity className="bg-zinc-900 rounded-xl p-4 border border-zinc-800 flex-row items-center justify-center">
-            <Ionicons name="download-outline" size={20} color="#10B981" />
+            <Ionicons name="download-outline" size={20} color="#9D12DE" />
             <Text className="text-white font-semibold ml-2">
               Exportar Reporte PDF
             </Text>
@@ -396,3 +396,5 @@ export default function AdvancedAnalytics() {
     </View>
   );
 }
+
+

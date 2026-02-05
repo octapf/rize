@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -203,7 +203,7 @@ export default function WorkoutStacks() {
                   <Text className="text-white font-bold text-xl mb-1">{stack.name}</Text>
                   <Text className="text-zinc-400 text-sm">{stack.goal}</Text>
                 </View>
-                <View className="bg-emerald-500 rounded-lg px-3 py-2">
+                <View className="bg-primary rounded-lg px-3 py-2">
                   <Text className="text-white font-bold">{stack.totalCost}</Text>
                 </View>
               </View>
@@ -216,7 +216,7 @@ export default function WorkoutStacks() {
                       <Text className="text-white font-bold">{supp.name}</Text>
                       <Text className="text-zinc-500 text-xs">{supp.dose}</Text>
                     </View>
-                    <Text className="text-emerald-400 text-sm">{supp.cost}</Text>
+                    <Text className="text-primary text-sm">{supp.cost}</Text>
                   </View>
                 ))}
               </View>
@@ -230,22 +230,22 @@ export default function WorkoutStacks() {
               <View className="flex-row flex-wrap gap-2">
                 {stack.benefits.map((benefit, benIdx) => (
                   <View key={benIdx} className="bg-zinc-900 rounded-full px-3 py-1.5">
-                    <Text className="text-zinc-300 text-xs">✓ {benefit}</Text>
+                    <Text className="text-zinc-300 text-xs">âœ“ {benefit}</Text>
                   </View>
                 ))}
               </View>
             </View>
           ))}
 
-          <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30 mb-6">
-            <Text className="text-blue-400 font-bold mb-2">Stack Tips</Text>
-            <Text className="text-blue-300 text-sm">
-              • Start with lower doses{'\n'}
-              • Assess tolerance before combining{'\n'}
-              • Buy in bulk to save money{'\n'}
-              • DIY stacks &gt; pre-made formulas{'\n'}
-              • Cycle stimulants (caffeine){'\n'}
-              • Quality &gt; quantity of ingredients
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
+            <Text className="text-primary/80 font-bold mb-2">Stack Tips</Text>
+            <Text className="text-primary/60 text-sm">
+              â€¢ Start with lower doses{'\n'}
+              â€¢ Assess tolerance before combining{'\n'}
+              â€¢ Buy in bulk to save money{'\n'}
+              â€¢ DIY stacks &gt; pre-made formulas{'\n'}
+              â€¢ Cycle stimulants (caffeine){'\n'}
+              â€¢ Quality &gt; quantity of ingredients
             </Text>
           </View>
         </View>
@@ -253,3 +253,4 @@ export default function WorkoutStacks() {
     </View>
   );
 }
+

@@ -27,19 +27,19 @@ export interface ButtonProps extends TouchableOpacityProps {
 }
 
 const variantStyles: Record<ButtonVariant, string> = {
-  primary: 'bg-emerald-600 active:bg-emerald-700',
+  primary: 'bg-primary active:bg-primary/80',
   secondary: 'bg-gray-200 active:bg-gray-300',
   destructive: 'bg-red-600 active:bg-red-700',
   ghost: 'bg-transparent active:bg-gray-100',
-  outline: 'bg-transparent border-2 border-emerald-600 active:bg-emerald-50',
+  outline: 'bg-transparent border-2 border-primary active:bg-primary/10',
 };
 
 const textVariantStyles: Record<ButtonVariant, string> = {
   primary: 'text-white',
   secondary: 'text-gray-900',
   destructive: 'text-white',
-  ghost: 'text-emerald-600',
-  outline: 'text-emerald-600',
+  ghost: 'text-primary',
+  outline: 'text-primary',
 };
 
 const sizeStyles: Record<ButtonSize, string> = {
@@ -82,7 +82,7 @@ export function Button({
     >
       {isLoading ? (
         <ActivityIndicator
-          color={variant === 'primary' || variant === 'destructive' ? '#fff' : '#10B981'}
+          color={variant === 'primary' || variant === 'destructive' ? '#fff' : '#9D12DE'}
           size="small"
         />
       ) : (
@@ -90,7 +90,7 @@ export function Button({
           {leftIcon && <>{leftIcon}</>}
           <Text
             className={cn(
-              'font-inter-semibold',
+              'font-label-bold',
               textVariantStyles[variant],
               textSizeStyles[size],
               leftIcon && 'ml-2',

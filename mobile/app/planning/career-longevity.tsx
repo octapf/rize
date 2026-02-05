@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -146,8 +146,8 @@ export default function CareerLongevity() {
             {
               area: 'Address pain early',
               how: [
-                'Tweak → rest/modify immediately',
-                'Pain → see professional',
+                'Tweak â†’ rest/modify immediately',
+                'Pain â†’ see professional',
                 'Don\'t train through pain',
                 'Find pain-free variations',
               ],
@@ -390,9 +390,9 @@ export default function CareerLongevity() {
             'Gradually reintroduce load',
           ],
           example: [
-            'Knee injury → upper body focus',
-            'Shoulder injury → lower body + rehab',
-            'Back injury → light accessories, core',
+            'Knee injury â†’ upper body focus',
+            'Shoulder injury â†’ lower body + rehab',
+            'Back injury â†’ light accessories, core',
           ],
         },
         {
@@ -526,8 +526,8 @@ export default function CareerLongevity() {
 
   const getColorClass = (color: string) => {
     const colors: { [key: string]: string } = {
-      blue: 'bg-blue-500',
-      emerald: 'bg-emerald-500',
+      blue: 'bg-primary',
+      emerald: 'bg-primary',
       purple: 'bg-purple-500',
       red: 'bg-red-500',
       amber: 'bg-amber-500',
@@ -588,23 +588,23 @@ export default function CareerLongevity() {
 
           {selectedTopic === 'mindset' && currentTopic.principles?.map((principle: any, idx: number) => (
             <View key={idx} className="bg-zinc-900 rounded-xl p-5 mb-6 border border-zinc-800">
-              <Text className="text-blue-400 text-xl font-bold mb-2">{principle.principle}</Text>
+              <Text className="text-primary/80 text-xl font-bold mb-2">{principle.principle}</Text>
               <Text className="text-zinc-300 mb-4">{principle.explanation}</Text>
 
               {principle.perspectives && (
-                <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30 mb-4">
-                  <Text className="text-blue-400 font-bold mb-2">Perspectives:</Text>
+                <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-4">
+                  <Text className="text-primary/80 font-bold mb-2">Perspectives:</Text>
                   {principle.perspectives.map((item: string, pIdx: number) => (
-                    <Text key={pIdx} className="text-blue-300 text-sm mb-1">• {item}</Text>
+                    <Text key={pIdx} className="text-primary/60 text-sm mb-1">â€¢ {item}</Text>
                   ))}
                 </View>
               )}
 
               {principle.tradeoffs && (
-                <View className="bg-emerald-500/10 rounded-xl p-4 border border-emerald-500/30 mb-4">
-                  <Text className="text-emerald-400 font-bold mb-2">Smart Trade-offs:</Text>
+                <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-4">
+                  <Text className="text-primary font-bold mb-2">Smart Trade-offs:</Text>
                   {principle.tradeoffs.map((item: string, tIdx: number) => (
-                    <Text key={tIdx} className="text-emerald-300 text-sm mb-1">• {item}</Text>
+                    <Text key={tIdx} className="text-primary/80 text-sm mb-1">â€¢ {item}</Text>
                   ))}
                 </View>
               )}
@@ -613,7 +613,7 @@ export default function CareerLongevity() {
                 <View className="bg-purple-500/10 rounded-xl p-4 border border-purple-500/30 mb-4">
                   <Text className="text-purple-400 font-bold mb-2">Changes Over Time:</Text>
                   {principle.changes.map((item: string, cIdx: number) => (
-                    <Text key={cIdx} className="text-purple-300 text-sm mb-1">• {item}</Text>
+                    <Text key={cIdx} className="text-purple-300 text-sm mb-1">â€¢ {item}</Text>
                   ))}
                 </View>
               )}
@@ -622,16 +622,16 @@ export default function CareerLongevity() {
                 <View className="mb-4">
                   <Text className="text-white font-bold mb-2">Why:</Text>
                   {principle.why.map((item: string, wIdx: number) => (
-                    <Text key={wIdx} className="text-zinc-300 text-sm mb-1">• {item}</Text>
+                    <Text key={wIdx} className="text-zinc-300 text-sm mb-1">â€¢ {item}</Text>
                   ))}
                 </View>
               )}
 
               {principle.how && (
-                <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30">
-                  <Text className="text-blue-400 font-bold mb-2">How:</Text>
+                <View className="bg-primary/10 rounded-xl p-4 border border-primary/30">
+                  <Text className="text-primary/80 font-bold mb-2">How:</Text>
                   {principle.how.map((item: string, hIdx: number) => (
-                    <Text key={hIdx} className="text-blue-300 text-sm mb-1">• {item}</Text>
+                    <Text key={hIdx} className="text-primary/60 text-sm mb-1">â€¢ {item}</Text>
                   ))}
                 </View>
               )}
@@ -641,7 +641,7 @@ export default function CareerLongevity() {
           {selectedTopic === 'physical' && currentTopic.strategies?.map((strategy: any, idx: number) => (
             <View key={idx} className="bg-zinc-900 rounded-xl p-5 mb-6 border border-zinc-800">
               <View className="flex-row items-center justify-between mb-4">
-                <Text className="text-emerald-400 text-xl font-bold flex-1">{strategy.strategy}</Text>
+                <Text className="text-primary text-xl font-bold flex-1">{strategy.strategy}</Text>
                 <View className="bg-red-500 rounded-full px-3 py-1">
                   <Text className="text-white text-xs font-bold">{strategy.importance}</Text>
                 </View>
@@ -651,7 +651,7 @@ export default function CareerLongevity() {
                 <View key={aIdx} className="bg-zinc-800 rounded-xl p-4 mb-3">
                   <Text className="text-white font-bold mb-1">{action.action}</Text>
                   <Text className="text-zinc-300 text-sm mb-1">{action.why}</Text>
-                  <Text className="text-emerald-400 text-sm">Priority: {action.priority}</Text>
+                  <Text className="text-primary text-sm">Priority: {action.priority}</Text>
                 </View>
               ))}
 
@@ -659,31 +659,31 @@ export default function CareerLongevity() {
                 <View key={pIdx} className="bg-zinc-800 rounded-xl p-4 mb-3">
                   <Text className="text-white font-bold mb-2">{prevent.area}</Text>
                   {prevent.how.map((item: string, hIdx: number) => (
-                    <Text key={hIdx} className="text-zinc-300 text-sm mb-1">• {item}</Text>
+                    <Text key={hIdx} className="text-zinc-300 text-sm mb-1">â€¢ {item}</Text>
                   ))}
                   {prevent.time && (
-                    <Text className="text-emerald-400 text-sm mt-2">Time: {prevent.time}</Text>
+                    <Text className="text-primary text-sm mt-2">Time: {prevent.time}</Text>
                   )}
                   {prevent.warning && (
-                    <Text className="text-red-400 text-sm mt-2">⚠️ {prevent.warning}</Text>
+                    <Text className="text-red-400 text-sm mt-2">âš ï¸ {prevent.warning}</Text>
                   )}
                 </View>
               ))}
 
               {strategy.why && (
-                <View className="bg-emerald-500/10 rounded-xl p-4 border border-emerald-500/30 mb-3">
-                  <Text className="text-emerald-400 font-bold mb-2">Why It Matters:</Text>
+                <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-3">
+                  <Text className="text-primary font-bold mb-2">Why It Matters:</Text>
                   {strategy.why.map((item: string, wIdx: number) => (
-                    <Text key={wIdx} className="text-emerald-300 text-sm mb-1">• {item}</Text>
+                    <Text key={wIdx} className="text-primary/80 text-sm mb-1">â€¢ {item}</Text>
                   ))}
                 </View>
               )}
 
               {strategy.how && (
-                <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30 mb-3">
-                  <Text className="text-blue-400 font-bold mb-2">How:</Text>
+                <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-3">
+                  <Text className="text-primary/80 font-bold mb-2">How:</Text>
                   {strategy.how.map((item: string, hIdx: number) => (
-                    <Text key={hIdx} className="text-blue-300 text-sm mb-1">• {item}</Text>
+                    <Text key={hIdx} className="text-primary/60 text-sm mb-1">â€¢ {item}</Text>
                   ))}
                 </View>
               )}
@@ -697,14 +697,14 @@ export default function CareerLongevity() {
               <View className="bg-purple-500/10 rounded-xl p-4 border border-purple-500/30 mb-4">
                 <Text className="text-purple-400 font-bold mb-2">Considerations:</Text>
                 {group.considerations.map((item: string, cIdx: number) => (
-                  <Text key={cIdx} className="text-purple-300 text-sm mb-1">• {item}</Text>
+                  <Text key={cIdx} className="text-purple-300 text-sm mb-1">â€¢ {item}</Text>
                 ))}
               </View>
 
-              <View className="bg-emerald-500/10 rounded-xl p-4 border border-emerald-500/30 mb-4">
-                <Text className="text-emerald-400 font-bold mb-2">Programming:</Text>
+              <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-4">
+                <Text className="text-primary font-bold mb-2">Programming:</Text>
                 {group.programming.map((item: string, pIdx: number) => (
-                  <Text key={pIdx} className="text-emerald-300 text-sm mb-1">✓ {item}</Text>
+                  <Text key={pIdx} className="text-primary/80 text-sm mb-1">âœ“ {item}</Text>
                 ))}
               </View>
 
@@ -712,7 +712,7 @@ export default function CareerLongevity() {
                 <View className="bg-red-500/10 rounded-xl p-4 border border-red-500/30">
                   <Text className="text-red-400 font-bold mb-2">Avoid:</Text>
                   {group.avoid.map((item: string, aIdx: number) => (
-                    <Text key={aIdx} className="text-red-300 text-sm mb-1">✗ {item}</Text>
+                    <Text key={aIdx} className="text-red-300 text-sm mb-1">âœ— {item}</Text>
                   ))}
                 </View>
               )}
@@ -721,25 +721,25 @@ export default function CareerLongevity() {
                 <View className="bg-amber-500/10 rounded-xl p-4 border border-amber-500/30 mt-4">
                   <Text className="text-amber-400 font-bold mb-2">Adjustments:</Text>
                   {group.adjustments.map((item: string, adjIdx: number) => (
-                    <Text key={adjIdx} className="text-amber-300 text-sm mb-1">• {item}</Text>
+                    <Text key={adjIdx} className="text-amber-300 text-sm mb-1">â€¢ {item}</Text>
                   ))}
                 </View>
               )}
 
               {group.important && (
-                <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30 mt-4">
-                  <Text className="text-blue-400 font-bold mb-2">Important:</Text>
+                <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mt-4">
+                  <Text className="text-primary/80 font-bold mb-2">Important:</Text>
                   {group.important.map((item: string, impIdx: number) => (
-                    <Text key={impIdx} className="text-blue-300 text-sm mb-1">• {item}</Text>
+                    <Text key={impIdx} className="text-primary/60 text-sm mb-1">â€¢ {item}</Text>
                   ))}
                 </View>
               )}
 
               {group.keys && (
-                <View className="bg-emerald-500/10 rounded-xl p-4 border border-emerald-500/30 mt-4">
-                  <Text className="text-emerald-400 font-bold mb-2">Keys to Success:</Text>
+                <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mt-4">
+                  <Text className="text-primary font-bold mb-2">Keys to Success:</Text>
                   {group.keys.map((item: string, kIdx: number) => (
-                    <Text key={kIdx} className="text-emerald-300 text-sm mb-1">• {item}</Text>
+                    <Text key={kIdx} className="text-primary/80 text-sm mb-1">â€¢ {item}</Text>
                   ))}
                 </View>
               )}
@@ -751,7 +751,7 @@ export default function CareerLongevity() {
               <View className="bg-red-500/10 rounded-xl p-5 border border-red-500/30 mb-6">
                 <Text className="text-red-400 text-xl font-bold mb-3">{currentTopic.philosophy?.title}</Text>
                 {currentTopic.philosophy?.mindset.map((item: string, idx: number) => (
-                  <Text key={idx} className="text-red-300 text-sm mb-1">• {item}</Text>
+                  <Text key={idx} className="text-red-300 text-sm mb-1">â€¢ {item}</Text>
                 ))}
               </View>
 
@@ -759,10 +759,10 @@ export default function CareerLongevity() {
                 <View key={idx} className="bg-zinc-900 rounded-xl p-5 mb-6 border border-zinc-800">
                   <Text className="text-white text-lg font-bold mb-4">{phase.phase}</Text>
 
-                  <View className="bg-emerald-500/10 rounded-xl p-4 border border-emerald-500/30 mb-3">
-                    <Text className="text-emerald-400 font-bold mb-2">Actions:</Text>
+                  <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-3">
+                    <Text className="text-primary font-bold mb-2">Actions:</Text>
                     {phase.actions.map((action: string, aIdx: number) => (
-                      <Text key={aIdx} className="text-emerald-300 text-sm mb-1">• {action}</Text>
+                      <Text key={aIdx} className="text-primary/80 text-sm mb-1">â€¢ {action}</Text>
                     ))}
                   </View>
 
@@ -770,16 +770,16 @@ export default function CareerLongevity() {
                     <View className="bg-red-500/10 rounded-xl p-4 border border-red-500/30 mb-3">
                       <Text className="text-red-400 font-bold mb-2">DON'T:</Text>
                       {phase.dont.map((item: string, dIdx: number) => (
-                        <Text key={dIdx} className="text-red-300 text-sm mb-1">✗ {item}</Text>
+                        <Text key={dIdx} className="text-red-300 text-sm mb-1">âœ— {item}</Text>
                       ))}
                     </View>
                   )}
 
                   {phase.guidelines && (
-                    <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30">
-                      <Text className="text-blue-400 font-bold mb-2">Guidelines:</Text>
+                    <View className="bg-primary/10 rounded-xl p-4 border border-primary/30">
+                      <Text className="text-primary/80 font-bold mb-2">Guidelines:</Text>
                       {phase.guidelines.map((guide: string, gIdx: number) => (
-                        <Text key={gIdx} className="text-blue-300 text-sm mb-1">• {guide}</Text>
+                        <Text key={gIdx} className="text-primary/60 text-sm mb-1">â€¢ {guide}</Text>
                       ))}
                     </View>
                   )}
@@ -795,24 +795,24 @@ export default function CareerLongevity() {
               <View className="bg-red-500/10 rounded-xl p-4 border border-red-500/30 mb-4">
                 <Text className="text-red-400 font-bold mb-2">Challenges:</Text>
                 {item.challenges?.map((challenge: string, cIdx: number) => (
-                  <Text key={cIdx} className="text-red-300 text-sm mb-1">• {challenge}</Text>
+                  <Text key={cIdx} className="text-red-300 text-sm mb-1">â€¢ {challenge}</Text>
                 ))}
               </View>
 
               {item.solutions && (
-                <View className="bg-emerald-500/10 rounded-xl p-4 border border-emerald-500/30 mb-4">
-                  <Text className="text-emerald-400 font-bold mb-2">Solutions:</Text>
+                <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-4">
+                  <Text className="text-primary font-bold mb-2">Solutions:</Text>
                   {item.solutions.map((solution: string, sIdx: number) => (
-                    <Text key={sIdx} className="text-emerald-300 text-sm mb-1">✓ {solution}</Text>
+                    <Text key={sIdx} className="text-primary/80 text-sm mb-1">âœ“ {solution}</Text>
                   ))}
                 </View>
               )}
 
               {item.balance && (
-                <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30 mb-4">
-                  <Text className="text-blue-400 font-bold mb-2">Balance:</Text>
+                <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-4">
+                  <Text className="text-primary/80 font-bold mb-2">Balance:</Text>
                   {item.balance.map((bal: string, bIdx: number) => (
-                    <Text key={bIdx} className="text-blue-300 text-sm mb-1">• {bal}</Text>
+                    <Text key={bIdx} className="text-primary/60 text-sm mb-1">â€¢ {bal}</Text>
                   ))}
                 </View>
               )}
@@ -821,35 +821,35 @@ export default function CareerLongevity() {
                 <View className="bg-amber-500/10 rounded-xl p-4 border border-amber-500/30 mb-4">
                   <Text className="text-amber-400 font-bold mb-2">Typical Costs:</Text>
                   {item.costs.map((cost: string, costIdx: number) => (
-                    <Text key={costIdx} className="text-amber-300 text-sm mb-1">• {cost}</Text>
+                    <Text key={costIdx} className="text-amber-300 text-sm mb-1">â€¢ {cost}</Text>
                   ))}
                 </View>
               )}
 
               {item.saveStrategy && (
-                <View className="bg-emerald-500/10 rounded-xl p-4 border border-emerald-500/30">
-                  <Text className="text-emerald-400 font-bold mb-2">Save Money:</Text>
+                <View className="bg-primary/10 rounded-xl p-4 border border-primary/30">
+                  <Text className="text-primary font-bold mb-2">Save Money:</Text>
                   {item.saveStrategy.map((save: string, saveIdx: number) => (
-                    <Text key={saveIdx} className="text-emerald-300 text-sm mb-1">✓ {save}</Text>
+                    <Text key={saveIdx} className="text-primary/80 text-sm mb-1">âœ“ {save}</Text>
                   ))}
                 </View>
               )}
             </View>
           ))}
 
-          <View className="bg-gradient-to-r from-blue-500/20 to-emerald-500/20 rounded-xl p-5 border border-blue-500/30 mb-6">
-            <Text className="text-blue-400 font-bold text-lg mb-3">The Marathon, Not the Sprint</Text>
-            <Text className="text-blue-300 text-sm mb-2">
-              • Your 1RM today doesn't matter in 10 years
+          <View className="bg-gradient-to-r from-blue-500/20 to-emerald-500/20 rounded-xl p-5 border border-primary/30 mb-6">
+            <Text className="text-primary/80 font-bold text-lg mb-3">The Marathon, Not the Sprint</Text>
+            <Text className="text-primary/60 text-sm mb-2">
+              â€¢ Your 1RM today doesn't matter in 10 years
             </Text>
-            <Text className="text-blue-300 text-sm mb-2">
-              • Staying healthy and training consistently does
+            <Text className="text-primary/60 text-sm mb-2">
+              â€¢ Staying healthy and training consistently does
             </Text>
-            <Text className="text-blue-300 text-sm mb-2">
-              • Compound progress over decades is incredible
+            <Text className="text-primary/60 text-sm mb-2">
+              â€¢ Compound progress over decades is incredible
             </Text>
-            <Text className="text-blue-300 text-sm">
-              • Plan to lift for life, not just for PRs
+            <Text className="text-primary/60 text-sm">
+              â€¢ Plan to lift for life, not just for PRs
             </Text>
           </View>
         </View>
@@ -857,3 +857,5 @@ export default function CareerLongevity() {
     </View>
   );
 }
+
+

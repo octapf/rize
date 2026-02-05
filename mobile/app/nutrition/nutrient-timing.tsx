@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -42,7 +42,7 @@ const MEAL_TIMING_TEMPLATES: MealTiming[] = [
     carbs: 60,
     fats: 10,
     calories: 430,
-    description: 'Comida completa: proteína magra + carbos complejos + grasas bajas',
+    description: 'Comida completa: proteÃ­na magra + carbos complejos + grasas bajas',
     isOptimal: true,
   },
   {
@@ -53,7 +53,7 @@ const MEAL_TIMING_TEMPLATES: MealTiming[] = [
     carbs: 40,
     fats: 5,
     calories: 270,
-    description: 'Snack ligero: proteína rápida + carbos simples',
+    description: 'Snack ligero: proteÃ­na rÃ¡pida + carbos simples',
     isOptimal: true,
   },
   {
@@ -64,7 +64,7 @@ const MEAL_TIMING_TEMPLATES: MealTiming[] = [
     carbs: 30,
     fats: 0,
     calories: 160,
-    description: 'Durante: BCAAs + carbos rápidos (solo workouts >90 min)',
+    description: 'Durante: BCAAs + carbos rÃ¡pidos (solo workouts >90 min)',
     isOptimal: false,
   },
   {
@@ -75,18 +75,18 @@ const MEAL_TIMING_TEMPLATES: MealTiming[] = [
     carbs: 50,
     fats: 5,
     calories: 330,
-    description: 'Ventana anabólica: proteína rápida + carbos alto GI',
+    description: 'Ventana anabÃ³lica: proteÃ­na rÃ¡pida + carbos alto GI',
     isOptimal: true,
   },
   {
     id: '5',
-    name: 'Post-Workout (1-2h después)',
+    name: 'Post-Workout (1-2h despuÃ©s)',
     timeAfterWorkout: 90,
     protein: 40,
     carbs: 60,
     fats: 15,
     calories: 515,
-    description: 'Comida completa: recarga glucógeno + síntesis proteica',
+    description: 'Comida completa: recarga glucÃ³geno + sÃ­ntesis proteica',
     isOptimal: true,
   },
 ];
@@ -94,21 +94,21 @@ const MEAL_TIMING_TEMPLATES: MealTiming[] = [
 const MEAL_EXAMPLES = {
   'pre-workout-early': [
     { name: 'Pollo + arroz + verduras', macros: '35p/60c/8f' },
-    { name: 'Avena + proteína + banana', macros: '30p/55c/12f' },
-    { name: 'Atún + pasta + aceite oliva', macros: '32p/65c/10f' },
+    { name: 'Avena + proteÃ­na + banana', macros: '30p/55c/12f' },
+    { name: 'AtÃºn + pasta + aceite oliva', macros: '32p/65c/10f' },
   ],
   'pre-workout-close': [
-    { name: 'Batido proteína + banana', macros: '25p/35c/3f' },
+    { name: 'Batido proteÃ­na + banana', macros: '25p/35c/3f' },
     { name: 'Yogurt griego + miel + frutos', macros: '20p/40c/5f' },
     { name: 'Tostadas + mermelada + whey', macros: '22p/42c/4f' },
   ],
   'post-workout-immediate': [
     { name: 'Whey + maltodextrina', macros: '30p/50c/2f' },
     { name: 'Batido: whey + banana + avena', macros: '28p/48c/6f' },
-    { name: 'Arroz blanco + proteína en polvo', macros: '25p/52c/3f' },
+    { name: 'Arroz blanco + proteÃ­na en polvo', macros: '25p/52c/3f' },
   ],
   'post-workout-later': [
-    { name: 'Salmón + batata + brócoli', macros: '40p/55c/18f' },
+    { name: 'SalmÃ³n + batata + brÃ³coli', macros: '40p/55c/18f' },
     { name: 'Carne + arroz + aguacate', macros: '45p/60c/15f' },
     { name: 'Huevos + tostadas + fruta', macros: '35p/58c/14f' },
   ],
@@ -180,7 +180,7 @@ export default function NutritionTiming() {
           <View className="bg-gradient-to-r from-emerald-500 to-green-500 rounded-xl p-6 mb-6">
             <Text className="text-white text-2xl font-bold mb-2">Timing Nutricional</Text>
             <Text className="text-white opacity-90 mb-4">
-              Optimiza tu nutrición alrededor del workout
+              Optimiza tu nutriciÃ³n alrededor del workout
             </Text>
             <View className="flex-row items-center">
               <Ionicons name="time" size={20} color="white" />
@@ -211,29 +211,29 @@ export default function NutritionTiming() {
 
           {/* Optimal Windows Timeline */}
           <View className="mb-6">
-            <Text className="text-white font-bold text-lg mb-4">Ventanas Óptimas</Text>
+            <Text className="text-white font-bold text-lg mb-4">Ventanas Ã“ptimas</Text>
             
             {/* Pre-Workout Early */}
             <View className="mb-4">
               <View className="flex-row items-center mb-2">
-                <View className="w-10 h-10 bg-blue-500 rounded-xl items-center justify-center mr-3">
+                <View className="w-10 h-10 bg-primary rounded-xl items-center justify-center mr-3">
                   <Ionicons name="restaurant" size={20} color="white" />
                 </View>
                 <View className="flex-1">
                   <Text className="text-white font-bold">Pre-Workout (2-3h antes)</Text>
-                  <Text className="text-blue-400 text-sm">
+                  <Text className="text-primary/80 text-sm">
                     {format(windows.preWorkoutEarliest, 'HH:mm')} - {format(windows.preWorkoutOptimal, 'HH:mm')}
                   </Text>
                 </View>
-                <View className="bg-blue-500/20 rounded-lg px-3 py-1">
-                  <Text className="text-blue-400 text-xs font-bold">ÓPTIMO</Text>
+                <View className="bg-primary/20 rounded-lg px-3 py-1">
+                  <Text className="text-primary/80 text-xs font-bold">Ã“PTIMO</Text>
                 </View>
               </View>
-              <View className="bg-blue-500/10 rounded-lg p-3 ml-13 border border-blue-500/30">
-                <Text className="text-blue-300 text-sm">
-                  • Comida completa balanceada{'\n'}
-                  • 30-40g proteína + 50-70g carbos{'\n'}
-                  • Tiempo para digestión completa
+              <View className="bg-primary/10 rounded-lg p-3 ml-13 border border-primary/30">
+                <Text className="text-primary/60 text-sm">
+                  â€¢ Comida completa balanceada{'\n'}
+                  â€¢ 30-40g proteÃ­na + 50-70g carbos{'\n'}
+                  â€¢ Tiempo para digestiÃ³n completa
                 </Text>
               </View>
             </View>
@@ -251,14 +251,14 @@ export default function NutritionTiming() {
                   </Text>
                 </View>
                 <View className="bg-purple-500/20 rounded-lg px-3 py-1">
-                  <Text className="text-purple-400 text-xs font-bold">RÁPIDO</Text>
+                  <Text className="text-purple-400 text-xs font-bold">RÃPIDO</Text>
                 </View>
               </View>
               <View className="bg-purple-500/10 rounded-lg p-3 ml-13 border border-purple-500/30">
                 <Text className="text-purple-300 text-sm">
-                  • Snack ligero de fácil digestión{'\n'}
-                  • 20-25g proteína + 30-40g carbos{'\n'}
-                  • Evita grasas y fibra
+                  â€¢ Snack ligero de fÃ¡cil digestiÃ³n{'\n'}
+                  â€¢ 20-25g proteÃ­na + 30-40g carbos{'\n'}
+                  â€¢ Evita grasas y fibra
                 </Text>
               </View>
             </View>
@@ -266,24 +266,24 @@ export default function NutritionTiming() {
             {/* Post-Workout Immediate */}
             <View className="mb-4">
               <View className="flex-row items-center mb-2">
-                <View className="w-10 h-10 bg-emerald-500 rounded-xl items-center justify-center mr-3">
+                <View className="w-10 h-10 bg-primary rounded-xl items-center justify-center mr-3">
                   <Ionicons name="fitness" size={20} color="white" />
                 </View>
                 <View className="flex-1">
                   <Text className="text-white font-bold">Post-Workout (0-30 min)</Text>
-                  <Text className="text-emerald-400 text-sm">
+                  <Text className="text-primary text-sm">
                     {format(windows.workoutTime, 'HH:mm')} - {format(windows.postWorkoutOptimal, 'HH:mm')}
                   </Text>
                 </View>
-                <View className="bg-emerald-500/20 rounded-lg px-3 py-1">
-                  <Text className="text-emerald-400 text-xs font-bold">CRÍTICO</Text>
+                <View className="bg-primary/20 rounded-lg px-3 py-1">
+                  <Text className="text-primary text-xs font-bold">CRÃTICO</Text>
                 </View>
               </View>
-              <View className="bg-emerald-500/10 rounded-lg p-3 ml-13 border border-emerald-500/30">
-                <Text className="text-emerald-300 text-sm">
-                  • Ventana anabólica máxima{'\n'}
-                  • 25-30g proteína rápida (whey){'\n'}
-                  • 40-60g carbos alto GI (maltodextrina)
+              <View className="bg-primary/10 rounded-lg p-3 ml-13 border border-primary/30">
+                <Text className="text-primary/80 text-sm">
+                  â€¢ Ventana anabÃ³lica mÃ¡xima{'\n'}
+                  â€¢ 25-30g proteÃ­na rÃ¡pida (whey){'\n'}
+                  â€¢ 40-60g carbos alto GI (maltodextrina)
                 </Text>
               </View>
             </View>
@@ -295,7 +295,7 @@ export default function NutritionTiming() {
                   <Ionicons name="restaurant" size={20} color="white" />
                 </View>
                 <View className="flex-1">
-                  <Text className="text-white font-bold">Post-Workout (1-2h después)</Text>
+                  <Text className="text-white font-bold">Post-Workout (1-2h despuÃ©s)</Text>
                   <Text className="text-amber-400 text-sm">
                     {format(new Date(windows.workoutTime.getTime() + 60 * 60 * 1000), 'HH:mm')} - {format(windows.postWorkoutLatest, 'HH:mm')}
                   </Text>
@@ -306,9 +306,9 @@ export default function NutritionTiming() {
               </View>
               <View className="bg-amber-500/10 rounded-lg p-3 ml-13 border border-amber-500/30">
                 <Text className="text-amber-300 text-sm">
-                  • Comida completa post-workout{'\n'}
-                  • 40-50g proteína + 60-80g carbos{'\n'}
-                  • Recarga glucógeno muscular
+                  â€¢ Comida completa post-workout{'\n'}
+                  â€¢ 40-50g proteÃ­na + 60-80g carbos{'\n'}
+                  â€¢ Recarga glucÃ³geno muscular
                 </Text>
               </View>
             </View>
@@ -348,27 +348,27 @@ export default function NutritionTiming() {
               <View className="flex-row items-center justify-between">
                 <Text className="text-white font-bold flex-1">{meal.name}</Text>
                 <View className="bg-zinc-800 rounded-lg px-3 py-1">
-                  <Text className="text-emerald-400 text-xs font-bold">{meal.macros}</Text>
+                  <Text className="text-primary text-xs font-bold">{meal.macros}</Text>
                 </View>
               </View>
             </View>
           ))}
 
           {/* Tips */}
-          <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30 mb-6 mt-4">
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6 mt-4">
             <View className="flex-row items-start">
-              <Ionicons name="bulb" size={20} color="#3B82F6" />
+              <Ionicons name="bulb" size={20} color="#9D12DE" />
               <View className="flex-1 ml-3">
-                <Text className="text-blue-400 font-bold mb-2">
+                <Text className="text-primary/80 font-bold mb-2">
                   Reglas de Nutrient Timing
                 </Text>
-                <Text className="text-blue-300 text-sm">
-                  • Pre-workout: carbos para energía{'\n'}
-                  • Post-workout: proteína para recuperación{'\n'}
-                  • 0-2h post = ventana anabólica{'\n'}
-                  • Si entrenas AM en ayunas: BCAAs pre{'\n'}
-                  • Timing &gt; tipo de comida{'\n'}
-                  • Hidratación constante 500ml/hora
+                <Text className="text-primary/60 text-sm">
+                  â€¢ Pre-workout: carbos para energÃ­a{'\n'}
+                  â€¢ Post-workout: proteÃ­na para recuperaciÃ³n{'\n'}
+                  â€¢ 0-2h post = ventana anabÃ³lica{'\n'}
+                  â€¢ Si entrenas AM en ayunas: BCAAs pre{'\n'}
+                  â€¢ Timing &gt; tipo de comida{'\n'}
+                  â€¢ HidrataciÃ³n constante 500ml/hora
                 </Text>
               </View>
             </View>
@@ -378,3 +378,5 @@ export default function NutritionTiming() {
     </View>
   );
 }
+
+

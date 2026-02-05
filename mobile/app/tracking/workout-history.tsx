@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -52,11 +52,11 @@ const MOCK_SESSIONS: WorkoutSession[] = [
       { name: 'Press Inclinado DB', sets: 3, reps: '10,10,8', weight: 35 },
       { name: 'Press Militar', sets: 4, reps: '8,8,8,6', weight: 60 },
       { name: 'Elevaciones Laterales', sets: 3, reps: '12,12,10', weight: 12 },
-      { name: 'Tríceps Polea', sets: 3, reps: '12,12,12', weight: 40 },
+      { name: 'TrÃ­ceps Polea', sets: 3, reps: '12,12,12', weight: 40 },
     ],
     totalVolume: 4280,
     rating: 5,
-    notes: 'Excelente sesión, nuevo PR en banca',
+    notes: 'Excelente sesiÃ³n, nuevo PR en banca',
   },
   {
     id: '2',
@@ -69,7 +69,7 @@ const MOCK_SESSIONS: WorkoutSession[] = [
       { name: 'Dominadas', sets: 4, reps: '10,8,8,6', weight: 0 },
       { name: 'Remo Barra', sets: 4, reps: '8,8,8,8', weight: 80 },
       { name: 'Face Pulls', sets: 3, reps: '15,15,15', weight: 25 },
-      { name: 'Curl Bíceps', sets: 3, reps: '10,10,10', weight: 20 },
+      { name: 'Curl BÃ­ceps', sets: 3, reps: '10,10,10', weight: 20 },
     ],
     totalVolume: 4230,
     rating: 4,
@@ -105,7 +105,7 @@ const MOCK_SESSIONS: WorkoutSession[] = [
     ],
     totalVolume: 2912,
     rating: 3,
-    notes: 'Sesión ligera de recuperación',
+    notes: 'SesiÃ³n ligera de recuperaciÃ³n',
   },
 ];
 
@@ -124,8 +124,8 @@ export default function WorkoutHistory() {
 
   const deleteSession = (id: string) => {
     Alert.alert(
-      'Eliminar Sesión',
-      '¿Estás seguro?',
+      'Eliminar SesiÃ³n',
+      'Â¿EstÃ¡s seguro?',
       [
         { text: 'Cancelar' },
         { text: 'Eliminar', style: 'destructive', onPress: () => setSessions(sessions.filter((s) => s.id !== id)) },
@@ -176,7 +176,7 @@ export default function WorkoutHistory() {
                 key={type.id}
                 onPress={() => setFilter(type.id)}
                 className={`flex-row items-center px-4 py-2 rounded-lg ${
-                  filter === type.id ? 'bg-emerald-500' : 'bg-zinc-900 border border-zinc-800'
+                  filter === type.id ? 'bg-primary' : 'bg-zinc-900 border border-zinc-800'
                 }`}
               >
                 <Ionicons
@@ -199,12 +199,12 @@ export default function WorkoutHistory() {
           <View className="bg-zinc-900 rounded-xl p-4 mb-6 border border-zinc-800">
             <Text className="text-white font-bold text-lg mb-3">Esta Semana</Text>
             <View className="flex-row flex-wrap gap-3">
-              <View className="flex-1 min-w-[45%] bg-emerald-500/10 rounded-lg p-3 border border-emerald-500/30">
-                <Text className="text-emerald-400 text-xs mb-1">Sesiones</Text>
+              <View className="flex-1 min-w-[45%] bg-primary/10 rounded-lg p-3 border border-primary/30">
+                <Text className="text-primary text-xs mb-1">Sesiones</Text>
                 <Text className="text-white text-2xl font-bold">{stats.sessions}</Text>
               </View>
-              <View className="flex-1 min-w-[45%] bg-blue-500/10 rounded-lg p-3 border border-blue-500/30">
-                <Text className="text-blue-400 text-xs mb-1">Tiempo Total</Text>
+              <View className="flex-1 min-w-[45%] bg-primary/10 rounded-lg p-3 border border-primary/30">
+                <Text className="text-primary/80 text-xs mb-1">Tiempo Total</Text>
                 <Text className="text-white text-2xl font-bold">{stats.totalDuration} min</Text>
               </View>
               <View className="flex-1 min-w-[45%] bg-purple-500/10 rounded-lg p-3 border border-purple-500/30">
@@ -222,10 +222,10 @@ export default function WorkoutHistory() {
           <Text className="text-white font-bold text-lg mb-4">Historial de Entrenamientos</Text>
           {filteredSessions.length === 0 ? (
             <View className="bg-zinc-900 rounded-xl p-8 items-center border border-zinc-800">
-              <Text className="text-6xl mb-3">🏋️</Text>
+              <Text className="text-6xl mb-3">ðŸ‹ï¸</Text>
               <Text className="text-white font-bold text-lg mb-2">Sin Sesiones</Text>
               <Text className="text-zinc-400 text-center">
-                Tus entrenamientos aparecerán aquí
+                Tus entrenamientos aparecerÃ¡n aquÃ­
               </Text>
             </View>
           ) : (
@@ -264,24 +264,24 @@ export default function WorkoutHistory() {
                     {/* Quick Stats */}
                     <View className="flex-row flex-wrap gap-2 mb-3">
                       <View className="bg-zinc-800 rounded px-3 py-1">
-                        <Text className="text-blue-400 text-xs font-bold">
-                          ⏱️ {session.duration} min
+                        <Text className="text-primary/80 text-xs font-bold">
+                          â±ï¸ {session.duration} min
                         </Text>
                       </View>
                       <View className="bg-zinc-800 rounded px-3 py-1">
                         <Text className="text-purple-400 text-xs font-bold">
-                          💪 {session.totalVolume.toLocaleString()} kg
+                          ðŸ’ª {session.totalVolume.toLocaleString()} kg
                         </Text>
                       </View>
                       <View className="bg-zinc-800 rounded px-3 py-1">
-                        <Text className="text-emerald-400 text-xs font-bold">
-                          📝 {session.exercises.length} ejercicios
+                        <Text className="text-primary text-xs font-bold">
+                          ðŸ“ {session.exercises.length} ejercicios
                         </Text>
                       </View>
                       {session.rating && (
                         <View className="bg-zinc-800 rounded px-3 py-1">
                           <Text className="text-amber-400 text-xs font-bold">
-                            {'⭐'.repeat(session.rating)}
+                            {'â­'.repeat(session.rating)}
                           </Text>
                         </View>
                       )}
@@ -298,12 +298,12 @@ export default function WorkoutHistory() {
                             <View className="flex-row items-center justify-between mb-1">
                               <Text className="text-white font-bold flex-1">{ex.name}</Text>
                               {ex.weight && ex.weight > 0 && (
-                                <Text className="text-emerald-400 font-bold ml-2">{ex.weight} kg</Text>
+                                <Text className="text-primary font-bold ml-2">{ex.weight} kg</Text>
                               )}
                             </View>
                             <View className="flex-row items-center gap-2">
                               <Text className="text-zinc-400 text-sm">
-                                {ex.sets} series × {ex.reps} reps
+                                {ex.sets} series Ã— {ex.reps} reps
                               </Text>
                             </View>
                             {ex.notes && (
@@ -315,9 +315,9 @@ export default function WorkoutHistory() {
 
                       {/* Notes */}
                       {session.notes && (
-                        <View className="bg-blue-500/10 rounded-lg p-3 border border-blue-500/30 mb-3">
-                          <Text className="text-blue-400 font-bold mb-1">Notas</Text>
-                          <Text className="text-blue-300 text-sm">{session.notes}</Text>
+                        <View className="bg-primary/10 rounded-lg p-3 border border-primary/30 mb-3">
+                          <Text className="text-primary/80 font-bold mb-1">Notas</Text>
+                          <Text className="text-primary/60 text-sm">{session.notes}</Text>
                         </View>
                       )}
 
@@ -325,7 +325,7 @@ export default function WorkoutHistory() {
                       <View className="flex-row gap-2">
                         <TouchableOpacity
                           onPress={() => Alert.alert('Repetir', 'Plantilla copiada')}
-                          className="flex-1 bg-emerald-500 rounded-lg p-3 flex-row items-center justify-center"
+                          className="flex-1 bg-primary rounded-lg p-3 flex-row items-center justify-center"
                         >
                           <Ionicons name="repeat" size={18} color="white" />
                           <Text className="text-white font-bold ml-2">Repetir Workout</Text>
@@ -345,19 +345,19 @@ export default function WorkoutHistory() {
           )}
 
           {/* Tips */}
-          <View className="bg-emerald-500/10 rounded-xl p-4 border border-emerald-500/30 mb-6">
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
             <View className="flex-row items-start">
-              <Ionicons name="bar-chart" size={20} color="#10B981" />
+              <Ionicons name="bar-chart" size={20} color="#9D12DE" />
               <View className="flex-1 ml-3">
-                <Text className="text-emerald-400 font-bold mb-2">
+                <Text className="text-primary font-bold mb-2">
                   Tips de Progreso
                 </Text>
-                <Text className="text-emerald-300 text-sm">
-                  • Revisa tu historial semanalmente{'\n'}
-                  • Busca progresión en peso o reps{'\n'}
-                  • Nota ejercicios que te cuestan{'\n'}
-                  • Repite workouts que funcionan{'\n'}
-                  • Ajusta según tu recuperación
+                <Text className="text-primary/80 text-sm">
+                  â€¢ Revisa tu historial semanalmente{'\n'}
+                  â€¢ Busca progresiÃ³n en peso o reps{'\n'}
+                  â€¢ Nota ejercicios que te cuestan{'\n'}
+                  â€¢ Repite workouts que funcionan{'\n'}
+                  â€¢ Ajusta segÃºn tu recuperaciÃ³n
                 </Text>
               </View>
             </View>
@@ -367,3 +367,5 @@ export default function WorkoutHistory() {
     </View>
   );
 }
+
+

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -36,8 +36,8 @@ interface Participant {
 const COMPETITIONS: Competition[] = [
   {
     id: '1',
-    name: 'Desafío de Volumen Enero',
-    description: 'Mayor número de series completadas',
+    name: 'DesafÃ­o de Volumen Enero',
+    description: 'Mayor nÃºmero de series completadas',
     type: 'volume',
     startDate: '2025-01-01',
     endDate: '2025-01-31',
@@ -65,7 +65,7 @@ const COMPETITIONS: Competition[] = [
   {
     id: '3',
     name: 'Racha de Fuego',
-    description: 'La racha más larga sin fallar',
+    description: 'La racha mÃ¡s larga sin fallar',
     type: 'streak',
     startDate: '2025-02-01',
     endDate: '2025-02-28',
@@ -82,7 +82,7 @@ const LEADERBOARD: Participant[] = [
   {
     id: '1',
     name: 'Carlos M.',
-    avatar: '🔥',
+    avatar: 'ðŸ”¥',
     score: 487,
     rank: 1,
     trend: 'same',
@@ -90,7 +90,7 @@ const LEADERBOARD: Participant[] = [
   {
     id: '2',
     name: 'Ana R.',
-    avatar: '💪',
+    avatar: 'ðŸ’ª',
     score: 456,
     rank: 2,
     trend: 'up',
@@ -98,15 +98,15 @@ const LEADERBOARD: Participant[] = [
   {
     id: '3',
     name: 'Luis P.',
-    avatar: '⚡',
+    avatar: 'âš¡',
     score: 423,
     rank: 3,
     trend: 'down',
   },
   {
     id: '4',
-    name: 'Tú',
-    avatar: '👤',
+    name: 'TÃº',
+    avatar: 'ðŸ‘¤',
     score: 312,
     rank: 12,
     trend: 'up',
@@ -118,20 +118,20 @@ export default function Competitions() {
 
   const tabs = [
     { id: 'active' as const, label: 'Activas', count: 2 },
-    { id: 'upcoming' as const, label: 'Próximas', count: 1 },
+    { id: 'upcoming' as const, label: 'PrÃ³ximas', count: 1 },
     { id: 'past' as const, label: 'Pasadas', count: 0 },
   ];
 
   const joinCompetition = (competitionId: string) => {
     Alert.alert(
       'Unirse a Competencia',
-      '¿Deseas participar en esta competencia?',
+      'Â¿Deseas participar en esta competencia?',
       [
         { text: 'Cancelar', style: 'cancel' },
         {
           text: 'Unirse',
           onPress: () => {
-            Alert.alert('¡Registrado!', 'Te has unido a la competencia. ¡Buena suerte!');
+            Alert.alert('Â¡Registrado!', 'Te has unido a la competencia. Â¡Buena suerte!');
           },
         },
       ]
@@ -152,7 +152,7 @@ export default function Competitions() {
           onPress: () => Alert.alert('Competencia creada', 'Invita a tus amigos'),
         },
         {
-          text: 'Racha (días)',
+          text: 'Racha (dÃ­as)',
           onPress: () => Alert.alert('Competencia creada', 'Invita a tus amigos'),
         },
         { text: 'Cancelar', style: 'cancel' },
@@ -163,9 +163,9 @@ export default function Competitions() {
   const getStatusColor = (status: string) => {
     switch (status) {
       case 'active':
-        return '#10B981';
+        return '#9D12DE';
       case 'upcoming':
-        return '#3B82F6';
+        return '#9D12DE';
       case 'ended':
         return '#71717A';
       default:
@@ -194,7 +194,7 @@ export default function Competitions() {
             Competencias
           </Text>
           <TouchableOpacity onPress={createCompetition}>
-            <Ionicons name="add-circle-outline" size={24} color="#10B981" />
+            <Ionicons name="add-circle-outline" size={24} color="#9D12DE" />
           </TouchableOpacity>
         </View>
 
@@ -202,10 +202,10 @@ export default function Competitions() {
         <View className="flex-row gap-3">
           <View className="flex-1 bg-zinc-900 rounded-xl p-3 border border-zinc-800">
             <Text className="text-zinc-400 text-xs">Participando</Text>
-            <Text className="text-emerald-500 text-2xl font-bold">2</Text>
+            <Text className="text-primary text-2xl font-bold">2</Text>
           </View>
           <View className="flex-1 bg-zinc-900 rounded-xl p-3 border border-zinc-800">
-            <Text className="text-zinc-400 text-xs">Mejor Posición</Text>
+            <Text className="text-zinc-400 text-xs">Mejor PosiciÃ³n</Text>
             <Text className="text-amber-500 text-2xl font-bold">#8</Text>
           </View>
           <View className="flex-1 bg-zinc-900 rounded-xl p-3 border border-zinc-800">
@@ -222,13 +222,13 @@ export default function Competitions() {
             key={tab.id}
             onPress={() => setSelectedTab(tab.id)}
             className={`flex-1 pb-3 border-b-2 ${
-              selectedTab === tab.id ? 'border-emerald-500' : 'border-transparent'
+              selectedTab === tab.id ? 'border-primary' : 'border-transparent'
             }`}
           >
             <View className="flex-row items-center justify-center">
               <Text
                 className={`font-semibold ${
-                  selectedTab === tab.id ? 'text-emerald-500' : 'text-zinc-400'
+                  selectedTab === tab.id ? 'text-primary' : 'text-zinc-400'
                 }`}
               >
                 {tab.label}
@@ -236,12 +236,12 @@ export default function Competitions() {
               {tab.count > 0 && (
                 <View
                   className={`ml-2 rounded-full px-2 py-0.5 ${
-                    selectedTab === tab.id ? 'bg-emerald-500/20' : 'bg-zinc-800'
+                    selectedTab === tab.id ? 'bg-primary/20' : 'bg-zinc-800'
                   }`}
                 >
                   <Text
                     className={`text-xs font-bold ${
-                      selectedTab === tab.id ? 'text-emerald-500' : 'text-zinc-400'
+                      selectedTab === tab.id ? 'text-primary' : 'text-zinc-400'
                     }`}
                   >
                     {tab.count}
@@ -260,11 +260,11 @@ export default function Competitions() {
             <View className="bg-zinc-900 rounded-xl p-8 border border-zinc-800 items-center">
               <Ionicons name="trophy-outline" size={48} color="#71717A" />
               <Text className="text-zinc-400 font-bold mt-4">
-                No hay competencias {selectedTab === 'active' ? 'activas' : selectedTab === 'upcoming' ? 'próximas' : 'pasadas'}
+                No hay competencias {selectedTab === 'active' ? 'activas' : selectedTab === 'upcoming' ? 'prÃ³ximas' : 'pasadas'}
               </Text>
               <TouchableOpacity
                 onPress={createCompetition}
-                className="bg-emerald-500 rounded-lg px-6 py-3 mt-4"
+                className="bg-primary rounded-lg px-6 py-3 mt-4"
               >
                 <Text className="text-white font-semibold">Crear Competencia</Text>
               </TouchableOpacity>
@@ -292,7 +292,7 @@ export default function Competitions() {
                           {competition.status === 'active'
                             ? 'EN CURSO'
                             : competition.status === 'upcoming'
-                            ? 'PRÓXIMA'
+                            ? 'PRÃ“XIMA'
                             : 'FINALIZADA'}
                         </Text>
                       </View>
@@ -322,7 +322,7 @@ export default function Competitions() {
                   <>
                     <View className="bg-zinc-800 rounded-lg p-3 mb-3">
                       <View className="flex-row items-center justify-between mb-2">
-                        <Text className="text-zinc-400 text-sm">Tu Posición</Text>
+                        <Text className="text-zinc-400 text-sm">Tu PosiciÃ³n</Text>
                         <View
                           className="px-3 py-1 rounded-full"
                           style={{
@@ -342,12 +342,12 @@ export default function Competitions() {
                           {competition.myScore.toLocaleString()}
                         </Text>
                         <Text className="text-zinc-500 text-sm">
-                          Líder: {competition.leaderScore.toLocaleString()}
+                          LÃ­der: {competition.leaderScore.toLocaleString()}
                         </Text>
                       </View>
                       <View className="bg-zinc-900 h-2 rounded-full overflow-hidden mt-2">
                         <View
-                          className="h-full bg-emerald-500 rounded-full"
+                          className="h-full bg-primary rounded-full"
                           style={{
                             width: `${(competition.myScore / competition.leaderScore) * 100}%`,
                           }}
@@ -358,7 +358,7 @@ export default function Competitions() {
                     {/* Prize */}
                     <View className="bg-amber-500/10 rounded-lg p-3 mb-3">
                       <View className="flex-row items-center">
-                        <Ionicons name="gift" size={20} color="#F59E0B" />
+                        <Ionicons name="gift" size={20} color="#FFEA00" />
                         <View className="flex-1 ml-2">
                           <Text className="text-amber-500 font-semibold text-sm">
                             Premio
@@ -372,9 +372,9 @@ export default function Competitions() {
 
                     {/* Actions */}
                     <View className="flex-row gap-2">
-                      <TouchableOpacity className="flex-1 bg-emerald-500 rounded-lg p-3">
+                      <TouchableOpacity className="flex-1 bg-primary rounded-lg p-3">
                         <Text className="text-white text-center font-semibold">
-                          Ver Clasificación
+                          Ver ClasificaciÃ³n
                         </Text>
                       </TouchableOpacity>
                       <TouchableOpacity className="flex-1 bg-zinc-800 rounded-lg p-3">
@@ -390,7 +390,7 @@ export default function Competitions() {
                 {competition.status === 'upcoming' && (
                   <TouchableOpacity
                     onPress={() => joinCompetition(competition.id)}
-                    className="bg-blue-500 rounded-lg p-3"
+                    className="bg-primary rounded-lg p-3"
                   >
                     <Text className="text-white text-center font-semibold">
                       Unirse a Competencia
@@ -413,8 +413,8 @@ export default function Competitions() {
               <View
                 key={participant.id}
                 className={`rounded-xl p-4 mb-3 border ${
-                  participant.name === 'Tú'
-                    ? 'bg-emerald-500/10 border-emerald-500/30'
+                  participant.name === 'TÃº'
+                    ? 'bg-primary/10 border-primary/30'
                     : 'bg-zinc-900 border-zinc-800'
                 }`}
               >
@@ -432,7 +432,7 @@ export default function Competitions() {
                     <View className="flex-row items-center">
                       <Text
                         className={`font-bold ${
-                          participant.name === 'Tú' ? 'text-emerald-500' : 'text-white'
+                          participant.name === 'TÃº' ? 'text-primary' : 'text-white'
                         }`}
                       >
                         {participant.name}
@@ -441,7 +441,7 @@ export default function Competitions() {
                         <Ionicons
                           name="trending-up"
                           size={14}
-                          color="#10B981"
+                          color="#9D12DE"
                           style={{ marginLeft: 6 }}
                         />
                       )}
@@ -481,3 +481,4 @@ export default function Competitions() {
     </View>
   );
 }
+

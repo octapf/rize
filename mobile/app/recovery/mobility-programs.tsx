@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -137,17 +137,17 @@ export default function MobilityPrograms() {
             <View key={idx} className="bg-zinc-900 rounded-xl p-4 mb-3 border border-zinc-800">
               <View className="flex-row items-start justify-between mb-2">
                 <View className="flex-row items-center flex-1">
-                  <Ionicons name={exercise.icon as any} size={20} color="#3b82f6" />
+                  <Ionicons name={exercise.icon as any} size={20} color="#9D12DE" />
                   <Text className="text-white font-bold ml-2 flex-1">{exercise.exercise}</Text>
                 </View>
               </View>
 
               <View className="flex-row gap-2 mb-2">
-                <View className="bg-blue-500/20 rounded-lg px-3 py-1">
-                  <Text className="text-blue-400 text-sm">Sets: {exercise.sets}</Text>
+                <View className="bg-primary/20 rounded-lg px-3 py-1">
+                  <Text className="text-primary/80 text-sm">Sets: {exercise.sets}</Text>
                 </View>
-                <View className="bg-emerald-500/20 rounded-lg px-3 py-1">
-                  <Text className="text-emerald-400 text-sm">Reps: {exercise.reps}</Text>
+                <View className="bg-primary/20 rounded-lg px-3 py-1">
+                  <Text className="text-primary text-sm">Reps: {exercise.reps}</Text>
                 </View>
                 {exercise.rest !== '-' && (
                   <View className="bg-amber-500/20 rounded-lg px-3 py-1">
@@ -169,9 +169,9 @@ export default function MobilityPrograms() {
                 className={`flex-1 min-w-[45%] bg-${benefit.color}-500/10 rounded-xl p-4 border border-${benefit.color}-500/30`}
               >
                 <Ionicons name={benefit.icon as any} size={24} color={
-                  benefit.color === 'emerald' ? '#10b981' :
-                  benefit.color === 'blue' ? '#3b82f6' :
-                  benefit.color === 'purple' ? '#a855f7' : '#f59e0b'
+                  benefit.color === 'emerald' ? '#9D12DE' :
+                  benefit.color === 'blue' ? '#9D12DE' :
+                  benefit.color === 'purple' ? '#a855f7' : '#FFEA00'
                 } />
                 <Text className="text-white font-bold mt-2 mb-1">{benefit.title}</Text>
                 <Text className={`text-${benefit.color}-400 text-sm`}>{benefit.desc}</Text>
@@ -198,14 +198,14 @@ export default function MobilityPrograms() {
             </View>
           ))}
 
-          <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30 mb-6">
-            <Text className="text-blue-400 font-bold mb-2">Mobility Tips</Text>
-            <Text className="text-blue-300 text-sm">
-              • 10 min daily &gt; 1h weekly{'\n'}
-              • Consistency is key{'\n'}
-              • Hold stretches 30-90s{'\n'}
-              • Breathe deeply during holds{'\n'}
-              • Progressive overload applies to mobility
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
+            <Text className="text-primary/80 font-bold mb-2">Mobility Tips</Text>
+            <Text className="text-primary/60 text-sm">
+              â€¢ 10 min daily &gt; 1h weekly{'\n'}
+              â€¢ Consistency is key{'\n'}
+              â€¢ Hold stretches 30-90s{'\n'}
+              â€¢ Breathe deeply during holds{'\n'}
+              â€¢ Progressive overload applies to mobility
             </Text>
           </View>
         </View>
@@ -213,3 +213,4 @@ export default function MobilityPrograms() {
     </View>
   );
 }
+

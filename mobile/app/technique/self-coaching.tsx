@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -90,7 +90,7 @@ export default function SelfCoaching() {
             'Trying to squat too deep for your mobility?',
           ],
           solutions: [
-            { solution: 'Learn proper bracing (360° pressure)', priority: 'Critical' },
+            { solution: 'Learn proper bracing (360Â° pressure)', priority: 'Critical' },
             { solution: 'Reduce depth if mobility limited', priority: 'High' },
             { solution: 'Core work: planks, dead bugs, bird dogs', priority: 'High' },
             { solution: 'Back extensions for erector strength', priority: 'Medium' },
@@ -227,8 +227,8 @@ export default function SelfCoaching() {
 
   const getColorClasses = (color: string) => {
     const colors: { [key: string]: { bg: string; border: string; text: string } } = {
-      blue: { bg: 'bg-blue-500', border: 'border-blue-400', text: 'text-blue-400' },
-      emerald: { bg: 'bg-emerald-500', border: 'border-emerald-400', text: 'text-emerald-400' },
+      blue: { bg: 'bg-primary', border: 'border-primary', text: 'text-primary/80' },
+      emerald: { bg: 'bg-primary', border: 'border-primary', text: 'text-primary' },
       purple: { bg: 'bg-purple-500', border: 'border-purple-400', text: 'text-purple-400' },
     };
     return colors[color];
@@ -249,7 +249,7 @@ export default function SelfCoaching() {
 
       <ScrollView className="flex-1" showsVerticalScrollIndicator={false}>
         <View className="px-6 pt-6">
-          <View className="bg-gradient-to-r from-emerald-500 to-blue-500 rounded-xl p-6 mb-6">
+          <View className="bg-gradient-to-r from-primary to-[#7D0EBE] rounded-xl p-6 mb-6">
             <Text className="text-white text-2xl font-bold mb-2">Coach Yourself</Text>
             <Text className="text-white opacity-90">
               Identify and fix your own faults
@@ -294,11 +294,11 @@ export default function SelfCoaching() {
                   <Text className="text-white font-bold mb-2">Diagnosis Questions:</Text>
                   {item.diagnosis.map((q, qIdx) => (
                     <Text key={qIdx} className="text-zinc-300 text-sm mb-2">
-                      • {q}
+                      â€¢ {q}
                     </Text>
                   ))}
 
-                  <Text className="text-emerald-400 font-bold mt-4 mb-3">Solutions:</Text>
+                  <Text className="text-primary font-bold mt-4 mb-3">Solutions:</Text>
                   {item.solutions.map((sol, sIdx) => (
                     <View key={sIdx} className="bg-zinc-800 rounded-xl p-3 mb-2 last:mb-0">
                       <View className="flex-row justify-between items-center">
@@ -323,20 +323,20 @@ export default function SelfCoaching() {
             <View>
               {coachingData.selfCorrection.techniques.map((tech, idx) => (
                 <View key={idx} className="bg-zinc-900 rounded-xl p-5 mb-6 border border-zinc-800">
-                  <Text className="text-emerald-400 text-xl font-bold mb-2">{tech.technique}</Text>
+                  <Text className="text-primary text-xl font-bold mb-2">{tech.technique}</Text>
                   <Text className="text-zinc-400 mb-4">{tech.description}</Text>
 
                   <Text className="text-white font-bold mb-3">Steps:</Text>
                   {tech.steps.map((step, sIdx) => (
                     <View key={sIdx} className="flex-row items-start mb-2">
-                      <Text className="text-emerald-400 font-bold mr-2">{sIdx + 1}.</Text>
+                      <Text className="text-primary font-bold mr-2">{sIdx + 1}.</Text>
                       <Text className="text-white text-sm flex-1">{step}</Text>
                     </View>
                   ))}
 
-                  <View className="bg-emerald-500/10 rounded-xl p-3 border border-emerald-500/30 mt-4">
-                    <Text className="text-emerald-400 font-bold text-sm mb-1">Example:</Text>
-                    <Text className="text-emerald-300 text-sm">{tech.example}</Text>
+                  <View className="bg-primary/10 rounded-xl p-3 border border-primary/30 mt-4">
+                    <Text className="text-primary font-bold text-sm mb-1">Example:</Text>
+                    <Text className="text-primary/80 text-sm">{tech.example}</Text>
                   </View>
                 </View>
               ))}
@@ -353,7 +353,7 @@ export default function SelfCoaching() {
                   <Text className="text-white font-bold mb-3">How to Track:</Text>
                   {metric.howTo.map((how, hIdx) => (
                     <Text key={hIdx} className="text-zinc-300 text-sm mb-2">
-                      • {how}
+                      â€¢ {how}
                     </Text>
                   ))}
 
@@ -369,38 +369,38 @@ export default function SelfCoaching() {
           <View className="bg-amber-500/10 rounded-xl p-4 border border-amber-500/30 mb-6">
             <Text className="text-amber-400 font-bold mb-2">Self-Coaching Mindset</Text>
             <Text className="text-amber-300 text-sm mb-2">
-              • Be objective - video doesn't lie, feelings do
+              â€¢ Be objective - video doesn't lie, feelings do
             </Text>
             <Text className="text-amber-300 text-sm mb-2">
-              • Be patient - technique changes take weeks, not days
+              â€¢ Be patient - technique changes take weeks, not days
             </Text>
             <Text className="text-amber-300 text-sm mb-2">
-              • Be humble - drop weight to fix form
+              â€¢ Be humble - drop weight to fix form
             </Text>
             <Text className="text-amber-300 text-sm mb-2">
-              • Be consistent - film every session
+              â€¢ Be consistent - film every session
             </Text>
             <Text className="text-amber-300 text-sm">
-              • Be smart - get external feedback when stuck
+              â€¢ Be smart - get external feedback when stuck
             </Text>
           </View>
 
-          <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30 mb-6">
-            <Text className="text-blue-400 font-bold mb-2">When to Get a Coach</Text>
-            <Text className="text-blue-300 text-sm mb-2">
-              • Consistently struggling with same fault
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
+            <Text className="text-primary/80 font-bold mb-2">When to Get a Coach</Text>
+            <Text className="text-primary/60 text-sm mb-2">
+              â€¢ Consistently struggling with same fault
             </Text>
-            <Text className="text-blue-300 text-sm mb-2">
-              • Preparing for competition
+            <Text className="text-primary/60 text-sm mb-2">
+              â€¢ Preparing for competition
             </Text>
-            <Text className="text-blue-300 text-sm mb-2">
-              • Plateau despite good self-coaching
+            <Text className="text-primary/60 text-sm mb-2">
+              â€¢ Plateau despite good self-coaching
             </Text>
-            <Text className="text-blue-300 text-sm mb-2">
-              • Want expert programming
+            <Text className="text-primary/60 text-sm mb-2">
+              â€¢ Want expert programming
             </Text>
-            <Text className="text-blue-300 text-sm">
-              • Worth the investment for serious lifters
+            <Text className="text-primary/60 text-sm">
+              â€¢ Worth the investment for serious lifters
             </Text>
           </View>
         </View>
@@ -408,3 +408,5 @@ export default function SelfCoaching() {
     </View>
   );
 }
+
+

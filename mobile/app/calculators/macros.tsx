@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -24,17 +24,17 @@ export default function MacroCalculator() {
   const [result, setResult] = useState<any>(null);
 
   const activityMultipliers = {
-    sedentary: { value: 1.2, label: 'Sedentario', description: 'Poco o ningún ejercicio' },
-    light: { value: 1.375, label: 'Ligero', description: '1-3 días/semana' },
-    moderate: { value: 1.55, label: 'Moderado', description: '3-5 días/semana' },
-    active: { value: 1.725, label: 'Activo', description: '6-7 días/semana' },
-    veryActive: { value: 1.9, label: 'Muy Activo', description: 'Entrenamiento 2x/día' },
+    sedentary: { value: 1.2, label: 'Sedentario', description: 'Poco o ningÃºn ejercicio' },
+    light: { value: 1.375, label: 'Ligero', description: '1-3 dÃ­as/semana' },
+    moderate: { value: 1.55, label: 'Moderado', description: '3-5 dÃ­as/semana' },
+    active: { value: 1.725, label: 'Activo', description: '6-7 dÃ­as/semana' },
+    veryActive: { value: 1.9, label: 'Muy Activo', description: 'Entrenamiento 2x/dÃ­a' },
   };
 
   const goalAdjustments = {
-    cutting: { label: 'Definición', cals: -500, protein: 2.2, desc: 'Perder grasa' },
+    cutting: { label: 'DefiniciÃ³n', cals: -500, protein: 2.2, desc: 'Perder grasa' },
     maintenance: { label: 'Mantenimiento', cals: 0, protein: 1.8, desc: 'Mantener peso' },
-    bulking: { label: 'Volumen', cals: 300, protein: 2.0, desc: 'Ganar músculo' },
+    bulking: { label: 'Volumen', cals: 300, protein: 2.0, desc: 'Ganar mÃºsculo' },
   };
 
   const calculateMacros = () => {
@@ -43,15 +43,15 @@ export default function MacroCalculator() {
     const a = parseInt(age);
 
     if (!w || w <= 0) {
-      Alert.alert('Error', 'Ingresa un peso válido');
+      Alert.alert('Error', 'Ingresa un peso vÃ¡lido');
       return;
     }
     if (!h || h <= 0) {
-      Alert.alert('Error', 'Ingresa una altura válida');
+      Alert.alert('Error', 'Ingresa una altura vÃ¡lida');
       return;
     }
     if (!a || a <= 0 || a > 120) {
-      Alert.alert('Error', 'Ingresa una edad válida');
+      Alert.alert('Error', 'Ingresa una edad vÃ¡lida');
       return;
     }
 
@@ -127,7 +127,7 @@ export default function MacroCalculator() {
         <View className="px-6 pt-6">
           {/* Personal Info */}
           <View className="bg-zinc-900 rounded-xl p-6 mb-6 border border-zinc-800">
-            <Text className="text-white text-lg font-bold mb-4">Información Personal</Text>
+            <Text className="text-white text-lg font-bold mb-4">InformaciÃ³n Personal</Text>
 
             {/* Gender */}
             <View className="mb-4">
@@ -136,7 +136,7 @@ export default function MacroCalculator() {
                 <TouchableOpacity
                   onPress={() => setGender('male')}
                   className={`flex-1 rounded-lg p-3 ${
-                    gender === 'male' ? 'bg-blue-500' : 'bg-zinc-800'
+                    gender === 'male' ? 'bg-primary' : 'bg-zinc-800'
                   }`}
                 >
                   <Text className={`text-center font-bold ${
@@ -214,7 +214,7 @@ export default function MacroCalculator() {
                 key={level}
                 onPress={() => setActivityLevel(level)}
                 className={`rounded-lg p-3 mb-2 flex-row items-center justify-between ${
-                  activityLevel === level ? 'bg-emerald-500' : 'bg-zinc-800'
+                  activityLevel === level ? 'bg-primary' : 'bg-zinc-800'
                 }`}
               >
                 <View>
@@ -224,7 +224,7 @@ export default function MacroCalculator() {
                     {activityMultipliers[level].label}
                   </Text>
                   <Text className={`text-sm ${
-                    activityLevel === level ? 'text-emerald-100' : 'text-zinc-400'
+                    activityLevel === level ? 'text-primary/50' : 'text-zinc-400'
                   }`}>
                     {activityMultipliers[level].description}
                   </Text>
@@ -248,8 +248,8 @@ export default function MacroCalculator() {
                     ? g === 'cutting'
                       ? 'bg-red-500'
                       : g === 'bulking'
-                      ? 'bg-blue-500'
-                      : 'bg-emerald-500'
+                      ? 'bg-primary'
+                      : 'bg-primary'
                     : 'bg-zinc-800'
                 }`}
               >
@@ -275,7 +275,7 @@ export default function MacroCalculator() {
           {/* Calculate Button */}
           <TouchableOpacity
             onPress={calculateMacros}
-            className="bg-emerald-500 rounded-xl p-4 mb-6 flex-row items-center justify-center"
+            className="bg-primary rounded-xl p-4 mb-6 flex-row items-center justify-center"
           >
             <Ionicons name="calculator" size={20} color="white" />
             <Text className="text-white font-bold ml-2">Calcular Macros</Text>
@@ -289,40 +289,40 @@ export default function MacroCalculator() {
                 <View className="flex-1 bg-zinc-900 rounded-xl p-4 border border-zinc-800">
                   <Text className="text-zinc-400 text-xs mb-2">BMR (Metabolismo Basal)</Text>
                   <Text className="text-white text-2xl font-bold">{result.bmr}</Text>
-                  <Text className="text-zinc-400 text-xs">kcal/día</Text>
+                  <Text className="text-zinc-400 text-xs">kcal/dÃ­a</Text>
                 </View>
                 <View className="flex-1 bg-zinc-900 rounded-xl p-4 border border-zinc-800">
                   <Text className="text-zinc-400 text-xs mb-2">TDEE (Gasto Total)</Text>
-                  <Text className="text-emerald-400 text-2xl font-bold">{result.tdee}</Text>
-                  <Text className="text-zinc-400 text-xs">kcal/día</Text>
+                  <Text className="text-primary text-2xl font-bold">{result.tdee}</Text>
+                  <Text className="text-zinc-400 text-xs">kcal/dÃ­a</Text>
                 </View>
               </View>
 
               {/* Daily Calories */}
               <View className="bg-gradient-to-r from-emerald-500 to-emerald-600 rounded-xl p-6 mb-6">
-                <Text className="text-emerald-200 text-sm mb-2">CALORÍAS DIARIAS</Text>
+                <Text className="text-white/70 text-sm mb-2">CALORÃAS DIARIAS</Text>
                 <View className="flex-row items-baseline mb-2">
                   <Text className="text-white text-5xl font-bold">{result.calories}</Text>
-                  <Text className="text-emerald-200 text-xl ml-2">kcal</Text>
+                  <Text className="text-white/70 text-xl ml-2">kcal</Text>
                 </View>
-                <Text className="text-emerald-100 text-sm">
-                  {goalAdjustments[goal].label} · {activityMultipliers[activityLevel].label}
+                <Text className="text-primary/50 text-sm">
+                  {goalAdjustments[goal].label} Â· {activityMultipliers[activityLevel].label}
                 </Text>
               </View>
 
               {/* Macros Breakdown */}
               <View className="bg-zinc-900 rounded-xl p-6 mb-6 border border-zinc-800">
-                <Text className="text-white text-lg font-bold mb-4">Distribución de Macros</Text>
+                <Text className="text-white text-lg font-bold mb-4">DistribuciÃ³n de Macros</Text>
 
                 {/* Protein */}
                 <View className="mb-4">
                   <View className="flex-row items-center justify-between mb-2">
                     <View className="flex-row items-center">
-                      <View className="w-3 h-3 bg-blue-500 rounded-full mr-2" />
-                      <Text className="text-white font-bold">Proteína</Text>
+                      <View className="w-3 h-3 bg-primary rounded-full mr-2" />
+                      <Text className="text-white font-bold">ProteÃ­na</Text>
                     </View>
                     <View className="flex-row items-baseline">
-                      <Text className="text-blue-400 text-2xl font-bold">{result.protein}</Text>
+                      <Text className="text-primary/80 text-2xl font-bold">{result.protein}</Text>
                       <Text className="text-zinc-400 ml-1">g</Text>
                       <Text className="text-zinc-500 ml-2 text-sm">
                         ({getMacroPercentage(result.proteinCals, result.calories)}%)
@@ -331,7 +331,7 @@ export default function MacroCalculator() {
                   </View>
                   <View className="bg-zinc-800 h-3 rounded-full overflow-hidden">
                     <View
-                      className="bg-blue-500 h-full"
+                      className="bg-primary h-full"
                       style={{ width: `${getMacroPercentage(result.proteinCals, result.calories)}%` }}
                     />
                   </View>
@@ -341,11 +341,11 @@ export default function MacroCalculator() {
                 <View className="mb-4">
                   <View className="flex-row items-center justify-between mb-2">
                     <View className="flex-row items-center">
-                      <View className="w-3 h-3 bg-emerald-500 rounded-full mr-2" />
+                      <View className="w-3 h-3 bg-primary rounded-full mr-2" />
                       <Text className="text-white font-bold">Carbohidratos</Text>
                     </View>
                     <View className="flex-row items-baseline">
-                      <Text className="text-emerald-400 text-2xl font-bold">{result.carbs}</Text>
+                      <Text className="text-primary text-2xl font-bold">{result.carbs}</Text>
                       <Text className="text-zinc-400 ml-1">g</Text>
                       <Text className="text-zinc-500 ml-2 text-sm">
                         ({getMacroPercentage(result.carbCals, result.calories)}%)
@@ -354,7 +354,7 @@ export default function MacroCalculator() {
                   </View>
                   <View className="bg-zinc-800 h-3 rounded-full overflow-hidden">
                     <View
-                      className="bg-emerald-500 h-full"
+                      className="bg-primary h-full"
                       style={{ width: `${getMacroPercentage(result.carbCals, result.calories)}%` }}
                     />
                   </View>
@@ -389,16 +389,16 @@ export default function MacroCalculator() {
                 <Text className="text-white text-lg font-bold mb-3">Por Comida (5 comidas)</Text>
                 <View className="flex-row justify-between">
                   <View className="flex-1 items-center">
-                    <Text className="text-zinc-400 text-xs mb-1">Calorías</Text>
+                    <Text className="text-zinc-400 text-xs mb-1">CalorÃ­as</Text>
                     <Text className="text-white font-bold text-lg">{Math.round(result.calories / 5)}</Text>
                   </View>
                   <View className="flex-1 items-center">
-                    <Text className="text-zinc-400 text-xs mb-1">Proteína</Text>
-                    <Text className="text-blue-400 font-bold text-lg">{Math.round(result.protein / 5)}g</Text>
+                    <Text className="text-zinc-400 text-xs mb-1">ProteÃ­na</Text>
+                    <Text className="text-primary/80 font-bold text-lg">{Math.round(result.protein / 5)}g</Text>
                   </View>
                   <View className="flex-1 items-center">
                     <Text className="text-zinc-400 text-xs mb-1">Carbos</Text>
-                    <Text className="text-emerald-400 font-bold text-lg">{Math.round(result.carbs / 5)}g</Text>
+                    <Text className="text-primary font-bold text-lg">{Math.round(result.carbs / 5)}g</Text>
                   </View>
                   <View className="flex-1 items-center">
                     <Text className="text-zinc-400 text-xs mb-1">Grasas</Text>
@@ -410,31 +410,31 @@ export default function MacroCalculator() {
           )}
 
           {/* Info Cards */}
-          <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30 mb-3">
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-3">
             <View className="flex-row items-start">
-              <Ionicons name="information-circle" size={20} color="#3B82F6" />
+              <Ionicons name="information-circle" size={20} color="#9D12DE" />
               <View className="flex-1 ml-3">
-                <Text className="text-blue-400 font-bold mb-2">
+                <Text className="text-primary/80 font-bold mb-2">
                   Macronutrientes Explicados
                 </Text>
-                <Text className="text-blue-300 text-sm">
-                  • Proteína: 4 kcal/g - Construcción muscular{'\n'}
-                  • Carbohidratos: 4 kcal/g - Energía{'\n'}
-                  • Grasas: 9 kcal/g - Hormonas y salud
+                <Text className="text-primary/60 text-sm">
+                  â€¢ ProteÃ­na: 4 kcal/g - ConstrucciÃ³n muscular{'\n'}
+                  â€¢ Carbohidratos: 4 kcal/g - EnergÃ­a{'\n'}
+                  â€¢ Grasas: 9 kcal/g - Hormonas y salud
                 </Text>
               </View>
             </View>
           </View>
 
-          <View className="bg-emerald-500/10 rounded-xl p-4 border border-emerald-500/30 mb-6">
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
             <View className="flex-row items-start">
-              <Ionicons name="checkmark-circle" size={20} color="#10B981" />
+              <Ionicons name="checkmark-circle" size={20} color="#9D12DE" />
               <View className="flex-1 ml-3">
-                <Text className="text-emerald-400 font-bold mb-2">
+                <Text className="text-primary font-bold mb-2">
                   Consistencia es Clave
                 </Text>
-                <Text className="text-emerald-300 text-sm">
-                  Ajusta según resultados después de 2-4 semanas. Pésate en las mismas condiciones diariamente.
+                <Text className="text-primary/80 text-sm">
+                  Ajusta segÃºn resultados despuÃ©s de 2-4 semanas. PÃ©sate en las mismas condiciones diariamente.
                 </Text>
               </View>
             </View>
@@ -444,3 +444,5 @@ export default function MacroCalculator() {
     </View>
   );
 }
+
+

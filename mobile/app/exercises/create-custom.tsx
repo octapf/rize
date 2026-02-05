@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -18,14 +18,14 @@ import { Card } from '@/components/ui/Card';
 type MuscleGroup = 'chest' | 'back' | 'legs' | 'shoulders' | 'arms' | 'core' | 'cardio' | 'other';
 
 const muscleGroups: { id: MuscleGroup; name: string; icon: string; color: string }[] = [
-  { id: 'chest', name: 'Pecho', icon: '💪', color: '#EF4444' },
-  { id: 'back', name: 'Espalda', icon: '🏋️', color: '#10B981' },
-  { id: 'legs', name: 'Piernas', icon: '🦵', color: '#3B82F6' },
-  { id: 'shoulders', name: 'Hombros', icon: '👐', color: '#F59E0B' },
-  { id: 'arms', name: 'Brazos', icon: '💪', color: '#8B5CF6' },
-  { id: 'core', name: 'Core', icon: '🎯', color: '#EC4899' },
-  { id: 'cardio', name: 'Cardio', icon: '❤️', color: '#EF4444' },
-  { id: 'other', name: 'Otro', icon: '🔥', color: '#6B7280' },
+  { id: 'chest', name: 'Pecho', icon: 'ðŸ’ª', color: '#EF4444' },
+  { id: 'back', name: 'Espalda', icon: 'ðŸ‹ï¸', color: '#9D12DE' },
+  { id: 'legs', name: 'Piernas', icon: 'ðŸ¦µ', color: '#9D12DE' },
+  { id: 'shoulders', name: 'Hombros', icon: 'ðŸ‘', color: '#FFEA00' },
+  { id: 'arms', name: 'Brazos', icon: 'ðŸ’ª', color: '#8B5CF6' },
+  { id: 'core', name: 'Core', icon: 'ðŸŽ¯', color: '#EC4899' },
+  { id: 'cardio', name: 'Cardio', icon: 'â¤ï¸', color: '#EF4444' },
+  { id: 'other', name: 'Otro', icon: 'ðŸ”¥', color: '#6B7280' },
 ];
 
 export default function CreateExerciseScreen() {
@@ -41,7 +41,7 @@ export default function CreateExerciseScreen() {
     mutationFn: (data: any) => exercisesApi.createExercise(data),
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['exercises'] });
-      Alert.alert('Éxito', 'Ejercicio creado correctamente', [
+      Alert.alert('Ã‰xito', 'Ejercicio creado correctamente', [
         {
           text: 'OK',
           onPress: () => router.back(),
@@ -72,7 +72,7 @@ export default function CreateExerciseScreen() {
   return (
     <View className="flex-1 bg-gray-50">
       {/* Header */}
-      <LinearGradient colors={['#10B981', '#059669']} className="px-6 pt-12 pb-6">
+      <LinearGradient colors={['#9D12DE', '#7C3AED']} className="px-6 pt-12 pb-6">
         <View className="flex-row items-center justify-between">
           <TouchableOpacity onPress={() => router.back()} className="p-2">
             <Ionicons name="arrow-back" size={28} color="white" />
@@ -109,7 +109,7 @@ export default function CreateExerciseScreen() {
                 onPress={() => setMuscleGroup(group.id)}
                 className={`px-4 py-2 rounded-full flex-row items-center gap-2 ${
                   muscleGroup === group.id
-                    ? 'bg-emerald-500'
+                    ? 'bg-primary'
                     : 'bg-gray-100 border border-gray-300'
                 }`}
               >
@@ -129,12 +129,12 @@ export default function CreateExerciseScreen() {
         {/* Description */}
         <Card className="p-4">
           <Text className="text-gray-700 font-semibold mb-2">
-            Descripción
+            DescripciÃ³n
           </Text>
           <TextInput
             value={description}
             onChangeText={setDescription}
-            placeholder="Descripción breve del ejercicio"
+            placeholder="DescripciÃ³n breve del ejercicio"
             className="bg-gray-50 rounded-lg px-4 py-3 text-gray-900"
             placeholderTextColor="#9CA3AF"
             multiline
@@ -151,7 +151,7 @@ export default function CreateExerciseScreen() {
           <TextInput
             value={equipment}
             onChangeText={setEquipment}
-            placeholder="Ej: Barra, Mancuernas, Máquina"
+            placeholder="Ej: Barra, Mancuernas, MÃ¡quina"
             className="bg-gray-50 rounded-lg px-4 py-3 text-gray-900"
             placeholderTextColor="#9CA3AF"
           />
@@ -198,7 +198,7 @@ export default function CreateExerciseScreen() {
           className="mt-4"
         >
           <LinearGradient
-            colors={['#10B981', '#059669']}
+            colors={['#9D12DE', '#7C3AED']}
             className="rounded-xl py-4 items-center"
           >
             {createExerciseMutation.isPending ? (
@@ -214,3 +214,4 @@ export default function CreateExerciseScreen() {
     </View>
   );
 }
+

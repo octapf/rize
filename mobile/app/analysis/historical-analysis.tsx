@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -115,7 +115,7 @@ export default function HistoricalAnalysis() {
                 key={period.key}
                 onPress={() => setSelectedPeriod(period.key)}
                 className={`flex-1 ${
-                  selectedPeriod === period.key ? 'bg-blue-500' : 'bg-zinc-900'
+                  selectedPeriod === period.key ? 'bg-primary' : 'bg-zinc-900'
                 } rounded-xl py-3 border ${
                   selectedPeriod === period.key ? 'border-blue-400' : 'border-zinc-800'
                 }`}
@@ -172,7 +172,7 @@ export default function HistoricalAnalysis() {
                     <View className="flex-1 items-center">
                       <View className="w-full px-1">
                         <View
-                          className="bg-blue-500 rounded-t-lg"
+                          className="bg-primary rounded-t-lg"
                           style={{ height: `${height}%`, minHeight: 20 }}
                         >
                           <Text className="text-white text-xs font-bold text-center mt-1">
@@ -200,9 +200,9 @@ export default function HistoricalAnalysis() {
                   name={insight.icon as any}
                   size={24}
                   color={
-                    insight.color === 'emerald' ? '#10b981' :
-                    insight.color === 'blue' ? '#3b82f6' :
-                    insight.color === 'amber' ? '#f59e0b' : '#ef4444'
+                    insight.color === 'emerald' ? '#9D12DE' :
+                    insight.color === 'blue' ? '#9D12DE' :
+                    insight.color === 'amber' ? '#FFEA00' : '#ef4444'
                   }
                 />
                 <View className="flex-1 ml-3">
@@ -223,21 +223,21 @@ export default function HistoricalAnalysis() {
                   <Text className="text-zinc-400 text-sm">Last 3 months</Text>
                 </View>
                 <View className="items-end">
-                  <Text className="text-emerald-400 font-bold text-lg">{performer.improvement}</Text>
-                  <Text className="text-emerald-500 text-sm">{performer.percent}</Text>
+                  <Text className="text-primary font-bold text-lg">{performer.improvement}</Text>
+                  <Text className="text-primary text-sm">{performer.percent}</Text>
                 </View>
               </View>
             </View>
           ))}
 
-          <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30 mb-6">
-            <Text className="text-blue-400 font-bold mb-2">Analysis Tips</Text>
-            <Text className="text-blue-300 text-sm">
-              • Look for upward trends{'\n'}
-              • Plateaus = need change{'\n'}
-              • Compare similar periods{'\n'}
-              • Account for deloads{'\n'}
-              • Monthly review recommended
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
+            <Text className="text-primary/80 font-bold mb-2">Analysis Tips</Text>
+            <Text className="text-primary/60 text-sm">
+              â€¢ Look for upward trends{'\n'}
+              â€¢ Plateaus = need change{'\n'}
+              â€¢ Compare similar periods{'\n'}
+              â€¢ Account for deloads{'\n'}
+              â€¢ Monthly review recommended
             </Text>
           </View>
         </View>
@@ -245,3 +245,4 @@ export default function HistoricalAnalysis() {
     </View>
   );
 }
+

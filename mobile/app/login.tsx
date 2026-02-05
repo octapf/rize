@@ -1,4 +1,4 @@
-import { useState } from 'react';
+﻿import { useState } from 'react';
 import { View, Text, ScrollView, KeyboardAvoidingView, Platform } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Link, router } from 'expo-router';
@@ -19,12 +19,12 @@ export default function LoginScreen() {
 
   const loginMutation = useMutation({
     mutationFn: authApi.login,
-    onSuccess: (data) => {
-      setAuth(data);
+    onSuccess: async (data) => {
+      await setAuth(data);
       router.replace('/(tabs)');
     },
     onError: (error: any) => {
-      const message = error.response?.data?.message || 'Error al iniciar sesión';
+      const message = error.response?.data?.message || 'Error al iniciar sesiÃ³n';
       setErrors({ emailOrUsername: message });
     },
   });
@@ -38,7 +38,7 @@ export default function LoginScreen() {
     }
 
     if (!password) {
-      setErrors({ password: 'Contraseña requerida' });
+      setErrors({ password: 'ContraseÃ±a requerida' });
       return;
     }
 
@@ -54,8 +54,8 @@ export default function LoginScreen() {
         <ScrollView className="flex-1" contentContainerClassName="p-6">
           {/* Logo/Brand */}
           <View className="items-center mb-12 mt-8">
-            <Text className="font-barlow-bold text-5xl text-emerald-600 mb-2">RIZE</Text>
-            <Text className="font-inter-regular text-base text-gray-600">
+            <Text className="font-heading-bold text-5xl text-primary mb-2">RIZE</Text>
+            <Text className="font-body text-base text-gray-600">
               Eleva tu entrenamiento
             </Text>
           </View>
@@ -75,8 +75,8 @@ export default function LoginScreen() {
             />
 
             <Input
-              label="Contraseña"
-              placeholder="••••••••"
+              label="ContraseÃ±a"
+              placeholder="â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢"
               value={password}
               onChangeText={setPassword}
               error={errors.password}
@@ -100,16 +100,16 @@ export default function LoginScreen() {
               isLoading={loginMutation.isPending}
               className="mt-4"
             >
-              Iniciar Sesión
+              Iniciar SesiÃ³n
             </Button>
 
             <View className="flex-row items-center justify-center mt-6">
-              <Text className="font-inter-regular text-sm text-gray-600">
-                ¿No tienes cuenta?{' '}
+              <Text className="font-body text-sm text-gray-600">
+                Â¿No tienes cuenta?{' '}
               </Text>
               <Link href="/register" asChild>
-                <Text className="font-inter-semibold text-sm text-emerald-600">
-                  Regístrate
+                <Text className="font-label-bold text-sm text-primary">
+                  RegÃ­strate
                 </Text>
               </Link>
             </View>
@@ -119,3 +119,4 @@ export default function LoginScreen() {
     </SafeAreaView>
   );
 }
+

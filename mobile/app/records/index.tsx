@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -15,10 +15,10 @@ import { recordsApi, ExerciseRecords } from '@/services/api/records.api';
 import { useEffect, useRef } from 'react';
 
 const RECORD_TYPES = {
-  weight: { label: 'Peso Máximo', icon: 'barbell', color: '#f59e0b', unit: 'kg' },
-  reps: { label: 'Repeticiones', icon: 'repeat', color: '#3b82f6', unit: 'reps' },
+  weight: { label: 'Peso MÃ¡ximo', icon: 'barbell', color: '#FFEA00', unit: 'kg' },
+  reps: { label: 'Repeticiones', icon: 'repeat', color: '#9D12DE', unit: 'reps' },
   volume: { label: 'Volumen Total', icon: 'speedometer', color: '#8b5cf6', unit: 'kg' },
-  duration: { label: 'Duración', icon: 'time', color: '#10b981', unit: 'sec' },
+  duration: { label: 'DuraciÃ³n', icon: 'time', color: '#9D12DE', unit: 'sec' },
   distance: { label: 'Distancia', icon: 'navigate', color: '#ef4444', unit: 'km' },
 };
 
@@ -61,7 +61,7 @@ export default function RecordsScreen() {
 
     if (diffDays === 0) return 'Hoy';
     if (diffDays === 1) return 'Ayer';
-    if (diffDays < 7) return `Hace ${diffDays} días`;
+    if (diffDays < 7) return `Hace ${diffDays} dÃ­as`;
     if (diffDays < 30) return `Hace ${Math.floor(diffDays / 7)} semanas`;
     return date.toLocaleDateString('es-ES', { day: '2-digit', month: 'short' });
   };
@@ -101,7 +101,7 @@ export default function RecordsScreen() {
           </View>
           <View style={styles.recordCountBadge}>
             <Text style={styles.recordCountText}>{recordsArray.length}</Text>
-            <Ionicons name="trophy" size={16} color="#f59e0b" />
+            <Ionicons name="trophy" size={16} color="#FFEA00" />
           </View>
         </View>
 
@@ -126,7 +126,7 @@ export default function RecordsScreen() {
                     <Text style={styles.recordDate}>{formatDate(record.achievedAt)}</Text>
                     {record.improvement && record.improvement > 0 && (
                       <View style={styles.improvementBadge}>
-                        <Ionicons name="trending-up" size={10} color="#10b981" />
+                        <Ionicons name="trending-up" size={10} color="#9D12DE" />
                         <Text style={styles.improvementText}>
                           +{record.improvement.toFixed(1)}%
                         </Text>
@@ -168,7 +168,7 @@ export default function RecordsScreen() {
               </Text>
               {record.improvement && record.improvement > 0 && (
                 <View style={styles.improvementBadgeLarge}>
-                  <Ionicons name="trending-up" size={14} color="#10b981" />
+                  <Ionicons name="trending-up" size={14} color="#9D12DE" />
                   <Text style={styles.improvementTextLarge}>+{record.improvement.toFixed(1)}%</Text>
                 </View>
               )}
@@ -231,13 +231,13 @@ export default function RecordsScreen() {
       <ScrollView contentContainerStyle={styles.content}>
         {/* Stats Header */}
         <View style={styles.statsHeader}>
-          <LinearGradient colors={['#f59e0b', '#d97706']} style={styles.statCard}>
+          <LinearGradient colors={['#FFEA00', '#d97706']} style={styles.statCard}>
             <Ionicons name="trophy" size={32} color="#fff" />
             <Text style={styles.statValue}>{allRecords.length}</Text>
             <Text style={styles.statLabel}>Ejercicios con Records</Text>
           </LinearGradient>
 
-          <LinearGradient colors={['#10b981', '#059669']} style={styles.statCard}>
+          <LinearGradient colors={['#9D12DE', '#7C3AED']} style={styles.statCard}>
             <Ionicons name="flame" size={32} color="#fff" />
             <Text style={styles.statValue}>{recentRecords.length}</Text>
             <Text style={styles.statLabel}>Records (30d)</Text>
@@ -256,7 +256,7 @@ export default function RecordsScreen() {
             {!isLoading && allRecords.length === 0 && (
               <View style={styles.empty}>
                 <Ionicons name="trophy-outline" size={64} color="#666" />
-                <Text style={styles.emptyText}>Aún no tienes records personales</Text>
+                <Text style={styles.emptyText}>AÃºn no tienes records personales</Text>
                 <Text style={styles.emptySubtext}>
                   Completa entrenamientos para establecer tus primeros records
                 </Text>
@@ -272,9 +272,9 @@ export default function RecordsScreen() {
             {recentRecords.length === 0 && (
               <View style={styles.empty}>
                 <Ionicons name="flame-outline" size={64} color="#666" />
-                <Text style={styles.emptyText}>No hay records en los últimos 30 días</Text>
+                <Text style={styles.emptyText}>No hay records en los Ãºltimos 30 dÃ­as</Text>
                 <Text style={styles.emptySubtext}>
-                  ¡Entrena duro para batir tus marcas!
+                  Â¡Entrena duro para batir tus marcas!
                 </Text>
               </View>
             )}
@@ -312,7 +312,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#1a1a1a',
   },
   filterTabActive: {
-    backgroundColor: '#f59e0b',
+    backgroundColor: '#FFEA00',
   },
   filterTabText: {
     fontSize: 14,
@@ -386,7 +386,7 @@ const styles = StyleSheet.create({
   recordCountText: {
     fontSize: 14,
     fontWeight: '700',
-    color: '#f59e0b',
+    color: '#FFEA00',
   },
   recordsGrid: {
     gap: 12,
@@ -427,7 +427,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     gap: 2,
-    backgroundColor: '#10b98120',
+    backgroundColor: '#9D12DE20',
     paddingHorizontal: 6,
     paddingVertical: 2,
     borderRadius: 6,
@@ -435,7 +435,7 @@ const styles = StyleSheet.create({
   improvementText: {
     fontSize: 10,
     fontWeight: '600',
-    color: '#10b981',
+    color: '#9D12DE',
   },
   recentItem: {
     marginBottom: 12,
@@ -474,7 +474,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     gap: 4,
-    backgroundColor: '#10b98130',
+    backgroundColor: '#9D12DE30',
     paddingHorizontal: 8,
     paddingVertical: 4,
     borderRadius: 8,
@@ -482,7 +482,7 @@ const styles = StyleSheet.create({
   improvementTextLarge: {
     fontSize: 12,
     fontWeight: '600',
-    color: '#10b981',
+    color: '#9D12DE',
   },
   recentDate: {
     fontSize: 12,
@@ -516,3 +516,4 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
 });
+

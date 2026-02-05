@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -57,7 +57,7 @@ export default function RecoveryBalance() {
     {
       name: 'Stress Levels',
       current: `${stressLevel}/10`,
-      optimal: '≤3/10',
+      optimal: 'â‰¤3/10',
       score: stressScore,
       maxScore: 25,
       icon: 'happy',
@@ -77,7 +77,7 @@ export default function RecoveryBalance() {
     {
       name: 'Muscle Soreness',
       current: `${soreness}/5`,
-      optimal: '≤2/5',
+      optimal: 'â‰¤2/5',
       score: sorenessScore,
       maxScore: 15,
       icon: 'fitness',
@@ -136,7 +136,7 @@ export default function RecoveryBalance() {
 
       <ScrollView className="flex-1" showsVerticalScrollIndicator={false}>
         <View className="px-6 pt-6">
-          <View className="bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl p-6 mb-6">
+          <View className="bg-gradient-to-r from-primary to-[#7D0EBE] rounded-xl p-6 mb-6">
             <Text className="text-white text-2xl font-bold mb-2">Recovery Score</Text>
             <Text className="text-white opacity-90 mb-4">
               Assess your readiness to train
@@ -185,7 +185,7 @@ export default function RecoveryBalance() {
                     key={level}
                     onPress={() => setStressLevel(level)}
                     className={`flex-1 ${
-                      stressLevel === level ? 'bg-blue-500' : 'bg-zinc-800'
+                      stressLevel === level ? 'bg-primary' : 'bg-zinc-800'
                     } rounded-lg py-2`}
                   >
                     <Text
@@ -246,8 +246,8 @@ export default function RecoveryBalance() {
                   <View className="flex-row items-center flex-1">
                     <Ionicons name={factor.icon as any} size={24} color={
                       factor.color === 'purple' ? '#a855f7' :
-                      factor.color === 'blue' ? '#3b82f6' :
-                      factor.color === 'emerald' ? '#10b981' : '#f59e0b'
+                      factor.color === 'blue' ? '#9D12DE' :
+                      factor.color === 'emerald' ? '#9D12DE' : '#FFEA00'
                     } />
                     <Text className="text-white font-bold ml-3">{factor.name}</Text>
                   </View>
@@ -271,7 +271,7 @@ export default function RecoveryBalance() {
                 <Text className={`text-${factor.color}-400 font-bold text-xs mb-1`}>IMPROVEMENT TIPS</Text>
                 {factor.tips.map((tip, tipIdx) => (
                   <Text key={tipIdx} className={`text-${factor.color}-300 text-xs mb-1`}>
-                    • {tip}
+                    â€¢ {tip}
                   </Text>
                 ))}
               </View>
@@ -285,21 +285,21 @@ export default function RecoveryBalance() {
               <Text className={`text-${rec.color}-400 font-bold mb-3`}>{rec.title}</Text>
               {rec.items.map((item, itemIdx) => (
                 <Text key={itemIdx} className={`text-${rec.color}-300 text-sm mb-2`}>
-                  ✓ {item}
+                  âœ“ {item}
                 </Text>
               ))}
             </View>
           ))}
 
-          <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30 mb-6">
-            <Text className="text-blue-400 font-bold mb-2">Recovery Principles</Text>
-            <Text className="text-blue-300 text-sm">
-              • Recovery = when muscle grows{'\n'}
-              • Sleep is #1 priority{'\n'}
-              • Stress kills gains{'\n'}
-              • Track trends, not single days{'\n'}
-              • Auto-regulate training intensity{'\n'}
-              • Deload every 6-8 weeks minimum
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
+            <Text className="text-primary/80 font-bold mb-2">Recovery Principles</Text>
+            <Text className="text-primary/60 text-sm">
+              â€¢ Recovery = when muscle grows{'\n'}
+              â€¢ Sleep is #1 priority{'\n'}
+              â€¢ Stress kills gains{'\n'}
+              â€¢ Track trends, not single days{'\n'}
+              â€¢ Auto-regulate training intensity{'\n'}
+              â€¢ Deload every 6-8 weeks minimum
             </Text>
           </View>
         </View>
@@ -307,3 +307,5 @@ export default function RecoveryBalance() {
     </View>
   );
 }
+
+

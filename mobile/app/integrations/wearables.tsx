@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -38,42 +38,42 @@ const DEVICES: WearableDevice[] = [
     connected: true,
     battery: 78,
     lastSync: 'Hace 5 minutos',
-    features: ['Frecuencia Cardíaca', 'HRV', 'Calorías', 'Pasos', 'Sueño', 'Oxígeno'],
+    features: ['Frecuencia CardÃ­aca', 'HRV', 'CalorÃ­as', 'Pasos', 'SueÃ±o', 'OxÃ­geno'],
   },
   {
     id: '2',
     name: 'Garmin Fenix 7',
     brand: 'garmin',
     connected: false,
-    features: ['GPS', 'VO2 Max', 'Estrés', 'Altitud', 'Pasos', 'Sueño'],
+    features: ['GPS', 'VO2 Max', 'EstrÃ©s', 'Altitud', 'Pasos', 'SueÃ±o'],
   },
   {
     id: '3',
     name: 'Fitbit Charge 6',
     brand: 'fitbit',
     connected: false,
-    features: ['Pasos', 'Calorías', 'Sueño', 'Frecuencia Cardíaca', 'SPO2'],
+    features: ['Pasos', 'CalorÃ­as', 'SueÃ±o', 'Frecuencia CardÃ­aca', 'SPO2'],
   },
   {
     id: '4',
     name: 'WHOOP 4.0',
     brand: 'whoop',
     connected: false,
-    features: ['Strain', 'Recuperación', 'Sueño', 'HRV', 'Frecuencia Cardíaca'],
+    features: ['Strain', 'RecuperaciÃ³n', 'SueÃ±o', 'HRV', 'Frecuencia CardÃ­aca'],
   },
   {
     id: '5',
     name: 'Polar Vantage V3',
     brand: 'polar',
     connected: false,
-    features: ['Running Power', 'Recuperación', 'VO2 Max', 'HRV', 'Sueño'],
+    features: ['Running Power', 'RecuperaciÃ³n', 'VO2 Max', 'HRV', 'SueÃ±o'],
   },
 ];
 
 const SYNCED_METRICS: SyncedMetric[] = [
   {
     id: '1',
-    name: 'Frecuencia Cardíaca',
+    name: 'Frecuencia CardÃ­aca',
     value: '68 bpm',
     icon: 'pulse',
     source: 'Apple Watch',
@@ -85,15 +85,15 @@ const SYNCED_METRICS: SyncedMetric[] = [
     value: '8,452',
     icon: 'walk',
     source: 'Apple Watch',
-    color: '#10B981',
+    color: '#9D12DE',
   },
   {
     id: '3',
-    name: 'Calorías Quemadas',
+    name: 'CalorÃ­as Quemadas',
     value: '2,340 kcal',
     icon: 'flame',
     source: 'Apple Watch',
-    color: '#F59E0B',
+    color: '#FFEA00',
   },
   {
     id: '4',
@@ -101,11 +101,11 @@ const SYNCED_METRICS: SyncedMetric[] = [
     value: '65 ms',
     icon: 'stats-chart',
     source: 'Apple Watch',
-    color: '#3B82F6',
+    color: '#9D12DE',
   },
   {
     id: '5',
-    name: 'Sueño Anoche',
+    name: 'SueÃ±o Anoche',
     value: '7.5 h',
     icon: 'moon',
     source: 'Apple Watch',
@@ -113,7 +113,7 @@ const SYNCED_METRICS: SyncedMetric[] = [
   },
   {
     id: '6',
-    name: 'Oxígeno en Sangre',
+    name: 'OxÃ­geno en Sangre',
     value: '98%',
     icon: 'water',
     source: 'Apple Watch',
@@ -159,7 +159,7 @@ export default function WearableIntegrations() {
     if (device.connected) {
       Alert.alert(
         'Desconectar Dispositivo',
-        `¿Deseas desconectar ${device.name}?`,
+        `Â¿Deseas desconectar ${device.name}?`,
         [
           { text: 'Cancelar', style: 'cancel' },
           {
@@ -174,13 +174,13 @@ export default function WearableIntegrations() {
     } else {
       Alert.alert(
         'Conectar Dispositivo',
-        `Conectando con ${device.name}...\n\nSerás redirigido a la aplicación oficial para autorizar el acceso.`,
+        `Conectando con ${device.name}...\n\nSerÃ¡s redirigido a la aplicaciÃ³n oficial para autorizar el acceso.`,
         [
           { text: 'Cancelar', style: 'cancel' },
           {
             text: 'Continuar',
             onPress: () => {
-              Alert.alert('¡Conectado!', `${device.name} está ahora sincronizado`);
+              Alert.alert('Â¡Conectado!', `${device.name} estÃ¡ ahora sincronizado`);
             },
           },
         ]
@@ -192,7 +192,7 @@ export default function WearableIntegrations() {
     setSyncInProgress(true);
     setTimeout(() => {
       setSyncInProgress(false);
-      Alert.alert('Sincronización Completa', 'Todos los datos están actualizados');
+      Alert.alert('SincronizaciÃ³n Completa', 'Todos los datos estÃ¡n actualizados');
     }, 2000);
   };
 
@@ -218,22 +218,22 @@ export default function WearableIntegrations() {
               <Ionicons
                 name={syncInProgress ? 'sync' : 'refresh'}
                 size={24}
-                color="#10B981"
+                color="#9D12DE"
               />
             </TouchableOpacity>
           )}
         </View>
 
         {connectedDevice && (
-          <View className="bg-emerald-500/10 rounded-xl p-4 border border-emerald-500/30">
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30">
             <View className="flex-row items-center justify-between">
               <View className="flex-row items-center flex-1">
-                <View className="bg-emerald-500/20 rounded-full p-2">
-                  <Ionicons name="checkmark-circle" size={20} color="#10B981" />
+                <View className="bg-primary/20 rounded-full p-2">
+                  <Ionicons name="checkmark-circle" size={20} color="#9D12DE" />
                 </View>
                 <View className="ml-3 flex-1">
-                  <Text className="text-emerald-400 font-bold">{connectedDevice.name}</Text>
-                  <Text className="text-emerald-300/70 text-sm">
+                  <Text className="text-primary font-bold">{connectedDevice.name}</Text>
+                  <Text className="text-primary/80/70 text-sm">
                     {connectedDevice.lastSync}
                   </Text>
                 </View>
@@ -243,9 +243,9 @@ export default function WearableIntegrations() {
                   <Ionicons
                     name="battery-charging"
                     size={16}
-                    color="#10B981"
+                    color="#9D12DE"
                   />
-                  <Text className="text-emerald-400 text-sm font-bold ml-1">
+                  <Text className="text-primary text-sm font-bold ml-1">
                     {connectedDevice.battery}%
                   </Text>
                 </View>
@@ -316,8 +316,8 @@ export default function WearableIntegrations() {
                   </View>
                 </View>
                 {device.connected && (
-                  <View className="bg-emerald-500/20 px-3 py-1 rounded-full">
-                    <Text className="text-emerald-400 text-xs font-bold">Conectado</Text>
+                  <View className="bg-primary/20 px-3 py-1 rounded-full">
+                    <Text className="text-primary text-xs font-bold">Conectado</Text>
                   </View>
                 )}
               </View>
@@ -338,7 +338,7 @@ export default function WearableIntegrations() {
               <TouchableOpacity
                 onPress={() => connectDevice(device)}
                 className={`${
-                  device.connected ? 'bg-zinc-800 border border-zinc-700' : 'bg-emerald-500'
+                  device.connected ? 'bg-zinc-800 border border-zinc-700' : 'bg-primary'
                 } rounded-lg p-3`}
               >
                 <Text
@@ -355,15 +355,15 @@ export default function WearableIntegrations() {
 
         {/* Info Card */}
         <View className="px-6 pb-6">
-          <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30">
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30">
             <View className="flex-row items-start">
-              <Ionicons name="information-circle" size={20} color="#3B82F6" />
+              <Ionicons name="information-circle" size={20} color="#9D12DE" />
               <View className="flex-1 ml-3">
-                <Text className="text-blue-400 font-bold mb-2">
-                  Sincronización Automática
+                <Text className="text-primary/80 font-bold mb-2">
+                  SincronizaciÃ³n AutomÃ¡tica
                 </Text>
-                <Text className="text-blue-300 text-sm">
-                  Los datos se sincronizan automáticamente cada hora cuando el dispositivo está conectado. También puedes forzar una sincronización manual en cualquier momento.
+                <Text className="text-primary/60 text-sm">
+                  Los datos se sincronizan automÃ¡ticamente cada hora cuando el dispositivo estÃ¡ conectado. TambiÃ©n puedes forzar una sincronizaciÃ³n manual en cualquier momento.
                 </Text>
               </View>
             </View>
@@ -373,3 +373,5 @@ export default function WearableIntegrations() {
     </View>
   );
 }
+
+

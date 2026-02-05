@@ -1,4 +1,4 @@
-import { useState } from 'react';
+﻿import { useState } from 'react';
 import { View, Text, ScrollView, KeyboardAvoidingView, Platform } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Link, router } from 'expo-router';
@@ -24,8 +24,8 @@ export default function RegisterScreen() {
 
   const registerMutation = useMutation({
     mutationFn: authApi.register,
-    onSuccess: (data) => {
-      setAuth(data);
+    onSuccess: async (data) => {
+      await setAuth(data);
       router.replace('/(tabs)');
     },
     onError: (error: any) => {
@@ -48,7 +48,7 @@ export default function RegisterScreen() {
     if (!email.trim()) {
       newErrors.email = 'El email es requerido';
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      newErrors.email = 'Email inválido';
+      newErrors.email = 'Email invÃ¡lido';
     }
 
     if (!username.trim()) {
@@ -58,9 +58,9 @@ export default function RegisterScreen() {
     }
 
     if (!password) {
-      newErrors.password = 'La contraseña es requerida';
+      newErrors.password = 'La contraseÃ±a es requerida';
     } else if (password.length < 8) {
-      newErrors.password = 'La contraseña debe tener al menos 8 caracteres';
+      newErrors.password = 'La contraseÃ±a debe tener al menos 8 caracteres';
     }
 
     if (Object.keys(newErrors).length > 0) {
@@ -80,8 +80,8 @@ export default function RegisterScreen() {
         <ScrollView className="flex-1" contentContainerClassName="p-6">
           {/* Logo/Brand */}
           <View className="items-center mb-12 mt-8">
-            <Text className="font-barlow-bold text-5xl text-emerald-600 mb-2">RIZE</Text>
-            <Text className="font-inter-regular text-base text-gray-600">
+            <Text className="font-heading-bold text-5xl text-primary mb-2">RIZE</Text>
+            <Text className="font-body text-base text-gray-600">
               Comienza tu viaje
             </Text>
           </View>
@@ -112,14 +112,14 @@ export default function RegisterScreen() {
             />
 
             <Input
-              label="Contraseña"
-              placeholder="••••••••"
+              label="ContraseÃ±a"
+              placeholder="â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢"
               value={password}
               onChangeText={setPassword}
               error={errors.password}
               secureTextEntry={!showPassword}
               autoCapitalize="none"
-              helperText="Mínimo 8 caracteres, 1 mayúscula, 1 minúscula, 1 número"
+              helperText="MÃ­nimo 8 caracteres, 1 mayÃºscula, 1 minÃºscula, 1 nÃºmero"
               leftIcon={<Ionicons name="lock-closed-outline" size={20} color="#6B7280" />}
               rightIcon={
                 <Ionicons
@@ -142,12 +142,12 @@ export default function RegisterScreen() {
             </Button>
 
             <View className="flex-row items-center justify-center mt-6">
-              <Text className="font-inter-regular text-sm text-gray-600">
-                ¿Ya tienes cuenta?{' '}
+              <Text className="font-body text-sm text-gray-600">
+                Â¿Ya tienes cuenta?{' '}
               </Text>
               <Link href="/login" asChild>
-                <Text className="font-inter-semibold text-sm text-emerald-600">
-                  Inicia Sesión
+                <Text className="font-label-bold text-sm text-primary">
+                  Inicia SesiÃ³n
                 </Text>
               </Link>
             </View>
@@ -157,3 +157,4 @@ export default function RegisterScreen() {
     </SafeAreaView>
   );
 }
+

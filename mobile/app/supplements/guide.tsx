@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -214,7 +214,7 @@ export default function SupplementGuide() {
 
       <ScrollView className="flex-1" showsVerticalScrollIndicator={false}>
         <View className="px-6 pt-6">
-          <View className="bg-gradient-to-r from-emerald-500 to-blue-500 rounded-xl p-6 mb-6">
+          <View className="bg-gradient-to-r from-primary to-[#7D0EBE] rounded-xl p-6 mb-6">
             <Text className="text-white text-2xl font-bold mb-2">Supplements</Text>
             <Text className="text-white opacity-90">
               Evidence-based recommendations
@@ -228,9 +228,9 @@ export default function SupplementGuide() {
                   key={cat}
                   onPress={() => setSelectedCategory(cat)}
                   className={`${
-                    selectedCategory === cat ? 'bg-emerald-500' : 'bg-zinc-800'
+                    selectedCategory === cat ? 'bg-primary' : 'bg-zinc-800'
                   } rounded-xl px-4 py-2 border ${
-                    selectedCategory === cat ? 'border-emerald-400' : 'border-zinc-700'
+                    selectedCategory === cat ? 'border-primary' : 'border-zinc-700'
                   }`}
                 >
                   <Text className="text-white font-bold capitalize">{cat}</Text>
@@ -272,14 +272,14 @@ export default function SupplementGuide() {
                 <Text className="text-white font-bold mb-2">Benefits</Text>
                 {supp.benefits.map((benefit, bidx) => (
                   <View key={bidx} className="flex-row items-start mb-1 last:mb-0">
-                    <Ionicons name="checkmark-circle" size={16} color="#10b981" />
+                    <Ionicons name="checkmark-circle" size={16} color="#9D12DE" />
                     <Text className="text-zinc-300 text-sm ml-2 flex-1">{benefit}</Text>
                   </View>
                 ))}
               </View>
 
-              <View className="bg-blue-500/10 rounded-xl p-3 border border-blue-500/30">
-                <Text className="text-blue-400 text-sm">{supp.notes}</Text>
+              <View className="bg-primary/10 rounded-xl p-3 border border-primary/30">
+                <Text className="text-primary/80 text-sm">{supp.notes}</Text>
               </View>
             </View>
           ))}
@@ -311,3 +311,4 @@ export default function SupplementGuide() {
     </View>
   );
 }
+

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -45,7 +45,7 @@ const PERSONAL_RECORDS: PersonalRecord[] = [
     date: '2025-01-25T18:00:00',
     previousPR: { weight: 155, reps: 1, date: '2025-01-10T18:00:00' },
     improvement: 3.2,
-    icon: '🏋️',
+    icon: 'ðŸ‹ï¸',
     color: 'bg-red-500',
   },
   {
@@ -57,8 +57,8 @@ const PERSONAL_RECORDS: PersonalRecord[] = [
     date: '2025-01-22T17:00:00',
     previousPR: { weight: 115, reps: 1, date: '2024-12-28T17:00:00' },
     improvement: 4.3,
-    icon: '💪',
-    color: 'bg-blue-500',
+    icon: 'ðŸ’ª',
+    color: 'bg-primary',
   },
   {
     id: '3',
@@ -69,7 +69,7 @@ const PERSONAL_RECORDS: PersonalRecord[] = [
     date: '2025-01-20T19:00:00',
     previousPR: { weight: 175, reps: 1, date: '2025-01-05T19:00:00' },
     improvement: 2.9,
-    icon: '⚡',
+    icon: 'âš¡',
     color: 'bg-amber-500',
   },
   {
@@ -81,8 +81,8 @@ const PERSONAL_RECORDS: PersonalRecord[] = [
     date: '2025-01-18T16:00:00',
     previousPR: { weight: 0, reps: 18, date: '2024-12-20T16:00:00' },
     improvement: 22.2,
-    icon: '🔥',
-    color: 'bg-emerald-500',
+    icon: 'ðŸ”¥',
+    color: 'bg-primary',
   },
   {
     id: '5',
@@ -93,7 +93,7 @@ const PERSONAL_RECORDS: PersonalRecord[] = [
     date: '2025-01-15T07:00:00',
     previousPR: { time: 1320, date: '2024-12-05T07:00:00' },
     improvement: 4.5,
-    icon: '🏃',
+    icon: 'ðŸƒ',
     color: 'bg-purple-500',
   },
   {
@@ -105,7 +105,7 @@ const PERSONAL_RECORDS: PersonalRecord[] = [
     date: '2025-01-12T18:30:00',
     previousPR: { weight: 72.5, reps: 1, date: '2024-11-25T18:30:00' },
     improvement: 3.4,
-    icon: '🎯',
+    icon: 'ðŸŽ¯',
     color: 'bg-cyan-500',
   },
   {
@@ -117,7 +117,7 @@ const PERSONAL_RECORDS: PersonalRecord[] = [
     date: '2025-01-10T15:00:00',
     previousPR: { weight: 0, reps: 1, date: '2024-10-15T15:00:00' },
     improvement: 15.4,
-    icon: '⬆️',
+    icon: 'â¬†ï¸',
     color: 'bg-orange-500',
   },
   {
@@ -128,7 +128,7 @@ const PERSONAL_RECORDS: PersonalRecord[] = [
     date: '2025-01-08T10:00:00',
     previousPR: { reps: 28, date: '2024-12-01T10:00:00' },
     improvement: 14.3,
-    icon: '💥',
+    icon: 'ðŸ’¥',
     color: 'bg-pink-500',
   },
 ];
@@ -170,7 +170,7 @@ export default function PersonalRecords() {
   const addPR = () => {
     Alert.alert(
       'Nuevo PR',
-      '¡Felicitaciones! Registra tu nuevo récord personal',
+      'Â¡Felicitaciones! Registra tu nuevo rÃ©cord personal',
       [
         { text: 'Cancelar', style: 'cancel' },
         { text: 'Registrar', onPress: () => Alert.alert('PR registrado') },
@@ -215,7 +215,7 @@ export default function PersonalRecords() {
       case 'strength':
         return 'text-red-400';
       case 'endurance':
-        return 'text-emerald-400';
+        return 'text-primary';
       case 'power':
         return 'text-amber-400';
       case 'cardio':
@@ -234,10 +234,10 @@ export default function PersonalRecords() {
             <Ionicons name="arrow-back" size={24} color="white" />
           </TouchableOpacity>
           <Text className="text-white text-2xl font-bold flex-1 ml-3">
-            Récords Personales
+            RÃ©cords Personales
           </Text>
           <TouchableOpacity onPress={addPR}>
-            <Ionicons name="add-circle" size={28} color="#10B981" />
+            <Ionicons name="add-circle" size={28} color="#9D12DE" />
           </TouchableOpacity>
         </View>
 
@@ -250,7 +250,7 @@ export default function PersonalRecords() {
             </View>
             <View className="flex-1">
               <Text className="text-zinc-400 text-xs mb-1">ESTE MES</Text>
-              <Text className="text-emerald-400 text-3xl font-bold">
+              <Text className="text-primary text-3xl font-bold">
                 {MONTHLY_BESTS[0].totalPRs}
               </Text>
             </View>
@@ -272,7 +272,7 @@ export default function PersonalRecords() {
                 onPress={() => setFilter(f.id as any)}
                 className={`flex-row items-center px-4 py-2 rounded-lg ${
                   filter === f.id
-                    ? 'bg-emerald-500'
+                    ? 'bg-primary'
                     : 'bg-zinc-900 border border-zinc-800'
                 }`}
               >
@@ -318,16 +318,16 @@ export default function PersonalRecords() {
                   </View>
                 </View>
                 <View className="items-end">
-                  <Text className="text-emerald-400 text-xs font-bold mb-1">
+                  <Text className="text-primary text-xs font-bold mb-1">
                     +{record.improvement.toFixed(1)}%
                   </Text>
-                  <Ionicons name="trending-up" size={20} color="#10B981" />
+                  <Ionicons name="trending-up" size={20} color="#9D12DE" />
                 </View>
               </View>
 
               {/* Current PR */}
               <View className="bg-zinc-800 rounded-lg p-4 mb-3">
-                <Text className="text-zinc-400 text-xs mb-2">RÉCORD ACTUAL</Text>
+                <Text className="text-zinc-400 text-xs mb-2">RÃ‰CORD ACTUAL</Text>
                 <View className="flex-row items-center justify-between">
                   {record.weight !== undefined && (
                     <View className="flex-1">
@@ -409,17 +409,17 @@ export default function PersonalRecords() {
               <View className="flex-row gap-2">
                 <TouchableOpacity
                   onPress={() => viewHistory(record)}
-                  className="flex-1 bg-blue-500/10 rounded-lg p-3 border border-blue-500/30"
+                  className="flex-1 bg-primary/10 rounded-lg p-3 border border-primary/30"
                 >
-                  <Text className="text-blue-400 text-sm font-bold text-center">
+                  <Text className="text-primary/80 text-sm font-bold text-center">
                     Ver Historial
                   </Text>
                 </TouchableOpacity>
                 <TouchableOpacity
                   onPress={() => shareRecord(record)}
-                  className="flex-1 bg-emerald-500/10 rounded-lg p-3 border border-emerald-500/30"
+                  className="flex-1 bg-primary/10 rounded-lg p-3 border border-primary/30"
                 >
-                  <Text className="text-emerald-400 text-sm font-bold text-center">
+                  <Text className="text-primary text-sm font-bold text-center">
                     Compartir
                   </Text>
                 </TouchableOpacity>
@@ -438,10 +438,10 @@ export default function PersonalRecords() {
                 <View className="flex-1">
                   <Text className="text-white font-bold text-lg">{monthly.month}</Text>
                   <Text className="text-zinc-400 text-sm">
-                    {monthly.totalPRs} récords nuevos
+                    {monthly.totalPRs} rÃ©cords nuevos
                   </Text>
                 </View>
-                <Ionicons name="trophy" size={28} color="#F59E0B" />
+                <Ionicons name="trophy" size={28} color="#FFEA00" />
               </View>
 
               <View>
@@ -460,15 +460,15 @@ export default function PersonalRecords() {
 
         {/* Info Card */}
         <View className="px-6 pb-6 pt-2">
-          <View className="bg-emerald-500/10 rounded-xl p-4 border border-emerald-500/30">
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30">
             <View className="flex-row items-start">
-              <Ionicons name="trophy" size={20} color="#10B981" />
+              <Ionicons name="trophy" size={20} color="#9D12DE" />
               <View className="flex-1 ml-3">
-                <Text className="text-emerald-400 font-bold mb-2">
-                  Progresión Sistemática
+                <Text className="text-primary font-bold mb-2">
+                  ProgresiÃ³n SistemÃ¡tica
                 </Text>
-                <Text className="text-emerald-300 text-sm">
-                  Cada PR es un hito. Celebra tus victorias y sigue superándote.
+                <Text className="text-primary/80 text-sm">
+                  Cada PR es un hito. Celebra tus victorias y sigue superÃ¡ndote.
                 </Text>
               </View>
             </View>
@@ -478,3 +478,5 @@ export default function PersonalRecords() {
     </View>
   );
 }
+
+

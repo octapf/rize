@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -33,7 +33,7 @@ interface MealPlan {
 const MEAL_PLANS: MealPlan[] = [
   {
     id: '1',
-    name: 'Plan Definición 2800 kcal',
+    name: 'Plan DefiniciÃ³n 2800 kcal',
     goal: 'Fat Loss',
     dailyCalories: 2800,
     meals: [
@@ -45,7 +45,7 @@ const MEAL_PLANS: MealPlan[] = [
         protein: 45,
         carbs: 75,
         fats: 18,
-        foods: ['Avena 80g', 'Proteína whey 1 scoop', 'Plátano', 'Mantequilla de maní 15g'],
+        foods: ['Avena 80g', 'ProteÃ­na whey 1 scoop', 'PlÃ¡tano', 'Mantequilla de manÃ­ 15g'],
         prepTime: 10,
         difficulty: 'easy',
       },
@@ -72,7 +72,7 @@ const MEAL_PLANS: MealPlan[] = [
         foods: [
           'Arroz integral 150g',
           'Carne res magra 180g',
-          'Brócoli 200g',
+          'BrÃ³coli 200g',
           'Aguacate 30g',
         ],
         prepTime: 30,
@@ -86,7 +86,7 @@ const MEAL_PLANS: MealPlan[] = [
         protein: 40,
         carbs: 50,
         fats: 8,
-        foods: ['Proteína whey 1.5 scoops', 'Avena 60g', 'Fresas 100g'],
+        foods: ['ProteÃ­na whey 1.5 scoops', 'Avena 60g', 'Fresas 100g'],
         prepTime: 5,
         difficulty: 'easy',
       },
@@ -99,7 +99,7 @@ const MEAL_PLANS: MealPlan[] = [
         carbs: 35,
         fats: 22,
         foods: [
-          'Salmón 180g',
+          'SalmÃ³n 180g',
           'Batata 150g',
           'Espinacas 100g',
           'Aceite oliva 10ml',
@@ -115,7 +115,7 @@ const MEAL_PLANS: MealPlan[] = [
         protein: 30,
         carbs: 10,
         fats: 12,
-        foods: ['Caseína 1 scoop', 'Almendras 20g'],
+        foods: ['CaseÃ­na 1 scoop', 'Almendras 20g'],
         prepTime: 2,
         difficulty: 'easy',
       },
@@ -129,7 +129,7 @@ const MEAL_PLANS: MealPlan[] = [
     meals: [
       {
         id: 'm1',
-        name: 'Desayuno Anabólico',
+        name: 'Desayuno AnabÃ³lico',
         time: '07:00',
         calories: 850,
         protein: 50,
@@ -139,8 +139,8 @@ const MEAL_PLANS: MealPlan[] = [
           'Avena 120g',
           'Huevos enteros x4',
           'Pan integral 2 rebanadas',
-          'Plátano',
-          'Mantequilla maní 20g',
+          'PlÃ¡tano',
+          'Mantequilla manÃ­ 20g',
         ],
         prepTime: 15,
         difficulty: 'easy',
@@ -153,13 +153,13 @@ const MEAL_PLANS: MealPlan[] = [
         protein: 35,
         carbs: 65,
         fats: 12,
-        foods: ['Arroz blanco 150g', 'Atún 120g', 'Aceite oliva 10ml'],
+        foods: ['Arroz blanco 150g', 'AtÃºn 120g', 'Aceite oliva 10ml'],
         prepTime: 10,
         difficulty: 'easy',
       },
       {
         id: 'm3',
-        name: 'Almuerzo Construcción',
+        name: 'Almuerzo ConstrucciÃ³n',
         time: '13:00',
         calories: 950,
         protein: 60,
@@ -189,19 +189,19 @@ const MEAL_PLANS: MealPlan[] = [
       },
       {
         id: 'm5',
-        name: 'Post-Workout Recuperación',
+        name: 'Post-Workout RecuperaciÃ³n',
         time: '19:00',
         calories: 550,
         protein: 45,
         carbs: 70,
         fats: 10,
-        foods: ['Proteína whey 2 scoops', 'Avena 80g', 'Plátano', 'Creatina 5g'],
+        foods: ['ProteÃ­na whey 2 scoops', 'Avena 80g', 'PlÃ¡tano', 'Creatina 5g'],
         prepTime: 5,
         difficulty: 'easy',
       },
       {
         id: 'm6',
-        name: 'Cena Alta Proteína',
+        name: 'Cena Alta ProteÃ­na',
         time: '21:30',
         calories: 700,
         protein: 55,
@@ -234,8 +234,8 @@ export default function MealPlanning() {
 
   const viewRecipe = (meal: Meal) => {
     Alert.alert(
-      `📖 Receta: ${meal.name}`,
-      `Ingredientes:\n${meal.foods.join('\n')}\n\nTiempo de preparación: ${meal.prepTime} min`,
+      `ðŸ“– Receta: ${meal.name}`,
+      `Ingredientes:\n${meal.foods.join('\n')}\n\nTiempo de preparaciÃ³n: ${meal.prepTime} min`,
       [{ text: 'Entendido' }]
     );
   };
@@ -246,7 +246,7 @@ export default function MealPlanning() {
       'Selecciona tu objetivo',
       [
         {
-          text: 'Definición',
+          text: 'DefiniciÃ³n',
           onPress: () => setSelectedPlan(MEAL_PLANS[0]),
         },
         {
@@ -261,7 +261,7 @@ export default function MealPlanning() {
   const generateGroceryList = () => {
     const allFoods = selectedPlan.meals.flatMap((meal) => meal.foods);
     Alert.alert(
-      '🛒 Lista de Compras',
+      'ðŸ›’ Lista de Compras',
       allFoods.join('\n'),
       [
         { text: 'Copiar' },
@@ -282,7 +282,7 @@ export default function MealPlanning() {
   const getDifficultyColor = (difficulty: string) => {
     switch (difficulty) {
       case 'easy':
-        return 'text-emerald-400';
+        return 'text-primary';
       case 'medium':
         return 'text-amber-400';
       case 'hard':
@@ -301,10 +301,10 @@ export default function MealPlanning() {
             <Ionicons name="arrow-back" size={24} color="white" />
           </TouchableOpacity>
           <Text className="text-white text-2xl font-bold flex-1 ml-3">
-            Planificación de Comidas
+            PlanificaciÃ³n de Comidas
           </Text>
           <TouchableOpacity onPress={changePlan}>
-            <Ionicons name="swap-horizontal" size={24} color="#10B981" />
+            <Ionicons name="swap-horizontal" size={24} color="#9D12DE" />
           </TouchableOpacity>
         </View>
 
@@ -316,10 +316,10 @@ export default function MealPlanning() {
               <Text className="text-zinc-400 text-sm">{selectedPlan.goal}</Text>
             </View>
             <View className="items-end">
-              <Text className="text-emerald-400 text-3xl font-bold">
+              <Text className="text-primary text-3xl font-bold">
                 {selectedPlan.dailyCalories}
               </Text>
-              <Text className="text-zinc-400 text-xs">kcal/día</Text>
+              <Text className="text-zinc-400 text-xs">kcal/dÃ­a</Text>
             </View>
           </View>
 
@@ -336,7 +336,7 @@ export default function MealPlanning() {
                 </Text>
               </View>
               <View className="items-end">
-                <Text className="text-zinc-400 text-xs mb-1">PROTEÍNA</Text>
+                <Text className="text-zinc-400 text-xs mb-1">PROTEÃNA</Text>
                 <Text className="text-white text-2xl font-bold">{proteinConsumed}g</Text>
               </View>
             </View>
@@ -347,14 +347,14 @@ export default function MealPlanning() {
         <View className="flex-row gap-2">
           <TouchableOpacity
             onPress={generateGroceryList}
-            className="flex-1 bg-blue-500/10 rounded-lg p-3 border border-blue-500/30 flex-row items-center justify-center"
+            className="flex-1 bg-primary/10 rounded-lg p-3 border border-primary/30 flex-row items-center justify-center"
           >
-            <Ionicons name="cart" size={18} color="#3B82F6" />
-            <Text className="text-blue-400 font-bold ml-2 text-sm">Lista Compras</Text>
+            <Ionicons name="cart" size={18} color="#9D12DE" />
+            <Text className="text-primary/80 font-bold ml-2 text-sm">Lista Compras</Text>
           </TouchableOpacity>
-          <TouchableOpacity className="flex-1 bg-emerald-500/10 rounded-lg p-3 border border-emerald-500/30 flex-row items-center justify-center">
-            <Ionicons name="restaurant" size={18} color="#10B981" />
-            <Text className="text-emerald-400 font-bold ml-2 text-sm">Meal Prep</Text>
+          <TouchableOpacity className="flex-1 bg-primary/10 rounded-lg p-3 border border-primary/30 flex-row items-center justify-center">
+            <Ionicons name="restaurant" size={18} color="#9D12DE" />
+            <Text className="text-primary font-bold ml-2 text-sm">Meal Prep</Text>
           </TouchableOpacity>
         </View>
       </View>
@@ -368,7 +368,7 @@ export default function MealPlanning() {
               <View
                 key={meal.id}
                 className={`bg-zinc-900 rounded-xl p-4 mb-4 border ${
-                  isCompleted ? 'border-emerald-500/30' : 'border-zinc-800'
+                  isCompleted ? 'border-primary/30' : 'border-zinc-800'
                 }`}
               >
                 {/* Meal Header */}
@@ -382,7 +382,7 @@ export default function MealPlanning() {
                     <View className="flex-row items-center gap-2">
                       <View className="bg-zinc-800 rounded px-2 py-1">
                         <Text className={`text-xs font-bold ${getDifficultyColor(meal.difficulty)}`}>
-                          {meal.difficulty === 'easy' ? 'Fácil' : meal.difficulty === 'medium' ? 'Media' : 'Difícil'}
+                          {meal.difficulty === 'easy' ? 'FÃ¡cil' : meal.difficulty === 'medium' ? 'Media' : 'DifÃ­cil'}
                         </Text>
                       </View>
                       <View className="flex-row items-center">
@@ -394,7 +394,7 @@ export default function MealPlanning() {
                   <TouchableOpacity
                     onPress={() => toggleMealComplete(meal.id)}
                     className={`w-12 h-12 rounded-full items-center justify-center ${
-                      isCompleted ? 'bg-emerald-500' : 'bg-zinc-800'
+                      isCompleted ? 'bg-primary' : 'bg-zinc-800'
                     }`}
                   >
                     <Ionicons
@@ -409,11 +409,11 @@ export default function MealPlanning() {
                 <View className="bg-zinc-800 rounded-lg p-3 mb-3">
                   <View className="flex-row items-center justify-between">
                     <View className="flex-1">
-                      <Text className="text-zinc-400 text-xs mb-1">CALORÍAS</Text>
+                      <Text className="text-zinc-400 text-xs mb-1">CALORÃAS</Text>
                       <Text className="text-white text-xl font-bold">{meal.calories}</Text>
                     </View>
                     <View className="flex-1">
-                      <Text className="text-zinc-400 text-xs mb-1">PROTEÍNA</Text>
+                      <Text className="text-zinc-400 text-xs mb-1">PROTEÃNA</Text>
                       <Text className="text-red-400 text-xl font-bold">{meal.protein}g</Text>
                     </View>
                     <View className="flex-1">
@@ -422,7 +422,7 @@ export default function MealPlanning() {
                     </View>
                     <View className="flex-1 items-end">
                       <Text className="text-zinc-400 text-xs mb-1">GRASAS</Text>
-                      <Text className="text-blue-400 text-xl font-bold">{meal.fats}g</Text>
+                      <Text className="text-primary/80 text-xl font-bold">{meal.fats}g</Text>
                     </View>
                   </View>
                 </View>
@@ -432,7 +432,7 @@ export default function MealPlanning() {
                   <Text className="text-zinc-400 text-xs mb-2">INGREDIENTES</Text>
                   {meal.foods.map((food, index) => (
                     <View key={index} className="flex-row items-center py-1">
-                      <View className="w-1.5 h-1.5 rounded-full bg-emerald-500 mr-2" />
+                      <View className="w-1.5 h-1.5 rounded-full bg-primary mr-2" />
                       <Text className="text-zinc-300 text-sm">{food}</Text>
                     </View>
                   ))}
@@ -441,9 +441,9 @@ export default function MealPlanning() {
                 {/* Actions */}
                 <TouchableOpacity
                   onPress={() => viewRecipe(meal)}
-                  className="bg-blue-500/10 rounded-lg p-3 border border-blue-500/30"
+                  className="bg-primary/10 rounded-lg p-3 border border-primary/30"
                 >
-                  <Text className="text-blue-400 font-bold text-center">Ver Receta Completa</Text>
+                  <Text className="text-primary/80 font-bold text-center">Ver Receta Completa</Text>
                 </TouchableOpacity>
               </View>
             );
@@ -452,13 +452,13 @@ export default function MealPlanning() {
 
         {/* Info Card */}
         <View className="px-6 pb-6 pt-2">
-          <View className="bg-emerald-500/10 rounded-xl p-4 border border-emerald-500/30">
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30">
             <View className="flex-row items-start">
-              <Ionicons name="restaurant" size={20} color="#10B981" />
+              <Ionicons name="restaurant" size={20} color="#9D12DE" />
               <View className="flex-1 ml-3">
-                <Text className="text-emerald-400 font-bold mb-2">Consistencia Nutricional</Text>
-                <Text className="text-emerald-300 text-sm">
-                  Sigue el plan 6-7 días a la semana. La nutrición es 70% de tus resultados.
+                <Text className="text-primary font-bold mb-2">Consistencia Nutricional</Text>
+                <Text className="text-primary/80 text-sm">
+                  Sigue el plan 6-7 dÃ­as a la semana. La nutriciÃ³n es 70% de tus resultados.
                 </Text>
               </View>
             </View>
@@ -468,3 +468,5 @@ export default function MealPlanning() {
     </View>
   );
 }
+
+

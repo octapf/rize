@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+﻿import React, { useState, useEffect, useRef } from 'react';
 import {
   View,
   Text,
@@ -30,7 +30,7 @@ const TIMER_PRESETS: TimerPreset[] = [
     name: 'Rest Timer (3 min)',
     mode: 'countdown',
     duration: 180,
-    icon: '⏱️',
+    icon: 'â±ï¸',
     description: 'Descanso entre series',
   },
   {
@@ -39,7 +39,7 @@ const TIMER_PRESETS: TimerPreset[] = [
     mode: 'emom',
     duration: 600,
     rounds: 10,
-    icon: '🔔',
+    icon: 'ðŸ””',
     description: 'Every Minute On the Minute',
   },
   {
@@ -47,7 +47,7 @@ const TIMER_PRESETS: TimerPreset[] = [
     name: 'AMRAP 12 min',
     mode: 'amrap',
     duration: 720,
-    icon: '♾️',
+    icon: 'â™¾ï¸',
     description: 'As Many Rounds As Possible',
   },
   {
@@ -58,7 +58,7 @@ const TIMER_PRESETS: TimerPreset[] = [
     rounds: 8,
     work: 20,
     rest: 10,
-    icon: '⚡',
+    icon: 'âš¡',
     description: '8 rounds de 20s trabajo / 10s descanso',
   },
   {
@@ -69,7 +69,7 @@ const TIMER_PRESETS: TimerPreset[] = [
     rounds: 8,
     work: 40,
     rest: 20,
-    icon: '🔥',
+    icon: 'ðŸ”¥',
     description: '8 rounds de 40s trabajo / 20s descanso',
   },
   {
@@ -77,7 +77,7 @@ const TIMER_PRESETS: TimerPreset[] = [
     name: 'Descanso Corto (90s)',
     mode: 'countdown',
     duration: 90,
-    icon: '⏸️',
+    icon: 'â¸ï¸',
     description: 'Entre series accesorios',
   },
 ];
@@ -163,7 +163,7 @@ export default function WorkoutTimer() {
   const handleTimerFinish = () => {
     setIsRunning(false);
     setIsPaused(false);
-    Alert.alert('Timer Completado! 🎉', 'Excelente trabajo!');
+    Alert.alert('Timer Completado! ðŸŽ‰', 'Excelente trabajo!');
   };
 
   const startTimer = () => {
@@ -238,22 +238,22 @@ export default function WorkoutTimer() {
           {!selectedMode ? (
             <>
               {/* Info Card */}
-              <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30 mb-6">
+              <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
                 <View className="flex-row items-start">
-                  <Ionicons name="timer" size={20} color="#3B82F6" />
+                  <Ionicons name="timer" size={20} color="#9D12DE" />
                   <View className="flex-1 ml-3">
-                    <Text className="text-blue-400 font-bold mb-2">
-                      Timer Versátil
+                    <Text className="text-primary/80 font-bold mb-2">
+                      Timer VersÃ¡til
                     </Text>
-                    <Text className="text-blue-300 text-sm">
-                      Cronómetro, cuenta regresiva, EMOM, AMRAP, Tabata y más para tus entrenamientos.
+                    <Text className="text-primary/60 text-sm">
+                      CronÃ³metro, cuenta regresiva, EMOM, AMRAP, Tabata y mÃ¡s para tus entrenamientos.
                     </Text>
                   </View>
                 </View>
               </View>
 
               {/* Presets */}
-              <Text className="text-white font-bold text-lg mb-4">Presets Rápidos</Text>
+              <Text className="text-white font-bold text-lg mb-4">Presets RÃ¡pidos</Text>
               {TIMER_PRESETS.map((preset) => (
                 <TouchableOpacity
                   key={preset.id}
@@ -263,7 +263,7 @@ export default function WorkoutTimer() {
                 >
                   <View className="flex-row items-center justify-between">
                     <View className="flex-row items-center flex-1">
-                      <View className="w-12 h-12 bg-blue-500 rounded-xl items-center justify-center mr-3">
+                      <View className="w-12 h-12 bg-primary rounded-xl items-center justify-center mr-3">
                         <Text className="text-2xl">{preset.icon}</Text>
                       </View>
                       <View className="flex-1">
@@ -283,10 +283,10 @@ export default function WorkoutTimer() {
               <View className="flex-row gap-2 mb-6">
                 <TouchableOpacity
                   onPress={() => { setSelectedMode('stopwatch'); setTime(0); }}
-                  className="flex-1 bg-emerald-500 rounded-xl p-4 items-center"
+                  className="flex-1 bg-primary rounded-xl p-4 items-center"
                 >
                   <Ionicons name="stopwatch" size={32} color="white" />
-                  <Text className="text-white font-bold mt-2">Cronómetro</Text>
+                  <Text className="text-white font-bold mt-2">CronÃ³metro</Text>
                 </TouchableOpacity>
                 <TouchableOpacity
                   onPress={() => { setSelectedMode('countdown'); setTime(180); setTargetTime(180); }}
@@ -304,7 +304,7 @@ export default function WorkoutTimer() {
                 {/* Mode Badge */}
                 <View className={`bg-${getTimerColor()}-500/10 rounded-lg px-4 py-2 border border-${getTimerColor()}-500/30 mb-4`}>
                   <Text className={`text-${getTimerColor()}-400 font-bold text-sm`}>
-                    {selectedMode === 'stopwatch' && 'CRONÓMETRO'}
+                    {selectedMode === 'stopwatch' && 'CRONÃ“METRO'}
                     {selectedMode === 'countdown' && 'CUENTA REGRESIVA'}
                     {selectedMode === 'emom' && 'EMOM'}
                     {selectedMode === 'amrap' && 'AMRAP'}
@@ -329,7 +329,7 @@ export default function WorkoutTimer() {
                   {!isRunning ? (
                     <TouchableOpacity
                       onPress={startTimer}
-                      className="bg-emerald-500 rounded-full w-20 h-20 items-center justify-center shadow-lg"
+                      className="bg-primary rounded-full w-20 h-20 items-center justify-center shadow-lg"
                     >
                       <Ionicons name="play" size={40} color="white" />
                     </TouchableOpacity>
@@ -368,9 +368,9 @@ export default function WorkoutTimer() {
                   <>
                     <Text className="text-white font-bold text-lg mb-3">EMOM Info</Text>
                     <Text className="text-zinc-400 text-sm mb-2">
-                      • Suena beep cada minuto{'\n'}
-                      • Completa ejercicios y descansa lo que quede{'\n'}
-                      • Total: {totalRounds} rondas
+                      â€¢ Suena beep cada minuto{'\n'}
+                      â€¢ Completa ejercicios y descansa lo que quede{'\n'}
+                      â€¢ Total: {totalRounds} rondas
                     </Text>
                   </>
                 )}
@@ -378,9 +378,9 @@ export default function WorkoutTimer() {
                   <>
                     <Text className="text-white font-bold text-lg mb-3">AMRAP Info</Text>
                     <Text className="text-zinc-400 text-sm mb-2">
-                      • Completa máximas rondas en tiempo{'\n'}
-                      • Mantén técnica perfecta{'\n'}
-                      • Anota rondas completadas al final
+                      â€¢ Completa mÃ¡ximas rondas en tiempo{'\n'}
+                      â€¢ MantÃ©n tÃ©cnica perfecta{'\n'}
+                      â€¢ Anota rondas completadas al final
                     </Text>
                   </>
                 )}
@@ -389,7 +389,7 @@ export default function WorkoutTimer() {
                     <Text className="text-white font-bold text-lg mb-3">Intervalo</Text>
                     <View className="flex-row justify-between">
                       <View className="items-center">
-                        <Text className="text-emerald-400 font-bold">Trabajo</Text>
+                        <Text className="text-primary font-bold">Trabajo</Text>
                         <Text className="text-white text-2xl font-bold">{workDuration}s</Text>
                       </View>
                       <View className="items-center">
@@ -397,7 +397,7 @@ export default function WorkoutTimer() {
                         <Text className="text-white text-2xl font-bold">{restDuration}s</Text>
                       </View>
                       <View className="items-center">
-                        <Text className="text-blue-400 font-bold">Rondas</Text>
+                        <Text className="text-primary/80 font-bold">Rondas</Text>
                         <Text className="text-white text-2xl font-bold">{currentRound}/{totalRounds}</Text>
                       </View>
                     </View>
@@ -435,3 +435,4 @@ export default function WorkoutTimer() {
     </View>
   );
 }
+

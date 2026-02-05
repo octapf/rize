@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -50,7 +50,7 @@ export default function FatigueManagementAdvanced() {
         title: 'Fatigue vs Soreness',
         fatigue: 'CNS/systemic - feel weak, unmotivated, performance down',
         soreness: 'Local muscle - DOMS, hurts to touch, still strong',
-        key: 'Soreness ≠ fatigue. Can be sore but not fatigued (and vice versa)',
+        key: 'Soreness â‰  fatigue. Can be sore but not fatigued (and vice versa)',
       },
       good_vs_bad: {
         title: 'Good Fatigue vs Bad Fatigue',
@@ -251,7 +251,7 @@ export default function FatigueManagementAdvanced() {
         methods: [
           {
             method: 'Reduced Volume',
-            how: 'Cut sets by 50% (4 sets → 2 sets)',
+            how: 'Cut sets by 50% (4 sets â†’ 2 sets)',
             intensity: 'Keep intensity same',
             example: 'Squat: 2x5 @ 80% instead of 4x5 @ 80%',
           },
@@ -534,10 +534,10 @@ export default function FatigueManagementAdvanced() {
 
   const getColorClass = (color: string) => {
     const colors: { [key: string]: string } = {
-      blue: 'bg-blue-500',
+      blue: 'bg-primary',
       amber: 'bg-amber-500',
       red: 'bg-red-500',
-      emerald: 'bg-emerald-500',
+      emerald: 'bg-primary',
       purple: 'bg-purple-500',
       rose: 'bg-rose-500',
       cyan: 'bg-cyan-500',
@@ -598,7 +598,7 @@ export default function FatigueManagementAdvanced() {
 
           {/* Content placeholder */}
           <View className="bg-amber-500/10 rounded-xl p-6 border border-amber-500/30 mb-6">
-            <Ionicons name={currentAspect.icon as any} size={32} color="#f59e0b" />
+            <Ionicons name={currentAspect.icon as any} size={32} color="#FFEA00" />
             <Text className="text-amber-400 font-bold text-lg mt-3 mb-2">
               {currentAspect.name}
             </Text>
@@ -610,41 +610,41 @@ export default function FatigueManagementAdvanced() {
           <View className="bg-gradient-to-r from-red-500/20 to-rose-500/20 rounded-xl p-5 border border-red-500/30 mb-6">
             <Text className="text-red-400 font-bold text-lg mb-3">Fatigue Red Flags</Text>
             <Text className="text-red-300 text-sm mb-2">
-              ⚠️ Resting heart rate +5-10 BPM above normal
+              âš ï¸ Resting heart rate +5-10 BPM above normal
             </Text>
             <Text className="text-red-300 text-sm mb-2">
-              ⚠️ Poor sleep despite being tired
+              âš ï¸ Poor sleep despite being tired
             </Text>
             <Text className="text-red-300 text-sm mb-2">
-              ⚠️ Dread going to gym (lost motivation)
+              âš ï¸ Dread going to gym (lost motivation)
             </Text>
             <Text className="text-red-300 text-sm mb-2">
-              ⚠️ Performance down &gt;10% for multiple sessions
+              âš ï¸ Performance down &gt;10% for multiple sessions
             </Text>
             <Text className="text-red-300 text-sm mb-2">
-              ⚠️ Persistent soreness that won't go away
+              âš ï¸ Persistent soreness that won't go away
             </Text>
             <Text className="text-red-300 text-sm">
-              → If 3+ present: Take rest day or deload week
+              â†’ If 3+ present: Take rest day or deload week
             </Text>
           </View>
 
-          <View className="bg-emerald-500/10 rounded-xl p-5 border border-emerald-500/30 mb-6">
-            <Text className="text-emerald-400 font-bold text-lg mb-3">Recovery Priorities</Text>
-            <Text className="text-emerald-300 text-sm mb-2">
-              1️⃣ Sleep 7-9 hours (most important)
+          <View className="bg-primary/10 rounded-xl p-5 border border-primary/30 mb-6">
+            <Text className="text-primary font-bold text-lg mb-3">Recovery Priorities</Text>
+            <Text className="text-primary/80 text-sm mb-2">
+              1ï¸âƒ£ Sleep 7-9 hours (most important)
             </Text>
-            <Text className="text-emerald-300 text-sm mb-2">
-              2️⃣ Eat enough food + protein
+            <Text className="text-primary/80 text-sm mb-2">
+              2ï¸âƒ£ Eat enough food + protein
             </Text>
-            <Text className="text-emerald-300 text-sm mb-2">
-              3️⃣ Deload every 3-5 weeks
+            <Text className="text-primary/80 text-sm mb-2">
+              3ï¸âƒ£ Deload every 3-5 weeks
             </Text>
-            <Text className="text-emerald-300 text-sm mb-2">
-              4️⃣ 1-2 rest days per week
+            <Text className="text-primary/80 text-sm mb-2">
+              4ï¸âƒ£ 1-2 rest days per week
             </Text>
-            <Text className="text-emerald-300 text-sm">
-              5️⃣ Everything else is bonus (massage, sauna, etc.)
+            <Text className="text-primary/80 text-sm">
+              5ï¸âƒ£ Everything else is bonus (massage, sauna, etc.)
             </Text>
           </View>
         </View>
@@ -652,3 +652,5 @@ export default function FatigueManagementAdvanced() {
     </View>
   );
 }
+
+

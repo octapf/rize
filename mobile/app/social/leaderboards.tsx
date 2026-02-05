@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -50,17 +50,17 @@ export default function Leaderboards() {
       icon: 'barbell',
       color: 'blue',
       entries: [
-        { rank: 1, userId: '1', name: 'Carlos Méndez', avatar: '🏋️', score: 125420, change: 0, isCurrentUser: false },
-        { rank: 2, userId: '2', name: 'Ana García', avatar: '💪', score: 118950, change: 1, isCurrentUser: false },
-        { rank: 3, userId: '3', name: 'Luis Rodríguez', avatar: '🔥', score: 112340, change: -1, isCurrentUser: false },
-        { rank: 4, userId: '4', name: 'María López', avatar: '⚡', score: 108765, change: 2, isCurrentUser: false },
-        { rank: 5, userId: '5', name: 'Pedro Sánchez', avatar: '🎯', score: 105230, change: 0, isCurrentUser: false },
-        { rank: 6, userId: '6', name: 'Laura Martínez', avatar: '🌟', score: 102890, change: -2, isCurrentUser: false },
-        { rank: 7, userId: '7', name: 'Diego Torres', avatar: '💯', score: 98450, change: 3, isCurrentUser: false },
-        { rank: 8, userId: '8', name: 'Sofia Ramírez', avatar: '🚀', score: 95670, change: 1, isCurrentUser: false },
-        { rank: 9, userId: '9', name: 'Miguel Flores', avatar: '⭐', score: 92340, change: -2, isCurrentUser: false },
-        { rank: 10, userId: '10', name: 'Carmen Ruiz', avatar: '🏆', score: 89120, change: 0, isCurrentUser: false },
-        { rank: 42, userId: 'me', name: 'Tú', avatar: '😎', score: 45680, change: 5, isCurrentUser: true },
+        { rank: 1, userId: '1', name: 'Carlos MÃ©ndez', avatar: 'ðŸ‹ï¸', score: 125420, change: 0, isCurrentUser: false },
+        { rank: 2, userId: '2', name: 'Ana GarcÃ­a', avatar: 'ðŸ’ª', score: 118950, change: 1, isCurrentUser: false },
+        { rank: 3, userId: '3', name: 'Luis RodrÃ­guez', avatar: 'ðŸ”¥', score: 112340, change: -1, isCurrentUser: false },
+        { rank: 4, userId: '4', name: 'MarÃ­a LÃ³pez', avatar: 'âš¡', score: 108765, change: 2, isCurrentUser: false },
+        { rank: 5, userId: '5', name: 'Pedro SÃ¡nchez', avatar: 'ðŸŽ¯', score: 105230, change: 0, isCurrentUser: false },
+        { rank: 6, userId: '6', name: 'Laura MartÃ­nez', avatar: 'ðŸŒŸ', score: 102890, change: -2, isCurrentUser: false },
+        { rank: 7, userId: '7', name: 'Diego Torres', avatar: 'ðŸ’¯', score: 98450, change: 3, isCurrentUser: false },
+        { rank: 8, userId: '8', name: 'Sofia RamÃ­rez', avatar: 'ðŸš€', score: 95670, change: 1, isCurrentUser: false },
+        { rank: 9, userId: '9', name: 'Miguel Flores', avatar: 'â­', score: 92340, change: -2, isCurrentUser: false },
+        { rank: 10, userId: '10', name: 'Carmen Ruiz', avatar: 'ðŸ†', score: 89120, change: 0, isCurrentUser: false },
+        { rank: 42, userId: 'me', name: 'TÃº', avatar: 'ðŸ˜Ž', score: 45680, change: 5, isCurrentUser: true },
       ],
     },
     workouts: {
@@ -72,17 +72,17 @@ export default function Leaderboards() {
       icon: 'fitness',
       color: 'emerald',
       entries: [
-        { rank: 1, userId: '1', name: 'Ana García', avatar: '💪', score: 45, change: 0, isCurrentUser: false },
-        { rank: 2, userId: '2', name: 'Carlos Méndez', avatar: '🏋️', score: 42, change: 2, isCurrentUser: false },
-        { rank: 3, userId: '3', name: 'María López', avatar: '⚡', score: 41, change: -1, isCurrentUser: false },
-        { rank: 4, userId: '4', name: 'Luis Rodríguez', avatar: '🔥', score: 39, change: 1, isCurrentUser: false },
-        { rank: 5, userId: '5', name: 'Sofia Ramírez', avatar: '🚀', score: 38, change: -2, isCurrentUser: false },
-        { rank: 6, userId: '6', name: 'Pedro Sánchez', avatar: '🎯', score: 37, change: 0, isCurrentUser: false },
-        { rank: 7, userId: '7', name: 'Laura Martínez', avatar: '🌟', score: 36, change: 3, isCurrentUser: false },
-        { rank: 8, userId: '8', name: 'Diego Torres', avatar: '💯', score: 35, change: 1, isCurrentUser: false },
-        { rank: 9, userId: '9', name: 'Miguel Flores', avatar: '⭐', score: 34, change: -1, isCurrentUser: false },
-        { rank: 10, userId: '10', name: 'Carmen Ruiz', avatar: '🏆', score: 33, change: 0, isCurrentUser: false },
-        { rank: 28, userId: 'me', name: 'Tú', avatar: '😎', score: 24, change: 2, isCurrentUser: true },
+        { rank: 1, userId: '1', name: 'Ana GarcÃ­a', avatar: 'ðŸ’ª', score: 45, change: 0, isCurrentUser: false },
+        { rank: 2, userId: '2', name: 'Carlos MÃ©ndez', avatar: 'ðŸ‹ï¸', score: 42, change: 2, isCurrentUser: false },
+        { rank: 3, userId: '3', name: 'MarÃ­a LÃ³pez', avatar: 'âš¡', score: 41, change: -1, isCurrentUser: false },
+        { rank: 4, userId: '4', name: 'Luis RodrÃ­guez', avatar: 'ðŸ”¥', score: 39, change: 1, isCurrentUser: false },
+        { rank: 5, userId: '5', name: 'Sofia RamÃ­rez', avatar: 'ðŸš€', score: 38, change: -2, isCurrentUser: false },
+        { rank: 6, userId: '6', name: 'Pedro SÃ¡nchez', avatar: 'ðŸŽ¯', score: 37, change: 0, isCurrentUser: false },
+        { rank: 7, userId: '7', name: 'Laura MartÃ­nez', avatar: 'ðŸŒŸ', score: 36, change: 3, isCurrentUser: false },
+        { rank: 8, userId: '8', name: 'Diego Torres', avatar: 'ðŸ’¯', score: 35, change: 1, isCurrentUser: false },
+        { rank: 9, userId: '9', name: 'Miguel Flores', avatar: 'â­', score: 34, change: -1, isCurrentUser: false },
+        { rank: 10, userId: '10', name: 'Carmen Ruiz', avatar: 'ðŸ†', score: 33, change: 0, isCurrentUser: false },
+        { rank: 28, userId: 'me', name: 'TÃº', avatar: 'ðŸ˜Ž', score: 24, change: 2, isCurrentUser: true },
       ],
     },
     streak: {
@@ -94,17 +94,17 @@ export default function Leaderboards() {
       icon: 'flame',
       color: 'orange',
       entries: [
-        { rank: 1, userId: '1', name: 'María López', avatar: '⚡', score: 287, change: 0, isCurrentUser: false },
-        { rank: 2, userId: '2', name: 'Carlos Méndez', avatar: '🏋️', score: 245, change: 0, isCurrentUser: false },
-        { rank: 3, userId: '3', name: 'Ana García', avatar: '💪', score: 198, change: 1, isCurrentUser: false },
-        { rank: 4, userId: '4', name: 'Luis Rodríguez', avatar: '🔥', score: 176, change: -1, isCurrentUser: false },
-        { rank: 5, userId: '5', name: 'Pedro Sánchez', avatar: '🎯', score: 165, change: 0, isCurrentUser: false },
-        { rank: 6, userId: '6', name: 'Sofia Ramírez', avatar: '🚀', score: 154, change: 2, isCurrentUser: false },
-        { rank: 7, userId: '7', name: 'Laura Martínez', avatar: '🌟', score: 142, change: -1, isCurrentUser: false },
-        { rank: 8, userId: '8', name: 'Diego Torres', avatar: '💯', score: 128, change: 1, isCurrentUser: false },
-        { rank: 9, userId: '9', name: 'Miguel Flores', avatar: '⭐', score: 115, change: -2, isCurrentUser: false },
-        { rank: 10, userId: '10', name: 'Carmen Ruiz', avatar: '🏆', score: 103, change: 0, isCurrentUser: false },
-        { rank: 15, userId: 'me', name: 'Tú', avatar: '😎', score: 89, change: 3, isCurrentUser: true },
+        { rank: 1, userId: '1', name: 'MarÃ­a LÃ³pez', avatar: 'âš¡', score: 287, change: 0, isCurrentUser: false },
+        { rank: 2, userId: '2', name: 'Carlos MÃ©ndez', avatar: 'ðŸ‹ï¸', score: 245, change: 0, isCurrentUser: false },
+        { rank: 3, userId: '3', name: 'Ana GarcÃ­a', avatar: 'ðŸ’ª', score: 198, change: 1, isCurrentUser: false },
+        { rank: 4, userId: '4', name: 'Luis RodrÃ­guez', avatar: 'ðŸ”¥', score: 176, change: -1, isCurrentUser: false },
+        { rank: 5, userId: '5', name: 'Pedro SÃ¡nchez', avatar: 'ðŸŽ¯', score: 165, change: 0, isCurrentUser: false },
+        { rank: 6, userId: '6', name: 'Sofia RamÃ­rez', avatar: 'ðŸš€', score: 154, change: 2, isCurrentUser: false },
+        { rank: 7, userId: '7', name: 'Laura MartÃ­nez', avatar: 'ðŸŒŸ', score: 142, change: -1, isCurrentUser: false },
+        { rank: 8, userId: '8', name: 'Diego Torres', avatar: 'ðŸ’¯', score: 128, change: 1, isCurrentUser: false },
+        { rank: 9, userId: '9', name: 'Miguel Flores', avatar: 'â­', score: 115, change: -2, isCurrentUser: false },
+        { rank: 10, userId: '10', name: 'Carmen Ruiz', avatar: 'ðŸ†', score: 103, change: 0, isCurrentUser: false },
+        { rank: 15, userId: 'me', name: 'TÃº', avatar: 'ðŸ˜Ž', score: 89, change: 3, isCurrentUser: true },
       ],
     },
     prs: {
@@ -116,17 +116,17 @@ export default function Leaderboards() {
       icon: 'trophy',
       color: 'amber',
       entries: [
-        { rank: 1, userId: '1', name: 'Luis Rodríguez', avatar: '🔥', score: 28, change: 0, isCurrentUser: false },
-        { rank: 2, userId: '2', name: 'Carlos Méndez', avatar: '🏋️', score: 24, change: 1, isCurrentUser: false },
-        { rank: 3, userId: '3', name: 'Pedro Sánchez', avatar: '🎯', score: 22, change: -1, isCurrentUser: false },
-        { rank: 4, userId: '4', name: 'Ana García', avatar: '💪', score: 21, change: 0, isCurrentUser: false },
-        { rank: 5, userId: '5', name: 'Diego Torres', avatar: '💯', score: 19, change: 2, isCurrentUser: false },
-        { rank: 6, userId: '6', name: 'María López', avatar: '⚡', score: 18, change: -1, isCurrentUser: false },
-        { rank: 7, userId: '7', name: 'Sofia Ramírez', avatar: '🚀', score: 17, change: 1, isCurrentUser: false },
-        { rank: 8, userId: '8', name: 'Laura Martínez', avatar: '🌟', score: 16, change: -2, isCurrentUser: false },
-        { rank: 9, userId: '9', name: 'Miguel Flores', avatar: '⭐', score: 15, change: 0, isCurrentUser: false },
-        { rank: 10, userId: '10', name: 'Carmen Ruiz', avatar: '🏆', score: 14, change: 0, isCurrentUser: false },
-        { rank: 19, userId: 'me', name: 'Tú', avatar: '😎', score: 8, change: 4, isCurrentUser: true },
+        { rank: 1, userId: '1', name: 'Luis RodrÃ­guez', avatar: 'ðŸ”¥', score: 28, change: 0, isCurrentUser: false },
+        { rank: 2, userId: '2', name: 'Carlos MÃ©ndez', avatar: 'ðŸ‹ï¸', score: 24, change: 1, isCurrentUser: false },
+        { rank: 3, userId: '3', name: 'Pedro SÃ¡nchez', avatar: 'ðŸŽ¯', score: 22, change: -1, isCurrentUser: false },
+        { rank: 4, userId: '4', name: 'Ana GarcÃ­a', avatar: 'ðŸ’ª', score: 21, change: 0, isCurrentUser: false },
+        { rank: 5, userId: '5', name: 'Diego Torres', avatar: 'ðŸ’¯', score: 19, change: 2, isCurrentUser: false },
+        { rank: 6, userId: '6', name: 'MarÃ­a LÃ³pez', avatar: 'âš¡', score: 18, change: -1, isCurrentUser: false },
+        { rank: 7, userId: '7', name: 'Sofia RamÃ­rez', avatar: 'ðŸš€', score: 17, change: 1, isCurrentUser: false },
+        { rank: 8, userId: '8', name: 'Laura MartÃ­nez', avatar: 'ðŸŒŸ', score: 16, change: -2, isCurrentUser: false },
+        { rank: 9, userId: '9', name: 'Miguel Flores', avatar: 'â­', score: 15, change: 0, isCurrentUser: false },
+        { rank: 10, userId: '10', name: 'Carmen Ruiz', avatar: 'ðŸ†', score: 14, change: 0, isCurrentUser: false },
+        { rank: 19, userId: 'me', name: 'TÃº', avatar: 'ðŸ˜Ž', score: 8, change: 4, isCurrentUser: true },
       ],
     },
   };
@@ -134,14 +134,14 @@ export default function Leaderboards() {
   const currentLeaderboard = leaderboards[selectedCategory];
 
   const getRankMedal = (rank: number) => {
-    if (rank === 1) return '🥇';
-    if (rank === 2) return '🥈';
-    if (rank === 3) return '🥉';
+    if (rank === 1) return 'ðŸ¥‡';
+    if (rank === 2) return 'ðŸ¥ˆ';
+    if (rank === 3) return 'ðŸ¥‰';
     return null;
   };
 
   const getChangeIcon = (change: number) => {
-    if (change > 0) return { icon: 'trending-up', color: '#10B981' };
+    if (change > 0) return { icon: 'trending-up', color: '#9D12DE' };
     if (change < 0) return { icon: 'trending-down', color: '#EF4444' };
     return { icon: 'remove', color: '#71717A' };
   };
@@ -179,7 +179,7 @@ export default function Leaderboards() {
           </View>
 
           {/* Category Selection */}
-          <Text className="text-white font-bold text-lg mb-3">Categoría</Text>
+          <Text className="text-white font-bold text-lg mb-3">CategorÃ­a</Text>
           <View className="flex-row flex-wrap gap-2 mb-6">
             {categories.map((cat) => (
               <TouchableOpacity
@@ -216,14 +216,14 @@ export default function Leaderboards() {
                     onPress={() => setSelectedPeriod(period as any)}
                     className={`flex-1 rounded-xl py-3 ${
                       selectedPeriod === period
-                        ? 'bg-blue-500'
+                        ? 'bg-primary'
                         : 'bg-zinc-900 border border-zinc-800'
                     }`}
                   >
                     <Text className={`text-center font-bold text-xs ${
                       selectedPeriod === period ? 'text-white' : 'text-zinc-400'
                     }`}>
-                      {period === 'daily' ? 'Hoy' : period === 'weekly' ? 'Semana' : period === 'monthly' ? 'Mes' : 'Histórico'}
+                      {period === 'daily' ? 'Hoy' : period === 'weekly' ? 'Semana' : period === 'monthly' ? 'Mes' : 'HistÃ³rico'}
                     </Text>
                   </TouchableOpacity>
                 ))}
@@ -251,7 +251,7 @@ export default function Leaderboards() {
                 <View className="w-16 h-16 bg-zinc-800 rounded-full items-center justify-center mb-2">
                   <Text className="text-3xl">{currentLeaderboard.entries[1].avatar}</Text>
                 </View>
-                <Text className="text-4xl mb-2">🥈</Text>
+                <Text className="text-4xl mb-2">ðŸ¥ˆ</Text>
                 <View className="w-full bg-zinc-800 rounded-t-xl p-3 h-24 items-center justify-center border-t-4 border-zinc-400">
                   <Text className="text-white font-bold text-center text-sm">
                     {currentLeaderboard.entries[1].name}
@@ -269,7 +269,7 @@ export default function Leaderboards() {
                 <View className="w-20 h-20 bg-zinc-800 rounded-full items-center justify-center mb-2 border-4 border-amber-500">
                   <Text className="text-4xl">{currentLeaderboard.entries[0].avatar}</Text>
                 </View>
-                <Text className="text-4xl mb-2">🥇</Text>
+                <Text className="text-4xl mb-2">ðŸ¥‡</Text>
                 <View className="w-full bg-amber-500 rounded-t-xl p-3 h-32 items-center justify-center">
                   <Text className="text-white font-bold text-center">
                     {currentLeaderboard.entries[0].name}
@@ -287,7 +287,7 @@ export default function Leaderboards() {
                 <View className="w-16 h-16 bg-zinc-800 rounded-full items-center justify-center mb-2">
                   <Text className="text-3xl">{currentLeaderboard.entries[2].avatar}</Text>
                 </View>
-                <Text className="text-4xl mb-2">🥉</Text>
+                <Text className="text-4xl mb-2">ðŸ¥‰</Text>
                 <View className="w-full bg-zinc-800 rounded-t-xl p-3 h-20 items-center justify-center border-t-4 border-orange-700">
                   <Text className="text-white font-bold text-center text-sm">
                     {currentLeaderboard.entries[2].name}
@@ -311,7 +311,7 @@ export default function Leaderboards() {
                 key={entry.userId}
                 className={`rounded-xl p-4 mb-3 flex-row items-center ${
                   entry.isCurrentUser
-                    ? 'bg-blue-500/20 border-2 border-blue-500'
+                    ? 'bg-primary/20 border-2 border-primary'
                     : 'bg-zinc-900 border border-zinc-800'
                 }`}
               >
@@ -320,7 +320,7 @@ export default function Leaderboards() {
                     <Text className="text-2xl">{medal}</Text>
                   ) : (
                     <Text className={`font-bold text-lg ${
-                      entry.isCurrentUser ? 'text-blue-400' : 'text-zinc-400'
+                      entry.isCurrentUser ? 'text-primary/80' : 'text-zinc-400'
                     }`}>
                       #{entry.rank}
                     </Text>
@@ -333,7 +333,7 @@ export default function Leaderboards() {
 
                 <View className="flex-1">
                   <Text className={`font-bold ${
-                    entry.isCurrentUser ? 'text-blue-400' : 'text-white'
+                    entry.isCurrentUser ? 'text-primary/80' : 'text-white'
                   }`}>
                     {entry.name}
                   </Text>
@@ -356,20 +356,20 @@ export default function Leaderboards() {
           })}
 
           {/* Tips */}
-          <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30 mb-6 mt-4">
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6 mt-4">
             <View className="flex-row items-start">
-              <Ionicons name="information-circle" size={20} color="#3B82F6" />
+              <Ionicons name="information-circle" size={20} color="#9D12DE" />
               <View className="flex-1 ml-3">
-                <Text className="text-blue-400 font-bold mb-2">
+                <Text className="text-primary/80 font-bold mb-2">
                   Sobre los Leaderboards
                 </Text>
-                <Text className="text-blue-300 text-sm">
-                  • Rankings actualizados en tiempo real{'\n'}
-                  • Competencia sana motiva progreso{'\n'}
-                  • Filtros por periodo y categoría{'\n'}
-                  • Tu ranking se muestra destacado{'\n'}
-                  • Flechas indican cambios de posición{'\n'}
-                  • Sigue subiendo posiciones! 📈
+                <Text className="text-primary/60 text-sm">
+                  â€¢ Rankings actualizados en tiempo real{'\n'}
+                  â€¢ Competencia sana motiva progreso{'\n'}
+                  â€¢ Filtros por periodo y categorÃ­a{'\n'}
+                  â€¢ Tu ranking se muestra destacado{'\n'}
+                  â€¢ Flechas indican cambios de posiciÃ³n{'\n'}
+                  â€¢ Sigue subiendo posiciones! ðŸ“ˆ
                 </Text>
               </View>
             </View>
@@ -379,3 +379,4 @@ export default function Leaderboards() {
     </View>
   );
 }
+

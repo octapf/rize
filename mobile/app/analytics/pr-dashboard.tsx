@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -90,7 +90,7 @@ export default function PRDashboard() {
     { name: '100kg Bench', achieved: true, date: '15 Ene 2024' },
     { name: '200kg Deadlift', achieved: true, date: '8 Dic 2024' },
     { name: '150kg Squat', achieved: true, date: '22 Oct 2024' },
-    { name: '225kg Deadlift', achieved: false, date: 'Próximamente' },
+    { name: '225kg Deadlift', achieved: false, date: 'PrÃ³ximamente' },
   ];
 
   const getCategoryIcon = (category: string) => {
@@ -139,17 +139,17 @@ export default function PRDashboard() {
 
           <View className="flex-row gap-3 mb-6">
             <View className="flex-1 bg-zinc-900 rounded-xl p-4 border border-zinc-800">
-              <Ionicons name="flame" size={24} color="#f59e0b" />
+              <Ionicons name="flame" size={24} color="#FFEA00" />
               <Text className="text-2xl font-bold text-white mt-2">{stats.thisMonth}</Text>
               <Text className="text-zinc-400 text-sm">This Month</Text>
             </View>
             <View className="flex-1 bg-zinc-900 rounded-xl p-4 border border-zinc-800">
-              <Ionicons name="calendar" size={24} color="#3b82f6" />
+              <Ionicons name="calendar" size={24} color="#9D12DE" />
               <Text className="text-2xl font-bold text-white mt-2">{stats.thisYear}</Text>
               <Text className="text-zinc-400 text-sm">This Year</Text>
             </View>
             <View className="flex-1 bg-zinc-900 rounded-xl p-4 border border-zinc-800">
-              <Ionicons name="trending-up" size={24} color="#10b981" />
+              <Ionicons name="trending-up" size={24} color="#9D12DE" />
               <Text className="text-2xl font-bold text-white mt-2">{stats.streak}</Text>
               <Text className="text-zinc-400 text-sm">Week Streak</Text>
             </View>
@@ -196,7 +196,7 @@ export default function PRDashboard() {
                       size={20}
                       color={
                         pr.category === 'strength' ? '#ef4444' :
-                        pr.category === 'volume' ? '#a855f7' : '#10b981'
+                        pr.category === 'volume' ? '#a855f7' : '#9D12DE'
                       }
                     />
                     <Text className="text-white font-bold text-lg ml-2">{pr.exercise}</Text>
@@ -215,8 +215,8 @@ export default function PRDashboard() {
                   Previous: {pr.previous} {pr.unit}
                 </Text>
                 <View className="flex-row items-center">
-                  <Ionicons name="trending-up" size={16} color="#10b981" />
-                  <Text className="text-emerald-400 font-bold text-sm ml-1">{pr.increase}</Text>
+                  <Ionicons name="trending-up" size={16} color="#9D12DE" />
+                  <Text className="text-primary font-bold text-sm ml-1">{pr.increase}</Text>
                 </View>
               </View>
             </View>
@@ -228,7 +228,7 @@ export default function PRDashboard() {
             <View
               key={idx}
               className={`bg-zinc-900 rounded-xl p-4 mb-3 border ${
-                milestone.achieved ? 'border-emerald-500' : 'border-zinc-800'
+                milestone.achieved ? 'border-primary' : 'border-zinc-800'
               }`}
             >
               <View className="flex-row items-center justify-between">
@@ -236,7 +236,7 @@ export default function PRDashboard() {
                   <Ionicons
                     name={milestone.achieved ? 'checkmark-circle' : 'ellipse-outline'}
                     size={24}
-                    color={milestone.achieved ? '#10b981' : '#71717a'}
+                    color={milestone.achieved ? '#9D12DE' : '#71717a'}
                   />
                   <View className="ml-3 flex-1">
                     <Text className={`${milestone.achieved ? 'text-white' : 'text-zinc-400'} font-bold`}>
@@ -246,7 +246,7 @@ export default function PRDashboard() {
                   </View>
                 </View>
                 {milestone.achieved && (
-                  <View className="bg-emerald-500 rounded-full px-3 py-1">
+                  <View className="bg-primary rounded-full px-3 py-1">
                     <Text className="text-white text-xs font-bold">DONE</Text>
                   </View>
                 )}
@@ -254,14 +254,14 @@ export default function PRDashboard() {
             </View>
           ))}
 
-          <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30 mb-6">
-            <Text className="text-blue-400 font-bold mb-2">PR Tips</Text>
-            <Text className="text-blue-300 text-sm">
-              • Valida PRs con buena técnica{'\n'}
-              • No intentes PR con fatiga acumulada{'\n'}
-              • Calentamiento específico antes de PRs{'\n'}
-              • Filma tus PRs para analizar técnica{'\n'}
-              • Celebra cada logro!
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
+            <Text className="text-primary/80 font-bold mb-2">PR Tips</Text>
+            <Text className="text-primary/60 text-sm">
+              â€¢ Valida PRs con buena tÃ©cnica{'\n'}
+              â€¢ No intentes PR con fatiga acumulada{'\n'}
+              â€¢ Calentamiento especÃ­fico antes de PRs{'\n'}
+              â€¢ Filma tus PRs para analizar tÃ©cnica{'\n'}
+              â€¢ Celebra cada logro!
             </Text>
           </View>
         </View>
@@ -269,3 +269,4 @@ export default function PRDashboard() {
     </View>
   );
 }
+

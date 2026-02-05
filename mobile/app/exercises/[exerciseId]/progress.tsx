@@ -294,7 +294,7 @@ export default function ExerciseProgressScreen() {
                 propsForDots: {
                   r: '4',
                   strokeWidth: '2',
-                  stroke: '#8B5CF6',
+                   stroke: '#9D12DE',
                 },
               }}
               bezier
@@ -310,10 +310,12 @@ export default function ExerciseProgressScreen() {
             <Text className="text-lg font-bold text-gray-900">
               Estimación 1RM
             </Text>
+            <Ionicons name="trending-up" size={24} color="#FFEA00" />
           </View>
 
           {exerciseHistory.length === 0 ? (
             <View className="py-8 items-center">
+              <Ionicons name="barbell" size={24} color="#9D12DE" />
               <Text className="text-gray-400">No hay datos en este período</Text>
             </View>
           ) : (

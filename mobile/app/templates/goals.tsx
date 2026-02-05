@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -28,26 +28,26 @@ interface WorkoutTemplate {
 const TEMPLATES: WorkoutTemplate[] = [
   {
     id: '1',
-    name: 'Definición Extrema',
+    name: 'DefiniciÃ³n Extrema',
     goal: 'fat-loss',
     duration: 8,
     daysPerWeek: 6,
     difficulty: 'intermedio',
-    description: 'Maximiza quema de grasa preservando músculo con combinación de HIIT y pesas',
+    description: 'Maximiza quema de grasa preservando mÃºsculo con combinaciÃ³n de HIIT y pesas',
     features: [
-      '3 días de pesas full body',
-      '3 días de HIIT (20-30 min)',
+      '3 dÃ­as de pesas full body',
+      '3 dÃ­as de HIIT (20-30 min)',
       'Supersets y tri-sets',
-      'Cardio acelerador metabólico',
-      'Déficit calórico 500 kcal',
+      'Cardio acelerador metabÃ³lico',
+      'DÃ©ficit calÃ³rico 500 kcal',
     ],
     sampleWeek: [
       { day: 'Lunes', focus: 'Full Body A + 15 min HIIT', duration: 75 },
       { day: 'Martes', focus: 'HIIT Tabata', duration: 30 },
-      { day: 'Miércoles', focus: 'Full Body B + Cardio', duration: 75 },
+      { day: 'MiÃ©rcoles', focus: 'Full Body B + Cardio', duration: 75 },
       { day: 'Jueves', focus: 'HIIT Ciclismo', duration: 30 },
       { day: 'Viernes', focus: 'Full Body C + Finisher', duration: 75 },
-      { day: 'Sábado', focus: 'LISS Cardio', duration: 45 },
+      { day: 'SÃ¡bado', focus: 'LISS Cardio', duration: 45 },
       { day: 'Domingo', focus: 'Descanso / Caminata', duration: 0 },
     ],
   },
@@ -58,46 +58,46 @@ const TEMPLATES: WorkoutTemplate[] = [
     duration: 12,
     daysPerWeek: 5,
     difficulty: 'intermedio',
-    description: 'Programa de hipertrofia enfocado en máxima ganancia muscular',
+    description: 'Programa de hipertrofia enfocado en mÃ¡xima ganancia muscular',
     features: [
       'Push/Pull/Legs split 2x semana',
       'Rango 8-12 reps hipertrofia',
       '4-5 sets por ejercicio',
       'TUT (time under tension) optimizado',
-      'Superávit 300-500 kcal',
+      'SuperÃ¡vit 300-500 kcal',
     ],
     sampleWeek: [
-      { day: 'Lunes', focus: 'Push (Pecho/Hombros/Tríceps)', duration: 90 },
-      { day: 'Martes', focus: 'Pull (Espalda/Bíceps)', duration: 85 },
-      { day: 'Miércoles', focus: 'Legs (Piernas completas)', duration: 95 },
+      { day: 'Lunes', focus: 'Push (Pecho/Hombros/TrÃ­ceps)', duration: 90 },
+      { day: 'Martes', focus: 'Pull (Espalda/BÃ­ceps)', duration: 85 },
+      { day: 'MiÃ©rcoles', focus: 'Legs (Piernas completas)', duration: 95 },
       { day: 'Jueves', focus: 'Descanso', duration: 0 },
       { day: 'Viernes', focus: 'Push B', duration: 90 },
-      { day: 'Sábado', focus: 'Pull B', duration: 85 },
+      { day: 'SÃ¡bado', focus: 'Pull B', duration: 85 },
       { day: 'Domingo', focus: 'Legs B / Descanso', duration: 0 },
     ],
   },
   {
     id: '3',
-    name: 'Fuerza Máxima 5/3/1',
+    name: 'Fuerza MÃ¡xima 5/3/1',
     goal: 'strength',
     duration: 16,
     daysPerWeek: 4,
     difficulty: 'avanzado',
-    description: 'Periodización basada en el método Wendler 5/3/1 para fuerza',
+    description: 'PeriodizaciÃ³n basada en el mÃ©todo Wendler 5/3/1 para fuerza',
     features: [
       'Enfoque en 4 grandes: Squat, Bench, Deadlift, OHP',
-      'Progresión mensual automática',
-      'Trabajo auxiliar específico',
+      'ProgresiÃ³n mensual automÃ¡tica',
+      'Trabajo auxiliar especÃ­fico',
       'Deload cada 4 semanas',
       'PR testing cada ciclo',
     ],
     sampleWeek: [
       { day: 'Lunes', focus: 'Squat 5/3/1 + Auxiliares', duration: 75 },
       { day: 'Martes', focus: 'Bench Press 5/3/1 + Volumen', duration: 70 },
-      { day: 'Miércoles', focus: 'Descanso', duration: 0 },
+      { day: 'MiÃ©rcoles', focus: 'Descanso', duration: 0 },
       { day: 'Jueves', focus: 'Deadlift 5/3/1 + Accesorios', duration: 75 },
       { day: 'Viernes', focus: 'OHP 5/3/1 + Upper Back', duration: 70 },
-      { day: 'Sábado', focus: 'Descanso / Cardio opcional', duration: 0 },
+      { day: 'SÃ¡bado', focus: 'Descanso / Cardio opcional', duration: 0 },
       { day: 'Domingo', focus: 'Descanso', duration: 0 },
     ],
   },
@@ -111,7 +111,7 @@ const TEMPLATES: WorkoutTemplate[] = [
     description: 'Desarrolla resistencia cardiovascular y muscular',
     features: [
       'Circuit training alta intensidad',
-      'Trabajo de capacidad aeróbica',
+      'Trabajo de capacidad aerÃ³bica',
       'CrossFit style WODs',
       'Running progresivo',
       'Bodyweight mastery',
@@ -119,16 +119,16 @@ const TEMPLATES: WorkoutTemplate[] = [
     sampleWeek: [
       { day: 'Lunes', focus: 'Circuit Training Full Body', duration: 45 },
       { day: 'Martes', focus: 'Running Intervalos', duration: 40 },
-      { day: 'Miércoles', focus: 'WOD AMRAP', duration: 50 },
+      { day: 'MiÃ©rcoles', focus: 'WOD AMRAP', duration: 50 },
       { day: 'Jueves', focus: 'Tempo Run', duration: 35 },
       { day: 'Viernes', focus: 'Circuit Metcon', duration: 45 },
-      { day: 'Sábado', focus: 'Long Run', duration: 60 },
+      { day: 'SÃ¡bado', focus: 'Long Run', duration: 60 },
       { day: 'Domingo', focus: 'Active Recovery', duration: 30 },
     ],
   },
   {
     id: '5',
-    name: 'Preparación Atlética',
+    name: 'PreparaciÃ³n AtlÃ©tica',
     goal: 'athlete',
     duration: 12,
     daysPerWeek: 6,
@@ -136,19 +136,19 @@ const TEMPLATES: WorkoutTemplate[] = [
     description: 'Entrenamiento funcional para atletas de alto rendimiento',
     features: [
       'Entrenamiento de velocidad y potencia',
-      'Pliométricos y explosividad',
-      'Agilidad y coordinación',
+      'PliomÃ©tricos y explosividad',
+      'Agilidad y coordinaciÃ³n',
       'Fuerza funcional',
-      'Periodización deportiva',
+      'PeriodizaciÃ³n deportiva',
     ],
     sampleWeek: [
-      { day: 'Lunes', focus: 'Fuerza Máxima Lower', duration: 75 },
-      { day: 'Martes', focus: 'Velocidad + Pliométricos', duration: 60 },
-      { day: 'Miércoles', focus: 'Fuerza Upper + Core', duration: 70 },
+      { day: 'Lunes', focus: 'Fuerza MÃ¡xima Lower', duration: 75 },
+      { day: 'Martes', focus: 'Velocidad + PliomÃ©tricos', duration: 60 },
+      { day: 'MiÃ©rcoles', focus: 'Fuerza Upper + Core', duration: 70 },
       { day: 'Jueves', focus: 'Agilidad + Condicionamiento', duration: 55 },
       { day: 'Viernes', focus: 'Potencia Olympic Lifts', duration: 75 },
-      { day: 'Sábado', focus: 'Metcon / Sport Específico', duration: 60 },
-      { day: 'Domingo', focus: 'Movilidad + Regeneración', duration: 40 },
+      { day: 'SÃ¡bado', focus: 'Metcon / Sport EspecÃ­fico', duration: 60 },
+      { day: 'Domingo', focus: 'Movilidad + RegeneraciÃ³n', duration: 40 },
     ],
   },
 ];
@@ -159,11 +159,11 @@ export default function WorkoutTemplates() {
 
   const goals = [
     { id: 'all', label: 'Todos', icon: 'grid' },
-    { id: 'fat-loss', label: 'Definición', icon: 'flame' },
-    { id: 'muscle-gain', label: 'Músculo', icon: 'barbell' },
+    { id: 'fat-loss', label: 'DefiniciÃ³n', icon: 'flame' },
+    { id: 'muscle-gain', label: 'MÃºsculo', icon: 'barbell' },
     { id: 'strength', label: 'Fuerza', icon: 'trophy' },
     { id: 'endurance', label: 'Resistencia', icon: 'bicycle' },
-    { id: 'athlete', label: 'Atlético', icon: 'flash' },
+    { id: 'athlete', label: 'AtlÃ©tico', icon: 'flash' },
   ];
 
   const getGoalColor = (goal: string) => {
@@ -171,13 +171,13 @@ export default function WorkoutTemplates() {
       case 'fat-loss':
         return '#EF4444';
       case 'muscle-gain':
-        return '#3B82F6';
+        return '#9D12DE';
       case 'strength':
         return '#8B5CF6';
       case 'endurance':
-        return '#10B981';
+        return '#9D12DE';
       case 'athlete':
-        return '#F59E0B';
+        return '#FFEA00';
       default:
         return '#71717A';
     }
@@ -186,9 +186,9 @@ export default function WorkoutTemplates() {
   const getDifficultyColor = (difficulty: string) => {
     switch (difficulty) {
       case 'principiante':
-        return '#10B981';
+        return '#9D12DE';
       case 'intermedio':
-        return '#F59E0B';
+        return '#FFEA00';
       case 'avanzado':
         return '#EF4444';
       default:
@@ -200,7 +200,7 @@ export default function WorkoutTemplates() {
     setSelectedTemplate(template.id);
     Alert.alert(
       `Iniciar: ${template.name}`,
-      `${template.duration} semanas • ${template.daysPerWeek} días/semana\n\n${template.description}\n\n¿Listo para comenzar?`,
+      `${template.duration} semanas â€¢ ${template.daysPerWeek} dÃ­as/semana\n\n${template.description}\n\nÂ¿Listo para comenzar?`,
       [
         { text: 'Cancelar', onPress: () => setSelectedTemplate(null), style: 'cancel' },
         {
@@ -209,7 +209,7 @@ export default function WorkoutTemplates() {
         },
         {
           text: 'Comenzar',
-          onPress: () => Alert.alert('¡Iniciado!', 'Tu programa ha comenzado'),
+          onPress: () => Alert.alert('Â¡Iniciado!', 'Tu programa ha comenzado'),
         },
       ]
     );
@@ -236,7 +236,7 @@ export default function WorkoutTemplates() {
         </View>
 
         {/* Info Card */}
-        <View className="bg-gradient-to-br from-emerald-500 to-blue-500 rounded-xl p-4 mb-4">
+        <View className="bg-gradient-to-br from-primary to-[#7D0EBE] rounded-xl p-4 mb-4">
           <View className="flex-row items-center">
             <Ionicons name="trophy" size={32} color="white" />
             <View className="ml-3 flex-1">
@@ -244,7 +244,7 @@ export default function WorkoutTemplates() {
                 {TEMPLATES.length} Programas Profesionales
               </Text>
               <Text className="text-white/80 text-sm">
-                Diseñados por entrenadores certificados
+                DiseÃ±ados por entrenadores certificados
               </Text>
             </View>
           </View>
@@ -259,7 +259,7 @@ export default function WorkoutTemplates() {
                 onPress={() => setSelectedGoal(goal.id)}
                 className={`flex-row items-center px-4 py-2 rounded-lg ${
                   selectedGoal === goal.id
-                    ? 'bg-emerald-500'
+                    ? 'bg-primary'
                     : 'bg-zinc-900 border border-zinc-800'
                 }`}
               >
@@ -293,7 +293,7 @@ export default function WorkoutTemplates() {
               key={template.id}
               onPress={() => startTemplate(template)}
               className={`bg-zinc-900 rounded-xl p-4 mb-4 border-2 ${
-                selectedTemplate === template.id ? 'border-emerald-500' : 'border-zinc-800'
+                selectedTemplate === template.id ? 'border-primary' : 'border-zinc-800'
               }`}
             >
               {/* Header */}
@@ -335,7 +335,7 @@ export default function WorkoutTemplates() {
               {/* Stats */}
               <View className="flex-row gap-2 mb-3">
                 <View className="flex-1 bg-zinc-800 rounded-lg p-3">
-                  <Text className="text-zinc-400 text-xs mb-1">Duración</Text>
+                  <Text className="text-zinc-400 text-xs mb-1">DuraciÃ³n</Text>
                   <Text className="text-white font-bold text-lg">
                     {template.duration} sem
                   </Text>
@@ -357,43 +357,43 @@ export default function WorkoutTemplates() {
               {/* Features */}
               <View className="bg-zinc-800 rounded-lg p-3 mb-3">
                 <Text className="text-white font-bold text-sm mb-2">
-                  Características
+                  CaracterÃ­sticas
                 </Text>
                 {template.features.map((feature, index) => (
                   <View key={index} className="flex-row items-center mb-1">
-                    <Ionicons name="checkmark-circle" size={14} color="#10B981" />
+                    <Ionicons name="checkmark-circle" size={14} color="#9D12DE" />
                     <Text className="text-zinc-300 text-sm ml-2">{feature}</Text>
                   </View>
                 ))}
               </View>
 
               {/* Sample Week */}
-              <View className="bg-blue-500/10 rounded-lg p-3 border border-blue-500/30 mb-3">
-                <Text className="text-blue-400 font-bold text-sm mb-2">
+              <View className="bg-primary/10 rounded-lg p-3 border border-primary/30 mb-3">
+                <Text className="text-primary/80 font-bold text-sm mb-2">
                   Semana Ejemplo
                 </Text>
                 {template.sampleWeek.slice(0, 4).map((day, index) => (
                   <View
                     key={index}
                     className={`flex-row items-center justify-between py-1 ${
-                      index < 3 ? 'border-b border-blue-500/20' : ''
+                      index < 3 ? 'border-b border-primary/20' : ''
                     }`}
                   >
                     <View className="flex-1">
-                      <Text className="text-blue-300 text-sm font-bold">
+                      <Text className="text-primary/60 text-sm font-bold">
                         {day.day}
                       </Text>
-                      <Text className="text-blue-300/70 text-xs">{day.focus}</Text>
+                      <Text className="text-primary/60/70 text-xs">{day.focus}</Text>
                     </View>
                     {day.duration > 0 && (
-                      <Text className="text-blue-400 text-xs">
+                      <Text className="text-primary/80 text-xs">
                         {day.duration} min
                       </Text>
                     )}
                   </View>
                 ))}
-                <Text className="text-blue-400 text-xs mt-2">
-                  +{template.sampleWeek.length - 4} días más...
+                <Text className="text-primary/80 text-xs mt-2">
+                  +{template.sampleWeek.length - 4} dÃ­as mÃ¡s...
                 </Text>
               </View>
 
@@ -401,7 +401,7 @@ export default function WorkoutTemplates() {
               <TouchableOpacity
                 onPress={() => startTemplate(template)}
                 className={`${
-                  selectedTemplate === template.id ? 'bg-emerald-500' : 'bg-zinc-800'
+                  selectedTemplate === template.id ? 'bg-primary' : 'bg-zinc-800'
                 } rounded-lg p-3`}
               >
                 <View className="flex-row items-center justify-center">
@@ -423,13 +423,13 @@ export default function WorkoutTemplates() {
         <View className="px-6 pb-6 pt-4">
           <View className="bg-amber-500/10 rounded-xl p-4 border border-amber-500/30">
             <View className="flex-row items-start">
-              <Ionicons name="information-circle" size={20} color="#F59E0B" />
+              <Ionicons name="information-circle" size={20} color="#FFEA00" />
               <View className="flex-1 ml-3">
                 <Text className="text-amber-400 font-bold mb-2">
-                  Elige Según Tu Objetivo
+                  Elige SegÃºn Tu Objetivo
                 </Text>
                 <Text className="text-amber-300 text-sm">
-                  Todos los programas incluyen progresión automática, ajustes de intensidad y seguimiento de resultados.
+                  Todos los programas incluyen progresiÃ³n automÃ¡tica, ajustes de intensidad y seguimiento de resultados.
                 </Text>
               </View>
             </View>
@@ -439,3 +439,4 @@ export default function WorkoutTemplates() {
     </View>
   );
 }
+

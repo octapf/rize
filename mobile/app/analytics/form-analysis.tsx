@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -28,7 +28,7 @@ export default function FormAnalysis() {
     ],
     bench: [
       { point: 'Bar Path', status: 'good', desc: 'Straight line to chest' },
-      { point: 'Elbow Position', status: 'good', desc: '45-75° angle' },
+      { point: 'Elbow Position', status: 'good', desc: '45-75Â° angle' },
       { point: 'Arch', status: 'warning', desc: 'Could be more pronounced' },
       { point: 'Leg Drive', status: 'critical', desc: 'Feet unstable' },
     ],
@@ -93,7 +93,7 @@ export default function FormAnalysis() {
           <View className="bg-gradient-to-r from-purple-500 to-blue-500 rounded-xl p-6 mb-6">
             <Text className="text-white text-2xl font-bold mb-2">AI Form Check</Text>
             <Text className="text-white opacity-90 mb-4">
-              Mejora tu técnica con análisis de video
+              Mejora tu tÃ©cnica con anÃ¡lisis de video
             </Text>
             <View className="flex-row items-center">
               <Ionicons name="videocam" size={20} color="white" />
@@ -109,7 +109,7 @@ export default function FormAnalysis() {
                 key={ex.key}
                 onPress={() => setSelectedExercise(ex.key)}
                 className={`flex-1 min-w-[45%] ${
-                  selectedExercise === ex.key ? 'bg-blue-500' : 'bg-zinc-900'
+                  selectedExercise === ex.key ? 'bg-primary' : 'bg-zinc-900'
                 } rounded-xl p-4 border ${
                   selectedExercise === ex.key ? 'border-blue-400' : 'border-zinc-800'
                 }`}
@@ -133,20 +133,20 @@ export default function FormAnalysis() {
           <View className="bg-zinc-900 rounded-xl p-4 mb-6 border border-zinc-800">
             <View className="flex-row items-center justify-between mb-4">
               <Text className="text-white font-bold text-lg">Form Score</Text>
-              <Text className={`text-3xl font-bold ${score >= 80 ? 'text-emerald-400' : score >= 60 ? 'text-amber-400' : 'text-red-400'}`}>
+              <Text className={`text-3xl font-bold ${score >= 80 ? 'text-primary' : score >= 60 ? 'text-amber-400' : 'text-red-400'}`}>
                 {score}%
               </Text>
             </View>
 
             <View className="bg-zinc-800 rounded-full h-3 mb-2">
               <View
-                className={`h-3 rounded-full ${score >= 80 ? 'bg-emerald-500' : score >= 60 ? 'bg-amber-500' : 'bg-red-500'}`}
+                className={`h-3 rounded-full ${score >= 80 ? 'bg-primary' : score >= 60 ? 'bg-amber-500' : 'bg-red-500'}`}
                 style={{ width: `${score}%` }}
               />
             </View>
 
             <Text className="text-zinc-400 text-sm">
-              {score >= 80 ? 'Excelente técnica!' : score >= 60 ? 'Mejorable' : 'Necesita corrección'}
+              {score >= 80 ? 'Excelente tÃ©cnica!' : score >= 60 ? 'Mejorable' : 'Necesita correcciÃ³n'}
             </Text>
           </View>
 
@@ -162,8 +162,8 @@ export default function FormAnalysis() {
                   name={getStatusIcon(check.status) as any}
                   size={24}
                   color={
-                    check.status === 'good' ? '#10b981' :
-                    check.status === 'warning' ? '#f59e0b' : '#ef4444'
+                    check.status === 'good' ? '#9D12DE' :
+                    check.status === 'warning' ? '#FFEA00' : '#ef4444'
                   }
                 />
                 <Text className="text-white font-bold ml-3 flex-1">{check.point}</Text>
@@ -187,20 +187,20 @@ export default function FormAnalysis() {
 
           <TouchableOpacity
             onPress={analyzeForm}
-            className="bg-blue-500 rounded-xl py-4 mb-6 flex-row items-center justify-center"
+            className="bg-primary rounded-xl py-4 mb-6 flex-row items-center justify-center"
           >
             <Ionicons name="analytics" size={24} color="white" />
             <Text className="text-white font-bold ml-2 text-lg">Analyze Form</Text>
           </TouchableOpacity>
 
-          <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30 mb-6">
-            <Text className="text-blue-400 font-bold mb-2">Tips para Grabar</Text>
-            <Text className="text-blue-300 text-sm">
-              • Graba desde un ángulo lateral{'\n'}
-              • Asegura buena iluminación{'\n'}
-              • Incluye setup completo{'\n'}
-              • Filma al menos 3 reps{'\n'}
-              • Usa trípode o apoyo estable
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
+            <Text className="text-primary/80 font-bold mb-2">Tips para Grabar</Text>
+            <Text className="text-primary/60 text-sm">
+              â€¢ Graba desde un Ã¡ngulo lateral{'\n'}
+              â€¢ Asegura buena iluminaciÃ³n{'\n'}
+              â€¢ Incluye setup completo{'\n'}
+              â€¢ Filma al menos 3 reps{'\n'}
+              â€¢ Usa trÃ­pode o apoyo estable
             </Text>
           </View>
         </View>
@@ -208,3 +208,4 @@ export default function FormAnalysis() {
     </View>
   );
 }
+

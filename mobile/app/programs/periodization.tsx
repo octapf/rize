@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -25,7 +25,7 @@ export default function PeriodizationPlanner() {
       name: 'Mesocycle 1: Foundation',
       duration: '4 weeks',
       phases: ['hypertrophy'],
-      focus: 'Volumen y técnica',
+      focus: 'Volumen y tÃ©cnica',
       completed: true,
     },
     {
@@ -70,7 +70,7 @@ export default function PeriodizationPlanner() {
       <ScrollView className="flex-1" showsVerticalScrollIndicator={false}>
         <View className="px-6 pt-6">
           <View className="bg-gradient-to-r from-purple-500 to-blue-500 rounded-xl p-6 mb-6">
-            <Text className="text-white text-2xl font-bold mb-2">Planificación Avanzada</Text>
+            <Text className="text-white text-2xl font-bold mb-2">PlanificaciÃ³n Avanzada</Text>
             <Text className="text-white opacity-90 mb-4">
               Programa tu entrenamiento por fases
             </Text>
@@ -124,7 +124,7 @@ export default function PeriodizationPlanner() {
             <View
               key={meso.id}
               className={`bg-zinc-900 rounded-xl p-5 mb-4 border ${
-                meso.completed ? 'border-emerald-500' : 'border-zinc-800'
+                meso.completed ? 'border-primary' : 'border-zinc-800'
               }`}
             >
               <View className="flex-row items-start justify-between mb-3">
@@ -133,7 +133,7 @@ export default function PeriodizationPlanner() {
                   <Text className="text-zinc-400 text-sm">{meso.duration}</Text>
                 </View>
                 {meso.completed && (
-                  <View className="bg-emerald-500 rounded-full px-3 py-1">
+                  <View className="bg-primary rounded-full px-3 py-1">
                     <Text className="text-white text-xs font-bold">DONE</Text>
                   </View>
                 )}
@@ -145,21 +145,21 @@ export default function PeriodizationPlanner() {
               </View>
 
               {!meso.completed && (
-                <TouchableOpacity className="bg-blue-500 rounded-xl py-3 mt-2">
+                <TouchableOpacity className="bg-primary rounded-xl py-3 mt-2">
                   <Text className="text-white font-bold text-center">Start Mesocycle</Text>
                 </TouchableOpacity>
               )}
             </View>
           ))}
 
-          <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30 mb-6">
-            <Text className="text-blue-400 font-bold mb-2">Periodización Explicada</Text>
-            <Text className="text-blue-300 text-sm">
-              • Previene estancamiento y overtraining{'\n'}
-              • Mesociclos de 3-6 semanas{'\n'}
-              • Deload cada 4-6 semanas{'\n'}
-              • Progresión estructurada{'\n'}
-              • Picos de rendimiento planificados
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
+            <Text className="text-primary/80 font-bold mb-2">PeriodizaciÃ³n Explicada</Text>
+            <Text className="text-primary/60 text-sm">
+              â€¢ Previene estancamiento y overtraining{'\n'}
+              â€¢ Mesociclos de 3-6 semanas{'\n'}
+              â€¢ Deload cada 4-6 semanas{'\n'}
+              â€¢ ProgresiÃ³n estructurada{'\n'}
+              â€¢ Picos de rendimiento planificados
             </Text>
           </View>
         </View>
@@ -167,3 +167,4 @@ export default function PeriodizationPlanner() {
     </View>
   );
 }
+

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -23,8 +23,8 @@ export default function DeloadProtocol() {
       color: 'blue',
       icon: 'fitness' as const,
       protocols: [
-        { metric: 'Volume', reduction: '40-50%', example: '3 sets → 2 sets' },
-        { metric: 'Intensity', reduction: '30-40%', example: '100kg → 60-70kg' },
+        { metric: 'Volume', reduction: '40-50%', example: '3 sets â†’ 2 sets' },
+        { metric: 'Intensity', reduction: '30-40%', example: '100kg â†’ 60-70kg' },
         { metric: 'Frequency', reduction: '0%', example: 'Keep same days' },
         { metric: 'Exercises', reduction: '0%', example: 'Same movements' },
       ],
@@ -110,7 +110,7 @@ export default function DeloadProtocol() {
 
       <ScrollView className="flex-1" showsVerticalScrollIndicator={false}>
         <View className="px-6 pt-6">
-          <View className="bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl p-6 mb-6">
+          <View className="bg-gradient-to-r from-primary to-[#7D0EBE] rounded-xl p-6 mb-6">
             <Text className="text-white text-2xl font-bold mb-2">Strategic Recovery</Text>
             <Text className="text-white opacity-90">
               Prevent overtraining, maximize gains
@@ -218,14 +218,14 @@ export default function DeloadProtocol() {
             })}
           </View>
 
-          <View className="bg-emerald-500/10 rounded-xl p-4 border border-emerald-500/30 mb-6">
-            <Text className="text-emerald-400 font-bold mb-2">Deload Tips</Text>
-            <Text className="text-emerald-300 text-sm">
-              • Plan deloads proactively{'\n'}
-              • Don't skip them{'\n'}
-              • Use time for mobility{'\n'}
-              • Focus on technique{'\n'}
-              • Trust the process
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
+            <Text className="text-primary font-bold mb-2">Deload Tips</Text>
+            <Text className="text-primary/80 text-sm">
+              â€¢ Plan deloads proactively{'\n'}
+              â€¢ Don't skip them{'\n'}
+              â€¢ Use time for mobility{'\n'}
+              â€¢ Focus on technique{'\n'}
+              â€¢ Trust the process
             </Text>
           </View>
         </View>
@@ -233,3 +233,5 @@ export default function DeloadProtocol() {
     </View>
   );
 }
+
+

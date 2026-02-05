@@ -38,7 +38,7 @@ export function Avatar({
   return (
     <View
       className={cn(
-        'rounded-full overflow-hidden bg-emerald-100 items-center justify-center',
+        'rounded-full overflow-hidden bg-primary/10 items-center justify-center',
         sizeStyles[size].container,
         className
       )}
@@ -54,7 +54,7 @@ export function Avatar({
       ) : (
         <Text
           className={cn(
-            'font-barlow-semibold text-emerald-700',
+            'font-label-bold text-primary',
             sizeStyles[size].text
           )}
         >

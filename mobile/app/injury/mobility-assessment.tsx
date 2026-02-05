@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -30,7 +30,7 @@ export default function MobilityAssessment() {
       category: 'Hip Flexor',
       test: 'Thomas Test',
       instruction: 'Lie on bench edge, pull one knee to chest, other leg hangs',
-      pass: 'Thigh parallel or below, knee at 90°',
+      pass: 'Thigh parallel or below, knee at 90Â°',
       fail: 'Thigh rises above parallel',
       improvement: [
         'Kneeling hip flexor stretch (60s)',
@@ -44,8 +44,8 @@ export default function MobilityAssessment() {
       category: 'Hamstring',
       test: 'Straight Leg Raise',
       instruction: 'Lie down, raise one straight leg while other stays flat',
-      pass: 'Leg reaches 70-80° from ground',
-      fail: 'Leg reaches <70° OR opposite leg bends',
+      pass: 'Leg reaches 70-80Â° from ground',
+      fail: 'Leg reaches <70Â° OR opposite leg bends',
       improvement: [
         'Lying hamstring stretch (60s)',
         'Standing toe touch progression',
@@ -72,8 +72,8 @@ export default function MobilityAssessment() {
       category: 'Thoracic Spine',
       test: 'Seated Rotation Test',
       instruction: 'Sit with arms crossed, rotate torso both ways',
-      pass: '45° rotation each side',
-      fail: '<45° rotation OR pain',
+      pass: '45Â° rotation each side',
+      fail: '<45Â° rotation OR pain',
       improvement: [
         'Thoracic extensions on foam roller',
         'Open book stretch (10 each)',
@@ -85,7 +85,7 @@ export default function MobilityAssessment() {
     {
       category: 'Hip Internal Rotation',
       test: '90/90 Position',
-      instruction: 'Sit with both knees at 90°, one in front, one to side',
+      instruction: 'Sit with both knees at 90Â°, one in front, one to side',
       pass: 'Both hips rest on ground comfortably',
       fail: 'Cannot achieve position OR knee lifts',
       improvement: [
@@ -156,7 +156,7 @@ export default function MobilityAssessment() {
 
       <ScrollView className="flex-1" showsVerticalScrollIndicator={false}>
         <View className="px-6 pt-6">
-          <View className="bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl p-6 mb-6">
+          <View className="bg-gradient-to-r from-primary to-[#7D0EBE] rounded-xl p-6 mb-6">
             <Text className="text-white text-2xl font-bold mb-2">Test Your Mobility</Text>
             <Text className="text-white opacity-90 mb-4">
               Identify limitations before they cause injury
@@ -191,14 +191,14 @@ export default function MobilityAssessment() {
               <View key={idx} className="bg-zinc-900 rounded-xl p-4 mb-4 border border-zinc-800">
                 <View className="flex-row items-center justify-between mb-3">
                   <View className="flex-1">
-                    <Text className="text-blue-400 text-xs font-bold">{test.category}</Text>
+                    <Text className="text-primary/80 text-xs font-bold">{test.category}</Text>
                     <Text className="text-white font-bold text-lg">{test.test}</Text>
                   </View>
                   {testResult && (
                     <Ionicons
                       name={testResult === 'pass' ? 'checkmark-circle' : 'close-circle'}
                       size={32}
-                      color={testResult === 'pass' ? '#10b981' : '#ef4444'}
+                      color={testResult === 'pass' ? '#9D12DE' : '#ef4444'}
                     />
                   )}
                 </View>
@@ -209,12 +209,12 @@ export default function MobilityAssessment() {
                 </View>
 
                 <View className="flex-row gap-2 mb-3">
-                  <View className="flex-1 bg-emerald-500/10 rounded-lg p-2 border border-emerald-500/30">
-                    <Text className="text-emerald-400 text-xs font-bold mb-1">✓ PASS</Text>
-                    <Text className="text-emerald-300 text-xs">{test.pass}</Text>
+                  <View className="flex-1 bg-primary/10 rounded-lg p-2 border border-primary/30">
+                    <Text className="text-primary text-xs font-bold mb-1">âœ“ PASS</Text>
+                    <Text className="text-primary/80 text-xs">{test.pass}</Text>
                   </View>
                   <View className="flex-1 bg-red-500/10 rounded-lg p-2 border border-red-500/30">
-                    <Text className="text-red-400 text-xs font-bold mb-1">✗ FAIL</Text>
+                    <Text className="text-red-400 text-xs font-bold mb-1">âœ— FAIL</Text>
                     <Text className="text-red-300 text-xs">{test.fail}</Text>
                   </View>
                 </View>
@@ -223,9 +223,9 @@ export default function MobilityAssessment() {
                   <TouchableOpacity
                     onPress={() => handleResult(test.test, 'pass')}
                     className={`flex-1 ${
-                      testResult === 'pass' ? 'bg-emerald-500' : 'bg-zinc-800'
+                      testResult === 'pass' ? 'bg-primary' : 'bg-zinc-800'
                     } rounded-lg py-3 border ${
-                      testResult === 'pass' ? 'border-emerald-400' : 'border-zinc-700'
+                      testResult === 'pass' ? 'border-primary' : 'border-zinc-700'
                     }`}
                   >
                     <Text
@@ -261,7 +261,7 @@ export default function MobilityAssessment() {
                     </Text>
                     {test.improvement.map((step, stepIdx) => (
                       <Text key={stepIdx} className="text-amber-300 text-sm mb-1">
-                        • {step}
+                        â€¢ {step}
                       </Text>
                     ))}
                     <Text className="text-zinc-400 text-xs mt-2 italic">
@@ -273,15 +273,15 @@ export default function MobilityAssessment() {
             );
           })}
 
-          <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30 mb-6">
-            <Text className="text-blue-400 font-bold mb-2">Assessment Guidelines</Text>
-            <Text className="text-blue-300 text-sm">
-              • Test when fresh (not post-workout){'\n'}
-              • No pain = stop immediately{'\n'}
-              • Retest monthly to track progress{'\n'}
-              • Work on failures 10 min/day{'\n'}
-              • Mobility before strength{'\n'}
-              • Be honest with yourself
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
+            <Text className="text-primary/80 font-bold mb-2">Assessment Guidelines</Text>
+            <Text className="text-primary/60 text-sm">
+              â€¢ Test when fresh (not post-workout){'\n'}
+              â€¢ No pain = stop immediately{'\n'}
+              â€¢ Retest monthly to track progress{'\n'}
+              â€¢ Work on failures 10 min/day{'\n'}
+              â€¢ Mobility before strength{'\n'}
+              â€¢ Be honest with yourself
             </Text>
           </View>
         </View>
@@ -289,3 +289,6 @@ export default function MobilityAssessment() {
     </View>
   );
 }
+
+
+

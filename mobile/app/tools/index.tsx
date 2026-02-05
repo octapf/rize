@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -16,7 +16,7 @@ export default function ToolsScreen() {
     {
       id: 'plate-calculator',
       name: 'Calculadora de Discos',
-      description: 'Calcula qué discos usar para tu peso objetivo',
+      description: 'Calcula quÃ© discos usar para tu peso objetivo',
       icon: 'calculator',
       color: '#8B5CF6',
       route: '/tools/plate-calculator',
@@ -24,7 +24,7 @@ export default function ToolsScreen() {
     {
       id: 'one-rep-max',
       name: 'Calculadora 1RM',
-      description: 'Estima tu máximo de una repetición',
+      description: 'Estima tu mÃ¡ximo de una repeticiÃ³n',
       icon: 'trending-up',
       color: '#EF4444',
       route: '/tools/one-rep-max',
@@ -34,21 +34,21 @@ export default function ToolsScreen() {
       name: 'Calculadora de Grasa Corporal',
       description: 'Estima tu porcentaje de grasa corporal',
       icon: 'body',
-      color: '#10B981',
+      color: '#9D12DE',
       route: '/tools/body-fat',
     },
     {
       id: 'tdee',
       name: 'Calculadora TDEE',
-      description: 'Calcula tus calorías diarias',
+      description: 'Calcula tus calorÃ­as diarias',
       icon: 'flame',
-      color: '#F59E0B',
+      color: '#FFEA00',
       route: '/tools/tdee',
     },
     {
       id: 'macros',
       name: 'Calculadora de Macros',
-      description: 'Planifica tu distribución de macronutrientes',
+      description: 'Planifica tu distribuciÃ³n de macronutrientes',
       icon: 'nutrition',
       color: '#06B6D4',
       route: '/tools/macros',
@@ -74,7 +74,7 @@ export default function ToolsScreen() {
     ].includes(route)) {
       router.push(route as any);
     } else {
-      Alert.alert('Próximamente', 'Esta herramienta estará disponible pronto');
+      Alert.alert('PrÃ³ximamente', 'Esta herramienta estarÃ¡ disponible pronto');
     }
   };
 
@@ -127,15 +127,15 @@ export default function ToolsScreen() {
         </View>
 
         {/* Info Card */}
-        <Card className="p-4 mt-4 bg-blue-50 border-blue-200">
+        <Card className="p-4 mt-4 bg-primary/5 border-primary/20">
           <View className="flex-row gap-3">
-            <Ionicons name="information-circle" size={24} color="#3B82F6" />
+            <Ionicons name="information-circle" size={24} color="#9D12DE" />
             <View className="flex-1">
-              <Text className="text-blue-900 font-semibold mb-1">
-                Más herramientas próximamente
+              <Text className="text-text font-semibold mb-1">
+                MÃ¡s herramientas prÃ³ximamente
               </Text>
-              <Text className="text-blue-700 text-sm">
-                Estamos trabajando en más calculadoras y utilidades para mejorar tu experiencia de entrenamiento.
+              <Text className="text-text/70 text-sm">
+                Estamos trabajando en mÃ¡s calculadoras y utilidades para mejorar tu experiencia de entrenamiento.
               </Text>
             </View>
           </View>
@@ -144,3 +144,4 @@ export default function ToolsScreen() {
     </View>
   );
 }
+

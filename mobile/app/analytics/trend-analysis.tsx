@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -108,9 +108,9 @@ export default function TrendAnalysis() {
 
   const getTrendColor = (trend: string) => {
     if (selectedMetric === 'bodyfat') {
-      return trend === 'down' ? '#10B981' : trend === 'up' ? '#EF4444' : '#71717A';
+      return trend === 'down' ? '#9D12DE' : trend === 'up' ? '#EF4444' : '#71717A';
     }
-    return trend === 'up' ? '#10B981' : trend === 'down' ? '#EF4444' : '#71717A';
+    return trend === 'up' ? '#9D12DE' : trend === 'down' ? '#EF4444' : '#71717A';
   };
 
   return (
@@ -130,9 +130,9 @@ export default function TrendAnalysis() {
       <ScrollView className="flex-1" showsVerticalScrollIndicator={false}>
         <View className="px-6 pt-6">
           {/* Info */}
-          <View className="bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl p-6 mb-6">
+          <View className="bg-gradient-to-r from-primary to-[#7D0EBE] rounded-xl p-6 mb-6">
             <Text className="text-white text-2xl font-bold mb-2">
-              Análisis Predictivo
+              AnÃ¡lisis Predictivo
             </Text>
             <Text className="text-white opacity-90 mb-4">
               Tendencias y predicciones basadas en tu progreso
@@ -146,7 +146,7 @@ export default function TrendAnalysis() {
           </View>
 
           {/* Metric Selection */}
-          <Text className="text-white font-bold text-lg mb-3">Métrica</Text>
+          <Text className="text-white font-bold text-lg mb-3">MÃ©trica</Text>
           <View className="flex-row flex-wrap gap-2 mb-6">
             {metrics.map((metric) => (
               <TouchableOpacity
@@ -181,14 +181,14 @@ export default function TrendAnalysis() {
                 onPress={() => setSelectedPeriod(period)}
                 className={`flex-1 rounded-xl py-3 ${
                   selectedPeriod === period
-                    ? 'bg-blue-500'
+                    ? 'bg-primary'
                     : 'bg-zinc-900 border border-zinc-800'
                 }`}
               >
                 <Text className={`text-center font-bold text-xs ${
                   selectedPeriod === period ? 'text-white' : 'text-zinc-400'
                 }`}>
-                  {period === 'week' ? 'Semana' : period === 'month' ? 'Mes' : period === 'quarter' ? 'Trimestre' : 'Año'}
+                  {period === 'week' ? 'Semana' : period === 'month' ? 'Mes' : period === 'quarter' ? 'Trimestre' : 'AÃ±o'}
                 </Text>
               </TouchableOpacity>
             ))}
@@ -228,7 +228,7 @@ export default function TrendAnalysis() {
 
             <View className={`bg-${currentMetric.color}-500/20 rounded-lg p-3`}>
               <Text className={`text-${currentMetric.color}-400 text-sm mb-1`}>
-                Predicción próximo periodo
+                PredicciÃ³n prÃ³ximo periodo
               </Text>
               <Text className={`text-${currentMetric.color}-300 text-xl font-bold`}>
                 {currentTrend.prediction.toLocaleString()} {currentMetric.unit}
@@ -238,7 +238,7 @@ export default function TrendAnalysis() {
 
           {/* Chart */}
           <View className="bg-zinc-900 rounded-xl p-4 mb-6 border border-zinc-800">
-            <Text className="text-white font-bold mb-4">Tendencia Histórica</Text>
+            <Text className="text-white font-bold mb-4">Tendencia HistÃ³rica</Text>
             
             <LineChart
               data={{
@@ -292,11 +292,11 @@ export default function TrendAnalysis() {
             <View className="flex-row items-center justify-between mt-3">
               <View className="flex-row items-center">
                 <View className={`w-3 h-3 bg-${currentMetric.color}-500 rounded-full mr-2`} />
-                <Text className="text-zinc-400 text-sm">Histórico</Text>
+                <Text className="text-zinc-400 text-sm">HistÃ³rico</Text>
               </View>
               <View className="flex-row items-center">
                 <View className={`w-3 h-3 bg-${currentMetric.color}-500 rounded-full mr-2 opacity-50`} />
-                <Text className="text-zinc-400 text-sm">Predicción</Text>
+                <Text className="text-zinc-400 text-sm">PredicciÃ³n</Text>
               </View>
             </View>
           </View>
@@ -309,27 +309,27 @@ export default function TrendAnalysis() {
 
             {selectedMetric === 'volume' && (
               <>
-                <View className="bg-emerald-500/10 rounded-lg p-3 mb-3">
+                <View className="bg-primary/10 rounded-lg p-3 mb-3">
                   <View className="flex-row items-start">
-                    <Ionicons name="checkmark-circle" size={20} color="#10B981" />
-                    <Text className="text-emerald-400 ml-2 flex-1">
+                    <Ionicons name="checkmark-circle" size={20} color="#9D12DE" />
+                    <Text className="text-primary ml-2 flex-1">
                       Volumen incrementando consistentemente (+14.5% este mes)
                     </Text>
                   </View>
                 </View>
 
-                <View className="bg-blue-500/10 rounded-lg p-3 mb-3">
+                <View className="bg-primary/10 rounded-lg p-3 mb-3">
                   <View className="flex-row items-start">
-                    <Ionicons name="information-circle" size={20} color="#3B82F6" />
-                    <Text className="text-blue-400 ml-2 flex-1">
-                      Ritmo ideal para hypertrophy. Mantén este progreso.
+                    <Ionicons name="information-circle" size={20} color="#9D12DE" />
+                    <Text className="text-primary/80 ml-2 flex-1">
+                      Ritmo ideal para hypertrophy. MantÃ©n este progreso.
                     </Text>
                   </View>
                 </View>
 
                 <View className="bg-amber-500/10 rounded-lg p-3">
                   <View className="flex-row items-start">
-                    <Ionicons name="warning" size={20} color="#F59E0B" />
+                    <Ionicons name="warning" size={20} color="#FFEA00" />
                     <Text className="text-amber-400 ml-2 flex-1">
                       Considera deload week en 2-3 semanas para recovery.
                     </Text>
@@ -340,20 +340,20 @@ export default function TrendAnalysis() {
 
             {selectedMetric === 'strength' && (
               <>
-                <View className="bg-emerald-500/10 rounded-lg p-3 mb-3">
+                <View className="bg-primary/10 rounded-lg p-3 mb-3">
                   <View className="flex-row items-start">
-                    <Ionicons name="checkmark-circle" size={20} color="#10B981" />
-                    <Text className="text-emerald-400 ml-2 flex-1">
-                      Fuerza aumentando +6.3%. Excelente progresión lineal.
+                    <Ionicons name="checkmark-circle" size={20} color="#9D12DE" />
+                    <Text className="text-primary ml-2 flex-1">
+                      Fuerza aumentando +6.3%. Excelente progresiÃ³n lineal.
                     </Text>
                   </View>
                 </View>
 
-                <View className="bg-blue-500/10 rounded-lg p-3">
+                <View className="bg-primary/10 rounded-lg p-3">
                   <View className="flex-row items-start">
-                    <Ionicons name="bulb" size={20} color="#3B82F6" />
-                    <Text className="text-blue-400 ml-2 flex-1">
-                      Próximo objetivo: 95kg promedio. Alcanzable en 6-8 semanas.
+                    <Ionicons name="bulb" size={20} color="#9D12DE" />
+                    <Text className="text-primary/80 ml-2 flex-1">
+                      PrÃ³ximo objetivo: 95kg promedio. Alcanzable en 6-8 semanas.
                     </Text>
                   </View>
                 </View>
@@ -362,19 +362,19 @@ export default function TrendAnalysis() {
 
             {selectedMetric === 'bodyweight' && (
               <>
-                <View className="bg-emerald-500/10 rounded-lg p-3 mb-3">
+                <View className="bg-primary/10 rounded-lg p-3 mb-3">
                   <View className="flex-row items-start">
-                    <Ionicons name="checkmark-circle" size={20} color="#10B981" />
-                    <Text className="text-emerald-400 ml-2 flex-1">
+                    <Ionicons name="checkmark-circle" size={20} color="#9D12DE" />
+                    <Text className="text-primary ml-2 flex-1">
                       Ganancia de peso controlada +1.8%. Ideal para lean bulk.
                     </Text>
                   </View>
                 </View>
 
-                <View className="bg-blue-500/10 rounded-lg p-3">
+                <View className="bg-primary/10 rounded-lg p-3">
                   <View className="flex-row items-start">
-                    <Ionicons name="information-circle" size={20} color="#3B82F6" />
-                    <Text className="text-blue-400 ml-2 flex-1">
+                    <Ionicons name="information-circle" size={20} color="#9D12DE" />
+                    <Text className="text-primary/80 ml-2 flex-1">
                       Ritmo de 0.5-0.7kg/mes minimiza grasa. Perfecto.
                     </Text>
                   </View>
@@ -384,29 +384,29 @@ export default function TrendAnalysis() {
 
             {selectedMetric === 'bodyfat' && (
               <>
-                <View className="bg-emerald-500/10 rounded-lg p-3 mb-3">
+                <View className="bg-primary/10 rounded-lg p-3 mb-3">
                   <View className="flex-row items-start">
-                    <Ionicons name="checkmark-circle" size={20} color="#10B981" />
-                    <Text className="text-emerald-400 ml-2 flex-1">
-                      Grasa corporal bajando -10.1%. Excelente composición.
+                    <Ionicons name="checkmark-circle" size={20} color="#9D12DE" />
+                    <Text className="text-primary ml-2 flex-1">
+                      Grasa corporal bajando -10.1%. Excelente composiciÃ³n.
                     </Text>
                   </View>
                 </View>
 
-                <View className="bg-blue-500/10 rounded-lg p-3 mb-3">
+                <View className="bg-primary/10 rounded-lg p-3 mb-3">
                   <View className="flex-row items-start">
-                    <Ionicons name="bulb" size={20} color="#3B82F6" />
-                    <Text className="text-blue-400 ml-2 flex-1">
-                      14.2% está en rango fitness. Meta 12-13% para definición.
+                    <Ionicons name="bulb" size={20} color="#9D12DE" />
+                    <Text className="text-primary/80 ml-2 flex-1">
+                      14.2% estÃ¡ en rango fitness. Meta 12-13% para definiciÃ³n.
                     </Text>
                   </View>
                 </View>
 
                 <View className="bg-amber-500/10 rounded-lg p-3">
                   <View className="flex-row items-start">
-                    <Ionicons name="warning" size={20} color="#F59E0B" />
+                    <Ionicons name="warning" size={20} color="#FFEA00" />
                     <Text className="text-amber-400 ml-2 flex-1">
-                      No bajes más de 1% por mes para preservar músculo.
+                      No bajes mÃ¡s de 1% por mes para preservar mÃºsculo.
                     </Text>
                   </View>
                 </View>
@@ -415,20 +415,20 @@ export default function TrendAnalysis() {
           </View>
 
           {/* Tips */}
-          <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30 mb-6">
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
             <View className="flex-row items-start">
-              <Ionicons name="analytics" size={20} color="#3B82F6" />
+              <Ionicons name="analytics" size={20} color="#9D12DE" />
               <View className="flex-1 ml-3">
-                <Text className="text-blue-400 font-bold mb-2">
-                  Sobre el Análisis de Tendencias
+                <Text className="text-primary/80 font-bold mb-2">
+                  Sobre el AnÃ¡lisis de Tendencias
                 </Text>
-                <Text className="text-blue-300 text-sm">
-                  • Predicciones basadas en algoritmos ML{'\n'}
-                  • Requiere mínimo 4 semanas de datos{'\n'}
-                  • Tendencias ajustan por outliers{'\n'}
-                  • Más datos = predicciones más precisas{'\n'}
-                  • Revisa insights semanalmente{'\n'}
-                  • Ajusta plan según recomendaciones
+                <Text className="text-primary/60 text-sm">
+                  â€¢ Predicciones basadas en algoritmos ML{'\n'}
+                  â€¢ Requiere mÃ­nimo 4 semanas de datos{'\n'}
+                  â€¢ Tendencias ajustan por outliers{'\n'}
+                  â€¢ MÃ¡s datos = predicciones mÃ¡s precisas{'\n'}
+                  â€¢ Revisa insights semanalmente{'\n'}
+                  â€¢ Ajusta plan segÃºn recomendaciones
                 </Text>
               </View>
             </View>
@@ -438,3 +438,5 @@ export default function TrendAnalysis() {
     </View>
   );
 }
+
+

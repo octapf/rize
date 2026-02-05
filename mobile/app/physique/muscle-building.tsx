@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -282,20 +282,20 @@ export default function MuscleBuilding() {
             {principles.map((p, idx) => (
               <View key={idx} className="bg-zinc-800 rounded-xl p-4 mb-3 last:mb-0 border border-zinc-700">
                 <View className="flex-row items-center mb-2">
-                  <Ionicons name={p.icon} size={20} color="#10b981" />
+                  <Ionicons name={p.icon} size={20} color="#9D12DE" />
                   <Text className="text-white font-bold text-lg ml-2">{p.principle}</Text>
                 </View>
                 <Text className="text-zinc-300 mb-2">{p.description}</Text>
-                <View className="bg-emerald-500/10 rounded-lg p-2 border border-emerald-500/30">
-                  <Text className="text-emerald-400 text-sm">{p.howTo}</Text>
+                <View className="bg-primary/10 rounded-lg p-2 border border-primary/30">
+                  <Text className="text-primary text-sm">{p.howTo}</Text>
                 </View>
               </View>
             ))}
           </View>
 
-          <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30 mb-6">
-            <Text className="text-blue-400 font-bold mb-2">Growth Formula</Text>
-            <Text className="text-blue-300 text-sm">
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
+            <Text className="text-primary/80 font-bold mb-2">Growth Formula</Text>
+            <Text className="text-primary/60 text-sm">
               Muscle growth = Progressive overload + Sufficient volume + Adequate protein (1.6-2.2g/kg) + Sleep (7-9h) + Consistency over months/years
             </Text>
           </View>
@@ -304,3 +304,4 @@ export default function MuscleBuilding() {
     </View>
   );
 }
+

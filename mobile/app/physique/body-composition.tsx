@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -28,7 +28,7 @@ export default function BodyComposition() {
       id: 'navy',
       name: 'Navy Method',
       icon: 'analytics' as const,
-      accuracy: 'Good (±3.5%)',
+      accuracy: 'Good (Â±3.5%)',
       description: 'Uses circumference measurements',
       measurements: gender === 'male' 
         ? ['Height', 'Neck', 'Waist'] 
@@ -38,7 +38,7 @@ export default function BodyComposition() {
       id: 'calipers',
       name: 'Caliper (3-Site)',
       icon: 'fitness' as const,
-      accuracy: 'Very Good (±2-3%)',
+      accuracy: 'Very Good (Â±2-3%)',
       description: 'Skinfold measurements at 3 sites',
       measurements: gender === 'male'
         ? ['Chest', 'Abdomen', 'Thigh']
@@ -48,7 +48,7 @@ export default function BodyComposition() {
       id: 'visual',
       name: 'Visual Estimate',
       icon: 'eye' as const,
-      accuracy: 'Fair (±5%)',
+      accuracy: 'Fair (Â±5%)',
       description: 'Compare to reference photos',
       measurements: ['Photo comparison'],
     },
@@ -132,7 +132,7 @@ export default function BodyComposition() {
 
       <ScrollView className="flex-1" showsVerticalScrollIndicator={false}>
         <View className="px-6 pt-6">
-          <View className="bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl p-6 mb-6">
+          <View className="bg-gradient-to-r from-primary to-[#7D0EBE] rounded-xl p-6 mb-6">
             <Text className="text-white text-2xl font-bold mb-2">BF% Calculator</Text>
             <Text className="text-white opacity-90">
               Multiple measurement methods
@@ -145,7 +145,7 @@ export default function BodyComposition() {
               <TouchableOpacity
                 onPress={() => setGender('male')}
                 className={`flex-1 ${
-                  gender === 'male' ? 'bg-blue-500' : 'bg-zinc-800'
+                  gender === 'male' ? 'bg-primary' : 'bg-zinc-800'
                 } rounded-xl p-3 border ${
                   gender === 'male' ? 'border-blue-400' : 'border-zinc-700'
                 }`}
@@ -174,7 +174,7 @@ export default function BodyComposition() {
                     key={m.id}
                     onPress={() => setMethod(m.id)}
                     className={`${
-                      method === m.id ? 'bg-blue-500' : 'bg-zinc-800'
+                      method === m.id ? 'bg-primary' : 'bg-zinc-800'
                     } rounded-xl p-4 border ${
                       method === m.id ? 'border-blue-400' : 'border-zinc-700'
                     } w-64`}
@@ -247,7 +247,7 @@ export default function BodyComposition() {
 
               <TouchableOpacity
                 onPress={calculateNavyMethod}
-                className="bg-blue-500 rounded-xl p-4 mt-2"
+                className="bg-primary rounded-xl p-4 mt-2"
               >
                 <Text className="text-white font-bold text-center text-lg">Calculate</Text>
               </TouchableOpacity>
@@ -255,7 +255,7 @@ export default function BodyComposition() {
           )}
 
           {bodyFat !== null && (
-            <View className="bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl p-6 mb-6">
+            <View className="bg-gradient-to-r from-primary to-[#7D0EBE] rounded-xl p-6 mb-6">
               <Text className="text-white opacity-90 mb-2">Your Body Fat %</Text>
               <Text className="text-white text-6xl font-bold mb-3">
                 {bodyFat.toFixed(1)}%
@@ -278,14 +278,14 @@ export default function BodyComposition() {
                 <View className="flex-row justify-between items-center mb-2">
                   <Text className="text-white font-bold text-lg">{range.range}</Text>
                   <View className={`px-3 py-1 rounded-full ${
-                    range.health === 'Excellent' || range.health === 'Very Good' ? 'bg-emerald-500/20' :
-                    range.health === 'Good' ? 'bg-blue-500/20' :
+                    range.health === 'Excellent' || range.health === 'Very Good' ? 'bg-primary/20' :
+                    range.health === 'Good' ? 'bg-primary/20' :
                     range.health === 'At Risk' || range.health === 'Dangerous' ? 'bg-red-500/20' :
                     'bg-amber-500/20'
                   }`}>
                     <Text className={`text-xs font-bold ${
-                      range.health === 'Excellent' || range.health === 'Very Good' ? 'text-emerald-400' :
-                      range.health === 'Good' ? 'text-blue-400' :
+                      range.health === 'Excellent' || range.health === 'Very Good' ? 'text-primary' :
+                      range.health === 'Good' ? 'text-primary/80' :
                       range.health === 'At Risk' || range.health === 'Dangerous' ? 'text-red-400' :
                       'text-amber-400'
                     }`}>
@@ -299,19 +299,19 @@ export default function BodyComposition() {
             ))}
           </View>
 
-          <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30 mb-6">
-            <Text className="text-blue-400 font-bold mb-2">Measurement Tips</Text>
-            <Text className="text-blue-300 text-sm mb-2">
-              • Measure in the morning before eating
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
+            <Text className="text-primary/80 font-bold mb-2">Measurement Tips</Text>
+            <Text className="text-primary/60 text-sm mb-2">
+              â€¢ Measure in the morning before eating
             </Text>
-            <Text className="text-blue-300 text-sm mb-2">
-              • Keep tape parallel to ground, snug but not tight
+            <Text className="text-primary/60 text-sm mb-2">
+              â€¢ Keep tape parallel to ground, snug but not tight
             </Text>
-            <Text className="text-blue-300 text-sm mb-2">
-              • Neck: measure below Adam's apple
+            <Text className="text-primary/60 text-sm mb-2">
+              â€¢ Neck: measure below Adam's apple
             </Text>
-            <Text className="text-blue-300 text-sm">
-              • Waist: at navel, relaxed (don't suck in)
+            <Text className="text-primary/60 text-sm">
+              â€¢ Waist: at navel, relaxed (don't suck in)
             </Text>
           </View>
         </View>
@@ -319,3 +319,5 @@ export default function BodyComposition() {
     </View>
   );
 }
+
+

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -71,13 +71,13 @@ export default function NotificationsScreen() {
   const getNotificationIcon = (type: Notification['type']) => {
     switch (type) {
       case 'achievement':
-        return { name: 'trophy' as const, color: '#f59e0b' };
+        return { name: 'trophy' as const, color: '#FFEA00' };
       case 'record':
-        return { name: 'trending-up' as const, color: '#10b981' };
+        return { name: 'trending-up' as const, color: '#9D12DE' };
       case 'challenge':
         return { name: 'flash' as const, color: '#ef4444' };
       case 'social':
-        return { name: 'people' as const, color: '#3b82f6' };
+        return { name: 'people' as const, color: '#9D12DE' };
       case 'reminder':
         return { name: 'time' as const, color: '#8b5cf6' };
       case 'system':
@@ -106,7 +106,7 @@ export default function NotificationsScreen() {
   return (
     <View className="flex-1 bg-gray-50">
       {/* Header */}
-      <LinearGradient colors={['#10B981', '#059669']} className="px-6 pt-12 pb-6">
+      <LinearGradient colors={['#9D12DE', '#7C3AED']} className="px-6 pt-12 pb-6">
         <View className="flex-row items-center justify-between mb-4">
           <TouchableOpacity onPress={() => router.back()} className="p-2">
             <Ionicons name="arrow-back" size={28} color="white" />
@@ -130,7 +130,7 @@ export default function NotificationsScreen() {
         {unreadCount > 0 && (
           <View className="bg-white/10 rounded-lg p-3">
             <Text className="text-white text-sm text-center">
-              Tienes <Text className="font-bold">{unreadCount}</Text> notificación{unreadCount !== 1 ? 'es' : ''} sin leer
+              Tienes <Text className="font-bold">{unreadCount}</Text> notificaciÃ³n{unreadCount !== 1 ? 'es' : ''} sin leer
             </Text>
           </View>
         )}
@@ -141,12 +141,12 @@ export default function NotificationsScreen() {
         <TouchableOpacity
           onPress={() => setFilter('all')}
           className={`flex-1 py-2 border-b-2 ${
-            filter === 'all' ? 'border-emerald-500' : 'border-transparent'
+            filter === 'all' ? 'border-primary' : 'border-transparent'
           }`}
         >
           <Text
             className={`text-center font-semibold ${
-              filter === 'all' ? 'text-emerald-600' : 'text-gray-500'
+              filter === 'all' ? 'text-primary' : 'text-gray-500'
             }`}
           >
             Todas
@@ -155,15 +155,15 @@ export default function NotificationsScreen() {
         <TouchableOpacity
           onPress={() => setFilter('unread')}
           className={`flex-1 py-2 border-b-2 ${
-            filter === 'unread' ? 'border-emerald-500' : 'border-transparent'
+            filter === 'unread' ? 'border-primary' : 'border-transparent'
           }`}
         >
           <Text
             className={`text-center font-semibold ${
-              filter === 'unread' ? 'text-emerald-600' : 'text-gray-500'
+              filter === 'unread' ? 'text-primary' : 'text-gray-500'
             }`}
           >
-            No leídas {unreadCount > 0 && `(${unreadCount})`}
+            No leÃ­das {unreadCount > 0 && `(${unreadCount})`}
           </Text>
         </TouchableOpacity>
       </View>
@@ -178,7 +178,7 @@ export default function NotificationsScreen() {
       >
         {isLoading && (
           <View className="items-center justify-center py-12">
-            <ActivityIndicator size="large" color="#10B981" />
+            <ActivityIndicator size="large" color="#9D12DE" />
           </View>
         )}
 
@@ -198,7 +198,7 @@ export default function NotificationsScreen() {
             <AnimatedCard
               key={notification._id}
               entering={FadeInDown.delay(index * 50)}
-              className={`p-4 ${!notification.read ? 'bg-emerald-50 border-l-4 border-emerald-500' : ''}`}
+              className={`p-4 ${!notification.read ? 'bg-emerald-50 border-l-4 border-primary' : ''}`}
             >
               <TouchableOpacity
                 onPress={() => handleNotificationPress(notification)}
@@ -219,7 +219,7 @@ export default function NotificationsScreen() {
                       {notification.title}
                     </Text>
                     {!notification.read && (
-                      <View className="w-2 h-2 bg-emerald-500 rounded-full ml-2 mt-1.5" />
+                      <View className="w-2 h-2 bg-primary rounded-full ml-2 mt-1.5" />
                     )}
                   </View>
                   <Text className="text-sm text-gray-600 mb-2">
@@ -245,3 +245,4 @@ export default function NotificationsScreen() {
     </View>
   );
 }
+

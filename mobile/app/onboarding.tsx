@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+﻿import React, { useState, useRef } from 'react';
 import {
   View,
   Text,
@@ -31,28 +31,28 @@ const slides: OnboardingSlide[] = [
     icon: 'barbell',
     title: 'Bienvenido a Rize',
     description: 'Tu app de calistenia y entrenamiento personal. Sigue tu progreso y alcanza tus metas.',
-    gradient: ['#10B981', '#059669'],
+    gradient: ['#9D12DE', '#7C3AED'],
   },
   {
     id: '2',
     icon: 'analytics',
     title: 'Sigue tu Progreso',
     description: 'Registra tus entrenamientos, gana XP, sube de nivel y desbloquea logros.',
-    gradient: ['#3B82F6', '#2563EB'],
+    gradient: ['#9D12DE', '#7C3AED'],
   },
   {
     id: '3',
     icon: 'people',
-    title: 'Conéctate con Amigos',
-    description: 'Comparte tus logros, motívate mutuamente y compite en el leaderboard.',
+    title: 'ConÃ©ctate con Amigos',
+    description: 'Comparte tus logros, motÃ­vate mutuamente y compite en el leaderboard.',
     gradient: ['#A855F7', '#9333EA'],
   },
   {
     id: '4',
     icon: 'trophy',
-    title: '¡Comienza Ahora!',
+    title: 'Â¡Comienza Ahora!',
     description: 'Crea tu cuenta y empieza tu viaje fitness hoy mismo.',
-    gradient: ['#F59E0B', '#D97706'],
+    gradient: ['#FFEA00', '#D97706'],
   },
 ];
 
@@ -131,7 +131,7 @@ export default function OnboardingScreen() {
             
             <TouchableOpacity onPress={handleNext} style={styles.nextButton}>
               <LinearGradient
-                colors={['#10B981', '#059669']}
+                colors={['#9D12DE', '#7C3AED']}
                 style={styles.nextButtonGradient}
               >
                 <Text style={styles.nextText}>Siguiente</Text>
@@ -142,10 +142,10 @@ export default function OnboardingScreen() {
         ) : (
           <TouchableOpacity onPress={handleFinish} style={styles.startButton}>
             <LinearGradient
-              colors={['#10B981', '#059669']}
+              colors={['#9D12DE', '#7C3AED']}
               style={styles.startButtonGradient}
             >
-              <Text style={styles.startText}>¡Empezar!</Text>
+              <Text style={styles.startText}>Â¡Empezar!</Text>
             </LinearGradient>
           </TouchableOpacity>
         )}
@@ -201,7 +201,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 4,
   },
   dotActive: {
-    backgroundColor: '#10B981',
+    backgroundColor: '#9D12DE',
     width: 24,
   },
   footer: {
@@ -250,3 +250,4 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
 });
+

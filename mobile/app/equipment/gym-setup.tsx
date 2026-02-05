@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -261,9 +261,9 @@ export default function GymSetup() {
 
   const getColorClass = (color: string) => {
     const colors: { [key: string]: string } = {
-      blue: 'bg-blue-500',
+      blue: 'bg-primary',
       purple: 'bg-purple-500',
-      emerald: 'bg-emerald-500',
+      emerald: 'bg-primary',
       amber: 'bg-amber-500',
     };
     return colors[color];
@@ -284,7 +284,7 @@ export default function GymSetup() {
 
       <ScrollView className="flex-1" showsVerticalScrollIndicator={false}>
         <View className="px-6 pt-6">
-          <View className="bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl p-6 mb-6">
+          <View className="bg-gradient-to-r from-primary to-[#7D0EBE] rounded-xl p-6 mb-6">
             <Text className="text-white text-2xl font-bold mb-2">Build Your Iron Temple</Text>
             <Text className="text-white opacity-90">
               Complete guide to gym equipment and setup
@@ -323,7 +323,7 @@ export default function GymSetup() {
           {selectedArea === 'homegym' && currentArea.budgets && (
             currentArea.budgets.map((budget, idx) => (
               <View key={idx} className="bg-zinc-900 rounded-xl p-5 mb-6 border border-zinc-800">
-                <View className="bg-blue-500 rounded-xl px-4 py-3 mb-4">
+                <View className="bg-primary rounded-xl px-4 py-3 mb-4">
                   <Text className="text-white font-bold text-lg">{budget.level}</Text>
                   <Text className="text-white/80 text-sm">{budget.priority} Priority</Text>
                 </View>
@@ -332,16 +332,16 @@ export default function GymSetup() {
                   <View key={iIdx} className="bg-zinc-800 rounded-xl p-4 mb-3 last:mb-4">
                     <View className="flex-row justify-between items-start mb-2">
                       <Text className="text-white font-bold flex-1">{item.item}</Text>
-                      <Text className="text-emerald-400 font-bold">{item.cost}</Text>
+                      <Text className="text-primary font-bold">{item.cost}</Text>
                     </View>
                     <Text className="text-zinc-400 text-sm mb-2">{item.why}</Text>
                     <Text className="text-zinc-500 text-xs">{item.specs}</Text>
                   </View>
                 ))}
 
-                <View className="bg-blue-500/10 rounded-xl p-3 border border-blue-500/30">
-                  <Text className="text-blue-400 font-bold text-sm mb-1">Notes:</Text>
-                  <Text className="text-blue-300 text-sm">{budget.notes}</Text>
+                <View className="bg-primary/10 rounded-xl p-3 border border-primary/30">
+                  <Text className="text-primary/80 font-bold text-sm mb-1">Notes:</Text>
+                  <Text className="text-primary/60 text-sm">{budget.notes}</Text>
                 </View>
               </View>
             ))
@@ -370,12 +370,12 @@ export default function GymSetup() {
             currentArea.equipment.map((equip, idx) => (
               <View key={idx} className="bg-zinc-900 rounded-xl p-5 mb-6 border border-zinc-800">
                 <View className="flex-row items-center mb-4">
-                  <View className={`${equip.critical ? 'bg-red-500' : 'bg-emerald-500'} rounded-full w-12 h-12 items-center justify-center mr-3`}>
+                  <View className={`${equip.critical ? 'bg-red-500' : 'bg-primary'} rounded-full w-12 h-12 items-center justify-center mr-3`}>
                     <Ionicons name="shield-checkmark" size={24} color="white" />
                   </View>
                   <View className="flex-1">
                     <Text className="text-white text-xl font-bold">{equip.name}</Text>
-                    <Text className={`${equip.critical ? 'text-red-400' : 'text-emerald-400'} text-sm`}>
+                    <Text className={`${equip.critical ? 'text-red-400' : 'text-primary'} text-sm`}>
                       {equip.critical ? 'CRITICAL' : 'Optional'}
                     </Text>
                   </View>
@@ -384,16 +384,16 @@ export default function GymSetup() {
                 <Text className="text-white font-bold mb-3">Setup:</Text>
                 {equip.setup.map((step, sIdx) => (
                   <View key={sIdx} className="bg-zinc-800 rounded-xl p-4 mb-2">
-                    <Text className="text-emerald-400 font-bold text-sm mb-1">{step.step}</Text>
+                    <Text className="text-primary font-bold text-sm mb-1">{step.step}</Text>
                     <Text className="text-zinc-300 text-xs">{step.why}</Text>
                   </View>
                 ))}
 
-                <View className="bg-blue-500/10 rounded-xl p-3 border border-blue-500/30 mt-3">
-                  <Text className="text-blue-400 font-bold text-sm mb-2">Tips:</Text>
+                <View className="bg-primary/10 rounded-xl p-3 border border-primary/30 mt-3">
+                  <Text className="text-primary/80 font-bold text-sm mb-2">Tips:</Text>
                   {equip.tips.map((tip, tIdx) => (
-                    <Text key={tIdx} className="text-blue-300 text-sm mb-1 last:mb-0">
-                      • {tip}
+                    <Text key={tIdx} className="text-primary/60 text-sm mb-1 last:mb-0">
+                      â€¢ {tip}
                     </Text>
                   ))}
                 </View>
@@ -432,16 +432,16 @@ export default function GymSetup() {
           <View className="bg-gradient-to-r from-red-500/20 to-orange-500/20 rounded-xl p-4 border border-red-500/30 mb-6">
             <Text className="text-red-400 font-bold mb-2">Safety First</Text>
             <Text className="text-red-300 text-sm mb-2">
-              • Never bench without safeties or spotter
+              â€¢ Never bench without safeties or spotter
             </Text>
             <Text className="text-red-300 text-sm mb-2">
-              • Inspect equipment before every heavy session
+              â€¢ Inspect equipment before every heavy session
             </Text>
             <Text className="text-red-300 text-sm mb-2">
-              • Quality equipment = long-term investment
+              â€¢ Quality equipment = long-term investment
             </Text>
             <Text className="text-red-300 text-sm">
-              • When in doubt, err on side of safety
+              â€¢ When in doubt, err on side of safety
             </Text>
           </View>
         </View>
@@ -449,3 +449,5 @@ export default function GymSetup() {
     </View>
   );
 }
+
+

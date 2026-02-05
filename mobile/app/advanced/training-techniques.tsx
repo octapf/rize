@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -34,7 +34,7 @@ export default function AdvancedTechniques() {
         'Works better on machines/cables than free weights',
         'Not for compound movements under heavy load',
       ],
-      example: 'Bicep curls: 15kg×8 → 12kg×6 → 10kg×4',
+      example: 'Bicep curls: 15kgÃ—8 â†’ 12kgÃ—6 â†’ 10kgÃ—4',
     },
     {
       id: 'restpause',
@@ -58,7 +58,7 @@ export default function AdvancedTechniques() {
         'Can accumulate significant fatigue',
         'Not for beginners',
       ],
-      example: 'Bench press: 80kg×8 → rest 20s → ×3 → rest 20s → ×2',
+      example: 'Bench press: 80kgÃ—8 â†’ rest 20s â†’ Ã—3 â†’ rest 20s â†’ Ã—2',
     },
     {
       id: 'cluster',
@@ -101,17 +101,17 @@ export default function AdvancedTechniques() {
       types: [
         {
           type: 'Antagonist',
-          example: 'Biceps → Triceps',
+          example: 'Biceps â†’ Triceps',
           benefit: 'Reciprocal innervation, time-efficient',
         },
         {
           type: 'Agonist',
-          example: 'Barbell row → Lat pulldown',
+          example: 'Barbell row â†’ Lat pulldown',
           benefit: 'Increased metabolic stress',
         },
         {
           type: 'Unrelated',
-          example: 'Bench press → Calf raises',
+          example: 'Bench press â†’ Calf raises',
           benefit: 'Time-saving only',
         },
       ],
@@ -298,25 +298,25 @@ export default function AdvancedTechniques() {
           </View>
 
           {'example' in currentTech && (
-            <View className="bg-emerald-500/10 rounded-xl p-4 border border-emerald-500/30 mb-6">
-              <Text className="text-emerald-400 font-bold mb-2">Example</Text>
-              <Text className="text-emerald-300 text-sm">{currentTech.example}</Text>
+            <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
+              <Text className="text-primary font-bold mb-2">Example</Text>
+              <Text className="text-primary/80 text-sm">{currentTech.example}</Text>
             </View>
           )}
 
           <View className="bg-amber-500/10 rounded-xl p-4 border border-amber-500/30 mb-6">
             <Text className="text-amber-400 font-bold mb-2">When to Use Advanced Techniques</Text>
             <Text className="text-amber-300 text-sm mb-2">
-              • You've been training consistently for 1+ years
+              â€¢ You've been training consistently for 1+ years
             </Text>
             <Text className="text-amber-300 text-sm mb-2">
-              • You've hit a plateau with standard training
+              â€¢ You've hit a plateau with standard training
             </Text>
             <Text className="text-amber-300 text-sm mb-2">
-              • Use 1-2 per workout MAX (not every exercise)
+              â€¢ Use 1-2 per workout MAX (not every exercise)
             </Text>
             <Text className="text-amber-300 text-sm">
-              • Cycle in/out every 3-4 weeks to prevent burnout
+              â€¢ Cycle in/out every 3-4 weeks to prevent burnout
             </Text>
           </View>
         </View>
@@ -324,3 +324,5 @@ export default function AdvancedTechniques() {
     </View>
   );
 }
+
+

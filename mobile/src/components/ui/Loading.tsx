@@ -12,7 +12,7 @@ interface LoadingProps {
 export function Loading({
   text,
   size = 'large',
-  color = '#10B981',
+  color = '#9D12DE',
   fullScreen = false,
   style,
 }: LoadingProps) {

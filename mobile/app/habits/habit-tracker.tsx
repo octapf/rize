@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -199,7 +199,7 @@ export default function HabitTracker() {
 
       <ScrollView className="flex-1" showsVerticalScrollIndicator={false}>
         <View className="px-6 pt-6">
-          <View className="bg-gradient-to-r from-emerald-500 to-blue-500 rounded-xl p-6 mb-6">
+          <View className="bg-gradient-to-r from-primary to-[#7D0EBE] rounded-xl p-6 mb-6">
             <Text className="text-white text-2xl font-bold mb-2">Build Consistency</Text>
             <Text className="text-white opacity-90">
               Track daily habits that matter
@@ -283,7 +283,7 @@ export default function HabitTracker() {
 
                   <View className={`bg-${catColor}-500/20 rounded-lg p-2 border border-${catColor}-500/40`}>
                     <Text className={`text-${catColor}-300 text-sm`}>
-                      💡 {habit.tips}
+                      ðŸ’¡ {habit.tips}
                     </Text>
                   </View>
                 </View>
@@ -291,36 +291,36 @@ export default function HabitTracker() {
             })}
           </View>
 
-          <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30 mb-6">
-            <Text className="text-blue-400 font-bold mb-2">Habit Stacking Strategy</Text>
-            <Text className="text-blue-300 text-sm mb-3">
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
+            <Text className="text-primary/80 font-bold mb-2">Habit Stacking Strategy</Text>
+            <Text className="text-primary/60 text-sm mb-3">
               Link new habits to existing ones:
             </Text>
             <View className="space-y-2">
               <View className="bg-zinc-900 rounded-lg p-2">
                 <Text className="text-white text-sm">
-                  After I <Text className="text-blue-400 font-bold">wake up</Text>, I will{' '}
-                  <Text className="text-emerald-400 font-bold">drink 500ml water</Text>
+                  After I <Text className="text-primary/80 font-bold">wake up</Text>, I will{' '}
+                  <Text className="text-primary font-bold">drink 500ml water</Text>
                 </Text>
               </View>
               <View className="bg-zinc-900 rounded-lg p-2">
                 <Text className="text-white text-sm">
-                  After I <Text className="text-blue-400 font-bold">finish workout</Text>, I will{' '}
-                  <Text className="text-emerald-400 font-bold">log it immediately</Text>
+                  After I <Text className="text-primary/80 font-bold">finish workout</Text>, I will{' '}
+                  <Text className="text-primary font-bold">log it immediately</Text>
                 </Text>
               </View>
               <View className="bg-zinc-900 rounded-lg p-2">
                 <Text className="text-white text-sm">
-                  After I <Text className="text-blue-400 font-bold">brush teeth</Text>, I will{' '}
-                  <Text className="text-emerald-400 font-bold">do 2 min stretching</Text>
+                  After I <Text className="text-primary/80 font-bold">brush teeth</Text>, I will{' '}
+                  <Text className="text-primary font-bold">do 2 min stretching</Text>
                 </Text>
               </View>
             </View>
           </View>
 
-          <View className="bg-emerald-500/10 rounded-xl p-4 border border-emerald-500/30 mb-6">
-            <Text className="text-emerald-400 font-bold mb-2">The 1% Rule</Text>
-            <Text className="text-emerald-300 text-sm">
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
+            <Text className="text-primary font-bold mb-2">The 1% Rule</Text>
+            <Text className="text-primary/80 text-sm">
               Getting 1% better every day means you're 37x better after a year. Focus on consistency over intensity.
             </Text>
           </View>
@@ -328,12 +328,12 @@ export default function HabitTracker() {
           <View className="bg-amber-500/10 rounded-xl p-4 border border-amber-500/30 mb-6">
             <Text className="text-amber-400 font-bold mb-2">Tracking Tips</Text>
             <Text className="text-amber-300 text-sm">
-              • Start with 2-3 habits max{'\n'}
-              • Make it impossible to ignore{'\n'}
-              • Never miss twice in a row{'\n'}
-              • Track immediately (don't delay){'\n'}
-              • Celebrate streaks{'\n'}
-              • Be patient (takes 66 days average)
+              â€¢ Start with 2-3 habits max{'\n'}
+              â€¢ Make it impossible to ignore{'\n'}
+              â€¢ Never miss twice in a row{'\n'}
+              â€¢ Track immediately (don't delay){'\n'}
+              â€¢ Celebrate streaks{'\n'}
+              â€¢ Be patient (takes 66 days average)
             </Text>
           </View>
 
@@ -352,3 +352,6 @@ export default function HabitTracker() {
     </View>
   );
 }
+
+
+

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -66,7 +66,7 @@ export default function BadgesScreen() {
   return (
     <View className="flex-1 bg-gray-50">
       {/* Header */}
-      <LinearGradient colors={['#F59E0B', '#D97706']} className="px-6 pt-12 pb-6">
+      <LinearGradient colors={['#FFEA00', '#D97706']} className="px-6 pt-12 pb-6">
         <View className="flex-row items-center justify-between mb-4">
           <TouchableOpacity onPress={() => router.back()} className="p-2">
             <Ionicons name="arrow-back" size={28} color="white" />
@@ -125,7 +125,7 @@ export default function BadgesScreen() {
             streak: 'Racha',
             volume: 'Volumen',
             level: 'Nivel',
-            records: 'Récords',
+            records: 'RÃ©cords',
             social: 'Social',
             special: 'Especiales',
           };
@@ -144,7 +144,7 @@ export default function BadgesScreen() {
             <View key={category}>
               {/* Category Header */}
               <View className="flex-row items-center gap-2 mb-3">
-                <Ionicons name={categoryIcons[category]} size={24} color="#F59E0B" />
+                <Ionicons name={categoryIcons[category]} size={24} color="#FFEA00" />
                 <Text className="text-lg font-bold text-gray-900">
                   {categoryNames[category]}
                 </Text>
@@ -224,9 +224,9 @@ export default function BadgesScreen() {
                 {unlockedBadges.includes(selectedBadge!) ? (
                   <View className="bg-emerald-50 p-4 rounded-xl mb-4">
                     <View className="flex-row items-center justify-center gap-2">
-                      <Ionicons name="checkmark-circle" size={24} color="#10B981" />
-                      <Text className="text-emerald-700 font-bold">
-                        ¡Desbloqueada!
+                      <Ionicons name="checkmark-circle" size={24} color="#9D12DE" />
+                      <Text className="text-primary font-bold">
+                        Â¡Desbloqueada!
                       </Text>
                     </View>
                   </View>
@@ -253,3 +253,5 @@ export default function BadgesScreen() {
     </View>
   );
 }
+
+

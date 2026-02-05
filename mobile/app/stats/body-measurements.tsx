@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -28,7 +28,7 @@ interface MeasurementCategory {
 
 const MEASUREMENT_DATA: MeasurementCategory[] = [
   {
-    category: 'Peso y Composición',
+    category: 'Peso y ComposiciÃ³n',
     measurements: [
       {
         id: '1',
@@ -37,7 +37,7 @@ const MEASUREMENT_DATA: MeasurementCategory[] = [
         unit: 'kg',
         date: new Date('2024-01-20'),
         icon: 'barbell',
-        color: '#10B981',
+        color: '#9D12DE',
       },
       {
         id: '2',
@@ -46,7 +46,7 @@ const MEASUREMENT_DATA: MeasurementCategory[] = [
         unit: '%',
         date: new Date('2024-01-20'),
         icon: 'analytics',
-        color: '#F59E0B',
+        color: '#FFEA00',
       },
       {
         id: '3',
@@ -69,11 +69,11 @@ const MEASUREMENT_DATA: MeasurementCategory[] = [
         unit: 'cm',
         date: new Date('2024-01-20'),
         icon: 'body',
-        color: '#3B82F6',
+        color: '#9D12DE',
       },
       {
         id: '5',
-        bodyPart: 'Bíceps (Derecho)',
+        bodyPart: 'BÃ­ceps (Derecho)',
         value: 38,
         unit: 'cm',
         date: new Date('2024-01-20'),
@@ -82,7 +82,7 @@ const MEASUREMENT_DATA: MeasurementCategory[] = [
       },
       {
         id: '6',
-        bodyPart: 'Bíceps (Izquierdo)',
+        bodyPart: 'BÃ­ceps (Izquierdo)',
         value: 37.5,
         unit: 'cm',
         date: new Date('2024-01-20'),
@@ -110,7 +110,7 @@ const MEASUREMENT_DATA: MeasurementCategory[] = [
         unit: 'cm',
         date: new Date('2024-01-20'),
         icon: 'ellipse',
-        color: '#F59E0B',
+        color: '#FFEA00',
       },
       {
         id: '9',
@@ -119,7 +119,7 @@ const MEASUREMENT_DATA: MeasurementCategory[] = [
         unit: 'cm',
         date: new Date('2024-01-20'),
         icon: 'square',
-        color: '#10B981',
+        color: '#9D12DE',
       },
     ],
   },
@@ -142,7 +142,7 @@ const MEASUREMENT_DATA: MeasurementCategory[] = [
         unit: 'cm',
         date: new Date('2024-01-20'),
         icon: 'arrow-down',
-        color: '#3B82F6',
+        color: '#9D12DE',
       },
       {
         id: '12',
@@ -151,7 +151,7 @@ const MEASUREMENT_DATA: MeasurementCategory[] = [
         unit: 'cm',
         date: new Date('2024-01-20'),
         icon: 'arrow-down',
-        color: '#3B82F6',
+        color: '#9D12DE',
       },
       {
         id: '13',
@@ -177,7 +177,7 @@ const MEASUREMENT_DATA: MeasurementCategory[] = [
 
 export default function BodyMeasurements() {
   const [searchQuery, setSearchQuery] = useState('');
-  const [expandedCategory, setExpandedCategory] = useState<string | null>('Peso y Composición');
+  const [expandedCategory, setExpandedCategory] = useState<string | null>('Peso y ComposiciÃ³n');
 
   const filteredData = MEASUREMENT_DATA.map((category) => ({
     ...category,
@@ -203,7 +203,7 @@ export default function BodyMeasurements() {
             Medidas Corporales
           </Text>
           <TouchableOpacity>
-            <Ionicons name="add-circle" size={28} color="#10B981" />
+            <Ionicons name="add-circle" size={28} color="#9D12DE" />
           </TouchableOpacity>
         </View>
 
@@ -232,7 +232,7 @@ export default function BodyMeasurements() {
           <Text className="text-zinc-400 text-xs">Medidas</Text>
         </View>
         <View className="flex-1 items-center border-l border-zinc-800">
-          <Text className="text-emerald-500 text-2xl font-bold">+2.5</Text>
+          <Text className="text-primary text-2xl font-bold">+2.5</Text>
           <Text className="text-zinc-400 text-xs">Cambio (%)</Text>
         </View>
         <View className="flex-1 items-center border-l border-zinc-800">
@@ -314,8 +314,8 @@ export default function BodyMeasurements() {
                     {/* Progress Indicator */}
                     <View className="mt-2 pt-2 border-t border-zinc-800 flex-row items-center justify-between">
                       <View className="flex-row items-center">
-                        <Ionicons name="trending-up" size={14} color="#10B981" />
-                        <Text className="text-emerald-500 text-xs ml-1 font-semibold">
+                        <Ionicons name="trending-up" size={14} color="#9D12DE" />
+                        <Text className="text-primary text-xs ml-1 font-semibold">
                           +0.5{measurement.unit} esta semana
                         </Text>
                       </View>
@@ -335,7 +335,7 @@ export default function BodyMeasurements() {
                 No se encontraron medidas
               </Text>
               <Text className="text-zinc-600 text-sm mt-2 text-center">
-                Intenta buscar otro término
+                Intenta buscar otro tÃ©rmino
               </Text>
             </View>
           )}
@@ -344,10 +344,11 @@ export default function BodyMeasurements() {
 
       {/* Quick Add Button */}
       <View className="absolute bottom-6 right-6">
-        <TouchableOpacity className="w-14 h-14 bg-emerald-500 rounded-full items-center justify-center shadow-lg">
+        <TouchableOpacity className="w-14 h-14 bg-primary rounded-full items-center justify-center shadow-lg">
           <Ionicons name="add" size={32} color="white" />
         </TouchableOpacity>
       </View>
     </View>
   );
 }
+

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -38,7 +38,7 @@ export default function SearchUsersScreen() {
   return (
     <View className="flex-1 bg-gray-50">
       {/* Header */}
-      <LinearGradient colors={['#10B981', '#059669']} className="px-6 pt-12 pb-6">
+      <LinearGradient colors={['#9D12DE', '#7C3AED']} className="px-6 pt-12 pb-6">
         <View className="flex-row items-center justify-between mb-4">
           <TouchableOpacity onPress={() => router.back()} className="p-2">
             <Ionicons name="arrow-back" size={28} color="white" />
@@ -90,7 +90,7 @@ export default function SearchUsersScreen() {
         {/* Loading */}
         {isLoading && debouncedQuery.length >= 2 && (
           <View className="py-12">
-            <ActivityIndicator size="large" color="#10B981" />
+            <ActivityIndicator size="large" color="#9D12DE" />
           </View>
         )}
 
@@ -105,7 +105,7 @@ export default function SearchUsersScreen() {
                     No se encontraron usuarios
                   </Text>
                   <Text className="text-center text-gray-400 text-sm">
-                    Intenta con otro término de búsqueda
+                    Intenta con otro tÃ©rmino de bÃºsqueda
                   </Text>
                 </View>
               </Card>
@@ -123,8 +123,8 @@ export default function SearchUsersScreen() {
                     <Card className="p-4">
                       <View className="flex-row items-center gap-4">
                         {/* Avatar */}
-                        <View className="bg-emerald-100 w-14 h-14 rounded-full items-center justify-center">
-                          <Text className="text-emerald-600 text-2xl font-bold">
+                        <View className="bg-primary/10 w-14 h-14 rounded-full items-center justify-center">
+                          <Text className="text-primary text-2xl font-bold">
                             {user.username[0].toUpperCase()}
                           </Text>
                         </View>
@@ -136,16 +136,16 @@ export default function SearchUsersScreen() {
                           </Text>
                           <View className="flex-row items-center gap-2 mt-1">
                             <View className="flex-row items-center gap-1">
-                              <Ionicons name="trophy" size={14} color="#F59E0B" />
+                              <Ionicons name="trophy" size={14} color="#FFEA00" />
                               <Text className="text-gray-600 text-sm">
                                 Nivel {user.level}
                               </Text>
                             </View>
-                            <Text className="text-gray-400">•</Text>
+                            <Text className="text-gray-400">â€¢</Text>
                             <View className="flex-row items-center gap-1">
                               <Ionicons name="flame" size={14} color="#EF4444" />
                               <Text className="text-gray-600 text-sm">
-                                {user.streak} días
+                                {user.streak} dÃ­as
                               </Text>
                             </View>
                           </View>
@@ -187,3 +187,4 @@ export default function SearchUsersScreen() {
     </View>
   );
 }
+

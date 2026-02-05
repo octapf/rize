@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -35,12 +35,12 @@ export default function TrainingPartners() {
   const partners: TrainingPartner[] = [
     {
       id: '1',
-      name: 'Carlos Méndez',
-      avatar: '🏋️',
+      name: 'Carlos MÃ©ndez',
+      avatar: 'ðŸ‹ï¸',
       location: 'Gym Total - Condesa',
       distance: 1.2,
       workoutStyle: ['Powerlifting', 'Strength'],
-      schedule: ['Lunes AM', 'Miércoles AM', 'Viernes AM'],
+      schedule: ['Lunes AM', 'MiÃ©rcoles AM', 'Viernes AM'],
       experience: 'advanced',
       goals: ['Aumentar fuerza', 'Competir powerlifting'],
       mutualFriends: 8,
@@ -49,26 +49,26 @@ export default function TrainingPartners() {
     },
     {
       id: '2',
-      name: 'Ana García',
-      avatar: '💪',
+      name: 'Ana GarcÃ­a',
+      avatar: 'ðŸ’ª',
       location: 'Smart Fit - Roma',
       distance: 2.5,
       workoutStyle: ['Bodybuilding', 'Hypertrophy'],
-      schedule: ['Martes PM', 'Jueves PM', 'Sábado AM'],
+      schedule: ['Martes PM', 'Jueves PM', 'SÃ¡bado AM'],
       experience: 'intermediate',
-      goals: ['Ganar masa muscular', 'Definición'],
+      goals: ['Ganar masa muscular', 'DefiniciÃ³n'],
       mutualFriends: 12,
       isOnline: true,
       matchScore: 88,
     },
     {
       id: '3',
-      name: 'Luis Rodríguez',
-      avatar: '🔥',
+      name: 'Luis RodrÃ­guez',
+      avatar: 'ðŸ”¥',
       location: 'CrossFit Box - Polanco',
       distance: 3.8,
       workoutStyle: ['CrossFit', 'HIIT'],
-      schedule: ['Lunes PM', 'Miércoles PM', 'Viernes PM'],
+      schedule: ['Lunes PM', 'MiÃ©rcoles PM', 'Viernes PM'],
       experience: 'advanced',
       goals: ['Competir CrossFit', 'Mejorar resistencia'],
       mutualFriends: 5,
@@ -77,12 +77,12 @@ export default function TrainingPartners() {
     },
     {
       id: '4',
-      name: 'María López',
-      avatar: '⚡',
+      name: 'MarÃ­a LÃ³pez',
+      avatar: 'âš¡',
       location: 'Anytime Fitness - Del Valle',
       distance: 1.8,
       workoutStyle: ['Functional', 'Cardio'],
-      schedule: ['Todos los días AM'],
+      schedule: ['Todos los dÃ­as AM'],
       experience: 'beginner',
       goals: ['Perder peso', 'Mejorar salud'],
       mutualFriends: 3,
@@ -91,8 +91,8 @@ export default function TrainingPartners() {
     },
     {
       id: '5',
-      name: 'Pedro Sánchez',
-      avatar: '🎯',
+      name: 'Pedro SÃ¡nchez',
+      avatar: 'ðŸŽ¯',
       location: 'Sports World - Insurgentes',
       distance: 4.2,
       workoutStyle: ['Calisthenics', 'Mobility'],
@@ -116,8 +116,8 @@ export default function TrainingPartners() {
 
   const sendPartnerRequest = (partner: TrainingPartner) => {
     Alert.alert(
-      'Solicitud Enviada! ✅',
-      `Enviaste solicitud a ${partner.name}\n\nPodrán coordinarse cuando acepte tu solicitud.`,
+      'Solicitud Enviada! âœ…',
+      `Enviaste solicitud a ${partner.name}\n\nPodrÃ¡n coordinarse cuando acepte tu solicitud.`,
       [{ text: 'OK' }]
     );
   };
@@ -196,7 +196,7 @@ export default function TrainingPartners() {
                     onPress={() => setFilterExperience(level)}
                     className={`px-4 py-2 rounded-lg ${
                       filterExperience === level
-                        ? 'bg-blue-500'
+                        ? 'bg-primary'
                         : 'bg-zinc-800'
                     }`}
                   >
@@ -211,7 +211,7 @@ export default function TrainingPartners() {
 
               {/* Distance Filter */}
               <Text className="text-zinc-400 text-sm mb-2">
-                Distancia máxima: {filterDistance} km
+                Distancia mÃ¡xima: {filterDistance} km
               </Text>
               <View className="flex-row items-center gap-2">
                 {[5, 10, 20, 50].map((dist) => (
@@ -243,7 +243,7 @@ export default function TrainingPartners() {
                 Sin resultados
               </Text>
               <Text className="text-zinc-400 text-center mt-2">
-                Ajusta los filtros para encontrar más partners
+                Ajusta los filtros para encontrar mÃ¡s partners
               </Text>
             </View>
           ) : (
@@ -257,7 +257,7 @@ export default function TrainingPartners() {
                   <View className="w-16 h-16 bg-zinc-800 rounded-full items-center justify-center mr-4">
                     <Text className="text-3xl">{partner.avatar}</Text>
                     {partner.isOnline && (
-                      <View className="absolute bottom-0 right-0 w-4 h-4 bg-emerald-500 rounded-full border-2 border-zinc-900" />
+                      <View className="absolute bottom-0 right-0 w-4 h-4 bg-primary rounded-full border-2 border-zinc-900" />
                     )}
                   </View>
 
@@ -276,7 +276,7 @@ export default function TrainingPartners() {
                     <View className="flex-row items-center mb-1">
                       <Ionicons name="location" size={14} color="#71717A" />
                       <Text className="text-zinc-400 text-sm ml-1">
-                        {partner.location} • {partner.distance}km
+                        {partner.location} â€¢ {partner.distance}km
                       </Text>
                     </View>
 
@@ -284,7 +284,7 @@ export default function TrainingPartners() {
                       <View className="flex-row items-center">
                         <Ionicons name="people" size={14} color="#71717A" />
                         <Text className="text-zinc-400 text-sm ml-1">
-                          {partner.mutualFriends} amigos en común
+                          {partner.mutualFriends} amigos en comÃºn
                         </Text>
                       </View>
                     )}
@@ -305,8 +305,8 @@ export default function TrainingPartners() {
                   <Text className="text-zinc-400 text-xs mb-2">Estilo de Entrenamiento</Text>
                   <View className="flex-row flex-wrap gap-2">
                     {partner.workoutStyle.map((style, idx) => (
-                      <View key={idx} className="bg-blue-500/20 rounded-lg px-3 py-1">
-                        <Text className="text-blue-400 text-xs font-bold">{style}</Text>
+                      <View key={idx} className="bg-primary/20 rounded-lg px-3 py-1">
+                        <Text className="text-primary/80 text-xs font-bold">{style}</Text>
                       </View>
                     ))}
                   </View>
@@ -331,7 +331,7 @@ export default function TrainingPartners() {
                   <View className="flex-row flex-wrap gap-2">
                     {partner.goals.map((goal, idx) => (
                       <View key={idx} className="bg-amber-500/20 rounded-lg px-3 py-1 flex-row items-center">
-                        <Ionicons name="flag" size={12} color="#F59E0B" />
+                        <Ionicons name="flag" size={12} color="#FFEA00" />
                         <Text className="text-amber-400 text-xs font-bold ml-1">{goal}</Text>
                       </View>
                     ))}
@@ -342,7 +342,7 @@ export default function TrainingPartners() {
                 <View className="flex-row gap-2">
                   <TouchableOpacity
                     onPress={() => sendPartnerRequest(partner)}
-                    className="flex-1 bg-blue-500 rounded-xl py-3 flex-row items-center justify-center"
+                    className="flex-1 bg-primary rounded-xl py-3 flex-row items-center justify-center"
                   >
                     <Ionicons name="add-circle" size={20} color="white" />
                     <Text className="text-white font-bold ml-2">Enviar Solicitud</Text>
@@ -357,20 +357,20 @@ export default function TrainingPartners() {
           )}
 
           {/* Tips */}
-          <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30 mb-6">
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
             <View className="flex-row items-start">
-              <Ionicons name="information-circle" size={20} color="#3B82F6" />
+              <Ionicons name="information-circle" size={20} color="#9D12DE" />
               <View className="flex-1 ml-3">
-                <Text className="text-blue-400 font-bold mb-2">
+                <Text className="text-primary/80 font-bold mb-2">
                   Beneficios de Entrenar en Pareja
                 </Text>
-                <Text className="text-blue-300 text-sm">
-                  • 95% más consistencia vs entrenar solo{'\n'}
-                  • Motivación y accountability mutuo{'\n'}
-                  • Ayuda técnica en ejercicios{'\n'}
-                  • Competencia sana mejora resultados{'\n'}
-                  • Social y más divertido{'\n'}
-                  • Seguridad en levantamientos pesados
+                <Text className="text-primary/60 text-sm">
+                  â€¢ 95% mÃ¡s consistencia vs entrenar solo{'\n'}
+                  â€¢ MotivaciÃ³n y accountability mutuo{'\n'}
+                  â€¢ Ayuda tÃ©cnica en ejercicios{'\n'}
+                  â€¢ Competencia sana mejora resultados{'\n'}
+                  â€¢ Social y mÃ¡s divertido{'\n'}
+                  â€¢ Seguridad en levantamientos pesados
                 </Text>
               </View>
             </View>
@@ -380,3 +380,4 @@ export default function TrainingPartners() {
     </View>
   );
 }
+

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -46,7 +46,7 @@ export default function BodyWeightScreen() {
     const weight = parseFloat(newWeight);
     
     if (!weight || weight <= 0 || weight > 300) {
-      Alert.alert('Error', 'Por favor ingresa un peso válido');
+      Alert.alert('Error', 'Por favor ingresa un peso vÃ¡lido');
       return;
     }
 
@@ -61,13 +61,13 @@ export default function BodyWeightScreen() {
     setNewWeight('');
     setNewNotes('');
     setShowAddModal(false);
-    Alert.alert('¡Guardado!', 'Peso registrado correctamente');
+    Alert.alert('Â¡Guardado!', 'Peso registrado correctamente');
   };
 
   const handleDeleteEntry = (id: string) => {
     Alert.alert(
       'Eliminar Registro',
-      '¿Seguro que quieres eliminar este registro?',
+      'Â¿Seguro que quieres eliminar este registro?',
       [
         { text: 'Cancelar', style: 'cancel' },
         {
@@ -124,7 +124,7 @@ export default function BodyWeightScreen() {
             <Text className="text-white/80 text-xs mb-1">Cambio</Text>
             <Text
               className={`text-2xl font-bold ${
-                totalChange < 0 ? 'text-emerald-300' : 'text-red-300'
+                totalChange < 0 ? 'text-primary/80' : 'text-red-300'
               }`}
             >
               {totalChange > 0 ? '+' : ''}
@@ -171,7 +171,7 @@ export default function BodyWeightScreen() {
                 <TextInput
                   value={newNotes}
                   onChangeText={setNewNotes}
-                  placeholder="Ej: Después del desayuno"
+                  placeholder="Ej: DespuÃ©s del desayuno"
                   multiline
                   numberOfLines={2}
                   className="bg-white border border-gray-300 rounded-lg px-4 py-3"
@@ -208,7 +208,7 @@ export default function BodyWeightScreen() {
         {entries.length > 0 && (
           <Card className="p-4">
             <Text className="text-gray-900 font-bold text-lg mb-3">
-              Evolución del Peso
+              EvoluciÃ³n del Peso
             </Text>
             <ScrollView horizontal showsHorizontalScrollIndicator={false}>
               <LineChart
@@ -240,26 +240,26 @@ export default function BodyWeightScreen() {
             </ScrollView>
 
             <Text className="text-gray-600 text-xs text-center mt-2">
-              Últimas {last30Entries.length} mediciones
+              Ãšltimas {last30Entries.length} mediciones
             </Text>
           </Card>
         )}
 
         {/* Goal */}
-        <Card className="p-4 bg-blue-50 border-blue-200">
+        <Card className="p-4 bg-primary/5 border-primary/20">
           <View className="flex-row items-center gap-3">
-            <View className="bg-blue-500 w-12 h-12 rounded-xl items-center justify-center">
+            <View className="bg-primary w-12 h-12 rounded-xl items-center justify-center">
               <Ionicons name="flag" size={24} color="white" />
             </View>
             <View className="flex-1">
-              <Text className="text-blue-900 font-bold text-lg">
+              <Text className="text-text font-bold text-lg">
                 Objetivo: 75 kg
               </Text>
-              <Text className="text-blue-700 text-sm">
+              <Text className="text-text/70 text-sm">
                 Faltan {(currentWeight - 75).toFixed(1)} kg
               </Text>
             </View>
-            <TouchableOpacity className="bg-blue-500 px-4 py-2 rounded-lg">
+            <TouchableOpacity className="bg-primary px-4 py-2 rounded-lg">
               <Text className="text-white font-semibold">Editar</Text>
             </TouchableOpacity>
           </View>
@@ -313,15 +313,15 @@ export default function BodyWeightScreen() {
         {/* Tips */}
         <Card className="p-4 bg-amber-50 border-amber-200">
           <View className="flex-row gap-3">
-            <Ionicons name="bulb" size={24} color="#F59E0B" />
+            <Ionicons name="bulb" size={24} color="#FFEA00" />
             <View className="flex-1">
               <Text className="text-amber-900 font-semibold mb-1">
                 Consejos
               </Text>
               <Text className="text-amber-700 text-sm">
-                • Pésate a la misma hora cada día{'\n'}
-                • Preferiblemente en ayunas{'\n'}
-                • Sé consistente con la ropa
+                â€¢ PÃ©sate a la misma hora cada dÃ­a{'\n'}
+                â€¢ Preferiblemente en ayunas{'\n'}
+                â€¢ SÃ© consistente con la ropa
               </Text>
             </View>
           </View>
@@ -330,3 +330,5 @@ export default function BodyWeightScreen() {
     </View>
   );
 }
+
+

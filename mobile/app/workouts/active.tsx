@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+﻿import React, { useState, useEffect } from 'react';
 import {
   View,
   Text,
@@ -90,7 +90,7 @@ export default function ActiveWorkoutScreen() {
       );
       setWorkout(response.data);
       
-      // Si se completó la serie, verificar auto-start rest timer
+      // Si se completÃ³ la serie, verificar auto-start rest timer
       if (!currentCompleted) {
         const autoStart = await settingsService.getSetting('autoStartRestTimer');
         if (autoStart) {
@@ -105,7 +105,7 @@ export default function ActiveWorkoutScreen() {
   const handleFinish = () => {
     Alert.alert(
       'Finalizar Entrenamiento',
-      '¿Seguro que quieres finalizar?',
+      'Â¿Seguro que quieres finalizar?',
       [
         { text: 'Cancelar', style: 'cancel' },
         {
@@ -114,7 +114,7 @@ export default function ActiveWorkoutScreen() {
           onPress: async () => {
             try {
               await workoutsApi.finishWorkout(id, timer);
-              Alert.alert('¡Éxito!', 'Entrenamiento completado', [
+              Alert.alert('Â¡Ã‰xito!', 'Entrenamiento completado', [
                 { text: 'OK', onPress: () => router.back() },
               ]);
             } catch (error) {
@@ -149,7 +149,7 @@ export default function ActiveWorkoutScreen() {
   if (isLoading) {
     return (
       <View className="flex-1 bg-gray-50 items-center justify-center">
-        <ActivityIndicator size="large" color="#10B981" />
+        <ActivityIndicator size="large" color="#9D12DE" />
       </View>
     );
   }
@@ -175,7 +175,7 @@ export default function ActiveWorkoutScreen() {
   return (
     <View className="flex-1 bg-gray-50">
       {/* Header */}
-      <LinearGradient colors={['#10B981', '#059669']} className="px-6 pt-12 pb-6">
+      <LinearGradient colors={['#9D12DE', '#7C3AED']} className="px-6 pt-12 pb-6">
         <View className="flex-row items-center justify-between mb-4">
           <TouchableOpacity onPress={() => router.back()} className="p-2">
             <Ionicons name="arrow-back" size={28} color="white" />
@@ -203,7 +203,7 @@ export default function ActiveWorkoutScreen() {
               Iniciar Entrenamiento
             </Button>
           ) : (
-            <Text className="text-emerald-100 text-sm">En progreso...</Text>
+            <Text className="text-primary/50 text-sm">En progreso...</Text>
           )}
         </View>
 
@@ -254,14 +254,14 @@ export default function ActiveWorkoutScreen() {
                 <View
                   className={`px-3 py-1 rounded-full ${
                     exerciseCompleted === exerciseSets
-                      ? 'bg-emerald-100'
+                      ? 'bg-primary/10'
                       : 'bg-gray-100'
                   }`}
                 >
                   <Text
                     className={`text-xs font-semibold ${
                       exerciseCompleted === exerciseSets
-                        ? 'text-emerald-700'
+                        ? 'text-primary'
                         : 'text-gray-600'
                     }`}
                   >
@@ -282,14 +282,14 @@ export default function ActiveWorkoutScreen() {
                     disabled={workout.status !== 'in-progress'}
                     className={`flex-row items-center justify-between p-3 rounded-lg border-2 ${
                       set.completed
-                        ? 'bg-emerald-50 border-emerald-500'
+                        ? 'bg-primary/10 border-primary'
                         : 'bg-white border-gray-200'
                     }`}
                   >
                     <View className="flex-row items-center gap-3">
                       <View
                         className={`w-8 h-8 rounded-full items-center justify-center ${
-                          set.completed ? 'bg-emerald-500' : 'bg-gray-200'
+                          set.completed ? 'bg-primary' : 'bg-gray-200'
                         }`}
                       >
                         {set.completed ? (
@@ -306,7 +306,7 @@ export default function ActiveWorkoutScreen() {
                         </Text>
                         <Text className="text-xs text-gray-600">
                           {set.reps} reps
-                          {set.weight && ` • ${set.weight} kg`}
+                          {set.weight && ` â€¢ ${set.weight} kg`}
                         </Text>
                       </View>
                     </View>
@@ -345,3 +345,5 @@ export default function ActiveWorkoutScreen() {
     </View>
   );
 }
+
+

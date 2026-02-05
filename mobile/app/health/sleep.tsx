@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -45,7 +45,7 @@ const SLEEP_HISTORY: SleepSession[] = [
     remSleep: 1.25,
     awakenings: 1,
     sleepScore: 92,
-    notes: 'Excelente recuperación post leg day',
+    notes: 'Excelente recuperaciÃ³n post leg day',
   },
   {
     id: '2',
@@ -85,7 +85,7 @@ const SLEEP_HISTORY: SleepSession[] = [
     remSleep: 1.2,
     awakenings: 3,
     sleepScore: 72,
-    notes: 'Dormí tarde, muchas interrupciones',
+    notes: 'DormÃ­ tarde, muchas interrupciones',
   },
   {
     id: '5',
@@ -112,7 +112,7 @@ const SLEEP_HISTORY: SleepSession[] = [
     remSleep: 1.0,
     awakenings: 4,
     sleepScore: 58,
-    notes: 'Poco sueño profundo, me sentí cansado',
+    notes: 'Poco sueÃ±o profundo, me sentÃ­ cansado',
   },
   {
     id: '7',
@@ -144,13 +144,13 @@ export default function SleepTracker() {
 
   const logSleep = () => {
     Alert.alert(
-      'Registrar Sueño',
-      'Ingresa tus horas de sueño de anoche',
+      'Registrar SueÃ±o',
+      'Ingresa tus horas de sueÃ±o de anoche',
       [
         { text: 'Cancelar', style: 'cancel' },
         {
           text: 'Registrar',
-          onPress: () => Alert.alert('Sueño registrado'),
+          onPress: () => Alert.alert('SueÃ±o registrado'),
         },
       ]
     );
@@ -159,9 +159,9 @@ export default function SleepTracker() {
   const getQualityColor = (quality: string) => {
     switch (quality) {
       case 'excellent':
-        return 'text-emerald-400';
+        return 'text-primary';
       case 'good':
-        return 'text-blue-400';
+        return 'text-primary/80';
       case 'fair':
         return 'text-amber-400';
       case 'poor':
@@ -187,8 +187,8 @@ export default function SleepTracker() {
   };
 
   const getScoreColor = (score: number) => {
-    if (score >= 85) return 'text-emerald-400';
-    if (score >= 70) return 'text-blue-400';
+    if (score >= 85) return 'text-primary';
+    if (score >= 70) return 'text-primary/80';
     if (score >= 60) return 'text-amber-400';
     return 'text-red-400';
   };
@@ -202,10 +202,10 @@ export default function SleepTracker() {
             <Ionicons name="arrow-back" size={24} color="white" />
           </TouchableOpacity>
           <Text className="text-white text-2xl font-bold flex-1 ml-3">
-            Seguimiento de Sueño
+            Seguimiento de SueÃ±o
           </Text>
           <TouchableOpacity onPress={logSleep}>
-            <Ionicons name="bed" size={28} color="#10B981" />
+            <Ionicons name="bed" size={28} color="#9D12DE" />
           </TouchableOpacity>
         </View>
 
@@ -213,14 +213,14 @@ export default function SleepTracker() {
         <View className="bg-zinc-900 rounded-xl p-4 border border-zinc-800 mb-4">
           <View className="flex-row items-center justify-between">
             <View className="flex-1">
-              <Text className="text-zinc-400 text-xs mb-1">ÚLTIMA NOCHE</Text>
+              <Text className="text-zinc-400 text-xs mb-1">ÃšLTIMA NOCHE</Text>
               <Text className="text-white text-3xl font-bold">
                 {sleepHistory[0].totalHours}h
               </Text>
             </View>
             <View className="flex-1">
               <Text className="text-zinc-400 text-xs mb-1">PROMEDIO 7D</Text>
-              <Text className="text-emerald-400 text-3xl font-bold">
+              <Text className="text-primary text-3xl font-bold">
                 {weeklyStats.avgHours}h
               </Text>
             </View>
@@ -238,7 +238,7 @@ export default function SleepTracker() {
           <TouchableOpacity
             onPress={() => setActiveTab('log')}
             className={`flex-1 py-3 rounded-lg ${
-              activeTab === 'log' ? 'bg-emerald-500' : 'bg-zinc-900 border border-zinc-800'
+              activeTab === 'log' ? 'bg-primary' : 'bg-zinc-900 border border-zinc-800'
             }`}
           >
             <Text
@@ -252,7 +252,7 @@ export default function SleepTracker() {
           <TouchableOpacity
             onPress={() => setActiveTab('insights')}
             className={`flex-1 py-3 rounded-lg ${
-              activeTab === 'insights' ? 'bg-emerald-500' : 'bg-zinc-900 border border-zinc-800'
+              activeTab === 'insights' ? 'bg-primary' : 'bg-zinc-900 border border-zinc-800'
             }`}
           >
             <Text
@@ -286,7 +286,7 @@ export default function SleepTracker() {
                       })}
                     </Text>
                     <Text className="text-zinc-400 text-sm">
-                      {session.bedTime} → {session.wakeTime}
+                      {session.bedTime} â†’ {session.wakeTime}
                     </Text>
                   </View>
                   <View className="items-end">
@@ -302,7 +302,7 @@ export default function SleepTracker() {
                   <View className="flex-row items-center justify-between mb-2">
                     <View className="flex-row items-center">
                       <Ionicons name="moon" size={16} color="#71717A" />
-                      <Text className="text-zinc-400 text-sm ml-2">Duración Total</Text>
+                      <Text className="text-zinc-400 text-sm ml-2">DuraciÃ³n Total</Text>
                     </View>
                     <Text className="text-white text-xl font-bold">
                       {session.totalHours}h
@@ -321,14 +321,14 @@ export default function SleepTracker() {
 
                 {/* Sleep Phases */}
                 <View className="mb-3">
-                  <Text className="text-zinc-400 text-xs mb-2">FASES DEL SUEÑO</Text>
+                  <Text className="text-zinc-400 text-xs mb-2">FASES DEL SUEÃ‘O</Text>
                   <View className="flex-row gap-2">
                     <View className="flex-1 bg-indigo-500/10 rounded-lg p-2 border border-indigo-500/30">
                       <Text className="text-indigo-400 text-xs">Profundo</Text>
                       <Text className="text-white font-bold">{session.deepSleep}h</Text>
                     </View>
-                    <View className="flex-1 bg-blue-500/10 rounded-lg p-2 border border-blue-500/30">
-                      <Text className="text-blue-400 text-xs">Ligero</Text>
+                    <View className="flex-1 bg-primary/10 rounded-lg p-2 border border-primary/30">
+                      <Text className="text-primary/80 text-xs">Ligero</Text>
                       <Text className="text-white font-bold">{session.lightSleep}h</Text>
                     </View>
                     <View className="flex-1 bg-purple-500/10 rounded-lg p-2 border border-purple-500/30">
@@ -348,7 +348,7 @@ export default function SleepTracker() {
                       }}
                     />
                     <View
-                      className="bg-blue-500"
+                      className="bg-primary"
                       style={{
                         width: `${(session.lightSleep / session.totalHours) * 100}%`,
                       }}
@@ -369,7 +369,7 @@ export default function SleepTracker() {
                       <Ionicons name="alert-circle" size={16} color="#71717A" />
                       <Text className="text-zinc-400 text-sm ml-2">Interrupciones</Text>
                     </View>
-                    <Text className={`font-bold ${session.awakenings <= 1 ? 'text-emerald-400' : 'text-amber-400'}`}>
+                    <Text className={`font-bold ${session.awakenings <= 1 ? 'text-primary' : 'text-amber-400'}`}>
                       {session.awakenings}
                     </Text>
                   </View>
@@ -395,14 +395,14 @@ export default function SleepTracker() {
 
               <View className="mb-4">
                 <View className="flex-row items-center justify-between mb-2">
-                  <Text className="text-zinc-400">Promedio de Sueño</Text>
-                  <Text className="text-emerald-400 text-2xl font-bold">
+                  <Text className="text-zinc-400">Promedio de SueÃ±o</Text>
+                  <Text className="text-primary text-2xl font-bold">
                     {weeklyStats.avgHours}h
                   </Text>
                 </View>
                 <View className="h-2 bg-zinc-800 rounded-full overflow-hidden">
                   <View
-                    className="h-full bg-emerald-500 rounded-full"
+                    className="h-full bg-primary rounded-full"
                     style={{ width: `${(weeklyStats.avgHours / 10) * 100}%` }}
                   />
                 </View>
@@ -418,7 +418,7 @@ export default function SleepTracker() {
                 <View className="h-2 bg-zinc-800 rounded-full overflow-hidden">
                   <View
                     className={`h-full rounded-full ${
-                      weeklyStats.avgQuality >= 85 ? 'bg-emerald-500' : 'bg-amber-500'
+                      weeklyStats.avgQuality >= 85 ? 'bg-primary' : 'bg-amber-500'
                     }`}
                     style={{ width: `${weeklyStats.avgQuality}%` }}
                   />
@@ -428,13 +428,13 @@ export default function SleepTracker() {
               <View className="mb-4">
                 <View className="flex-row items-center justify-between mb-2">
                   <Text className="text-zinc-400">Consistencia</Text>
-                  <Text className="text-blue-400 text-2xl font-bold">
+                  <Text className="text-primary/80 text-2xl font-bold">
                     {weeklyStats.consistency}%
                   </Text>
                 </View>
                 <View className="h-2 bg-zinc-800 rounded-full overflow-hidden">
                   <View
-                    className="h-full bg-blue-500 rounded-full"
+                    className="h-full bg-primary rounded-full"
                     style={{ width: `${weeklyStats.consistency}%` }}
                   />
                 </View>
@@ -443,7 +443,7 @@ export default function SleepTracker() {
               <View className="flex-row gap-2">
                 <View className="flex-1 bg-zinc-800 rounded-lg p-2">
                   <Text className="text-zinc-400 text-xs mb-1">MEJOR NOCHE</Text>
-                  <Text className="text-emerald-400 text-sm font-bold">
+                  <Text className="text-primary text-sm font-bold">
                     {new Date(weeklyStats.bestNight).toLocaleDateString('es-ES', {
                       day: '2-digit',
                       month: 'short',
@@ -470,19 +470,19 @@ export default function SleepTracker() {
 
               <View className="mb-3">
                 <View className="flex-row items-start mb-2">
-                  <Ionicons name="checkmark-circle" size={18} color="#10B981" />
+                  <Ionicons name="checkmark-circle" size={18} color="#9D12DE" />
                   <Text className="text-zinc-300 text-sm ml-2 flex-1">
-                    Tu promedio de {weeklyStats.avgHours}h está cerca del óptimo (7-9h)
+                    Tu promedio de {weeklyStats.avgHours}h estÃ¡ cerca del Ã³ptimo (7-9h)
                   </Text>
                 </View>
                 <View className="flex-row items-start mb-2">
                   <Ionicons name="moon" size={18} color="#6366F1" />
                   <Text className="text-zinc-300 text-sm ml-2 flex-1">
-                    Aumenta sueño profundo con magnesio antes de dormir
+                    Aumenta sueÃ±o profundo con magnesio antes de dormir
                   </Text>
                 </View>
                 <View className="flex-row items-start mb-2">
-                  <Ionicons name="time" size={18} color="#F59E0B" />
+                  <Ionicons name="time" size={18} color="#FFEA00" />
                   <Text className="text-zinc-300 text-sm ml-2 flex-1">
                     Intenta acostarte a la misma hora para mejor consistencia
                   </Text>
@@ -499,29 +499,29 @@ export default function SleepTracker() {
             {/* Sleep & Recovery Correlation */}
             <View className="bg-zinc-900 rounded-xl p-4 border border-zinc-800">
               <Text className="text-white font-bold text-lg mb-3">
-                Sueño & Recuperación
+                SueÃ±o & RecuperaciÃ³n
               </Text>
 
-              <View className="bg-emerald-500/10 rounded-lg p-3 border border-emerald-500/30 mb-3">
-                <Text className="text-emerald-400 font-bold mb-1">
-                  Correlación Positiva
+              <View className="bg-primary/10 rounded-lg p-3 border border-primary/30 mb-3">
+                <Text className="text-primary font-bold mb-1">
+                  CorrelaciÃ³n Positiva
                 </Text>
-                <Text className="text-emerald-300 text-sm">
-                  Tus mejores entrenamientos ocurren después de 8+ horas de sueño
+                <Text className="text-primary/80 text-sm">
+                  Tus mejores entrenamientos ocurren despuÃ©s de 8+ horas de sueÃ±o
                 </Text>
               </View>
 
               <View className="mb-2">
                 <View className="flex-row items-center justify-between mb-1">
-                  <Text className="text-zinc-400 text-sm">8h+ sueño</Text>
-                  <Text className="text-emerald-400 font-bold">+15% rendimiento</Text>
+                  <Text className="text-zinc-400 text-sm">8h+ sueÃ±o</Text>
+                  <Text className="text-primary font-bold">+15% rendimiento</Text>
                 </View>
                 <View className="flex-row items-center justify-between mb-1">
-                  <Text className="text-zinc-400 text-sm">7-8h sueño</Text>
-                  <Text className="text-blue-400 font-bold">Rendimiento normal</Text>
+                  <Text className="text-zinc-400 text-sm">7-8h sueÃ±o</Text>
+                  <Text className="text-primary/80 font-bold">Rendimiento normal</Text>
                 </View>
                 <View className="flex-row items-center justify-between">
-                  <Text className="text-zinc-400 text-sm">&lt;7h sueño</Text>
+                  <Text className="text-zinc-400 text-sm">&lt;7h sueÃ±o</Text>
                   <Text className="text-red-400 font-bold">-12% rendimiento</Text>
                 </View>
               </View>
@@ -536,10 +536,10 @@ export default function SleepTracker() {
               <Ionicons name="bulb" size={20} color="#6366F1" />
               <View className="flex-1 ml-3">
                 <Text className="text-indigo-400 font-bold mb-2">
-                  Sueño = Recuperación
+                  SueÃ±o = RecuperaciÃ³n
                 </Text>
                 <Text className="text-indigo-300 text-sm">
-                  El sueño profundo libera HGH (hormona de crecimiento). Prioriza 7-9h para máxima hipertrofia.
+                  El sueÃ±o profundo libera HGH (hormona de crecimiento). Prioriza 7-9h para mÃ¡xima hipertrofia.
                 </Text>
               </View>
             </View>
@@ -549,3 +549,5 @@ export default function SleepTracker() {
     </View>
   );
 }
+
+

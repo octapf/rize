@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -147,13 +147,13 @@ export default function AttemptSelection() {
           </View>
 
           {attempts && (
-            <View className="bg-blue-500/10 rounded-xl p-6 mb-6 border border-blue-500/30">
-              <Text className="text-blue-400 font-bold text-lg mb-4">Recommended Attempts</Text>
+            <View className="bg-primary/10 rounded-xl p-6 mb-6 border border-primary/30">
+              <Text className="text-primary/80 font-bold text-lg mb-4">Recommended Attempts</Text>
               
               <View className="bg-zinc-900 rounded-xl p-4 mb-3">
                 <View className="flex-row justify-between items-center">
                   <View>
-                    <Text className="text-emerald-400 font-bold mb-1">Opener (90%)</Text>
+                    <Text className="text-primary font-bold mb-1">Opener (90%)</Text>
                     <Text className="text-zinc-400 text-sm">Confidence builder</Text>
                   </View>
                   <Text className="text-white text-3xl font-bold">{attempts.opener}kg</Text>
@@ -163,7 +163,7 @@ export default function AttemptSelection() {
               <View className="bg-zinc-900 rounded-xl p-4 mb-3">
                 <View className="flex-row justify-between items-center">
                   <View>
-                    <Text className="text-blue-400 font-bold mb-1">Second (95%)</Text>
+                    <Text className="text-primary/80 font-bold mb-1">Second (95%)</Text>
                     <Text className="text-zinc-400 text-sm">Build your total</Text>
                   </View>
                   <Text className="text-white text-3xl font-bold">{attempts.second}kg</Text>
@@ -221,8 +221,8 @@ export default function AttemptSelection() {
             {attemptRules.map((rule, idx) => (
               <View key={idx} className="bg-zinc-800 rounded-xl p-4 mb-3 last:mb-0">
                 <View className="flex-row items-center mb-2">
-                  <Ionicons name={rule.icon} size={20} color="#10b981" />
-                  <Text className="text-emerald-400 font-bold ml-2">{rule.rule}</Text>
+                  <Ionicons name={rule.icon} size={20} color="#9D12DE" />
+                  <Text className="text-primary font-bold ml-2">{rule.rule}</Text>
                 </View>
                 <Text className="text-zinc-300 text-sm">{rule.explanation}</Text>
               </View>
@@ -233,8 +233,8 @@ export default function AttemptSelection() {
             <Text className="text-white font-bold text-lg mb-4">Jump Guidelines</Text>
             {Object.entries(jumpGuidelines).map(([key, value]) => (
               <View key={key} className="mb-3 last:mb-0">
-                <Text className="text-blue-400 font-bold capitalize mb-1">
-                  {key.replace(/_/g, ' → ').replace('to', 'to')}
+                <Text className="text-primary/80 font-bold capitalize mb-1">
+                  {key.replace(/_/g, ' â†’ ').replace('to', 'to')}
                 </Text>
                 <Text className="text-zinc-300 text-sm">{value}</Text>
               </View>
@@ -244,16 +244,16 @@ export default function AttemptSelection() {
           <View className="bg-red-500/10 rounded-xl p-4 border border-red-500/30 mb-6">
             <Text className="text-red-400 font-bold mb-2">Critical Meet Day Rules</Text>
             <Text className="text-red-300 text-sm mb-2">
-              • Never change attempt in warm-up room due to nerves
+              â€¢ Never change attempt in warm-up room due to nerves
             </Text>
             <Text className="text-red-300 text-sm mb-2">
-              • Have coach/handler make attempt selections
+              â€¢ Have coach/handler make attempt selections
             </Text>
             <Text className="text-red-300 text-sm mb-2">
-              • If opener feels hard, your 1RM estimate was wrong
+              â€¢ If opener feels hard, your 1RM estimate was wrong
             </Text>
             <Text className="text-red-300 text-sm">
-              • 9/9 is better than bombing out chasing PRs
+              â€¢ 9/9 is better than bombing out chasing PRs
             </Text>
           </View>
         </View>
@@ -261,3 +261,4 @@ export default function AttemptSelection() {
     </View>
   );
 }
+

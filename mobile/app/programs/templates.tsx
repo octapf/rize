@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -46,7 +46,7 @@ const MOCK_TEMPLATES: WorkoutTemplate[] = [
       { name: 'Press Inclinado DB', sets: 3, reps: '8-10', restSeconds: 120 },
       { name: 'Press Militar', sets: 4, reps: '6-8', restSeconds: 150 },
       { name: 'Elevaciones Laterales', sets: 3, reps: '12-15', restSeconds: 60 },
-      { name: 'Tríceps Polea', sets: 3, reps: '10-12', restSeconds: 60 },
+      { name: 'TrÃ­ceps Polea', sets: 3, reps: '10-12', restSeconds: 60 },
       { name: 'Fondos', sets: 3, reps: 'Al fallo', restSeconds: 90 },
     ],
   },
@@ -57,12 +57,12 @@ const MOCK_TEMPLATES: WorkoutTemplate[] = [
     difficulty: 'intermediate',
     estimatedDuration: 70,
     exercises: [
-      { name: 'Peso Muerto', sets: 3, reps: '5', restSeconds: 180, notes: 'Técnica perfecta' },
+      { name: 'Peso Muerto', sets: 3, reps: '5', restSeconds: 180, notes: 'TÃ©cnica perfecta' },
       { name: 'Dominadas', sets: 4, reps: '8-10', restSeconds: 120 },
       { name: 'Remo Barra', sets: 4, reps: '8-10', restSeconds: 120 },
       { name: 'Remo DB', sets: 3, reps: '10-12', restSeconds: 90 },
       { name: 'Face Pulls', sets: 3, reps: '15-20', restSeconds: 60 },
-      { name: 'Curl Bíceps', sets: 3, reps: '10-12', restSeconds: 60 },
+      { name: 'Curl BÃ­ceps', sets: 3, reps: '10-12', restSeconds: 60 },
     ],
   },
   {
@@ -74,9 +74,9 @@ const MOCK_TEMPLATES: WorkoutTemplate[] = [
     exercises: [
       { name: 'Sentadilla', sets: 4, reps: '8-10', restSeconds: 180 },
       { name: 'Prensa', sets: 3, reps: '12-15', restSeconds: 120 },
-      { name: 'Zancadas Búlgaras', sets: 3, reps: '10-12/lado', restSeconds: 90 },
+      { name: 'Zancadas BÃºlgaras', sets: 3, reps: '10-12/lado', restSeconds: 90 },
       { name: 'Curl Femoral', sets: 3, reps: '12-15', restSeconds: 90 },
-      { name: 'Extensiones Cuádriceps', sets: 3, reps: '12-15', restSeconds: 60 },
+      { name: 'Extensiones CuÃ¡driceps', sets: 3, reps: '12-15', restSeconds: 60 },
       { name: 'Pantorrillas', sets: 4, reps: '15-20', restSeconds: 60 },
     ],
   },
@@ -91,8 +91,8 @@ const MOCK_TEMPLATES: WorkoutTemplate[] = [
       { name: 'Remo DB', sets: 3, reps: '10-12', restSeconds: 90 },
       { name: 'Press Militar DB', sets: 3, reps: '10-12', restSeconds: 90 },
       { name: 'Dominadas Asistidas', sets: 3, reps: '8-10', restSeconds: 90 },
-      { name: 'Curl Bíceps', sets: 2, reps: '12-15', restSeconds: 60 },
-      { name: 'Tríceps Fondos', sets: 2, reps: '12-15', restSeconds: 60 },
+      { name: 'Curl BÃ­ceps', sets: 2, reps: '12-15', restSeconds: 60 },
+      { name: 'TrÃ­ceps Fondos', sets: 2, reps: '12-15', restSeconds: 60 },
     ],
   },
 ];
@@ -131,10 +131,10 @@ export default function WorkoutTemplates() {
   const startWorkout = (template: WorkoutTemplate) => {
     Alert.alert(
       'Iniciar Workout',
-      `¿Empezar "${template.name}"?`,
+      `Â¿Empezar "${template.name}"?`,
       [
         { text: 'Cancelar' },
-        { text: 'Iniciar', onPress: () => Alert.alert('Workout Iniciado! 🏋️', 'Timer y tracking activados') },
+        { text: 'Iniciar', onPress: () => Alert.alert('Workout Iniciado! ðŸ‹ï¸', 'Timer y tracking activados') },
       ]
     );
   };
@@ -152,7 +152,7 @@ export default function WorkoutTemplates() {
   const deleteTemplate = (id: string) => {
     Alert.alert(
       'Eliminar Plantilla',
-      '¿Estás seguro?',
+      'Â¿EstÃ¡s seguro?',
       [
         { text: 'Cancelar' },
         { text: 'Eliminar', style: 'destructive', onPress: () => setTemplates(templates.filter((t) => t.id !== id)) },
@@ -182,7 +182,7 @@ export default function WorkoutTemplates() {
             <TouchableOpacity
               onPress={() => setFilter('all')}
               className={`flex-row items-center px-4 py-2 rounded-lg ${
-                filter === 'all' ? 'bg-emerald-500' : 'bg-zinc-900 border border-zinc-800'
+                filter === 'all' ? 'bg-primary' : 'bg-zinc-900 border border-zinc-800'
               }`}
             >
               <Ionicons name="apps" size={18} color={filter === 'all' ? 'white' : '#71717A'} />
@@ -195,7 +195,7 @@ export default function WorkoutTemplates() {
                 key={type.id}
                 onPress={() => setFilter(type.id)}
                 className={`flex-row items-center px-4 py-2 rounded-lg ${
-                  filter === type.id ? 'bg-emerald-500' : 'bg-zinc-900 border border-zinc-800'
+                  filter === type.id ? 'bg-primary' : 'bg-zinc-900 border border-zinc-800'
                 }`}
               >
                 <Ionicons
@@ -217,10 +217,10 @@ export default function WorkoutTemplates() {
           {/* Templates List */}
           {filteredTemplates.length === 0 ? (
             <View className="bg-zinc-900 rounded-xl p-8 items-center border border-zinc-800">
-              <Text className="text-6xl mb-3">📋</Text>
+              <Text className="text-6xl mb-3">ðŸ“‹</Text>
               <Text className="text-white font-bold text-lg mb-2">Sin Plantillas</Text>
               <Text className="text-zinc-400 text-center">
-                Crea plantillas para workouts más rápidos
+                Crea plantillas para workouts mÃ¡s rÃ¡pidos
               </Text>
             </View>
           ) : (
@@ -264,18 +264,18 @@ export default function WorkoutTemplates() {
                     {/* Quick Info */}
                     <View className="flex-row flex-wrap gap-2">
                       <View className="bg-zinc-800 rounded px-3 py-1">
-                        <Text className="text-blue-400 text-xs font-bold">
-                          ⏱️ {template.estimatedDuration} min
+                        <Text className="text-primary/80 text-xs font-bold">
+                          â±ï¸ {template.estimatedDuration} min
                         </Text>
                       </View>
                       <View className="bg-zinc-800 rounded px-3 py-1">
-                        <Text className="text-emerald-400 text-xs font-bold">
-                          💪 {template.exercises.length} ejercicios
+                        <Text className="text-primary text-xs font-bold">
+                          ðŸ’ª {template.exercises.length} ejercicios
                         </Text>
                       </View>
                       <View className="bg-zinc-800 rounded px-3 py-1">
                         <Text className="text-purple-400 text-xs font-bold">
-                          📊 {template.exercises.reduce((sum, ex) => sum + ex.sets, 0)} series
+                          ðŸ“Š {template.exercises.reduce((sum, ex) => sum + ex.sets, 0)} series
                         </Text>
                       </View>
                     </View>
@@ -290,17 +290,17 @@ export default function WorkoutTemplates() {
                           <View key={idx} className="bg-zinc-800 rounded-lg p-3 mb-2">
                             <View className="flex-row items-start justify-between mb-1">
                               <Text className="text-white font-bold flex-1">{ex.name}</Text>
-                              <Text className="text-emerald-400 font-bold ml-2">
-                                {ex.sets} × {ex.reps}
+                              <Text className="text-primary font-bold ml-2">
+                                {ex.sets} Ã— {ex.reps}
                               </Text>
                             </View>
                             <View className="flex-row items-center gap-3">
                               <Text className="text-zinc-400 text-sm">
-                                ⏱️ Descanso: {ex.restSeconds}s
+                                â±ï¸ Descanso: {ex.restSeconds}s
                               </Text>
                             </View>
                             {ex.notes && (
-                              <Text className="text-zinc-500 text-xs mt-1">💡 {ex.notes}</Text>
+                              <Text className="text-zinc-500 text-xs mt-1">ðŸ’¡ {ex.notes}</Text>
                             )}
                           </View>
                         ))}
@@ -310,7 +310,7 @@ export default function WorkoutTemplates() {
                       <View className="flex-row gap-2">
                         <TouchableOpacity
                           onPress={() => startWorkout(template)}
-                          className="flex-1 bg-emerald-500 rounded-lg p-3 flex-row items-center justify-center"
+                          className="flex-1 bg-primary rounded-lg p-3 flex-row items-center justify-center"
                         >
                           <Ionicons name="play" size={18} color="white" />
                           <Text className="text-white font-bold ml-2">Iniciar Workout</Text>
@@ -322,7 +322,7 @@ export default function WorkoutTemplates() {
                           <Ionicons name="copy" size={18} color="white" />
                         </TouchableOpacity>
                         <TouchableOpacity
-                          onPress={() => Alert.alert('Editar', 'Función de edición próximamente')}
+                          onPress={() => Alert.alert('Editar', 'FunciÃ³n de ediciÃ³n prÃ³ximamente')}
                           className="bg-zinc-800 rounded-lg p-3 items-center justify-center px-4"
                         >
                           <Ionicons name="create" size={18} color="white" />
@@ -350,11 +350,11 @@ export default function WorkoutTemplates() {
                   Tips para Plantillas
                 </Text>
                 <Text className="text-purple-300 text-sm">
-                  • Crea variaciones A/B para cada tipo{'\n'}
-                  • Incluye descansos apropiados{'\n'}
-                  • Orden: compuestos primero{'\n'}
-                  • Anota RPE o carga objetivo{'\n'}
-                  • Revisa y ajusta según progreso
+                  â€¢ Crea variaciones A/B para cada tipo{'\n'}
+                  â€¢ Incluye descansos apropiados{'\n'}
+                  â€¢ Orden: compuestos primero{'\n'}
+                  â€¢ Anota RPE o carga objetivo{'\n'}
+                  â€¢ Revisa y ajusta segÃºn progreso
                 </Text>
               </View>
             </View>
@@ -364,3 +364,4 @@ export default function WorkoutTemplates() {
     </View>
   );
 }
+

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -285,7 +285,7 @@ export default function ExerciseSubstitutions() {
           {currentSubs.map((sub, idx) => (
             <View key={idx} className="bg-zinc-900 rounded-xl p-5 mb-6 border border-zinc-800">
               <View className="flex-row items-center mb-3">
-                <Ionicons name={sub.icon} size={24} color="#f59e0b" />
+                <Ionicons name={sub.icon} size={24} color="#FFEA00" />
                 <Text className="text-white font-bold text-xl ml-2">{sub.original}</Text>
               </View>
 
@@ -300,33 +300,33 @@ export default function ExerciseSubstitutions() {
                 </View>
               </View>
 
-              <Text className="text-emerald-400 font-bold mb-3">Alternatives:</Text>
+              <Text className="text-primary font-bold mb-3">Alternatives:</Text>
               {sub.alternatives.map((alt, aidx) => (
-                <View key={aidx} className="bg-emerald-500/10 rounded-xl p-4 mb-3 last:mb-0 border border-emerald-500/30">
+                <View key={aidx} className="bg-primary/10 rounded-xl p-4 mb-3 last:mb-0 border border-primary/30">
                   <Text className="text-white font-bold text-lg mb-1">{alt.name}</Text>
                   <Text className="text-zinc-300 text-sm mb-2">{alt.why}</Text>
                   <View className="flex-row items-center">
-                    <Ionicons name="hardware-chip" size={14} color="#10b981" />
-                    <Text className="text-emerald-400 text-xs ml-1">{alt.equipment}</Text>
+                    <Ionicons name="hardware-chip" size={14} color="#9D12DE" />
+                    <Text className="text-primary text-xs ml-1">{alt.equipment}</Text>
                   </View>
                 </View>
               ))}
             </View>
           ))}
 
-          <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30 mb-6">
-            <Text className="text-blue-400 font-bold mb-2">Substitution Principles</Text>
-            <Text className="text-blue-300 text-sm mb-2">
-              • Match movement pattern (horizontal push, vertical pull, etc.)
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
+            <Text className="text-primary/80 font-bold mb-2">Substitution Principles</Text>
+            <Text className="text-primary/60 text-sm mb-2">
+              â€¢ Match movement pattern (horizontal push, vertical pull, etc.)
             </Text>
-            <Text className="text-blue-300 text-sm mb-2">
-              • Target same muscle groups
+            <Text className="text-primary/60 text-sm mb-2">
+              â€¢ Target same muscle groups
             </Text>
-            <Text className="text-blue-300 text-sm mb-2">
-              • Consider available equipment
+            <Text className="text-primary/60 text-sm mb-2">
+              â€¢ Consider available equipment
             </Text>
-            <Text className="text-blue-300 text-sm">
-              • Respect pain signals - don't push through injury
+            <Text className="text-primary/60 text-sm">
+              â€¢ Respect pain signals - don't push through injury
             </Text>
           </View>
         </View>
@@ -334,3 +334,4 @@ export default function ExerciseSubstitutions() {
     </View>
   );
 }
+

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -119,7 +119,7 @@ export default function BodyRecomposition() {
 
       <ScrollView className="flex-1" showsVerticalScrollIndicator={false}>
         <View className="px-6 pt-6">
-          <View className="bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl p-6 mb-6">
+          <View className="bg-gradient-to-r from-primary to-[#7D0EBE] rounded-xl p-6 mb-6">
             <Text className="text-white text-2xl font-bold mb-2">Transform Your Body</Text>
             <Text className="text-white opacity-90 mb-4">
               Science-based recomp planning
@@ -169,22 +169,22 @@ export default function BodyRecomposition() {
               />
             </View>
 
-            <View className="bg-blue-500/10 rounded-lg p-4 border border-blue-500/30">
+            <View className="bg-primary/10 rounded-lg p-4 border border-primary/30">
               <View className="flex-row justify-between mb-2">
-                <Text className="text-blue-400">Lean Mass:</Text>
+                <Text className="text-primary/80">Lean Mass:</Text>
                 <Text className="text-white font-bold">{leanMass.toFixed(1)} kg</Text>
               </View>
               <View className="flex-row justify-between mb-2">
-                <Text className="text-blue-400">Fat Mass:</Text>
+                <Text className="text-primary/80">Fat Mass:</Text>
                 <Text className="text-white font-bold">{fatMass.toFixed(1)} kg</Text>
               </View>
               <View className="flex-row justify-between mb-2">
-                <Text className="text-blue-400">Target Weight:</Text>
+                <Text className="text-primary/80">Target Weight:</Text>
                 <Text className="text-white font-bold">{targetWeight.toFixed(1)} kg</Text>
               </View>
               <View className="flex-row justify-between">
-                <Text className="text-blue-400">Fat to Lose:</Text>
-                <Text className="text-emerald-400 font-bold">{fatToLose.toFixed(1)} kg</Text>
+                <Text className="text-primary/80">Fat to Lose:</Text>
+                <Text className="text-primary font-bold">{fatToLose.toFixed(1)} kg</Text>
               </View>
             </View>
           </View>
@@ -220,8 +220,8 @@ export default function BodyRecomposition() {
           <View className="bg-zinc-900 rounded-xl p-5 mb-6 border border-zinc-800">
             <Text className="text-white font-bold text-lg mb-4">Nutrition Plan</Text>
 
-            <View className="bg-emerald-500/10 rounded-lg p-4 mb-4 border border-emerald-500/30">
-              <Text className="text-emerald-400 font-bold text-2xl mb-1">
+            <View className="bg-primary/10 rounded-lg p-4 mb-4 border border-primary/30">
+              <Text className="text-primary font-bold text-2xl mb-1">
                 {nutrition.daily.toFixed(0)} cal/day
               </Text>
               <Text className="text-zinc-400">{nutrition.desc}</Text>
@@ -229,9 +229,9 @@ export default function BodyRecomposition() {
 
             <Text className="text-zinc-400 font-bold mb-3">Macro Split</Text>
             <View className="space-y-3">
-              <View className="bg-blue-500/10 rounded-lg p-3 border border-blue-500/30">
+              <View className="bg-primary/10 rounded-lg p-3 border border-primary/30">
                 <View className="flex-row justify-between mb-1">
-                  <Text className="text-blue-400 font-bold">Protein</Text>
+                  <Text className="text-primary/80 font-bold">Protein</Text>
                   <Text className="text-white font-bold">{nutrition.protein.toFixed(0)}g</Text>
                 </View>
                 <Text className="text-zinc-500 text-xs">{(nutrition.protein * 4).toFixed(0)} cal</Text>
@@ -283,7 +283,7 @@ export default function BodyRecomposition() {
 
           <View className="bg-amber-500/10 rounded-xl p-4 border border-amber-500/30 mb-6">
             <View className="flex-row items-center mb-2">
-              <Ionicons name="time" size={20} color="#f59e0b" />
+              <Ionicons name="time" size={20} color="#FFEA00" />
               <Text className="text-amber-400 font-bold ml-2">Timeline</Text>
             </View>
             <Text className="text-amber-300">
@@ -294,15 +294,15 @@ export default function BodyRecomposition() {
             </Text>
           </View>
 
-          <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30 mb-6">
-            <Text className="text-blue-400 font-bold mb-2">Recomp Tips</Text>
-            <Text className="text-blue-300 text-sm">
-              • Track weight weekly, not daily{'\n'}
-              • Photos &gt; scale weight{'\n'}
-              • Prioritize protein intake{'\n'}
-              • Sleep is non-negotiable{'\n'}
-              • Patience = 12-16 weeks minimum{'\n'}
-              • Adjust based on 2-week averages
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
+            <Text className="text-primary/80 font-bold mb-2">Recomp Tips</Text>
+            <Text className="text-primary/60 text-sm">
+              â€¢ Track weight weekly, not daily{'\n'}
+              â€¢ Photos &gt; scale weight{'\n'}
+              â€¢ Prioritize protein intake{'\n'}
+              â€¢ Sleep is non-negotiable{'\n'}
+              â€¢ Patience = 12-16 weeks minimum{'\n'}
+              â€¢ Adjust based on 2-week averages
             </Text>
           </View>
         </View>
@@ -310,3 +310,4 @@ export default function BodyRecomposition() {
     </View>
   );
 }
+

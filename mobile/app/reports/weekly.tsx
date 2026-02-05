@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -50,11 +50,11 @@ const CURRENT_WEEK: WeeklyReport = {
   avgSleep: 7.8,
   consistency: 100,
   prs: 3,
-  topMuscleGroups: ['Pecho', 'Espalda', 'Cuádriceps'],
-  achievements: ['Racha 7 días', 'Nuevo PR Sentadilla', '25 workouts en Enero'],
+  topMuscleGroups: ['Pecho', 'Espalda', 'CuÃ¡driceps'],
+  achievements: ['Racha 7 dÃ­as', 'Nuevo PR Sentadilla', '25 workouts en Enero'],
   improvements: [
     { metric: 'Volumen Total', value: 12.5, trend: 'up' },
-    { metric: 'Fuerza Máxima', value: 8.3, trend: 'up' },
+    { metric: 'Fuerza MÃ¡xima', value: 8.3, trend: 'up' },
     { metric: 'Consistencia', value: 15, trend: 'up' },
     { metric: 'Grasa Corporal', value: -2.1, trend: 'down' },
   ],
@@ -163,7 +163,7 @@ export default function WeeklyReports() {
   const getTrendColor = (trend: string, isNegativeGood: boolean = false) => {
     if (trend === 'stable') return 'text-zinc-400';
     if ((trend === 'up' && !isNegativeGood) || (trend === 'down' && isNegativeGood)) {
-      return 'text-emerald-400';
+      return 'text-primary';
     }
     return 'text-red-400';
   };
@@ -192,11 +192,11 @@ export default function WeeklyReports() {
             </Text>
             <View className={`px-3 py-1 rounded-lg ${
               currentWeek.consistency >= 90
-                ? 'bg-emerald-500/10 border border-emerald-500/30'
+                ? 'bg-primary/10 border border-primary/30'
                 : 'bg-amber-500/10 border border-amber-500/30'
             }`}>
               <Text className={`text-xs font-bold ${
-                currentWeek.consistency >= 90 ? 'text-emerald-400' : 'text-amber-400'
+                currentWeek.consistency >= 90 ? 'text-primary' : 'text-amber-400'
               }`}>
                 {currentWeek.consistency}% CONSISTENCIA
               </Text>
@@ -227,13 +227,13 @@ export default function WeeklyReports() {
               <Text className="text-white text-2xl font-bold">
                 {currentWeek.workoutsCompleted}
               </Text>
-              <Text className="text-emerald-400 text-xs">
+              <Text className="text-primary text-xs">
                 {currentWeek.workoutsMissed} perdidos
               </Text>
             </View>
             <View className="flex-1 bg-zinc-900 rounded-xl p-3 border border-zinc-800">
               <Text className="text-zinc-400 text-xs mb-1">VOLUMEN</Text>
-              <Text className="text-emerald-400 text-2xl font-bold">
+              <Text className="text-primary text-2xl font-bold">
                 {(currentWeek.totalVolume / 1000).toFixed(1)}k
               </Text>
               <Text className="text-zinc-400 text-xs">kg levantados</Text>
@@ -242,15 +242,15 @@ export default function WeeklyReports() {
 
           <View className="flex-row gap-3 mb-6">
             <View className="flex-1 bg-zinc-900 rounded-xl p-3 border border-zinc-800">
-              <Text className="text-zinc-400 text-xs mb-1">CALORÍAS</Text>
+              <Text className="text-zinc-400 text-xs mb-1">CALORÃAS</Text>
               <Text className="text-red-400 text-2xl font-bold">
                 {currentWeek.totalCalories}
               </Text>
               <Text className="text-zinc-400 text-xs">quemadas</Text>
             </View>
             <View className="flex-1 bg-zinc-900 rounded-xl p-3 border border-zinc-800">
-              <Text className="text-zinc-400 text-xs mb-1">SUEÑO AVG</Text>
-              <Text className="text-blue-400 text-2xl font-bold">
+              <Text className="text-zinc-400 text-xs mb-1">SUEÃ‘O AVG</Text>
+              <Text className="text-primary/80 text-2xl font-bold">
                 {currentWeek.avgSleep}h
               </Text>
               <Text className="text-zinc-400 text-xs">por noche</Text>
@@ -274,18 +274,18 @@ export default function WeeklyReports() {
                     size={20}
                     color={
                       improvement.value < 0
-                        ? '#10B981'
+                        ? '#9D12DE'
                         : improvement.value > 0
-                        ? '#10B981'
+                        ? '#9D12DE'
                         : '#71717A'
                     }
                   />
                   <Text
                     className={`ml-2 font-bold text-lg ${
                       improvement.value < 0 && improvement.metric === 'Grasa Corporal'
-                        ? 'text-emerald-400'
+                        ? 'text-primary'
                         : improvement.value > 0
-                        ? 'text-emerald-400'
+                        ? 'text-primary'
                         : 'text-zinc-400'
                     }`}
                   >
@@ -303,10 +303,10 @@ export default function WeeklyReports() {
             {currentWeek.achievements.map((achievement, index) => (
               <View key={index} className="flex-row items-center mb-3 last:mb-0">
                 <View className="w-10 h-10 bg-amber-500/20 rounded-full items-center justify-center mr-3">
-                  <Ionicons name="trophy" size={20} color="#F59E0B" />
+                  <Ionicons name="trophy" size={20} color="#FFEA00" />
                 </View>
                 <Text className="text-white flex-1">{achievement}</Text>
-                <Ionicons name="checkmark-circle" size={24} color="#10B981" />
+                <Ionicons name="checkmark-circle" size={24} color="#9D12DE" />
               </View>
             ))}
           </View>
@@ -318,9 +318,9 @@ export default function WeeklyReports() {
               {currentWeek.topMuscleGroups.map((muscle, index) => (
                 <View
                   key={index}
-                  className="bg-emerald-500/10 rounded-lg px-4 py-2 border border-emerald-500/30"
+                  className="bg-primary/10 rounded-lg px-4 py-2 border border-primary/30"
                 >
-                  <Text className="text-emerald-400 font-bold">{muscle}</Text>
+                  <Text className="text-primary font-bold">{muscle}</Text>
                 </View>
               ))}
             </View>
@@ -330,7 +330,7 @@ export default function WeeklyReports() {
           {currentWeek.prs > 0 && (
             <>
               <Text className="text-white font-bold text-lg mb-3">
-                Récords Personales
+                RÃ©cords Personales
               </Text>
               <View className="bg-zinc-900 rounded-xl p-4 border border-zinc-800 mb-6">
                 <View className="flex-row items-center">
@@ -341,10 +341,10 @@ export default function WeeklyReports() {
                   </View>
                   <View className="flex-1">
                     <Text className="text-white font-bold text-lg mb-1">
-                      ¡PRs Rotos Esta Semana!
+                      Â¡PRs Rotos Esta Semana!
                     </Text>
                     <Text className="text-zinc-400 text-sm">
-                      Sigue superándote cada día
+                      Sigue superÃ¡ndote cada dÃ­a
                     </Text>
                   </View>
                 </View>
@@ -368,14 +368,14 @@ export default function WeeklyReports() {
                   })}
                 </Text>
                 {day.workouts > 0 ? (
-                  <View className="bg-emerald-500/10 rounded-lg px-2 py-1">
-                    <Text className="text-emerald-400 text-xs font-bold">
+                  <View className="bg-primary/10 rounded-lg px-2 py-1">
+                    <Text className="text-primary text-xs font-bold">
                       ENTRENADO
                     </Text>
                   </View>
                 ) : (
-                  <View className="bg-blue-500/10 rounded-lg px-2 py-1">
-                    <Text className="text-blue-400 text-xs font-bold">DESCANSO</Text>
+                  <View className="bg-primary/10 rounded-lg px-2 py-1">
+                    <Text className="text-primary/80 text-xs font-bold">DESCANSO</Text>
                   </View>
                 )}
               </View>
@@ -390,25 +390,25 @@ export default function WeeklyReports() {
                       </Text>
                     </View>
                     <View className="flex-1 bg-zinc-800 rounded-lg p-2">
-                      <Text className="text-zinc-400 text-xs">Calorías</Text>
+                      <Text className="text-zinc-400 text-xs">CalorÃ­as</Text>
                       <Text className="text-red-400 font-bold">{day.calories}</Text>
                     </View>
                   </View>
                   <View className="bg-zinc-800 rounded-lg p-2 mb-2">
                     <Text className="text-zinc-400 text-xs mb-1">Top Ejercicio</Text>
-                    <Text className="text-emerald-400 font-bold">{day.topExercise}</Text>
+                    <Text className="text-primary font-bold">{day.topExercise}</Text>
                   </View>
                 </>
               ) : null}
 
               <View className="flex-row gap-2">
                 <View className="flex-1 bg-zinc-800 rounded-lg p-2">
-                  <Text className="text-zinc-400 text-xs">Sueño</Text>
-                  <Text className="text-blue-400 font-bold">{day.sleep}h</Text>
+                  <Text className="text-zinc-400 text-xs">SueÃ±o</Text>
+                  <Text className="text-primary/80 font-bold">{day.sleep}h</Text>
                 </View>
                 <View className="flex-1 bg-zinc-800 rounded-lg p-2">
-                  <Text className="text-zinc-400 text-xs">Nutrición</Text>
-                  <Text className="text-emerald-400 font-bold">{day.nutrition}%</Text>
+                  <Text className="text-zinc-400 text-xs">NutriciÃ³n</Text>
+                  <Text className="text-primary font-bold">{day.nutrition}%</Text>
                 </View>
               </View>
             </View>
@@ -417,7 +417,7 @@ export default function WeeklyReports() {
           {/* Share Report */}
           <TouchableOpacity
             onPress={shareReport}
-            className="bg-emerald-500 rounded-xl p-4 mb-4 flex-row items-center justify-center"
+            className="bg-primary rounded-xl p-4 mb-4 flex-row items-center justify-center"
           >
             <Ionicons name="share-social" size={20} color="white" />
             <Text className="text-white font-bold ml-2">Compartir Reporte</Text>
@@ -426,14 +426,14 @@ export default function WeeklyReports() {
 
         {/* Info Card */}
         <View className="px-6 pb-6 pt-2">
-          <View className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30">
+          <View className="bg-primary/10 rounded-xl p-4 border border-primary/30">
             <View className="flex-row items-start">
-              <Ionicons name="analytics" size={20} color="#3B82F6" />
+              <Ionicons name="analytics" size={20} color="#9D12DE" />
               <View className="flex-1 ml-3">
-                <Text className="text-blue-400 font-bold mb-2">
+                <Text className="text-primary/80 font-bold mb-2">
                   Reflexiona y Mejora
                 </Text>
-                <Text className="text-blue-300 text-sm">
+                <Text className="text-primary/60 text-sm">
                   Revisa tu semana cada domingo para identificar oportunidades de mejora
                 </Text>
               </View>
@@ -444,3 +444,4 @@ export default function WeeklyReports() {
     </View>
   );
 }
+
