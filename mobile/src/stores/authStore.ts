@@ -115,6 +115,10 @@ export const useAuthStore = create<AuthState>((set, get) => ({
     if (userStr && accessToken) {
       try {
         const user = JSON.parse(userStr) as User;
+        
+        // Restore token in API client to avoid 401 errors on reload
+        apiClient.setAuthToken(accessToken);
+        
         set({
           user,
           isAuthenticated: true,

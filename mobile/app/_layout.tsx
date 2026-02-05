@@ -68,7 +68,7 @@ export default function RootLayout() {
   // Initialize auth and check onboarding on mount
   useEffect(() => {
     const init = async () => {
-      initAuth();
+      await initAuth();
       const completed = await AsyncStorage.getItem(ONBOARDING_KEY);
       setOnboardingCompleted(completed === 'true');
     };
