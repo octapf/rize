@@ -37,13 +37,11 @@ async function createTestUser() {
     console.log('✅ Cleaned up old test users');
 
     // Crear usuario de prueba con credenciales simples
-    const plainPassword = 'Admin123';
-    const hashedPassword = await bcrypt.hash(plainPassword, 10);
-    
+    // NO hashear manualmente - el modelo User.pre('save') lo hará automáticamente
     const testUser = await User.create({
       email: 'test@test.com',
       username: 'testuser',
-      password: hashedPassword,
+      password: 'Admin123', // ← Contraseña en texto plano, se hasheará automáticamente
     });
 
     console.log('\n✅ USUARIO CREADO - PRUEBA CON ESTOS DATOS:\n');
