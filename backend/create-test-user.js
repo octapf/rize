@@ -32,18 +32,25 @@ async function createTestUser() {
     await mongoose.connect(mongoUri);
     console.log('✅ Connected to MongoDB');
 
-    // Crear usuario de prueba
+    // Limpiar usuarios de prueba existentes
+    await User.deleteMany({ email: { $in: ['test@test.com', 'octa@gmail.com', 'demo@test.com'] } });
+    console.log('✅ Cleaned up old test users');
+
+    // Crear usuario de prueba con credenciales simples
+    const plainPassword = 'Admin123';
+    const hashedPassword = await bcrypt.hash(plainPassword, 10);
+    
     const testUser = await User.create({
-      email: 'octa@gmail.com',
-      username: 'octa',
-      password: 'password123', // Será hasheada por el pre-save hook
+      email: 'test@test.com',
+      username: 'testuser',
+      password: hashedPassword,
     });
 
-    console.log('✅ Usuario creado:');
-    console.log(`   Email: ${testUser.email}`);
-    console.log(`   Username: ${testUser.username}`);
-    console.log(`   Password (plain): password123`);
-    console.log(`   ID: ${testUser._id}`);
+    console.log('\n✅ USUARIO CREADO - PRUEBA CON ESTOS DATOS:\n');
+    console.log('📧 Email: test@test.com');
+    console.log('👤 Usuario: testuser');
+    console.log('🔐 Contraseña: Admin123');
+    console.log(`\n✅ ID: ${testUser._id}\n`);
 
     process.exit(0);
   } catch (error) {
