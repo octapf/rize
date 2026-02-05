@@ -135,7 +135,7 @@ function ToastItem({ toast }: { toast: Toast }) {
         return { bg: '#F59E0B', icon: '#FFF' };
       case 'info':
       default:
-        return { bg: '#3B82F6', icon: '#FFF' };
+        return { bg: '#9D12DE', icon: '#FFEA00' };
     }
   };
 

@@ -8,6 +8,7 @@ import { Button } from '@/components/ui/Button';
 import { Input } from '@/components/ui/Input';
 import { authApi } from '@/services/api/auth.api';
 import { useAuthStore } from '@/stores/authStore';
+import { useToast } from '@/contexts/ToastContext';
 
 export default function LoginScreen() {
   const [emailOrUsername, setEmailOrUsername] = useState('');
@@ -16,15 +17,18 @@ export default function LoginScreen() {
   const [errors, setErrors] = useState<{ emailOrUsername?: string; password?: string }>({});
 
   const setAuth = useAuthStore((state) => state.setAuth);
+  const toast = useToast();
 
   const loginMutation = useMutation({
     mutationFn: authApi.login,
     onSuccess: async (data) => {
       await setAuth(data);
+      toast.success('¡Bienvenido de nuevo!');
       router.replace('/(tabs)');
     },
     onError: (error: any) => {
-      const message = error.response?.data?.message || 'Error al iniciar sesiÃ³n';
+      const message = error.response?.data?.message || 'Error al iniciar sesión';
+      toast.error(message);
       setErrors({ emailOrUsername: message });
     },
   });
@@ -33,12 +37,16 @@ export default function LoginScreen() {
     setErrors({});
 
     if (!emailOrUsername.trim()) {
-      setErrors({ emailOrUsername: 'Email o usuario requerido' });
+      const msg = 'Email o usuario requerido';
+      toast.error(msg);
+      setErrors({ emailOrUsername: msg });
       return;
     }
 
     if (!password) {
-      setErrors({ password: 'ContraseÃ±a requerida' });
+      const msg = 'Contraseña requerida';
+      toast.error(msg);
+      setErrors({ password: msg });
       return;
     }
 

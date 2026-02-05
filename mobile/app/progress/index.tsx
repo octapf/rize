@@ -13,6 +13,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { useQuery } from '@tanstack/react-query';
 import { usersApi } from '@/services/api/users.api';
 import { workoutsApi } from '@/services/api/workouts.api';
+import { useAuthStore } from '@/stores/authStore';
 import { Card } from '@/components/ui/Card';
 import { LineChart, BarChart } from 'react-native-chart-kit';
 import { format, subDays, startOfWeek, endOfWeek } from 'date-fns';
@@ -25,14 +26,18 @@ type TimeRange = '7d' | '30d' | '90d' | 'year';
 export default function ProgressScreen() {
   const [timeRange, setTimeRange] = useState<TimeRange>('30d');
 
+  const { isAuthenticated } = useAuthStore();
+
   const { data: statsData, isLoading: statsLoading } = useQuery({
     queryKey: ['user-stats'],
     queryFn: () => usersApi.getMyStats(),
+    enabled: isAuthenticated,
   });
 
   const { data: workoutsData, isLoading: workoutsLoading } = useQuery({
     queryKey: ['workouts-all'],
     queryFn: () => workoutsApi.getUserWorkouts(),
+    enabled: isAuthenticated,
   });
 
   const workouts = workoutsData?.data.workouts || [];

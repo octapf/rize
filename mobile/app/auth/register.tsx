@@ -7,12 +7,12 @@ import {
   KeyboardAvoidingView,
   Platform,
   ScrollView,
-  Alert,
 } from 'react-native';
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useAuthStore } from '@/stores/authStore';
+import { useToast } from '@/contexts/ToastContext';
 
 export default function RegisterScreen() {
   const [name, setName] = useState('');
@@ -25,30 +25,31 @@ export default function RegisterScreen() {
   const [isLoading, setIsLoading] = useState(false);
 
   const register = useAuthStore((state) => state.register);
+  const toast = useToast();
 
   const validateForm = () => {
     if (!name.trim() || !email.trim() || !username.trim() || !password.trim() || !confirmPassword.trim()) {
-      Alert.alert('Error', 'Por favor completa todos los campos');
+      toast.error('Por favor completa todos los campos');
       return false;
     }
 
     if (!email.includes('@')) {
-      Alert.alert('Error', 'Email inválido');
+      toast.error('Email inválido');
       return false;
     }
 
     if (username.length < 3) {
-      Alert.alert('Error', 'El usuario debe tener al menos 3 caracteres');
+      toast.error('El usuario debe tener al menos 3 caracteres');
       return false;
     }
 
     if (password.length < 8) {
-      Alert.alert('Error', 'La contraseña debe tener al menos 8 caracteres');
+      toast.error('La contraseña debe tener al menos 8 caracteres');
       return false;
     }
 
     if (password !== confirmPassword) {
-      Alert.alert('Error', 'Las contraseñas no coinciden');
+      toast.error('Las contraseñas no coinciden');
       return false;
     }
 
@@ -61,9 +62,6 @@ export default function RegisterScreen() {
     setIsLoading(true);
 
     try {
-      // Simular llamada API
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      
       await register({
         name: name.trim(),
         email: email.trim().toLowerCase(),
@@ -71,10 +69,12 @@ export default function RegisterScreen() {
         password,
       });
 
+      toast.success('¡Cuenta creada exitosamente!');
       // Entrar directo a la cuenta
       router.replace('/(tabs)');
     } catch (error: any) {
-      Alert.alert('Error', error.message || 'No se pudo crear la cuenta');
+      const message = error.response?.data?.message || error.message || 'No se pudo crear la cuenta';
+      toast.error(message);
     } finally {
       setIsLoading(false);
     }

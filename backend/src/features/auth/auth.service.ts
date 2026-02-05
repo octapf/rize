@@ -35,6 +35,8 @@ export class AuthService {
   async register(data: RegisterData): Promise<AuthResponse> {
     const { email, username, password } = data;
 
+    logger.info(`Registration attempt for email: ${email}, username: ${username}`);
+
     // Check if user already exists
     const existingUser = await User.findOne({
       $or: [{ email }, { username }],
@@ -81,18 +83,26 @@ export class AuthService {
   async login(data: LoginData): Promise<AuthResponse> {
     const { emailOrUsername, password } = data;
 
-    // Find user by email or username
+    logger.info(`Login attempt for: ${emailOrUsername}`);
+
+    // Find user by email or username (need to select password explicitly)
     const user = await User.findOne({
       $or: [{ email: emailOrUsername }, { username: emailOrUsername }],
-    });
+    }).select('+password');
 
     if (!user) {
+      logger.warn(`Login failed: User not found for ${emailOrUsername}`);
       throw new UnauthorizedError('Credenciales inválidas');
     }
 
+    logger.info(`User found: ${user.email}, has password: ${!!user.password}`);
+
     // Verify password
     const isPasswordValid = await user.comparePassword(password);
+    logger.info(`Password validation result: ${isPasswordValid}`);
+    
     if (!isPasswordValid) {
+      logger.warn(`Login failed: Invalid password for ${user.email}`);
       throw new UnauthorizedError('Credenciales inválidas');
     }
 

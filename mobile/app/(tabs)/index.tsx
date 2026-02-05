@@ -14,18 +14,20 @@ import { Button } from '@/components/ui/Button';
 import { QuickStats } from '@/components/QuickStats';
 
 export default function HomeScreen() {
-  const { user } = useAuthStore();
+  const { user, isAuthenticated } = useAuthStore();
 
   // Fetch user stats
   const { data: statsData, isLoading: statsLoading } = useQuery({
     queryKey: ['user-stats'],
     queryFn: () => usersApi.getMyStats(),
+    enabled: isAuthenticated,
   });
 
   // Fetch recent workouts
   const { data: workoutsData, isLoading: workoutsLoading } = useQuery({
     queryKey: ['workouts-recent'],
     queryFn: () => workoutsApi.getUserWorkouts(),
+    enabled: isAuthenticated,
   });
 
   const workouts = workoutsData?.data.workouts || [];

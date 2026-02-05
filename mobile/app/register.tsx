@@ -8,6 +8,7 @@ import { Button } from '@/components/ui/Button';
 import { Input } from '@/components/ui/Input';
 import { authApi } from '@/services/api/auth.api';
 import { useAuthStore } from '@/stores/authStore';
+import { useToast } from '@/contexts/ToastContext';
 
 export default function RegisterScreen() {
   const [email, setEmail] = useState('');
@@ -21,19 +22,23 @@ export default function RegisterScreen() {
   }>({});
 
   const setAuth = useAuthStore((state) => state.setAuth);
+  const toast = useToast();
 
   const registerMutation = useMutation({
     mutationFn: authApi.register,
     onSuccess: async (data) => {
       await setAuth(data);
+      toast.success('¡Cuenta creada exitosamente!');
       router.replace('/(tabs)');
     },
     onError: (error: any) => {
       const validationErrors = error.response?.data?.errors;
       if (validationErrors) {
         setErrors(validationErrors);
+        toast.error('Por favor corrige los errores del formulario');
       } else {
         const message = error.response?.data?.message || 'Error al registrarse';
+        toast.error(message);
         setErrors({ email: message });
       }
     },
@@ -65,6 +70,8 @@ export default function RegisterScreen() {
 
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
+      const firstError = Object.values(newErrors)[0];
+      toast.error(firstError);
       return;
     }
 

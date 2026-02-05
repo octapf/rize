@@ -7,13 +7,13 @@ import {
   KeyboardAvoidingView,
   Platform,
   ScrollView,
-  Alert,
   Dimensions
 } from 'react-native';
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import { useAuthStore } from '@/stores/authStore';
 import { GlassCard } from '@/components/ui/GlassCard';
+import { useToast } from '@/contexts/ToastContext';
 import Animated, { FadeInDown, FadeInUp, withRepeat, withTiming, useSharedValue, useAnimatedStyle, Easing } from 'react-native-reanimated';
 import { useEffect } from 'react';
 
@@ -51,28 +51,28 @@ export default function LoginScreen() {
   }));
 
   const login = useAuthStore((state) => state.login);
+  const toast = useToast();
 
   const handleLogin = async () => {
     if (!email.trim() || !password.trim()) {
-      Alert.alert('Error', 'Por favor completa todos los campos');
+      toast.error('Por favor completa todos los campos');
       return;
     }
 
     if (!email.includes('@')) {
-      Alert.alert('Error', 'Email inválido');
+      toast.error('Email inválido');
       return;
     }
 
     setIsLoading(true);
 
     try {
-      // Simular llamada API
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      
       await login(email, password);
+      toast.success('¡Bienvenido de nuevo!');
       router.replace('/(tabs)');
     } catch (error: any) {
-      Alert.alert('Error', error.message || 'Credenciales inválidas');
+      const message = error.response?.data?.message || error.message || 'Credenciales inválidas';
+      toast.error(message);
     } finally {
       setIsLoading(false);
     }
