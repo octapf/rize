@@ -71,8 +71,8 @@ export default function RegisterScreen() {
         password,
       });
 
-      // Ir a onboarding
-      router.replace('/auth/onboarding');
+      // Entrar directo a la cuenta
+      router.replace('/(tabs)');
     } catch (error: any) {
       Alert.alert('Error', error.message || 'No se pudo crear la cuenta');
     } finally {
