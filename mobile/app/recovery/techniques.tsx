@@ -38,7 +38,7 @@ export default function RecoveryTechniques() {
         },
         {
           tip: 'Cool Temperature',
-          details: '15-19Â°C ideal for deep sleep. Body temp drops to sleep',
+          details: '15-19°C ideal for deep sleep. Body temp drops to sleep',
           priority: 'High',
         },
         {
@@ -371,7 +371,7 @@ export default function RecoveryTechniques() {
             <View className="bg-zinc-800 rounded-xl p-4 mb-4">
               {currentTechnique.benefits.map((benefit, idx) => (
                 <Text key={idx} className="text-primary text-sm mb-2 last:mb-0">
-                  âœ“ {benefit}
+                  ✓ {benefit}
                 </Text>
               ))}
             </View>
@@ -433,16 +433,16 @@ export default function RecoveryTechniques() {
           <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
             <Text className="text-primary font-bold mb-2">Remember</Text>
             <Text className="text-primary/80 text-sm mb-2">
-              â€¢ You don't grow in the gym, you grow during recovery
+              • You don't grow in the gym, you grow during recovery
             </Text>
             <Text className="text-primary/80 text-sm mb-2">
-              â€¢ More training â‰  more gains. Recovery is when adaptation happens
+              • More training â‰  more gains. Recovery is when adaptation happens
             </Text>
             <Text className="text-primary/80 text-sm mb-2">
-              â€¢ Sleep and nutrition are 90% of recovery
+              • Sleep and nutrition are 90% of recovery
             </Text>
             <Text className="text-primary/80 text-sm">
-              â€¢ Fancy recovery tools are nice, but not necessary
+              • Fancy recovery tools are nice, but not necessary
             </Text>
           </View>
         </View>

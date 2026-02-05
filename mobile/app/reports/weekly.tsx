@@ -50,11 +50,11 @@ const CURRENT_WEEK: WeeklyReport = {
   avgSleep: 7.8,
   consistency: 100,
   prs: 3,
-  topMuscleGroups: ['Pecho', 'Espalda', 'CuÃ¡driceps'],
-  achievements: ['Racha 7 dÃ­as', 'Nuevo PR Sentadilla', '25 workouts en Enero'],
+  topMuscleGroups: ['Pecho', 'Espalda', 'Cuádriceps'],
+  achievements: ['Racha 7 días', 'Nuevo PR Sentadilla', '25 workouts en Enero'],
   improvements: [
     { metric: 'Volumen Total', value: 12.5, trend: 'up' },
-    { metric: 'Fuerza MÃ¡xima', value: 8.3, trend: 'up' },
+    { metric: 'Fuerza Máxima', value: 8.3, trend: 'up' },
     { metric: 'Consistencia', value: 15, trend: 'up' },
     { metric: 'Grasa Corporal', value: -2.1, trend: 'down' },
   ],
@@ -330,7 +330,7 @@ export default function WeeklyReports() {
           {currentWeek.prs > 0 && (
             <>
               <Text className="text-white font-bold text-lg mb-3">
-                RÃ©cords Personales
+                Récords Personales
               </Text>
               <View className="bg-zinc-900 rounded-xl p-4 border border-zinc-800 mb-6">
                 <View className="flex-row items-center">
@@ -341,10 +341,10 @@ export default function WeeklyReports() {
                   </View>
                   <View className="flex-1">
                     <Text className="text-white font-bold text-lg mb-1">
-                      Â¡PRs Rotos Esta Semana!
+                      ¡PRs Rotos Esta Semana!
                     </Text>
                     <Text className="text-zinc-400 text-sm">
-                      Sigue superÃ¡ndote cada dÃ­a
+                      Sigue superándote cada día
                     </Text>
                   </View>
                 </View>
@@ -390,7 +390,7 @@ export default function WeeklyReports() {
                       </Text>
                     </View>
                     <View className="flex-1 bg-zinc-800 rounded-lg p-2">
-                      <Text className="text-zinc-400 text-xs">CalorÃ­as</Text>
+                      <Text className="text-zinc-400 text-xs">Calorías</Text>
                       <Text className="text-red-400 font-bold">{day.calories}</Text>
                     </View>
                   </View>
@@ -403,11 +403,11 @@ export default function WeeklyReports() {
 
               <View className="flex-row gap-2">
                 <View className="flex-1 bg-zinc-800 rounded-lg p-2">
-                  <Text className="text-zinc-400 text-xs">SueÃ±o</Text>
+                  <Text className="text-zinc-400 text-xs">Sueño</Text>
                   <Text className="text-primary/80 font-bold">{day.sleep}h</Text>
                 </View>
                 <View className="flex-1 bg-zinc-800 rounded-lg p-2">
-                  <Text className="text-zinc-400 text-xs">NutriciÃ³n</Text>
+                  <Text className="text-zinc-400 text-xs">Nutrición</Text>
                   <Text className="text-primary font-bold">{day.nutrition}%</Text>
                 </View>
               </View>

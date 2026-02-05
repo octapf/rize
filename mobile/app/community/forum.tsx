@@ -33,8 +33,8 @@ const FORUM_POSTS: ForumPost[] = [
   {
     id: '1',
     author: { name: 'Carlos Pro', avatar: 'ðŸ’ª', level: 24, verified: true },
-    title: 'Â¿CÃ³mo romper plateau en sentadilla?',
-    content: 'Llevo 3 semanas estancado en 140kg x 5. Â¿AlgÃºn tip para superar esto?',
+    title: '¿Cómo romper plateau en sentadilla?',
+    content: 'Llevo 3 semanas estancado en 140kg x 5. ¿Algún tip para superar esto?',
     category: 'Fuerza',
     replies: 18,
     views: 342,
@@ -46,9 +46,9 @@ const FORUM_POSTS: ForumPost[] = [
   {
     id: '2',
     author: { name: 'Ana Fitness', avatar: 'ðŸ‹ï¸', level: 18, verified: false },
-    title: 'Mejor protocolo para definiciÃ³n',
-    content: 'Empezando corte. Â¿Deficit 300 o 500 kcal? Â¿Cardio o solo pesas?',
-    category: 'NutriciÃ³n',
+    title: 'Mejor protocolo para definición',
+    content: 'Empezando corte. ¿Deficit 300 o 500 kcal? ¿Cardio o solo pesas?',
+    category: 'Nutrición',
     replies: 31,
     views: 589,
     likes: 45,
@@ -59,9 +59,9 @@ const FORUM_POSTS: ForumPost[] = [
   {
     id: '3',
     author: { name: 'Miguel Beast', avatar: 'ðŸ¦', level: 32, verified: true },
-    title: 'Creatina: Â¿Fase de carga necesaria?',
-    content: 'Debate: Â¿5g diarios desde dÃ­a 1 o loading phase de 20g x 5 dÃ­as?',
-    category: 'SuplementaciÃ³n',
+    title: 'Creatina: ¿Fase de carga necesaria?',
+    content: 'Debate: ¿5g diarios desde día 1 o loading phase de 20g x 5 días?',
+    category: 'Suplementación',
     replies: 24,
     views: 456,
     likes: 38,
@@ -71,9 +71,9 @@ const FORUM_POSTS: ForumPost[] = [
   },
   {
     id: '4',
-    author: { name: 'Laura Recovery', avatar: 'ðŸ§˜', level: 15, verified: false },
+    author: { name: 'Laura Recovery', avatar: '🧘', level: 15, verified: false },
     title: 'Dolor de hombro en press banca',
-    content: 'Molestia frontal del hombro al bajar barra. Â¿TÃ©cnica o lesiÃ³n?',
+    content: 'Molestia frontal del hombro al bajar barra. ¿Técnica o lesión?',
     category: 'Salud',
     replies: 12,
     views: 234,
@@ -84,10 +84,10 @@ const FORUM_POSTS: ForumPost[] = [
   },
   {
     id: '5',
-    author: { name: 'Pedro Iron', avatar: 'âš¡', level: 28, verified: true },
+    author: { name: 'Pedro Iron', avatar: '⚡', level: 28, verified: true },
     title: '[GUÃA] 5/3/1 para principiantes',
-    content: 'Tutorial completo del programa Wendler 5/3/1. Setup, progresiÃ³n, deload.',
-    category: 'ProgramaciÃ³n',
+    content: 'Tutorial completo del programa Wendler 5/3/1. Setup, progresión, deload.',
+    category: 'Programación',
     replies: 67,
     views: 1248,
     likes: 142,
@@ -99,8 +99,8 @@ const FORUM_POSTS: ForumPost[] = [
     id: '6',
     author: { name: 'Sofia Cardio', avatar: 'ðŸƒ', level: 12, verified: false },
     title: 'Combinar pesas y running',
-    content: 'Â¿CÃ³mo estructurar semana para no perder mÃºsculo entrenando maratÃ³n?',
-    category: 'ProgramaciÃ³n',
+    content: '¿Cómo estructurar semana para no perder músculo entrenando maratón?',
+    category: 'Programación',
     replies: 9,
     views: 167,
     likes: 14,
@@ -113,10 +113,10 @@ const FORUM_POSTS: ForumPost[] = [
 const CATEGORIES = [
   { id: 'all', name: 'Todos', icon: 'apps', color: 'text-zinc-400' },
   { id: 'Fuerza', name: 'Fuerza', icon: 'barbell', color: 'text-red-400' },
-  { id: 'NutriciÃ³n', name: 'NutriciÃ³n', icon: 'restaurant', color: 'text-primary' },
-  { id: 'SuplementaciÃ³n', name: 'Suplementos', icon: 'flask', color: 'text-purple-400' },
+  { id: 'Nutrición', name: 'Nutrición', icon: 'restaurant', color: 'text-primary' },
+  { id: 'Suplementación', name: 'Suplementos', icon: 'flask', color: 'text-purple-400' },
   { id: 'Salud', name: 'Salud', icon: 'medical', color: 'text-primary/80' },
-  { id: 'ProgramaciÃ³n', name: 'ProgramaciÃ³n', icon: 'calendar', color: 'text-amber-400' },
+  { id: 'Programación', name: 'Programación', icon: 'calendar', color: 'text-amber-400' },
 ];
 
 export default function CommunityForum() {
@@ -141,7 +141,7 @@ export default function CommunityForum() {
   const openPost = (post: ForumPost) => {
     Alert.alert(
       post.title,
-      `${post.content}\n\nPor: ${post.author.name}\n${post.replies} respuestas â€¢ ${post.views} vistas`,
+      `${post.content}\n\nPor: ${post.author.name}\n${post.replies} respuestas • ${post.views} vistas`,
       [
         { text: 'Cancelar', style: 'cancel' },
         { text: 'Ver Completo' },
@@ -280,9 +280,9 @@ export default function CommunityForum() {
                   className={`px-2 py-1 rounded-lg ${
                     post.category === 'Fuerza'
                       ? 'bg-red-500/10'
-                      : post.category === 'NutriciÃ³n'
+                      : post.category === 'Nutrición'
                       ? 'bg-primary/10'
-                      : post.category === 'SuplementaciÃ³n'
+                      : post.category === 'Suplementación'
                       ? 'bg-purple-500/10'
                       : post.category === 'Salud'
                       ? 'bg-primary/10'
@@ -293,9 +293,9 @@ export default function CommunityForum() {
                     className={`text-xs ${
                       post.category === 'Fuerza'
                         ? 'text-red-400'
-                        : post.category === 'NutriciÃ³n'
+                        : post.category === 'Nutrición'
                         ? 'text-primary'
-                        : post.category === 'SuplementaciÃ³n'
+                        : post.category === 'Suplementación'
                         ? 'text-purple-400'
                         : post.category === 'Salud'
                         ? 'text-primary/80'
@@ -357,7 +357,7 @@ export default function CommunityForum() {
                   Comunidad de Respeto
                 </Text>
                 <Text className="text-primary/60 text-sm">
-                  Comparte conocimiento, haz preguntas y ayuda a otros. Juntos somos mÃ¡s fuertes.
+                  Comparte conocimiento, haz preguntas y ayuda a otros. Juntos somos más fuertes.
                 </Text>
               </View>
             </View>

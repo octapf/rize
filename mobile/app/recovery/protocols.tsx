@@ -33,22 +33,22 @@ interface RecoveryExercise {
 const RECOVERY_PROTOCOLS: RecoveryProtocol[] = [
   {
     id: '1',
-    name: 'LiberaciÃ³n Miofascial Completa',
+    name: 'Liberación Miofascial Completa',
     type: 'foam-rolling',
     duration: 25,
     difficulty: 'intermedio',
-    targetArea: ['espalda', 'piernas', 'glÃºteos', 'cuÃ¡driceps'],
+    targetArea: ['espalda', 'piernas', 'glúteos', 'cuádriceps'],
     bestFor: 'Post-entrenamiento de pierna o espalda',
     benefits: [
-      'Reduce tensiÃ³n muscular',
-      'Mejora circulaciÃ³n',
+      'Reduce tensión muscular',
+      'Mejora circulación',
       'Previene lesiones',
-      'Acelera recuperaciÃ³n',
+      'Acelera recuperación',
     ],
     exercises: [
       {
         id: '1',
-        name: 'Roll de CuÃ¡driceps',
+        name: 'Roll de Cuádriceps',
         duration: 60,
         sets: 2,
         notes: 'Movimiento lento, detente en puntos tensos 20-30 segundos',
@@ -62,7 +62,7 @@ const RECOVERY_PROTOCOLS: RecoveryProtocol[] = [
       },
       {
         id: '3',
-        name: 'Roll de GlÃºteos',
+        name: 'Roll de Glúteos',
         duration: 45,
         sets: 2,
         notes: 'Cruza pierna sobre rodilla, busca trigger points',
@@ -72,14 +72,14 @@ const RECOVERY_PROTOCOLS: RecoveryProtocol[] = [
         name: 'Roll de Espalda Alta',
         duration: 60,
         sets: 2,
-        notes: 'Evita zona lumbar, enfÃ³cate en dorsales',
+        notes: 'Evita zona lumbar, enfócate en dorsales',
       },
       {
         id: '5',
         name: 'Roll de Pantorrillas',
         duration: 45,
         sets: 2,
-        notes: 'Ambas piernas o una por vez para mÃ¡s presiÃ³n',
+        notes: 'Ambas piernas o una por vez para más presión',
       },
     ],
   },
@@ -110,14 +110,14 @@ const RECOVERY_PROTOCOLS: RecoveryProtocol[] = [
         name: 'World\'s Greatest Stretch',
         duration: 90,
         sets: 2,
-        notes: 'MantÃ©n cada posiciÃ³n 3-5 segundos',
+        notes: 'Mantén cada posición 3-5 segundos',
       },
       {
         id: '3',
-        name: 'CÃ­rculos de Cadera',
+        name: 'Círculos de Cadera',
         duration: 45,
         sets: 2,
-        notes: '10 cÃ­rculos en cada direcciÃ³n',
+        notes: '10 círculos en cada dirección',
       },
       {
         id: '4',
@@ -131,7 +131,7 @@ const RECOVERY_PROTOCOLS: RecoveryProtocol[] = [
         name: 'Movilidad de Tobillo',
         duration: 45,
         sets: 2,
-        notes: 'Rodilla hacia adelante sin despegar talÃ³n',
+        notes: 'Rodilla hacia adelante sin despegar talón',
       },
     ],
   },
@@ -142,19 +142,19 @@ const RECOVERY_PROTOCOLS: RecoveryProtocol[] = [
     duration: 20,
     difficulty: 'principiante',
     targetArea: ['todo el cuerpo'],
-    bestFor: 'DespuÃ©s de cualquier entrenamiento',
+    bestFor: 'Después de cualquier entrenamiento',
     benefits: [
       'Reduce dolor muscular',
       'Mejora flexibilidad',
-      'Acelera recuperaciÃ³n',
+      'Acelera recuperación',
       'Relaja el sistema nervioso',
     ],
     exercises: [
       {
         id: '1',
-        name: 'Estiramiento de CuÃ¡driceps',
+        name: 'Estiramiento de Cuádriceps',
         duration: 60,
-        notes: 'MantÃ©n 30 segundos por pierna',
+        notes: 'Mantén 30 segundos por pierna',
       },
       {
         id: '2',
@@ -184,34 +184,34 @@ const RECOVERY_PROTOCOLS: RecoveryProtocol[] = [
   },
   {
     id: '4',
-    name: 'RespiraciÃ³n y RelajaciÃ³n',
+    name: 'Respiración y Relajación',
     type: 'breathing',
     duration: 10,
     difficulty: 'principiante',
     targetArea: ['sistema nervioso'],
-    bestFor: 'Antes de dormir o reducir estrÃ©s',
+    bestFor: 'Antes de dormir o reducir estrés',
     benefits: [
-      'Reduce estrÃ©s',
-      'Mejora calidad de sueÃ±o',
-      'Activa sistema parasimpÃ¡tico',
-      'Mejora concentraciÃ³n',
+      'Reduce estrés',
+      'Mejora calidad de sueño',
+      'Activa sistema parasimpático',
+      'Mejora concentración',
     ],
     exercises: [
       {
         id: '1',
-        name: 'RespiraciÃ³n 4-7-8',
+        name: 'Respiración 4-7-8',
         duration: 180,
-        notes: 'Inhala 4 seg, sostÃ©n 7 seg, exhala 8 seg. Repite 4 veces',
+        notes: 'Inhala 4 seg, sostén 7 seg, exhala 8 seg. Repite 4 veces',
       },
       {
         id: '2',
         name: 'Box Breathing',
         duration: 180,
-        notes: 'Inhala 4, sostÃ©n 4, exhala 4, sostÃ©n 4. Repite',
+        notes: 'Inhala 4, sostén 4, exhala 4, sostén 4. Repite',
       },
       {
         id: '3',
-        name: 'RespiraciÃ³n DiafragmÃ¡tica',
+        name: 'Respiración Diafragmática',
         duration: 240,
         notes: 'Mano en abdomen, respira expandiendo solo el abdomen',
       },
@@ -228,7 +228,7 @@ export default function RecoveryProtocols() {
     { id: 'foam-rolling', label: 'Foam Rolling', icon: 'ellipse' },
     { id: 'mobility', label: 'Movilidad', icon: 'fitness' },
     { id: 'stretching', label: 'Estiramientos', icon: 'hand-left' },
-    { id: 'breathing', label: 'RespiraciÃ³n', icon: 'water' },
+    { id: 'breathing', label: 'Respiración', icon: 'water' },
   ];
 
   const getTypeColor = (type: string) => {
@@ -267,13 +267,13 @@ export default function RecoveryProtocols() {
     setActiveProtocol(protocol.id);
     Alert.alert(
       'Iniciar Protocolo',
-      `${protocol.name}\n\n${protocol.duration} minutos\n${protocol.exercises.length} ejercicios\n\nÂ¿Listo para comenzar?`,
+      `${protocol.name}\n\n${protocol.duration} minutos\n${protocol.exercises.length} ejercicios\n\n¿Listo para comenzar?`,
       [
         { text: 'Cancelar', onPress: () => setActiveProtocol(null), style: 'cancel' },
         {
           text: 'Comenzar',
           onPress: () => {
-            Alert.alert('Â¡En marcha!', 'Sigue las instrucciones de cada ejercicio');
+            Alert.alert('¡En marcha!', 'Sigue las instrucciones de cada ejercicio');
           },
         },
       ]
@@ -293,7 +293,7 @@ export default function RecoveryProtocols() {
             <Ionicons name="arrow-back" size={24} color="white" />
           </TouchableOpacity>
           <Text className="text-white text-2xl font-bold flex-1 ml-3">
-            Protocolos de RecuperaciÃ³n
+            Protocolos de Recuperación
           </Text>
           <TouchableOpacity>
             <Ionicons name="bookmark-outline" size={24} color="white" />
@@ -309,7 +309,7 @@ export default function RecoveryProtocols() {
                 18
               </Text>
               <Text className="text-white/80 text-sm">
-                6.2 horas de recuperaciÃ³n
+                6.2 horas de recuperación
               </Text>
             </View>
             <View className="bg-white/20 rounded-full p-4">
@@ -456,7 +456,7 @@ export default function RecoveryProtocols() {
                 ))}
                 {protocol.exercises.length > 3 && (
                   <Text className="text-zinc-500 text-xs mt-2">
-                    +{protocol.exercises.length - 3} mÃ¡s...
+                    +{protocol.exercises.length - 3} más...
                   </Text>
                 )}
               </View>
@@ -498,10 +498,10 @@ export default function RecoveryProtocols() {
               <Ionicons name="information-circle" size={20} color="#9D12DE" />
               <View className="flex-1 ml-3">
                 <Text className="text-primary/80 font-bold mb-2">
-                  RecuperaciÃ³n Activa
+                  Recuperación Activa
                 </Text>
                 <Text className="text-primary/60 text-sm">
-                  La recuperaciÃ³n es tan importante como el entrenamiento. Dedica 15-30 minutos diarios a estos protocolos para maximizar resultados y prevenir lesiones.
+                  La recuperación es tan importante como el entrenamiento. Dedica 15-30 minutos diarios a estos protocolos para maximizar resultados y prevenir lesiones.
                 </Text>
               </View>
             </View>

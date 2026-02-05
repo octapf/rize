@@ -27,7 +27,7 @@ interface Friend {
 const mockFriends: Friend[] = [
   {
     id: '1',
-    name: 'Carlos GarcÃ­a',
+    name: 'Carlos García',
     username: '@carlosfit',
     level: 15,
     xp: 3450,
@@ -37,7 +37,7 @@ const mockFriends: Friend[] = [
   },
   {
     id: '2',
-    name: 'MarÃ­a LÃ³pez',
+    name: 'María López',
     username: '@mariastrong',
     level: 18,
     xp: 4200,
@@ -47,7 +47,7 @@ const mockFriends: Friend[] = [
   },
   {
     id: '3',
-    name: 'Juan PÃ©rez',
+    name: 'Juan Pérez',
     username: '@juanfitness',
     level: 12,
     xp: 2890,
@@ -58,7 +58,7 @@ const mockFriends: Friend[] = [
   },
   {
     id: '4',
-    name: 'Ana MartÃ­nez',
+    name: 'Ana Martínez',
     username: '@anagym',
     level: 20,
     xp: 5100,
@@ -69,7 +69,7 @@ const mockFriends: Friend[] = [
   },
   {
     id: '5',
-    name: 'Pedro SÃ¡nchez',
+    name: 'Pedro Sánchez',
     username: '@pedrolift',
     level: 14,
     xp: 3200,
@@ -194,7 +194,7 @@ export default function FriendsScreen() {
             <Text className="text-white text-2xl font-bold">{friends.length}</Text>
           </Card>
           <Card className="flex-1 p-3 bg-white/20 border-0">
-            <Text className="text-white/80 text-xs mb-1">En lÃ­nea</Text>
+            <Text className="text-white/80 text-xs mb-1">En línea</Text>
             <Text className="text-white text-2xl font-bold">{onlineFriends}</Text>
           </Card>
         </View>
@@ -231,7 +231,7 @@ export default function FriendsScreen() {
                   filter === f ? 'text-white' : 'text-gray-700'
                 }`}
               >
-                {f === 'all' ? 'Todos' : 'En lÃ­nea'}
+                {f === 'all' ? 'Todos' : 'En línea'}
               </Text>
             </TouchableOpacity>
           ))}
@@ -247,7 +247,7 @@ export default function FriendsScreen() {
             </Text>
             <Text className="text-gray-600 text-center mt-2">
               {searchQuery
-                ? 'Intenta con otra bÃºsqueda'
+                ? 'Intenta con otra búsqueda'
                 : 'Agrega amigos para ver su actividad'}
             </Text>
             <TouchableOpacity

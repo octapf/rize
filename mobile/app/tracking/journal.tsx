@@ -26,10 +26,10 @@ interface JournalEntry {
 }
 
 const MOOD_OPTIONS = [
-  { value: 'bad', emoji: 'ðŸ˜ž', label: 'Mal', color: 'red' },
-  { value: 'ok', emoji: 'ðŸ˜', label: 'OK', color: 'amber' },
-  { value: 'good', emoji: 'ðŸ™‚', label: 'Bien', color: 'blue' },
-  { value: 'great', emoji: 'ðŸ˜ƒ', label: 'Genial', color: 'emerald' },
+  { value: 'bad', emoji: '😞', label: 'Mal', color: 'red' },
+  { value: 'ok', emoji: '😐', label: 'OK', color: 'amber' },
+  { value: 'good', emoji: '🙂', label: 'Bien', color: 'blue' },
+  { value: 'great', emoji: '😐ƒ', label: 'Genial', color: 'emerald' },
 ];
 
 const MOCK_ENTRIES: JournalEntry[] = [
@@ -41,8 +41,8 @@ const MOCK_ENTRIES: JournalEntry[] = [
     energy: 5,
     sleep: 7.5,
     bodyWeight: 78.5,
-    notes: 'Excelente sesiÃ³n! Nuevo PR en press banca 100kg x6. Me sentÃ­ muy fuerte hoy.',
-    achievements: ['PR en press banca', 'TÃ©cnica perfecta'],
+    notes: 'Excelente sesión! Nuevo PR en press banca 100kg x6. Me sentí muy fuerte hoy.',
+    achievements: ['PR en press banca', 'Técnica perfecta'],
     challenges: ['Press militar un poco pesado'],
   },
   {
@@ -53,7 +53,7 @@ const MOCK_ENTRIES: JournalEntry[] = [
     energy: 4,
     sleep: 8,
     bodyWeight: 78.2,
-    notes: 'Peso muerto se sintiÃ³ bien, dominadas mejorando.',
+    notes: 'Peso muerto se sintió bien, dominadas mejorando.',
     achievements: ['10 dominadas limpias'],
   },
   {
@@ -63,8 +63,8 @@ const MOCK_ENTRIES: JournalEntry[] = [
     mood: 'ok',
     energy: 3,
     sleep: 6,
-    notes: 'Poco sueÃ±o, energÃ­a baja. CompletÃ© el workout pero difÃ­cil.',
-    challenges: ['Fatiga general', 'Bajo en energÃ­a'],
+    notes: 'Poco sueño, energía baja. Completé el workout pero difícil.',
+    challenges: ['Fatiga general', 'Bajo en energía'],
   },
 ];
 
@@ -100,13 +100,13 @@ export default function WorkoutJournal() {
     setEntries([entry, ...entries]);
     setNewEntry({ workoutType: '', mood: 'good', energy: 4, sleep: '', bodyWeight: '', notes: '' });
     setShowAddForm(false);
-    Alert.alert('Entrada Guardada! ðŸ“', 'Registro aÃ±adido al diario');
+    Alert.alert('Entrada Guardada! ðŸ“', 'Registro añadido al diario');
   };
 
   const deleteEntry = (id: string) => {
     Alert.alert(
       'Eliminar Entrada',
-      'Â¿EstÃ¡s seguro?',
+      '¿Estás seguro?',
       [
         { text: 'Cancelar' },
         { text: 'Eliminar', style: 'destructive', onPress: () => setEntries(entries.filter((e) => e.id !== id)) },
@@ -193,7 +193,7 @@ export default function WorkoutJournal() {
 
               {/* Energy */}
               <View className="mb-4">
-                <Text className="text-zinc-400 text-sm mb-2">EnergÃ­a (1-5)</Text>
+                <Text className="text-zinc-400 text-sm mb-2">Energía (1-5)</Text>
                 <View className="flex-row gap-2">
                   {[1, 2, 3, 4, 5].map((level) => (
                     <TouchableOpacity
@@ -214,7 +214,7 @@ export default function WorkoutJournal() {
               {/* Sleep & Weight */}
               <View className="flex-row gap-4 mb-4">
                 <View className="flex-1">
-                  <Text className="text-zinc-400 text-sm mb-2">SueÃ±o (horas)</Text>
+                  <Text className="text-zinc-400 text-sm mb-2">Sueño (horas)</Text>
                   <TextInput
                     className="bg-zinc-800 rounded-xl px-4 py-3 text-white text-lg font-bold"
                     placeholder="7.5"
@@ -242,7 +242,7 @@ export default function WorkoutJournal() {
                 <Text className="text-zinc-400 text-sm mb-2">Notas</Text>
                 <TextInput
                   className="bg-zinc-800 rounded-xl px-4 py-3 text-white"
-                  placeholder="Â¿CÃ³mo fue el workout? PRs, sensaciones, etc."
+                  placeholder="¿Cómo fue el workout? PRs, sensaciones, etc."
                   placeholderTextColor="#71717A"
                   multiline
                   numberOfLines={4}
@@ -267,11 +267,11 @@ export default function WorkoutJournal() {
                   <Text className="text-white font-bold text-lg mb-3">Esta Semana</Text>
                   <View className="flex-row gap-3">
                     <View className="flex-1 bg-amber-500/10 rounded-lg p-3 border border-amber-500/30">
-                      <Text className="text-amber-400 text-xs mb-1">EnergÃ­a Promedio</Text>
+                      <Text className="text-amber-400 text-xs mb-1">Energía Promedio</Text>
                       <Text className="text-white text-2xl font-bold">{stats.energy}/5</Text>
                     </View>
                     <View className="flex-1 bg-purple-500/10 rounded-lg p-3 border border-purple-500/30">
-                      <Text className="text-purple-400 text-xs mb-1">SueÃ±o Promedio</Text>
+                      <Text className="text-purple-400 text-xs mb-1">Sueño Promedio</Text>
                       <Text className="text-white text-2xl font-bold">{stats.sleep}h</Text>
                     </View>
                     <View className="flex-1 bg-primary/10 rounded-lg p-3 border border-primary/30">
@@ -321,18 +321,18 @@ export default function WorkoutJournal() {
                         </View>
                         <View className="bg-amber-500/10 rounded px-3 py-1 border border-amber-500/30">
                           <Text className="text-amber-400 text-xs font-bold">
-                            âš¡ EnergÃ­a {entry.energy}/5
+                            ⚡ Energía {entry.energy}/5
                           </Text>
                         </View>
                         <View className="bg-purple-500/10 rounded px-3 py-1 border border-purple-500/30">
                           <Text className="text-purple-400 text-xs font-bold">
-                            ðŸ˜´ {entry.sleep}h sueÃ±o
+                            😐´ {entry.sleep}h sueño
                           </Text>
                         </View>
                         {entry.bodyWeight && (
                           <View className="bg-primary/10 rounded px-3 py-1 border border-primary/30">
                             <Text className="text-primary/80 text-xs font-bold">
-                              âš–ï¸ {entry.bodyWeight}kg
+                              ⚖️ {entry.bodyWeight}kg
                             </Text>
                           </View>
                         )}
@@ -381,14 +381,14 @@ export default function WorkoutJournal() {
               <Ionicons name="book" size={20} color="#9D12DE" />
               <View className="flex-1 ml-3">
                 <Text className="text-primary/80 font-bold mb-2">
-                  Por QuÃ© Llevar un Diario
+                  Por Qué Llevar un Diario
                 </Text>
                 <Text className="text-primary/60 text-sm">
-                  â€¢ Identifica patrones (sueÃ±o, energÃ­a, rendimiento){'\n'}
-                  â€¢ Documenta progreso a largo plazo{'\n'}
-                  â€¢ Detecta quÃ© funciona y quÃ© no{'\n'}
-                  â€¢ MotivaciÃ³n al ver mejoras{'\n'}
-                  â€¢ Ajusta plan segÃºn data real
+                  • Identifica patrones (sueño, energía, rendimiento){'\n'}
+                  • Documenta progreso a largo plazo{'\n'}
+                  • Detecta qué funciona y qué no{'\n'}
+                  • Motivación al ver mejoras{'\n'}
+                  • Ajusta plan según data real
                 </Text>
               </View>
             </View>

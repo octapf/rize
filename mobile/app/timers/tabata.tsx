@@ -73,7 +73,7 @@ export default function TabataTimer() {
             >
               <Text className="text-white font-bold text-lg mb-2">{preset.name}</Text>
               <Text className="text-zinc-400 text-sm">
-                {preset.work}s work â€¢ {preset.rest}s rest â€¢ {preset.rounds} rounds
+                {preset.work}s work • {preset.rest}s rest • {preset.rounds} rounds
               </Text>
             </TouchableOpacity>
           ))}

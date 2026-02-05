@@ -28,9 +28,9 @@ interface CardioSession {
 const CARDIO_TYPES = [
   { id: 'running', label: 'Correr', icon: 'ðŸƒ', color: 'red' },
   { id: 'cycling', label: 'Ciclismo', icon: 'ðŸš´', color: 'blue' },
-  { id: 'swimming', label: 'NataciÃ³n', icon: 'ðŸŠ', color: 'cyan' },
+  { id: 'swimming', label: 'Natación', icon: 'ðŸŠ', color: 'cyan' },
   { id: 'rowing', label: 'Remo', icon: 'ðŸš£', color: 'emerald' },
-  { id: 'elliptical', label: 'ElÃ­ptica', icon: 'ðŸŽ¿', color: 'purple' },
+  { id: 'elliptical', label: 'Elíptica', icon: '🎯¿', color: 'purple' },
   { id: 'walking', label: 'Caminar', icon: 'ðŸš¶', color: 'amber' },
   { id: 'other', label: 'Otro', icon: 'ðŸ’ª', color: 'zinc' },
 ];
@@ -103,7 +103,7 @@ export default function CardioTracker() {
 
   const addSession = () => {
     if (!newSession.duration || !newSession.calories) {
-      Alert.alert('Error', 'Ingresa al menos duraciÃ³n y calorÃ­as');
+      Alert.alert('Error', 'Ingresa al menos duración y calorías');
       return;
     }
 
@@ -121,13 +121,13 @@ export default function CardioTracker() {
     setSessions([session, ...sessions]);
     setNewSession({ type: 'running', duration: '', distance: '', calories: '', avgHeartRate: '', notes: '' });
     setShowAddForm(false);
-    Alert.alert('SesiÃ³n Guardada! ðŸŽ‰', 'Cardio registrado correctamente');
+    Alert.alert('Sesión Guardada! 🎉', 'Cardio registrado correctamente');
   };
 
   const deleteSession = (id: string) => {
     Alert.alert(
-      'Eliminar SesiÃ³n',
-      'Â¿EstÃ¡s seguro?',
+      'Eliminar Sesión',
+      '¿Estás seguro?',
       [
         { text: 'Cancelar' },
         { text: 'Eliminar', style: 'destructive', onPress: () => setSessions(sessions.filter((s) => s.id !== id)) },
@@ -203,7 +203,7 @@ export default function CardioTracker() {
         <View className="px-6 pt-6">
           {showAddForm ? (
             <View className="bg-zinc-900 rounded-xl p-6 mb-6 border border-zinc-800">
-              <Text className="text-white font-bold text-lg mb-4">Nueva SesiÃ³n de Cardio</Text>
+              <Text className="text-white font-bold text-lg mb-4">Nueva Sesión de Cardio</Text>
 
               {/* Type Selection */}
               <View className="mb-4">
@@ -228,7 +228,7 @@ export default function CardioTracker() {
               {/* Duration & Distance */}
               <View className="flex-row gap-4 mb-4">
                 <View className="flex-1">
-                  <Text className="text-zinc-400 text-sm mb-2">DuraciÃ³n (min)</Text>
+                  <Text className="text-zinc-400 text-sm mb-2">Duración (min)</Text>
                   <TextInput
                     className="bg-zinc-800 rounded-xl px-4 py-3 text-white text-lg font-bold"
                     placeholder="30"
@@ -254,7 +254,7 @@ export default function CardioTracker() {
               {/* Calories & HR */}
               <View className="flex-row gap-4 mb-4">
                 <View className="flex-1">
-                  <Text className="text-zinc-400 text-sm mb-2">CalorÃ­as</Text>
+                  <Text className="text-zinc-400 text-sm mb-2">Calorías</Text>
                   <TextInput
                     className="bg-zinc-800 rounded-xl px-4 py-3 text-white text-lg font-bold"
                     placeholder="300"
@@ -282,7 +282,7 @@ export default function CardioTracker() {
                 <Text className="text-zinc-400 text-sm mb-2">Notas (opcional)</Text>
                 <TextInput
                   className="bg-zinc-800 rounded-xl px-4 py-3 text-white"
-                  placeholder="CÃ³mo te sentiste, rutas, etc."
+                  placeholder="Cómo te sentiste, rutas, etc."
                   placeholderTextColor="#71717A"
                   multiline
                   numberOfLines={2}
@@ -296,7 +296,7 @@ export default function CardioTracker() {
                 className="bg-primary rounded-xl p-4 flex-row items-center justify-center"
               >
                 <Ionicons name="checkmark-circle" size={20} color="white" />
-                <Text className="text-white font-bold ml-2">Guardar SesiÃ³n</Text>
+                <Text className="text-white font-bold ml-2">Guardar Sesión</Text>
               </TouchableOpacity>
             </View>
           ) : (
@@ -314,7 +314,7 @@ export default function CardioTracker() {
                     <Text className="text-white text-2xl font-bold">{stats.totalDuration} min</Text>
                   </View>
                   <View className="flex-1 min-w-[45%] bg-red-500/10 rounded-lg p-3 border border-red-500/30">
-                    <Text className="text-red-400 text-xs mb-1">CalorÃ­as</Text>
+                    <Text className="text-red-400 text-xs mb-1">Calorías</Text>
                     <Text className="text-white text-2xl font-bold">{stats.totalCalories}</Text>
                   </View>
                   <View className="flex-1 min-w-[45%] bg-amber-500/10 rounded-lg p-3 border border-amber-500/30">
@@ -331,7 +331,7 @@ export default function CardioTracker() {
                   <Text className="text-6xl mb-3">ðŸƒ</Text>
                   <Text className="text-white font-bold text-lg mb-2">Sin Sesiones</Text>
                   <Text className="text-zinc-400 text-center">
-                    AÃ±ade tu primera sesiÃ³n de cardio
+                    Añade tu primera sesión de cardio
                   </Text>
                 </View>
               ) : (
@@ -387,7 +387,7 @@ export default function CardioTracker() {
                         {session.pace && (
                           <View className="bg-zinc-800 rounded px-3 py-1">
                             <Text className="text-amber-400 text-xs font-bold">
-                              âš¡ {session.pace.toFixed(2)} min/km
+                              ⚡ {session.pace.toFixed(2)} min/km
                             </Text>
                           </View>
                         )}

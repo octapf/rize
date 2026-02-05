@@ -30,16 +30,16 @@ interface DayPlan {
 
 const SAMPLE_MEALS: { [key: string]: Meal[] } = {
   breakfast: [
-    { name: 'Avena con ProteÃ­na', protein: 30, carbs: 50, fats: 10, calories: 410 },
+    { name: 'Avena con Proteína', protein: 30, carbs: 50, fats: 10, calories: 410 },
     { name: 'Huevos Revueltos + Tostadas', protein: 25, carbs: 35, fats: 15, calories: 365 },
     { name: 'Smoothie Proteico', protein: 35, carbs: 45, fats: 8, calories: 388 },
-    { name: 'Pancakes de ProteÃ­na', protein: 28, carbs: 40, fats: 12, calories: 372 },
+    { name: 'Pancakes de Proteína', protein: 28, carbs: 40, fats: 12, calories: 372 },
   ],
   lunch: [
-    { name: 'Pollo + Arroz + BrÃ³coli', protein: 45, carbs: 60, fats: 12, calories: 532 },
-    { name: 'SalmÃ³n + Quinoa + EspÃ¡rragos', protein: 40, carbs: 55, fats: 18, calories: 538 },
+    { name: 'Pollo + Arroz + Brócoli', protein: 45, carbs: 60, fats: 12, calories: 532 },
+    { name: 'Salmón + Quinoa + Espárragos', protein: 40, carbs: 55, fats: 18, calories: 538 },
     { name: 'Carne + Papas + Ensalada', protein: 50, carbs: 65, fats: 15, calories: 590 },
-    { name: 'AtÃºn + Pasta + Verduras', protein: 42, carbs: 70, fats: 10, calories: 530 },
+    { name: 'Atún + Pasta + Verduras', protein: 42, carbs: 70, fats: 10, calories: 530 },
   ],
   dinner: [
     { name: 'Pechuga + Batata + Vegetales', protein: 40, carbs: 50, fats: 10, calories: 450 },
@@ -48,10 +48,10 @@ const SAMPLE_MEALS: { [key: string]: Meal[] } = {
     { name: 'Pollo al Curry + Arroz', protein: 42, carbs: 52, fats: 16, calories: 512 },
   ],
   snacks: [
-    { name: 'ProteÃ­na + Banana', protein: 25, carbs: 30, fats: 3, calories: 247 },
+    { name: 'Proteína + Banana', protein: 25, carbs: 30, fats: 3, calories: 247 },
     { name: 'Yogurt Griego + Frutos Secos', protein: 20, carbs: 25, fats: 12, calories: 284 },
     { name: 'Batido Post-Workout', protein: 30, carbs: 40, fats: 5, calories: 315 },
-    { name: 'Tortitas de Arroz + Mantequilla de ManÃ­', protein: 15, carbs: 35, fats: 14, calories: 322 },
+    { name: 'Tortitas de Arroz + Mantequilla de Maní', protein: 15, carbs: 35, fats: 14, calories: 322 },
   ],
 };
 
@@ -61,7 +61,7 @@ export default function MealPrep() {
   const [shoppingList, setShoppingList] = useState<string[]>([]);
   const [showGenerator, setShowGenerator] = useState(true);
 
-  const days = ['Lunes', 'Martes', 'MiÃ©rcoles', 'Jueves', 'Viernes', 'SÃ¡bado', 'Domingo'];
+  const days = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'];
 
   const generateWeekPlan = () => {
     const plan: DayPlan[] = days.map((day) => ({
@@ -77,7 +77,7 @@ export default function MealPrep() {
     setWeekPlan(plan);
     setShowGenerator(false);
     generateShoppingList(plan);
-    Alert.alert('Plan Generado! ðŸ½ï¸', 'Meal prep de 7 dÃ­as creado');
+    Alert.alert('Plan Generado! ðŸ½ï¸', 'Meal prep de 7 días creado');
   };
 
   const generateShoppingList = (plan: DayPlan[]) => {
@@ -86,12 +86,12 @@ export default function MealPrep() {
     // Ingredients simulation based on meals
     const commonIngredients = [
       'ðŸ— 2kg Pechuga de Pollo',
-      'ðŸŸ 1kg SalmÃ³n/Pescado',
-      'ðŸ¥© 1kg Carne Magra',
+      'ðŸŸ 1kg Salmón/Pescado',
+      '🥩 1kg Carne Magra',
       'ðŸ¥š 2 docenas Huevos',
       'ðŸš 2kg Arroz/Quinoa',
       'ðŸ¥” 2kg Papas/Batata',
-      'ðŸ¥¦ BrÃ³coli, Espinacas, Ensaladas',
+      'ðŸ¥¦ Brócoli, Espinacas, Ensaladas',
       'ðŸŒ Frutas variadas',
       'ðŸ¥œ Frutos secos y mantequillas',
       'ðŸ¥› Yogurt griego, Leche',
@@ -168,11 +168,11 @@ export default function MealPrep() {
             <View className="bg-gradient-to-r from-primary to-[#7D0EBE] rounded-xl p-6 mb-6">
               <Text className="text-white text-3xl font-bold mb-2">Plan Semanal</Text>
               <Text className="text-white opacity-90 mb-4">
-                Genera tu meal prep de 7 dÃ­as con macros balanceados
+                Genera tu meal prep de 7 días con macros balanceados
               </Text>
               <View className="flex-row items-center">
                 <Ionicons name="restaurant" size={20} color="white" />
-                <Text className="text-white ml-2 font-bold">4 comidas/dÃ­a Ã— 7 dÃ­as</Text>
+                <Text className="text-white ml-2 font-bold">4 comidas/día × 7 días</Text>
               </View>
             </View>
 
@@ -185,7 +185,7 @@ export default function MealPrep() {
                   <Ionicons name="calendar" size={24} color="white" />
                 </View>
                 <View className="flex-1 ml-4">
-                  <Text className="text-white font-bold text-lg">7 DÃ­as Completos</Text>
+                  <Text className="text-white font-bold text-lg">7 Días Completos</Text>
                   <Text className="text-zinc-400 text-sm">Desayuno, comida, cena y snacks</Text>
                 </View>
               </View>
@@ -196,7 +196,7 @@ export default function MealPrep() {
                 </View>
                 <View className="flex-1 ml-4">
                   <Text className="text-white font-bold text-lg">Macros Calculados</Text>
-                  <Text className="text-zinc-400 text-sm">ProteÃ­na, carbos y grasas por comida</Text>
+                  <Text className="text-zinc-400 text-sm">Proteína, carbos y grasas por comida</Text>
                 </View>
               </View>
 
@@ -236,15 +236,15 @@ export default function MealPrep() {
                 <Ionicons name="bulb" size={20} color="#9D12DE" />
                 <View className="flex-1 ml-3">
                   <Text className="text-primary/80 font-bold mb-2">
-                    Por QuÃ© Meal Prep
+                    Por Qué Meal Prep
                   </Text>
                   <Text className="text-primary/60 text-sm">
-                    â€¢ Ahorra 5-10 horas por semana{'\n'}
-                    â€¢ Control total de macros{'\n'}
-                    â€¢ Evita decisiones impulsivas{'\n'}
-                    â€¢ MÃ¡s barato que comer fuera{'\n'}
-                    â€¢ Consistencia = resultados{'\n'}
-                    â€¢ Menos estrÃ©s diario
+                    • Ahorra 5-10 horas por semana{'\n'}
+                    • Control total de macros{'\n'}
+                    • Evita decisiones impulsivas{'\n'}
+                    • Más barato que comer fuera{'\n'}
+                    • Consistencia = resultados{'\n'}
+                    • Menos estrés diario
                   </Text>
                 </View>
               </View>
@@ -259,12 +259,12 @@ export default function MealPrep() {
                     Tips de Meal Prep
                   </Text>
                   <Text className="text-amber-300 text-sm">
-                    â€¢ Cocina domingo para lun-mie{'\n'}
-                    â€¢ Cocina miÃ©rcoles para jue-dom{'\n'}
-                    â€¢ Usa contenedores de cristal{'\n'}
-                    â€¢ Congela porciones extras{'\n'}
-                    â€¢ VarÃ­a proteÃ­nas y carbos{'\n'}
-                    â€¢ Verduras frescas &gt; congeladas
+                    • Cocina domingo para lun-mie{'\n'}
+                    • Cocina miércoles para jue-dom{'\n'}
+                    • Usa contenedores de cristal{'\n'}
+                    • Congela porciones extras{'\n'}
+                    • Varía proteínas y carbos{'\n'}
+                    • Verduras frescas &gt; congeladas
                   </Text>
                 </View>
               </View>
@@ -301,11 +301,11 @@ export default function MealPrep() {
             <Text className="text-white font-bold text-lg mb-4">Promedio Diario</Text>
             <View className="flex-row gap-2">
               <View className="flex-1 bg-white/20 rounded-lg p-3">
-                <Text className="text-white opacity-90 text-xs mb-1">CalorÃ­as</Text>
+                <Text className="text-white opacity-90 text-xs mb-1">Calorías</Text>
                 <Text className="text-white font-bold text-xl">{averages.calories}</Text>
               </View>
               <View className="flex-1 bg-white/20 rounded-lg p-3">
-                <Text className="text-white opacity-90 text-xs mb-1">ProteÃ­na</Text>
+                <Text className="text-white opacity-90 text-xs mb-1">Proteína</Text>
                 <Text className="text-white font-bold text-xl">{averages.protein}g</Text>
               </View>
               <View className="flex-1 bg-white/20 rounded-lg p-3">
@@ -320,7 +320,7 @@ export default function MealPrep() {
           </View>
 
           {/* Days */}
-          <Text className="text-white font-bold text-lg mb-4">DÃ­as de la Semana</Text>
+          <Text className="text-white font-bold text-lg mb-4">Días de la Semana</Text>
           {weekPlan.map((dayPlan, index) => {
             const totals = getDayTotals(dayPlan);
             

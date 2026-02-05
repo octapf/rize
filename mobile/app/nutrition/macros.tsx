@@ -57,7 +57,7 @@ const TODAY_DATA: DailyMacros = {
     {
       id: '1',
       meal: 'Desayuno',
-      food: 'Avena con ProteÃ­na',
+      food: 'Avena con Proteína',
       portion: '100g avena + 1 scoop whey',
       calories: 480,
       protein: 42,
@@ -79,8 +79,8 @@ const TODAY_DATA: DailyMacros = {
     {
       id: '3',
       meal: 'Snack Pre-Entreno',
-      food: 'PlÃ¡tano + Mantequilla ManÃ­',
-      portion: '1 plÃ¡tano + 20g PB',
+      food: 'Plátano + Mantequilla Maní',
+      portion: '1 plátano + 20g PB',
       calories: 240,
       protein: 6,
       carbs: 38,
@@ -123,7 +123,7 @@ const TODAY_DATA: DailyMacros = {
     {
       id: '7',
       meal: 'Snack Tarde',
-      food: 'Batido ProteÃ­na',
+      food: 'Batido Proteína',
       portion: '1 scoop + agua',
       calories: 120,
       protein: 25,
@@ -134,7 +134,7 @@ const TODAY_DATA: DailyMacros = {
     {
       id: '8',
       meal: 'Cena',
-      food: 'SalmÃ³n a la Plancha',
+      food: 'Salmón a la Plancha',
       portion: '200g',
       calories: 410,
       protein: 46,
@@ -195,7 +195,7 @@ export default function MacroTracker() {
       'Busca en nuestra base de datos o crea personalizado',
       [
         { text: 'Buscar Alimento' },
-        { text: 'Escanear CÃ³digo de Barras' },
+        { text: 'Escanear Código de Barras' },
         { text: 'Manual' },
         { text: 'Cancelar', style: 'cancel' },
       ]
@@ -207,7 +207,7 @@ export default function MacroTracker() {
       'Editar Entrada',
       `${entry.food} - ${entry.portion}`,
       [
-        { text: 'Editar PorciÃ³n' },
+        { text: 'Editar Porción' },
         { text: 'Duplicar' },
         { text: 'Eliminar', style: 'destructive' },
         { text: 'Cancelar', style: 'cancel' },
@@ -245,7 +245,7 @@ export default function MacroTracker() {
         <View className="bg-gradient-to-br from-primary to-[#7D0EBE] rounded-xl p-4 mb-4">
           <View className="flex-row items-center justify-between mb-3">
             <View>
-              <Text className="text-white/80 text-sm mb-1">CalorÃ­as Hoy</Text>
+              <Text className="text-white/80 text-sm mb-1">Calorías Hoy</Text>
               <Text className="text-white font-bold text-4xl">
                 {TODAY_DATA.totals.calories}
               </Text>
@@ -399,7 +399,7 @@ export default function MacroTracker() {
                     <View>
                       <Text className="text-white font-bold text-lg">{meal}</Text>
                       <Text className="text-zinc-400 text-sm">
-                        {mealTotals.calories} kcal â€¢ {mealTotals.protein}P {mealTotals.carbs}C{' '}
+                        {mealTotals.calories} kcal • {mealTotals.protein}P {mealTotals.carbs}C{' '}
                         {mealTotals.fats}F
                       </Text>
                     </View>
@@ -468,7 +468,7 @@ export default function MacroTracker() {
               <View className="flex-row items-center justify-center">
                 <Ionicons name="barcode" size={20} color="white" />
                 <Text className="text-white font-bold ml-2">
-                  Escanear CÃ³digo de Barras
+                  Escanear Código de Barras
                 </Text>
               </View>
             </TouchableOpacity>

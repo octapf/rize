@@ -25,8 +25,8 @@ interface VideoLibraryItem {
 const VIDEO_LIBRARY: VideoLibraryItem[] = [
   {
     id: '1',
-    title: 'Dominadas - TÃ©cnica Perfecta',
-    category: 'TracciÃ³n',
+    title: 'Dominadas - Técnica Perfecta',
+    category: 'Tracción',
     duration: '8:45',
     difficulty: 'intermediate',
     views: 12500,
@@ -36,7 +36,7 @@ const VIDEO_LIBRARY: VideoLibraryItem[] = [
   },
   {
     id: '2',
-    title: 'Muscle-Up - ProgresiÃ³n Completa',
+    title: 'Muscle-Up - Progresión Completa',
     category: 'Avanzado',
     duration: '12:30',
     difficulty: 'advanced',
@@ -58,8 +58,8 @@ const VIDEO_LIBRARY: VideoLibraryItem[] = [
   },
   {
     id: '4',
-    title: 'Planche - Fundamentos y PreparaciÃ³n',
-    category: 'EstÃ¡ticos',
+    title: 'Planche - Fundamentos y Preparación',
+    category: 'Estáticos',
     duration: '15:45',
     difficulty: 'advanced',
     views: 6700,
@@ -69,8 +69,8 @@ const VIDEO_LIBRARY: VideoLibraryItem[] = [
   },
   {
     id: '5',
-    title: 'Front Lever - GuÃ­a Paso a Paso',
-    category: 'EstÃ¡ticos',
+    title: 'Front Lever - Guía Paso a Paso',
+    category: 'Estáticos',
     duration: '11:20',
     difficulty: 'advanced',
     views: 7300,
@@ -92,7 +92,7 @@ const VIDEO_LIBRARY: VideoLibraryItem[] = [
   {
     id: '7',
     title: 'Handstand - Equilibrio y Control',
-    category: 'EstÃ¡ticos',
+    category: 'Estáticos',
     duration: '14:00',
     difficulty: 'intermediate',
     views: 9200,
@@ -113,7 +113,7 @@ const VIDEO_LIBRARY: VideoLibraryItem[] = [
   },
 ];
 
-const CATEGORIES = ['Todos', 'TracciÃ³n', 'Empuje', 'Piernas', 'EstÃ¡ticos', 'Avanzado'];
+const CATEGORIES = ['Todos', 'Tracción', 'Empuje', 'Piernas', 'Estáticos', 'Avanzado'];
 const DIFFICULTY_FILTERS = ['Todos', 'beginner', 'intermediate', 'advanced'];
 
 export default function VideoLibrary() {
@@ -375,7 +375,7 @@ export default function VideoLibrary() {
               No se encontraron videos
             </Text>
             <Text className="text-zinc-600 text-sm mt-2 text-center">
-              Intenta cambiar los filtros o buscar otro tÃ©rmino
+              Intenta cambiar los filtros o buscar otro término
             </Text>
           </View>
         }

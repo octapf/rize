@@ -25,7 +25,7 @@ export default function ForgotPasswordScreen() {
     }
 
     if (!email.includes('@')) {
-      Alert.alert('Error', 'Email invÃ¡lido');
+      Alert.alert('Error', 'Email inválido');
       return;
     }
 
@@ -67,7 +67,7 @@ export default function ForgotPasswordScreen() {
             </Text>
 
             <Text className="text-primary/50 text-lg text-center mb-8 px-4">
-              Hemos enviado instrucciones para restablecer tu contraseÃ±a a{'\n'}
+              Hemos enviado instrucciones para restablecer tu contraseña a{'\n'}
               <Text className="font-bold">{email}</Text>
             </Text>
 
@@ -127,7 +127,7 @@ export default function ForgotPasswordScreen() {
               <Ionicons name="lock-closed" size={40} color="#FFEA00" />
             </View>
             <Text className="text-white text-3xl font-bold text-center mb-2">
-              Â¿Olvidaste tu{'\n'}contraseÃ±a?
+              ¿Olvidaste tu{'\n'}contraseña?
             </Text>
             <Text className="text-amber-100 text-base text-center">
               No te preocupes, te ayudaremos
@@ -140,7 +140,7 @@ export default function ForgotPasswordScreen() {
           <View className="bg-primary/5 p-4 rounded-2xl mb-6 flex-row gap-3">
             <Ionicons name="information-circle" size={24} color="#9D12DE" />
             <Text className="text-text flex-1">
-              Te enviaremos un enlace para restablecer tu contraseÃ±a a tu email
+              Te enviaremos un enlace para restablecer tu contraseña a tu email
             </Text>
           </View>
 
@@ -180,19 +180,19 @@ export default function ForgotPasswordScreen() {
 
           {/* Back to Login */}
           <View className="flex-row items-center justify-center mt-6">
-            <Text className="text-gray-600">Â¿Recordaste tu contraseÃ±a? </Text>
+            <Text className="text-gray-600">¿Recordaste tu contraseña? </Text>
             <TouchableOpacity onPress={() => router.back()}>
-              <Text className="text-amber-600 font-bold">Inicia SesiÃ³n</Text>
+              <Text className="text-amber-600 font-bold">Inicia Sesión</Text>
             </TouchableOpacity>
           </View>
 
           {/* Help */}
           <View className="mt-12 p-6 bg-gray-100 rounded-2xl">
             <Text className="text-gray-900 font-bold text-center mb-2">
-              Â¿Necesitas ayuda?
+              ¿Necesitas ayuda?
             </Text>
             <Text className="text-gray-600 text-center text-sm mb-4">
-              Si tienes problemas para acceder a tu cuenta, contÃ¡ctanos
+              Si tienes problemas para acceder a tu cuenta, contáctanos
             </Text>
             <TouchableOpacity className="bg-gray-800 py-3 rounded-lg">
               <Text className="text-white font-semibold text-center">

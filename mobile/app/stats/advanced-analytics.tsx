@@ -33,7 +33,7 @@ const METRICS: AnalyticsMetric[] = [
   {
     id: 'frequency',
     name: 'Frecuencia',
-    value: '5 dÃ­as/sem',
+    value: '5 días/sem',
     change: 0,
     icon: 'calendar',
     color: '#9D12DE',
@@ -63,7 +63,7 @@ export default function AdvancedAnalytics() {
   const periods = [
     { id: 'week' as const, label: 'Semana' },
     { id: 'month' as const, label: 'Mes' },
-    { id: 'year' as const, label: 'AÃ±o' },
+    { id: 'year' as const, label: 'Año' },
   ];
 
   // Volume trend data
@@ -81,7 +81,7 @@ export default function AdvancedAnalytics() {
   // Exercise distribution
   const exerciseDistribution = [
     {
-      name: 'TracciÃ³n',
+      name: 'Tracción',
       population: 35,
       color: '#9D12DE',
       legendFontColor: '#71717A',
@@ -191,7 +191,7 @@ export default function AdvancedAnalytics() {
         {/* Key Metrics */}
         <View className="px-6 pt-6">
           <Text className="text-white font-bold text-lg mb-3">
-            MÃ©tricas Clave
+            Métricas Clave
           </Text>
           <View className="flex-row flex-wrap gap-3">
             {METRICS.map((metric) => (
@@ -259,7 +259,7 @@ export default function AdvancedAnalytics() {
         {/* Exercise Distribution */}
         <View className="px-6 pt-6">
           <Text className="text-white font-bold text-lg mb-3">
-            DistribuciÃ³n de Ejercicios
+            Distribución de Ejercicios
           </Text>
           <View className="bg-zinc-900 rounded-xl p-4 border border-zinc-800">
             <PieChart
@@ -304,7 +304,7 @@ export default function AdvancedAnalytics() {
         {/* Performance Score */}
         <View className="px-6 pt-6">
           <Text className="text-white font-bold text-lg mb-3">
-            EvoluciÃ³n de Performance
+            Evolución de Performance
           </Text>
           <View className="bg-zinc-900 rounded-xl p-4 border border-zinc-800">
             <LineChart
@@ -345,7 +345,7 @@ export default function AdvancedAnalytics() {
                   Progreso Consistente
                 </Text>
                 <Text className="text-primary/80 text-sm leading-5">
-                  Has incrementado tu volumen un 12% este mes. MantÃ©n este ritmo
+                  Has incrementado tu volumen un 12% este mes. Mantén este ritmo
                   para seguir progresando.
                 </Text>
               </View>
@@ -360,8 +360,8 @@ export default function AdvancedAnalytics() {
                   Balance Muscular
                 </Text>
                 <Text className="text-primary/60 text-sm leading-5">
-                  Tu ratio tracciÃ³n/empuje estÃ¡ equilibrado (1.09:1). Ideal para
-                  desarrollo simÃ©trico.
+                  Tu ratio tracción/empuje está equilibrado (1.09:1). Ideal para
+                  desarrollo simétrico.
                 </Text>
               </View>
             </View>
@@ -375,7 +375,7 @@ export default function AdvancedAnalytics() {
                   Oportunidad de Mejora
                 </Text>
                 <Text className="text-amber-300 text-sm leading-5">
-                  Tu volumen de core (8%) estÃ¡ por debajo del Ã³ptimo (15-20%).
+                  Tu volumen de core (8%) está por debajo del óptimo (15-20%).
                   Considera agregar 2-3 ejercicios de core por semana.
                 </Text>
               </View>

@@ -30,21 +30,21 @@ export default function TrainingPhilosophy() {
         {
           method: 'Add Weight',
           description: 'Most common form of progression',
-          example: 'Bench 100kg Ã— 5 â†’ 102.5kg Ã— 5',
+          example: 'Bench 100kg × 5 â†’ 102.5kg × 5',
           frequency: 'Weekly for beginners, monthly for advanced',
           notes: 'Smallest increments possible (2.5kg for upper, 5kg for lower)',
         },
         {
           method: 'Add Reps',
           description: 'Increase volume at same weight',
-          example: '100kg Ã— 5 reps â†’ 100kg Ã— 6 reps',
+          example: '100kg × 5 reps â†’ 100kg × 6 reps',
           frequency: 'Session to session',
           notes: 'Once you hit top of rep range, add weight and drop reps',
         },
         {
           method: 'Add Sets',
           description: 'Increase total training volume',
-          example: '3 sets Ã— 8 reps â†’ 4 sets Ã— 8 reps',
+          example: '3 sets × 8 reps â†’ 4 sets × 8 reps',
           frequency: 'Weekly or bi-weekly',
           notes: 'Be careful of excessive volume accumulation',
         },
@@ -121,7 +121,7 @@ export default function TrainingPhilosophy() {
         },
       ],
       application: [
-        'If planned 5Ã—5 @ 80% feels RPE 9, reduce load',
+        'If planned 5×5 @ 80% feels RPE 9, reduce load',
         'If everything feels easy, push a bit harder',
         'Bad sleep/stress = reduce volume or intensity',
         'Feeling great = optional backoff sets',
@@ -208,7 +208,7 @@ export default function TrainingPhilosophy() {
         {
           method: 'Loading Schemes',
           description: 'Change sets, reps, intensity',
-          example: 'Strength block (5Ã—5) â†’ hypertrophy (4Ã—10)',
+          example: 'Strength block (5×5) â†’ hypertrophy (4×10)',
           frequency: 'Every mesocycle (4-6 weeks)',
           notes: 'Classic periodization approach',
         },

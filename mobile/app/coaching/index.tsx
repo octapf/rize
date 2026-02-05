@@ -43,8 +43,8 @@ interface CoachingInsight {
 const RECOMMENDATIONS: WorkoutRecommendation[] = [
   {
     id: '1',
-    title: 'Aumentar volumen de tracciÃ³n',
-    reason: 'Has progresado consistentemente en dominadas las Ãºltimas 4 semanas',
+    title: 'Aumentar volumen de tracción',
+    reason: 'Has progresado consistentemente en dominadas las últimas 4 semanas',
     type: 'increase',
     priority: 'high',
     action: '+2 series de pull-ups',
@@ -63,8 +63,8 @@ const RECOMMENDATIONS: WorkoutRecommendation[] = [
   },
   {
     id: '3',
-    title: 'MantÃ©n intensidad actual',
-    reason: 'EstÃ¡s progresando a un ritmo sostenible en piernas',
+    title: 'Mantén intensidad actual',
+    reason: 'Estás progresando a un ritmo sostenible en piernas',
     type: 'maintain',
     priority: 'medium',
     action: 'Continuar con el plan actual',
@@ -77,7 +77,7 @@ const RECOMMENDATIONS: WorkoutRecommendation[] = [
     reason: 'No has recuperado fuerza en press desde hace 2 semanas',
     type: 'decrease',
     priority: 'medium',
-    action: '2 sesiones semanales â†’ 1 sesiÃ³n',
+    action: '2 sesiones semanales â†’ 1 sesión',
     icon: 'trending-down',
     color: '#EF4444',
   },
@@ -85,7 +85,7 @@ const RECOMMENDATIONS: WorkoutRecommendation[] = [
 
 const RECOVERY_METRICS: RecoveryMetric[] = [
   {
-    name: 'Calidad de sueÃ±o',
+    name: 'Calidad de sueño',
     value: 7.2,
     maxValue: 10,
     status: 'good',
@@ -99,14 +99,14 @@ const RECOVERY_METRICS: RecoveryMetric[] = [
     icon: 'body',
   },
   {
-    name: 'EnergÃ­a general',
+    name: 'Energía general',
     value: 6.8,
     maxValue: 10,
     status: 'good',
     icon: 'flash',
   },
   {
-    name: 'EstrÃ©s percibido',
+    name: 'Estrés percibido',
     value: 6.2,
     maxValue: 10,
     status: 'moderate',
@@ -118,28 +118,28 @@ const INSIGHTS: CoachingInsight[] = [
   {
     id: '1',
     category: 'Volumen',
-    message: 'Tu volumen semanal (68 series) estÃ¡ dentro del rango Ã³ptimo para hipertrofia',
+    message: 'Tu volumen semanal (68 series) está dentro del rango óptimo para hipertrofia',
     impact: 'positive',
     icon: 'analytics',
   },
   {
     id: '2',
-    category: 'RecuperaciÃ³n',
-    message: 'Descansaste solo 6h promedio esta semana. Intenta 7-9h para mejor recuperaciÃ³n',
+    category: 'Recuperación',
+    message: 'Descansaste solo 6h promedio esta semana. Intenta 7-9h para mejor recuperación',
     impact: 'negative',
     icon: 'bed',
   },
   {
     id: '3',
-    category: 'ProgresiÃ³n',
-    message: 'Has aumentado el peso en 3 ejercicios clave este mes. Â¡Excelente progreso!',
+    category: 'Progresión',
+    message: 'Has aumentado el peso en 3 ejercicios clave este mes. ¡Excelente progreso!',
     impact: 'positive',
     icon: 'trophy',
   },
   {
     id: '4',
     category: 'Balance',
-    message: 'Ratio tracciÃ³n/empuje estÃ¡ equilibrado (1.1:1)',
+    message: 'Ratio tracción/empuje está equilibrado (1.1:1)',
     impact: 'positive',
     icon: 'scale',
   },
@@ -151,7 +151,7 @@ export default function VirtualCoach() {
 
   const tabs = [
     { id: 'recommendations' as const, label: 'Recomendaciones', icon: 'bulb' },
-    { id: 'recovery' as const, label: 'RecuperaciÃ³n', icon: 'heart' },
+    { id: 'recovery' as const, label: 'Recuperación', icon: 'heart' },
     { id: 'insights' as const, label: 'Insights', icon: 'analytics' },
   ];
 
@@ -310,7 +310,7 @@ export default function VirtualCoach() {
                     </Text>
                     <View className="bg-zinc-800 rounded-lg p-3">
                       <Text className="text-zinc-300 text-sm font-semibold">
-                        AcciÃ³n sugerida:
+                        Acción sugerida:
                       </Text>
                       <Text className="text-white text-sm mt-1">{rec.action}</Text>
                     </View>
@@ -325,12 +325,12 @@ export default function VirtualCoach() {
                   </View>
                   <TouchableOpacity
                     onPress={() =>
-                      Alert.alert('Aplicar cambio', `Â¿Aplicar "${rec.action}"?`, [
+                      Alert.alert('Aplicar cambio', `¿Aplicar "${rec.action}"?`, [
                         { text: 'Cancelar', style: 'cancel' },
                         {
                           text: 'Aplicar',
                           onPress: () =>
-                            Alert.alert('Â¡Listo!', 'Cambio aplicado a tu plan'),
+                            Alert.alert('¡Listo!', 'Cambio aplicado a tu plan'),
                         },
                       ])
                     }
@@ -348,7 +348,7 @@ export default function VirtualCoach() {
         {selectedTab === 'recovery' && (
           <View className="px-6 py-4">
             <Text className="text-white font-bold text-lg mb-4">
-              Estado de RecuperaciÃ³n
+              Estado de Recuperación
             </Text>
 
             {/* Recovery Metrics */}
@@ -395,8 +395,8 @@ export default function VirtualCoach() {
                     Considera un Deload
                   </Text>
                   <Text className="text-amber-300 text-sm leading-5">
-                    Tu puntuaciÃ³n de recuperaciÃ³n estÃ¡ por debajo del 70%. Un deload
-                    de una semana te ayudarÃ¡ a volver mÃ¡s fuerte.
+                    Tu puntuación de recuperación está por debajo del 70%. Un deload
+                    de una semana te ayudará a volver más fuerte.
                   </Text>
                   <TouchableOpacity className="bg-amber-500 rounded-lg p-3 mt-3">
                     <Text className="text-white font-semibold text-center">
@@ -410,8 +410,8 @@ export default function VirtualCoach() {
             {/* Sleep Tracker */}
             <View className="bg-zinc-900 rounded-xl p-4 border border-zinc-800 mt-3">
               <View className="flex-row items-center justify-between mb-3">
-                <Text className="text-white font-bold">Tendencia de SueÃ±o</Text>
-                <Text className="text-zinc-400 text-sm">Ãšltimos 7 dÃ­as</Text>
+                <Text className="text-white font-bold">Tendencia de Sueño</Text>
+                <Text className="text-zinc-400 text-sm">Últimos 7 días</Text>
               </View>
               <View className="flex-row items-end justify-between">
                 {[6.5, 7, 6, 7.5, 8, 6.5, 7.2].map((hours, index) => (
@@ -436,13 +436,13 @@ export default function VirtualCoach() {
         {selectedTab === 'insights' && (
           <View className="px-6 py-4">
             <Text className="text-white font-bold text-lg mb-4">
-              AnÃ¡lisis Inteligente
+              Análisis Inteligente
             </Text>
 
             {/* Performance Chart */}
             <View className="bg-zinc-900 rounded-xl p-4 mb-4 border border-zinc-800">
               <Text className="text-white font-bold mb-3">
-                EvoluciÃ³n de Performance
+                Evolución de Performance
               </Text>
               <LineChart
                 data={performanceData}

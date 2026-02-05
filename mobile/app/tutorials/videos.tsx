@@ -29,17 +29,17 @@ interface Tutorial {
 const TUTORIALS: Tutorial[] = [
   {
     id: '1',
-    title: 'TÃ©cnica Perfecta: Sentadilla',
-    category: 'TÃ©cnica de Ejercicios',
+    title: 'Técnica Perfecta: Sentadilla',
+    category: 'Técnica de Ejercicios',
     duration: 12,
     difficulty: 'intermediate',
     instructor: 'Carlos Fitness Pro',
     views: 12450,
     rating: 4.8,
     thumbnail: 'ðŸ‹ï¸',
-    description: 'Domina la sentadilla con barra. PosiciÃ³n de pies, profundidad, core, respiraciÃ³n.',
+    description: 'Domina la sentadilla con barra. Posición de pies, profundidad, core, respiración.',
     equipmentNeeded: ['Barra', 'Rack', 'Discos'],
-    musclesTargeted: ['CuÃ¡driceps', 'GlÃºteos', 'Isquiotibiales', 'Core'],
+    musclesTargeted: ['Cuádriceps', 'Glúteos', 'Isquiotibiales', 'Core'],
     keyPoints: [
       'Pies ancho de hombros, dedos ligeramente hacia afuera',
       'Descender hasta romper paralelo',
@@ -50,7 +50,7 @@ const TUTORIALS: Tutorial[] = [
   {
     id: '2',
     title: 'Press de Banca: Evita Lesiones',
-    category: 'TÃ©cnica de Ejercicios',
+    category: 'Técnica de Ejercicios',
     duration: 10,
     difficulty: 'beginner',
     instructor: 'Ana Strong',
@@ -59,9 +59,9 @@ const TUTORIALS: Tutorial[] = [
     thumbnail: 'ðŸ’ª',
     description: 'Protocolo completo de press banca seguro y efectivo. Agarre, arco, trayectoria.',
     equipmentNeeded: ['Banco plano', 'Barra', 'Discos'],
-    musclesTargeted: ['Pectorales', 'TrÃ­ceps', 'Deltoides anterior'],
+    musclesTargeted: ['Pectorales', 'Tríceps', 'Deltoides anterior'],
     keyPoints: [
-      'Agarre ligeramente mÃ¡s ancho que hombros',
+      'Agarre ligeramente más ancho que hombros',
       'Crear arco natural en espalda baja',
       'Descender barra a medio pecho',
       'Empujar con trayectoria diagonal',
@@ -70,21 +70,21 @@ const TUTORIALS: Tutorial[] = [
   {
     id: '3',
     title: 'Peso Muerto Convencional',
-    category: 'TÃ©cnica de Ejercicios',
+    category: 'Técnica de Ejercicios',
     duration: 15,
     difficulty: 'advanced',
     instructor: 'Miguel Beast',
     views: 9840,
     rating: 4.7,
-    thumbnail: 'âš¡',
+    thumbnail: '⚡',
     description: 'El rey de todos los ejercicios. Setup perfecto, pull explosivo, lockout controlado.',
     equipmentNeeded: ['Barra', 'Discos', 'Correas (opcional)', 'Tiza'],
-    musclesTargeted: ['Espalda completa', 'GlÃºteos', 'Isquiotibiales', 'Trapecios'],
+    musclesTargeted: ['Espalda completa', 'Glúteos', 'Isquiotibiales', 'Trapecios'],
     keyPoints: [
       'Barra sobre medio pie, shins verticales',
       'Grip shoulder-width, espalda plana',
       'Pull con piernas primero, luego cadera',
-      'Lockout completo con glÃºteos apretados',
+      'Lockout completo con glúteos apretados',
     ],
   },
   {
@@ -96,9 +96,9 @@ const TUTORIALS: Tutorial[] = [
     instructor: 'Laura Mobility',
     views: 24350,
     rating: 4.9,
-    thumbnail: 'ðŸ§˜',
-    description: 'Rutina de movilidad para despertar el cuerpo. Perfecto pre-entreno o maÃ±anas.',
-    equipmentNeeded: ['Esterilla', 'Banda elÃ¡stica (opcional)'],
+    thumbnail: '🧘',
+    description: 'Rutina de movilidad para despertar el cuerpo. Perfecto pre-entreno o mañanas.',
+    equipmentNeeded: ['Esterilla', 'Banda elástica (opcional)'],
     musclesTargeted: ['Caderas', 'Hombros', 'Columna', 'Tobillos'],
     keyPoints: [
       'Cat-Cow 10 reps para columna',
@@ -117,7 +117,7 @@ const TUTORIALS: Tutorial[] = [
     views: 31240,
     rating: 4.6,
     thumbnail: 'ðŸ”¥',
-    description: 'Quema calorÃ­as desde casa. Intervalos 40 seg trabajo / 20 seg descanso.',
+    description: 'Quema calorías desde casa. Intervalos 40 seg trabajo / 20 seg descanso.',
     equipmentNeeded: ['Ninguno'],
     musclesTargeted: ['Cuerpo completo', 'Sistema cardiovascular'],
     keyPoints: [
@@ -136,55 +136,55 @@ const TUTORIALS: Tutorial[] = [
     instructor: 'Carlos Fitness Pro',
     views: 15680,
     rating: 4.8,
-    thumbnail: 'ðŸŽ¯',
-    description: 'ProgresiÃ³n completa para lograr tus primeras 10 dominadas seguidas.',
+    thumbnail: '🎯',
+    description: 'Progresión completa para lograr tus primeras 10 dominadas seguidas.',
     equipmentNeeded: ['Barra fija', 'Banda de resistencia'],
-    musclesTargeted: ['Dorsales', 'BÃ­ceps', 'Core'],
+    musclesTargeted: ['Dorsales', 'Bíceps', 'Core'],
     keyPoints: [
-      'Fase 1: Dominadas negativas (excÃ©ntricas)',
+      'Fase 1: Dominadas negativas (excéntricas)',
       'Fase 2: Asistidas con banda',
       'Fase 3: Singles con descanso',
-      'Fase 4: Sets de mÃºltiples reps',
+      'Fase 4: Sets de múltiples reps',
     ],
   },
   {
     id: '7',
     title: 'Foam Rolling Completo',
-    category: 'RecuperaciÃ³n',
+    category: 'Recuperación',
     duration: 25,
     difficulty: 'beginner',
     instructor: 'Ana Recovery',
     views: 8920,
     rating: 4.7,
-    thumbnail: 'ðŸŽ¾',
-    description: 'SesiÃ³n completa de liberaciÃ³n miofascial. Reduce tensiÃ³n y mejora movilidad.',
+    thumbnail: '🎾',
+    description: 'Sesión completa de liberación miofascial. Reduce tensión y mejora movilidad.',
     equipmentNeeded: ['Foam roller', 'Lacrosse ball (opcional)'],
-    musclesTargeted: ['IT band', 'GlÃºteos', 'Espalda baja', 'CuÃ¡driceps'],
+    musclesTargeted: ['IT band', 'Glúteos', 'Espalda baja', 'Cuádriceps'],
     keyPoints: [
       'IT band 60 seg cada lado',
-      'GlÃºteos con pelota 90 seg',
+      'Glúteos con pelota 90 seg',
       'Espalda baja con roller 120 seg',
-      'CuÃ¡driceps y pantorrillas 60 seg/lado',
+      'Cuádriceps y pantorrillas 60 seg/lado',
     ],
   },
   {
     id: '8',
-    title: 'NutriciÃ³n Pre y Post Entreno',
-    category: 'NutriciÃ³n',
+    title: 'Nutrición Pre y Post Entreno',
+    category: 'Nutrición',
     duration: 22,
     difficulty: 'beginner',
     instructor: 'Miguel Nutrition',
     views: 19340,
     rating: 4.9,
     thumbnail: 'ðŸŽ',
-    description: 'Optimiza tu alimentaciÃ³n alrededor del entrenamiento para mÃ¡ximos resultados.',
+    description: 'Optimiza tu alimentación alrededor del entrenamiento para máximos resultados.',
     equipmentNeeded: ['Ninguno'],
-    musclesTargeted: ['N/A - NutriciÃ³n'],
+    musclesTargeted: ['N/A - Nutrición'],
     keyPoints: [
-      'Pre: Carbos 1-2h antes (avena, plÃ¡tano)',
-      'Intra: AminoÃ¡cidos si sesiÃ³n >90 min',
-      'Post: ProteÃ­na + carbos en ventana 2h',
-      'HidrataciÃ³n: 500ml agua pre y post',
+      'Pre: Carbos 1-2h antes (avena, plátano)',
+      'Intra: Aminoácidos si sesión >90 min',
+      'Post: Proteína + carbos en ventana 2h',
+      'Hidratación: 500ml agua pre y post',
     ],
   },
 ];
@@ -196,12 +196,12 @@ export default function VideoTutorials() {
 
   const categories = [
     'all',
-    'TÃ©cnica de Ejercicios',
+    'Técnica de Ejercicios',
     'Movilidad & Stretching',
     'Cardio & Conditioning',
     'Progresiones',
-    'RecuperaciÃ³n',
-    'NutriciÃ³n',
+    'Recuperación',
+    'Nutrición',
   ];
 
   const filteredTutorials = tutorials.filter((tutorial) => {
@@ -212,8 +212,8 @@ export default function VideoTutorials() {
 
   const playVideo = (tutorial: Tutorial) => {
     Alert.alert(
-      `â–¶ï¸ ${tutorial.title}`,
-      `Por: ${tutorial.instructor}\nDuraciÃ³n: ${tutorial.duration} min\n\n${tutorial.description}`,
+      `▶️ ${tutorial.title}`,
+      `Por: ${tutorial.instructor}\nDuración: ${tutorial.duration} min\n\n${tutorial.description}`,
       [
         { text: 'Cancelar', style: 'cancel' },
         { text: 'Reproducir', onPress: () => Alert.alert('Reproduciendo video...') },
@@ -375,9 +375,9 @@ export default function VideoTutorials() {
               </View>
 
               {/* Muscles Targeted */}
-              {tutorial.musclesTargeted[0] !== 'N/A - NutriciÃ³n' && (
+              {tutorial.musclesTargeted[0] !== 'N/A - Nutrición' && (
                 <View className="mb-3">
-                  <Text className="text-zinc-400 text-xs mb-2">MÃšSCULOS OBJETIVO</Text>
+                  <Text className="text-zinc-400 text-xs mb-2">MÚSCULOS OBJETIVO</Text>
                   <View className="flex-row flex-wrap gap-2">
                     {tutorial.musclesTargeted.map((muscle, index) => (
                       <View key={index} className="bg-red-500/10 rounded-lg px-2 py-1">
@@ -393,7 +393,7 @@ export default function VideoTutorials() {
                 <Text className="text-zinc-400 text-xs mb-2">PUNTOS CLAVE</Text>
                 {tutorial.keyPoints.map((point, index) => (
                   <View key={index} className="flex-row items-start mb-1 last:mb-0">
-                    <Text className="text-primary mr-2">â€¢</Text>
+                    <Text className="text-primary mr-2">•</Text>
                     <Text className="text-zinc-300 text-sm flex-1">{point}</Text>
                   </View>
                 ))}
@@ -426,7 +426,7 @@ export default function VideoTutorials() {
                   Aprende de los Mejores
                 </Text>
                 <Text className="text-primary/60 text-sm">
-                  TÃ©cnica perfecta = resultados mÃ¡ximos + cero lesiones
+                  Técnica perfecta = resultados máximos + cero lesiones
                 </Text>
               </View>
             </View>

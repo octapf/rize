@@ -539,13 +539,13 @@ export default function PostMeetAnalysis() {
               ðŸ”§ Technical: What worked, what broke down
             </Text>
             <Text className="text-primary/80 text-sm mb-2">
-              âœ… Preparation: Training cycle, peak timing, logistics
+              ✅ Preparation: Training cycle, peak timing, logistics
             </Text>
             <Text className="text-primary/80 text-sm mb-2">
               ðŸ“š Lessons: What to keep, what to change
             </Text>
             <Text className="text-primary/80 text-sm">
-              ðŸŽ¯ Planning: Adjust goals and next training cycle
+              🎯 Planning: Adjust goals and next training cycle
             </Text>
           </View>
 

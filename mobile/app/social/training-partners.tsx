@@ -35,12 +35,12 @@ export default function TrainingPartners() {
   const partners: TrainingPartner[] = [
     {
       id: '1',
-      name: 'Carlos MÃ©ndez',
+      name: 'Carlos Méndez',
       avatar: 'ðŸ‹ï¸',
       location: 'Gym Total - Condesa',
       distance: 1.2,
       workoutStyle: ['Powerlifting', 'Strength'],
-      schedule: ['Lunes AM', 'MiÃ©rcoles AM', 'Viernes AM'],
+      schedule: ['Lunes AM', 'Miércoles AM', 'Viernes AM'],
       experience: 'advanced',
       goals: ['Aumentar fuerza', 'Competir powerlifting'],
       mutualFriends: 8,
@@ -49,26 +49,26 @@ export default function TrainingPartners() {
     },
     {
       id: '2',
-      name: 'Ana GarcÃ­a',
+      name: 'Ana García',
       avatar: 'ðŸ’ª',
       location: 'Smart Fit - Roma',
       distance: 2.5,
       workoutStyle: ['Bodybuilding', 'Hypertrophy'],
-      schedule: ['Martes PM', 'Jueves PM', 'SÃ¡bado AM'],
+      schedule: ['Martes PM', 'Jueves PM', 'Sábado AM'],
       experience: 'intermediate',
-      goals: ['Ganar masa muscular', 'DefiniciÃ³n'],
+      goals: ['Ganar masa muscular', 'Definición'],
       mutualFriends: 12,
       isOnline: true,
       matchScore: 88,
     },
     {
       id: '3',
-      name: 'Luis RodrÃ­guez',
+      name: 'Luis Rodríguez',
       avatar: 'ðŸ”¥',
       location: 'CrossFit Box - Polanco',
       distance: 3.8,
       workoutStyle: ['CrossFit', 'HIIT'],
-      schedule: ['Lunes PM', 'MiÃ©rcoles PM', 'Viernes PM'],
+      schedule: ['Lunes PM', 'Miércoles PM', 'Viernes PM'],
       experience: 'advanced',
       goals: ['Competir CrossFit', 'Mejorar resistencia'],
       mutualFriends: 5,
@@ -77,12 +77,12 @@ export default function TrainingPartners() {
     },
     {
       id: '4',
-      name: 'MarÃ­a LÃ³pez',
-      avatar: 'âš¡',
+      name: 'María López',
+      avatar: '⚡',
       location: 'Anytime Fitness - Del Valle',
       distance: 1.8,
       workoutStyle: ['Functional', 'Cardio'],
-      schedule: ['Todos los dÃ­as AM'],
+      schedule: ['Todos los días AM'],
       experience: 'beginner',
       goals: ['Perder peso', 'Mejorar salud'],
       mutualFriends: 3,
@@ -91,8 +91,8 @@ export default function TrainingPartners() {
     },
     {
       id: '5',
-      name: 'Pedro SÃ¡nchez',
-      avatar: 'ðŸŽ¯',
+      name: 'Pedro Sánchez',
+      avatar: '🎯',
       location: 'Sports World - Insurgentes',
       distance: 4.2,
       workoutStyle: ['Calisthenics', 'Mobility'],
@@ -116,8 +116,8 @@ export default function TrainingPartners() {
 
   const sendPartnerRequest = (partner: TrainingPartner) => {
     Alert.alert(
-      'Solicitud Enviada! âœ…',
-      `Enviaste solicitud a ${partner.name}\n\nPodrÃ¡n coordinarse cuando acepte tu solicitud.`,
+      'Solicitud Enviada! ✅',
+      `Enviaste solicitud a ${partner.name}\n\nPodrán coordinarse cuando acepte tu solicitud.`,
       [{ text: 'OK' }]
     );
   };
@@ -211,7 +211,7 @@ export default function TrainingPartners() {
 
               {/* Distance Filter */}
               <Text className="text-zinc-400 text-sm mb-2">
-                Distancia mÃ¡xima: {filterDistance} km
+                Distancia máxima: {filterDistance} km
               </Text>
               <View className="flex-row items-center gap-2">
                 {[5, 10, 20, 50].map((dist) => (
@@ -243,7 +243,7 @@ export default function TrainingPartners() {
                 Sin resultados
               </Text>
               <Text className="text-zinc-400 text-center mt-2">
-                Ajusta los filtros para encontrar mÃ¡s partners
+                Ajusta los filtros para encontrar más partners
               </Text>
             </View>
           ) : (
@@ -276,7 +276,7 @@ export default function TrainingPartners() {
                     <View className="flex-row items-center mb-1">
                       <Ionicons name="location" size={14} color="#71717A" />
                       <Text className="text-zinc-400 text-sm ml-1">
-                        {partner.location} â€¢ {partner.distance}km
+                        {partner.location} • {partner.distance}km
                       </Text>
                     </View>
 
@@ -284,7 +284,7 @@ export default function TrainingPartners() {
                       <View className="flex-row items-center">
                         <Ionicons name="people" size={14} color="#71717A" />
                         <Text className="text-zinc-400 text-sm ml-1">
-                          {partner.mutualFriends} amigos en comÃºn
+                          {partner.mutualFriends} amigos en común
                         </Text>
                       </View>
                     )}
@@ -365,12 +365,12 @@ export default function TrainingPartners() {
                   Beneficios de Entrenar en Pareja
                 </Text>
                 <Text className="text-primary/60 text-sm">
-                  â€¢ 95% mÃ¡s consistencia vs entrenar solo{'\n'}
-                  â€¢ MotivaciÃ³n y accountability mutuo{'\n'}
-                  â€¢ Ayuda tÃ©cnica en ejercicios{'\n'}
-                  â€¢ Competencia sana mejora resultados{'\n'}
-                  â€¢ Social y mÃ¡s divertido{'\n'}
-                  â€¢ Seguridad en levantamientos pesados
+                  • 95% más consistencia vs entrenar solo{'\n'}
+                  • Motivación y accountability mutuo{'\n'}
+                  • Ayuda técnica en ejercicios{'\n'}
+                  • Competencia sana mejora resultados{'\n'}
+                  • Social y más divertido{'\n'}
+                  • Seguridad en levantamientos pesados
                 </Text>
               </View>
             </View>

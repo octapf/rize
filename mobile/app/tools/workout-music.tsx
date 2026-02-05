@@ -26,7 +26,7 @@ const BUILT_IN_PLAYLISTS: Playlist[] = [
   {
     id: '1',
     name: 'Beast Mode',
-    description: 'Heavy metal y rock para PR dÃ­as',
+    description: 'Heavy metal y rock para PR días',
     trackCount: 45,
     duration: 180,
     genre: 'Metal/Rock',
@@ -37,7 +37,7 @@ const BUILT_IN_PLAYLISTS: Playlist[] = [
   {
     id: '2',
     name: 'Cardio Vibes',
-    description: 'EDM y electrÃ³nica para cardio constante',
+    description: 'EDM y electrónica para cardio constante',
     trackCount: 60,
     duration: 240,
     genre: 'EDM/Electronic',
@@ -59,7 +59,7 @@ const BUILT_IN_PLAYLISTS: Playlist[] = [
   {
     id: '4',
     name: 'Warm-Up Flow',
-    description: 'MÃºsica chill para calentamiento',
+    description: 'Música chill para calentamiento',
     trackCount: 20,
     duration: 60,
     genre: 'Chill/Pop',
@@ -81,10 +81,10 @@ const BUILT_IN_PLAYLISTS: Playlist[] = [
 ];
 
 const GENRE_SUGGESTIONS = [
-  { genre: 'Metal/Rock', icon: 'musical-notes', color: 'red', description: 'Para PRs y mÃ¡xima intensidad' },
+  { genre: 'Metal/Rock', icon: 'musical-notes', color: 'red', description: 'Para PRs y máxima intensidad' },
   { genre: 'EDM/Electronic', icon: 'pulse', color: 'purple', description: 'Cardio y resistencia' },
   { genre: 'Hip-Hop/Trap', icon: 'logo-soundcloud', color: 'amber', description: 'Fuerza y potencia' },
-  { genre: 'Reggaeton/Latin', icon: 'musical-note', color: 'pink', description: 'EnergÃ­a y ritmo' },
+  { genre: 'Reggaeton/Latin', icon: 'musical-note', color: 'pink', description: 'Energía y ritmo' },
   { genre: 'Dubstep/Bass', icon: 'analytics', color: 'cyan', description: 'HIIT y explosividad' },
   { genre: 'Pop/Mainstream', icon: 'radio', color: 'blue', description: 'General y accesible' },
 ];
@@ -108,8 +108,8 @@ export default function WorkoutMusic() {
 
   const playPlaylist = (playlist: Playlist) => {
     Alert.alert(
-      `ðŸŽµ ${playlist.name}`,
-      `${playlist.trackCount} canciones â€¢ ${Math.round(playlist.duration / 60)} min\n\nAbriendo en tu app de mÃºsica...`,
+      `🎯µ ${playlist.name}`,
+      `${playlist.trackCount} canciones • ${Math.round(playlist.duration / 60)} min\n\nAbriendo en tu app de música...`,
       [
         { text: 'Cancelar', style: 'cancel' },
         { 
@@ -126,7 +126,7 @@ export default function WorkoutMusic() {
   const deletePlaylist = (id: string) => {
     Alert.alert(
       'Eliminar Playlist',
-      'Â¿EstÃ¡s seguro?',
+      '¿Estás seguro?',
       [
         { text: 'Cancelar', style: 'cancel' },
         {
@@ -181,7 +181,7 @@ export default function WorkoutMusic() {
           <View className="bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl p-6 mb-6">
             <Text className="text-white text-2xl font-bold mb-2">Tu Soundtrack</Text>
             <Text className="text-white opacity-90 mb-4">
-              La mÃºsica perfecta mejora rendimiento 15-20%
+              La música perfecta mejora rendimiento 15-20%
             </Text>
             <View className="flex-row items-center">
               <Ionicons name="musical-notes" size={20} color="white" />
@@ -231,7 +231,7 @@ export default function WorkoutMusic() {
             <View className="bg-zinc-900 rounded-xl p-8 border border-zinc-800 items-center">
               <Ionicons name="musical-notes-outline" size={64} color="#52525B" />
               <Text className="text-zinc-400 text-center mt-4">
-                No hay playlists en este gÃ©nero
+                No hay playlists en este género
               </Text>
             </View>
           ) : (
@@ -253,11 +253,11 @@ export default function WorkoutMusic() {
                         <Text className={`text-${playlist.color}-400 text-xs`}>
                           {playlist.trackCount} tracks
                         </Text>
-                        <Text className="text-zinc-500 text-xs">â€¢</Text>
+                        <Text className="text-zinc-500 text-xs">•</Text>
                         <Text className={`text-${playlist.color}-400 text-xs`}>
                           {Math.round(playlist.duration / 60)} min
                         </Text>
-                        <Text className="text-zinc-500 text-xs">â€¢</Text>
+                        <Text className="text-zinc-500 text-xs">•</Text>
                         <Text className={`text-${playlist.color}-400 text-xs`}>
                           {playlist.genre}
                         </Text>
@@ -305,7 +305,7 @@ export default function WorkoutMusic() {
           )}
 
           {/* Genre Suggestions */}
-          <Text className="text-white font-bold text-lg mb-4 mt-6">GuÃ­a de GÃ©neros</Text>
+          <Text className="text-white font-bold text-lg mb-4 mt-6">Guía de Géneros</Text>
           
           {GENRE_SUGGESTIONS.map((suggestion, idx) => (
             <View key={idx} className="bg-zinc-900 rounded-xl p-4 mb-3 border border-zinc-800">
@@ -327,15 +327,15 @@ export default function WorkoutMusic() {
               <Ionicons name="bulb" size={20} color="#9D12DE" />
               <View className="flex-1 ml-3">
                 <Text className="text-primary/80 font-bold mb-2">
-                  Tips de MÃºsica para Entrenar
+                  Tips de Música para Entrenar
                 </Text>
                 <Text className="text-primary/60 text-sm">
-                  â€¢ 130-150 BPM = ideal para cardio{'\n'}
-                  â€¢ MÃºsica rÃ¡pida = mÃ¡s reps/mejor rendimiento{'\n'}
-                  â€¢ Crea playlists por tipo de workout{'\n'}
-                  â€¢ Canciones favoritas para series difÃ­ciles{'\n'}
-                  â€¢ Silencio tambiÃ©n es vÃ¡lido (mindfulness){'\n'}
-                  â€¢ Actualiza playlists cada mes
+                  • 130-150 BPM = ideal para cardio{'\n'}
+                  • Música rápida = más reps/mejor rendimiento{'\n'}
+                  • Crea playlists por tipo de workout{'\n'}
+                  • Canciones favoritas para series difíciles{'\n'}
+                  • Silencio también es válido (mindfulness){'\n'}
+                  • Actualiza playlists cada mes
                 </Text>
               </View>
             </View>

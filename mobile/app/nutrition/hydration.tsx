@@ -42,10 +42,10 @@ const WEEKLY_GOAL = 4000;
 const WEEK_DATA = [
   { day: 'Lun', consumed: 3800, goal: 4000 },
   { day: 'Mar', consumed: 4100, goal: 4000 },
-  { day: 'MiÃ©', consumed: 3500, goal: 4000 },
+  { day: 'Mié', consumed: 3500, goal: 4000 },
   { day: 'Jue', consumed: 3900, goal: 4000 },
   { day: 'Vie', consumed: 3400, goal: 4000 },
-  { day: 'SÃ¡b', consumed: 3650, goal: 4000 },
+  { day: 'Sáb', consumed: 3650, goal: 4000 },
   { day: 'Dom', consumed: 3200, goal: 4000 },
 ];
 
@@ -59,18 +59,18 @@ const HYDRATION_BENEFITS = [
   },
   {
     icon: 'ðŸ§ ',
-    title: 'FunciÃ³n Cognitiva',
+    title: 'Función Cognitiva',
     description: 'Focus mental y toma de decisiones',
   },
   {
     icon: 'ðŸ”¥',
     title: 'Metabolismo',
-    description: 'Acelera quema de grasa y recuperaciÃ³n',
+    description: 'Acelera quema de grasa y recuperación',
   },
   {
     icon: 'ðŸ©º',
     title: 'Articulaciones',
-    description: 'LubricaciÃ³n y prevenciÃ³n de lesiones',
+    description: 'Lubricación y prevención de lesiones',
   },
 ];
 
@@ -92,7 +92,7 @@ export default function HydrationTracker() {
 
     if (hydration.consumed + amount >= hydration.goal) {
       Alert.alert(
-        'ðŸŽ‰ Â¡Meta Alcanzada!',
+        '🎉 ¡Meta Alcanzada!',
         `Has cumplido tu objetivo de ${hydration.goal}ml hoy`,
         [{ text: 'Awesome!' }]
       );
@@ -124,7 +124,7 @@ export default function HydrationTracker() {
       const lastLog = hydration.logs[hydration.logs.length - 1];
       Alert.alert(
         'Eliminar Registro',
-        `Â¿Quitar ${lastLog.amount}ml de las ${lastLog.time}?`,
+        `¿Quitar ${lastLog.amount}ml de las ${lastLog.time}?`,
         [
           { text: 'Cancelar', style: 'cancel' },
           {
@@ -155,7 +155,7 @@ export default function HydrationTracker() {
             <Ionicons name="arrow-back" size={24} color="white" />
           </TouchableOpacity>
           <Text className="text-white text-2xl font-bold flex-1 ml-3">
-            HidrataciÃ³n
+            Hidratación
           </Text>
           <TouchableOpacity onPress={removeLastLog}>
             <Ionicons name="trash-outline" size={24} color="#EF4444" />
@@ -185,7 +185,7 @@ export default function HydrationTracker() {
           {remaining > 0 && (
             <View className="bg-amber-500/10 rounded-xl px-4 py-2 mt-4 border border-amber-500/30">
               <Text className="text-amber-400 text-sm font-bold">
-                ðŸŽ¯ Faltan {remaining}ml para tu meta
+                🎯 Faltan {remaining}ml para tu meta
               </Text>
             </View>
           )}
@@ -193,7 +193,7 @@ export default function HydrationTracker() {
           {remaining === 0 && (
             <View className="bg-primary/10 rounded-xl px-4 py-2 mt-4 border border-primary/30">
               <Text className="text-primary text-sm font-bold">
-                âœ… Â¡Meta del dÃ­a completada!
+                ✅ ¡Meta del día completada!
               </Text>
             </View>
           )}
@@ -203,7 +203,7 @@ export default function HydrationTracker() {
       <ScrollView className="flex-1" showsVerticalScrollIndicator={false}>
         {/* Quick Add */}
         <View className="px-6 pt-6">
-          <Text className="text-white font-bold text-lg mb-3">Agregar RÃ¡pido</Text>
+          <Text className="text-white font-bold text-lg mb-3">Agregar Rápido</Text>
           <View className="flex-row flex-wrap gap-2 mb-6">
             {QUICK_ADD_AMOUNTS.map((amount) => (
               <TouchableOpacity
@@ -229,7 +229,7 @@ export default function HydrationTracker() {
           <View className="bg-zinc-900 rounded-xl p-4 border border-zinc-800 mb-6">
             {hydration.logs.length === 0 ? (
               <Text className="text-zinc-400 text-center py-4">
-                No hay registros aÃºn. Â¡Empieza a beber agua!
+                No hay registros aún. ¡Empieza a beber agua!
               </Text>
             ) : (
               hydration.logs.map((log, index) => (
@@ -308,7 +308,7 @@ export default function HydrationTracker() {
               <Ionicons name="bulb" size={20} color="#9D12DE" />
               <View className="flex-1 ml-3">
                 <Text className="text-primary/80 font-bold mb-2">
-                  FÃ³rmula Ã“ptima
+                  Fórmula Ã“ptima
                 </Text>
                 <Text className="text-primary/60 text-sm">
                   Meta diaria: 35ml x kg de peso corporal + 500ml extra por cada hora de

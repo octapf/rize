@@ -125,7 +125,7 @@ export default function BadgesScreen() {
             streak: 'Racha',
             volume: 'Volumen',
             level: 'Nivel',
-            records: 'RÃ©cords',
+            records: 'Récords',
             social: 'Social',
             special: 'Especiales',
           };
@@ -226,7 +226,7 @@ export default function BadgesScreen() {
                     <View className="flex-row items-center justify-center gap-2">
                       <Ionicons name="checkmark-circle" size={24} color="#9D12DE" />
                       <Text className="text-primary font-bold">
-                        Â¡Desbloqueada!
+                        ¡Desbloqueada!
                       </Text>
                     </View>
                   </View>

@@ -30,10 +30,10 @@ export default function RecoveryScore() {
   const [currentScore] = useState(78);
   const [hrv] = useState(62); // Heart Rate Variability (higher = better recovery)
   const [factors] = useState<RecoveryFactor[]>([
-    { name: 'Calidad de SueÃ±o', score: 85, weight: 30, icon: 'bed' },
+    { name: 'Calidad de Sueño', score: 85, weight: 30, icon: 'bed' },
     { name: 'Dolor Muscular', score: 70, weight: 25, icon: 'fitness' },
     { name: 'Estado de Ãnimo', score: 80, weight: 15, icon: 'happy' },
-    { name: 'Nivel de EnergÃ­a', score: 75, weight: 20, icon: 'battery-charging' },
+    { name: 'Nivel de Energía', score: 75, weight: 20, icon: 'battery-charging' },
     { name: 'HRV (Variabilidad)', score: 72, weight: 10, icon: 'pulse' },
   ]);
 
@@ -54,37 +54,37 @@ export default function RecoveryScore() {
       soreness: 60,
       mood: 70,
       energy: 65,
-      recommendation: 'Intensidad moderada. Preferir ejercicios tÃ©cnicos.',
+      recommendation: 'Intensidad moderada. Preferir ejercicios técnicos.',
     },
     {
-      date: 'Hace 2 dÃ­as',
+      date: 'Hace 2 días',
       score: 82,
       sleep: 90,
       soreness: 80,
       mood: 85,
       energy: 80,
-      recommendation: 'Ã“ptimo para PR attempts. MÃ¡xima intensidad.',
+      recommendation: 'Ã“ptimo para PR attempts. Máxima intensidad.',
     },
     {
-      date: 'Hace 3 dÃ­as',
+      date: 'Hace 3 días',
       score: 55,
       sleep: 60,
       soreness: 50,
       mood: 55,
       energy: 55,
-      recommendation: 'Baja recuperaciÃ³n. DÃ­a de movilidad o descanso.',
+      recommendation: 'Baja recuperación. Día de movilidad o descanso.',
     },
     {
-      date: 'Hace 4 dÃ­as',
+      date: 'Hace 4 días',
       score: 72,
       sleep: 80,
       soreness: 65,
       mood: 75,
       energy: 70,
-      recommendation: 'Buena recuperaciÃ³n. Entrenamiento normal.',
+      recommendation: 'Buena recuperación. Entrenamiento normal.',
     },
     {
-      date: 'Hace 5 dÃ­as',
+      date: 'Hace 5 días',
       score: 88,
       sleep: 95,
       soreness: 85,
@@ -93,13 +93,13 @@ export default function RecoveryScore() {
       recommendation: 'Excelente. Ideal para volume training.',
     },
     {
-      date: 'Hace 6 dÃ­as',
+      date: 'Hace 6 días',
       score: 75,
       sleep: 80,
       soreness: 70,
       mood: 75,
       energy: 75,
-      recommendation: 'SÃ³lido. Entrenamientos de fuerza recomendados.',
+      recommendation: 'Sólido. Entrenamientos de fuerza recomendados.',
     },
   ]);
 
@@ -120,7 +120,7 @@ export default function RecoveryScore() {
   const getWorkoutRecommendation = (score: number) => {
     if (score >= 80) {
       return {
-        title: 'MÃ¡xima Intensidad',
+        title: 'Máxima Intensidad',
         description: 'Ideal para PRs, volume alto, entrenamientos largos',
         intensity: 'ALTA',
         color: 'emerald',
@@ -137,14 +137,14 @@ export default function RecoveryScore() {
     if (score >= 50) {
       return {
         title: 'Intensidad Baja-Moderada',
-        description: 'TÃ©cnica, cardio ligero, movilidad. Escucha tu cuerpo',
+        description: 'Técnica, cardio ligero, movilidad. Escucha tu cuerpo',
         intensity: 'BAJA',
         color: 'amber',
       };
     }
     return {
       title: 'Descanso Activo',
-      description: 'Caminata, yoga, stretching. Prioriza recuperaciÃ³n',
+      description: 'Caminata, yoga, stretching. Prioriza recuperación',
       intensity: 'DESCANSO',
       color: 'red',
     };
@@ -153,7 +153,7 @@ export default function RecoveryScore() {
   const updateFactor = (factorName: string) => {
     Alert.alert(
       `Actualizar: ${factorName}`,
-      'Esta funciÃ³n abrirÃ¡ un formulario para registrar tu estado actual',
+      'Esta función abrirá un formulario para registrar tu estado actual',
       [{ text: 'Entendido' }]
     );
   };
@@ -171,7 +171,7 @@ export default function RecoveryScore() {
             <Ionicons name="arrow-back" size={24} color="white" />
           </TouchableOpacity>
           <Text className="text-white text-2xl font-bold flex-1 ml-3">
-            PuntuaciÃ³n de RecuperaciÃ³n
+            Puntuación de Recuperación
           </Text>
           <TouchableOpacity>
             <Ionicons name="settings" size={24} color="white" />
@@ -211,7 +211,7 @@ export default function RecoveryScore() {
             <View className="flex-row items-center justify-between bg-zinc-800 rounded-lg p-3">
               <View className="flex-row items-center">
                 <Ionicons name="pulse" size={20} color="#71717A" />
-                <Text className="text-zinc-400 ml-2">HRV (Variabilidad CardÃ­aca)</Text>
+                <Text className="text-zinc-400 ml-2">HRV (Variabilidad Cardíaca)</Text>
               </View>
               <Text className="text-white font-bold">{hrv} ms</Text>
             </View>
@@ -238,7 +238,7 @@ export default function RecoveryScore() {
 
           {/* Recovery Factors */}
           <View className="mb-6">
-            <Text className="text-white text-lg font-bold mb-3">Factores de RecuperaciÃ³n</Text>
+            <Text className="text-white text-lg font-bold mb-3">Factores de Recuperación</Text>
             {factors.map((factor) => {
               const factorColors = getScoreColor(factor.score);
               return (
@@ -277,7 +277,7 @@ export default function RecoveryScore() {
 
           {/* History */}
           <View className="mb-6">
-            <Text className="text-white text-lg font-bold mb-3">Historial (7 dÃ­as)</Text>
+            <Text className="text-white text-lg font-bold mb-3">Historial (7 días)</Text>
             {history.map((day, index) => {
               const dayColors = getScoreColor(day.score);
               return (
@@ -288,7 +288,7 @@ export default function RecoveryScore() {
                   <View className="flex-row items-center justify-between mb-3">
                     <View>
                       <Text className="text-white font-bold">{day.date}</Text>
-                      <Text className="text-zinc-400 text-xs">PuntuaciÃ³n general</Text>
+                      <Text className="text-zinc-400 text-xs">Puntuación general</Text>
                     </View>
                     <View className="flex-row items-baseline">
                       <Text className={`${dayColors.text} font-bold text-2xl`}>
@@ -301,7 +301,7 @@ export default function RecoveryScore() {
                   {/* Mini Factors */}
                   <View className="flex-row gap-2 mb-3">
                     <View className="flex-1 bg-zinc-800 rounded-lg p-2">
-                      <Text className="text-zinc-400 text-xs mb-1">ðŸ’¤ SueÃ±o</Text>
+                      <Text className="text-zinc-400 text-xs mb-1">ðŸ’¤ Sueño</Text>
                       <Text className="text-white font-bold text-sm">{day.sleep}</Text>
                     </View>
                     <View className="flex-1 bg-zinc-800 rounded-lg p-2">
@@ -309,11 +309,11 @@ export default function RecoveryScore() {
                       <Text className="text-white font-bold text-sm">{day.soreness}</Text>
                     </View>
                     <View className="flex-1 bg-zinc-800 rounded-lg p-2">
-                      <Text className="text-zinc-400 text-xs mb-1">ðŸ˜Š Ãnimo</Text>
+                      <Text className="text-zinc-400 text-xs mb-1">😐Š Ãnimo</Text>
                       <Text className="text-white font-bold text-sm">{day.mood}</Text>
                     </View>
                     <View className="flex-1 bg-zinc-800 rounded-lg p-2">
-                      <Text className="text-zinc-400 text-xs mb-1">âš¡ EnergÃ­a</Text>
+                      <Text className="text-zinc-400 text-xs mb-1">⚡ Energía</Text>
                       <Text className="text-white font-bold text-sm">{day.energy}</Text>
                     </View>
                   </View>
@@ -334,10 +334,10 @@ export default function RecoveryScore() {
               <Ionicons name="information-circle" size={20} color="#9D12DE" />
               <View className="flex-1 ml-3">
                 <Text className="text-primary/80 font-bold mb-2">
-                  Â¿QuÃ© es HRV?
+                  ¿Qué es HRV?
                 </Text>
                 <Text className="text-primary/60 text-sm">
-                  Variabilidad de frecuencia cardÃ­aca. Mayor HRV = mejor recuperaciÃ³n del sistema nervioso. Valores normales: 50-80ms.
+                  Variabilidad de frecuencia cardíaca. Mayor HRV = mejor recuperación del sistema nervioso. Valores normales: 50-80ms.
                 </Text>
               </View>
             </View>
@@ -348,10 +348,10 @@ export default function RecoveryScore() {
               <Ionicons name="checkmark-circle" size={20} color="#9D12DE" />
               <View className="flex-1 ml-3">
                 <Text className="text-primary font-bold mb-2">
-                  Mejora Tu RecuperaciÃ³n
+                  Mejora Tu Recuperación
                 </Text>
                 <Text className="text-primary/80 text-sm">
-                  7-9h sueÃ±o, hidrataciÃ³n, nutriciÃ³n adecuada, manejo de estrÃ©s, dÃ­as de descanso programados.
+                  7-9h sueño, hidratación, nutrición adecuada, manejo de estrés, días de descanso programados.
                 </Text>
               </View>
             </View>
@@ -366,7 +366,7 @@ export default function RecoveryScore() {
           className="bg-primary rounded-xl p-4 flex-row items-center justify-center"
         >
           <Ionicons name="refresh" size={20} color="white" />
-          <Text className="text-white font-bold ml-2">Actualizar RecuperaciÃ³n</Text>
+          <Text className="text-white font-bold ml-2">Actualizar Recuperación</Text>
         </TouchableOpacity>
       </View>
     </View>

@@ -530,7 +530,7 @@ export default function WeightClassManagement() {
                   Percentage: {cutData.percentage}% of bodyweight
                 </Text>
                 {parseFloat(cutData.percentage) <= 3 && (
-                  <Text className="text-primary text-sm">âœ“ Easy cut - should be no problem</Text>
+                  <Text className="text-primary text-sm">✓ Easy cut - should be no problem</Text>
                 )}
                 {parseFloat(cutData.percentage) > 3 && parseFloat(cutData.percentage) <= 5 && (
                   <Text className="text-amber-400 text-sm">âš  Moderate cut - doable with planning</Text>
@@ -539,7 +539,7 @@ export default function WeightClassManagement() {
                   <Text className="text-red-400 text-sm">âš  Hard cut - will impact performance</Text>
                 )}
                 {parseFloat(cutData.percentage) > 7 && (
-                  <Text className="text-red-400 text-sm">âœ— Too much - consider moving up a class</Text>
+                  <Text className="text-red-400 text-sm">✓ Too much - consider moving up a class</Text>
                 )}
               </View>
             )}
@@ -607,7 +607,7 @@ export default function WeightClassManagement() {
 
                   <Text className="text-white font-bold mb-2">Reasoning:</Text>
                   {strat.reasoning.map((reason: string, rIdx: number) => (
-                    <Text key={rIdx} className="text-zinc-300 text-sm mb-1">â€¢ {reason}</Text>
+                    <Text key={rIdx} className="text-zinc-300 text-sm mb-1">• {reason}</Text>
                   ))}
 
                   {strat.guideline && (
@@ -619,7 +619,7 @@ export default function WeightClassManagement() {
               <View className="bg-red-500/10 rounded-xl p-5 border border-red-500/30 mb-6">
                 <Text className="text-red-400 font-bold mb-3">Common Mistakes:</Text>
                 {currentSection.mistakes?.map((mistake: string, idx: number) => (
-                  <Text key={idx} className="text-red-300 text-sm mb-1">âœ— {mistake}</Text>
+                  <Text key={idx} className="text-red-300 text-sm mb-1">✓ {mistake}</Text>
                 ))}
               </View>
             </View>
@@ -635,7 +635,7 @@ export default function WeightClassManagement() {
                   <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-3">
                     <Text className="text-primary font-bold mb-2">Method:</Text>
                     {phase.method.map((item: string, mIdx: number) => (
-                      <Text key={mIdx} className="text-primary/80 text-sm mb-1">â€¢ {item}</Text>
+                      <Text key={mIdx} className="text-primary/80 text-sm mb-1">• {item}</Text>
                     ))}
                   </View>
 
@@ -659,21 +659,21 @@ export default function WeightClassManagement() {
                   <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-3">
                     <Text className="text-primary font-bold mb-2">Pros:</Text>
                     {type.pros.map((pro: string, pIdx: number) => (
-                      <Text key={pIdx} className="text-primary/80 text-sm mb-1">âœ“ {pro}</Text>
+                      <Text key={pIdx} className="text-primary/80 text-sm mb-1">✓ {pro}</Text>
                     ))}
                   </View>
 
                   <View className="bg-red-500/10 rounded-xl p-4 border border-red-500/30 mb-3">
                     <Text className="text-red-400 font-bold mb-2">Cons:</Text>
                     {type.cons.map((con: string, cIdx: number) => (
-                      <Text key={cIdx} className="text-red-300 text-sm mb-1">âœ— {con}</Text>
+                      <Text key={cIdx} className="text-red-300 text-sm mb-1">✓ {con}</Text>
                     ))}
                   </View>
 
                   <View className="bg-primary/10 rounded-xl p-4 border border-primary/30">
                     <Text className="text-primary/80 font-bold mb-2">Strategy:</Text>
                     {type.strategy.map((strat: string, sIdx: number) => (
-                      <Text key={sIdx} className="text-primary/60 text-sm mb-1">â€¢ {strat}</Text>
+                      <Text key={sIdx} className="text-primary/60 text-sm mb-1">• {strat}</Text>
                     ))}
                   </View>
                 </View>
@@ -688,14 +688,14 @@ export default function WeightClassManagement() {
                   <Text className="text-cyan-400 text-xl font-bold mb-4">{section.title}</Text>
                   
                   {section.actions && section.actions.map((action: string, idx: number) => (
-                    <Text key={idx} className="text-zinc-300 mb-2">â€¢ {action}</Text>
+                    <Text key={idx} className="text-zinc-300 mb-2">• {action}</Text>
                   ))}
 
                   {section.night && (
                     <View className="mb-4">
                       <Text className="text-white font-bold mb-2">Night Before:</Text>
                       {section.night.map((item: string, idx: number) => (
-                        <Text key={idx} className="text-zinc-300 text-sm mb-1">â€¢ {item}</Text>
+                        <Text key={idx} className="text-zinc-300 text-sm mb-1">• {item}</Text>
                       ))}
                     </View>
                   )}
@@ -704,7 +704,7 @@ export default function WeightClassManagement() {
                     <View>
                       <Text className="text-white font-bold mb-2">Morning Of:</Text>
                       {section.morning.map((item: string, idx: number) => (
-                        <Text key={idx} className="text-zinc-300 text-sm mb-1">â€¢ {item}</Text>
+                        <Text key={idx} className="text-zinc-300 text-sm mb-1">• {item}</Text>
                       ))}
                     </View>
                   )}
@@ -718,7 +718,7 @@ export default function WeightClassManagement() {
               <View className="bg-purple-500/10 rounded-xl p-5 border border-purple-500/30 mb-6">
                 <Text className="text-purple-400 font-bold text-lg mb-3">Why Body Comp Matters:</Text>
                 {currentSection.importance?.map((reason: string, idx: number) => (
-                  <Text key={idx} className="text-purple-300 text-sm mb-1">â€¢ {reason}</Text>
+                  <Text key={idx} className="text-purple-300 text-sm mb-1">• {reason}</Text>
                 ))}
               </View>
 
@@ -728,8 +728,8 @@ export default function WeightClassManagement() {
                   <Text className="text-primary/80 font-bold mb-1">{guide.range}</Text>
                   <Text className="text-zinc-300 text-sm mb-3">{guide.description}</Text>
                   <View className="flex-row justify-between">
-                    <Text className="text-primary text-sm flex-1 mr-2">âœ“ {guide.pros}</Text>
-                    <Text className="text-red-400 text-sm flex-1">âœ— {guide.cons}</Text>
+                    <Text className="text-primary text-sm flex-1 mr-2">✓ {guide.pros}</Text>
+                    <Text className="text-red-400 text-sm flex-1">✓ {guide.cons}</Text>
                   </View>
                 </View>
               ))}
@@ -740,8 +740,8 @@ export default function WeightClassManagement() {
                   <Text className="text-purple-400 font-bold mb-1">{guide.range}</Text>
                   <Text className="text-zinc-300 text-sm mb-3">{guide.description}</Text>
                   <View className="flex-row justify-between">
-                    <Text className="text-primary text-sm flex-1 mr-2">âœ“ {guide.pros}</Text>
-                    <Text className="text-red-400 text-sm flex-1">âœ— {guide.cons}</Text>
+                    <Text className="text-primary text-sm flex-1 mr-2">✓ {guide.pros}</Text>
+                    <Text className="text-red-400 text-sm flex-1">✓ {guide.cons}</Text>
                   </View>
                 </View>
               ))}
@@ -753,7 +753,7 @@ export default function WeightClassManagement() {
               <View className="bg-amber-500/10 rounded-xl p-5 border border-amber-500/30 mb-6">
                 <Text className="text-amber-400 font-bold text-lg mb-3">Philosophy:</Text>
                 {currentSection.philosophy?.map((item: string, idx: number) => (
-                  <Text key={idx} className="text-amber-300 text-sm mb-1">â€¢ {item}</Text>
+                  <Text key={idx} className="text-amber-300 text-sm mb-1">• {item}</Text>
                 ))}
               </View>
 
@@ -762,14 +762,14 @@ export default function WeightClassManagement() {
                   <Text className="text-amber-400 text-xl font-bold mb-4">{section.title}</Text>
 
                   {section.approach && section.approach.map((item: string, idx: number) => (
-                    <Text key={idx} className="text-zinc-300 mb-2">â€¢ {item}</Text>
+                    <Text key={idx} className="text-zinc-300 mb-2">• {item}</Text>
                   ))}
 
                   {section.signs && (
                     <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-3">
                       <Text className="text-primary font-bold mb-2">Signs:</Text>
                       {section.signs.map((sign: string, sIdx: number) => (
-                        <Text key={sIdx} className="text-primary/80 text-sm mb-1">â€¢ {sign}</Text>
+                        <Text key={sIdx} className="text-primary/80 text-sm mb-1">• {sign}</Text>
                       ))}
                     </View>
                   )}
@@ -778,7 +778,7 @@ export default function WeightClassManagement() {
                     <View className="bg-red-500/10 rounded-xl p-4 border border-red-500/30">
                       <Text className="text-red-400 font-bold mb-2">Mistakes:</Text>
                       {section.mistakes.map((mistake: string, mIdx: number) => (
-                        <Text key={mIdx} className="text-red-300 text-sm mb-1">âœ— {mistake}</Text>
+                        <Text key={mIdx} className="text-red-300 text-sm mb-1">✓ {mistake}</Text>
                       ))}
                     </View>
                   )}
@@ -792,10 +792,10 @@ export default function WeightClassManagement() {
               {currentSection.myths?.map((item: any, idx: number) => (
                 <View key={idx} className="bg-zinc-900 rounded-xl p-5 mb-4 border border-zinc-800">
                   <View className="bg-red-500/10 rounded-xl p-3 border border-red-500/30 mb-3">
-                    <Text className="text-red-400 font-bold">âœ— Myth: {item.myth}</Text>
+                    <Text className="text-red-400 font-bold">✓ Myth: {item.myth}</Text>
                   </View>
                   <View className="bg-primary/10 rounded-xl p-3 border border-primary/30">
-                    <Text className="text-primary font-bold">âœ“ Reality: {item.reality}</Text>
+                    <Text className="text-primary font-bold">✓ Reality: {item.reality}</Text>
                   </View>
                 </View>
               ))}
@@ -805,16 +805,16 @@ export default function WeightClassManagement() {
           <View className="bg-gradient-to-r from-blue-500/20 to-emerald-500/20 rounded-xl p-5 border border-primary/30 mb-6">
             <Text className="text-primary/80 font-bold text-lg mb-3">Remember</Text>
             <Text className="text-primary/60 text-sm mb-2">
-              â€¢ Strength-to-weight ratio matters more than absolute weight
+              • Strength-to-weight ratio matters more than absolute weight
             </Text>
             <Text className="text-primary/60 text-sm mb-2">
-              â€¢ Small strategic cuts okay, big cuts hurt performance
+              • Small strategic cuts okay, big cuts hurt performance
             </Text>
             <Text className="text-primary/60 text-sm mb-2">
-              â€¢ Body composition &gt; scale weight
+              • Body composition &gt; scale weight
             </Text>
             <Text className="text-primary/60 text-sm">
-              â€¢ When in doubt, move up and get stronger
+              • When in doubt, move up and get stronger
             </Text>
           </View>
         </View>

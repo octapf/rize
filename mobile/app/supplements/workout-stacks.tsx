@@ -230,7 +230,7 @@ export default function WorkoutStacks() {
               <View className="flex-row flex-wrap gap-2">
                 {stack.benefits.map((benefit, benIdx) => (
                   <View key={benIdx} className="bg-zinc-900 rounded-full px-3 py-1.5">
-                    <Text className="text-zinc-300 text-xs">âœ“ {benefit}</Text>
+                    <Text className="text-zinc-300 text-xs">✓ {benefit}</Text>
                   </View>
                 ))}
               </View>
@@ -240,12 +240,12 @@ export default function WorkoutStacks() {
           <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
             <Text className="text-primary/80 font-bold mb-2">Stack Tips</Text>
             <Text className="text-primary/60 text-sm">
-              â€¢ Start with lower doses{'\n'}
-              â€¢ Assess tolerance before combining{'\n'}
-              â€¢ Buy in bulk to save money{'\n'}
-              â€¢ DIY stacks &gt; pre-made formulas{'\n'}
-              â€¢ Cycle stimulants (caffeine){'\n'}
-              â€¢ Quality &gt; quantity of ingredients
+              • Start with lower doses{'\n'}
+              • Assess tolerance before combining{'\n'}
+              • Buy in bulk to save money{'\n'}
+              • DIY stacks &gt; pre-made formulas{'\n'}
+              • Cycle stimulants (caffeine){'\n'}
+              • Quality &gt; quantity of ingredients
             </Text>
           </View>
         </View>

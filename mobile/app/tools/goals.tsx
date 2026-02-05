@@ -26,8 +26,8 @@ interface Goal {
 
 const GOAL_CATEGORIES = [
   { value: 'strength', label: 'Fuerza', icon: 'barbell', color: 'red' },
-  { value: 'body', label: 'FÃ­sico', icon: 'body', color: 'blue' },
-  { value: 'habit', label: 'HÃ¡bito', icon: 'checkmark-circle', color: 'emerald' },
+  { value: 'body', label: 'Físico', icon: 'body', color: 'blue' },
+  { value: 'habit', label: 'Hábito', icon: 'checkmark-circle', color: 'emerald' },
   { value: 'performance', label: 'Rendimiento', icon: 'speedometer', color: 'purple' },
 ];
 
@@ -41,7 +41,7 @@ const MOCK_GOALS: Goal[] = [
     unit: 'kg',
     deadline: new Date(2026, 5, 1),
     status: 'active',
-    notes: '1RM actual: 100kg, progresiÃ³n lineal',
+    notes: '1RM actual: 100kg, progresión lineal',
   },
   {
     id: '2',
@@ -82,7 +82,7 @@ const MOCK_GOALS: Goal[] = [
     currentValue: 10,
     unit: 'reps',
     status: 'completed',
-    notes: 'Â¡Logrado el 20 de enero!',
+    notes: '¡Logrado el 20 de enero!',
   },
 ];
 
@@ -129,7 +129,7 @@ export default function GoalTracker() {
 
   const addGoal = () => {
     if (!newGoal.title || !newGoal.targetValue || !newGoal.currentValue) {
-      Alert.alert('Error', 'Completa tÃ­tulo, meta actual y objetivo');
+      Alert.alert('Error', 'Completa título, meta actual y objetivo');
       return;
     }
 
@@ -147,7 +147,7 @@ export default function GoalTracker() {
     setGoals([goal, ...goals]);
     setNewGoal({ title: '', category: 'strength', targetValue: '', currentValue: '', unit: 'kg', notes: '' });
     setShowAddForm(false);
-    Alert.alert('Meta Creada! ðŸŽ¯', 'Ahora a trabajar para lograrla');
+    Alert.alert('Meta Creada! 🎯', 'Ahora a trabajar para lograrla');
   };
 
   const updateProgress = (id: string, newValue: number) => {
@@ -160,7 +160,7 @@ export default function GoalTracker() {
         (g.unit === '%' || g.unit === 'min') && newValue <= g.targetValue
       ) {
         updated.status = 'completed';
-        Alert.alert('Â¡Meta Lograda! ðŸŽ‰', `Completaste: ${g.title}`);
+        Alert.alert('¡Meta Lograda! 🎉', `Completaste: ${g.title}`);
       }
       return updated;
     }));
@@ -169,7 +169,7 @@ export default function GoalTracker() {
   const deleteGoal = (id: string) => {
     Alert.alert(
       'Eliminar Meta',
-      'Â¿EstÃ¡s seguro?',
+      '¿Estás seguro?',
       [
         { text: 'Cancelar' },
         { text: 'Eliminar', style: 'destructive', onPress: () => setGoals(goals.filter((g) => g.id !== id)) },
@@ -223,7 +223,7 @@ export default function GoalTracker() {
 
               {/* Title */}
               <View className="mb-4">
-                <Text className="text-zinc-400 text-sm mb-2">TÃ­tulo</Text>
+                <Text className="text-zinc-400 text-sm mb-2">Título</Text>
                 <TextInput
                   className="bg-zinc-800 rounded-xl px-4 py-3 text-white text-lg font-bold"
                   placeholder="Ej: Sentadilla 150kg, Bajar a 10% grasa..."
@@ -235,7 +235,7 @@ export default function GoalTracker() {
 
               {/* Category */}
               <View className="mb-4">
-                <Text className="text-zinc-400 text-sm mb-2">CategorÃ­a</Text>
+                <Text className="text-zinc-400 text-sm mb-2">Categoría</Text>
                 <View className="flex-row flex-wrap gap-2">
                   {GOAL_CATEGORIES.map((cat) => (
                     <TouchableOpacity
@@ -290,7 +290,7 @@ export default function GoalTracker() {
               <View className="mb-4">
                 <Text className="text-zinc-400 text-sm mb-2">Unidad</Text>
                 <View className="flex-row flex-wrap gap-2">
-                  {['kg', 'reps', '%', 'min', 'semanas', 'dÃ­as'].map((unit) => (
+                  {['kg', 'reps', '%', 'min', 'semanas', 'días'].map((unit) => (
                     <TouchableOpacity
                       key={unit}
                       onPress={() => setNewGoal({ ...newGoal, unit })}
@@ -333,7 +333,7 @@ export default function GoalTracker() {
               {/* Goals List */}
               {filteredGoals.length === 0 ? (
                 <View className="bg-zinc-900 rounded-xl p-8 items-center border border-zinc-800">
-                  <Text className="text-6xl mb-3">ðŸŽ¯</Text>
+                  <Text className="text-6xl mb-3">🎯</Text>
                   <Text className="text-white font-bold text-lg mb-2">Sin Metas</Text>
                   <Text className="text-zinc-400 text-center">
                     Define metas para mantenerte enfocado
@@ -359,7 +359,7 @@ export default function GoalTracker() {
                             <View className="flex-row gap-2">
                               <View className={`bg-${goal.status === 'completed' ? 'emerald' : goal.status === 'paused' ? 'amber' : 'blue'}-500/10 rounded px-2 py-0.5 border border-${goal.status === 'completed' ? 'emerald' : goal.status === 'paused' ? 'amber' : 'blue'}-500/30`}>
                                 <Text className={`text-${goal.status === 'completed' ? 'emerald' : goal.status === 'paused' ? 'amber' : 'blue'}-400 text-xs font-bold`}>
-                                  {goal.status === 'completed' ? 'âœ“ Completada' : goal.status === 'paused' ? 'â¸ Pausada' : 'ðŸ”¥ Activa'}
+                                  {goal.status === 'completed' ? '✓ Completada' : goal.status === 'paused' ? 'â¸ Pausada' : 'ðŸ”¥ Activa'}
                                 </Text>
                               </View>
                             </View>
@@ -391,7 +391,7 @@ export default function GoalTracker() {
                       {daysLeft !== null && (
                         <View className={`bg-${daysLeft < 7 ? 'red' : daysLeft < 30 ? 'amber' : 'blue'}-500/10 rounded-lg p-2 border border-${daysLeft < 7 ? 'red' : daysLeft < 30 ? 'amber' : 'blue'}-500/30 mb-3`}>
                           <Text className={`text-${daysLeft < 7 ? 'red' : daysLeft < 30 ? 'amber' : 'blue'}-400 text-sm`}>
-                            â° {daysLeft > 0 ? `${daysLeft} dÃ­as restantes` : daysLeft === 0 ? 'Â¡Hoy es el deadline!' : `VenciÃ³ hace ${Math.abs(daysLeft)} dÃ­as`}
+                            â° {daysLeft > 0 ? `${daysLeft} días restantes` : daysLeft === 0 ? '¡Hoy es el deadline!' : `Venció hace ${Math.abs(daysLeft)} días`}
                           </Text>
                         </View>
                       )}
@@ -440,11 +440,11 @@ export default function GoalTracker() {
                   Tips para Lograr Metas
                 </Text>
                 <Text className="text-amber-300 text-sm">
-                  â€¢ Metas SMART: especÃ­ficas y medibles{'\n'}
-                  â€¢ Deadline realista pero desafiante{'\n'}
-                  â€¢ Divide en mini-metas semanales{'\n'}
-                  â€¢ Trackea progreso constantemente{'\n'}
-                  â€¢ Ajusta estrategia si es necesario
+                  • Metas SMART: específicas y medibles{'\n'}
+                  • Deadline realista pero desafiante{'\n'}
+                  • Divide en mini-metas semanales{'\n'}
+                  • Trackea progreso constantemente{'\n'}
+                  • Ajusta estrategia si es necesario
                 </Text>
               </View>
             </View>

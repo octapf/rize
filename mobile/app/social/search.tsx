@@ -105,7 +105,7 @@ export default function SearchUsersScreen() {
                     No se encontraron usuarios
                   </Text>
                   <Text className="text-center text-gray-400 text-sm">
-                    Intenta con otro tÃ©rmino de bÃºsqueda
+                    Intenta con otro término de búsqueda
                   </Text>
                 </View>
               </Card>
@@ -141,11 +141,11 @@ export default function SearchUsersScreen() {
                                 Nivel {user.level}
                               </Text>
                             </View>
-                            <Text className="text-gray-400">â€¢</Text>
+                            <Text className="text-gray-400">•</Text>
                             <View className="flex-row items-center gap-1">
                               <Ionicons name="flame" size={14} color="#EF4444" />
                               <Text className="text-gray-600 text-sm">
-                                {user.streak} dÃ­as
+                                {user.streak} días
                               </Text>
                             </View>
                           </View>

@@ -292,12 +292,12 @@ export default function CuttingBulking() {
           <View className="bg-purple-500/10 rounded-xl p-4 border border-purple-500/30 mb-6">
             <Text className="text-purple-400 font-bold mb-2">Cycling Tips</Text>
             <Text className="text-purple-300 text-sm">
-              â€¢ Bulk when lean (12-15% BF men){'\n'}
-              â€¢ Cut when necessary (18-20% BF men){'\n'}
-              â€¢ Diet breaks prevent metabolic adaptation{'\n'}
-              â€¢ Track weekly averages, not daily{'\n'}
-              â€¢ Adjust based on 2-week trends{'\n'}
-              â€¢ Patience: cycles take 3-6 months
+              • Bulk when lean (12-15% BF men){'\n'}
+              • Cut when necessary (18-20% BF men){'\n'}
+              • Diet breaks prevent metabolic adaptation{'\n'}
+              • Track weekly averages, not daily{'\n'}
+              • Adjust based on 2-week trends{'\n'}
+              • Patience: cycles take 3-6 months
             </Text>
           </View>
         </View>

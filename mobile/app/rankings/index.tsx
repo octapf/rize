@@ -84,9 +84,9 @@ export default function RankingsScreen() {
 
   const getRankIcon = (rank: number) => {
     switch (rank) {
-      case 1: return 'ðŸ¥‡';
-      case 2: return 'ðŸ¥ˆ';
-      case 3: return 'ðŸ¥‰';
+      case 1: return '🥇';
+      case 2: return '🥈';
+      case 3: return '🥉';
       default: return `#${rank}`;
     }
   };
@@ -96,7 +96,7 @@ export default function RankingsScreen() {
       case 'xp': return `${user.xp.toLocaleString()} XP`;
       case 'workouts': return `${user.workouts} workouts`;
       case 'volume': return `${(user.volume / 1000).toFixed(1)}k kg`;
-      case 'streak': return `${user.streak} dÃ­as`;
+      case 'streak': return `${user.streak} días`;
       default: return '';
     }
   };
@@ -180,7 +180,7 @@ export default function RankingsScreen() {
                       {leaderboard[1].avatar}
                     </Text>
                   </View>
-                  <Text className="text-4xl mb-1">ðŸ¥ˆ</Text>
+                  <Text className="text-4xl mb-1">🥈</Text>
                   <View className="bg-gray-200 w-full h-24 rounded-t-xl items-center justify-center">
                     <Text className="text-gray-900 font-bold text-center" numberOfLines={1}>
                       {leaderboard[1].username}
@@ -198,7 +198,7 @@ export default function RankingsScreen() {
                       {leaderboard[0].avatar}
                     </Text>
                   </View>
-                  <Text className="text-5xl mb-1">ðŸ¥‡</Text>
+                  <Text className="text-5xl mb-1">🥇</Text>
                   <View className="bg-highlight w-full h-32 rounded-t-xl items-center justify-center">
                     <Text className="text-yellow-900 font-bold text-center" numberOfLines={1}>
                       {leaderboard[0].username}
@@ -216,7 +216,7 @@ export default function RankingsScreen() {
                       {leaderboard[2].avatar}
                     </Text>
                   </View>
-                  <Text className="text-4xl mb-1">ðŸ¥‰</Text>
+                  <Text className="text-4xl mb-1">🥉</Text>
                   <View className="bg-orange-300 w-full h-20 rounded-t-xl items-center justify-center">
                     <Text className="text-orange-900 font-bold text-center" numberOfLines={1}>
                       {leaderboard[2].username}
@@ -284,7 +284,7 @@ export default function RankingsScreen() {
                           }`}
                         >
                           {userItem.username}
-                          {isCurrentUser && ' (TÃº)'}
+                          {isCurrentUser && ' (Tú)'}
                         </Text>
                         <Text className="text-gray-600 text-sm">
                           {getStatValue(userItem)}
@@ -304,7 +304,7 @@ export default function RankingsScreen() {
           {user && !leaderboard.some(u => u._id === user._id) && (
             <View className="mt-4">
               <Text className="text-gray-600 text-sm text-center mb-2">
-                Tu posiciÃ³n
+                Tu posición
               </Text>
               <Card className="p-4 border-2 border-primary bg-emerald-50">
                 <View className="flex-row items-center gap-4">
@@ -320,7 +320,7 @@ export default function RankingsScreen() {
                   </View>
                   <View className="flex-1">
                     <Text className="font-bold text-primary">
-                      {user.username} (TÃº)
+                      {user.username} (Tú)
                     </Text>
                     <Text className="text-primary text-sm">
                       {user.xp.toLocaleString()} XP

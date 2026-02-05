@@ -561,22 +561,22 @@ export default function AutoregulationSystems() {
           <View className="bg-gradient-to-r from-amber-500/20 to-orange-500/20 rounded-xl p-5 border border-amber-500/30 mb-6">
             <Text className="text-amber-400 font-bold text-lg mb-3">Quick Reference</Text>
             <Text className="text-amber-300 text-sm mb-2">
-              â€¢ RPE 10 = Max effort, nothing left
+              • RPE 10 = Max effort, nothing left
             </Text>
             <Text className="text-amber-300 text-sm mb-2">
-              â€¢ RPE 9 = 1 rep left in tank
+              • RPE 9 = 1 rep left in tank
             </Text>
             <Text className="text-amber-300 text-sm mb-2">
-              â€¢ RPE 8 = 2 reps left (most working sets)
+              • RPE 8 = 2 reps left (most working sets)
             </Text>
             <Text className="text-amber-300 text-sm mb-2">
-              â€¢ RIR = 10 minus RPE (same thing, different framing)
+              • RIR = 10 minus RPE (same thing, different framing)
             </Text>
             <Text className="text-amber-300 text-sm mb-2">
-              â€¢ VBT = Bar speed determines load
+              • VBT = Bar speed determines load
             </Text>
             <Text className="text-amber-300 text-sm">
-              â€¢ Takes 4-6 weeks to calibrate RPE/RIR - be patient
+              • Takes 4-6 weeks to calibrate RPE/RIR - be patient
             </Text>
           </View>
         </View>

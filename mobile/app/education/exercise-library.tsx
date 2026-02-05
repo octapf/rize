@@ -25,8 +25,8 @@ export default function ExerciseLibrary() {
       equipment: 'Barbell, Bench',
       primary: ['Pectoralis Major', 'Anterior Deltoid', 'Triceps'],
       secondary: ['Serratus Anterior', 'Lats'],
-      cues: ['Retract scapulae', 'Arch upper back', 'Bar to lower chest', 'Elbows 45-75Â°', 'Drive feet into ground'],
-      sets_reps: '4-5 sets Ã— 5-8 reps',
+      cues: ['Retract scapulae', 'Arch upper back', 'Bar to lower chest', 'Elbows 45-75°', 'Drive feet into ground'],
+      sets_reps: '4-5 sets × 5-8 reps',
       notes: 'King of chest exercises. Master this first.',
     },
     {
@@ -37,8 +37,8 @@ export default function ExerciseLibrary() {
       equipment: 'Dumbbells, Incline Bench',
       primary: ['Upper Pectoralis', 'Anterior Deltoid'],
       secondary: ['Triceps'],
-      cues: ['30-45Â° bench angle', 'Dumbbells at chest level', 'Press up and slightly together', 'Full ROM', 'Control descent'],
-      sets_reps: '3-4 sets Ã— 8-12 reps',
+      cues: ['30-45° bench angle', 'Dumbbells at chest level', 'Press up and slightly together', 'Full ROM', 'Control descent'],
+      sets_reps: '3-4 sets × 8-12 reps',
       notes: 'Best for upper chest development.',
     },
     {
@@ -49,8 +49,8 @@ export default function ExerciseLibrary() {
       equipment: 'Dip bars',
       primary: ['Lower Pectoralis', 'Triceps'],
       secondary: ['Anterior Deltoid'],
-      cues: ['Lean forward 20-30Â°', 'Elbows out', 'Lower until stretch', 'Don\'t go too deep', 'Explosive concentric'],
-      sets_reps: '3 sets Ã— 8-15 reps',
+      cues: ['Lean forward 20-30°', 'Elbows out', 'Lower until stretch', 'Don\'t go too deep', 'Explosive concentric'],
+      sets_reps: '3 sets × 8-15 reps',
       notes: 'Great for lower chest. Add weight when bodyweight is easy.',
     },
     // BACK
@@ -63,7 +63,7 @@ export default function ExerciseLibrary() {
       primary: ['Erector Spinae', 'Glutes', 'Hamstrings'],
       secondary: ['Lats', 'Traps', 'Forearms'],
       cues: ['Bar over mid-foot', 'Neutral spine', 'Push floor away', 'Bar against shins', 'Lock out hips'],
-      sets_reps: '3-5 sets Ã— 3-8 reps',
+      sets_reps: '3-5 sets × 3-8 reps',
       notes: 'King of posterior chain. High CNS demand.',
     },
     {
@@ -75,7 +75,7 @@ export default function ExerciseLibrary() {
       primary: ['Lats', 'Teres Major'],
       secondary: ['Biceps', 'Rhomboids', 'Rear Delts'],
       cues: ['Full hang', 'Pull elbows down', 'Chest to bar', 'Control descent', 'No kipping'],
-      sets_reps: '4 sets Ã— 6-12 reps',
+      sets_reps: '4 sets × 6-12 reps',
       notes: 'Best lat builder. Use assistance or weight as needed.',
     },
     {
@@ -87,7 +87,7 @@ export default function ExerciseLibrary() {
       primary: ['Rhomboids', 'Lats', 'Traps'],
       secondary: ['Erector Spinae', 'Biceps'],
       cues: ['Hip hinge position', 'Row to sternum', 'Squeeze scapulae', 'Control eccentric', 'Don\'t use momentum'],
-      sets_reps: '4 sets Ã— 6-10 reps',
+      sets_reps: '4 sets × 6-10 reps',
       notes: 'Classic back thickness builder.',
     },
     // SHOULDERS
@@ -100,7 +100,7 @@ export default function ExerciseLibrary() {
       primary: ['Anterior Deltoid', 'Lateral Deltoid', 'Triceps'],
       secondary: ['Upper Chest', 'Core'],
       cues: ['Bar on front delts', 'Press up and back', 'Head through at top', 'Lock elbows', 'Brace core'],
-      sets_reps: '4 sets Ã— 5-8 reps',
+      sets_reps: '4 sets × 5-8 reps',
       notes: 'Best shoulder mass builder. Strict form essential.',
     },
     {
@@ -112,7 +112,7 @@ export default function ExerciseLibrary() {
       primary: ['Lateral Deltoid'],
       secondary: ['Anterior Deltoid'],
       cues: ['Slight elbow bend', 'Raise to shoulder height', 'Lead with elbows', 'Control descent', 'Don\'t swing'],
-      sets_reps: '3-4 sets Ã— 12-20 reps',
+      sets_reps: '3-4 sets × 12-20 reps',
       notes: 'Best lateral delt isolation. High volume works well.',
     },
     {
@@ -124,7 +124,7 @@ export default function ExerciseLibrary() {
       primary: ['Posterior Deltoid', 'Rhomboids'],
       secondary: ['Rotator Cuff'],
       cues: ['Pull to face level', 'Externally rotate', 'Squeeze rear delts', 'High reps', 'Focus on feel'],
-      sets_reps: '3 sets Ã— 15-25 reps',
+      sets_reps: '3 sets × 15-25 reps',
       notes: 'Shoulder health essential. Do these often.',
     },
     // LEGS
@@ -137,7 +137,7 @@ export default function ExerciseLibrary() {
       primary: ['Quadriceps', 'Glutes', 'Hamstrings'],
       secondary: ['Erector Spinae', 'Core'],
       cues: ['Bar on traps', 'Brace hard', 'Hip crease below knee', 'Knees out', 'Drive through mid-foot'],
-      sets_reps: '4-5 sets Ã— 4-8 reps',
+      sets_reps: '4-5 sets × 4-8 reps',
       notes: 'King of leg exercises. Build your base here.',
     },
     {
@@ -149,7 +149,7 @@ export default function ExerciseLibrary() {
       primary: ['Hamstrings', 'Glutes'],
       secondary: ['Erector Spinae', 'Lats'],
       cues: ['Slight knee bend', 'Hip hinge', 'Bar down shins', 'Feel hamstring stretch', 'Squeeze glutes at top'],
-      sets_reps: '3-4 sets Ã— 8-12 reps',
+      sets_reps: '3-4 sets × 8-12 reps',
       notes: 'Best hamstring builder. Great for deadlift strength.',
     },
     {
@@ -161,7 +161,7 @@ export default function ExerciseLibrary() {
       primary: ['Quadriceps', 'Glutes'],
       secondary: ['Hamstrings', 'Core'],
       cues: ['Back foot elevated', 'Torso upright', 'Front knee tracks over toe', 'Lower under control', 'Drive through heel'],
-      sets_reps: '3 sets Ã— 8-12 reps per leg',
+      sets_reps: '3 sets × 8-12 reps per leg',
       notes: 'Excellent unilateral exercise. Fixes imbalances.',
     },
     // ARMS
@@ -174,7 +174,7 @@ export default function ExerciseLibrary() {
       primary: ['Biceps Brachii'],
       secondary: ['Brachialis', 'Brachioradialis'],
       cues: ['Elbows fixed', 'Full supination', 'Squeeze at top', 'Control descent', 'No swinging'],
-      sets_reps: '3-4 sets Ã— 8-12 reps',
+      sets_reps: '3-4 sets × 8-12 reps',
       notes: 'Classic bicep builder. Master the basics.',
     },
     {
@@ -186,7 +186,7 @@ export default function ExerciseLibrary() {
       primary: ['Triceps'],
       secondary: ['Pectoralis Major', 'Anterior Deltoid'],
       cues: ['Hands shoulder-width', 'Elbows close to body', 'Touch lower chest', 'Lock out fully', 'Control descent'],
-      sets_reps: '3-4 sets Ã— 6-10 reps',
+      sets_reps: '3-4 sets × 6-10 reps',
       notes: 'Best tricep mass builder. Heavy loading possible.',
     },
     // CORE
@@ -199,7 +199,7 @@ export default function ExerciseLibrary() {
       primary: ['Rectus Abdominis', 'Transverse Abdominis'],
       secondary: ['Obliques', 'Erector Spinae'],
       cues: ['Forearms down', 'Body straight', 'Squeeze glutes', 'Brace hard', 'Breathe'],
-      sets_reps: '3-4 sets Ã— 30-60 seconds',
+      sets_reps: '3-4 sets × 30-60 seconds',
       notes: 'Core stability fundamental. Progress to harder variations.',
     },
   ];
@@ -309,7 +309,7 @@ export default function ExerciseLibrary() {
                   <Text className="text-primary/80 font-bold mb-2">Form Cues</Text>
                   {exercise.cues.map((cue, idx) => (
                     <View key={idx} className="flex-row items-start mb-1">
-                      <Text className="text-primary/80 mr-2">â€¢</Text>
+                      <Text className="text-primary/80 mr-2">•</Text>
                       <Text className="text-zinc-300 text-sm flex-1">{cue}</Text>
                     </View>
                   ))}

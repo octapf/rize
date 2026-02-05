@@ -203,8 +203,8 @@ export default function PeriodizationPlans() {
                     <Text className="text-white font-bold">{phase.weeks}</Text>
                   </View>
                   <View className="flex-row justify-between">
-                    <Text className="text-zinc-400 text-sm">Sets Ã— Reps:</Text>
-                    <Text className="text-white font-bold">{phase.sets} Ã— {phase.reps}</Text>
+                    <Text className="text-zinc-400 text-sm">Sets × Reps:</Text>
+                    <Text className="text-white font-bold">{phase.sets} × {phase.reps}</Text>
                   </View>
                   <View className="flex-row justify-between">
                     <Text className="text-zinc-400 text-sm">Intensity:</Text>
@@ -242,11 +242,11 @@ export default function PeriodizationPlans() {
           <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
             <Text className="text-primary/80 font-bold mb-2">Key Principles</Text>
             <Text className="text-primary/60 text-sm">
-              â€¢ Progressive overload is mandatory{'\n'}
-              â€¢ Deload every 3-6 weeks{'\n'}
-              â€¢ Track all lifts meticulously{'\n'}
-              â€¢ Adjust based on feedback{'\n'}
-              â€¢ Consistency &gt; perfection
+              • Progressive overload is mandatory{'\n'}
+              • Deload every 3-6 weeks{'\n'}
+              • Track all lifts meticulously{'\n'}
+              • Adjust based on feedback{'\n'}
+              • Consistency &gt; perfection
             </Text>
           </View>
         </View>

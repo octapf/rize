@@ -291,12 +291,12 @@ export default function SupplementTiming() {
           <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
             <Text className="text-primary/80 font-bold mb-2">Timing Tips</Text>
             <Text className="text-primary/60 text-sm">
-              â€¢ Consistency &gt; perfect timing{'\n'}
-              â€¢ Creatine = anytime (daily saturation){'\n'}
-              â€¢ Caffeine = avoid late afternoon{'\n'}
-              â€¢ Fat-soluble vitamins with meals{'\n'}
-              â€¢ Pre-workout 30-45 min before{'\n'}
-              â€¢ Post-workout window = 2-4 hours (not 30 min)
+              • Consistency &gt; perfect timing{'\n'}
+              • Creatine = anytime (daily saturation){'\n'}
+              • Caffeine = avoid late afternoon{'\n'}
+              • Fat-soluble vitamins with meals{'\n'}
+              • Pre-workout 30-45 min before{'\n'}
+              • Post-workout window = 2-4 hours (not 30 min)
             </Text>
           </View>
         </View>

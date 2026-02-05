@@ -28,9 +28,9 @@ const RECOMMENDATIONS: WorkoutRecommendation[] = [
   {
     id: '1',
     type: 'recovery',
-    title: 'SesiÃ³n de RecuperaciÃ³n Activa',
+    title: 'Sesión de Recuperación Activa',
     description: 'Ejercicios de movilidad y trabajo ligero',
-    reason: 'Tu fatiga muscular estÃ¡ alta (8/10). Necesitas recuperaciÃ³n.',
+    reason: 'Tu fatiga muscular está alta (8/10). Necesitas recuperación.',
     confidence: 94,
     workout: {
       name: 'Movilidad y Estiramientos',
@@ -44,7 +44,7 @@ const RECOMMENDATIONS: WorkoutRecommendation[] = [
     type: 'intensity',
     title: 'Entrenamiento de Fuerza',
     description: 'Enfoque en levantamientos pesados con bajo volumen',
-    reason: 'Llevas 3 semanas sin trabajar mÃ¡ximos. Momento ideal.',
+    reason: 'Llevas 3 semanas sin trabajar máximos. Momento ideal.',
     confidence: 87,
     workout: {
       name: 'Fuerza 5x3',
@@ -57,8 +57,8 @@ const RECOMMENDATIONS: WorkoutRecommendation[] = [
     id: '3',
     type: 'volume',
     title: 'Alto Volumen - Hipertrofia',
-    description: 'MÃºltiples series para maximizar crecimiento muscular',
-    reason: 'Tu recuperaciÃ³n es Ã³ptima. Puedes tolerar mÃ¡s volumen.',
+    description: 'Múltiples series para maximizar crecimiento muscular',
+    reason: 'Tu recuperación es óptima. Puedes tolerar más volumen.',
     confidence: 82,
     workout: {
       name: 'Hipertrofia Push 4x12',
@@ -118,13 +118,13 @@ export default function SmartRecommendations() {
   const startWorkout = (recommendation: WorkoutRecommendation) => {
     Alert.alert(
       'Iniciar Entrenamiento',
-      `${recommendation.workout.name}\n\nDuraciÃ³n: ${recommendation.workout.duration} min\nEjercicios: ${recommendation.workout.exercises}\n\nÂ¿Comenzar ahora?`,
+      `${recommendation.workout.name}\n\nDuración: ${recommendation.workout.duration} min\nEjercicios: ${recommendation.workout.exercises}\n\n¿Comenzar ahora?`,
       [
         { text: 'Cancelar', style: 'cancel' },
         {
           text: 'Iniciar',
           onPress: () => {
-            Alert.alert('Â¡Entrenamiento Iniciado!', 'Ve a la pestaÃ±a de entrenamientos para continuar');
+            Alert.alert('¡Entrenamiento Iniciado!', 'Ve a la pestaña de entrenamientos para continuar');
             router.push('/workouts/active');
           },
         },
@@ -135,11 +135,11 @@ export default function SmartRecommendations() {
   const customizeWorkout = (recommendation: WorkoutRecommendation) => {
     Alert.alert(
       'Personalizar',
-      'Selecciona quÃ© deseas modificar',
+      'Selecciona qué deseas modificar',
       [
-        { text: 'Cambiar Ejercicios', onPress: () => Alert.alert('Ejercicios', 'PrÃ³ximamente') },
-        { text: 'Ajustar Volumen', onPress: () => Alert.alert('Volumen', 'PrÃ³ximamente') },
-        { text: 'Modificar Intensidad', onPress: () => Alert.alert('Intensidad', 'PrÃ³ximamente') },
+        { text: 'Cambiar Ejercicios', onPress: () => Alert.alert('Ejercicios', 'Próximamente') },
+        { text: 'Ajustar Volumen', onPress: () => Alert.alert('Volumen', 'Próximamente') },
+        { text: 'Modificar Intensidad', onPress: () => Alert.alert('Intensidad', 'Próximamente') },
         { text: 'Cancelar', style: 'cancel' },
       ]
     );
@@ -147,8 +147,8 @@ export default function SmartRecommendations() {
 
   const explainRecommendation = (recommendation: WorkoutRecommendation) => {
     Alert.alert(
-      'Â¿Por quÃ© esta recomendaciÃ³n?',
-      `Basado en:\n\nâ€¢ Nivel de fatiga actual\nâ€¢ Historial de entrenamientos\nâ€¢ Objetivos establecidos\nâ€¢ Tiempo desde Ãºltimo entrenamiento similar\nâ€¢ MÃ©tricas de recuperaciÃ³n\n\nConfianza: ${recommendation.confidence}%`,
+      '¿Por qué esta recomendación?',
+      `Basado en:\n\n• Nivel de fatiga actual\n• Historial de entrenamientos\n• Objetivos establecidos\n• Tiempo desde último entrenamiento similar\n• Métricas de recuperación\n\nConfianza: ${recommendation.confidence}%`,
       [{ text: 'Entendido' }]
     );
   };
@@ -178,7 +178,7 @@ export default function SmartRecommendations() {
                 <Text className="text-white font-bold">IA Analizando</Text>
               </View>
               <Text className="text-white/80 text-sm">
-                Basado en tus Ãºltimos 30 entrenamientos
+                Basado en tus últimos 30 entrenamientos
               </Text>
             </View>
             <View className="bg-white/20 rounded-full p-3">
@@ -194,7 +194,7 @@ export default function SmartRecommendations() {
           <View className="flex-row items-center mb-3">
             <Ionicons name="star" size={20} color="#FFEA00" />
             <Text className="text-white font-bold text-lg ml-2">
-              Mejor OpciÃ³n para Hoy
+              Mejor Opción para Hoy
             </Text>
           </View>
 
@@ -242,7 +242,7 @@ export default function SmartRecommendations() {
                 </Text>
                 <View className="flex-row gap-2">
                   <View className="flex-1 bg-zinc-900 rounded p-2">
-                    <Text className="text-zinc-400 text-xs">DuraciÃ³n</Text>
+                    <Text className="text-zinc-400 text-xs">Duración</Text>
                     <Text className="text-white font-bold">
                       {RECOMMENDATIONS[0].workout.duration} min
                     </Text>
@@ -333,7 +333,7 @@ export default function SmartRecommendations() {
               {selectedRecommendation === recommendation.id && (
                 <>
                   <View className="bg-zinc-800 rounded-lg p-3 mb-3">
-                    <Text className="text-zinc-400 text-xs mb-2">RazÃ³n</Text>
+                    <Text className="text-zinc-400 text-xs mb-2">Razón</Text>
                     <Text className="text-white text-sm">{recommendation.reason}</Text>
                   </View>
 
@@ -343,7 +343,7 @@ export default function SmartRecommendations() {
                     </Text>
                     <View className="flex-row gap-2">
                       <View className="flex-1 bg-zinc-900 rounded p-2">
-                        <Text className="text-zinc-400 text-xs">DuraciÃ³n</Text>
+                        <Text className="text-zinc-400 text-xs">Duración</Text>
                         <Text className="text-white font-semibold text-sm">
                           {recommendation.workout.duration} min
                         </Text>
@@ -400,9 +400,9 @@ export default function SmartRecommendations() {
           <TouchableOpacity className="bg-zinc-900 rounded-xl p-4 mb-3 border border-zinc-800">
             <View className="flex-row items-center justify-between">
               <View className="flex-1">
-                <Text className="text-white font-semibold">DÃ­as Disponibles</Text>
+                <Text className="text-white font-semibold">Días Disponibles</Text>
                 <Text className="text-zinc-400 text-sm mt-1">
-                  Lun, MiÃ©, Vie, SÃ¡b
+                  Lun, Mié, Vie, Sáb
                 </Text>
               </View>
               <Ionicons name="chevron-forward" size={20} color="#71717A" />

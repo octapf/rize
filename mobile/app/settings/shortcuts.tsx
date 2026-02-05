@@ -28,7 +28,7 @@ interface Shortcut {
 const defaultShortcuts: Shortcut[] = [
   {
     id: 'quick-workout',
-    name: 'Workout RÃ¡pido',
+    name: 'Workout Rápido',
     icon: 'flash',
     action: '/workouts/quick-start',
     enabled: true,
@@ -36,7 +36,7 @@ const defaultShortcuts: Shortcut[] = [
   },
   {
     id: 'last-workout',
-    name: 'Repetir Ãšltimo',
+    name: 'Repetir Último',
     icon: 'refresh',
     action: '/workouts/repeat-last',
     enabled: true,
@@ -123,7 +123,7 @@ export default function ShortcutsScreen() {
   const resetToDefault = () => {
     Alert.alert(
       'Restablecer Atajos',
-      'Â¿EstÃ¡s seguro de que quieres restablecer los atajos a los valores predeterminados?',
+      '¿Estás seguro de que quieres restablecer los atajos a los valores predeterminados?',
       [
         { text: 'Cancelar', style: 'cancel' },
         {
@@ -143,14 +143,14 @@ export default function ShortcutsScreen() {
           <TouchableOpacity onPress={() => router.back()} className="p-2">
             <Ionicons name="arrow-back" size={28} color="white" />
           </TouchableOpacity>
-          <Text className="text-2xl font-bold text-white">Atajos RÃ¡pidos</Text>
+          <Text className="text-2xl font-bold text-white">Atajos Rápidos</Text>
           <TouchableOpacity onPress={resetToDefault} className="p-2">
             <Ionicons name="refresh" size={24} color="white" />
           </TouchableOpacity>
         </View>
 
         <Text className="text-purple-100 text-center">
-          Personaliza tus acciones rÃ¡pidas
+          Personaliza tus acciones rápidas
         </Text>
       </LinearGradient>
 
@@ -160,7 +160,7 @@ export default function ShortcutsScreen() {
           <View className="flex-row items-start gap-3">
             <Ionicons name="information-circle" size={24} color="#9D12DE" />
             <Text className="flex-1 text-text/80 text-sm">
-              Los atajos habilitados aparecerÃ¡n en el widget de acceso rÃ¡pido en la pantalla principal.
+              Los atajos habilitados aparecerán en el widget de acceso rápido en la pantalla principal.
               Activa solo los que uses frecuentemente.
             </Text>
           </View>
@@ -216,7 +216,7 @@ export default function ShortcutsScreen() {
 
           <Card className="p-4">
             <Text className="text-gray-700 font-semibold mb-3">
-              Acciones RÃ¡pidas
+              Acciones Rápidas
             </Text>
 
             {shortcuts.filter(s => s.enabled).length === 0 ? (

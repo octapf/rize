@@ -244,16 +244,16 @@ export default function StrengthCalculators() {
           <View className="bg-amber-500/10 rounded-xl p-4 border border-amber-500/30 mb-6">
             <Text className="text-amber-400 font-bold mb-2">Important Notes</Text>
             <Text className="text-amber-300 text-sm mb-2">
-              â€¢ 1RM calculators are estimates, not exact measurements
+              • 1RM calculators are estimates, not exact measurements
             </Text>
             <Text className="text-amber-300 text-sm mb-2">
-              â€¢ Most accurate for 3-8 rep range
+              • Most accurate for 3-8 rep range
             </Text>
             <Text className="text-amber-300 text-sm mb-2">
-              â€¢ Standards vary by federation, gender, and age
+              • Standards vary by federation, gender, and age
             </Text>
             <Text className="text-amber-300 text-sm">
-              â€¢ Use as general guidelines, not absolute truth
+              • Use as general guidelines, not absolute truth
             </Text>
           </View>
         </View>

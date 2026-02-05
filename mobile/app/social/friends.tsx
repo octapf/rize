@@ -40,7 +40,7 @@ export default function FriendsScreen() {
   const handleChallengeUser = (friendId: string, username: string) => {
     Alert.alert(
       'Crear Reto',
-      `Â¿Quieres retar a @${username}?`,
+      `¿Quieres retar a @${username}?`,
       [
         { text: 'Cancelar', style: 'cancel' },
         {
@@ -161,7 +161,7 @@ export default function FriendsScreen() {
                 <Text className="text-center text-gray-500 font-medium">
                   {searchQuery
                     ? 'No se encontraron amigos'
-                    : 'AÃºn no tienes amigos'}
+                    : 'Aún no tienes amigos'}
                 </Text>
                 {!searchQuery && (
                   <Button
@@ -192,7 +192,7 @@ export default function FriendsScreen() {
                         @{friend.username}
                       </Text>
                       <Text className="text-gray-500 text-sm">
-                        Nivel {Math.floor((friend.xp || 0) / 100) + 1} â€¢ {friend.xp || 0} XP
+                        Nivel {Math.floor((friend.xp || 0) / 100) + 1} • {friend.xp || 0} XP
                       </Text>
                     </View>
                   </TouchableOpacity>

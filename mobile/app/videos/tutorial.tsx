@@ -28,48 +28,48 @@ interface VideoTutorial {
 const TUTORIAL_DATA: { [key: string]: VideoTutorial } = {
   'pull-ups': {
     id: 'pull-ups',
-    title: 'Dominadas - TÃ©cnica Perfecta',
+    title: 'Dominadas - Técnica Perfecta',
     duration: '8:45',
     difficulty: 'intermediate',
-    description: 'Aprende la tÃ©cnica correcta para realizar dominadas estrictas, maximizando la activaciÃ³n muscular y minimizando el riesgo de lesiones.',
+    description: 'Aprende la técnica correcta para realizar dominadas estrictas, maximizando la activación muscular y minimizando el riesgo de lesiones.',
     keyPoints: [
-      'Agarre prono (palmas hacia adelante) ligeramente mÃ¡s ancho que los hombros',
-      'Iniciar el movimiento con retracciÃ³n escapular (juntar omÃ³platos)',
-      'Tirar con los codos, no con los bÃ­ceps como mÃºsculo principal',
-      'Barbilla sobre la barra en la posiciÃ³n superior',
-      'Descenso controlado hasta extensiÃ³n completa',
+      'Agarre prono (palmas hacia adelante) ligeramente más ancho que los hombros',
+      'Iniciar el movimiento con retracción escapular (juntar omóplatos)',
+      'Tirar con los codos, no con los bíceps como músculo principal',
+      'Barbilla sobre la barra en la posición superior',
+      'Descenso controlado hasta extensión completa',
       'Evitar balanceo y kipping (movimiento estricto)',
     ],
     commonMistakes: [
-      'No extender completamente los brazos en la posiciÃ³n inferior',
+      'No extender completamente los brazos en la posición inferior',
       'Usar impulso de piernas (kipping) en lugar de fuerza pura',
       'Hombros encogidos durante todo el movimiento',
       'No activar el core, causando arqueamiento de espalda',
-      'Descenso rÃ¡pido sin control',
+      'Descenso rápido sin control',
     ],
     videoUrl: 'https://example.com/videos/pull-ups-tutorial.mp4',
     thumbnailUrl: 'https://example.com/thumbnails/pull-ups.jpg',
   },
   'muscle-up': {
     id: 'muscle-up',
-    title: 'Muscle-Up - ProgresiÃ³n Completa',
+    title: 'Muscle-Up - Progresión Completa',
     duration: '12:30',
     difficulty: 'advanced',
-    description: 'Domina el muscle-up con esta progresiÃ³n paso a paso, desde los pre-requisitos hasta la ejecuciÃ³n perfecta.',
+    description: 'Domina el muscle-up con esta progresión paso a paso, desde los pre-requisitos hasta la ejecución perfecta.',
     keyPoints: [
       'Requisito: 15+ dominadas estrictas y 20+ fondos en paralelas',
       'Fase 1: Pull-up explosivo con pecho a la barra',
-      'Fase 2: TransiciÃ³n rÃ¡pida llevando hombros sobre la barra',
-      'Fase 3: Press-out como un dip hasta extensiÃ³n completa',
+      'Fase 2: Transición rápida llevando hombros sobre la barra',
+      'Fase 3: Press-out como un dip hasta extensión completa',
       'False grip opcional pero recomendado para principiantes',
-      'Timing explosivo en el tirÃ³n inicial',
+      'Timing explosivo en el tirón inicial',
     ],
     commonMistakes: [
       'Intentar el muscle-up sin fuerza base suficiente',
-      'Separar mucho los codos durante la transiciÃ³n',
+      'Separar mucho los codos durante la transición',
       'No generar suficiente impulso en el pull inicial',
-      'Perder tensiÃ³n durante la transiciÃ³n',
-      'PosiciÃ³n de muÃ±ecas incorrecta',
+      'Perder tensión durante la transición',
+      'Posición de muñecas incorrecta',
     ],
     videoUrl: 'https://example.com/videos/muscle-up-tutorial.mp4',
     thumbnailUrl: 'https://example.com/thumbnails/muscle-up.jpg',
@@ -248,12 +248,12 @@ export default function VideoTutorial() {
 
         {/* Video Chapters */}
         <View className="px-6 py-4 border-b border-zinc-800">
-          <Text className="text-white font-bold text-lg mb-3">CapÃ­tulos</Text>
+          <Text className="text-white font-bold text-lg mb-3">Capítulos</Text>
           {[
-            { time: 0, title: 'IntroducciÃ³n', duration: '0:45' },
-            { time: 45, title: 'PosiciÃ³n Inicial', duration: '1:30' },
-            { time: 135, title: 'Fase ConcÃ©ntrica', duration: '2:15' },
-            { time: 270, title: 'Fase ExcÃ©ntrica', duration: '1:45' },
+            { time: 0, title: 'Introducción', duration: '0:45' },
+            { time: 45, title: 'Posición Inicial', duration: '1:30' },
+            { time: 135, title: 'Fase Concéntrica', duration: '2:15' },
+            { time: 270, title: 'Fase Excéntrica', duration: '1:45' },
             { time: 375, title: 'Errores Comunes', duration: '2:30' },
           ].map((chapter, index) => (
             <TouchableOpacity

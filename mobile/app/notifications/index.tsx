@@ -130,7 +130,7 @@ export default function NotificationsScreen() {
         {unreadCount > 0 && (
           <View className="bg-white/10 rounded-lg p-3">
             <Text className="text-white text-sm text-center">
-              Tienes <Text className="font-bold">{unreadCount}</Text> notificaciÃ³n{unreadCount !== 1 ? 'es' : ''} sin leer
+              Tienes <Text className="font-bold">{unreadCount}</Text> notificación{unreadCount !== 1 ? 'es' : ''} sin leer
             </Text>
           </View>
         )}
@@ -163,7 +163,7 @@ export default function NotificationsScreen() {
               filter === 'unread' ? 'text-primary' : 'text-gray-500'
             }`}
           >
-            No leÃ­das {unreadCount > 0 && `(${unreadCount})`}
+            No leídas {unreadCount > 0 && `(${unreadCount})`}
           </Text>
         </TouchableOpacity>
       </View>

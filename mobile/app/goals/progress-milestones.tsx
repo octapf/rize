@@ -281,23 +281,23 @@ export default function ProgressMilestones() {
           <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
             <Text className="text-primary font-bold mb-2">Milestone Benefits</Text>
             <Text className="text-primary/80 text-sm">
-              âœ“ Keeps motivation high{'\n'}
-              âœ“ Provides clear targets{'\n'}
-              âœ“ Celebrates progress{'\n'}
-              âœ“ Builds confidence{'\n'}
-              âœ“ Documents journey
+              ✓ Keeps motivation high{'\n'}
+              ✓ Provides clear targets{'\n'}
+              ✓ Celebrates progress{'\n'}
+              ✓ Builds confidence{'\n'}
+              ✓ Documents journey
             </Text>
           </View>
 
           <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
             <Text className="text-primary/80 font-bold mb-2">How to Use Milestones</Text>
             <Text className="text-primary/60 text-sm">
-              â€¢ Pick 1-3 milestones to chase{'\n'}
-              â€¢ Break into smaller weekly goals{'\n'}
-              â€¢ Track attempts and near-misses{'\n'}
-              â€¢ Celebrate when you hit them{'\n'}
-              â€¢ Share wins with community{'\n'}
-              â€¢ Move to next challenge
+              • Pick 1-3 milestones to chase{'\n'}
+              • Break into smaller weekly goals{'\n'}
+              • Track attempts and near-misses{'\n'}
+              • Celebrate when you hit them{'\n'}
+              • Share wins with community{'\n'}
+              • Move to next challenge
             </Text>
           </View>
         </View>

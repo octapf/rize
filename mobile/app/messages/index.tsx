@@ -35,9 +35,9 @@ const mockConversations: Conversation[] = [
   {
     id: '1',
     userId: '1',
-    userName: 'Carlos GarcÃ­a',
+    userName: 'Carlos García',
     userAvatar: 'C',
-    lastMessage: 'Â¡Excelente entrenamiento hoy! ðŸ’ª',
+    lastMessage: '¡Excelente entrenamiento hoy! ðŸ’ª',
     timestamp: new Date(2026, 0, 26, 14, 30),
     unreadCount: 2,
     isOnline: true,
@@ -45,9 +45,9 @@ const mockConversations: Conversation[] = [
   {
     id: '2',
     userId: '2',
-    userName: 'MarÃ­a LÃ³pez',
+    userName: 'María López',
     userAvatar: 'M',
-    lastMessage: 'Â¿Vamos al gym maÃ±ana?',
+    lastMessage: '¿Vamos al gym mañana?',
     timestamp: new Date(2026, 0, 26, 10, 15),
     unreadCount: 0,
     isOnline: true,
@@ -55,7 +55,7 @@ const mockConversations: Conversation[] = [
   {
     id: '3',
     userId: '3',
-    userName: 'Juan PÃ©rez',
+    userName: 'Juan Pérez',
     userAvatar: 'J',
     lastMessage: 'Gracias por los consejos',
     timestamp: new Date(2026, 0, 25, 18, 45),
@@ -89,8 +89,8 @@ export default function MessagesScreen() {
 
   const handleDeleteConversation = (conversationId: string) => {
     Alert.alert(
-      'Eliminar ConversaciÃ³n',
-      'Â¿EstÃ¡s seguro? No podrÃ¡s recuperar los mensajes.',
+      'Eliminar Conversación',
+      '¿Estás seguro? No podrás recuperar los mensajes.',
       [
         { text: 'Cancelar', style: 'cancel' },
         {
@@ -137,7 +137,7 @@ export default function MessagesScreen() {
               No hay conversaciones
             </Text>
             <Text className="text-gray-600 text-center mt-2">
-              Inicia una conversaciÃ³n con tus amigos
+              Inicia una conversación con tus amigos
             </Text>
           </Card>
         ) : (

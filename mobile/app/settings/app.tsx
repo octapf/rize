@@ -76,10 +76,10 @@ export default function AppSettings() {
   const changeProfileVisibility = () => {
     Alert.alert(
       'Visibilidad de Perfil',
-      'Elige quiÃ©n puede ver tu perfil',
+      '¿Quién puede ver tu perfil?',
       [
         {
-          text: 'PÃºblico',
+          text: 'Público',
           onPress: () => setPrivacy({ ...privacy, profileVisibility: 'public' }),
         },
         {
@@ -100,9 +100,9 @@ export default function AppSettings() {
       'Idioma',
       'Selecciona tu idioma preferido',
       [
-        { text: 'EspaÃ±ol', onPress: () => setApp({ ...app, language: 'es' }) },
+        { text: 'Español', onPress: () => setApp({ ...app, language: 'es' }) },
         { text: 'English', onPress: () => setApp({ ...app, language: 'en' }) },
-        { text: 'PortuguÃªs', onPress: () => setApp({ ...app, language: 'pt' }) },
+        { text: 'Portugués', onPress: () => setApp({ ...app, language: 'pt' }) },
         { text: 'Cancelar', style: 'cancel' },
       ]
     );
@@ -114,7 +114,7 @@ export default function AppSettings() {
       'Elige tu sistema preferido',
       [
         {
-          text: 'MÃ©trico (kg, cm)',
+          text: 'Métrico (kg, cm)',
           onPress: () => setApp({ ...app, metricSystem: 'metric' }),
         },
         {
@@ -132,15 +132,15 @@ export default function AppSettings() {
       'Descarga todos tus datos de entrenamiento',
       [
         { text: 'Cancelar', style: 'cancel' },
-        { text: 'Exportar', onPress: () => Alert.alert('Exportando...', 'Se enviarÃ¡ a tu email') },
+        { text: 'Exportar', onPress: () => Alert.alert('Exportando...', 'Se enviará a tu email') },
       ]
     );
   };
 
   const deleteAccount = () => {
     Alert.alert(
-      'âš ï¸ Eliminar Cuenta',
-      'Esta acciÃ³n es permanente. Todos tus datos serÃ¡n eliminados.\n\nÂ¿EstÃ¡s seguro?',
+      '⚠️ Eliminar Cuenta',
+      'Esta acción es permanente. Todos tus datos serán eliminados.\n\n¿Estás seguro?',
       [
         { text: 'Cancelar', style: 'cancel' },
         {
@@ -155,7 +155,7 @@ export default function AppSettings() {
   const getVisibilityLabel = (visibility: string) => {
     switch (visibility) {
       case 'public':
-        return 'PÃºblico';
+        return 'Público';
       case 'friends':
         return 'Solo Amigos';
       case 'private':
@@ -168,11 +168,11 @@ export default function AppSettings() {
   const getLanguageLabel = (lang: string) => {
     switch (lang) {
       case 'es':
-        return 'EspaÃ±ol';
+        return 'Español';
       case 'en':
         return 'English';
       case 'pt':
-        return 'PortuguÃªs';
+        return 'Portugués';
       default:
         return lang;
     }
@@ -187,7 +187,7 @@ export default function AppSettings() {
             <Ionicons name="arrow-back" size={24} color="white" />
           </TouchableOpacity>
           <Text className="text-white text-2xl font-bold flex-1 ml-3">
-            ConfiguraciÃ³n
+            Configuración
           </Text>
           <TouchableOpacity>
             <Ionicons name="help-circle-outline" size={24} color="white" />
@@ -250,7 +250,7 @@ export default function AppSettings() {
                 <View className="flex-1">
                   <Text className="text-white font-bold mb-1">Sistema de Medidas</Text>
                   <Text className="text-zinc-400 text-sm">
-                    {app.metricSystem === 'metric' ? 'MÃ©trico (kg, cm)' : 'Imperial (lb, in)'}
+                    {app.metricSystem === 'metric' ? 'Métrico (kg, cm)' : 'Imperial (lb, in)'}
                   </Text>
                 </View>
                 <Ionicons name="chevron-forward" size={20} color="#71717A" />
@@ -275,7 +275,7 @@ export default function AppSettings() {
                 <View className="flex-1">
                   <Text className="text-white font-bold mb-1">Auto-Play Videos</Text>
                   <Text className="text-zinc-400 text-sm">
-                    Reproduce videos automÃ¡ticamente
+                    Reproduce videos automáticamente
                   </Text>
                 </View>
                 <Switch
@@ -288,7 +288,7 @@ export default function AppSettings() {
 
               <View className="flex-row items-center justify-between mb-4 pb-4 border-b border-zinc-800">
                 <View className="flex-1">
-                  <Text className="text-white font-bold mb-1">GuÃ­a de Voz</Text>
+                  <Text className="text-white font-bold mb-1">Guía de Voz</Text>
                   <Text className="text-zinc-400 text-sm">
                     Instrucciones por voz durante workouts
                   </Text>
@@ -303,9 +303,9 @@ export default function AppSettings() {
 
               <View className="flex-row items-center justify-between">
                 <View className="flex-1">
-                  <Text className="text-white font-bold mb-1">VibraciÃ³n HÃ¡ptica</Text>
+                  <Text className="text-white font-bold mb-1">Vibración Háptica</Text>
                   <Text className="text-zinc-400 text-sm">
-                    Feedback tÃ¡ctil en la app
+                    Feedback táctil en la app
                   </Text>
                 </View>
                 <Switch
@@ -357,7 +357,7 @@ export default function AppSettings() {
                 <View className="flex-1">
                   <Text className="text-white font-bold mb-1">Mostrar Progreso</Text>
                   <Text className="text-zinc-400 text-sm">
-                    Comparte tus mÃ©tricas y logros
+                    Comparte tus métricas y logros
                   </Text>
                 </View>
                 <Switch
@@ -372,9 +372,9 @@ export default function AppSettings() {
 
               <View className="flex-row items-center justify-between mb-4 pb-4 border-b border-zinc-800">
                 <View className="flex-1">
-                  <Text className="text-white font-bold mb-1">Mostrar UbicaciÃ³n</Text>
+                  <Text className="text-white font-bold mb-1">Mostrar Ubicación</Text>
                   <Text className="text-zinc-400 text-sm">
-                    Comparte tu ubicaciÃ³n de gym
+                    Comparte tu ubicación de gym
                   </Text>
                 </View>
                 <Switch
@@ -408,7 +408,7 @@ export default function AppSettings() {
                 <View className="flex-1">
                   <Text className="text-white font-bold mb-1">Aparecer en Leaderboards</Text>
                   <Text className="text-zinc-400 text-sm">
-                    Muestra tu ranking en desafÃ­os
+                    Muestra tu ranking en desafíos
                   </Text>
                 </View>
                 <Switch
@@ -481,7 +481,7 @@ export default function AppSettings() {
 
               <View className="flex-row items-center justify-between mb-4 pb-4 border-b border-zinc-800">
                 <View className="flex-1">
-                  <Text className="text-white font-bold mb-1">Actualizaciones de DesafÃ­os</Text>
+                  <Text className="text-white font-bold mb-1">Actualizaciones de Desafíos</Text>
                   <Text className="text-zinc-400 text-sm">
                     Progreso en challenges activos
                   </Text>
@@ -517,7 +517,7 @@ export default function AppSettings() {
                 <View className="flex-1">
                   <Text className="text-white font-bold mb-1">Frases Motivacionales</Text>
                   <Text className="text-zinc-400 text-sm">
-                    InspiraciÃ³n diaria
+                    Inspiración diaria
                   </Text>
                 </View>
                 <Switch
@@ -557,7 +557,7 @@ export default function AppSettings() {
           <TouchableOpacity className="bg-zinc-900 rounded-xl p-4 border border-zinc-800 mb-3">
             <View className="flex-row items-center">
               <Ionicons name="document-text" size={20} color="#FFEA00" />
-              <Text className="text-white font-bold ml-3">TÃ©rminos y Privacidad</Text>
+              <Text className="text-white font-bold ml-3">Términos y Privacidad</Text>
             </View>
           </TouchableOpacity>
 

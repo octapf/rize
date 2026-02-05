@@ -554,16 +554,16 @@ export default function ProgramDesignFramework() {
           <View className="bg-gradient-to-r from-emerald-500/20 to-teal-500/20 rounded-xl p-5 border border-primary/30 mb-6">
             <Text className="text-primary font-bold text-lg mb-3">Design Principles</Text>
             <Text className="text-primary/80 text-sm mb-2">
-              â€¢ Specificity - train the competition lifts
+              • Specificity - train the competition lifts
             </Text>
             <Text className="text-primary/80 text-sm mb-2">
-              â€¢ Progressive overload - add weight/reps/sets over time
+              • Progressive overload - add weight/reps/sets over time
             </Text>
             <Text className="text-primary/80 text-sm mb-2">
-              â€¢ Variation - prevent adaptation and overuse
+              • Variation - prevent adaptation and overuse
             </Text>
             <Text className="text-primary/80 text-sm">
-              â€¢ Recovery - program deloads and manage fatigue
+              • Recovery - program deloads and manage fatigue
             </Text>
           </View>
         </View>

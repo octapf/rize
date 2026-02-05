@@ -31,7 +31,7 @@ export default function HealthKitSync() {
   const exportToHealth = () => {
     Alert.alert(
       'Exportar a Health App',
-      'Tus workouts se exportarÃ¡n automÃ¡ticamente a HealthKit.',
+      'Tus workouts se exportarán automáticamente a HealthKit.',
       [{ text: 'OK' }]
     );
   };
@@ -59,7 +59,7 @@ export default function HealthKitSync() {
             <View className="flex-row items-center">
               <Ionicons name="heart-circle" size={24} color="white" />
               <Text className="text-white ml-2">
-                {dataCategories.filter(d => d.enabled).length} categorÃ­as activas
+                {dataCategories.filter(d => d.enabled).length} categorías activas
               </Text>
             </View>
           </View>
@@ -71,7 +71,7 @@ export default function HealthKitSync() {
             <View className="flex-row items-center flex-1">
               <Ionicons name="sync" size={24} color="#9D12DE" />
               <View className="ml-3 flex-1">
-                <Text className="text-white font-bold">SincronizaciÃ³n Activa</Text>
+                <Text className="text-white font-bold">Sincronización Activa</Text>
                 <Text className="text-zinc-400 text-sm">Importar datos de HealthKit</Text>
               </View>
             </View>
@@ -88,7 +88,7 @@ export default function HealthKitSync() {
               <Ionicons name="cloud-upload" size={24} color="#9D12DE" />
               <View className="ml-3 flex-1">
                 <Text className="text-white font-bold">Auto-Sync</Text>
-                <Text className="text-zinc-400 text-sm">Exportar workouts automÃ¡ticamente</Text>
+                <Text className="text-zinc-400 text-sm">Exportar workouts automáticamente</Text>
               </View>
             </View>
             <View className={`w-12 h-6 rounded-full ${autoSync ? 'bg-primary' : 'bg-zinc-700'}`}>
@@ -96,7 +96,7 @@ export default function HealthKitSync() {
             </View>
           </TouchableOpacity>
 
-          <Text className="text-white font-bold text-lg mb-4">CategorÃ­as de Datos</Text>
+          <Text className="text-white font-bold text-lg mb-4">Categorías de Datos</Text>
 
           {dataCategories.map((category) => (
             <View
@@ -148,11 +148,11 @@ export default function HealthKitSync() {
               <View className="flex-1 ml-3">
                 <Text className="text-primary/80 font-bold mb-2">Sync Bidireccional</Text>
                 <Text className="text-primary/60 text-sm">
-                  â€¢ Importa datos de HealthKit automÃ¡ticamente{'\n'}
-                  â€¢ Exporta workouts a la app Salud{'\n'}
-                  â€¢ SincronizaciÃ³n en tiempo real{'\n'}
-                  â€¢ Datos encriptados end-to-end{'\n'}
-                  â€¢ Compatible con todos los wearables de Apple
+                  • Importa datos de HealthKit automáticamente{'\n'}
+                  • Exporta workouts a la app Salud{'\n'}
+                  • Sincronización en tiempo real{'\n'}
+                  • Datos encriptados end-to-end{'\n'}
+                  • Compatible con todos los wearables de Apple
                 </Text>
               </View>
             </View>

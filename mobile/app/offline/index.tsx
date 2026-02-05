@@ -36,7 +36,7 @@ export default function OfflineMode() {
   const [offlineWorkouts, setOfflineWorkouts] = useState<OfflineWorkout[]>([
     {
       id: '1',
-      name: 'Empuje - DÃ­a 1',
+      name: 'Empuje - Día 1',
       timestamp: '2025-01-20 18:30',
       exercises: 6,
       sets: 24,
@@ -44,7 +44,7 @@ export default function OfflineMode() {
     },
     {
       id: '2',
-      name: 'TracciÃ³n - DÃ­a 2',
+      name: 'Tracción - Día 2',
       timestamp: '2025-01-21 19:00',
       exercises: 5,
       sets: 20,
@@ -95,14 +95,14 @@ export default function OfflineMode() {
     if (!offlineMode) {
       Alert.alert(
         'Activar Modo Offline',
-        'Los datos se guardarÃ¡n localmente y se sincronizarÃ¡n cuando vuelvas a conectarte.',
+        'Los datos se guardarán localmente y se sincronizarán cuando vuelvas a conectarte.',
         [
           { text: 'Cancelar', style: 'cancel' },
           {
             text: 'Activar',
             onPress: () => {
               setOfflineMode(true);
-              Alert.alert('Modo Offline Activado', 'Puedes entrenar sin conexiÃ³n');
+              Alert.alert('Modo Offline Activado', 'Puedes entrenar sin conexión');
             },
           },
         ]
@@ -115,13 +115,13 @@ export default function OfflineMode() {
   const syncNow = async () => {
     Alert.alert(
       'Sincronizar Datos',
-      `Â¿Deseas sincronizar ${getTotalPendingItems()} elementos pendientes?`,
+      `¿Deseas sincronizar ${getTotalPendingItems()} elementos pendientes?`,
       [
         { text: 'Cancelar', style: 'cancel' },
         {
           text: 'Sincronizar',
           onPress: async () => {
-            // Simular sincronizaciÃ³n
+            // Simular sincronización
             Alert.alert('Sincronizando...', 'Por favor espera', [
               { text: 'OK', onPress: () => {
                 setTimeout(() => {
@@ -130,7 +130,7 @@ export default function OfflineMode() {
                   setOfflineWorkouts(updated);
                   saveOfflineData(updated);
                   setSyncQueue({ workouts: 0, nutrition: 0, measurements: 0, photos: 0 });
-                  Alert.alert('Â¡SincronizaciÃ³n Completa!', 'Todos los datos estÃ¡n actualizados');
+                  Alert.alert('¡Sincronización Completa!', 'Todos los datos están actualizados');
                 }, 2000);
               }},
             ]);
@@ -143,7 +143,7 @@ export default function OfflineMode() {
   const deleteOfflineData = () => {
     Alert.alert(
       'Eliminar Datos Offline',
-      'Â¿EstÃ¡s seguro? Esta acciÃ³n no se puede deshacer.',
+      '¿Estás seguro? Esta acción no se puede deshacer.',
       [
         { text: 'Cancelar', style: 'cancel' },
         {
@@ -172,7 +172,7 @@ export default function OfflineMode() {
   const viewWorkoutDetails = (workout: OfflineWorkout) => {
     Alert.alert(
       workout.name,
-      `Ejercicios: ${workout.exercises}\nSeries: ${workout.sets}\nFecha: ${workout.timestamp}\n\nEstado: ${workout.synced ? 'Sincronizado âœ…' : 'Pendiente â³'}`,
+      `Ejercicios: ${workout.exercises}\nSeries: ${workout.sets}\nFecha: ${workout.timestamp}\n\nEstado: ${workout.synced ? 'Sincronizado ✅' : 'Pendiente â³'}`,
       [{ text: 'OK' }]
     );
   };
@@ -226,7 +226,7 @@ export default function OfflineMode() {
               <View className="flex-1">
                 <Text className="text-white font-bold text-lg">Modo Offline</Text>
                 <Text className="text-zinc-400 text-sm mt-1">
-                  Guarda datos localmente cuando no hay conexiÃ³n
+                  Guarda datos localmente cuando no hay conexión
                 </Text>
               </View>
               <TouchableOpacity
@@ -248,7 +248,7 @@ export default function OfflineMode() {
                 <View className="flex-row items-start">
                   <Ionicons name="checkmark-circle" size={16} color="#9D12DE" />
                   <Text className="text-primary text-xs ml-2 flex-1">
-                    Modo offline activado. Tus entrenamientos se guardarÃ¡n localmente y se sincronizarÃ¡n automÃ¡ticamente.
+                    Modo offline activado. Tus entrenamientos se guardarán localmente y se sincronizarán automáticamente.
                   </Text>
                 </View>
               </View>
@@ -259,9 +259,9 @@ export default function OfflineMode() {
           <View className="bg-zinc-900 rounded-xl p-4 border border-zinc-800 mb-4">
             <View className="flex-row items-center justify-between">
               <View className="flex-1">
-                <Text className="text-white font-bold">SincronizaciÃ³n AutomÃ¡tica</Text>
+                <Text className="text-white font-bold">Sincronización Automática</Text>
                 <Text className="text-zinc-400 text-sm mt-1">
-                  Sincronizar cuando haya conexiÃ³n WiFi
+                  Sincronizar cuando haya conexión WiFi
                 </Text>
               </View>
               <TouchableOpacity
@@ -310,7 +310,7 @@ export default function OfflineMode() {
                   <View className="flex-row items-center justify-between bg-zinc-900 rounded-lg p-2">
                     <View className="flex-row items-center">
                       <Ionicons name="restaurant" size={16} color="#71717A" />
-                      <Text className="text-zinc-300 text-sm ml-2">NutriciÃ³n</Text>
+                      <Text className="text-zinc-300 text-sm ml-2">Nutrición</Text>
                     </View>
                     <Text className="text-amber-500 font-bold">{syncQueue.nutrition}</Text>
                   </View>
@@ -352,7 +352,7 @@ export default function OfflineMode() {
                 No hay entrenamientos offline
               </Text>
               <Text className="text-zinc-500 text-sm mt-2 text-center">
-                Activa el modo offline para guardar datos sin conexiÃ³n
+                Activa el modo offline para guardar datos sin conexión
               </Text>
             </View>
           ) : (
@@ -423,19 +423,19 @@ export default function OfflineMode() {
               <Ionicons name="information-circle" size={20} color="#9D12DE" />
               <View className="flex-1 ml-3">
                 <Text className="text-primary/80 font-bold mb-2">
-                  Â¿CÃ³mo funciona el Modo Offline?
+                  ¿Cómo funciona el Modo Offline?
                 </Text>
                 <Text className="text-primary/60 text-sm mb-2">
-                  â€¢ Los datos se guardan localmente en tu dispositivo
+                  • Los datos se guardan localmente en tu dispositivo
                 </Text>
                 <Text className="text-primary/60 text-sm mb-2">
-                  â€¢ Se sincronizan automÃ¡ticamente cuando hay conexiÃ³n
+                  • Se sincronizan automáticamente cuando hay conexión
                 </Text>
                 <Text className="text-primary/60 text-sm mb-2">
-                  â€¢ Puedes entrenar sin internet
+                  • Puedes entrenar sin internet
                 </Text>
                 <Text className="text-primary/60 text-sm">
-                  â€¢ Los datos estÃ¡n encriptados y seguros
+                  • Los datos están encriptados y seguros
                 </Text>
               </View>
             </View>

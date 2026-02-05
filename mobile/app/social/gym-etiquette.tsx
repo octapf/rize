@@ -523,10 +523,10 @@ export default function GymEtiquette() {
 
               {rule.dos && (
                 <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-3">
-                  <Text className="text-primary font-bold mb-2">âœ“ DO:</Text>
+                  <Text className="text-primary font-bold mb-2">✓ DO:</Text>
                   {rule.dos.map((item, dIdx) => (
                     <Text key={dIdx} className="text-primary/80 text-sm mb-1 last:mb-0">
-                      â€¢ {item}
+                      • {item}
                     </Text>
                   ))}
                 </View>
@@ -534,10 +534,10 @@ export default function GymEtiquette() {
 
               {rule.donts && (
                 <View className="bg-red-500/10 rounded-xl p-4 border border-red-500/30 mb-3">
-                  <Text className="text-red-400 font-bold mb-2">âœ— DON'T:</Text>
+                  <Text className="text-red-400 font-bold mb-2">✓ DON'T:</Text>
                   {rule.donts.map((item, dIdx) => (
                     <Text key={dIdx} className="text-red-300 text-sm mb-1 last:mb-0">
-                      â€¢ {item}
+                      • {item}
                     </Text>
                   ))}
                 </View>
@@ -548,7 +548,7 @@ export default function GymEtiquette() {
                   <Text className="text-amber-400 font-bold mb-2">Exceptions:</Text>
                   {rule.exceptions.map((item, eIdx) => (
                     <Text key={eIdx} className="text-amber-300 text-sm mb-1 last:mb-0">
-                      â€¢ {item}
+                      • {item}
                     </Text>
                   ))}
                 </View>
@@ -559,7 +559,7 @@ export default function GymEtiquette() {
                   <Text className="text-primary/80 font-bold mb-2">Solutions:</Text>
                   {rule.solutions.map((item, sIdx) => (
                     <Text key={sIdx} className="text-primary/60 text-sm mb-1 last:mb-0">
-                      â€¢ {item}
+                      • {item}
                     </Text>
                   ))}
                 </View>
@@ -570,7 +570,7 @@ export default function GymEtiquette() {
                   <Text className="text-purple-400 font-bold mb-2">Why It Matters:</Text>
                   {rule.whyItMatters.map((item, wIdx) => (
                     <Text key={wIdx} className="text-purple-300 text-sm mb-1 last:mb-0">
-                      â€¢ {item}
+                      • {item}
                     </Text>
                   ))}
                 </View>
@@ -581,7 +581,7 @@ export default function GymEtiquette() {
                   <Text className="text-red-400 font-bold mb-2">âš ï¸ Why It's Dangerous:</Text>
                   {rule.whyDangerous.map((item, wIdx) => (
                     <Text key={wIdx} className="text-red-300 text-sm mb-1 last:mb-0">
-                      â€¢ {item}
+                      • {item}
                     </Text>
                   ))}
                 </View>
@@ -589,10 +589,10 @@ export default function GymEtiquette() {
 
               {rule.acceptable && (
                 <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-3">
-                  <Text className="text-primary font-bold mb-2">âœ“ Acceptable:</Text>
+                  <Text className="text-primary font-bold mb-2">✓ Acceptable:</Text>
                   {rule.acceptable.map((item, aIdx) => (
                     <Text key={aIdx} className="text-primary/80 text-sm mb-1 last:mb-0">
-                      â€¢ {item}
+                      • {item}
                     </Text>
                   ))}
                 </View>
@@ -600,10 +600,10 @@ export default function GymEtiquette() {
 
               {rule.excessive && (
                 <View className="bg-red-500/10 rounded-xl p-4 border border-red-500/30 mb-3">
-                  <Text className="text-red-400 font-bold mb-2">âœ— Excessive:</Text>
+                  <Text className="text-red-400 font-bold mb-2">✓ Excessive:</Text>
                   {rule.excessive.map((item, eIdx) => (
                     <Text key={eIdx} className="text-red-300 text-sm mb-1 last:mb-0">
-                      â€¢ {item}
+                      • {item}
                     </Text>
                   ))}
                 </View>
@@ -614,7 +614,7 @@ export default function GymEtiquette() {
                   <Text className="text-primary/80 font-bold mb-2">Guidelines:</Text>
                   {rule.guideline.map((item, gIdx) => (
                     <Text key={gIdx} className="text-primary/60 text-sm mb-1 last:mb-0">
-                      â€¢ {item}
+                      • {item}
                     </Text>
                   ))}
                 </View>
@@ -625,7 +625,7 @@ export default function GymEtiquette() {
                   <Text className="text-primary font-bold mb-2">When to Speak Up:</Text>
                   {rule.whenToSpeak.map((item, wIdx) => (
                     <Text key={wIdx} className="text-primary/80 text-sm mb-1 last:mb-0">
-                      â€¢ {item}
+                      • {item}
                     </Text>
                   ))}
                 </View>
@@ -636,7 +636,7 @@ export default function GymEtiquette() {
                   <Text className="text-red-400 font-bold mb-2">When to Stay Quiet:</Text>
                   {rule.whenToStayQuiet.map((item, wIdx) => (
                     <Text key={wIdx} className="text-red-300 text-sm mb-1 last:mb-0">
-                      â€¢ {item}
+                      • {item}
                     </Text>
                   ))}
                 </View>
@@ -647,7 +647,7 @@ export default function GymEtiquette() {
                   <Text className="text-amber-400 font-bold mb-2">If You Must Say Something:</Text>
                   {rule.ifYouMustSay.map((item, iIdx) => (
                     <Text key={iIdx} className="text-amber-300 text-sm mb-1 last:mb-0">
-                      â€¢ {item}
+                      • {item}
                     </Text>
                   ))}
                 </View>
@@ -658,7 +658,7 @@ export default function GymEtiquette() {
                   <Text className="text-primary/80 font-bold mb-2">If Equipment Looks Abandoned:</Text>
                   {rule.ifAbandoned.map((item, iIdx) => (
                     <Text key={iIdx} className="text-primary/60 text-sm mb-1 last:mb-0">
-                      â€¢ {item}
+                      • {item}
                     </Text>
                   ))}
                 </View>
@@ -666,10 +666,10 @@ export default function GymEtiquette() {
 
               {rule.appropriate && (
                 <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-3">
-                  <Text className="text-primary font-bold mb-2">âœ“ Appropriate:</Text>
+                  <Text className="text-primary font-bold mb-2">✓ Appropriate:</Text>
                   {rule.appropriate.map((item, aIdx) => (
                     <Text key={aIdx} className="text-primary/80 text-sm mb-1 last:mb-0">
-                      â€¢ {item}
+                      • {item}
                     </Text>
                   ))}
                 </View>
@@ -677,10 +677,10 @@ export default function GymEtiquette() {
 
               {rule.inappropriate && (
                 <View className="bg-red-500/10 rounded-xl p-4 border border-red-500/30 mb-3">
-                  <Text className="text-red-400 font-bold mb-2">âœ— Inappropriate:</Text>
+                  <Text className="text-red-400 font-bold mb-2">✓ Inappropriate:</Text>
                   {rule.inappropriate.map((item, iIdx) => (
                     <Text key={iIdx} className="text-red-300 text-sm mb-1 last:mb-0">
-                      â€¢ {item}
+                      • {item}
                     </Text>
                   ))}
                 </View>
@@ -691,7 +691,7 @@ export default function GymEtiquette() {
                   <Text className="text-purple-400 font-bold mb-2">Rule of Thumb:</Text>
                   {rule.rule.map((item, rIdx) => (
                     <Text key={rIdx} className="text-purple-300 text-sm mb-1 last:mb-0">
-                      â€¢ {item}
+                      • {item}
                     </Text>
                   ))}
                 </View>
@@ -702,7 +702,7 @@ export default function GymEtiquette() {
                   <Text className="text-amber-400 font-bold mb-2">âš ï¸ Legal/Privacy:</Text>
                   {rule.legal.map((item, lIdx) => (
                     <Text key={lIdx} className="text-amber-300 text-sm mb-1 last:mb-0">
-                      â€¢ {item}
+                      • {item}
                     </Text>
                   ))}
                 </View>
@@ -713,7 +713,7 @@ export default function GymEtiquette() {
                   <Text className="text-primary/80 font-bold mb-2">If Someone Else Smells:</Text>
                   {rule.ifSomeoneSmells.map((item: string, iIdx: number) => (
                     <Text key={iIdx} className="text-primary/60 text-sm mb-1 last:mb-0">
-                      â€¢ {item}
+                      • {item}
                     </Text>
                   ))}
                 </View>

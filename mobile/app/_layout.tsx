@@ -73,7 +73,7 @@ export default function RootLayout() {
       setOnboardingCompleted(completed === 'true');
     };
     init();
-  }, []);
+  }, [initAuth]);
 
   useEffect(() => {
     if (fontsLoaded && !isLoading && onboardingCompleted !== null) {

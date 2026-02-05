@@ -15,19 +15,19 @@ import { Card } from '@/components/ui/Card';
 export default function EditProfileScreen() {
   const [name, setName] = useState('Usuario');
   const [username, setUsername] = useState('@usuario');
-  const [bio, setBio] = useState('Fitness enthusiast ðŸ’ª');
+  const [bio, setBio] = useState('Fitness enthusiast 💪');
   const [email, setEmail] = useState('usuario@example.com');
   const [age, setAge] = useState('25');
   const [height, setHeight] = useState('175');
   const [targetWeight, setTargetWeight] = useState('75');
 
   const handleSave = () => {
-    Alert.alert('Â¡Guardado!', 'Tu perfil ha sido actualizado');
+    Alert.alert('¡Guardado!', 'Tu perfil ha sido actualizado');
     router.back();
   };
 
   const handleChangeAvatar = () => {
-    Alert.alert('Cambiar Avatar', 'FunciÃ³n de galerÃ­a en desarrollo');
+    Alert.alert('Cambiar Avatar', 'Función de galería en desarrollo');
   };
 
   return (
@@ -67,7 +67,7 @@ export default function EditProfileScreen() {
         {/* Basic Info */}
         <Card className="p-4 mb-4">
           <Text className="text-gray-900 font-bold text-lg mb-4">
-            InformaciÃ³n BÃ¡sica
+            Información Básica
           </Text>
 
           <View className="gap-4">
@@ -98,7 +98,7 @@ export default function EditProfileScreen() {
                 value={bio}
                 onChangeText={setBio}
                 className="bg-gray-50 border border-gray-300 rounded-lg px-4 py-3 text-gray-900"
-                placeholder="CuÃ©ntanos sobre ti"
+                placeholder="Cuéntanos sobre ti"
                 multiline
                 numberOfLines={3}
               />
@@ -121,7 +121,7 @@ export default function EditProfileScreen() {
         {/* Physical Stats */}
         <Card className="p-4 mb-4">
           <Text className="text-gray-900 font-bold text-lg mb-4">
-            EstadÃ­sticas FÃ­sicas
+            Estadísticas Físicas
           </Text>
 
           <View className="gap-4">
@@ -168,12 +168,12 @@ export default function EditProfileScreen() {
 
           <View className="gap-3">
             <TouchableOpacity className="flex-row items-center justify-between p-3 bg-gray-50 rounded-lg">
-              <Text className="text-gray-900 font-semibold">Perfil PÃºblico</Text>
+              <Text className="text-gray-900 font-semibold">Perfil Público</Text>
               <Ionicons name="toggle" size={32} color="#9D12DE" />
             </TouchableOpacity>
 
             <TouchableOpacity className="flex-row items-center justify-between p-3 bg-gray-50 rounded-lg">
-              <Text className="text-gray-900 font-semibold">Mostrar EstadÃ­sticas</Text>
+              <Text className="text-gray-900 font-semibold">Mostrar Estadísticas</Text>
               <Ionicons name="toggle" size={32} color="#9D12DE" />
             </TouchableOpacity>
 
@@ -193,7 +193,7 @@ export default function EditProfileScreen() {
           <View className="gap-2">
             <TouchableOpacity className="bg-white border border-red-300 py-3 rounded-lg">
               <Text className="text-red-600 font-semibold text-center">
-                Cambiar ContraseÃ±a
+                Cambiar Contraseña
               </Text>
             </TouchableOpacity>
 

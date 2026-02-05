@@ -96,12 +96,12 @@ export default function ProgrammingIntegration() {
           {
             step: '1. Identify Weak Points',
             method: 'Where do you miss lifts? Video analysis.',
-            example: 'Miss deadlifts off floor â†’ deficit deadlifts',
+            example: 'Miss deadlifts off floor → deficit deadlifts',
           },
           {
             step: '2. Choose Specific Variations',
             method: 'Pick variations that target that weakness',
-            example: 'Lockout weak on bench â†’ board press, close grip',
+            example: 'Lockout weak on bench → board press, close grip',
           },
           {
             step: '3. Limit Total Exercises',
@@ -528,22 +528,22 @@ export default function ProgrammingIntegration() {
           <View className="bg-gradient-to-r from-amber-500/20 to-orange-500/20 rounded-xl p-5 border border-amber-500/30 mb-6">
             <Text className="text-amber-400 font-bold text-lg mb-3">Integration Principles</Text>
             <Text className="text-amber-300 text-sm mb-2">
-              ðŸŽ¯ Exercise Selection: Tier 1 (comp lifts) â†’ Tier 2 (variations) â†’ Tier 3 (assistance)
+              🎯 Exercise Selection: Tier 1 (comp lifts) â†’ Tier 2 (variations) â†’ Tier 3 (assistance)
             </Text>
             <Text className="text-amber-300 text-sm mb-2">
-              ðŸŽ¯ Volume: Progress gradually over months/years
+              🎯 Volume: Progress gradually over months/years
             </Text>
             <Text className="text-amber-300 text-sm mb-2">
-              ðŸŽ¯ Intensity: 50-60% moderate, 20-30% heavy, 10-20% light
+              🎯 Intensity: 50-60% moderate, 20-30% heavy, 10-20% light
             </Text>
             <Text className="text-amber-300 text-sm mb-2">
-              ðŸŽ¯ Periodization: Choose model based on experience and goals
+              🎯 Periodization: Choose model based on experience and goals
             </Text>
             <Text className="text-amber-300 text-sm mb-2">
-              ðŸŽ¯ Recovery: Deload every 3-5 weeks, use autoregulation
+              🎯 Recovery: Deload every 3-5 weeks, use autoregulation
             </Text>
             <Text className="text-amber-300 text-sm">
-              ðŸŽ¯ Customization: Adjust to YOUR recovery, weak points, leverages
+              🎯 Customization: Adjust to YOUR recovery, weak points, leverages
             </Text>
           </View>
         </View>

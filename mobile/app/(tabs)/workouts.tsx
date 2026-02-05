@@ -67,10 +67,10 @@ export default function WorkoutsScreen() {
                 <Ionicons name="barbell-outline" size={64} color="#9D12DE" />
               </View>
               <Text className="text-white text-xl font-bold mb-2">
-                Â¡Comienza tu viaje!
+                ¡Comienza tu viaje!
               </Text>
               <Text className="text-gray-400 text-base text-center px-8 mb-6">
-                No hay entrenamientos registrados aÃºn.
+                No hay entrenamientos registrados aún.
                 Crea tu primer entrenamiento y empieza a ganar XP.
               </Text>
               <TouchableOpacity
@@ -127,7 +127,7 @@ export default function WorkoutsScreen() {
                       <Ionicons name="time" size={18} color="#FFEA00" />
                     </View>
                     <View>
-                      <Text className="text-xs text-gray-400">DuraciÃ³n</Text>
+                      <Text className="text-xs text-gray-400">Duración</Text>
                       <Text className="text-sm font-semibold text-white">
                         {formatDuration(workout.duration)}
                       </Text>

@@ -28,14 +28,14 @@ interface FitnessTest {
 const FITNESS_TESTS: FitnessTest[] = [
   {
     id: '1',
-    name: 'Push-ups MÃ¡ximos',
+    name: 'Push-ups Máximos',
     category: 'endurance',
-    description: 'CuÃ¡ntos push-ups puedes hacer sin parar',
+    description: 'Cuántos push-ups puedes hacer sin parar',
     instructions: [
-      'PosiciÃ³n de plancha, manos alineadas con hombros',
+      'Posición de plancha, manos alineadas con hombros',
       'Descender hasta pecho casi toca suelo',
       'Empujar hasta brazos extendidos',
-      'Contar repeticiones hasta fallo tÃ©cnico',
+      'Contar repeticiones hasta fallo técnico',
       'Mantener core tenso todo el tiempo',
     ],
     equipment: ['Ninguno'],
@@ -48,7 +48,7 @@ const FITNESS_TESTS: FitnessTest[] = [
   },
   {
     id: '2',
-    name: 'Pull-ups MÃ¡ximas',
+    name: 'Pull-ups Máximas',
     category: 'strength',
     description: 'Dominadas estrictas sin kipping',
     instructions: [
@@ -68,17 +68,17 @@ const FITNESS_TESTS: FitnessTest[] = [
   },
   {
     id: '3',
-    name: 'Plank Hold MÃ¡ximo',
+    name: 'Plank Hold Máximo',
     category: 'endurance',
-    description: 'Tiempo mÃ¡ximo en plancha frontal',
+    description: 'Tiempo máximo en plancha frontal',
     instructions: [
-      'PosiciÃ³n de plancha con antebrazos',
+      'Posición de plancha con antebrazos',
       'Cuerpo completamente recto (hombros-cadera-tobillos)',
-      'Core activado, glÃºteos apretados',
+      'Core activado, glúteos apretados',
       'Cronometrar hasta fallo de forma',
-      'Si cadera cae mÃ¡s de 5cm = fin',
+      'Si cadera cae más de 5cm = fin',
     ],
-    equipment: ['CronÃ³metro'],
+    equipment: ['Cronómetro'],
     standards: {
       male: { excellent: '3:00+', good: '2:00-2:59', average: '1:00-1:59', poor: '<1:00' },
       female: { excellent: '2:30+', good: '1:30-2:29', average: '0:45-1:29', poor: '<0:45' },
@@ -90,15 +90,15 @@ const FITNESS_TESTS: FitnessTest[] = [
     id: '4',
     name: 'Cooper Test (12 min)',
     category: 'endurance',
-    description: 'Distancia mÃ¡xima corriendo en 12 minutos',
+    description: 'Distancia máxima corriendo en 12 minutos',
     instructions: [
       'Calentar 10 minutos antes',
-      'Correr/caminar mÃ¡xima distancia en 12 min',
+      'Correr/caminar máxima distancia en 12 min',
       'Mantener pace sostenible',
       'Usar pista o GPS para medir distancia',
       'Anotar metros totales',
     ],
-    equipment: ['CronÃ³metro', 'GPS/Pista'],
+    equipment: ['Cronómetro', 'GPS/Pista'],
     standards: {
       male: { excellent: '2800m+', good: '2400-2799m', average: '2000-2399m', poor: '<2000m' },
       female: { excellent: '2500m+', good: '2100-2499m', average: '1800-2099m', poor: '<1800m' },
@@ -110,11 +110,11 @@ const FITNESS_TESTS: FitnessTest[] = [
     id: '5',
     name: 'Vertical Jump',
     category: 'power',
-    description: 'Salto vertical mÃ¡ximo',
+    description: 'Salto vertical máximo',
     instructions: [
       'Marcar altura de pie con brazo extendido',
       'Saltar verticalmente con impulso de brazos',
-      'Tocar punto mÃ¡s alto posible',
+      'Tocar punto más alto posible',
       'Medir diferencia entre marcas',
       'Mejor de 3 intentos',
     ],
@@ -135,15 +135,15 @@ const FITNESS_TESTS: FitnessTest[] = [
       'Sentarse con piernas extendidas',
       'Pies contra caja/pared',
       'Alcanzar hacia adelante sin doblar rodillas',
-      'Mantener 2 segundos en mÃ¡ximo alcance',
+      'Mantener 2 segundos en máximo alcance',
       'Medir distancia pasando dedos de pies',
     ],
-    equipment: ['Caja de mediciÃ³n o regla'],
+    equipment: ['Caja de medición o regla'],
     standards: {
       male: { excellent: '+10cm', good: '0-9cm', average: '-10-(-1)cm', poor: '<-10cm' },
       female: { excellent: '+15cm', good: '+5-14cm', average: '-5-4cm', poor: '<-5cm' },
     },
-    icon: 'ðŸ§˜',
+    icon: '🧘',
     color: 'indigo',
   },
   {
@@ -176,7 +176,7 @@ const FITNESS_TESTS: FitnessTest[] = [
       'Encontrar 1RM de sentadilla',
       'Dividir 1RM entre peso corporal',
       'Profundidad al menos paralelo',
-      'Con tÃ©cnica perfecta',
+      'Con técnica perfecta',
     ],
     equipment: ['Barra', 'Rack', 'Discos'],
     standards: {
@@ -375,7 +375,7 @@ export default function FitnessTests() {
 
                 {/* Gender Selection */}
                 <View className="mb-4">
-                  <Text className="text-zinc-400 text-sm mb-2">Sexo (para estÃ¡ndares)</Text>
+                  <Text className="text-zinc-400 text-sm mb-2">Sexo (para estándares)</Text>
                   <View className="flex-row gap-2">
                     <TouchableOpacity
                       onPress={() => setGender('male')}
@@ -419,7 +419,7 @@ export default function FitnessTests() {
 
                 {/* Standards Table */}
                 <View className="mb-4">
-                  <Text className="text-white font-bold mb-3">EstÃ¡ndares de EvaluaciÃ³n</Text>
+                  <Text className="text-white font-bold mb-3">Estándares de Evaluación</Text>
                   <View className="bg-zinc-800 rounded-lg overflow-hidden">
                     {['excellent', 'good', 'average', 'poor'].map((level, index) => {
                       const colors = {
@@ -494,10 +494,10 @@ export default function FitnessTests() {
                       Tips para Tests
                     </Text>
                     <Text className="text-amber-300 text-sm">
-                      â€¢ Realiza siempre en las mismas condiciones{'\n'}
-                      â€¢ Descansa bien el dÃ­a anterior{'\n'}
-                      â€¢ Calienta adecuadamente{'\n'}
-                      â€¢ Registra resultados para comparar
+                      • Realiza siempre en las mismas condiciones{'\n'}
+                      • Descansa bien el día anterior{'\n'}
+                      • Calienta adecuadamente{'\n'}
+                      • Registra resultados para comparar
                     </Text>
                   </View>
                 </View>

@@ -62,11 +62,11 @@ const PLAYLISTS: Playlist[] = [
 const PRESETS: WorkoutMusicPreset[] = [
   {
     id: '1',
-    name: 'Fuerza MÃ¡xima',
+    name: 'Fuerza Máxima',
     description: 'Metal y Rock pesado para levantamientos intensos',
     intensity: 'alta',
     bpm: 140,
-    icon: 'âš¡',
+    icon: '⚡',
   },
   {
     id: '2',
@@ -79,7 +79,7 @@ const PRESETS: WorkoutMusicPreset[] = [
   {
     id: '3',
     name: 'Cardio HIIT',
-    description: 'EDM energÃ©tico para intervalos',
+    description: 'EDM energético para intervalos',
     intensity: 'alta',
     bpm: 150,
     icon: 'ðŸ”¥',
@@ -87,10 +87,10 @@ const PRESETS: WorkoutMusicPreset[] = [
   {
     id: '4',
     name: 'Movilidad',
-    description: 'MÃºsica relajante para estiramientos',
+    description: 'Música relajante para estiramientos',
     intensity: 'baja',
     bpm: 80,
-    icon: 'ðŸ§˜',
+    icon: '🧘',
   },
 ];
 
@@ -146,13 +146,13 @@ export default function WorkoutMusic() {
   const connectService = (service: string) => {
     Alert.alert(
       `Conectar ${service}`,
-      'Esta funciÃ³n requiere autenticaciÃ³n con el servicio',
+      'Esta función requiere autenticación con el servicio',
       [
         { text: 'Cancelar', style: 'cancel' },
         {
           text: 'Conectar',
           onPress: () => {
-            Alert.alert('Â¡Conectado!', `${service} vinculado exitosamente`);
+            Alert.alert('¡Conectado!', `${service} vinculado exitosamente`);
           },
         },
       ]
@@ -162,14 +162,14 @@ export default function WorkoutMusic() {
   const playPlaylist = (playlist: Playlist) => {
     Alert.alert(
       'Reproducir Playlist',
-      `${playlist.name}\n\n${playlist.songs} canciones â€¢ ${playlist.duration} min`,
+      `${playlist.name}\n\n${playlist.songs} canciones • ${playlist.duration} min`,
       [
         { text: 'Cancelar', style: 'cancel' },
         {
           text: 'Reproducir',
           onPress: () => {
             setSelectedPlaylist(playlist.id);
-            Alert.alert('Reproduciendo', `ðŸŽµ ${playlist.name}`);
+            Alert.alert('Reproduciendo', `🎯µ ${playlist.name}`);
           },
         },
       ]
@@ -185,7 +185,7 @@ export default function WorkoutMusic() {
         {
           text: 'Aplicar',
           onPress: () => {
-            Alert.alert('Preset Aplicado', `La mÃºsica se adaptarÃ¡ a ${preset.name}`);
+            Alert.alert('Preset Aplicado', `La música se adaptará a ${preset.name}`);
           },
         },
       ]
@@ -201,7 +201,7 @@ export default function WorkoutMusic() {
             <Ionicons name="arrow-back" size={24} color="white" />
           </TouchableOpacity>
           <Text className="text-white text-2xl font-bold flex-1 ml-3">
-            MÃºsica de Entrenamiento
+            Música de Entrenamiento
           </Text>
           <TouchableOpacity>
             <Ionicons name="settings-outline" size={24} color="white" />
@@ -212,9 +212,9 @@ export default function WorkoutMusic() {
         <View className="bg-zinc-900 rounded-xl p-4 border border-zinc-800">
           <View className="flex-row items-center justify-between">
             <View className="flex-1">
-              <Text className="text-white font-bold">MÃºsica AutomÃ¡tica</Text>
+              <Text className="text-white font-bold">Música Automática</Text>
               <Text className="text-zinc-400 text-sm mt-1">
-                Reproduce mÃºsica durante entrenamientos
+                Reproduce música durante entrenamientos
               </Text>
             </View>
             <Switch
@@ -231,7 +231,7 @@ export default function WorkoutMusic() {
         {/* Music Services */}
         <View className="px-6 pt-6">
           <Text className="text-white font-bold text-lg mb-3">
-            Servicios de MÃºsica
+            Servicios de Música
           </Text>
 
           <View className="flex-row gap-3 mb-6">
@@ -379,15 +379,15 @@ export default function WorkoutMusic() {
 
           {/* Settings */}
           <Text className="text-white font-bold text-lg mb-3 mt-4">
-            ConfiguraciÃ³n
+            Configuración
           </Text>
 
           <View className="bg-zinc-900 rounded-xl p-4 mb-3 border border-zinc-800">
             <View className="flex-row items-center justify-between">
               <View className="flex-1">
-                <Text className="text-white font-semibold">ReproducciÃ³n AutomÃ¡tica</Text>
+                <Text className="text-white font-semibold">Reproducción Automática</Text>
                 <Text className="text-zinc-400 text-sm mt-1">
-                  Inicia mÃºsica al comenzar entrenamiento
+                  Inicia música al comenzar entrenamiento
                 </Text>
               </View>
               <Switch
@@ -404,7 +404,7 @@ export default function WorkoutMusic() {
               <View className="flex-1">
                 <Text className="text-white font-semibold">BPM Adaptativo</Text>
                 <Text className="text-zinc-400 text-sm mt-1">
-                  Ajusta el tempo segÃºn ejercicio actual
+                  Ajusta el tempo según ejercicio actual
                 </Text>
               </View>
               <Switch
@@ -422,16 +422,16 @@ export default function WorkoutMusic() {
               <Ionicons name="information-circle" size={20} color="#9D12DE" />
               <View className="flex-1 ml-3">
                 <Text className="text-primary/80 font-bold mb-2">
-                  Â¿CÃ³mo funciona?
+                  ¿Cómo funciona?
                 </Text>
                 <Text className="text-primary/60 text-sm mb-2">
-                  â€¢ La mÃºsica se sincroniza con tus entrenamientos
+                  • La música se sincroniza con tus entrenamientos
                 </Text>
                 <Text className="text-primary/60 text-sm mb-2">
-                  â€¢ Presets optimizados para cada tipo de ejercicio
+                  • Presets optimizados para cada tipo de ejercicio
                 </Text>
                 <Text className="text-primary/60 text-sm">
-                  â€¢ IntegraciÃ³n con Spotify, Apple Music y YouTube Music
+                  • Integración con Spotify, Apple Music y YouTube Music
                 </Text>
               </View>
             </View>

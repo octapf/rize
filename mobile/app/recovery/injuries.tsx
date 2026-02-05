@@ -51,7 +51,7 @@ const INJURIES: Injury[] = [
     status: 'active',
     startDate: '2024-01-25',
     painLevel: 2,
-    notes: 'Ligero dolor despuÃ©s de sentadillas profundas',
+    notes: 'Ligero dolor después de sentadillas profundas',
     restrictions: ['Pistol squats', 'Sentadillas ATG'],
   },
 ];
@@ -60,27 +60,27 @@ const RECOVERY_PROTOCOLS: RecoveryProtocol[] = [
   {
     id: '1',
     name: 'Protocolo para Tendinitis de Hombro',
-    description: 'RecuperaciÃ³n conservadora para lesiones del manguito rotador',
+    description: 'Recuperación conservadora para lesiones del manguito rotador',
     duration: '4-6 semanas',
     icon: 'medical',
     steps: [
-      'Semana 1-2: Reposo relativo, hielo 3x/dÃ­a, antiinflamatorios',
+      'Semana 1-2: Reposo relativo, hielo 3x/día, antiinflamatorios',
       'Semana 3-4: Ejercicios de movilidad sin peso',
-      'Semana 5-6: ProgresiÃ³n gradual con bandas elÃ¡sticas',
-      'Semana 7+: ReintroducciÃ³n de ejercicios con peso ligero',
+      'Semana 5-6: Progresión gradual con bandas elásticas',
+      'Semana 7+: Reintroducción de ejercicios con peso ligero',
     ],
   },
   {
     id: '2',
     name: 'Protocolo RICE para Articulaciones',
     description: 'Rest, Ice, Compression, Elevation',
-    duration: '3-7 dÃ­as',
+    duration: '3-7 días',
     icon: 'snow',
     steps: [
       'Reposo: Evitar actividades que causen dolor',
       'Hielo: Aplicar 15-20 min cada 2-3 horas',
-      'CompresiÃ³n: Venda elÃ¡stica moderada',
-      'ElevaciÃ³n: Mantener por encima del nivel del corazÃ³n',
+      'Compresión: Venda elástica moderada',
+      'Elevación: Mantener por encima del nivel del corazón',
     ],
   },
   {
@@ -101,7 +101,7 @@ const RECOVERY_PROTOCOLS: RecoveryProtocol[] = [
 const BODY_PARTS = [
   'Hombro',
   'Codo',
-  'MuÃ±eca',
+  'Muñeca',
   'Espalda Baja',
   'Rodilla',
   'Tobillo',
@@ -116,7 +116,7 @@ export default function InjuryRecovery() {
   const tabs = [
     { id: 'active' as const, label: 'Lesiones', icon: 'bandage' },
     { id: 'protocols' as const, label: 'Protocolos', icon: 'fitness' },
-    { id: 'prevention' as const, label: 'PrevenciÃ³n', icon: 'shield' },
+    { id: 'prevention' as const, label: 'Prevención', icon: 'shield' },
   ];
 
   const getSeverityColor = (severity: string) => {
@@ -147,14 +147,14 @@ export default function InjuryRecovery() {
 
   const addInjury = () => {
     Alert.alert(
-      'Nueva LesiÃ³n',
-      'Â¿QuÃ© parte del cuerpo te duele?',
+      'Nueva Lesión',
+      '¿Qué parte del cuerpo te duele?',
       BODY_PARTS.map((part) => ({
         text: part,
         onPress: () => {
           Alert.prompt(
-            'Describe la lesiÃ³n',
-            `Â¿QuÃ© tipo de dolor sientes en ${part}?`,
+            'Describe la lesión',
+            `¿Qué tipo de dolor sientes en ${part}?`,
             [
               { text: 'Cancelar', style: 'cancel' },
               {
@@ -172,7 +172,7 @@ export default function InjuryRecovery() {
                     restrictions: [],
                   };
                   setInjuries((prev) => [...prev, newInjury]);
-                  Alert.alert('LesiÃ³n registrada', 'Recuerda consultar a un profesional');
+                  Alert.alert('Lesión registrada', 'Recuerda consultar a un profesional');
                 },
               },
             ]
@@ -193,18 +193,18 @@ export default function InjuryRecovery() {
   const markAsHealed = (injuryId: string) => {
     Alert.alert(
       'Marcar como Sanada',
-      'Â¿Esta lesiÃ³n estÃ¡ completamente recuperada?',
+      '¿Esta lesión está completamente recuperada?',
       [
         { text: 'Cancelar', style: 'cancel' },
         {
-          text: 'SÃ­, estÃ¡ sanada',
+          text: 'Sí, está sanada',
           onPress: () => {
             setInjuries((prev) =>
               prev.map((inj) =>
                 inj.id === injuryId ? { ...inj, status: 'healed' } : inj
               )
             );
-            Alert.alert('Â¡Genial!', 'LesiÃ³n marcada como sanada');
+            Alert.alert('¡Genial!', 'Lesión marcada como sanada');
           },
         },
       ]
@@ -223,7 +223,7 @@ export default function InjuryRecovery() {
             <Ionicons name="arrow-back" size={24} color="white" />
           </TouchableOpacity>
           <Text className="text-white text-2xl font-bold flex-1 ml-3">
-            Lesiones y RecuperaciÃ³n
+            Lesiones y Recuperación
           </Text>
           <TouchableOpacity onPress={addInjury}>
             <Ionicons name="add-circle-outline" size={24} color="white" />
@@ -288,7 +288,7 @@ export default function InjuryRecovery() {
                   style={{ alignSelf: 'center', marginBottom: 12 }}
                 />
                 <Text className="text-primary font-bold text-center text-lg">
-                  Â¡Sin lesiones activas!
+                  ¡Sin lesiones activas!
                 </Text>
                 <Text className="text-primary/80 text-center mt-2">
                   Sigue entrenando de forma inteligente para mantenerte libre de
@@ -427,7 +427,7 @@ export default function InjuryRecovery() {
                       <View className="flex-1 ml-3">
                         <Text className="text-zinc-400 font-bold">{injury.name}</Text>
                         <Text className="text-zinc-500 text-sm mt-0.5">
-                          {injury.bodyPart} â€¢ {injury.startDate}
+                          {injury.bodyPart} • {injury.startDate}
                         </Text>
                       </View>
                     </View>
@@ -442,7 +442,7 @@ export default function InjuryRecovery() {
         {selectedTab === 'protocols' && (
           <View className="px-6 py-4">
             <Text className="text-white font-bold text-lg mb-3">
-              Protocolos de RecuperaciÃ³n
+              Protocolos de Recuperación
             </Text>
 
             {RECOVERY_PROTOCOLS.map((protocol) => (
@@ -491,7 +491,7 @@ export default function InjuryRecovery() {
         {selectedTab === 'prevention' && (
           <View className="px-6 py-4 pb-6">
             <Text className="text-white font-bold text-lg mb-3">
-              PrevenciÃ³n de Lesiones
+              Prevención de Lesiones
             </Text>
 
             <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-3">
@@ -502,8 +502,8 @@ export default function InjuryRecovery() {
                     Calentamiento Adecuado
                   </Text>
                   <Text className="text-primary/80 text-sm leading-5">
-                    â€¢ 5-10 min de movilidad articular{'\n'}â€¢ ActivaciÃ³n muscular
-                    especÃ­fica{'\n'}â€¢ Series de calentamiento progresivas
+                    • 5-10 min de movilidad articular{'\n'}• Activación muscular
+                    específica{'\n'}• Series de calentamiento progresivas
                   </Text>
                 </View>
               </View>
@@ -514,11 +514,11 @@ export default function InjuryRecovery() {
                 <Ionicons name="fitness" size={24} color="#9D12DE" />
                 <View className="flex-1 ml-3">
                   <Text className="text-primary font-bold mb-2">
-                    ProgresiÃ³n Gradual
+                    Progresión Gradual
                   </Text>
                   <Text className="text-primary/60 text-sm leading-5">
-                    â€¢ No aumentar volumen mÃ¡s de 10% semanal{'\n'}â€¢ Respetar dÃ­as de
-                    descanso{'\n'}â€¢ Escuchar las seÃ±ales del cuerpo
+                    • No aumentar volumen más de 10% semanal{'\n'}• Respetar días de
+                    descanso{'\n'}• Escuchar las señales del cuerpo
                   </Text>
                 </View>
               </View>
@@ -532,8 +532,8 @@ export default function InjuryRecovery() {
                     Trabajo de Movilidad
                   </Text>
                   <Text className="text-amber-300 text-sm leading-5">
-                    â€¢ Estiramientos dinÃ¡micos pre-workout{'\n'}â€¢ Estiramientos
-                    estÃ¡ticos post-workout{'\n'}â€¢ Trabajo de fascia y liberaciÃ³n
+                    • Estiramientos dinámicos pre-workout{'\n'}• Estiramientos
+                    estáticos post-workout{'\n'}• Trabajo de fascia y liberación
                     miofascial
                   </Text>
                 </View>
@@ -548,8 +548,8 @@ export default function InjuryRecovery() {
                     Fortalecimiento Preventivo
                   </Text>
                   <Text className="text-purple-300 text-sm leading-5">
-                    â€¢ Trabajo de estabilizadores{'\n'}â€¢ Ejercicios unilaterales{'\n'}â€¢
-                    Fortalecimiento de puntos dÃ©biles
+                    • Trabajo de estabilizadores{'\n'}• Ejercicios unilaterales{'\n'}•
+                    Fortalecimiento de puntos débiles
                   </Text>
                 </View>
               </View>

@@ -24,17 +24,17 @@ export default function MacroCalculator() {
   const [result, setResult] = useState<any>(null);
 
   const activityMultipliers = {
-    sedentary: { value: 1.2, label: 'Sedentario', description: 'Poco o ningÃºn ejercicio' },
-    light: { value: 1.375, label: 'Ligero', description: '1-3 dÃ­as/semana' },
-    moderate: { value: 1.55, label: 'Moderado', description: '3-5 dÃ­as/semana' },
-    active: { value: 1.725, label: 'Activo', description: '6-7 dÃ­as/semana' },
-    veryActive: { value: 1.9, label: 'Muy Activo', description: 'Entrenamiento 2x/dÃ­a' },
+    sedentary: { value: 1.2, label: 'Sedentario', description: 'Poco o ningún ejercicio' },
+    light: { value: 1.375, label: 'Ligero', description: '1-3 días/semana' },
+    moderate: { value: 1.55, label: 'Moderado', description: '3-5 días/semana' },
+    active: { value: 1.725, label: 'Activo', description: '6-7 días/semana' },
+    veryActive: { value: 1.9, label: 'Muy Activo', description: 'Entrenamiento 2x/día' },
   };
 
   const goalAdjustments = {
-    cutting: { label: 'DefiniciÃ³n', cals: -500, protein: 2.2, desc: 'Perder grasa' },
+    cutting: { label: 'Definición', cals: -500, protein: 2.2, desc: 'Perder grasa' },
     maintenance: { label: 'Mantenimiento', cals: 0, protein: 1.8, desc: 'Mantener peso' },
-    bulking: { label: 'Volumen', cals: 300, protein: 2.0, desc: 'Ganar mÃºsculo' },
+    bulking: { label: 'Volumen', cals: 300, protein: 2.0, desc: 'Ganar músculo' },
   };
 
   const calculateMacros = () => {
@@ -43,15 +43,15 @@ export default function MacroCalculator() {
     const a = parseInt(age);
 
     if (!w || w <= 0) {
-      Alert.alert('Error', 'Ingresa un peso vÃ¡lido');
+      Alert.alert('Error', 'Ingresa un peso válido');
       return;
     }
     if (!h || h <= 0) {
-      Alert.alert('Error', 'Ingresa una altura vÃ¡lida');
+      Alert.alert('Error', 'Ingresa una altura válida');
       return;
     }
     if (!a || a <= 0 || a > 120) {
-      Alert.alert('Error', 'Ingresa una edad vÃ¡lida');
+      Alert.alert('Error', 'Ingresa una edad válida');
       return;
     }
 
@@ -127,7 +127,7 @@ export default function MacroCalculator() {
         <View className="px-6 pt-6">
           {/* Personal Info */}
           <View className="bg-zinc-900 rounded-xl p-6 mb-6 border border-zinc-800">
-            <Text className="text-white text-lg font-bold mb-4">InformaciÃ³n Personal</Text>
+            <Text className="text-white text-lg font-bold mb-4">Información Personal</Text>
 
             {/* Gender */}
             <View className="mb-4">
@@ -289,12 +289,12 @@ export default function MacroCalculator() {
                 <View className="flex-1 bg-zinc-900 rounded-xl p-4 border border-zinc-800">
                   <Text className="text-zinc-400 text-xs mb-2">BMR (Metabolismo Basal)</Text>
                   <Text className="text-white text-2xl font-bold">{result.bmr}</Text>
-                  <Text className="text-zinc-400 text-xs">kcal/dÃ­a</Text>
+                  <Text className="text-zinc-400 text-xs">kcal/día</Text>
                 </View>
                 <View className="flex-1 bg-zinc-900 rounded-xl p-4 border border-zinc-800">
                   <Text className="text-zinc-400 text-xs mb-2">TDEE (Gasto Total)</Text>
                   <Text className="text-primary text-2xl font-bold">{result.tdee}</Text>
-                  <Text className="text-zinc-400 text-xs">kcal/dÃ­a</Text>
+                  <Text className="text-zinc-400 text-xs">kcal/día</Text>
                 </View>
               </View>
 
@@ -306,20 +306,20 @@ export default function MacroCalculator() {
                   <Text className="text-white/70 text-xl ml-2">kcal</Text>
                 </View>
                 <Text className="text-primary/50 text-sm">
-                  {goalAdjustments[goal].label} Â· {activityMultipliers[activityLevel].label}
+                  {goalAdjustments[goal].label} · {activityMultipliers[activityLevel].label}
                 </Text>
               </View>
 
               {/* Macros Breakdown */}
               <View className="bg-zinc-900 rounded-xl p-6 mb-6 border border-zinc-800">
-                <Text className="text-white text-lg font-bold mb-4">DistribuciÃ³n de Macros</Text>
+                <Text className="text-white text-lg font-bold mb-4">Distribución de Macros</Text>
 
                 {/* Protein */}
                 <View className="mb-4">
                   <View className="flex-row items-center justify-between mb-2">
                     <View className="flex-row items-center">
                       <View className="w-3 h-3 bg-primary rounded-full mr-2" />
-                      <Text className="text-white font-bold">ProteÃ­na</Text>
+                      <Text className="text-white font-bold">Proteína</Text>
                     </View>
                     <View className="flex-row items-baseline">
                       <Text className="text-primary/80 text-2xl font-bold">{result.protein}</Text>
@@ -389,11 +389,11 @@ export default function MacroCalculator() {
                 <Text className="text-white text-lg font-bold mb-3">Por Comida (5 comidas)</Text>
                 <View className="flex-row justify-between">
                   <View className="flex-1 items-center">
-                    <Text className="text-zinc-400 text-xs mb-1">CalorÃ­as</Text>
+                    <Text className="text-zinc-400 text-xs mb-1">Calorías</Text>
                     <Text className="text-white font-bold text-lg">{Math.round(result.calories / 5)}</Text>
                   </View>
                   <View className="flex-1 items-center">
-                    <Text className="text-zinc-400 text-xs mb-1">ProteÃ­na</Text>
+                    <Text className="text-zinc-400 text-xs mb-1">Proteína</Text>
                     <Text className="text-primary/80 font-bold text-lg">{Math.round(result.protein / 5)}g</Text>
                   </View>
                   <View className="flex-1 items-center">
@@ -418,9 +418,9 @@ export default function MacroCalculator() {
                   Macronutrientes Explicados
                 </Text>
                 <Text className="text-primary/60 text-sm">
-                  â€¢ ProteÃ­na: 4 kcal/g - ConstrucciÃ³n muscular{'\n'}
-                  â€¢ Carbohidratos: 4 kcal/g - EnergÃ­a{'\n'}
-                  â€¢ Grasas: 9 kcal/g - Hormonas y salud
+                  • Proteína: 4 kcal/g - Construcción muscular{'\n'}
+                  • Carbohidratos: 4 kcal/g - Energía{'\n'}
+                  • Grasas: 9 kcal/g - Hormonas y salud
                 </Text>
               </View>
             </View>
@@ -434,7 +434,7 @@ export default function MacroCalculator() {
                   Consistencia es Clave
                 </Text>
                 <Text className="text-primary/80 text-sm">
-                  Ajusta segÃºn resultados despuÃ©s de 2-4 semanas. PÃ©sate en las mismas condiciones diariamente.
+                  Ajusta según resultados después de 2-4 semanas. Pésate en las mismas condiciones diariamente.
                 </Text>
               </View>
             </View>

@@ -123,12 +123,12 @@ export default function Biomechanics() {
           duration: '2-3 seconds',
           mechanics: [
             'Pull bar to chest (don\'t just lower)',
-            'Elbows 45-75Â° from torso',
+            'Elbows 45-75° from torso',
             'Touch lower chest/sternum',
             'Maintain arch and leg drive',
             'Inhale and hold',
           ],
-          common_errors: ['Bar drifts toward face', 'Elbows flare 90Â°', 'Bouncing', 'Losing tightness'],
+          common_errors: ['Bar drifts toward face', 'Elbows flare 90°', 'Bouncing', 'Losing tightness'],
         },
         {
           phase: 'Ascent (Concentric)',
@@ -436,7 +436,7 @@ export default function Biomechanics() {
                   <Text className="text-white font-bold mb-2">Mechanics</Text>
                   {phase.mechanics.map((mech, midx) => (
                     <View key={midx} className="flex-row items-start mb-1 last:mb-0">
-                      <Text className="text-primary mr-2">â€¢</Text>
+                      <Text className="text-primary mr-2">•</Text>
                       <Text className="text-zinc-300 text-sm flex-1">{mech}</Text>
                     </View>
                   ))}
@@ -446,7 +446,7 @@ export default function Biomechanics() {
                   <Text className="text-red-400 font-bold text-sm mb-1">Common Errors</Text>
                   {phase.common_errors.map((error, eidx) => (
                     <Text key={eidx} className="text-red-300 text-sm mb-1 last:mb-0">
-                      Ã— {error}
+                      × {error}
                     </Text>
                   ))}
                 </View>
@@ -463,7 +463,7 @@ export default function Biomechanics() {
                   Impact: {factor.impact}
                 </Text>
                 <Text className="text-primary text-sm">
-                  âœ“ Adaptation: {factor.adaptation}
+                  ✓ Adaptation: {factor.adaptation}
                 </Text>
               </View>
             ))}
@@ -487,16 +487,16 @@ export default function Biomechanics() {
           <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
             <Text className="text-primary/80 font-bold mb-2">Key Principles</Text>
             <Text className="text-primary/60 text-sm mb-2">
-              â€¢ Biomechanics determine optimal technique for YOUR body
+              • Biomechanics determine optimal technique for YOUR body
             </Text>
             <Text className="text-primary/60 text-sm mb-2">
-              â€¢ Leverage differences explain why form varies between lifters
+              • Leverage differences explain why form varies between lifters
             </Text>
             <Text className="text-primary/60 text-sm mb-2">
-              â€¢ Address weak points with specific accessories
+              • Address weak points with specific accessories
             </Text>
             <Text className="text-primary/60 text-sm">
-              â€¢ Film your lifts to identify mechanical inefficiencies
+              • Film your lifts to identify mechanical inefficiencies
             </Text>
           </View>
         </View>

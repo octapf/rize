@@ -98,7 +98,7 @@ export default function FatigueManagement() {
       strategies: [
         { tip: 'Aim for 7-9 hours nightly', priority: 'Critical' },
         { tip: 'Same sleep/wake schedule', priority: 'High' },
-        { tip: 'Dark, cool room (65-68Â°F)', priority: 'High' },
+        { tip: 'Dark, cool room (65-68°F)', priority: 'High' },
         { tip: 'No screens 1hr before bed', priority: 'Medium' },
         { tip: 'Magnesium supplement', priority: 'Medium' },
       ],

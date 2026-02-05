@@ -50,7 +50,7 @@ const WORKOUT_HISTORY: WorkoutSession[] = [
     totalVolume: 8650,
     calories: 420,
     intensity: 'high',
-    muscle_groups: ['Pecho', 'Hombros', 'TrÃ­ceps'],
+    muscle_groups: ['Pecho', 'Hombros', 'Tríceps'],
     notes: 'Nuevo PR en press banca: 120kg x 3',
   },
   {
@@ -62,7 +62,7 @@ const WORKOUT_HISTORY: WorkoutSession[] = [
     totalVolume: 7240,
     calories: 385,
     intensity: 'medium',
-    muscle_groups: ['Espalda', 'BÃ­ceps'],
+    muscle_groups: ['Espalda', 'Bíceps'],
   },
   {
     id: '3',
@@ -73,8 +73,8 @@ const WORKOUT_HISTORY: WorkoutSession[] = [
     totalVolume: 12450,
     calories: 520,
     intensity: 'high',
-    muscle_groups: ['CuÃ¡driceps', 'GlÃºteos', 'Isquiotibiales'],
-    notes: 'Sentadilla profunda sintiÃ©ndose fuerte',
+    muscle_groups: ['Cuádriceps', 'Glúteos', 'Isquiotibiales'],
+    notes: 'Sentadilla profunda sintiéndose fuerte',
   },
   {
     id: '4',
@@ -96,7 +96,7 @@ const WORKOUT_HISTORY: WorkoutSession[] = [
     totalVolume: 10240,
     calories: 465,
     intensity: 'high',
-    muscle_groups: ['CuÃ¡driceps', 'GlÃºteos'],
+    muscle_groups: ['Cuádriceps', 'Glúteos'],
   },
   {
     id: '6',
@@ -107,7 +107,7 @@ const WORKOUT_HISTORY: WorkoutSession[] = [
     totalVolume: 7140,
     calories: 340,
     intensity: 'medium',
-    muscle_groups: ['Pecho', 'TrÃ­ceps'],
+    muscle_groups: ['Pecho', 'Tríceps'],
   },
   {
     id: '7',
@@ -130,7 +130,7 @@ const WEEKLY_STATS: WeeklyStats[] = [
     totalVolume: 43570,
     totalCalories: 2095,
     avgDuration: 81,
-    topMuscleGroups: ['Pecho', 'Espalda', 'CuÃ¡driceps'],
+    topMuscleGroups: ['Pecho', 'Espalda', 'Cuádriceps'],
   },
   {
     week: 'Semana 3 Enero',
@@ -138,7 +138,7 @@ const WEEKLY_STATS: WeeklyStats[] = [
     totalVolume: 48240,
     totalCalories: 2340,
     avgDuration: 76,
-    topMuscleGroups: ['Espalda', 'GlÃºteos', 'Hombros'],
+    topMuscleGroups: ['Espalda', 'Glúteos', 'Hombros'],
   },
   {
     week: 'Semana 2 Enero',
@@ -146,7 +146,7 @@ const WEEKLY_STATS: WeeklyStats[] = [
     totalVolume: 41890,
     totalCalories: 2010,
     avgDuration: 79,
-    topMuscleGroups: ['Pecho', 'CuÃ¡driceps', 'BÃ­ceps'],
+    topMuscleGroups: ['Pecho', 'Cuádriceps', 'Bíceps'],
   },
 ];
 
@@ -174,7 +174,7 @@ export default function WorkoutHistory() {
   const viewWorkoutDetails = (workout: WorkoutSession) => {
     Alert.alert(
       workout.name,
-      `${workout.exercises} ejercicios â€¢ ${workout.duration} min\n${workout.totalVolume.toLocaleString()}kg volumen\n\n${workout.notes || 'Sin notas'}`,
+      `${workout.exercises} ejercicios • ${workout.duration} min\n${workout.totalVolume.toLocaleString()}kg volumen\n\n${workout.notes || 'Sin notas'}`,
       [{ text: 'OK' }]
     );
   };
@@ -269,7 +269,7 @@ export default function WorkoutHistory() {
             <View className="bg-zinc-900 rounded-xl p-4 border border-zinc-800 mb-6">
               <View className="flex-row items-center justify-between">
                 <View className="flex-1">
-                  <Text className="text-zinc-400 text-xs mb-1">ÃšLTIMO WORKOUT</Text>
+                  <Text className="text-zinc-400 text-xs mb-1">ÚLTIMO WORKOUT</Text>
                   <Text className="text-white text-lg font-bold">
                     Hace {Math.floor((Date.now() - new Date(history[0].date).getTime()) / (1000 * 60 * 60))}h
                   </Text>
@@ -323,7 +323,7 @@ export default function WorkoutHistory() {
                   <View className="flex-1 bg-zinc-800 rounded-lg p-2">
                     <View className="flex-row items-center mb-1">
                       <Ionicons name="time" size={14} color="#71717A" />
-                      <Text className="text-zinc-400 text-xs ml-1">DuraciÃ³n</Text>
+                      <Text className="text-zinc-400 text-xs ml-1">Duración</Text>
                     </View>
                     <Text className="text-white font-bold">{workout.duration} min</Text>
                   </View>
@@ -349,7 +349,7 @@ export default function WorkoutHistory() {
                   <View className="flex-1 bg-zinc-800 rounded-lg p-2">
                     <View className="flex-row items-center mb-1">
                       <Ionicons name="flame" size={14} color="#71717A" />
-                      <Text className="text-zinc-400 text-xs ml-1">CalorÃ­as</Text>
+                      <Text className="text-zinc-400 text-xs ml-1">Calorías</Text>
                     </View>
                     <Text className="text-red-400 font-bold">{workout.calories} kcal</Text>
                   </View>
@@ -507,7 +507,7 @@ export default function WorkoutHistory() {
                       Excelente Mes
                     </Text>
                     <Text className="text-primary/80 text-sm">
-                      Tu consistencia estÃ¡ por encima del 90%. Sigue asÃ­ para resultados Ã³ptimos.
+                      Tu consistencia está por encima del 90%. Sigue así para resultados óptimos.
                     </Text>
                   </View>
                 </View>
@@ -524,7 +524,7 @@ export default function WorkoutHistory() {
                 <View className="flex-row items-start mb-2">
                   <Ionicons name="arrow-forward" size={16} color="#9D12DE" />
                   <Text className="text-zinc-300 text-sm ml-2 flex-1">
-                    MantÃ©n tu consistencia del 91.7% o mejor
+                    Mantén tu consistencia del 91.7% o mejor
                   </Text>
                 </View>
                 <View className="flex-row items-start mb-2">

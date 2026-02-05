@@ -42,22 +42,22 @@ const EXERCISE_DATABASE: Exercise[] = [
     equipment: 'Barra',
     difficulty: 'intermediate',
     instructions: [
-      'AcuÃ©state en banco plano con pies firmes en el suelo',
-      'Agarre ligeramente mÃ¡s ancho que hombros',
-      'Baja barra a la lÃ­nea del pezÃ³n controladamente',
+      'Acuéstate en banco plano con pies firmes en el suelo',
+      'Agarre ligeramente más ancho que hombros',
+      'Baja barra a la línea del pezón controladamente',
       'Empuja explosivamente mientras exhalas',
-      'MantÃ©n escÃ¡pulas retraÃ­das todo el movimiento',
+      'Mantén escápulas retraídas todo el movimiento',
     ],
     tips: [
       'Arco lumbar natural, no excesivo',
-      'Codos a 45Â° del torso, no 90Â°',
+      'Codos a 45° del torso, no 90°',
       'Toca pecho en cada rep',
-      'MuÃ±ecas alineadas con antebrazo',
+      'Muñecas alineadas con antebrazo',
     ],
     commonMistakes: [
       'Rebotar la barra en el pecho',
-      'Despegar glÃºteos del banco',
-      'Codos muy abiertos (lesiÃ³n hombro)',
+      'Despegar glúteos del banco',
+      'Codos muy abiertos (lesión hombro)',
       'No tocar pecho (ROM incompleto)',
     ],
     variations: ['Press Inclinado', 'Press Declinado', 'Press con Mancuernas'],
@@ -72,21 +72,21 @@ const EXERCISE_DATABASE: Exercise[] = [
     instructions: [
       'Barra en traps (high bar) o deltoides posteriores (low bar)',
       'Pies ancho de hombros, puntas ligeramente hacia fuera',
-      'Inhala profundo, mantÃ©n core apretado',
+      'Inhala profundo, mantén core apretado',
       'Desciende rompiendo cadera primero',
-      'Baja hasta paralelo o mÃ¡s (caderas bajo rodillas)',
-      'Empuja a travÃ©s de talones manteniendo pecho arriba',
+      'Baja hasta paralelo o más (caderas bajo rodillas)',
+      'Empuja a través de talones manteniendo pecho arriba',
     ],
     tips: [
-      'Rodillas en lÃ­nea con pies (no hacia dentro)',
-      'MantÃ©n peso en talones y mediopiÃ©',
+      'Rodillas en línea con pies (no hacia dentro)',
+      'Mantén peso en talones y mediopié',
       'Mira al frente, no abajo ni arriba',
       'Core apretado todo el movimiento',
     ],
     commonMistakes: [
       'No bajar a paralelo',
       'Rodillas colapsando hacia dentro',
-      'Subir glÃºteos mÃ¡s rÃ¡pido que el torso',
+      'Subir glúteos más rápido que el torso',
       'Redondear espalda baja',
     ],
     variations: ['Front Squat', 'Bulgarian Split Squat', 'Squat con Pausa'],
@@ -103,14 +103,14 @@ const EXERCISE_DATABASE: Exercise[] = [
       'Agarre afuera de piernas, espalda neutral',
       'Inhala, aprieta lats, tensa todo el cuerpo',
       'Empuja suelo con piernas (no "tires" con espalda)',
-      'Extiende cadera y rodillas simultÃ¡neamente',
-      'Termina con glÃºteos apretados, no hiperextensiÃ³n lumbar',
+      'Extiende cadera y rodillas simultáneamente',
+      'Termina con glúteos apretados, no hiperextensión lumbar',
     ],
     tips: [
-      'La barra sube en lÃ­nea recta, pegada a tibias',
+      'La barra sube en línea recta, pegada a tibias',
       'Hombros ligeramente adelante de la barra al inicio',
-      'MantÃ©n cuello neutral (no mires arriba)',
-      'Aprieta glÃºteos al finalizar, no arco excesivo',
+      'Mantén cuello neutral (no mires arriba)',
+      'Aprieta glúteos al finalizar, no arco excesivo',
     ],
     commonMistakes: [
       'Redondear espalda baja',
@@ -128,14 +128,14 @@ const EXERCISE_DATABASE: Exercise[] = [
     equipment: 'Barra fija',
     difficulty: 'intermediate',
     instructions: [
-      'Cuelga de barra con agarre prono, ancho de hombros o mÃ¡s',
-      'Retrae escÃ¡pulas antes de empezar a subir',
-      'Tira codos hacia abajo y atrÃ¡s',
+      'Cuelga de barra con agarre prono, ancho de hombros o más',
+      'Retrae escápulas antes de empezar a subir',
+      'Tira codos hacia abajo y atrás',
       'Sube hasta barbilla sobre barra',
       'Desciende controladamente hasta brazos extendidos',
     ],
     tips: [
-      'Inicia el movimiento con escÃ¡pulas, no brazos',
+      'Inicia el movimiento con escápulas, no brazos',
       'Piensa "codos al piso" no "manos a la cara"',
       'Evita kipping (usar impulso)',
       'Full ROM: brazos extendidos abajo',
@@ -143,7 +143,7 @@ const EXERCISE_DATABASE: Exercise[] = [
     commonMistakes: [
       'No bajar hasta brazos extendidos',
       'Usar impulso excesivo',
-      'Hombros elevados (no retraer escÃ¡pulas)',
+      'Hombros elevados (no retraer escápulas)',
       'Hiperextender cuello para subir',
     ],
     variations: ['Chin-ups', 'Dominadas Neutras', 'Dominadas Asistidas'],
@@ -156,17 +156,17 @@ const EXERCISE_DATABASE: Exercise[] = [
     equipment: 'Barra',
     difficulty: 'intermediate',
     instructions: [
-      'De pie, barra en clavÃ­culas, agarre ancho de hombros',
+      'De pie, barra en clavículas, agarre ancho de hombros',
       'Codos ligeramente adelante de la barra',
-      'Aprieta glÃºteos y core para estabilidad',
+      'Aprieta glúteos y core para estabilidad',
       'Empuja barra verticalmente sobre la cabeza',
-      'Mueve cabeza ligeramente atrÃ¡s al subir',
-      'Finaliza con biceps junto a orejas, barra sobre mediopiÃ©',
+      'Mueve cabeza ligeramente atrás al subir',
+      'Finaliza con biceps junto a orejas, barra sobre mediopié',
     ],
     tips: [
       'No hiperextender espalda baja',
-      'Barra sube y baja en lÃ­nea recta',
-      'Full lockout arriba con escÃ¡pulas elevadas',
+      'Barra sube y baja en línea recta',
+      'Full lockout arriba con escápulas elevadas',
       'Respira arriba, no abajo',
     ],
     commonMistakes: [
@@ -185,16 +185,16 @@ const EXERCISE_DATABASE: Exercise[] = [
     equipment: 'Barra',
     difficulty: 'intermediate',
     instructions: [
-      'Bisagra de cadera, torso ~45Â° del suelo',
-      'Agarre prono, ligeramente mÃ¡s ancho que hombros',
-      'Brazos extendidos, escÃ¡pulas protraÃ­das al inicio',
-      'Tira codos hacia arriba y atrÃ¡s',
+      'Bisagra de cadera, torso ~45° del suelo',
+      'Agarre prono, ligeramente más ancho que hombros',
+      'Brazos extendidos, escápulas protraídas al inicio',
+      'Tira codos hacia arriba y atrás',
       'Toca barra en parte baja del pecho/abdomen superior',
       'Desciende controladamente',
     ],
     tips: [
-      'MantÃ©n espalda neutral, no redondees',
-      'Aprieta dorsales y retrae escÃ¡pulas arriba',
+      'Mantén espalda neutral, no redondees',
+      'Aprieta dorsales y retrae escápulas arriba',
       'No uses demasiado impulso',
       'Piensa en "separar la barra"',
     ],
@@ -285,7 +285,7 @@ export default function ExerciseDatabase() {
             {/* Instructions */}
             <View className="bg-primary/10 rounded-xl p-4 mb-6 border border-primary/30">
               <Text className="text-primary font-bold text-lg mb-3">
-                EjecuciÃ³n Paso a Paso
+                Ejecución Paso a Paso
               </Text>
               {selectedExercise.instructions.map((instruction, idx) => (
                 <View key={idx} className="flex-row items-start mb-3">
@@ -447,10 +447,10 @@ export default function ExerciseDatabase() {
               <Ionicons name="information-circle" size={20} color="#FFEA00" />
               <View className="flex-1 ml-3">
                 <Text className="text-amber-400 font-bold mb-2">
-                  Base de Datos en ExpansiÃ³n
+                  Base de Datos en Expansión
                 </Text>
                 <Text className="text-amber-300 text-sm">
-                  Esta es una selecciÃ³n de ejercicios fundamentales. MÃ¡s ejercicios serÃ¡n aÃ±adidos prÃ³ximamente.
+                  Esta es una selección de ejercicios fundamentales. Más ejercicios serán añadidos próximamente.
                 </Text>
               </View>
             </View>

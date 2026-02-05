@@ -38,7 +38,7 @@ const MOCK_RECORDS: PersonalRecord[] = [
     unit: 'kg',
     date: new Date(2026, 0, 27),
     previousRecord: 115,
-    notes: 'Nueva marca personal! TÃ©cnica perfecta',
+    notes: 'Nueva marca personal! Técnica perfecta',
   },
   {
     id: '2',
@@ -78,7 +78,7 @@ const MOCK_RECORDS: PersonalRecord[] = [
     value: 12500,
     unit: 'kg',
     date: new Date(2026, 0, 5),
-    notes: 'Volumen total de la sesiÃ³n',
+    notes: 'Volumen total de la sesión',
   },
 ];
 
@@ -88,8 +88,8 @@ export default function PersonalRecords() {
 
   const deleteRecord = (id: string) => {
     Alert.alert(
-      'Eliminar RÃ©cord',
-      'Â¿EstÃ¡s seguro?',
+      'Eliminar Récord',
+      '¿Estás seguro?',
       [
         { text: 'Cancelar' },
         { text: 'Eliminar', style: 'destructive', onPress: () => setRecords(records.filter((r) => r.id !== id)) },
@@ -98,7 +98,7 @@ export default function PersonalRecords() {
   };
 
   const addNewRecord = () => {
-    Alert.alert('PrÃ³ximamente', 'Formulario para aÃ±adir nuevo PR en desarrollo');
+    Alert.alert('Próximamente', 'Formulario para añadir nuevo PR en desarrollo');
   };
 
   const getTypeLabel = (type: string): string => {
@@ -106,9 +106,9 @@ export default function PersonalRecords() {
       '1RM': '1 Rep Max',
       '3RM': '3 Reps Max',
       '5RM': '5 Reps Max',
-      'maxReps': 'MÃ¡x Repeticiones',
-      'maxWeight': 'MÃ¡ximo Peso',
-      'maxVolume': 'MÃ¡ximo Volumen',
+      'maxReps': 'Máx Repeticiones',
+      'maxWeight': 'Máximo Peso',
+      'maxVolume': 'Máximo Volumen',
     };
     return labels[type] || type;
   };
@@ -192,7 +192,7 @@ export default function PersonalRecords() {
           {filteredRecords.length === 0 ? (
             <View className="bg-zinc-900 rounded-xl p-8 items-center border border-zinc-800">
               <Text className="text-6xl mb-3">ðŸ†</Text>
-              <Text className="text-white font-bold text-lg mb-2">Sin RÃ©cords</Text>
+              <Text className="text-white font-bold text-lg mb-2">Sin Récords</Text>
               <Text className="text-zinc-400 text-center">
                 Empieza a registrar tus logros personales
               </Text>
@@ -236,7 +236,7 @@ export default function PersonalRecords() {
 
                     {/* Value */}
                     <View className={`bg-${categoryInfo.color}-500 rounded-xl p-4 mb-3`}>
-                      <Text className="text-white opacity-90 text-sm mb-1">RÃ©cord Personal</Text>
+                      <Text className="text-white opacity-90 text-sm mb-1">Récord Personal</Text>
                       <View className="flex-row items-baseline">
                         <Text className="text-white text-5xl font-bold mr-2">
                           {record.value}
@@ -284,12 +284,12 @@ export default function PersonalRecords() {
                   Tips para Nuevos PRs
                 </Text>
                 <Text className="text-amber-300 text-sm">
-                  â€¢ No intentes PRs cuando estÃ©s fatigado{'\n'}
-                  â€¢ Calentamiento especÃ­fico es crucial{'\n'}
-                  â€¢ Siempre con spotter en ejercicios pesados{'\n'}
-                  â€¢ TÃ©cnica perfecta &gt; ego lifting{'\n'}
-                  â€¢ Descansa bien la noche anterior{'\n'}
-                  â€¢ Celebra cada logro, por pequeÃ±o que sea!
+                  • No intentes PRs cuando estés fatigado{'\n'}
+                  • Calentamiento específico es crucial{'\n'}
+                  • Siempre con spotter en ejercicios pesados{'\n'}
+                  • Técnica perfecta &gt; ego lifting{'\n'}
+                  • Descansa bien la noche anterior{'\n'}
+                  • Celebra cada logro, por pequeño que sea!
                 </Text>
               </View>
             </View>

@@ -90,7 +90,7 @@ export default function LeaderboardScreen() {
       case 'volume':
         return `${(entry.totalVolume || 0).toLocaleString()} kg`;
       case 'streak':
-        return `${entry.streak || 0} dÃ­as`;
+        return `${entry.streak || 0} días`;
       default:
         return '';
     }
@@ -127,7 +127,7 @@ export default function LeaderboardScreen() {
           )}
           {item.isCurrentUser && (
             <View style={styles.youBadge}>
-              <Text style={styles.youBadgeText}>TÃš</Text>
+              <Text style={styles.youBadgeText}>TÚ</Text>
             </View>
           )}
         </View>
@@ -157,7 +157,7 @@ export default function LeaderboardScreen() {
     <View style={styles.container}>
       <Stack.Screen
         options={{
-          title: 'ClasificaciÃ³n',
+          title: 'Clasificación',
           headerStyle: { backgroundColor: '#000' },
           headerTintColor: '#fff',
         }}
@@ -256,7 +256,7 @@ export default function LeaderboardScreen() {
       {/* Leaderboard List */}
       {isLoading && (
         <View style={styles.centered}>
-          <Text style={styles.loadingText}>Cargando clasificaciÃ³n...</Text>
+          <Text style={styles.loadingText}>Cargando clasificación...</Text>
         </View>
       )}
 
@@ -265,7 +265,7 @@ export default function LeaderboardScreen() {
           <Ionicons name="trophy-outline" size={64} color="#666" />
           <Text style={styles.emptyText}>
             {selectedView === 'friends'
-              ? 'AÃºn no hay datos de tus amigos'
+              ? 'Aún no hay datos de tus amigos'
               : 'No hay datos disponibles'}
           </Text>
         </View>

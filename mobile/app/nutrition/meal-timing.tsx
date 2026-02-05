@@ -290,12 +290,12 @@ export default function MealTiming() {
           <View className="bg-red-500/10 rounded-xl p-4 border border-red-500/30 mb-6">
             <Text className="text-red-400 font-bold mb-2">Meal Timing Reality Check</Text>
             <Text className="text-red-300 text-sm">
-              â€¢ Total daily macros &gt; meal timing{'\n'}
-              â€¢ 2-4h "anabolic window" not 30 min{'\n'}
-              â€¢ Pre-workout more important than post{'\n'}
-              â€¢ Consistency beats perfect timing{'\n'}
-              â€¢ Listen to your body{'\n'}
-              â€¢ Find what works for YOUR schedule
+              • Total daily macros &gt; meal timing{'\n'}
+              • 2-4h "anabolic window" not 30 min{'\n'}
+              • Pre-workout more important than post{'\n'}
+              • Consistency beats perfect timing{'\n'}
+              • Listen to your body{'\n'}
+              • Find what works for YOUR schedule
             </Text>
           </View>
         </View>

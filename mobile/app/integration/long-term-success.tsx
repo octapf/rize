@@ -443,19 +443,19 @@ export default function LongTermSuccess() {
           <View className="bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-xl p-5 border border-purple-500/30 mb-6">
             <Text className="text-purple-400 font-bold text-lg mb-3">The Marathon, Not Sprint</Text>
             <Text className="text-purple-300 text-sm mb-2">
-              â€¢ Think in decades - you have 30+ years of training ahead
+              • Think in decades - you have 30+ years of training ahead
             </Text>
             <Text className="text-purple-300 text-sm mb-2">
-              â€¢ Consistency beats intensity over the long run
+              • Consistency beats intensity over the long run
             </Text>
             <Text className="text-purple-300 text-sm mb-2">
-              â€¢ Injuries that sideline you &gt; slow progress
+              • Injuries that sideline you &gt; slow progress
             </Text>
             <Text className="text-purple-300 text-sm mb-2">
-              â€¢ Enjoy the process - it's the only way to sustain it
+              • Enjoy the process - it's the only way to sustain it
             </Text>
             <Text className="text-purple-300 text-sm">
-              â€¢ Your "why" will carry you through hard times
+              • Your "why" will carry you through hard times
             </Text>
           </View>
 
@@ -465,19 +465,19 @@ export default function LongTermSuccess() {
               Keys to Longevity
             </Text>
             <Text className="text-primary/80 text-sm mb-2">
-              âœ“ Perfect technique prevents injuries
+              ✓ Perfect technique prevents injuries
             </Text>
             <Text className="text-primary/80 text-sm mb-2">
-              âœ“ Regular deloads keep you fresh
+              ✓ Regular deloads keep you fresh
             </Text>
             <Text className="text-primary/80 text-sm mb-2">
-              âœ“ Vary training to prevent burnout
+              ✓ Vary training to prevent burnout
             </Text>
             <Text className="text-primary/80 text-sm mb-2">
-              âœ“ Listen to your body always
+              ✓ Listen to your body always
             </Text>
             <Text className="text-primary/80 text-sm">
-              âœ“ Remember - you're building strength for LIFE
+              ✓ Remember - you're building strength for LIFE
             </Text>
           </View>
         </View>

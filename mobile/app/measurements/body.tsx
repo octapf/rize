@@ -115,7 +115,7 @@ const MEASUREMENT_HISTORY: MeasurementHistory[] = [
 ];
 
 const CALIPER_SITES = [
-  { id: '1', name: 'TrÃ­ceps', value: 12, unit: 'mm', icon: 'bonfire' },
+  { id: '1', name: 'Tríceps', value: 12, unit: 'mm', icon: 'bonfire' },
   { id: '2', name: 'Subescapular', value: 18, unit: 'mm', icon: 'body' },
   { id: '3', name: 'Suprailiaco', value: 22, unit: 'mm', icon: 'analytics' },
   { id: '4', name: 'Abdominal', value: 24, unit: 'mm', icon: 'ellipse-outline' },
@@ -138,8 +138,8 @@ export default function BodyMeasurements() {
 
   const addMeasurement = (bodyPart: string) => {
     Alert.alert(
-      'Nueva MediciÃ³n',
-      `Ingresa la mediciÃ³n para ${bodyPart}`,
+      'Nueva Medición',
+      `Ingresa la medición para ${bodyPart}`,
       [
         {
           text: 'Cancelar',
@@ -148,7 +148,7 @@ export default function BodyMeasurements() {
         {
           text: 'Guardar',
           onPress: () => {
-            Alert.alert('Guardado', `MediciÃ³n de ${bodyPart} registrada`);
+            Alert.alert('Guardado', `Medición de ${bodyPart} registrada`);
           },
         },
       ]
@@ -196,7 +196,7 @@ export default function BodyMeasurements() {
                 +3.2 cm
               </Text>
               <Text className="text-white/80 text-sm">
-                MÃºsculo ganado en Ã¡reas clave
+                Músculo ganado en áreas clave
               </Text>
             </View>
             <View className="bg-white/20 rounded-full p-4">
@@ -353,7 +353,7 @@ export default function BodyMeasurements() {
             </View>
 
             <Text className="text-white font-bold text-lg mb-3">
-              Sitios de MediciÃ³n (7 pliegues)
+              Sitios de Medición (7 pliegues)
             </Text>
 
             {CALIPER_SITES.map((site) => (
@@ -384,7 +384,7 @@ export default function BodyMeasurements() {
               <View className="flex-row items-center justify-center">
                 <Ionicons name="add-circle" size={20} color="white" />
                 <Text className="text-white font-bold ml-2">
-                  Nueva MediciÃ³n Completa
+                  Nueva Medición Completa
                 </Text>
               </View>
             </TouchableOpacity>
@@ -487,7 +487,7 @@ export default function BodyMeasurements() {
                   Mide Siempre en las Mismas Condiciones
                 </Text>
                 <Text className="text-amber-300 text-sm">
-                  Para resultados precisos, mide siempre a la misma hora del dÃ­a, en ayunas, y despuÃ©s de ir al baÃ±o.
+                  Para resultados precisos, mide siempre a la misma hora del día, en ayunas, y después de ir al baño.
                 </Text>
               </View>
             </View>

@@ -217,11 +217,11 @@ export default function TemplateBuilder() {
           <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
             <Text className="text-primary/80 font-bold mb-2">Template Builder Tips</Text>
             <Text className="text-primary/60 text-sm">
-              â€¢ Include compound lifts first{'\n'}
-              â€¢ 4-6 exercises per session{'\n'}
-              â€¢ Balance push/pull ratio{'\n'}
-              â€¢ Progressive overload cada semana{'\n'}
-              â€¢ Save templates para reutilizar
+              • Include compound lifts first{'\n'}
+              • 4-6 exercises per session{'\n'}
+              • Balance push/pull ratio{'\n'}
+              • Progressive overload cada semana{'\n'}
+              • Save templates para reutilizar
             </Text>
           </View>
         </View>

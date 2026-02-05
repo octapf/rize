@@ -329,16 +329,16 @@ export default function MovementScreening() {
           <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
             <Text className="text-primary/80 font-bold mb-2">Screening Tips</Text>
             <Text className="text-primary/60 text-sm mb-2">
-              â€¢ Record video to review form
+              • Record video to review form
             </Text>
             <Text className="text-primary/60 text-sm mb-2">
-              â€¢ Test both sides for asymmetries
+              • Test both sides for asymmetries
             </Text>
             <Text className="text-primary/60 text-sm mb-2">
-              â€¢ Re-screen every 4-6 weeks to track improvements
+              • Re-screen every 4-6 weeks to track improvements
             </Text>
             <Text className="text-primary/60 text-sm">
-              â€¢ Score of 1 = address limitation before heavy loading
+              • Score of 1 = address limitation before heavy loading
             </Text>
           </View>
         </View>

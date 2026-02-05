@@ -103,7 +103,7 @@ export default function WorkoutComparison() {
         color: 'blue',
       },
       {
-        label: 'DuraciÃ³n',
+        label: 'Duración',
         workoutA: workoutA.duration,
         workoutB: workoutB.duration,
         unit: 'min',
@@ -161,9 +161,9 @@ export default function WorkoutComparison() {
               <Ionicons name="arrow-back" size={24} color="white" />
             </TouchableOpacity>
             <Text className="text-white text-2xl font-bold flex-1 ml-3">
-              ComparaciÃ³n
+              Comparación
             </Text>
-            <TouchableOpacity onPress={() => Alert.alert('Guardado', 'ComparaciÃ³n guardada')}>
+            <TouchableOpacity onPress={() => Alert.alert('Guardado', 'Comparación guardada')}>
               <Ionicons name="bookmark" size={24} color="white" />
             </TouchableOpacity>
           </View>
@@ -206,7 +206,7 @@ export default function WorkoutComparison() {
             </View>
 
             {/* Comparisons */}
-            <Text className="text-white font-bold text-lg mb-4">MÃ©tricas</Text>
+            <Text className="text-white font-bold text-lg mb-4">Métricas</Text>
             {comparisons.map((comparison, index) => (
               <View key={index} className="bg-zinc-900 rounded-xl p-4 mb-3 border border-zinc-800">
                 <View className="flex-row items-center mb-3">
@@ -269,10 +269,10 @@ export default function WorkoutComparison() {
                   <Text className="text-primary/80 font-bold mb-2">Insights</Text>
                   <Text className="text-primary/60 text-sm">
                     {workoutAWins > workoutBWins
-                      ? `${workoutA.name} tuvo mejor rendimiento general. Considera quÃ© factores contribuyeron (sueÃ±o, nutriciÃ³n, descanso).`
+                      ? `${workoutA.name} tuvo mejor rendimiento general. Considera qué factores contribuyeron (sueño, nutrición, descanso).`
                       : workoutBWins > workoutAWins
-                      ? `${workoutB.name} fue superior. Analiza quÃ© cambiÃ³ entre sesiones para replicar el Ã©xito.`
-                      : 'Workouts muy parejos. MantÃ©n la consistencia y progresa gradualmente.'}
+                      ? `${workoutB.name} fue superior. Analiza qué cambió entre sesiones para replicar el éxito.`
+                      : 'Workouts muy parejos. Mantén la consistencia y progresa gradualmente.'}
                   </Text>
                 </View>
               </View>
@@ -333,7 +333,7 @@ export default function WorkoutComparison() {
                 } else if (!workoutB && workout.id !== workoutA.id) {
                   selectWorkout(workout, 'B');
                 } else if (workoutA && workoutB) {
-                  Alert.alert('Info', 'Ya seleccionaste ambos workouts. CompÃ¡ralos o resetea.');
+                  Alert.alert('Info', 'Ya seleccionaste ambos workouts. Compáralos o resetea.');
                 }
               }}
               disabled={workoutA?.id === workout.id || workoutB?.id === workout.id}
@@ -389,7 +389,7 @@ export default function WorkoutComparison() {
               className="bg-zinc-900 rounded-xl p-4 flex-row items-center justify-center mb-6 border border-zinc-800"
             >
               <Ionicons name="refresh" size={20} color="white" />
-              <Text className="text-white font-bold ml-2">Resetear SelecciÃ³n</Text>
+              <Text className="text-white font-bold ml-2">Resetear Selección</Text>
             </TouchableOpacity>
           )}
 
@@ -399,14 +399,14 @@ export default function WorkoutComparison() {
               <Ionicons name="information-circle" size={20} color="#9D12DE" />
               <View className="flex-1 ml-3">
                 <Text className="text-primary/80 font-bold mb-2">
-                  Por QuÃ© Comparar
+                  Por Qué Comparar
                 </Text>
                 <Text className="text-primary/60 text-sm">
-                  â€¢ Identifica quÃ© workouts son mÃ¡s efectivos{'\n'}
-                  â€¢ Analiza progreso entre sesiones{'\n'}
-                  â€¢ Optimiza volumen y duraciÃ³n{'\n'}
-                  â€¢ Replica sesiones exitosas{'\n'}
-                  â€¢ Toma decisiones basadas en data
+                  • Identifica qué workouts son más efectivos{'\n'}
+                  • Analiza progreso entre sesiones{'\n'}
+                  • Optimiza volumen y duración{'\n'}
+                  • Replica sesiones exitosas{'\n'}
+                  • Toma decisiones basadas en data
                 </Text>
               </View>
             </View>

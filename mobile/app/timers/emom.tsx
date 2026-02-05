@@ -62,7 +62,7 @@ export default function EMOMTimer() {
               <Text className="text-white text-7xl font-bold">{timeLeft}</Text>
             </View>
 
-            <Text className="text-zinc-400 text-lg mb-2">PrÃ³ximo ejercicio:</Text>
+            <Text className="text-zinc-400 text-lg mb-2">Próximo ejercicio:</Text>
             <Text className="text-white text-2xl font-bold text-center">
               {exercises[currentRound % exercises.length]}
             </Text>
@@ -89,12 +89,12 @@ export default function EMOMTimer() {
           </View>
 
           <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
-            <Text className="text-primary/80 font-bold mb-2">CÃ³mo Funciona EMOM</Text>
+            <Text className="text-primary/80 font-bold mb-2">Cómo Funciona EMOM</Text>
             <Text className="text-primary/60 text-sm">
-              â€¢ Cada minuto haz el ejercicio asignado{'\n'}
-              â€¢ Lo que sobre del minuto = descanso{'\n'}
-              â€¢ Trabaja rÃ¡pido para mÃ¡s rest{'\n'}
-              â€¢ Mejora velocidad y resistencia
+              • Cada minuto haz el ejercicio asignado{'\n'}
+              • Lo que sobre del minuto = descanso{'\n'}
+              • Trabaja rápido para más rest{'\n'}
+              • Mejora velocidad y resistencia
             </Text>
           </View>
         </View>

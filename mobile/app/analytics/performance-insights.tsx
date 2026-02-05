@@ -27,7 +27,7 @@ export default function PerformanceInsights() {
     { key: 'strength', label: 'Fuerza', icon: 'barbell', color: 'red' },
     { key: 'volume', label: 'Volumen', icon: 'fitness', color: 'purple' },
     { key: 'recovery', label: 'Recovery', icon: 'moon', color: 'emerald' },
-    { key: 'nutrition', label: 'NutriciÃ³n', icon: 'nutrition', color: 'amber' },
+    { key: 'nutrition', label: 'Nutrición', icon: 'nutrition', color: 'amber' },
   ];
 
   const insights: PerformanceInsight[] = [
@@ -35,9 +35,9 @@ export default function PerformanceInsights() {
       id: '1',
       category: 'strength',
       title: 'Squat PR Inminente',
-      description: 'Basado en tu progresiÃ³n lineal de las Ãºltimas 6 semanas (+2.5kg/semana), estÃ¡s cerca de un PR.',
+      description: 'Basado en tu progresión lineal de las últimas 6 semanas (+2.5kg/semana), estás cerca de un PR.',
       severity: 'positive',
-      recommendation: 'Intenta 1RM de 140kg en tu prÃ³xima sesiÃ³n de pierna. Probabilidad de Ã©xito: 87%',
+      recommendation: 'Intenta 1RM de 140kg en tu próxima sesión de pierna. Probabilidad de éxito: 87%',
       impact: 95,
       icon: 'trending-up',
     },
@@ -45,7 +45,7 @@ export default function PerformanceInsights() {
       id: '2',
       category: 'volume',
       title: 'Volumen de Pecho Bajo',
-      description: 'Tu volumen semanal de pecho (12 sets) estÃ¡ 40% por debajo del rango Ã³ptimo para hypertrophy.',
+      description: 'Tu volumen semanal de pecho (12 sets) está 40% por debajo del rango óptimo para hypertrophy.',
       severity: 'warning',
       recommendation: 'Incrementa a 18-20 sets/semana. Agrega 2 sets de incline press y 2 sets de flies.',
       impact: 78,
@@ -54,30 +54,30 @@ export default function PerformanceInsights() {
     {
       id: '3',
       category: 'recovery',
-      title: 'Excelente RecuperaciÃ³n',
-      description: 'Tus mÃ©tricas de recovery (sueÃ±o 8h, frecuencia cardÃ­aca 58 bpm) estÃ¡n Ã³ptimas.',
+      title: 'Excelente Recuperación',
+      description: 'Tus métricas de recovery (sueño 8h, frecuencia cardíaca 58 bpm) están óptimas.',
       severity: 'positive',
-      recommendation: 'MantÃ©n tu rutina actual de sueÃ±o y nutriciÃ³n. Considera aumentar intensidad.',
+      recommendation: 'Mantén tu rutina actual de sueño y nutrición. Considera aumentar intensidad.',
       impact: 92,
       icon: 'checkmark-circle',
     },
     {
       id: '4',
       category: 'frequency',
-      title: 'Frecuencia de Pierna SubÃ³ptima',
+      title: 'Frecuencia de Pierna Subóptima',
       description: 'Entrenas pierna solo 1x/semana. Para tus objetivos de hypertrophy, esto es insuficiente.',
       severity: 'critical',
-      recommendation: 'Cambia a split de pierna 2x/semana (pesado + volumen). MejorarÃ¡ crecimiento 30-40%.',
+      recommendation: 'Cambia a split de pierna 2x/semana (pesado + volumen). Mejorará crecimiento 30-40%.',
       impact: 85,
       icon: 'alert-circle',
     },
     {
       id: '5',
       category: 'nutrition',
-      title: 'ProteÃ­na Post-Workout Baja',
-      description: 'Consumes solo 15g de proteÃ­na post-entrenamiento. Ã“ptimo es 25-40g.',
+      title: 'Proteína Post-Workout Baja',
+      description: 'Consumes solo 15g de proteína post-entrenamiento. Ã“ptimo es 25-40g.',
       severity: 'warning',
-      recommendation: 'Agrega un scoop adicional de whey (25g) o equivalente en comida sÃ³lida.',
+      recommendation: 'Agrega un scoop adicional de whey (25g) o equivalente en comida sólida.',
       impact: 68,
       icon: 'nutrition',
     },
@@ -95,9 +95,9 @@ export default function PerformanceInsights() {
       id: '7',
       category: 'volume',
       title: 'Superando Rango de Volumen',
-      description: 'Volumen total semanal de 32 sets estÃ¡ en el lÃ­mite superior. Riesgo de overtraining.',
+      description: 'Volumen total semanal de 32 sets está en el límite superior. Riesgo de overtraining.',
       severity: 'warning',
-      recommendation: 'MantÃ©n o reduce ligeramente. Monitorea fatiga y performance.',
+      recommendation: 'Mantén o reduce ligeramente. Monitorea fatiga y performance.',
       impact: 65,
       icon: 'alert',
     },
@@ -105,29 +105,29 @@ export default function PerformanceInsights() {
       id: '8',
       category: 'recovery',
       title: 'Deload Recomendado',
-      description: 'Llevas 8 semanas de progresiÃ³n lineal sin deload. Indicadores de fatiga acumulada detectados.',
+      description: 'Llevas 8 semanas de progresión lineal sin deload. Indicadores de fatiga acumulada detectados.',
       severity: 'critical',
-      recommendation: 'Planea deload week prÃ³xima semana: reduce volumen 40-50%, mantÃ©n intensidad.',
+      recommendation: 'Planea deload week próxima semana: reduce volumen 40-50%, mantén intensidad.',
       impact: 88,
       icon: 'moon',
     },
     {
       id: '9',
       category: 'nutrition',
-      title: 'DÃ©ficit CalÃ³rico Muy Agresivo',
-      description: 'Tu dÃ©ficit actual (-800 cal/dÃ­a) es muy alto para tu nivel de actividad.',
+      title: 'Déficit Calórico Muy Agresivo',
+      description: 'Tu déficit actual (-800 cal/día) es muy alto para tu nivel de actividad.',
       severity: 'critical',
-      recommendation: 'Reduce dÃ©ficit a -500 cal/dÃ­a para preservar mÃºsculo. PÃ©rdida mÃ¡s lenta pero sostenible.',
+      recommendation: 'Reduce déficit a -500 cal/día para preservar músculo. Pérdida más lenta pero sostenible.',
       impact: 80,
       icon: 'flame',
     },
     {
       id: '10',
       category: 'strength',
-      title: 'ProgresiÃ³n Lineal Perfecta',
-      description: 'Bench press aumentando 2.5kg cada 2 semanas. PatrÃ³n Ã³ptimo de progresiÃ³n.',
+      title: 'Progresión Lineal Perfecta',
+      description: 'Bench press aumentando 2.5kg cada 2 semanas. Patrón óptimo de progresión.',
       severity: 'positive',
-      recommendation: 'ContinÃºa con este protocolo hasta estancarte. Luego cambia a periodizaciÃ³n ondulante.',
+      recommendation: 'Continúa con este protocolo hasta estancarte. Luego cambia a periodización ondulante.',
       impact: 90,
       icon: 'trophy',
     },
@@ -213,7 +213,7 @@ export default function PerformanceInsights() {
             <View className="flex-1 bg-red-500/10 rounded-xl p-4 border border-red-500/30">
               <Ionicons name="alert-circle" size={24} color="#EF4444" />
               <Text className="text-red-400 font-bold text-2xl mt-2">{stats.critical}</Text>
-              <Text className="text-red-300 text-sm">CrÃ­ticos</Text>
+              <Text className="text-red-300 text-sm">Críticos</Text>
             </View>
           </View>
 
@@ -281,7 +281,7 @@ export default function PerformanceInsights() {
 
                     <View className={`bg-${color}-500/20 rounded-lg p-3`}>
                       <Text className={`text-${color}-400 font-bold text-sm mb-1`}>
-                        RecomendaciÃ³n:
+                        Recomendación:
                       </Text>
                       <Text className={`text-${color}-300 text-sm`}>
                         {insight.recommendation}
@@ -320,12 +320,12 @@ export default function PerformanceInsights() {
                   Sobre Performance Insights
                 </Text>
                 <Text className="text-primary/60 text-sm">
-                  â€¢ Actualizados diariamente basado en tus datos{'\n'}
-                  â€¢ Algoritmos ML detectan patrones y oportunidades{'\n'}
-                  â€¢ Prioriza insights crÃ­ticos primero{'\n'}
-                  â€¢ Implementa 1-2 recomendaciones a la vez{'\n'}
-                  â€¢ Insights positivos = sigue haciendo lo mismo{'\n'}
-                  â€¢ Re-evalÃºa cada 2 semanas despuÃ©s de cambios
+                  • Actualizados diariamente basado en tus datos{'\n'}
+                  • Algoritmos ML detectan patrones y oportunidades{'\n'}
+                  • Prioriza insights críticos primero{'\n'}
+                  • Implementa 1-2 recomendaciones a la vez{'\n'}
+                  • Insights positivos = sigue haciendo lo mismo{'\n'}
+                  • Re-evalúa cada 2 semanas después de cambios
                 </Text>
               </View>
             </View>

@@ -313,7 +313,7 @@ export default function CommonMistakes() {
                 <Text className="text-primary font-bold mb-2">How to Fix</Text>
                 {error.fix.map((f, fidx) => (
                   <View key={fidx} className="flex-row items-start mb-1 last:mb-0">
-                    <Text className="text-primary mr-2">âœ“</Text>
+                    <Text className="text-primary mr-2">✓</Text>
                     <Text className="text-primary/80 text-sm flex-1">{f}</Text>
                   </View>
                 ))}

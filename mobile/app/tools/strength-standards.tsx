@@ -110,7 +110,7 @@ export default function StrengthStandards() {
       novice: 'Novato',
       intermediate: 'Intermedio',
       advanced: 'Avanzado',
-      elite: 'Ã‰lite',
+      elite: 'Élite',
       'N/A': 'Sin Datos',
     };
     return labels[level] || 'N/A';
@@ -173,7 +173,7 @@ export default function StrengthStandards() {
                   Compara Tu Fuerza
                 </Text>
                 <Text className="text-purple-300 text-sm">
-                  Basado en estÃ¡ndares de powerlifting. Los valores son 1RM como ratio de peso corporal.
+                  Basado en estándares de powerlifting. Los valores son 1RM como ratio de peso corporal.
                 </Text>
               </View>
             </View>
@@ -356,10 +356,10 @@ export default function StrengthStandards() {
                   Notas Importantes
                 </Text>
                 <Text className="text-primary/60 text-sm">
-                  â€¢ Estos son estÃ¡ndares generales{'\n'}
-                  â€¢ VarÃ­an segÃºn edad y experiencia{'\n'}
-                  â€¢ Peso corporal influye (mÃ¡s pesado = ratios mÃ¡s bajos tÃ­picamente){'\n'}
-                  â€¢ EnfÃ³cate en progreso personal, no solo comparaciones
+                  • Estos son estándares generales{'\n'}
+                  • Varían según edad y experiencia{'\n'}
+                  • Peso corporal influye (más pesado = ratios más bajos típicamente){'\n'}
+                  • Enfócate en progreso personal, no solo comparaciones
                 </Text>
               </View>
             </View>

@@ -150,10 +150,10 @@ export default function ProgressScreen() {
   const volumeData = prepareVolumeData();
 
   const timeRanges = [
-    { id: '7d' as const, label: '7 dÃ­as' },
-    { id: '30d' as const, label: '30 dÃ­as' },
-    { id: '90d' as const, label: '90 dÃ­as' },
-    { id: 'year' as const, label: '1 aÃ±o' },
+    { id: '7d' as const, label: '7 días' },
+    { id: '30d' as const, label: '30 días' },
+    { id: '90d' as const, label: '90 días' },
+    { id: 'year' as const, label: '1 año' },
   ];
 
   const chartConfig = {
@@ -245,7 +245,7 @@ export default function ProgressScreen() {
           
           {workoutFrequency.data.every(d => d === 0) ? (
             <View className="py-8 items-center">
-              <Text className="text-gray-400">No hay datos en este perÃ­odo</Text>
+              <Text className="text-gray-400">No hay datos en este período</Text>
             </View>
           ) : (
             <BarChart
@@ -273,7 +273,7 @@ export default function ProgressScreen() {
 
           {volumeData.data.every(d => d === 0) ? (
             <View className="py-8 items-center">
-              <Text className="text-gray-400">No hay datos en este perÃ­odo</Text>
+              <Text className="text-gray-400">No hay datos en este período</Text>
             </View>
           ) : (
             <LineChart
@@ -314,7 +314,7 @@ export default function ProgressScreen() {
 
           <View className="gap-3">
             <View className="flex-row items-center justify-between py-3 border-b border-gray-200">
-              <Text className="text-gray-700">Volumen en un dÃ­a</Text>
+              <Text className="text-gray-700">Volumen en un día</Text>
               <Text className="text-gray-900 font-bold">
                 {Math.max(...volumeData.data, 0).toLocaleString()} kg
               </Text>
@@ -326,9 +326,9 @@ export default function ProgressScreen() {
               </Text>
             </View>
             <View className="flex-row items-center justify-between py-3">
-              <Text className="text-gray-700">Racha mÃ¡s larga</Text>
+              <Text className="text-gray-700">Racha más larga</Text>
               <Text className="text-gray-900 font-bold">
-                {stats?.user.streak || 0} dÃ­as
+                {stats?.user.streak || 0} días
               </Text>
             </View>
           </View>
@@ -351,7 +351,7 @@ export default function ProgressScreen() {
               </Text>
             </View>
             <View className="flex-row items-center justify-between">
-              <Text className="text-gray-700">Promedio por sesiÃ³n</Text>
+              <Text className="text-gray-700">Promedio por sesión</Text>
               <Text className="text-gray-900 font-bold">
                 {stats?.workouts.total
                   ? Math.round((stats.time.total || 0) / stats.workouts.total)

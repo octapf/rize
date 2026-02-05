@@ -328,12 +328,12 @@ export default function HabitTracker() {
           <View className="bg-amber-500/10 rounded-xl p-4 border border-amber-500/30 mb-6">
             <Text className="text-amber-400 font-bold mb-2">Tracking Tips</Text>
             <Text className="text-amber-300 text-sm">
-              â€¢ Start with 2-3 habits max{'\n'}
-              â€¢ Make it impossible to ignore{'\n'}
-              â€¢ Never miss twice in a row{'\n'}
-              â€¢ Track immediately (don't delay){'\n'}
-              â€¢ Celebrate streaks{'\n'}
-              â€¢ Be patient (takes 66 days average)
+              • Start with 2-3 habits max{'\n'}
+              • Make it impossible to ignore{'\n'}
+              • Never miss twice in a row{'\n'}
+              • Track immediately (don't delay){'\n'}
+              • Celebrate streaks{'\n'}
+              • Be patient (takes 66 days average)
             </Text>
           </View>
 

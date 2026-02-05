@@ -40,8 +40,8 @@ const mockGoals: Goal[] = [
   },
   {
     id: '2',
-    title: 'Racha de 30 DÃ­as',
-    description: 'Entrena 30 dÃ­as consecutivos',
+    title: 'Racha de 30 Días',
+    description: 'Entrena 30 días consecutivos',
     type: 'streak',
     target: 30,
     current: 12,
@@ -92,7 +92,7 @@ export default function GoalsScreen() {
   const handleDeleteGoal = (id: string) => {
     Alert.alert(
       'Eliminar Objetivo',
-      'Â¿EstÃ¡s seguro de que quieres eliminar este objetivo?',
+      '¿Estás seguro de que quieres eliminar este objetivo?',
       [
         { text: 'Cancelar', style: 'cancel' },
         {
@@ -136,7 +136,7 @@ export default function GoalsScreen() {
                   <Ionicons name="calendar" size={14} color="#6B7280" />
                   <Text className="text-gray-600 text-xs">
                     {daysRemaining > 0
-                      ? `${daysRemaining} dÃ­as restantes`
+                      ? `${daysRemaining} días restantes`
                       : 'Vencido'}
                   </Text>
                 </View>
@@ -188,7 +188,7 @@ export default function GoalsScreen() {
             </Text>
             {goal.type === 'workouts' && goal.deadline && daysRemaining && daysRemaining > 0 && (
               <Text className="text-gray-600 text-sm">
-                ~{Math.ceil((goal.target - goal.current) / daysRemaining)} por dÃ­a
+                ~{Math.ceil((goal.target - goal.current) / daysRemaining)} por día
               </Text>
             )}
           </View>
@@ -265,7 +265,7 @@ export default function GoalsScreen() {
         {completedGoals.length > 0 && (
           <View className="mt-6">
             <Text className="text-lg font-bold text-gray-900 mb-3">
-              Completados ðŸŽ‰
+              Completados 🎉
             </Text>
             {completedGoals.map(renderGoalCard)}
           </View>

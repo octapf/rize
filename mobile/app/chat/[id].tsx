@@ -28,7 +28,7 @@ interface Message {
 
 const mockUser = {
   id: '1',
-  name: 'Carlos GarcÃ­a',
+  name: 'Carlos García',
   avatar: 'C',
   isOnline: true,
   lastSeen: new Date(),
@@ -38,7 +38,7 @@ const mockMessages: Message[] = [
   {
     id: '1',
     senderId: '1',
-    text: 'Â¡Hola! Â¿CÃ³mo te fue en el gym hoy?',
+    text: '¡Hola! ¿Cómo te fue en el gym hoy?',
     timestamp: new Date(2026, 0, 26, 10, 30),
     read: true,
     type: 'text',
@@ -46,7 +46,7 @@ const mockMessages: Message[] = [
   {
     id: '2',
     senderId: 'me',
-    text: 'Â¡Muy bien! Hice un PR en bench press ðŸ’ª',
+    text: '¡Muy bien! Hice un PR en bench press ðŸ’ª',
     timestamp: new Date(2026, 0, 26, 10, 32),
     read: true,
     type: 'text',
@@ -54,7 +54,7 @@ const mockMessages: Message[] = [
   {
     id: '3',
     senderId: '1',
-    text: 'Â¡Felicidades! Â¿CuÃ¡nto levantaste?',
+    text: '¡Felicidades! ¿Cuánto levantaste?',
     timestamp: new Date(2026, 0, 26, 10, 33),
     read: true,
     type: 'text',
@@ -70,7 +70,7 @@ const mockMessages: Message[] = [
   {
     id: '5',
     senderId: '1',
-    text: 'Â¡IncreÃ­ble! Â¿Vamos juntos maÃ±ana?',
+    text: '¡Increíble! ¿Vamos juntos mañana?',
     timestamp: new Date(2026, 0, 26, 10, 40),
     read: true,
     type: 'text',
@@ -133,7 +133,7 @@ export default function ChatScreen() {
       const response: Message = {
         id: (Date.now() + 1).toString(),
         senderId: userId,
-        text: 'Â¡Genial! ðŸ‘',
+        text: '¡Genial! ðŸ‘',
         timestamp: new Date(),
         read: false,
         type: 'text',
@@ -151,7 +151,7 @@ export default function ChatScreen() {
   };
 
   const handleSendChallenge = () => {
-    Alert.alert('Enviar DesafÃ­o', 'FunciÃ³n en desarrollo');
+    Alert.alert('Enviar Desafío', 'Función en desarrollo');
   };
 
   const formatMessageTime = (date: Date) => {
@@ -250,7 +250,7 @@ export default function ChatScreen() {
                   {mockUser.name}
                 </Text>
                 <Text className="text-blue-100 text-xs">
-                  {mockUser.isOnline ? 'En lÃ­nea' : `Visto ${format(mockUser.lastSeen, 'HH:mm')}`}
+                  {mockUser.isOnline ? 'En línea' : `Visto ${format(mockUser.lastSeen, 'HH:mm')}`}
                 </Text>
               </View>
             </TouchableOpacity>
@@ -291,7 +291,7 @@ export default function ChatScreen() {
           >
             <Ionicons name="flash" size={16} color="#EF4444" />
             <Text className="text-red-700 font-semibold text-sm">
-              DesafÃ­o
+              Desafío
             </Text>
           </TouchableOpacity>
         </View>

@@ -69,7 +69,7 @@ const PERSONAL_RECORDS: PersonalRecord[] = [
     date: '2025-01-20T19:00:00',
     previousPR: { weight: 175, reps: 1, date: '2025-01-05T19:00:00' },
     improvement: 2.9,
-    icon: 'âš¡',
+    icon: '⚡',
     color: 'bg-amber-500',
   },
   {
@@ -105,7 +105,7 @@ const PERSONAL_RECORDS: PersonalRecord[] = [
     date: '2025-01-12T18:30:00',
     previousPR: { weight: 72.5, reps: 1, date: '2024-11-25T18:30:00' },
     improvement: 3.4,
-    icon: 'ðŸŽ¯',
+    icon: '🎯',
     color: 'bg-cyan-500',
   },
   {
@@ -170,7 +170,7 @@ export default function PersonalRecords() {
   const addPR = () => {
     Alert.alert(
       'Nuevo PR',
-      'Â¡Felicitaciones! Registra tu nuevo rÃ©cord personal',
+      '¡Felicitaciones! Registra tu nuevo récord personal',
       [
         { text: 'Cancelar', style: 'cancel' },
         { text: 'Registrar', onPress: () => Alert.alert('PR registrado') },
@@ -234,7 +234,7 @@ export default function PersonalRecords() {
             <Ionicons name="arrow-back" size={24} color="white" />
           </TouchableOpacity>
           <Text className="text-white text-2xl font-bold flex-1 ml-3">
-            RÃ©cords Personales
+            Récords Personales
           </Text>
           <TouchableOpacity onPress={addPR}>
             <Ionicons name="add-circle" size={28} color="#9D12DE" />
@@ -327,7 +327,7 @@ export default function PersonalRecords() {
 
               {/* Current PR */}
               <View className="bg-zinc-800 rounded-lg p-4 mb-3">
-                <Text className="text-zinc-400 text-xs mb-2">RÃ‰CORD ACTUAL</Text>
+                <Text className="text-zinc-400 text-xs mb-2">RÉCORD ACTUAL</Text>
                 <View className="flex-row items-center justify-between">
                   {record.weight !== undefined && (
                     <View className="flex-1">
@@ -438,7 +438,7 @@ export default function PersonalRecords() {
                 <View className="flex-1">
                   <Text className="text-white font-bold text-lg">{monthly.month}</Text>
                   <Text className="text-zinc-400 text-sm">
-                    {monthly.totalPRs} rÃ©cords nuevos
+                    {monthly.totalPRs} récords nuevos
                   </Text>
                 </View>
                 <Ionicons name="trophy" size={28} color="#FFEA00" />
@@ -465,10 +465,10 @@ export default function PersonalRecords() {
               <Ionicons name="trophy" size={20} color="#9D12DE" />
               <View className="flex-1 ml-3">
                 <Text className="text-primary font-bold mb-2">
-                  ProgresiÃ³n SistemÃ¡tica
+                  Progresión Sistemática
                 </Text>
                 <Text className="text-primary/80 text-sm">
-                  Cada PR es un hito. Celebra tus victorias y sigue superÃ¡ndote.
+                  Cada PR es un hito. Celebra tus victorias y sigue superándote.
                 </Text>
               </View>
             </View>

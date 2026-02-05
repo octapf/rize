@@ -17,10 +17,10 @@ export default function VoiceCommands() {
     {
       category: 'Logging Workouts',
       commands: [
-        { phrase: '"Log 3 sets of bench press"', action: 'AÃ±ade ejercicio al workout actual' },
+        { phrase: '"Log 3 sets of bench press"', action: 'Añade ejercicio al workout actual' },
         { phrase: '"100 kilos, 5 reps"', action: 'Registra peso y reps del set' },
         { phrase: '"Add rest timer 2 minutes"', action: 'Inicia rest timer' },
-        { phrase: '"Finish workout"', action: 'Completa sesiÃ³n actual' },
+        { phrase: '"Finish workout"', action: 'Completa sesión actual' },
       ],
     },
     {
@@ -44,7 +44,7 @@ export default function VoiceCommands() {
       category: 'Stats & Progress',
       commands: [
         { phrase: '"What\'s my squat PR?"', action: 'Muestra personal record' },
-        { phrase: '"Show this week\'s volume"', action: 'EstadÃ­sticas semanales' },
+        { phrase: '"Show this week\'s volume"', action: 'Estadísticas semanales' },
         { phrase: '"How many workouts this month?"', action: 'Resumen mensual' },
       ],
     },
@@ -82,7 +82,7 @@ export default function VoiceCommands() {
     setTimeout(() => {
       setIsListening(false);
       setLastCommand('Log 3 sets of bench press');
-      Alert.alert('Comando Detectado', 'AÃ±adido: Bench Press 3 sets');
+      Alert.alert('Comando Detectado', 'Añadido: Bench Press 3 sets');
     }, 2000);
   };
 
@@ -184,11 +184,11 @@ export default function VoiceCommands() {
           <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
             <Text className="text-primary/80 font-bold mb-2">Voice Control Tips</Text>
             <Text className="text-primary/60 text-sm">
-              â€¢ Speak clearly cerca del micrÃ³fono{'\n'}
-              â€¢ Ambiente silencioso = mejor recognition{'\n'}
-              â€¢ Usa comandos exactos{'\n'}
-              â€¢ Configura Siri Shortcuts para atajos{'\n'}
-              â€¢ Perfect para workout sin manos libres
+              • Speak clearly cerca del micrófono{'\n'}
+              • Ambiente silencioso = mejor recognition{'\n'}
+              • Usa comandos exactos{'\n'}
+              • Configura Siri Shortcuts para atajos{'\n'}
+              • Perfect para workout sin manos libres
             </Text>
           </View>
 

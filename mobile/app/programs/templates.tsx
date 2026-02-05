@@ -46,7 +46,7 @@ const MOCK_TEMPLATES: WorkoutTemplate[] = [
       { name: 'Press Inclinado DB', sets: 3, reps: '8-10', restSeconds: 120 },
       { name: 'Press Militar', sets: 4, reps: '6-8', restSeconds: 150 },
       { name: 'Elevaciones Laterales', sets: 3, reps: '12-15', restSeconds: 60 },
-      { name: 'TrÃ­ceps Polea', sets: 3, reps: '10-12', restSeconds: 60 },
+      { name: 'Tríceps Polea', sets: 3, reps: '10-12', restSeconds: 60 },
       { name: 'Fondos', sets: 3, reps: 'Al fallo', restSeconds: 90 },
     ],
   },
@@ -57,12 +57,12 @@ const MOCK_TEMPLATES: WorkoutTemplate[] = [
     difficulty: 'intermediate',
     estimatedDuration: 70,
     exercises: [
-      { name: 'Peso Muerto', sets: 3, reps: '5', restSeconds: 180, notes: 'TÃ©cnica perfecta' },
+      { name: 'Peso Muerto', sets: 3, reps: '5', restSeconds: 180, notes: 'Técnica perfecta' },
       { name: 'Dominadas', sets: 4, reps: '8-10', restSeconds: 120 },
       { name: 'Remo Barra', sets: 4, reps: '8-10', restSeconds: 120 },
       { name: 'Remo DB', sets: 3, reps: '10-12', restSeconds: 90 },
       { name: 'Face Pulls', sets: 3, reps: '15-20', restSeconds: 60 },
-      { name: 'Curl BÃ­ceps', sets: 3, reps: '10-12', restSeconds: 60 },
+      { name: 'Curl Bíceps', sets: 3, reps: '10-12', restSeconds: 60 },
     ],
   },
   {
@@ -74,9 +74,9 @@ const MOCK_TEMPLATES: WorkoutTemplate[] = [
     exercises: [
       { name: 'Sentadilla', sets: 4, reps: '8-10', restSeconds: 180 },
       { name: 'Prensa', sets: 3, reps: '12-15', restSeconds: 120 },
-      { name: 'Zancadas BÃºlgaras', sets: 3, reps: '10-12/lado', restSeconds: 90 },
+      { name: 'Zancadas Búlgaras', sets: 3, reps: '10-12/lado', restSeconds: 90 },
       { name: 'Curl Femoral', sets: 3, reps: '12-15', restSeconds: 90 },
-      { name: 'Extensiones CuÃ¡driceps', sets: 3, reps: '12-15', restSeconds: 60 },
+      { name: 'Extensiones Cuádriceps', sets: 3, reps: '12-15', restSeconds: 60 },
       { name: 'Pantorrillas', sets: 4, reps: '15-20', restSeconds: 60 },
     ],
   },
@@ -91,8 +91,8 @@ const MOCK_TEMPLATES: WorkoutTemplate[] = [
       { name: 'Remo DB', sets: 3, reps: '10-12', restSeconds: 90 },
       { name: 'Press Militar DB', sets: 3, reps: '10-12', restSeconds: 90 },
       { name: 'Dominadas Asistidas', sets: 3, reps: '8-10', restSeconds: 90 },
-      { name: 'Curl BÃ­ceps', sets: 2, reps: '12-15', restSeconds: 60 },
-      { name: 'TrÃ­ceps Fondos', sets: 2, reps: '12-15', restSeconds: 60 },
+      { name: 'Curl Bíceps', sets: 2, reps: '12-15', restSeconds: 60 },
+      { name: 'Tríceps Fondos', sets: 2, reps: '12-15', restSeconds: 60 },
     ],
   },
 ];
@@ -131,7 +131,7 @@ export default function WorkoutTemplates() {
   const startWorkout = (template: WorkoutTemplate) => {
     Alert.alert(
       'Iniciar Workout',
-      `Â¿Empezar "${template.name}"?`,
+      `¿Empezar "${template.name}"?`,
       [
         { text: 'Cancelar' },
         { text: 'Iniciar', onPress: () => Alert.alert('Workout Iniciado! ðŸ‹ï¸', 'Timer y tracking activados') },
@@ -152,7 +152,7 @@ export default function WorkoutTemplates() {
   const deleteTemplate = (id: string) => {
     Alert.alert(
       'Eliminar Plantilla',
-      'Â¿EstÃ¡s seguro?',
+      '¿Estás seguro?',
       [
         { text: 'Cancelar' },
         { text: 'Eliminar', style: 'destructive', onPress: () => setTemplates(templates.filter((t) => t.id !== id)) },
@@ -220,7 +220,7 @@ export default function WorkoutTemplates() {
               <Text className="text-6xl mb-3">ðŸ“‹</Text>
               <Text className="text-white font-bold text-lg mb-2">Sin Plantillas</Text>
               <Text className="text-zinc-400 text-center">
-                Crea plantillas para workouts mÃ¡s rÃ¡pidos
+                Crea plantillas para workouts más rápidos
               </Text>
             </View>
           ) : (
@@ -291,7 +291,7 @@ export default function WorkoutTemplates() {
                             <View className="flex-row items-start justify-between mb-1">
                               <Text className="text-white font-bold flex-1">{ex.name}</Text>
                               <Text className="text-primary font-bold ml-2">
-                                {ex.sets} Ã— {ex.reps}
+                                {ex.sets} × {ex.reps}
                               </Text>
                             </View>
                             <View className="flex-row items-center gap-3">
@@ -322,7 +322,7 @@ export default function WorkoutTemplates() {
                           <Ionicons name="copy" size={18} color="white" />
                         </TouchableOpacity>
                         <TouchableOpacity
-                          onPress={() => Alert.alert('Editar', 'FunciÃ³n de ediciÃ³n prÃ³ximamente')}
+                          onPress={() => Alert.alert('Editar', 'Función de edición próximamente')}
                           className="bg-zinc-800 rounded-lg p-3 items-center justify-center px-4"
                         >
                           <Ionicons name="create" size={18} color="white" />
@@ -350,11 +350,11 @@ export default function WorkoutTemplates() {
                   Tips para Plantillas
                 </Text>
                 <Text className="text-purple-300 text-sm">
-                  â€¢ Crea variaciones A/B para cada tipo{'\n'}
-                  â€¢ Incluye descansos apropiados{'\n'}
-                  â€¢ Orden: compuestos primero{'\n'}
-                  â€¢ Anota RPE o carga objetivo{'\n'}
-                  â€¢ Revisa y ajusta segÃºn progreso
+                  • Crea variaciones A/B para cada tipo{'\n'}
+                  • Incluye descansos apropiados{'\n'}
+                  • Orden: compuestos primero{'\n'}
+                  • Anota RPE o carga objetivo{'\n'}
+                  • Revisa y ajusta según progreso
                 </Text>
               </View>
             </View>

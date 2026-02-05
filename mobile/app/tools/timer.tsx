@@ -58,7 +58,7 @@ const TIMER_PRESETS: TimerPreset[] = [
     rounds: 8,
     work: 20,
     rest: 10,
-    icon: 'âš¡',
+    icon: '⚡',
     description: '8 rounds de 20s trabajo / 10s descanso',
   },
   {
@@ -163,7 +163,7 @@ export default function WorkoutTimer() {
   const handleTimerFinish = () => {
     setIsRunning(false);
     setIsPaused(false);
-    Alert.alert('Timer Completado! ðŸŽ‰', 'Excelente trabajo!');
+    Alert.alert('Timer Completado! 🎉', 'Excelente trabajo!');
   };
 
   const startTimer = () => {
@@ -243,17 +243,17 @@ export default function WorkoutTimer() {
                   <Ionicons name="timer" size={20} color="#9D12DE" />
                   <View className="flex-1 ml-3">
                     <Text className="text-primary/80 font-bold mb-2">
-                      Timer VersÃ¡til
+                      Timer Versátil
                     </Text>
                     <Text className="text-primary/60 text-sm">
-                      CronÃ³metro, cuenta regresiva, EMOM, AMRAP, Tabata y mÃ¡s para tus entrenamientos.
+                      Cronómetro, cuenta regresiva, EMOM, AMRAP, Tabata y más para tus entrenamientos.
                     </Text>
                   </View>
                 </View>
               </View>
 
               {/* Presets */}
-              <Text className="text-white font-bold text-lg mb-4">Presets RÃ¡pidos</Text>
+              <Text className="text-white font-bold text-lg mb-4">Presets Rápidos</Text>
               {TIMER_PRESETS.map((preset) => (
                 <TouchableOpacity
                   key={preset.id}
@@ -286,7 +286,7 @@ export default function WorkoutTimer() {
                   className="flex-1 bg-primary rounded-xl p-4 items-center"
                 >
                   <Ionicons name="stopwatch" size={32} color="white" />
-                  <Text className="text-white font-bold mt-2">CronÃ³metro</Text>
+                  <Text className="text-white font-bold mt-2">Cronómetro</Text>
                 </TouchableOpacity>
                 <TouchableOpacity
                   onPress={() => { setSelectedMode('countdown'); setTime(180); setTargetTime(180); }}
@@ -368,9 +368,9 @@ export default function WorkoutTimer() {
                   <>
                     <Text className="text-white font-bold text-lg mb-3">EMOM Info</Text>
                     <Text className="text-zinc-400 text-sm mb-2">
-                      â€¢ Suena beep cada minuto{'\n'}
-                      â€¢ Completa ejercicios y descansa lo que quede{'\n'}
-                      â€¢ Total: {totalRounds} rondas
+                      • Suena beep cada minuto{'\n'}
+                      • Completa ejercicios y descansa lo que quede{'\n'}
+                      • Total: {totalRounds} rondas
                     </Text>
                   </>
                 )}
@@ -378,9 +378,9 @@ export default function WorkoutTimer() {
                   <>
                     <Text className="text-white font-bold text-lg mb-3">AMRAP Info</Text>
                     <Text className="text-zinc-400 text-sm mb-2">
-                      â€¢ Completa mÃ¡ximas rondas en tiempo{'\n'}
-                      â€¢ MantÃ©n tÃ©cnica perfecta{'\n'}
-                      â€¢ Anota rondas completadas al final
+                      • Completa máximas rondas en tiempo{'\n'}
+                      • Mantén técnica perfecta{'\n'}
+                      • Anota rondas completadas al final
                     </Text>
                   </>
                 )}

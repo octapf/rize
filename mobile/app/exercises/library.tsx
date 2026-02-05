@@ -18,7 +18,7 @@ import type { Exercise } from '@/services/api/exercises.api';
 const categories = [
   { id: 'all', label: 'Todos', icon: 'apps', color: '#6B7280' },
   { id: 'push', label: 'Empuje', icon: 'arrow-up', color: '#EF4444' },
-  { id: 'pull', label: 'JalÃ³n', icon: 'arrow-down', color: '#9D12DE' },
+  { id: 'pull', label: 'Jalón', icon: 'arrow-down', color: '#9D12DE' },
   { id: 'legs', label: 'Piernas', icon: 'walk', color: '#FFEA00' },
   { id: 'core', label: 'Core', icon: 'body', color: '#9D12DE' },
   { id: 'skills', label: 'Skills', icon: 'trophy', color: '#A855F7' },

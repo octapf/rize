@@ -53,7 +53,7 @@ export default function CreateWorkoutScreen() {
         exercises: exercisesData.length > 0 ? exercisesData : undefined,
       });
 
-      Alert.alert('Ã‰xito', 'Entrenamiento creado correctamente');
+      Alert.alert('Éxito', 'Entrenamiento creado correctamente');
       clear(); // Limpiar el draft
       router.back();
     } catch (error: any) {
@@ -106,14 +106,14 @@ export default function CreateWorkoutScreen() {
           </Text>
         </View>
 
-        {/* DuraciÃ³n */}
+        {/* Duración */}
         <View>
           <View className="flex-row items-center gap-2 mb-3">
             <View className="bg-primary/10 p-2 rounded-lg">
               <Ionicons name="time" size={20} color="#9D12DE" />
             </View>
             <Text className="text-base font-bold text-gray-900">
-              DuraciÃ³n (minutos)
+              Duración (minutos)
             </Text>
           </View>
           <TextInput
@@ -169,7 +169,7 @@ export default function CreateWorkoutScreen() {
                     {item.exercise.name.es}
                   </Text>
                   <Text className="text-sm text-gray-600">
-                    {item.sets.length} serie{item.sets.length > 1 ? 's' : ''} â€¢{' '}
+                    {item.sets.length} serie{item.sets.length > 1 ? 's' : ''} •{' '}
                     {item.sets.map((s) => s.reps).join('-')} reps
                   </Text>
                 </View>
@@ -205,7 +205,7 @@ export default function CreateWorkoutScreen() {
           <TextInput
             value={notes}
             onChangeText={setNotes}
-            placeholder="AÃ±ade notas sobre tu entrenamiento..."
+            placeholder="Añade notas sobre tu entrenamiento..."
             multiline
             numberOfLines={4}
             textAlignVertical="top"
@@ -226,16 +226,16 @@ export default function CreateWorkoutScreen() {
             </View>
             <View className="flex-1">
               <Text className="text-base font-bold text-text mb-1">
-                VersiÃ³n Simplificada
+                Versión Simplificada
               </Text>
               <Text className="text-sm text-text/70 leading-5">
-                Por ahora solo registra el entrenamiento bÃ¡sico. En la prÃ³xima actualizaciÃ³n podrÃ¡s aÃ±adir series, repeticiones y peso para cada ejercicio.
+                Por ahora solo registra el entrenamiento básico. En la próxima actualización podrás añadir series, repeticiones y peso para cada ejercicio.
               </Text>
             </View>
           </View>
         </View>
 
-        {/* BotÃ³n crear */}
+        {/* Botón crear */}
         <TouchableOpacity
           onPress={handleCreate}
           disabled={createWorkout.isPending || !name.trim()}

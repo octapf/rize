@@ -235,40 +235,40 @@ export default function RealisticGoalSetting() {
             letter: 'S - Specific',
             powerlifting: 'Not "get stronger" â†’ "Add 20 lbs to squat"',
             examples: [
-              'âœ“ Hit 405 lb squat by end of year',
-              'âœ— Squat more',
+              '✓ Hit 405 lb squat by end of year',
+              '✓ Squat more',
             ],
           },
           {
             letter: 'M - Measurable',
             powerlifting: 'Numbers you can track',
             examples: [
-              'âœ“ Increase training max 5 lbs per month',
-              'âœ— Feel stronger',
+              '✓ Increase training max 5 lbs per month',
+              '✓ Feel stronger',
             ],
           },
           {
             letter: 'A - Achievable',
             powerlifting: 'Based on your level and timeframe',
             examples: [
-              'âœ“ Intermediate: +30 lbs squat in 6 months',
-              'âœ— Advanced: +100 lbs squat in 6 months',
+              '✓ Intermediate: +30 lbs squat in 6 months',
+              '✓ Advanced: +100 lbs squat in 6 months',
             ],
           },
           {
             letter: 'R - Relevant',
             powerlifting: 'Aligns with bigger picture',
             examples: [
-              'âœ“ Increase bench to be competitive in weight class',
-              'âœ— Random exercise PR that doesn\'t transfer',
+              '✓ Increase bench to be competitive in weight class',
+              '✓ Random exercise PR that doesn\'t transfer',
             ],
           },
           {
             letter: 'T - Time-bound',
             powerlifting: 'Specific deadline',
             examples: [
-              'âœ“ 1500 lb total at November meet',
-              'âœ— Get to 1500 lb total someday',
+              '✓ 1500 lb total at November meet',
+              '✓ Get to 1500 lb total someday',
             ],
           },
         ],
@@ -601,7 +601,7 @@ export default function RealisticGoalSetting() {
               <View className="bg-zinc-900 rounded-xl p-5 mb-6 border border-zinc-800">
                 <Text className="text-primary/80 text-xl font-bold mb-4">{currentPhase.why_important?.title}</Text>
                 {currentPhase.why_important?.reasons.map((reason: string, idx: number) => (
-                  <Text key={idx} className="text-primary/60 text-sm mb-2">â€¢ {reason}</Text>
+                  <Text key={idx} className="text-primary/60 text-sm mb-2">• {reason}</Text>
                 ))}
               </View>
 
@@ -611,7 +611,7 @@ export default function RealisticGoalSetting() {
                   <View key={idx} className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-4 last:mb-0">
                     <Text className="text-primary font-bold mb-2">{cat.category}:</Text>
                     {cat.items.map((item: string, iIdx: number) => (
-                      <Text key={iIdx} className="text-primary/80 text-sm mb-1">âœ“ {item}</Text>
+                      <Text key={iIdx} className="text-primary/80 text-sm mb-1">✓ {item}</Text>
                     ))}
                   </View>
                 ))}
@@ -626,7 +626,7 @@ export default function RealisticGoalSetting() {
                     
                     <Text className="text-primary/80 font-bold text-sm mb-2">Characteristics:</Text>
                     {level.characteristics.map((char: string, cIdx: number) => (
-                      <Text key={cIdx} className="text-zinc-300 text-sm mb-1">â€¢ {char}</Text>
+                      <Text key={cIdx} className="text-zinc-300 text-sm mb-1">• {char}</Text>
                     ))}
                     
                     <View className="bg-primary/10 rounded-xl p-3 border border-primary/30 mt-3">
@@ -654,7 +654,7 @@ export default function RealisticGoalSetting() {
                     </View>
 
                     {stage.notes.map((note: string, nIdx: number) => (
-                      <Text key={nIdx} className="text-zinc-300 text-sm mb-1">â€¢ {note}</Text>
+                      <Text key={nIdx} className="text-zinc-300 text-sm mb-1">• {note}</Text>
                     ))}
                   </View>
                 ))}
@@ -687,16 +687,16 @@ export default function RealisticGoalSetting() {
           <View className="bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-xl p-5 border border-primary/30 mb-6">
             <Text className="text-primary/80 font-bold text-lg mb-3">Golden Rules</Text>
             <Text className="text-primary/60 text-sm mb-2">
-              â€¢ Better to exceed conservative goal than miss aggressive one
+              • Better to exceed conservative goal than miss aggressive one
             </Text>
             <Text className="text-primary/60 text-sm mb-2">
-              â€¢ Progress isn't linear - expect plateaus
+              • Progress isn't linear - expect plateaus
             </Text>
             <Text className="text-primary/60 text-sm mb-2">
-              â€¢ Life happens - build buffer into timelines
+              • Life happens - build buffer into timelines
             </Text>
             <Text className="text-primary/60 text-sm">
-              â€¢ Focus on process, outcomes will follow
+              • Focus on process, outcomes will follow
             </Text>
           </View>
         </View>

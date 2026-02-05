@@ -19,8 +19,8 @@ interface WorkoutSchedule {
   notes?: string;
 }
 
-const DAYS_OF_WEEK = ['Lun', 'Mar', 'MiÃ©', 'Jue', 'Vie', 'SÃ¡b', 'Dom'];
-const FULL_DAYS = ['Lunes', 'Martes', 'MiÃ©rcoles', 'Jueves', 'Viernes', 'SÃ¡bado', 'Domingo'];
+const DAYS_OF_WEEK = ['Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb', 'Dom'];
+const FULL_DAYS = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'];
 
 const WORKOUT_TYPES = [
   { id: 'push', label: 'Push', icon: 'arrow-up', color: 'blue' },
@@ -74,7 +74,7 @@ export default function WeeklySchedule() {
 
   const clearDay = (day: number) => {
     setSchedule(schedule.filter((s) => s.dayOfWeek !== day));
-    Alert.alert('Eliminado', 'DÃ­a limpiado del calendario');
+    Alert.alert('Eliminado', 'Día limpiado del calendario');
   };
 
   const weekDates = getWeekDates();
@@ -92,7 +92,7 @@ export default function WeeklySchedule() {
           <Text className="text-white text-2xl font-bold flex-1 ml-3">
             Weekly Schedule
           </Text>
-          <TouchableOpacity onPress={() => Alert.alert('Plantillas', 'Cargar plantilla de semana prÃ³ximamente')}>
+          <TouchableOpacity onPress={() => Alert.alert('Plantillas', 'Cargar plantilla de semana próximamente')}>
             <Ionicons name="calendar" size={24} color="white" />
           </TouchableOpacity>
         </View>
@@ -172,14 +172,14 @@ export default function WeeklySchedule() {
                   }}
                   className="bg-red-500/10 rounded-lg p-3 border border-red-500/30 mt-3"
                 >
-                  <Text className="text-red-400 font-bold text-center">Limpiar DÃ­a</Text>
+                  <Text className="text-red-400 font-bold text-center">Limpiar Día</Text>
                 </TouchableOpacity>
               )}
             </View>
           )}
 
           {/* Detailed Schedule */}
-          <Text className="text-white font-bold text-lg mb-4">PlanificaciÃ³n Detallada</Text>
+          <Text className="text-white font-bold text-lg mb-4">Planificación Detallada</Text>
           {FULL_DAYS.map((dayName, index) => {
             const workout = getWorkoutForDay(index);
             const typeInfo = workout ? getTypeInfo(workout.workoutType) : null;
@@ -244,7 +244,7 @@ export default function WeeklySchedule() {
             <Text className="text-white font-bold text-lg mb-3">Resumen Semanal</Text>
             <View className="flex-row flex-wrap gap-3">
               <View className="flex-1 min-w-[45%] bg-primary/10 rounded-lg p-3 border border-primary/30">
-                <Text className="text-primary text-xs mb-1">DÃ­as de Entrenamiento</Text>
+                <Text className="text-primary text-xs mb-1">Días de Entrenamiento</Text>
                 <Text className="text-white text-2xl font-bold">
                   {schedule.filter((s) => s.workoutType !== 'rest').length}
                 </Text>
@@ -256,7 +256,7 @@ export default function WeeklySchedule() {
                 </Text>
               </View>
               <View className="flex-1 min-w-[45%] bg-amber-500/10 rounded-lg p-3 border border-amber-500/30">
-                <Text className="text-amber-400 text-xs mb-1">DÃ­as de Descanso</Text>
+                <Text className="text-amber-400 text-xs mb-1">Días de Descanso</Text>
                 <Text className="text-white text-2xl font-bold">
                   {schedule.filter((s) => s.workoutType === 'rest').length + (7 - schedule.length)}
                 </Text>
@@ -276,14 +276,14 @@ export default function WeeklySchedule() {
               <Ionicons name="calendar" size={20} color="#9D12DE" />
               <View className="flex-1 ml-3">
                 <Text className="text-primary/80 font-bold mb-2">
-                  Tips de PlanificaciÃ³n
+                  Tips de Planificación
                 </Text>
                 <Text className="text-primary/60 text-sm">
-                  â€¢ MÃ­nimo 1 dÃ­a descanso entre grupos{'\n'}
-                  â€¢ Push/Pull/Legs es muy efectivo{'\n'}
-                  â€¢ Planifica segÃºn tu horario real{'\n'}
-                  â€¢ SÃ© consistente con los horarios{'\n'}
-                  â€¢ Ajusta segÃºn recuperaciÃ³n
+                  • Mínimo 1 día descanso entre grupos{'\n'}
+                  • Push/Pull/Legs es muy efectivo{'\n'}
+                  • Planifica según tu horario real{'\n'}
+                  • Sé consistente con los horarios{'\n'}
+                  • Ajusta según recuperación
                 </Text>
               </View>
             </View>

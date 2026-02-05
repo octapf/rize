@@ -39,7 +39,7 @@ const MOCK_PHOTOS: ProgressPhoto[] = [
     date: new Date(2026, 0, 27),
     weight: 75,
     bodyFat: 15,
-    notes: 'DespuÃ©s de 8 semanas de cut',
+    notes: 'Después de 8 semanas de cut',
     photos: {
       front: 'https://via.placeholder.com/300x400/10b981/ffffff?text=Front',
       side: 'https://via.placeholder.com/300x400/3b82f6/ffffff?text=Side',
@@ -51,7 +51,7 @@ const MOCK_PHOTOS: ProgressPhoto[] = [
     date: new Date(2025, 11, 1),
     weight: 78,
     bodyFat: 17,
-    notes: 'Inicio de cut, peso mÃ¡ximo',
+    notes: 'Inicio de cut, peso máximo',
     photos: {
       front: 'https://via.placeholder.com/300x400/71717a/ffffff?text=Front',
       side: 'https://via.placeholder.com/300x400/71717a/ffffff?text=Side',
@@ -78,11 +78,11 @@ export default function ProgressPhotos() {
 
   const addPhoto = () => {
     Alert.alert(
-      'AÃ±adir Foto de Progreso',
-      'Esta funciÃ³n abrirÃ­a la cÃ¡mara o galerÃ­a',
+      'Añadir Foto de Progreso',
+      'Esta función abriría la cámara o galería',
       [
-        { text: 'CÃ¡mara' },
-        { text: 'GalerÃ­a' },
+        { text: 'Cámara' },
+        { text: 'Galería' },
         { text: 'Cancelar' },
       ]
     );
@@ -91,7 +91,7 @@ export default function ProgressPhotos() {
   const deletePhoto = (id: string) => {
     Alert.alert(
       'Eliminar Foto',
-      'Â¿EstÃ¡s seguro? Esta acciÃ³n no se puede deshacer.',
+      '¿Estás seguro? Esta acción no se puede deshacer.',
       [
         { text: 'Cancelar' },
         { text: 'Eliminar', style: 'destructive', onPress: () => setPhotos(photos.filter((p) => p.id !== id)) },
@@ -106,7 +106,7 @@ export default function ProgressPhotos() {
       if (comparePhotos.length < 2) {
         setComparePhotos([...comparePhotos, photoId]);
       } else {
-        Alert.alert('MÃ¡ximo 2 fotos', 'Solo puedes comparar 2 fotos a la vez');
+        Alert.alert('Máximo 2 fotos', 'Solo puedes comparar 2 fotos a la vez');
       }
     }
   };
@@ -174,7 +174,7 @@ export default function ProgressPhotos() {
           <View className="flex-row items-center justify-center">
             <Ionicons name="git-compare" size={20} color={compareMode ? 'white' : '#71717A'} />
             <Text className={`ml-2 font-bold ${compareMode ? 'text-white' : 'text-zinc-400'}`}>
-              {compareMode ? `Comparar (${comparePhotos.length}/2)` : 'Modo ComparaciÃ³n'}
+              {compareMode ? `Comparar (${comparePhotos.length}/2)` : 'Modo Comparación'}
             </Text>
           </View>
         </TouchableOpacity>
@@ -226,7 +226,7 @@ export default function ProgressPhotos() {
           {/* Compare View */}
           {compareMode && comparePhotos.length === 2 && (
             <View className="bg-zinc-900 rounded-xl p-4 mb-6 border border-primary">
-              <Text className="text-white font-bold text-lg mb-3">ComparaciÃ³n</Text>
+              <Text className="text-white font-bold text-lg mb-3">Comparación</Text>
               <View className="flex-row gap-2">
                 {comparePhotos.map((photoId) => {
                   const photo = photos.find((p) => p.id === photoId);
@@ -242,7 +242,7 @@ export default function ProgressPhotos() {
                         {format(photo.date, "d MMM yyyy", { locale: es })}
                       </Text>
                       <Text className="text-zinc-400 text-sm text-center">
-                        {photo.weight}kg {photo.bodyFat && `â€¢ ${photo.bodyFat}% BF`}
+                        {photo.weight}kg {photo.bodyFat && `• ${photo.bodyFat}% BF`}
                       </Text>
                     </View>
                   );
@@ -365,11 +365,11 @@ export default function ProgressPhotos() {
                   Tips para Fotos de Progreso
                 </Text>
                 <Text className="text-primary/60 text-sm">
-                  â€¢ Misma iluminaciÃ³n cada vez{'\n'}
-                  â€¢ Misma hora del dÃ­a (maÃ±ana en ayunas){'\n'}
-                  â€¢ Misma postura y Ã¡ngulos{'\n'}
-                  â€¢ Cada 2-4 semanas es suficiente{'\n'}
-                  â€¢ RelÃ¡jate, no poses
+                  • Misma iluminación cada vez{'\n'}
+                  • Misma hora del día (mañana en ayunas){'\n'}
+                  • Misma postura y ángulos{'\n'}
+                  • Cada 2-4 semanas es suficiente{'\n'}
+                  • Relájate, no poses
                 </Text>
               </View>
             </View>

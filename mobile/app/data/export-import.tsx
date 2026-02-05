@@ -53,7 +53,7 @@ export default function DataExportImport() {
   };
 
   const createBackup = () => {
-    Alert.alert('Backup Creado âœ…', 'Todos tus datos han sido respaldados en iCloud');
+    Alert.alert('Backup Creado ✅', 'Todos tus datos han sido respaldados en iCloud');
   };
 
   return (
@@ -128,7 +128,7 @@ export default function DataExportImport() {
                     {option.label}
                   </Text>
                   {option.lastBackup && (
-                    <Text className="text-zinc-400 text-sm">Ãšltimo backup: {option.lastBackup}</Text>
+                    <Text className="text-zinc-400 text-sm">Último backup: {option.lastBackup}</Text>
                   )}
                 </View>
                 <Ionicons
@@ -164,10 +164,10 @@ export default function DataExportImport() {
               <View className="flex-1 ml-3">
                 <Text className="text-primary/80 font-bold mb-2">Data Security</Text>
                 <Text className="text-primary/60 text-sm">
-                  â€¢ EncriptaciÃ³n end-to-end{'\n'}
-                  â€¢ Backups automÃ¡ticos diarios{'\n'}
-                  â€¢ Exporta antes de cambiar dispositivo{'\n'}
-                  â€¢ Import preserva historial completo
+                  • Encriptación end-to-end{'\n'}
+                  • Backups automáticos diarios{'\n'}
+                  • Exporta antes de cambiar dispositivo{'\n'}
+                  • Import preserva historial completo
                 </Text>
               </View>
             </View>

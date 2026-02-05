@@ -52,11 +52,11 @@ const MOCK_SESSIONS: WorkoutSession[] = [
       { name: 'Press Inclinado DB', sets: 3, reps: '10,10,8', weight: 35 },
       { name: 'Press Militar', sets: 4, reps: '8,8,8,6', weight: 60 },
       { name: 'Elevaciones Laterales', sets: 3, reps: '12,12,10', weight: 12 },
-      { name: 'TrÃ­ceps Polea', sets: 3, reps: '12,12,12', weight: 40 },
+      { name: 'Tríceps Polea', sets: 3, reps: '12,12,12', weight: 40 },
     ],
     totalVolume: 4280,
     rating: 5,
-    notes: 'Excelente sesiÃ³n, nuevo PR en banca',
+    notes: 'Excelente sesión, nuevo PR en banca',
   },
   {
     id: '2',
@@ -69,7 +69,7 @@ const MOCK_SESSIONS: WorkoutSession[] = [
       { name: 'Dominadas', sets: 4, reps: '10,8,8,6', weight: 0 },
       { name: 'Remo Barra', sets: 4, reps: '8,8,8,8', weight: 80 },
       { name: 'Face Pulls', sets: 3, reps: '15,15,15', weight: 25 },
-      { name: 'Curl BÃ­ceps', sets: 3, reps: '10,10,10', weight: 20 },
+      { name: 'Curl Bíceps', sets: 3, reps: '10,10,10', weight: 20 },
     ],
     totalVolume: 4230,
     rating: 4,
@@ -105,7 +105,7 @@ const MOCK_SESSIONS: WorkoutSession[] = [
     ],
     totalVolume: 2912,
     rating: 3,
-    notes: 'SesiÃ³n ligera de recuperaciÃ³n',
+    notes: 'Sesión ligera de recuperación',
   },
 ];
 
@@ -124,8 +124,8 @@ export default function WorkoutHistory() {
 
   const deleteSession = (id: string) => {
     Alert.alert(
-      'Eliminar SesiÃ³n',
-      'Â¿EstÃ¡s seguro?',
+      'Eliminar Sesión',
+      '¿Estás seguro?',
       [
         { text: 'Cancelar' },
         { text: 'Eliminar', style: 'destructive', onPress: () => setSessions(sessions.filter((s) => s.id !== id)) },
@@ -225,7 +225,7 @@ export default function WorkoutHistory() {
               <Text className="text-6xl mb-3">ðŸ‹ï¸</Text>
               <Text className="text-white font-bold text-lg mb-2">Sin Sesiones</Text>
               <Text className="text-zinc-400 text-center">
-                Tus entrenamientos aparecerÃ¡n aquÃ­
+                Tus entrenamientos aparecerán aquí
               </Text>
             </View>
           ) : (
@@ -303,7 +303,7 @@ export default function WorkoutHistory() {
                             </View>
                             <View className="flex-row items-center gap-2">
                               <Text className="text-zinc-400 text-sm">
-                                {ex.sets} series Ã— {ex.reps} reps
+                                {ex.sets} series × {ex.reps} reps
                               </Text>
                             </View>
                             {ex.notes && (
@@ -353,11 +353,11 @@ export default function WorkoutHistory() {
                   Tips de Progreso
                 </Text>
                 <Text className="text-primary/80 text-sm">
-                  â€¢ Revisa tu historial semanalmente{'\n'}
-                  â€¢ Busca progresiÃ³n en peso o reps{'\n'}
-                  â€¢ Nota ejercicios que te cuestan{'\n'}
-                  â€¢ Repite workouts que funcionan{'\n'}
-                  â€¢ Ajusta segÃºn tu recuperaciÃ³n
+                  • Revisa tu historial semanalmente{'\n'}
+                  • Busca progresión en peso o reps{'\n'}
+                  • Nota ejercicios que te cuestan{'\n'}
+                  • Repite workouts que funcionan{'\n'}
+                  • Ajusta según tu recuperación
                 </Text>
               </View>
             </View>

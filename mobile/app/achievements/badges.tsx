@@ -36,12 +36,12 @@ const ACHIEVEMENTS: Achievement[] = [
     icon: 'fitness',
     unlocked: true,
     unlockedDate: '2025-01-01',
-    reward: { xp: 100, badge: 'ðŸ¥‰' },
+    reward: { xp: 100, badge: '🥉' },
   },
   {
     id: '2',
     name: 'Racha de Fuego',
-    description: 'Entrena 7 dÃ­as seguidos',
+    description: 'Entrena 7 días seguidos',
     category: 'consistencia',
     tier: 'silver',
     icon: 'flame',
@@ -53,7 +53,7 @@ const ACHIEVEMENTS: Achievement[] = [
   },
   {
     id: '3',
-    name: 'CenturiÃ³n',
+    name: 'Centurión',
     description: 'Alcanza 100kg en press de banca',
     category: 'fuerza',
     tier: 'gold',
@@ -120,7 +120,7 @@ const ACHIEVEMENTS: Achievement[] = [
     unlocked: false,
     progress: 6,
     maxProgress: 10,
-    reward: { xp: 1000, badge: 'ðŸŽ“' },
+    reward: { xp: 1000, badge: '🎯“' },
   },
 ];
 
@@ -469,7 +469,7 @@ export default function AchievementBadges() {
                   Sistema de Logros
                 </Text>
                 <Text className="text-primary/60 text-sm">
-                  Desbloquea logros completando desafÃ­os en diferentes categorÃ­as. Cada logro otorga XP y badges para mostrar tus logros.
+                  Desbloquea logros completando desafíos en diferentes categorías. Cada logro otorga XP y badges para mostrar tus logros.
                 </Text>
               </View>
             </View>

@@ -30,7 +30,7 @@ const LIVE_CLASSES: VirtualClass[] = [
   {
     id: '1',
     title: 'HIIT Extremo Full Body',
-    instructor: 'Carlos MartÃ­nez',
+    instructor: 'Carlos Martínez',
     type: 'hiit',
     duration: 45,
     difficulty: 'avanzado',
@@ -45,7 +45,7 @@ const LIVE_CLASSES: VirtualClass[] = [
   {
     id: '2',
     title: 'Yoga Flow Matutino',
-    instructor: 'Ana RodrÃ­guez',
+    instructor: 'Ana Rodríguez',
     type: 'yoga',
     duration: 60,
     difficulty: 'intermedio',
@@ -55,7 +55,7 @@ const LIVE_CLASSES: VirtualClass[] = [
     maxParticipants: 150,
     thumbnail: 'https://via.placeholder.com/400x200/10B981/FFFFFF?text=Yoga',
     equipment: ['Colchoneta', 'Bloque'],
-    description: 'Secuencia de yoga para empezar el dÃ­a con energÃ­a',
+    description: 'Secuencia de yoga para empezar el día con energía',
   },
 ];
 
@@ -63,7 +63,7 @@ const UPCOMING_CLASSES: VirtualClass[] = [
   {
     id: '3',
     title: 'Spinning de Alta Intensidad',
-    instructor: 'Luis GÃ³mez',
+    instructor: 'Luis Gómez',
     type: 'spinning',
     duration: 50,
     difficulty: 'avanzado',
@@ -72,13 +72,13 @@ const UPCOMING_CLASSES: VirtualClass[] = [
     participants: 0,
     maxParticipants: 100,
     thumbnail: 'https://via.placeholder.com/400x200/F59E0B/FFFFFF?text=Spinning',
-    equipment: ['Bicicleta estÃ¡tica'],
-    description: 'Clase de cycling con mÃºsica motivadora',
+    equipment: ['Bicicleta estática'],
+    description: 'Clase de cycling con música motivadora',
   },
   {
     id: '4',
     title: 'Entrenamiento Funcional',
-    instructor: 'MarÃ­a LÃ³pez',
+    instructor: 'María López',
     type: 'functional',
     duration: 40,
     difficulty: 'intermedio',
@@ -88,12 +88,12 @@ const UPCOMING_CLASSES: VirtualClass[] = [
     maxParticipants: 150,
     thumbnail: 'https://via.placeholder.com/400x200/3B82F6/FFFFFF?text=Funcional',
     equipment: ['Kettlebell', 'TRX', 'Colchoneta'],
-    description: 'Movimientos funcionales para mejorar tu dÃ­a a dÃ­a',
+    description: 'Movimientos funcionales para mejorar tu día a día',
   },
   {
     id: '5',
     title: 'Fuerza con Pesas',
-    instructor: 'Pedro SÃ¡nchez',
+    instructor: 'Pedro Sánchez',
     type: 'strength',
     duration: 55,
     difficulty: 'avanzado',
@@ -103,7 +103,7 @@ const UPCOMING_CLASSES: VirtualClass[] = [
     maxParticipants: 120,
     thumbnail: 'https://via.placeholder.com/400x200/8B5CF6/FFFFFF?text=Fuerza',
     equipment: ['Barra', 'Discos', 'Banco'],
-    description: 'ConstrucciÃ³n de fuerza y masa muscular',
+    description: 'Construcción de fuerza y masa muscular',
   },
 ];
 
@@ -112,7 +112,7 @@ export default function GroupClasses() {
 
   const tabs = [
     { id: 'live' as const, label: 'En Vivo', icon: 'radio' },
-    { id: 'upcoming' as const, label: 'PrÃ³ximas', icon: 'calendar' },
+    { id: 'upcoming' as const, label: 'Próximas', icon: 'calendar' },
     { id: 'ondemand' as const, label: 'On Demand', icon: 'play-circle' },
   ];
 
@@ -152,13 +152,13 @@ export default function GroupClasses() {
     if (classItem.isLive) {
       Alert.alert(
         'Unirse a Clase en Vivo',
-        `${classItem.title}\n\nInstructor: ${classItem.instructor}\n${classItem.participants}/${classItem.maxParticipants} participantes\n\nÂ¿Deseas unirte ahora?`,
+        `${classItem.title}\n\nInstructor: ${classItem.instructor}\n${classItem.participants}/${classItem.maxParticipants} participantes\n\n¿Deseas unirte ahora?`,
         [
           { text: 'Cancelar', style: 'cancel' },
           {
             text: 'Unirse',
             onPress: () => {
-              Alert.alert('Â¡Conectado!', 'EstÃ¡s en la clase en vivo');
+              Alert.alert('¡Conectado!', 'Estás en la clase en vivo');
             },
           },
         ]
@@ -166,13 +166,13 @@ export default function GroupClasses() {
     } else {
       Alert.alert(
         'Reservar Clase',
-        `${classItem.title}\n\nHorario: ${classItem.scheduledTime}\n\nÂ¿Deseas reservar tu lugar?`,
+        `${classItem.title}\n\nHorario: ${classItem.scheduledTime}\n\n¿Deseas reservar tu lugar?`,
         [
           { text: 'Cancelar', style: 'cancel' },
           {
             text: 'Reservar',
             onPress: () => {
-              Alert.alert('Â¡Reservado!', 'RecibirÃ¡s un recordatorio antes de la clase');
+              Alert.alert('¡Reservado!', 'Recibirás un recordatorio antes de la clase');
             },
           },
         ]
@@ -368,7 +368,7 @@ export default function GroupClasses() {
         {selectedTab === 'upcoming' && (
           <View className="px-6 pt-6">
             <Text className="text-white font-bold text-lg mb-3">
-              PrÃ³ximas Clases Hoy ({UPCOMING_CLASSES.length})
+              Próximas Clases Hoy ({UPCOMING_CLASSES.length})
             </Text>
 
             {UPCOMING_CLASSES.map((classItem) => (
@@ -457,7 +457,7 @@ export default function GroupClasses() {
                 Biblioteca On Demand
               </Text>
               <Text className="text-zinc-500 text-sm mt-2 text-center">
-                Accede a mÃ¡s de 500 clases grabadas cuando quieras
+                Accede a más de 500 clases grabadas cuando quieras
               </Text>
               <TouchableOpacity className="bg-primary rounded-lg px-6 py-3 mt-4">
                 <Text className="text-white font-bold">Explorar Biblioteca</Text>
@@ -476,13 +476,13 @@ export default function GroupClasses() {
                   Tips para Clases Virtuales
                 </Text>
                 <Text className="text-primary/60 text-sm mb-1">
-                  â€¢ Prepara tu equipamiento antes de la clase
+                  • Prepara tu equipamiento antes de la clase
                 </Text>
                 <Text className="text-primary/60 text-sm mb-1">
-                  â€¢ Busca un espacio con buena conexiÃ³n
+                  • Busca un espacio con buena conexión
                 </Text>
                 <Text className="text-primary/60 text-sm">
-                  â€¢ Llega 5 minutos antes para calentar
+                  • Llega 5 minutos antes para calentar
                 </Text>
               </View>
             </View>

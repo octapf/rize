@@ -25,16 +25,16 @@ const INTEGRATIONS: Integration[] = [
   {
     id: 'apple-health',
     name: 'Apple Health',
-    description: 'Sincroniza entrenamientos, pasos, calorÃ­as y mÃ¡s',
+    description: 'Sincroniza entrenamientos, pasos, calorías y más',
     icon: 'heart',
     color: '#FF0000',
     isConnected: false,
     category: 'health',
     features: [
-      'SincronizaciÃ³n automÃ¡tica de workouts',
+      'Sincronización automática de workouts',
       'Importar datos de actividad diaria',
-      'Exportar mÃ©tricas de salud',
-      'Tracking de frecuencia cardÃ­aca',
+      'Exportar métricas de salud',
+      'Tracking de frecuencia cardíaca',
     ],
   },
   {
@@ -46,9 +46,9 @@ const INTEGRATIONS: Integration[] = [
     isConnected: false,
     category: 'health',
     features: [
-      'SincronizaciÃ³n bidireccional',
+      'Sincronización bidireccional',
       'Datos de actividad en tiempo real',
-      'IntegraciÃ³n con Google Wear',
+      'Integración con Google Wear',
       'Historial de entrenamientos',
     ],
   },
@@ -61,7 +61,7 @@ const INTEGRATIONS: Integration[] = [
     isConnected: true,
     category: 'social',
     features: [
-      'Publicar workouts automÃ¡ticamente',
+      'Publicar workouts automáticamente',
       'Importar actividades de running/cycling',
       'Competir en segmentos',
       'Conectar con amigos',
@@ -77,53 +77,53 @@ const INTEGRATIONS: Integration[] = [
     category: 'health',
     features: [
       'Importar log de comidas',
-      'Sincronizar calorÃ­as quemadas',
-      'Tracking de macros automÃ¡tico',
+      'Sincronizar calorías quemadas',
+      'Tracking de macros automático',
       'Base de datos de alimentos',
     ],
   },
   {
     id: 'apple-watch',
     name: 'Apple Watch',
-    description: 'Control desde tu muÃ±eca',
+    description: 'Control desde tu muñeca',
     icon: 'watch',
     color: '#000000',
     isConnected: false,
     category: 'wearable',
     features: [
       'Ver workouts en tiempo real',
-      'MÃ©tricas de frecuencia cardÃ­aca',
+      'Métricas de frecuencia cardíaca',
       'Notificaciones de descanso',
-      'Control de reproducciÃ³n',
+      'Control de reproducción',
     ],
   },
   {
     id: 'fitbit',
     name: 'Fitbit',
-    description: 'IntegraciÃ³n completa con Fitbit',
+    description: 'Integración completa con Fitbit',
     icon: 'footsteps',
     color: '#00B0B9',
     isConnected: false,
     category: 'wearable',
     features: [
       'Sincronizar pasos y actividad',
-      'Datos de sueÃ±o',
-      'Frecuencia cardÃ­aca en reposo',
-      'CalorÃ­as quemadas',
+      'Datos de sueño',
+      'Frecuencia cardíaca en reposo',
+      'Calorías quemadas',
     ],
   },
   {
     id: 'spotify',
     name: 'Spotify',
-    description: 'MÃºsica para tus entrenamientos',
+    description: 'Música para tus entrenamientos',
     icon: 'musical-notes',
     color: '#1DB954',
     isConnected: true,
     category: 'productivity',
     features: [
       'Playlists de workout',
-      'Control de reproducciÃ³n',
-      'Descubrir mÃºsica motivacional',
+      'Control de reproducción',
+      'Descubrir música motivacional',
       'Sincronizar con BPM',
     ],
   },
@@ -136,7 +136,7 @@ const INTEGRATIONS: Integration[] = [
     isConnected: false,
     category: 'productivity',
     features: [
-      'Crear eventos de workout automÃ¡ticamente',
+      'Crear eventos de workout automáticamente',
       'Recordatorios personalizados',
       'Sincronizar con calendario personal',
       'Bloques de tiempo dedicados',
@@ -170,8 +170,8 @@ export default function Integrations() {
 
     if (integration.isConnected) {
       Alert.alert(
-        'Desconectar IntegraciÃ³n',
-        `Â¿EstÃ¡s seguro de desconectar ${integration.name}?`,
+        'Desconectar Integración',
+        `¿Estás seguro de desconectar ${integration.name}?`,
         [
           { text: 'Cancelar', style: 'cancel' },
           {
@@ -190,7 +190,7 @@ export default function Integrations() {
       );
     } else {
       Alert.alert(
-        'Conectar IntegraciÃ³n',
+        'Conectar Integración',
         `Rize necesita permisos para acceder a ${integration.name}`,
         [
           { text: 'Cancelar', style: 'cancel' },
@@ -203,7 +203,7 @@ export default function Integrations() {
                 )
               );
               Alert.alert(
-                'Â¡Conectado!',
+                '¡Conectado!',
                 `${integration.name} se ha conectado correctamente`
               );
             },
@@ -333,7 +333,7 @@ export default function Integrations() {
               {integration.isConnected && (
                 <View className="pt-3 border-t border-zinc-800">
                   <Text className="text-zinc-400 text-xs mb-2 font-semibold">
-                    CaracterÃ­sticas:
+                    Características:
                   </Text>
                   {integration.features.map((feature, index) => (
                     <View key={index} className="flex-row items-center mb-1">
@@ -367,7 +367,7 @@ export default function Integrations() {
             <Ionicons name="information-circle" size={24} color="#9D12DE" />
             <View className="flex-1 ml-3">
               <Text className="text-primary/80 font-bold mb-1">
-                SincronizaciÃ³n Segura
+                Sincronización Segura
               </Text>
               <Text className="text-primary/60 text-sm leading-5">
                 Todas las integraciones usan OAuth 2.0 y nunca almacenamos tus

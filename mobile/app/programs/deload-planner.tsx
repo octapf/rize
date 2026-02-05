@@ -10,29 +10,29 @@ import { Ionicons } from '@expo/vector-icons';
 
 export default function DeloadWeek() {
   const benefits = [
-    { icon: 'fitness', title: 'Recovery Muscular', desc: 'Permite reparaciÃ³n completa de fibras' },
-    { icon: 'pulse', title: 'Sistema Nervioso', desc: 'Restaura funciÃ³n del SNC' },
-    { icon: 'water', title: 'Articulaciones', desc: 'Reduce inflamaciÃ³n acumulada' },
-    { icon: 'trending-up', title: 'SupercompensaciÃ³n', desc: 'Vuelves mÃ¡s fuerte despuÃ©s' },
+    { icon: 'fitness', title: 'Recovery Muscular', desc: 'Permite reparación completa de fibras' },
+    { icon: 'pulse', title: 'Sistema Nervioso', desc: 'Restaura función del SNC' },
+    { icon: 'water', title: 'Articulaciones', desc: 'Reduce inflamación acumulada' },
+    { icon: 'trending-up', title: 'Supercompensación', desc: 'Vuelves más fuerte después' },
   ];
 
   const deloadMethods = [
     {
       name: 'Volume Deload',
       description: 'Reduce sets/reps 40-50%',
-      example: '3 sets â†’ 2 sets, mantÃ©n peso',
+      example: '3 sets â†’ 2 sets, mantén peso',
       color: 'blue',
     },
     {
       name: 'Intensity Deload',
       description: 'Reduce peso 40-50%',
-      example: '100kg â†’ 60kg, mantÃ©n volumen',
+      example: '100kg â†’ 60kg, mantén volumen',
       color: 'emerald',
     },
     {
       name: 'Active Recovery',
       description: 'Cambio de actividad',
-      example: 'Yoga, nataciÃ³n, cardio ligero',
+      example: 'Yoga, natación, cardio ligero',
       color: 'purple',
     },
   ];
@@ -66,7 +66,7 @@ export default function DeloadWeek() {
             </Text>
             <View className="flex-row items-center">
               <Ionicons name="leaf" size={20} color="white" />
-              <Text className="text-white ml-2">PrÃ³ximo deload: En 2 semanas</Text>
+              <Text className="text-white ml-2">Próximo deload: En 2 semanas</Text>
             </View>
           </View>
 
@@ -84,7 +84,7 @@ export default function DeloadWeek() {
             </View>
           ))}
 
-          <Text className="text-white font-bold text-lg mb-4 mt-6">MÃ©todos de Deload</Text>
+          <Text className="text-white font-bold text-lg mb-4 mt-6">Métodos de Deload</Text>
 
           {deloadMethods.map((method) => (
             <View
@@ -120,13 +120,13 @@ export default function DeloadWeek() {
           </View>
 
           <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
-            <Text className="text-primary/80 font-bold mb-2">CuÃ¡ndo Hacer Deload</Text>
+            <Text className="text-primary/80 font-bold mb-2">Cuándo Hacer Deload</Text>
             <Text className="text-primary/60 text-sm">
-              â€¢ Cada 4-6 semanas de training intenso{'\n'}
-              â€¢ Si performance cae 2 sesiones seguidas{'\n'}
-              â€¢ Fatiga persistente o dolores articulares{'\n'}
-              â€¢ Antes de competencia (tapering){'\n'}
-              â€¢ No es pereza, es estrategia
+              • Cada 4-6 semanas de training intenso{'\n'}
+              • Si performance cae 2 sesiones seguidas{'\n'}
+              • Fatiga persistente o dolores articulares{'\n'}
+              • Antes de competencia (tapering){'\n'}
+              • No es pereza, es estrategia
             </Text>
           </View>
         </View>

@@ -260,7 +260,7 @@ export default function PostCompRecovery() {
                       </View>
                       {step.actions.map((action, aidx) => (
                         <View key={aidx} className="flex-row items-start mb-1 last:mb-0">
-                          <Text className="text-zinc-500 mr-2">â€¢</Text>
+                          <Text className="text-zinc-500 mr-2">•</Text>
                           <Text className="text-zinc-300 text-sm flex-1">{action}</Text>
                         </View>
                       ))}
@@ -281,7 +281,7 @@ export default function PostCompRecovery() {
                 </View>
                 {aspect.tips.map((tip, tidx) => (
                   <View key={tidx} className="flex-row items-start mb-1 last:mb-0">
-                    <Text className="text-purple-400 mr-2">â€¢</Text>
+                    <Text className="text-purple-400 mr-2">•</Text>
                     <Text className="text-purple-200 text-sm flex-1">{tip}</Text>
                   </View>
                 ))}
@@ -313,22 +313,22 @@ export default function PostCompRecovery() {
           <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
             <Text className="text-primary/80 font-bold mb-2">Recovery Checklist</Text>
             <Text className="text-primary/60 text-sm mb-2">
-              âœ“ Immediate celebration and refuel
+              ✓ Immediate celebration and refuel
             </Text>
             <Text className="text-primary/60 text-sm mb-2">
-              âœ“ 3 days complete rest
+              ✓ 3 days complete rest
             </Text>
             <Text className="text-primary/60 text-sm mb-2">
-              âœ“ Week 1: Light movement only
+              ✓ Week 1: Light movement only
             </Text>
             <Text className="text-primary/60 text-sm mb-2">
-              âœ“ Week 2: Gradual return to barbell
+              ✓ Week 2: Gradual return to barbell
             </Text>
             <Text className="text-primary/60 text-sm mb-2">
-              âœ“ Weeks 3-4: Build into new cycle
+              ✓ Weeks 3-4: Build into new cycle
             </Text>
             <Text className="text-primary/60 text-sm">
-              âœ“ Set new goals and move forward
+              ✓ Set new goals and move forward
             </Text>
           </View>
 

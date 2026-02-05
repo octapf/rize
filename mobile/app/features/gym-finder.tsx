@@ -79,11 +79,11 @@ export default function GymFinder() {
   });
 
   const favoriteGym = (gymName: string) => {
-    Alert.alert('Favorito', `${gymName} aÃ±adido a favoritos`);
+    Alert.alert('Favorito', `${gymName} añadido a favoritos`);
   };
 
   const getDirections = (gymName: string) => {
-    Alert.alert('NavegaciÃ³n', `Abriendo Maps para ${gymName}`);
+    Alert.alert('Navegación', `Abriendo Maps para ${gymName}`);
   };
 
   return (
@@ -236,11 +236,11 @@ export default function GymFinder() {
           <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
             <Text className="text-primary/80 font-bold mb-2">Gym Selection Tips</Text>
             <Text className="text-primary/60 text-sm">
-              â€¢ Visita antes de registrarte{'\n'}
-              â€¢ Verifica equipamiento disponible{'\n'}
-              â€¢ Pregunta por horarios de peak{'\n'}
-              â€¢ Lee reviews de otros usuarios{'\n'}
-              â€¢ Compara precios y contratos
+              • Visita antes de registrarte{'\n'}
+              • Verifica equipamiento disponible{'\n'}
+              • Pregunta por horarios de peak{'\n'}
+              • Lee reviews de otros usuarios{'\n'}
+              • Compara precios y contratos
             </Text>
           </View>
         </View>

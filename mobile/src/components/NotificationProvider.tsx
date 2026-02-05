@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { AppState, AppStateStatus } from 'react-native';
+import { AppState, AppStateStatus, Platform } from 'react-native';
 import { useAuthStore } from '@/stores/authStore';
 import {
   registerForPushNotificationsAsync,
@@ -44,11 +44,14 @@ export function NotificationProvider({ children }: { children: React.ReactNode }
       });
 
       return () => {
-        if (notificationListener.current) {
-          Notifications.removeNotificationSubscription(notificationListener.current);
-        }
-        if (responseListener.current) {
-          Notifications.removeNotificationSubscription(responseListener.current);
+        // removeNotificationSubscription is only available on native platforms
+        if (Platform.OS !== 'web') {
+          if (notificationListener.current) {
+            Notifications.removeNotificationSubscription(notificationListener.current);
+          }
+          if (responseListener.current) {
+            Notifications.removeNotificationSubscription(responseListener.current);
+          }
         }
       };
     }

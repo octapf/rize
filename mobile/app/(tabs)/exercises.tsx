@@ -27,8 +27,8 @@ export default function ExercisesTabScreen() {
         </Text>
         
         <Text className="text-gray-600 text-center mb-8 px-4">
-          Desde flexiones bÃ¡sicas hasta planche y front lever.
-          Organizado por categorÃ­as y niveles de dificultad.
+          Desde flexiones básicas hasta planche y front lever.
+          Organizado por categorías y niveles de dificultad.
         </Text>
 
         <TouchableOpacity

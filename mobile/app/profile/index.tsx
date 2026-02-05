@@ -58,7 +58,7 @@ export default function UserProfile() {
       id: '1',
       type: 'workout',
       title: 'Pull Day Completado',
-      subtitle: '12 ejercicios â€¢ 65 min',
+      subtitle: '12 ejercicios • 65 min',
       timestamp: new Date(2025, 0, 27, 10, 30),
       icon: 'fitness',
       color: '#9D12DE',
@@ -84,7 +84,7 @@ export default function UserProfile() {
     {
       id: '4',
       type: 'friend',
-      title: 'Nueva amistad con MarÃ­a LÃ³pez',
+      title: 'Nueva amistad con María López',
       subtitle: 'Ahora son amigos',
       timestamp: new Date(2025, 0, 24, 14, 20),
       icon: 'people',
@@ -93,7 +93,7 @@ export default function UserProfile() {
   ];
 
   const topAchievements = [
-    { id: '1', name: 'Racha de 30 DÃ­as', icon: 'flame', color: '#EF4444' },
+    { id: '1', name: 'Racha de 30 Días', icon: 'flame', color: '#EF4444' },
     { id: '2', name: 'Muscle Up King', icon: 'trophy', color: '#FFEA00' },
     { id: '3', name: '100 Toneladas', icon: 'barbell', color: '#9D12DE' },
   ];
@@ -114,7 +114,7 @@ export default function UserProfile() {
   const saveProfile = () => {
     // TODO: API call to update profile
     setEditModalVisible(false);
-    Alert.alert('Ã‰xito', 'Perfil actualizado correctamente');
+    Alert.alert('Éxito', 'Perfil actualizado correctamente');
   };
 
   const levelProgress = (stats.xp / stats.nextLevelXP) * 100;
@@ -353,11 +353,11 @@ export default function UserProfile() {
 
               {/* Bio */}
               <View className="mb-6">
-                <Text className="text-zinc-400 text-sm mb-2">BiografÃ­a</Text>
+                <Text className="text-zinc-400 text-sm mb-2">Biografía</Text>
                 <TextInput
                   value={bio}
                   onChangeText={setBio}
-                  placeholder="CuÃ©ntanos sobre ti..."
+                  placeholder="Cuéntanos sobre ti..."
                   placeholderTextColor="#52525B"
                   multiline
                   numberOfLines={3}

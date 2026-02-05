@@ -595,7 +595,7 @@ export default function CareerLongevity() {
                 <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-4">
                   <Text className="text-primary/80 font-bold mb-2">Perspectives:</Text>
                   {principle.perspectives.map((item: string, pIdx: number) => (
-                    <Text key={pIdx} className="text-primary/60 text-sm mb-1">â€¢ {item}</Text>
+                    <Text key={pIdx} className="text-primary/60 text-sm mb-1">• {item}</Text>
                   ))}
                 </View>
               )}
@@ -604,7 +604,7 @@ export default function CareerLongevity() {
                 <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-4">
                   <Text className="text-primary font-bold mb-2">Smart Trade-offs:</Text>
                   {principle.tradeoffs.map((item: string, tIdx: number) => (
-                    <Text key={tIdx} className="text-primary/80 text-sm mb-1">â€¢ {item}</Text>
+                    <Text key={tIdx} className="text-primary/80 text-sm mb-1">• {item}</Text>
                   ))}
                 </View>
               )}
@@ -613,7 +613,7 @@ export default function CareerLongevity() {
                 <View className="bg-purple-500/10 rounded-xl p-4 border border-purple-500/30 mb-4">
                   <Text className="text-purple-400 font-bold mb-2">Changes Over Time:</Text>
                   {principle.changes.map((item: string, cIdx: number) => (
-                    <Text key={cIdx} className="text-purple-300 text-sm mb-1">â€¢ {item}</Text>
+                    <Text key={cIdx} className="text-purple-300 text-sm mb-1">• {item}</Text>
                   ))}
                 </View>
               )}
@@ -622,7 +622,7 @@ export default function CareerLongevity() {
                 <View className="mb-4">
                   <Text className="text-white font-bold mb-2">Why:</Text>
                   {principle.why.map((item: string, wIdx: number) => (
-                    <Text key={wIdx} className="text-zinc-300 text-sm mb-1">â€¢ {item}</Text>
+                    <Text key={wIdx} className="text-zinc-300 text-sm mb-1">• {item}</Text>
                   ))}
                 </View>
               )}
@@ -631,7 +631,7 @@ export default function CareerLongevity() {
                 <View className="bg-primary/10 rounded-xl p-4 border border-primary/30">
                   <Text className="text-primary/80 font-bold mb-2">How:</Text>
                   {principle.how.map((item: string, hIdx: number) => (
-                    <Text key={hIdx} className="text-primary/60 text-sm mb-1">â€¢ {item}</Text>
+                    <Text key={hIdx} className="text-primary/60 text-sm mb-1">• {item}</Text>
                   ))}
                 </View>
               )}
@@ -659,7 +659,7 @@ export default function CareerLongevity() {
                 <View key={pIdx} className="bg-zinc-800 rounded-xl p-4 mb-3">
                   <Text className="text-white font-bold mb-2">{prevent.area}</Text>
                   {prevent.how.map((item: string, hIdx: number) => (
-                    <Text key={hIdx} className="text-zinc-300 text-sm mb-1">â€¢ {item}</Text>
+                    <Text key={hIdx} className="text-zinc-300 text-sm mb-1">• {item}</Text>
                   ))}
                   {prevent.time && (
                     <Text className="text-primary text-sm mt-2">Time: {prevent.time}</Text>
@@ -674,7 +674,7 @@ export default function CareerLongevity() {
                 <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-3">
                   <Text className="text-primary font-bold mb-2">Why It Matters:</Text>
                   {strategy.why.map((item: string, wIdx: number) => (
-                    <Text key={wIdx} className="text-primary/80 text-sm mb-1">â€¢ {item}</Text>
+                    <Text key={wIdx} className="text-primary/80 text-sm mb-1">• {item}</Text>
                   ))}
                 </View>
               )}
@@ -683,7 +683,7 @@ export default function CareerLongevity() {
                 <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-3">
                   <Text className="text-primary/80 font-bold mb-2">How:</Text>
                   {strategy.how.map((item: string, hIdx: number) => (
-                    <Text key={hIdx} className="text-primary/60 text-sm mb-1">â€¢ {item}</Text>
+                    <Text key={hIdx} className="text-primary/60 text-sm mb-1">• {item}</Text>
                   ))}
                 </View>
               )}
@@ -697,14 +697,14 @@ export default function CareerLongevity() {
               <View className="bg-purple-500/10 rounded-xl p-4 border border-purple-500/30 mb-4">
                 <Text className="text-purple-400 font-bold mb-2">Considerations:</Text>
                 {group.considerations.map((item: string, cIdx: number) => (
-                  <Text key={cIdx} className="text-purple-300 text-sm mb-1">â€¢ {item}</Text>
+                  <Text key={cIdx} className="text-purple-300 text-sm mb-1">• {item}</Text>
                 ))}
               </View>
 
               <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-4">
                 <Text className="text-primary font-bold mb-2">Programming:</Text>
                 {group.programming.map((item: string, pIdx: number) => (
-                  <Text key={pIdx} className="text-primary/80 text-sm mb-1">âœ“ {item}</Text>
+                  <Text key={pIdx} className="text-primary/80 text-sm mb-1">✓ {item}</Text>
                 ))}
               </View>
 
@@ -712,7 +712,7 @@ export default function CareerLongevity() {
                 <View className="bg-red-500/10 rounded-xl p-4 border border-red-500/30">
                   <Text className="text-red-400 font-bold mb-2">Avoid:</Text>
                   {group.avoid.map((item: string, aIdx: number) => (
-                    <Text key={aIdx} className="text-red-300 text-sm mb-1">âœ— {item}</Text>
+                    <Text key={aIdx} className="text-red-300 text-sm mb-1">✓ {item}</Text>
                   ))}
                 </View>
               )}
@@ -721,7 +721,7 @@ export default function CareerLongevity() {
                 <View className="bg-amber-500/10 rounded-xl p-4 border border-amber-500/30 mt-4">
                   <Text className="text-amber-400 font-bold mb-2">Adjustments:</Text>
                   {group.adjustments.map((item: string, adjIdx: number) => (
-                    <Text key={adjIdx} className="text-amber-300 text-sm mb-1">â€¢ {item}</Text>
+                    <Text key={adjIdx} className="text-amber-300 text-sm mb-1">• {item}</Text>
                   ))}
                 </View>
               )}
@@ -730,7 +730,7 @@ export default function CareerLongevity() {
                 <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mt-4">
                   <Text className="text-primary/80 font-bold mb-2">Important:</Text>
                   {group.important.map((item: string, impIdx: number) => (
-                    <Text key={impIdx} className="text-primary/60 text-sm mb-1">â€¢ {item}</Text>
+                    <Text key={impIdx} className="text-primary/60 text-sm mb-1">• {item}</Text>
                   ))}
                 </View>
               )}
@@ -739,7 +739,7 @@ export default function CareerLongevity() {
                 <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mt-4">
                   <Text className="text-primary font-bold mb-2">Keys to Success:</Text>
                   {group.keys.map((item: string, kIdx: number) => (
-                    <Text key={kIdx} className="text-primary/80 text-sm mb-1">â€¢ {item}</Text>
+                    <Text key={kIdx} className="text-primary/80 text-sm mb-1">• {item}</Text>
                   ))}
                 </View>
               )}
@@ -751,7 +751,7 @@ export default function CareerLongevity() {
               <View className="bg-red-500/10 rounded-xl p-5 border border-red-500/30 mb-6">
                 <Text className="text-red-400 text-xl font-bold mb-3">{currentTopic.philosophy?.title}</Text>
                 {currentTopic.philosophy?.mindset.map((item: string, idx: number) => (
-                  <Text key={idx} className="text-red-300 text-sm mb-1">â€¢ {item}</Text>
+                  <Text key={idx} className="text-red-300 text-sm mb-1">• {item}</Text>
                 ))}
               </View>
 
@@ -762,7 +762,7 @@ export default function CareerLongevity() {
                   <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-3">
                     <Text className="text-primary font-bold mb-2">Actions:</Text>
                     {phase.actions.map((action: string, aIdx: number) => (
-                      <Text key={aIdx} className="text-primary/80 text-sm mb-1">â€¢ {action}</Text>
+                      <Text key={aIdx} className="text-primary/80 text-sm mb-1">• {action}</Text>
                     ))}
                   </View>
 
@@ -770,7 +770,7 @@ export default function CareerLongevity() {
                     <View className="bg-red-500/10 rounded-xl p-4 border border-red-500/30 mb-3">
                       <Text className="text-red-400 font-bold mb-2">DON'T:</Text>
                       {phase.dont.map((item: string, dIdx: number) => (
-                        <Text key={dIdx} className="text-red-300 text-sm mb-1">âœ— {item}</Text>
+                        <Text key={dIdx} className="text-red-300 text-sm mb-1">✓ {item}</Text>
                       ))}
                     </View>
                   )}
@@ -779,7 +779,7 @@ export default function CareerLongevity() {
                     <View className="bg-primary/10 rounded-xl p-4 border border-primary/30">
                       <Text className="text-primary/80 font-bold mb-2">Guidelines:</Text>
                       {phase.guidelines.map((guide: string, gIdx: number) => (
-                        <Text key={gIdx} className="text-primary/60 text-sm mb-1">â€¢ {guide}</Text>
+                        <Text key={gIdx} className="text-primary/60 text-sm mb-1">• {guide}</Text>
                       ))}
                     </View>
                   )}
@@ -795,7 +795,7 @@ export default function CareerLongevity() {
               <View className="bg-red-500/10 rounded-xl p-4 border border-red-500/30 mb-4">
                 <Text className="text-red-400 font-bold mb-2">Challenges:</Text>
                 {item.challenges?.map((challenge: string, cIdx: number) => (
-                  <Text key={cIdx} className="text-red-300 text-sm mb-1">â€¢ {challenge}</Text>
+                  <Text key={cIdx} className="text-red-300 text-sm mb-1">• {challenge}</Text>
                 ))}
               </View>
 
@@ -803,7 +803,7 @@ export default function CareerLongevity() {
                 <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-4">
                   <Text className="text-primary font-bold mb-2">Solutions:</Text>
                   {item.solutions.map((solution: string, sIdx: number) => (
-                    <Text key={sIdx} className="text-primary/80 text-sm mb-1">âœ“ {solution}</Text>
+                    <Text key={sIdx} className="text-primary/80 text-sm mb-1">✓ {solution}</Text>
                   ))}
                 </View>
               )}
@@ -812,7 +812,7 @@ export default function CareerLongevity() {
                 <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-4">
                   <Text className="text-primary/80 font-bold mb-2">Balance:</Text>
                   {item.balance.map((bal: string, bIdx: number) => (
-                    <Text key={bIdx} className="text-primary/60 text-sm mb-1">â€¢ {bal}</Text>
+                    <Text key={bIdx} className="text-primary/60 text-sm mb-1">• {bal}</Text>
                   ))}
                 </View>
               )}
@@ -821,7 +821,7 @@ export default function CareerLongevity() {
                 <View className="bg-amber-500/10 rounded-xl p-4 border border-amber-500/30 mb-4">
                   <Text className="text-amber-400 font-bold mb-2">Typical Costs:</Text>
                   {item.costs.map((cost: string, costIdx: number) => (
-                    <Text key={costIdx} className="text-amber-300 text-sm mb-1">â€¢ {cost}</Text>
+                    <Text key={costIdx} className="text-amber-300 text-sm mb-1">• {cost}</Text>
                   ))}
                 </View>
               )}
@@ -830,7 +830,7 @@ export default function CareerLongevity() {
                 <View className="bg-primary/10 rounded-xl p-4 border border-primary/30">
                   <Text className="text-primary font-bold mb-2">Save Money:</Text>
                   {item.saveStrategy.map((save: string, saveIdx: number) => (
-                    <Text key={saveIdx} className="text-primary/80 text-sm mb-1">âœ“ {save}</Text>
+                    <Text key={saveIdx} className="text-primary/80 text-sm mb-1">✓ {save}</Text>
                   ))}
                 </View>
               )}
@@ -840,16 +840,16 @@ export default function CareerLongevity() {
           <View className="bg-gradient-to-r from-blue-500/20 to-emerald-500/20 rounded-xl p-5 border border-primary/30 mb-6">
             <Text className="text-primary/80 font-bold text-lg mb-3">The Marathon, Not the Sprint</Text>
             <Text className="text-primary/60 text-sm mb-2">
-              â€¢ Your 1RM today doesn't matter in 10 years
+              • Your 1RM today doesn't matter in 10 years
             </Text>
             <Text className="text-primary/60 text-sm mb-2">
-              â€¢ Staying healthy and training consistently does
+              • Staying healthy and training consistently does
             </Text>
             <Text className="text-primary/60 text-sm mb-2">
-              â€¢ Compound progress over decades is incredible
+              • Compound progress over decades is incredible
             </Text>
             <Text className="text-primary/60 text-sm">
-              â€¢ Plan to lift for life, not just for PRs
+              • Plan to lift for life, not just for PRs
             </Text>
           </View>
         </View>

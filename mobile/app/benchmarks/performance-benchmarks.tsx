@@ -197,11 +197,11 @@ export default function PerformanceBenchmarks() {
           <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
             <Text className="text-primary font-bold mb-2">Testing Tips</Text>
             <Text className="text-primary/80 text-sm">
-              â€¢ Warm up properly before tests{'\n'}
-              â€¢ Test when fresh (early week){'\n'}
-              â€¢ Retest every 8-12 weeks{'\n'}
-              â€¢ Track progress over time{'\n'}
-              â€¢ Don't test all at once
+              • Warm up properly before tests{'\n'}
+              • Test when fresh (early week){'\n'}
+              • Retest every 8-12 weeks{'\n'}
+              • Track progress over time{'\n'}
+              • Don't test all at once
             </Text>
           </View>
         </View>

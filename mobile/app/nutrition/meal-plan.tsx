@@ -46,7 +46,7 @@ const WEEKLY_PLAN: DayPlan[] = [
         protein: 40,
         carbs: 75,
         fats: 20,
-        foods: ['Avena con proteÃ­na', 'PlÃ¡tano', 'Almendras', 'CafÃ©'],
+        foods: ['Avena con proteína', 'Plátano', 'Almendras', 'Café'],
       },
       {
         id: '2',
@@ -56,7 +56,7 @@ const WEEKLY_PLAN: DayPlan[] = [
         protein: 60,
         carbs: 95,
         fats: 25,
-        foods: ['Pollo a la plancha (200g)', 'Arroz integral', 'BrÃ³coli', 'Aguacate'],
+        foods: ['Pollo a la plancha (200g)', 'Arroz integral', 'Brócoli', 'Aguacate'],
       },
       {
         id: '3',
@@ -66,7 +66,7 @@ const WEEKLY_PLAN: DayPlan[] = [
         protein: 30,
         carbs: 45,
         fats: 12,
-        foods: ['Batido de proteÃ­na', 'Avena', 'Mantequilla de manÃ­'],
+        foods: ['Batido de proteína', 'Avena', 'Mantequilla de maní'],
       },
       {
         id: '4',
@@ -76,17 +76,17 @@ const WEEKLY_PLAN: DayPlan[] = [
         protein: 50,
         carbs: 80,
         fats: 22,
-        foods: ['SalmÃ³n al horno (180g)', 'Batata', 'EspÃ¡rragos', 'Aceite de oliva'],
+        foods: ['Salmón al horno (180g)', 'Batata', 'Espárragos', 'Aceite de oliva'],
       },
       {
         id: '5',
-        name: 'Pre-SueÃ±o',
+        name: 'Pre-Sueño',
         time: '23:00',
         calories: 150,
         protein: 0,
         carbs: 25,
         fats: 6,
-        foods: ['CaseÃ­na', 'Nueces'],
+        foods: ['Caseína', 'Nueces'],
       },
     ],
   },
@@ -97,7 +97,7 @@ export default function MealPlan() {
   const [showAddMeal, setShowAddMeal] = useState(false);
 
   const currentPlan = WEEKLY_PLAN[selectedDay];
-  const days = ['Lun', 'Mar', 'MiÃ©', 'Jue', 'Vie', 'SÃ¡b', 'Dom'];
+  const days = ['Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb', 'Dom'];
 
   const getMacroPercentage = (macro: number, total: number) => {
     return ((macro / total) * 100).toFixed(0);
@@ -105,8 +105,8 @@ export default function MealPlan() {
 
   const addMeal = () => {
     Alert.alert(
-      'PrÃ³ximamente',
-      'La funcionalidad de agregar comidas estarÃ¡ disponible pronto'
+      'Próximamente',
+      'La funcionalidad de agregar comidas estará disponible pronto'
     );
     setShowAddMeal(false);
   };
@@ -160,7 +160,7 @@ export default function MealPlan() {
         <View className="bg-zinc-900 rounded-xl p-4 border border-zinc-800">
           <View className="flex-row items-center justify-between mb-3">
             <Text className="text-white font-bold text-lg">
-              Total del DÃ­a
+              Total del Día
             </Text>
             <Text className="text-primary font-bold text-2xl">
               {currentPlan.totalCalories}
@@ -169,7 +169,7 @@ export default function MealPlan() {
 
           <View className="flex-row justify-between">
             <View className="flex-1 items-center">
-              <Text className="text-zinc-400 text-xs mb-1">ProteÃ­na</Text>
+              <Text className="text-zinc-400 text-xs mb-1">Proteína</Text>
               <Text className="text-red-500 text-xl font-bold">
                 {currentPlan.totalProtein}g
               </Text>
@@ -234,7 +234,7 @@ export default function MealPlan() {
                   <Text className="text-primary font-bold text-2xl">
                     {meal.calories}
                   </Text>
-                  <Text className="text-zinc-500 text-xs">calorÃ­as</Text>
+                  <Text className="text-zinc-500 text-xs">calorías</Text>
                 </View>
               </View>
 
@@ -294,11 +294,11 @@ export default function MealPlan() {
               <Ionicons name="information-circle" size={24} color="#9D12DE" />
               <View className="flex-1 ml-3">
                 <Text className="text-primary/80 font-bold mb-1">
-                  Consejo del DÃ­a
+                  Consejo del Día
                 </Text>
                 <Text className="text-primary/60 text-sm leading-5">
-                  Distribuye tu proteÃ­na de manera uniforme durante el dÃ­a para
-                  maximizar la sÃ­ntesis de proteÃ­na muscular (20-40g por comida).
+                  Distribuye tu proteína de manera uniforme durante el día para
+                  maximizar la síntesis de proteína muscular (20-40g por comida).
                 </Text>
               </View>
             </View>

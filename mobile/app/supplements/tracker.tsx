@@ -43,7 +43,7 @@ const SUPPLEMENTS: Supplement[] = [
     brand: 'MyProtein',
     category: 'creatina',
     dosage: '5g',
-    timing: 'Diario (maÃ±ana)',
+    timing: 'Diario (mañana)',
     quantity: 45,
     unit: 'porciones',
     daysRemaining: 45,
@@ -60,11 +60,11 @@ const SUPPLEMENTS: Supplement[] = [
     unit: 'porciones',
     daysRemaining: 16,
     active: true,
-    notes: 'Solo dÃ­as de pierna',
+    notes: 'Solo días de pierna',
   },
   {
     id: '4',
-    name: 'MultivitamÃ­nico',
+    name: 'Multivitamínico',
     brand: 'Centrum',
     category: 'vitaminas',
     dosage: '1 tableta',
@@ -82,7 +82,7 @@ export default function SupplementTracker() {
 
   const categories = [
     { id: 'all', label: 'Todos', icon: 'apps' },
-    { id: 'proteina', label: 'ProteÃ­na', icon: 'fitness' },
+    { id: 'proteina', label: 'Proteína', icon: 'fitness' },
     { id: 'pre-workout', label: 'Pre-Workout', icon: 'flash' },
     { id: 'vitaminas', label: 'Vitaminas', icon: 'medkit' },
     { id: 'creatina', label: 'Creatina', icon: 'water' },
@@ -114,7 +114,7 @@ export default function SupplementTracker() {
         { text: 'Cancelar', style: 'cancel' },
         {
           text: 'Agregar',
-          onPress: () => Alert.alert('Â¡Agregado!', 'Suplemento agregado exitosamente'),
+          onPress: () => Alert.alert('¡Agregado!', 'Suplemento agregado exitosamente'),
         },
       ]
     );
@@ -129,7 +129,7 @@ export default function SupplementTracker() {
         {
           text: 'Registrar',
           onPress: () => {
-            Alert.alert('Â¡Registrado!', `${supplement.name} - ${supplement.dosage}`);
+            Alert.alert('¡Registrado!', `${supplement.name} - ${supplement.dosage}`);
           },
         },
       ]
@@ -139,7 +139,7 @@ export default function SupplementTracker() {
   const editSupplement = (supplement: Supplement) => {
     Alert.alert(
       supplement.name,
-      'Selecciona una acciÃ³n',
+      'Selecciona una acción',
       [
         {
           text: 'Actualizar Cantidad',
@@ -150,7 +150,7 @@ export default function SupplementTracker() {
         },
         {
           text: 'Editar Horario',
-          onPress: () => Alert.alert('Horario', 'FunciÃ³n prÃ³ximamente'),
+          onPress: () => Alert.alert('Horario', 'Función próximamente'),
         },
         {
           text: supplement.active ? 'Desactivar' : 'Activar',
@@ -159,7 +159,7 @@ export default function SupplementTracker() {
         {
           text: 'Eliminar',
           style: 'destructive',
-          onPress: () => Alert.alert('Confirmar', 'Â¿Eliminar este suplemento?', [
+          onPress: () => Alert.alert('Confirmar', '¿Eliminar este suplemento?', [
             { text: 'Cancelar', style: 'cancel' },
             { text: 'Eliminar', style: 'destructive', onPress: () => Alert.alert('Eliminado', 'Suplemento eliminado') },
           ]),
@@ -270,7 +270,7 @@ export default function SupplementTracker() {
                     Stock Bajo
                   </Text>
                   <Text className="text-amber-300 text-sm">
-                    {lowStock} suplemento{lowStock > 1 ? 's' : ''} con menos de 10 dÃ­as restantes
+                    {lowStock} suplemento{lowStock > 1 ? 's' : ''} con menos de 10 días restantes
                   </Text>
                 </View>
               </View>
@@ -363,7 +363,7 @@ export default function SupplementTracker() {
 
                 <View className="flex-row items-center justify-between">
                   <Text className="text-zinc-500 text-xs">
-                    ~{supplement.daysRemaining} dÃ­as restantes
+                    ~{supplement.daysRemaining} días restantes
                   </Text>
                   <TouchableOpacity
                     onPress={() => logSupplementIntake(supplement)}

@@ -38,42 +38,42 @@ const DEVICES: WearableDevice[] = [
     connected: true,
     battery: 78,
     lastSync: 'Hace 5 minutos',
-    features: ['Frecuencia CardÃ­aca', 'HRV', 'CalorÃ­as', 'Pasos', 'SueÃ±o', 'OxÃ­geno'],
+    features: ['Frecuencia Cardíaca', 'HRV', 'Calorías', 'Pasos', 'Sueño', 'Oxígeno'],
   },
   {
     id: '2',
     name: 'Garmin Fenix 7',
     brand: 'garmin',
     connected: false,
-    features: ['GPS', 'VO2 Max', 'EstrÃ©s', 'Altitud', 'Pasos', 'SueÃ±o'],
+    features: ['GPS', 'VO2 Max', 'Estrés', 'Altitud', 'Pasos', 'Sueño'],
   },
   {
     id: '3',
     name: 'Fitbit Charge 6',
     brand: 'fitbit',
     connected: false,
-    features: ['Pasos', 'CalorÃ­as', 'SueÃ±o', 'Frecuencia CardÃ­aca', 'SPO2'],
+    features: ['Pasos', 'Calorías', 'Sueño', 'Frecuencia Cardíaca', 'SPO2'],
   },
   {
     id: '4',
     name: 'WHOOP 4.0',
     brand: 'whoop',
     connected: false,
-    features: ['Strain', 'RecuperaciÃ³n', 'SueÃ±o', 'HRV', 'Frecuencia CardÃ­aca'],
+    features: ['Strain', 'Recuperación', 'Sueño', 'HRV', 'Frecuencia Cardíaca'],
   },
   {
     id: '5',
     name: 'Polar Vantage V3',
     brand: 'polar',
     connected: false,
-    features: ['Running Power', 'RecuperaciÃ³n', 'VO2 Max', 'HRV', 'SueÃ±o'],
+    features: ['Running Power', 'Recuperación', 'VO2 Max', 'HRV', 'Sueño'],
   },
 ];
 
 const SYNCED_METRICS: SyncedMetric[] = [
   {
     id: '1',
-    name: 'Frecuencia CardÃ­aca',
+    name: 'Frecuencia Cardíaca',
     value: '68 bpm',
     icon: 'pulse',
     source: 'Apple Watch',
@@ -89,7 +89,7 @@ const SYNCED_METRICS: SyncedMetric[] = [
   },
   {
     id: '3',
-    name: 'CalorÃ­as Quemadas',
+    name: 'Calorías Quemadas',
     value: '2,340 kcal',
     icon: 'flame',
     source: 'Apple Watch',
@@ -105,7 +105,7 @@ const SYNCED_METRICS: SyncedMetric[] = [
   },
   {
     id: '5',
-    name: 'SueÃ±o Anoche',
+    name: 'Sueño Anoche',
     value: '7.5 h',
     icon: 'moon',
     source: 'Apple Watch',
@@ -113,7 +113,7 @@ const SYNCED_METRICS: SyncedMetric[] = [
   },
   {
     id: '6',
-    name: 'OxÃ­geno en Sangre',
+    name: 'Oxígeno en Sangre',
     value: '98%',
     icon: 'water',
     source: 'Apple Watch',
@@ -159,7 +159,7 @@ export default function WearableIntegrations() {
     if (device.connected) {
       Alert.alert(
         'Desconectar Dispositivo',
-        `Â¿Deseas desconectar ${device.name}?`,
+        `¿Deseas desconectar ${device.name}?`,
         [
           { text: 'Cancelar', style: 'cancel' },
           {
@@ -174,13 +174,13 @@ export default function WearableIntegrations() {
     } else {
       Alert.alert(
         'Conectar Dispositivo',
-        `Conectando con ${device.name}...\n\nSerÃ¡s redirigido a la aplicaciÃ³n oficial para autorizar el acceso.`,
+        `Conectando con ${device.name}...\n\nSerás redirigido a la aplicación oficial para autorizar el acceso.`,
         [
           { text: 'Cancelar', style: 'cancel' },
           {
             text: 'Continuar',
             onPress: () => {
-              Alert.alert('Â¡Conectado!', `${device.name} estÃ¡ ahora sincronizado`);
+              Alert.alert('¡Conectado!', `${device.name} está ahora sincronizado`);
             },
           },
         ]
@@ -192,7 +192,7 @@ export default function WearableIntegrations() {
     setSyncInProgress(true);
     setTimeout(() => {
       setSyncInProgress(false);
-      Alert.alert('SincronizaciÃ³n Completa', 'Todos los datos estÃ¡n actualizados');
+      Alert.alert('Sincronización Completa', 'Todos los datos están actualizados');
     }, 2000);
   };
 
@@ -360,10 +360,10 @@ export default function WearableIntegrations() {
               <Ionicons name="information-circle" size={20} color="#9D12DE" />
               <View className="flex-1 ml-3">
                 <Text className="text-primary/80 font-bold mb-2">
-                  SincronizaciÃ³n AutomÃ¡tica
+                  Sincronización Automática
                 </Text>
                 <Text className="text-primary/60 text-sm">
-                  Los datos se sincronizan automÃ¡ticamente cada hora cuando el dispositivo estÃ¡ conectado. TambiÃ©n puedes forzar una sincronizaciÃ³n manual en cualquier momento.
+                  Los datos se sincronizan automáticamente cada hora cuando el dispositivo está conectado. También puedes forzar una sincronización manual en cualquier momento.
                 </Text>
               </View>
             </View>

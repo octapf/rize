@@ -52,7 +52,7 @@ export default function AdvancedProgress() {
     { id: 'fuerza', label: 'Fuerza' },
     { id: 'volumen', label: 'Volumen' },
     { id: 'cardio', label: 'Cardio' },
-    { id: 'composicion', label: 'ComposiciÃ³n' },
+    { id: 'composicion', label: 'Composición' },
   ];
 
   const getTrendColor = (trend: string) => {
@@ -85,9 +85,9 @@ export default function AdvancedProgress() {
     Alert.alert(
       metric.name,
       `Valor Actual: ${metric.value} ${metric.unit}\nCambio: ${metric.change > 0 ? '+' : ''}${metric.change} ${metric.unit}\n\nTendencia: ${
-        metric.trend === 'up' ? 'Mejorando âœ…' : metric.trend === 'down' ? 'Bajando â¬‡ï¸' : 'Estable âž¡ï¸'
+        metric.trend === 'up' ? 'Mejorando ✅' : metric.trend === 'down' ? 'Bajando â¬‡ï¸' : 'Estable âž¡ï¸'
       }`,
-      [{ text: 'Ver HistÃ³rico' }, { text: 'Cerrar' }]
+      [{ text: 'Ver Histórico' }, { text: 'Cerrar' }]
     );
   };
 
@@ -161,7 +161,7 @@ export default function AdvancedProgress() {
         {/* Chart Section */}
         <View className="px-6 pt-6">
           <Text className="text-white font-bold text-lg mb-3">
-            ProgresiÃ³n 1RM Sentadilla
+            Progresión 1RM Sentadilla
           </Text>
 
           <View className="bg-zinc-900 rounded-xl p-4 mb-6 border border-zinc-800">
@@ -199,7 +199,7 @@ export default function AdvancedProgress() {
 
           {/* Metrics Grid */}
           <Text className="text-white font-bold text-lg mb-3">
-            Todas las MÃ©tricas
+            Todas las Métricas
           </Text>
 
           <View className="mb-6">
@@ -268,7 +268,7 @@ export default function AdvancedProgress() {
                   Progreso Excelente en Fuerza
                 </Text>
                 <Text className="text-primary/80 text-sm">
-                  Tu 1RM en sentadilla ha aumentado 10kg en 3 semanas. ContinÃºa con este ritmo.
+                  Tu 1RM en sentadilla ha aumentado 10kg en 3 semanas. Continúa con este ritmo.
                 </Text>
               </View>
             </View>
@@ -279,10 +279,10 @@ export default function AdvancedProgress() {
               <Ionicons name="warning" size={20} color="#FFEA00" />
               <View className="flex-1 ml-3">
                 <Text className="text-amber-400 font-bold mb-1">
-                  AtenciÃ³n al Cardio
+                  Atención al Cardio
                 </Text>
                 <Text className="text-amber-300 text-sm">
-                  Tu VO2 Max ha bajado 2 puntos. Considera agregar mÃ¡s trabajo cardiovascular.
+                  Tu VO2 Max ha bajado 2 puntos. Considera agregar más trabajo cardiovascular.
                 </Text>
               </View>
             </View>
@@ -296,7 +296,7 @@ export default function AdvancedProgress() {
                   Balance Muscular Ã“ptimo
                 </Text>
                 <Text className="text-primary/60 text-sm">
-                  Tu composiciÃ³n corporal estÃ¡ mejorando. -0.8% grasa con +1.2kg masa muscular.
+                  Tu composición corporal está mejorando. -0.8% grasa con +1.2kg masa muscular.
                 </Text>
               </View>
             </View>

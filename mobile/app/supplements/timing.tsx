@@ -254,13 +254,13 @@ export default function SupplementTiming() {
           <View className="bg-amber-500/10 rounded-xl p-4 border border-amber-500/30 mb-6">
             <Text className="text-amber-400 font-bold mb-2">Timing vs Totals</Text>
             <Text className="text-amber-300 text-sm mb-2">
-              â€¢ Daily totals matter MORE than timing for most supplements
+              • Daily totals matter MORE than timing for most supplements
             </Text>
             <Text className="text-amber-300 text-sm mb-2">
-              â€¢ Exceptions: Caffeine (pre-workout), Magnesium (before bed)
+              • Exceptions: Caffeine (pre-workout), Magnesium (before bed)
             </Text>
             <Text className="text-amber-300 text-sm">
-              â€¢ Don't stress perfect timing - consistency with daily totals wins
+              • Don't stress perfect timing - consistency with daily totals wins
             </Text>
           </View>
         </View>

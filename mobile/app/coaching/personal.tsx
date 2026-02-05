@@ -56,7 +56,7 @@ const FORM_ERRORS: FormError[] = [
 const COACHES: Coach[] = [
   {
     id: '1',
-    name: 'Carlos PÃ©rez',
+    name: 'Carlos Pérez',
     specialty: 'Powerlifting',
     rating: 4.9,
     clients: 234,
@@ -67,7 +67,7 @@ const COACHES: Coach[] = [
   },
   {
     id: '2',
-    name: 'Ana MartÃ­nez',
+    name: 'Ana Martínez',
     specialty: 'Hipertrofia',
     rating: 4.8,
     clients: 189,
@@ -78,12 +78,12 @@ const COACHES: Coach[] = [
   },
   {
     id: '3',
-    name: 'Luis GarcÃ­a',
+    name: 'Luis García',
     specialty: 'Calistenia',
     rating: 4.7,
     clients: 156,
     responseTime: '< 6 horas',
-    avatar: 'ðŸ¤¸',
+    avatar: '🤸',
     price: 19.99,
     available: false,
   },
@@ -105,15 +105,15 @@ export default function PersonalCoaching() {
       'Selecciona el origen del video',
       [
         {
-          text: 'CÃ¡mara',
+          text: 'Cámara',
           onPress: () => {
-            Alert.alert('Grabando...', 'FunciÃ³n de cÃ¡mara prÃ³ximamente');
+            Alert.alert('Grabando...', 'Función de cámara próximamente');
           },
         },
         {
-          text: 'GalerÃ­a',
+          text: 'Galería',
           onPress: () => {
-            Alert.alert('Â¡Video Subido!', 'Tu form check estÃ¡ en revisiÃ³n. RecibirÃ¡s feedback en 24-48 horas.');
+            Alert.alert('¡Video Subido!', 'Tu form check está en revisión. Recibirás feedback en 24-48 horas.');
           },
         },
         { text: 'Cancelar', style: 'cancel' },
@@ -124,7 +124,7 @@ export default function PersonalCoaching() {
   const viewFormCheckDetails = (error: FormError) => {
     Alert.alert(
       error.exercise,
-      `Problema detectado: ${error.issue}\n\nFecha: ${error.timestamp}\n\nEstado: ${error.reviewed ? 'Revisado âœ…' : 'Pendiente â³'}`,
+      `Problema detectado: ${error.issue}\n\nFecha: ${error.timestamp}\n\nEstado: ${error.reviewed ? 'Revisado ✅' : 'Pendiente â³'}`,
       [
         { text: 'Ver Video', onPress: () => Alert.alert('Reproducir Video', error.videoUrl || 'No disponible') },
         { text: 'Cerrar' },
@@ -134,21 +134,21 @@ export default function PersonalCoaching() {
 
   const hireCoach = (coach: Coach) => {
     if (!coach.available) {
-      Alert.alert('Coach No Disponible', `${coach.name} no estÃ¡ aceptando nuevos clientes en este momento.`);
+      Alert.alert('Coach No Disponible', `${coach.name} no está aceptando nuevos clientes en este momento.`);
       return;
     }
 
     Alert.alert(
       'Contratar Coach',
-      `${coach.name}\n${coach.specialty}\n\nPrecio: $${coach.price}/mes\n\nÂ¿Deseas continuar?`,
+      `${coach.name}\n${coach.specialty}\n\nPrecio: $${coach.price}/mes\n\n¿Deseas continuar?`,
       [
         { text: 'Cancelar', style: 'cancel' },
         {
           text: 'Contratar',
           onPress: () => {
             Alert.alert(
-              'Â¡Contratado!',
-              `${coach.name} te contactarÃ¡ en ${coach.responseTime}.\n\nRevisarÃ¡s tu plan inicial juntos.`
+              '¡Contratado!',
+              `${coach.name} te contactará en ${coach.responseTime}.\n\nRevisarás tu plan inicial juntos.`
             );
           },
         },
@@ -314,16 +314,16 @@ export default function PersonalCoaching() {
                 <Ionicons name="information-circle" size={20} color="#9D12DE" />
                 <View className="flex-1 ml-3">
                   <Text className="text-primary/80 font-bold mb-2">
-                    Â¿CÃ³mo funciona?
+                    ¿Cómo funciona?
                   </Text>
                   <Text className="text-primary/60 text-sm mb-2">
-                    1. Graba tu ejercicio desde un Ã¡ngulo lateral
+                    1. Graba tu ejercicio desde un ángulo lateral
                   </Text>
                   <Text className="text-primary/60 text-sm mb-2">
                     2. Sube el video y describe tus dudas
                   </Text>
                   <Text className="text-primary/60 text-sm">
-                    3. Un coach revisarÃ¡ tu tÃ©cnica y te darÃ¡ feedback detallado
+                    3. Un coach revisará tu técnica y te dará feedback detallado
                   </Text>
                 </View>
               </View>

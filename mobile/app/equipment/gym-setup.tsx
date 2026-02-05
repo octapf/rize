@@ -393,7 +393,7 @@ export default function GymSetup() {
                   <Text className="text-primary/80 font-bold text-sm mb-2">Tips:</Text>
                   {equip.tips.map((tip, tIdx) => (
                     <Text key={tIdx} className="text-primary/60 text-sm mb-1 last:mb-0">
-                      â€¢ {tip}
+                      • {tip}
                     </Text>
                   ))}
                 </View>
@@ -432,16 +432,16 @@ export default function GymSetup() {
           <View className="bg-gradient-to-r from-red-500/20 to-orange-500/20 rounded-xl p-4 border border-red-500/30 mb-6">
             <Text className="text-red-400 font-bold mb-2">Safety First</Text>
             <Text className="text-red-300 text-sm mb-2">
-              â€¢ Never bench without safeties or spotter
+              • Never bench without safeties or spotter
             </Text>
             <Text className="text-red-300 text-sm mb-2">
-              â€¢ Inspect equipment before every heavy session
+              • Inspect equipment before every heavy session
             </Text>
             <Text className="text-red-300 text-sm mb-2">
-              â€¢ Quality equipment = long-term investment
+              • Quality equipment = long-term investment
             </Text>
             <Text className="text-red-300 text-sm">
-              â€¢ When in doubt, err on side of safety
+              • When in doubt, err on side of safety
             </Text>
           </View>
         </View>

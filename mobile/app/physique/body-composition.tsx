@@ -302,16 +302,16 @@ export default function BodyComposition() {
           <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
             <Text className="text-primary/80 font-bold mb-2">Measurement Tips</Text>
             <Text className="text-primary/60 text-sm mb-2">
-              â€¢ Measure in the morning before eating
+              • Measure in the morning before eating
             </Text>
             <Text className="text-primary/60 text-sm mb-2">
-              â€¢ Keep tape parallel to ground, snug but not tight
+              • Keep tape parallel to ground, snug but not tight
             </Text>
             <Text className="text-primary/60 text-sm mb-2">
-              â€¢ Neck: measure below Adam's apple
+              • Neck: measure below Adam's apple
             </Text>
             <Text className="text-primary/60 text-sm">
-              â€¢ Waist: at navel, relaxed (don't suck in)
+              • Waist: at navel, relaxed (don't suck in)
             </Text>
           </View>
         </View>

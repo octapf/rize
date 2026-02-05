@@ -537,13 +537,13 @@ export default function PeriodizationMastery() {
               ðŸ“ˆ Linear: High volume â†’ Low volume, Low intensity â†’ High intensity
             </Text>
             <Text className="text-purple-300 text-sm mb-2">
-              ðŸ§± Block: Sequential blocks (Accumulation â†’ Intensification â†’ Realization)
+              🧱 Block: Sequential blocks (Accumulation â†’ Intensification â†’ Realization)
             </Text>
             <Text className="text-purple-300 text-sm mb-2">
               ðŸ”„ DUP: Vary volume/intensity within week (Heavy/Volume/Power)
             </Text>
             <Text className="text-purple-300 text-sm">
-              ðŸš€ Conjugate: Max Effort + Dynamic Effort, rotating variations
+              🚀 Conjugate: Max Effort + Dynamic Effort, rotating variations
             </Text>
           </View>
 

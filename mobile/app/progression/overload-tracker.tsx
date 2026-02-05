@@ -239,11 +239,11 @@ export default function ProgressiveOverload() {
           <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
             <Text className="text-primary/80 font-bold mb-2">Progressive Overload Tips</Text>
             <Text className="text-primary/60 text-sm">
-              â€¢ Small consistent increases &gt; big jumps{'\n'}
-              â€¢ Track ALL variables (weight/sets/reps/rest){'\n'}
-              â€¢ Deload every 6-8 weeks{'\n'}
-              â€¢ Can't progress? Check recovery{'\n'}
-              â€¢ Progressive overload = muscle growth
+              • Small consistent increases &gt; big jumps{'\n'}
+              • Track ALL variables (weight/sets/reps/rest){'\n'}
+              • Deload every 6-8 weeks{'\n'}
+              • Can't progress? Check recovery{'\n'}
+              • Progressive overload = muscle growth
             </Text>
           </View>
         </View>

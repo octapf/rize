@@ -288,7 +288,7 @@ export default function PeriodizationTemplates() {
                 <View className="border-t border-zinc-700 pt-3">
                   {phase.notes.map((note, noteIdx) => (
                     <Text key={noteIdx} className="text-zinc-300 text-sm mb-1">
-                      â€¢ {note}
+                      • {note}
                     </Text>
                   ))}
                 </View>
@@ -305,7 +305,7 @@ export default function PeriodizationTemplates() {
             </View>
             {currentTemplate.pros.map((pro, idx) => (
               <Text key={idx} className="text-primary text-sm mb-2 last:mb-0">
-                âœ“ {pro}
+                ✓ {pro}
               </Text>
             ))}
           </View>
@@ -327,16 +327,16 @@ export default function PeriodizationTemplates() {
           <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
             <Text className="text-primary/80 font-bold mb-2">Implementation Tips</Text>
             <Text className="text-primary/60 text-sm mb-2">
-              â€¢ Stick to one model for full cycle (don't program hop)
+              • Stick to one model for full cycle (don't program hop)
             </Text>
             <Text className="text-primary/60 text-sm mb-2">
-              â€¢ Track all lifts to ensure progression
+              • Track all lifts to ensure progression
             </Text>
             <Text className="text-primary/60 text-sm mb-2">
-              â€¢ Don't skip deloads (recovery is when you grow)
+              • Don't skip deloads (recovery is when you grow)
             </Text>
             <Text className="text-primary/60 text-sm">
-              â€¢ Adjust based on recovery and life stress
+              • Adjust based on recovery and life stress
             </Text>
           </View>
         </View>

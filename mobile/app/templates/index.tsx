@@ -68,7 +68,7 @@ export default function TemplatesScreen() {
   const handleDelete = (template: WorkoutTemplate) => {
     Alert.alert(
       'Eliminar Plantilla',
-      `Â¿EstÃ¡s seguro de que quieres eliminar "${template.name}"?`,
+      `¿Estás seguro de que quieres eliminar "${template.name}"?`,
       [
         { text: 'Cancelar', style: 'cancel' },
         {
@@ -81,7 +81,7 @@ export default function TemplatesScreen() {
   };
 
   const handleUseTemplate = (template: WorkoutTemplate) => {
-    Alert.alert('Usar Plantilla', `Â¿Crear workout desde "${template.name}"?`, [
+    Alert.alert('Usar Plantilla', `¿Crear workout desde "${template.name}"?`, [
       { text: 'Cancelar', style: 'cancel' },
       {
         text: 'Crear',
@@ -216,7 +216,7 @@ export default function TemplatesScreen() {
           <Ionicons name="document-text-outline" size={64} color="#666" />
           <Text style={styles.emptyText}>
             {showPublic
-              ? 'No hay plantillas pÃºblicas'
+              ? 'No hay plantillas públicas'
               : 'No tienes plantillas guardadas'}
           </Text>
           {!showPublic && (

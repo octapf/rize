@@ -40,7 +40,7 @@ const DAILY_QUESTS: DailyQuest[] = [
   {
     id: '1',
     title: 'Completa tu Workout',
-    description: 'Finaliza tu entrenamiento programado del dÃ­a',
+    description: 'Finaliza tu entrenamiento programado del día',
     xp: 100,
     category: 'workout',
     completed: true,
@@ -50,7 +50,7 @@ const DAILY_QUESTS: DailyQuest[] = [
   {
     id: '2',
     title: 'Alcanza tus Macros',
-    description: 'Cumple con proteÃ­nas, carbos y grasas del dÃ­a',
+    description: 'Cumple con proteínas, carbos y grasas del día',
     xp: 75,
     category: 'nutrition',
     completed: true,
@@ -60,11 +60,11 @@ const DAILY_QUESTS: DailyQuest[] = [
   {
     id: '3',
     title: 'Duerme 8 Horas',
-    description: 'Registra al menos 8 horas de sueÃ±o',
+    description: 'Registra al menos 8 horas de sueño',
     xp: 50,
     category: 'recovery',
     completed: false,
-    icon: 'ðŸ˜´',
+    icon: '😐´',
     color: 'bg-primary',
   },
   {
@@ -80,7 +80,7 @@ const DAILY_QUESTS: DailyQuest[] = [
   {
     id: '5',
     title: 'Supera un PR',
-    description: 'Establece un nuevo rÃ©cord personal',
+    description: 'Establece un nuevo récord personal',
     xp: 150,
     category: 'challenge',
     completed: false,
@@ -99,7 +99,7 @@ const STREAKS: Streak[] = [
     color: 'bg-orange-500',
   },
   {
-    name: 'NutriciÃ³n Perfecta',
+    name: 'Nutrición Perfecta',
     current: 5,
     best: 14,
     active: true,
@@ -107,7 +107,7 @@ const STREAKS: Streak[] = [
     color: 'bg-primary',
   },
   {
-    name: 'SueÃ±o Ã“ptimo',
+    name: 'Sueño Ã“ptimo',
     current: 3,
     best: 9,
     active: true,
@@ -134,10 +134,10 @@ const LEVEL_PROGRESS: LevelProgress = {
 const WEEKLY_BONUS = [
   { day: 'Lun', completed: true },
   { day: 'Mar', completed: true },
-  { day: 'MiÃ©', completed: true },
+  { day: 'Mié', completed: true },
   { day: 'Jue', completed: false },
   { day: 'Vie', completed: false },
-  { day: 'SÃ¡b', completed: false },
+  { day: 'Sáb', completed: false },
   { day: 'Dom', completed: false },
 ];
 
@@ -153,7 +153,7 @@ export default function DailyQuests() {
         )
       );
       Alert.alert(
-        `âœ… Quest Completada!`,
+        `✅ Quest Completada!`,
         `+${quest.xp} XP ganados\n\n"${quest.title}"`,
         [{ text: 'Awesome!' }]
       );
@@ -225,7 +225,7 @@ export default function DailyQuests() {
           </View>
 
           <Text className="text-zinc-400 text-xs text-center">
-            Â¡{Math.round(progressPercent)}% hacia el Nivel {LEVEL_PROGRESS.currentLevel + 1}!
+            ¡{Math.round(progressPercent)}% hacia el Nivel {LEVEL_PROGRESS.currentLevel + 1}!
           </Text>
         </View>
 
@@ -338,7 +338,7 @@ export default function DailyQuests() {
           <View className="bg-zinc-900 rounded-xl p-4 border border-zinc-800 mb-6 mt-3">
             <Text className="text-white font-bold text-lg mb-3">Bonus Semanal</Text>
             <Text className="text-zinc-400 text-sm mb-4">
-              Completa todas las quests 7 dÃ­as seguidos para ganar 500 XP bonus
+              Completa todas las quests 7 días seguidos para ganar 500 XP bonus
             </Text>
             <View className="flex-row items-center justify-between">
               {WEEKLY_BONUS.map((day, index) => (
@@ -375,7 +375,7 @@ export default function DailyQuests() {
                   <View className="flex-1">
                     <Text className="text-white font-bold">{streak.name}</Text>
                     <Text className="text-zinc-400 text-sm">
-                      Mejor: {streak.best} dÃ­as
+                      Mejor: {streak.best} días
                     </Text>
                   </View>
                 </View>
@@ -387,14 +387,14 @@ export default function DailyQuests() {
                   >
                     {streak.current}
                   </Text>
-                  <Text className="text-zinc-400 text-xs">dÃ­as</Text>
+                  <Text className="text-zinc-400 text-xs">días</Text>
                 </View>
               </View>
 
               {streak.active && (
                 <View className="bg-primary/10 rounded-lg p-2 border border-primary/30">
                   <Text className="text-primary text-xs text-center">
-                    âœ¨ Â¡Racha Activa! Â¡No la rompas!
+                    ✓ ¡Racha Activa! ¡No la rompas!
                   </Text>
                 </View>
               )}
@@ -402,7 +402,7 @@ export default function DailyQuests() {
               {!streak.active && (
                 <View className="bg-zinc-800 rounded-lg p-2">
                   <Text className="text-zinc-400 text-xs text-center">
-                    Racha perdida. Â¡Empieza de nuevo hoy!
+                    Racha perdida. ¡Empieza de nuevo hoy!
                   </Text>
                 </View>
               )}
@@ -420,8 +420,8 @@ export default function DailyQuests() {
                   Gamifica tu Progreso
                 </Text>
                 <Text className="text-amber-300 text-sm">
-                  Completa quests, mantÃ©n rachas y sube de nivel. Convierte cada
-                  entrenamiento en una victoria Ã©pica.
+                  Completa quests, mantén rachas y sube de nivel. Convierte cada
+                  entrenamiento en una victoria épica.
                 </Text>
               </View>
             </View>

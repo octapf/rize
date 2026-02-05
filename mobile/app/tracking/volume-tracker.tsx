@@ -201,16 +201,16 @@ export default function VolumeTracker() {
           <View className="bg-amber-500/10 rounded-xl p-4 border border-amber-500/30 mb-6">
             <Text className="text-amber-400 font-bold mb-2">Volume Management</Text>
             <Text className="text-amber-300 text-sm mb-2">
-              â€¢ Start at minimum effective volume (MEV)
+              • Start at minimum effective volume (MEV)
             </Text>
             <Text className="text-amber-300 text-sm mb-2">
-              â€¢ Add 1-2 sets per week when progress stalls
+              • Add 1-2 sets per week when progress stalls
             </Text>
             <Text className="text-amber-300 text-sm mb-2">
-              â€¢ Deload when approaching maximum recoverable volume (MRV)
+              • Deload when approaching maximum recoverable volume (MRV)
             </Text>
             <Text className="text-amber-300 text-sm">
-              â€¢ Track volume to avoid junk volume
+              • Track volume to avoid junk volume
             </Text>
           </View>
 

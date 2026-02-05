@@ -244,16 +244,16 @@ export default function AttemptSelection() {
           <View className="bg-red-500/10 rounded-xl p-4 border border-red-500/30 mb-6">
             <Text className="text-red-400 font-bold mb-2">Critical Meet Day Rules</Text>
             <Text className="text-red-300 text-sm mb-2">
-              â€¢ Never change attempt in warm-up room due to nerves
+              • Never change attempt in warm-up room due to nerves
             </Text>
             <Text className="text-red-300 text-sm mb-2">
-              â€¢ Have coach/handler make attempt selections
+              • Have coach/handler make attempt selections
             </Text>
             <Text className="text-red-300 text-sm mb-2">
-              â€¢ If opener feels hard, your 1RM estimate was wrong
+              • If opener feels hard, your 1RM estimate was wrong
             </Text>
             <Text className="text-red-300 text-sm">
-              â€¢ 9/9 is better than bombing out chasing PRs
+              • 9/9 is better than bombing out chasing PRs
             </Text>
           </View>
         </View>

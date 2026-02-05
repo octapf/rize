@@ -42,7 +42,7 @@ const PROGRAMS: Program[] = [
     level: 'beginner',
     goal: 'Fuerza base',
     workoutsPerWeek: 3,
-    description: 'Programa diseÃ±ado para construir una base sÃ³lida de fuerza y tÃ©cnica en ejercicios fundamentales de calistenia.',
+    description: 'Programa diseñado para construir una base sólida de fuerza y técnica en ejercicios fundamentales de calistenia.',
     weeks: [
       {
         weekNumber: 1,
@@ -61,7 +61,7 @@ const PROGRAMS: Program[] = [
     level: 'intermediate',
     goal: 'Hipertrofia',
     workoutsPerWeek: 6,
-    description: 'Rutina clÃ¡sica dividida en empuje, tracciÃ³n y piernas para maximizar el crecimiento muscular.',
+    description: 'Rutina clásica dividida en empuje, tracción y piernas para maximizar el crecimiento muscular.',
     weeks: [
       {
         weekNumber: 1,
@@ -99,18 +99,18 @@ const PROGRAMS: Program[] = [
   },
   {
     id: '4',
-    name: 'PÃ©rdida de Grasa',
+    name: 'Pérdida de Grasa',
     duration: '10 semanas',
     level: 'intermediate',
-    goal: 'DefiniciÃ³n',
+    goal: 'Definición',
     workoutsPerWeek: 4,
-    description: 'CombinaciÃ³n de fuerza y cardio metabÃ³lico para maximizar la quema de grasa mientras preservas mÃºsculo.',
+    description: 'Combinación de fuerza y cardio metabólico para maximizar la quema de grasa mientras preservas músculo.',
     weeks: [
       {
         weekNumber: 1,
         workouts: [
-          { day: 1, name: 'Upper Body HIIT', exercises: 8, duration: '40min', type: 'MetabÃ³lico' },
-          { day: 2, name: 'Lower Body HIIT', exercises: 8, duration: '40min', type: 'MetabÃ³lico' },
+          { day: 1, name: 'Upper Body HIIT', exercises: 8, duration: '40min', type: 'Metabólico' },
+          { day: 2, name: 'Lower Body HIIT', exercises: 8, duration: '40min', type: 'Metabólico' },
           { day: 4, name: 'Full Body Circuit', exercises: 10, duration: '45min', type: 'Circuito' },
           { day: 6, name: 'HIIT Cardio', exercises: 6, duration: '35min', type: 'Cardio' },
         ],
@@ -159,13 +159,13 @@ export default function TrainingPrograms() {
   const startProgram = (program: Program) => {
     Alert.alert(
       'Iniciar Programa',
-      `Â¿Quieres comenzar "${program.name}"?\n\nDuraciÃ³n: ${program.duration}\nEntrenos por semana: ${program.workoutsPerWeek}`,
+      `¿Quieres comenzar "${program.name}"?\n\nDuración: ${program.duration}\nEntrenos por semana: ${program.workoutsPerWeek}`,
       [
         { text: 'Cancelar', style: 'cancel' },
         {
           text: 'Comenzar',
           onPress: () => {
-            Alert.alert('Â¡Programa Iniciado!', 'Ahora puedes ver tu progreso en la secciÃ³n de rutinas.');
+            Alert.alert('¡Programa Iniciado!', 'Ahora puedes ver tu progreso en la sección de rutinas.');
           },
         },
       ]
@@ -314,7 +314,7 @@ export default function TrainingPrograms() {
                     {program.weeks[0].workouts.length > 3 && (
                       <View className="bg-zinc-800 px-3 py-1 rounded-lg">
                         <Text className="text-zinc-400 text-xs font-semibold">
-                          +{program.weeks[0].workouts.length - 3} mÃ¡s
+                          +{program.weeks[0].workouts.length - 3} más
                         </Text>
                       </View>
                     )}
@@ -340,7 +340,7 @@ export default function TrainingPrograms() {
                 No se encontraron programas
               </Text>
               <Text className="text-zinc-600 text-sm mt-2 text-center">
-                Intenta cambiar los filtros o buscar otro tÃ©rmino
+                Intenta cambiar los filtros o buscar otro término
               </Text>
             </View>
           )}

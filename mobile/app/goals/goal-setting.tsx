@@ -172,7 +172,7 @@ export default function GoalSetting() {
                   </View>
                   <View className={`bg-${category.color}-500/20 rounded-lg p-2 border border-${category.color}-500/40`}>
                     <Text className={`text-${category.color}-300 text-xs`}>
-                      âœ“ {example.why}
+                      ✓ {example.why}
                     </Text>
                   </View>
                 </View>
@@ -183,12 +183,12 @@ export default function GoalSetting() {
           <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
             <Text className="text-primary/80 font-bold mb-2">Goal-Setting Tips</Text>
             <Text className="text-primary/60 text-sm">
-              â€¢ Write goals down physically{'\n'}
-              â€¢ Share with accountability partner{'\n'}
-              â€¢ Review weekly{'\n'}
-              â€¢ Celebrate milestones{'\n'}
-              â€¢ Adjust if needed, don't quit{'\n'}
-              â€¢ One major goal at a time
+              • Write goals down physically{'\n'}
+              • Share with accountability partner{'\n'}
+              • Review weekly{'\n'}
+              • Celebrate milestones{'\n'}
+              • Adjust if needed, don't quit{'\n'}
+              • One major goal at a time
             </Text>
           </View>
 

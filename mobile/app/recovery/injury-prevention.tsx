@@ -37,7 +37,7 @@ export default function InjuryPrevention() {
           causes: ['Poor shoulder position', 'Lack of mobility', 'Weak rotator cuff', 'Too much pressing'],
           prevention: [
             'Retract scapulae on bench (shoulder blades back/down)',
-            'Don\'t flare elbows 90Â° on bench (45-75Â° angle)',
+            'Don\'t flare elbows 90° on bench (45-75° angle)',
             'Do face pulls and band pull-aparts (3x/week)',
             'Balance push/pull ratio (1:1 or more pulling)',
             'Improve thoracic mobility',
@@ -362,14 +362,14 @@ export default function InjuryPrevention() {
                   <Text className="text-white font-bold mb-2">Causes:</Text>
                   {item.causes.map((cause, cIdx) => (
                     <Text key={cIdx} className="text-zinc-300 text-sm mb-1">
-                      â€¢ {cause}
+                      • {cause}
                     </Text>
                   ))}
 
                   <Text className="text-primary font-bold mt-4 mb-2">Prevention:</Text>
                   {item.prevention.map((prev, pIdx) => (
                     <Text key={pIdx} className="text-primary/80 text-sm mb-1">
-                      âœ“ {prev}
+                      ✓ {prev}
                     </Text>
                   ))}
 
@@ -407,7 +407,7 @@ export default function InjuryPrevention() {
                   <View className="bg-zinc-800 rounded-xl p-3 mb-3">
                     {strategy.guidelines.map((guideline, gIdx) => (
                       <Text key={gIdx} className="text-white text-sm mb-2 last:mb-0">
-                        â€¢ {guideline}
+                        • {guideline}
                       </Text>
                     ))}
                   </View>
@@ -446,7 +446,7 @@ export default function InjuryPrevention() {
                   <Text className="text-zinc-400 text-sm mb-2">Examples:</Text>
                   {item.examples.map((example, eIdx) => (
                     <Text key={eIdx} className="text-zinc-300 text-sm mb-1">
-                      â€¢ {example}
+                      • {example}
                     </Text>
                   ))}
                 </View>

@@ -30,8 +30,8 @@ interface Plan {
 const PREMIUM_FEATURES: PremiumFeature[] = [
   {
     id: '1',
-    name: 'AnÃ¡lisis con IA',
-    description: 'AnÃ¡lisis avanzado de fotos de comida y tÃ©cnica',
+    name: 'Análisis con IA',
+    description: 'Análisis avanzado de fotos de comida y técnica',
     icon: 'sparkles',
     category: 'IA',
   },
@@ -58,8 +58,8 @@ const PREMIUM_FEATURES: PremiumFeature[] = [
   },
   {
     id: '5',
-    name: 'EstadÃ­sticas Avanzadas',
-    description: 'GrÃ¡ficos y mÃ©tricas detalladas',
+    name: 'Estadísticas Avanzadas',
+    description: 'Gráficos y métricas detalladas',
     icon: 'analytics',
     category: 'Analytics',
   },
@@ -73,7 +73,7 @@ const PREMIUM_FEATURES: PremiumFeature[] = [
   {
     id: '7',
     name: 'Soporte Prioritario',
-    description: 'AtenciÃ³n al cliente 24/7',
+    description: 'Atención al cliente 24/7',
     icon: 'chatbubbles',
     category: 'Soporte',
   },
@@ -98,21 +98,21 @@ const PLANS: Plan[] = [
     id: 'yearly',
     name: 'Anual',
     price: 79.99,
-    period: 'aÃ±o',
+    period: 'año',
     discount: 33,
     popular: true,
     features: [
       'Todas las funciones premium',
       '2 meses gratis',
       'Cancela cuando quieras',
-      'Ahorra $40/aÃ±o',
+      'Ahorra $40/año',
     ],
   },
   {
     id: 'lifetime',
     name: 'De por Vida',
     price: 199.99,
-    period: 'Ãºnico pago',
+    period: 'único pago',
     features: [
       'Todas las funciones premium',
       'Acceso de por vida',
@@ -127,16 +127,16 @@ export default function Premium() {
 
   const handleSubscribe = () => {
     Alert.alert(
-      'Confirmar SuscripciÃ³n',
-      `Â¿Suscribirte al plan ${selectedPlan.name} por $${selectedPlan.price}?`,
+      'Confirmar Suscripción',
+      `¿Suscribirte al plan ${selectedPlan.name} por $${selectedPlan.price}?`,
       [
         { text: 'Cancelar', style: 'cancel' },
         {
           text: 'Suscribirse',
           onPress: () => {
             Alert.alert(
-              'Â¡Bienvenido a Premium!',
-              'Tu suscripciÃ³n estÃ¡ activa. Disfruta de todas las funciones premium.'
+              '¡Bienvenido a Premium!',
+              'Tu suscripción está activa. Disfruta de todas las funciones premium.'
             );
           },
         },
@@ -145,7 +145,7 @@ export default function Premium() {
   };
 
   const restorePurchases = () => {
-    Alert.alert('Restaurando compras...', 'Verificando tu suscripciÃ³n', [
+    Alert.alert('Restaurando compras...', 'Verificando tu suscripción', [
       {
         text: 'OK',
         onPress: () => {
@@ -311,8 +311,8 @@ export default function Premium() {
               "Vale cada centavo"
             </Text>
             <Text className="text-zinc-300 text-sm leading-5 mb-2">
-              El anÃ¡lisis con IA me ayudÃ³ a corregir mi tÃ©cnica y evitar lesiones.
-              Los planes personalizados son increÃ­bles.
+              El análisis con IA me ayudó a corregir mi técnica y evitar lesiones.
+              Los planes personalizados son increíbles.
             </Text>
             <Text className="text-zinc-500 text-xs">- Carlos M.</Text>
           </View>
@@ -324,10 +324,10 @@ export default function Premium() {
               ))}
             </View>
             <Text className="text-white font-semibold mb-2">
-              "La mejor inversiÃ³n"
+              "La mejor inversión"
             </Text>
             <Text className="text-zinc-300 text-sm leading-5 mb-2">
-              Las estadÃ­sticas avanzadas me permitieron optimizar mi
+              Las estadísticas avanzadas me permitieron optimizar mi
               entrenamiento. Resultados visibles en 3 meses.
             </Text>
             <Text className="text-zinc-500 text-xs">- Ana R.</Text>
@@ -342,30 +342,30 @@ export default function Premium() {
 
           <View className="bg-zinc-900 rounded-xl p-4 border border-zinc-800 mb-3">
             <Text className="text-white font-semibold mb-2">
-              Â¿Puedo cancelar en cualquier momento?
+              ¿Puedo cancelar en cualquier momento?
             </Text>
             <Text className="text-zinc-300 text-sm leading-5">
-              SÃ­, puedes cancelar tu suscripciÃ³n cuando quieras sin penalizaciÃ³n.
-              TendrÃ¡s acceso hasta el final del perÃ­odo pagado.
+              Sí, puedes cancelar tu suscripción cuando quieras sin penalización.
+              Tendrás acceso hasta el final del período pagado.
             </Text>
           </View>
 
           <View className="bg-zinc-900 rounded-xl p-4 border border-zinc-800 mb-3">
             <Text className="text-white font-semibold mb-2">
-              Â¿Hay garantÃ­a de devoluciÃ³n?
+              ¿Hay garantía de devolución?
             </Text>
             <Text className="text-zinc-300 text-sm leading-5">
-              Ofrecemos garantÃ­a de 7 dÃ­as. Si no estÃ¡s satisfecho, te devolvemos
+              Ofrecemos garantía de 7 días. Si no estás satisfecho, te devolvemos
               el 100% de tu dinero, sin preguntas.
             </Text>
           </View>
 
           <View className="bg-zinc-900 rounded-xl p-4 border border-zinc-800">
             <Text className="text-white font-semibold mb-2">
-              Â¿QuÃ© mÃ©todos de pago aceptan?
+              ¿Qué métodos de pago aceptan?
             </Text>
             <Text className="text-zinc-300 text-sm leading-5">
-              Aceptamos tarjetas de crÃ©dito/dÃ©bito, PayPal, Apple Pay y Google Pay.
+              Aceptamos tarjetas de crédito/débito, PayPal, Apple Pay y Google Pay.
               Todos los pagos son seguros y cifrados.
             </Text>
           </View>
@@ -384,8 +384,8 @@ export default function Premium() {
         </TouchableOpacity>
 
         <Text className="text-zinc-500 text-xs text-center mt-3">
-          Al suscribirte, aceptas nuestros TÃ©rminos de Servicio y PolÃ­tica de
-          Privacidad. La suscripciÃ³n se renueva automÃ¡ticamente.
+          Al suscribirte, aceptas nuestros Términos de Servicio y Política de
+          Privacidad. La suscripción se renueva automáticamente.
         </Text>
       </View>
     </View>

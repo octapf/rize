@@ -24,20 +24,20 @@ const mockPosts: FeedPost[] = [
     userId: 'user1',
     user: {
       _id: 'user1',
-      name: 'Carlos GarcÃ­a',
+      name: 'Carlos García',
       username: 'carlosg',
       avatar: undefined,
     },
     type: 'workout',
-    content: 'Â¡TerminÃ© mi rutina de piernas! ðŸ’ª Nuevo PR en sentadillas',
+    content: '¡Terminé mi rutina de piernas! ðŸ’ª Nuevo PR en sentadillas',
     workoutId: 'w1',
     likes: ['me', 'user2'],
     comments: [
       {
         _id: 'c1',
         userId: 'user2',
-        user: { _id: 'user2', name: 'Ana LÃ³pez', username: 'ana', avatar: undefined },
-        text: 'Â¡Felicidades! ðŸŽ‰',
+        user: { _id: 'user2', name: 'Ana López', username: 'ana', avatar: undefined },
+        text: '¡Felicidades! 🎉',
         createdAt: new Date(2026, 0, 27, 10, 35).toISOString(),
       },
     ],
@@ -48,12 +48,12 @@ const mockPosts: FeedPost[] = [
     userId: 'user2',
     user: {
       _id: 'user2',
-      name: 'Ana LÃ³pez',
+      name: 'Ana López',
       username: 'ana',
       avatar: undefined,
     },
     type: 'achievement',
-    content: 'Â¡DesbloqueÃ© el logro "100 Workouts"! ðŸ†',
+    content: '¡Desbloqueé el logro "100 Workouts"! ðŸ†',
     achievementId: 'a1',
     likes: ['user1', 'user3'],
     comments: [],
@@ -64,7 +64,7 @@ const mockPosts: FeedPost[] = [
     userId: 'user3',
     user: {
       _id: 'user3',
-      name: 'Pedro MartÃ­nez',
+      name: 'Pedro Martínez',
       username: 'pedro',
       avatar: undefined,
     },
@@ -112,19 +112,19 @@ export default function FeedScreen() {
 
   const handleLike = (postId: string) => {
     // Mock toggle for now
-    Alert.alert('Like', 'FunciÃ³n en desarrollo');
+    Alert.alert('Like', 'Función en desarrollo');
   };
 
   const handleComment = (postId: string) => {
     if (!commentText.trim()) return;
     // commentMutation.mutate({ postId, text: commentText });
-    Alert.alert('Comentar', 'FunciÃ³n en desarrollo');
+    Alert.alert('Comentar', 'Función en desarrollo');
     setCommentText('');
     setActiveCommentPost(null);
   };
 
   const handleShare = (postId: string) => {
-    Alert.alert('Compartir', 'FunciÃ³n en desarrollo');
+    Alert.alert('Compartir', 'Función en desarrollo');
   };
 
   const onRefresh = async () => {
@@ -171,7 +171,7 @@ export default function FeedScreen() {
               {item.user.name}
             </Text>
             <Text className="text-gray-500 text-sm">
-              @{item.user.username} â€¢ {formatDistanceToNow(new Date(item.createdAt), { 
+              @{item.user.username} • {formatDistanceToNow(new Date(item.createdAt), { 
                 addSuffix: true, 
                 locale: es 
               })}
@@ -306,7 +306,7 @@ export default function FeedScreen() {
               No hay publicaciones
             </Text>
             <Text className="text-gray-600 text-center mt-2">
-              Sigue a mÃ¡s amigos para ver su actividad
+              Sigue a más amigos para ver su actividad
             </Text>
           </View>
         }

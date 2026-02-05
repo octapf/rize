@@ -149,10 +149,10 @@ export default function WorkoutTimer() {
           <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
             <Text className="text-primary/80 font-bold mb-2">Timer Tips</Text>
             <Text className="text-primary/60 text-sm">
-              â€¢ Keep workouts 45-75 min{'\n'}
-              â€¢ Log sets for tracking{'\n'}
-              â€¢ Shorter = often better{'\n'}
-              â€¢ Quality &gt; quantity
+              • Keep workouts 45-75 min{'\n'}
+              • Log sets for tracking{'\n'}
+              • Shorter = often better{'\n'}
+              • Quality &gt; quantity
             </Text>
           </View>
         </View>

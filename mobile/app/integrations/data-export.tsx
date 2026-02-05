@@ -79,7 +79,7 @@ const DATA_CATEGORIES: DataCategory[] = [
   },
   {
     id: 'nutrition',
-    name: 'NutriciÃ³n',
+    name: 'Nutrición',
     description: 'Planes de comida y macros',
     icon: 'restaurant',
     selected: true,
@@ -103,8 +103,8 @@ const DATA_CATEGORIES: DataCategory[] = [
   },
   {
     id: 'stats',
-    name: 'EstadÃ­sticas',
-    description: 'PRs, rÃ©cords, logros',
+    name: 'Estadísticas',
+    description: 'PRs, récords, logros',
     icon: 'trophy',
     selected: true,
     itemCount: 512,
@@ -138,7 +138,7 @@ export default function DataExport() {
 
   const handleExport = () => {
     if (selectedCategories.length === 0) {
-      Alert.alert('Error', 'Selecciona al menos una categorÃ­a para exportar');
+      Alert.alert('Error', 'Selecciona al menos una categoría para exportar');
       return;
     }
 
@@ -146,7 +146,7 @@ export default function DataExport() {
 
     Alert.alert(
       'Exportando Datos',
-      `Se exportarÃ¡n ${totalItems} elementos en formato ${format?.name}. Esto puede tardar unos minutos.`,
+      `Se exportarán ${totalItems} elementos en formato ${format?.name}. Esto puede tardar unos minutos.`,
       [
         { text: 'Cancelar', style: 'cancel' },
         {
@@ -154,12 +154,12 @@ export default function DataExport() {
           onPress: () => {
             // Simulate export process
             Alert.alert(
-              'Â¡ExportaciÃ³n Exitosa!',
-              `Tu archivo ${format?.extension} estÃ¡ listo. Se ha guardado en tu carpeta de Descargas.`,
+              '¡Exportación Exitosa!',
+              `Tu archivo ${format?.extension} está listo. Se ha guardado en tu carpeta de Descargas.`,
               [
                 {
                   text: 'Compartir',
-                  onPress: () => Alert.alert('Compartir', 'FunciÃ³n de compartir'),
+                  onPress: () => Alert.alert('Compartir', 'Función de compartir'),
                 },
                 { text: 'OK' },
               ]
@@ -173,7 +173,7 @@ export default function DataExport() {
   const handleImport = () => {
     Alert.alert(
       'Importar Datos',
-      'Â¿QuÃ© tipo de archivo deseas importar?',
+      '¿Qué tipo de archivo deseas importar?',
       [
         {
           text: 'JSON',
@@ -204,7 +204,7 @@ export default function DataExport() {
         </View>
 
         <Text className="text-zinc-400 text-sm leading-5">
-          Exporta tus datos para crear backups o migrar a otras plataformas. TambiÃ©n
+          Exporta tus datos para crear backups o migrar a otras plataformas. También
           puedes importar datos desde otras apps.
         </Text>
       </View>
@@ -233,7 +233,7 @@ export default function DataExport() {
         {/* Export Format */}
         <View className="px-6 mb-6">
           <Text className="text-white font-bold text-lg mb-3">
-            Formato de ExportaciÃ³n
+            Formato de Exportación
           </Text>
 
           {EXPORT_FORMATS.map((format) => (
@@ -271,7 +271,7 @@ export default function DataExport() {
                   {format.description}
                 </Text>
                 <Text className="text-zinc-500 text-xs mt-1">
-                  {format.extension} â€¢ {format.size}
+                  {format.extension} • {format.size}
                 </Text>
               </View>
 
@@ -286,7 +286,7 @@ export default function DataExport() {
         <View className="px-6 mb-6">
           <View className="flex-row items-center justify-between mb-3">
             <Text className="text-white font-bold text-lg">
-              CategorÃ­as de Datos
+              Categorías de Datos
             </Text>
             <Text className="text-zinc-400 text-sm">
               {selectedCategories.length}/{categories.length} seleccionadas
@@ -361,7 +361,7 @@ export default function DataExport() {
               <View className="flex-1">
                 <Text className="text-white font-semibold">Comprimir Datos</Text>
                 <Text className="text-zinc-400 text-sm mt-0.5">
-                  Reduce el tamaÃ±o del archivo ({compressData ? '-60%' : '0%'})
+                  Reduce el tamaño del archivo ({compressData ? '-60%' : '0%'})
                 </Text>
               </View>
               <Switch
@@ -382,22 +382,22 @@ export default function DataExport() {
                 <Ionicons name="information-circle" size={24} color="#9D12DE" />
                 <View className="flex-1 ml-3">
                   <Text className="text-primary/80 font-bold mb-2">
-                    Resumen de ExportaciÃ³n
+                    Resumen de Exportación
                   </Text>
                   <View className="space-y-1">
                     <Text className="text-primary/60 text-sm">
-                      â€¢ {totalItems.toLocaleString('es-ES')} elementos totales
+                      • {totalItems.toLocaleString('es-ES')} elementos totales
                     </Text>
                     <Text className="text-primary/60 text-sm">
-                      â€¢ {selectedCategories.length} categorÃ­as seleccionadas
+                      • {selectedCategories.length} categorías seleccionadas
                     </Text>
                     <Text className="text-primary/60 text-sm">
-                      â€¢ TamaÃ±o estimado:{' '}
+                      • Tamaño estimado:{' '}
                       {EXPORT_FORMATS.find((f) => f.id === selectedFormat)?.size}
                     </Text>
                     {includeMedia && (
                       <Text className="text-primary/60 text-sm">
-                        â€¢ Incluye 34 fotos y videos
+                        • Incluye 34 fotos y videos
                       </Text>
                     )}
                   </View>

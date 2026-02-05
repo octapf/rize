@@ -278,12 +278,12 @@ export default function MacrosCalculator() {
           <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
             <Text className="text-primary/80 font-bold mb-2">Macro Tips</Text>
             <Text className="text-primary/60 text-sm">
-              â€¢ Hit protein target daily (most important){'\n'}
-              â€¢ Carbs & fats are flexible{'\n'}
-              â€¢ Track weekly averages, not daily{'\n'}
-              â€¢ Adjust based on 2-week results{'\n'}
-              â€¢ Fiber: 25-35g per day{'\n'}
-              â€¢ Water: 3-4 liters daily
+              • Hit protein target daily (most important){'\n'}
+              • Carbs & fats are flexible{'\n'}
+              • Track weekly averages, not daily{'\n'}
+              • Adjust based on 2-week results{'\n'}
+              • Fiber: 25-35g per day{'\n'}
+              • Water: 3-4 liters daily
             </Text>
           </View>
         </View>

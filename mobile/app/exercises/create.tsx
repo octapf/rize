@@ -36,7 +36,7 @@ const TIME_UNITS = [
 
 const DISTANCE_UNITS = [
   { value: 'meters', label: 'Metros' },
-  { value: 'kilometers', label: 'KilÃ³metros' },
+  { value: 'kilometers', label: 'Kilómetros' },
   { value: 'miles', label: 'Millas' },
 ] as const;
 
@@ -56,7 +56,7 @@ export default function CreateExerciseScreen() {
     mutationFn: (data: CreateExerciseInput) => exercisesApi.createCustomExercise(data),
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['exercises'] });
-      Alert.alert('Ã‰xito', 'Ejercicio creado correctamente');
+      Alert.alert('Éxito', 'Ejercicio creado correctamente');
       router.back();
     },
     onError: (error: any) => {
@@ -66,7 +66,7 @@ export default function CreateExerciseScreen() {
 
   const handleSubmit = () => {
     if (!nameES.trim() || !nameEN.trim()) {
-      Alert.alert('Error', 'El nombre en espaÃ±ol e inglÃ©s son obligatorios');
+      Alert.alert('Error', 'El nombre en español e inglés son obligatorios');
       return;
     }
 
@@ -128,7 +128,7 @@ export default function CreateExerciseScreen() {
 
       <ScrollView style={styles.scrollView}>
         <View style={styles.section}>
-          <Text style={styles.label}>Nombre (EspaÃ±ol) *</Text>
+          <Text style={styles.label}>Nombre (Español) *</Text>
           <TextInput
             style={styles.input}
             value={nameES}
@@ -139,7 +139,7 @@ export default function CreateExerciseScreen() {
         </View>
 
         <View style={styles.section}>
-          <Text style={styles.label}>Nombre (InglÃ©s) *</Text>
+          <Text style={styles.label}>Nombre (Inglés) *</Text>
           <TextInput
             style={styles.input}
             value={nameEN}
@@ -150,7 +150,7 @@ export default function CreateExerciseScreen() {
         </View>
 
         <View style={styles.section}>
-          <Text style={styles.label}>CategorÃ­a *</Text>
+          <Text style={styles.label}>Categoría *</Text>
           <View style={styles.chipsContainer}>
             {CATEGORIES.map((cat) => (
               <TouchableOpacity
@@ -220,12 +220,12 @@ export default function CreateExerciseScreen() {
         </View>
 
         <View style={styles.section}>
-          <Text style={styles.label}>DescripciÃ³n (EspaÃ±ol)</Text>
+          <Text style={styles.label}>Descripción (Español)</Text>
           <TextInput
             style={[styles.input, styles.textArea]}
             value={descriptionES}
             onChangeText={setDescriptionES}
-            placeholder="DescripciÃ³n opcional del ejercicio"
+            placeholder="Descripción opcional del ejercicio"
             placeholderTextColor="#666"
             multiline
             numberOfLines={3}
@@ -233,7 +233,7 @@ export default function CreateExerciseScreen() {
         </View>
 
         <View style={styles.section}>
-          <Text style={styles.label}>DescripciÃ³n (InglÃ©s)</Text>
+          <Text style={styles.label}>Descripción (Inglés)</Text>
           <TextInput
             style={[styles.input, styles.textArea]}
             value={descriptionEN}

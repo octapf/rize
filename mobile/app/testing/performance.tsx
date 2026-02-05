@@ -93,10 +93,10 @@ export default function PerformanceTesting() {
   ];
 
   const testTypes = [
-    { id: '1RM', label: '1RM', description: '1 repeticiÃ³n mÃ¡xima' },
-    { id: '3RM', label: '3RM', description: '3 repeticiones mÃ¡ximas' },
-    { id: '5RM', label: '5RM', description: '5 repeticiones mÃ¡ximas' },
-    { id: 'AMRAP', label: 'AMRAP', description: 'MÃ¡x reps posibles' },
+    { id: '1RM', label: '1RM', description: '1 repetición máxima' },
+    { id: '3RM', label: '3RM', description: '3 repeticiones máximas' },
+    { id: '5RM', label: '5RM', description: '5 repeticiones máximas' },
+    { id: 'AMRAP', label: 'AMRAP', description: 'Máx reps posibles' },
   ];
 
   const calculate1RM = () => {
@@ -104,11 +104,11 @@ export default function PerformanceTesting() {
     const reps = parseInt(calcReps);
 
     if (isNaN(weight) || isNaN(reps) || weight <= 0 || reps <= 0) {
-      Alert.alert('Error', 'Ingresa valores vÃ¡lidos');
+      Alert.alert('Error', 'Ingresa valores válidos');
       return;
     }
 
-    // Brzycki formula: 1RM = weight Ã— (36 / (37 - reps))
+    // Brzycki formula: 1RM = weight × (36 / (37 - reps))
     const estimated1RM = Math.round(weight * (36 / (37 - reps)));
     const estimated3RM = Math.round(estimated1RM * 0.93);
     const estimated5RM = Math.round(estimated1RM * 0.87);
@@ -149,7 +149,7 @@ export default function PerformanceTesting() {
             'Peso levantado (kg):',
             (weight) => {
               if (weight) {
-                Alert.alert('Â¡Test Registrado!', `${type} de ${exercise}: ${weight} kg`);
+                Alert.alert('¡Test Registrado!', `${type} de ${exercise}: ${weight} kg`);
               }
             }
           );
@@ -358,7 +358,7 @@ export default function PerformanceTesting() {
                 className="bg-primary rounded-lg p-4"
               >
                 <Text className="text-white font-bold text-center text-lg">
-                  Calcular MÃ¡ximos
+                  Calcular Máximos
                 </Text>
               </TouchableOpacity>
             </View>
@@ -378,9 +378,9 @@ export default function PerformanceTesting() {
                   </Text>
                   <View className="h-px bg-zinc-700 my-2" />
                   <View className="flex-row items-baseline">
-                    <Text className="text-white/60 text-sm">EstimaciÃ³n usando </Text>
+                    <Text className="text-white/60 text-sm">Estimación usando </Text>
                     <Text className="text-primary text-sm font-bold">
-                      FÃ³rmula Brzycki
+                      Fórmula Brzycki
                     </Text>
                   </View>
                 </View>
@@ -423,10 +423,10 @@ export default function PerformanceTesting() {
                 <Ionicons name="information-circle" size={20} color="#9D12DE" />
                 <View className="flex-1 ml-3">
                   <Text className="text-primary/80 font-bold mb-2">
-                    Sobre el CÃ¡lculo
+                    Sobre el Cálculo
                   </Text>
                   <Text className="text-primary/60 text-sm">
-                    Esta calculadora usa la fÃ³rmula Brzycki para estimar tu 1RM. Los resultados son aproximaciones y pueden variar segÃºn tu experiencia y tÃ©cnica.
+                    Esta calculadora usa la fórmula Brzycki para estimar tu 1RM. Los resultados son aproximaciones y pueden variar según tu experiencia y técnica.
                   </Text>
                 </View>
               </View>
@@ -501,7 +501,7 @@ export default function PerformanceTesting() {
                   </View>
                 </View>
                 <Text className="text-zinc-400 text-sm mt-1">
-                  Ãšltimos 4 meses
+                  Últimos 4 meses
                 </Text>
               </View>
             ))}

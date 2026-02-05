@@ -505,14 +505,14 @@ export default function WaveLoadingAdvanced() {
               <View className="bg-primary/10 rounded-xl p-5 border border-primary/30 mb-6">
                 <Text className="text-primary font-bold text-lg mb-3">Benefits:</Text>
                 {currentType.benefits?.map((benefit: string, idx: number) => (
-                  <Text key={idx} className="text-primary/80 text-sm mb-1">âœ“ {benefit}</Text>
+                  <Text key={idx} className="text-primary/80 text-sm mb-1">✓ {benefit}</Text>
                 ))}
               </View>
 
               <View className="bg-primary/10 rounded-xl p-5 border border-primary/30 mb-6">
                 <Text className="text-primary/80 font-bold text-lg mb-3">When to Use:</Text>
                 {currentType.when_to_use?.map((when: string, idx: number) => (
-                  <Text key={idx} className="text-primary/60 text-sm mb-1">â€¢ {when}</Text>
+                  <Text key={idx} className="text-primary/60 text-sm mb-1">• {when}</Text>
                 ))}
               </View>
             </View>
@@ -559,7 +559,7 @@ export default function WaveLoadingAdvanced() {
                       <Text className="text-purple-400 font-bold mb-2">Protocol:</Text>
                       {Array.isArray(advanced.protocol) ? (
                         advanced.protocol.map((item: string, idx: number) => (
-                          <Text key={idx} className="text-purple-300 text-sm mb-1">â€¢ {item}</Text>
+                          <Text key={idx} className="text-purple-300 text-sm mb-1">• {item}</Text>
                         ))
                       ) : (
                         Object.entries(advanced.protocol).map(([week, detail]: [string, any]) => (
@@ -626,7 +626,7 @@ export default function WaveLoadingAdvanced() {
                   {section.notes && (
                     <View className="bg-primary/10 rounded-xl p-3 border border-primary/30 mt-3">
                       {section.notes.map((note: string, idx: number) => (
-                        <Text key={idx} className="text-primary/60 text-sm mb-1">â€¢ {note}</Text>
+                        <Text key={idx} className="text-primary/60 text-sm mb-1">• {note}</Text>
                       ))}
                     </View>
                   )}
@@ -657,7 +657,7 @@ export default function WaveLoadingAdvanced() {
                     <View className="bg-red-500/10 rounded-xl p-4 border border-red-500/30 mb-3">
                       <Text className="text-red-400 font-bold mb-2">Within Wave:</Text>
                       {exec.within_wave.map((item: string, idx: number) => (
-                        <Text key={idx} className="text-red-300 text-sm mb-1">â€¢ {item}</Text>
+                        <Text key={idx} className="text-red-300 text-sm mb-1">• {item}</Text>
                       ))}
                     </View>
                   )}
@@ -666,17 +666,17 @@ export default function WaveLoadingAdvanced() {
                     <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-3">
                       <Text className="text-primary/80 font-bold mb-2">Between Waves:</Text>
                       {exec.between_waves.map((item: string, idx: number) => (
-                        <Text key={idx} className="text-primary/60 text-sm mb-1">â€¢ {item}</Text>
+                        <Text key={idx} className="text-primary/60 text-sm mb-1">• {item}</Text>
                       ))}
                     </View>
                   )}
 
                   {exec.points && exec.points.map((point: string, idx: number) => (
-                    <Text key={idx} className="text-zinc-300 mb-2">â€¢ {point}</Text>
+                    <Text key={idx} className="text-zinc-300 mb-2">• {point}</Text>
                   ))}
 
                   {exec.principles && exec.principles.map((principle: string, idx: number) => (
-                    <Text key={idx} className="text-zinc-300 mb-2">â€¢ {principle}</Text>
+                    <Text key={idx} className="text-zinc-300 mb-2">• {principle}</Text>
                   ))}
 
                   {exec.example && (
@@ -691,7 +691,7 @@ export default function WaveLoadingAdvanced() {
                     <View className="bg-amber-500/10 rounded-xl p-4 border border-amber-500/30 mt-3">
                       <Text className="text-amber-400 font-bold mb-2">RPE Guide:</Text>
                       {exec.RPE_guide.map((guide: string, idx: number) => (
-                        <Text key={idx} className="text-amber-300 text-sm mb-1">â€¢ {guide}</Text>
+                        <Text key={idx} className="text-amber-300 text-sm mb-1">• {guide}</Text>
                       ))}
                     </View>
                   )}
@@ -721,14 +721,14 @@ export default function WaveLoadingAdvanced() {
                   <View className="bg-red-500/10 rounded-xl p-4 border border-red-500/30 mb-3">
                     <Text className="text-red-400 font-bold mb-2">Causes:</Text>
                     {problem.causes.map((cause: string, cIdx: number) => (
-                      <Text key={cIdx} className="text-red-300 text-sm mb-1">â€¢ {cause}</Text>
+                      <Text key={cIdx} className="text-red-300 text-sm mb-1">• {cause}</Text>
                     ))}
                   </View>
 
                   <View className="bg-primary/10 rounded-xl p-4 border border-primary/30">
                     <Text className="text-primary font-bold mb-2">Fixes:</Text>
                     {problem.fixes.map((fix: string, fIdx: number) => (
-                      <Text key={fIdx} className="text-primary/80 text-sm mb-1">âœ“ {fix}</Text>
+                      <Text key={fIdx} className="text-primary/80 text-sm mb-1">✓ {fix}</Text>
                     ))}
                   </View>
                 </View>
@@ -739,16 +739,16 @@ export default function WaveLoadingAdvanced() {
           <View className="bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-xl p-5 border border-primary/30 mb-6">
             <Text className="text-primary/80 font-bold text-lg mb-3">Remember</Text>
             <Text className="text-primary/60 text-sm mb-2">
-              â€¢ Waves potentiate - second wave should feel easier
+              • Waves potentiate - second wave should feel easier
             </Text>
             <Text className="text-primary/60 text-sm mb-2">
-              â€¢ Don't grind every rep - quality over struggle
+              • Don't grind every rep - quality over struggle
             </Text>
             <Text className="text-primary/60 text-sm mb-2">
-              â€¢ Rest adequately between waves (3-5min)
+              • Rest adequately between waves (3-5min)
             </Text>
             <Text className="text-primary/60 text-sm">
-              â€¢ Autoregulate - some days wave higher than others
+              • Autoregulate - some days wave higher than others
             </Text>
           </View>
         </View>

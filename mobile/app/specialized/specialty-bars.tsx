@@ -490,22 +490,22 @@ export default function SpecialtyBars() {
           <View className="bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-xl p-5 border border-primary/30 mb-6">
             <Text className="text-primary/80 font-bold text-lg mb-3">Key Principles</Text>
             <Text className="text-primary/60 text-sm mb-2">
-              â€¢ Specialty bars are tools, not replacements (usually)
+              • Specialty bars are tools, not replacements (usually)
             </Text>
             <Text className="text-primary/60 text-sm mb-2">
-              â€¢ Best for secondary work or addressing weak points
+              • Best for secondary work or addressing weak points
             </Text>
             <Text className="text-primary/60 text-sm mb-2">
-              â€¢ SSB: Shoulder-friendly, quad emphasis
+              • SSB: Shoulder-friendly, quad emphasis
             </Text>
             <Text className="text-primary/60 text-sm mb-2">
-              â€¢ Trap Bar: Back-friendly deadlift variation
+              • Trap Bar: Back-friendly deadlift variation
             </Text>
             <Text className="text-primary/60 text-sm mb-2">
-              â€¢ Football Bar: Neutral grip pressing for joint health
+              • Football Bar: Neutral grip pressing for joint health
             </Text>
             <Text className="text-primary/60 text-sm">
-              â€¢ Drop specialty bars 6-8 weeks before competition
+              • Drop specialty bars 6-8 weeks before competition
             </Text>
           </View>
         </View>

@@ -204,11 +204,11 @@ export default function WorkoutJournaling() {
           <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
             <Text className="text-primary/80 font-bold mb-2">Journaling Tips</Text>
             <Text className="text-primary/60 text-sm">
-              â€¢ Write immediately post-workout{'\n'}
-              â€¢ Be honest sobre energy y effort{'\n'}
-              â€¢ Note form cues que ayudaron{'\n'}
-              â€¢ Track sleep/nutrition impact{'\n'}
-              â€¢ Review monthly para patterns
+              • Write immediately post-workout{'\n'}
+              • Be honest sobre energy y effort{'\n'}
+              • Note form cues que ayudaron{'\n'}
+              • Track sleep/nutrition impact{'\n'}
+              • Review monthly para patterns
             </Text>
           </View>
         </View>

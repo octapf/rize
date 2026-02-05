@@ -28,7 +28,7 @@ interface MeasurementCategory {
 
 const MEASUREMENT_DATA: MeasurementCategory[] = [
   {
-    category: 'Peso y ComposiciÃ³n',
+    category: 'Peso y Composición',
     measurements: [
       {
         id: '1',
@@ -73,7 +73,7 @@ const MEASUREMENT_DATA: MeasurementCategory[] = [
       },
       {
         id: '5',
-        bodyPart: 'BÃ­ceps (Derecho)',
+        bodyPart: 'Bíceps (Derecho)',
         value: 38,
         unit: 'cm',
         date: new Date('2024-01-20'),
@@ -82,7 +82,7 @@ const MEASUREMENT_DATA: MeasurementCategory[] = [
       },
       {
         id: '6',
-        bodyPart: 'BÃ­ceps (Izquierdo)',
+        bodyPart: 'Bíceps (Izquierdo)',
         value: 37.5,
         unit: 'cm',
         date: new Date('2024-01-20'),
@@ -177,7 +177,7 @@ const MEASUREMENT_DATA: MeasurementCategory[] = [
 
 export default function BodyMeasurements() {
   const [searchQuery, setSearchQuery] = useState('');
-  const [expandedCategory, setExpandedCategory] = useState<string | null>('Peso y ComposiciÃ³n');
+  const [expandedCategory, setExpandedCategory] = useState<string | null>('Peso y Composición');
 
   const filteredData = MEASUREMENT_DATA.map((category) => ({
     ...category,
@@ -335,7 +335,7 @@ export default function BodyMeasurements() {
                 No se encontraron medidas
               </Text>
               <Text className="text-zinc-600 text-sm mt-2 text-center">
-                Intenta buscar otro tÃ©rmino
+                Intenta buscar otro término
               </Text>
             </View>
           )}

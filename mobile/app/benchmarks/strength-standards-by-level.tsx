@@ -422,12 +422,12 @@ export default function StrengthStandardsByLevel() {
 
           <View className="bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-xl p-5 border border-purple-500/30 mb-6">
             <Text className="text-purple-400 font-bold text-lg mb-3">Wilks Score Reference</Text>
-            <Text className="text-purple-300 text-sm mb-2">â€¢ 250-300: Novice</Text>
-            <Text className="text-purple-300 text-sm mb-2">â€¢ 300-350: Intermediate</Text>
-            <Text className="text-purple-300 text-sm mb-2">â€¢ 350-400: Advanced</Text>
-            <Text className="text-purple-300 text-sm mb-2">â€¢ 400-450: Competitive</Text>
-            <Text className="text-purple-300 text-sm mb-2">â€¢ 450-500: Elite</Text>
-            <Text className="text-purple-300 text-sm">â€¢ 500+: World Class</Text>
+            <Text className="text-purple-300 text-sm mb-2">• 250-300: Novice</Text>
+            <Text className="text-purple-300 text-sm mb-2">• 300-350: Intermediate</Text>
+            <Text className="text-purple-300 text-sm mb-2">• 350-400: Advanced</Text>
+            <Text className="text-purple-300 text-sm mb-2">• 400-450: Competitive</Text>
+            <Text className="text-purple-300 text-sm mb-2">• 450-500: Elite</Text>
+            <Text className="text-purple-300 text-sm">• 500+: World Class</Text>
           </View>
         </View>
       </ScrollView>

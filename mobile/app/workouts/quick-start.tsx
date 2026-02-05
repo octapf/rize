@@ -31,28 +31,28 @@ export default function QuickStartScreen() {
               _id: '1',
               name: 'Push Day',
               exercises: 5,
-              icon: 'ðŸ’ª',
+              icon: '💪',
               estimatedTime: 60,
             },
             {
               _id: '2',
               name: 'Pull Day',
               exercises: 6,
-              icon: 'ðŸ‹ï¸',
+              icon: '🏋️',
               estimatedTime: 70,
             },
             {
               _id: '3',
               name: 'Leg Day',
               exercises: 5,
-              icon: 'ðŸ¦µ',
+              icon: '🦵',
               estimatedTime: 75,
             },
             {
               _id: '4',
               name: 'Full Body',
               exercises: 8,
-              icon: 'ðŸ”¥',
+              icon: '🔥',
               estimatedTime: 90,
             },
           ],
@@ -104,7 +104,7 @@ export default function QuickStartScreen() {
           <TouchableOpacity onPress={() => router.back()} className="p-2">
             <Ionicons name="arrow-back" size={28} color="white" />
           </TouchableOpacity>
-          <Text className="text-2xl font-bold text-white">Inicio RÃ¡pido</Text>
+          <Text className="text-2xl font-bold text-white">Inicio Rápido</Text>
           <View className="w-10" />
         </View>
 
@@ -122,7 +122,7 @@ export default function QuickStartScreen() {
           <TextInput
             value={workoutName}
             onChangeText={setWorkoutName}
-            placeholder="Ej: Pecho y TrÃ­ceps"
+            placeholder="Ej: Pecho y Tríceps"
             className="bg-gray-50 rounded-lg px-4 py-3 text-gray-900"
             placeholderTextColor="#9CA3AF"
           />
@@ -131,7 +131,7 @@ export default function QuickStartScreen() {
         {/* Quick Templates */}
         <View>
           <Text className="text-lg font-bold text-gray-900 mb-3">
-            Plantillas RÃ¡pidas
+            Plantillas Rápidas
           </Text>
           <View className="gap-3">
             {templates.map((template) => (
@@ -191,7 +191,7 @@ export default function QuickStartScreen() {
         {/* Quick Actions */}
         <View>
           <Text className="text-lg font-bold text-gray-900 mb-3">
-            Acciones RÃ¡pidas
+            Acciones Rápidas
           </Text>
 
           <View className="gap-3">
@@ -242,7 +242,7 @@ export default function QuickStartScreen() {
                     </View>
                     <View>
                       <Text className="text-gray-900 font-bold">
-                        Workout VacÃ­o
+                        Workout Vacío
                       </Text>
                       <Text className="text-gray-600 text-sm">
                         Agregar ejercicios manualmente

@@ -48,7 +48,7 @@ const HABITS: Habit[] = [
     icon: 'ðŸ‹ï¸',
     color: 'emerald',
     goal: 1,
-    unit: 'sesiÃ³n',
+    unit: 'sesión',
     currentValue: 1,
     streak: 4,
     bestStreak: 15,
@@ -56,8 +56,8 @@ const HABITS: Habit[] = [
   },
   {
     id: '3',
-    name: 'ProteÃ­na',
-    icon: 'ðŸ¥©',
+    name: 'Proteína',
+    icon: '🥩',
     color: 'red',
     goal: 150,
     unit: 'g',
@@ -80,8 +80,8 @@ const HABITS: Habit[] = [
   },
   {
     id: '5',
-    name: 'SueÃ±o',
-    icon: 'ðŸ˜´',
+    name: 'Sueño',
+    icon: '😐´',
     color: 'purple',
     goal: 8,
     unit: 'horas',
@@ -104,8 +104,8 @@ const HABITS: Habit[] = [
   },
   {
     id: '7',
-    name: 'MeditaciÃ³n',
-    icon: 'ðŸ§˜',
+    name: 'Meditación',
+    icon: '🧘',
     color: 'indigo',
     goal: 10,
     unit: 'min',
@@ -117,7 +117,7 @@ const HABITS: Habit[] = [
   {
     id: '8',
     name: 'Stretching',
-    icon: 'ðŸ¤¸',
+    icon: '🤸',
     color: 'pink',
     goal: 15,
     unit: 'min',
@@ -135,7 +135,7 @@ export default function HabitTracker() {
   const categories = [
     { id: 'all', label: 'Todos', icon: 'apps' },
     { id: 'fitness', label: 'Fitness', icon: 'barbell' },
-    { id: 'nutrition', label: 'NutriciÃ³n', icon: 'restaurant' },
+    { id: 'nutrition', label: 'Nutrición', icon: 'restaurant' },
     { id: 'wellness', label: 'Bienestar', icon: 'heart' },
   ];
 
@@ -184,7 +184,7 @@ export default function HabitTracker() {
         return h;
       })
     );
-    Alert.alert('HÃ¡bito Completado! ðŸŽ‰', 'Sigue asÃ­, la consistencia es clave.');
+    Alert.alert('Hábito Completado! 🎉', 'Sigue así, la consistencia es clave.');
   };
 
   const getProgress = (habit: Habit) => {
@@ -259,7 +259,7 @@ export default function HabitTracker() {
                 <Text className="text-white text-3xl font-bold">
                   {getTotalCompleted()}/{habits.length}
                 </Text>
-                <Text className="text-white text-sm">HÃ¡bitos completados</Text>
+                <Text className="text-white text-sm">Hábitos completados</Text>
               </View>
               <View className="items-center">
                 <Text className="text-6xl">{getTotalCompleted() === habits.length ? 'ðŸ†' : 'ðŸ’ª'}</Text>
@@ -336,7 +336,7 @@ export default function HabitTracker() {
                         {habit.streak > 0 && (
                           <View className="flex-row items-center bg-amber-500/10 rounded px-2 py-0.5 border border-amber-500/30">
                             <Text className="text-amber-400 text-xs font-bold">
-                              {habit.streak} dÃ­as {getStreakEmoji(habit.streak)}
+                              {habit.streak} días {getStreakEmoji(habit.streak)}
                             </Text>
                           </View>
                         )}
@@ -390,7 +390,7 @@ export default function HabitTracker() {
                   <View className="mt-2 flex-row items-center">
                     <Ionicons name="trophy" size={14} color="#71717A" />
                     <Text className="text-zinc-500 text-xs ml-1">
-                      Mejor racha: {habit.bestStreak} dÃ­as
+                      Mejor racha: {habit.bestStreak} días
                     </Text>
                   </View>
                 )}
@@ -404,13 +404,13 @@ export default function HabitTracker() {
               <Ionicons name="bulb" size={20} color="#9D12DE" />
               <View className="flex-1 ml-3">
                 <Text className="text-primary/80 font-bold mb-2">
-                  Consejos para HÃ¡bitos
+                  Consejos para Hábitos
                 </Text>
                 <Text className="text-primary/60 text-sm">
-                  â€¢ Empieza con 2-3 hÃ¡bitos clave{'\n'}
-                  â€¢ Consistencia &gt; PerfecciÃ³n{'\n'}
-                  â€¢ Celebra rachas pequeÃ±as{'\n'}
-                  â€¢ Si fallas 1 dÃ­a, retoma inmediatamente
+                  • Empieza con 2-3 hábitos clave{'\n'}
+                  • Consistencia &gt; Perfección{'\n'}
+                  • Celebra rachas pequeñas{'\n'}
+                  • Si fallas 1 día, retoma inmediatamente
                 </Text>
               </View>
             </View>

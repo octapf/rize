@@ -172,11 +172,11 @@ export default function RestTimer() {
           <View className="bg-amber-500/10 rounded-xl p-4 border border-amber-500/30 mb-6">
             <Text className="text-amber-400 font-bold mb-2">Rest Tips</Text>
             <Text className="text-amber-300 text-sm">
-              â€¢ Rest enough to recover{'\n'}
-              â€¢ Not so long that you cool down{'\n'}
-              â€¢ Compounds need more rest{'\n'}
-              â€¢ Stay active during rest{'\n'}
-              â€¢ Consistency matters
+              • Rest enough to recover{'\n'}
+              • Not so long that you cool down{'\n'}
+              • Compounds need more rest{'\n'}
+              • Stay active during rest{'\n'}
+              • Consistency matters
             </Text>
           </View>
         </View>

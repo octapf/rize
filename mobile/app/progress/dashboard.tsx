@@ -85,7 +85,7 @@ export default function ProgressDashboard() {
   const periods = [
     { id: 'week', label: 'Semana' },
     { id: 'month', label: 'Mes' },
-    { id: 'year', label: 'AÃ±o' },
+    { id: 'year', label: 'Año' },
   ];
 
   const calculateProgress = (current: number, start: number, goal: number) => {
@@ -168,7 +168,7 @@ export default function ProgressDashboard() {
               <Text className="text-white font-bold">{(totalVolume / 1000).toFixed(0)}k kg</Text>
             </View>
             <View className="flex-1 bg-white/20 rounded-lg p-2">
-              <Text className="text-white/80 text-xs">DuraciÃ³n Avg</Text>
+              <Text className="text-white/80 text-xs">Duración Avg</Text>
               <Text className="text-white font-bold">
                 {Math.round(
                   WEEKLY_STATS.reduce((sum, w) => sum + w.avgDuration, 0) / WEEKLY_STATS.length
@@ -207,7 +207,7 @@ export default function ProgressDashboard() {
         <View className="px-6 pt-6">
           {/* Key Metrics */}
           <Text className="text-white font-bold text-lg mb-3">
-            MÃ©tricas Clave
+            Métricas Clave
           </Text>
 
           {METRICS.map((metric) => {
@@ -352,7 +352,7 @@ export default function ProgressDashboard() {
               <Text className="text-white font-bold text-2xl mb-1">
                 {(WEEKLY_STATS.reduce((sum, w) => sum + w.calories, 0) / 1000).toFixed(1)}k
               </Text>
-              <Text className="text-zinc-400 text-xs">CalorÃ­as quemadas</Text>
+              <Text className="text-zinc-400 text-xs">Calorías quemadas</Text>
             </View>
 
             <View className="flex-1 bg-zinc-900 rounded-xl p-4 border border-zinc-800">
@@ -384,10 +384,10 @@ export default function ProgressDashboard() {
               <Ionicons name="information-circle" size={20} color="#9D12DE" />
               <View className="flex-1 ml-3">
                 <Text className="text-primary/80 font-bold mb-2">
-                  Seguimiento AutomÃ¡tico
+                  Seguimiento Automático
                 </Text>
                 <Text className="text-primary/60 text-sm">
-                  Todas tus mÃ©tricas se actualizan automÃ¡ticamente. Revisa tu progreso semanalmente para mantener la motivaciÃ³n.
+                  Todas tus métricas se actualizan automáticamente. Revisa tu progreso semanalmente para mantener la motivación.
                 </Text>
               </View>
             </View>

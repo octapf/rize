@@ -215,7 +215,7 @@ export default function MeetDayChecklist() {
                 <View className="bg-zinc-800 rounded-xl p-3">
                   {segment.tasks.map((task, tidx) => (
                     <View key={tidx} className="flex-row items-start mb-1 last:mb-0">
-                      <Text className="text-primary/80 mr-2">â€¢</Text>
+                      <Text className="text-primary/80 mr-2">•</Text>
                       <Text className="text-zinc-300 text-sm flex-1">{task}</Text>
                     </View>
                   ))}
@@ -254,7 +254,7 @@ export default function MeetDayChecklist() {
               <View className="bg-zinc-800 rounded-xl p-3">
                 {betweenLifts.squat_to_bench.map((item, idx) => (
                   <Text key={idx} className="text-zinc-300 text-sm mb-1 last:mb-0">
-                    â€¢ {item}
+                    • {item}
                   </Text>
                 ))}
               </View>
@@ -265,7 +265,7 @@ export default function MeetDayChecklist() {
               <View className="bg-zinc-800 rounded-xl p-3">
                 {betweenLifts.bench_to_deadlift.map((item, idx) => (
                   <Text key={idx} className="text-zinc-300 text-sm mb-1 last:mb-0">
-                    â€¢ {item}
+                    • {item}
                   </Text>
                 ))}
               </View>
@@ -286,19 +286,19 @@ export default function MeetDayChecklist() {
           <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
             <Text className="text-primary/80 font-bold mb-2">Final Reminders</Text>
             <Text className="text-primary/60 text-sm mb-2">
-              â€¢ Trust your openers - they should be easy
+              • Trust your openers - they should be easy
             </Text>
             <Text className="text-primary/60 text-sm mb-2">
-              â€¢ Don't change attempts in warm-up room due to nerves
+              • Don't change attempts in warm-up room due to nerves
             </Text>
             <Text className="text-primary/60 text-sm mb-2">
-              â€¢ Listen to commands carefully - no early starts
+              • Listen to commands carefully - no early starts
             </Text>
             <Text className="text-primary/60 text-sm mb-2">
-              â€¢ Stay hydrated and fueled between flights
+              • Stay hydrated and fueled between flights
             </Text>
             <Text className="text-primary/60 text-sm">
-              â€¢ Have fun - you've earned this moment
+              • Have fun - you've earned this moment
             </Text>
           </View>
         </View>

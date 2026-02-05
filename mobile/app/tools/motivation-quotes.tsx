@@ -51,14 +51,14 @@ const QUOTES: Quote[] = [
 ];
 
 const AFFIRMATIONS = [
-  'Soy mÃ¡s fuerte cada dÃ­a',
-  'Mi cuerpo es capaz de cosas increÃ­bles',
+  'Soy más fuerte cada día',
+  'Mi cuerpo es capaz de cosas increíbles',
   'Merezco estar en mi mejor forma',
   'La consistencia es mi superpoder',
   'No me rindo, me adapto',
-  'Mis lÃ­mites solo existen en mi mente',
+  'Mis límites solo existen en mi mente',
   'Cada rep me acerca a mis metas',
-  'ConfÃ­o en el proceso',
+  'Confío en el proceso',
   'Soy disciplinado y enfocado',
   'Mi progreso es imparable',
 ];
@@ -84,7 +84,7 @@ export default function MotivationQuotes() {
     { key: 'all', label: 'Todos', icon: 'apps', color: 'blue' },
     { key: 'strength', label: 'Fuerza', icon: 'barbell', color: 'red' },
     { key: 'discipline', label: 'Disciplina', icon: 'shield', color: 'purple' },
-    { key: 'motivation', label: 'MotivaciÃ³n', icon: 'flash', color: 'amber' },
+    { key: 'motivation', label: 'Motivación', icon: 'flash', color: 'amber' },
     { key: 'persistence', label: 'Persistencia', icon: 'trending-up', color: 'emerald' },
     { key: 'mindset', label: 'Mentalidad', icon: 'bulb', color: 'cyan' },
   ];
@@ -101,7 +101,7 @@ export default function MotivationQuotes() {
       Alert.alert('Eliminado', 'Quote eliminado de favoritos');
     } else {
       setSavedQuotes([{ quote, savedDate: new Date() }, ...savedQuotes]);
-      Alert.alert('Guardado âœ“', 'Quote agregado a favoritos');
+      Alert.alert('Guardado ✓', 'Quote agregado a favoritos');
     }
   };
 
@@ -148,7 +148,7 @@ export default function MotivationQuotes() {
             <View className="bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl p-6 mb-6">
               <Text className="text-white text-2xl font-bold mb-2">Afirmaciones Diarias</Text>
               <Text className="text-white opacity-90">
-                Repite estas afirmaciones cada maÃ±ana para programar tu mente
+                Repite estas afirmaciones cada mañana para programar tu mente
               </Text>
             </View>
 
@@ -170,14 +170,14 @@ export default function MotivationQuotes() {
                 <Ionicons name="information-circle" size={20} color="#9D12DE" />
                 <View className="flex-1 ml-3">
                   <Text className="text-primary/80 font-bold mb-2">
-                    CÃ³mo Usar Afirmaciones
+                    Cómo Usar Afirmaciones
                   </Text>
                   <Text className="text-primary/60 text-sm">
-                    â€¢ Repite en voz alta cada maÃ±ana{'\n'}
-                    â€¢ Siente cada palabra, cree en ella{'\n'}
-                    â€¢ Repite antes de entrenar{'\n'}
-                    â€¢ EscrÃ­belas en un diario{'\n'}
-                    â€¢ Programa tu subconsciente para el Ã©xito
+                    • Repite en voz alta cada mañana{'\n'}
+                    • Siente cada palabra, cree en ella{'\n'}
+                    • Repite antes de entrenar{'\n'}
+                    • Escríbelas en un diario{'\n'}
+                    • Programa tu subconsciente para el éxito
                   </Text>
                 </View>
               </View>
@@ -197,7 +197,7 @@ export default function MotivationQuotes() {
             <Ionicons name="arrow-back" size={24} color="white" />
           </TouchableOpacity>
           <Text className="text-white text-2xl font-bold flex-1 ml-3">
-            MotivaciÃ³n
+            Motivación
           </Text>
           <TouchableOpacity onPress={() => setShowAffirmations(true)}>
             <View className="bg-purple-500 rounded-full p-2">
@@ -214,7 +214,7 @@ export default function MotivationQuotes() {
             <View className="bg-gradient-to-r from-amber-500 to-orange-500 rounded-xl p-6 mb-6">
               <View className="flex-row items-center mb-3">
                 <Ionicons name="sunny" size={24} color="white" />
-                <Text className="text-white font-bold text-lg ml-2">Quote del DÃ­a</Text>
+                <Text className="text-white font-bold text-lg ml-2">Quote del Día</Text>
               </View>
               <Text className="text-white text-xl font-bold mb-3 leading-7">
                 "{dailyQuote.text}"
@@ -243,13 +243,13 @@ export default function MotivationQuotes() {
 
           {/* Quick Affirmation */}
           <TouchableOpacity
-            onPress={() => Alert.alert('AfirmaciÃ³n', getRandomAffirmation())}
+            onPress={() => Alert.alert('Afirmación', getRandomAffirmation())}
             className="bg-purple-500/10 rounded-xl p-4 mb-6 border border-purple-500/30"
           >
             <View className="flex-row items-center justify-between">
               <View className="flex-row items-center flex-1">
                 <Ionicons name="sparkles" size={20} color="#A855F7" />
-                <Text className="text-purple-400 font-bold ml-2">AfirmaciÃ³n Random</Text>
+                <Text className="text-purple-400 font-bold ml-2">Afirmación Random</Text>
               </View>
               <Ionicons name="chevron-forward" size={20} color="#A855F7" />
             </View>
@@ -340,14 +340,14 @@ export default function MotivationQuotes() {
               <Ionicons name="bulb" size={20} color="#9D12DE" />
               <View className="flex-1 ml-3">
                 <Text className="text-primary/80 font-bold mb-2">
-                  Usa la MotivaciÃ³n Correctamente
+                  Usa la Motivación Correctamente
                 </Text>
                 <Text className="text-primary/60 text-sm">
-                  â€¢ MotivaciÃ³n te inicia, disciplina te mantiene{'\n'}
-                  â€¢ Lee un quote antes de entrenar{'\n'}
-                  â€¢ Guarda favoritos para dÃ­as difÃ­ciles{'\n'}
-                  â€¢ Comparte con amigos para accountability{'\n'}
-                  â€¢ Afirmaciones reprograman tu mente
+                  • Motivación te inicia, disciplina te mantiene{'\n'}
+                  • Lee un quote antes de entrenar{'\n'}
+                  • Guarda favoritos para días difíciles{'\n'}
+                  • Comparte con amigos para accountability{'\n'}
+                  • Afirmaciones reprograman tu mente
                 </Text>
               </View>
             </View>

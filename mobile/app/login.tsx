@@ -83,8 +83,8 @@ export default function LoginScreen() {
             />
 
             <Input
-              label="ContraseÃ±a"
-              placeholder="â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢"
+              label="Contraseña"
+              placeholder="••••••••"
               value={password}
               onChangeText={setPassword}
               error={errors.password}
@@ -108,16 +108,16 @@ export default function LoginScreen() {
               isLoading={loginMutation.isPending}
               className="mt-4"
             >
-              Iniciar SesiÃ³n
+              Iniciar Sesión
             </Button>
 
             <View className="flex-row items-center justify-center mt-6">
               <Text className="font-body text-sm text-gray-600">
-                Â¿No tienes cuenta?{' '}
+                ¿No tienes cuenta?{' '}
               </Text>
               <Link href="/register" asChild>
                 <Text className="font-label-bold text-sm text-primary">
-                  RegÃ­strate
+                  Regístrate
                 </Text>
               </Link>
             </View>

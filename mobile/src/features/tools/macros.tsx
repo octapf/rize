@@ -27,24 +27,24 @@ const MACRO_SPLITS: Record<MacroSplit, MacroSplitConfig> = {
     protein: 30,
     carbs: 40,
     fats: 30,
-    description: 'DistribuciÃ³n equilibrada para mantenimiento general',
+    description: 'Distribución equilibrada para mantenimiento general',
   },
   'high-protein': {
-    name: 'Alto en ProteÃ­na',
+    name: 'Alto en Proteína',
     protein: 40,
     carbs: 30,
     fats: 30,
-    description: 'Ideal para ganar mÃºsculo o perder grasa',
+    description: 'Ideal para ganar músculo o perder grasa',
   },
   'low-carb': {
     name: 'Bajo en Carbos',
     protein: 35,
     carbs: 20,
     fats: 45,
-    description: 'Reduce carbohidratos para pÃ©rdida de grasa',
+    description: 'Reduce carbohidratos para pérdida de grasa',
   },
   keto: {
-    name: 'CetogÃ©nica',
+    name: 'Cetogénica',
     protein: 25,
     carbs: 5,
     fats: 70,
@@ -135,7 +135,7 @@ export default function MacrosCalculator() {
           </Text>
         </View>
         <Text className="text-zinc-400 text-sm">
-          Personaliza tu distribuciÃ³n de macronutrientes
+          Personaliza tu distribución de macronutrientes
         </Text>
       </View>
 
@@ -144,7 +144,7 @@ export default function MacrosCalculator() {
           {/* TDEE Input */}
           <View>
             <Text className="text-white text-base font-semibold mb-2">
-              Tu TDEE (CalorÃ­as de Mantenimiento)
+              Tu TDEE (Calorías de Mantenimiento)
             </Text>
             <Text className="text-zinc-400 text-sm mb-3">
               Si no conoces tu TDEE, usa la calculadora TDEE primero
@@ -182,7 +182,7 @@ export default function MacrosCalculator() {
                       goal === 'cut' ? 'text-red-500' : 'text-zinc-300'
                     }`}
                   >
-                    DefiniciÃ³n (Cut)
+                    Definición (Cut)
                   </Text>
                   <Text className="text-zinc-500 text-xs">-500 cal del TDEE</Text>
                 </View>
@@ -252,7 +252,7 @@ export default function MacrosCalculator() {
           {/* Macro Split Selection */}
           <View>
             <Text className="text-white text-base font-semibold mb-3">
-              DistribuciÃ³n de Macros
+              Distribución de Macros
             </Text>
             <View className="space-y-3">
               {(Object.keys(MACRO_SPLITS) as MacroSplit[]).map((split) => {
@@ -305,11 +305,11 @@ export default function MacrosCalculator() {
             <View className="bg-zinc-900 rounded-xl p-6 border border-zinc-800">
               {/* Target Calories */}
               <View className="items-center mb-6 pb-6 border-b border-zinc-800">
-                <Text className="text-zinc-400 text-sm mb-1">CalorÃ­as Objetivo</Text>
+                <Text className="text-zinc-400 text-sm mb-1">Calorías Objetivo</Text>
                 <Text className="text-white text-4xl font-bold">
                   {targetCalories.toLocaleString()}
                 </Text>
-                <Text className="text-zinc-500 text-sm mt-1">kcal/dÃ­a</Text>
+                <Text className="text-zinc-500 text-sm mt-1">kcal/día</Text>
               </View>
 
               {/* Macros Breakdown */}
@@ -319,7 +319,7 @@ export default function MacrosCalculator() {
                   <View className="flex-row justify-between items-center mb-2">
                     <View className="flex-row items-center">
                       <View className="w-3 h-3 rounded-full bg-red-500 mr-2" />
-                      <Text className="text-white font-semibold">ProteÃ­na</Text>
+                      <Text className="text-white font-semibold">Proteína</Text>
                     </View>
                     <Text className="text-white font-bold text-lg">
                       {macros.protein.grams}g
@@ -391,14 +391,14 @@ export default function MacrosCalculator() {
               {mealPlan && (
                 <View className="mt-6 pt-6 border-t border-zinc-800">
                   <Text className="text-white font-semibold mb-3">
-                    Por Comida (3 comidas/dÃ­a)
+                    Por Comida (3 comidas/día)
                   </Text>
                   <View className="flex-row justify-around">
                     <View className="items-center">
                       <Text className="text-red-500 font-bold text-xl">
                         {mealPlan.protein}g
                       </Text>
-                      <Text className="text-zinc-500 text-xs">ProteÃ­na</Text>
+                      <Text className="text-zinc-500 text-xs">Proteína</Text>
                     </View>
                     <View className="items-center">
                       <Text className="text-primary font-bold text-xl">
@@ -427,10 +427,10 @@ export default function MacrosCalculator() {
                   Consejos
                 </Text>
                 <Text className="text-primary/70 text-xs leading-5">
-                  â€¢ Ajusta basado en tus resultados semanales{'\n'}
-                  â€¢ MantÃ©n la proteÃ­na alta para preservar mÃºsculo{'\n'}
-                  â€¢ Las grasas ayudan con hormonas y saciedad{'\n'}
-                  â€¢ Los carbos dan energÃ­a para entrenar
+                  • Ajusta basado en tus resultados semanales{'\n'}
+                  • Mantén la proteína alta para preservar músculo{'\n'}
+                  • Las grasas ayudan con hormonas y saciedad{'\n'}
+                  • Los carbos dan energía para entrenar
                 </Text>
               </View>
             </View>
