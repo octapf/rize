@@ -1,10 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, TouchableOpacity, ScrollView } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -221,11 +217,11 @@ export default function DeloadProtocol() {
           <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
             <Text className="text-primary font-bold mb-2">Deload Tips</Text>
             <Text className="text-primary/80 text-sm">
-              • Plan deloads proactively{'\n'}
-              • Don't skip them{'\n'}
-              • Use time for mobility{'\n'}
-              • Focus on technique{'\n'}
-              • Trust the process
+              â€¢ Plan deloads proactively{'\n'}
+              â€¢ Don't skip them{'\n'}
+              â€¢ Use time for mobility{'\n'}
+              â€¢ Focus on technique{'\n'}
+              â€¢ Trust the process
             </Text>
           </View>
         </View>

@@ -1,13 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  TextInput,
-  TouchableOpacity,
-  ScrollView,
-  StyleSheet,
-  Alert,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, TextInput, TouchableOpacity, ScrollView, StyleSheet, Alert } from 'react-native';;
 import { Stack, router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
@@ -36,7 +29,7 @@ const TIME_UNITS = [
 
 const DISTANCE_UNITS = [
   { value: 'meters', label: 'Metros' },
-  { value: 'kilometers', label: 'Kil髆etros' },
+  { value: 'kilometers', label: 'Kil贸metros' },
   { value: 'miles', label: 'Millas' },
 ] as const;
 
@@ -56,7 +49,7 @@ export default function CreateExerciseScreen() {
     mutationFn: (data: CreateExerciseInput) => exercisesApi.createCustomExercise(data),
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['exercises'] });
-      Alert.alert('蓌ito', 'Ejercicio creado correctamente');
+      Alert.alert('茅xito', 'Ejercicio creado correctamente');
       router.back();
     },
     onError: (error: any) => {
@@ -66,7 +59,7 @@ export default function CreateExerciseScreen() {
 
   const handleSubmit = () => {
     if (!nameES.trim() || !nameEN.trim()) {
-      Alert.alert('Error', 'El nombre en espa駉l e ingl閟 son obligatorios');
+      Alert.alert('Error', 'El nombre en espa帽ol e ingl茅s son obligatorios');
       return;
     }
 
@@ -128,7 +121,7 @@ export default function CreateExerciseScreen() {
 
       <ScrollView style={styles.scrollView}>
         <View style={styles.section}>
-          <Text style={styles.label}>Nombre (Espa駉l) *</Text>
+          <Text style={styles.label}>Nombre (Espa帽ol) *</Text>
           <TextInput
             style={styles.input}
             value={nameES}
@@ -139,7 +132,7 @@ export default function CreateExerciseScreen() {
         </View>
 
         <View style={styles.section}>
-          <Text style={styles.label}>Nombre (Ingl閟) *</Text>
+          <Text style={styles.label}>Nombre (Ingl茅s) *</Text>
           <TextInput
             style={styles.input}
             value={nameEN}
@@ -150,7 +143,7 @@ export default function CreateExerciseScreen() {
         </View>
 
         <View style={styles.section}>
-          <Text style={styles.label}>Categor韆 *</Text>
+          <Text style={styles.label}>Categor铆a *</Text>
           <View style={styles.chipsContainer}>
             {CATEGORIES.map((cat) => (
               <TouchableOpacity
@@ -220,12 +213,12 @@ export default function CreateExerciseScreen() {
         </View>
 
         <View style={styles.section}>
-          <Text style={styles.label}>Descripci髇 (Espa駉l)</Text>
+          <Text style={styles.label}>Descripci贸n (Espa帽ol)</Text>
           <TextInput
             style={[styles.input, styles.textArea]}
             value={descriptionES}
             onChangeText={setDescriptionES}
-            placeholder="Descripci髇 opcional del ejercicio"
+            placeholder="Descripci贸n opcional del ejercicio"
             placeholderTextColor="#666"
             multiline
             numberOfLines={3}
@@ -233,7 +226,7 @@ export default function CreateExerciseScreen() {
         </View>
 
         <View style={styles.section}>
-          <Text style={styles.label}>Descripci髇 (Ingl閟)</Text>
+          <Text style={styles.label}>Descripci贸n (Ingl茅s)</Text>
           <TextInput
             style={[styles.input, styles.textArea]}
             value={descriptionEN}

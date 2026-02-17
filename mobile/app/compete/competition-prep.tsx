@@ -1,10 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, TouchableOpacity, ScrollView } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -278,7 +274,7 @@ export default function CompetitionPrep() {
                   <Text className="text-white font-bold mb-2">Training</Text>
                   {phase.training.map((item, tidx) => (
                     <View key={tidx} className="flex-row items-start mb-1 last:mb-0">
-                      <Text className={`text-${currentPrep.color}-400 mr-2`}>•</Text>
+                      <Text className={`text-${currentPrep.color}-400 mr-2`}>â€¢</Text>
                       <Text className="text-zinc-300 text-sm flex-1">{item}</Text>
                     </View>
                   ))}
@@ -315,19 +311,19 @@ export default function CompetitionPrep() {
           <View className="bg-amber-500/10 rounded-xl p-4 border border-amber-500/30 mb-6">
             <Text className="text-amber-400 font-bold mb-2">General Prep Tips</Text>
             <Text className="text-amber-300 text-sm mb-2">
-              • Practice competition conditions in training
+              â€¢ Practice competition conditions in training
             </Text>
             <Text className="text-amber-300 text-sm mb-2">
-              • Don't try anything new in final 2 weeks
+              â€¢ Don't try anything new in final 2 weeks
             </Text>
             <Text className="text-amber-300 text-sm mb-2">
-              • Taper is crucial - trust the process
+              â€¢ Taper is crucial - trust the process
             </Text>
             <Text className="text-amber-300 text-sm mb-2">
-              • Sleep and stress management = performance
+              â€¢ Sleep and stress management = performance
             </Text>
             <Text className="text-amber-300 text-sm">
-              • Compete for experience first, results second
+              â€¢ Compete for experience first, results second
             </Text>
           </View>
         </View>

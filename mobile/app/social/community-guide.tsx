@@ -1,10 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, TouchableOpacity, ScrollView } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -604,19 +600,19 @@ export default function CommunityGuide() {
               {platform.subreddits?.map((sub: any, sIdx: number) => (
                 <View key={sIdx} className="bg-zinc-900 rounded-xl p-5 mb-4 border border-zinc-800">
                   <Text className="text-white text-xl font-bold mb-1">{sub.name}</Text>
-                  <Text className="text-zinc-400 text-sm mb-3">{sub.size} � {sub.focus}</Text>
+                  <Text className="text-zinc-400 text-sm mb-3">{sub.size} • {sub.focus}</Text>
 
                   <View className="bg-primary/10 rounded-xl p-3 border border-primary/30 mb-3">
                     <Text className="text-primary font-bold mb-2">Pros:</Text>
                     {sub.pros.map((pro: string, pIdx: number) => (
-                      <Text key={pIdx} className="text-primary/80 text-sm mb-1">� {pro}</Text>
+                      <Text key={pIdx} className="text-primary/80 text-sm mb-1">• {pro}</Text>
                     ))}
                   </View>
 
                   <View className="bg-red-500/10 rounded-xl p-3 border border-red-500/30 mb-3">
                     <Text className="text-red-400 font-bold mb-2">Cons:</Text>
                     {sub.cons.map((con: string, cIdx: number) => (
-                      <Text key={cIdx} className="text-red-300 text-sm mb-1">� {con}</Text>
+                      <Text key={cIdx} className="text-red-300 text-sm mb-1">• {con}</Text>
                     ))}
                   </View>
 
@@ -631,20 +627,20 @@ export default function CommunityGuide() {
                   <Text className="text-purple-400 text-lg font-bold mb-3">{tipSection.tip}</Text>
                   
                   {tipSection.accounts && tipSection.accounts.map((account: string, aIdx: number) => (
-                    <Text key={aIdx} className="text-zinc-300 text-sm mb-2">� {account}</Text>
+                    <Text key={aIdx} className="text-zinc-300 text-sm mb-2">• {account}</Text>
                   ))}
                   
                   {tipSection.redFlags && (
                     <View className="bg-red-500/10 rounded-xl p-3 border border-red-500/30 mt-2">
                       <Text className="text-red-400 font-bold mb-2">Red Flags:</Text>
                       {tipSection.redFlags.map((flag: string, fIdx: number) => (
-                        <Text key={fIdx} className="text-red-300 text-sm mb-1">� {flag}</Text>
+                        <Text key={fIdx} className="text-red-300 text-sm mb-1">• {flag}</Text>
                       ))}
                     </View>
                   )}
                   
                   {tipSection.hashtags && tipSection.hashtags.map((tag: string, hIdx: number) => (
-                    <Text key={hIdx} className="text-primary/80 text-sm mb-1">� {tag}</Text>
+                    <Text key={hIdx} className="text-primary/80 text-sm mb-1">• {tag}</Text>
                   ))}
                 </View>
               ))}
@@ -682,7 +678,7 @@ export default function CommunityGuide() {
                 <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-4">
                   <Text className="text-primary font-bold mb-2">Benefits:</Text>
                   {option.benefits.map((benefit: string, bIdx: number) => (
-                    <Text key={bIdx} className="text-primary/80 text-sm mb-1">� {benefit}</Text>
+                    <Text key={bIdx} className="text-primary/80 text-sm mb-1">• {benefit}</Text>
                   ))}
                 </View>
               )}
@@ -691,7 +687,7 @@ export default function CommunityGuide() {
                 <View className="mb-4">
                   <Text className="text-white font-bold mb-2">How to Find:</Text>
                   {option.howToFind.map((how: string, hIdx: number) => (
-                    <Text key={hIdx} className="text-zinc-300 text-sm mb-1">� {how}</Text>
+                    <Text key={hIdx} className="text-zinc-300 text-sm mb-1">• {how}</Text>
                   ))}
                 </View>
               )}
@@ -700,7 +696,7 @@ export default function CommunityGuide() {
                 <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-4">
                   <Text className="text-primary/80 font-bold mb-2">Why Attend:</Text>
                   {option.whyAttend.map((why: string, wIdx: number) => (
-                    <Text key={wIdx} className="text-primary/60 text-sm mb-1">� {why}</Text>
+                    <Text key={wIdx} className="text-primary/60 text-sm mb-1">• {why}</Text>
                   ))}
                 </View>
               )}
@@ -709,7 +705,7 @@ export default function CommunityGuide() {
                 <View className="mb-4">
                   <Text className="text-white font-bold mb-2">Types:</Text>
                   {option.types.map((type: string, tIdx: number) => (
-                    <Text key={tIdx} className="text-zinc-300 text-sm mb-1">� {type}</Text>
+                    <Text key={tIdx} className="text-zinc-300 text-sm mb-1">• {type}</Text>
                   ))}
                 </View>
               )}
@@ -741,7 +737,7 @@ export default function CommunityGuide() {
                 <View className="bg-purple-500/10 rounded-xl p-4 border border-purple-500/30 mb-4">
                   <Text className="text-purple-400 font-bold mb-2">Examples:</Text>
                   {aspect.examples.map((ex: string, eIdx: number) => (
-                    <Text key={eIdx} className="text-purple-300 text-sm mb-1">� {ex}</Text>
+                    <Text key={eIdx} className="text-purple-300 text-sm mb-1">• {ex}</Text>
                   ))}
                 </View>
               )}
@@ -759,7 +755,7 @@ export default function CommunityGuide() {
                 <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-4">
                   <Text className="text-primary font-bold mb-2">Celebrated:</Text>
                   {aspect.celebrated.map((item: string, cIdx: number) => (
-                    <Text key={cIdx} className="text-primary/80 text-sm mb-1">� {item}</Text>
+                    <Text key={cIdx} className="text-primary/80 text-sm mb-1">• {item}</Text>
                   ))}
                 </View>
               )}
@@ -768,7 +764,7 @@ export default function CommunityGuide() {
                 <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-4">
                   <Text className="text-primary/80 font-bold mb-2">Progress:</Text>
                   {aspect.progress.map((item: string, pIdx: number) => (
-                    <Text key={pIdx} className="text-primary/60 text-sm mb-1">� {item}</Text>
+                    <Text key={pIdx} className="text-primary/60 text-sm mb-1">• {item}</Text>
                   ))}
                 </View>
               )}
@@ -792,7 +788,7 @@ export default function CommunityGuide() {
                 <View className="mb-4">
                   <Text className="text-white font-bold mb-2">Roles:</Text>
                   {way.roles.map((role: string, rIdx: number) => (
-                    <Text key={rIdx} className="text-zinc-300 text-sm mb-1">� {role}</Text>
+                    <Text key={rIdx} className="text-zinc-300 text-sm mb-1">• {role}</Text>
                   ))}
                 </View>
               )}
@@ -801,7 +797,7 @@ export default function CommunityGuide() {
                 <View className="bg-red-500/10 rounded-xl p-4 border border-red-500/30 mb-4">
                   <Text className="text-red-400 font-bold mb-2">Benefits:</Text>
                   {way.benefits.map((benefit: string, bIdx: number) => (
-                    <Text key={bIdx} className="text-red-300 text-sm mb-1">� {benefit}</Text>
+                    <Text key={bIdx} className="text-red-300 text-sm mb-1">• {benefit}</Text>
                   ))}
                 </View>
               )}
@@ -810,13 +806,13 @@ export default function CommunityGuide() {
                 <View className="mb-4">
                   <Text className="text-white font-bold mb-2">Content Types:</Text>
                   {way.types.map((type: string, tIdx: number) => (
-                    <Text key={tIdx} className="text-zinc-300 text-sm mb-1">� {type}</Text>
+                    <Text key={tIdx} className="text-zinc-300 text-sm mb-1">• {type}</Text>
                   ))}
                 </View>
               )}
 
               {way.actions && way.actions.map((action: string, aIdx: number) => (
-                <Text key={aIdx} className="text-zinc-300 text-sm mb-2">� {action}</Text>
+                <Text key={aIdx} className="text-zinc-300 text-sm mb-2">• {action}</Text>
               ))}
             </View>
           ))}
@@ -830,7 +826,7 @@ export default function CommunityGuide() {
                   <View className="bg-red-500/10 rounded-xl p-4 border border-red-500/30 mb-4">
                     <Text className="text-red-400 font-bold mb-2">Examples:</Text>
                     {item.examples.map((ex: string, eIdx: number) => (
-                      <Text key={eIdx} className="text-red-300 text-sm mb-1">� {ex}</Text>
+                      <Text key={eIdx} className="text-red-300 text-sm mb-1">• {ex}</Text>
                     ))}
                   </View>
 
@@ -848,7 +844,7 @@ export default function CommunityGuide() {
               <View className="bg-primary/10 rounded-xl p-5 border border-primary/30 mb-6">
                 <Text className="text-primary text-lg font-bold mb-3">? Healthy Community Signs:</Text>
                 {currentSection.healthySigns?.map((sign: string, idx: number) => (
-                  <Text key={idx} className="text-primary/80 text-sm mb-2">� {sign}</Text>
+                  <Text key={idx} className="text-primary/80 text-sm mb-2">• {sign}</Text>
                 ))}
               </View>
             </View>
@@ -857,16 +853,16 @@ export default function CommunityGuide() {
           <View className="bg-gradient-to-r from-purple-500/20 to-blue-500/20 rounded-xl p-5 border border-purple-500/30 mb-6">
             <Text className="text-purple-400 font-bold text-lg mb-3">Community Makes the Difference</Text>
             <Text className="text-purple-300 text-sm mb-2">
-              � Powerlifting community is one of the best in fitness
+              • Powerlifting community is one of the best in fitness
             </Text>
             <Text className="text-purple-300 text-sm mb-2">
-              � Find YOUR people - online and local
+              • Find YOUR people - online and local
             </Text>
             <Text className="text-purple-300 text-sm mb-2">
-              � Give back more than you take
+              • Give back more than you take
             </Text>
             <Text className="text-purple-300 text-sm">
-              � Be the community member you want to see
+              • Be the community member you want to see
             </Text>
           </View>
         </View>

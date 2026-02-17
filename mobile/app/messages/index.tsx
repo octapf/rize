@@ -1,11 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  ScrollView,
-  TouchableOpacity,
-  Alert,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, ScrollView, TouchableOpacity, Alert } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
@@ -35,9 +30,9 @@ const mockConversations: Conversation[] = [
   {
     id: '1',
     userId: '1',
-    userName: 'Carlos García',
+    userName: 'Carlos GarcÃ­a',
     userAvatar: 'C',
-    lastMessage: '¡Excelente entrenamiento hoy! ðŸ’ª',
+    lastMessage: 'Â¡Excelente entrenamiento hoy! ðŸ’ª',
     timestamp: new Date(2026, 0, 26, 14, 30),
     unreadCount: 2,
     isOnline: true,
@@ -45,9 +40,9 @@ const mockConversations: Conversation[] = [
   {
     id: '2',
     userId: '2',
-    userName: 'María López',
+    userName: 'MarÃ­a LÃ³pez',
     userAvatar: 'M',
-    lastMessage: '¿Vamos al gym mañana?',
+    lastMessage: 'Â¿Vamos al gym maÃ±ana?',
     timestamp: new Date(2026, 0, 26, 10, 15),
     unreadCount: 0,
     isOnline: true,
@@ -55,7 +50,7 @@ const mockConversations: Conversation[] = [
   {
     id: '3',
     userId: '3',
-    userName: 'Juan Pérez',
+    userName: 'Juan PÃ©rez',
     userAvatar: 'J',
     lastMessage: 'Gracias por los consejos',
     timestamp: new Date(2026, 0, 25, 18, 45),
@@ -89,8 +84,8 @@ export default function MessagesScreen() {
 
   const handleDeleteConversation = (conversationId: string) => {
     Alert.alert(
-      'Eliminar Conversación',
-      '¿Estás seguro? No podrás recuperar los mensajes.',
+      'Eliminar ConversaciÃ³n',
+      'Â¿EstÃ¡s seguro? No podrÃ¡s recuperar los mensajes.',
       [
         { text: 'Cancelar', style: 'cancel' },
         {
@@ -137,7 +132,7 @@ export default function MessagesScreen() {
               No hay conversaciones
             </Text>
             <Text className="text-gray-600 text-center mt-2">
-              Inicia una conversación con tus amigos
+              Inicia una conversaciÃ³n con tus amigos
             </Text>
           </Card>
         ) : (

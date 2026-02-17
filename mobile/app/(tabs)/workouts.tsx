@@ -1,5 +1,6 @@
 import React from 'react';
-import { View, Text, ScrollView, RefreshControl, TouchableOpacity, ActivityIndicator } from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, ScrollView, RefreshControl, TouchableOpacity, ActivityIndicator } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import Animated, { FadeInDown } from 'react-native-reanimated';
@@ -67,10 +68,10 @@ export default function WorkoutsScreen() {
                 <Ionicons name="barbell-outline" size={64} color="#9D12DE" />
               </View>
               <Text className="text-white text-xl font-bold mb-2">
-                ¡Comienza tu viaje!
+                Â¡Comienza tu viaje!
               </Text>
               <Text className="text-gray-400 text-base text-center px-8 mb-6">
-                No hay entrenamientos registrados aún.
+                No hay entrenamientos registrados aÃºn.
                 Crea tu primer entrenamiento y empieza a ganar XP.
               </Text>
               <TouchableOpacity
@@ -127,7 +128,7 @@ export default function WorkoutsScreen() {
                       <Ionicons name="time" size={18} color="#FFEA00" />
                     </View>
                     <View>
-                      <Text className="text-xs text-gray-400">Duración</Text>
+                      <Text className="text-xs text-gray-400">DuraciÃ³n</Text>
                       <Text className="text-sm font-semibold text-white">
                         {formatDuration(workout.duration)}
                       </Text>

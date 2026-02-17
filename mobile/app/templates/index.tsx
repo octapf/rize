@@ -1,12 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  FlatList,
-  TouchableOpacity,
-  StyleSheet,
-  Alert,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, FlatList, TouchableOpacity, StyleSheet, Alert } from 'react-native';;
 import { Stack, router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
@@ -68,7 +62,7 @@ export default function TemplatesScreen() {
   const handleDelete = (template: WorkoutTemplate) => {
     Alert.alert(
       'Eliminar Plantilla',
-      `¿Estás seguro de que quieres eliminar "${template.name}"?`,
+      `Â¿EstÃ¡s seguro de que quieres eliminar "${template.name}"?`,
       [
         { text: 'Cancelar', style: 'cancel' },
         {
@@ -81,7 +75,7 @@ export default function TemplatesScreen() {
   };
 
   const handleUseTemplate = (template: WorkoutTemplate) => {
-    Alert.alert('Usar Plantilla', `¿Crear workout desde "${template.name}"?`, [
+    Alert.alert('Usar Plantilla', `Â¿Crear workout desde "${template.name}"?`, [
       { text: 'Cancelar', style: 'cancel' },
       {
         text: 'Crear',
@@ -216,7 +210,7 @@ export default function TemplatesScreen() {
           <Ionicons name="document-text-outline" size={64} color="#666" />
           <Text style={styles.emptyText}>
             {showPublic
-              ? 'No hay plantillas públicas'
+              ? 'No hay plantillas pÃºblicas'
               : 'No tienes plantillas guardadas'}
           </Text>
           {!showPublic && (

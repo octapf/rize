@@ -1,11 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-  Alert,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, TouchableOpacity, ScrollView, Alert } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -31,10 +26,10 @@ const REST_ACTIVITIES: RestActivity[] = [
     duration: 30,
     intensity: 'low',
     calories: 120,
-    benefits: ['Flexibilidad', 'Movilidad', 'RelajaciÛn', 'Postura'],
+    benefits: ['Flexibilidad', 'Movilidad', 'Relajaci√≥n', 'Postura'],
     equipment: ['Esterilla'],
     instructions: [
-      'Calentamiento con respiraciÛn 5 min',
+      'Calentamiento con respiraci√≥n 5 min',
       'Saludo al sol 3 series lentas',
       'Posturas de apertura de cadera',
       'Estiramientos pasivos 10 min',
@@ -50,13 +45,13 @@ const REST_ACTIVITIES: RestActivity[] = [
     duration: 45,
     intensity: 'moderate',
     calories: 200,
-    benefits: ['CirculaciÛn', 'RecuperaciÛn activa', 'Vitamina D', 'Salud mental'],
+    benefits: ['Circulaci√≥n', 'Recuperaci√≥n activa', 'Vitamina D', 'Salud mental'],
     equipment: ['Ninguno'],
     instructions: [
       'Ritmo moderado 120-130 BPM',
       'Terreno plano o colinas suaves',
-      'MantÈn postura erguida',
-      'RespiraciÛn nasal profunda',
+      'Mant√©n postura erguida',
+      'Respiraci√≥n nasal profunda',
       'Estiramiento final 5 min',
     ],
     icon: 'üö∂',
@@ -64,17 +59,17 @@ const REST_ACTIVITIES: RestActivity[] = [
   },
   {
     id: '3',
-    name: 'NataciÛn Suave',
+    name: 'Nataci√≥n Suave',
     category: 'cardio',
     duration: 30,
     intensity: 'low',
     calories: 180,
-    benefits: ['RecuperaciÛn articular', 'Cardio bajo impacto', 'Movilidad'],
+    benefits: ['Recuperaci√≥n articular', 'Cardio bajo impacto', 'Movilidad'],
     equipment: ['Piscina'],
     instructions: [
       'Calentamiento 5 min estilo libre lento',
-      'TÈcnica de respiraciÛn bilateral',
-      'Velocidad 60-70% del m·ximo',
+      'T√©cnica de respiraci√≥n bilateral',
+      'Velocidad 60-70% del m√°ximo',
       'Pausas cada 200m',
       'Enfriamiento 5 min',
     ],
@@ -88,13 +83,13 @@ const REST_ACTIVITIES: RestActivity[] = [
     duration: 20,
     intensity: 'low',
     calories: 40,
-    benefits: ['LiberaciÛn miofascial', 'Reduce tensiÛn', 'Previene lesiones'],
+    benefits: ['Liberaci√≥n miofascial', 'Reduce tensi√≥n', 'Previene lesiones'],
     equipment: ['Foam roller', 'Lacrosse ball'],
     instructions: [
       'IT band 60 seg cada lado',
-      'Gl˙teos con pelota 90 seg',
+      'Gl√∫teos con pelota 90 seg',
       'Espalda baja 120 seg',
-      'Cu·driceps 60 seg cada lado',
+      'Cu√°driceps 60 seg cada lado',
       'Pantorrillas 45 seg cada lado',
     ],
     icon: '??',
@@ -102,18 +97,18 @@ const REST_ACTIVITIES: RestActivity[] = [
   },
   {
     id: '5',
-    name: 'MeditaciÛn Guiada',
+    name: 'Meditaci√≥n Guiada',
     category: 'mental',
     duration: 15,
     intensity: 'low',
     calories: 20,
-    benefits: ['Reduce estrÈs', 'Mejora sueÒo', 'Claridad mental', 'RecuperaciÛn neurolÛgica'],
+    benefits: ['Reduce estr√©s', 'Mejora sue√±o', 'Claridad mental', 'Recuperaci√≥n neurol√≥gica'],
     equipment: ['Ninguno'],
     instructions: [
-      'PosiciÛn cÛmoda sentado o acostado',
-      'RespiraciÛn 4-7-8 durante 5 min',
+      'Posici√≥n c√≥moda sentado o acostado',
+      'Respiraci√≥n 4-7-8 durante 5 min',
       'Body scan de pies a cabeza',
-      'VisualizaciÛn positiva',
+      'Visualizaci√≥n positiva',
       'Gratitud y afirmaciones finales',
     ],
     icon: 'üß†',
@@ -121,16 +116,16 @@ const REST_ACTIVITIES: RestActivity[] = [
   },
   {
     id: '6',
-    name: 'Stretching Din·mico',
+    name: 'Stretching Din√°mico',
     category: 'mobility',
     duration: 25,
     intensity: 'low',
     calories: 80,
-    benefits: ['ROM articular', 'PrevenciÛn lesiones', 'Movilidad funcional'],
-    equipment: ['Banda el·stica'],
+    benefits: ['ROM articular', 'Prevenci√≥n lesiones', 'Movilidad funcional'],
+    equipment: ['Banda el√°stica'],
     instructions: [
-      'CÌrculos de brazos 20 reps',
-      'Leg swings adelante-atr·s 15/lado',
+      'C√≠rculos de brazos 20 reps',
+      'Leg swings adelante-atr√°s 15/lado',
       'Hip circles 20 reps',
       'Cat-cow 15 reps',
       'World\'s greatest stretch 5/lado',
@@ -145,14 +140,14 @@ const REST_ACTIVITIES: RestActivity[] = [
     duration: 40,
     intensity: 'moderate',
     calories: 220,
-    benefits: ['RecuperaciÛn piernas', 'Cardio bajo impacto', 'CirculaciÛn'],
+    benefits: ['Recuperaci√≥n piernas', 'Cardio bajo impacto', 'Circulaci√≥n'],
     equipment: ['Bicicleta'],
     instructions: [
       'Resistencia baja RPM 60-80',
-      'Frecuencia cardÌaca Zona 2 (60-70% max)',
+      'Frecuencia card√≠aca Zona 2 (60-70% max)',
       'Terreno plano preferentemente',
-      'HidrataciÛn cada 15 min',
-      'Estiramiento cu·driceps final',
+      'Hidrataci√≥n cada 15 min',
+      'Estiramiento cu√°driceps final',
     ],
     icon: 'üö¥',
     color: 'bg-primary',
@@ -164,13 +159,13 @@ const REST_ACTIVITIES: RestActivity[] = [
     duration: 30,
     intensity: 'low',
     calories: 100,
-    benefits: ['DesintoxicaciÛn', 'CirculaciÛn', 'ReducciÛn inflamaciÛn', 'HGH'],
-    equipment: ['Sauna', 'Ducha frÌa'],
+    benefits: ['Desintoxicaci√≥n', 'Circulaci√≥n', 'Reducci√≥n inflamaci√≥n', 'HGH'],
+    equipment: ['Sauna', 'Ducha fr√≠a'],
     instructions: [
-      'Sauna 15 min (70-80∞C)',
-      'Ducha frÌa 2 min',
+      'Sauna 15 min (70-80¬∞C)',
+      'Ducha fr√≠a 2 min',
       'Repetir ciclo 2-3 veces',
-      'HidrataciÛn abundante',
+      'Hidrataci√≥n abundante',
       'Descanso final 10 min',
     ],
     icon: '‚ô®Ô∏è',
@@ -186,7 +181,7 @@ export default function RestDayActivities() {
     { id: 'all', label: 'Todas', icon: 'apps' },
     { id: 'mobility', label: 'Movilidad', icon: 'body' },
     { id: 'cardio', label: 'Cardio', icon: 'heart' },
-    { id: 'recovery', label: 'RecuperaciÛn', icon: 'fitness' },
+    { id: 'recovery', label: 'Recuperaci√≥n', icon: 'fitness' },
     { id: 'mental', label: 'Mental', icon: 'brain' },
   ];
 
@@ -197,7 +192,7 @@ export default function RestDayActivities() {
   const startActivity = (activity: RestActivity) => {
     Alert.alert(
       `Iniciar: ${activity.name}`,
-      `DuraciÛn: ${activity.duration} min\nQuemar·s ~${activity.calories} kcal`,
+      `Duraci√≥n: ${activity.duration} min\nQuemar√°s ~${activity.calories} kcal`,
       [
         { text: 'Cancelar', style: 'cancel' },
         {
@@ -271,10 +266,10 @@ export default function RestDayActivities() {
               <Ionicons name="information-circle" size={20} color="#9D12DE" />
               <View className="flex-1 ml-3">
                 <Text className="text-primary/80 font-bold mb-2">
-                  RecuperaciÛn Activa
+                  Recuperaci√≥n Activa
                 </Text>
                 <Text className="text-primary/60 text-sm">
-                  Los dÌas de descanso NO son dÌas inactivos. Movimiento suave acelera recuperaciÛn.
+                  Los d√≠as de descanso NO son d√≠as inactivos. Movimiento suave acelera recuperaci√≥n.
                 </Text>
               </View>
             </View>
@@ -319,14 +314,14 @@ export default function RestDayActivities() {
                 <View className="flex-1 bg-zinc-800 rounded-lg p-2">
                   <View className="flex-row items-center mb-1">
                     <Ionicons name="time" size={14} color="#71717A" />
-                    <Text className="text-zinc-400 text-xs ml-1">DuraciÛn</Text>
+                    <Text className="text-zinc-400 text-xs ml-1">Duraci√≥n</Text>
                   </View>
                   <Text className="text-white font-bold">{activity.duration} min</Text>
                 </View>
                 <View className="flex-1 bg-zinc-800 rounded-lg p-2">
                   <View className="flex-row items-center mb-1">
                     <Ionicons name="flame" size={14} color="#71717A" />
-                    <Text className="text-zinc-400 text-xs ml-1">CalorÌas</Text>
+                    <Text className="text-zinc-400 text-xs ml-1">Calor√≠as</Text>
                   </View>
                   <Text className="text-red-400 font-bold">{activity.calories}</Text>
                 </View>
@@ -361,7 +356,7 @@ export default function RestDayActivities() {
                 <Text className="text-zinc-400 text-xs mb-2">GU√çA R√ÅPIDA</Text>
                 {activity.instructions.slice(0, 3).map((instruction, index) => (
                   <View key={index} className="flex-row items-start mb-1 last:mb-0">
-                    <Text className="text-primary mr-2">ï</Text>
+                    <Text className="text-primary mr-2">‚Ä¢</Text>
                     <Text className="text-zinc-300 text-sm flex-1">{instruction}</Text>
                   </View>
                 ))}
@@ -371,7 +366,7 @@ export default function RestDayActivities() {
                     className="mt-2"
                   >
                     <Text className="text-primary/80 text-sm">
-                      Ver {activity.instructions.length - 3} pasos m·s ‚Üí
+                      Ver {activity.instructions.length - 3} pasos m√°s ‚Üí
                     </Text>
                   </TouchableOpacity>
                 )}
@@ -408,7 +403,7 @@ export default function RestDayActivities() {
                   Descanso Inteligente
                 </Text>
                 <Text className="text-primary/80 text-sm">
-                  1-2 actividades de baja intensidad en dÌas de descanso optimizan recuperaciÛn sin interferir con crecimiento muscular.
+                  1-2 actividades de baja intensidad en d√≠as de descanso optimizan recuperaci√≥n sin interferir con crecimiento muscular.
                 </Text>
               </View>
             </View>

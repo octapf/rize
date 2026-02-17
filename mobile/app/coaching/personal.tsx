@@ -1,12 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-  TextInput,
-  Alert,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, TouchableOpacity, ScrollView, TextInput, Alert } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -56,7 +50,7 @@ const FORM_ERRORS: FormError[] = [
 const COACHES: Coach[] = [
   {
     id: '1',
-    name: 'Carlos Pérez',
+    name: 'Carlos PÃ©rez',
     specialty: 'Powerlifting',
     rating: 4.9,
     clients: 234,
@@ -67,7 +61,7 @@ const COACHES: Coach[] = [
   },
   {
     id: '2',
-    name: 'Ana Martínez',
+    name: 'Ana MartÃ­nez',
     specialty: 'Hipertrofia',
     rating: 4.8,
     clients: 189,
@@ -78,7 +72,7 @@ const COACHES: Coach[] = [
   },
   {
     id: '3',
-    name: 'Luis García',
+    name: 'Luis GarcÃ­a',
     specialty: 'Calistenia',
     rating: 4.7,
     clients: 156,
@@ -105,15 +99,15 @@ export default function PersonalCoaching() {
       'Selecciona el origen del video',
       [
         {
-          text: 'Cámara',
+          text: 'CÃ¡mara',
           onPress: () => {
-            Alert.alert('Grabando...', 'Función de cámara próximamente');
+            Alert.alert('Grabando...', 'FunciÃ³n de cÃ¡mara prÃ³ximamente');
           },
         },
         {
-          text: 'Galería',
+          text: 'GalerÃ­a',
           onPress: () => {
-            Alert.alert('¡Video Subido!', 'Tu form check está en revisión. Recibirás feedback en 24-48 horas.');
+            Alert.alert('Â¡Video Subido!', 'Tu form check estÃ¡ en revisiÃ³n. RecibirÃ¡s feedback en 24-48 horas.');
           },
         },
         { text: 'Cancelar', style: 'cancel' },
@@ -134,21 +128,21 @@ export default function PersonalCoaching() {
 
   const hireCoach = (coach: Coach) => {
     if (!coach.available) {
-      Alert.alert('Coach No Disponible', `${coach.name} no está aceptando nuevos clientes en este momento.`);
+      Alert.alert('Coach No Disponible', `${coach.name} no estÃ¡ aceptando nuevos clientes en este momento.`);
       return;
     }
 
     Alert.alert(
       'Contratar Coach',
-      `${coach.name}\n${coach.specialty}\n\nPrecio: $${coach.price}/mes\n\n¿Deseas continuar?`,
+      `${coach.name}\n${coach.specialty}\n\nPrecio: $${coach.price}/mes\n\nÂ¿Deseas continuar?`,
       [
         { text: 'Cancelar', style: 'cancel' },
         {
           text: 'Contratar',
           onPress: () => {
             Alert.alert(
-              '¡Contratado!',
-              `${coach.name} te contactará en ${coach.responseTime}.\n\nRevisarás tu plan inicial juntos.`
+              'Â¡Contratado!',
+              `${coach.name} te contactarÃ¡ en ${coach.responseTime}.\n\nRevisarÃ¡s tu plan inicial juntos.`
             );
           },
         },
@@ -314,16 +308,16 @@ export default function PersonalCoaching() {
                 <Ionicons name="information-circle" size={20} color="#9D12DE" />
                 <View className="flex-1 ml-3">
                   <Text className="text-primary/80 font-bold mb-2">
-                    ¿Cómo funciona?
+                    Â¿CÃ³mo funciona?
                   </Text>
                   <Text className="text-primary/60 text-sm mb-2">
-                    1. Graba tu ejercicio desde un ángulo lateral
+                    1. Graba tu ejercicio desde un Ã¡ngulo lateral
                   </Text>
                   <Text className="text-primary/60 text-sm mb-2">
                     2. Sube el video y describe tus dudas
                   </Text>
                   <Text className="text-primary/60 text-sm">
-                    3. Un coach revisará tu técnica y te dará feedback detallado
+                    3. Un coach revisarâ€¢ tu tÃ©cnica y te darâ€¢ feedback detallado
                   </Text>
                 </View>
               </View>

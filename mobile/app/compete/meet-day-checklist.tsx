@@ -1,11 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-  TextInput,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, TouchableOpacity, ScrollView, TextInput } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -215,7 +210,7 @@ export default function MeetDayChecklist() {
                 <View className="bg-zinc-800 rounded-xl p-3">
                   {segment.tasks.map((task, tidx) => (
                     <View key={tidx} className="flex-row items-start mb-1 last:mb-0">
-                      <Text className="text-primary/80 mr-2">•</Text>
+                      <Text className="text-primary/80 mr-2">â€¢</Text>
                       <Text className="text-zinc-300 text-sm flex-1">{task}</Text>
                     </View>
                   ))}
@@ -254,7 +249,7 @@ export default function MeetDayChecklist() {
               <View className="bg-zinc-800 rounded-xl p-3">
                 {betweenLifts.squat_to_bench.map((item, idx) => (
                   <Text key={idx} className="text-zinc-300 text-sm mb-1 last:mb-0">
-                    • {item}
+                    â€¢ {item}
                   </Text>
                 ))}
               </View>
@@ -265,7 +260,7 @@ export default function MeetDayChecklist() {
               <View className="bg-zinc-800 rounded-xl p-3">
                 {betweenLifts.bench_to_deadlift.map((item, idx) => (
                   <Text key={idx} className="text-zinc-300 text-sm mb-1 last:mb-0">
-                    • {item}
+                    â€¢ {item}
                   </Text>
                 ))}
               </View>
@@ -286,19 +281,19 @@ export default function MeetDayChecklist() {
           <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
             <Text className="text-primary/80 font-bold mb-2">Final Reminders</Text>
             <Text className="text-primary/60 text-sm mb-2">
-              • Trust your openers - they should be easy
+              â€¢ Trust your openers - they should be easy
             </Text>
             <Text className="text-primary/60 text-sm mb-2">
-              • Don't change attempts in warm-up room due to nerves
+              â€¢ Don't change attempts in warm-up room due to nerves
             </Text>
             <Text className="text-primary/60 text-sm mb-2">
-              • Listen to commands carefully - no early starts
+              â€¢ Listen to commands carefully - no early starts
             </Text>
             <Text className="text-primary/60 text-sm mb-2">
-              • Stay hydrated and fueled between flights
+              â€¢ Stay hydrated and fueled between flights
             </Text>
             <Text className="text-primary/60 text-sm">
-              • Have fun - you've earned this moment
+              â€¢ Have fun - you've earned this moment
             </Text>
           </View>
         </View>

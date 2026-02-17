@@ -1,12 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  FlatList,
-  Image,
-  Alert,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, TouchableOpacity, FlatList, Image, Alert } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
@@ -52,7 +46,7 @@ export default function ProgressPhotosComparisonScreen() {
         date: new Date(),
       };
       setPhotos([newPhoto, ...photos]);
-      Alert.alert('Éxito', 'Foto agregada correctamente');
+      Alert.alert('Ã©xito', 'Foto agregada correctamente');
     }
   };
 
@@ -61,7 +55,7 @@ export default function ProgressPhotosComparisonScreen() {
       setSelectedPhotos(selectedPhotos.filter((p) => p !== id));
     } else {
       if (selectedPhotos.length >= 4) {
-        Alert.alert('Límite', 'Máximo 4 fotos para comparar');
+        Alert.alert('LÃ­mite', 'MÃ¡ximo 4 fotos para comparar');
         return;
       }
       setSelectedPhotos([...selectedPhotos, id]);
@@ -137,8 +131,8 @@ export default function ProgressPhotosComparisonScreen() {
             <TouchableOpacity onPress={() => setCompareMode(false)}>
               <Ionicons name="arrow-back" size={28} color="white" />
             </TouchableOpacity>
-            <Text className="text-2xl font-bold text-white">Comparación</Text>
-            <TouchableOpacity onPress={() => Alert.alert('Compartir', 'Función en desarrollo')}>
+            <Text className="text-2xl font-bold text-white">ComparaciÃ³n</Text>
+            <TouchableOpacity onPress={() => Alert.alert('Compartir', 'FunciÃ³n en desarrollo')}>
               <Ionicons name="share-outline" size={28} color="white" />
             </TouchableOpacity>
           </View>
@@ -150,7 +144,7 @@ export default function ProgressPhotosComparisonScreen() {
               <View className="items-center">
                 <Text className="text-gray-600 text-sm">Tiempo</Text>
                 <Text className="text-primary font-bold text-2xl">{daysDiff}</Text>
-                <Text className="text-gray-600 text-xs">días</Text>
+                <Text className="text-gray-600 text-xs">dÃ­as</Text>
               </View>
               {weightDiff !== null && (
                 <View className="items-center">
@@ -222,7 +216,7 @@ export default function ProgressPhotosComparisonScreen() {
               No hay fotos
             </Text>
             <Text className="text-gray-600 text-center mt-2">
-              Agrega fotos para seguir tu transformación
+              Agrega fotos para seguir tu transformaciÃ³n
             </Text>
           </View>
         }

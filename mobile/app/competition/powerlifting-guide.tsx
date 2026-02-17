@@ -1,10 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, TouchableOpacity, ScrollView } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -325,7 +321,7 @@ export default function PowerliftingGuide() {
                   <Text className="text-primary/80 text-xl font-bold mb-4">{section.title}</Text>
                   {section.content.map((item, itemIdx) => (
                     <Text key={itemIdx} className="text-zinc-300 text-sm mb-2 last:mb-0">
-                      • {item}
+                      â€¢ {item}
                     </Text>
                   ))}
                 </View>
@@ -382,7 +378,7 @@ export default function PowerliftingGuide() {
                   <Text className="text-white font-bold mb-3">Training:</Text>
                   {phase.training.map((item, tIdx) => (
                     <Text key={tIdx} className="text-zinc-300 text-sm mb-2">
-                      • {item}
+                      â€¢ {item}
                     </Text>
                   ))}
 
@@ -403,7 +399,7 @@ export default function PowerliftingGuide() {
 
                   {strategy.guidelines.map((guideline, gIdx) => (
                     <Text key={gIdx} className="text-zinc-300 text-sm mb-2">
-                      • {guideline}
+                      â€¢ {guideline}
                     </Text>
                   ))}
 
@@ -419,19 +415,19 @@ export default function PowerliftingGuide() {
           <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
             <Text className="text-primary font-bold mb-2">First Meet Tips</Text>
             <Text className="text-primary/80 text-sm mb-2">
-              • Go 9/9 (make all 9 attempts) - conservative openers
+              â€¢ Go 9/9 (make all 9 attempts) - conservative openers
             </Text>
             <Text className="text-primary/80 text-sm mb-2">
-              • Experience &gt; total on first meet
+              â€¢ Experience &gt; total on first meet
             </Text>
             <Text className="text-primary/80 text-sm mb-2">
-              • Bring handler/coach if possible
+              â€¢ Bring handler/coach if possible
             </Text>
             <Text className="text-primary/80 text-sm mb-2">
-              • Practice commands in training
+              â€¢ Practice commands in training
             </Text>
             <Text className="text-primary/80 text-sm">
-              • Have fun - it's supposed to be enjoyable!
+              â€¢ Have fun - it's supposed to be enjoyable!
             </Text>
           </View>
         </View>

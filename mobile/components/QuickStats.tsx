@@ -1,5 +1,6 @@
 import React from 'react';
-import { View, Text, TouchableOpacity, ActivityIndicator } from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, TouchableOpacity, ActivityIndicator } from 'react-native';;
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
 import { router } from 'expo-router';

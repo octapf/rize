@@ -1,11 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-  Alert,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, TouchableOpacity, ScrollView, Alert } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -27,10 +22,10 @@ interface Challenge {
 const CHALLENGES: Challenge[] = [
   {
     id: '1',
-    name: 'Desafío Push-ups 1000',
+    name: 'DesafÃ­o Push-ups 1000',
     type: 'reps',
     creator: 'Carlos M.',
-    participants: ['Tú', 'Carlos M.', 'Ana R.', 'Luis P.'],
+    participants: ['TÃº', 'Carlos M.', 'Ana R.', 'Luis P.'],
     startDate: '2025-01-15',
     endDate: '2025-01-31',
     myProgress: 687,
@@ -42,8 +37,8 @@ const CHALLENGES: Challenge[] = [
     id: '2',
     name: 'Racha Semanal',
     type: 'time',
-    creator: 'Tú',
-    participants: ['Tú', 'Ana R.', 'Pedro S.'],
+    creator: 'TÃº',
+    participants: ['TÃº', 'Ana R.', 'Pedro S.'],
     startDate: '2025-01-20',
     endDate: '2025-01-27',
     myProgress: 5,
@@ -54,10 +49,10 @@ const CHALLENGES: Challenge[] = [
   },
   {
     id: '3',
-    name: 'Máximo en Sentadilla',
+    name: 'MÃ¡ximo en Sentadilla',
     type: 'weight',
     creator: 'Luis P.',
-    participants: ['Luis P.', 'María G.', 'Jorge T.'],
+    participants: ['Luis P.', 'MarÃ­a G.', 'Jorge T.'],
     startDate: '2025-02-01',
     endDate: '2025-02-28',
     myProgress: 0,
@@ -71,9 +66,9 @@ export default function SocialChallenges() {
   const [selectedTab, setSelectedTab] = useState<'active' | 'friends' | 'public'>('active');
 
   const tabs = [
-    { id: 'active' as const, label: 'Mis Desafíos', count: 2 },
+    { id: 'active' as const, label: 'Mis DesafÃ­os', count: 2 },
     { id: 'friends' as const, label: 'Amigos', count: 3 },
-    { id: 'public' as const, label: 'Públicos', count: 12 },
+    { id: 'public' as const, label: 'PÃºblicos', count: 12 },
   ];
 
   const getTypeIcon = (type: string) => {
@@ -108,11 +103,11 @@ export default function SocialChallenges() {
 
   const createChallenge = () => {
     Alert.alert(
-      'Crear Desafío',
+      'Crear DesafÃ­o',
       'Selecciona el tipo',
       [
         { text: 'Repeticiones', onPress: () => setupChallenge('reps') },
-        { text: 'Peso Máximo', onPress: () => setupChallenge('weight') },
+        { text: 'Peso MÃ¡ximo', onPress: () => setupChallenge('weight') },
         { text: 'Distancia', onPress: () => setupChallenge('distance') },
         { text: 'Tiempo/Racha', onPress: () => setupChallenge('time') },
         { text: 'Cancelar', style: 'cancel' },
@@ -122,22 +117,22 @@ export default function SocialChallenges() {
 
   const setupChallenge = (type: string) => {
     Alert.alert(
-      'Configurar Desafío',
-      'Próximamente podrás personalizar:\n\n• Duración\n• Meta\n• Participantes\n• Premio',
+      'Configurar DesafÃ­o',
+      'PrÃ³ximamente podrÃ¡s personalizar:\n\nâ€¢ DuraciÃ³n\nâ€¢ Meta\nâ€¢ Participantes\nâ€¢ Premio',
       [{ text: 'OK' }]
     );
   };
 
   const joinChallenge = (challenge: Challenge) => {
     Alert.alert(
-      'Unirse a Desafío',
-      `${challenge.name}\n\nCreado por: ${challenge.creator}\nParticipantes: ${challenge.participants.length}\n\n¿Deseas unirte?`,
+      'Unirse a DesafÃ­o',
+      `${challenge.name}\n\nCreado por: ${challenge.creator}\nParticipantes: ${challenge.participants.length}\n\nÂ¿Deseas unirte?`,
       [
         { text: 'Cancelar', style: 'cancel' },
         {
           text: 'Unirse',
           onPress: () => {
-            Alert.alert('¡Unido!', 'Comienza a competir con tus amigos');
+            Alert.alert('Â¡Unido!', 'Comienza a competir con tus amigos');
           },
         },
       ]
@@ -149,7 +144,7 @@ export default function SocialChallenges() {
       .map((p, i) => `${i + 1}. ${p}`)
       .join('\n');
 
-    Alert.alert('Clasificación', leaderboardText, [{ text: 'OK' }]);
+    Alert.alert('ClasificaciÃ³n', leaderboardText, [{ text: 'OK' }]);
   };
 
   const logProgress = (challenge: Challenge) => {
@@ -162,7 +157,7 @@ export default function SocialChallenges() {
           text: 'Guardar',
           onPress: (value) => {
             if (value) {
-              Alert.alert('¡Progreso Guardado!', `+${value} agregado`);
+              Alert.alert('Â¡Progreso Guardado!', `+${value} agregado`);
             }
           },
         },
@@ -187,7 +182,7 @@ export default function SocialChallenges() {
             <Ionicons name="arrow-back" size={24} color="white" />
           </TouchableOpacity>
           <Text className="text-white text-2xl font-bold flex-1 ml-3">
-            Desafíos Sociales
+            DesafÃ­os Sociales
           </Text>
           <TouchableOpacity onPress={createChallenge}>
             <Ionicons name="add-circle" size={24} color="#9D12DE" />
@@ -255,16 +250,16 @@ export default function SocialChallenges() {
             <View className="bg-zinc-900 rounded-xl p-8 border border-zinc-800 items-center">
               <Ionicons name="trophy-outline" size={48} color="#71717A" />
               <Text className="text-zinc-400 font-bold mt-4">
-                No hay desafíos
+                No hay desafÃ­os
               </Text>
               <Text className="text-zinc-500 text-sm mt-2 text-center">
-                Crea o únete a un desafío
+                Crea o Ãºnete a un desafÃ­o
               </Text>
               <TouchableOpacity
                 onPress={createChallenge}
                 className="bg-primary rounded-lg px-6 py-3 mt-4"
               >
-                <Text className="text-white font-semibold">Crear Desafío</Text>
+                <Text className="text-white font-semibold">Crear DesafÃ­o</Text>
               </TouchableOpacity>
             </View>
           ) : (
@@ -360,10 +355,10 @@ export default function SocialChallenges() {
                       </View>
                       <View className="flex-row items-center justify-between mt-2">
                         <Text className="text-zinc-500 text-xs">
-                          Posición #{challenge.myRank}
+                          PosiciÃ³n #{challenge.myRank}
                         </Text>
                         <Text className="text-primary text-xs font-bold">
-                          {challenge.leaderProgress - challenge.myProgress} para líder
+                          {challenge.leaderProgress - challenge.myProgress} para lÃ­der
                         </Text>
                       </View>
                     </View>

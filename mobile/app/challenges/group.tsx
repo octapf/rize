@@ -1,11 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-  Alert,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, TouchableOpacity, ScrollView, Alert } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -76,9 +71,9 @@ const CHALLENGES: Challenge[] = [
   },
   {
     id: '3',
-    name: 'MaratÛn Virtual 42K',
+    name: 'Marat√≥n Virtual 42K',
     type: 'individual',
-    goal: 'Corre/Camina 42km en 30 dÌas',
+    goal: 'Corre/Camina 42km en 30 d√≠as',
     metric: 'distance',
     startDate: '2025-01-20',
     endDate: '2025-02-20',
@@ -99,7 +94,7 @@ const CHALLENGES: Challenge[] = [
     id: '4',
     name: 'Quema Extrema',
     type: 'community',
-    goal: 'Quema 50,000 calorÌas colectivas',
+    goal: 'Quema 50,000 calor√≠as colectivas',
     metric: 'calories',
     startDate: '2025-02-01',
     endDate: '2025-02-28',
@@ -114,7 +109,7 @@ const CHALLENGES: Challenge[] = [
     id: '5',
     name: 'Consistency Champion',
     type: 'individual',
-    goal: 'Entrena 60 minutos diarios por 21 dÌas',
+    goal: 'Entrena 60 minutos diarios por 21 d√≠as',
     metric: 'time',
     startDate: '2025-01-05',
     endDate: '2025-01-26',
@@ -124,9 +119,9 @@ const CHALLENGES: Challenge[] = [
     myProgress: 21,
     myRank: 12,
     leaderboard: [
-      { rank: 1, name: 'Consistent Joe', avatar: 'üíé', value: 21, unit: 'dÌas' },
-      { rank: 2, name: 'Daily Grind', avatar: 'üî•', value: 21, unit: 'dÌas' },
-      { rank: 3, name: 'Never Skip', avatar: 'üí™', value: 21, unit: 'dÌas' },
+      { rank: 1, name: 'Consistent Joe', avatar: 'üíé', value: 21, unit: 'd√≠as' },
+      { rank: 2, name: 'Daily Grind', avatar: 'üî•', value: 21, unit: 'd√≠as' },
+      { rank: 3, name: 'Never Skip', avatar: 'üí™', value: 21, unit: 'd√≠as' },
     ],
   },
 ];
@@ -145,7 +140,7 @@ export default function GroupChallenges() {
 
   const statuses = [
     { id: 'active', label: 'Activos' },
-    { id: 'upcoming', label: 'PrÛximos' },
+    { id: 'upcoming', label: 'Pr√≥ximos' },
     { id: 'completed', label: 'Completados' },
   ];
 
@@ -179,19 +174,19 @@ export default function GroupChallenges() {
     if (challenge.status === 'upcoming') {
       Alert.alert(
         'Pre-registro',
-        `${challenge.name}\n\nComienza: ${new Date(challenge.startDate).toLocaleDateString('es-ES')}\n\nøQuieres registrarte?`,
+        `${challenge.name}\n\nComienza: ${new Date(challenge.startDate).toLocaleDateString('es-ES')}\n\n¬øQuieres registrarte?`,
         [
           { text: 'Cancelar', style: 'cancel' },
-          { text: 'Registrarse', onPress: () => Alert.alert('°Registrado!', 'Te notificaremos cuando comience') },
+          { text: 'Registrarse', onPress: () => Alert.alert('¬°Registrado!', 'Te notificaremos cuando comience') },
         ]
       );
     } else if (challenge.status === 'active') {
       Alert.alert(
-        'Unirse al DesafÌo',
-        `${challenge.name}\n\n${challenge.goal}\n\nParticipantes: ${challenge.participants}\n\nøListo para el desafÌo?`,
+        'Unirse al Desaf√≠o',
+        `${challenge.name}\n\n${challenge.goal}\n\nParticipantes: ${challenge.participants}\n\n¬øListo para el desaf√≠o?`,
         [
           { text: 'Cancelar', style: 'cancel' },
-          { text: 'Unirse', onPress: () => Alert.alert('°Dentro!', 'Tu progreso se registrar· autom·ticamente') },
+          { text: 'Unirse', onPress: () => Alert.alert('¬°Dentro!', 'Tu progreso se registrar√° autom√°ticamente') },
         ]
       );
     }
@@ -201,7 +196,7 @@ export default function GroupChallenges() {
     setSelectedChallenge(challenge.id);
     Alert.alert(
       `üèÜ ${challenge.name}`,
-      `Tu posiciÛn: #${challenge.myRank}\nProgreso: ${challenge.myProgress}/${challenge.goal}\n\nVer tabla completa de posiciones`,
+      `Tu posici√≥n: #${challenge.myRank}\nProgreso: ${challenge.myProgress}/${challenge.goal}\n\nVer tabla completa de posiciones`,
       [
         { text: 'Ver Todos' },
         { text: 'Compartir' },
@@ -227,7 +222,7 @@ export default function GroupChallenges() {
             <Ionicons name="arrow-back" size={24} color="white" />
           </TouchableOpacity>
           <Text className="text-white text-2xl font-bold flex-1 ml-3">
-            DesafÌos de Grupo
+            Desaf√≠os de Grupo
           </Text>
           <TouchableOpacity>
             <Ionicons name="add-circle-outline" size={24} color="white" />
@@ -238,7 +233,7 @@ export default function GroupChallenges() {
         <View className="bg-gradient-to-br from-primary to-[#7D0EBE] rounded-xl p-4 mb-4">
           <View className="flex-row items-center justify-between">
             <View className="flex-1">
-              <Text className="text-white/80 text-sm mb-1">DesafÌos Activos</Text>
+              <Text className="text-white/80 text-sm mb-1">Desaf√≠os Activos</Text>
               <Text className="text-white font-bold text-4xl mb-1">
                 {activeChallenges}
               </Text>
@@ -309,7 +304,7 @@ export default function GroupChallenges() {
       <ScrollView className="flex-1" showsVerticalScrollIndicator={false}>
         <View className="px-6 pt-6">
           <Text className="text-white font-bold text-lg mb-3">
-            {filteredChallenges.length} DesafÌos
+            {filteredChallenges.length} Desaf√≠os
           </Text>
 
           {filteredChallenges.map((challenge) => (
@@ -472,7 +467,7 @@ export default function GroupChallenges() {
                         ? 'Ya Participando'
                         : challenge.status === 'upcoming'
                         ? 'Pre-registrarse'
-                        : 'Unirse al DesafÌo'}
+                        : 'Unirse al Desaf√≠o'}
                     </Text>
                   </View>
                 </TouchableOpacity>
@@ -491,7 +486,7 @@ export default function GroupChallenges() {
                   Compite y Gana
                 </Text>
                 <Text className="text-primary/60 text-sm">
-                  ⁄nete a desafÌos individuales o forma equipo. Gana badges, XP y premios exclusivos. °El progreso se sincroniza autom·ticamente!
+                  √∫nete a desaf√≠os individuales o forma equipo. Gana badges, XP y premios exclusivos. ¬°El progreso se sincroniza autom√°ticamente!
                 </Text>
               </View>
             </View>

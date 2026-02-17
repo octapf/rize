@@ -1,11 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-  TextInput,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, TouchableOpacity, ScrollView, TextInput } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -197,11 +192,11 @@ export default function PerformanceBenchmarks() {
           <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
             <Text className="text-primary font-bold mb-2">Testing Tips</Text>
             <Text className="text-primary/80 text-sm">
-              • Warm up properly before tests{'\n'}
-              • Test when fresh (early week){'\n'}
-              • Retest every 8-12 weeks{'\n'}
-              • Track progress over time{'\n'}
-              • Don't test all at once
+              â€¢ Warm up properly before tests{'\n'}
+              â€¢ Test when fresh (early week){'\n'}
+              â€¢ Retest every 8-12 weeks{'\n'}
+              â€¢ Track progress over time{'\n'}
+              â€¢ Don't test all at once
             </Text>
           </View>
         </View>

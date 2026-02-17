@@ -1,12 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  FlatList,
-  TouchableOpacity,
-  StyleSheet,
-  Image,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, FlatList, TouchableOpacity, StyleSheet, Image } from 'react-native';;
 import { Stack } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
@@ -90,7 +84,7 @@ export default function LeaderboardScreen() {
       case 'volume':
         return `${(entry.totalVolume || 0).toLocaleString()} kg`;
       case 'streak':
-        return `${entry.streak || 0} días`;
+        return `${entry.streak || 0} dÃ­as`;
       default:
         return '';
     }
@@ -127,7 +121,7 @@ export default function LeaderboardScreen() {
           )}
           {item.isCurrentUser && (
             <View style={styles.youBadge}>
-              <Text style={styles.youBadgeText}>TÚ</Text>
+              <Text style={styles.youBadgeText}>TÃº</Text>
             </View>
           )}
         </View>
@@ -157,7 +151,7 @@ export default function LeaderboardScreen() {
     <View style={styles.container}>
       <Stack.Screen
         options={{
-          title: 'Clasificación',
+          title: 'ClasificaciÃ³n',
           headerStyle: { backgroundColor: '#000' },
           headerTintColor: '#fff',
         }}
@@ -256,7 +250,7 @@ export default function LeaderboardScreen() {
       {/* Leaderboard List */}
       {isLoading && (
         <View style={styles.centered}>
-          <Text style={styles.loadingText}>Cargando clasificación...</Text>
+          <Text style={styles.loadingText}>Cargando clasificaciÃ³n...</Text>
         </View>
       )}
 
@@ -265,7 +259,7 @@ export default function LeaderboardScreen() {
           <Ionicons name="trophy-outline" size={64} color="#666" />
           <Text style={styles.emptyText}>
             {selectedView === 'friends'
-              ? 'Aún no hay datos de tus amigos'
+              ? 'AÃºn no hay datos de tus amigos'
               : 'No hay datos disponibles'}
           </Text>
         </View>

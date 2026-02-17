@@ -1,12 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import {
-  View,
-  Text,
-  ScrollView,
-  TouchableOpacity,
-  Alert,
-  ActivityIndicator,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, ScrollView, TouchableOpacity, Alert, ActivityIndicator } from 'react-native';;
 import { router, useLocalSearchParams } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
@@ -90,7 +84,7 @@ export default function ActiveWorkoutScreen() {
       );
       setWorkout(response.data);
       
-      // Si se completó la serie, verificar auto-start rest timer
+      // Si se completÃ³ la serie, verificar auto-start rest timer
       if (!currentCompleted) {
         const autoStart = await settingsService.getSetting('autoStartRestTimer');
         if (autoStart) {
@@ -105,7 +99,7 @@ export default function ActiveWorkoutScreen() {
   const handleFinish = () => {
     Alert.alert(
       'Finalizar Entrenamiento',
-      '¿Seguro que quieres finalizar?',
+      'Â¿Seguro que quieres finalizar?',
       [
         { text: 'Cancelar', style: 'cancel' },
         {
@@ -114,7 +108,7 @@ export default function ActiveWorkoutScreen() {
           onPress: async () => {
             try {
               await workoutsApi.finishWorkout(id, timer);
-              Alert.alert('¡Éxito!', 'Entrenamiento completado', [
+              Alert.alert('Â¡Ã‰xito!', 'Entrenamiento completado', [
                 { text: 'OK', onPress: () => router.back() },
               ]);
             } catch (error) {
@@ -306,7 +300,7 @@ export default function ActiveWorkoutScreen() {
                         </Text>
                         <Text className="text-xs text-gray-600">
                           {set.reps} reps
-                          {set.weight && ` • ${set.weight} kg`}
+                          {set.weight && ` â€¢ ${set.weight} kg`}
                         </Text>
                       </View>
                     </View>

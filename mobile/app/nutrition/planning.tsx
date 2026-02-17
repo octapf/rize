@@ -1,11 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-  Alert,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, TouchableOpacity, ScrollView, Alert } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -33,7 +28,7 @@ interface MealPlan {
 const MEAL_PLANS: MealPlan[] = [
   {
     id: '1',
-    name: 'Plan Definición 2800 kcal',
+    name: 'Plan DefiniciÃ³n 2800 kcal',
     goal: 'Fat Loss',
     dailyCalories: 2800,
     meals: [
@@ -45,7 +40,7 @@ const MEAL_PLANS: MealPlan[] = [
         protein: 45,
         carbs: 75,
         fats: 18,
-        foods: ['Avena 80g', 'Proteína whey 1 scoop', 'Plátano', 'Mantequilla de maní 15g'],
+        foods: ['Avena 80g', 'ProteÃ­na whey 1 scoop', 'PlÃ¡tano', 'Mantequilla de manâ€¢ 15g'],
         prepTime: 10,
         difficulty: 'easy',
       },
@@ -72,7 +67,7 @@ const MEAL_PLANS: MealPlan[] = [
         foods: [
           'Arroz integral 150g',
           'Carne res magra 180g',
-          'Brócoli 200g',
+          'BrÃ³coli 200g',
           'Aguacate 30g',
         ],
         prepTime: 30,
@@ -86,7 +81,7 @@ const MEAL_PLANS: MealPlan[] = [
         protein: 40,
         carbs: 50,
         fats: 8,
-        foods: ['Proteína whey 1.5 scoops', 'Avena 60g', 'Fresas 100g'],
+        foods: ['ProteÃ­na whey 1.5 scoops', 'Avena 60g', 'Fresas 100g'],
         prepTime: 5,
         difficulty: 'easy',
       },
@@ -99,7 +94,7 @@ const MEAL_PLANS: MealPlan[] = [
         carbs: 35,
         fats: 22,
         foods: [
-          'Salmón 180g',
+          'SalmÃ³n 180g',
           'Batata 150g',
           'Espinacas 100g',
           'Aceite oliva 10ml',
@@ -115,7 +110,7 @@ const MEAL_PLANS: MealPlan[] = [
         protein: 30,
         carbs: 10,
         fats: 12,
-        foods: ['Caseína 1 scoop', 'Almendras 20g'],
+        foods: ['CaseÃ­na 1 scoop', 'Almendras 20g'],
         prepTime: 2,
         difficulty: 'easy',
       },
@@ -129,7 +124,7 @@ const MEAL_PLANS: MealPlan[] = [
     meals: [
       {
         id: 'm1',
-        name: 'Desayuno Anabólico',
+        name: 'Desayuno AnabÃ³lico',
         time: '07:00',
         calories: 850,
         protein: 50,
@@ -139,8 +134,8 @@ const MEAL_PLANS: MealPlan[] = [
           'Avena 120g',
           'Huevos enteros x4',
           'Pan integral 2 rebanadas',
-          'Plátano',
-          'Mantequilla maní 20g',
+          'PlÃ¡tano',
+          'Mantequilla manâ€¢ 20g',
         ],
         prepTime: 15,
         difficulty: 'easy',
@@ -153,13 +148,13 @@ const MEAL_PLANS: MealPlan[] = [
         protein: 35,
         carbs: 65,
         fats: 12,
-        foods: ['Arroz blanco 150g', 'Atún 120g', 'Aceite oliva 10ml'],
+        foods: ['Arroz blanco 150g', 'AtÃºn 120g', 'Aceite oliva 10ml'],
         prepTime: 10,
         difficulty: 'easy',
       },
       {
         id: 'm3',
-        name: 'Almuerzo Construcción',
+        name: 'Almuerzo ConstrucciÃ³n',
         time: '13:00',
         calories: 950,
         protein: 60,
@@ -189,19 +184,19 @@ const MEAL_PLANS: MealPlan[] = [
       },
       {
         id: 'm5',
-        name: 'Post-Workout Recuperación',
+        name: 'Post-Workout RecuperaciÃ³n',
         time: '19:00',
         calories: 550,
         protein: 45,
         carbs: 70,
         fats: 10,
-        foods: ['Proteína whey 2 scoops', 'Avena 80g', 'Plátano', 'Creatina 5g'],
+        foods: ['ProteÃ­na whey 2 scoops', 'Avena 80g', 'PlÃ¡tano', 'Creatina 5g'],
         prepTime: 5,
         difficulty: 'easy',
       },
       {
         id: 'm6',
-        name: 'Cena Alta Proteína',
+        name: 'Cena Alta ProteÃ­na',
         time: '21:30',
         calories: 700,
         protein: 55,
@@ -235,7 +230,7 @@ export default function MealPlanning() {
   const viewRecipe = (meal: Meal) => {
     Alert.alert(
       `ðŸ“– Receta: ${meal.name}`,
-      `Ingredientes:\n${meal.foods.join('\n')}\n\nTiempo de preparación: ${meal.prepTime} min`,
+      `Ingredientes:\n${meal.foods.join('\n')}\n\nTiempo de preparaciÃ³n: ${meal.prepTime} min`,
       [{ text: 'Entendido' }]
     );
   };
@@ -246,7 +241,7 @@ export default function MealPlanning() {
       'Selecciona tu objetivo',
       [
         {
-          text: 'Definición',
+          text: 'DefiniciÃ³n',
           onPress: () => setSelectedPlan(MEAL_PLANS[0]),
         },
         {
@@ -301,7 +296,7 @@ export default function MealPlanning() {
             <Ionicons name="arrow-back" size={24} color="white" />
           </TouchableOpacity>
           <Text className="text-white text-2xl font-bold flex-1 ml-3">
-            Planificación de Comidas
+            PlanificaciÃ³n de Comidas
           </Text>
           <TouchableOpacity onPress={changePlan}>
             <Ionicons name="swap-horizontal" size={24} color="#9D12DE" />
@@ -319,7 +314,7 @@ export default function MealPlanning() {
               <Text className="text-primary text-3xl font-bold">
                 {selectedPlan.dailyCalories}
               </Text>
-              <Text className="text-zinc-400 text-xs">kcal/día</Text>
+              <Text className="text-zinc-400 text-xs">kcal/dÃ­a</Text>
             </View>
           </View>
 
@@ -382,7 +377,7 @@ export default function MealPlanning() {
                     <View className="flex-row items-center gap-2">
                       <View className="bg-zinc-800 rounded px-2 py-1">
                         <Text className={`text-xs font-bold ${getDifficultyColor(meal.difficulty)}`}>
-                          {meal.difficulty === 'easy' ? 'Fácil' : meal.difficulty === 'medium' ? 'Media' : 'Difícil'}
+                          {meal.difficulty === 'easy' ? 'FÃ¡cil' : meal.difficulty === 'medium' ? 'Media' : 'DifÃ¡cil'}
                         </Text>
                       </View>
                       <View className="flex-row items-center">
@@ -458,7 +453,7 @@ export default function MealPlanning() {
               <View className="flex-1 ml-3">
                 <Text className="text-primary font-bold mb-2">Consistencia Nutricional</Text>
                 <Text className="text-primary/80 text-sm">
-                  Sigue el plan 6-7 días a la semana. La nutrición es 70% de tus resultados.
+                  Sigue el plan 6-7 dÃ­as a la semana. La nutriciÃ³n es 70% de tus resultados.
                 </Text>
               </View>
             </View>

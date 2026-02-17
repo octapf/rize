@@ -1,10 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, TouchableOpacity, ScrollView } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -536,14 +532,14 @@ export default function PlateauBreaking() {
                 <View className="bg-red-500/10 rounded-xl p-4 border border-red-500/30 mb-4">
                   <Text className="text-red-400 font-bold mb-2">Real Plateau:</Text>
                   {currentStrategy.real_vs_perceived?.real_plateau.map((sign: string, idx: number) => (
-                    <Text key={idx} className="text-red-300 text-sm mb-1">� {sign}</Text>
+                    <Text key={idx} className="text-red-300 text-sm mb-1">• {sign}</Text>
                   ))}
                 </View>
 
                 <View className="bg-primary/10 rounded-xl p-4 border border-primary/30">
                   <Text className="text-primary font-bold mb-2">Not Actually Plateau:</Text>
                   {currentStrategy.real_vs_perceived?.not_plateau.map((sign: string, idx: number) => (
-                    <Text key={idx} className="text-primary/80 text-sm mb-1">� {sign}</Text>
+                    <Text key={idx} className="text-primary/80 text-sm mb-1">• {sign}</Text>
                   ))}
                 </View>
               </View>
@@ -556,7 +552,7 @@ export default function PlateauBreaking() {
                     
                     <Text className="text-zinc-400 font-bold text-sm mb-2">Signs:</Text>
                     {cat.signs.map((sign: string, sIdx: number) => (
-                      <Text key={sIdx} className="text-zinc-300 text-sm mb-1">� {sign}</Text>
+                      <Text key={sIdx} className="text-zinc-300 text-sm mb-1">• {sign}</Text>
                     ))}
 
                     <View className="bg-primary/10 rounded-xl p-3 border border-primary/30 mt-3">
@@ -583,16 +579,16 @@ export default function PlateauBreaking() {
           <View className="bg-gradient-to-r from-primary/20 to-primary/100/20 rounded-xl p-5 border border-primary/30 mb-6">
             <Text className="text-primary font-bold text-lg mb-3">Key Principles</Text>
             <Text className="text-primary/80 text-sm mb-2">
-              � Identify the root cause before changing everything
+              • Identify the root cause before changing everything
             </Text>
             <Text className="text-primary/80 text-sm mb-2">
-              � Change ONE variable at a time when possible
+              • Change ONE variable at a time when possible
             </Text>
             <Text className="text-primary/80 text-sm mb-2">
-              � Give changes 4-6 weeks to work
+              • Give changes 4-6 weeks to work
             </Text>
             <Text className="text-primary/80 text-sm">
-              � Sometimes you need to get weaker short-term to get stronger long-term
+              • Sometimes you need to get weaker short-term to get stronger long-term
             </Text>
           </View>
         </View>

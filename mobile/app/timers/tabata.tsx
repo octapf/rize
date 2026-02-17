@@ -1,10 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, TouchableOpacity, ScrollView } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -73,7 +69,7 @@ export default function TabataTimer() {
             >
               <Text className="text-white font-bold text-lg mb-2">{preset.name}</Text>
               <Text className="text-zinc-400 text-sm">
-                {preset.work}s work � {preset.rest}s rest � {preset.rounds} rounds
+                {preset.work}s work • {preset.rest}s rest • {preset.rounds} rounds
               </Text>
             </TouchableOpacity>
           ))}

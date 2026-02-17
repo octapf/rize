@@ -1,12 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-  TextInput,
-  Alert,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, TouchableOpacity, ScrollView, TextInput, Alert } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -115,7 +109,7 @@ const MEASUREMENT_HISTORY: MeasurementHistory[] = [
 ];
 
 const CALIPER_SITES = [
-  { id: '1', name: 'Tr韈eps', value: 12, unit: 'mm', icon: 'bonfire' },
+  { id: '1', name: 'Tr铆ceps', value: 12, unit: 'mm', icon: 'bonfire' },
   { id: '2', name: 'Subescapular', value: 18, unit: 'mm', icon: 'body' },
   { id: '3', name: 'Suprailiaco', value: 22, unit: 'mm', icon: 'analytics' },
   { id: '4', name: 'Abdominal', value: 24, unit: 'mm', icon: 'ellipse-outline' },
@@ -138,8 +132,8 @@ export default function BodyMeasurements() {
 
   const addMeasurement = (bodyPart: string) => {
     Alert.alert(
-      'Nueva Medici髇',
-      `Ingresa la medici髇 para ${bodyPart}`,
+      'Nueva Medici贸n',
+      `Ingresa la medici贸n para ${bodyPart}`,
       [
         {
           text: 'Cancelar',
@@ -148,7 +142,7 @@ export default function BodyMeasurements() {
         {
           text: 'Guardar',
           onPress: () => {
-            Alert.alert('Guardado', `Medici髇 de ${bodyPart} registrada`);
+            Alert.alert('Guardado', `Medici贸n de ${bodyPart} registrada`);
           },
         },
       ]
@@ -196,7 +190,7 @@ export default function BodyMeasurements() {
                 +3.2 cm
               </Text>
               <Text className="text-white/80 text-sm">
-                M鷖culo ganado en 醨eas clave
+                M煤sculo ganado en 谩reas clave
               </Text>
             </View>
             <View className="bg-white/20 rounded-full p-4">
@@ -353,7 +347,7 @@ export default function BodyMeasurements() {
             </View>
 
             <Text className="text-white font-bold text-lg mb-3">
-              Sitios de Medici髇 (7 pliegues)
+              Sitios de Medici贸n (7 pliegues)
             </Text>
 
             {CALIPER_SITES.map((site) => (
@@ -384,7 +378,7 @@ export default function BodyMeasurements() {
               <View className="flex-row items-center justify-center">
                 <Ionicons name="add-circle" size={20} color="white" />
                 <Text className="text-white font-bold ml-2">
-                  Nueva Medici髇 Completa
+                  Nueva Medici贸n Completa
                 </Text>
               </View>
             </TouchableOpacity>
@@ -487,7 +481,7 @@ export default function BodyMeasurements() {
                   Mide Siempre en las Mismas Condiciones
                 </Text>
                 <Text className="text-amber-300 text-sm">
-                  Para resultados precisos, mide siempre a la misma hora del d韆, en ayunas, y despu閟 de ir al ba駉.
+                  Para resultados precisos, mide siempre a la misma hora del d铆a, en ayunas, y despu茅s de ir al ba帽o.
                 </Text>
               </View>
             </View>

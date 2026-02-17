@@ -1,11 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-  Alert,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, TouchableOpacity, ScrollView, Alert } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -30,14 +25,14 @@ const WARMUP_ROUTINES: WarmupRoutine[] = [
     id: '1',
     name: 'Calentamiento General (10 min)',
     duration: 10,
-    focus: 'Preparación cardiovascular y articular',
+    focus: 'PreparaciÃ³n cardiovascular y articular',
     level: 'general',
     exercises: [
       { name: 'Jumping Jacks', duration: '2 min', notes: 'Ritmo moderado, subir temperatura corporal' },
-      { name: 'Arm Circles', duration: '1 min', reps: '20 adelante + 20 atrás', notes: 'Círculos amplios, hombros relajados' },
-      { name: 'Hip Circles', duration: '1 min', reps: '10 cada dirección', notes: 'Manos en cadera, círculos grandes' },
-      { name: 'Leg Swings', duration: '2 min', reps: '15 cada lado', notes: 'Adelante-atrás y lateral' },
-      { name: 'Torso Twists', duration: '1 min', reps: '20 total', notes: 'Rotación suave de tronco' },
+      { name: 'Arm Circles', duration: '1 min', reps: '20 adelante + 20 atrÃ¡s', notes: 'CÃ­rculos amplios, hombros relajados' },
+      { name: 'Hip Circles', duration: '1 min', reps: '10 cada direcciÃ³n', notes: 'Manos en cadera, cÃ­rculos grandes' },
+      { name: 'Leg Swings', duration: '2 min', reps: '15 cada lado', notes: 'Adelante-atrÃ¡s y lateral' },
+      { name: 'Torso Twists', duration: '1 min', reps: '20 total', notes: 'RotaciÃ³n suave de tronco' },
       { name: 'Light Jog', duration: '3 min', notes: 'Trotar suave en sitio o cinta' },
     ],
     benefits: ['Aumenta temperatura corporal', 'Prepara articulaciones', 'Activa sistema cardiovascular', 'Reduce riesgo lesiones'],
@@ -50,12 +45,12 @@ const WARMUP_ROUTINES: WarmupRoutine[] = [
     focus: 'Hombros, pecho, espalda y brazos',
     level: 'upper',
     exercises: [
-      { name: 'Band Pull-Aparts', duration: '2 min', reps: '3x15', notes: 'Con banda elástica, retracción escapular' },
+      { name: 'Band Pull-Aparts', duration: '2 min', reps: '3x15', notes: 'Con banda elÃ¡stica, retracciÃ³n escapular' },
       { name: 'Scapular Push-ups', duration: '2 min', reps: '2x10', notes: 'Solo movimiento escapular, brazos rectos' },
       { name: 'Wall Slides', duration: '2 min', reps: '3x12', notes: 'Espalda contra pared, brazos en W' },
       { name: 'Cat-Cow', duration: '2 min', reps: '15 reps', notes: 'Movilidad de columna' },
       { name: 'Shoulder Dislocations', duration: '2 min', reps: '10 reps', notes: 'Con banda o palo, rango completo' },
-      { name: 'Light DB Press', duration: '2 min', reps: '2x12', notes: 'Peso muy ligero, activación' },
+      { name: 'Light DB Press', duration: '2 min', reps: '2x12', notes: 'Peso muy ligero, activaciÃ³n' },
     ],
     benefits: ['Moviliza hombros', 'Activa escapulares', 'Previene lesiones', 'Mejora rango de movimiento'],
     icon: 'ðŸ’ª',
@@ -64,68 +59,68 @@ const WARMUP_ROUTINES: WarmupRoutine[] = [
     id: '3',
     name: 'Warm-up Tren Inferior',
     duration: 12,
-    focus: 'Caderas, glúteos, cuádriceps e isquios',
+    focus: 'Caderas, glÃºteos, cuÃ¡driceps e isquios',
     level: 'lower',
     exercises: [
-      { name: 'Glute Bridges', duration: '2 min', reps: '2x15', notes: 'Contracción glúteos, hold 1 seg arriba' },
+      { name: 'Glute Bridges', duration: '2 min', reps: '2x15', notes: 'ContracciÃ³n glÃºteos, hold 1 seg arriba' },
       { name: 'Bodyweight Squats', duration: '2 min', reps: '20 reps', notes: 'Profundidad completa, tempo lento' },
-      { name: 'Walking Lunges', duration: '2 min', reps: '10 cada pierna', notes: 'Activación glúteos y cuádriceps' },
+      { name: 'Walking Lunges', duration: '2 min', reps: '10 cada pierna', notes: 'ActivaciÃ³n glÃºteos y cuÃ¡driceps' },
       { name: '90/90 Hip Stretch', duration: '2 min', reps: '30 seg/lado', notes: 'Movilidad interna/externa cadera' },
       { name: 'Cossack Squats', duration: '2 min', reps: '8 cada lado', notes: 'Movilidad lateral de cadera' },
-      { name: 'Leg Swings', duration: '2 min', reps: '15 cada dirección', notes: 'Preparación dinámica' },
+      { name: 'Leg Swings', duration: '2 min', reps: '15 cada direcciÃ³n', notes: 'PreparaciÃ³n dinÃ¡mica' },
     ],
-    benefits: ['Activa glúteos', 'Moviliza caderas', 'Prepara rodillas', 'Previene dolor lumbar'],
+    benefits: ['Activa glÃºteos', 'Moviliza caderas', 'Prepara rodillas', 'Previene dolor lumbar'],
     icon: '??',
   },
   {
     id: '4',
     name: 'Warm-up Sentadilla Pesada',
     duration: 15,
-    focus: 'Preparación específica para squat heavy',
+    focus: 'PreparaciÃ³n especÃ­fica para squat heavy',
     level: 'specific',
     exercises: [
-      { name: 'Foam Roll IT Band + Quads', duration: '3 min', notes: 'Liberación miofascial' },
+      { name: 'Foam Roll IT Band + Quads', duration: '3 min', notes: 'LiberaciÃ³n miofascial' },
       { name: 'Goblet Squats', duration: '2 min', reps: '2x10', notes: 'Con kettlebell o mancuerna' },
       { name: 'Box Squats', duration: '2 min', reps: '2x8', notes: 'Profundidad progresiva' },
       { name: 'Pause Squats', duration: '3 min', reps: '3x5', notes: 'Solo barra, pause 3 seg abajo' },
-      { name: 'Empty Bar Squats', duration: '2 min', reps: '2x8', notes: 'Técnica perfecta' },
+      { name: 'Empty Bar Squats', duration: '2 min', reps: '2x8', notes: 'TÃ©cnica perfecta' },
       { name: 'Ramp-up Sets', duration: '3 min', reps: '50%, 70%, 85% x3', notes: 'Acercarse al peso de trabajo' },
     ],
-    benefits: ['Grooving técnica', 'Preparación neuromuscular', 'Gradiente de carga', 'Confianza mental'],
+    benefits: ['Grooving tÃ©cnica', 'PreparaciÃ³n neuromuscular', 'Gradiente de carga', 'Confianza mental'],
     icon: 'ðŸ‹ï¸',
   },
   {
     id: '5',
     name: 'Warm-up Press de Banca',
     duration: 15,
-    focus: 'Preparación específica para bench press',
+    focus: 'PreparaciÃ³n especÃ­fica para bench press',
     level: 'specific',
     exercises: [
-      { name: 'Band Pull-Aparts', duration: '2 min', reps: '3x20', notes: 'Activación escapular' },
-      { name: 'Push-ups', duration: '2 min', reps: '2x12', notes: 'Activación pectorales' },
-      { name: 'Empty Bar Bench', duration: '2 min', reps: '2x10', notes: 'Groove patrón de movimiento' },
+      { name: 'Band Pull-Aparts', duration: '2 min', reps: '3x20', notes: 'ActivaciÃ³n escapular' },
+      { name: 'Push-ups', duration: '2 min', reps: '2x12', notes: 'ActivaciÃ³n pectorales' },
+      { name: 'Empty Bar Bench', duration: '2 min', reps: '2x10', notes: 'Groove patrÃ³n de movimiento' },
       { name: 'Scapular Retractions', duration: '2 min', reps: '15 reps', notes: 'En banco, solo escapulares' },
       { name: 'Light DB Press', duration: '2 min', reps: '2x10', notes: 'Mancuernas ligeras' },
-      { name: 'Ramp-up Sets', duration: '5 min', reps: '50%, 60%, 70%, 80% x5-3', notes: 'Aproximación al peso de trabajo' },
+      { name: 'Ramp-up Sets', duration: '5 min', reps: '50%, 60%, 70%, 80% x5-3', notes: 'AproximaciÃ³n al peso de trabajo' },
     ],
-    benefits: ['Estabilidad escapular', 'Activación arco torácico', 'Preparación neurológica', 'Prevención lesiones hombro'],
+    benefits: ['Estabilidad escapular', 'ActivaciÃ³n arco torÃ¡cico', 'PreparaciÃ³n neurolÃ³gica', 'PrevenciÃ³n lesiones hombro'],
     icon: 'ðŸ’ª',
   },
   {
     id: '6',
     name: 'Warm-up Peso Muerto',
     duration: 15,
-    focus: 'Preparación específica para deadlift',
+    focus: 'PreparaciÃ³n especÃ­fica para deadlift',
     level: 'specific',
     exercises: [
       { name: 'Cat-Cow', duration: '2 min', reps: '15 reps', notes: 'Movilidad columna' },
       { name: 'Romanian Deadlifts', duration: '2 min', reps: '2x10', notes: 'Solo barra, bisagra cadera' },
-      { name: 'Glute Bridges', duration: '2 min', reps: '2x15', notes: 'Activación glúteos y core' },
+      { name: 'Glute Bridges', duration: '2 min', reps: '2x15', notes: 'ActivaciÃ³n glÃºteos y core' },
       { name: 'Dead Bugs', duration: '2 min', reps: '10 cada lado', notes: 'Estabilidad core' },
-      { name: 'Light Deadlifts', duration: '2 min', reps: '2x5', notes: 'Técnica con peso ligero' },
+      { name: 'Light Deadlifts', duration: '2 min', reps: '2x5', notes: 'TÃ©cnica con peso ligero' },
       { name: 'Ramp-up Sets', duration: '5 min', reps: '40%, 60%, 75%, 85% x5-3', notes: 'Build up al peso de trabajo' },
     ],
-    benefits: ['Patrón bisagra cadera', 'Activación posterior chain', 'Setup mental', 'Agarre preparado'],
+    benefits: ['PatrÃ³n bisagra cadera', 'ActivaciÃ³n posterior chain', 'Setup mental', 'Agarre preparado'],
     icon: 'ðŸ‹ï¸',
   },
 ];
@@ -140,7 +135,7 @@ export default function WarmupRoutines() {
     { id: 'general', label: 'General', icon: 'flame' },
     { id: 'upper', label: 'Tren Superior', icon: 'body' },
     { id: 'lower', label: 'Tren Inferior', icon: 'walk' },
-    { id: 'specific', label: 'Específico', icon: 'fitness' },
+    { id: 'specific', label: 'EspecÃ­fico', icon: 'fitness' },
   ];
 
   const filteredRoutines = filter === 'all'
@@ -261,7 +256,7 @@ export default function WarmupRoutines() {
                     ))}
                     {routine.exercises.length > 3 && (
                       <Text className="text-primary/80 text-sm ml-3.5">
-                        +{routine.exercises.length - 3} más
+                        +{routine.exercises.length - 3} mÃ¡s
                       </Text>
                     )}
                   </View>
@@ -369,10 +364,10 @@ export default function WarmupRoutines() {
                       Consejos de Calentamiento
                     </Text>
                     <Text className="text-primary/60 text-sm">
-                      • Progresión: general â†’ específico{'\n'}
-                      • Mayor intensidad = más warm-up{'\n'}
-                      • En frío: +5 min extra{'\n'}
-                      • No fatigues antes de entrenar
+                      â€¢ ProgresiÃ³n: general â†’ especÃ­fico{'\n'}
+                      â€¢ Mayor intensidad = mÃ¡s warm-up{'\n'}
+                      â€¢ En frÃ­o: +5 min extra{'\n'}
+                      â€¢ No fatigues antes de entrenar
                     </Text>
                   </View>
                 </View>

@@ -1,12 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-  TextInput,
-  Alert,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, TouchableOpacity, ScrollView, TextInput, Alert } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import { format } from 'date-fns';
@@ -25,15 +19,15 @@ interface RPEEntry {
 
 const RPE_SCALE = [
   { value: 10, label: 'Max Esfuerzo', description: 'Imposible hacer otra rep', color: 'red', reps: '0 RIR' },
-  { value: 9.5, label: 'Casi Max', description: 'Quiz�s 1 rep m�s', color: 'red', reps: '0-1 RIR' },
-  { value: 9, label: 'Muy Duro', description: '1 rep m�s seguro', color: 'orange', reps: '1 RIR' },
-  { value: 8.5, label: 'Duro+', description: '1-2 reps m�s', color: 'orange', reps: '1-2 RIR' },
-  { value: 8, label: 'Duro', description: '2 reps m�s', color: 'amber', reps: '2 RIR' },
-  { value: 7.5, label: 'Moderado+', description: '2-3 reps m�s', color: 'amber', reps: '2-3 RIR' },
-  { value: 7, label: 'Moderado', description: '3 reps m�s', color: 'yellow', reps: '3 RIR' },
-  { value: 6, label: 'Moderado-', description: '4 reps m�s', color: 'lime', reps: '4 RIR' },
-  { value: 5, label: 'F�cil', description: '5+ reps m�s', color: 'primary', reps: '5+ RIR' },
-  { value: 4, label: 'Muy F�cil', description: 'Calentamiento', color: 'blue', reps: 'Warmup' },
+  { value: 9.5, label: 'Casi Max', description: 'Quizás 1 rep más', color: 'red', reps: '0-1 RIR' },
+  { value: 9, label: 'Muy Duro', description: '1 rep más seguro', color: 'orange', reps: '1 RIR' },
+  { value: 8.5, label: 'Duro+', description: '1-2 reps más', color: 'orange', reps: '1-2 RIR' },
+  { value: 8, label: 'Duro', description: '2 reps más', color: 'amber', reps: '2 RIR' },
+  { value: 7.5, label: 'Moderado+', description: '2-3 reps más', color: 'amber', reps: '2-3 RIR' },
+  { value: 7, label: 'Moderado', description: '3 reps más', color: 'yellow', reps: '3 RIR' },
+  { value: 6, label: 'Moderado-', description: '4 reps más', color: 'lime', reps: '4 RIR' },
+  { value: 5, label: 'Fácil', description: '5+ reps más', color: 'primary', reps: '5+ RIR' },
+  { value: 4, label: 'Muy Fácil', description: 'Calentamiento', color: 'blue', reps: 'Warmup' },
 ];
 
 const COMMON_EXERCISES = [
@@ -54,7 +48,7 @@ const MOCK_ENTRIES: RPEEntry[] = [
     reps: 6,
     weight: 100,
     rpe: 8.5,
-    notes: '�ltima serie muy dura',
+    notes: 'Última serie muy dura',
   },
   {
     id: '2',
@@ -114,7 +108,7 @@ export default function RPETracker() {
   const deleteEntry = (id: string) => {
     Alert.alert(
       'Eliminar Entrada',
-      '�Est�s seguro?',
+      '¿Estás seguro?',
       [
         { text: 'Cancelar' },
         { text: 'Eliminar', style: 'destructive', onPress: () => setEntries(entries.filter((e) => e.id !== id)) },
@@ -162,7 +156,7 @@ export default function RPETracker() {
     }
 
     return {
-      message: 'Mant�n peso actual, progresando bien',
+      message: 'Mantén peso actual, progresando bien',
       color: 'blue',
       icon: 'checkmark-circle',
     };
@@ -298,7 +292,7 @@ export default function RPETracker() {
                 <Text className="text-zinc-400 text-sm mb-2">Notas (opcional)</Text>
                 <TextInput
                   className="bg-zinc-800 rounded-lg px-4 py-3 text-white"
-                  placeholder="Ej: �ltima serie muy dura..."
+                  placeholder="Ej: Última serie muy dura..."
                   placeholderTextColor="#71717A"
                   multiline
                   value={newEntry.notes}
@@ -323,7 +317,7 @@ export default function RPETracker() {
                   {getAverageRPE() || '-'}
                 </Text>
                 <Text className="text-white opacity-90">
-                  �ltimas {entries.length} sesiones registradas
+                  Últimas {entries.length} sesiones registradas
                 </Text>
               </View>
 
@@ -383,7 +377,7 @@ export default function RPETracker() {
                         {/* RPE Info */}
                         <View className={`bg-${rpeInfo.color}-500/10 rounded-lg p-3 mb-3 border border-${rpeInfo.color}-500/30`}>
                           <Text className={`text-${rpeInfo.color}-400 font-bold text-sm mb-1`}>
-                            {rpeInfo.label} � {rpeInfo.reps}
+                            {rpeInfo.label} • {rpeInfo.reps}
                           </Text>
                           <Text className={`text-${rpeInfo.color}-300 text-xs`}>
                             {rpeInfo.description}
@@ -438,15 +432,15 @@ export default function RPETracker() {
               <Ionicons name="bulb" size={20} color="#9D12DE" />
               <View className="flex-1 ml-3">
                 <Text className="text-primary/80 font-bold mb-2">
-                  C�mo Usar RPE
+                  Cómo Usar RPE
                 </Text>
                 <Text className="text-primary/60 text-sm">
-                  � Objetivo hipertrofia: RPE 7-9{'\n'}
-                  � Objetivo fuerza: RPE 7-8.5{'\n'}
-                  � Siempre deja 1-2 reps en reserva{'\n'}
-                  � RPE 10 solo en tests de max{'\n'}
-                  � Trackea para ajustar peso/volumen{'\n'}
-                  � Aprende a ser honesto contigo mismo
+                  • Objetivo hipertrofia: RPE 7-9{'\n'}
+                  • Objetivo fuerza: RPE 7-8.5{'\n'}
+                  • Siempre deja 1-2 reps en reserva{'\n'}
+                  • RPE 10 solo en tests de max{'\n'}
+                  • Trackea para ajustar peso/volumen{'\n'}
+                  • Aprende a ser honesto contigo mismo
                 </Text>
               </View>
             </View>

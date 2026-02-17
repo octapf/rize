@@ -1,11 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-  TextInput,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, TouchableOpacity, ScrollView, TextInput } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -135,7 +130,7 @@ export default function PRTracker() {
               <View key={idx} className="flex-row items-center justify-between bg-zinc-800 rounded-xl p-4 mb-2 last:mb-0">
                 <View className="flex-1">
                   <Text className="text-white font-bold text-lg">
-                    {pr.weight}kg × {pr.reps}
+                    {pr.weight}kg â€¢ {pr.reps}
                   </Text>
                   <Text className="text-zinc-400 text-sm">{pr.date}</Text>
                 </View>
@@ -198,16 +193,16 @@ export default function PRTracker() {
           <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
             <Text className="text-primary/80 font-bold mb-2">PR Tips</Text>
             <Text className="text-primary/60 text-sm mb-2">
-              • Test PRs when fresh, not after volume work
+              â€¢ Test PRs when fresh, not after volume work
             </Text>
             <Text className="text-primary/60 text-sm mb-2">
-              • Film your lifts to verify form
+              â€¢ Film your lifts to verify form
             </Text>
             <Text className="text-primary/60 text-sm mb-2">
-              • Rep PRs count too! 5RM progress = strength gains
+              â€¢ Rep PRs count too! 5RM progress = strength gains
             </Text>
             <Text className="text-primary/60 text-sm">
-              • Don't test 1RM more than once per month
+              â€¢ Don't test 1RM more than once per month
             </Text>
           </View>
         </View>

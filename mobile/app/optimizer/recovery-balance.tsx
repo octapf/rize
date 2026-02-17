@@ -1,11 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-  TextInput,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, TouchableOpacity, ScrollView, TextInput } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -271,7 +266,7 @@ export default function RecoveryBalance() {
                 <Text className={`text-${factor.color}-400 font-bold text-xs mb-1`}>IMPROVEMENT TIPS</Text>
                 {factor.tips.map((tip, tipIdx) => (
                   <Text key={tipIdx} className={`text-${factor.color}-300 text-xs mb-1`}>
-                    • {tip}
+                    â€¢ {tip}
                   </Text>
                 ))}
               </View>
@@ -294,12 +289,12 @@ export default function RecoveryBalance() {
           <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
             <Text className="text-primary/80 font-bold mb-2">Recovery Principles</Text>
             <Text className="text-primary/60 text-sm">
-              • Recovery = when muscle grows{'\n'}
-              • Sleep is #1 priority{'\n'}
-              • Stress kills gains{'\n'}
-              • Track trends, not single days{'\n'}
-              • Auto-regulate training intensity{'\n'}
-              • Deload every 6-8 weeks minimum
+              â€¢ Recovery = when muscle grows{'\n'}
+              â€¢ Sleep is #1 priority{'\n'}
+              â€¢ Stress kills gains{'\n'}
+              â€¢ Track trends, not single days{'\n'}
+              â€¢ Auto-regulate training intensity{'\n'}
+              â€¢ Deload every 6-8 weeks minimum
             </Text>
           </View>
         </View>

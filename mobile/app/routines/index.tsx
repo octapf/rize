@@ -1,14 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  ScrollView,
-  TouchableOpacity,
-  StyleSheet,
-  Alert,
-  Modal,
-  FlatList,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, ScrollView, TouchableOpacity, StyleSheet, Alert, Modal, FlatList } from 'react-native';;
 import { Stack, router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
@@ -20,10 +12,10 @@ import { useToast } from '@/contexts/ToastContext';
 const DAYS = [
   { key: 'monday', label: 'Lun', fullName: 'Lunes', icon: 'today' },
   { key: 'tuesday', label: 'Mar', fullName: 'Martes', icon: 'today' },
-  { key: 'wednesday', label: 'Mié', fullName: 'Miércoles', icon: 'today' },
+  { key: 'wednesday', label: 'MiÃ©', fullName: 'MiÃ©rcoles', icon: 'today' },
   { key: 'thursday', label: 'Jue', fullName: 'Jueves', icon: 'today' },
   { key: 'friday', label: 'Vie', fullName: 'Viernes', icon: 'today' },
-  { key: 'saturday', label: 'Sáb', fullName: 'Sábado', icon: 'today' },
+  { key: 'saturday', label: 'SÃ¡b', fullName: 'SÃ¡bado', icon: 'today' },
   { key: 'sunday', label: 'Dom', fullName: 'Domingo', icon: 'today' },
 ];
 
@@ -102,7 +94,7 @@ export default function RoutinesScreen() {
 
     Alert.alert(
       'Eliminar entrenamiento',
-      `¿Quitar el entrenamiento del ${DAYS.find((d) => d.key === day)?.fullName}?`,
+      `Â¿Quitar el entrenamiento del ${DAYS.find((d) => d.key === day)?.fullName}?`,
       [
         { text: 'Cancelar', style: 'cancel' },
         {
@@ -220,7 +212,7 @@ export default function RoutinesScreen() {
                   </View>
                 ) : (
                   <View style={styles.emptyDay}>
-                    <Text style={styles.emptyDayText}>Día de descanso</Text>
+                    <Text style={styles.emptyDayText}>DÃ­a de descanso</Text>
                   </View>
                 )}
               </TouchableOpacity>
@@ -277,7 +269,7 @@ export default function RoutinesScreen() {
                   <View style={{ flex: 1 }}>
                     <Text style={styles.templateItemName}>{item.name}</Text>
                     <Text style={styles.templateItemMeta}>
-                      {item.exercises?.length || 0} ejercicios • {item.category}
+                      {item.exercises?.length || 0} ejercicios â€¢ {item.category}
                     </Text>
                   </View>
                   <Ionicons name="checkmark-circle" size={24} color="#9D12DE" />

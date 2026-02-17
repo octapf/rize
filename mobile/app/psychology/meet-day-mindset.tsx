@@ -1,10 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, TouchableOpacity, ScrollView } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -447,7 +443,7 @@ export default function MeetDayMindset() {
                     <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-3">
                       <Text className="text-primary/80 font-bold mb-2">Techniques:</Text>
                       {item.techniques.map((tech: string, tIdx: number) => (
-                        <Text key={tIdx} className="text-primary/60 text-sm mb-1">� {tech}</Text>
+                        <Text key={tIdx} className="text-primary/60 text-sm mb-1">• {tech}</Text>
                       ))}
                     </View>
                   )}
@@ -457,7 +453,7 @@ export default function MeetDayMindset() {
                   ))}
 
                   {item.plan && item.plan.map((p: string, pIdx: number) => (
-                    <Text key={pIdx} className="text-zinc-300 mb-2">� {p}</Text>
+                    <Text key={pIdx} className="text-zinc-300 mb-2">• {p}</Text>
                   ))}
 
                   {item.frequency && (
@@ -476,14 +472,14 @@ export default function MeetDayMindset() {
                 <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-4">
                   <Text className="text-primary font-bold mb-2">? Do:</Text>
                   {currentPhase.nightBefore?.dos.map((item: string, idx: number) => (
-                    <Text key={idx} className="text-primary/80 text-sm mb-1">� {item}</Text>
+                    <Text key={idx} className="text-primary/80 text-sm mb-1">• {item}</Text>
                   ))}
                 </View>
 
                 <View className="bg-red-500/10 rounded-xl p-4 border border-red-500/30">
                   <Text className="text-red-400 font-bold mb-2">? Don't:</Text>
                   {currentPhase.nightBefore?.donts.map((item: string, idx: number) => (
-                    <Text key={idx} className="text-red-300 text-sm mb-1">� {item}</Text>
+                    <Text key={idx} className="text-red-300 text-sm mb-1">• {item}</Text>
                   ))}
                 </View>
               </View>
@@ -500,13 +496,13 @@ export default function MeetDayMindset() {
 
                 <Text className="text-white font-bold mb-2">Priorities:</Text>
                 {currentPhase.arrival?.priorities.map((priority: string, idx: number) => (
-                  <Text key={idx} className="text-zinc-300 mb-2">� {priority}</Text>
+                  <Text key={idx} className="text-zinc-300 mb-2">• {priority}</Text>
                 ))}
 
                 <View className="bg-amber-500/10 rounded-xl p-4 border border-amber-500/30 mt-4">
                   <Text className="text-amber-400 font-bold mb-2">Expect:</Text>
                   {currentPhase.arrival?.atmosphere.map((item: string, idx: number) => (
-                    <Text key={idx} className="text-amber-300 text-sm mb-1">� {item}</Text>
+                    <Text key={idx} className="text-amber-300 text-sm mb-1">• {item}</Text>
                   ))}
                 </View>
               </View>
@@ -517,14 +513,14 @@ export default function MeetDayMindset() {
                 <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-4">
                   <Text className="text-primary font-bold mb-2">Strategy:</Text>
                   {currentPhase.warmupRoom?.strategy.map((item: string, idx: number) => (
-                    <Text key={idx} className="text-primary/80 text-sm mb-1">� {item}</Text>
+                    <Text key={idx} className="text-primary/80 text-sm mb-1">• {item}</Text>
                   ))}
                 </View>
 
                 <View className="bg-purple-500/10 rounded-xl p-4 border border-purple-500/30">
                   <Text className="text-purple-400 font-bold mb-2">Mental Approach:</Text>
                   {currentPhase.warmupRoom?.mentalApproach.map((item: string, idx: number) => (
-                    <Text key={idx} className="text-purple-300 text-sm mb-1">� {item}</Text>
+                    <Text key={idx} className="text-purple-300 text-sm mb-1">• {item}</Text>
                   ))}
                 </View>
               </View>
@@ -546,14 +542,14 @@ export default function MeetDayMindset() {
                 <View className="bg-purple-500/10 rounded-xl p-4 border border-purple-500/30 mb-4">
                   <Text className="text-purple-400 font-bold mb-2">Mindset:</Text>
                   {currentPhase.approach?.mindset.map((item: string, idx: number) => (
-                    <Text key={idx} className="text-purple-300 text-sm mb-1">� {item}</Text>
+                    <Text key={idx} className="text-purple-300 text-sm mb-1">• {item}</Text>
                   ))}
                 </View>
 
                 <View className="bg-primary/10 rounded-xl p-4 border border-primary/30">
                   <Text className="text-primary/80 font-bold mb-2">Technique:</Text>
                   {currentPhase.approach?.technique.map((item: string, idx: number) => (
-                    <Text key={idx} className="text-primary/60 text-sm mb-1">� {item}</Text>
+                    <Text key={idx} className="text-primary/60 text-sm mb-1">• {item}</Text>
                   ))}
                 </View>
               </View>
@@ -576,7 +572,7 @@ export default function MeetDayMindset() {
                 <Text className="text-red-400 font-bold text-lg mb-2">Commands - {currentPhase.commands?.importance}</Text>
                 <Text className="text-red-300 text-sm mb-3">Practice:</Text>
                 {currentPhase.commands?.practice.map((item: string, idx: number) => (
-                  <Text key={idx} className="text-red-300 text-sm mb-1">� {item}</Text>
+                  <Text key={idx} className="text-red-300 text-sm mb-1">• {item}</Text>
                 ))}
               </View>
             </View>
@@ -592,7 +588,7 @@ export default function MeetDayMindset() {
                     <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-4">
                       <Text className="text-primary/80 font-bold mb-2">Reality:</Text>
                       {section.reality.map((item: string, idx: number) => (
-                        <Text key={idx} className="text-primary/60 text-sm mb-1">� {item}</Text>
+                        <Text key={idx} className="text-primary/60 text-sm mb-1">• {item}</Text>
                       ))}
                     </View>
                   )}
@@ -601,7 +597,7 @@ export default function MeetDayMindset() {
                     <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-4">
                       <Text className="text-primary font-bold mb-2">Techniques:</Text>
                       {section.techniques.map((item: string, idx: number) => (
-                        <Text key={idx} className="text-primary/80 text-sm mb-1">� {item}</Text>
+                        <Text key={idx} className="text-primary/80 text-sm mb-1">• {item}</Text>
                       ))}
                     </View>
                   )}
@@ -610,7 +606,7 @@ export default function MeetDayMindset() {
                     <View className="bg-purple-500/10 rounded-xl p-4 border border-purple-500/30 mb-4">
                       <Text className="text-purple-400 font-bold mb-2">Building Confidence:</Text>
                       {section.building.map((item: string, idx: number) => (
-                        <Text key={idx} className="text-purple-300 text-sm mb-1">� {item}</Text>
+                        <Text key={idx} className="text-purple-300 text-sm mb-1">• {item}</Text>
                       ))}
                     </View>
                   )}
@@ -676,7 +672,7 @@ export default function MeetDayMindset() {
                   )}
 
                   {section.guidelines && section.guidelines.map((guide: string, idx: number) => (
-                    <Text key={idx} className="text-zinc-300 mb-2">� {guide}</Text>
+                    <Text key={idx} className="text-zinc-300 mb-2">• {guide}</Text>
                   ))}
 
                   {section.mistakes && (
@@ -697,7 +693,7 @@ export default function MeetDayMindset() {
                         <View className="bg-zinc-800 rounded-xl p-3 mt-2">
                           <Text className="text-white font-bold mb-2 text-sm">Consider:</Text>
                           {section.considerations.map((item: string, cIdx: number) => (
-                            <Text key={cIdx} className="text-zinc-300 text-sm mb-1">� {item}</Text>
+                            <Text key={cIdx} className="text-zinc-300 text-sm mb-1">• {item}</Text>
                           ))}
                         </View>
                       )}
@@ -722,7 +718,7 @@ export default function MeetDayMindset() {
                     <View className="bg-cyan-500/10 rounded-xl p-4 border border-cyan-500/30 mt-3">
                       <Text className="text-cyan-400 font-bold mb-2">Emotions:</Text>
                       {section.emotions.map((item: string, eIdx: number) => (
-                        <Text key={eIdx} className="text-cyan-300 text-sm mb-1">� {item}</Text>
+                        <Text key={eIdx} className="text-cyan-300 text-sm mb-1">• {item}</Text>
                       ))}
                     </View>
                   )}
@@ -731,7 +727,7 @@ export default function MeetDayMindset() {
                     <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-3">
                       <Text className="text-primary/80 font-bold mb-2">Questions:</Text>
                       {section.questions.map((q: string, qIdx: number) => (
-                        <Text key={qIdx} className="text-primary/60 text-sm mb-1">� {q}</Text>
+                        <Text key={qIdx} className="text-primary/60 text-sm mb-1">• {q}</Text>
                       ))}
                     </View>
                   )}
@@ -747,7 +743,7 @@ export default function MeetDayMindset() {
                       <View className="bg-amber-500/10 rounded-xl p-3 border border-amber-500/30">
                         <Text className="text-amber-400 font-bold text-sm mb-1">Caution:</Text>
                         {section.success.caution.map((item: string, cIdx: number) => (
-                          <Text key={cIdx} className="text-amber-300 text-sm mb-1">� {item}</Text>
+                          <Text key={cIdx} className="text-amber-300 text-sm mb-1">• {item}</Text>
                         ))}
                       </View>
                     </View>
@@ -759,13 +755,13 @@ export default function MeetDayMindset() {
                       <View className="bg-primary/10 rounded-xl p-3 border border-primary/30 mb-2">
                         <Text className="text-primary/80 font-bold text-sm mb-1">Reality:</Text>
                         {section.learning.reality.map((item: string, rIdx: number) => (
-                          <Text key={rIdx} className="text-primary/60 text-sm mb-1">� {item}</Text>
+                          <Text key={rIdx} className="text-primary/60 text-sm mb-1">• {item}</Text>
                         ))}
                       </View>
                       <View className="bg-primary/10 rounded-xl p-3 border border-primary/30">
                         <Text className="text-primary font-bold text-sm mb-1">Action:</Text>
                         {section.learning.action.map((item: string, aIdx: number) => (
-                          <Text key={aIdx} className="text-primary/80 text-sm mb-1">� {item}</Text>
+                          <Text key={aIdx} className="text-primary/80 text-sm mb-1">• {item}</Text>
                         ))}
                       </View>
                     </View>
@@ -778,16 +774,16 @@ export default function MeetDayMindset() {
           <View className="bg-gradient-to-r from-purple-500/20 to-blue-500/20 rounded-xl p-5 border border-purple-500/30 mb-6">
             <Text className="text-purple-400 font-bold text-lg mb-3">Remember</Text>
             <Text className="text-purple-300 text-sm mb-2">
-              � Your meet prep is mental as much as physical
+              • Your meet prep is mental as much as physical
             </Text>
             <Text className="text-purple-300 text-sm mb-2">
-              � Nerves are normal - everyone has them
+              • Nerves are normal - everyone has them
             </Text>
             <Text className="text-purple-300 text-sm mb-2">
-              � Trust your training and preparation
+              • Trust your training and preparation
             </Text>
             <Text className="text-purple-300 text-sm">
-              � One meet doesn't define you - it's just one data point
+              • One meet doesn't define you - it's just one data point
             </Text>
           </View>
         </View>

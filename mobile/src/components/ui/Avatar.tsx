@@ -1,5 +1,6 @@
 import React from 'react';
-import { View, Image, Text, ViewProps } from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, Image, ViewProps } from 'react-native';;
 import { cn } from '@/lib/utils';
 
 export type AvatarSize = 'xs' | 'sm' | 'md' | 'lg' | 'xl';

@@ -1,5 +1,6 @@
 import React from 'react';
-import { View, ActivityIndicator, Text, StyleSheet, ViewStyle } from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, ActivityIndicator, StyleSheet, ViewStyle } from 'react-native';;
 
 interface LoadingProps {
   text?: string;

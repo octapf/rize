@@ -1,10 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, TouchableOpacity, ScrollView } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -292,12 +288,12 @@ export default function ProgressMilestones() {
           <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
             <Text className="text-primary/80 font-bold mb-2">How to Use Milestones</Text>
             <Text className="text-primary/60 text-sm">
-              • Pick 1-3 milestones to chase{'\n'}
-              • Break into smaller weekly goals{'\n'}
-              • Track attempts and near-misses{'\n'}
-              • Celebrate when you hit them{'\n'}
-              • Share wins with community{'\n'}
-              • Move to next challenge
+              â€¢ Pick 1-3 milestones to chase{'\n'}
+              â€¢ Break into smaller weekly goals{'\n'}
+              â€¢ Track attempts and near-misses{'\n'}
+              â€¢ Celebrate when you hit them{'\n'}
+              â€¢ Share wins with community{'\n'}
+              â€¢ Move to next challenge
             </Text>
           </View>
         </View>

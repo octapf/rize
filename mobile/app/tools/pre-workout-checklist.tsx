@@ -1,11 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-  Alert,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, TouchableOpacity, ScrollView, Alert } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import { format } from 'date-fns';
@@ -36,14 +31,14 @@ const CHECKLIST_ITEMS: ChecklistItem[] = [
     id: '1',
     category: 'warmup',
     label: 'Cardio 5-10 min',
-    description: 'Elevar temperatura corporal y frecuencia cardíaca',
+    description: 'Elevar temperatura corporal y frecuencia cardÃ­aca',
     isCompleted: false,
     isRequired: true,
   },
   {
     id: '2',
     category: 'warmup',
-    label: 'Calentamiento dinámico',
+    label: 'Calentamiento dinÃ¡mico',
     description: 'Movimientos activos rango completo',
     isCompleted: false,
     isRequired: true,
@@ -51,7 +46,7 @@ const CHECKLIST_ITEMS: ChecklistItem[] = [
   {
     id: '3',
     category: 'warmup',
-    label: 'Series de aproximación',
+    label: 'Series de aproximaciÃ³n',
     description: 'Sets ligeros del ejercicio principal',
     isCompleted: false,
     isRequired: true,
@@ -61,14 +56,14 @@ const CHECKLIST_ITEMS: ChecklistItem[] = [
     id: '4',
     category: 'mobility',
     label: 'Movilidad articular',
-    description: 'Círculos de hombros, caderas, tobillos',
+    description: 'CÃ­rculos de hombros, caderas, tobillos',
     isCompleted: false,
     isRequired: true,
   },
   {
     id: '5',
     category: 'mobility',
-    label: 'Activación glúteos',
+    label: 'ActivaciÃ³n glÃºteos',
     description: 'Clamshells, puentes, bandas',
     isCompleted: false,
     isRequired: false,
@@ -76,7 +71,7 @@ const CHECKLIST_ITEMS: ChecklistItem[] = [
   {
     id: '6',
     category: 'mobility',
-    label: 'Activación core',
+    label: 'ActivaciÃ³n core',
     description: 'Planchas, dead bugs, bird dogs',
     isCompleted: false,
     isRequired: false,
@@ -94,7 +89,7 @@ const CHECKLIST_ITEMS: ChecklistItem[] = [
     id: '8',
     category: 'equipment',
     label: 'Espacio despejado',
-    description: 'Ãrea de trabajo segura sin obstáculos',
+    description: 'Ãrea de trabajo segura sin obstÃ¡culos',
     isCompleted: false,
     isRequired: true,
   },
@@ -102,7 +97,7 @@ const CHECKLIST_ITEMS: ChecklistItem[] = [
     id: '9',
     category: 'equipment',
     label: 'Accesorios listos',
-    description: 'Cinturón, muñequeras, bandas si necesitas',
+    description: 'CinturÃ³n, muÃ±equeras, bandas si necesitas',
     isCompleted: false,
     isRequired: false,
   },
@@ -119,14 +114,14 @@ const CHECKLIST_ITEMS: ChecklistItem[] = [
     id: '11',
     category: 'nutrition',
     label: 'Comida pre-workout',
-    description: '1-2h antes: carbos + proteína moderada',
+    description: '1-2h antes: carbos + proteÃ­na moderada',
     isCompleted: false,
     isRequired: true,
   },
   {
     id: '12',
     category: 'nutrition',
-    label: 'Cafeína (opcional)',
+    label: 'CafeÃ­na (opcional)',
     description: '200-400mg 30-60 min antes si usas',
     isCompleted: false,
     isRequired: false,
@@ -136,14 +131,14 @@ const CHECKLIST_ITEMS: ChecklistItem[] = [
     id: '13',
     category: 'mindset',
     label: 'Objetivo claro',
-    description: 'Sabes qué vas a entrenar y tus metas',
+    description: 'Sabes quÃ© vas a entrenar y tus metas',
     isCompleted: false,
     isRequired: true,
   },
   {
     id: '14',
     category: 'mindset',
-    label: 'Música/Focus',
+    label: 'MÃºsica/Focus',
     description: 'Playlist lista o ambiente adecuado',
     isCompleted: false,
     isRequired: false,
@@ -188,7 +183,7 @@ export default function PreWorkoutChecklist() {
     { key: 'warmup', label: 'Calentamiento', icon: 'flame', color: 'red' },
     { key: 'mobility', label: 'Movilidad', icon: 'body', color: 'blue' },
     { key: 'equipment', label: 'Equipo', icon: 'barbell', color: 'primary' },
-    { key: 'nutrition', label: 'Nutrición', icon: 'restaurant', color: 'amber' },
+    { key: 'nutrition', label: 'NutriciÃ³n', icon: 'restaurant', color: 'amber' },
     { key: 'mindset', label: 'Mental', icon: 'bulb', color: 'purple' },
   ];
 
@@ -260,9 +255,9 @@ export default function PreWorkoutChecklist() {
     Alert.alert(
       `${scoreEmoji} Readiness Score: ${readinessScore}/100`,
       `${completedCount}/${checklist.length} completados\n\n${
-        readinessScore >= 90 ? '¡Perfecto! Listo para un gran workout' :
-        readinessScore >= 70 ? 'Bien preparado. ¡A entrenar!' :
-        'Considera completar más items para mejor resultado'
+        readinessScore >= 90 ? 'Â¡Perfecto! Listo para un gran workout' :
+        readinessScore >= 70 ? 'Bien preparado. Â¡A entrenar!' :
+        'Considera completar mÃ¡s items para mejor resultado'
       }`,
       [
         { text: 'Entendido', onPress: () => resetChecklist() }
@@ -273,11 +268,11 @@ export default function PreWorkoutChecklist() {
   const skipChecklist = () => {
     Alert.alert(
       'Saltar Checklist',
-      '¿Seguro quieres saltarte el checklist pre-workout?\n\nNo recomendado: aumenta riesgo de lesión.',
+      'Â¿Seguro quieres saltarte el checklist pre-workout?\n\nNo recomendado: aumenta riesgo de lesiÃ³n.',
       [
         { text: 'No, Completar', style: 'cancel' },
         {
-          text: 'Sí, Saltar',
+          text: 'SÃ­, Saltar',
           style: 'destructive',
           onPress: () => {
             const newSession: ChecklistSession = {
@@ -512,7 +507,7 @@ export default function PreWorkoutChecklist() {
             >
               <Ionicons name="checkmark-circle" size={24} color="white" />
               <Text className="text-white font-bold text-lg ml-2">
-                {completedRequired === requiredCount ? 'Empezar Workout' : 'Continuar con Precaución'}
+                {completedRequired === requiredCount ? 'Empezar Workout' : 'Continuar con PrecauciÃ³n'}
               </Text>
             </TouchableOpacity>
 
@@ -541,14 +536,14 @@ export default function PreWorkoutChecklist() {
               <Ionicons name="information-circle" size={20} color="#9D12DE" />
               <View className="flex-1 ml-3">
                 <Text className="text-primary/80 font-bold mb-2">
-                  Por Qué Usar el Checklist
+                  Por QuÃ© Usar el Checklist
                 </Text>
                 <Text className="text-primary/60 text-sm">
-                  • Reduce riesgo de lesión hasta 60%{'\n'}
-                  • Mejora rendimiento 15-20%{'\n'}
-                  • Crea rutina y consistencia{'\n'}
-                  • Identifica gaps en preparación{'\n'}
-                  • 90%+ readiness = workout óptimo
+                  â€¢ Reduce riesgo de lesiÃ³n hasta 60%{'\n'}
+                  â€¢ Mejora rendimiento 15-20%{'\n'}
+                  â€¢ Crea rutina y consistencia{'\n'}
+                  â€¢ Identifica gaps en preparaciÃ³n{'\n'}
+                  â€¢ 90%+ readiness = workout Ã“ptimo
                 </Text>
               </View>
             </View>

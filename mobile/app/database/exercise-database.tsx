@@ -1,11 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-  TextInput,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, TouchableOpacity, ScrollView, TextInput } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -148,7 +143,7 @@ export default function ExerciseDatabase() {
             </Text>
             <View className="flex-row items-center">
               <Ionicons name="barbell" size={20} color="white" />
-              <Text className="text-white ml-2">{stats.total} exercises • {stats.variations} variations</Text>
+              <Text className="text-white ml-2">{stats.total} exercises â€¢ {stats.variations} variations</Text>
             </View>
           </View>
 
@@ -277,11 +272,11 @@ export default function ExerciseDatabase() {
           <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
             <Text className="text-primary/80 font-bold mb-2">Exercise Database Tips</Text>
             <Text className="text-primary/60 text-sm">
-              • Watch form videos antes de intentar{'\n'}
-              • Start con light weight para learn technique{'\n'}
-              • Explore variations para variety{'\n'}
-              • Check secondary muscles trabajados{'\n'}
-              • Save favorites para quick access
+              â€¢ Watch form videos antes de intentar{'\n'}
+              â€¢ Start con light weight para learn technique{'\n'}
+              â€¢ Explore variations para variety{'\n'}
+              â€¢ Check secondary muscles trabajados{'\n'}
+              â€¢ Save favorites para quick access
             </Text>
           </View>
         </View>

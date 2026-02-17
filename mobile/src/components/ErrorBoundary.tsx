@@ -1,5 +1,6 @@
 import React, { Component, ErrorInfo, ReactNode } from 'react';
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, TouchableOpacity, StyleSheet } from 'react-native';;
 import { Ionicons } from '@expo/vector-icons';
 
 interface Props {

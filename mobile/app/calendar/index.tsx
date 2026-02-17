@@ -1,10 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  ScrollView,
-  TouchableOpacity,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, ScrollView, TouchableOpacity } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
@@ -214,7 +210,7 @@ export default function CalendarScreen() {
                   </View>
                   <View>
                     <Text className="text-primary font-bold">
-                      Día completado
+                      DÃ­a completado
                     </Text>
                     <Text className="text-primary text-sm">
                       {selectedDayWorkout.workoutCount}{' '}
@@ -268,10 +264,10 @@ export default function CalendarScreen() {
             </View>
             <View className="flex-1">
               <Text className="text-amber-900 font-bold text-lg">
-                Racha Actual: 7 días
+                Racha Actual: 7 dÃ­as
               </Text>
               <Text className="text-amber-700 text-sm">
-                ¡Sigue así! No pierdas tu racha
+                Â¡Sigue asÃ­! No pierdas tu racha
               </Text>
             </View>
           </View>

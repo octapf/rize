@@ -1,12 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  ScrollView,
-  TouchableOpacity,
-  TextInput,
-  ActivityIndicator,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, ScrollView, TouchableOpacity, TextInput, ActivityIndicator } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
@@ -105,7 +99,7 @@ export default function SearchUsersScreen() {
                     No se encontraron usuarios
                   </Text>
                   <Text className="text-center text-gray-400 text-sm">
-                    Intenta con otro término de búsqueda
+                    Intenta con otro tÃ©rmino de bÃºsqueda
                   </Text>
                 </View>
               </Card>
@@ -141,11 +135,11 @@ export default function SearchUsersScreen() {
                                 Nivel {user.level}
                               </Text>
                             </View>
-                            <Text className="text-gray-400">•</Text>
+                            <Text className="text-gray-400">â€¢</Text>
                             <View className="flex-row items-center gap-1">
                               <Ionicons name="flame" size={14} color="#EF4444" />
                               <Text className="text-gray-600 text-sm">
-                                {user.streak} días
+                                {user.streak} dÃ­as
                               </Text>
                             </View>
                           </View>

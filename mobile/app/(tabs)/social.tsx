@@ -1,13 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  ScrollView,
-  RefreshControl,
-  ActivityIndicator,
-  TouchableOpacity,
-  Alert,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, ScrollView, RefreshControl, ActivityIndicator, TouchableOpacity, Alert } from 'react-native';;
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useFeed, useLikeWorkout, useUnlikeWorkout, useFriends, usePendingRequests } from '@/hooks/useSocial';
@@ -264,7 +257,7 @@ export default function SocialScreen() {
                         {friend.username}
                       </Text>
                       <Text className="text-xs text-gray-500">
-                        Nivel {Math.floor(friend.xp / 100) + 1} • {friend.xp} XP
+                        Nivel {Math.floor(friend.xp / 100) + 1} â€¢ {friend.xp} XP
                       </Text>
                     </View>
                   </View>
@@ -275,7 +268,7 @@ export default function SocialScreen() {
             <Card className="p-8 items-center">
               <Ionicons name="person-add-outline" size={48} color="#9CA3AF" />
               <Text className="text-gray-500 mt-4 text-center">
-                Aún no tienes amigos{'\n'}Busca usuarios para agregar
+                AÃºn no tienes amigos{'\n'}Busca usuarios para agregar
               </Text>
             </Card>
           )}

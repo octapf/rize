@@ -1,11 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-  TextInput,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, TouchableOpacity, ScrollView, TextInput } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -244,16 +239,16 @@ export default function AttemptSelection() {
           <View className="bg-red-500/10 rounded-xl p-4 border border-red-500/30 mb-6">
             <Text className="text-red-400 font-bold mb-2">Critical Meet Day Rules</Text>
             <Text className="text-red-300 text-sm mb-2">
-              • Never change attempt in warm-up room due to nerves
+              â€¢ Never change attempt in warm-up room due to nerves
             </Text>
             <Text className="text-red-300 text-sm mb-2">
-              • Have coach/handler make attempt selections
+              â€¢ Have coach/handler make attempt selections
             </Text>
             <Text className="text-red-300 text-sm mb-2">
-              • If opener feels hard, your 1RM estimate was wrong
+              â€¢ If opener feels hard, your 1RM estimate was wrong
             </Text>
             <Text className="text-red-300 text-sm">
-              • 9/9 is better than bombing out chasing PRs
+              â€¢ 9/9 is better than bombing out chasing PRs
             </Text>
           </View>
         </View>

@@ -1,12 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-  TextInput,
-  Alert,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, TouchableOpacity, ScrollView, TextInput, Alert } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import { format } from 'date-fns';
@@ -27,9 +21,9 @@ interface JournalEntry {
 
 const MOOD_OPTIONS = [
   { value: 'bad', emoji: '??', label: 'Mal', color: 'red' },
-  { value: 'ok', emoji: '??ê', label: 'OK', color: 'amber' },
+  { value: 'ok', emoji: 'üìù', label: 'OK', color: 'amber' },
   { value: 'good', emoji: '??', label: 'Bien', color: 'blue' },
-  { value: 'great', emoji: '??É', label: 'Genial', color: 'primary' },
+  { value: 'great', emoji: 'üìù', label: 'Genial', color: 'primary' },
 ];
 
 const MOCK_ENTRIES: JournalEntry[] = [
@@ -41,8 +35,8 @@ const MOCK_ENTRIES: JournalEntry[] = [
     energy: 5,
     sleep: 7.5,
     bodyWeight: 78.5,
-    notes: 'Excelente sesiÛn! Nuevo PR en press banca 100kg x6. Me sentÌ muy fuerte hoy.',
-    achievements: ['PR en press banca', 'TÈcnica perfecta'],
+    notes: 'Excelente sesi√≥n! Nuevo PR en press banca 100kg x6. Me sent√≠ muy fuerte hoy.',
+    achievements: ['PR en press banca', 'T√©cnica perfecta'],
     challenges: ['Press militar un poco pesado'],
   },
   {
@@ -53,7 +47,7 @@ const MOCK_ENTRIES: JournalEntry[] = [
     energy: 4,
     sleep: 8,
     bodyWeight: 78.2,
-    notes: 'Peso muerto se sintiÛ bien, dominadas mejorando.',
+    notes: 'Peso muerto se sinti‚Ä¢ bien, dominadas mejorando.',
     achievements: ['10 dominadas limpias'],
   },
   {
@@ -63,8 +57,8 @@ const MOCK_ENTRIES: JournalEntry[] = [
     mood: 'ok',
     energy: 3,
     sleep: 6,
-    notes: 'Poco sueÒo, energÌa baja. CompletÈ el workout pero difÌcil.',
-    challenges: ['Fatiga general', 'Bajo en energÌa'],
+    notes: 'Poco sue√±o, energ√≠a baja. Complet‚Ä¢ el workout pero dif√≠cil.',
+    challenges: ['Fatiga general', 'Bajo en energ√≠a'],
   },
 ];
 
@@ -100,13 +94,13 @@ export default function WorkoutJournal() {
     setEntries([entry, ...entries]);
     setNewEntry({ workoutType: '', mood: 'good', energy: 4, sleep: '', bodyWeight: '', notes: '' });
     setShowAddForm(false);
-    Alert.alert('Entrada Guardada! üìù', 'Registro aÒadido al diario');
+    Alert.alert('Entrada Guardada! üìù', 'Registro a√±adido al diario');
   };
 
   const deleteEntry = (id: string) => {
     Alert.alert(
       'Eliminar Entrada',
-      'øEst·s seguro?',
+      '¬øEst√°s seguro?',
       [
         { text: 'Cancelar' },
         { text: 'Eliminar', style: 'destructive', onPress: () => setEntries(entries.filter((e) => e.id !== id)) },
@@ -193,7 +187,7 @@ export default function WorkoutJournal() {
 
               {/* Energy */}
               <View className="mb-4">
-                <Text className="text-zinc-400 text-sm mb-2">EnergÌa (1-5)</Text>
+                <Text className="text-zinc-400 text-sm mb-2">Energ√≠a (1-5)</Text>
                 <View className="flex-row gap-2">
                   {[1, 2, 3, 4, 5].map((level) => (
                     <TouchableOpacity
@@ -214,7 +208,7 @@ export default function WorkoutJournal() {
               {/* Sleep & Weight */}
               <View className="flex-row gap-4 mb-4">
                 <View className="flex-1">
-                  <Text className="text-zinc-400 text-sm mb-2">SueÒo (horas)</Text>
+                  <Text className="text-zinc-400 text-sm mb-2">Sue√±o (horas)</Text>
                   <TextInput
                     className="bg-zinc-800 rounded-xl px-4 py-3 text-white text-lg font-bold"
                     placeholder="7.5"
@@ -242,7 +236,7 @@ export default function WorkoutJournal() {
                 <Text className="text-zinc-400 text-sm mb-2">Notas</Text>
                 <TextInput
                   className="bg-zinc-800 rounded-xl px-4 py-3 text-white"
-                  placeholder="øCÛmo fue el workout? PRs, sensaciones, etc."
+                  placeholder="¬øC√≥mo fue el workout? PRs, sensaciones, etc."
                   placeholderTextColor="#71717A"
                   multiline
                   numberOfLines={4}
@@ -267,11 +261,11 @@ export default function WorkoutJournal() {
                   <Text className="text-white font-bold text-lg mb-3">Esta Semana</Text>
                   <View className="flex-row gap-3">
                     <View className="flex-1 bg-amber-500/10 rounded-lg p-3 border border-amber-500/30">
-                      <Text className="text-amber-400 text-xs mb-1">EnergÌa Promedio</Text>
+                      <Text className="text-amber-400 text-xs mb-1">Energ√≠a Promedio</Text>
                       <Text className="text-white text-2xl font-bold">{stats.energy}/5</Text>
                     </View>
                     <View className="flex-1 bg-purple-500/10 rounded-lg p-3 border border-purple-500/30">
-                      <Text className="text-purple-400 text-xs mb-1">SueÒo Promedio</Text>
+                      <Text className="text-purple-400 text-xs mb-1">Sue√±o Promedio</Text>
                       <Text className="text-white text-2xl font-bold">{stats.sleep}h</Text>
                     </View>
                     <View className="flex-1 bg-primary/10 rounded-lg p-3 border border-primary/30">
@@ -321,18 +315,18 @@ export default function WorkoutJournal() {
                         </View>
                         <View className="bg-amber-500/10 rounded px-3 py-1 border border-amber-500/30">
                           <Text className="text-amber-400 text-xs font-bold">
-                            ? EnergÌa {entry.energy}/5
+                            ‚Ä¢ Energ√≠a {entry.energy}/5
                           </Text>
                         </View>
                         <View className="bg-purple-500/10 rounded px-3 py-1 border border-purple-500/30">
                           <Text className="text-purple-400 text-xs font-bold">
-                            ??¥ {entry.sleep}h sueÒo
+                            ??‚Ä¢ {entry.sleep}h sue√±o
                           </Text>
                         </View>
                         {entry.bodyWeight && (
                           <View className="bg-primary/10 rounded px-3 py-1 border border-primary/30">
                             <Text className="text-primary/80 text-xs font-bold">
-                              ??è {entry.bodyWeight}kg
+                              ??‚Ä¢ {entry.bodyWeight}kg
                             </Text>
                           </View>
                         )}
@@ -381,14 +375,14 @@ export default function WorkoutJournal() {
               <Ionicons name="book" size={20} color="#9D12DE" />
               <View className="flex-1 ml-3">
                 <Text className="text-primary/80 font-bold mb-2">
-                  Por QuÈ Llevar un Diario
+                  Por Qu√© Llevar un Diario
                 </Text>
                 <Text className="text-primary/60 text-sm">
-                  ï Identifica patrones (sueÒo, energÌa, rendimiento){'\n'}
-                  ï Documenta progreso a largo plazo{'\n'}
-                  ï Detecta quÈ funciona y quÈ no{'\n'}
-                  ï MotivaciÛn al ver mejoras{'\n'}
-                  ï Ajusta plan seg˙n data real
+                  ‚Ä¢ Identifica patrones (sue√±o, energ√≠a, rendimiento){'\n'}
+                  ‚Ä¢ Documenta progreso a largo plazo{'\n'}
+                  ‚Ä¢ Detecta qu√© funciona y qu√© no{'\n'}
+                  ‚Ä¢ Motivaci√≥n al ver mejoras{'\n'}
+                  ‚Ä¢ Ajusta plan seg√∫n data real
                 </Text>
               </View>
             </View>

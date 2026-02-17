@@ -1,12 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-  TextInput,
-  Alert,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, TouchableOpacity, ScrollView, TextInput, Alert } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import { format } from 'date-fns';
@@ -28,7 +22,7 @@ interface InjuryLog {
 const BODY_PARTS = [
   { id: 'shoulder', label: 'Hombro', icon: 'ðŸ¦¾' },
   { id: 'elbow', label: 'Codo', icon: 'ðŸ’ª' },
-  { id: 'wrist', label: 'Muñeca', icon: 'ðŸ¤š' },
+  { id: 'wrist', label: 'MuÃ±eca', icon: 'ðŸ¤š' },
   { id: 'back', label: 'Espalda', icon: 'ðŸ‹ï¸' },
   { id: 'hip', label: 'Cadera', icon: 'ðŸ¦´' },
   { id: 'knee', label: 'Rodilla', icon: '??' },
@@ -39,12 +33,12 @@ const BODY_PARTS = [
 const TREATMENTS = [
   'Reposo',
   'Hielo',
-  'Compresión',
-  'Elevación',
+  'CompresiÃ³n',
+  'ElevaciÃ³n',
   'Fisioterapia',
   'Estiramientos',
   'Foam Rolling',
-  'Medicación',
+  'MedicaciÃ³n',
   'Reducir carga',
   'Modificar ejercicios',
 ];
@@ -144,7 +138,7 @@ export default function InjuryLog() {
 
   const addLog = () => {
     if (!newLog.description) {
-      Alert.alert('Error', 'Ingresa una descripción');
+      Alert.alert('Error', 'Ingresa una descripciÃ³n');
       return;
     }
 
@@ -170,7 +164,7 @@ export default function InjuryLog() {
       affectedExercises: '',
     });
     setShowAddForm(false);
-    Alert.alert('Registro Guardado', 'Lesión/molestia registrada');
+    Alert.alert('Registro Guardado', 'LesiÃ³n/molestia registrada');
   };
 
   const updateStatus = (id: string, newStatus: 'active' | 'recovering' | 'resolved') => {
@@ -184,7 +178,7 @@ export default function InjuryLog() {
   const deleteLog = (id: string) => {
     Alert.alert(
       'Eliminar Registro',
-      '¿Estás seguro?',
+      'Â¿EstÃ¡s seguro?',
       [
         { text: 'Cancelar' },
         { text: 'Eliminar', style: 'destructive', onPress: () => setLogs(logs.filter((l) => l.id !== id)) },
@@ -249,7 +243,7 @@ export default function InjuryLog() {
                       }`}
                     >
                       <Text className={`text-center font-bold ${newLog.type === type ? 'text-white' : 'text-zinc-400'}`}>
-                        {type === 'pain' ? 'Dolor' : type === 'injury' ? 'Lesión' : 'Movilidad'}
+                        {type === 'pain' ? 'Dolor' : type === 'injury' ? 'LesiÃ³n' : 'Movilidad'}
                       </Text>
                     </TouchableOpacity>
                   ))}
@@ -298,7 +292,7 @@ export default function InjuryLog() {
 
               {/* Description */}
               <View className="mb-4">
-                <Text className="text-zinc-400 text-sm mb-2">Descripción</Text>
+                <Text className="text-zinc-400 text-sm mb-2">DescripciÃ³n</Text>
                 <TextInput
                   className="bg-zinc-800 rounded-xl px-4 py-3 text-white"
                   placeholder="Describe el problema..."
@@ -467,7 +461,7 @@ export default function InjuryLog() {
                       <View className="mt-3 pt-3 border-t border-zinc-800">
                         <Text className="text-zinc-500 text-xs">
                           Registrado: {format(log.date, "d MMM yyyy", { locale: es })}
-                          {log.resolvedDate && ` • Resuelto: ${format(log.resolvedDate, "d MMM yyyy", { locale: es })}`}
+                          {log.resolvedDate && ` â€¢ Resuelto: ${format(log.resolvedDate, "d MMM yyyy", { locale: es })}`}
                         </Text>
                       </View>
                     </View>
@@ -483,14 +477,14 @@ export default function InjuryLog() {
               <Ionicons name="medical" size={20} color="#EF4444" />
               <View className="flex-1 ml-3">
                 <Text className="text-red-400 font-bold mb-2">
-                  Prevención de Lesiones
+                  PrevenciÃ³n de Lesiones
                 </Text>
                 <Text className="text-red-300 text-sm">
-                  • Calentamiento adecuado siempre{'\n'}
-                  • No ignorar dolores persistentes{'\n'}
-                  • Consulta profesional si es grave{'\n'}
-                  • Técnica perfecta &gt; peso pesado{'\n'}
-                  • Deload weeks cada 4-6 semanas
+                  â€¢ Calentamiento adecuado siempre{'\n'}
+                  â€¢ No ignorar dolores persistentes{'\n'}
+                  â€¢ Consulta profesional si es grave{'\n'}
+                  â€¢ TÃ©cnica perfecta &gt; peso pesado{'\n'}
+                  â€¢ Deload weeks cada 4-6 semanas
                 </Text>
               </View>
             </View>

@@ -1,11 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-  Alert,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, TouchableOpacity, ScrollView, Alert } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -28,31 +23,31 @@ const ALTERNATIVES: EquipmentAlternative[] = [
     alternatives: [
       {
         name: 'Sentadilla Goblet con Mancuerna',
-        equipment: 'Mancuerna única',
+        equipment: 'Mancuerna Ãºnica',
         difficulty: 'easier',
-        instructions: 'Sostén mancuerna vertical frente al pecho. Sentadilla profunda manteniendo torso erguido.',
-        targetMuscles: ['Cuádriceps', 'Glúteos', 'Core'],
+        instructions: 'SostÃ©n mancuerna vertical frente al pecho. Sentadilla profunda manteniendo torso erguido.',
+        targetMuscles: ['CuÃ¡driceps', 'GlÃºteos', 'Core'],
       },
       {
-        name: 'Sentadilla Búlgara',
+        name: 'Sentadilla BÃºlgara',
         equipment: 'Banco + Mancuernas',
         difficulty: 'same',
         instructions: 'Pie trasero elevado en banco. Descender hasta rodilla casi toca suelo. Unilateral.',
-        targetMuscles: ['Cuádriceps', 'Glúteos'],
+        targetMuscles: ['CuÃ¡driceps', 'GlÃºteos'],
       },
       {
         name: 'Pistol Squats',
         equipment: 'Peso corporal',
         difficulty: 'harder',
-        instructions: 'Sentadilla a una pierna. Pierna libre extendida al frente. Balance crítico.',
-        targetMuscles: ['Cuádriceps', 'Glúteos', 'Core', 'Balance'],
+        instructions: 'Sentadilla a una pierna. Pierna libre extendida al frente. Balance crÃ­tico.',
+        targetMuscles: ['CuÃ¡driceps', 'GlÃºteos', 'Core', 'Balance'],
       },
       {
         name: 'Sentadilla con Bandas',
         equipment: 'Banda de resistencia',
         difficulty: 'easier',
-        instructions: 'Banda bajo pies, agarres en hombros. Tensión progresiva en todo el rango.',
-        targetMuscles: ['Cuádriceps', 'Glúteos'],
+        instructions: 'Banda bajo pies, agarres en hombros. TensiÃ³n progresiva en todo el rango.',
+        targetMuscles: ['CuÃ¡driceps', 'GlÃºteos'],
       },
     ],
   },
@@ -65,28 +60,28 @@ const ALTERNATIVES: EquipmentAlternative[] = [
         equipment: 'Peso corporal + Chaleco',
         difficulty: 'same',
         instructions: 'Flexiones tradicionales con peso adicional en espalda. Rango completo.',
-        targetMuscles: ['Pectorales', 'Tríceps', 'Hombros'],
+        targetMuscles: ['Pectorales', 'TrÃ­ceps', 'Hombros'],
       },
       {
         name: 'Floor Press con Mancuernas',
         equipment: 'Mancuernas',
         difficulty: 'easier',
         instructions: 'Acostado en suelo, press con mancuernas. Rango limitado protege hombros.',
-        targetMuscles: ['Pectorales', 'Tríceps'],
+        targetMuscles: ['Pectorales', 'TrÃ­ceps'],
       },
       {
         name: 'Dips en Paralelas',
         equipment: 'Barras paralelas',
         difficulty: 'harder',
-        instructions: 'Torso inclinado hacia adelante para énfasis pectoral. Descender profundo.',
-        targetMuscles: ['Pectorales', 'Tríceps', 'Hombros'],
+        instructions: 'Torso inclinado hacia adelante para Ã©nfasis pectoral. Descender profundo.',
+        targetMuscles: ['Pectorales', 'TrÃ­ceps', 'Hombros'],
       },
       {
         name: 'Press con Bandas',
-        equipment: 'Bandas elásticas',
+        equipment: 'Bandas elÃ¡sticas',
         difficulty: 'easier',
-        instructions: 'Banda anclada atrás, press hacia adelante. Tensión progresiva.',
-        targetMuscles: ['Pectorales', 'Tríceps'],
+        instructions: 'Banda anclada atrÃ¡s, press hacia adelante. TensiÃ³n progresiva.',
+        targetMuscles: ['Pectorales', 'TrÃ­ceps'],
       },
     ],
   },
@@ -98,29 +93,29 @@ const ALTERNATIVES: EquipmentAlternative[] = [
         name: 'Romanian DL con Mancuernas',
         equipment: 'Mancuernas',
         difficulty: 'easier',
-        instructions: 'Bisagra de cadera, mancuernas pegadas a piernas. Énfasis isquiotibiales.',
-        targetMuscles: ['Isquiotibiales', 'Glúteos', 'Espalda baja'],
+        instructions: 'Bisagra de cadera, mancuernas pegadas a piernas. Ã©nfasis isquiotibiales.',
+        targetMuscles: ['Isquiotibiales', 'GlÃºteos', 'Espalda baja'],
       },
       {
         name: 'Good Mornings',
         equipment: 'Barra ligera o peso corporal',
         difficulty: 'easier',
         instructions: 'Barra en hombros, bisagra de cadera manteniendo rodillas semi-flexionadas.',
-        targetMuscles: ['Isquiotibiales', 'Glúteos', 'Erectores'],
+        targetMuscles: ['Isquiotibiales', 'GlÃºteos', 'Erectores'],
       },
       {
         name: 'Single Leg RDL',
-        equipment: 'Mancuerna única',
+        equipment: 'Mancuerna Ãºnica',
         difficulty: 'harder',
-        instructions: 'Unilateral, pierna libre extendida atrás. Balance y activación glúteo.',
-        targetMuscles: ['Isquiotibiales', 'Glúteos', 'Core'],
+        instructions: 'Unilateral, pierna libre extendida atrÃ¡s. Balance y activaciÃ³n glÃºteo.',
+        targetMuscles: ['Isquiotibiales', 'GlÃºteos', 'Core'],
       },
       {
         name: 'Kettlebell Swings',
         equipment: 'Kettlebell',
         difficulty: 'same',
         instructions: 'Bisagra explosiva de cadera. Proyectar KB hasta hombros. Power training.',
-        targetMuscles: ['Glúteos', 'Isquiotibiales', 'Core'],
+        targetMuscles: ['GlÃºteos', 'Isquiotibiales', 'Core'],
       },
     ],
   },
@@ -132,29 +127,29 @@ const ALTERNATIVES: EquipmentAlternative[] = [
         name: 'Australian Pull-ups',
         equipment: 'Barra baja o anillas',
         difficulty: 'easier',
-        instructions: 'Cuerpo inclinado bajo barra. Pull horizontal manteniendo cuerpo rígido.',
-        targetMuscles: ['Dorsales', 'Bíceps', 'Core'],
+        instructions: 'Cuerpo inclinado bajo barra. Pull horizontal manteniendo cuerpo rÃ­gido.',
+        targetMuscles: ['Dorsales', 'BÃ­ceps', 'Core'],
       },
       {
         name: 'Lat Pulldown con Banda',
-        equipment: 'Banda elástica',
+        equipment: 'Banda elÃ¡stica',
         difficulty: 'easier',
         instructions: 'Banda anclada arriba. Pull vertical hacia pecho. Squeeze escapular.',
-        targetMuscles: ['Dorsales', 'Bíceps'],
+        targetMuscles: ['Dorsales', 'BÃ­ceps'],
       },
       {
         name: 'Dominadas Negativas',
         equipment: 'Barra fija',
         difficulty: 'easier',
-        instructions: 'Saltar a posición superior. Descender controlado 5-10 seg. Solo excéntrico.',
-        targetMuscles: ['Dorsales', 'Bíceps'],
+        instructions: 'Saltar a posiciÃ³n superior. Descender controlado 5-10 seg. Solo excÃ©ntrico.',
+        targetMuscles: ['Dorsales', 'BÃ­ceps'],
       },
       {
         name: 'Remo con Mancuernas',
         equipment: 'Mancuernas + Banco',
         difficulty: 'easier',
-        instructions: 'Torso paralelo a suelo, pull hacia cadera. Retracción escapular.',
-        targetMuscles: ['Dorsales', 'Romboides', 'Bíceps'],
+        instructions: 'Torso paralelo a suelo, pull hacia cadera. RetracciÃ³n escapular.',
+        targetMuscles: ['Dorsales', 'Romboides', 'BÃ­ceps'],
       },
     ],
   },
@@ -166,29 +161,29 @@ const ALTERNATIVES: EquipmentAlternative[] = [
         name: 'Pike Push-ups',
         equipment: 'Peso corporal',
         difficulty: 'easier',
-        instructions: 'V invertida, caderas arriba. Flexión vertical. Progresión hacia handstand pushups.',
-        targetMuscles: ['Deltoides', 'Tríceps'],
+        instructions: 'V invertida, caderas arriba. FlexiÃ³n vertical. ProgresiÃ³n hacia handstand pushups.',
+        targetMuscles: ['Deltoides', 'TrÃ­ceps'],
       },
       {
         name: 'Arnold Press',
         equipment: 'Mancuernas',
         difficulty: 'same',
-        instructions: 'Rotación de palmas durante el press. Mayor ROM y activación deltoides.',
-        targetMuscles: ['Deltoides', 'Tríceps'],
+        instructions: 'RotaciÃ³n de palmas durante el press. Mayor ROM y activaciÃ³n deltoides.',
+        targetMuscles: ['Deltoides', 'TrÃ­ceps'],
       },
       {
         name: 'Handstand Push-ups',
         equipment: 'Pared',
         difficulty: 'harder',
-        instructions: 'Invertido contra pared. Press completo vertical. Máxima dificultad.',
-        targetMuscles: ['Deltoides', 'Tríceps', 'Core'],
+        instructions: 'Invertido contra pared. Press completo vertical. MÃ¡xima dificultad.',
+        targetMuscles: ['Deltoides', 'TrÃ­ceps', 'Core'],
       },
       {
         name: 'Press con Bandas',
-        equipment: 'Bandas elásticas',
+        equipment: 'Bandas elÃ¡sticas',
         difficulty: 'easier',
-        instructions: 'Banda bajo pies, press vertical. Tensión progresiva máxima arriba.',
-        targetMuscles: ['Deltoides', 'Tríceps'],
+        instructions: 'Banda bajo pies, press vertical. TensiÃ³n progresiva mÃ¡xima arriba.',
+        targetMuscles: ['Deltoides', 'TrÃ­ceps'],
       },
     ],
   },
@@ -205,7 +200,7 @@ export default function EquipmentAlternatives() {
   const viewAlternativeDetails = (exercise: string, alternative: any) => {
     Alert.alert(
       alternative.name,
-      `Equipo: ${alternative.equipment}\n\n${alternative.instructions}\n\nMúsculos: ${alternative.targetMuscles.join(', ')}`,
+      `Equipo: ${alternative.equipment}\n\n${alternative.instructions}\n\nMÃºsculos: ${alternative.targetMuscles.join(', ')}`,
       [{ text: 'Entendido' }]
     );
   };
@@ -261,7 +256,7 @@ export default function EquipmentAlternatives() {
                 Adapta Tu Entrenamiento
               </Text>
               <Text className="text-primary/60 text-sm">
-                Sin equipo específico? Encuentra alternativas efectivas para cada ejercicio
+                Sin equipo especÃ­fico? Encuentra alternativas efectivas para cada ejercicio
               </Text>
             </View>
           </View>
@@ -348,7 +343,7 @@ export default function EquipmentAlternatives() {
 
                       {/* Target Muscles */}
                       <View>
-                        <Text className="text-zinc-400 text-xs mb-1">MÚSCULOS</Text>
+                        <Text className="text-zinc-400 text-xs mb-1">MÃšSCULOS</Text>
                         <View className="flex-row flex-wrap gap-1">
                           {alt.targetMuscles.map((muscle, i) => (
                             <View key={i} className="bg-zinc-700 rounded px-2 py-1">
@@ -378,10 +373,10 @@ export default function EquipmentAlternatives() {
               <Ionicons name="bulb" size={20} color="#FFEA00" />
               <View className="flex-1 ml-3">
                 <Text className="text-amber-400 font-bold mb-2">
-                  Variación = Progreso
+                  VariaciÃ³n = Progreso
                 </Text>
                 <Text className="text-amber-300 text-sm">
-                  Rotar entre variaciones previene adaptación y plateaus. Cambia ejercicios cada 4-6 semanas.
+                  Rotar entre variaciones previene adaptaciÃ³n y plateaus. Cambia ejercicios cada 4-6 semanas.
                 </Text>
               </View>
             </View>

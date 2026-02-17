@@ -1,13 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-  TextInput,
-  Alert,
-  Dimensions,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, TouchableOpacity, ScrollView, TextInput, Alert, Dimensions } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -38,42 +31,42 @@ const DEVICES: WearableDevice[] = [
     connected: true,
     battery: 78,
     lastSync: 'Hace 5 minutos',
-    features: ['Frecuencia CardÌaca', 'HRV', 'CalorÌas', 'Pasos', 'SueÒo', 'OxÌgeno'],
+    features: ['Frecuencia Card√≠aca', 'HRV', 'Calor√≠as', 'Pasos', 'Sue√±o', 'Ox√≠geno'],
   },
   {
     id: '2',
     name: 'Garmin Fenix 7',
     brand: 'garmin',
     connected: false,
-    features: ['GPS', 'VO2 Max', 'EstrÈs', 'Altitud', 'Pasos', 'SueÒo'],
+    features: ['GPS', 'VO2 Max', 'Estr√©s', 'Altitud', 'Pasos', 'Sue√±o'],
   },
   {
     id: '3',
     name: 'Fitbit Charge 6',
     brand: 'fitbit',
     connected: false,
-    features: ['Pasos', 'CalorÌas', 'SueÒo', 'Frecuencia CardÌaca', 'SPO2'],
+    features: ['Pasos', 'Calor√≠as', 'Sue√±o', 'Frecuencia Card√≠aca', 'SPO2'],
   },
   {
     id: '4',
     name: 'WHOOP 4.0',
     brand: 'whoop',
     connected: false,
-    features: ['Strain', 'RecuperaciÛn', 'SueÒo', 'HRV', 'Frecuencia CardÌaca'],
+    features: ['Strain', 'Recuperaci√≥n', 'Sue√±o', 'HRV', 'Frecuencia Card√≠aca'],
   },
   {
     id: '5',
     name: 'Polar Vantage V3',
     brand: 'polar',
     connected: false,
-    features: ['Running Power', 'RecuperaciÛn', 'VO2 Max', 'HRV', 'SueÒo'],
+    features: ['Running Power', 'Recuperaci√≥n', 'VO2 Max', 'HRV', 'Sue√±o'],
   },
 ];
 
 const SYNCED_METRICS: SyncedMetric[] = [
   {
     id: '1',
-    name: 'Frecuencia CardÌaca',
+    name: 'Frecuencia Card√≠aca',
     value: '68 bpm',
     icon: 'pulse',
     source: 'Apple Watch',
@@ -89,7 +82,7 @@ const SYNCED_METRICS: SyncedMetric[] = [
   },
   {
     id: '3',
-    name: 'CalorÌas Quemadas',
+    name: 'Calor√≠as Quemadas',
     value: '2,340 kcal',
     icon: 'flame',
     source: 'Apple Watch',
@@ -105,7 +98,7 @@ const SYNCED_METRICS: SyncedMetric[] = [
   },
   {
     id: '5',
-    name: 'SueÒo Anoche',
+    name: 'Sue√±o Anoche',
     value: '7.5 h',
     icon: 'moon',
     source: 'Apple Watch',
@@ -113,7 +106,7 @@ const SYNCED_METRICS: SyncedMetric[] = [
   },
   {
     id: '6',
-    name: 'OxÌgeno en Sangre',
+    name: 'Ox√≠geno en Sangre',
     value: '98%',
     icon: 'water',
     source: 'Apple Watch',
@@ -159,7 +152,7 @@ export default function WearableIntegrations() {
     if (device.connected) {
       Alert.alert(
         'Desconectar Dispositivo',
-        `øDeseas desconectar ${device.name}?`,
+        `¬øDeseas desconectar ${device.name}?`,
         [
           { text: 'Cancelar', style: 'cancel' },
           {
@@ -174,13 +167,13 @@ export default function WearableIntegrations() {
     } else {
       Alert.alert(
         'Conectar Dispositivo',
-        `Conectando con ${device.name}...\n\nSer·s redirigido a la aplicaciÛn oficial para autorizar el acceso.`,
+        `Conectando con ${device.name}...\n\nSer√°s redirigido a la aplicaci√≥n oficial para autorizar el acceso.`,
         [
           { text: 'Cancelar', style: 'cancel' },
           {
             text: 'Continuar',
             onPress: () => {
-              Alert.alert('°Conectado!', `${device.name} est· ahora sincronizado`);
+              Alert.alert('¬°Conectado!', `${device.name} est√° ahora sincronizado`);
             },
           },
         ]
@@ -192,7 +185,7 @@ export default function WearableIntegrations() {
     setSyncInProgress(true);
     setTimeout(() => {
       setSyncInProgress(false);
-      Alert.alert('SincronizaciÛn Completa', 'Todos los datos est·n actualizados');
+      Alert.alert('Sincronizaci√≥n Completa', 'Todos los datos est√©n actualizados');
     }, 2000);
   };
 
@@ -360,10 +353,10 @@ export default function WearableIntegrations() {
               <Ionicons name="information-circle" size={20} color="#9D12DE" />
               <View className="flex-1 ml-3">
                 <Text className="text-primary/80 font-bold mb-2">
-                  SincronizaciÛn Autom·tica
+                  Sincronizaci√≥n Autom√°tica
                 </Text>
                 <Text className="text-primary/60 text-sm">
-                  Los datos se sincronizan autom·ticamente cada hora cuando el dispositivo est· conectado. TambiÈn puedes forzar una sincronizaciÛn manual en cualquier momento.
+                  Los datos se sincronizan autom√°ticamente cada hora cuando el dispositivo est√° conectado. Tambi√©n puedes forzar una sincronizaci√≥n manual en cualquier momento.
                 </Text>
               </View>
             </View>

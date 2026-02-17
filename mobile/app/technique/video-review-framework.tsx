@@ -1,10 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, TouchableOpacity, ScrollView } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -37,13 +33,13 @@ export default function VideoReviewFramework() {
       angles: {
         squat: [
           {
-            angle: 'Side view (90�)',
+            angle: 'Side view (90°)',
             importance: 'Critical',
             shows: 'Depth, bar path, back angle, knee travel',
             distance: '10-15 feet away, waist height',
           },
           {
-            angle: 'Front view (45�)',
+            angle: 'Front view (45°)',
             importance: 'High',
             shows: 'Knee valgus/varus, walkout, stance symmetry',
             distance: '10 feet away, waist height',
@@ -57,7 +53,7 @@ export default function VideoReviewFramework() {
         ],
         bench: [
           {
-            angle: 'Side view (90�)',
+            angle: 'Side view (90°)',
             importance: 'Critical',
             shows: 'Bar path, arch, leg drive timing',
             distance: '8-10 feet away, bench height',
@@ -77,13 +73,13 @@ export default function VideoReviewFramework() {
         ],
         deadlift: [
           {
-            angle: 'Side view (90�)',
+            angle: 'Side view (90°)',
             importance: 'Critical',
             shows: 'Back angle, bar path, hip position, lockout',
             distance: '10-15 feet away, mid-thigh height',
           },
           {
-            angle: 'Front view (45�)',
+            angle: 'Front view (45°)',
             importance: 'High',
             shows: 'Bar position over feet, symmetry, grip',
             distance: '10 feet away, knee height',
@@ -208,7 +204,7 @@ export default function VideoReviewFramework() {
               '"Knees out"',
               '"Screw feet into ground"',
             ],
-            film: 'Front 45� angle to see knees',
+            film: 'Front 45° angle to see knees',
           },
           {
             problem: 'Good morning squat',
@@ -605,7 +601,7 @@ export default function VideoReviewFramework() {
               <View className="bg-primary/10 rounded-xl p-5 border border-primary/30 mb-6">
                 <Text className="text-primary/80 font-bold text-lg mb-3">Filming Tips:</Text>
                 {currentAspect.tips?.map((tip: string, idx: number) => (
-                  <Text key={idx} className="text-primary/60 text-sm mb-1">� {tip}</Text>
+                  <Text key={idx} className="text-primary/60 text-sm mb-1">• {tip}</Text>
                 ))}
               </View>
             </View>
@@ -626,7 +622,7 @@ export default function VideoReviewFramework() {
                 <View className="bg-primary/10 rounded-xl p-4 border border-primary/30">
                   <Text className="text-primary/80 font-bold mb-2">Quick Questions:</Text>
                   {currentAspect.immediate?.questions.map((q: string, idx: number) => (
-                    <Text key={idx} className="text-primary/60 text-sm mb-1">� {q}</Text>
+                    <Text key={idx} className="text-primary/60 text-sm mb-1">• {q}</Text>
                   ))}
                 </View>
               </View>
@@ -688,7 +684,7 @@ export default function VideoReviewFramework() {
                       <View className="mb-2">
                         <Text className="text-primary font-bold text-sm mb-1">Cues to Try:</Text>
                         {prob.cues_to_try.map((cue: string, cIdx: number) => (
-                          <Text key={cIdx} className="text-primary/80 text-sm mb-1">� {cue}</Text>
+                          <Text key={cIdx} className="text-primary/80 text-sm mb-1">• {cue}</Text>
                         ))}
                       </View>
                       <Text className="text-primary/80 text-sm">Film: {prob.film}</Text>
@@ -700,7 +696,7 @@ export default function VideoReviewFramework() {
               <View className="bg-amber-500/10 rounded-xl p-5 border border-amber-500/30 mb-6">
                 <Text className="text-amber-400 font-bold text-lg mb-3">{currentAspect.testing?.title}</Text>
                 {currentAspect.testing?.protocol.map((item: string, idx: number) => (
-                  <Text key={idx} className="text-amber-300 text-sm mb-1">� {item}</Text>
+                  <Text key={idx} className="text-amber-300 text-sm mb-1">• {item}</Text>
                 ))}
               </View>
             </View>
@@ -725,7 +721,7 @@ export default function VideoReviewFramework() {
                     <View className="bg-red-500/10 rounded-xl p-4 border border-red-500/30 mb-3">
                       <Text className="text-red-400 font-bold mb-2">Can Delete:</Text>
                       {section.can_delete.map((item: string, idx: number) => (
-                        <Text key={idx} className="text-red-300 text-sm mb-1">� {item}</Text>
+                        <Text key={idx} className="text-red-300 text-sm mb-1">• {item}</Text>
                       ))}
                     </View>
                   )}
@@ -743,24 +739,24 @@ export default function VideoReviewFramework() {
                     <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-3">
                       <Text className="text-primary/80 font-bold mb-2">File Naming:</Text>
                       {section.naming.map((name: string, idx: number) => (
-                        <Text key={idx} className="text-primary/60 text-sm mb-1">� {name}</Text>
+                        <Text key={idx} className="text-primary/60 text-sm mb-1">• {name}</Text>
                       ))}
                     </View>
                   )}
 
                   {section.monthly && section.monthly.map((item: string, idx: number) => (
-                    <Text key={idx} className="text-zinc-300 text-sm mb-2">� {item}</Text>
+                    <Text key={idx} className="text-zinc-300 text-sm mb-2">• {item}</Text>
                   ))}
 
                   {section.pr_progression && section.pr_progression.map((item: string, idx: number) => (
-                    <Text key={idx} className="text-zinc-300 text-sm mb-2">� {item}</Text>
+                    <Text key={idx} className="text-zinc-300 text-sm mb-2">• {item}</Text>
                   ))}
 
                   {section.what_to_note && (
                     <View className="bg-purple-500/10 rounded-xl p-4 border border-purple-500/30 mb-3">
                       <Text className="text-purple-400 font-bold mb-2">What to Note:</Text>
                       {section.what_to_note.map((note: string, idx: number) => (
-                        <Text key={idx} className="text-purple-300 text-sm mb-1">� {note}</Text>
+                        <Text key={idx} className="text-purple-300 text-sm mb-1">• {note}</Text>
                       ))}
                     </View>
                   )}
@@ -812,14 +808,14 @@ export default function VideoReviewFramework() {
                     <Text className="text-primary/80 text-sm mb-2">Platforms: {app.platforms}</Text>
                     <Text className="text-zinc-400 text-sm mb-1">Features:</Text>
                     {app.features.map((feature: string, fIdx: number) => (
-                      <Text key={fIdx} className="text-zinc-300 text-sm mb-1">� {feature}</Text>
+                      <Text key={fIdx} className="text-zinc-300 text-sm mb-1">• {feature}</Text>
                     ))}
                   </View>
                 ))}
 
                 <Text className="text-primary/80 font-bold mb-3 mt-4">Simple Solutions:</Text>
                 {currentAspect.apps?.simple.map((solution: string, idx: number) => (
-                  <Text key={idx} className="text-primary/60 text-sm mb-1">� {solution}</Text>
+                  <Text key={idx} className="text-primary/60 text-sm mb-1">• {solution}</Text>
                 ))}
               </View>
 
@@ -840,16 +836,16 @@ export default function VideoReviewFramework() {
           <View className="bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-xl p-5 border border-primary/30 mb-6">
             <Text className="text-primary/80 font-bold text-lg mb-3">Key Principles</Text>
             <Text className="text-primary/60 text-sm mb-2">
-              � Film consistently - data beats guessing
+              • Film consistently - data beats guessing
             </Text>
             <Text className="text-primary/60 text-sm mb-2">
-              � Compare to YOURSELF, not others
+              • Compare to YOURSELF, not others
             </Text>
             <Text className="text-primary/60 text-sm mb-2">
-              � One issue at a time - systematic improvement
+              • One issue at a time - systematic improvement
             </Text>
             <Text className="text-primary/60 text-sm">
-              � Video shows truth - feel can be deceiving
+              • Video shows truth - feel can be deceiving
             </Text>
           </View>
         </View>

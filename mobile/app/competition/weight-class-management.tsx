@@ -1,11 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-  TextInput,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, TouchableOpacity, ScrollView, TextInput } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -607,7 +602,7 @@ export default function WeightClassManagement() {
 
                   <Text className="text-white font-bold mb-2">Reasoning:</Text>
                   {strat.reasoning.map((reason: string, rIdx: number) => (
-                    <Text key={rIdx} className="text-zinc-300 text-sm mb-1">� {reason}</Text>
+                    <Text key={rIdx} className="text-zinc-300 text-sm mb-1">• {reason}</Text>
                   ))}
 
                   {strat.guideline && (
@@ -635,7 +630,7 @@ export default function WeightClassManagement() {
                   <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-3">
                     <Text className="text-primary font-bold mb-2">Method:</Text>
                     {phase.method.map((item: string, mIdx: number) => (
-                      <Text key={mIdx} className="text-primary/80 text-sm mb-1">� {item}</Text>
+                      <Text key={mIdx} className="text-primary/80 text-sm mb-1">• {item}</Text>
                     ))}
                   </View>
 
@@ -673,7 +668,7 @@ export default function WeightClassManagement() {
                   <View className="bg-primary/10 rounded-xl p-4 border border-primary/30">
                     <Text className="text-primary/80 font-bold mb-2">Strategy:</Text>
                     {type.strategy.map((strat: string, sIdx: number) => (
-                      <Text key={sIdx} className="text-primary/60 text-sm mb-1">� {strat}</Text>
+                      <Text key={sIdx} className="text-primary/60 text-sm mb-1">• {strat}</Text>
                     ))}
                   </View>
                 </View>
@@ -688,14 +683,14 @@ export default function WeightClassManagement() {
                   <Text className="text-cyan-400 text-xl font-bold mb-4">{section.title}</Text>
                   
                   {section.actions && section.actions.map((action: string, idx: number) => (
-                    <Text key={idx} className="text-zinc-300 mb-2">� {action}</Text>
+                    <Text key={idx} className="text-zinc-300 mb-2">• {action}</Text>
                   ))}
 
                   {section.night && (
                     <View className="mb-4">
                       <Text className="text-white font-bold mb-2">Night Before:</Text>
                       {section.night.map((item: string, idx: number) => (
-                        <Text key={idx} className="text-zinc-300 text-sm mb-1">� {item}</Text>
+                        <Text key={idx} className="text-zinc-300 text-sm mb-1">• {item}</Text>
                       ))}
                     </View>
                   )}
@@ -704,7 +699,7 @@ export default function WeightClassManagement() {
                     <View>
                       <Text className="text-white font-bold mb-2">Morning Of:</Text>
                       {section.morning.map((item: string, idx: number) => (
-                        <Text key={idx} className="text-zinc-300 text-sm mb-1">� {item}</Text>
+                        <Text key={idx} className="text-zinc-300 text-sm mb-1">• {item}</Text>
                       ))}
                     </View>
                   )}
@@ -718,7 +713,7 @@ export default function WeightClassManagement() {
               <View className="bg-purple-500/10 rounded-xl p-5 border border-purple-500/30 mb-6">
                 <Text className="text-purple-400 font-bold text-lg mb-3">Why Body Comp Matters:</Text>
                 {currentSection.importance?.map((reason: string, idx: number) => (
-                  <Text key={idx} className="text-purple-300 text-sm mb-1">� {reason}</Text>
+                  <Text key={idx} className="text-purple-300 text-sm mb-1">• {reason}</Text>
                 ))}
               </View>
 
@@ -753,7 +748,7 @@ export default function WeightClassManagement() {
               <View className="bg-amber-500/10 rounded-xl p-5 border border-amber-500/30 mb-6">
                 <Text className="text-amber-400 font-bold text-lg mb-3">Philosophy:</Text>
                 {currentSection.philosophy?.map((item: string, idx: number) => (
-                  <Text key={idx} className="text-amber-300 text-sm mb-1">� {item}</Text>
+                  <Text key={idx} className="text-amber-300 text-sm mb-1">• {item}</Text>
                 ))}
               </View>
 
@@ -762,14 +757,14 @@ export default function WeightClassManagement() {
                   <Text className="text-amber-400 text-xl font-bold mb-4">{section.title}</Text>
 
                   {section.approach && section.approach.map((item: string, idx: number) => (
-                    <Text key={idx} className="text-zinc-300 mb-2">� {item}</Text>
+                    <Text key={idx} className="text-zinc-300 mb-2">• {item}</Text>
                   ))}
 
                   {section.signs && (
                     <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-3">
                       <Text className="text-primary font-bold mb-2">Signs:</Text>
                       {section.signs.map((sign: string, sIdx: number) => (
-                        <Text key={sIdx} className="text-primary/80 text-sm mb-1">� {sign}</Text>
+                        <Text key={sIdx} className="text-primary/80 text-sm mb-1">• {sign}</Text>
                       ))}
                     </View>
                   )}
@@ -805,16 +800,16 @@ export default function WeightClassManagement() {
           <View className="bg-gradient-to-r from-blue-500/20 to-primary/20 rounded-xl p-5 border border-primary/30 mb-6">
             <Text className="text-primary/80 font-bold text-lg mb-3">Remember</Text>
             <Text className="text-primary/60 text-sm mb-2">
-              � Strength-to-weight ratio matters more than absolute weight
+              • Strength-to-weight ratio matters more than absolute weight
             </Text>
             <Text className="text-primary/60 text-sm mb-2">
-              � Small strategic cuts okay, big cuts hurt performance
+              • Small strategic cuts okay, big cuts hurt performance
             </Text>
             <Text className="text-primary/60 text-sm mb-2">
-              � Body composition &gt; scale weight
+              • Body composition &gt; scale weight
             </Text>
             <Text className="text-primary/60 text-sm">
-              � When in doubt, move up and get stronger
+              • When in doubt, move up and get stronger
             </Text>
           </View>
         </View>

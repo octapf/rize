@@ -1,10 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, TouchableOpacity, ScrollView } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -62,7 +58,7 @@ export default function EMOMTimer() {
               <Text className="text-white text-7xl font-bold">{timeLeft}</Text>
             </View>
 
-            <Text className="text-zinc-400 text-lg mb-2">PrÛximo ejercicio:</Text>
+            <Text className="text-zinc-400 text-lg mb-2">Pr√≥ximo ejercicio:</Text>
             <Text className="text-white text-2xl font-bold text-center">
               {exercises[currentRound % exercises.length]}
             </Text>
@@ -89,12 +85,12 @@ export default function EMOMTimer() {
           </View>
 
           <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
-            <Text className="text-primary/80 font-bold mb-2">CÛmo Funciona EMOM</Text>
+            <Text className="text-primary/80 font-bold mb-2">C√≥mo Funciona EMOM</Text>
             <Text className="text-primary/60 text-sm">
-              ï Cada minuto haz el ejercicio asignado{'\n'}
-              ï Lo que sobre del minuto = descanso{'\n'}
-              ï Trabaja r·pido para m·s rest{'\n'}
-              ï Mejora velocidad y resistencia
+              ‚Ä¢ Cada minuto haz el ejercicio asignado{'\n'}
+              ‚Ä¢ Lo que sobre del minuto = descanso{'\n'}
+              ‚Ä¢ Trabaja r√°pido para m√°s rest{'\n'}
+              ‚Ä¢ Mejora velocidad y resistencia
             </Text>
           </View>
         </View>

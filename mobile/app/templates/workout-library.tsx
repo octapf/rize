@@ -1,11 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-  TextInput,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, TouchableOpacity, ScrollView, TextInput } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -183,7 +178,7 @@ export default function WorkoutTemplates() {
               <View className="flex-row items-center mb-3">
                 <Ionicons name="star" size={16} color="#FFEA00" />
                 <Text className="text-amber-400 ml-1 font-bold">{template.rating}</Text>
-                <Text className="text-zinc-500 ml-1">• {template.downloads.toLocaleString()} downloads</Text>
+                <Text className="text-zinc-500 ml-1">â€¢ {template.downloads.toLocaleString()} downloads</Text>
               </View>
 
               <View className="flex-row gap-2 mb-4">
@@ -215,11 +210,11 @@ export default function WorkoutTemplates() {
           <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
             <Text className="text-primary/80 font-bold mb-2">Template Tips</Text>
             <Text className="text-primary/60 text-sm">
-              • Follow program 8-12 semanas mínimo{'\n'}
-              • No mezcles templates diferentes{'\n'}
-              • Track progress cada semana{'\n'}
-              • Adjust pesos con linear progression{'\n'}
-              • Deload cuando sea necesario
+              â€¢ Follow program 8-12 semanas mÃ­nimo{'\n'}
+              â€¢ No mezcles templates diferentes{'\n'}
+              â€¢ Track progress cada semana{'\n'}
+              â€¢ Adjust pesos con linear progression{'\n'}
+              â€¢ Deload cuando sea necesario
             </Text>
           </View>
         </View>

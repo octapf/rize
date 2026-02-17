@@ -1,12 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-  TextInput,
-  Alert,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, TouchableOpacity, ScrollView, TextInput, Alert } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -21,7 +15,7 @@ interface Equipment {
 }
 
 const EQUIPMENT: Equipment[] = [
-  { id: '1', name: 'Barra Olímpica', category: 'barras', quantity: 3, weight: 20, inUse: false, lastUsed: '2025-01-20' },
+  { id: '1', name: 'Barra OlÃ­mpica', category: 'barras', quantity: 3, weight: 20, inUse: false, lastUsed: '2025-01-20' },
   { id: '2', name: 'Discos 20kg', category: 'discos', quantity: 8, weight: 20, inUse: true },
   { id: '3', name: 'Discos 10kg', category: 'discos', quantity: 8, weight: 10, inUse: false },
   { id: '4', name: 'Discos 5kg', category: 'discos', quantity: 8, weight: 5, inUse: false },
@@ -29,8 +23,8 @@ const EQUIPMENT: Equipment[] = [
   { id: '6', name: 'Mancuernas 15kg (par)', category: 'mancuernas', quantity: 1, weight: 15, inUse: true },
   { id: '7', name: 'Rack de Sentadilla', category: 'maquinas', quantity: 1, inUse: false },
   { id: '8', name: 'Banco Plano', category: 'maquinas', quantity: 2, inUse: true },
-  { id: '9', name: 'Bandas Elásticas', category: 'accesorios', quantity: 5, inUse: false },
-  { id: '10', name: 'Cinturón Lumbar', category: 'accesorios', quantity: 1, inUse: false, lastUsed: '2025-01-21' },
+  { id: '9', name: 'Bandas ElÃ¡sticas', category: 'accesorios', quantity: 5, inUse: false },
+  { id: '10', name: 'CinturÃ³n Lumbar', category: 'accesorios', quantity: 1, inUse: false, lastUsed: '2025-01-21' },
 ];
 
 export default function EquipmentTracker() {
@@ -42,7 +36,7 @@ export default function EquipmentTracker() {
     { id: 'barras', label: 'Barras', icon: 'remove' },
     { id: 'discos', label: 'Discos', icon: 'disc' },
     { id: 'mancuernas', label: 'Mancuernas', icon: 'fitness' },
-    { id: 'maquinas', label: 'Máquinas', icon: 'hardware-chip' },
+    { id: 'maquinas', label: 'MÃ¡quinas', icon: 'hardware-chip' },
     { id: 'accesorios', label: 'Accesorios', icon: 'extension-puzzle' },
   ];
 
@@ -54,7 +48,7 @@ export default function EquipmentTracker() {
         { text: 'Cancelar', style: 'cancel' },
         {
           text: 'Agregar',
-          onPress: () => Alert.alert('¡Agregado!', 'Equipamiento agregado exitosamente'),
+          onPress: () => Alert.alert('Â¡Agregado!', 'Equipamiento agregado exitosamente'),
         },
       ]
     );
@@ -63,7 +57,7 @@ export default function EquipmentTracker() {
   const editEquipment = (equipment: Equipment) => {
     Alert.alert(
       equipment.name,
-      'Selecciona una acción',
+      'Selecciona una acciÃ³n',
       [
         {
           text: 'Editar Cantidad',
@@ -74,12 +68,12 @@ export default function EquipmentTracker() {
         },
         {
           text: equipment.inUse ? 'Marcar Disponible' : 'Marcar en Uso',
-          onPress: () => Alert.alert('Estado Actualizado', `${equipment.name} ahora está ${equipment.inUse ? 'disponible' : 'en uso'}`),
+          onPress: () => Alert.alert('Estado Actualizado', `${equipment.name} ahora estÃ¡ ${equipment.inUse ? 'disponible' : 'en uso'}`),
         },
         {
           text: 'Eliminar',
           style: 'destructive',
-          onPress: () => Alert.alert('Confirmar', '¿Eliminar este equipo?', [
+          onPress: () => Alert.alert('Confirmar', 'Â¿Eliminar este equipo?', [
             { text: 'Cancelar', style: 'cancel' },
             { text: 'Eliminar', style: 'destructive', onPress: () => Alert.alert('Eliminado', 'Equipo eliminado') },
           ]),
@@ -190,7 +184,7 @@ export default function EquipmentTracker() {
             <View className="bg-zinc-900 rounded-xl p-8 border border-zinc-800 items-center">
               <Ionicons name="cube-outline" size={48} color="#71717A" />
               <Text className="text-zinc-400 font-bold mt-4">
-                No se encontró equipamiento
+                No se encontrâ€¢ equipamiento
               </Text>
               <Text className="text-zinc-500 text-sm mt-2 text-center">
                 Prueba con otros filtros
@@ -253,7 +247,7 @@ export default function EquipmentTracker() {
                   )}
                   {item.lastUsed && (
                     <View className="flex-1 bg-zinc-800 rounded-lg p-2">
-                      <Text className="text-zinc-400 text-xs">Último Uso</Text>
+                      <Text className="text-zinc-400 text-xs">Ãšltimo Uso</Text>
                       <Text className="text-white font-semibold text-sm">{item.lastUsed}</Text>
                     </View>
                   )}
@@ -273,13 +267,13 @@ export default function EquipmentTracker() {
                   Recordatorio de Mantenimiento
                 </Text>
                 <Text className="text-primary/60 text-sm mb-2">
-                  • Limpia y lubrica barras cada 3 meses
+                  â€¢ Limpia y lubrica barras cada 3 meses
                 </Text>
                 <Text className="text-primary/60 text-sm mb-2">
-                  • Revisa discos y mancuernas mensualmente
+                  â€¢ Revisa discos y mancuernas mensualmente
                 </Text>
                 <Text className="text-primary/60 text-sm">
-                  • Inspecciona máquinas y racks semanalmente
+                  â€¢ Inspecciona mÃ¡quinas y racks semanalmente
                 </Text>
               </View>
             </View>

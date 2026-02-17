@@ -1,11 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-  TextInput,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, TouchableOpacity, ScrollView, TextInput } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -214,11 +209,11 @@ export default function HIITTemplates() {
           <View className="bg-red-500/10 rounded-xl p-4 border border-red-500/30 mb-6">
             <Text className="text-red-400 font-bold mb-2">Safety Guidelines</Text>
             <Text className="text-red-300 text-sm">
-              • Warm up 5-10 minutes{'\n'}
-              • Start with 2-3 sessions/week{'\n'}
-              • Don't do HIIT on leg days{'\n'}
-              • Recovery is critical{'\n'}
-              • Stop if form breaks down
+              â€¢ Warm up 5-10 minutes{'\n'}
+              â€¢ Start with 2-3 sessions/week{'\n'}
+              â€¢ Don't do HIIT on leg days{'\n'}
+              â€¢ Recovery is critical{'\n'}
+              â€¢ Stop if form breaks down
             </Text>
           </View>
         </View>

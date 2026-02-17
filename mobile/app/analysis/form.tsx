@@ -1,11 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-  Alert,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, TouchableOpacity, ScrollView, Alert } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -39,9 +34,9 @@ const FORM_ANALYSES: FormAnalysis[] = [
         status: 'excellent',
       },
       {
-        name: 'PosiciÛn de Rodillas',
+        name: 'Posici√≥n de Rodillas',
         score: 75,
-        feedback: 'Rodillas se adelantan ligeramente. Intenta sentarte m·s atr·s',
+        feedback: 'Rodillas se adelantan ligeramente. Intenta sentarte m√°s atr√°s',
         status: 'good',
       },
       {
@@ -51,21 +46,21 @@ const FORM_ANALYSES: FormAnalysis[] = [
         status: 'excellent',
       },
       {
-        name: 'Velocidad ConcÈntrica',
+        name: 'Velocidad Conc√©ntrica',
         score: 80,
         feedback: 'Buena explosividad en la subida',
         status: 'good',
       },
       {
-        name: 'Control ExcÈntrico',
+        name: 'Control Exc√©ntrico',
         score: 85,
-        feedback: 'Descenso controlado, podrÌas ser m·s lento para mayor TUT',
+        feedback: 'Descenso controlado, podr√≠as ser m√°s lento para mayor TUT',
         status: 'good',
       },
     ],
     aiSuggestions: [
-      'EnfÛcate en empujar con los talones para mantener rodillas atr·s',
-      'MantÈn el pecho alto durante todo el movimiento',
+      'Enf√≥cate en empujar con los talones para mantener rodillas atr√°s',
+      'Mant√©n el pecho alto durante todo el movimiento',
       'Considera agregar trabajo de movilidad de tobillo',
     ],
   },
@@ -79,19 +74,19 @@ const FORM_ANALYSES: FormAnalysis[] = [
       {
         name: 'Trayectoria de Barra',
         score: 65,
-        feedback: 'La barra no sigue lÌnea recta, se va hacia la cabeza',
+        feedback: 'La barra no sigue l√≠nea recta, se va hacia la cabeza',
         status: 'needs-work',
       },
       {
-        name: 'RetracciÛn Escapular',
+        name: 'Retracci√≥n Escapular',
         score: 80,
-        feedback: 'Buena retracciÛn, mantÈn esc·pulas juntas',
+        feedback: 'Buena retracci√≥n, mant√©n esc√°pulas juntas',
         status: 'good',
       },
       {
         name: 'Arco Lumbar',
         score: 70,
-        feedback: 'Arco presente pero podrÌas mejorarlo para m·s estabilidad',
+        feedback: 'Arco presente pero podr√≠as mejorarlo para m√°s estabilidad',
         status: 'good',
       },
       {
@@ -103,12 +98,12 @@ const FORM_ANALYSES: FormAnalysis[] = [
       {
         name: 'Leg Drive',
         score: 60,
-        feedback: 'Piernas no est·n activas, pierdes estabilidad',
+        feedback: 'Piernas no est√©n activas, pierdes estabilidad',
         status: 'needs-work',
       },
     ],
     aiSuggestions: [
-      'Visualiza empujar la barra hacia atr·s (hacia la cabeza) al subir',
+      'Visualiza empujar la barra hacia atr√°s (hacia la cabeza) al subir',
       'Activa las piernas empujando el suelo durante el press',
       'Practica el setup con peso ligero antes del trabajo pesado',
     ],
@@ -121,7 +116,7 @@ const FORM_ANALYSES: FormAnalysis[] = [
     videoUrl: 'video-3.mp4',
     metrics: [
       {
-        name: 'PosiciÛn Inicial',
+        name: 'Posici√≥n Inicial',
         score: 95,
         feedback: 'Setup perfecto: cadera alta, hombros sobre barra',
         status: 'excellent',
@@ -133,9 +128,9 @@ const FORM_ANALYSES: FormAnalysis[] = [
         status: 'excellent',
       },
       {
-        name: 'ExtensiÛn de Cadera',
+        name: 'Extensi√≥n de Cadera',
         score: 88,
-        feedback: 'Excelente lockout con gl˙teos al final',
+        feedback: 'Excelente lockout con gl√∫teos al final',
         status: 'excellent',
       },
       {
@@ -152,9 +147,9 @@ const FORM_ANALYSES: FormAnalysis[] = [
       },
     ],
     aiSuggestions: [
-      'TÈcnica ejemplar, mantÈn esta forma',
-      'PodrÌas experimentar con stance ligeramente m·s ancho',
-      'Considera deficit deadlifts para desarrollar m·s fuerza del suelo',
+      'T√©cnica ejemplar, mant√©n esta forma',
+      'Podr√≠as experimentar con stance ligeramente m√°s ancho',
+      'Considera deficit deadlifts para desarrollar m√°s fuerza del suelo',
     ],
   },
 ];
@@ -203,10 +198,10 @@ export default function FormAnalysis() {
   const uploadVideo = () => {
     Alert.alert(
       'Subir Video',
-      'Selecciona un video de tu ejercicio para an·lisis de forma',
+      'Selecciona un video de tu ejercicio para an√°lisis de forma',
       [
-        { text: 'Grabar Nuevo', onPress: () => Alert.alert('Grabando...', 'FunciÛn de c·mara') },
-        { text: 'Seleccionar de GalerÌa', onPress: () => Alert.alert('GalerÌa', 'Selector de video') },
+        { text: 'Grabar Nuevo', onPress: () => Alert.alert('Grabando...', 'Funci√≥n de c√°mara') },
+        { text: 'Seleccionar de Galer√≠a', onPress: () => Alert.alert('Galer√≠a', 'Selector de video') },
         { text: 'Cancelar', style: 'cancel' },
       ]
     );
@@ -215,8 +210,8 @@ export default function FormAnalysis() {
   const viewVideoAnalysis = (analysis: FormAnalysis) => {
     setSelectedAnalysis(analysis.id);
     Alert.alert(
-      `An·lisis: ${analysis.exercise}`,
-      `Score: ${analysis.overallScore}/100\n\nEste video muestra ${analysis.metrics.length} mÈtricas analizadas por IA`,
+      `An√°lisis: ${analysis.exercise}`,
+      `Score: ${analysis.overallScore}/100\n\nEste video muestra ${analysis.metrics.length} m√©tricas analizadas por IA`,
       [
         { text: 'Ver Video' },
         { text: 'Compartir' },
@@ -238,7 +233,7 @@ export default function FormAnalysis() {
             <Ionicons name="arrow-back" size={24} color="white" />
           </TouchableOpacity>
           <Text className="text-white text-2xl font-bold flex-1 ml-3">
-            An·lisis de Forma
+            An√°lisis de Forma
           </Text>
           <TouchableOpacity onPress={uploadVideo}>
             <Ionicons name="videocam" size={24} color="white" />
@@ -254,7 +249,7 @@ export default function FormAnalysis() {
                 {averageScore}
               </Text>
               <Text className="text-white/80 text-sm">
-                {FORM_ANALYSES.length} an·lisis completados
+                {FORM_ANALYSES.length} an√°lisis completados
               </Text>
             </View>
             <View className="bg-white/20 rounded-full p-4">
@@ -270,7 +265,7 @@ export default function FormAnalysis() {
           <View className="flex-row items-center justify-center">
             <Ionicons name="add-circle" size={20} color="white" />
             <Text className="text-white font-bold ml-2">
-              Subir Nuevo Video para An·lisis
+              Subir Nuevo Video para An√°lisis
             </Text>
           </View>
         </TouchableOpacity>
@@ -279,7 +274,7 @@ export default function FormAnalysis() {
       <ScrollView className="flex-1" showsVerticalScrollIndicator={false}>
         <View className="px-6 pt-6">
           <Text className="text-white font-bold text-lg mb-3">
-            An·lisis Recientes
+            An√°lisis Recientes
           </Text>
 
           {FORM_ANALYSES.map((analysis) => (
@@ -319,7 +314,7 @@ export default function FormAnalysis() {
               {/* Metrics */}
               <View className="bg-zinc-800 rounded-lg p-3 mb-3">
                 <Text className="text-white font-bold text-sm mb-3">
-                  MÈtricas Analizadas ({analysis.metrics.length})
+                  M√©tricas Analizadas ({analysis.metrics.length})
                 </Text>
                 {analysis.metrics.map((metric, index) => (
                   <View
@@ -374,7 +369,7 @@ export default function FormAnalysis() {
                 </View>
                 {analysis.aiSuggestions.map((suggestion, index) => (
                   <View key={index} className="flex-row items-start mb-1">
-                    <Text className="text-primary/80 mr-2">ï</Text>
+                    <Text className="text-primary/80 mr-2">‚Ä¢</Text>
                     <Text className="text-primary/60 text-sm flex-1">{suggestion}</Text>
                   </View>
                 ))}
@@ -406,14 +401,14 @@ export default function FormAnalysis() {
               <Ionicons name="information-circle" size={20} color="#FFEA00" />
               <View className="flex-1 ml-3">
                 <Text className="text-amber-400 font-bold mb-2">
-                  CÛmo Grabar para Mejor An·lisis
+                  C√≥mo Grabar para Mejor An√°lisis
                 </Text>
                 <Text className="text-amber-300 text-sm mb-2">
-                  ï Graba desde el lateral para mejor visibilidad{'\n'}
-                  ï Aseg˙rate de que todo tu cuerpo estÈ en cuadro{'\n'}
-                  ï Usa buena iluminaciÛn{'\n'}
-                  ï MantÈn la c·mara estable{'\n'}
-                  ï Graba series completas (3-5 reps)
+                  ‚Ä¢ Graba desde el lateral para mejor visibilidad{'\n'}
+                  ‚Ä¢ Aseg√∫rate de que todo tu cuerpo est√° en cuadro{'\n'}
+                  ‚Ä¢ Usa buena iluminaci√≥n{'\n'}
+                  ‚Ä¢ Mant√©n la c√°mara estable{'\n'}
+                  ‚Ä¢ Graba series completas (3-5 reps)
                 </Text>
               </View>
             </View>

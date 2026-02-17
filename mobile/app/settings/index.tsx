@@ -1,12 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  ScrollView,
-  TouchableOpacity,
-  Switch,
-  Alert,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, ScrollView, TouchableOpacity, Switch, Alert } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
@@ -116,7 +110,7 @@ export default function SettingsScreen() {
           <TouchableOpacity onPress={() => router.back()} className="p-2">
             <Ionicons name="arrow-back" size={28} color="white" />
           </TouchableOpacity>
-          <Text className="text-2xl font-bold text-white">Configuración</Text>
+          <Text className="text-2xl font-bold text-white">ConfiguraciÃ³n</Text>
           <View className="w-10" />
         </View>
       </LinearGradient>
@@ -161,7 +155,7 @@ export default function SettingsScreen() {
             <View className="flex-row items-center justify-between py-3 border-t border-gray-200">
               <View className="flex-1">
                 <Text className="text-gray-900 font-medium">
-                  Iniciar timer automáticamente
+                  Iniciar timer automÃ¡ticamente
                 </Text>
                 <Text className="text-gray-500 text-sm">
                   Al completar una serie
@@ -318,7 +312,7 @@ export default function SettingsScreen() {
 
             <View className="flex-row items-center justify-between pt-3">
               <View className="flex-1">
-                <Text className="text-gray-900 font-medium">Feedback háptico</Text>
+                <Text className="text-gray-900 font-medium">Feedback hÃ¡ptico</Text>
                 <Text className="text-gray-500 text-sm">
                   Vibraciones al interactuar
                 </Text>
@@ -344,7 +338,7 @@ export default function SettingsScreen() {
             <TouchableOpacity className="flex-row items-center justify-between py-3 border-b border-gray-200">
               <View className="flex-row items-center gap-3">
                 <Ionicons name="lock-closed-outline" size={24} color="#6B7280" />
-                <Text className="text-gray-900">Cambiar contraseña</Text>
+                <Text className="text-gray-900">Cambiar contraseÃ±a</Text>
               </View>
               <Ionicons name="chevron-forward" size={20} color="#9CA3AF" />
             </TouchableOpacity>
@@ -361,7 +355,7 @@ export default function SettingsScreen() {
               onPress={() => {
                 Alert.alert(
                   'Eliminar cuenta',
-                  '¿Estás seguro? Esta acción no se puede deshacer.',
+                  'Â¿EstÃ¡s seguro? Esta acciÃ³n no se puede deshacer.',
                   [
                     { text: 'Cancelar', style: 'cancel' },
                     { text: 'Eliminar', style: 'destructive' },
@@ -381,21 +375,21 @@ export default function SettingsScreen() {
 
         {/* About */}
         <View>
-          <Text className="text-lg font-bold text-gray-900 mb-3">Información</Text>
+          <Text className="text-lg font-bold text-gray-900 mb-3">InformaciÃ³n</Text>
 
           <Card className="p-4">
             <View className="flex-row items-center justify-between py-3 border-b border-gray-200">
-              <Text className="text-gray-900">Versión</Text>
+              <Text className="text-gray-900">VersiÃ³n</Text>
               <Text className="text-gray-600">1.0.0</Text>
             </View>
 
             <TouchableOpacity className="flex-row items-center justify-between py-3 border-b border-gray-200">
-              <Text className="text-gray-900">Términos y condiciones</Text>
+              <Text className="text-gray-900">TÃ©rminos y condiciones</Text>
               <Ionicons name="chevron-forward" size={20} color="#9CA3AF" />
             </TouchableOpacity>
 
             <TouchableOpacity className="flex-row items-center justify-between py-3">
-              <Text className="text-gray-900">Política de privacidad</Text>
+              <Text className="text-gray-900">PolÃ­tica de privacidad</Text>
               <Ionicons name="chevron-forward" size={20} color="#9CA3AF" />
             </TouchableOpacity>
           </Card>

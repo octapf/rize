@@ -1,13 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  ScrollView,
-  TouchableOpacity,
-  TextInput,
-  ActivityIndicator,
-  Alert,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, ScrollView, TouchableOpacity, TextInput, ActivityIndicator, Alert } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
@@ -40,8 +33,8 @@ const mockGoals: Goal[] = [
   },
   {
     id: '2',
-    title: 'Racha de 30 Días',
-    description: 'Entrena 30 días consecutivos',
+    title: 'Racha de 30 DÃ­as',
+    description: 'Entrena 30 dÃ­as consecutivos',
     type: 'streak',
     target: 30,
     current: 12,
@@ -92,7 +85,7 @@ export default function GoalsScreen() {
   const handleDeleteGoal = (id: string) => {
     Alert.alert(
       'Eliminar Objetivo',
-      '¿Estás seguro de que quieres eliminar este objetivo?',
+      'Â¿EstÃ¡s seguro de que quieres eliminar este objetivo?',
       [
         { text: 'Cancelar', style: 'cancel' },
         {
@@ -136,7 +129,7 @@ export default function GoalsScreen() {
                   <Ionicons name="calendar" size={14} color="#6B7280" />
                   <Text className="text-gray-600 text-xs">
                     {daysRemaining > 0
-                      ? `${daysRemaining} días restantes`
+                      ? `${daysRemaining} dÃ­as restantes`
                       : 'Vencido'}
                   </Text>
                 </View>
@@ -188,7 +181,7 @@ export default function GoalsScreen() {
             </Text>
             {goal.type === 'workouts' && goal.deadline && daysRemaining && daysRemaining > 0 && (
               <Text className="text-gray-600 text-sm">
-                ~{Math.ceil((goal.target - goal.current) / daysRemaining)} por día
+                ~{Math.ceil((goal.target - goal.current) / daysRemaining)} por dÃ­a
               </Text>
             )}
           </View>

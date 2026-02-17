@@ -1,12 +1,6 @@
 import React from 'react';
-import {
-  View,
-  Text,
-  FlatList,
-  TouchableOpacity,
-  StyleSheet,
-  Alert,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, FlatList, TouchableOpacity, StyleSheet, Alert } from 'react-native';;
 import { Stack, router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
@@ -29,7 +23,7 @@ const getTypeLabel = (type: string, unit?: string) => {
   if (type === 'reps') return 'Repeticiones';
   if (type === 'time') return unit === 'minutes' ? 'Minutos' : 'Segundos';
   if (type === 'distance') {
-    if (unit === 'kilometers') return 'Kilómetros';
+    if (unit === 'kilometers') return 'KilÃ³metros';
     if (unit === 'miles') return 'Millas';
     return 'Metros';
   }
@@ -48,7 +42,7 @@ export default function MyExercisesScreen() {
     mutationFn: (id: string) => exercisesApi.deleteCustomExercise(id),
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['exercises'] });
-      Alert.alert('Éxito', 'Ejercicio eliminado');
+      Alert.alert('Ã©xito', 'Ejercicio eliminado');
     },
     onError: (error: any) => {
       Alert.alert('Error', error.response?.data?.error?.message || 'Error al eliminar');
@@ -58,7 +52,7 @@ export default function MyExercisesScreen() {
   const handleDelete = (exercise: Exercise) => {
     Alert.alert(
       'Eliminar Ejercicio',
-      `¿Estás seguro de que quieres eliminar "${exercise.name.es}"?`,
+      `Â¿EstÃ¡s seguro de que quieres eliminar "${exercise.name.es}"?`,
       [
         { text: 'Cancelar', style: 'cancel' },
         {
@@ -81,9 +75,9 @@ export default function MyExercisesScreen() {
         <Text style={styles.exerciseSubtitle}>{item.name.en}</Text>
         <View style={styles.exerciseMeta}>
           <Text style={styles.metaText}>
-            {item.category.toUpperCase()} • Dificultad {item.difficulty}
+            {item.category.toUpperCase()} â€¢ Dificultad {item.difficulty}
           </Text>
-          <Text style={styles.metaText}>• {getTypeLabel(item.type, item.unit)}</Text>
+          <Text style={styles.metaText}>â€¢ {getTypeLabel(item.type, item.unit)}</Text>
         </View>
       </View>
 

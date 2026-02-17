@@ -1,11 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  Alert,
-  Dimensions,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, TouchableOpacity, Alert, Dimensions } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import { Camera, CameraType } from 'expo-camera';
@@ -40,7 +35,7 @@ const BARCODE_DATABASE: { [key: string]: ScannedProduct } = {
   '123456789': {
     barcode: '123456789',
     name: 'Arroz Integral',
-    brand: 'Marca Genérica',
+    brand: 'Marca GenÃ©rica',
     serving: '100g',
     calories: 111,
     protein: 2.6,
@@ -83,13 +78,13 @@ export default function BarcodeScanner() {
 
     if (product) {
       Alert.alert(
-        '¡Producto Encontrado!',
+        'Â¡Producto Encontrado!',
         `${product.name} - ${product.brand}\n\n` +
-          `Calorías: ${product.calories} kcal\n` +
-          `Proteína: ${product.protein}g\n` +
+          `CalorÃ­as: ${product.calories} kcal\n` +
+          `ProteÃ­na: ${product.protein}g\n` +
           `Carbohidratos: ${product.carbs}g\n` +
           `Grasas: ${product.fats}g\n\n` +
-          `Porción: ${product.serving}`,
+          `PorciÃ³n: ${product.serving}`,
         [
           {
             text: 'Escanear Otro',
@@ -100,7 +95,7 @@ export default function BarcodeScanner() {
             text: 'Agregar',
             onPress: () => {
               Alert.alert(
-                '¡Agregado!',
+                'Â¡Agregado!',
                 `${product.name} agregado a tu registro`,
                 [
                   {
@@ -116,7 +111,7 @@ export default function BarcodeScanner() {
     } else {
       Alert.alert(
         'Producto No Encontrado',
-        `Código: ${data}\n\nEste producto no está en nuestra base de datos. ¿Deseas agregarlo manualmente?`,
+        `CÃ³digo: ${data}\n\nEste producto no estÃ¡ en nuestra base de datos. Â¿Deseas agregarlo manualmente?`,
         [
           {
             text: 'Escanear Otro',
@@ -150,7 +145,7 @@ export default function BarcodeScanner() {
   if (hasPermission === null) {
     return (
       <View className="flex-1 bg-zinc-950 items-center justify-center">
-        <Text className="text-white">Solicitando permiso de cámara...</Text>
+        <Text className="text-white">Solicitando permiso de cÃ¡mara...</Text>
       </View>
     );
   }
@@ -160,11 +155,11 @@ export default function BarcodeScanner() {
       <View className="flex-1 bg-zinc-950 items-center justify-center px-6">
         <Ionicons name="camera-off" size={64} color="#EF4444" />
         <Text className="text-white font-bold text-xl mt-4 text-center">
-          Sin Acceso a Cámara
+          Sin Acceso a CÃ¡mara
         </Text>
         <Text className="text-zinc-400 text-center mt-2 leading-6">
-          Necesitamos acceso a tu cámara para escanear códigos de barras. Ve a
-          Configuración para habilitar el permiso.
+          Necesitamos acceso a tu cÃ¡mara para escanear cÃ³digos de barras. Ve a
+          ConfiguraciÃ³n para habilitar el permiso.
         </Text>
         <TouchableOpacity
           onPress={() => router.back()}
@@ -242,8 +237,8 @@ export default function BarcodeScanner() {
             <View className="mt-6 bg-black/70 rounded-xl p-4">
               <Text className="text-white text-center font-semibold">
                 {scanned
-                  ? 'Código escaneado'
-                  : 'Centra el código de barras en el recuadro'}
+                  ? 'CÃ³digo escaneado'
+                  : 'Centra el cÃ³digo de barras en el recuadro'}
               </Text>
             </View>
           </View>
@@ -259,8 +254,8 @@ export default function BarcodeScanner() {
                   Tips para escanear:
                 </Text>
                 <Text className="text-zinc-300 text-sm">
-                  • Asegúrate de tener buena iluminación{'\n'}• Mantén el código a
-                  15-30 cm de la cámara{'\n'}• El código debe estar plano y sin
+                  â€¢ AsegÃºrate de tener buena iluminaciÃ³n{'\n'}â€¢ MantÃ©n el cÃ³digo a
+                  15-30 cm de la cÃ¡mara{'\n'}â€¢ El cÃ³digo debe estar plano y sin
                   reflejos
                 </Text>
               </View>
@@ -271,7 +266,7 @@ export default function BarcodeScanner() {
               onPress={() => {
                 Alert.alert(
                   'Entrada Manual',
-                  '¿No puedes escanear el código?',
+                  'Â¿No puedes escanear el cÃ³digo?',
                   [
                     {
                       text: 'Cancelar',

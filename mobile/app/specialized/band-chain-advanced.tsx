@@ -1,10 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, TouchableOpacity, ScrollView } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -496,19 +492,19 @@ export default function BandChainAdvanced() {
           <View className="bg-gradient-to-r from-amber-500/20 to-orange-500/20 rounded-xl p-5 border border-amber-500/30 mb-6">
             <Text className="text-amber-400 font-bold text-lg mb-3">Key Points</Text>
             <Text className="text-amber-300 text-sm mb-2">
-              � Accommodating resistance = variable resistance through ROM
+              • Accommodating resistance = variable resistance through ROM
             </Text>
             <Text className="text-amber-300 text-sm mb-2">
-              � Bands: Exponential, eccentric overload, unstable
+              • Bands: Exponential, eccentric overload, unstable
             </Text>
             <Text className="text-amber-300 text-sm mb-2">
-              � Chains: Linear, predictable, smooth feel
+              • Chains: Linear, predictable, smooth feel
             </Text>
             <Text className="text-amber-300 text-sm mb-2">
-              � Use for lockout strength and speed development
+              • Use for lockout strength and speed development
             </Text>
             <Text className="text-amber-300 text-sm">
-              � Start conservative - more fatiguing than straight weight
+              • Start conservative - more fatiguing than straight weight
             </Text>
           </View>
         </View>

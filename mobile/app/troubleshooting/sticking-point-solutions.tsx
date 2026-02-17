@@ -1,10 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, TouchableOpacity, ScrollView } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -515,7 +511,7 @@ export default function StickingPointSolutions() {
               <View className="bg-red-500/10 rounded-xl p-4 border border-red-500/30 mb-4">
                 <Text className="text-red-400 font-bold mb-2">Why You're Stuck:</Text>
                 {point.why_stuck.map((reason, rIdx) => (
-                  <Text key={rIdx} className="text-red-300 text-sm mb-1">� {reason}</Text>
+                  <Text key={rIdx} className="text-red-300 text-sm mb-1">• {reason}</Text>
                 ))}
               </View>
 
@@ -553,19 +549,19 @@ export default function StickingPointSolutions() {
           <View className="bg-gradient-to-r from-amber-500/20 to-orange-500/20 rounded-xl p-5 border border-amber-500/30 mb-6">
             <Text className="text-amber-400 font-bold text-lg mb-3">Programming Tips</Text>
             <Text className="text-amber-300 text-sm mb-2">
-              � Pick 1-2 exercises for your specific weak point
+              • Pick 1-2 exercises for your specific weak point
             </Text>
             <Text className="text-amber-300 text-sm mb-2">
-              � Do them 2x per week after main work
+              • Do them 2x per week after main work
             </Text>
             <Text className="text-amber-300 text-sm mb-2">
-              � Give it 4-6 weeks to work - be patient
+              • Give it 4-6 weeks to work - be patient
             </Text>
             <Text className="text-amber-300 text-sm mb-2">
-              � Film to confirm weak point is actually weak point
+              • Film to confirm weak point is actually weak point
             </Text>
             <Text className="text-amber-300 text-sm">
-              � Once fixed, maintain with lighter work
+              • Once fixed, maintain with lighter work
             </Text>
           </View>
         </View>

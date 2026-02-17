@@ -25,6 +25,10 @@ alwaysApply: false
 - Create hook in `src/hooks/use{Feature}.ts` with React Query
 - Handle loading, error states
 
+## Text & Fonts
+- Use `Text` from `@/components/ui/Text` (not `react-native` Text) for correct Spanish characters (á, é, í, ó, ú).
+- Fonts: `font-heading` (Poppins), `font-body` (Inter), `font-label` (Montserrat).
+
 ## Brand (source: `mobile/tailwind.config.js`)
 - Primary: `#9D12DE` (purple). Use `bg-primary`, `text-primary`.
 - Accent: `#FFEA00` (yellow). Use `bg-highlight`, `text-highlight`.

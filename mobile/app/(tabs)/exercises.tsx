@@ -1,5 +1,6 @@
 import React from 'react';
-import { View, Text, TouchableOpacity, ScrollView } from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, TouchableOpacity, ScrollView } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
@@ -27,8 +28,8 @@ export default function ExercisesTabScreen() {
         </Text>
         
         <Text className="text-gray-600 text-center mb-8 px-4">
-          Desde flexiones b·sicas hasta planche y front lever.
-          Organizado por categorÌas y niveles de dificultad.
+          Desde flexiones b√°sicas hasta planche y front lever.
+          Organizado por categor√≠as y niveles de dificultad.
         </Text>
 
         <TouchableOpacity

@@ -1,5 +1,6 @@
 import React from 'react';
-import { View, Text, ScrollView, TouchableOpacity } from 'react-native';
+import { View, ScrollView, TouchableOpacity } from 'react-native';
+import { Text } from '@/components/ui/Text';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
@@ -37,7 +38,7 @@ export default function HomeScreen() {
 
   React.useEffect(() => {
     if (statsError) {
-      toast.error('No pudimos cargar tus estadísticas');
+      toast.error('No pudimos cargar tus estad?sticas');
     }
   }, [statsError]);
 
@@ -83,7 +84,7 @@ export default function HomeScreen() {
         {stats && (
           <Animated.View entering={FadeInDown.delay(100)} className="mb-6">
             <Text className="text-lg font-bold text-white mb-3">
-              Acciones Rápidas
+              Acciones RÃ¡pidas
             </Text>
 
             <View className="flex-row flex-wrap gap-2">
@@ -93,7 +94,7 @@ export default function HomeScreen() {
               >
                 <Ionicons name="flash" size={16} color="#FFEA00" />
                 <Text className="text-white font-semibold">
-                  Inicio Rápido
+                  Inicio RÃ¡pido
                 </Text>
               </TouchableOpacity>
 
@@ -131,7 +132,7 @@ export default function HomeScreen() {
         {/* Quick Actions */}
         <Animated.View entering={FadeInDown.delay(300)}>
           <Text className="text-xl font-bold text-white mb-3">
-            Acciones Rápidas
+            Acciones RÃ¡pidas
           </Text>
 
           <View className="gap-3">
@@ -148,7 +149,7 @@ export default function HomeScreen() {
                           Nuevo Entrenamiento
                         </Text>
                         <Text className="text-white/80 text-sm">
-                          Comienza tu sesión ahora
+                          Comienza tu sesiÃ³n ahora
                         </Text>
                       </View>
                     </View>
@@ -256,7 +257,7 @@ export default function HomeScreen() {
               <View className="items-center gap-3">
                 <Ionicons name="barbell-outline" size={48} color="#9D12DE" />
                 <Text className="text-gray-400 text-center">
-                  Aún no tienes entrenamientos
+                  A?n no tienes entrenamientos
                 </Text>
                 <Button
                   onPress={() => router.push('/workouts/create')}

@@ -1,12 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-  Alert,
-  Switch,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, TouchableOpacity, ScrollView, Alert, Switch } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -52,12 +46,12 @@ interface Interaction {
 const SUPPLEMENTS: Supplement[] = [
   {
     id: '1',
-    name: 'Proteína Whey',
-    category: 'Proteína',
+    name: 'ProteÃ­na Whey',
+    category: 'ProteÃ­na',
     dosage: '30g (1 scoop)',
     timing: 'post-workout',
     frequency: 'daily',
-    benefits: ['Recuperación muscular', 'Síntesis proteica', 'Saciedad'],
+    benefits: ['RecuperaciÃ³n muscular', 'SÃ­ntesis proteica', 'Saciedad'],
     enabled: true,
     icon: 'ðŸ’ª',
     color: 'bg-primary',
@@ -69,19 +63,19 @@ const SUPPLEMENTS: Supplement[] = [
     dosage: '5g',
     timing: 'post-workout',
     frequency: 'daily',
-    benefits: ['Fuerza', 'Potencia', 'Masa muscular', 'Recuperación'],
+    benefits: ['Fuerza', 'Potencia', 'Masa muscular', 'RecuperaciÃ³n'],
     enabled: true,
     icon: '?',
     color: 'bg-amber-500',
   },
   {
     id: '3',
-    name: 'Cafeína',
+    name: 'CafeÃ­na',
     category: 'Estimulante',
     dosage: '200mg',
     timing: 'pre-workout',
     frequency: 'workout-days',
-    benefits: ['Energía', 'Focus', 'Rendimiento', 'Termogénesis'],
+    benefits: ['EnergÃ­a', 'Focus', 'Rendimiento', 'TermogÃ©nesis'],
     enabled: true,
     icon: 'â˜•',
     color: 'bg-red-500',
@@ -125,11 +119,11 @@ const SUPPLEMENTS: Supplement[] = [
   {
     id: '7',
     name: 'Magnesio',
-    category: 'Recuperación',
+    category: 'RecuperaciÃ³n',
     dosage: '400mg',
     timing: 'night',
     frequency: 'daily',
-    benefits: ['Sueño', 'Recuperación', 'Relajación muscular'],
+    benefits: ['SueÃ±o', 'RecuperaciÃ³n', 'RelajaciÃ³n muscular'],
     enabled: false,
     icon: 'ðŸŒ™',
     color: 'bg-indigo-500',
@@ -137,11 +131,11 @@ const SUPPLEMENTS: Supplement[] = [
   {
     id: '8',
     name: 'ZMA',
-    category: 'Recuperación',
+    category: 'RecuperaciÃ³n',
     dosage: '1 serving',
     timing: 'night',
     frequency: 'daily',
-    benefits: ['Testosterona', 'Sueño profundo', 'Recuperación'],
+    benefits: ['Testosterona', 'SueÃ±o profundo', 'RecuperaciÃ³n'],
     enabled: false,
     icon: 'ðŸ’¤',
     color: 'bg-purple-500',
@@ -151,25 +145,25 @@ const SUPPLEMENTS: Supplement[] = [
 const STACKS: SupplementStack[] = [
   {
     id: '1',
-    name: 'Stack Básico',
+    name: 'Stack BÃ¡sico',
     goal: 'Fundamentos esenciales',
-    supplements: ['Proteína Whey', 'Creatina Monohidrato', 'Omega-3', 'Vitamina D3'],
+    supplements: ['ProteÃ­na Whey', 'Creatina Monohidrato', 'Omega-3', 'Vitamina D3'],
     totalCost: 85,
     monthlyServing: 30,
   },
   {
     id: '2',
     name: 'Stack Performance',
-    goal: 'Máximo rendimiento en gym',
-    supplements: ['Proteína Whey', 'Creatina Monohidrato', 'Cafeína', 'Beta-Alanina'],
+    goal: 'MÃ¡ximo rendimiento en gym',
+    supplements: ['ProteÃ­na Whey', 'Creatina Monohidrato', 'CafeÃ­na', 'Beta-Alanina'],
     totalCost: 95,
     monthlyServing: 30,
   },
   {
     id: '3',
-    name: 'Stack Recuperación',
-    goal: 'Optimizar descanso y recuperación',
-    supplements: ['Proteína Whey', 'Omega-3', 'Magnesio', 'ZMA'],
+    name: 'Stack RecuperaciÃ³n',
+    goal: 'Optimizar descanso y recuperaciÃ³n',
+    supplements: ['ProteÃ­na Whey', 'Omega-3', 'Magnesio', 'ZMA'],
     totalCost: 90,
     monthlyServing: 30,
   },
@@ -178,27 +172,27 @@ const STACKS: SupplementStack[] = [
 const INTERACTIONS: Interaction[] = [
   {
     supplement1: 'Creatina Monohidrato',
-    supplement2: 'Cafeína',
+    supplement2: 'CafeÃ­na',
     type: 'negative',
-    description: 'La cafeína puede reducir la absorción de creatina. Separar por 2-3 horas.',
+    description: 'La cafeÃ­na puede reducir la absorciÃ³n de creatina. Separar por 2-3 horas.',
   },
   {
-    supplement1: 'Proteína Whey',
+    supplement1: 'ProteÃ­na Whey',
     supplement2: 'Creatina Monohidrato',
     type: 'positive',
-    description: 'Sinergia positiva. La proteína ayuda a transportar creatina al músculo.',
+    description: 'Sinergia positiva. La proteÃ­na ayuda a transportar creatina al mÃºsculo.',
   },
   {
     supplement1: 'Omega-3',
     supplement2: 'Vitamina D3',
     type: 'positive',
-    description: 'Mejor absorción cuando se toman juntos con comida grasa.',
+    description: 'Mejor absorciÃ³n cuando se toman juntos con comida grasa.',
   },
   {
     supplement1: 'Magnesio',
     supplement2: 'ZMA',
     type: 'neutral',
-    description: 'ZMA ya contiene magnesio. Evitar duplicar dosificación.',
+    description: 'ZMA ya contiene magnesio. Evitar duplicar dosificaciÃ³n.',
   },
 ];
 
@@ -222,7 +216,7 @@ export default function SupplementStacks() {
 
   const getTimingSchedule = (): TimingSchedule[] => {
     const schedule: TimingSchedule[] = [
-      { time: 'Mañana (06:00)', supplements: [] },
+      { time: 'MaÃ±ana (06:00)', supplements: [] },
       { time: 'Pre-Entreno (17:30)', supplements: [] },
       { time: 'Post-Entreno (19:00)', supplements: [] },
       { time: 'Con Comida (13:00)', supplements: [] },
@@ -236,7 +230,7 @@ export default function SupplementStacks() {
       
       switch (supp.timing) {
         case 'morning':
-          timeSlot = schedule.find((s) => s.time.includes('Mañana'));
+          timeSlot = schedule.find((s) => s.time.includes('MaÃ±ana'));
           break;
         case 'pre-workout':
           timeSlot = schedule.find((s) => s.time.includes('Pre-Entreno'));
@@ -279,7 +273,7 @@ export default function SupplementStacks() {
   const applyStack = (stack: SupplementStack) => {
     Alert.alert(
       `Aplicar ${stack.name}`,
-      `¿Activar estos suplementos:\n${stack.supplements.join('\n')}`,
+      `Â¿Activar estos suplementos:\n${stack.supplements.join('\n')}`,
       [
         { text: 'Cancelar', style: 'cancel' },
         {
@@ -307,7 +301,7 @@ export default function SupplementStacks() {
             <Ionicons name="arrow-back" size={24} color="white" />
           </TouchableOpacity>
           <Text className="text-white text-2xl font-bold flex-1 ml-3">
-            Suplementación
+            SuplementaciÃ³n
           </Text>
           <TouchableOpacity>
             <Ionicons name="add-circle" size={28} color="#9D12DE" />
@@ -502,7 +496,7 @@ export default function SupplementStacks() {
                   <View className="items-end">
                     <Text className="text-zinc-400 text-xs">DURACIÃ“N</Text>
                     <Text className="text-white text-2xl font-bold">
-                      {stack.monthlyServing} días
+                      {stack.monthlyServing} dÃ­as
                     </Text>
                   </View>
                 </View>
@@ -531,7 +525,7 @@ export default function SupplementStacks() {
                     Interacciones entre Suplementos
                   </Text>
                   <Text className="text-primary/60 text-sm">
-                    Conoce cómo interactúan tus suplementos para optimizar resultados
+                    Conoce cÃ³mo interactÃºan tus suplementos para optimizar resultados
                   </Text>
                 </View>
               </View>
@@ -581,10 +575,10 @@ export default function SupplementStacks() {
               <Ionicons name="warning" size={20} color="#FFEA00" />
               <View className="flex-1 ml-3">
                 <Text className="text-amber-400 font-bold mb-2">
-                  Consulta Médica
+                  Consulta MÃ©dica
                 </Text>
                 <Text className="text-amber-300 text-sm">
-                  Siempre consulta con un profesional antes de comenzar suplementación
+                  Siempre consulta con un profesional antes de comenzar suplementaciÃ³n
                 </Text>
               </View>
             </View>

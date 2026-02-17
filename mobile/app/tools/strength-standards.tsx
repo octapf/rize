@@ -1,12 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-  TextInput,
-  Alert,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, TouchableOpacity, ScrollView, TextInput, Alert } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -110,7 +104,7 @@ export default function StrengthStandards() {
       novice: 'Novato',
       intermediate: 'Intermedio',
       advanced: 'Avanzado',
-      elite: '…lite',
+      elite: '√âlite',
       'N/A': 'Sin Datos',
     };
     return labels[level] || 'N/A';
@@ -173,7 +167,7 @@ export default function StrengthStandards() {
                   Compara Tu Fuerza
                 </Text>
                 <Text className="text-purple-300 text-sm">
-                  Basado en est·ndares de powerlifting. Los valores son 1RM como ratio de peso corporal.
+                  Basado en est√°ndares de powerlifting. Los valores son 1RM como ratio de peso corporal.
                 </Text>
               </View>
             </View>
@@ -356,10 +350,10 @@ export default function StrengthStandards() {
                   Notas Importantes
                 </Text>
                 <Text className="text-primary/60 text-sm">
-                  ï Estos son est·ndares generales{'\n'}
-                  ï VarÌan seg˙n edad y experiencia{'\n'}
-                  ï Peso corporal influye (m·s pesado = ratios m·s bajos tÌpicamente){'\n'}
-                  ï EnfÛcate en progreso personal, no solo comparaciones
+                  ‚Ä¢ Estos son est√°ndares generales{'\n'}
+                  ‚Ä¢ Var√≠an seg√∫n edad y experiencia{'\n'}
+                  ‚Ä¢ Peso corporal influye (m√°s pesado = ratios m√°s bajos t√≠picamente){'\n'}
+                  ‚Ä¢ Enf√≥cate en progreso personal, no solo comparaciones
                 </Text>
               </View>
             </View>

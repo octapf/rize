@@ -1,10 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, TouchableOpacity, ScrollView } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -288,7 +284,7 @@ export default function PeriodizationTemplates() {
                 <View className="border-t border-zinc-700 pt-3">
                   {phase.notes.map((note, noteIdx) => (
                     <Text key={noteIdx} className="text-zinc-300 text-sm mb-1">
-                      � {note}
+                      • {note}
                     </Text>
                   ))}
                 </View>
@@ -327,16 +323,16 @@ export default function PeriodizationTemplates() {
           <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
             <Text className="text-primary/80 font-bold mb-2">Implementation Tips</Text>
             <Text className="text-primary/60 text-sm mb-2">
-              � Stick to one model for full cycle (don't program hop)
+              • Stick to one model for full cycle (don't program hop)
             </Text>
             <Text className="text-primary/60 text-sm mb-2">
-              � Track all lifts to ensure progression
+              • Track all lifts to ensure progression
             </Text>
             <Text className="text-primary/60 text-sm mb-2">
-              � Don't skip deloads (recovery is when you grow)
+              • Don't skip deloads (recovery is when you grow)
             </Text>
             <Text className="text-primary/60 text-sm">
-              � Adjust based on recovery and life stress
+              • Adjust based on recovery and life stress
             </Text>
           </View>
         </View>

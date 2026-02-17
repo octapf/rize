@@ -1,12 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-  Alert,
-  Switch,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, TouchableOpacity, ScrollView, Alert, Switch } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -79,7 +73,7 @@ const DATA_CATEGORIES: DataCategory[] = [
   },
   {
     id: 'nutrition',
-    name: 'Nutrición',
+    name: 'NutriciÃ³n',
     description: 'Planes de comida y macros',
     icon: 'restaurant',
     selected: true,
@@ -103,8 +97,8 @@ const DATA_CATEGORIES: DataCategory[] = [
   },
   {
     id: 'stats',
-    name: 'Estadísticas',
-    description: 'PRs, récords, logros',
+    name: 'EstadÃ­sticas',
+    description: 'PRs, rÃ©cords, logros',
     icon: 'trophy',
     selected: true,
     itemCount: 512,
@@ -138,7 +132,7 @@ export default function DataExport() {
 
   const handleExport = () => {
     if (selectedCategories.length === 0) {
-      Alert.alert('Error', 'Selecciona al menos una categoría para exportar');
+      Alert.alert('Error', 'Selecciona al menos una categorÃ­a para exportar');
       return;
     }
 
@@ -146,7 +140,7 @@ export default function DataExport() {
 
     Alert.alert(
       'Exportando Datos',
-      `Se exportarán ${totalItems} elementos en formato ${format?.name}. Esto puede tardar unos minutos.`,
+      `Se exportarÃ¡n ${totalItems} elementos en formato ${format?.name}. Esto puede tardar unos minutos.`,
       [
         { text: 'Cancelar', style: 'cancel' },
         {
@@ -154,12 +148,12 @@ export default function DataExport() {
           onPress: () => {
             // Simulate export process
             Alert.alert(
-              '¡Exportación Exitosa!',
-              `Tu archivo ${format?.extension} está listo. Se ha guardado en tu carpeta de Descargas.`,
+              'Â¡ExportaciÃ³n Exitosa!',
+              `Tu archivo ${format?.extension} estÃ¡ listo. Se ha guardado en tu carpeta de Descargas.`,
               [
                 {
                   text: 'Compartir',
-                  onPress: () => Alert.alert('Compartir', 'Función de compartir'),
+                  onPress: () => Alert.alert('Compartir', 'FunciÃ³n de compartir'),
                 },
                 { text: 'OK' },
               ]
@@ -173,7 +167,7 @@ export default function DataExport() {
   const handleImport = () => {
     Alert.alert(
       'Importar Datos',
-      '¿Qué tipo de archivo deseas importar?',
+      'Â¿QuÃ© tipo de archivo deseas importar?',
       [
         {
           text: 'JSON',
@@ -204,7 +198,7 @@ export default function DataExport() {
         </View>
 
         <Text className="text-zinc-400 text-sm leading-5">
-          Exporta tus datos para crear backups o migrar a otras plataformas. También
+          Exporta tus datos para crear backups o migrar a otras plataformas. TambiÃ©n
           puedes importar datos desde otras apps.
         </Text>
       </View>
@@ -233,7 +227,7 @@ export default function DataExport() {
         {/* Export Format */}
         <View className="px-6 mb-6">
           <Text className="text-white font-bold text-lg mb-3">
-            Formato de Exportación
+            Formato de ExportaciÃ³n
           </Text>
 
           {EXPORT_FORMATS.map((format) => (
@@ -271,7 +265,7 @@ export default function DataExport() {
                   {format.description}
                 </Text>
                 <Text className="text-zinc-500 text-xs mt-1">
-                  {format.extension} • {format.size}
+                  {format.extension} â€¢ {format.size}
                 </Text>
               </View>
 
@@ -286,7 +280,7 @@ export default function DataExport() {
         <View className="px-6 mb-6">
           <View className="flex-row items-center justify-between mb-3">
             <Text className="text-white font-bold text-lg">
-              Categorías de Datos
+              CategorÃ­as de Datos
             </Text>
             <Text className="text-zinc-400 text-sm">
               {selectedCategories.length}/{categories.length} seleccionadas
@@ -361,7 +355,7 @@ export default function DataExport() {
               <View className="flex-1">
                 <Text className="text-white font-semibold">Comprimir Datos</Text>
                 <Text className="text-zinc-400 text-sm mt-0.5">
-                  Reduce el tamaño del archivo ({compressData ? '-60%' : '0%'})
+                  Reduce el tamaÃ±o del archivo ({compressData ? '-60%' : '0%'})
                 </Text>
               </View>
               <Switch
@@ -382,22 +376,22 @@ export default function DataExport() {
                 <Ionicons name="information-circle" size={24} color="#9D12DE" />
                 <View className="flex-1 ml-3">
                   <Text className="text-primary/80 font-bold mb-2">
-                    Resumen de Exportación
+                    Resumen de ExportaciÃ³n
                   </Text>
                   <View className="space-y-1">
                     <Text className="text-primary/60 text-sm">
-                      • {totalItems.toLocaleString('es-ES')} elementos totales
+                      â€¢ {totalItems.toLocaleString('es-ES')} elementos totales
                     </Text>
                     <Text className="text-primary/60 text-sm">
-                      • {selectedCategories.length} categorías seleccionadas
+                      â€¢ {selectedCategories.length} categorÃ­as seleccionadas
                     </Text>
                     <Text className="text-primary/60 text-sm">
-                      • Tamaño estimado:{' '}
+                      â€¢ TamaÃ±o estimado:{' '}
                       {EXPORT_FORMATS.find((f) => f.id === selectedFormat)?.size}
                     </Text>
                     {includeMedia && (
                       <Text className="text-primary/60 text-sm">
-                        • Incluye 34 fotos y videos
+                        â€¢ Incluye 34 fotos y videos
                       </Text>
                     )}
                   </View>

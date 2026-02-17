@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
-import { Modal, View, Text, TouchableOpacity } from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { Modal, View, TouchableOpacity } from 'react-native';;
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
 import Animated, {

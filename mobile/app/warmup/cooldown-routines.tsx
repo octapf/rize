@@ -1,10 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, TouchableOpacity, ScrollView } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -27,11 +23,11 @@ export default function CooldownRoutines() {
         { exercise: 'Arm Circles (slow)', duration: '30 sec each direction', notes: 'Gentle, controlled movement' },
       ],
       staticStretches: [
-        { muscle: 'Chest', exercise: 'Doorway Pec Stretch', duration: '45 sec each side', notes: 'Elbow at 90°, lean forward' },
+        { muscle: 'Chest', exercise: 'Doorway Pec Stretch', duration: '45 sec each side', notes: 'Elbow at 90Â°, lean forward' },
         { muscle: 'Lats', exercise: 'Lat Hang Stretch', duration: '30 sec', notes: 'Hang from bar, relax shoulders' },
         { muscle: 'Shoulders', exercise: 'Cross-body Shoulder Stretch', duration: '30 sec each', notes: 'Pull arm across chest' },
         { muscle: 'Triceps', exercise: 'Overhead Tricep Stretch', duration: '30 sec each', notes: 'Elbow behind head' },
-        { muscle: 'Hip Flexors', exercise: 'Kneeling Hip Flexor Stretch', duration: '45 sec each', notes: 'Front knee at 90°, squeeze glute' },
+        { muscle: 'Hip Flexors', exercise: 'Kneeling Hip Flexor Stretch', duration: '45 sec each', notes: 'Front knee at 90Â°, squeeze glute' },
         { muscle: 'Quads', exercise: 'Standing Quad Stretch', duration: '30 sec each', notes: 'Pull heel to glute, knee down' },
         { muscle: 'Hamstrings', exercise: 'Seated Hamstring Stretch', duration: '45 sec each', notes: 'Reach for toes, keep back straight' },
         { muscle: 'Glutes', exercise: 'Figure-4 Stretch', duration: '45 sec each', notes: 'Ankle on opposite knee, pull' },
@@ -261,12 +257,12 @@ export default function CooldownRoutines() {
           <View className="bg-red-500/10 rounded-xl p-4 border border-red-500/30 mb-6">
             <Text className="text-red-400 font-bold mb-2">Cool-down Benefits</Text>
             <Text className="text-red-300 text-sm">
-              • Reduces DOMS (muscle soreness){'\n'}
-              • Improves flexibility over time{'\n'}
-              • Prevents blood pooling{'\n'}
-              • Aids in waste product removal{'\n'}
-              • Signals body to start recovery{'\n'}
-              • 10-15 min investment = faster recovery
+              â€¢ Reduces DOMS (muscle soreness){'\n'}
+              â€¢ Improves flexibility over time{'\n'}
+              â€¢ Prevents blood pooling{'\n'}
+              â€¢ Aids in waste product removal{'\n'}
+              â€¢ Signals body to start recovery{'\n'}
+              â€¢ 10-15 min investment = faster recovery
             </Text>
           </View>
         </View>

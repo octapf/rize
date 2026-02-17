@@ -1,12 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-  TextInput,
-  Alert,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, TouchableOpacity, ScrollView, TextInput, Alert } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -48,18 +42,18 @@ const MOCK_MEAL_PLAN: MealPlan = {
       protein: 40,
       carbs: 75,
       fats: 18,
-      foods: ['Avena 100g', 'Huevos 4', 'Pl·tano 2', 'Mantequilla de manÌ 20g'],
+      foods: ['Avena 100g', 'Huevos 4', 'Pl√°tano 2', 'Mantequilla de man‚Ä¢ 20g'],
       isLogged: true,
     },
     {
       id: '2',
-      name: 'Snack Media MaÒana',
+      name: 'Snack Media Ma√±ana',
       time: '11:00',
       calories: 400,
       protein: 35,
       carbs: 40,
       fats: 8,
-      foods: ['Batido de proteÌna', 'Arroz con leche 150g'],
+      foods: ['Batido de prote√≠na', 'Arroz con leche 150g'],
       isLogged: true,
     },
     {
@@ -92,7 +86,7 @@ const MOCK_MEAL_PLAN: MealPlan = {
       protein: 40,
       carbs: 55,
       fats: 8,
-      foods: ['Batido proteÌna 2 scoops', 'Pl·tano', 'Avena 50g'],
+      foods: ['Batido prote√≠na 2 scoops', 'Pl√°tano', 'Avena 50g'],
       isLogged: false,
     },
     {
@@ -103,7 +97,7 @@ const MOCK_MEAL_PLAN: MealPlan = {
       protein: 35,
       carbs: 25,
       fats: 12,
-      foods: ['SalmÛn 150g', 'Ensalada grande', 'Batata 100g'],
+      foods: ['Salm√≥n 150g', 'Ensalada grande', 'Batata 100g'],
       isLogged: false,
     },
   ],
@@ -114,8 +108,8 @@ const QUICK_FOODS = [
   { name: 'Pechuga de Pollo (100g)', protein: 30, carbs: 0, fats: 3, calories: 165 },
   { name: 'Arroz Blanco (100g)', protein: 3, carbs: 28, fats: 0, calories: 130 },
   { name: 'Avena (100g)', protein: 13, carbs: 67, fats: 7, calories: 389 },
-  { name: 'Pl·tano', protein: 1, carbs: 27, fats: 0, calories: 105 },
-  { name: 'Batido ProteÌna', protein: 25, carbs: 3, fats: 2, calories: 130 },
+  { name: 'Pl√°tano', protein: 1, carbs: 27, fats: 0, calories: 105 },
+  { name: 'Batido Prote√≠na', protein: 25, carbs: 3, fats: 2, calories: 130 },
 ];
 
 export default function MealPlanner() {
@@ -182,7 +176,7 @@ export default function MealPlanner() {
               {/* Protein */}
               <View>
                 <View className="flex-row items-center justify-between mb-2">
-                  <Text className="text-primary/80 font-bold">ProteÌna</Text>
+                  <Text className="text-primary/80 font-bold">Prote√≠na</Text>
                   <Text className="text-white font-bold">
                     {totals.protein}g / {mealPlan.targetProtein}g
                   </Text>
@@ -315,17 +309,17 @@ export default function MealPlanner() {
 
           {/* Quick Add Foods */}
           <View className="bg-zinc-900 rounded-xl p-4 mb-6 border border-zinc-800">
-            <Text className="text-white font-bold mb-3">Alimentos R·pidos</Text>
+            <Text className="text-white font-bold mb-3">Alimentos R√°pidos</Text>
             <View className="flex-row flex-wrap gap-2">
               {QUICK_FOODS.map((food, idx) => (
                 <TouchableOpacity
                   key={idx}
-                  onPress={() => Alert.alert('AÒadir', `${food.name} aÒadido`)}
+                  onPress={() => Alert.alert('A√±adir', `${food.name} a√±adido`)}
                   className="bg-zinc-800 rounded-lg px-3 py-2"
                 >
                   <Text className="text-white text-sm font-bold mb-1">{food.name}</Text>
                   <Text className="text-zinc-400 text-xs">
-                    {food.calories} kcal ï P:{food.protein}g
+                    {food.calories} kcal ‚Ä¢ P:{food.protein}g
                   </Text>
                 </TouchableOpacity>
               ))}
@@ -338,13 +332,13 @@ export default function MealPlanner() {
               <Ionicons name="restaurant" size={20} color="#9D12DE" />
               <View className="flex-1 ml-3">
                 <Text className="text-primary font-bold mb-2">
-                  Tips de NutriciÛn
+                  Tips de Nutrici√≥n
                 </Text>
                 <Text className="text-primary/80 text-sm">
-                  ï Prepara comidas con anticipaciÛn{'\n'}
-                  ï Pesa alimentos para precisiÛn{'\n'}
-                  ï ProteÌna en cada comida{'\n'}
-                  ï Ajusta seg˙n progreso semanal
+                  ‚Ä¢ Prepara comidas con anticipaci√≥n{'\n'}
+                  ‚Ä¢ Pesa alimentos para precisi√≥n{'\n'}
+                  ‚Ä¢ Prote√≠na en cada comida{'\n'}
+                  ‚Ä¢ Ajusta seg√∫n progreso semanal
                 </Text>
               </View>
             </View>

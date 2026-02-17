@@ -1,5 +1,6 @@
 import React from 'react';
-import { View, Text, ViewProps } from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, ViewProps } from 'react-native';;
 import { cn } from '@/lib/utils';
 
 export type BadgeVariant = 'success' | 'warning' | 'error' | 'info' | 'neutral';

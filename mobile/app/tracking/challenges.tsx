@@ -1,11 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-  Alert,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, TouchableOpacity, ScrollView, Alert } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import { format, differenceInDays } from 'date-fns';
@@ -29,51 +24,51 @@ interface Challenge {
 
 const CHALLENGE_TEMPLATES: Omit<Challenge, 'id' | 'startDate' | 'endDate' | 'completedDays' | 'status'>[] = [
   {
-    name: '30 Días de Entrenamiento',
-    description: 'Entrena al menos 30 minutos cada día durante 30 días',
+    name: '30 DÃ­as de Entrenamiento',
+    description: 'Entrena al menos 30 minutos cada dÃ­a durante 30 dÃ­as',
     duration: 30,
     type: 'fitness',
     icon: 'barbell',
     color: 'red',
     dailyTasks: [
-      'Completar sesión de entrenamiento (30+ min)',
+      'Completar sesiÃ³n de entrenamiento (30+ min)',
       'Calentar adecuadamente',
       'Registrar el workout',
     ],
-    reward: 'ðŸ’ª Fuerza ganada, hábito consolidado',
+    reward: 'ðŸ’ª Fuerza ganada, hÃ¡bito consolidado',
   },
   {
-    name: 'Proteína en Cada Comida',
-    description: '30g+ proteína en cada comida durante 30 días',
+    name: 'ProteÃ­na en Cada Comida',
+    description: '30g+ proteÃ­na en cada comida durante 30 dÃ­as',
     duration: 30,
     type: 'nutrition',
     icon: 'nutrition',
     color: 'primary',
     dailyTasks: [
-      '30g+ proteína en desayuno',
-      '40g+ proteína en comida',
-      '40g+ proteína en cena',
+      '30g+ proteÃ­na en desayuno',
+      '40g+ proteÃ­na en comida',
+      '40g+ proteÃ­na en cena',
       'Trackear macros',
     ],
-    reward: '?? Mejor composición corporal, saciedad',
+    reward: '?? Mejor composiciÃ³n corporal, saciedad',
   },
   {
     name: '10k Pasos Diarios',
-    description: 'Camina mínimo 10,000 pasos cada día',
+    description: 'Camina mÃ­nimo 10,000 pasos cada dÃ­a',
     duration: 30,
     type: 'fitness',
     icon: 'walk',
     color: 'blue',
     dailyTasks: [
       'Alcanzar 10,000 pasos',
-      'Caminar después de comidas',
-      'Revisar contador al final del día',
+      'Caminar despuÃ©s de comidas',
+      'Revisar contador al final del dÃ­a',
     ],
-    reward: 'ðŸš¶ Mejor salud cardiovascular, recuperación activa',
+    reward: 'ðŸš¶ Mejor salud cardiovascular, recuperaciÃ³n activa',
   },
   {
-    name: '8 Horas de Sueño',
-    description: 'Dormir 8 horas completas cada noche durante 30 días',
+    name: '8 Horas de SueÃ±o',
+    description: 'Dormir 8 horas completas cada noche durante 30 dÃ­as',
     duration: 30,
     type: 'recovery',
     icon: 'moon',
@@ -82,13 +77,13 @@ const CHALLENGE_TEMPLATES: Omit<Challenge, 'id' | 'startDate' | 'endDate' | 'com
       'Acostarse antes de las 11 PM',
       'Dormir 8 horas seguidas',
       'Sin pantallas 1h antes de dormir',
-      'Habitación oscura y fresca',
+      'HabitaciÃ³n oscura y fresca',
     ],
-    reward: '??´ Mejor recuperación, hormona de crecimiento óptima',
+    reward: '??â€¢ Mejor recuperaciÃ³n, hormona de crecimiento Ã³ptima',
   },
   {
     name: 'Sin Alcohol',
-    description: 'Cero alcohol durante 30 días',
+    description: 'Cero alcohol durante 30 dÃ­as',
     duration: 30,
     type: 'mindset',
     icon: 'close-circle',
@@ -98,19 +93,19 @@ const CHALLENGE_TEMPLATES: Omit<Challenge, 'id' | 'startDate' | 'endDate' | 'com
       'Beber 3L+ de agua',
       'Elegir alternativas saludables',
     ],
-    reward: 'ðŸ§  Mejor sueño, recuperación y composición corporal',
+    reward: 'ðŸ§  Mejor sueÃ±o, recuperaciÃ³n y composiciÃ³n corporal',
   },
   {
     name: 'Movilidad Diaria',
-    description: '15 minutos de movilidad cada mañana',
+    description: '15 minutos de movilidad cada maÃ±ana',
     duration: 30,
     type: 'recovery',
     icon: 'body',
     color: 'cyan',
     dailyTasks: [
       '15 min de movilidad matutina',
-      'Enfocarse en áreas tensas',
-      'Respiración profunda',
+      'Enfocarse en Ã¡reas tensas',
+      'RespiraciÃ³n profunda',
     ],
     reward: '?? Mejor ROM, menos dolor, mejor postura',
   },
@@ -134,8 +129,8 @@ export default function Challenges() {
   const types = [
     { key: 'all', label: 'Todos', icon: 'apps' },
     { key: 'fitness', label: 'Fitness', icon: 'barbell' },
-    { key: 'nutrition', label: 'Nutrición', icon: 'nutrition' },
-    { key: 'recovery', label: 'Recuperación', icon: 'moon' },
+    { key: 'nutrition', label: 'NutriciÃ³n', icon: 'nutrition' },
+    { key: 'recovery', label: 'RecuperaciÃ³n', icon: 'moon' },
     { key: 'mindset', label: 'Mindset', icon: 'bulb' },
   ];
 
@@ -158,7 +153,7 @@ export default function Challenges() {
     };
 
     setChallenges([...challenges, newChallenge]);
-    Alert.alert('Challenge Iniciado! ??', `${template.name} - ${template.duration} días`);
+    Alert.alert('Challenge Iniciado! ðŸŽ‰', `${template.name} - ${template.duration} dÃ­as`);
   };
 
   const getDaysRemaining = (challenge: Challenge) => {
@@ -209,9 +204,9 @@ export default function Challenges() {
     if (!wasCompleted) {
       const newTotal = challenge.completedDays.length + 1;
       if (newTotal === challenge.duration) {
-        Alert.alert('?? CHALLENGE COMPLETADO! ??', `Has completado ${challenge.name}!\n\n${challenge.reward}`);
+        Alert.alert('?? CHALLENGE COMPLETADO! ðŸŽ‰', `Has completado ${challenge.name}!\n\n${challenge.reward}`);
       } else {
-        Alert.alert('Día Completado! ?', `Día ${currentDay}/${challenge.duration}`);
+        Alert.alert('DÃ­a Completado! ?', `DÃ­a ${currentDay}/${challenge.duration}`);
       }
     }
   };
@@ -219,7 +214,7 @@ export default function Challenges() {
   const abandonChallenge = (challengeId: string) => {
     Alert.alert(
       'Abandonar Challenge',
-      '¿Seguro? Se perderá todo el progreso',
+      'Â¿Seguro? Se perderÃ¡ todo el progreso',
       [
         { text: 'Cancelar' },
         {
@@ -290,7 +285,7 @@ export default function Challenges() {
                     {/* Progress */}
                     <View className="flex-row gap-2 mb-4">
                       <View className="flex-1 bg-primary/10 rounded-lg p-3 border border-primary/30">
-                        <Text className="text-primary/80 text-xs mb-1">Día Actual</Text>
+                        <Text className="text-primary/80 text-xs mb-1">DÃ­a Actual</Text>
                         <Text className="text-primary/80 font-bold text-2xl">
                           {currentDay}/{challenge.duration}
                         </Text>
@@ -321,7 +316,7 @@ export default function Challenges() {
 
                     {/* Daily Tasks */}
                     <View className="bg-zinc-800 rounded-lg p-3 mb-4">
-                      <Text className="text-white font-bold mb-2">Tareas del Día</Text>
+                      <Text className="text-white font-bold mb-2">Tareas del DÃ­a</Text>
                       {challenge.dailyTasks.map((task, idx) => (
                         <View key={idx} className="flex-row items-start mb-1 last:mb-0">
                           <Ionicons name="checkmark-circle" size={16} color="#9D12DE" />
@@ -387,7 +382,7 @@ export default function Challenges() {
 
               <View className="flex-row items-center mb-3">
                 <Ionicons name="calendar" size={16} color="#71717A" />
-                <Text className="text-zinc-400 text-sm ml-2">{template.duration} días</Text>
+                <Text className="text-zinc-400 text-sm ml-2">{template.duration} dÃ­as</Text>
                 <Ionicons name="trophy" size={16} color="#FFEA00" className="ml-4" />
                 <Text className="text-zinc-400 text-sm ml-2 flex-1" numberOfLines={1}>
                   {template.reward}
@@ -413,12 +408,12 @@ export default function Challenges() {
                   Tips para Challenges
                 </Text>
                 <Text className="text-primary/60 text-sm">
-                  • Empieza con 1 challenge a la vez{'\n'}
-                  • Prepara todo la noche anterior{'\n'}
-                  • Comparte con amigos para accountability{'\n'}
-                  • Si fallas 1 día, continúa al siguiente{'\n'}
-                  • Celebra hitos: día 7, 14, 21, 30{'\n'}
-                  • 30 días = nuevo hábito consolidado
+                  â€¢ Empieza con 1 challenge a la vez{'\n'}
+                  â€¢ Prepara todo la noche anterior{'\n'}
+                  â€¢ Comparte con amigos para accountability{'\n'}
+                  â€¢ Si fallas 1 dÃ­a, continÃºa al siguiente{'\n'}
+                  â€¢ Celebra hitos: dÃ­a 7, 14, 21, 30{'\n'}
+                  â€¢ 30 dÃ­as = nuevo hÃ¡bito consolidado
                 </Text>
               </View>
             </View>

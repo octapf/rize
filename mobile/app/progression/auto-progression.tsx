@@ -1,11 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-  Alert,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, TouchableOpacity, ScrollView, Alert } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -161,7 +156,7 @@ export default function AutoProgression() {
                 <Text className={`text-${mode.color}-400 font-bold mb-2`}>Rules:</Text>
                 {mode.rules.map((rule, idx) => (
                   <View key={idx} className="flex-row items-start mb-1">
-                    <Text className={`text-${mode.color}-400 mr-2`}>•</Text>
+                    <Text className={`text-${mode.color}-400 mr-2`}>â€¢</Text>
                     <Text className={`text-${mode.color}-300 text-sm flex-1`}>{rule}</Text>
                   </View>
                 ))}
@@ -220,11 +215,11 @@ export default function AutoProgression() {
           <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
             <Text className="text-primary/80 font-bold mb-2">Auto Progression Benefits</Text>
             <Text className="text-primary/60 text-sm">
-              • No guessing next workout{'\n'}
-              • Consistent progressive overload{'\n'}
-              • Automatic deload cuando needed{'\n'}
-              • Adapts to tu nivel{'\n'}
-              • Focus on lifting, not planning
+              â€¢ No guessing next workout{'\n'}
+              â€¢ Consistent progressive overload{'\n'}
+              â€¢ Automatic deload cuando needed{'\n'}
+              â€¢ Adapts to tu nivel{'\n'}
+              â€¢ Focus on lifting, not planning
             </Text>
           </View>
         </View>

@@ -1,11 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-  TextInput,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, TouchableOpacity, ScrollView, TextInput } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -190,11 +185,11 @@ export default function TrainingNotes() {
           <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
             <Text className="text-primary/80 font-bold mb-2">Journaling Benefits</Text>
             <Text className="text-primary/60 text-sm">
-              • Track what works y what doesn't{'\n'}
-              • Identify patterns en performance{'\n'}
-              • Remember form cues{'\n'}
-              • Monitor energy levels{'\n'}
-              • Improve future workouts
+              â€¢ Track what works y what doesn't{'\n'}
+              â€¢ Identify patterns en performance{'\n'}
+              â€¢ Remember form cues{'\n'}
+              â€¢ Monitor energy levels{'\n'}
+              â€¢ Improve future workouts
             </Text>
           </View>
         </View>

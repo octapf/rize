@@ -1,12 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-  Alert,
-  TextInput,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, TouchableOpacity, ScrollView, Alert, TextInput } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -37,29 +31,29 @@ const SUBSTITUTIONS: ExerciseSubstitution[] = [
         name: 'Sentadilla Goblet',
         difficulty: 'easier',
         equipmentNeeded: ['Mancuerna', 'Kettlebell'],
-        muscleEmphasis: 'Enfoque en cuádriceps, menos carga en espalda',
-        description: 'Sostén peso frente al pecho. Perfecto para principiantes y trabajo de movilidad.',
+        muscleEmphasis: 'Enfoque en cuÃ¡driceps, menos carga en espalda',
+        description: 'SostÃ©n peso frente al pecho. Perfecto para principiantes y trabajo de movilidad.',
       },
       {
         name: 'Prensa de Piernas',
         difficulty: 'easier',
-        equipmentNeeded: ['Máquina de prensa'],
-        muscleEmphasis: 'Cuádriceps y glúteos, sin carga axial',
-        description: 'Elimina componente de estabilización. Ideal si hay dolor de espalda baja.',
+        equipmentNeeded: ['MÃ¡quina de prensa'],
+        muscleEmphasis: 'CuÃ¡driceps y glÃºteos, sin carga axial',
+        description: 'Elimina componente de estabilizaciÃ³n. Ideal si hay dolor de espalda baja.',
       },
       {
-        name: 'Sentadilla Búlgara',
+        name: 'Sentadilla BÃºlgara',
         difficulty: 'harder',
         equipmentNeeded: ['Banco', 'Mancuernas'],
-        muscleEmphasis: 'Unilateral - mayor activación glúteos',
-        description: 'Exige más balance. Excelente para corregir asimetrías.',
+        muscleEmphasis: 'Unilateral - mayor activaciÃ³n glÃºteos',
+        description: 'Exige mÃ¡s balance. Excelente para corregir asimetrÃƒÂ­as.',
       },
       {
         name: 'Hack Squat',
         difficulty: 'same',
-        equipmentNeeded: ['Máquina hack squat'],
-        muscleEmphasis: 'Cuádriceps dominante, trayectoria fija',
-        description: 'Patrón similar pero guiado. Permite cargar pesado con seguridad.',
+        equipmentNeeded: ['MÃ¡quina hack squat'],
+        muscleEmphasis: 'CuÃ¡driceps dominante, trayectoria fija',
+        description: 'PatrÃ³n similar pero guiado. Permite cargar pesado con seguridad.',
       },
     ],
   },
@@ -73,27 +67,27 @@ const SUBSTITUTIONS: ExerciseSubstitution[] = [
         name: 'Press con Mancuernas',
         difficulty: 'same',
         equipmentNeeded: ['Mancuernas', 'Banco'],
-        muscleEmphasis: 'Mayor rango de movimiento, menos estrés en hombros',
-        description: 'ROM completo. Requiere más estabilización que barra.',
+        muscleEmphasis: 'Mayor rango de movimiento, menos estrÃ©s en hombros',
+        description: 'ROM completo. Requiere mÃ¡s estabilizaciÃ³n que barra.',
       },
       {
         name: 'Flexiones',
         difficulty: 'easier',
         equipmentNeeded: ['Ninguno'],
-        muscleEmphasis: 'Bodyweight, más activación core',
-        description: 'Sin equipo necesario. Escala con elevación/peso.',
+        muscleEmphasis: 'Bodyweight, mÃ¡s activaciÃ³n core',
+        description: 'Sin equipo necesario. Escala con elevaciÃ³n/peso.',
       },
       {
         name: 'Press Inclinado con Mancuernas',
         difficulty: 'same',
         equipmentNeeded: ['Mancuernas', 'Banco inclinado'],
         muscleEmphasis: 'Pectoral superior y deltoides anterior',
-        description: 'Cambia ángulo de presión. Menos estrés en hombro.',
+        description: 'Cambia Ã¡ngulo de presiÃ³n. Menos estrÃ©s en hombro.',
       },
       {
-        name: 'Press en Máquina',
+        name: 'Press en MÃ¡quina',
         difficulty: 'easier',
-        equipmentNeeded: ['Máquina chest press'],
+        equipmentNeeded: ['MÃ¡quina chest press'],
         muscleEmphasis: 'Aislamiento pectoral, trayectoria fija',
         description: 'Perfecto para trabajo de volumen sin fatiga neural.',
       },
@@ -109,28 +103,28 @@ const SUBSTITUTIONS: ExerciseSubstitution[] = [
         name: 'Peso Muerto Rumano',
         difficulty: 'easier',
         equipmentNeeded: ['Barra', 'Mancuernas'],
-        muscleEmphasis: 'Isquiotibiales y glúteos, menos espalda baja',
-        description: 'ROM más corto. Excelente para hipertrofia de femoral.',
+        muscleEmphasis: 'Isquiotibiales y glÃºteos, menos espalda baja',
+        description: 'ROM mÃ¡s corto. Excelente para hipertrofia de femoral.',
       },
       {
         name: 'Peso Muerto Sumo',
         difficulty: 'same',
         equipmentNeeded: ['Barra'],
-        muscleEmphasis: 'Más glúteos y aductores, menos espalda',
-        description: 'Stance amplio. Reduce recorrido y estrés lumbar.',
+        muscleEmphasis: 'MÃ¡s glÃºteos y aductores, menos espalda',
+        description: 'Stance amplio. Reduce recorrido y estrÃ©s lumbar.',
       },
       {
         name: 'Trap Bar Deadlift',
         difficulty: 'easier',
         equipmentNeeded: ['Trap bar'],
-        muscleEmphasis: 'Más cuádriceps, posición más natural',
+        muscleEmphasis: 'MÃ¡s cuÃ¡driceps, posiciÃ³n mÃ¡s natural',
         description: 'Centro de gravedad mejor. Ideal para principiantes.',
       },
       {
         name: 'Deficit Deadlift',
         difficulty: 'harder',
         equipmentNeeded: ['Barra', 'Plataforma elevada'],
-        muscleEmphasis: 'Mayor ROM, más fuerza del piso',
+        muscleEmphasis: 'Mayor ROM, mÃ¡s fuerza del piso',
         description: 'Parado sobre plataforma. Para avanzados.',
       },
     ],
@@ -144,29 +138,29 @@ const SUBSTITUTIONS: ExerciseSubstitution[] = [
       {
         name: 'Dominadas Asistidas',
         difficulty: 'easier',
-        equipmentNeeded: ['Máquina asistida', 'Banda elástica'],
-        muscleEmphasis: 'Mismo patrón, carga reducida',
-        description: 'Progresión hacia dominadas completas.',
+        equipmentNeeded: ['MÃ¡quina asistida', 'Banda elÃ¡stica'],
+        muscleEmphasis: 'Mismo patrÃ³n, carga reducida',
+        description: 'ProgresiÃ³n hacia dominadas completas.',
       },
       {
         name: 'Dominadas Negativas',
         difficulty: 'easier',
         equipmentNeeded: ['Barra fija'],
-        muscleEmphasis: 'Fase excéntrica, construye fuerza',
+        muscleEmphasis: 'Fase excÃ©ntrica, construye fuerza',
         description: 'Solo bajar lentamente. Muy efectivo.',
       },
       {
         name: 'Lat Pulldown',
         difficulty: 'easier',
-        equipmentNeeded: ['Máquina lat pulldown'],
+        equipmentNeeded: ['MÃ¡quina lat pulldown'],
         muscleEmphasis: 'Dorsales, carga ajustable',
-        description: 'Patrón similar en máquina.',
+        description: 'PatrÃ³n similar en mÃ¡quina.',
       },
       {
         name: 'Dominadas con Peso',
         difficulty: 'harder',
-        equipmentNeeded: ['Barra', 'Cinturón de lastre', 'Discos'],
-        muscleEmphasis: 'Máxima fuerza y masa',
+        equipmentNeeded: ['Barra', 'CinturÃ³n de lastre', 'Discos'],
+        muscleEmphasis: 'MÃ¡xima fuerza y masa',
         description: 'Para avanzados. Carga progresiva.',
       },
     ],
@@ -191,8 +185,8 @@ export default function ExerciseVariations() {
           text: 'Usar Esta',
           onPress: () =>
             Alert.alert(
-              'Sustitución Aplicada',
-              `${original} â†’ ${variation.name} en tu próximo workout`
+              'SustituciÃ³n Aplicada',
+              `${original} â†’ ${variation.name} en tu prÃ³ximo workout`
             ),
         },
       ]
@@ -215,11 +209,11 @@ export default function ExerciseVariations() {
   const getDifficultyLabel = (difficulty: string) => {
     switch (difficulty) {
       case 'easier':
-        return 'Más Fácil';
+        return 'MÃ¡s FÃ¡cil';
       case 'same':
         return 'Similar';
       case 'harder':
-        return 'Más Difícil';
+        return 'MÃ¡s DifÃ¡cil';
       default:
         return difficulty;
     }
@@ -265,7 +259,7 @@ export default function ExerciseVariations() {
                   Encuentra Alternativas
                 </Text>
                 <Text className="text-primary/60 text-sm">
-                  ¿Lesión? ¿Sin equipo? ¿Estancado? Descubre variaciones efectivas para
+                  Â¿LesiÃ³n? Â¿Sin equipo? Â¿Estancado? Descubre variaciones efectivas para
                   cada ejercicio.
                 </Text>
               </View>
@@ -379,7 +373,7 @@ export default function ExerciseVariations() {
                 <Text className="text-primary font-bold mb-2">Progreso Continuo</Text>
                 <Text className="text-primary/80 text-sm">
                   Las variaciones mantienen el progreso cuando el ejercicio principal no es
-                  viable. ¡No hay excusas para no entrenar!
+                  viable. Â¡No hay excusas para no entrenar!
                 </Text>
               </View>
             </View>

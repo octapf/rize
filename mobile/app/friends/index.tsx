@@ -1,11 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  ScrollView,
-  TouchableOpacity,
-  TextInput,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, ScrollView, TouchableOpacity, TextInput } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
@@ -27,7 +22,7 @@ interface Friend {
 const mockFriends: Friend[] = [
   {
     id: '1',
-    name: 'Carlos García',
+    name: 'Carlos GarcÃ­a',
     username: '@carlosfit',
     level: 15,
     xp: 3450,
@@ -37,7 +32,7 @@ const mockFriends: Friend[] = [
   },
   {
     id: '2',
-    name: 'María López',
+    name: 'MarÃ­a LÃ³pez',
     username: '@mariastrong',
     level: 18,
     xp: 4200,
@@ -47,7 +42,7 @@ const mockFriends: Friend[] = [
   },
   {
     id: '3',
-    name: 'Juan Pérez',
+    name: 'Juan PÃ©rez',
     username: '@juanfitness',
     level: 12,
     xp: 2890,
@@ -58,7 +53,7 @@ const mockFriends: Friend[] = [
   },
   {
     id: '4',
-    name: 'Ana Martínez',
+    name: 'Ana MartÃ­nez',
     username: '@anagym',
     level: 20,
     xp: 5100,
@@ -69,7 +64,7 @@ const mockFriends: Friend[] = [
   },
   {
     id: '5',
-    name: 'Pedro Sánchez',
+    name: 'Pedro SÃ¡nchez',
     username: '@pedrolift',
     level: 14,
     xp: 3200,
@@ -194,7 +189,7 @@ export default function FriendsScreen() {
             <Text className="text-white text-2xl font-bold">{friends.length}</Text>
           </Card>
           <Card className="flex-1 p-3 bg-white/20 border-0">
-            <Text className="text-white/80 text-xs mb-1">En línea</Text>
+            <Text className="text-white/80 text-xs mb-1">En lÃ­nea</Text>
             <Text className="text-white text-2xl font-bold">{onlineFriends}</Text>
           </Card>
         </View>
@@ -231,7 +226,7 @@ export default function FriendsScreen() {
                   filter === f ? 'text-white' : 'text-gray-700'
                 }`}
               >
-                {f === 'all' ? 'Todos' : 'En línea'}
+                {f === 'all' ? 'Todos' : 'En lÃ­nea'}
               </Text>
             </TouchableOpacity>
           ))}
@@ -247,7 +242,7 @@ export default function FriendsScreen() {
             </Text>
             <Text className="text-gray-600 text-center mt-2">
               {searchQuery
-                ? 'Intenta con otra búsqueda'
+                ? 'Intenta con otra bÃºsqueda'
                 : 'Agrega amigos para ver su actividad'}
             </Text>
             <TouchableOpacity

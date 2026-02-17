@@ -1,11 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-  TextInput,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, TouchableOpacity, ScrollView, TextInput } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -601,7 +596,7 @@ export default function RealisticGoalSetting() {
               <View className="bg-zinc-900 rounded-xl p-5 mb-6 border border-zinc-800">
                 <Text className="text-primary/80 text-xl font-bold mb-4">{currentPhase.why_important?.title}</Text>
                 {currentPhase.why_important?.reasons.map((reason: string, idx: number) => (
-                  <Text key={idx} className="text-primary/60 text-sm mb-2">� {reason}</Text>
+                  <Text key={idx} className="text-primary/60 text-sm mb-2">• {reason}</Text>
                 ))}
               </View>
 
@@ -626,7 +621,7 @@ export default function RealisticGoalSetting() {
                     
                     <Text className="text-primary/80 font-bold text-sm mb-2">Characteristics:</Text>
                     {level.characteristics.map((char: string, cIdx: number) => (
-                      <Text key={cIdx} className="text-zinc-300 text-sm mb-1">� {char}</Text>
+                      <Text key={cIdx} className="text-zinc-300 text-sm mb-1">• {char}</Text>
                     ))}
                     
                     <View className="bg-primary/10 rounded-xl p-3 border border-primary/30 mt-3">
@@ -654,7 +649,7 @@ export default function RealisticGoalSetting() {
                     </View>
 
                     {stage.notes.map((note: string, nIdx: number) => (
-                      <Text key={nIdx} className="text-zinc-300 text-sm mb-1">� {note}</Text>
+                      <Text key={nIdx} className="text-zinc-300 text-sm mb-1">• {note}</Text>
                     ))}
                   </View>
                 ))}
@@ -687,16 +682,16 @@ export default function RealisticGoalSetting() {
           <View className="bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-xl p-5 border border-primary/30 mb-6">
             <Text className="text-primary/80 font-bold text-lg mb-3">Golden Rules</Text>
             <Text className="text-primary/60 text-sm mb-2">
-              � Better to exceed conservative goal than miss aggressive one
+              • Better to exceed conservative goal than miss aggressive one
             </Text>
             <Text className="text-primary/60 text-sm mb-2">
-              � Progress isn't linear - expect plateaus
+              • Progress isn't linear - expect plateaus
             </Text>
             <Text className="text-primary/60 text-sm mb-2">
-              � Life happens - build buffer into timelines
+              • Life happens - build buffer into timelines
             </Text>
             <Text className="text-primary/60 text-sm">
-              � Focus on process, outcomes will follow
+              • Focus on process, outcomes will follow
             </Text>
           </View>
         </View>

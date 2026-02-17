@@ -1,12 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-  TextInput,
-  Alert,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, TouchableOpacity, ScrollView, TextInput, Alert } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import { format } from 'date-fns';
@@ -149,13 +143,13 @@ export default function PersonalRecords() {
     setPrs([pr, ...prs]);
     setNewPR({ exercise: '', category: 'other', weight: '', reps: '1', notes: '' });
     setShowAddModal(false);
-    Alert.alert('PR Guardado! ??', `Nuevo rÈcord en ${pr.exercise}: ${pr.weight}kg x${pr.reps}`);
+    Alert.alert('PR Guardado! üéâ', `Nuevo r√©cord en ${pr.exercise}: ${pr.weight}kg x${pr.reps}`);
   };
 
   const deletePR = (id: string) => {
     Alert.alert(
       'Eliminar PR',
-      'øEst·s seguro?',
+      '¬øEst√°s seguro?',
       [
         { text: 'Cancelar' },
         { text: 'Eliminar', style: 'destructive', onPress: () => setPrs(prs.filter((pr) => pr.id !== id)) },
@@ -275,7 +269,7 @@ export default function PersonalRecords() {
               </View>
 
               <View className="mb-4">
-                <Text className="text-zinc-400 text-sm mb-2">CategorÌa</Text>
+                <Text className="text-zinc-400 text-sm mb-2">Categor√≠a</Text>
                 <View className="flex-row flex-wrap gap-2">
                   {EXERCISE_CATEGORIES.filter((c) => c.id !== 'all').map((cat) => (
                     <TouchableOpacity
@@ -376,7 +370,7 @@ export default function PersonalRecords() {
                     <Text className="text-6xl mb-3">üèÜ</Text>
                     <Text className="text-white font-bold text-lg mb-2">Sin PRs Registrados</Text>
                     <Text className="text-zinc-400 text-center">
-                      Agrega tus rÈcords personales para trackear tu progreso
+                      Agrega tus r√©cords personales para trackear tu progreso
                     </Text>
                   </View>
                 ) : (
@@ -412,7 +406,7 @@ export default function PersonalRecords() {
                           <View className={`flex-1 bg-${color}-500/10 rounded-lg p-3 border border-${color}-500/30`}>
                             <Text className="text-zinc-400 text-xs mb-1">Peso x Reps</Text>
                             <Text className="text-white font-bold text-xl">
-                              {pr.weight}kg ◊ {pr.reps}
+                              {pr.weight}kg ‚Ä¢ {pr.reps}
                             </Text>
                           </View>
                           {pr.reps > 1 && (
@@ -447,10 +441,10 @@ export default function PersonalRecords() {
                   Tips para PRs
                 </Text>
                 <Text className="text-purple-300 text-sm">
-                  ï Solo cuenta con tÈcnica perfecta{'\n'}
-                  ï Graba tus PRs para verificar forma{'\n'}
-                  ï Descansa bien antes de intentos{'\n'}
-                  ï Progreso consistente &gt; PRs constantes
+                  ‚Ä¢ Solo cuenta con t√©cnica perfecta{'\n'}
+                  ‚Ä¢ Graba tus PRs para verificar forma{'\n'}
+                  ‚Ä¢ Descansa bien antes de intentos{'\n'}
+                  ‚Ä¢ Progreso consistente &gt; PRs constantes
                 </Text>
               </View>
             </View>

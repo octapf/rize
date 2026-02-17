@@ -1,10 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, TouchableOpacity, ScrollView } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -203,8 +199,8 @@ export default function PeriodizationPlans() {
                     <Text className="text-white font-bold">{phase.weeks}</Text>
                   </View>
                   <View className="flex-row justify-between">
-                    <Text className="text-zinc-400 text-sm">Sets × Reps:</Text>
-                    <Text className="text-white font-bold">{phase.sets} × {phase.reps}</Text>
+                    <Text className="text-zinc-400 text-sm">Sets â€¢ Reps:</Text>
+                    <Text className="text-white font-bold">{phase.sets} â€¢ {phase.reps}</Text>
                   </View>
                   <View className="flex-row justify-between">
                     <Text className="text-zinc-400 text-sm">Intensity:</Text>
@@ -242,11 +238,11 @@ export default function PeriodizationPlans() {
           <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
             <Text className="text-primary/80 font-bold mb-2">Key Principles</Text>
             <Text className="text-primary/60 text-sm">
-              • Progressive overload is mandatory{'\n'}
-              • Deload every 3-6 weeks{'\n'}
-              • Track all lifts meticulously{'\n'}
-              • Adjust based on feedback{'\n'}
-              • Consistency &gt; perfection
+              â€¢ Progressive overload is mandatory{'\n'}
+              â€¢ Deload every 3-6 weeks{'\n'}
+              â€¢ Track all lifts meticulously{'\n'}
+              â€¢ Adjust based on feedback{'\n'}
+              â€¢ Consistency &gt; perfection
             </Text>
           </View>
         </View>

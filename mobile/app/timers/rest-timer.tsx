@@ -1,11 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-  TextInput,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, TouchableOpacity, ScrollView, TextInput } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -172,11 +167,11 @@ export default function RestTimer() {
           <View className="bg-amber-500/10 rounded-xl p-4 border border-amber-500/30 mb-6">
             <Text className="text-amber-400 font-bold mb-2">Rest Tips</Text>
             <Text className="text-amber-300 text-sm">
-              • Rest enough to recover{'\n'}
-              • Not so long that you cool down{'\n'}
-              • Compounds need more rest{'\n'}
-              • Stay active during rest{'\n'}
-              • Consistency matters
+              â€¢ Rest enough to recover{'\n'}
+              â€¢ Not so long that you cool down{'\n'}
+              â€¢ Compounds need more rest{'\n'}
+              â€¢ Stay active during rest{'\n'}
+              â€¢ Consistency matters
             </Text>
           </View>
         </View>

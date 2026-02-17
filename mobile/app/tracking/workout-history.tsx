@@ -1,12 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-  TextInput,
-  Alert,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, TouchableOpacity, ScrollView, TextInput, Alert } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import { format } from 'date-fns';
@@ -52,11 +46,11 @@ const MOCK_SESSIONS: WorkoutSession[] = [
       { name: 'Press Inclinado DB', sets: 3, reps: '10,10,8', weight: 35 },
       { name: 'Press Militar', sets: 4, reps: '8,8,8,6', weight: 60 },
       { name: 'Elevaciones Laterales', sets: 3, reps: '12,12,10', weight: 12 },
-      { name: 'TrÌceps Polea', sets: 3, reps: '12,12,12', weight: 40 },
+      { name: 'Tr√≠ceps Polea', sets: 3, reps: '12,12,12', weight: 40 },
     ],
     totalVolume: 4280,
     rating: 5,
-    notes: 'Excelente sesiÛn, nuevo PR en banca',
+    notes: 'Excelente sesi√≥n, nuevo PR en banca',
   },
   {
     id: '2',
@@ -69,7 +63,7 @@ const MOCK_SESSIONS: WorkoutSession[] = [
       { name: 'Dominadas', sets: 4, reps: '10,8,8,6', weight: 0 },
       { name: 'Remo Barra', sets: 4, reps: '8,8,8,8', weight: 80 },
       { name: 'Face Pulls', sets: 3, reps: '15,15,15', weight: 25 },
-      { name: 'Curl BÌceps', sets: 3, reps: '10,10,10', weight: 20 },
+      { name: 'Curl B√≠ceps', sets: 3, reps: '10,10,10', weight: 20 },
     ],
     totalVolume: 4230,
     rating: 4,
@@ -105,7 +99,7 @@ const MOCK_SESSIONS: WorkoutSession[] = [
     ],
     totalVolume: 2912,
     rating: 3,
-    notes: 'SesiÛn ligera de recuperaciÛn',
+    notes: 'Sesi√≥n ligera de recuperaci√≥n',
   },
 ];
 
@@ -124,8 +118,8 @@ export default function WorkoutHistory() {
 
   const deleteSession = (id: string) => {
     Alert.alert(
-      'Eliminar SesiÛn',
-      'øEst·s seguro?',
+      'Eliminar Sesi√≥n',
+      '¬øEst√°s seguro?',
       [
         { text: 'Cancelar' },
         { text: 'Eliminar', style: 'destructive', onPress: () => setSessions(sessions.filter((s) => s.id !== id)) },
@@ -225,7 +219,7 @@ export default function WorkoutHistory() {
               <Text className="text-6xl mb-3">üèãÔ∏è</Text>
               <Text className="text-white font-bold text-lg mb-2">Sin Sesiones</Text>
               <Text className="text-zinc-400 text-center">
-                Tus entrenamientos aparecer·n aquÌ
+                Tus entrenamientos aparecer√°n aqu√≠
               </Text>
             </View>
           ) : (
@@ -303,7 +297,7 @@ export default function WorkoutHistory() {
                             </View>
                             <View className="flex-row items-center gap-2">
                               <Text className="text-zinc-400 text-sm">
-                                {ex.sets} series ◊ {ex.reps} reps
+                                {ex.sets} series ‚Ä¢ {ex.reps} reps
                               </Text>
                             </View>
                             {ex.notes && (
@@ -353,11 +347,11 @@ export default function WorkoutHistory() {
                   Tips de Progreso
                 </Text>
                 <Text className="text-primary/80 text-sm">
-                  ï Revisa tu historial semanalmente{'\n'}
-                  ï Busca progresiÛn en peso o reps{'\n'}
-                  ï Nota ejercicios que te cuestan{'\n'}
-                  ï Repite workouts que funcionan{'\n'}
-                  ï Ajusta seg˙n tu recuperaciÛn
+                  ‚Ä¢ Revisa tu historial semanalmente{'\n'}
+                  ‚Ä¢ Busca progresi√≥n en peso o reps{'\n'}
+                  ‚Ä¢ Nota ejercicios que te cuestan{'\n'}
+                  ‚Ä¢ Repite workouts que funcionan{'\n'}
+                  ‚Ä¢ Ajusta seg√∫n tu recuperaci√≥n
                 </Text>
               </View>
             </View>

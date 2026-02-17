@@ -1,11 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-  Alert,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, TouchableOpacity, ScrollView, Alert } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -41,7 +36,7 @@ const ACHIEVEMENTS: Achievement[] = [
   {
     id: '2',
     name: 'Racha de Fuego',
-    description: 'Entrena 7 dÌas seguidos',
+    description: 'Entrena 7 d√≠as seguidos',
     category: 'consistencia',
     tier: 'silver',
     icon: 'flame',
@@ -53,7 +48,7 @@ const ACHIEVEMENTS: Achievement[] = [
   },
   {
     id: '3',
-    name: 'CenturiÛn',
+    name: 'Centuri√≥n',
     description: 'Alcanza 100kg en press de banca',
     category: 'fuerza',
     tier: 'gold',
@@ -120,7 +115,7 @@ const ACHIEVEMENTS: Achievement[] = [
     unlocked: false,
     progress: 6,
     maxProgress: 10,
-    reward: { xp: 1000, badge: '??ì' },
+    reward: { xp: 1000, badge: 'üìù' },
   },
 ];
 
@@ -469,7 +464,7 @@ export default function AchievementBadges() {
                   Sistema de Logros
                 </Text>
                 <Text className="text-primary/60 text-sm">
-                  Desbloquea logros completando desafÌos en diferentes categorÌas. Cada logro otorga XP y badges para mostrar tus logros.
+                  Desbloquea logros completando desaf√≠os en diferentes categor√≠as. Cada logro otorga XP y badges para mostrar tus logros.
                 </Text>
               </View>
             </View>

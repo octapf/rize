@@ -1,12 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  ScrollView,
-  TouchableOpacity,
-  ActivityIndicator,
-  RefreshControl,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, ScrollView, TouchableOpacity, ActivityIndicator, RefreshControl } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
@@ -96,7 +90,7 @@ export default function RankingsScreen() {
       case 'xp': return `${user.xp.toLocaleString()} XP`;
       case 'workouts': return `${user.workouts} workouts`;
       case 'volume': return `${(user.volume / 1000).toFixed(1)}k kg`;
-      case 'streak': return `${user.streak} días`;
+      case 'streak': return `${user.streak} dÃ­as`;
       default: return '';
     }
   };
@@ -284,7 +278,7 @@ export default function RankingsScreen() {
                           }`}
                         >
                           {userItem.username}
-                          {isCurrentUser && ' (Tú)'}
+                          {isCurrentUser && ' (TÃº)'}
                         </Text>
                         <Text className="text-gray-600 text-sm">
                           {getStatValue(userItem)}
@@ -304,7 +298,7 @@ export default function RankingsScreen() {
           {user && !leaderboard.some(u => u._id === user._id) && (
             <View className="mt-4">
               <Text className="text-gray-600 text-sm text-center mb-2">
-                Tu posición
+                Tu posiciÃ³n
               </Text>
               <Card className="p-4 border-2 border-primary bg-primary/10">
                 <View className="flex-row items-center gap-4">
@@ -320,7 +314,7 @@ export default function RankingsScreen() {
                   </View>
                   <View className="flex-1">
                     <Text className="font-bold text-primary">
-                      {user.username} (Tú)
+                      {user.username} (TÃº)
                     </Text>
                     <Text className="text-primary text-sm">
                       {user.xp.toLocaleString()} XP

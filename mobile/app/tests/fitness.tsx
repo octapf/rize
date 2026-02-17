@@ -1,12 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-  Alert,
-  TextInput,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, TouchableOpacity, ScrollView, Alert, TextInput } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -28,14 +22,14 @@ interface FitnessTest {
 const FITNESS_TESTS: FitnessTest[] = [
   {
     id: '1',
-    name: 'Push-ups M·ximos',
+    name: 'Push-ups M√°ximos',
     category: 'endurance',
-    description: 'Cu·ntos push-ups puedes hacer sin parar',
+    description: 'Cu√°ntos push-ups puedes hacer sin parar',
     instructions: [
-      'PosiciÛn de plancha, manos alineadas con hombros',
+      'Posici√≥n de plancha, manos alineadas con hombros',
       'Descender hasta pecho casi toca suelo',
       'Empujar hasta brazos extendidos',
-      'Contar repeticiones hasta fallo tÈcnico',
+      'Contar repeticiones hasta fallo t√©cnico',
       'Mantener core tenso todo el tiempo',
     ],
     equipment: ['Ninguno'],
@@ -48,7 +42,7 @@ const FITNESS_TESTS: FitnessTest[] = [
   },
   {
     id: '2',
-    name: 'Pull-ups M·ximas',
+    name: 'Pull-ups M√°ximas',
     category: 'strength',
     description: 'Dominadas estrictas sin kipping',
     instructions: [
@@ -68,17 +62,17 @@ const FITNESS_TESTS: FitnessTest[] = [
   },
   {
     id: '3',
-    name: 'Plank Hold M·ximo',
+    name: 'Plank Hold M√°ximo',
     category: 'endurance',
-    description: 'Tiempo m·ximo en plancha frontal',
+    description: 'Tiempo m√°ximo en plancha frontal',
     instructions: [
-      'PosiciÛn de plancha con antebrazos',
+      'Posici√≥n de plancha con antebrazos',
       'Cuerpo completamente recto (hombros-cadera-tobillos)',
-      'Core activado, gl˙teos apretados',
+      'Core activado, gl√∫teos apretados',
       'Cronometrar hasta fallo de forma',
-      'Si cadera cae m·s de 5cm = fin',
+      'Si cadera cae m√°s de 5cm = fin',
     ],
-    equipment: ['CronÛmetro'],
+    equipment: ['Cron√≥metro'],
     standards: {
       male: { excellent: '3:00+', good: '2:00-2:59', average: '1:00-1:59', poor: '<1:00' },
       female: { excellent: '2:30+', good: '1:30-2:29', average: '0:45-1:29', poor: '<0:45' },
@@ -90,15 +84,15 @@ const FITNESS_TESTS: FitnessTest[] = [
     id: '4',
     name: 'Cooper Test (12 min)',
     category: 'endurance',
-    description: 'Distancia m·xima corriendo en 12 minutos',
+    description: 'Distancia m√°xima corriendo en 12 minutos',
     instructions: [
       'Calentar 10 minutos antes',
-      'Correr/caminar m·xima distancia en 12 min',
+      'Correr/caminar m√°xima distancia en 12 min',
       'Mantener pace sostenible',
       'Usar pista o GPS para medir distancia',
       'Anotar metros totales',
     ],
-    equipment: ['CronÛmetro', 'GPS/Pista'],
+    equipment: ['Cron√≥metro', 'GPS/Pista'],
     standards: {
       male: { excellent: '2800m+', good: '2400-2799m', average: '2000-2399m', poor: '<2000m' },
       female: { excellent: '2500m+', good: '2100-2499m', average: '1800-2099m', poor: '<1800m' },
@@ -110,11 +104,11 @@ const FITNESS_TESTS: FitnessTest[] = [
     id: '5',
     name: 'Vertical Jump',
     category: 'power',
-    description: 'Salto vertical m·ximo',
+    description: 'Salto vertical m√°ximo',
     instructions: [
       'Marcar altura de pie con brazo extendido',
       'Saltar verticalmente con impulso de brazos',
-      'Tocar punto m·s alto posible',
+      'Tocar punto m√°s alto posible',
       'Medir diferencia entre marcas',
       'Mejor de 3 intentos',
     ],
@@ -135,10 +129,10 @@ const FITNESS_TESTS: FitnessTest[] = [
       'Sentarse con piernas extendidas',
       'Pies contra caja/pared',
       'Alcanzar hacia adelante sin doblar rodillas',
-      'Mantener 2 segundos en m·ximo alcance',
+      'Mantener 2 segundos en m√°ximo alcance',
       'Medir distancia pasando dedos de pies',
     ],
-    equipment: ['Caja de mediciÛn o regla'],
+    equipment: ['Caja de medici√≥n o regla'],
     standards: {
       male: { excellent: '+10cm', good: '0-9cm', average: '-10-(-1)cm', poor: '<-10cm' },
       female: { excellent: '+15cm', good: '+5-14cm', average: '-5-4cm', poor: '<-5cm' },
@@ -176,7 +170,7 @@ const FITNESS_TESTS: FitnessTest[] = [
       'Encontrar 1RM de sentadilla',
       'Dividir 1RM entre peso corporal',
       'Profundidad al menos paralelo',
-      'Con tÈcnica perfecta',
+      'Con t√©cnica perfecta',
     ],
     equipment: ['Barra', 'Rack', 'Discos'],
     standards: {
@@ -375,7 +369,7 @@ export default function FitnessTests() {
 
                 {/* Gender Selection */}
                 <View className="mb-4">
-                  <Text className="text-zinc-400 text-sm mb-2">Sexo (para est·ndares)</Text>
+                  <Text className="text-zinc-400 text-sm mb-2">Sexo (para est√°ndares)</Text>
                   <View className="flex-row gap-2">
                     <TouchableOpacity
                       onPress={() => setGender('male')}
@@ -419,7 +413,7 @@ export default function FitnessTests() {
 
                 {/* Standards Table */}
                 <View className="mb-4">
-                  <Text className="text-white font-bold mb-3">Est·ndares de EvaluaciÛn</Text>
+                  <Text className="text-white font-bold mb-3">Est√°ndares de Evaluaci√≥n</Text>
                   <View className="bg-zinc-800 rounded-lg overflow-hidden">
                     {['excellent', 'good', 'average', 'poor'].map((level, index) => {
                       const colors = {
@@ -494,10 +488,10 @@ export default function FitnessTests() {
                       Tips para Tests
                     </Text>
                     <Text className="text-amber-300 text-sm">
-                      ï Realiza siempre en las mismas condiciones{'\n'}
-                      ï Descansa bien el dÌa anterior{'\n'}
-                      ï Calienta adecuadamente{'\n'}
-                      ï Registra resultados para comparar
+                      ‚Ä¢ Realiza siempre en las mismas condiciones{'\n'}
+                      ‚Ä¢ Descansa bien el d√≠a anterior{'\n'}
+                      ‚Ä¢ Calienta adecuadamente{'\n'}
+                      ‚Ä¢ Registra resultados para comparar
                     </Text>
                   </View>
                 </View>

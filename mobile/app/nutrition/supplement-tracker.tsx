@@ -1,12 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-  TextInput,
-  Alert,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, TouchableOpacity, ScrollView, TextInput, Alert } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import { format } from 'date-fns';
@@ -35,14 +29,14 @@ interface SupplementLog {
 const SUPPLEMENT_LIBRARY = [
   { name: 'Whey Protein', category: 'protein', defaultDosage: '30', unit: 'g', timings: ['Post-Workout', 'Desayuno'] },
   { name: 'Creatina Monohidrato', category: 'performance', defaultDosage: '5', unit: 'g', timings: ['Post-Workout', 'Cualquier Momento'] },
-  { name: 'Cafeína', category: 'performance', defaultDosage: '200', unit: 'mg', timings: ['Pre-Workout', 'Mañana'] },
+  { name: 'CafeÃ­na', category: 'performance', defaultDosage: '200', unit: 'mg', timings: ['Pre-Workout', 'MaÃ±ana'] },
   { name: 'Beta-Alanina', category: 'performance', defaultDosage: '3', unit: 'g', timings: ['Pre-Workout'] },
   { name: 'BCAAs', category: 'recovery', defaultDosage: '10', unit: 'g', timings: ['Intra-Workout', 'Pre-Workout'] },
   { name: 'Omega-3 (EPA/DHA)', category: 'health', defaultDosage: '2', unit: 'g', timings: ['Con Comida'] },
-  { name: 'Vitamina D3', category: 'health', defaultDosage: '4000', unit: 'IU', timings: ['Mañana', 'Con Comida'] },
+  { name: 'Vitamina D3', category: 'health', defaultDosage: '4000', unit: 'IU', timings: ['MaÃ±ana', 'Con Comida'] },
   { name: 'Magnesio', category: 'recovery', defaultDosage: '400', unit: 'mg', timings: ['Noche', 'Antes de Dormir'] },
   { name: 'ZMA', category: 'recovery', defaultDosage: '1', unit: 'dosis', timings: ['Antes de Dormir'] },
-  { name: 'Ashwagandha', category: 'recovery', defaultDosage: '600', unit: 'mg', timings: ['Noche', 'Mañana'] },
+  { name: 'Ashwagandha', category: 'recovery', defaultDosage: '600', unit: 'mg', timings: ['Noche', 'MaÃ±ana'] },
   { name: 'L-Citrulina', category: 'performance', defaultDosage: '6', unit: 'g', timings: ['Pre-Workout'] },
   { name: 'Glutamina', category: 'recovery', defaultDosage: '5', unit: 'g', timings: ['Post-Workout', 'Antes de Dormir'] },
 ];
@@ -71,7 +65,7 @@ const MOCK_STACK: Supplement[] = [
   },
   {
     id: '3',
-    name: 'Cafeína',
+    name: 'CafeÃ­na',
     category: 'performance',
     dosage: '200',
     unit: 'mg',
@@ -98,9 +92,9 @@ export default function SupplementTracker() {
 
   const categories = [
     { key: 'all', label: 'Todos', icon: 'apps', color: 'blue' },
-    { key: 'protein', label: 'Proteína', icon: 'nutrition', color: 'primary' },
+    { key: 'protein', label: 'ProteÃ­na', icon: 'nutrition', color: 'primary' },
     { key: 'performance', label: 'Performance', icon: 'flash', color: 'red' },
-    { key: 'recovery', label: 'Recuperación', icon: 'bed', color: 'purple' },
+    { key: 'recovery', label: 'RecuperaciÃ³n', icon: 'bed', color: 'purple' },
     { key: 'health', label: 'Salud', icon: 'heart', color: 'pink' },
   ];
 
@@ -121,7 +115,7 @@ export default function SupplementTracker() {
     
     setStack([...stack, newSupplement]);
     setShowAddForm(false);
-    Alert.alert('Suplemento Agregado ?', `${supplement.name} añadido a tu stack`);
+    Alert.alert('Suplemento Agregado ?', `${supplement.name} aÃ±adido a tu stack`);
   };
 
   const toggleActive = (id: string) => {
@@ -140,7 +134,7 @@ export default function SupplementTracker() {
   const removeSupplement = (id: string) => {
     Alert.alert(
       'Eliminar Suplemento',
-      '¿Estás seguro?',
+      'Â¿EstÃ¡s seguro?',
       [
         { text: 'Cancelar', style: 'cancel' },
         {
@@ -217,7 +211,7 @@ export default function SupplementTracker() {
                     <Text className="text-zinc-400 text-sm">
                       {supp.defaultDosage} {supp.unit}
                     </Text>
-                    <Text className="text-zinc-500 text-sm">•</Text>
+                    <Text className="text-zinc-500 text-sm">â€¢</Text>
                     <Text className="text-zinc-400 text-sm">
                       {supp.timings.join(', ')}
                     </Text>
@@ -317,7 +311,7 @@ export default function SupplementTracker() {
             <View className="bg-zinc-900 rounded-xl p-8 border border-zinc-800 items-center">
               <Ionicons name="medical-outline" size={64} color="#52525B" />
               <Text className="text-zinc-400 text-center mt-4 mb-4">
-                No hay suplementos en esta categoría
+                No hay suplementos en esta categorÃ­a
               </Text>
               <TouchableOpacity
                 onPress={() => setShowAddForm(true)}
@@ -427,15 +421,15 @@ export default function SupplementTracker() {
               <Ionicons name="bulb" size={20} color="#9D12DE" />
               <View className="flex-1 ml-3">
                 <Text className="text-primary/80 font-bold mb-2">
-                  Tips de Suplementación
+                  Tips de SuplementaciÃ³n
                 </Text>
                 <Text className="text-primary/60 text-sm">
-                  • Creatina: 5g diario, cualquier momento{'\n'}
-                  • Cafeína: 3-6 mg/kg, 30-60 min pre-workout{'\n'}
-                  • Omega-3: con comidas grasas para absorción{'\n'}
-                  • Whey: 20-40g post-workout{'\n'}
-                  • Vitamina D: mañana con grasas{'\n'}
-                  • Magnesio/ZMA: noche para mejor sueño
+                  â€¢ Creatina: 5g diario, cualquier momento{'\n'}
+                  â€¢ CafeÃ­na: 3-6 mg/kg, 30-60 min pre-workout{'\n'}
+                  â€¢ Omega-3: con comidas grasas para absorciÃ³n{'\n'}
+                  â€¢ Whey: 20-40g post-workout{'\n'}
+                  â€¢ Vitamina D: maÃ±ana con grasas{'\n'}
+                  â€¢ Magnesio/ZMA: noche para mejor sueÃ±o
                 </Text>
               </View>
             </View>

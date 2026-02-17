@@ -1,13 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  ScrollView,
-  TouchableOpacity,
-  ActivityIndicator,
-  RefreshControl,
-  Image,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, ScrollView, TouchableOpacity, ActivityIndicator, RefreshControl, Image } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
@@ -38,7 +31,7 @@ const mockFeed: FeedItem[] = [
     user: { _id: '1', username: 'FitnessKing', avatar: 'F' },
     timestamp: new Date(Date.now() - 1000 * 60 * 30),
     data: {
-      name: 'Día de Pecho',
+      name: 'DÃ­a de Pecho',
       exercises: 5,
       volume: 3200,
       duration: 65,
@@ -153,7 +146,7 @@ export default function CommunityFeedScreen() {
                   <Text className="text-primary font-bold">{item.data.volume} kg</Text>
                 </View>
                 <View>
-                  <Text className="text-primary text-sm">Duración</Text>
+                  <Text className="text-primary text-sm">DuraciÃ³n</Text>
                   <Text className="text-primary font-bold">{item.data.duration}m</Text>
                 </View>
               </View>
@@ -185,14 +178,14 @@ export default function CommunityFeedScreen() {
               <View className="flex-row items-center gap-2 mb-2">
                 <Ionicons name="trending-up" size={20} color="#8B5CF6" />
                 <Text className="text-purple-900 font-bold text-lg">
-                  ¡Nuevo Récord Personal!
+                  Â¡Nuevo RÃ©cord Personal!
                 </Text>
               </View>
               <Text className="text-purple-800 text-base">
-                <Text className="font-bold">{item.data.exercise}</Text>: {item.data.weight} kg × {item.data.reps} reps
+                <Text className="font-bold">{item.data.exercise}</Text>: {item.data.weight} kg â€¢ {item.data.reps} reps
               </Text>
               <Text className="text-purple-600 text-sm mt-1">
-                +{item.data.improvement} kg más que el récord anterior
+                +{item.data.improvement} kg mÃ¡s que el rÃ©cord anterior
               </Text>
             </View>
           );

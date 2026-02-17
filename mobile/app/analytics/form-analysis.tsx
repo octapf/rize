@@ -1,11 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-  Alert,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, TouchableOpacity, ScrollView, Alert } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -28,7 +23,7 @@ export default function FormAnalysis() {
     ],
     bench: [
       { point: 'Bar Path', status: 'good', desc: 'Straight line to chest' },
-      { point: 'Elbow Position', status: 'good', desc: '45-75∞ angle' },
+      { point: 'Elbow Position', status: 'good', desc: '45-75‚Ä¢ angle' },
       { point: 'Arch', status: 'warning', desc: 'Could be more pronounced' },
       { point: 'Leg Drive', status: 'critical', desc: 'Feet unstable' },
     ],
@@ -93,7 +88,7 @@ export default function FormAnalysis() {
           <View className="bg-gradient-to-r from-purple-500 to-blue-500 rounded-xl p-6 mb-6">
             <Text className="text-white text-2xl font-bold mb-2">AI Form Check</Text>
             <Text className="text-white opacity-90 mb-4">
-              Mejora tu tÈcnica con an·lisis de video
+              Mejora tu t√©cnica con an√°lisis de video
             </Text>
             <View className="flex-row items-center">
               <Ionicons name="videocam" size={20} color="white" />
@@ -146,7 +141,7 @@ export default function FormAnalysis() {
             </View>
 
             <Text className="text-zinc-400 text-sm">
-              {score >= 80 ? 'Excelente tÈcnica!' : score >= 60 ? 'Mejorable' : 'Necesita correcciÛn'}
+              {score >= 80 ? 'Excelente t√©cnica!' : score >= 60 ? 'Mejorable' : 'Necesita correcci√≥n'}
             </Text>
           </View>
 
@@ -196,11 +191,11 @@ export default function FormAnalysis() {
           <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
             <Text className="text-primary/80 font-bold mb-2">Tips para Grabar</Text>
             <Text className="text-primary/60 text-sm">
-              ï Graba desde un ·ngulo lateral{'\n'}
-              ï Asegura buena iluminaciÛn{'\n'}
-              ï Incluye setup completo{'\n'}
-              ï Filma al menos 3 reps{'\n'}
-              ï Usa trÌpode o apoyo estable
+              ‚Ä¢ Graba desde un √°ngulo lateral{'\n'}
+              ‚Ä¢ Asegura buena iluminaci√≥n{'\n'}
+              ‚Ä¢ Incluye setup completo{'\n'}
+              ‚Ä¢ Filma al menos 3 reps{'\n'}
+              ‚Ä¢ Usa tr√≠pode o apoyo estable
             </Text>
           </View>
         </View>

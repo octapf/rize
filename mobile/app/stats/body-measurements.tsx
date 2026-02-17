@@ -1,11 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-  TextInput,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, TouchableOpacity, ScrollView, TextInput } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import { format } from 'date-fns';
@@ -28,7 +23,7 @@ interface MeasurementCategory {
 
 const MEASUREMENT_DATA: MeasurementCategory[] = [
   {
-    category: 'Peso y Composición',
+    category: 'Peso y ComposiciÃ³n',
     measurements: [
       {
         id: '1',
@@ -73,7 +68,7 @@ const MEASUREMENT_DATA: MeasurementCategory[] = [
       },
       {
         id: '5',
-        bodyPart: 'Bíceps (Derecho)',
+        bodyPart: 'BÃ­ceps (Derecho)',
         value: 38,
         unit: 'cm',
         date: new Date('2024-01-20'),
@@ -82,7 +77,7 @@ const MEASUREMENT_DATA: MeasurementCategory[] = [
       },
       {
         id: '6',
-        bodyPart: 'Bíceps (Izquierdo)',
+        bodyPart: 'BÃ­ceps (Izquierdo)',
         value: 37.5,
         unit: 'cm',
         date: new Date('2024-01-20'),
@@ -177,7 +172,7 @@ const MEASUREMENT_DATA: MeasurementCategory[] = [
 
 export default function BodyMeasurements() {
   const [searchQuery, setSearchQuery] = useState('');
-  const [expandedCategory, setExpandedCategory] = useState<string | null>('Peso y Composición');
+  const [expandedCategory, setExpandedCategory] = useState<string | null>('Peso y ComposiciÃ³n');
 
   const filteredData = MEASUREMENT_DATA.map((category) => ({
     ...category,
@@ -335,7 +330,7 @@ export default function BodyMeasurements() {
                 No se encontraron medidas
               </Text>
               <Text className="text-zinc-600 text-sm mt-2 text-center">
-                Intenta buscar otro término
+                Intenta buscar otro tÃ©rmino
               </Text>
             </View>
           )}

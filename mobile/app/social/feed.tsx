@@ -1,14 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  FlatList,
-  Image,
-  TextInput,
-  RefreshControl,
-  Alert,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, TouchableOpacity, FlatList, Image, TextInput, RefreshControl, Alert } from 'react-native';
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
@@ -24,20 +16,20 @@ const mockPosts: FeedPost[] = [
     userId: 'user1',
     user: {
       _id: 'user1',
-      name: 'Carlos GarcÌa',
+      name: 'Carlos Garc√≠a',
       username: 'carlosg',
       avatar: undefined,
     },
     type: 'workout',
-    content: '°TerminÈ mi rutina de piernas! üí™ Nuevo PR en sentadillas',
+    content: '¬°Termin√© mi rutina de piernas! üí™ Nuevo PR en sentadillas',
     workoutId: 'w1',
     likes: ['me', 'user2'],
     comments: [
       {
         _id: 'c1',
         userId: 'user2',
-        user: { _id: 'user2', name: 'Ana LÛpez', username: 'ana', avatar: undefined },
-        text: '°Felicidades! ??',
+        user: { _id: 'user2', name: 'Ana L√≥pez', username: 'ana', avatar: undefined },
+        text: '¬°Felicidades! üéâ',
         createdAt: new Date(2026, 0, 27, 10, 35).toISOString(),
       },
     ],
@@ -48,12 +40,12 @@ const mockPosts: FeedPost[] = [
     userId: 'user2',
     user: {
       _id: 'user2',
-      name: 'Ana LÛpez',
+      name: 'Ana L√≥pez',
       username: 'ana',
       avatar: undefined,
     },
     type: 'achievement',
-    content: '°DesbloqueÈ el logro "100 Workouts"! üèÜ',
+    content: '¬°Desbloque√© el logro "100 Workouts"! üèÜ',
     achievementId: 'a1',
     likes: ['user1', 'user3'],
     comments: [],
@@ -64,7 +56,7 @@ const mockPosts: FeedPost[] = [
     userId: 'user3',
     user: {
       _id: 'user3',
-      name: 'Pedro MartÌnez',
+      name: 'Pedro Mart√≠nez',
       username: 'pedro',
       avatar: undefined,
     },
@@ -112,19 +104,19 @@ export default function FeedScreen() {
 
   const handleLike = (postId: string) => {
     // Mock toggle for now
-    Alert.alert('Like', 'FunciÛn en desarrollo');
+    Alert.alert('Like', 'Funci√≥n en desarrollo');
   };
 
   const handleComment = (postId: string) => {
     if (!commentText.trim()) return;
     // commentMutation.mutate({ postId, text: commentText });
-    Alert.alert('Comentar', 'FunciÛn en desarrollo');
+    Alert.alert('Comentar', 'Funci√≥n en desarrollo');
     setCommentText('');
     setActiveCommentPost(null);
   };
 
   const handleShare = (postId: string) => {
-    Alert.alert('Compartir', 'FunciÛn en desarrollo');
+    Alert.alert('Compartir', 'Funci√≥n en desarrollo');
   };
 
   const onRefresh = async () => {
@@ -171,7 +163,7 @@ export default function FeedScreen() {
               {item.user.name}
             </Text>
             <Text className="text-gray-500 text-sm">
-              @{item.user.username} ï {formatDistanceToNow(new Date(item.createdAt), { 
+              @{item.user.username} ‚Ä¢ {formatDistanceToNow(new Date(item.createdAt), { 
                 addSuffix: true, 
                 locale: es 
               })}
@@ -306,7 +298,7 @@ export default function FeedScreen() {
               No hay publicaciones
             </Text>
             <Text className="text-gray-600 text-center mt-2">
-              Sigue a m·s amigos para ver su actividad
+              Sigue a m√°s amigos para ver su actividad
             </Text>
           </View>
         }

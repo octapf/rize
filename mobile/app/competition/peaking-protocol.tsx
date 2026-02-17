@@ -1,10 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, TouchableOpacity, ScrollView } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -340,19 +336,19 @@ export default function PeakingProtocol() {
           <View className="bg-gradient-to-r from-red-500/20 to-purple-500/20 rounded-xl p-4 border border-red-500/30 mb-6">
             <Text className="text-red-400 font-bold mb-2">Critical Peak Principles</Text>
             <Text className="text-red-300 text-sm mb-2">
-              • Deload hard week 4 - let fatigue dissipate completely
+              â€¢ Deload hard week 4 - let fatigue dissipate completely
             </Text>
             <Text className="text-red-300 text-sm mb-2">
-              • Week 3 test openers - should feel confident and fast
+              â€¢ Week 3 test openers - should feel confident and fast
             </Text>
             <Text className="text-red-300 text-sm mb-2">
-              • Week 2 is LIGHT - resist urge to "do more"
+              â€¢ Week 2 is LIGHT - resist urge to "do more"
             </Text>
             <Text className="text-red-300 text-sm mb-2">
-              • Meet week do almost nothing - trust the process
+              â€¢ Meet week do almost nothing - trust the process
             </Text>
             <Text className="text-red-300 text-sm">
-              • Sleep 8+ hours every night - this is when strength peaks
+              â€¢ Sleep 8+ hours every night - this is when strength peaks
             </Text>
           </View>
 

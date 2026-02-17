@@ -1,10 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, TouchableOpacity, ScrollView } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -60,14 +56,14 @@ export default function FormCues() {
       execution: [
         'Unrack, lock out over chest',
         'Lower to nipple line or slightly below',
-        'Elbows 45-75° from torso',
+        'Elbows 45-75â€¢ from torso',
         'Touch chest lightly',
         'Press in slight arc back to start',
         'Maintain leg drive throughout',
       ],
       breathing: 'Breath at top, hold descent and press, exhale at lockout',
       commonMistakes: [
-        { mistake: 'Flared elbows (90°)', fix: 'Tuck to 45-75°, saves shoulders', severity: 'high' },
+        { mistake: 'Flared elbows (90Â°)', fix: 'Tuck to 45-75Â°, saves shoulders', severity: 'high' },
         { mistake: 'Bouncing off chest', fix: 'Controlled touch, maintain tension', severity: 'medium' },
         { mistake: 'Butt off bench', fix: 'Keep butt down, arch upper back only', severity: 'high' },
         { mistake: 'No leg drive', fix: 'Push through floor, stable base', severity: 'medium' },
@@ -154,7 +150,7 @@ export default function FormCues() {
     row: {
       name: 'Barbell Row',
       setup: [
-        'Hip hinge to ~45° torso angle',
+        'Hip hinge to ~45Â° torso angle',
         'Grip shoulder-width or slightly wider',
         'Neutral spine, slight knee bend',
         'Bar hangs at arms length',
@@ -309,11 +305,11 @@ export default function FormCues() {
           <View className="bg-amber-500/10 rounded-xl p-4 border border-amber-500/30 mb-6">
             <Text className="text-amber-400 font-bold mb-2">Pro Tips</Text>
             <Text className="text-amber-300 text-sm">
-              • Film your sets from multiple angles{'\n'}
-              • Master form before adding weight{'\n'}
-              • Quality reps &gt; ego lifting{'\n'}
-              • Hire a coach if struggling{'\n'}
-              • Consistent cues build motor patterns
+              â€¢ Film your sets from multiple angles{'\n'}
+              â€¢ Master form before adding weight{'\n'}
+              â€¢ Quality reps &gt; ego lifting{'\n'}
+              â€¢ Hire a coach if struggling{'\n'}
+              â€¢ Consistent cues build motor patterns
             </Text>
           </View>
         </View>

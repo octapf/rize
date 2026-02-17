@@ -1,7 +1,8 @@
 import React from 'react';
+import { Text } from '@/components/ui/Text';
 import { render } from '@testing-library/react-native';
 import { Card, CardHeader, CardContent, CardActions } from '../Card';
-import { Text } from 'react-native';
+;
 
 describe('Card', () => {
   describe('Card Component', () => {

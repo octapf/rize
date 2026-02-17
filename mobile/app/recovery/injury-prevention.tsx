@@ -1,10 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, TouchableOpacity, ScrollView } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -37,7 +33,7 @@ export default function InjuryPrevention() {
           causes: ['Poor shoulder position', 'Lack of mobility', 'Weak rotator cuff', 'Too much pressing'],
           prevention: [
             'Retract scapulae on bench (shoulder blades back/down)',
-            'Don\'t flare elbows 90� on bench (45-75� angle)',
+            'Don\'t flare elbows 90• on bench (45-75• angle)',
             'Do face pulls and band pull-aparts (3x/week)',
             'Balance push/pull ratio (1:1 or more pulling)',
             'Improve thoracic mobility',
@@ -362,7 +358,7 @@ export default function InjuryPrevention() {
                   <Text className="text-white font-bold mb-2">Causes:</Text>
                   {item.causes.map((cause, cIdx) => (
                     <Text key={cIdx} className="text-zinc-300 text-sm mb-1">
-                      � {cause}
+                      • {cause}
                     </Text>
                   ))}
 
@@ -407,7 +403,7 @@ export default function InjuryPrevention() {
                   <View className="bg-zinc-800 rounded-xl p-3 mb-3">
                     {strategy.guidelines.map((guideline, gIdx) => (
                       <Text key={gIdx} className="text-white text-sm mb-2 last:mb-0">
-                        � {guideline}
+                        • {guideline}
                       </Text>
                     ))}
                   </View>
@@ -446,7 +442,7 @@ export default function InjuryPrevention() {
                   <Text className="text-zinc-400 text-sm mb-2">Examples:</Text>
                   {item.examples.map((example, eIdx) => (
                     <Text key={eIdx} className="text-zinc-300 text-sm mb-1">
-                      � {example}
+                      • {example}
                     </Text>
                   ))}
                 </View>

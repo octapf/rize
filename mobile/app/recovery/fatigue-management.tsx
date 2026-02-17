@@ -1,11 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-  TextInput,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, TouchableOpacity, ScrollView, TextInput } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -98,7 +93,7 @@ export default function FatigueManagement() {
       strategies: [
         { tip: 'Aim for 7-9 hours nightly', priority: 'Critical' },
         { tip: 'Same sleep/wake schedule', priority: 'High' },
-        { tip: 'Dark, cool room (65-68°F)', priority: 'High' },
+        { tip: 'Dark, cool room (65-68Â°F)', priority: 'High' },
         { tip: 'No screens 1hr before bed', priority: 'Medium' },
         { tip: 'Magnesium supplement', priority: 'Medium' },
       ],

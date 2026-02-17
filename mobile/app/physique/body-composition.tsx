@@ -1,11 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-  TextInput,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, TouchableOpacity, ScrollView, TextInput } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -302,16 +297,16 @@ export default function BodyComposition() {
           <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
             <Text className="text-primary/80 font-bold mb-2">Measurement Tips</Text>
             <Text className="text-primary/60 text-sm mb-2">
-              • Measure in the morning before eating
+              â€¢ Measure in the morning before eating
             </Text>
             <Text className="text-primary/60 text-sm mb-2">
-              • Keep tape parallel to ground, snug but not tight
+              â€¢ Keep tape parallel to ground, snug but not tight
             </Text>
             <Text className="text-primary/60 text-sm mb-2">
-              • Neck: measure below Adam's apple
+              â€¢ Neck: measure below Adam's apple
             </Text>
             <Text className="text-primary/60 text-sm">
-              • Waist: at navel, relaxed (don't suck in)
+              â€¢ Waist: at navel, relaxed (don't suck in)
             </Text>
           </View>
         </View>

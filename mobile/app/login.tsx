@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { View, Text, ScrollView, KeyboardAvoidingView, Platform } from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, ScrollView, KeyboardAvoidingView, Platform } from 'react-native';;
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Link, router } from 'expo-router';
 import { useMutation } from '@tanstack/react-query';
@@ -23,11 +24,11 @@ export default function LoginScreen() {
     mutationFn: authApi.login,
     onSuccess: async (data) => {
       await setAuth(data);
-      toast.success('¡Bienvenido de nuevo!');
+      toast.success('Â¡Bienvenido de nuevo!');
       router.replace('/(tabs)');
     },
     onError: (error: any) => {
-      const message = error.response?.data?.message || 'Error al iniciar sesión';
+      const message = error.response?.data?.message || 'Error al iniciar sesiÃ³n';
       toast.error(message);
       setErrors({ emailOrUsername: message });
     },
@@ -44,7 +45,7 @@ export default function LoginScreen() {
     }
 
     if (!password) {
-      const msg = 'Contraseña requerida';
+      const msg = 'ContraseÃ±a requerida';
       toast.error(msg);
       setErrors({ password: msg });
       return;
@@ -83,8 +84,8 @@ export default function LoginScreen() {
             />
 
             <Input
-              label="Contraseña"
-              placeholder="••••••••"
+              label="ContraseÃ±a"
+              placeholder="â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢"
               value={password}
               onChangeText={setPassword}
               error={errors.password}
@@ -108,16 +109,16 @@ export default function LoginScreen() {
               isLoading={loginMutation.isPending}
               className="mt-4"
             >
-              Iniciar Sesión
+              Iniciar SesiÃ³n
             </Button>
 
             <View className="flex-row items-center justify-center mt-6">
               <Text className="font-body text-sm text-gray-600">
-                ¿No tienes cuenta?{' '}
+                Â¿No tienes cuenta?{' '}
               </Text>
               <Link href="/register" asChild>
                 <Text className="font-label-bold text-sm text-primary">
-                  Regístrate
+                  RegÃ­strate
                 </Text>
               </Link>
             </View>

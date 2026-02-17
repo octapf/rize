@@ -1,10 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, TouchableOpacity, ScrollView } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -234,11 +230,11 @@ export default function WorkoutComparison() {
           <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
             <Text className="text-primary/80 font-bold mb-2">Comparison Insights</Text>
             <Text className="text-primary/60 text-sm">
-              • Green = improvement{'\n'}
-              • Compare same workout types{'\n'}
-              • Look for consistent progress{'\n'}
-              • Stagnant? Time para deload{'\n'}
-              • Track trends, not individual sessions
+              â€¢ Green = improvement{'\n'}
+              â€¢ Compare same workout types{'\n'}
+              â€¢ Look for consistent progress{'\n'}
+              â€¢ Stagnant? Time para deload{'\n'}
+              â€¢ Track trends, not individual sessions
             </Text>
           </View>
         </View>

@@ -1,10 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, TouchableOpacity, ScrollView } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -34,7 +30,7 @@ export default function AdvancedTechniques() {
         'Works better on machines/cables than free weights',
         'Not for compound movements under heavy load',
       ],
-      example: 'Bicep curls: 15kg�8 → 12kg�6 → 10kg�4',
+      example: 'Bicep curls: 15kg×8 → 12kg×6 → 10kg×4',
     },
     {
       id: 'restpause',
@@ -58,7 +54,7 @@ export default function AdvancedTechniques() {
         'Can accumulate significant fatigue',
         'Not for beginners',
       ],
-      example: 'Bench press: 80kg�8 → rest 20s → �3 → rest 20s → �2',
+      example: 'Bench press: 80kg×8 → rest 20s → ×3 → rest 20s → ×2',
     },
     {
       id: 'cluster',
@@ -307,16 +303,16 @@ export default function AdvancedTechniques() {
           <View className="bg-amber-500/10 rounded-xl p-4 border border-amber-500/30 mb-6">
             <Text className="text-amber-400 font-bold mb-2">When to Use Advanced Techniques</Text>
             <Text className="text-amber-300 text-sm mb-2">
-              � You've been training consistently for 1+ years
+              • You've been training consistently for 1+ years
             </Text>
             <Text className="text-amber-300 text-sm mb-2">
-              � You've hit a plateau with standard training
+              • You've hit a plateau with standard training
             </Text>
             <Text className="text-amber-300 text-sm mb-2">
-              � Use 1-2 per workout MAX (not every exercise)
+              • Use 1-2 per workout MAX (not every exercise)
             </Text>
             <Text className="text-amber-300 text-sm">
-              � Cycle in/out every 3-4 weeks to prevent burnout
+              • Cycle in/out every 3-4 weeks to prevent burnout
             </Text>
           </View>
         </View>

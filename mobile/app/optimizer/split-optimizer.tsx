@@ -1,10 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, TouchableOpacity, ScrollView } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -287,13 +283,13 @@ export default function SplitOptimizer() {
                   <View className="flex-1 bg-primary/10 rounded p-2 border border-primary/30">
                     <Text className="text-primary text-xs font-bold mb-1">PROS</Text>
                     {split.pros.slice(0, 2).map((pro, proIdx) => (
-                      <Text key={proIdx} className="text-primary/80 text-xs">• {pro}</Text>
+                      <Text key={proIdx} className="text-primary/80 text-xs">â€¢ {pro}</Text>
                     ))}
                   </View>
                   <View className="flex-1 bg-amber-500/10 rounded p-2 border border-amber-500/30">
                     <Text className="text-amber-400 text-xs font-bold mb-1">CONS</Text>
                     {split.cons.slice(0, 2).map((con, conIdx) => (
-                      <Text key={conIdx} className="text-amber-300 text-xs">• {con}</Text>
+                      <Text key={conIdx} className="text-amber-300 text-xs">â€¢ {con}</Text>
                     ))}
                   </View>
                 </View>
@@ -303,12 +299,12 @@ export default function SplitOptimizer() {
           <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
             <Text className="text-primary/80 font-bold mb-2">Split Selection Tips</Text>
             <Text className="text-primary/60 text-sm">
-              • Frequency &gt; volume for naturals{'\n'}
-              • 2x per week per muscle = optimal{'\n'}
-              • Choose split you can sustain{'\n'}
-              • 4-6 days ideal for intermediates{'\n'}
-              • Beginners: start with 3-4 days{'\n'}
-              • Advanced: 5-6 days with proper recovery
+              â€¢ Frequency &gt; volume for naturals{'\n'}
+              â€¢ 2x per week per muscle = optimal{'\n'}
+              â€¢ Choose split you can sustain{'\n'}
+              â€¢ 4-6 days ideal for intermediates{'\n'}
+              â€¢ Beginners: start with 3-4 days{'\n'}
+              â€¢ Advanced: 5-6 days with proper recovery
             </Text>
           </View>
         </View>

@@ -1,11 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-  TextInput,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, TouchableOpacity, ScrollView, TextInput } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -329,16 +324,16 @@ export default function MovementScreening() {
           <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
             <Text className="text-primary/80 font-bold mb-2">Screening Tips</Text>
             <Text className="text-primary/60 text-sm mb-2">
-              • Record video to review form
+              â€¢ Record video to review form
             </Text>
             <Text className="text-primary/60 text-sm mb-2">
-              • Test both sides for asymmetries
+              â€¢ Test both sides for asymmetries
             </Text>
             <Text className="text-primary/60 text-sm mb-2">
-              • Re-screen every 4-6 weeks to track improvements
+              â€¢ Re-screen every 4-6 weeks to track improvements
             </Text>
             <Text className="text-primary/60 text-sm">
-              • Score of 1 = address limitation before heavy loading
+              â€¢ Score of 1 = address limitation before heavy loading
             </Text>
           </View>
         </View>

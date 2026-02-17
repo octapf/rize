@@ -1,12 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-  TextInput,
-  FlatList,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, TouchableOpacity, ScrollView, TextInput, FlatList } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -25,8 +19,8 @@ interface VideoLibraryItem {
 const VIDEO_LIBRARY: VideoLibraryItem[] = [
   {
     id: '1',
-    title: 'Dominadas - TÈcnica Perfecta',
-    category: 'TracciÛn',
+    title: 'Dominadas - T√©cnica Perfecta',
+    category: 'Tracci√≥n',
     duration: '8:45',
     difficulty: 'intermediate',
     views: 12500,
@@ -36,7 +30,7 @@ const VIDEO_LIBRARY: VideoLibraryItem[] = [
   },
   {
     id: '2',
-    title: 'Muscle-Up - ProgresiÛn Completa',
+    title: 'Muscle-Up - Progresi√≥n Completa',
     category: 'Avanzado',
     duration: '12:30',
     difficulty: 'advanced',
@@ -58,8 +52,8 @@ const VIDEO_LIBRARY: VideoLibraryItem[] = [
   },
   {
     id: '4',
-    title: 'Planche - Fundamentos y PreparaciÛn',
-    category: 'Est·ticos',
+    title: 'Planche - Fundamentos y Preparaci√≥n',
+    category: 'Est√°ticos',
     duration: '15:45',
     difficulty: 'advanced',
     views: 6700,
@@ -69,8 +63,8 @@ const VIDEO_LIBRARY: VideoLibraryItem[] = [
   },
   {
     id: '5',
-    title: 'Front Lever - GuÌa Paso a Paso',
-    category: 'Est·ticos',
+    title: 'Front Lever - Gu√≠a Paso a Paso',
+    category: 'Est√°ticos',
     duration: '11:20',
     difficulty: 'advanced',
     views: 7300,
@@ -92,7 +86,7 @@ const VIDEO_LIBRARY: VideoLibraryItem[] = [
   {
     id: '7',
     title: 'Handstand - Equilibrio y Control',
-    category: 'Est·ticos',
+    category: 'Est√°ticos',
     duration: '14:00',
     difficulty: 'intermediate',
     views: 9200,
@@ -113,7 +107,7 @@ const VIDEO_LIBRARY: VideoLibraryItem[] = [
   },
 ];
 
-const CATEGORIES = ['Todos', 'TracciÛn', 'Empuje', 'Piernas', 'Est·ticos', 'Avanzado'];
+const CATEGORIES = ['Todos', 'Tracci√≥n', 'Empuje', 'Piernas', 'Est√°ticos', 'Avanzado'];
 const DIFFICULTY_FILTERS = ['Todos', 'beginner', 'intermediate', 'advanced'];
 
 export default function VideoLibrary() {
@@ -375,7 +369,7 @@ export default function VideoLibrary() {
               No se encontraron videos
             </Text>
             <Text className="text-zinc-600 text-sm mt-2 text-center">
-              Intenta cambiar los filtros o buscar otro tÈrmino
+              Intenta cambiar los filtros o buscar otro t√©rmino
             </Text>
           </View>
         }

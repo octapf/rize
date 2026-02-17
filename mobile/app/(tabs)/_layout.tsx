@@ -8,6 +8,7 @@ export default function TabsLayout() {
         tabBarActiveTintColor: '#9D12DE',
         tabBarInactiveTintColor: '#888888',
         headerShown: false,
+        tabBarLabelStyle: { fontFamily: 'Inter_400Regular' },
         tabBarStyle: {
           borderTopWidth: 1,
           borderTopColor: '#404040',

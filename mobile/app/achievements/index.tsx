@@ -1,11 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  ScrollView,
-  TouchableOpacity,
-  ActivityIndicator,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, ScrollView, TouchableOpacity, ActivityIndicator } from 'react-native';;
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useAchievements } from '@/hooks/useAchievements';
@@ -241,11 +236,11 @@ export default function AchievementsScreen() {
                               className={`text-xs font-semibold ${colors.text}`}
                             >
                               {achievement.rarity === 'common'
-                                ? 'Común'
+                                ? 'ComÃºn'
                                 : achievement.rarity === 'rare'
                                 ? 'Raro'
                                 : achievement.rarity === 'epic'
-                                ? 'Épico'
+                                ? 'Ã©pico'
                                 : 'Legendario'}
                             </Text>
                           </View>

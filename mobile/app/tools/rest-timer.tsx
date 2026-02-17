@@ -1,11 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-  Alert,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, TouchableOpacity, ScrollView, Alert } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -38,7 +33,7 @@ export default function RestTimerScreen() {
           if (prev <= 1) {
             setIsRunning(false);
             // TODO: Play notification sound
-            Alert.alert('¡Tiempo!', 'Descanso terminado. ¡A entrenar!');
+            Alert.alert('Â¡Tiempo!', 'Descanso terminado. Â¡A entrenar!');
             return 0;
           }
           return prev - 1;
@@ -254,10 +249,10 @@ export default function RestTimerScreen() {
                     Consejos de Descanso
                   </Text>
                   <Text className="text-primary/60/80 text-xs leading-5">
-                    • Fuerza: 2-3 minutos{'\n'}
-                    • Hipertrofia: 60-90 segundos{'\n'}
-                    • Resistencia: 30-60 segundos{'\n'}
-                    • Mantente hidratado durante los descansos
+                    â€¢ Fuerza: 2-3 minutos{'\n'}
+                    â€¢ Hipertrofia: 60-90 segundos{'\n'}
+                    â€¢ Resistencia: 30-60 segundos{'\n'}
+                    â€¢ Mantente hidratado durante los descansos
                   </Text>
                 </View>
               </View>

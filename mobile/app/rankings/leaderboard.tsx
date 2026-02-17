@@ -1,11 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  FlatList,
-  RefreshControl,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, TouchableOpacity, FlatList, RefreshControl } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
@@ -22,12 +17,12 @@ interface LeaderboardUser {
 }
 
 const mockLeaderboard: LeaderboardUser[] = [
-  { rank: 1, userId: '1', name: 'Carlos García', username: 'carlosg', score: 12540, change: 2 },
-  { rank: 2, userId: '2', name: 'Ana López', username: 'ana', score: 11230, change: -1 },
-  { rank: 3, userId: '3', name: 'Pedro Martínez', username: 'pedro', score: 10890, change: 1 },
-  { rank: 4, userId: '4', name: 'María Sánchez', username: 'maria', score: 9750, change: 0 },
-  { rank: 5, userId: 'me', name: 'Tú', username: 'tuuser', score: 8920, change: 3 },
-  { rank: 6, userId: '6', name: 'Luis Rodríguez', username: 'luis', score: 8450, change: -2 },
+  { rank: 1, userId: '1', name: 'Carlos GarcÃ­a', username: 'carlosg', score: 12540, change: 2 },
+  { rank: 2, userId: '2', name: 'Ana LÃ³pez', username: 'ana', score: 11230, change: -1 },
+  { rank: 3, userId: '3', name: 'Pedro MartÃ­nez', username: 'pedro', score: 10890, change: 1 },
+  { rank: 4, userId: '4', name: 'MarÃ­a SÃ¡nchez', username: 'maria', score: 9750, change: 0 },
+  { rank: 5, userId: 'me', name: 'TÃº', username: 'tuuser', score: 8920, change: 3 },
+  { rank: 6, userId: '6', name: 'Luis RodrÃ­guez', username: 'luis', score: 8450, change: -2 },
   { rank: 7, userId: '7', name: 'Sofia Torres', username: 'sofia', score: 7890, change: 1 },
   { rank: 8, userId: '8', name: 'Diego Ruiz', username: 'diego', score: 7320, change: -1 },
 ];
@@ -62,7 +57,7 @@ export default function LeaderboardScreen() {
       case 'workouts':
         return 'workouts';
       case 'streak':
-        return 'días';
+        return 'dÃ­as';
       default:
         return '';
     }
@@ -179,7 +174,7 @@ export default function LeaderboardScreen() {
                   timeRange === range ? 'text-amber-600' : 'text-white'
                 }`}
               >
-                {range === 'week' ? 'Semana' : range === 'month' ? 'Mes' : 'Histórico'}
+                {range === 'week' ? 'Semana' : range === 'month' ? 'Mes' : 'HistÃ³rico'}
               </Text>
             </TouchableOpacity>
           ))}

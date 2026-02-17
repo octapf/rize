@@ -1,10 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, TouchableOpacity, ScrollView } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -201,11 +197,11 @@ export default function MobilityPrograms() {
           <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
             <Text className="text-primary/80 font-bold mb-2">Mobility Tips</Text>
             <Text className="text-primary/60 text-sm">
-              • 10 min daily &gt; 1h weekly{'\n'}
-              • Consistency is key{'\n'}
-              • Hold stretches 30-90s{'\n'}
-              • Breathe deeply during holds{'\n'}
-              • Progressive overload applies to mobility
+              â€¢ 10 min daily &gt; 1h weekly{'\n'}
+              â€¢ Consistency is key{'\n'}
+              â€¢ Hold stretches 30-90s{'\n'}
+              â€¢ Breathe deeply during holds{'\n'}
+              â€¢ Progressive overload applies to mobility
             </Text>
           </View>
         </View>

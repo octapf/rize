@@ -1,11 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-  Dimensions,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, TouchableOpacity, ScrollView, Dimensions } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import { LineChart, BarChart, PieChart } from 'react-native-chart-kit';
@@ -33,7 +28,7 @@ const METRICS: AnalyticsMetric[] = [
   {
     id: 'frequency',
     name: 'Frecuencia',
-    value: '5 d�as/sem',
+    value: '5 días/sem',
     change: 0,
     icon: 'calendar',
     color: '#9D12DE',
@@ -63,7 +58,7 @@ export default function AdvancedAnalytics() {
   const periods = [
     { id: 'week' as const, label: 'Semana' },
     { id: 'month' as const, label: 'Mes' },
-    { id: 'year' as const, label: 'A�o' },
+    { id: 'year' as const, label: 'Año' },
   ];
 
   // Volume trend data
@@ -81,7 +76,7 @@ export default function AdvancedAnalytics() {
   // Exercise distribution
   const exerciseDistribution = [
     {
-      name: 'Tracci�n',
+      name: 'Tracción',
       population: 35,
       color: '#9D12DE',
       legendFontColor: '#71717A',
@@ -191,7 +186,7 @@ export default function AdvancedAnalytics() {
         {/* Key Metrics */}
         <View className="px-6 pt-6">
           <Text className="text-white font-bold text-lg mb-3">
-            M�tricas Clave
+            Métricas Clave
           </Text>
           <View className="flex-row flex-wrap gap-3">
             {METRICS.map((metric) => (
@@ -259,7 +254,7 @@ export default function AdvancedAnalytics() {
         {/* Exercise Distribution */}
         <View className="px-6 pt-6">
           <Text className="text-white font-bold text-lg mb-3">
-            Distribuci�n de Ejercicios
+            Distribución de Ejercicios
           </Text>
           <View className="bg-zinc-900 rounded-xl p-4 border border-zinc-800">
             <PieChart
@@ -304,7 +299,7 @@ export default function AdvancedAnalytics() {
         {/* Performance Score */}
         <View className="px-6 pt-6">
           <Text className="text-white font-bold text-lg mb-3">
-            Evoluci�n de Performance
+            Evolución de Performance
           </Text>
           <View className="bg-zinc-900 rounded-xl p-4 border border-zinc-800">
             <LineChart
@@ -345,7 +340,7 @@ export default function AdvancedAnalytics() {
                   Progreso Consistente
                 </Text>
                 <Text className="text-primary/80 text-sm leading-5">
-                  Has incrementado tu volumen un 12% este mes. Mant�n este ritmo
+                  Has incrementado tu volumen un 12% este mes. Mantén este ritmo
                   para seguir progresando.
                 </Text>
               </View>
@@ -360,8 +355,8 @@ export default function AdvancedAnalytics() {
                   Balance Muscular
                 </Text>
                 <Text className="text-primary/60 text-sm leading-5">
-                  Tu ratio tracci�n/empuje est� equilibrado (1.09:1). Ideal para
-                  desarrollo sim�trico.
+                  Tu ratio tracción/empuje está equilibrado (1.09:1). Ideal para
+                  desarrollo simétrico.
                 </Text>
               </View>
             </View>
@@ -375,7 +370,7 @@ export default function AdvancedAnalytics() {
                   Oportunidad de Mejora
                 </Text>
                 <Text className="text-amber-300 text-sm leading-5">
-                  Tu volumen de core (8%) est� por debajo del �ptimo (15-20%).
+                  Tu volumen de core (8%) está por debajo del Óptimo (15-20%).
                   Considera agregar 2-3 ejercicios de core por semana.
                 </Text>
               </View>

@@ -1,10 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, TouchableOpacity, ScrollView } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -197,16 +193,16 @@ export default function DeloadProtocols() {
           <View className="bg-amber-500/10 rounded-xl p-4 border border-amber-500/30 mb-6">
             <Text className="text-amber-400 font-bold mb-2">Why Deload?</Text>
             <Text className="text-amber-300 text-sm mb-2">
-              � Training creates fatigue faster than you recover
+              • Training creates fatigue faster than you recover
             </Text>
             <Text className="text-amber-300 text-sm mb-2">
-              � Accumulated fatigue masks strength gains
+              • Accumulated fatigue masks strength gains
             </Text>
             <Text className="text-amber-300 text-sm mb-2">
-              � Deloads allow supercompensation (rebound)
+              • Deloads allow supercompensation (rebound)
             </Text>
             <Text className="text-amber-300 text-sm">
-              � You don't lose gains in one week
+              • You don't lose gains in one week
             </Text>
           </View>
 
@@ -280,7 +276,7 @@ export default function DeloadProtocols() {
             <Text className="text-white font-bold mb-3">Key Points</Text>
             {currentProtocol.notes.map((note, idx) => (
               <Text key={idx} className="text-zinc-300 text-sm mb-2 last:mb-4">
-                � {note}
+                • {note}
               </Text>
             ))}
 

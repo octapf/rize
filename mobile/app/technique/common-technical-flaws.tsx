@@ -1,10 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, TouchableOpacity, ScrollView } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -47,7 +43,7 @@ export default function CommonTechnicalFlaws() {
               ],
             },
           ],
-          film_angle: 'Front view at 45� angle',
+          film_angle: 'Front view at 45° angle',
         },
         {
           flaw: 'Good Morning Squat (Hips Rise First)',
@@ -204,7 +200,7 @@ export default function CommonTechnicalFlaws() {
             'Stresses shoulders not chest/triceps',
           ],
           causes: [
-            'Flaring elbows too much (90�)',
+            'Flaring elbows too much (90°)',
             'Touching too low on chest',
             'Poor shoulder position - not retracted',
             'Trying to use chest too much',
@@ -212,7 +208,7 @@ export default function CommonTechnicalFlaws() {
           ],
           fixes: [
             {
-              immediate: 'Cue "tuck elbows" - aim for 45-75� angle',
+              immediate: 'Cue "tuck elbows" - aim for 45-75• angle',
               short_term: [
                 'Touch higher on chest (nipple line)',
                 'Film every set - side view',
@@ -661,14 +657,14 @@ export default function CommonTechnicalFlaws() {
               <View className="bg-red-500/10 rounded-xl p-4 border border-red-500/30 mb-4">
                 <Text className="text-red-400 font-bold mb-2">Why It's Bad:</Text>
                 {flaw.why_bad.map((reason, rIdx) => (
-                  <Text key={rIdx} className="text-red-300 text-sm mb-1">� {reason}</Text>
+                  <Text key={rIdx} className="text-red-300 text-sm mb-1">• {reason}</Text>
                 ))}
               </View>
 
               <View className="bg-amber-500/10 rounded-xl p-4 border border-amber-500/30 mb-4">
                 <Text className="text-amber-400 font-bold mb-2">Common Causes:</Text>
                 {flaw.causes.map((cause, cIdx) => (
-                  <Text key={cIdx} className="text-amber-300 text-sm mb-1">� {cause}</Text>
+                  <Text key={cIdx} className="text-amber-300 text-sm mb-1">• {cause}</Text>
                 ))}
               </View>
 
@@ -692,14 +688,14 @@ export default function CommonTechnicalFlaws() {
                     <View className="mb-3">
                       <Text className="text-primary/80 font-bold mb-2">Short-term (This Week/Month):</Text>
                       {fix.short_term.map((action, aIdx) => (
-                        <Text key={aIdx} className="text-primary/60 text-sm mb-1">� {action}</Text>
+                        <Text key={aIdx} className="text-primary/60 text-sm mb-1">• {action}</Text>
                       ))}
                     </View>
 
                     <View>
                       <Text className="text-purple-400 font-bold mb-2">Long-term (Build Foundation):</Text>
                       {fix.long_term.map((action, aIdx) => (
-                        <Text key={aIdx} className="text-purple-300 text-sm mb-1">� {action}</Text>
+                        <Text key={aIdx} className="text-purple-300 text-sm mb-1">• {action}</Text>
                       ))}
                     </View>
                   </View>
@@ -719,19 +715,19 @@ export default function CommonTechnicalFlaws() {
           <View className="bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-xl p-5 border border-purple-500/30 mb-6">
             <Text className="text-purple-400 font-bold text-lg mb-3">General Principles</Text>
             <Text className="text-purple-300 text-sm mb-2">
-              � Film yourself - you can't fix what you don't see
+              • Film yourself - you can't fix what you don't see
             </Text>
             <Text className="text-purple-300 text-sm mb-2">
-              � Fix ONE issue at a time - don't overwhelm
+              • Fix ONE issue at a time - don't overwhelm
             </Text>
             <Text className="text-purple-300 text-sm mb-2">
-              � Drop weight if needed - ego &lt; technique
+              • Drop weight if needed - ego &lt; technique
             </Text>
             <Text className="text-purple-300 text-sm mb-2">
-              � Address root cause, not just symptom
+              • Address root cause, not just symptom
             </Text>
             <Text className="text-purple-300 text-sm">
-              � Be patient - motor patterns take time to change
+              • Be patient - motor patterns take time to change
             </Text>
           </View>
         </View>

@@ -1,11 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-  TextInput,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, TouchableOpacity, ScrollView, TextInput } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -297,12 +292,12 @@ export default function BodyRecomposition() {
           <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
             <Text className="text-primary/80 font-bold mb-2">Recomp Tips</Text>
             <Text className="text-primary/60 text-sm">
-              • Track weight weekly, not daily{'\n'}
-              • Photos &gt; scale weight{'\n'}
-              • Prioritize protein intake{'\n'}
-              • Sleep is non-negotiable{'\n'}
-              • Patience = 12-16 weeks minimum{'\n'}
-              • Adjust based on 2-week averages
+              â€¢ Track weight weekly, not daily{'\n'}
+              â€¢ Photos &gt; scale weight{'\n'}
+              â€¢ Prioritize protein intake{'\n'}
+              â€¢ Sleep is non-negotiable{'\n'}
+              â€¢ Patience = 12-16 weeks minimum{'\n'}
+              â€¢ Adjust based on 2-week averages
             </Text>
           </View>
         </View>

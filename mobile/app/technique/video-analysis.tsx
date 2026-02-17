@@ -1,10 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, TouchableOpacity, ScrollView } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -19,7 +15,7 @@ export default function VideoAnalysis() {
       angles: [
         {
           angle: 'Side View (Most Important)',
-          setup: '90� to lifter, camera at hip height',
+          setup: '90• to lifter, camera at hip height',
           checkpoints: [
             { checkpoint: 'Bar path', good: 'Vertical line over mid-foot', bad: 'Bar drifts forward or back' },
             { checkpoint: 'Hip/chest rise', good: 'Both rise together', bad: 'Hips shoot up first (stripper squat)' },
@@ -59,7 +55,7 @@ export default function VideoAnalysis() {
       angles: [
         {
           angle: 'Side View',
-          setup: '90� to lifter, camera at chest height',
+          setup: '90• to lifter, camera at chest height',
           checkpoints: [
             { checkpoint: 'Bar path', good: 'J-curve (down to chest, up to shoulders)', bad: 'Straight vertical' },
             { checkpoint: 'Arch maintenance', good: 'Arch stays through rep', bad: 'Flat back, butt comes up' },
@@ -83,7 +79,7 @@ export default function VideoAnalysis() {
           angle: 'Feet View',
           setup: 'From feet, camera at bench level',
           checkpoints: [
-            { checkpoint: 'Elbow angle', good: '45-75� from body', bad: 'Flared 90�' },
+            { checkpoint: 'Elbow angle', good: '45-75• from body', bad: 'Flared 90°' },
             { checkpoint: 'Forearm angle', good: 'Vertical at bottom', bad: 'Angled inward or outward' },
             { checkpoint: 'Wrist position', good: 'Neutral, stacked', bad: 'Bent back excessively' },
           ],
@@ -98,7 +94,7 @@ export default function VideoAnalysis() {
       angles: [
         {
           angle: 'Side View (Essential)',
-          setup: '90� to lifter, camera at hip height',
+          setup: '90• to lifter, camera at hip height',
           checkpoints: [
             { checkpoint: 'Bar position', good: 'Starts over mid-foot, stays there', bad: 'Starts over toes, drifts forward' },
             { checkpoint: 'Back position', good: 'Neutral spine throughout', bad: 'Rounded upper or lower back' },
@@ -128,7 +124,7 @@ export default function VideoAnalysis() {
       angles: [
         {
           angle: 'Side View',
-          setup: '90� to lifter, camera at shoulder height',
+          setup: '90• to lifter, camera at shoulder height',
           checkpoints: [
             { checkpoint: 'Bar path', good: 'Up and back, then vertical', bad: 'Pressing forward' },
             { checkpoint: 'Lower back', good: 'Neutral spine, no arch', bad: 'Hyperextension' },
@@ -321,19 +317,19 @@ export default function VideoAnalysis() {
           <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
             <Text className="text-primary/80 font-bold mb-2">Pro Tips</Text>
             <Text className="text-primary/60 text-sm mb-2">
-              � What you feel ≠ what you see (video doesn't lie)
+              • What you feel ≠ what you see (video doesn't lie)
             </Text>
             <Text className="text-primary/60 text-sm mb-2">
-              � Side view is most important for all lifts
+              • Side view is most important for all lifts
             </Text>
             <Text className="text-primary/60 text-sm mb-2">
-              � Film EVERY session - make it a habit
+              • Film EVERY session - make it a habit
             </Text>
             <Text className="text-primary/60 text-sm mb-2">
-              � Keep old videos to see long-term progress
+              • Keep old videos to see long-term progress
             </Text>
             <Text className="text-primary/60 text-sm">
-              � Consider posting for experienced feedback
+              • Consider posting for experienced feedback
             </Text>
           </View>
         </View>

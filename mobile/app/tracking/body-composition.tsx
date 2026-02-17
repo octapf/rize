@@ -1,12 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-  TextInput,
-  Alert,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, TouchableOpacity, ScrollView, TextInput, Alert } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import { format } from 'date-fns';
@@ -110,13 +104,13 @@ export default function BodyComposition() {
     setEntries([entry, ...entries]);
     setNewEntry({ weight: '', bodyFat: '', muscleMass: '', visceralFat: '', bmr: '', notes: '' });
     setShowAddForm(false);
-    Alert.alert('Entrada Guardada! ðŸ“Š', 'Composición corporal registrada');
+    Alert.alert('Entrada Guardada! ðŸ“Š', 'ComposiciÃ³n corporal registrada');
   };
 
   const deleteEntry = (id: string) => {
     Alert.alert(
       'Eliminar Entrada',
-      '¿Estás seguro?',
+      'Â¿EstÃ¡s seguro?',
       [
         { text: 'Cancelar' },
         { text: 'Eliminar', style: 'destructive', onPress: () => setEntries(entries.filter((e) => e.id !== id)) },
@@ -169,7 +163,7 @@ export default function BodyComposition() {
         <View className="px-6 pt-6">
           {showAddForm ? (
             <View className="bg-zinc-900 rounded-xl p-6 mb-6 border border-zinc-800">
-              <Text className="text-white font-bold text-lg mb-4">Nueva Medición</Text>
+              <Text className="text-white font-bold text-lg mb-4">Nueva MediciÃ³n</Text>
 
               {/* Weight & Body Fat */}
               <View className="flex-row gap-4 mb-4">
@@ -220,7 +214,7 @@ export default function BodyComposition() {
                 <Text className="text-zinc-400 text-sm mb-2">Masa Muscular (kg) - opcional</Text>
                 <TextInput
                   className="bg-zinc-800 rounded-xl px-4 py-3 text-white text-lg font-bold"
-                  placeholder="Autodetectado si vacío"
+                  placeholder="Autodetectado si vacÃ­o"
                   placeholderTextColor="#71717A"
                   keyboardType="decimal-pad"
                   value={newEntry.muscleMass}
@@ -242,7 +236,7 @@ export default function BodyComposition() {
                   />
                 </View>
                 <View className="flex-1">
-                  <Text className="text-zinc-400 text-sm mb-2">TMB (kcal/día)</Text>
+                  <Text className="text-zinc-400 text-sm mb-2">TMB (kcal/dÃ­a)</Text>
                   <TextInput
                     className="bg-zinc-800 rounded-xl px-4 py-3 text-white text-lg font-bold"
                     placeholder="1800"
@@ -273,7 +267,7 @@ export default function BodyComposition() {
                 className="bg-primary rounded-xl p-4 flex-row items-center justify-center"
               >
                 <Ionicons name="checkmark-circle" size={20} color="white" />
-                <Text className="text-white font-bold ml-2">Guardar Medición</Text>
+                <Text className="text-white font-bold ml-2">Guardar MediciÃ³n</Text>
               </TouchableOpacity>
             </View>
           ) : (
@@ -281,7 +275,7 @@ export default function BodyComposition() {
               {/* Latest Stats */}
               {entries.length > 0 && (
                 <View className="bg-zinc-900 rounded-xl p-4 mb-6 border border-zinc-800">
-                  <Text className="text-white font-bold text-lg mb-3">Última Medición</Text>
+                  <Text className="text-white font-bold text-lg mb-3">Ãšltima MediciÃ³n</Text>
                   <Text className="text-zinc-400 text-sm mb-3">
                     {format(entries[0].date, "d 'de' MMMM, yyyy", { locale: es })}
                   </Text>
@@ -312,7 +306,7 @@ export default function BodyComposition() {
               {progress && (
                 <View className="bg-zinc-900 rounded-xl p-4 mb-6 border border-zinc-800">
                   <Text className="text-white font-bold text-lg mb-3">
-                    Progreso ({progress.days} días)
+                    Progreso ({progress.days} dÃ­as)
                   </Text>
                   <View className="space-y-3">
                     <View className="flex-row items-center justify-between">
@@ -386,7 +380,7 @@ export default function BodyComposition() {
                   <Text className="text-6xl mb-3">ðŸ“Š</Text>
                   <Text className="text-white font-bold text-lg mb-2">Sin Mediciones</Text>
                   <Text className="text-zinc-400 text-center">
-                    Registra tu composición corporal
+                    Registra tu composiciÃ³n corporal
                   </Text>
                 </View>
               ) : (
@@ -432,7 +426,7 @@ export default function BodyComposition() {
                       {entry.bmr && (
                         <View className="flex-row justify-between">
                           <Text className="text-zinc-400">TMB</Text>
-                          <Text className="text-white font-bold">{entry.bmr} kcal/día</Text>
+                          <Text className="text-white font-bold">{entry.bmr} kcal/dÃ­a</Text>
                         </View>
                       )}
                     </View>
@@ -458,11 +452,11 @@ export default function BodyComposition() {
                   Tips para Mediciones Precisas
                 </Text>
                 <Text className="text-primary/80 text-sm">
-                  • Mide siempre a la misma hora (AM en ayunas){'\n'}
-                  • Después de ir al baño{'\n'}
-                  • Antes de entrenar{'\n'}
-                  • Mismas condiciones semanales{'\n'}
-                  • Usa báscula de bioimpedancia confiable
+                  â€¢ Mide siempre a la misma hora (AM en ayunas){'\n'}
+                  â€¢ DespuÃ©s de ir al baÃ±o{'\n'}
+                  â€¢ Antes de entrenar{'\n'}
+                  â€¢ Mismas condiciones semanales{'\n'}
+                  â€¢ Usa bÃ¡scula de bioimpedancia confiable
                 </Text>
               </View>
             </View>

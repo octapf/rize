@@ -1,13 +1,6 @@
 import React, { useState, useRef } from 'react';
-import {
-  View,
-  Text,
-  StyleSheet,
-  Dimensions,
-  TouchableOpacity,
-  FlatList,
-  ViewToken,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, StyleSheet, Dimensions, TouchableOpacity, FlatList, ViewToken } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
@@ -43,14 +36,14 @@ const slides: OnboardingSlide[] = [
   {
     id: '3',
     icon: 'people',
-    title: 'Conéctate con Amigos',
-    description: 'Comparte tus logros, motívate mutuamente y compite en el leaderboard.',
+    title: 'ConÃ©ctate con Amigos',
+    description: 'Comparte tus logros, motÃ­vate mutuamente y compite en el leaderboard.',
     gradient: ['#A855F7', '#9333EA'],
   },
   {
     id: '4',
     icon: 'trophy',
-    title: '¡Comienza Ahora!',
+    title: 'Â¡Comienza Ahora!',
     description: 'Crea tu cuenta y empieza tu viaje fitness hoy mismo.',
     gradient: ['#FFEA00', '#D97706'],
   },
@@ -145,7 +138,7 @@ export default function OnboardingScreen() {
               colors={['#9D12DE', '#7C3AED']}
               style={styles.startButtonGradient}
             >
-              <Text style={styles.startText}>¡Empezar!</Text>
+              <Text style={styles.startText}>Â¿Empezar!</Text>
             </LinearGradient>
           </TouchableOpacity>
         )}

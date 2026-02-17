@@ -1,13 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-  TextInput,
-  FlatList,
-  Image,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, TouchableOpacity, ScrollView, TextInput, FlatList, Image } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -27,8 +20,8 @@ const EXERCISES: Exercise[] = [
   {
     id: '1',
     name: 'Pull-ups',
-    category: 'TracciÛn',
-    muscleGroup: ['Espalda', 'BÌceps'],
+    category: 'Tracci√≥n',
+    muscleGroup: ['Espalda', 'B√≠ceps'],
     equipment: 'Barra',
     difficulty: 'intermediate',
     description: 'Ejercicio fundamental de calistenia para la espalda',
@@ -36,7 +29,7 @@ const EXERCISES: Exercise[] = [
       'Agarra la barra con las palmas hacia adelante',
       'Cuelga con los brazos completamente extendidos',
       'Tira hacia arriba hasta que tu barbilla pase la barra',
-      'Baja de forma controlada hasta la posiciÛn inicial',
+      'Baja de forma controlada hasta la posici√≥n inicial',
     ],
     isCustom: false,
   },
@@ -44,15 +37,15 @@ const EXERCISES: Exercise[] = [
     id: '2',
     name: 'Push-ups',
     category: 'Empuje',
-    muscleGroup: ['Pecho', 'TrÌceps', 'Hombros'],
+    muscleGroup: ['Pecho', 'Tr√≠ceps', 'Hombros'],
     equipment: 'Sin equipo',
     difficulty: 'beginner',
-    description: 'Ejercicio b·sico de empuje para el tren superior',
+    description: 'Ejercicio b√°sico de empuje para el tren superior',
     instructions: [
-      'ColÛcate en posiciÛn de plancha con manos al ancho de hombros',
+      'Col√≥cate en posici√≥n de plancha con manos al ancho de hombros',
       'Baja el cuerpo manteniendo el core activo',
       'Empuja hacia arriba hasta extender los brazos',
-      'MantÈn el cuerpo recto durante todo el movimiento',
+      'Mant√©n el cuerpo recto durante todo el movimiento',
     ],
     isCustom: false,
   },
@@ -60,15 +53,15 @@ const EXERCISES: Exercise[] = [
     id: '3',
     name: 'Squats',
     category: 'Piernas',
-    muscleGroup: ['Cu·driceps', 'Gl˙teos'],
+    muscleGroup: ['Cu√°driceps', 'Gl√∫teos'],
     equipment: 'Sin equipo',
     difficulty: 'beginner',
     description: 'Ejercicio fundamental para piernas',
     instructions: [
-      'P·rate con los pies al ancho de hombros',
+      'P√°rate con los pies al ancho de hombros',
       'Baja como si te sentaras en una silla',
-      'MantÈn el pecho hacia arriba y las rodillas sobre los pies',
-      'Empuja a travÈs de los talones para volver',
+      'Mant√©n el pecho hacia arriba y las rodillas sobre los pies',
+      'Empuja a trav√©s de los talones para volver',
     ],
     isCustom: false,
   },
@@ -76,14 +69,14 @@ const EXERCISES: Exercise[] = [
     id: '4',
     name: 'Dips',
     category: 'Empuje',
-    muscleGroup: ['TrÌceps', 'Pecho', 'Hombros'],
+    muscleGroup: ['Tr√≠ceps', 'Pecho', 'Hombros'],
     equipment: 'Paralelas',
     difficulty: 'intermediate',
     description: 'Ejercicio compuesto para el tren superior',
     instructions: [
-      'SujÈtate en las barras paralelas',
+      'Suj√©tate en las barras paralelas',
       'Baja flexionando los codos',
-      'MantÈn el pecho ligeramente hacia adelante',
+      'Mant√©n el pecho ligeramente hacia adelante',
       'Empuja hacia arriba hasta extender los brazos',
     ],
     isCustom: false,
@@ -98,7 +91,7 @@ const EXERCISES: Exercise[] = [
     description: 'Ejercicio avanzado que combina pull-up y dip',
     instructions: [
       'Comienza con un pull-up explosivo',
-      'En el punto m·s alto, lleva el pecho sobre la barra',
+      'En el punto m√°s alto, lleva el pecho sobre la barra',
       'Transiciona a un dip empujando hacia arriba',
       'Extiende completamente los brazos en la parte superior',
     ],
@@ -108,12 +101,12 @@ const EXERCISES: Exercise[] = [
     id: '6',
     name: 'Pistol Squats',
     category: 'Piernas',
-    muscleGroup: ['Cu·driceps', 'Gl˙teos'],
+    muscleGroup: ['Cu√°driceps', 'Gl√∫teos'],
     equipment: 'Sin equipo',
     difficulty: 'advanced',
     description: 'Sentadilla a una pierna',
     instructions: [
-      'P·rate en una pierna',
+      'P√°rate en una pierna',
       'Extiende la otra pierna hacia adelante',
       'Baja lentamente manteniendo el equilibrio',
       'Empuja hacia arriba con la pierna de apoyo',
@@ -123,32 +116,32 @@ const EXERCISES: Exercise[] = [
   {
     id: '7',
     name: 'Planche',
-    category: 'Est·ticos',
+    category: 'Est√°ticos',
     muscleGroup: ['Hombros', 'Core', 'Brazos'],
     equipment: 'Sin equipo',
     difficulty: 'advanced',
-    description: 'Ejercicio est·tico avanzado de equilibrio',
+    description: 'Ejercicio est√°tico avanzado de equilibrio',
     instructions: [
-      'ColÛcate en posiciÛn de plancha',
+      'Col√≥cate en posici√≥n de plancha',
       'Inclina el peso hacia adelante',
       'Levanta los pies del suelo',
-      'MantÈn el cuerpo paralelo al suelo',
+      'Mant√©n el cuerpo paralelo al suelo',
     ],
     isCustom: false,
   },
   {
     id: '8',
     name: 'Front Lever',
-    category: 'Est·ticos',
+    category: 'Est√°ticos',
     muscleGroup: ['Espalda', 'Core'],
     equipment: 'Barra',
     difficulty: 'advanced',
-    description: 'Ejercicio est·tico de suspensiÛn horizontal',
+    description: 'Ejercicio est√°tico de suspensi√≥n horizontal',
     instructions: [
       'Cuelga de la barra',
       'Activa la espalda y el core',
       'Levanta el cuerpo hasta quedar horizontal',
-      'MantÈn la posiciÛn con el cuerpo recto',
+      'Mant√©n la posici√≥n con el cuerpo recto',
     ],
     isCustom: false,
   },
@@ -370,7 +363,7 @@ export default function ExerciseLibrary() {
               No se encontraron ejercicios
             </Text>
             <Text className="text-zinc-600 text-sm mt-2 text-center">
-              Intenta cambiar los filtros o buscar otro tÈrmino
+              Intenta cambiar los filtros o buscar otro t√©rmino
             </Text>
           </View>
         }

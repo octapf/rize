@@ -1,11 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-  TextInput,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, TouchableOpacity, ScrollView, TextInput } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -244,16 +239,16 @@ export default function StrengthCalculators() {
           <View className="bg-amber-500/10 rounded-xl p-4 border border-amber-500/30 mb-6">
             <Text className="text-amber-400 font-bold mb-2">Important Notes</Text>
             <Text className="text-amber-300 text-sm mb-2">
-              • 1RM calculators are estimates, not exact measurements
+              â€¢ 1RM calculators are estimates, not exact measurements
             </Text>
             <Text className="text-amber-300 text-sm mb-2">
-              • Most accurate for 3-8 rep range
+              â€¢ Most accurate for 3-8 rep range
             </Text>
             <Text className="text-amber-300 text-sm mb-2">
-              • Standards vary by federation, gender, and age
+              â€¢ Standards vary by federation, gender, and age
             </Text>
             <Text className="text-amber-300 text-sm">
-              • Use as general guidelines, not absolute truth
+              â€¢ Use as general guidelines, not absolute truth
             </Text>
           </View>
         </View>

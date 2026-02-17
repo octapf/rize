@@ -1,12 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-  TextInput,
-  Alert,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, TouchableOpacity, ScrollView, TextInput, Alert } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -43,7 +37,7 @@ const SUPPLEMENTS: Supplement[] = [
     brand: 'MyProtein',
     category: 'creatina',
     dosage: '5g',
-    timing: 'Diario (maÒana)',
+    timing: 'Diario (ma√±ana)',
     quantity: 45,
     unit: 'porciones',
     daysRemaining: 45,
@@ -60,11 +54,11 @@ const SUPPLEMENTS: Supplement[] = [
     unit: 'porciones',
     daysRemaining: 16,
     active: true,
-    notes: 'Solo dÌas de pierna',
+    notes: 'Solo d√≠as de pierna',
   },
   {
     id: '4',
-    name: 'MultivitamÌnico',
+    name: 'Multivitam√≠nico',
     brand: 'Centrum',
     category: 'vitaminas',
     dosage: '1 tableta',
@@ -82,7 +76,7 @@ export default function SupplementTracker() {
 
   const categories = [
     { id: 'all', label: 'Todos', icon: 'apps' },
-    { id: 'proteina', label: 'ProteÌna', icon: 'fitness' },
+    { id: 'proteina', label: 'Prote√≠na', icon: 'fitness' },
     { id: 'pre-workout', label: 'Pre-Workout', icon: 'flash' },
     { id: 'vitaminas', label: 'Vitaminas', icon: 'medkit' },
     { id: 'creatina', label: 'Creatina', icon: 'water' },
@@ -114,7 +108,7 @@ export default function SupplementTracker() {
         { text: 'Cancelar', style: 'cancel' },
         {
           text: 'Agregar',
-          onPress: () => Alert.alert('°Agregado!', 'Suplemento agregado exitosamente'),
+          onPress: () => Alert.alert('¬°Agregado!', 'Suplemento agregado exitosamente'),
         },
       ]
     );
@@ -129,7 +123,7 @@ export default function SupplementTracker() {
         {
           text: 'Registrar',
           onPress: () => {
-            Alert.alert('°Registrado!', `${supplement.name} - ${supplement.dosage}`);
+            Alert.alert('¬°Registrado!', `${supplement.name} - ${supplement.dosage}`);
           },
         },
       ]
@@ -139,7 +133,7 @@ export default function SupplementTracker() {
   const editSupplement = (supplement: Supplement) => {
     Alert.alert(
       supplement.name,
-      'Selecciona una acciÛn',
+      'Selecciona una acci√≥n',
       [
         {
           text: 'Actualizar Cantidad',
@@ -150,7 +144,7 @@ export default function SupplementTracker() {
         },
         {
           text: 'Editar Horario',
-          onPress: () => Alert.alert('Horario', 'FunciÛn prÛximamente'),
+          onPress: () => Alert.alert('Horario', 'Funci√≥n pr√≥ximamente'),
         },
         {
           text: supplement.active ? 'Desactivar' : 'Activar',
@@ -159,7 +153,7 @@ export default function SupplementTracker() {
         {
           text: 'Eliminar',
           style: 'destructive',
-          onPress: () => Alert.alert('Confirmar', 'øEliminar este suplemento?', [
+          onPress: () => Alert.alert('Confirmar', '¬øEliminar este suplemento?', [
             { text: 'Cancelar', style: 'cancel' },
             { text: 'Eliminar', style: 'destructive', onPress: () => Alert.alert('Eliminado', 'Suplemento eliminado') },
           ]),
@@ -270,7 +264,7 @@ export default function SupplementTracker() {
                     Stock Bajo
                   </Text>
                   <Text className="text-amber-300 text-sm">
-                    {lowStock} suplemento{lowStock > 1 ? 's' : ''} con menos de 10 dÌas restantes
+                    {lowStock} suplemento{lowStock > 1 ? 's' : ''} con menos de 10 d√≠as restantes
                   </Text>
                 </View>
               </View>
@@ -363,7 +357,7 @@ export default function SupplementTracker() {
 
                 <View className="flex-row items-center justify-between">
                   <Text className="text-zinc-500 text-xs">
-                    ~{supplement.daysRemaining} dÌas restantes
+                    ~{supplement.daysRemaining} d√≠as restantes
                   </Text>
                   <TouchableOpacity
                     onPress={() => logSupplementIntake(supplement)}

@@ -1,12 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-  TextInput,
-  Alert,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, TouchableOpacity, ScrollView, TextInput, Alert } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -40,20 +34,20 @@ const ACHIEVEMENTS: Achievement[] = [
   },
   {
     id: '2',
-    name: 'Centurión',
-    description: 'Entrena 100 días seguidos',
+    name: 'CenturiÃ³n',
+    description: 'Entrena 100 dÃ­as seguidos',
     icon: 'flame',
     color: 'red',
     category: 'consistency',
     achieved: false,
     progress: 67,
     target: 100,
-    unit: 'días',
+    unit: 'dÃ­as',
   },
   {
     id: '3',
-    name: '2× BW Bench',
-    description: 'Press banca con 2× tu peso corporal',
+    name: '2â€¢ BW Bench',
+    description: 'Press banca con 2â€¢ tu peso corporal',
     icon: 'barbell',
     color: 'primary',
     category: 'strength',
@@ -76,15 +70,15 @@ const ACHIEVEMENTS: Achievement[] = [
   },
   {
     id: '5',
-    name: '30 Días Streak',
-    description: 'Entrena 30 días consecutivos',
+    name: '30 DÃ­as Streak',
+    description: 'Entrena 30 dÃ­as consecutivos',
     icon: 'calendar',
     color: 'purple',
     category: 'consistency',
     achieved: true,
     progress: 30,
     target: 30,
-    unit: 'días',
+    unit: 'dÃ­as',
     dateAchieved: new Date(2026, 0, 10),
   },
   {
@@ -114,7 +108,7 @@ interface LeaderboardEntry {
 const MOCK_LEADERBOARD: LeaderboardEntry[] = [
   { rank: 1, name: 'Carlos M.', value: 200, unit: 'kg' },
   { rank: 2, name: 'Miguel R.', value: 195, unit: 'kg' },
-  { rank: 3, name: 'Tú', value: 185, unit: 'kg', isCurrentUser: true },
+  { rank: 3, name: 'TÃº', value: 185, unit: 'kg', isCurrentUser: true },
   { rank: 4, name: 'David L.', value: 180, unit: 'kg' },
   { rank: 5, name: 'Pablo S.', value: 175, unit: 'kg' },
 ];
@@ -312,7 +306,7 @@ export default function AchievementsLeaderboard() {
               <View className="bg-zinc-900 rounded-xl p-8 border border-zinc-800 items-center">
                 <Ionicons name="trophy-outline" size={64} color="#52525B" />
                 <Text className="text-zinc-400 text-center mt-4">
-                  No hay logros en esta categoría
+                  No hay logros en esta categorÃ­a
                 </Text>
               </View>
             )}
@@ -442,8 +436,8 @@ export default function AchievementsLeaderboard() {
                 </Text>
                 <Text className="text-primary/60 text-sm">
                   {activeTab === 'achievements' 
-                    ? '• Desbloquea logros entrenando consistente\n• Cada logro = 100 puntos\n• Comparte tus logros con amigos\n• Nuevos logros cada mes'
-                    : '• Rankings actualizados diariamente\n• Compite con amigos del gym\n• Crea grupos privados\n• Filtra por peso corporal'}
+                    ? 'â€¢ Desbloquea logros entrenando consistente\nâ€¢ Cada logro = 100 puntos\nâ€¢ Comparte tus logros con amigos\nâ€¢ Nuevos logros cada mes'
+                    : 'â€¢ Rankings actualizados diariamente\nâ€¢ Compite con amigos del gym\nâ€¢ Crea grupos privados\nâ€¢ Filtra por peso corporal'}
                 </Text>
               </View>
             </View>

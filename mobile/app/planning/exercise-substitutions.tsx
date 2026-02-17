@@ -1,10 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, TouchableOpacity, ScrollView } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -317,16 +313,16 @@ export default function ExerciseSubstitutions() {
           <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
             <Text className="text-primary/80 font-bold mb-2">Substitution Principles</Text>
             <Text className="text-primary/60 text-sm mb-2">
-              • Match movement pattern (horizontal push, vertical pull, etc.)
+              â€¢ Match movement pattern (horizontal push, vertical pull, etc.)
             </Text>
             <Text className="text-primary/60 text-sm mb-2">
-              • Target same muscle groups
+              â€¢ Target same muscle groups
             </Text>
             <Text className="text-primary/60 text-sm mb-2">
-              • Consider available equipment
+              â€¢ Consider available equipment
             </Text>
             <Text className="text-primary/60 text-sm">
-              • Respect pain signals - don't push through injury
+              â€¢ Respect pain signals - don't push through injury
             </Text>
           </View>
         </View>

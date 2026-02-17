@@ -1,10 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, TouchableOpacity, ScrollView } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -260,7 +256,7 @@ export default function PostCompRecovery() {
                       </View>
                       {step.actions.map((action, aidx) => (
                         <View key={aidx} className="flex-row items-start mb-1 last:mb-0">
-                          <Text className="text-zinc-500 mr-2">•</Text>
+                          <Text className="text-zinc-500 mr-2">â€¢</Text>
                           <Text className="text-zinc-300 text-sm flex-1">{action}</Text>
                         </View>
                       ))}
@@ -281,7 +277,7 @@ export default function PostCompRecovery() {
                 </View>
                 {aspect.tips.map((tip, tidx) => (
                   <View key={tidx} className="flex-row items-start mb-1 last:mb-0">
-                    <Text className="text-purple-400 mr-2">•</Text>
+                    <Text className="text-purple-400 mr-2">â€¢</Text>
                     <Text className="text-purple-200 text-sm flex-1">{tip}</Text>
                   </View>
                 ))}

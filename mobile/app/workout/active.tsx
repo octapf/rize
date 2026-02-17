@@ -1,13 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-  TextInput,
-  Alert,
-  Modal,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, TouchableOpacity, ScrollView, TextInput, Alert, Modal } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -138,7 +131,7 @@ export default function ActiveWorkout() {
 
   const finishWorkout = () => {
     Alert.alert(
-      '¿Finalizar Entrenamiento?',
+      'Â¿Finalizar Entrenamiento?',
       `Has completado ${totalSetsCompleted} de ${totalSets} series.\n\nTiempo total: ${formatTime(elapsedTime)}`,
       [
         { text: 'Cancelar', style: 'cancel' },
@@ -146,7 +139,7 @@ export default function ActiveWorkout() {
           text: 'Finalizar',
           style: 'destructive',
           onPress: () => {
-            Alert.alert('¡Entrenamiento guardado!', 'Excelente trabajo hoy ðŸ’ª', [
+            Alert.alert('Â¡Entrenamiento guardado!', 'Excelente trabajo hoy ðŸ’ª', [
               { text: 'OK', onPress: () => router.back() },
             ]);
           },
@@ -193,8 +186,8 @@ export default function ActiveWorkout() {
           <TouchableOpacity
             onPress={() => {
               Alert.alert(
-                '¿Salir del entrenamiento?',
-                'Perderás todo el progreso no guardado',
+                'Â¿Salir del entrenamiento?',
+                'PerderÃ¡s todo el progreso no guardado',
                 [
                   { text: 'Cancelar', style: 'cancel' },
                   {
@@ -289,7 +282,7 @@ export default function ActiveWorkout() {
           <View className="flex-row items-center mb-2">
             <Ionicons name="barbell-outline" size={16} color="#71717A" />
             <Text className="text-zinc-400 text-sm ml-2">
-              {currentExercise.targetSets} series × {currentExercise.targetReps} reps
+              {currentExercise.targetSets} series â€¢ {currentExercise.targetReps} reps
             </Text>
           </View>
 
@@ -424,7 +417,7 @@ export default function ActiveWorkout() {
           <TextInput
             value={currentExercise.notes}
             onChangeText={(text) => saveNotes(text)}
-            placeholder="Escribe tus notas aquí..."
+            placeholder="Escribe tus notas aquÃ­..."
             placeholderTextColor="#52525B"
             multiline
             textAlignVertical="top"

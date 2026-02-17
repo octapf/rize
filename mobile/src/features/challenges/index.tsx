@@ -1,12 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-  Alert,
-  FlatList,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, TouchableOpacity, ScrollView, Alert, FlatList } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import { format, differenceInDays } from 'date-fns';
@@ -35,12 +29,12 @@ interface Challenge {
 const CHALLENGES: Challenge[] = [
   {
     id: '1',
-    name: '30 Días de Dominadas',
-    description: 'Completa al menos 10 dominadas cada día durante 30 días consecutivos',
+    name: '30 DÃ­as de Dominadas',
+    description: 'Completa al menos 10 dominadas cada dÃ­a durante 30 dÃ­as consecutivos',
     type: 'streak',
     goal: 30,
     current: 12,
-    unit: 'días',
+    unit: 'dÃ­as',
     startDate: new Date(2025, 0, 1),
     endDate: new Date(2025, 0, 31),
     participants: 234,
@@ -81,7 +75,7 @@ const CHALLENGES: Challenge[] = [
   {
     id: '4',
     name: 'Racha de Hierro',
-    description: 'Entrena 5 días a la semana durante 4 semanas',
+    description: 'Entrena 5 dÃ­as a la semana durante 4 semanas',
     type: 'streak',
     goal: 20,
     current: 8,
@@ -96,7 +90,7 @@ const CHALLENGES: Challenge[] = [
   {
     id: '5',
     name: '100 Flexiones Challenge',
-    description: 'Completa 100 flexiones en una sola sesión',
+    description: 'Completa 100 flexiones en una sola sesiÃ³n',
     type: 'skill',
     goal: 100,
     current: 0,
@@ -111,11 +105,11 @@ const CHALLENGES: Challenge[] = [
   {
     id: '6',
     name: 'Noviembre Sin Fallar',
-    description: 'Entrena todos los días de noviembre sin excepción',
+    description: 'Entrena todos los dÃ­as de noviembre sin excepciÃ³n',
     type: 'streak',
     goal: 30,
     current: 30,
-    unit: 'días',
+    unit: 'dÃ­as',
     startDate: new Date(2024, 10, 1),
     endDate: new Date(2024, 10, 30),
     participants: 187,
@@ -177,13 +171,13 @@ export default function Challenges() {
           : c
       )
     );
-    Alert.alert('¡Unido!', 'Te has unido al challenge. ¡Buena suerte!');
+    Alert.alert('Â¡Unido!', 'Te has unido al challenge. Â¡Buena suerte!');
   };
 
   const leaveChallenge = (challengeId: string) => {
     Alert.alert(
       'Abandonar Challenge',
-      '¿Estás seguro de que quieres abandonar este challenge?',
+      'Â¿EstÃ¡s seguro de que quieres abandonar este challenge?',
       [
         { text: 'Cancelar', style: 'cancel' },
         {
@@ -280,7 +274,7 @@ export default function Challenges() {
             <View className="flex-row items-center mr-4">
               <Ionicons name="time-outline" size={16} color="#71717A" />
               <Text className="text-zinc-500 text-xs ml-1">
-                {daysRemaining} días restantes
+                {daysRemaining} dÃ­as restantes
               </Text>
             </View>
           )}
@@ -423,7 +417,7 @@ export default function Challenges() {
               activeTab === 'upcoming' ? 'text-primary' : 'text-zinc-400'
             }`}
           >
-            Próximos
+            PrÃ³ximos
           </Text>
         </TouchableOpacity>
         <TouchableOpacity
@@ -455,15 +449,15 @@ export default function Challenges() {
               {activeTab === 'active'
                 ? 'No hay challenges activos'
                 : activeTab === 'upcoming'
-                ? 'No hay challenges próximos'
-                : 'No has completado ningún challenge aún'}
+                ? 'No hay challenges prÃ³ximos'
+                : 'No has completado ningÃºn challenge aÃºn'}
             </Text>
             {activeTab === 'active' && (
               <TouchableOpacity
                 onPress={() => setActiveTab('upcoming')}
                 className="mt-4 bg-primary px-6 py-3 rounded-xl"
               >
-                <Text className="text-white font-semibold">Ver Próximos Challenges</Text>
+                <Text className="text-white font-semibold">Ver PrÃ³ximos Challenges</Text>
               </TouchableOpacity>
             )}
           </View>

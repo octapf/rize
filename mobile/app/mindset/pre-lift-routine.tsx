@@ -1,10 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, TouchableOpacity, ScrollView } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -34,7 +30,7 @@ export default function PreLiftRoutine() {
             { action: 'Bar settles in groove on back', mental: 'Feel it lock in place' },
             { action: 'Hands grip, squeeze tight', mental: 'Engage upper back' },
             { action: 'Elbows drive under and back', mental: 'Create shelf for bar' },
-            { action: 'Big breath, brace HARD', mental: '360� pressure in core' },
+            { action: 'Big breath, brace HARD', mental: '360• pressure in core' },
             { action: 'Stand with bar', mental: 'Bar should feel light' },
           ],
           keys: ['Tightness', 'Breathing', 'Upper back engaged'],
@@ -160,7 +156,7 @@ export default function PreLiftRoutine() {
             { action: 'Grip bar outside legs', mental: 'Arms straight, locked elbows' },
             { action: 'Pull slack out of bar', mental: 'Tension on bar before lift starts' },
             { action: 'Chest up, lats engaged', mental: '"Bend the bar" cue, protect back' },
-            { action: 'BIG breath, brace HARD', mental: '360� core pressure, lock it in' },
+            { action: 'BIG breath, brace HARD', mental: '360• core pressure, lock it in' },
           ],
           keys: ['Slack out', 'Lats tight', 'Braced fully'],
         },
@@ -367,7 +363,7 @@ export default function PreLiftRoutine() {
                   <Text className="text-white font-bold mb-3">Implementation:</Text>
                   {principle.implementation.map((item, iIdx) => (
                     <Text key={iIdx} className="text-zinc-300 text-sm mb-2 last:mb-0">
-                      � {item}
+                      • {item}
                     </Text>
                   ))}
                 </View>
@@ -378,19 +374,19 @@ export default function PreLiftRoutine() {
           <View className="bg-gradient-to-r from-amber-500/20 to-orange-500/20 rounded-xl p-4 border border-amber-500/30 mb-6">
             <Text className="text-amber-400 font-bold mb-2">Building Your Routine</Text>
             <Text className="text-amber-300 text-sm mb-2">
-              � Practice routine on EVERY warmup set
+              • Practice routine on EVERY warmup set
             </Text>
             <Text className="text-amber-300 text-sm mb-2">
-              � Same routine training and competition
+              • Same routine training and competition
             </Text>
             <Text className="text-amber-300 text-sm mb-2">
-              � 30-60 seconds total - not too long
+              • 30-60 seconds total - not too long
             </Text>
             <Text className="text-amber-300 text-sm mb-2">
-              � Consistency creates confidence
+              • Consistency creates confidence
             </Text>
             <Text className="text-amber-300 text-sm">
-              � Your routine is YOUR ritual - make it yours
+              • Your routine is YOUR ritual - make it yours
             </Text>
           </View>
         </View>

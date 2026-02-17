@@ -1,12 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  TextInput,
-  TouchableOpacity,
-  ScrollView,
-  Alert,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, TextInput, TouchableOpacity, ScrollView, Alert } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
@@ -55,7 +49,7 @@ export default function PlateCalculatorScreen() {
     const target = parseFloat(targetWeight);
 
     if (!target || target <= 0) {
-      Alert.alert('Error', 'Ingresa un peso válido');
+      Alert.alert('Error', 'Ingresa un peso vÃ¡lido');
       return;
     }
 
@@ -86,7 +80,7 @@ export default function PlateCalculatorScreen() {
 
     if (remaining > 0.1) {
       Alert.alert(
-        'Aproximación',
+        'AproximaciÃ³n',
         `No se puede lograr el peso exacto con los discos disponibles.\nDiferencia: ${(remaining * 2).toFixed(2)}${unit}`
       );
     }
@@ -120,7 +114,7 @@ export default function PlateCalculatorScreen() {
         </View>
 
         <Text className="text-purple-100 text-center">
-          Calcula qué discos usar para tu peso objetivo
+          Calcula quÃ© discos usar para tu peso objetivo
         </Text>
       </LinearGradient>
 
@@ -152,7 +146,7 @@ export default function PlateCalculatorScreen() {
           <Text className="text-gray-900 font-bold mb-3">Tipo de Barra</Text>
           <View className="gap-2">
             {[
-              { id: 'standard', label: `Olímpica (${BAR_WEIGHTS[unit].standard}${unit})`, icon: 'barbell' },
+              { id: 'standard', label: `OlÃ­mpica (${BAR_WEIGHTS[unit].standard}${unit})`, icon: 'barbell' },
               { id: 'women', label: `Mujer (${BAR_WEIGHTS[unit].women}${unit})`, icon: 'barbell' },
               { id: 'ez', label: `EZ Bar (${BAR_WEIGHTS[unit].ez}${unit})`, icon: 'barbell' },
             ].map((type) => (
@@ -264,7 +258,7 @@ export default function PlateCalculatorScreen() {
                       </View>
                       <View className="bg-purple-100 px-3 py-1 rounded-full">
                         <Text className="text-purple-700 font-bold">
-                          ×{plate.count}
+                          Ã—{plate.count}
                         </Text>
                       </View>
                     </View>
@@ -327,10 +321,10 @@ export default function PlateCalculatorScreen() {
                 Consejos
               </Text>
               <Text className="text-text/70 text-sm">
-                • Los discos se colocan simétricos en ambos lados{'\n'}
-                • Empieza siempre con los discos más pesados{'\n'}
-                • Usa collares para asegurar los discos{'\n'}
-                • Verifica el peso total antes de levantar
+                â€¢ Los discos se colocan simÃ©tricos en ambos lados{'\n'}
+                â€¢ Empieza siempre con los discos mÃ¡s pesados{'\n'}
+                â€¢ Usa collares para asegurar los discos{'\n'}
+                â€¢ Verifica el peso total antes de levantar
               </Text>
             </View>
           </View>

@@ -1,11 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-  TextInput,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, TouchableOpacity, ScrollView, TextInput } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -288,16 +283,16 @@ export default function WorkoutPlanner() {
           <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
             <Text className="text-primary/80 font-bold mb-2">Program Design Tips</Text>
             <Text className="text-primary/60 text-sm mb-2">
-              • Start with minimum effective volume
+              â€¢ Start with minimum effective volume
             </Text>
             <Text className="text-primary/60 text-sm mb-2">
-              • Progress by adding weight, reps, or sets
+              â€¢ Progress by adding weight, reps, or sets
             </Text>
             <Text className="text-primary/60 text-sm mb-2">
-              • Deload every 4-6 weeks
+              â€¢ Deload every 4-6 weeks
             </Text>
             <Text className="text-primary/60 text-sm">
-              • Track all workouts to monitor progress
+              â€¢ Track all workouts to monitor progress
             </Text>
           </View>
         </View>

@@ -1,13 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  ScrollView,
-  TouchableOpacity,
-  TextInput,
-  ActivityIndicator,
-  Alert,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, ScrollView, TouchableOpacity, TextInput, ActivityIndicator, Alert } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
@@ -41,7 +34,7 @@ export default function CreateExerciseScreen() {
     mutationFn: (data: any) => exercisesApi.createExercise(data),
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['exercises'] });
-      Alert.alert('Éxito', 'Ejercicio creado correctamente', [
+      Alert.alert('Ã©xito', 'Ejercicio creado correctamente', [
         {
           text: 'OK',
           onPress: () => router.back(),
@@ -129,12 +122,12 @@ export default function CreateExerciseScreen() {
         {/* Description */}
         <Card className="p-4">
           <Text className="text-gray-700 font-semibold mb-2">
-            Descripción
+            DescripciÃ³n
           </Text>
           <TextInput
             value={description}
             onChangeText={setDescription}
-            placeholder="Descripción breve del ejercicio"
+            placeholder="DescripciÃ³n breve del ejercicio"
             className="bg-gray-50 rounded-lg px-4 py-3 text-gray-900"
             placeholderTextColor="#9CA3AF"
             multiline
@@ -151,7 +144,7 @@ export default function CreateExerciseScreen() {
           <TextInput
             value={equipment}
             onChangeText={setEquipment}
-            placeholder="Ej: Barra, Mancuernas, Máquina"
+            placeholder="Ej: Barra, Mancuernas, MÃ¡quina"
             className="bg-gray-50 rounded-lg px-4 py-3 text-gray-900"
             placeholderTextColor="#9CA3AF"
           />

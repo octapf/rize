@@ -1,13 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-  TextInput,
-  Alert,
-  Image,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, TouchableOpacity, ScrollView, TextInput, Alert, Image } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -41,7 +34,7 @@ interface GroceryItem {
   checked: boolean;
 }
 
-const WEEK_DAYS = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'];
+const WEEK_DAYS = ['Lunes', 'Martes', 'MiÃ©rcoles', 'Jueves', 'Viernes', 'SÃ¡bado', 'Domingo'];
 
 const SAMPLE_PLAN: MealPlan = {
   id: '1',
@@ -53,14 +46,14 @@ const SAMPLE_PLAN: MealPlan = {
   meals: [
     {
       id: '1',
-      name: 'Desayuno Alto en Proteína',
+      name: 'Desayuno Alto en ProteÃ­na',
       type: 'desayuno',
       time: '08:00',
       calories: 520,
       protein: 42,
       carbs: 55,
       fats: 12,
-      foods: ['4 claras + 2 huevos', '80g avena', '1 plátano', 'Café'],
+      foods: ['4 claras + 2 huevos', '80g avena', '1 plÃ¡tano', 'CafÃ©'],
     },
     {
       id: '2',
@@ -104,7 +97,7 @@ const SAMPLE_PLAN: MealPlan = {
       protein: 48,
       carbs: 42,
       fats: 15,
-      foods: ['180g salmón', '150g batata', 'Brócoli al vapor', 'Ensalada'],
+      foods: ['180g salmÃ³n', '150g batata', 'BrÃ³coli al vapor', 'Ensalada'],
     },
     {
       id: '6',
@@ -115,22 +108,22 @@ const SAMPLE_PLAN: MealPlan = {
       protein: 25,
       carbs: 8,
       fats: 5,
-      foods: ['30g caseína', '10 almendras'],
+      foods: ['30g caseÃ­na', '10 almendras'],
     },
   ],
 };
 
 const GROCERY_LIST: GroceryItem[] = [
   { id: '1', name: 'Pechuga de pollo', category: 'proteinas', quantity: '1.4 kg', checked: false },
-  { id: '2', name: 'Salmón fresco', category: 'proteinas', quantity: '900g', checked: false },
+  { id: '2', name: 'SalmÃ³n fresco', category: 'proteinas', quantity: '900g', checked: false },
   { id: '3', name: 'Huevos', category: 'proteinas', quantity: '2 docenas', checked: false },
   { id: '4', name: 'Whey protein', category: 'proteinas', quantity: '1 bote', checked: false },
   { id: '5', name: 'Arroz integral', category: 'carbohidratos', quantity: '1 kg', checked: false },
   { id: '6', name: 'Avena', category: 'carbohidratos', quantity: '500g', checked: false },
   { id: '7', name: 'Batata', category: 'carbohidratos', quantity: '1 kg', checked: false },
-  { id: '8', name: 'Brócoli', category: 'vegetales', quantity: '500g', checked: false },
+  { id: '8', name: 'BrÃ³coli', category: 'vegetales', quantity: '500g', checked: false },
   { id: '9', name: 'Lechuga', category: 'vegetales', quantity: '2 unidades', checked: false },
-  { id: '10', name: 'Plátanos', category: 'frutas', quantity: '7 unidades', checked: false },
+  { id: '10', name: 'PlÃ¡tanos', category: 'frutas', quantity: '7 unidades', checked: false },
   { id: '11', name: 'Manzanas', category: 'frutas', quantity: '7 unidades', checked: false },
   { id: '12', name: 'Yogurt griego', category: 'lacteos', quantity: '1.5 kg', checked: false },
   { id: '13', name: 'Almendras', category: 'otros', quantity: '200g', checked: false },
@@ -174,13 +167,13 @@ export default function MealPlanning() {
   const copyToAllDays = () => {
     Alert.alert(
       'Copiar Plan',
-      '¿Deseas copiar el plan de Lunes a todos los días de la semana?',
+      'Â¿Deseas copiar el plan de Lunes a todos los dÃ­as de la semana?',
       [
         { text: 'Cancelar', style: 'cancel' },
         {
           text: 'Copiar',
           onPress: () => {
-            Alert.alert('¡Copiado!', 'Plan aplicado a toda la semana');
+            Alert.alert('Â¡Copiado!', 'Plan aplicado a toda la semana');
           },
         },
       ]
@@ -189,7 +182,7 @@ export default function MealPlanning() {
 
   const generateGroceryList = () => {
     Alert.alert(
-      '¡Lista Generada!',
+      'Â¡Lista Generada!',
       `${groceryList.length} productos agregados a tu lista de compras basados en tu plan semanal`
     );
   };
@@ -220,7 +213,7 @@ export default function MealPlanning() {
             <Ionicons name="arrow-back" size={24} color="white" />
           </TouchableOpacity>
           <Text className="text-white text-2xl font-bold flex-1 ml-3">
-            Planificación de Comidas
+            PlanificaciÃ³n de Comidas
           </Text>
           <TouchableOpacity>
             <Ionicons name="add-circle" size={24} color="#9D12DE" />
@@ -296,7 +289,7 @@ export default function MealPlanning() {
                     <Text className="text-white font-bold text-3xl mb-1">
                       {SAMPLE_PLAN.totalCalories}
                     </Text>
-                    <Text className="text-white/80 text-sm">Calorías totales</Text>
+                    <Text className="text-white/80 text-sm">CalorÃ­as totales</Text>
                   </View>
                   <TouchableOpacity
                     onPress={copyToAllDays}
@@ -313,7 +306,7 @@ export default function MealPlanning() {
 
                 <View className="flex-row gap-4 mt-4">
                   <View className="flex-1">
-                    <Text className="text-white/60 text-xs">Proteína</Text>
+                    <Text className="text-white/60 text-xs">ProteÃ­na</Text>
                     <Text className="text-white font-bold text-lg">
                       {SAMPLE_PLAN.totalProtein}g
                     </Text>
@@ -335,7 +328,7 @@ export default function MealPlanning() {
 
               {/* Meals */}
               <Text className="text-white font-bold text-lg mb-3">
-                Comidas del Día ({SAMPLE_PLAN.meals.length})
+                Comidas del DÃ­a ({SAMPLE_PLAN.meals.length})
               </Text>
 
               {SAMPLE_PLAN.meals.map((meal) => (
@@ -367,7 +360,7 @@ export default function MealPlanning() {
                   <View className="bg-zinc-800 rounded-lg p-3 mb-3">
                     {meal.foods.map((food, index) => (
                       <Text key={index} className="text-zinc-300 text-sm mb-1">
-                        • {food}
+                        â€¢ {food}
                       </Text>
                     ))}
                   </View>
@@ -375,7 +368,7 @@ export default function MealPlanning() {
                   {/* Macros */}
                   <View className="flex-row gap-3">
                     <View className="flex-1 bg-zinc-800 rounded-lg p-2">
-                      <Text className="text-zinc-400 text-xs">Proteína</Text>
+                      <Text className="text-zinc-400 text-xs">ProteÃ­na</Text>
                       <Text className="text-red-500 font-bold">{meal.protein}g</Text>
                     </View>
                     <View className="flex-1 bg-zinc-800 rounded-lg p-2">

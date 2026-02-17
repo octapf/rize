@@ -1,12 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-  TextInput,
-  Alert,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, TouchableOpacity, ScrollView, TextInput, Alert } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import { format, differenceInMinutes } from 'date-fns';
@@ -42,7 +36,7 @@ const MEAL_TIMING_TEMPLATES: MealTiming[] = [
     carbs: 60,
     fats: 10,
     calories: 430,
-    description: 'Comida completa: proteÌna magra + carbos complejos + grasas bajas',
+    description: 'Comida completa: prote√≠na magra + carbos complejos + grasas bajas',
     isOptimal: true,
   },
   {
@@ -53,7 +47,7 @@ const MEAL_TIMING_TEMPLATES: MealTiming[] = [
     carbs: 40,
     fats: 5,
     calories: 270,
-    description: 'Snack ligero: proteÌna r·pida + carbos simples',
+    description: 'Snack ligero: prote√≠na r√°pida + carbos simples',
     isOptimal: true,
   },
   {
@@ -64,7 +58,7 @@ const MEAL_TIMING_TEMPLATES: MealTiming[] = [
     carbs: 30,
     fats: 0,
     calories: 160,
-    description: 'Durante: BCAAs + carbos r·pidos (solo workouts >90 min)',
+    description: 'Durante: BCAAs + carbos r√°pidos (solo workouts >90 min)',
     isOptimal: false,
   },
   {
@@ -75,18 +69,18 @@ const MEAL_TIMING_TEMPLATES: MealTiming[] = [
     carbs: 50,
     fats: 5,
     calories: 330,
-    description: 'Ventana anabÛlica: proteÌna r·pida + carbos alto GI',
+    description: 'Ventana anab√≥lica: prote√≠na r√°pida + carbos alto GI',
     isOptimal: true,
   },
   {
     id: '5',
-    name: 'Post-Workout (1-2h despuÈs)',
+    name: 'Post-Workout (1-2h despu√©s)',
     timeAfterWorkout: 90,
     protein: 40,
     carbs: 60,
     fats: 15,
     calories: 515,
-    description: 'Comida completa: recarga glucÛgeno + sÌntesis proteica',
+    description: 'Comida completa: recarga gluc√≥geno + s√≠ntesis proteica',
     isOptimal: true,
   },
 ];
@@ -94,21 +88,21 @@ const MEAL_TIMING_TEMPLATES: MealTiming[] = [
 const MEAL_EXAMPLES = {
   'pre-workout-early': [
     { name: 'Pollo + arroz + verduras', macros: '35p/60c/8f' },
-    { name: 'Avena + proteÌna + banana', macros: '30p/55c/12f' },
-    { name: 'At˙n + pasta + aceite oliva', macros: '32p/65c/10f' },
+    { name: 'Avena + prote√≠na + banana', macros: '30p/55c/12f' },
+    { name: 'At√∫n + pasta + aceite oliva', macros: '32p/65c/10f' },
   ],
   'pre-workout-close': [
-    { name: 'Batido proteÌna + banana', macros: '25p/35c/3f' },
+    { name: 'Batido prote√≠na + banana', macros: '25p/35c/3f' },
     { name: 'Yogurt griego + miel + frutos', macros: '20p/40c/5f' },
     { name: 'Tostadas + mermelada + whey', macros: '22p/42c/4f' },
   ],
   'post-workout-immediate': [
     { name: 'Whey + maltodextrina', macros: '30p/50c/2f' },
     { name: 'Batido: whey + banana + avena', macros: '28p/48c/6f' },
-    { name: 'Arroz blanco + proteÌna en polvo', macros: '25p/52c/3f' },
+    { name: 'Arroz blanco + prote√≠na en polvo', macros: '25p/52c/3f' },
   ],
   'post-workout-later': [
-    { name: 'SalmÛn + batata + brÛcoli', macros: '40p/55c/18f' },
+    { name: 'Salm√≥n + batata + br√≥coli', macros: '40p/55c/18f' },
     { name: 'Carne + arroz + aguacate', macros: '45p/60c/15f' },
     { name: 'Huevos + tostadas + fruta', macros: '35p/58c/14f' },
   ],
@@ -180,7 +174,7 @@ export default function NutritionTiming() {
           <View className="bg-gradient-to-r from-primary to-primary/100 rounded-xl p-6 mb-6">
             <Text className="text-white text-2xl font-bold mb-2">Timing Nutricional</Text>
             <Text className="text-white opacity-90 mb-4">
-              Optimiza tu nutriciÛn alrededor del workout
+              Optimiza tu nutrici√≥n alrededor del workout
             </Text>
             <View className="flex-row items-center">
               <Ionicons name="time" size={20} color="white" />
@@ -231,9 +225,9 @@ export default function NutritionTiming() {
               </View>
               <View className="bg-primary/10 rounded-lg p-3 ml-13 border border-primary/30">
                 <Text className="text-primary/60 text-sm">
-                  ï Comida completa balanceada{'\n'}
-                  ï 30-40g proteÌna + 50-70g carbos{'\n'}
-                  ï Tiempo para digestiÛn completa
+                  ‚Ä¢ Comida completa balanceada{'\n'}
+                  ‚Ä¢ 30-40g prote√≠na + 50-70g carbos{'\n'}
+                  ‚Ä¢ Tiempo para digesti√≥n completa
                 </Text>
               </View>
             </View>
@@ -256,9 +250,9 @@ export default function NutritionTiming() {
               </View>
               <View className="bg-purple-500/10 rounded-lg p-3 ml-13 border border-purple-500/30">
                 <Text className="text-purple-300 text-sm">
-                  ï Snack ligero de f·cil digestiÛn{'\n'}
-                  ï 20-25g proteÌna + 30-40g carbos{'\n'}
-                  ï Evita grasas y fibra
+                  ‚Ä¢ Snack ligero de f√°cil digesti√≥n{'\n'}
+                  ‚Ä¢ 20-25g prote√≠na + 30-40g carbos{'\n'}
+                  ‚Ä¢ Evita grasas y fibra
                 </Text>
               </View>
             </View>
@@ -281,9 +275,9 @@ export default function NutritionTiming() {
               </View>
               <View className="bg-primary/10 rounded-lg p-3 ml-13 border border-primary/30">
                 <Text className="text-primary/80 text-sm">
-                  ï Ventana anabÛlica m·xima{'\n'}
-                  ï 25-30g proteÌna r·pida (whey){'\n'}
-                  ï 40-60g carbos alto GI (maltodextrina)
+                  ‚Ä¢ Ventana anab√≥lica m√°xima{'\n'}
+                  ‚Ä¢ 25-30g prote√≠na r√°pida (whey){'\n'}
+                  ‚Ä¢ 40-60g carbos alto GI (maltodextrina)
                 </Text>
               </View>
             </View>
@@ -295,7 +289,7 @@ export default function NutritionTiming() {
                   <Ionicons name="restaurant" size={20} color="white" />
                 </View>
                 <View className="flex-1">
-                  <Text className="text-white font-bold">Post-Workout (1-2h despuÈs)</Text>
+                  <Text className="text-white font-bold">Post-Workout (1-2h despu√©s)</Text>
                   <Text className="text-amber-400 text-sm">
                     {format(new Date(windows.workoutTime.getTime() + 60 * 60 * 1000), 'HH:mm')} - {format(windows.postWorkoutLatest, 'HH:mm')}
                   </Text>
@@ -306,9 +300,9 @@ export default function NutritionTiming() {
               </View>
               <View className="bg-amber-500/10 rounded-lg p-3 ml-13 border border-amber-500/30">
                 <Text className="text-amber-300 text-sm">
-                  ï Comida completa post-workout{'\n'}
-                  ï 40-50g proteÌna + 60-80g carbos{'\n'}
-                  ï Recarga glucÛgeno muscular
+                  ‚Ä¢ Comida completa post-workout{'\n'}
+                  ‚Ä¢ 40-50g prote√≠na + 60-80g carbos{'\n'}
+                  ‚Ä¢ Recarga gluc√≥geno muscular
                 </Text>
               </View>
             </View>
@@ -363,12 +357,12 @@ export default function NutritionTiming() {
                   Reglas de Nutrient Timing
                 </Text>
                 <Text className="text-primary/60 text-sm">
-                  ï Pre-workout: carbos para energÌa{'\n'}
-                  ï Post-workout: proteÌna para recuperaciÛn{'\n'}
-                  ï 0-2h post = ventana anabÛlica{'\n'}
-                  ï Si entrenas AM en ayunas: BCAAs pre{'\n'}
-                  ï Timing &gt; tipo de comida{'\n'}
-                  ï HidrataciÛn constante 500ml/hora
+                  ‚Ä¢ Pre-workout: carbos para energ√≠a{'\n'}
+                  ‚Ä¢ Post-workout: prote√≠na para recuperaci√≥n{'\n'}
+                  ‚Ä¢ 0-2h post = ventana anab√≥lica{'\n'}
+                  ‚Ä¢ Si entrenas AM en ayunas: BCAAs pre{'\n'}
+                  ‚Ä¢ Timing &gt; tipo de comida{'\n'}
+                  ‚Ä¢ Hidrataci√≥n constante 500ml/hora
                 </Text>
               </View>
             </View>

@@ -1,11 +1,6 @@
 import React from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-  Share,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, TouchableOpacity, ScrollView, Share } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -50,8 +45,8 @@ const WORKOUT_SUMMARY = {
     },
   ] as CompletedSet[],
   achievements: [
-    { icon: 'trophy', text: 'Nuevo r�cord personal', color: '#FFEA00' },
-    { icon: 'flame', text: 'Racha de 7 d�as', color: '#9D12DE' },
+    { icon: 'trophy', text: 'Nuevo récord personal', color: '#FFEA00' },
+    { icon: 'flame', text: 'Racha de 7 días', color: '#9D12DE' },
     { icon: 'star', text: '+50 XP ganados', color: '#9D12DE' },
   ],
   personalRecords: [
@@ -80,11 +75,11 @@ export default function WorkoutSummary() {
   const shareWorkout = async () => {
     try {
       const message = `💪 ${WORKOUT_SUMMARY.workoutName}\n\n` +
-        `⏱️ Duraci�n: ${formatDuration(WORKOUT_SUMMARY.duration)}\n` +
+        `⏱️ Duración: ${formatDuration(WORKOUT_SUMMARY.duration)}\n` +
         `? Series: ${WORKOUT_SUMMARY.completedSets}/${WORKOUT_SUMMARY.totalSets}\n` +
         `📊 Volumen: ${(WORKOUT_SUMMARY.totalVolume / 1000).toFixed(1)}T\n\n` +
         `Ejercicios:\n${WORKOUT_SUMMARY.exercises
-          .map((ex) => `� ${ex.exerciseName}: ${ex.sets}x${ex.reps}${ex.weight > 0 ? ` @ ${ex.weight}kg` : ''}`)
+          .map((ex) => `• ${ex.exerciseName}: ${ex.sets}x${ex.reps}${ex.weight > 0 ? ` @ ${ex.weight}kg` : ''}`)
           .join('\n')}\n\n` +
         `#Rize #Calistenia`;
 
@@ -104,7 +99,7 @@ export default function WorkoutSummary() {
           <Ionicons name="checkmark-circle" size={64} color="#9D12DE" />
         </View>
         <Text className="text-white text-3xl font-bold mb-2">
-          �Excelente Trabajo!
+          ¡Excelente Trabajo!
         </Text>
         <Text className="text-zinc-400 text-center">
           Has completado tu entrenamiento de {WORKOUT_SUMMARY.workoutName}
@@ -117,7 +112,7 @@ export default function WorkoutSummary() {
           <View className="bg-[#9D12DE] rounded-2xl p-6 mb-4">
             <View className="flex-row justify-between mb-6">
               <View>
-                <Text className="text-purple-100 text-sm mb-1">Duraci�n</Text>
+                <Text className="text-purple-100 text-sm mb-1">Duración</Text>
                 <Text className="text-white text-3xl font-bold">
                   {formatDuration(WORKOUT_SUMMARY.duration)}
                 </Text>
@@ -179,7 +174,7 @@ export default function WorkoutSummary() {
           {WORKOUT_SUMMARY.personalRecords.length > 0 && (
             <View className="mb-4">
               <Text className="text-white font-bold text-lg mb-3">
-                🏆 Nuevos R�cords
+                🏆 Nuevos Récords
               </Text>
               {WORKOUT_SUMMARY.personalRecords.map((pr, index) => (
                 <View

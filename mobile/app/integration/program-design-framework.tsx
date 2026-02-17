@@ -1,10 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, TouchableOpacity, ScrollView } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -554,16 +550,16 @@ export default function ProgramDesignFramework() {
           <View className="bg-gradient-to-r from-primary/20 to-primary/100/20 rounded-xl p-5 border border-primary/30 mb-6">
             <Text className="text-primary font-bold text-lg mb-3">Design Principles</Text>
             <Text className="text-primary/80 text-sm mb-2">
-              � Specificity - train the competition lifts
+              • Specificity - train the competition lifts
             </Text>
             <Text className="text-primary/80 text-sm mb-2">
-              � Progressive overload - add weight/reps/sets over time
+              • Progressive overload - add weight/reps/sets over time
             </Text>
             <Text className="text-primary/80 text-sm mb-2">
-              � Variation - prevent adaptation and overuse
+              • Variation - prevent adaptation and overuse
             </Text>
             <Text className="text-primary/80 text-sm">
-              � Recovery - program deloads and manage fatigue
+              • Recovery - program deloads and manage fatigue
             </Text>
           </View>
         </View>

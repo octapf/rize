@@ -1,11 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-  Alert,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, TouchableOpacity, ScrollView, Alert } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -128,7 +123,7 @@ export default function DataExportImport() {
                     {option.label}
                   </Text>
                   {option.lastBackup && (
-                    <Text className="text-zinc-400 text-sm">Último backup: {option.lastBackup}</Text>
+                    <Text className="text-zinc-400 text-sm">Ãšltimo backup: {option.lastBackup}</Text>
                   )}
                 </View>
                 <Ionicons
@@ -164,10 +159,10 @@ export default function DataExportImport() {
               <View className="flex-1 ml-3">
                 <Text className="text-primary/80 font-bold mb-2">Data Security</Text>
                 <Text className="text-primary/60 text-sm">
-                  • Encriptación end-to-end{'\n'}
-                  • Backups automáticos diarios{'\n'}
-                  • Exporta antes de cambiar dispositivo{'\n'}
-                  • Import preserva historial completo
+                  â€¢ EncriptaciÃ³n end-to-end{'\n'}
+                  â€¢ Backups automÃ¡ticos diarios{'\n'}
+                  â€¢ Exporta antes de cambiar dispositivo{'\n'}
+                  â€¢ Import preserva historial completo
                 </Text>
               </View>
             </View>

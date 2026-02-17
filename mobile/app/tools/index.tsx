@@ -1,11 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-  Alert,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, TouchableOpacity, ScrollView, Alert } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
@@ -16,7 +11,7 @@ export default function ToolsScreen() {
     {
       id: 'plate-calculator',
       name: 'Calculadora de Discos',
-      description: 'Calcula quÈ discos usar para tu peso objetivo',
+      description: 'Calcula qu√© discos usar para tu peso objetivo',
       icon: 'calculator',
       color: '#8B5CF6',
       route: '/tools/plate-calculator',
@@ -24,7 +19,7 @@ export default function ToolsScreen() {
     {
       id: 'one-rep-max',
       name: 'Calculadora 1RM',
-      description: 'Estima tu m·ximo de una repeticiÛn',
+      description: 'Estima tu m√°ximo de una repetici√≥n',
       icon: 'trending-up',
       color: '#EF4444',
       route: '/tools/one-rep-max',
@@ -40,7 +35,7 @@ export default function ToolsScreen() {
     {
       id: 'tdee',
       name: 'Calculadora TDEE',
-      description: 'Calcula tus calorÌas diarias',
+      description: 'Calcula tus calor√≠as diarias',
       icon: 'flame',
       color: '#FFEA00',
       route: '/tools/tdee',
@@ -48,7 +43,7 @@ export default function ToolsScreen() {
     {
       id: 'macros',
       name: 'Calculadora de Macros',
-      description: 'Planifica tu distribuciÛn de macronutrientes',
+      description: 'Planifica tu distribuci√≥n de macronutrientes',
       icon: 'nutrition',
       color: '#06B6D4',
       route: '/tools/macros',
@@ -74,7 +69,7 @@ export default function ToolsScreen() {
     ].includes(route)) {
       router.push(route as any);
     } else {
-      Alert.alert('PrÛximamente', 'Esta herramienta estar· disponible pronto');
+      Alert.alert('Pr√≥ximamente', 'Esta herramienta estar√° disponible pronto');
     }
   };
 
@@ -132,10 +127,10 @@ export default function ToolsScreen() {
             <Ionicons name="information-circle" size={24} color="#9D12DE" />
             <View className="flex-1">
               <Text className="text-text font-semibold mb-1">
-                M·s herramientas prÛximamente
+                M√°s herramientas pr√≥ximamente
               </Text>
               <Text className="text-text/70 text-sm">
-                Estamos trabajando en m·s calculadoras y utilidades para mejorar tu experiencia de entrenamiento.
+                Estamos trabajando en m√°s calculadoras y utilidades para mejorar tu experiencia de entrenamiento.
               </Text>
             </View>
           </View>

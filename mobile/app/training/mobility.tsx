@@ -1,10 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, TouchableOpacity, ScrollView } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -26,7 +22,7 @@ export default function MobilityRoutines() {
           reps: '30-45s/side',
           focus: 'Hip internal/external rotation',
           instructions: [
-            'Sit with front leg at 90�, back leg at 90�',
+            'Sit with front leg at 90°, back leg at 90°',
             'Keep chest tall, lean forward over front leg',
             'Feel stretch in front hip (external rotation)',
             'Switch sides, feel back hip (internal rotation)',
@@ -114,7 +110,7 @@ export default function MobilityRoutines() {
           reps: '10-12',
           focus: 'Scapular upward rotation',
           instructions: [
-            'Back against wall, arms at 90�',
+            'Back against wall, arms at 90°',
             'Press lower back flat to wall',
             'Slide arms up wall, maintain contact',
             'Lower slowly with control',
@@ -303,7 +299,7 @@ export default function MobilityRoutines() {
           reps: '10',
           focus: 'Scapular control + thoracic extension',
           instructions: [
-            'Back to wall, arms at 90�',
+            'Back to wall, arms at 90°',
             'Keep contact: head, upper back, lower back, arms',
             'Slide arms up and down',
             'Maintain all contact points',
@@ -402,7 +398,7 @@ export default function MobilityRoutines() {
                 <View className="flex-row justify-between items-start mb-2">
                   <Text className="text-white font-bold text-lg flex-1">{exercise.name}</Text>
                   <Text className={`text-${currentRoutine.color}-400 font-bold ml-2`}>
-                    {exercise.sets}�{exercise.reps}
+                    {exercise.sets}×{exercise.reps}
                   </Text>
                 </View>
 
@@ -429,35 +425,35 @@ export default function MobilityRoutines() {
           <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
             <Text className="text-primary/80 font-bold mb-2">Mobility Tips</Text>
             <Text className="text-primary/60 text-sm mb-2">
-              � Do mobility work when muscles are warm
+              • Do mobility work when muscles are warm
             </Text>
             <Text className="text-primary/60 text-sm mb-2">
-              � Consistency &gt; intensity (daily light work &gt; weekly hard work)
+              • Consistency &gt; intensity (daily light work &gt; weekly hard work)
             </Text>
             <Text className="text-primary/60 text-sm mb-2">
-              � Never force into pain (mild discomfort OK)
+              • Never force into pain (mild discomfort OK)
             </Text>
             <Text className="text-primary/60 text-sm mb-2">
-              � Hold stretches 30-45s minimum for real change
+              • Hold stretches 30-45s minimum for real change
             </Text>
             <Text className="text-primary/60 text-sm">
-              � Focus on weak points (most people: hips, thoracic, ankles)
+              • Focus on weak points (most people: hips, thoracic, ankles)
             </Text>
           </View>
 
           <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
             <Text className="text-primary font-bold mb-2">When to Mobilize</Text>
             <Text className="text-primary/80 text-sm mb-2">
-              � Morning: 5-10 min general mobility to wake up
+              • Morning: 5-10 min general mobility to wake up
             </Text>
             <Text className="text-primary/80 text-sm mb-2">
-              � Pre-workout: Target areas for that session
+              • Pre-workout: Target areas for that session
             </Text>
             <Text className="text-primary/80 text-sm mb-2">
-              � Post-workout: Static stretching when warm
+              • Post-workout: Static stretching when warm
             </Text>
             <Text className="text-primary/80 text-sm">
-              � Evening: Relaxing stretching before bed
+              • Evening: Relaxing stretching before bed
             </Text>
           </View>
         </View>

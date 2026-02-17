@@ -1,11 +1,6 @@
 import React, { useState } from 'react';
-import {
-  TextInput,
-  View,
-  Text,
-  TextInputProps,
-  TouchableOpacity,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { TextInput, View, TextInputProps, TouchableOpacity } from 'react-native';;
 import { cn } from '@/lib/utils';
 
 export interface InputProps extends TextInputProps {

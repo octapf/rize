@@ -1,13 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  ScrollView,
-  TouchableOpacity,
-  TextInput,
-  Alert,
-  ActivityIndicator,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, ScrollView, TouchableOpacity, TextInput, Alert, ActivityIndicator } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
@@ -104,7 +97,7 @@ export default function QuickStartScreen() {
           <TouchableOpacity onPress={() => router.back()} className="p-2">
             <Ionicons name="arrow-back" size={28} color="white" />
           </TouchableOpacity>
-          <Text className="text-2xl font-bold text-white">Inicio Rápido</Text>
+          <Text className="text-2xl font-bold text-white">Inicio RÃ¡pido</Text>
           <View className="w-10" />
         </View>
 
@@ -122,7 +115,7 @@ export default function QuickStartScreen() {
           <TextInput
             value={workoutName}
             onChangeText={setWorkoutName}
-            placeholder="Ej: Pecho y Tríceps"
+            placeholder="Ej: Pecho y TrÃ­ceps"
             className="bg-gray-50 rounded-lg px-4 py-3 text-gray-900"
             placeholderTextColor="#9CA3AF"
           />
@@ -131,7 +124,7 @@ export default function QuickStartScreen() {
         {/* Quick Templates */}
         <View>
           <Text className="text-lg font-bold text-gray-900 mb-3">
-            Plantillas Rápidas
+            Plantillas RÃ¡pidas
           </Text>
           <View className="gap-3">
             {templates.map((template) => (
@@ -191,7 +184,7 @@ export default function QuickStartScreen() {
         {/* Quick Actions */}
         <View>
           <Text className="text-lg font-bold text-gray-900 mb-3">
-            Acciones Rápidas
+            Acciones RÃ¡pidas
           </Text>
 
           <View className="gap-3">
@@ -242,7 +235,7 @@ export default function QuickStartScreen() {
                     </View>
                     <View>
                       <Text className="text-gray-900 font-bold">
-                        Workout Vacío
+                        Workout VacÃ­o
                       </Text>
                       <Text className="text-gray-600 text-sm">
                         Agregar ejercicios manualmente

@@ -1,10 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, TouchableOpacity, ScrollView } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -82,7 +78,7 @@ export default function MastersLifting() {
           importance: 'Critical',
           actions: [
             'Aim for 8+ hours (not 7)',
-            'Keep room cool (65-68�F)',
+            'Keep room cool (65-68°F)',
             'Complete darkness',
             'Consistent sleep schedule',
             'Avoid alcohol (destroys sleep quality)',
@@ -569,13 +565,13 @@ export default function MastersLifting() {
 
                 <Text className="text-white font-bold mb-2">Divisions:</Text>
                 {currentAge.whatIs?.divisions.map((div: string, idx: number) => (
-                  <Text key={idx} className="text-zinc-300 mb-1">� {div}</Text>
+                  <Text key={idx} className="text-zinc-300 mb-1">• {div}</Text>
                 ))}
 
                 <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mt-4">
                   <Text className="text-primary/80 font-bold mb-2">Reality:</Text>
                   {currentAge.whatIs?.reality.map((item: string, idx: number) => (
-                    <Text key={idx} className="text-primary/60 text-sm mb-1">� {item}</Text>
+                    <Text key={idx} className="text-primary/60 text-sm mb-1">• {item}</Text>
                   ))}
                 </View>
               </View>
@@ -593,7 +589,7 @@ export default function MastersLifting() {
               <View className="bg-red-500/10 rounded-xl p-5 border border-red-500/30 mb-6">
                 <Text className="text-red-400 font-bold text-lg mb-3">Challenges</Text>
                 {currentAge.challenges?.map((challenge: string, idx: number) => (
-                  <Text key={idx} className="text-red-300 text-sm mb-1">� {challenge}</Text>
+                  <Text key={idx} className="text-red-300 text-sm mb-1">• {challenge}</Text>
                 ))}
               </View>
             </View>
@@ -604,7 +600,7 @@ export default function MastersLifting() {
               <View className="bg-primary/10 rounded-xl p-5 border border-primary/30 mb-6">
                 <Text className="text-primary font-bold text-lg mb-3">Why Recovery Is Different</Text>
                 {currentAge.whyDifferent?.map((reason: string, idx: number) => (
-                  <Text key={idx} className="text-primary/80 text-sm mb-1">� {reason}</Text>
+                  <Text key={idx} className="text-primary/80 text-sm mb-1">• {reason}</Text>
                 ))}
               </View>
 
@@ -623,7 +619,7 @@ export default function MastersLifting() {
                     <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-3">
                       <Text className="text-primary font-bold mb-2">Actions:</Text>
                       {strategy.actions.map((action: string, aIdx: number) => (
-                        <Text key={aIdx} className="text-primary/80 text-sm mb-1">� {action}</Text>
+                        <Text key={aIdx} className="text-primary/80 text-sm mb-1">• {action}</Text>
                       ))}
                     </View>
                   )}
@@ -632,7 +628,7 @@ export default function MastersLifting() {
                     <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-3">
                       <Text className="text-primary/80 font-bold mb-2">Guidelines:</Text>
                       {strategy.guidelines.map((guide: string, gIdx: number) => (
-                        <Text key={gIdx} className="text-primary/60 text-sm mb-1">� {guide}</Text>
+                        <Text key={gIdx} className="text-primary/60 text-sm mb-1">• {guide}</Text>
                       ))}
                     </View>
                   )}
@@ -641,7 +637,7 @@ export default function MastersLifting() {
                     <View className="bg-purple-500/10 rounded-xl p-4 border border-purple-500/30 mb-3">
                       <Text className="text-purple-400 font-bold mb-2">Protocol:</Text>
                       {strategy.protocol.map((item: string, pIdx: number) => (
-                        <Text key={pIdx} className="text-purple-300 text-sm mb-1">� {item}</Text>
+                        <Text key={pIdx} className="text-purple-300 text-sm mb-1">• {item}</Text>
                       ))}
                     </View>
                   )}
@@ -650,7 +646,7 @@ export default function MastersLifting() {
                     <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-3">
                       <Text className="text-primary font-bold mb-2">? Effective:</Text>
                       {strategy.effective.map((item: string, eIdx: number) => (
-                        <Text key={eIdx} className="text-primary/80 text-sm mb-1">� {item}</Text>
+                        <Text key={eIdx} className="text-primary/80 text-sm mb-1">• {item}</Text>
                       ))}
                     </View>
                   )}
@@ -659,7 +655,7 @@ export default function MastersLifting() {
                     <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-3">
                       <Text className="text-primary/80 font-bold mb-2">Protein:</Text>
                       {strategy.protein.map((item: string, prIdx: number) => (
-                        <Text key={prIdx} className="text-primary/60 text-sm mb-1">� {item}</Text>
+                        <Text key={prIdx} className="text-primary/60 text-sm mb-1">• {item}</Text>
                       ))}
                     </View>
                   )}
@@ -668,7 +664,7 @@ export default function MastersLifting() {
                     <View className="bg-purple-500/10 rounded-xl p-4 border border-purple-500/30">
                       <Text className="text-purple-400 font-bold mb-2">Other:</Text>
                       {strategy.other.map((item: string, oIdx: number) => (
-                        <Text key={oIdx} className="text-purple-300 text-sm mb-1">� {item}</Text>
+                        <Text key={oIdx} className="text-purple-300 text-sm mb-1">• {item}</Text>
                       ))}
                     </View>
                   )}
@@ -688,7 +684,7 @@ export default function MastersLifting() {
                     <View className="bg-purple-500/10 rounded-xl p-4 border border-purple-500/30 mb-3">
                       <Text className="text-purple-400 font-bold mb-2">Application:</Text>
                       {principle.application.map((item: string, aIdx: number) => (
-                        <Text key={aIdx} className="text-purple-300 text-sm mb-1">� {item}</Text>
+                        <Text key={aIdx} className="text-purple-300 text-sm mb-1">• {item}</Text>
                       ))}
                     </View>
                   )}
@@ -697,7 +693,7 @@ export default function MastersLifting() {
                     <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-3">
                       <Text className="text-primary/80 font-bold mb-2">Recommendations:</Text>
                       {principle.recommendations.map((item: string, rIdx: number) => (
-                        <Text key={rIdx} className="text-primary/60 text-sm mb-1">� {item}</Text>
+                        <Text key={rIdx} className="text-primary/60 text-sm mb-1">• {item}</Text>
                       ))}
                     </View>
                   )}
@@ -706,7 +702,7 @@ export default function MastersLifting() {
                     <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-3">
                       <Text className="text-primary font-bold mb-2">Sweet Spot:</Text>
                       {principle.sweetSpot.map((item: string, sIdx: number) => (
-                        <Text key={sIdx} className="text-primary/80 text-sm mb-1">� {item}</Text>
+                        <Text key={sIdx} className="text-primary/80 text-sm mb-1">• {item}</Text>
                       ))}
                     </View>
                   )}
@@ -715,7 +711,7 @@ export default function MastersLifting() {
                     <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-3">
                       <Text className="text-primary/80 font-bold mb-2">Strategies:</Text>
                       {principle.strategies.map((item: string, stIdx: number) => (
-                        <Text key={stIdx} className="text-primary/60 text-sm mb-1">� {item}</Text>
+                        <Text key={stIdx} className="text-primary/60 text-sm mb-1">• {item}</Text>
                       ))}
                     </View>
                   )}
@@ -724,7 +720,7 @@ export default function MastersLifting() {
                     <View className="bg-red-500/10 rounded-xl p-4 border border-red-500/30">
                       <Text className="text-red-400 font-bold mb-2">Essential:</Text>
                       {principle.essential.map((item: string, eIdx: number) => (
-                        <Text key={eIdx} className="text-red-300 text-sm mb-1">� {item}</Text>
+                        <Text key={eIdx} className="text-red-300 text-sm mb-1">• {item}</Text>
                       ))}
                     </View>
                   )}
@@ -741,7 +737,7 @@ export default function MastersLifting() {
                   <View key={idx} className="bg-zinc-800 rounded-xl p-4 mb-3 last:mb-0">
                     <Text className="text-white font-bold mb-2">{day.day}</Text>
                     {day.workout.map((exercise: string, eIdx: number) => (
-                      <Text key={eIdx} className="text-zinc-300 text-sm mb-1">� {exercise}</Text>
+                      <Text key={eIdx} className="text-zinc-300 text-sm mb-1">• {exercise}</Text>
                     ))}
                   </View>
                 ))}
@@ -759,13 +755,13 @@ export default function MastersLifting() {
                     <View className="bg-red-500/10 rounded-xl p-4 border border-red-500/30 mb-3">
                       <Text className="text-red-400 font-bold mb-2">Tests:</Text>
                       {item.tests.map((test: string, tIdx: number) => (
-                        <Text key={tIdx} className="text-red-300 text-sm mb-1">� {test}</Text>
+                        <Text key={tIdx} className="text-red-300 text-sm mb-1">• {test}</Text>
                       ))}
                     </View>
                   )}
 
                   {item.tips && item.tips.map((tip: string, tIdx: number) => (
-                    <Text key={tIdx} className="text-zinc-300 text-sm mb-2">� {tip}</Text>
+                    <Text key={tIdx} className="text-zinc-300 text-sm mb-2">• {tip}</Text>
                   ))}
 
                   {item.why && (
@@ -786,7 +782,7 @@ export default function MastersLifting() {
                   <View className="bg-red-500/10 rounded-xl p-3 border border-red-500/30 mb-3">
                     <Text className="text-red-400 font-bold text-sm mb-1">Common Issues:</Text>
                     {joint.issues.map((issue: string, iIdx: number) => (
-                      <Text key={iIdx} className="text-red-300 text-sm mb-1">� {issue}</Text>
+                      <Text key={iIdx} className="text-red-300 text-sm mb-1">• {issue}</Text>
                     ))}
                   </View>
 
@@ -811,7 +807,7 @@ export default function MastersLifting() {
                     <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-3">
                       <Text className="text-primary font-bold mb-2">? Success Is:</Text>
                       {persp.shift.map((item: string, sIdx: number) => (
-                        <Text key={sIdx} className="text-primary/80 text-sm mb-1">� {item}</Text>
+                        <Text key={sIdx} className="text-primary/80 text-sm mb-1">• {item}</Text>
                       ))}
                     </View>
                   )}
@@ -820,7 +816,7 @@ export default function MastersLifting() {
                     <View className="bg-red-500/10 rounded-xl p-4 border border-red-500/30 mb-3">
                       <Text className="text-red-400 font-bold mb-2">? Success Is NOT:</Text>
                       {persp.notSuccess.map((item: string, nIdx: number) => (
-                        <Text key={nIdx} className="text-red-300 text-sm mb-1">� {item}</Text>
+                        <Text key={nIdx} className="text-red-300 text-sm mb-1">• {item}</Text>
                       ))}
                     </View>
                   )}
@@ -829,7 +825,7 @@ export default function MastersLifting() {
                     <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-3">
                       <Text className="text-primary/80 font-bold mb-2">Reality:</Text>
                       {persp.reality.map((item: string, rIdx: number) => (
-                        <Text key={rIdx} className="text-primary/60 text-sm mb-1">� {item}</Text>
+                        <Text key={rIdx} className="text-primary/60 text-sm mb-1">• {item}</Text>
                       ))}
                     </View>
                   )}
@@ -838,7 +834,7 @@ export default function MastersLifting() {
                     <View className="bg-amber-500/10 rounded-xl p-4 border border-amber-500/30 mb-3">
                       <Text className="text-amber-400 font-bold mb-2">Take Pride:</Text>
                       {persp.pride.map((item: string, prIdx: number) => (
-                        <Text key={prIdx} className="text-amber-300 text-sm mb-1">� {item}</Text>
+                        <Text key={prIdx} className="text-amber-300 text-sm mb-1">• {item}</Text>
                       ))}
                     </View>
                   )}
@@ -847,7 +843,7 @@ export default function MastersLifting() {
                     <View className="bg-purple-500/10 rounded-xl p-4 border border-purple-500/30">
                       <Text className="text-purple-400 font-bold mb-2">Ask Yourself:</Text>
                       {persp.questions.map((q: string, qIdx: number) => (
-                        <Text key={qIdx} className="text-purple-300 text-sm mb-1">� {q}</Text>
+                        <Text key={qIdx} className="text-purple-300 text-sm mb-1">• {q}</Text>
                       ))}
                     </View>
                   )}
@@ -858,13 +854,13 @@ export default function MastersLifting() {
                 <View key={idx} className="bg-zinc-900 rounded-xl p-5 mb-4 border border-zinc-800">
                   <Text className="text-white font-bold mb-3">{source.source}</Text>
                   {source.examples && source.examples.map((ex: string, eIdx: number) => (
-                    <Text key={eIdx} className="text-zinc-300 text-sm mb-1">� {ex}</Text>
+                    <Text key={eIdx} className="text-zinc-300 text-sm mb-1">• {ex}</Text>
                   ))}
                   {source.benefits && source.benefits.map((ben: string, bIdx: number) => (
-                    <Text key={bIdx} className="text-zinc-300 text-sm mb-1">� {ben}</Text>
+                    <Text key={bIdx} className="text-zinc-300 text-sm mb-1">• {ben}</Text>
                   ))}
                   {source.facts && source.facts.map((fact: string, fIdx: number) => (
-                    <Text key={fIdx} className="text-zinc-300 text-sm mb-1">� {fact}</Text>
+                    <Text key={fIdx} className="text-zinc-300 text-sm mb-1">• {fact}</Text>
                   ))}
                 </View>
               ))}
@@ -874,16 +870,16 @@ export default function MastersLifting() {
           <View className="bg-gradient-to-r from-amber-500/20 to-blue-500/20 rounded-xl p-5 border border-amber-500/30 mb-6">
             <Text className="text-amber-400 font-bold text-lg mb-3">You're Not Old, You're Elite</Text>
             <Text className="text-amber-300 text-sm mb-2">
-              � Most people your age are declining - you're getting stronger
+              • Most people your age are declining - you're getting stronger
             </Text>
             <Text className="text-amber-300 text-sm mb-2">
-              � Every rep is defying aging
+              • Every rep is defying aging
             </Text>
             <Text className="text-amber-300 text-sm mb-2">
-              � You can compete and win well into your 70s+
+              • You can compete and win well into your 70s+
             </Text>
             <Text className="text-amber-300 text-sm">
-              � Age is just which division you compete in
+              • Age is just which division you compete in
             </Text>
           </View>
         </View>

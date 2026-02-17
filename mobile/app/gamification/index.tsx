@@ -1,11 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-  Dimensions,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, TouchableOpacity, ScrollView, Dimensions } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import { LineChart } from 'react-native-chart-kit';
@@ -39,7 +34,7 @@ const QUESTS: Quest[] = [
   {
     id: '1',
     title: 'Racha Semanal',
-    description: 'Entrena 5 días esta semana',
+    description: 'Entrena 5 dÃ­as esta semana',
     progress: 3,
     target: 5,
     xp: 250,
@@ -60,7 +55,7 @@ const QUESTS: Quest[] = [
   },
   {
     id: '3',
-    title: 'Súper Serie',
+    title: 'SÃ­per Serie',
     description: 'Completa un workout de 60+ min',
     progress: 45,
     target: 60,
@@ -71,7 +66,7 @@ const QUESTS: Quest[] = [
   },
   {
     id: '4',
-    title: 'Desafío Premium',
+    title: 'DesafÃ­o Premium',
     description: 'Completa 10 ejercicios avanzados',
     progress: 6,
     target: 10,
@@ -96,7 +91,7 @@ const ACHIEVEMENTS: Achievement[] = [
   {
     id: '2',
     title: 'Racha de Fuego',
-    description: 'Entrena 7 días seguidos',
+    description: 'Entrena 7 dÃ­as seguidos',
     tier: 'silver',
     unlocked: true,
     unlockedAt: '2025-01-20',
@@ -105,7 +100,7 @@ const ACHIEVEMENTS: Achievement[] = [
   },
   {
     id: '3',
-    title: 'Fuerza Titánica',
+    title: 'Fuerza TitÃºnica',
     description: 'Levanta 10,000 kg totales',
     tier: 'gold',
     unlocked: false,
@@ -284,7 +279,7 @@ export default function Gamification() {
                 <View className="flex-row items-center justify-center mt-2">
                   <Ionicons name="checkmark-circle" size={16} color="#9D12DE" />
                   <Text className="text-primary font-semibold text-sm ml-2">
-                    ¡Completado!
+                    Â¡Completado!
                   </Text>
                 </View>
               )}

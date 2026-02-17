@@ -1,12 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-  TextInput,
-  Alert,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, TouchableOpacity, ScrollView, TextInput, Alert } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -26,7 +20,7 @@ interface SupplementLog {
 }
 
 const TIMING_OPTIONS = [
-  { value: 'morning', label: 'Mañana', icon: 'sunny', color: 'amber' },
+  { value: 'morning', label: 'MaÃ±ana', icon: 'sunny', color: 'amber' },
   { value: 'preworkout', label: 'Pre-Workout', icon: 'fitness', color: 'blue' },
   { value: 'postworkout', label: 'Post-Workout', icon: 'barbell', color: 'primary' },
   { value: 'evening', label: 'Tarde', icon: 'partly-sunny', color: 'orange' },
@@ -34,12 +28,12 @@ const TIMING_OPTIONS = [
 ];
 
 const MOCK_SUPPLEMENTS: Supplement[] = [
-  { id: '1', name: 'Proteína Whey', dosage: '30g', timing: 'postworkout', purpose: 'Síntesis proteica', taken: true },
+  { id: '1', name: 'ProteÃ­na Whey', dosage: '30g', timing: 'postworkout', purpose: 'SÃ­ntesis proteica', taken: true },
   { id: '2', name: 'Creatina', dosage: '5g', timing: 'postworkout', purpose: 'Fuerza y volumen', taken: true },
-  { id: '3', name: 'Vitamina D3', dosage: '2000 IU', timing: 'morning', purpose: 'Salud ósea', taken: true },
+  { id: '3', name: 'Vitamina D3', dosage: '2000 IU', timing: 'morning', purpose: 'Salud Ã³sea', taken: true },
   { id: '4', name: 'Omega-3', dosage: '1000mg', timing: 'morning', purpose: 'Salud cardiovascular', taken: false },
-  { id: '5', name: 'Magnesio', dosage: '400mg', timing: 'bedtime', purpose: 'Recuperación y sueño', taken: false },
-  { id: '6', name: 'Cafeína', dosage: '200mg', timing: 'preworkout', purpose: 'Energía y foco', taken: true },
+  { id: '5', name: 'Magnesio', dosage: '400mg', timing: 'bedtime', purpose: 'RecuperaciÃ³n y sueÃ±o', taken: false },
+  { id: '6', name: 'CafeÃ­na', dosage: '200mg', timing: 'preworkout', purpose: 'EnergÃ­a y foco', taken: true },
 ];
 
 export default function SupplementTracker() {
@@ -83,13 +77,13 @@ export default function SupplementTracker() {
     setSupplements([...supplements, supplement]);
     setNewSupplement({ name: '', dosage: '', timing: 'morning', purpose: '' });
     setShowAddForm(false);
-    Alert.alert('Suplemento Añadido! ðŸ’Š', 'Suplemento agregado a tu lista');
+    Alert.alert('Suplemento AÃ±adido! ðŸ’Š', 'Suplemento agregado a tu lista');
   };
 
   const deleteSupplement = (id: string) => {
     Alert.alert(
       'Eliminar Suplemento',
-      '¿Estás seguro?',
+      'Â¿EstÃ¡s seguro?',
       [
         { text: 'Cancelar' },
         { text: 'Eliminar', style: 'destructive', onPress: () => setSupplements(supplements.filter((s) => s.id !== id)) },
@@ -167,7 +161,7 @@ export default function SupplementTracker() {
                 <Text className="text-zinc-400 text-sm mb-2">Nombre</Text>
                 <TextInput
                   className="bg-zinc-800 rounded-xl px-4 py-3 text-white text-lg font-bold"
-                  placeholder="Ej: Proteína Whey, Creatina, etc."
+                  placeholder="Ej: ProteÃ­na Whey, Creatina, etc."
                   placeholderTextColor="#71717A"
                   value={newSupplement.name}
                   onChangeText={(text) => setNewSupplement({ ...newSupplement, name: text })}
@@ -188,7 +182,7 @@ export default function SupplementTracker() {
 
               {/* Timing */}
               <View className="mb-4">
-                <Text className="text-zinc-400 text-sm mb-2">Momento del Día</Text>
+                <Text className="text-zinc-400 text-sm mb-2">Momento del DÃ­a</Text>
                 <View className="flex-row flex-wrap gap-2">
                   {TIMING_OPTIONS.map((timing) => (
                     <TouchableOpacity
@@ -215,10 +209,10 @@ export default function SupplementTracker() {
 
               {/* Purpose */}
               <View className="mb-4">
-                <Text className="text-zinc-400 text-sm mb-2">Propósito (opcional)</Text>
+                <Text className="text-zinc-400 text-sm mb-2">PropÃ³sito (opcional)</Text>
                 <TextInput
                   className="bg-zinc-800 rounded-xl px-4 py-3 text-white"
-                  placeholder="Para qué lo tomas..."
+                  placeholder="Para quÃ© lo tomas..."
                   placeholderTextColor="#71717A"
                   value={newSupplement.purpose}
                   onChangeText={(text) => setNewSupplement({ ...newSupplement, purpose: text })}
@@ -230,7 +224,7 @@ export default function SupplementTracker() {
                 className="bg-primary rounded-xl p-4 flex-row items-center justify-center"
               >
                 <Ionicons name="checkmark-circle" size={20} color="white" />
-                <Text className="text-white font-bold ml-2">Añadir Suplemento</Text>
+                <Text className="text-white font-bold ml-2">AÃ±adir Suplemento</Text>
               </TouchableOpacity>
             </View>
           ) : (
@@ -312,7 +306,7 @@ export default function SupplementTracker() {
                   <Text className="text-6xl mb-3">ðŸ’Š</Text>
                   <Text className="text-white font-bold text-lg mb-2">Sin Suplementos</Text>
                   <Text className="text-zinc-400 text-center">
-                    Añade suplementos para trackear tu ingesta
+                    AÃ±ade suplementos para trackear tu ingesta
                   </Text>
                 </View>
               )}
@@ -325,14 +319,14 @@ export default function SupplementTracker() {
               <Ionicons name="information-circle" size={20} color="#9D12DE" />
               <View className="flex-1 ml-3">
                 <Text className="text-primary/80 font-bold mb-2">
-                  Tips de Suplementación
+                  Tips de SuplementaciÃ³n
                 </Text>
                 <Text className="text-primary/60 text-sm">
-                  • Prioriza comida real primero{'\n'}
-                  • Creatina: 5g diario, cualquier momento{'\n'}
-                  • Proteína: cuando no llegues a meta{'\n'}
-                  • Cafeína pre-workout: 3-6mg/kg peso{'\n'}
-                  • Consulta médico antes de nuevos supps
+                  â€¢ Prioriza comida real primero{'\n'}
+                  â€¢ Creatina: 5g diario, cualquier momento{'\n'}
+                  â€¢ ProteÃ­na: cuando no llegues a meta{'\n'}
+                  â€¢ CafeÃ­na pre-workout: 3-6mg/kg peso{'\n'}
+                  â€¢ Consulta mÃ©dico antes de nuevos supps
                 </Text>
               </View>
             </View>

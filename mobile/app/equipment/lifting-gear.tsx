@@ -1,10 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, TouchableOpacity, ScrollView } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -448,7 +444,7 @@ export default function EquipmentGuide() {
                   <Text className="text-white font-bold mb-2">Why use it:</Text>
                   {item.why.map((reason, rIdx) => (
                     <Text key={rIdx} className="text-zinc-300 text-sm mb-1">
-                      � {reason}
+                      • {reason}
                     </Text>
                   ))}
                 </View>
@@ -531,19 +527,19 @@ export default function EquipmentGuide() {
           <View className="bg-gradient-to-r from-amber-500/20 to-orange-500/20 rounded-xl p-4 border border-amber-500/30 mb-6">
             <Text className="text-amber-400 font-bold mb-2">Equipment Philosophy</Text>
             <Text className="text-amber-300 text-sm mb-2">
-              � Equipment should enhance training, not replace skill
+              • Equipment should enhance training, not replace skill
             </Text>
             <Text className="text-amber-300 text-sm mb-2">
-              � Start minimal - belt and shoes are enough
+              • Start minimal - belt and shoes are enough
             </Text>
             <Text className="text-amber-300 text-sm mb-2">
-              � Save equipment for heavy sets (80%+ 1RM)
+              • Save equipment for heavy sets (80%+ 1RM)
             </Text>
             <Text className="text-amber-300 text-sm mb-2">
-              � Build raw strength first before relying on gear
+              • Build raw strength first before relying on gear
             </Text>
             <Text className="text-amber-300 text-sm">
-              � Quality over quantity - buy once, cry once
+              • Quality over quantity - buy once, cry once
             </Text>
           </View>
         </View>

@@ -1,12 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-  TextInput,
-  Alert,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, TouchableOpacity, ScrollView, TextInput, Alert } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -42,22 +36,22 @@ const EXERCISE_DATABASE: Exercise[] = [
     equipment: 'Barra',
     difficulty: 'intermediate',
     instructions: [
-      'AcuÈstate en banco plano con pies firmes en el suelo',
-      'Agarre ligeramente m·s ancho que hombros',
-      'Baja barra a la lÌnea del pezÛn controladamente',
+      'Acu√©state en banco plano con pies firmes en el suelo',
+      'Agarre ligeramente m√°s ancho que hombros',
+      'Baja barra a la l√≠nea del pez√≥n controladamente',
       'Empuja explosivamente mientras exhalas',
-      'MantÈn esc·pulas retraÌdas todo el movimiento',
+      'Mant√©n esc√°pulas retra√≠das todo el movimiento',
     ],
     tips: [
       'Arco lumbar natural, no excesivo',
-      'Codos a 45∞ del torso, no 90∞',
+      'Codos a 45¬∞ del torso, no 90¬∞',
       'Toca pecho en cada rep',
-      'MuÒecas alineadas con antebrazo',
+      'Mu√±ecas alineadas con antebrazo',
     ],
     commonMistakes: [
       'Rebotar la barra en el pecho',
-      'Despegar gl˙teos del banco',
-      'Codos muy abiertos (lesiÛn hombro)',
+      'Despegar gl√∫teos del banco',
+      'Codos muy abiertos (lesi√≥n hombro)',
       'No tocar pecho (ROM incompleto)',
     ],
     variations: ['Press Inclinado', 'Press Declinado', 'Press con Mancuernas'],
@@ -72,21 +66,21 @@ const EXERCISE_DATABASE: Exercise[] = [
     instructions: [
       'Barra en traps (high bar) o deltoides posteriores (low bar)',
       'Pies ancho de hombros, puntas ligeramente hacia fuera',
-      'Inhala profundo, mantÈn core apretado',
+      'Inhala profundo, mant√©n core apretado',
       'Desciende rompiendo cadera primero',
-      'Baja hasta paralelo o m·s (caderas bajo rodillas)',
-      'Empuja a travÈs de talones manteniendo pecho arriba',
+      'Baja hasta paralelo o m√°s (caderas bajo rodillas)',
+      'Empuja a trav√©s de talones manteniendo pecho arriba',
     ],
     tips: [
-      'Rodillas en lÌnea con pies (no hacia dentro)',
-      'MantÈn peso en talones y mediopiÈ',
+      'Rodillas en l√≠nea con pies (no hacia dentro)',
+      'Mant√©n peso en talones y mediopie',
       'Mira al frente, no abajo ni arriba',
       'Core apretado todo el movimiento',
     ],
     commonMistakes: [
       'No bajar a paralelo',
       'Rodillas colapsando hacia dentro',
-      'Subir gl˙teos m·s r·pido que el torso',
+      'Subir gl√∫teos m√°s r√°pido que el torso',
       'Redondear espalda baja',
     ],
     variations: ['Front Squat', 'Bulgarian Split Squat', 'Squat con Pausa'],
@@ -103,14 +97,14 @@ const EXERCISE_DATABASE: Exercise[] = [
       'Agarre afuera de piernas, espalda neutral',
       'Inhala, aprieta lats, tensa todo el cuerpo',
       'Empuja suelo con piernas (no "tires" con espalda)',
-      'Extiende cadera y rodillas simult·neamente',
-      'Termina con gl˙teos apretados, no hiperextensiÛn lumbar',
+      'Extiende cadera y rodillas simult√°neamente',
+      'Termina con gl√∫teos apretados, no hiperextensi√≥n lumbar',
     ],
     tips: [
-      'La barra sube en lÌnea recta, pegada a tibias',
+      'La barra sube en l√≠nea recta, pegada a tibias',
       'Hombros ligeramente adelante de la barra al inicio',
-      'MantÈn cuello neutral (no mires arriba)',
-      'Aprieta gl˙teos al finalizar, no arco excesivo',
+      'Mant√©n cuello neutral (no mires arriba)',
+      'Aprieta gl√∫teos al finalizar, no arco excesivo',
     ],
     commonMistakes: [
       'Redondear espalda baja',
@@ -128,14 +122,14 @@ const EXERCISE_DATABASE: Exercise[] = [
     equipment: 'Barra fija',
     difficulty: 'intermediate',
     instructions: [
-      'Cuelga de barra con agarre prono, ancho de hombros o m·s',
-      'Retrae esc·pulas antes de empezar a subir',
-      'Tira codos hacia abajo y atr·s',
+      'Cuelga de barra con agarre prono, ancho de hombros o m√°s',
+      'Retrae esc√°pulas antes de empezar a subir',
+      'Tira codos hacia abajo y atr√°s',
       'Sube hasta barbilla sobre barra',
       'Desciende controladamente hasta brazos extendidos',
     ],
     tips: [
-      'Inicia el movimiento con esc·pulas, no brazos',
+      'Inicia el movimiento con esc√°pulas, no brazos',
       'Piensa "codos al piso" no "manos a la cara"',
       'Evita kipping (usar impulso)',
       'Full ROM: brazos extendidos abajo',
@@ -143,7 +137,7 @@ const EXERCISE_DATABASE: Exercise[] = [
     commonMistakes: [
       'No bajar hasta brazos extendidos',
       'Usar impulso excesivo',
-      'Hombros elevados (no retraer esc·pulas)',
+      'Hombros elevados (no retraer esc√°pulas)',
       'Hiperextender cuello para subir',
     ],
     variations: ['Chin-ups', 'Dominadas Neutras', 'Dominadas Asistidas'],
@@ -156,17 +150,17 @@ const EXERCISE_DATABASE: Exercise[] = [
     equipment: 'Barra',
     difficulty: 'intermediate',
     instructions: [
-      'De pie, barra en clavÌculas, agarre ancho de hombros',
+      'De pie, barra en clav√≠culas, agarre ancho de hombros',
       'Codos ligeramente adelante de la barra',
-      'Aprieta gl˙teos y core para estabilidad',
+      'Aprieta gl√∫teos y core para estabilidad',
       'Empuja barra verticalmente sobre la cabeza',
-      'Mueve cabeza ligeramente atr·s al subir',
-      'Finaliza con biceps junto a orejas, barra sobre mediopiÈ',
+      'Mueve cabeza ligeramente atr√°s al subir',
+      'Finaliza con biceps junto a orejas, barra sobre mediopie',
     ],
     tips: [
       'No hiperextender espalda baja',
-      'Barra sube y baja en lÌnea recta',
-      'Full lockout arriba con esc·pulas elevadas',
+      'Barra sube y baja en l√≠nea recta',
+      'Full lockout arriba con esc√°pulas elevadas',
       'Respira arriba, no abajo',
     ],
     commonMistakes: [
@@ -185,16 +179,16 @@ const EXERCISE_DATABASE: Exercise[] = [
     equipment: 'Barra',
     difficulty: 'intermediate',
     instructions: [
-      'Bisagra de cadera, torso ~45∞ del suelo',
-      'Agarre prono, ligeramente m·s ancho que hombros',
-      'Brazos extendidos, esc·pulas protraÌdas al inicio',
-      'Tira codos hacia arriba y atr·s',
+      'Bisagra de cadera, torso ~45¬∞ del suelo',
+      'Agarre prono, ligeramente m√°s ancho que hombros',
+      'Brazos extendidos, esc√°pulas protra√≠das al inicio',
+      'Tira codos hacia arriba y atr√°s',
       'Toca barra en parte baja del pecho/abdomen superior',
       'Desciende controladamente',
     ],
     tips: [
-      'MantÈn espalda neutral, no redondees',
-      'Aprieta dorsales y retrae esc·pulas arriba',
+      'Mant√©n espalda neutral, no redondees',
+      'Aprieta dorsales y retrae esc√°pulas arriba',
       'No uses demasiado impulso',
       'Piensa en "separar la barra"',
     ],
@@ -285,7 +279,7 @@ export default function ExerciseDatabase() {
             {/* Instructions */}
             <View className="bg-primary/10 rounded-xl p-4 mb-6 border border-primary/30">
               <Text className="text-primary font-bold text-lg mb-3">
-                EjecuciÛn Paso a Paso
+                Ejecuci√≥n Paso a Paso
               </Text>
               {selectedExercise.instructions.map((instruction, idx) => (
                 <View key={idx} className="flex-row items-start mb-3">
@@ -447,10 +441,10 @@ export default function ExerciseDatabase() {
               <Ionicons name="information-circle" size={20} color="#FFEA00" />
               <View className="flex-1 ml-3">
                 <Text className="text-amber-400 font-bold mb-2">
-                  Base de Datos en ExpansiÛn
+                  Base de Datos en Expansi√≥n
                 </Text>
                 <Text className="text-amber-300 text-sm">
-                  Esta es una selecciÛn de ejercicios fundamentales. M·s ejercicios ser·n aÒadidos prÛximamente.
+                  Esta es una selecci√≥n de ejercicios fundamentales. M√°s ejercicios ser√°n a√±adidos pr√≥ximamente.
                 </Text>
               </View>
             </View>

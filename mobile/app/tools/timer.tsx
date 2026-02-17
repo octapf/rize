@@ -1,12 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-  TextInput,
-  Alert,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, TouchableOpacity, ScrollView, TextInput, Alert } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -163,7 +157,7 @@ export default function WorkoutTimer() {
   const handleTimerFinish = () => {
     setIsRunning(false);
     setIsPaused(false);
-    Alert.alert('Timer Completado! ??', 'Excelente trabajo!');
+    Alert.alert('Timer Completado! üéâ', 'Excelente trabajo!');
   };
 
   const startTimer = () => {
@@ -243,17 +237,17 @@ export default function WorkoutTimer() {
                   <Ionicons name="timer" size={20} color="#9D12DE" />
                   <View className="flex-1 ml-3">
                     <Text className="text-primary/80 font-bold mb-2">
-                      Timer Vers·til
+                      Timer Vers√°til
                     </Text>
                     <Text className="text-primary/60 text-sm">
-                      CronÛmetro, cuenta regresiva, EMOM, AMRAP, Tabata y m·s para tus entrenamientos.
+                      Cron√≥metro, cuenta regresiva, EMOM, AMRAP, Tabata y m√°s para tus entrenamientos.
                     </Text>
                   </View>
                 </View>
               </View>
 
               {/* Presets */}
-              <Text className="text-white font-bold text-lg mb-4">Presets R·pidos</Text>
+              <Text className="text-white font-bold text-lg mb-4">Presets R√°pidos</Text>
               {TIMER_PRESETS.map((preset) => (
                 <TouchableOpacity
                   key={preset.id}
@@ -286,7 +280,7 @@ export default function WorkoutTimer() {
                   className="flex-1 bg-primary rounded-xl p-4 items-center"
                 >
                   <Ionicons name="stopwatch" size={32} color="white" />
-                  <Text className="text-white font-bold mt-2">CronÛmetro</Text>
+                  <Text className="text-white font-bold mt-2">Cron√≥metro</Text>
                 </TouchableOpacity>
                 <TouchableOpacity
                   onPress={() => { setSelectedMode('countdown'); setTime(180); setTargetTime(180); }}
@@ -368,9 +362,9 @@ export default function WorkoutTimer() {
                   <>
                     <Text className="text-white font-bold text-lg mb-3">EMOM Info</Text>
                     <Text className="text-zinc-400 text-sm mb-2">
-                      ï Suena beep cada minuto{'\n'}
-                      ï Completa ejercicios y descansa lo que quede{'\n'}
-                      ï Total: {totalRounds} rondas
+                      ‚Ä¢ Suena beep cada minuto{'\n'}
+                      ‚Ä¢ Completa ejercicios y descansa lo que quede{'\n'}
+                      ‚Ä¢ Total: {totalRounds} rondas
                     </Text>
                   </>
                 )}
@@ -378,9 +372,9 @@ export default function WorkoutTimer() {
                   <>
                     <Text className="text-white font-bold text-lg mb-3">AMRAP Info</Text>
                     <Text className="text-zinc-400 text-sm mb-2">
-                      ï Completa m·ximas rondas en tiempo{'\n'}
-                      ï MantÈn tÈcnica perfecta{'\n'}
-                      ï Anota rondas completadas al final
+                      ‚Ä¢ Completa m√°ximas rondas en tiempo{'\n'}
+                      ‚Ä¢ Mant√©n t√©cnica perfecta{'\n'}
+                      ‚Ä¢ Anota rondas completadas al final
                     </Text>
                   </>
                 )}

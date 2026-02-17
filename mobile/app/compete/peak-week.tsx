@@ -1,10 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, TouchableOpacity, ScrollView } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -352,16 +348,16 @@ export default function PeakWeek() {
           <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
             <Text className="text-primary/80 font-bold mb-2">Remember</Text>
             <Text className="text-primary/60 text-sm mb-2">
-              • Peak week can't fix poor preparation
+              â€¢ Peak week can't fix poor preparation
             </Text>
             <Text className="text-primary/60 text-sm mb-2">
-              • The work is done - now you just recover
+              â€¢ The work is done - now you just recover
             </Text>
             <Text className="text-primary/60 text-sm mb-2">
-              • Trust your training and your plan
+              â€¢ Trust your training and your plan
             </Text>
             <Text className="text-primary/60 text-sm">
-              • When in doubt, do LESS not more
+              â€¢ When in doubt, do LESS not more
             </Text>
           </View>
         </View>

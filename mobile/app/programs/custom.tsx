@@ -1,12 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-  TextInput,
-  Alert,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, TouchableOpacity, ScrollView, TextInput, Alert } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -43,19 +37,19 @@ const SAMPLE_PROGRAM: Program = {
   phases: [
     {
       id: '1',
-      name: 'Fase 1: Adaptación',
+      name: 'Fase 1: AdaptaciÃ³n',
       weeks: 3,
       focus: 'Volumen alto, intensidad media',
       intensity: '65-75% 1RM',
       volume: '4-5 series x 8-12 reps',
       exercises: 6,
-      description: 'Preparación muscular y técnica',
+      description: 'PreparaciÃ³n muscular y tÃ©cnica',
     },
     {
       id: '2',
       name: 'Fase 2: Hipertrofia',
       weeks: 4,
-      focus: 'Volumen máximo',
+      focus: 'Volumen mÃ¡ximo',
       intensity: '70-80% 1RM',
       volume: '4-6 series x 6-10 reps',
       exercises: 7,
@@ -69,17 +63,17 @@ const SAMPLE_PROGRAM: Program = {
       intensity: '80-90% 1RM',
       volume: '3-5 series x 3-6 reps',
       exercises: 5,
-      description: 'Desarrollo de fuerza máxima',
+      description: 'Desarrollo de fuerza mÃ¡xima',
     },
     {
       id: '4',
       name: 'Fase 4: Peaking',
       weeks: 2,
-      focus: 'Intensidad máxima, volumen bajo',
+      focus: 'Intensidad mÃ¡xima, volumen bajo',
       intensity: '90-95% 1RM',
       volume: '2-3 series x 1-3 reps',
       exercises: 4,
-      description: 'Pico de rendimiento y test de máximos',
+      description: 'Pico de rendimiento y test de mÃ¡ximos',
     },
   ],
 };
@@ -99,7 +93,7 @@ const PROGRAM_TEMPLATES = [
     type: 'hipertrofia',
     phases: 4,
     duration: 16,
-    description: 'Máximo crecimiento muscular',
+    description: 'MÃ¡ximo crecimiento muscular',
   },
   {
     id: '3',
@@ -107,7 +101,7 @@ const PROGRAM_TEMPLATES = [
     type: 'powerlifting',
     phases: 5,
     duration: 20,
-    description: 'Preparación para competencia',
+    description: 'PreparaciÃ³n para competencia',
   },
   {
     id: '4',
@@ -115,7 +109,7 @@ const PROGRAM_TEMPLATES = [
     type: 'resistencia',
     phases: 3,
     duration: 8,
-    description: 'Mejora capacidad aeróbica y muscular',
+    description: 'Mejora capacidad aerÃ³bica y muscular',
   },
 ];
 
@@ -137,7 +131,7 @@ export default function CustomPrograms() {
   const getPhaseStatus = (phaseIndex: number, currentPhase: number) => {
     if (phaseIndex + 1 < currentPhase) return 'Completada';
     if (phaseIndex + 1 === currentPhase) return 'En Curso';
-    return 'Próxima';
+    return 'PrÃ³xima';
   };
 
   const getTypeColor = (type: string) => {
@@ -161,13 +155,13 @@ export default function CustomPrograms() {
 
     Alert.alert(
       'Crear Programa',
-      `${template.name}\n\n${template.duration} semanas • ${template.phases} fases\n\n${template.description}`,
+      `${template.name}\n\n${template.duration} semanas â€¢ ${template.phases} fases\n\n${template.description}`,
       [
         { text: 'Cancelar', style: 'cancel' },
         {
           text: 'Comenzar Ahora',
           onPress: () => {
-            Alert.alert('¡Programa Creado!', 'Tu programa personalizado está listo');
+            Alert.alert('Â¡Programa Creado!', 'Tu programa personalizado estÃ¡ listo');
           },
         },
       ]
@@ -274,7 +268,7 @@ export default function CustomPrograms() {
                       <View className="flex-row items-center mb-2">
                         <View className="bg-primary/20 px-3 py-1 rounded-full">
                           <Text className="text-primary/80 text-xs font-bold">
-                            FASE {index + 1} • EN CURSO
+                            FASE {index + 1} â€¢ EN CURSO
                           </Text>
                         </View>
                       </View>
@@ -289,7 +283,7 @@ export default function CustomPrograms() {
 
                   <View className="bg-zinc-800 rounded-lg p-3 mb-3">
                     <View className="flex-row items-center justify-between mb-2">
-                      <Text className="text-zinc-400 text-sm">Duración</Text>
+                      <Text className="text-zinc-400 text-sm">DuraciÃ³n</Text>
                       <Text className="text-white font-bold">{phase.weeks} semanas</Text>
                     </View>
                     <View className="flex-row items-center justify-between mb-2">
@@ -301,7 +295,7 @@ export default function CustomPrograms() {
                       <Text className="text-primary font-bold">{phase.volume}</Text>
                     </View>
                     <View className="flex-row items-center justify-between">
-                      <Text className="text-zinc-400 text-sm">Ejercicios/Día</Text>
+                      <Text className="text-zinc-400 text-sm">Ejercicios/DÃ­a</Text>
                       <Text className="text-amber-500 font-bold">{phase.exercises}</Text>
                     </View>
                   </View>
@@ -327,19 +321,19 @@ export default function CustomPrograms() {
 
             {/* Progress Stats */}
             <Text className="text-white font-bold text-lg mb-3">
-              Estadísticas del Programa
+              EstadÃ­sticas del Programa
             </Text>
 
             <View className="flex-row gap-3 mb-4">
               <View className="flex-1 bg-zinc-900 rounded-xl p-4 border border-zinc-800">
                 <Ionicons name="calendar" size={24} color="#9D12DE" />
-                <Text className="text-zinc-400 text-xs mt-2">Días Entrenados</Text>
+                <Text className="text-zinc-400 text-xs mt-2">DÃ­as Entrenados</Text>
                 <Text className="text-white font-bold text-2xl">32</Text>
               </View>
               <View className="flex-1 bg-zinc-900 rounded-xl p-4 border border-zinc-800">
                 <Ionicons name="flame" size={24} color="#FFEA00" />
                 <Text className="text-zinc-400 text-xs mt-2">Racha Actual</Text>
-                <Text className="text-white font-bold text-2xl">8 días</Text>
+                <Text className="text-white font-bold text-2xl">8 dÃ­as</Text>
               </View>
             </View>
 
@@ -362,7 +356,7 @@ export default function CustomPrograms() {
         {selectedTab === 'phases' && (
           <View className="px-6 pt-6">
             <Text className="text-white font-bold text-lg mb-3">
-              Periodización ({SAMPLE_PROGRAM.phases.length} Fases)
+              PeriodizaciÃ³n ({SAMPLE_PROGRAM.phases.length} Fases)
             </Text>
 
             {SAMPLE_PROGRAM.phases.map((phase, index) => (
@@ -399,7 +393,7 @@ export default function CustomPrograms() {
                     </Text>
                   </View>
                   <View className="items-end">
-                    <Text className="text-zinc-400 text-xs">Duración</Text>
+                    <Text className="text-zinc-400 text-xs">DuraciÃ³n</Text>
                     <Text className="text-white font-bold text-xl">
                       {phase.weeks}w
                     </Text>
@@ -461,7 +455,7 @@ export default function CustomPrograms() {
 
                 <View className="flex-row gap-3 mb-3">
                   <View className="flex-1 bg-zinc-800 rounded-lg p-3">
-                    <Text className="text-zinc-400 text-xs">Duración</Text>
+                    <Text className="text-zinc-400 text-xs">DuraciÃ³n</Text>
                     <Text className="text-white font-bold text-lg">
                       {template.duration} sem
                     </Text>
@@ -494,7 +488,7 @@ export default function CustomPrograms() {
               <Ionicons name="information-circle" size={20} color="#9D12DE" />
               <View className="flex-1 ml-3">
                 <Text className="text-primary/80 font-bold mb-2">
-                  Periodización Inteligente
+                  PeriodizaciÃ³n Inteligente
                 </Text>
                 <Text className="text-primary/60 text-sm">
                   Los programas periodizados alternan fases de volumen, intensidad y descanso para maximizar resultados y prevenir estancamiento.

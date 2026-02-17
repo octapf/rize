@@ -1,11 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-  TextInput,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, TouchableOpacity, ScrollView, TextInput } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -183,12 +178,12 @@ export default function GoalSetting() {
           <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
             <Text className="text-primary/80 font-bold mb-2">Goal-Setting Tips</Text>
             <Text className="text-primary/60 text-sm">
-              • Write goals down physically{'\n'}
-              • Share with accountability partner{'\n'}
-              • Review weekly{'\n'}
-              • Celebrate milestones{'\n'}
-              • Adjust if needed, don't quit{'\n'}
-              • One major goal at a time
+              â€¢ Write goals down physically{'\n'}
+              â€¢ Share with accountability partner{'\n'}
+              â€¢ Review weekly{'\n'}
+              â€¢ Celebrate milestones{'\n'}
+              â€¢ Adjust if needed, don't quit{'\n'}
+              â€¢ One major goal at a time
             </Text>
           </View>
 

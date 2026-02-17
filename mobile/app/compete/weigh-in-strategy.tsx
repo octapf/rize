@@ -1,11 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-  TextInput,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, TouchableOpacity, ScrollView, TextInput } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -286,19 +281,19 @@ export default function WeighIn() {
           <View className="bg-amber-500/10 rounded-xl p-4 border border-amber-500/30 mb-6">
             <Text className="text-amber-400 font-bold mb-2">Safety First</Text>
             <Text className="text-amber-300 text-sm mb-2">
-              • Never attempt water cut without prior practice
+              â€¢ Never attempt water cut without prior practice
             </Text>
             <Text className="text-amber-300 text-sm mb-2">
-              • Monitor urine color (dark = too dehydrated)
+              â€¢ Monitor urine color (dark = too dehydrated)
             </Text>
             <Text className="text-amber-300 text-sm mb-2">
-              • Stop if experiencing severe cramps/dizziness
+              â€¢ Stop if experiencing severe cramps/dizziness
             </Text>
             <Text className="text-amber-300 text-sm mb-2">
-              • Consider moving up a weight class if &gt;5kg over
+              â€¢ Consider moving up a weight class if &gt;5kg over
             </Text>
             <Text className="text-amber-300 text-sm">
-              • Prioritize performance over making weight
+              â€¢ Prioritize performance over making weight
             </Text>
           </View>
         </View>

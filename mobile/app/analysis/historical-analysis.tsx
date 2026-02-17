@@ -1,10 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, TouchableOpacity, ScrollView } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -233,11 +229,11 @@ export default function HistoricalAnalysis() {
           <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
             <Text className="text-primary/80 font-bold mb-2">Analysis Tips</Text>
             <Text className="text-primary/60 text-sm">
-              • Look for upward trends{'\n'}
-              • Plateaus = need change{'\n'}
-              • Compare similar periods{'\n'}
-              • Account for deloads{'\n'}
-              • Monthly review recommended
+              â€¢ Look for upward trends{'\n'}
+              â€¢ Plateaus = need change{'\n'}
+              â€¢ Compare similar periods{'\n'}
+              â€¢ Account for deloads{'\n'}
+              â€¢ Monthly review recommended
             </Text>
           </View>
         </View>

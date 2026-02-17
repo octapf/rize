@@ -1,12 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-  TextInput,
-  Alert,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, TouchableOpacity, ScrollView, TextInput, Alert } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import { format } from 'date-fns';
@@ -28,9 +22,9 @@ interface CardioSession {
 const CARDIO_TYPES = [
   { id: 'running', label: 'Correr', icon: 'üèÉ', color: 'red' },
   { id: 'cycling', label: 'Ciclismo', icon: 'üö¥', color: 'blue' },
-  { id: 'swimming', label: 'NataciÛn', icon: 'üèä', color: 'cyan' },
+  { id: 'swimming', label: 'Nataci√≥n', icon: 'üèä', color: 'cyan' },
   { id: 'rowing', label: 'Remo', icon: 'üö£', color: 'primary' },
-  { id: 'elliptical', label: 'ElÌptica', icon: '??ø', color: 'purple' },
+  { id: 'elliptical', label: 'El√≠ptica', icon: 'üìù', color: 'purple' },
   { id: 'walking', label: 'Caminar', icon: 'üö∂', color: 'amber' },
   { id: 'other', label: 'Otro', icon: 'üí™', color: 'zinc' },
 ];
@@ -103,7 +97,7 @@ export default function CardioTracker() {
 
   const addSession = () => {
     if (!newSession.duration || !newSession.calories) {
-      Alert.alert('Error', 'Ingresa al menos duraciÛn y calorÌas');
+      Alert.alert('Error', 'Ingresa al menos duraci√≥n y calor√≠as');
       return;
     }
 
@@ -121,13 +115,13 @@ export default function CardioTracker() {
     setSessions([session, ...sessions]);
     setNewSession({ type: 'running', duration: '', distance: '', calories: '', avgHeartRate: '', notes: '' });
     setShowAddForm(false);
-    Alert.alert('SesiÛn Guardada! ??', 'Cardio registrado correctamente');
+    Alert.alert('Sesi√≥n Guardada! üéâ', 'Cardio registrado correctamente');
   };
 
   const deleteSession = (id: string) => {
     Alert.alert(
-      'Eliminar SesiÛn',
-      'øEst·s seguro?',
+      'Eliminar Sesi√≥n',
+      '¬øEst√°s seguro?',
       [
         { text: 'Cancelar' },
         { text: 'Eliminar', style: 'destructive', onPress: () => setSessions(sessions.filter((s) => s.id !== id)) },
@@ -203,7 +197,7 @@ export default function CardioTracker() {
         <View className="px-6 pt-6">
           {showAddForm ? (
             <View className="bg-zinc-900 rounded-xl p-6 mb-6 border border-zinc-800">
-              <Text className="text-white font-bold text-lg mb-4">Nueva SesiÛn de Cardio</Text>
+              <Text className="text-white font-bold text-lg mb-4">Nueva Sesi√≥n de Cardio</Text>
 
               {/* Type Selection */}
               <View className="mb-4">
@@ -228,7 +222,7 @@ export default function CardioTracker() {
               {/* Duration & Distance */}
               <View className="flex-row gap-4 mb-4">
                 <View className="flex-1">
-                  <Text className="text-zinc-400 text-sm mb-2">DuraciÛn (min)</Text>
+                  <Text className="text-zinc-400 text-sm mb-2">Duraci√≥n (min)</Text>
                   <TextInput
                     className="bg-zinc-800 rounded-xl px-4 py-3 text-white text-lg font-bold"
                     placeholder="30"
@@ -254,7 +248,7 @@ export default function CardioTracker() {
               {/* Calories & HR */}
               <View className="flex-row gap-4 mb-4">
                 <View className="flex-1">
-                  <Text className="text-zinc-400 text-sm mb-2">CalorÌas</Text>
+                  <Text className="text-zinc-400 text-sm mb-2">Calor√≠as</Text>
                   <TextInput
                     className="bg-zinc-800 rounded-xl px-4 py-3 text-white text-lg font-bold"
                     placeholder="300"
@@ -282,7 +276,7 @@ export default function CardioTracker() {
                 <Text className="text-zinc-400 text-sm mb-2">Notas (opcional)</Text>
                 <TextInput
                   className="bg-zinc-800 rounded-xl px-4 py-3 text-white"
-                  placeholder="CÛmo te sentiste, rutas, etc."
+                  placeholder="C√≥mo te sentiste, rutas, etc."
                   placeholderTextColor="#71717A"
                   multiline
                   numberOfLines={2}
@@ -296,7 +290,7 @@ export default function CardioTracker() {
                 className="bg-primary rounded-xl p-4 flex-row items-center justify-center"
               >
                 <Ionicons name="checkmark-circle" size={20} color="white" />
-                <Text className="text-white font-bold ml-2">Guardar SesiÛn</Text>
+                <Text className="text-white font-bold ml-2">Guardar Sesi√≥n</Text>
               </TouchableOpacity>
             </View>
           ) : (
@@ -314,7 +308,7 @@ export default function CardioTracker() {
                     <Text className="text-white text-2xl font-bold">{stats.totalDuration} min</Text>
                   </View>
                   <View className="flex-1 min-w-[45%] bg-red-500/10 rounded-lg p-3 border border-red-500/30">
-                    <Text className="text-red-400 text-xs mb-1">CalorÌas</Text>
+                    <Text className="text-red-400 text-xs mb-1">Calor√≠as</Text>
                     <Text className="text-white text-2xl font-bold">{stats.totalCalories}</Text>
                   </View>
                   <View className="flex-1 min-w-[45%] bg-amber-500/10 rounded-lg p-3 border border-amber-500/30">
@@ -331,7 +325,7 @@ export default function CardioTracker() {
                   <Text className="text-6xl mb-3">üèÉ</Text>
                   <Text className="text-white font-bold text-lg mb-2">Sin Sesiones</Text>
                   <Text className="text-zinc-400 text-center">
-                    AÒade tu primera sesiÛn de cardio
+                    A√±ade tu primera sesi√≥n de cardio
                   </Text>
                 </View>
               ) : (

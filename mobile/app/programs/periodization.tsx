@@ -1,11 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-  TextInput,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, TouchableOpacity, ScrollView, TextInput } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -25,7 +20,7 @@ export default function PeriodizationPlanner() {
       name: 'Mesocycle 1: Foundation',
       duration: '4 weeks',
       phases: ['hypertrophy'],
-      focus: 'Volumen y técnica',
+      focus: 'Volumen y tÃ©cnica',
       completed: true,
     },
     {
@@ -70,7 +65,7 @@ export default function PeriodizationPlanner() {
       <ScrollView className="flex-1" showsVerticalScrollIndicator={false}>
         <View className="px-6 pt-6">
           <View className="bg-gradient-to-r from-purple-500 to-blue-500 rounded-xl p-6 mb-6">
-            <Text className="text-white text-2xl font-bold mb-2">Planificación Avanzada</Text>
+            <Text className="text-white text-2xl font-bold mb-2">PlanificaciÃ³n Avanzada</Text>
             <Text className="text-white opacity-90 mb-4">
               Programa tu entrenamiento por fases
             </Text>
@@ -153,13 +148,13 @@ export default function PeriodizationPlanner() {
           ))}
 
           <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
-            <Text className="text-primary/80 font-bold mb-2">Periodización Explicada</Text>
+            <Text className="text-primary/80 font-bold mb-2">PeriodizaciÃ³n Explicada</Text>
             <Text className="text-primary/60 text-sm">
-              • Previene estancamiento y overtraining{'\n'}
-              • Mesociclos de 3-6 semanas{'\n'}
-              • Deload cada 4-6 semanas{'\n'}
-              • Progresión estructurada{'\n'}
-              • Picos de rendimiento planificados
+              â€¢ Previene estancamiento y overtraining{'\n'}
+              â€¢ Mesociclos de 3-6 semanas{'\n'}
+              â€¢ Deload cada 4-6 semanas{'\n'}
+              â€¢ ProgresiÃ³n estructurada{'\n'}
+              â€¢ Picos de rendimiento planificados
             </Text>
           </View>
         </View>

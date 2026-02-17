@@ -1,12 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import {
-  View,
-  Text,
-  ScrollView,
-  TextInput,
-  TouchableOpacity,
-  Alert,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, ScrollView, TextInput, TouchableOpacity, Alert } from 'react-native';;
 import { router, useLocalSearchParams } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
@@ -43,7 +37,7 @@ export default function CreateChallengeScreen() {
       type: 'workout_count' as const,
       icon: 'barbell',
       label: 'Entrenamientos',
-      description: 'Número de entrenamientos completados',
+      description: 'NÃºmero de entrenamientos completados',
       unit: 'entrenamientos',
       color: '#9D12DE',
     },
@@ -58,7 +52,7 @@ export default function CreateChallengeScreen() {
   ];
 
   const durations = [
-    { days: 3, label: '3 días' },
+    { days: 3, label: '3 dÃ­as' },
     { days: 7, label: '1 semana' },
     { days: 14, label: '2 semanas' },
     { days: 30, label: '1 mes' },
@@ -71,7 +65,7 @@ export default function CreateChallengeScreen() {
     }
 
     if (!targetValue || parseInt(targetValue) <= 0) {
-      Alert.alert('Error', 'Ingresa un objetivo válido');
+      Alert.alert('Error', 'Ingresa un objetivo vÃ¡lido');
       return;
     }
 
@@ -83,7 +77,7 @@ export default function CreateChallengeScreen() {
         duration: parseInt(duration),
       });
 
-      Alert.alert('¡Reto Creado!', 'Se ha enviado el reto a tu amigo', [
+      Alert.alert('Â¡Reto Creado!', 'Se ha enviado el reto a tu amigo', [
         { text: 'OK', onPress: () => router.back() },
       ]);
     } catch (error: any) {
@@ -117,7 +111,7 @@ export default function CreateChallengeScreen() {
           {!loadingFriends && friends.length === 0 && (
             <Card className="p-4 bg-gray-50">
               <Text className="text-gray-600 text-center">
-                No tienes amigos todavía. ¡Ve a la sección social para agregar!
+                No tienes amigos todavÃ­a. Â¡Ve a la secciÃ³n social para agregar!
               </Text>
             </Card>
           )}
@@ -204,7 +198,7 @@ export default function CreateChallengeScreen() {
 
         {/* Duration */}
         <View>
-          <Text className="text-lg font-bold text-gray-900 mb-3">4. Duración</Text>
+          <Text className="text-lg font-bold text-gray-900 mb-3">4. DuraciÃ³n</Text>
           <View className="flex-row gap-2">
             {durations.map((d) => (
               <TouchableOpacity
@@ -235,12 +229,12 @@ export default function CreateChallengeScreen() {
           <Card className="p-4 bg-red-50 border-red-200">
             <Text className="text-sm font-semibold text-red-900 mb-2">Resumen del Reto</Text>
             <Text className="text-sm text-red-700">
-              Retarás a{' '}
+              RetarÃ¡s a{' '}
               <Text className="font-bold">
                 @{friends.find((f: any) => f._id === selectedFriend)?.username}
               </Text>{' '}
               a completar <Text className="font-bold">{targetValue} {selectedTypeInfo?.unit}</Text>{' '}
-              en <Text className="font-bold">{duration} días</Text>
+              en <Text className="font-bold">{duration} dÃ­as</Text>
             </Text>
           </Card>
         )}

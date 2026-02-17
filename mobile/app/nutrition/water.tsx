@@ -1,12 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-  TextInput,
-  Alert,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, TouchableOpacity, ScrollView, TextInput, Alert } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import { format } from 'date-fns';
@@ -60,14 +54,14 @@ export default function WaterTracker() {
     });
 
     if (log.consumed + amount >= log.target) {
-      Alert.alert('¡Meta Alcanzada! ðŸ’§', '¡Excelente hidratación hoy!');
+      Alert.alert('Â¡Meta Alcanzada! ðŸ’§', 'Â¡Excelente hidrataciÃ³n hoy!');
     }
   };
 
   const addCustomAmount = () => {
     const amount = parseInt(customAmount);
     if (!amount || amount <= 0) {
-      Alert.alert('Error', 'Ingresa una cantidad válida');
+      Alert.alert('Error', 'Ingresa una cantidad vÃ¡lida');
       return;
     }
     addWater(amount);
@@ -80,7 +74,7 @@ export default function WaterTracker() {
 
     Alert.alert(
       'Eliminar',
-      `¿Quitar ${intake.amount}ml?`,
+      `Â¿Quitar ${intake.amount}ml?`,
       [
         { text: 'Cancelar' },
         {
@@ -196,7 +190,7 @@ export default function WaterTracker() {
           </View>
 
           {/* Quick Add Buttons */}
-          <Text className="text-white font-bold text-lg mb-3">Añadir Rápido</Text>
+          <Text className="text-white font-bold text-lg mb-3">AÃ±adir RÃ¡pido</Text>
           <View className="flex-row gap-2 mb-6">
             {QUICK_AMOUNTS.map((amount) => (
               <TouchableOpacity
@@ -238,7 +232,7 @@ export default function WaterTracker() {
               <Text className="text-6xl mb-3">ðŸ’§</Text>
               <Text className="text-white font-bold text-lg mb-2">Sin Registro</Text>
               <Text className="text-zinc-400 text-center">
-                Empieza a trackear tu hidratación
+                Empieza a trackear tu hidrataciÃ³n
               </Text>
             </View>
           ) : (
@@ -274,14 +268,14 @@ export default function WaterTracker() {
               <Ionicons name="information-circle" size={20} color="#9D12DE" />
               <View className="flex-1 ml-3">
                 <Text className="text-primary/80 font-bold mb-2">
-                  Tips de Hidratación
+                  Tips de HidrataciÃ³n
                 </Text>
                 <Text className="text-primary/60 text-sm">
-                  • Meta general: 30-40ml por kg de peso{'\n'}
-                  • Más agua en días de entrenamiento{'\n'}
-                  • Bebe constantemente, no todo de golpe{'\n'}
-                  • Agua antes/durante/después del workout{'\n'}
-                  • Orina clara = buena hidratación
+                  â€¢ Meta general: 30-40ml por kg de peso{'\n'}
+                  â€¢ MÃ¡s agua en dÃ­as de entrenamiento{'\n'}
+                  â€¢ Bebe constantemente, no todo de golpe{'\n'}
+                  â€¢ Agua antes/durante/despuÃ©s del workout{'\n'}
+                  â€¢ Orina clara = buena hidrataciÃ³n
                 </Text>
               </View>
             </View>

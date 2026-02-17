@@ -1,10 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, TouchableOpacity, ScrollView } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -410,7 +406,7 @@ export default function AccommodatingResistance() {
                   
                   {section.content && section.content.map((item, iIdx) => (
                     <Text key={iIdx} className="text-zinc-300 mb-2 last:mb-0">
-                      � {item}
+                      • {item}
                     </Text>
                   ))}
 
@@ -557,7 +553,7 @@ export default function AccommodatingResistance() {
                 <Text className="text-primary/80 font-bold mb-3">Pro Tips:</Text>
                 {currentType.tips?.map((tip, idx) => (
                   <Text key={idx} className="text-primary/60 text-sm mb-2 last:mb-0">
-                    � {tip}
+                    • {tip}
                   </Text>
                 ))}
               </View>
@@ -567,16 +563,16 @@ export default function AccommodatingResistance() {
           <View className="bg-gradient-to-r from-red-500/20 to-purple-500/20 rounded-xl p-4 border border-red-500/30 mb-6">
             <Text className="text-red-400 font-bold mb-2">Important Notes</Text>
             <Text className="text-red-300 text-sm mb-2">
-              � Advanced technique - NOT for beginners
+              • Advanced technique - NOT for beginners
             </Text>
             <Text className="text-red-300 text-sm mb-2">
-              � Use in cycles (6-10 weeks), then return to straight weight
+              • Use in cycles (6-10 weeks), then return to straight weight
             </Text>
             <Text className="text-red-300 text-sm mb-2">
-              � Setup is critical - uneven tension = injury risk
+              • Setup is critical - uneven tension = injury risk
             </Text>
             <Text className="text-red-300 text-sm">
-              � Film your lifts to ensure bar speed is appropriate
+              • Film your lifts to ensure bar speed is appropriate
             </Text>
           </View>
         </View>

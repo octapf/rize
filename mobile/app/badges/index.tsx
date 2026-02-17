@@ -1,11 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  ScrollView,
-  TouchableOpacity,
-  Modal,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, ScrollView, TouchableOpacity, Modal } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
@@ -125,7 +120,7 @@ export default function BadgesScreen() {
             streak: 'Racha',
             volume: 'Volumen',
             level: 'Nivel',
-            records: 'Récords',
+            records: 'RÃ©cords',
             social: 'Social',
             special: 'Especiales',
           };
@@ -226,7 +221,7 @@ export default function BadgesScreen() {
                     <View className="flex-row items-center justify-center gap-2">
                       <Ionicons name="checkmark-circle" size={24} color="#9D12DE" />
                       <Text className="text-primary font-bold">
-                        ¡Desbloqueada!
+                        Â¡Desbloqueada!
                       </Text>
                     </View>
                   </View>

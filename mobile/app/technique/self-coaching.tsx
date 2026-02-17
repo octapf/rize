@@ -1,10 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, TouchableOpacity, ScrollView } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -90,7 +86,7 @@ export default function SelfCoaching() {
             'Trying to squat too deep for your mobility?',
           ],
           solutions: [
-            { solution: 'Learn proper bracing (360� pressure)', priority: 'Critical' },
+            { solution: 'Learn proper bracing (360• pressure)', priority: 'Critical' },
             { solution: 'Reduce depth if mobility limited', priority: 'High' },
             { solution: 'Core work: planks, dead bugs, bird dogs', priority: 'High' },
             { solution: 'Back extensions for erector strength', priority: 'Medium' },
@@ -294,7 +290,7 @@ export default function SelfCoaching() {
                   <Text className="text-white font-bold mb-2">Diagnosis Questions:</Text>
                   {item.diagnosis.map((q, qIdx) => (
                     <Text key={qIdx} className="text-zinc-300 text-sm mb-2">
-                      � {q}
+                      • {q}
                     </Text>
                   ))}
 
@@ -353,7 +349,7 @@ export default function SelfCoaching() {
                   <Text className="text-white font-bold mb-3">How to Track:</Text>
                   {metric.howTo.map((how, hIdx) => (
                     <Text key={hIdx} className="text-zinc-300 text-sm mb-2">
-                      � {how}
+                      • {how}
                     </Text>
                   ))}
 
@@ -369,38 +365,38 @@ export default function SelfCoaching() {
           <View className="bg-amber-500/10 rounded-xl p-4 border border-amber-500/30 mb-6">
             <Text className="text-amber-400 font-bold mb-2">Self-Coaching Mindset</Text>
             <Text className="text-amber-300 text-sm mb-2">
-              � Be objective - video doesn't lie, feelings do
+              • Be objective - video doesn't lie, feelings do
             </Text>
             <Text className="text-amber-300 text-sm mb-2">
-              � Be patient - technique changes take weeks, not days
+              • Be patient - technique changes take weeks, not days
             </Text>
             <Text className="text-amber-300 text-sm mb-2">
-              � Be humble - drop weight to fix form
+              • Be humble - drop weight to fix form
             </Text>
             <Text className="text-amber-300 text-sm mb-2">
-              � Be consistent - film every session
+              • Be consistent - film every session
             </Text>
             <Text className="text-amber-300 text-sm">
-              � Be smart - get external feedback when stuck
+              • Be smart - get external feedback when stuck
             </Text>
           </View>
 
           <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
             <Text className="text-primary/80 font-bold mb-2">When to Get a Coach</Text>
             <Text className="text-primary/60 text-sm mb-2">
-              � Consistently struggling with same fault
+              • Consistently struggling with same fault
             </Text>
             <Text className="text-primary/60 text-sm mb-2">
-              � Preparing for competition
+              • Preparing for competition
             </Text>
             <Text className="text-primary/60 text-sm mb-2">
-              � Plateau despite good self-coaching
+              • Plateau despite good self-coaching
             </Text>
             <Text className="text-primary/60 text-sm mb-2">
-              � Want expert programming
+              • Want expert programming
             </Text>
             <Text className="text-primary/60 text-sm">
-              � Worth the investment for serious lifters
+              • Worth the investment for serious lifters
             </Text>
           </View>
         </View>

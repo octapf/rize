@@ -1,11 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-  TextInput,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, TouchableOpacity, ScrollView, TextInput } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -205,11 +200,11 @@ export default function TrainingMaxCalculator() {
           <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
             <Text className="text-primary/80 font-bold mb-2">1RM Tips</Text>
             <Text className="text-primary/60 text-sm">
-              • Best accuracy con 3-5 reps{'\n'}
-              • No uses failure sets (deload primero){'\n'}
-              • Test 1RM cada 8-12 semanas{'\n'}
-              • Training Max = 90% de 1RM real{'\n'}
-              • Recalcula con cada PR
+              â€¢ Best accuracy con 3-5 reps{'\n'}
+              â€¢ No uses failure sets (deload primero){'\n'}
+              â€¢ Test 1RM cada 8-12 semanas{'\n'}
+              â€¢ Training Max = 90% de 1RM real{'\n'}
+              â€¢ Recalcula con cada PR
             </Text>
           </View>
         </View>

@@ -1,10 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, TouchableOpacity, ScrollView } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -240,12 +236,12 @@ export default function WorkoutStacks() {
           <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
             <Text className="text-primary/80 font-bold mb-2">Stack Tips</Text>
             <Text className="text-primary/60 text-sm">
-              • Start with lower doses{'\n'}
-              • Assess tolerance before combining{'\n'}
-              • Buy in bulk to save money{'\n'}
-              • DIY stacks &gt; pre-made formulas{'\n'}
-              • Cycle stimulants (caffeine){'\n'}
-              • Quality &gt; quantity of ingredients
+              â€¢ Start with lower doses{'\n'}
+              â€¢ Assess tolerance before combining{'\n'}
+              â€¢ Buy in bulk to save money{'\n'}
+              â€¢ DIY stacks &gt; pre-made formulas{'\n'}
+              â€¢ Cycle stimulants (caffeine){'\n'}
+              â€¢ Quality &gt; quantity of ingredients
             </Text>
           </View>
         </View>

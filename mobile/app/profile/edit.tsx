@@ -1,12 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  ScrollView,
-  TouchableOpacity,
-  TextInput,
-  Alert,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, ScrollView, TouchableOpacity, TextInput, Alert } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
@@ -22,12 +16,12 @@ export default function EditProfileScreen() {
   const [targetWeight, setTargetWeight] = useState('75');
 
   const handleSave = () => {
-    Alert.alert('¡Guardado!', 'Tu perfil ha sido actualizado');
+    Alert.alert('Â¡Guardado!', 'Tu perfil ha sido actualizado');
     router.back();
   };
 
   const handleChangeAvatar = () => {
-    Alert.alert('Cambiar Avatar', 'Función de galería en desarrollo');
+    Alert.alert('Cambiar Avatar', 'FunciÃ³n de galerÃ­a en desarrollo');
   };
 
   return (
@@ -67,7 +61,7 @@ export default function EditProfileScreen() {
         {/* Basic Info */}
         <Card className="p-4 mb-4">
           <Text className="text-gray-900 font-bold text-lg mb-4">
-            Información Básica
+            InformaciÃ³n BÃ¡sica
           </Text>
 
           <View className="gap-4">
@@ -98,7 +92,7 @@ export default function EditProfileScreen() {
                 value={bio}
                 onChangeText={setBio}
                 className="bg-gray-50 border border-gray-300 rounded-lg px-4 py-3 text-gray-900"
-                placeholder="Cuéntanos sobre ti"
+                placeholder="CuÃ©ntanos sobre ti"
                 multiline
                 numberOfLines={3}
               />
@@ -121,7 +115,7 @@ export default function EditProfileScreen() {
         {/* Physical Stats */}
         <Card className="p-4 mb-4">
           <Text className="text-gray-900 font-bold text-lg mb-4">
-            Estadísticas Físicas
+            EstadÃ­sticas FÃ­sicas
           </Text>
 
           <View className="gap-4">
@@ -168,12 +162,12 @@ export default function EditProfileScreen() {
 
           <View className="gap-3">
             <TouchableOpacity className="flex-row items-center justify-between p-3 bg-gray-50 rounded-lg">
-              <Text className="text-gray-900 font-semibold">Perfil Público</Text>
+              <Text className="text-gray-900 font-semibold">Perfil PÃºblico</Text>
               <Ionicons name="toggle" size={32} color="#9D12DE" />
             </TouchableOpacity>
 
             <TouchableOpacity className="flex-row items-center justify-between p-3 bg-gray-50 rounded-lg">
-              <Text className="text-gray-900 font-semibold">Mostrar Estadísticas</Text>
+              <Text className="text-gray-900 font-semibold">Mostrar EstadÃ­sticas</Text>
               <Ionicons name="toggle" size={32} color="#9D12DE" />
             </TouchableOpacity>
 
@@ -193,7 +187,7 @@ export default function EditProfileScreen() {
           <View className="gap-2">
             <TouchableOpacity className="bg-white border border-red-300 py-3 rounded-lg">
               <Text className="text-red-600 font-semibold text-center">
-                Cambiar Contraseña
+                Cambiar ContraseÃ±a
               </Text>
             </TouchableOpacity>
 

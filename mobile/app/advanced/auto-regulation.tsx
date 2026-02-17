@@ -1,10 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, TouchableOpacity, ScrollView } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -37,10 +33,10 @@ export default function AutoRegulation() {
       example: {
         scenario: 'Programmed: 4 sets of 5 @ RPE 8',
         execution: [
-          'Set 1: 100kg × 5 @ RPE 7 â†’ too easy, add weight',
-          'Set 2: 105kg × 5 @ RPE 8 â†’ perfect, maintain',
-          'Set 3: 105kg × 5 @ RPE 8.5 â†’ slightly harder, fatigue accumulating',
-          'Set 4: 105kg × 5 @ RPE 9 â†’ harder but completed, good session',
+          'Set 1: 100kg â€¢ 5 @ RPE 7 â†’ too easy, add weight',
+          'Set 2: 105kg â€¢ 5 @ RPE 8 â†’ perfect, maintain',
+          'Set 3: 105kg â€¢ 5 @ RPE 8.5 â†’ slightly harder, fatigue accumulating',
+          'Set 4: 105kg â€¢ 5 @ RPE 9 â†’ harder but completed, good session',
         ],
       },
     },
@@ -108,9 +104,9 @@ export default function AutoRegulation() {
         'Use to estimate 1RM or adjust program',
       ],
       formulas: [
-        'Epley: 1RM = weight × (1 + reps/30)',
-        'Brzycki: 1RM = weight × (36 / (37 - reps))',
-        'Wathan: 1RM = weight × (48.8 + 53.8×e^(-0.075×reps))',
+        'Epley: 1RM = weight â€¢ (1 + reps/30)',
+        'Brzycki: 1RM = weight â€¢ (36 / (37 - reps))',
+        'Wathan: 1RM = weight â€¢ (48.8 + 53.8Ã—e^(-0.075Ã—reps))',
       ],
       frequency: 'Test AMRAP every 3-4 weeks max',
       cautions: [
@@ -293,16 +289,16 @@ export default function AutoRegulation() {
           <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
             <Text className="text-primary/80 font-bold mb-2">Why Auto-Regulate?</Text>
             <Text className="text-primary/60 text-sm mb-2">
-              • Not every day is the same - sleep, stress, nutrition vary
+              â€¢ Not every day is the same - sleep, stress, nutrition vary
             </Text>
             <Text className="text-primary/60 text-sm mb-2">
-              • Prevents overtraining on bad days
+              â€¢ Prevents overtraining on bad days
             </Text>
             <Text className="text-primary/60 text-sm mb-2">
-              • Allows pushing harder on good days
+              â€¢ Allows pushing harder on good days
             </Text>
             <Text className="text-primary/60 text-sm">
-              • More sustainable long-term than rigid programming
+              â€¢ More sustainable long-term than rigid programming
             </Text>
           </View>
         </View>

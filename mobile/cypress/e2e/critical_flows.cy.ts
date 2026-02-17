@@ -1,11 +1,11 @@
-describe('Flujos Cr韙icos de RIZE', () => {
+describe('Flujos Cr铆ticos de RIZE', () => {
 
   beforeEach(() => {
     cy.on('uncaught:exception', () => false);
   });
 
-  // TEST 1: Validaci髇 de Registro (Contrase馻s)
-  it('1. [Registro] Debe validar coincidencia de contrase馻s', () => {
+  // TEST 1: Validaci贸n de Registro (Contrase帽as)
+  it('1. [Registro] Debe validar coincidencia de contrase帽as', () => {
     cy.visit('/auth/register');
     
     cy.get('input').eq(0).type('Test Name');     
@@ -64,8 +64,8 @@ describe('Flujos Cr韙icos de RIZE', () => {
     cy.contains(/Iniciar Sesi|Bienvenido/i, { timeout: 10000 }).should('be.visible');
   });
 
-  // TEST 4: Login y Navegaci髇 (Mocked)
-  it('4. [Navegaci髇] Login exitoso y acceso a Ejercicios', () => {
+  // TEST 4: Login y Navegaci贸n (Mocked)
+  it('4. [Navegaci贸n] Login exitoso y acceso a Ejercicios', () => {
     cy.intercept('POST', '**/auth/login', {
       statusCode: 200,
       body: {
@@ -85,7 +85,7 @@ describe('Flujos Cr韙icos de RIZE', () => {
     cy.visit('/auth/login');
     cy.get('input').eq(0).type('demo@rize.app');
     cy.get('input').last().type('password123'); 
-    cy.contains('Iniciar Sesi髇').click();
+    cy.contains('Iniciar Sesi贸n').click();
 
     cy.wait('@loginReq', { timeout: 15000 });
     cy.contains('Tu Progreso', { timeout: 15000 }).should('be.visible');
@@ -95,8 +95,8 @@ describe('Flujos Cr韙icos de RIZE', () => {
     cy.contains('Biblioteca completa de calistenia', { timeout: 10000 }).should('be.visible');
   });
 
-  // TEST 5: Navegaci髇 a Perfil (Mocked)
-  it('5. [Navegaci髇] Acceso al Perfil de Usuario', () => {
+  // TEST 5: Navegaci贸n a Perfil (Mocked)
+  it('5. [Navegaci贸n] Acceso al Perfil de Usuario', () => {
       cy.intercept('POST', '**/auth/login', {
         statusCode: 200,
         body: {
@@ -115,7 +115,7 @@ describe('Flujos Cr韙icos de RIZE', () => {
       cy.visit('/auth/login');
       cy.get('input').eq(0).type('demo@rize.app');
       cy.get('input').last().type('password123');
-      cy.contains('Iniciar Sesi髇').click();
+      cy.contains('Iniciar Sesi贸n').click();
       
       cy.wait('@loginReq');
       cy.contains('Tu Progreso', { timeout: 15000 }).should('be.visible');

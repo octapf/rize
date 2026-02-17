@@ -1,10 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, TouchableOpacity, ScrollView } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -90,7 +86,7 @@ export default function PRDashboard() {
     { name: '100kg Bench', achieved: true, date: '15 Ene 2024' },
     { name: '200kg Deadlift', achieved: true, date: '8 Dic 2024' },
     { name: '150kg Squat', achieved: true, date: '22 Oct 2024' },
-    { name: '225kg Deadlift', achieved: false, date: 'Próximamente' },
+    { name: '225kg Deadlift', achieved: false, date: 'PrÃ³ximamente' },
   ];
 
   const getCategoryIcon = (category: string) => {
@@ -257,11 +253,11 @@ export default function PRDashboard() {
           <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
             <Text className="text-primary/80 font-bold mb-2">PR Tips</Text>
             <Text className="text-primary/60 text-sm">
-              • Valida PRs con buena técnica{'\n'}
-              • No intentes PR con fatiga acumulada{'\n'}
-              • Calentamiento específico antes de PRs{'\n'}
-              • Filma tus PRs para analizar técnica{'\n'}
-              • Celebra cada logro!
+              â€¢ Valida PRs con buena tÃ©cnica{'\n'}
+              â€¢ No intentes PR con fatiga acumulada{'\n'}
+              â€¢ Calentamiento especÃ­fico antes de PRs{'\n'}
+              â€¢ Filma tus PRs para analizar tÃ©cnica{'\n'}
+              â€¢ Celebra cada logro!
             </Text>
           </View>
         </View>

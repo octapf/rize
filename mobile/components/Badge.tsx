@@ -1,5 +1,6 @@
 import React from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, TouchableOpacity } from 'react-native';;
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
 import { BADGES, BADGE_TIERS, BadgeId } from '@/constants/badges';

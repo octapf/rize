@@ -1,10 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, TouchableOpacity, ScrollView } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -18,7 +14,7 @@ export default function ConsistencyMetrics() {
       icon: 'checkmark-circle' as const,
       color: 'blue',
       description: 'Percentage of planned workouts completed',
-      calculation: '(Completed Workouts / Planned Workouts) × 100',
+      calculation: '(Completed Workouts / Planned Workouts) â€¢ 100',
       targets: [
         { level: 'Excellent', range: '90-100%', impact: 'Maximum progress' },
         { level: 'Good', range: '80-89%', impact: 'Solid progress' },
@@ -60,7 +56,7 @@ export default function ConsistencyMetrics() {
       icon: 'nutrition' as const,
       color: 'purple',
       description: 'Hitting macro/calorie targets',
-      calculation: '(Days within Â±5% targets / Total Days) × 100',
+      calculation: '(Days within Â±5% targets / Total Days) â€¢ 100',
       targets: [
         { level: 'Elite', range: '95-100%', impact: 'Max results' },
         { level: 'Excellent', range: '85-94%', impact: 'Great results' },
@@ -74,7 +70,7 @@ export default function ConsistencyMetrics() {
       icon: 'moon' as const,
       color: 'amber',
       description: '7+ hours sleep per night',
-      calculation: '(Nights with 7+ hours / Total Nights) × 100',
+      calculation: '(Nights with 7+ hours / Total Nights) â€¢ 100',
       targets: [
         { level: 'Optimal', range: '90-100%', impact: 'Peak recovery' },
         { level: 'Good', range: '75-89%', impact: 'Adequate recovery' },
@@ -251,23 +247,23 @@ export default function ConsistencyMetrics() {
           <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
             <Text className="text-primary/80 font-bold mb-2">Why Consistency Matters</Text>
             <Text className="text-primary/60 text-sm">
-              • 80% adherence beats 100% intensity{'\n'}
-              • Small daily actions compound{'\n'}
-              • Builds unbreakable habits{'\n'}
-              • Prevents boom-bust cycles{'\n'}
-              • Long-term &gt; short-term heroics
+              â€¢ 80% adherence beats 100% intensity{'\n'}
+              â€¢ Small daily actions compound{'\n'}
+              â€¢ Builds unbreakable habits{'\n'}
+              â€¢ Prevents boom-bust cycles{'\n'}
+              â€¢ Long-term &gt; short-term heroics
             </Text>
           </View>
 
           <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
             <Text className="text-primary font-bold mb-2">Improving Consistency</Text>
             <Text className="text-primary/80 text-sm">
-              • Schedule workouts like meetings{'\n'}
-              • Remove friction (prep gear night before){'\n'}
-              • Never miss twice in a row{'\n'}
-              • Track immediately{'\n'}
-              • Accountability partner{'\n'}
-              • Forgive missed days, refocus
+              â€¢ Schedule workouts like meetings{'\n'}
+              â€¢ Remove friction (prep gear night before){'\n'}
+              â€¢ Never miss twice in a row{'\n'}
+              â€¢ Track immediately{'\n'}
+              â€¢ Accountability partner{'\n'}
+              â€¢ Forgive missed days, refocus
             </Text>
           </View>
         </View>

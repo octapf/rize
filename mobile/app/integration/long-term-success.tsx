@@ -1,10 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, TouchableOpacity, ScrollView } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -443,19 +439,19 @@ export default function LongTermSuccess() {
           <View className="bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-xl p-5 border border-purple-500/30 mb-6">
             <Text className="text-purple-400 font-bold text-lg mb-3">The Marathon, Not Sprint</Text>
             <Text className="text-purple-300 text-sm mb-2">
-              � Think in decades - you have 30+ years of training ahead
+              • Think in decades - you have 30+ years of training ahead
             </Text>
             <Text className="text-purple-300 text-sm mb-2">
-              � Consistency beats intensity over the long run
+              • Consistency beats intensity over the long run
             </Text>
             <Text className="text-purple-300 text-sm mb-2">
-              � Injuries that sideline you &gt; slow progress
+              • Injuries that sideline you &gt; slow progress
             </Text>
             <Text className="text-purple-300 text-sm mb-2">
-              � Enjoy the process - it's the only way to sustain it
+              • Enjoy the process - it's the only way to sustain it
             </Text>
             <Text className="text-purple-300 text-sm">
-              � Your "why" will carry you through hard times
+              • Your "why" will carry you through hard times
             </Text>
           </View>
 

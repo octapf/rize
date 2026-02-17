@@ -1,5 +1,6 @@
 import React from 'react';
-import { View, Text, TouchableOpacity, ActivityIndicator } from 'react-native';
+import { View, TouchableOpacity, ActivityIndicator } from 'react-native';
+import { Text } from '@/components/ui/Text';
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
 import { router } from 'expo-router';
@@ -83,10 +84,11 @@ export const QuickStats: React.FC<QuickStatsProps> = ({ stats, isLoading }) => {
             className="flex-1"
             disabled={!stat.route}
           >
-            <Card className="p-0 overflow-hidden h-28 border-white/10">
+            <Card className="p-0 overflow-visible min-h-[140px] border-white/10">
               <LinearGradient
                 colors={stat.gradient}
-                className="h-full p-4 justify-between"
+                style={{ paddingHorizontal: 16, paddingTop: 16, paddingBottom: 20 }}
+                className="flex-1 justify-between"
               >
                 <View className="flex-row items-center justify-between">
                   <View className={`p-2 rounded-lg ${stat.textColor === 'black' ? 'bg-black/10' : 'bg-white/20'}`}>
@@ -96,11 +98,11 @@ export const QuickStats: React.FC<QuickStatsProps> = ({ stats, isLoading }) => {
                     <Ionicons name="chevron-forward" size={20} color={stat.textColor ? "rgba(0,0,0,0.5)" : "rgba(255,255,255,0.7)"} />
                   )}
                 </View>
-                <View>
-                  <Text className={`text-2xl font-bold mb-1 ${stat.textColor === 'black' ? 'text-black' : 'text-white'}`}>
+                <View style={{ paddingBottom: 2 }}>
+                  <Text className={`text-2xl font-bold mb-1 ${stat.textColor === 'black' ? 'text-black' : 'text-white'}`} numberOfLines={1}>
                     {stat.value}
                   </Text>
-                  <Text className={`text-sm ${stat.textColor === 'black' ? 'text-black/70' : 'text-white/80'}`}>
+                  <Text className={`text-sm ${stat.textColor === 'black' ? 'text-black/70' : 'text-white/80'}`} numberOfLines={1} style={{ lineHeight: 20 }}>
                     {stat.label}
                   </Text>
                 </View>
@@ -119,10 +121,11 @@ export const QuickStats: React.FC<QuickStatsProps> = ({ stats, isLoading }) => {
             className="flex-1"
             disabled={!stat.route}
           >
-            <Card className="p-0 overflow-hidden h-28 border-white/10">
+            <Card className="p-0 overflow-visible min-h-[140px] border-white/10">
               <LinearGradient
                 colors={stat.gradient}
-                className="h-full p-4 justify-between"
+                style={{ paddingHorizontal: 16, paddingTop: 16, paddingBottom: 20 }}
+                className="flex-1 justify-between"
               >
                 <View className="flex-row items-center justify-between">
                   <View className="bg-white/20 p-2 rounded-lg">
@@ -132,11 +135,13 @@ export const QuickStats: React.FC<QuickStatsProps> = ({ stats, isLoading }) => {
                     <Ionicons name="chevron-forward" size={20} color="rgba(255,255,255,0.7)" />
                   )}
                 </View>
-                <View>
-                  <Text className="text-white text-2xl font-bold mb-1">
+                <View style={{ paddingBottom: 2 }}>
+                  <Text className="text-white text-2xl font-bold mb-1" numberOfLines={1}>
                     {stat.value}
                   </Text>
-                  <Text className="text-white/80 text-sm">{stat.label}</Text>
+                  <Text className="text-white/80 text-sm" numberOfLines={1} style={{ lineHeight: 20 }}>
+                    {stat.label}
+                  </Text>
                 </View>
               </LinearGradient>
             </Card>
@@ -146,7 +151,7 @@ export const QuickStats: React.FC<QuickStatsProps> = ({ stats, isLoading }) => {
 
       {/* XP Progress Bar (if provided) */}
       {stats?.xp !== undefined && (
-        <Card className="p-4 bg-[#333333] border-white/10">
+        <Card className="p-4 bg-[#333333] border-white/10 mt-1">
           <View className="flex-row items-center justify-between mb-2">
             <Text className="text-gray-300 font-semibold">
               Progreso al siguiente nivel

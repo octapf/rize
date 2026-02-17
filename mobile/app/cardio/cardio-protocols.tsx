@@ -1,10 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, TouchableOpacity, ScrollView } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -265,11 +261,11 @@ export default function CardioProtocols() {
           <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
             <Text className="text-primary/80 font-bold mb-2">Weekly Structure</Text>
             <Text className="text-primary/60 text-sm">
-              • Mix different intensities{'\n'}
-              • 80/20 rule: 80% easy, 20% hard{'\n'}
-              • Don't go hard every day{'\n'}
-              • Recovery is essential{'\n'}
-              • Progress gradually
+              â€¢ Mix different intensities{'\n'}
+              â€¢ 80/20 rule: 80% easy, 20% hard{'\n'}
+              â€¢ Don't go hard every day{'\n'}
+              â€¢ Recovery is essential{'\n'}
+              â€¢ Progress gradually
             </Text>
           </View>
         </View>

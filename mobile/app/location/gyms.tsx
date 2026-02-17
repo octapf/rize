@@ -1,12 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-  Alert,
-  TextInput,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, TouchableOpacity, ScrollView, Alert, TextInput } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -97,7 +91,7 @@ const GYMS: Gym[] = [
     hours: 'Abierto 24 horas',
     isOpen: true,
     equipment: ['Squat Racks', 'Bench Press', 'Cables', 'Dumbbells', 'Cardio', 'Machines'],
-    amenities: ['Vestuarios', 'Duchas', 'Wifi', 'Acceso global', 'App mÛvil'],
+    amenities: ['Vestuarios', 'Duchas', 'Wifi', 'Acceso global', 'App m√≥vil'],
     address: 'Plaza Comercial Norte, Local 12',
     phone: '+52 55 4567 8901',
     image: 'üåü',
@@ -142,7 +136,7 @@ export default function GymFinder() {
   const viewGymDetails = (gym: Gym) => {
     Alert.alert(
       gym.name,
-      `${gym.address}\n\nTelÈfono: ${gym.phone}\n\nHorario: ${gym.hours}\n\nEquipo: ${gym.equipment.join(', ')}\n\nAmenidades: ${gym.amenities.join(', ')}`,
+      `${gym.address}\n\nTel√©fono: ${gym.phone}\n\nHorario: ${gym.hours}\n\nEquipo: ${gym.equipment.join(', ')}\n\nAmenidades: ${gym.amenities.join(', ')}`,
       [
         { text: 'Cerrar' },
         { text: 'Llamar', onPress: () => Alert.alert('Llamando...') },
@@ -152,7 +146,7 @@ export default function GymFinder() {
   };
 
   const saveGym = (gymId: string, gymName: string) => {
-    Alert.alert('Guardado', `${gymName} aÒadido a favoritos`);
+    Alert.alert('Guardado', `${gymName} a√±adido a favoritos`);
   };
 
   return (
@@ -253,7 +247,7 @@ export default function GymFinder() {
                     <View className="flex-row items-center mb-1">
                       <Ionicons name="location" size={12} color="#71717A" />
                       <Text className="text-zinc-400 text-xs ml-1">
-                        {gym.distance} km ∑ {gym.priceRange}
+                        {gym.distance} km ‚Ä¢ {gym.priceRange}
                       </Text>
                     </View>
                     <View className="flex-row items-center">
@@ -262,7 +256,7 @@ export default function GymFinder() {
                         {gym.rating}
                       </Text>
                       <Text className="text-zinc-400 text-xs ml-1">
-                        ({gym.reviews} reseÒas)
+                        ({gym.reviews} rese√±as)
                       </Text>
                     </View>
                   </View>
@@ -305,7 +299,7 @@ export default function GymFinder() {
                   {gym.equipment.length > 4 && (
                     <View className="bg-primary/10 rounded px-2 py-1">
                       <Text className="text-primary/80 text-xs">
-                        +{gym.equipment.length - 4} m·s
+                        +{gym.equipment.length - 4} m√°s
                       </Text>
                     </View>
                   )}
@@ -366,7 +360,7 @@ export default function GymFinder() {
                   Encuentra tu Gym Ideal
                 </Text>
                 <Text className="text-primary/60 text-sm">
-                  Elige basado en equipo disponible, cercanÌa y ambiente. Muchos ofrecen pases de prueba gratuitos.
+                  Elige basado en equipo disponible, cercan√≠a y ambiente. Muchos ofrecen pases de prueba gratuitos.
                 </Text>
               </View>
             </View>

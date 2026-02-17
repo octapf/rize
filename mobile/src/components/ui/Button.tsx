@@ -1,11 +1,6 @@
 import React from 'react';
-import {
-  TouchableOpacity,
-  Text,
-  ActivityIndicator,
-  TouchableOpacityProps,
-  ViewStyle,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { TouchableOpacity, ActivityIndicator, TouchableOpacityProps, ViewStyle } from 'react-native';;
 import { cn } from '@/lib/utils';
 
 export type ButtonVariant =

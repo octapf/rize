@@ -1,12 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-  TextInput,
-  Alert,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, TouchableOpacity, ScrollView, TextInput, Alert } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -44,14 +38,14 @@ const TEMPLATES: Template[] = [
   },
   {
     id: '2',
-    name: 'Plan Definición Pro',
+    name: 'Plan DefiniciÃ³n Pro',
     creator: 'Ana Fitness',
     rating: 4.9,
     reviews: 567,
     price: 9.99,
     level: 'avanzado',
     duration: '8 semanas',
-    category: 'Definición',
+    category: 'DefiniciÃ³n',
     workouts: 48,
     image: 'ðŸ”¥',
     isPremium: true,
@@ -75,7 +69,7 @@ const TEMPLATES: Template[] = [
   {
     id: '4',
     name: 'Push/Pull/Legs Premium',
-    creator: 'María PT',
+    creator: 'MarÃ­a PT',
     rating: 5.0,
     reviews: 432,
     price: 14.99,
@@ -109,7 +103,7 @@ export default function MarketplaceRoutines() {
   const [selectedLevel, setSelectedLevel] = useState('Todos');
   const [searchQuery, setSearchQuery] = useState('');
 
-  const categories = ['Todos', 'Fuerza', 'Hipertrofia', 'Definición', 'General'];
+  const categories = ['Todos', 'Fuerza', 'Hipertrofia', 'DefiniciÃ³n', 'General'];
   const levels = ['Todos', 'principiante', 'intermedio', 'avanzado'];
 
   const getLevelColor = (level: string) => {
@@ -129,27 +123,27 @@ export default function MarketplaceRoutines() {
     if (template.price === 0) {
       Alert.alert(
         'Rutina Gratis',
-        '¿Deseas agregar esta rutina a tu biblioteca?',
+        'Â¿Deseas agregar esta rutina a tu biblioteca?',
         [
           { text: 'Cancelar', style: 'cancel' },
           {
             text: 'Agregar',
-            onPress: () => Alert.alert('¡Agregado!', 'Rutina disponible en tu biblioteca'),
+            onPress: () => Alert.alert('Â¡Agregado!', 'Rutina disponible en tu biblioteca'),
           },
         ]
       );
     } else {
       Alert.alert(
         'Comprar Rutina',
-        `Precio: $${template.price.toFixed(2)}\n\n¿Confirmar compra?`,
+        `Precio: $${template.price.toFixed(2)}\n\nÂ¿Confirmar compra?`,
         [
           { text: 'Cancelar', style: 'cancel' },
           {
             text: 'Comprar',
             onPress: () =>
               Alert.alert(
-                '¡Compra Exitosa!',
-                'La rutina está ahora en tu biblioteca'
+                'Â¡Compra Exitosa!',
+                'La rutina estÃ¡ ahora en tu biblioteca'
               ),
           },
         ]
@@ -211,7 +205,7 @@ export default function MarketplaceRoutines() {
       <ScrollView className="flex-1" showsVerticalScrollIndicator={false}>
         {/* Category Filter */}
         <View className="px-6 pt-4">
-          <Text className="text-white font-bold mb-3">Categoría</Text>
+          <Text className="text-white font-bold mb-3">CategorÃ­a</Text>
           <ScrollView
             horizontal
             showsHorizontalScrollIndicator={false}
@@ -322,7 +316,7 @@ export default function MarketplaceRoutines() {
                       </Text>
                     </View>
                     <Text className="text-zinc-500 text-sm ml-2">
-                      ({template.reviews} reseñas)
+                      ({template.reviews} reseÃ±as)
                     </Text>
                   </View>
 
@@ -379,7 +373,7 @@ export default function MarketplaceRoutines() {
                               <Text className="text-white font-bold text-2xl">
                                 ${template.price.toFixed(2)}
                               </Text>
-                              <Text className="text-zinc-500 text-xs">Pago único</Text>
+                              <Text className="text-zinc-500 text-xs">Pago Ãºnico</Text>
                             </View>
                           )}
                         </View>
@@ -424,7 +418,7 @@ export default function MarketplaceRoutines() {
             <View className="flex-row items-center justify-between mb-3">
               <View className="flex-1">
                 <Text className="text-white font-bold text-xl mb-2">
-                  ¿Eres entrenador?
+                  Â¿Eres entrenador?
                 </Text>
                 <Text className="text-white/80 text-sm">
                   Vende tus rutinas y monetiza tu conocimiento

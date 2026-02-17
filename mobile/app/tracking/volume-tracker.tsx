@@ -1,11 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-  TextInput,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, TouchableOpacity, ScrollView, TextInput } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -201,16 +196,16 @@ export default function VolumeTracker() {
           <View className="bg-amber-500/10 rounded-xl p-4 border border-amber-500/30 mb-6">
             <Text className="text-amber-400 font-bold mb-2">Volume Management</Text>
             <Text className="text-amber-300 text-sm mb-2">
-              • Start at minimum effective volume (MEV)
+              â€¢ Start at minimum effective volume (MEV)
             </Text>
             <Text className="text-amber-300 text-sm mb-2">
-              • Add 1-2 sets per week when progress stalls
+              â€¢ Add 1-2 sets per week when progress stalls
             </Text>
             <Text className="text-amber-300 text-sm mb-2">
-              • Deload when approaching maximum recoverable volume (MRV)
+              â€¢ Deload when approaching maximum recoverable volume (MRV)
             </Text>
             <Text className="text-amber-300 text-sm">
-              • Track volume to avoid junk volume
+              â€¢ Track volume to avoid junk volume
             </Text>
           </View>
 

@@ -1,11 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-  Alert,
-} from 'react-native';
+import { Text } from '@/components/ui/Text';
+import { View, TouchableOpacity, ScrollView, Alert } from 'react-native';;
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -170,7 +165,7 @@ export default function PersonalRecords() {
   const addPR = () => {
     Alert.alert(
       'Nuevo PR',
-      '°Felicitaciones! Registra tu nuevo rÈcord personal',
+      '¬°Felicitaciones! Registra tu nuevo r√©cord personal',
       [
         { text: 'Cancelar', style: 'cancel' },
         { text: 'Registrar', onPress: () => Alert.alert('PR registrado') },
@@ -234,7 +229,7 @@ export default function PersonalRecords() {
             <Ionicons name="arrow-back" size={24} color="white" />
           </TouchableOpacity>
           <Text className="text-white text-2xl font-bold flex-1 ml-3">
-            RÈcords Personales
+            R√©cords Personales
           </Text>
           <TouchableOpacity onPress={addPR}>
             <Ionicons name="add-circle" size={28} color="#9D12DE" />
@@ -327,7 +322,7 @@ export default function PersonalRecords() {
 
               {/* Current PR */}
               <View className="bg-zinc-800 rounded-lg p-4 mb-3">
-                <Text className="text-zinc-400 text-xs mb-2">R…CORD ACTUAL</Text>
+                <Text className="text-zinc-400 text-xs mb-2">R√âCORD ACTUAL</Text>
                 <View className="flex-row items-center justify-between">
                   {record.weight !== undefined && (
                     <View className="flex-1">
@@ -438,7 +433,7 @@ export default function PersonalRecords() {
                 <View className="flex-1">
                   <Text className="text-white font-bold text-lg">{monthly.month}</Text>
                   <Text className="text-zinc-400 text-sm">
-                    {monthly.totalPRs} rÈcords nuevos
+                    {monthly.totalPRs} r√©cords nuevos
                   </Text>
                 </View>
                 <Ionicons name="trophy" size={28} color="#FFEA00" />
@@ -465,10 +460,10 @@ export default function PersonalRecords() {
               <Ionicons name="trophy" size={20} color="#9D12DE" />
               <View className="flex-1 ml-3">
                 <Text className="text-primary font-bold mb-2">
-                  ProgresiÛn Sistem·tica
+                  Progresi√≥n Sistem√°tica
                 </Text>
                 <Text className="text-primary/80 text-sm">
-                  Cada PR es un hito. Celebra tus victorias y sigue super·ndote.
+                  Cada PR es un hito. Celebra tus victorias y sigue super√°ndote.
                 </Text>
               </View>
             </View>
