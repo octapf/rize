@@ -1,4 +1,4 @@
-Ôªøimport React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -32,9 +32,9 @@ interface ForumPost {
 const FORUM_POSTS: ForumPost[] = [
   {
     id: '1',
-    author: { name: 'Carlos Pro', avatar: '√∞≈∏‚Äô¬™', level: 24, verified: true },
-    title: '¬øC√≥mo romper plateau en sentadilla?',
-    content: 'Llevo 3 semanas estancado en 140kg x 5. ¬øAlg√∫n tip para superar esto?',
+    author: { name: 'Carlos Pro', avatar: 'üí™', level: 24, verified: true },
+    title: 'øCÛmo romper plateau en sentadilla?',
+    content: 'Llevo 3 semanas estancado en 140kg x 5. øAlg˙n tip para superar esto?',
     category: 'Fuerza',
     replies: 18,
     views: 342,
@@ -45,10 +45,10 @@ const FORUM_POSTS: ForumPost[] = [
   },
   {
     id: '2',
-    author: { name: 'Ana Fitness', avatar: '√∞≈∏¬è‚Äπ√Ø¬∏¬è', level: 18, verified: false },
-    title: 'Mejor protocolo para definici√≥n',
-    content: 'Empezando corte. ¬øDeficit 300 o 500 kcal? ¬øCardio o solo pesas?',
-    category: 'Nutrici√≥n',
+    author: { name: 'Ana Fitness', avatar: 'üèãÔ∏è', level: 18, verified: false },
+    title: 'Mejor protocolo para definiciÛn',
+    content: 'Empezando corte. øDeficit 300 o 500 kcal? øCardio o solo pesas?',
+    category: 'NutriciÛn',
     replies: 31,
     views: 589,
     likes: 45,
@@ -58,10 +58,10 @@ const FORUM_POSTS: ForumPost[] = [
   },
   {
     id: '3',
-    author: { name: 'Miguel Beast', avatar: '√∞≈∏¬¶¬Å', level: 32, verified: true },
-    title: 'Creatina: ¬øFase de carga necesaria?',
-    content: 'Debate: ¬ø5g diarios desde d√≠a 1 o loading phase de 20g x 5 d√≠as?',
-    category: 'Suplementaci√≥n',
+    author: { name: 'Miguel Beast', avatar: 'ü¶Å', level: 32, verified: true },
+    title: 'Creatina: øFase de carga necesaria?',
+    content: 'Debate: ø5g diarios desde dÌa 1 o loading phase de 20g x 5 dÌas?',
+    category: 'SuplementaciÛn',
     replies: 24,
     views: 456,
     likes: 38,
@@ -71,9 +71,9 @@ const FORUM_POSTS: ForumPost[] = [
   },
   {
     id: '4',
-    author: { name: 'Laura Recovery', avatar: 'üßò', level: 15, verified: false },
+    author: { name: 'Laura Recovery', avatar: '??', level: 15, verified: false },
     title: 'Dolor de hombro en press banca',
-    content: 'Molestia frontal del hombro al bajar barra. ¬øT√©cnica o lesi√≥n?',
+    content: 'Molestia frontal del hombro al bajar barra. øTÈcnica o lesiÛn?',
     category: 'Salud',
     replies: 12,
     views: 234,
@@ -84,10 +84,10 @@ const FORUM_POSTS: ForumPost[] = [
   },
   {
     id: '5',
-    author: { name: 'Pedro Iron', avatar: '‚ö°', level: 28, verified: true },
-    title: '[GU√É¬çA] 5/3/1 para principiantes',
-    content: 'Tutorial completo del programa Wendler 5/3/1. Setup, progresi√≥n, deload.',
-    category: 'Programaci√≥n',
+    author: { name: 'Pedro Iron', avatar: '?', level: 28, verified: true },
+    title: '[GU√çA] 5/3/1 para principiantes',
+    content: 'Tutorial completo del programa Wendler 5/3/1. Setup, progresiÛn, deload.',
+    category: 'ProgramaciÛn',
     replies: 67,
     views: 1248,
     likes: 142,
@@ -97,10 +97,10 @@ const FORUM_POSTS: ForumPost[] = [
   },
   {
     id: '6',
-    author: { name: 'Sofia Cardio', avatar: '√∞≈∏¬è∆í', level: 12, verified: false },
+    author: { name: 'Sofia Cardio', avatar: 'üèÉ', level: 12, verified: false },
     title: 'Combinar pesas y running',
-    content: '¬øC√≥mo estructurar semana para no perder m√∫sculo entrenando marat√≥n?',
-    category: 'Programaci√≥n',
+    content: 'øCÛmo estructurar semana para no perder m˙sculo entrenando maratÛn?',
+    category: 'ProgramaciÛn',
     replies: 9,
     views: 167,
     likes: 14,
@@ -113,10 +113,10 @@ const FORUM_POSTS: ForumPost[] = [
 const CATEGORIES = [
   { id: 'all', name: 'Todos', icon: 'apps', color: 'text-zinc-400' },
   { id: 'Fuerza', name: 'Fuerza', icon: 'barbell', color: 'text-red-400' },
-  { id: 'Nutrici√≥n', name: 'Nutrici√≥n', icon: 'restaurant', color: 'text-primary' },
-  { id: 'Suplementaci√≥n', name: 'Suplementos', icon: 'flask', color: 'text-purple-400' },
+  { id: 'NutriciÛn', name: 'NutriciÛn', icon: 'restaurant', color: 'text-primary' },
+  { id: 'SuplementaciÛn', name: 'Suplementos', icon: 'flask', color: 'text-purple-400' },
   { id: 'Salud', name: 'Salud', icon: 'medical', color: 'text-primary/80' },
-  { id: 'Programaci√≥n', name: 'Programaci√≥n', icon: 'calendar', color: 'text-amber-400' },
+  { id: 'ProgramaciÛn', name: 'ProgramaciÛn', icon: 'calendar', color: 'text-amber-400' },
 ];
 
 export default function CommunityForum() {
@@ -141,7 +141,7 @@ export default function CommunityForum() {
   const openPost = (post: ForumPost) => {
     Alert.alert(
       post.title,
-      `${post.content}\n\nPor: ${post.author.name}\n${post.replies} respuestas ‚Ä¢ ${post.views} vistas`,
+      `${post.content}\n\nPor: ${post.author.name}\n${post.replies} respuestas ï ${post.views} vistas`,
       [
         { text: 'Cancelar', style: 'cancel' },
         { text: 'Ver Completo' },
@@ -280,9 +280,9 @@ export default function CommunityForum() {
                   className={`px-2 py-1 rounded-lg ${
                     post.category === 'Fuerza'
                       ? 'bg-red-500/10'
-                      : post.category === 'Nutrici√≥n'
+                      : post.category === 'NutriciÛn'
                       ? 'bg-primary/10'
-                      : post.category === 'Suplementaci√≥n'
+                      : post.category === 'SuplementaciÛn'
                       ? 'bg-purple-500/10'
                       : post.category === 'Salud'
                       ? 'bg-primary/10'
@@ -293,9 +293,9 @@ export default function CommunityForum() {
                     className={`text-xs ${
                       post.category === 'Fuerza'
                         ? 'text-red-400'
-                        : post.category === 'Nutrici√≥n'
+                        : post.category === 'NutriciÛn'
                         ? 'text-primary'
-                        : post.category === 'Suplementaci√≥n'
+                        : post.category === 'SuplementaciÛn'
                         ? 'text-purple-400'
                         : post.category === 'Salud'
                         ? 'text-primary/80'
@@ -357,7 +357,7 @@ export default function CommunityForum() {
                   Comunidad de Respeto
                 </Text>
                 <Text className="text-primary/60 text-sm">
-                  Comparte conocimiento, haz preguntas y ayuda a otros. Juntos somos m√°s fuertes.
+                  Comparte conocimiento, haz preguntas y ayuda a otros. Juntos somos m·s fuertes.
                 </Text>
               </View>
             </View>

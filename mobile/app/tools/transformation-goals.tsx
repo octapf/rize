@@ -1,4 +1,4 @@
-Ôªøimport React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -49,7 +49,7 @@ const MOCK_GOAL: BodyTransformationGoal = {
   photoCheckIns: 8,
   weeklyCheckIns: 12,
   status: 'active',
-  notes: 'Objetivo: +0.5kg por semana, prote√≠na 2g/kg',
+  notes: 'Objetivo: +0.5kg por semana, proteÌna 2g/kg',
 };
 
 export default function TransformationGoals() {
@@ -97,7 +97,7 @@ export default function TransformationGoals() {
             const newWeight = parseFloat(value || '0');
             if (newWeight > 0) {
               setGoal({ ...goal, currentWeight: newWeight, weeklyCheckIns: goal.weeklyCheckIns + 1 });
-              Alert.alert('Peso Actualizado! ‚öñÔ∏è¬è', `Nuevo peso: ${newWeight}kg`);
+              Alert.alert('Peso Actualizado! ??è', `Nuevo peso: ${newWeight}kg`);
             }
           },
         },
@@ -110,7 +110,7 @@ export default function TransformationGoals() {
   const addPhotoCheckIn = () => {
     Alert.alert(
       'Foto de Progreso',
-      'Funcionalidad de c√°mara en desarrollo',
+      'Funcionalidad de c·mara en desarrollo',
       [
         {
           text: 'OK',
@@ -135,7 +135,7 @@ export default function TransformationGoals() {
               const newMeasurements = [...goal.measurements];
               newMeasurements[index] = { ...measurement, current: newValue };
               setGoal({ ...goal, measurements: newMeasurements });
-              Alert.alert('Medida Actualizada! √∞≈∏‚Äú¬è');
+              Alert.alert('Medida Actualizada! üìè');
             }
           },
         },
@@ -182,7 +182,7 @@ export default function TransformationGoals() {
             </View>
             <View className="bg-white/20 rounded-lg p-3">
               <Text className="text-white font-bold text-lg">
-                {getDaysRemaining()} d√≠as restantes
+                {getDaysRemaining()} dÌas restantes
               </Text>
               <Text className="text-white opacity-90 text-sm">
                 {getWeeksElapsed()} semanas transcurridas
@@ -216,7 +216,7 @@ export default function TransformationGoals() {
               </View>
               <View className="h-3 bg-zinc-800 rounded-full overflow-hidden">
                 <View 
-                  className="h-full bg-gradient-to-r from-blue-500 to-emerald-500 rounded-full"
+                  className="h-full bg-gradient-to-r from-blue-500 to-primary rounded-full"
                   style={{ width: `${Math.min(getWeightProgress(), 100)}%` }}
                 />
               </View>
@@ -263,7 +263,7 @@ export default function TransformationGoals() {
                 <View className="flex-row items-center justify-between mb-2">
                   <Text className="text-white font-bold">{measurement.bodyPart}</Text>
                   <Text className="text-zinc-400 text-sm">
-                    {measurement.current} √¢‚Ä†‚Äô {measurement.target} {measurement.unit}
+                    {measurement.current} ‚Üí {measurement.target} {measurement.unit}
                   </Text>
                 </View>
                 <View className="h-2 bg-zinc-800 rounded-full overflow-hidden">
@@ -304,7 +304,7 @@ export default function TransformationGoals() {
                 <Text className="text-white font-bold ml-3">Toma fotos cada semana</Text>
               </View>
               <Text className="text-zinc-400 text-sm">
-                Misma pose, misma luz, mismo √°ngulo. Las fotos &gt; b√°scula.
+                Misma pose, misma luz, mismo ·ngulo. Las fotos &gt; b·scula.
               </Text>
             </View>
 
@@ -336,10 +336,10 @@ export default function TransformationGoals() {
 
             <View className="bg-zinc-800 rounded-lg p-4">
               <Text className="text-zinc-300 text-sm mb-2">
-                ‚úì Mide peso y medidas corporales{'\n'}
-                ‚úì Toma fotos de progreso{'\n'}
-                ‚úì Eval√∫a energ√≠a y rendimiento{'\n'}
-                ‚úì Ajusta plan seg√∫n resultados
+                ? Mide peso y medidas corporales{'\n'}
+                ? Toma fotos de progreso{'\n'}
+                ? Eval˙a energÌa y rendimiento{'\n'}
+                ? Ajusta plan seg˙n resultados
               </Text>
             </View>
           </View>
@@ -363,15 +363,15 @@ export default function TransformationGoals() {
               <Ionicons name="bulb" size={20} color="#9D12DE" />
               <View className="flex-1 ml-3">
                 <Text className="text-primary/80 font-bold mb-2">
-                  Tips de Transformaci√≥n
+                  Tips de TransformaciÛn
                 </Text>
                 <Text className="text-primary/60 text-sm">
-                  ‚Ä¢ S√© paciente, 12-16 semanas m√≠nimo{'\n'}
-                  ‚Ä¢ Fotos semanales son clave{'\n'}
-                  ‚Ä¢ Ajusta cada 2-3 semanas seg√∫n progreso{'\n'}
-                  ‚Ä¢ Duerme 7-9h diarias{'\n'}
-                  ‚Ä¢ Prote√≠na alta (1.8-2.2g/kg){'\n'}
-                  ‚Ä¢ Conf√≠a en el proceso!
+                  ï SÈ paciente, 12-16 semanas mÌnimo{'\n'}
+                  ï Fotos semanales son clave{'\n'}
+                  ï Ajusta cada 2-3 semanas seg˙n progreso{'\n'}
+                  ï Duerme 7-9h diarias{'\n'}
+                  ï ProteÌna alta (1.8-2.2g/kg){'\n'}
+                  ï ConfÌa en el proceso!
                 </Text>
               </View>
             </View>

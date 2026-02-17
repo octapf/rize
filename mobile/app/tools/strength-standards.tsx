@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -35,7 +35,7 @@ interface StrengthStandard {
 const STRENGTH_STANDARDS: StrengthStandard[] = [
   {
     lift: 'Sentadilla',
-    icon: 'ðŸ‹ï¸',
+    icon: '🏋️',
     standards: {
       male: { beginner: 0.75, novice: 1.0, intermediate: 1.5, advanced: 2.0, elite: 2.5 },
       female: { beginner: 0.5, novice: 0.75, intermediate: 1.0, advanced: 1.5, elite: 1.75 },
@@ -43,7 +43,7 @@ const STRENGTH_STANDARDS: StrengthStandard[] = [
   },
   {
     lift: 'Press de Banca',
-    icon: 'ðŸ’ª',
+    icon: '💪',
     standards: {
       male: { beginner: 0.5, novice: 0.75, intermediate: 1.0, advanced: 1.5, elite: 2.0 },
       female: { beginner: 0.3, novice: 0.5, intermediate: 0.75, advanced: 1.0, elite: 1.25 },
@@ -51,7 +51,7 @@ const STRENGTH_STANDARDS: StrengthStandard[] = [
   },
   {
     lift: 'Peso Muerto',
-    icon: 'ðŸ‹ï¸â€â™‚ï¸',
+    icon: '🏋️‍♂️',
     standards: {
       male: { beginner: 1.0, novice: 1.5, intermediate: 2.0, advanced: 2.5, elite: 3.0 },
       female: { beginner: 0.75, novice: 1.0, intermediate: 1.5, advanced: 2.0, elite: 2.5 },
@@ -59,7 +59,7 @@ const STRENGTH_STANDARDS: StrengthStandard[] = [
   },
   {
     lift: 'Press Militar',
-    icon: 'ðŸ¦¾',
+    icon: '🦾',
     standards: {
       male: { beginner: 0.35, novice: 0.5, intermediate: 0.75, advanced: 1.0, elite: 1.35 },
       female: { beginner: 0.2, novice: 0.35, intermediate: 0.5, advanced: 0.75, elite: 1.0 },
@@ -97,7 +97,7 @@ export default function StrengthStandards() {
       beginner: 'red',
       novice: 'amber',
       intermediate: 'blue',
-      advanced: 'emerald',
+      advanced: 'primary',
       elite: 'purple',
       'N/A': 'zinc',
     };
@@ -110,7 +110,7 @@ export default function StrengthStandards() {
       novice: 'Novato',
       intermediate: 'Intermedio',
       advanced: 'Avanzado',
-      elite: 'Élite',
+      elite: '�lite',
       'N/A': 'Sin Datos',
     };
     return labels[level] || 'N/A';
@@ -173,7 +173,7 @@ export default function StrengthStandards() {
                   Compara Tu Fuerza
                 </Text>
                 <Text className="text-purple-300 text-sm">
-                  Basado en estándares de powerlifting. Los valores son 1RM como ratio de peso corporal.
+                  Basado en est�ndares de powerlifting. Los valores son 1RM como ratio de peso corporal.
                 </Text>
               </View>
             </View>
@@ -290,7 +290,7 @@ export default function StrengthStandards() {
 
                 {/* Standards Table */}
                 <View className="mt-4">
-                  <Text className="text-zinc-400 text-xs mb-2">ESTÃNDARES (KG)</Text>
+                  <Text className="text-zinc-400 text-xs mb-2">ESTÁNDARES (KG)</Text>
                   <View className="bg-zinc-800 rounded-lg overflow-hidden">
                     {['beginner', 'novice', 'intermediate', 'advanced', 'elite'].map((lvl, index) => {
                       const standardValue = standard.standards[gender][lvl as keyof typeof standard.standards.male];
@@ -356,10 +356,10 @@ export default function StrengthStandards() {
                   Notas Importantes
                 </Text>
                 <Text className="text-primary/60 text-sm">
-                  • Estos son estándares generales{'\n'}
-                  • Varían según edad y experiencia{'\n'}
-                  • Peso corporal influye (más pesado = ratios más bajos típicamente){'\n'}
-                  • Enfócate en progreso personal, no solo comparaciones
+                  � Estos son est�ndares generales{'\n'}
+                  � Var�an seg�n edad y experiencia{'\n'}
+                  � Peso corporal influye (m�s pesado = ratios m�s bajos t�picamente){'\n'}
+                  � Enf�cate en progreso personal, no solo comparaciones
                 </Text>
               </View>
             </View>

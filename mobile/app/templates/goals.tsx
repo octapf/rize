@@ -1,4 +1,4 @@
-Ôªøimport React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -28,26 +28,26 @@ interface WorkoutTemplate {
 const TEMPLATES: WorkoutTemplate[] = [
   {
     id: '1',
-    name: 'Definici√≥n Extrema',
+    name: 'DefiniciÛn Extrema',
     goal: 'fat-loss',
     duration: 8,
     daysPerWeek: 6,
     difficulty: 'intermedio',
-    description: 'Maximiza quema de grasa preservando m√∫sculo con combinaci√≥n de HIIT y pesas',
+    description: 'Maximiza quema de grasa preservando m˙sculo con combinaciÛn de HIIT y pesas',
     features: [
-      '3 d√≠as de pesas full body',
-      '3 d√≠as de HIIT (20-30 min)',
+      '3 dÌas de pesas full body',
+      '3 dÌas de HIIT (20-30 min)',
       'Supersets y tri-sets',
-      'Cardio acelerador metab√≥lico',
-      'D√©ficit cal√≥rico 500 kcal',
+      'Cardio acelerador metabÛlico',
+      'DÈficit calÛrico 500 kcal',
     ],
     sampleWeek: [
       { day: 'Lunes', focus: 'Full Body A + 15 min HIIT', duration: 75 },
       { day: 'Martes', focus: 'HIIT Tabata', duration: 30 },
-      { day: 'Mi√©rcoles', focus: 'Full Body B + Cardio', duration: 75 },
+      { day: 'MiÈrcoles', focus: 'Full Body B + Cardio', duration: 75 },
       { day: 'Jueves', focus: 'HIIT Ciclismo', duration: 30 },
       { day: 'Viernes', focus: 'Full Body C + Finisher', duration: 75 },
-      { day: 'S√°bado', focus: 'LISS Cardio', duration: 45 },
+      { day: 'S·bado', focus: 'LISS Cardio', duration: 45 },
       { day: 'Domingo', focus: 'Descanso / Caminata', duration: 0 },
     ],
   },
@@ -58,46 +58,46 @@ const TEMPLATES: WorkoutTemplate[] = [
     duration: 12,
     daysPerWeek: 5,
     difficulty: 'intermedio',
-    description: 'Programa de hipertrofia enfocado en m√°xima ganancia muscular',
+    description: 'Programa de hipertrofia enfocado en m·xima ganancia muscular',
     features: [
       'Push/Pull/Legs split 2x semana',
       'Rango 8-12 reps hipertrofia',
       '4-5 sets por ejercicio',
       'TUT (time under tension) optimizado',
-      'Super√°vit 300-500 kcal',
+      'Super·vit 300-500 kcal',
     ],
     sampleWeek: [
-      { day: 'Lunes', focus: 'Push (Pecho/Hombros/Tr√≠ceps)', duration: 90 },
-      { day: 'Martes', focus: 'Pull (Espalda/B√≠ceps)', duration: 85 },
-      { day: 'Mi√©rcoles', focus: 'Legs (Piernas completas)', duration: 95 },
+      { day: 'Lunes', focus: 'Push (Pecho/Hombros/TrÌceps)', duration: 90 },
+      { day: 'Martes', focus: 'Pull (Espalda/BÌceps)', duration: 85 },
+      { day: 'MiÈrcoles', focus: 'Legs (Piernas completas)', duration: 95 },
       { day: 'Jueves', focus: 'Descanso', duration: 0 },
       { day: 'Viernes', focus: 'Push B', duration: 90 },
-      { day: 'S√°bado', focus: 'Pull B', duration: 85 },
+      { day: 'S·bado', focus: 'Pull B', duration: 85 },
       { day: 'Domingo', focus: 'Legs B / Descanso', duration: 0 },
     ],
   },
   {
     id: '3',
-    name: 'Fuerza M√°xima 5/3/1',
+    name: 'Fuerza M·xima 5/3/1',
     goal: 'strength',
     duration: 16,
     daysPerWeek: 4,
     difficulty: 'avanzado',
-    description: 'Periodizaci√≥n basada en el m√©todo Wendler 5/3/1 para fuerza',
+    description: 'PeriodizaciÛn basada en el mÈtodo Wendler 5/3/1 para fuerza',
     features: [
       'Enfoque en 4 grandes: Squat, Bench, Deadlift, OHP',
-      'Progresi√≥n mensual autom√°tica',
-      'Trabajo auxiliar espec√≠fico',
+      'ProgresiÛn mensual autom·tica',
+      'Trabajo auxiliar especÌfico',
       'Deload cada 4 semanas',
       'PR testing cada ciclo',
     ],
     sampleWeek: [
       { day: 'Lunes', focus: 'Squat 5/3/1 + Auxiliares', duration: 75 },
       { day: 'Martes', focus: 'Bench Press 5/3/1 + Volumen', duration: 70 },
-      { day: 'Mi√©rcoles', focus: 'Descanso', duration: 0 },
+      { day: 'MiÈrcoles', focus: 'Descanso', duration: 0 },
       { day: 'Jueves', focus: 'Deadlift 5/3/1 + Accesorios', duration: 75 },
       { day: 'Viernes', focus: 'OHP 5/3/1 + Upper Back', duration: 70 },
-      { day: 'S√°bado', focus: 'Descanso / Cardio opcional', duration: 0 },
+      { day: 'S·bado', focus: 'Descanso / Cardio opcional', duration: 0 },
       { day: 'Domingo', focus: 'Descanso', duration: 0 },
     ],
   },
@@ -111,7 +111,7 @@ const TEMPLATES: WorkoutTemplate[] = [
     description: 'Desarrolla resistencia cardiovascular y muscular',
     features: [
       'Circuit training alta intensidad',
-      'Trabajo de capacidad aer√≥bica',
+      'Trabajo de capacidad aerÛbica',
       'CrossFit style WODs',
       'Running progresivo',
       'Bodyweight mastery',
@@ -119,16 +119,16 @@ const TEMPLATES: WorkoutTemplate[] = [
     sampleWeek: [
       { day: 'Lunes', focus: 'Circuit Training Full Body', duration: 45 },
       { day: 'Martes', focus: 'Running Intervalos', duration: 40 },
-      { day: 'Mi√©rcoles', focus: 'WOD AMRAP', duration: 50 },
+      { day: 'MiÈrcoles', focus: 'WOD AMRAP', duration: 50 },
       { day: 'Jueves', focus: 'Tempo Run', duration: 35 },
       { day: 'Viernes', focus: 'Circuit Metcon', duration: 45 },
-      { day: 'S√°bado', focus: 'Long Run', duration: 60 },
+      { day: 'S·bado', focus: 'Long Run', duration: 60 },
       { day: 'Domingo', focus: 'Active Recovery', duration: 30 },
     ],
   },
   {
     id: '5',
-    name: 'Preparaci√≥n Atl√©tica',
+    name: 'PreparaciÛn AtlÈtica',
     goal: 'athlete',
     duration: 12,
     daysPerWeek: 6,
@@ -136,19 +136,19 @@ const TEMPLATES: WorkoutTemplate[] = [
     description: 'Entrenamiento funcional para atletas de alto rendimiento',
     features: [
       'Entrenamiento de velocidad y potencia',
-      'Pliom√©tricos y explosividad',
-      'Agilidad y coordinaci√≥n',
+      'PliomÈtricos y explosividad',
+      'Agilidad y coordinaciÛn',
       'Fuerza funcional',
-      'Periodizaci√≥n deportiva',
+      'PeriodizaciÛn deportiva',
     ],
     sampleWeek: [
-      { day: 'Lunes', focus: 'Fuerza M√°xima Lower', duration: 75 },
-      { day: 'Martes', focus: 'Velocidad + Pliom√©tricos', duration: 60 },
-      { day: 'Mi√©rcoles', focus: 'Fuerza Upper + Core', duration: 70 },
+      { day: 'Lunes', focus: 'Fuerza M·xima Lower', duration: 75 },
+      { day: 'Martes', focus: 'Velocidad + PliomÈtricos', duration: 60 },
+      { day: 'MiÈrcoles', focus: 'Fuerza Upper + Core', duration: 70 },
       { day: 'Jueves', focus: 'Agilidad + Condicionamiento', duration: 55 },
       { day: 'Viernes', focus: 'Potencia Olympic Lifts', duration: 75 },
-      { day: 'S√°bado', focus: 'Metcon / Sport Espec√≠fico', duration: 60 },
-      { day: 'Domingo', focus: 'Movilidad + Regeneraci√≥n', duration: 40 },
+      { day: 'S·bado', focus: 'Metcon / Sport EspecÌfico', duration: 60 },
+      { day: 'Domingo', focus: 'Movilidad + RegeneraciÛn', duration: 40 },
     ],
   },
 ];
@@ -159,11 +159,11 @@ export default function WorkoutTemplates() {
 
   const goals = [
     { id: 'all', label: 'Todos', icon: 'grid' },
-    { id: 'fat-loss', label: 'Definici√≥n', icon: 'flame' },
-    { id: 'muscle-gain', label: 'M√∫sculo', icon: 'barbell' },
+    { id: 'fat-loss', label: 'DefiniciÛn', icon: 'flame' },
+    { id: 'muscle-gain', label: 'M˙sculo', icon: 'barbell' },
     { id: 'strength', label: 'Fuerza', icon: 'trophy' },
     { id: 'endurance', label: 'Resistencia', icon: 'bicycle' },
-    { id: 'athlete', label: 'Atl√©tico', icon: 'flash' },
+    { id: 'athlete', label: 'AtlÈtico', icon: 'flash' },
   ];
 
   const getGoalColor = (goal: string) => {
@@ -200,7 +200,7 @@ export default function WorkoutTemplates() {
     setSelectedTemplate(template.id);
     Alert.alert(
       `Iniciar: ${template.name}`,
-      `${template.duration} semanas ‚Ä¢ ${template.daysPerWeek} d√≠as/semana\n\n${template.description}\n\n¬øListo para comenzar?`,
+      `${template.duration} semanas ï ${template.daysPerWeek} dÌas/semana\n\n${template.description}\n\nøListo para comenzar?`,
       [
         { text: 'Cancelar', onPress: () => setSelectedTemplate(null), style: 'cancel' },
         {
@@ -209,7 +209,7 @@ export default function WorkoutTemplates() {
         },
         {
           text: 'Comenzar',
-          onPress: () => Alert.alert('¬°Iniciado!', 'Tu programa ha comenzado'),
+          onPress: () => Alert.alert('°Iniciado!', 'Tu programa ha comenzado'),
         },
       ]
     );
@@ -244,7 +244,7 @@ export default function WorkoutTemplates() {
                 {TEMPLATES.length} Programas Profesionales
               </Text>
               <Text className="text-white/80 text-sm">
-                Dise√±ados por entrenadores certificados
+                DiseÒados por entrenadores certificados
               </Text>
             </View>
           </View>
@@ -335,7 +335,7 @@ export default function WorkoutTemplates() {
               {/* Stats */}
               <View className="flex-row gap-2 mb-3">
                 <View className="flex-1 bg-zinc-800 rounded-lg p-3">
-                  <Text className="text-zinc-400 text-xs mb-1">Duraci√≥n</Text>
+                  <Text className="text-zinc-400 text-xs mb-1">DuraciÛn</Text>
                   <Text className="text-white font-bold text-lg">
                     {template.duration} sem
                   </Text>
@@ -357,7 +357,7 @@ export default function WorkoutTemplates() {
               {/* Features */}
               <View className="bg-zinc-800 rounded-lg p-3 mb-3">
                 <Text className="text-white font-bold text-sm mb-2">
-                  Caracter√≠sticas
+                  CaracterÌsticas
                 </Text>
                 {template.features.map((feature, index) => (
                   <View key={index} className="flex-row items-center mb-1">
@@ -393,7 +393,7 @@ export default function WorkoutTemplates() {
                   </View>
                 ))}
                 <Text className="text-primary/80 text-xs mt-2">
-                  +{template.sampleWeek.length - 4} d√≠as m√°s...
+                  +{template.sampleWeek.length - 4} dÌas m·s...
                 </Text>
               </View>
 
@@ -426,10 +426,10 @@ export default function WorkoutTemplates() {
               <Ionicons name="information-circle" size={20} color="#FFEA00" />
               <View className="flex-1 ml-3">
                 <Text className="text-amber-400 font-bold mb-2">
-                  Elige Seg√∫n Tu Objetivo
+                  Elige Seg˙n Tu Objetivo
                 </Text>
                 <Text className="text-amber-300 text-sm">
-                  Todos los programas incluyen progresi√≥n autom√°tica, ajustes de intensidad y seguimiento de resultados.
+                  Todos los programas incluyen progresiÛn autom·tica, ajustes de intensidad y seguimiento de resultados.
                 </Text>
               </View>
             </View>

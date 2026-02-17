@@ -1,4 +1,4 @@
-ï»¿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -32,7 +32,7 @@ const COMMON_EXERCISES = [
 ];
 
 const PERCENTAGE_CHART = [
-  { percent: 100, reps: '1', description: 'MÃ¡ximo absoluto' },
+  { percent: 100, reps: '1', description: 'Máximo absoluto' },
   { percent: 95, reps: '2', description: 'Fuerza pura' },
   { percent: 90, reps: '3-4', description: 'Fuerza' },
   { percent: 85, reps: '5-6', description: 'Fuerza-Hipertrofia' },
@@ -40,7 +40,7 @@ const PERCENTAGE_CHART = [
   { percent: 75, reps: '9-10', description: 'Hipertrofia' },
   { percent: 70, reps: '11-12', description: 'Resistencia muscular' },
   { percent: 65, reps: '13-15', description: 'Resistencia' },
-  { percent: 60, reps: '15+', description: 'Calentamiento/TÃ©cnica' },
+  { percent: 60, reps: '15+', description: 'Calentamiento/Técnica' },
 ];
 
 export default function MaxCalculator() {
@@ -58,7 +58,7 @@ export default function MaxCalculator() {
       return;
     }
     if (!w || w <= 0) {
-      Alert.alert('Error', 'Ingresa un peso vÃ¡lido');
+      Alert.alert('Error', 'Ingresa un peso válido');
       return;
     }
     if (!r || r <= 0 || r > 20) {
@@ -66,7 +66,7 @@ export default function MaxCalculator() {
       return;
     }
 
-    // Epley Formula: 1RM = weight Ã— (1 + reps/30)
+    // Epley Formula: 1RM = weight × (1 + reps/30)
     const oneRepMax = w * (1 + r / 30);
 
     const percentages = PERCENTAGE_CHART.map((p) => ({
@@ -99,7 +99,7 @@ export default function MaxCalculator() {
           <Text className="text-white text-2xl font-bold flex-1 ml-3">
             1RM Calculator
           </Text>
-          <TouchableOpacity onPress={() => Alert.alert('Info', 'FÃ³rmula de Epley para calcular tu mÃ¡ximo')}>
+          <TouchableOpacity onPress={() => Alert.alert('Info', 'Fórmula de Epley para calcular tu máximo')}>
             <Ionicons name="information-circle" size={24} color="white" />
           </TouchableOpacity>
         </View>
@@ -109,7 +109,7 @@ export default function MaxCalculator() {
         <View className="px-6 pt-6">
           {/* Exercise Selection */}
           <View className="mb-6">
-            <Text className="text-zinc-400 text-sm mb-3">Ejercicio ComÃºn</Text>
+            <Text className="text-zinc-400 text-sm mb-3">Ejercicio Común</Text>
             <View className="flex-row flex-wrap gap-2 mb-4">
               {COMMON_EXERCISES.map((ex) => (
                 <TouchableOpacity
@@ -168,7 +168,7 @@ export default function MaxCalculator() {
                 onChangeText={setReps}
               />
               <Text className="text-zinc-500 text-xs mt-2">
-                MÃ¡ximo 20 reps para cÃ¡lculo preciso
+                Máximo 20 reps para cálculo preciso
               </Text>
             </View>
 
@@ -192,7 +192,7 @@ export default function MaxCalculator() {
                 </Text>
                 <View className="bg-white/20 rounded-lg p-3 mt-4">
                   <Text className="text-white text-sm">
-                    Basado en {result.weight}kg Ã— {result.reps} reps
+                    Basado en {result.weight}kg × {result.reps} reps
                   </Text>
                 </View>
               </View>
@@ -233,7 +233,7 @@ export default function MaxCalculator() {
                             {p.weight}kg
                           </Text>
                           <Text className="text-zinc-400 text-sm">
-                            {p.reps} reps â€¢ {chartInfo.description}
+                            {p.reps} reps • {chartInfo.description}
                           </Text>
                         </View>
                       </View>
@@ -244,11 +244,11 @@ export default function MaxCalculator() {
 
               {/* Save Button */}
               <TouchableOpacity
-                onPress={() => Alert.alert('Guardado', 'MÃ¡ximos guardados en tu perfil')}
+                onPress={() => Alert.alert('Guardado', 'Máximos guardados en tu perfil')}
                 className="bg-primary rounded-xl p-4 flex-row items-center justify-center mt-4"
               >
                 <Ionicons name="save" size={20} color="white" />
-                <Text className="text-white font-bold ml-2">Guardar MÃ¡ximos</Text>
+                <Text className="text-white font-bold ml-2">Guardar Máximos</Text>
               </TouchableOpacity>
             </View>
           )}
@@ -262,12 +262,12 @@ export default function MaxCalculator() {
                   Importante sobre 1RM
                 </Text>
                 <Text className="text-amber-300 text-sm">
-                  â€¢ Esto es una ESTIMACIÃƒâ€œN, no tu mÃ¡ximo real{'\n'}
-                  â€¢ Menos preciso con mÃ¡s de 10 reps{'\n'}
-                  â€¢ Siempre haz calentamiento antes de maxear{'\n'}
-                  â€¢ Ten spotter para levantamientos pesados{'\n'}
-                  â€¢ No pruebes 1RM real muy seguido{'\n'}
-                  â€¢ Usa para programar entrenamientos, no ego lifting
+                  • Esto es una ESTIMACIÃ“N, no tu máximo real{'\n'}
+                  • Menos preciso con más de 10 reps{'\n'}
+                  • Siempre haz calentamiento antes de maxear{'\n'}
+                  • Ten spotter para levantamientos pesados{'\n'}
+                  • No pruebes 1RM real muy seguido{'\n'}
+                  • Usa para programar entrenamientos, no ego lifting
                 </Text>
               </View>
             </View>
@@ -276,25 +276,25 @@ export default function MaxCalculator() {
           {/* Formula Info */}
           <View className="bg-zinc-900 rounded-xl p-4 border border-zinc-800 mb-6">
             <Text className="text-white font-bold text-lg mb-3">
-              FÃ³rmulas 1RM
+              Fórmulas 1RM
             </Text>
             <View className="space-y-2">
               <View className="bg-zinc-800 rounded-lg p-3">
-                <Text className="text-primary font-bold mb-1">Epley (Usada AquÃ­)</Text>
+                <Text className="text-primary font-bold mb-1">Epley (Usada Aquí)</Text>
                 <Text className="text-zinc-300 text-sm">
-                  1RM = Peso Ã— (1 + Reps/30)
+                  1RM = Peso × (1 + Reps/30)
                 </Text>
               </View>
               <View className="bg-zinc-800 rounded-lg p-3">
                 <Text className="text-primary/80 font-bold mb-1">Brzycki</Text>
                 <Text className="text-zinc-300 text-sm">
-                  1RM = Peso Ã— (36 / (37 - Reps))
+                  1RM = Peso × (36 / (37 - Reps))
                 </Text>
               </View>
               <View className="bg-zinc-800 rounded-lg p-3">
                 <Text className="text-purple-400 font-bold mb-1">Lombardi</Text>
                 <Text className="text-zinc-300 text-sm">
-                  1RM = Peso Ã— Reps^0.1
+                  1RM = Peso × Reps^0.1
                 </Text>
               </View>
             </View>

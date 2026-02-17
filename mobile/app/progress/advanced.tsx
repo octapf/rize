@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -52,7 +52,7 @@ export default function AdvancedProgress() {
     { id: 'fuerza', label: 'Fuerza' },
     { id: 'volumen', label: 'Volumen' },
     { id: 'cardio', label: 'Cardio' },
-    { id: 'composicion', label: 'Composición' },
+    { id: 'composicion', label: 'Composici�n' },
   ];
 
   const getTrendColor = (trend: string) => {
@@ -85,9 +85,9 @@ export default function AdvancedProgress() {
     Alert.alert(
       metric.name,
       `Valor Actual: ${metric.value} ${metric.unit}\nCambio: ${metric.change > 0 ? '+' : ''}${metric.change} ${metric.unit}\n\nTendencia: ${
-        metric.trend === 'up' ? 'Mejorando ✅' : metric.trend === 'down' ? 'Bajando â¬‡ï¸' : 'Estable âž¡ï¸'
+        metric.trend === 'up' ? 'Mejorando ?' : metric.trend === 'down' ? 'Bajando ⬇️' : 'Estable ➡️'
       }`,
-      [{ text: 'Ver Histórico' }, { text: 'Cerrar' }]
+      [{ text: 'Ver Hist�rico' }, { text: 'Cerrar' }]
     );
   };
 
@@ -161,7 +161,7 @@ export default function AdvancedProgress() {
         {/* Chart Section */}
         <View className="px-6 pt-6">
           <Text className="text-white font-bold text-lg mb-3">
-            Progresión 1RM Sentadilla
+            Progresi�n 1RM Sentadilla
           </Text>
 
           <View className="bg-zinc-900 rounded-xl p-4 mb-6 border border-zinc-800">
@@ -174,7 +174,7 @@ export default function AdvancedProgress() {
                 backgroundGradientFrom: '#18181B',
                 backgroundGradientTo: '#18181B',
                 decimalPlaces: 1,
-                color: (opacity = 1) => `rgba(16, 185, 129, ${opacity})`,
+                color: (opacity = 1) => `rgba(157, 18, 222, ${opacity})`,
                 labelColor: (opacity = 1) => `rgba(161, 161, 170, ${opacity})`,
                 style: {
                   borderRadius: 16,
@@ -199,7 +199,7 @@ export default function AdvancedProgress() {
 
           {/* Metrics Grid */}
           <Text className="text-white font-bold text-lg mb-3">
-            Todas las Métricas
+            Todas las M�tricas
           </Text>
 
           <View className="mb-6">
@@ -268,7 +268,7 @@ export default function AdvancedProgress() {
                   Progreso Excelente en Fuerza
                 </Text>
                 <Text className="text-primary/80 text-sm">
-                  Tu 1RM en sentadilla ha aumentado 10kg en 3 semanas. Continúa con este ritmo.
+                  Tu 1RM en sentadilla ha aumentado 10kg en 3 semanas. Contin�a con este ritmo.
                 </Text>
               </View>
             </View>
@@ -279,10 +279,10 @@ export default function AdvancedProgress() {
               <Ionicons name="warning" size={20} color="#FFEA00" />
               <View className="flex-1 ml-3">
                 <Text className="text-amber-400 font-bold mb-1">
-                  Atención al Cardio
+                  Atenci�n al Cardio
                 </Text>
                 <Text className="text-amber-300 text-sm">
-                  Tu VO2 Max ha bajado 2 puntos. Considera agregar más trabajo cardiovascular.
+                  Tu VO2 Max ha bajado 2 puntos. Considera agregar m�s trabajo cardiovascular.
                 </Text>
               </View>
             </View>
@@ -293,10 +293,10 @@ export default function AdvancedProgress() {
               <Ionicons name="information-circle" size={20} color="#9D12DE" />
               <View className="flex-1 ml-3">
                 <Text className="text-primary/80 font-bold mb-1">
-                  Balance Muscular Ã“ptimo
+                  Balance Muscular Óptimo
                 </Text>
                 <Text className="text-primary/60 text-sm">
-                  Tu composición corporal está mejorando. -0.8% grasa con +1.2kg masa muscular.
+                  Tu composici�n corporal est� mejorando. -0.8% grasa con +1.2kg masa muscular.
                 </Text>
               </View>
             </View>

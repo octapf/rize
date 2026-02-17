@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -24,20 +24,20 @@ const mockPosts: FeedPost[] = [
     userId: 'user1',
     user: {
       _id: 'user1',
-      name: 'Carlos García',
+      name: 'Carlos Garc�a',
       username: 'carlosg',
       avatar: undefined,
     },
     type: 'workout',
-    content: '¡Terminé mi rutina de piernas! ðŸ’ª Nuevo PR en sentadillas',
+    content: '�Termin� mi rutina de piernas! 💪 Nuevo PR en sentadillas',
     workoutId: 'w1',
     likes: ['me', 'user2'],
     comments: [
       {
         _id: 'c1',
         userId: 'user2',
-        user: { _id: 'user2', name: 'Ana López', username: 'ana', avatar: undefined },
-        text: '¡Felicidades! 🎉',
+        user: { _id: 'user2', name: 'Ana L�pez', username: 'ana', avatar: undefined },
+        text: '�Felicidades! ??',
         createdAt: new Date(2026, 0, 27, 10, 35).toISOString(),
       },
     ],
@@ -48,12 +48,12 @@ const mockPosts: FeedPost[] = [
     userId: 'user2',
     user: {
       _id: 'user2',
-      name: 'Ana López',
+      name: 'Ana L�pez',
       username: 'ana',
       avatar: undefined,
     },
     type: 'achievement',
-    content: '¡Desbloqueé el logro "100 Workouts"! ðŸ†',
+    content: '�Desbloque� el logro "100 Workouts"! 🏆',
     achievementId: 'a1',
     likes: ['user1', 'user3'],
     comments: [],
@@ -64,12 +64,12 @@ const mockPosts: FeedPost[] = [
     userId: 'user3',
     user: {
       _id: 'user3',
-      name: 'Pedro Martínez',
+      name: 'Pedro Mart�nez',
       username: 'pedro',
       avatar: undefined,
     },
     type: 'pr',
-    content: 'Nuevo PR en Bench Press: 120kg! ðŸ”¥',
+    content: 'Nuevo PR en Bench Press: 120kg! 🔥',
     exerciseId: 'e1',
     likes: ['me'],
     comments: [],
@@ -112,19 +112,19 @@ export default function FeedScreen() {
 
   const handleLike = (postId: string) => {
     // Mock toggle for now
-    Alert.alert('Like', 'Función en desarrollo');
+    Alert.alert('Like', 'Funci�n en desarrollo');
   };
 
   const handleComment = (postId: string) => {
     if (!commentText.trim()) return;
     // commentMutation.mutate({ postId, text: commentText });
-    Alert.alert('Comentar', 'Función en desarrollo');
+    Alert.alert('Comentar', 'Funci�n en desarrollo');
     setCommentText('');
     setActiveCommentPost(null);
   };
 
   const handleShare = (postId: string) => {
-    Alert.alert('Compartir', 'Función en desarrollo');
+    Alert.alert('Compartir', 'Funci�n en desarrollo');
   };
 
   const onRefresh = async () => {
@@ -171,7 +171,7 @@ export default function FeedScreen() {
               {item.user.name}
             </Text>
             <Text className="text-gray-500 text-sm">
-              @{item.user.username} • {formatDistanceToNow(new Date(item.createdAt), { 
+              @{item.user.username} � {formatDistanceToNow(new Date(item.createdAt), { 
                 addSuffix: true, 
                 locale: es 
               })}
@@ -306,7 +306,7 @@ export default function FeedScreen() {
               No hay publicaciones
             </Text>
             <Text className="text-gray-600 text-center mt-2">
-              Sigue a más amigos para ver su actividad
+              Sigue a m�s amigos para ver su actividad
             </Text>
           </View>
         }

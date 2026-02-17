@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -93,10 +93,10 @@ export default function PerformanceTesting() {
   ];
 
   const testTypes = [
-    { id: '1RM', label: '1RM', description: '1 repetición máxima' },
-    { id: '3RM', label: '3RM', description: '3 repeticiones máximas' },
-    { id: '5RM', label: '5RM', description: '5 repeticiones máximas' },
-    { id: 'AMRAP', label: 'AMRAP', description: 'Máx reps posibles' },
+    { id: '1RM', label: '1RM', description: '1 repetici�n m�xima' },
+    { id: '3RM', label: '3RM', description: '3 repeticiones m�ximas' },
+    { id: '5RM', label: '5RM', description: '5 repeticiones m�ximas' },
+    { id: 'AMRAP', label: 'AMRAP', description: 'M�x reps posibles' },
   ];
 
   const calculate1RM = () => {
@@ -104,11 +104,11 @@ export default function PerformanceTesting() {
     const reps = parseInt(calcReps);
 
     if (isNaN(weight) || isNaN(reps) || weight <= 0 || reps <= 0) {
-      Alert.alert('Error', 'Ingresa valores válidos');
+      Alert.alert('Error', 'Ingresa valores v�lidos');
       return;
     }
 
-    // Brzycki formula: 1RM = weight × (36 / (37 - reps))
+    // Brzycki formula: 1RM = weight � (36 / (37 - reps))
     const estimated1RM = Math.round(weight * (36 / (37 - reps)));
     const estimated3RM = Math.round(estimated1RM * 0.93);
     const estimated5RM = Math.round(estimated1RM * 0.87);
@@ -149,7 +149,7 @@ export default function PerformanceTesting() {
             'Peso levantado (kg):',
             (weight) => {
               if (weight) {
-                Alert.alert('¡Test Registrado!', `${type} de ${exercise}: ${weight} kg`);
+                Alert.alert('�Test Registrado!', `${type} de ${exercise}: ${weight} kg`);
               }
             }
           );
@@ -358,7 +358,7 @@ export default function PerformanceTesting() {
                 className="bg-primary rounded-lg p-4"
               >
                 <Text className="text-white font-bold text-center text-lg">
-                  Calcular Máximos
+                  Calcular M�ximos
                 </Text>
               </TouchableOpacity>
             </View>
@@ -378,37 +378,37 @@ export default function PerformanceTesting() {
                   </Text>
                   <View className="h-px bg-zinc-700 my-2" />
                   <View className="flex-row items-baseline">
-                    <Text className="text-white/60 text-sm">Estimación usando </Text>
+                    <Text className="text-white/60 text-sm">Estimaci�n usando </Text>
                     <Text className="text-primary text-sm font-bold">
-                      Fórmula Brzycki
+                      F�rmula Brzycki
                     </Text>
                   </View>
                 </View>
 
                 <View className="gap-3">
                   <View className="bg-red-500/10 border border-red-500/30 rounded-lg p-4">
-                    <Text className="text-red-500/60 text-xs mb-1">1 REP MÃXIMA</Text>
+                    <Text className="text-red-500/60 text-xs mb-1">1 REP MÁXIMA</Text>
                     <Text className="text-red-500 font-bold text-3xl">
                       {calculation.estimated1RM} kg
                     </Text>
                   </View>
 
                   <View className="bg-amber-500/10 border border-amber-500/30 rounded-lg p-4">
-                    <Text className="text-amber-500/60 text-xs mb-1">3 REPS MÃXIMAS</Text>
+                    <Text className="text-amber-500/60 text-xs mb-1">3 REPS MÁXIMAS</Text>
                     <Text className="text-amber-500 font-bold text-2xl">
                       {calculation.estimated3RM} kg
                     </Text>
                   </View>
 
                   <View className="bg-primary/10 border border-primary/30 rounded-lg p-4">
-                    <Text className="text-primary/60 text-xs mb-1">5 REPS MÃXIMAS</Text>
+                    <Text className="text-primary/60 text-xs mb-1">5 REPS MÁXIMAS</Text>
                     <Text className="text-primary font-bold text-2xl">
                       {calculation.estimated5RM} kg
                     </Text>
                   </View>
 
                   <View className="bg-primary/10 border border-primary/30 rounded-lg p-4">
-                    <Text className="text-primary/60 text-xs mb-1">10 REPS MÃXIMAS</Text>
+                    <Text className="text-primary/60 text-xs mb-1">10 REPS MÁXIMAS</Text>
                     <Text className="text-primary font-bold text-2xl">
                       {calculation.estimated10RM} kg
                     </Text>
@@ -423,10 +423,10 @@ export default function PerformanceTesting() {
                 <Ionicons name="information-circle" size={20} color="#9D12DE" />
                 <View className="flex-1 ml-3">
                   <Text className="text-primary/80 font-bold mb-2">
-                    Sobre el Cálculo
+                    Sobre el C�lculo
                   </Text>
                   <Text className="text-primary/60 text-sm">
-                    Esta calculadora usa la fórmula Brzycki para estimar tu 1RM. Los resultados son aproximaciones y pueden variar según tu experiencia y técnica.
+                    Esta calculadora usa la f�rmula Brzycki para estimar tu 1RM. Los resultados son aproximaciones y pueden variar seg�n tu experiencia y t�cnica.
                   </Text>
                 </View>
               </View>
@@ -451,7 +451,7 @@ export default function PerformanceTesting() {
                   backgroundGradientFrom: '#18181B',
                   backgroundGradientTo: '#18181B',
                   decimalPlaces: 0,
-                  color: (opacity = 1) => `rgba(16, 185, 129, ${opacity})`,
+                  color: (opacity = 1) => `rgba(157, 18, 222, ${opacity})`,
                   labelColor: (opacity = 1) => `rgba(161, 161, 170, ${opacity})`,
                   style: {
                     borderRadius: 16,
@@ -501,7 +501,7 @@ export default function PerformanceTesting() {
                   </View>
                 </View>
                 <Text className="text-zinc-400 text-sm mt-1">
-                  Últimos 4 meses
+                  �ltimos 4 meses
                 </Text>
               </View>
             ))}

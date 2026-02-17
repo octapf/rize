@@ -1,0 +1,34 @@
+---
+description: Mobile screen and API integration patterns
+globs: mobile/**/*.tsx
+alwaysApply: false
+---
+
+# Mobile Feature Pattern
+
+**Aplicar automáticamente**: FRONTEND_STANDARDS.md y DESIGN_SYSTEM.md. No requiere que el usuario lo mencione.
+
+## Stack
+- Expo Router (file-based): `app/` directory
+- NativeWind (Tailwind) for styles
+- Zustand for local state, React Query for server state
+- Hooks: useWorkouts, useExercises, useSocial, etc. in `src/hooks/`
+
+## New screen flow
+1. Add route in `app/{path}.tsx` or `app/{folder}/`
+2. Use existing hooks if API exists
+3. UI: Card, Button, Input, Avatar, Badge from `src/components/ui/`
+4. Auth: wrap with auth check or use (tabs) layout
+
+## API integration
+- Add/use client in `src/services/api/`
+- Create hook in `src/hooks/use{Feature}.ts` with React Query
+- Handle loading, error states
+
+## Brand (source: `mobile/tailwind.config.js`)
+- Primary: `#9D12DE` (purple). Use `bg-primary`, `text-primary`.
+- Accent: `#FFEA00` (yellow). Use `bg-highlight`, `text-highlight`.
+- Background/Surface: `#262626`. Use `bg-background`, `bg-surface`.
+- Text: `#E3E3E3`. Use `text-text`.
+- Fonts: `font-heading` (Poppins), `font-body` (Inter), `font-label` (Montserrat).
+- Do not hardcode hex colors. Use Tailwind tokens and DESIGN_SYSTEM.md.

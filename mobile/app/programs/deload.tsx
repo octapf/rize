@@ -1,4 +1,4 @@
-Ôªøimport React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -21,27 +21,27 @@ interface DeloadWeek {
 const DELOAD_TYPES = [
   {
     value: 'volume',
-    label: 'Reducci√≥n de Volumen',
+    label: 'ReducciÛn de Volumen',
     description: 'Reduce series/reps en 40-50%',
     icon: 'remove-circle',
     color: 'blue',
     recommendations: [
-      'Mant√©n la intensidad (peso)',
+      'MantÈn la intensidad (peso)',
       'Reduce series a 2 por ejercicio',
       'Reduce reps en 30-40%',
-      'Mant√©n ejercicios principales',
+      'MantÈn ejercicios principales',
     ],
   },
   {
     value: 'intensity',
-    label: 'Reducci√≥n de Intensidad',
+    label: 'ReducciÛn de Intensidad',
     description: 'Reduce peso en 40-50%',
     icon: 'fitness',
-    color: 'emerald',
+    color: 'primary',
     recommendations: [
-      'Mant√©n el volumen (series/reps)',
+      'MantÈn el volumen (series/reps)',
       'Reduce peso al 50-60% 1RM',
-      'Enf√≥cate en t√©cnica perfecta',
+      'EnfÛcate en tÈcnica perfecta',
       'Tempo controlado',
     ],
   },
@@ -54,8 +54,8 @@ const DELOAD_TYPES = [
     recommendations: [
       'Reduce peso 40-50%',
       'Reduce series 40-50%',
-      'Considera solo 3 d√≠as',
-      'Movilidad y recuperaci√≥n activa',
+      'Considera solo 3 dÌas',
+      'Movilidad y recuperaciÛn activa',
     ],
   },
 ];
@@ -67,7 +67,7 @@ const MOCK_DELOADS: DeloadWeek[] = [
     startDate: new Date(2026, 1, 9),
     type: 'volume',
     status: 'upcoming',
-    notes: 'Despu√©s de 3 semanas intensas de volumen',
+    notes: 'DespuÈs de 3 semanas intensas de volumen',
   },
   {
     id: '2',
@@ -75,7 +75,7 @@ const MOCK_DELOADS: DeloadWeek[] = [
     startDate: new Date(2026, 0, 13),
     type: 'full',
     status: 'completed',
-    notes: 'Post competici√≥n',
+    notes: 'Post competiciÛn',
   },
   {
     id: '3',
@@ -104,13 +104,13 @@ export default function DeloadPlanner() {
 
     setDeloads([newDeload, ...deloads]);
     setSelectedType(null);
-    Alert.alert('Deload Programado! √∞≈∏‚Äú‚Ä¶', 'Semana de deload a√±adida al calendario');
+    Alert.alert('Deload Programado! üìÖ', 'Semana de deload aÒadida al calendario');
   };
 
   const deleteDeload = (id: string) => {
     Alert.alert(
       'Eliminar Deload',
-      '¬øEst√°s seguro?',
+      'øEst·s seguro?',
       [
         { text: 'Cancelar' },
         { text: 'Eliminar', style: 'destructive', onPress: () => setDeloads(deloads.filter((d) => d.id !== id)) },
@@ -120,7 +120,7 @@ export default function DeloadPlanner() {
 
   const markCompleted = (id: string) => {
     setDeloads(deloads.map((d) => (d.id === id ? { ...d, status: 'completed' as const } : d)));
-    Alert.alert('Completado! ‚úÖ', 'Deload marcado como completado');
+    Alert.alert('Completado! ?', 'Deload marcado como completado');
   };
 
   const getTypeInfo = (type: string) => {
@@ -167,7 +167,7 @@ export default function DeloadPlanner() {
                   className={`mb-3 rounded-lg p-4 bg-${type.color}-500/10 border border-${type.color}-500/30`}
                 >
                   <View className="flex-row items-center mb-2">
-                    <Ionicons name={type.icon as any} size={24} color={`#${type.color === 'blue' ? '3B82F6' : type.color === 'emerald' ? '10B981' : 'A855F7'}`} />
+                    <Ionicons name={type.icon as any} size={24} color={`#${type.color === 'blue' ? '3B82F6' : type.color === 'primary' ? '9D12DE' : 'A855F7'}`} />
                     <Text className={`text-${type.color}-400 font-bold text-lg ml-3`}>
                       {type.label}
                     </Text>
@@ -176,7 +176,7 @@ export default function DeloadPlanner() {
                   <View className="bg-zinc-800 rounded-lg p-2">
                     {type.recommendations.map((rec, idx) => (
                       <Text key={idx} className="text-zinc-400 text-xs">
-                        ‚Ä¢ {rec}
+                        ï {rec}
                       </Text>
                     ))}
                   </View>
@@ -190,13 +190,13 @@ export default function DeloadPlanner() {
             <View className="bg-gradient-to-r from-primary to-[#7D0EBE] rounded-xl p-6 mb-6">
               <View className="flex-row items-center mb-3">
                 <Ionicons name="calendar" size={24} color="white" />
-                <Text className="text-white font-bold text-lg ml-2">Pr√≥ximo Deload</Text>
+                <Text className="text-white font-bold text-lg ml-2">PrÛximo Deload</Text>
               </View>
               <Text className="text-white text-3xl font-bold mb-2">
-                {getDaysUntil(nextDeload.startDate)} d√≠as
+                {getDaysUntil(nextDeload.startDate)} dÌas
               </Text>
               <Text className="text-white opacity-90 text-sm mb-3">
-                Semana {nextDeload.weekNumber} ‚Ä¢ {getTypeInfo(nextDeload.type).label}
+                Semana {nextDeload.weekNumber} ï {getTypeInfo(nextDeload.type).label}
               </Text>
               <TouchableOpacity
                 onPress={() => markCompleted(nextDeload.id)}
@@ -209,14 +209,14 @@ export default function DeloadPlanner() {
 
           {/* Why Deload */}
           <View className="bg-zinc-900 rounded-xl p-4 mb-6 border border-zinc-800">
-            <Text className="text-white font-bold text-lg mb-3">¬øPor Qu√© Deload?</Text>
+            <Text className="text-white font-bold text-lg mb-3">øPor QuÈ Deload?</Text>
             <View className="space-y-3">
               <View className="flex-row items-start">
                 <View className="w-8 h-8 bg-primary/10 rounded-full items-center justify-center mr-3 mt-0.5">
                   <Ionicons name="fitness" size={16} color="#9D12DE" />
                 </View>
                 <View className="flex-1">
-                  <Text className="text-white font-bold mb-1">Recuperaci√≥n Completa</Text>
+                  <Text className="text-white font-bold mb-1">RecuperaciÛn Completa</Text>
                   <Text className="text-zinc-400 text-sm">
                     Permite que sistema nervioso central y articulaciones se recuperen
                   </Text>
@@ -254,7 +254,7 @@ export default function DeloadPlanner() {
                 <View className="flex-1">
                   <Text className="text-white font-bold mb-1">Salud Mental</Text>
                   <Text className="text-zinc-400 text-sm">
-                    Break psicol√≥gico para volver con m√°s motivaci√≥n
+                    Break psicolÛgico para volver con m·s motivaciÛn
                   </Text>
                 </View>
               </View>
@@ -265,7 +265,7 @@ export default function DeloadPlanner() {
           <Text className="text-white font-bold text-lg mb-4">Historial</Text>
           {deloads.length === 0 ? (
             <View className="bg-zinc-900 rounded-xl p-8 items-center border border-zinc-800 mb-6">
-              <Text className="text-6xl mb-3">√∞≈∏‚Äú‚Ä¶</Text>
+              <Text className="text-6xl mb-3">üìÖ</Text>
               <Text className="text-white font-bold text-lg mb-2">Sin Deloads Programados</Text>
               <Text className="text-zinc-400 text-center">
                 Programa semanas de deload cada 4-6 semanas
@@ -292,9 +292,9 @@ export default function DeloadPlanner() {
                           <Text className="text-zinc-400 text-sm mb-2">
                             {typeInfo.label}
                           </Text>
-                          <View className={`bg-${deload.status === 'completed' ? 'emerald' : deload.status === 'active' ? 'blue' : 'amber'}-500/10 rounded px-2 py-1 border border-${deload.status === 'completed' ? 'emerald' : deload.status === 'active' ? 'blue' : 'amber'}-500/30 self-start`}>
-                            <Text className={`text-${deload.status === 'completed' ? 'emerald' : deload.status === 'active' ? 'blue' : 'amber'}-400 text-xs font-bold`}>
-                              {deload.status === 'completed' ? '‚úì Completado' : deload.status === 'active' ? '√∞≈∏‚Äù¬• Activo' : `${daysUntil} d√≠as`}
+                          <View className={`bg-${deload.status === 'completed' ? 'primary' : deload.status === 'active' ? 'blue' : 'amber'}-500/10 rounded px-2 py-1 border border-${deload.status === 'completed' ? 'primary' : deload.status === 'active' ? 'blue' : 'amber'}-500/30 self-start`}>
+                            <Text className={`text-${deload.status === 'completed' ? 'primary' : deload.status === 'active' ? 'blue' : 'amber'}-400 text-xs font-bold`}>
+                              {deload.status === 'completed' ? '? Completado' : deload.status === 'active' ? 'üî• Activo' : `${daysUntil} dÌas`}
                             </Text>
                           </View>
                         </View>
@@ -331,15 +331,15 @@ export default function DeloadPlanner() {
               <Ionicons name="bulb" size={20} color="#9D12DE" />
               <View className="flex-1 ml-3">
                 <Text className="text-primary/80 font-bold mb-2">
-                  Cu√°ndo Hacer Deload
+                  Cu·ndo Hacer Deload
                 </Text>
                 <Text className="text-primary/60 text-sm">
-                  ‚Ä¢ Cada 4-6 semanas de entrenamiento intenso{'\n'}
-                  ‚Ä¢ Si sientes fatiga acumulada{'\n'}
-                  ‚Ä¢ Dolor articular persistente{'\n'}
-                  ‚Ä¢ P√©rdida de motivaci√≥n{'\n'}
-                  ‚Ä¢ Estancamiento en progreso{'\n'}
-                  ‚Ä¢ Post-competici√≥n o meet
+                  ï Cada 4-6 semanas de entrenamiento intenso{'\n'}
+                  ï Si sientes fatiga acumulada{'\n'}
+                  ï Dolor articular persistente{'\n'}
+                  ï PÈrdida de motivaciÛn{'\n'}
+                  ï Estancamiento en progreso{'\n'}
+                  ï Post-competiciÛn o meet
                 </Text>
               </View>
             </View>

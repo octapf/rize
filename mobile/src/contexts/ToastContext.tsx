@@ -128,7 +128,7 @@ function ToastItem({ toast }: { toast: Toast }) {
   const getColors = () => {
     switch (toast.type) {
       case 'success':
-        return { bg: '#10B981', icon: '#FFF' };
+        return { bg: '#9D12DE', icon: '#FFF' };
       case 'error':
         return { bg: '#EF4444', icon: '#FFF' };
       case 'warning':

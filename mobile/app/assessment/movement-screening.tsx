@@ -1,4 +1,4 @@
-ï»¿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -35,7 +35,7 @@ export default function MovementScreening() {
         3: {
           criteria: 'Full depth squat, torso upright, arms overhead, heels down',
           label: 'Perfect',
-          color: 'emerald',
+          color: 'primary',
         },
         2: {
           criteria: 'Needs 2x4 under heels to achieve criteria above',
@@ -76,7 +76,7 @@ export default function MovementScreening() {
         3: {
           criteria: 'Hips, knees, ankles aligned; dowel stays level; no loss of balance',
           label: 'Perfect',
-          color: 'emerald',
+          color: 'primary',
         },
         2: {
           criteria: 'Minimal movement in dowel, slight alignment loss',
@@ -99,7 +99,7 @@ export default function MovementScreening() {
       id: 'lunge',
       name: 'In-Line Lunge',
       icon: 'arrow-forward' as const,
-      color: 'emerald',
+      color: 'primary',
       description: 'Dynamic stability and deceleration',
       setup: [
         'Stand on line, dowel behind back',
@@ -116,7 +116,7 @@ export default function MovementScreening() {
         3: {
           criteria: 'Dowel maintains contact, no torso movement, knee touches',
           label: 'Perfect',
-          color: 'emerald',
+          color: 'primary',
         },
         2: {
           criteria: 'Minor dowel loss, completes movement',
@@ -154,7 +154,7 @@ export default function MovementScreening() {
         3: {
           criteria: 'Fists within one hand length',
           label: 'Perfect',
-          color: 'emerald',
+          color: 'primary',
         },
         2: {
           criteria: 'Fists within 1.5 hand lengths',
@@ -193,7 +193,7 @@ export default function MovementScreening() {
         3: {
           criteria: 'Malleolus (ankle) passes mid-thigh of down leg',
           label: 'Perfect',
-          color: 'emerald',
+          color: 'primary',
         },
         2: {
           criteria: 'Malleolus reaches mid-thigh',
@@ -231,7 +231,7 @@ export default function MovementScreening() {
 
       <ScrollView className="flex-1" showsVerticalScrollIndicator={false}>
         <View className="px-6 pt-6">
-          <View className="bg-gradient-to-r from-blue-500 to-emerald-500 rounded-xl p-6 mb-6">
+          <View className="bg-gradient-to-r from-blue-500 to-primary rounded-xl p-6 mb-6">
             <Text className="text-white text-2xl font-bold mb-2">Screen Movement</Text>
             <Text className="text-white opacity-90">
               Identify limitations and asymmetries
@@ -267,7 +267,7 @@ export default function MovementScreening() {
 
           <View className={`bg-${currentMovement.color}-500/10 rounded-xl p-5 mb-6 border border-${currentMovement.color}-500/30`}>
             <View className="flex-row items-center mb-3">
-              <Ionicons name={currentMovement.icon} size={28} color={`#${currentMovement.color === 'blue' ? '3b82f6' : currentMovement.color === 'purple' ? 'a855f7' : currentMovement.color === 'emerald' ? '10b981' : currentMovement.color === 'amber' ? 'f59e0b' : 'ef4444'}`} />
+              <Ionicons name={currentMovement.icon} size={28} color={`#${currentMovement.color === 'blue' ? '3b82f6' : currentMovement.color === 'purple' ? 'a855f7' : currentMovement.color === 'primary' ? '9D12DE' : currentMovement.color === 'amber' ? 'f59e0b' : 'ef4444'}`} />
               <Text className={`text-${currentMovement.color}-400 font-bold text-xl ml-3 flex-1`}>
                 {currentMovement.name}
               </Text>
@@ -329,16 +329,16 @@ export default function MovementScreening() {
           <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
             <Text className="text-primary/80 font-bold mb-2">Screening Tips</Text>
             <Text className="text-primary/60 text-sm mb-2">
-              â€¢ Record video to review form
+              • Record video to review form
             </Text>
             <Text className="text-primary/60 text-sm mb-2">
-              â€¢ Test both sides for asymmetries
+              • Test both sides for asymmetries
             </Text>
             <Text className="text-primary/60 text-sm mb-2">
-              â€¢ Re-screen every 4-6 weeks to track improvements
+              • Re-screen every 4-6 weeks to track improvements
             </Text>
             <Text className="text-primary/60 text-sm">
-              â€¢ Score of 1 = address limitation before heavy loading
+              • Score of 1 = address limitation before heavy loading
             </Text>
           </View>
         </View>

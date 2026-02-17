@@ -1,4 +1,4 @@
-ï»¿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -18,7 +18,7 @@ export default function ConsistencyMetrics() {
       icon: 'checkmark-circle' as const,
       color: 'blue',
       description: 'Percentage of planned workouts completed',
-      calculation: '(Completed Workouts / Planned Workouts) Ã— 100',
+      calculation: '(Completed Workouts / Planned Workouts) × 100',
       targets: [
         { level: 'Excellent', range: '90-100%', impact: 'Maximum progress' },
         { level: 'Good', range: '80-89%', impact: 'Solid progress' },
@@ -44,13 +44,13 @@ export default function ConsistencyMetrics() {
       id: 'volume',
       name: 'Volume Consistency',
       icon: 'barbell' as const,
-      color: 'emerald',
+      color: 'primary',
       description: 'Week-to-week volume stability',
       calculation: 'Standard deviation of weekly volume',
       targets: [
-        { level: 'Very Stable', range: 'Ã‚Â±5%', impact: 'Excellent programming' },
-        { level: 'Stable', range: 'Ã‚Â±10%', impact: 'Good programming' },
-        { level: 'Variable', range: 'Ã‚Â±20%', impact: 'Consider planning' },
+        { level: 'Very Stable', range: 'Â±5%', impact: 'Excellent programming' },
+        { level: 'Stable', range: 'Â±10%', impact: 'Good programming' },
+        { level: 'Variable', range: 'Â±20%', impact: 'Consider planning' },
         { level: 'Erratic', range: '>20%', impact: 'Needs structure' },
       ],
     },
@@ -60,7 +60,7 @@ export default function ConsistencyMetrics() {
       icon: 'nutrition' as const,
       color: 'purple',
       description: 'Hitting macro/calorie targets',
-      calculation: '(Days within Ã‚Â±5% targets / Total Days) Ã— 100',
+      calculation: '(Days within Â±5% targets / Total Days) × 100',
       targets: [
         { level: 'Elite', range: '95-100%', impact: 'Max results' },
         { level: 'Excellent', range: '85-94%', impact: 'Great results' },
@@ -74,7 +74,7 @@ export default function ConsistencyMetrics() {
       icon: 'moon' as const,
       color: 'amber',
       description: '7+ hours sleep per night',
-      calculation: '(Nights with 7+ hours / Total Nights) Ã— 100',
+      calculation: '(Nights with 7+ hours / Total Nights) × 100',
       targets: [
         { level: 'Optimal', range: '90-100%', impact: 'Peak recovery' },
         { level: 'Good', range: '75-89%', impact: 'Adequate recovery' },
@@ -117,7 +117,7 @@ export default function ConsistencyMetrics() {
 
       <ScrollView className="flex-1" showsVerticalScrollIndicator={false}>
         <View className="px-6 pt-6">
-          <View className="bg-gradient-to-r from-blue-500 to-emerald-500 rounded-xl p-6 mb-6">
+          <View className="bg-gradient-to-r from-blue-500 to-primary rounded-xl p-6 mb-6">
             <Text className="text-white text-2xl font-bold mb-2">Track Consistency</Text>
             <Text className="text-white opacity-90">
               Consistency beats intensity
@@ -176,7 +176,7 @@ export default function ConsistencyMetrics() {
 
           <View className={`bg-${currentMetric.color}-500/10 rounded-xl p-5 mb-6 border border-${currentMetric.color}-500/30`}>
             <View className="flex-row items-center mb-3">
-              <Ionicons name={currentMetric.icon} size={28} color={`#${currentMetric.color === 'blue' ? '3b82f6' : currentMetric.color === 'red' ? 'ef4444' : currentMetric.color === 'emerald' ? '10b981' : currentMetric.color === 'purple' ? 'a855f7' : 'f59e0b'}`} />
+              <Ionicons name={currentMetric.icon} size={28} color={`#${currentMetric.color === 'blue' ? '3b82f6' : currentMetric.color === 'red' ? 'ef4444' : currentMetric.color === 'primary' ? '9D12DE' : currentMetric.color === 'purple' ? 'a855f7' : 'f59e0b'}`} />
               <Text className={`text-${currentMetric.color}-400 font-bold text-2xl ml-3`}>
                 {currentMetric.name}
               </Text>
@@ -191,7 +191,7 @@ export default function ConsistencyMetrics() {
           <View className="bg-zinc-900 rounded-xl p-5 mb-6 border border-zinc-800">
             <Text className="text-white font-bold text-lg mb-4">Performance Targets</Text>
             {currentMetric.targets.map((target, idx) => {
-              const colors = ['emerald', 'blue', 'amber', 'red'];
+              const colors = ['primary', 'blue', 'amber', 'red'];
               const color = colors[idx];
               
               return (
@@ -219,7 +219,7 @@ export default function ConsistencyMetrics() {
             <Text className="text-white font-bold text-lg mb-4">Weekly Breakdown</Text>
             {weeklyConsistency.weeks.map((week, idx) => {
               const adherence = weeklyConsistency.adherence[idx];
-              const color = adherence >= 90 ? 'emerald' : adherence >= 75 ? 'blue' : 'amber';
+              const color = adherence >= 90 ? 'primary' : adherence >= 75 ? 'blue' : 'amber';
               
               return (
                 <View
@@ -251,23 +251,23 @@ export default function ConsistencyMetrics() {
           <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
             <Text className="text-primary/80 font-bold mb-2">Why Consistency Matters</Text>
             <Text className="text-primary/60 text-sm">
-              â€¢ 80% adherence beats 100% intensity{'\n'}
-              â€¢ Small daily actions compound{'\n'}
-              â€¢ Builds unbreakable habits{'\n'}
-              â€¢ Prevents boom-bust cycles{'\n'}
-              â€¢ Long-term &gt; short-term heroics
+              • 80% adherence beats 100% intensity{'\n'}
+              • Small daily actions compound{'\n'}
+              • Builds unbreakable habits{'\n'}
+              • Prevents boom-bust cycles{'\n'}
+              • Long-term &gt; short-term heroics
             </Text>
           </View>
 
           <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
             <Text className="text-primary font-bold mb-2">Improving Consistency</Text>
             <Text className="text-primary/80 text-sm">
-              â€¢ Schedule workouts like meetings{'\n'}
-              â€¢ Remove friction (prep gear night before){'\n'}
-              â€¢ Never miss twice in a row{'\n'}
-              â€¢ Track immediately{'\n'}
-              â€¢ Accountability partner{'\n'}
-              â€¢ Forgive missed days, refocus
+              • Schedule workouts like meetings{'\n'}
+              • Remove friction (prep gear night before){'\n'}
+              • Never miss twice in a row{'\n'}
+              • Track immediately{'\n'}
+              • Accountability partner{'\n'}
+              • Forgive missed days, refocus
             </Text>
           </View>
         </View>

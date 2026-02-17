@@ -1,4 +1,4 @@
-ï»¿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -78,8 +78,8 @@ export default function WorkoutHistoryScreen() {
 
   const filters = [
     { label: 'Todos', value: 'all' as const },
-    { label: 'Ãšltima Semana', value: 'week' as const },
-    { label: 'Ãšltimo Mes', value: 'month' as const },
+    { label: 'Última Semana', value: 'week' as const },
+    { label: 'Último Mes', value: 'month' as const },
   ];
 
   return (
@@ -130,7 +130,7 @@ export default function WorkoutHistoryScreen() {
             <View className="items-center gap-3">
               <Ionicons name="fitness-outline" size={48} color="#9CA3AF" />
               <Text className="text-center text-gray-500 font-medium">
-                No hay entrenamientos en este perÃ­odo
+                No hay entrenamientos en este período
               </Text>
             </View>
           </Card>
@@ -180,7 +180,7 @@ export default function WorkoutHistoryScreen() {
                   {/* Stats */}
                   <View className="flex-row gap-3 py-3 border-t border-gray-200">
                     <View className="flex-1 items-center">
-                      <Text className="text-gray-500 text-xs mb-1">DuraciÃ³n</Text>
+                      <Text className="text-gray-500 text-xs mb-1">Duración</Text>
                       <View className="flex-row items-center gap-1">
                         <Ionicons name="time-outline" size={16} color="#6B7280" />
                         <Text className="text-gray-900 font-bold">
@@ -230,7 +230,7 @@ export default function WorkoutHistoryScreen() {
                       {workout.exercises.length > 3 && (
                         <View className="bg-gray-100 px-3 py-1 rounded-full">
                           <Text className="text-xs text-gray-700 font-medium">
-                            +{workout.exercises.length - 3} mÃ¡s
+                            +{workout.exercises.length - 3} más
                           </Text>
                         </View>
                       )}

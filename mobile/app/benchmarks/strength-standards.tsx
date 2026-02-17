@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -147,7 +147,7 @@ export default function StrengthStandards() {
             <Text className="text-white font-bold text-lg mb-4">Standards (1RM)</Text>
             
             {levels.map((level, idx) => {
-              const colors = ['emerald', 'blue', 'purple', 'amber'];
+              const colors = ['primary', 'blue', 'purple', 'amber'];
               const color = colors[idx];
               const standardWeight = getStandard(selectedExercise, level);
               

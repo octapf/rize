@@ -1,4 +1,4 @@
-﻿import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import {
   View,
   Text,
@@ -30,7 +30,7 @@ const TIMER_PRESETS: TimerPreset[] = [
     name: 'Rest Timer (3 min)',
     mode: 'countdown',
     duration: 180,
-    icon: 'â±ï¸',
+    icon: '⏱️',
     description: 'Descanso entre series',
   },
   {
@@ -39,7 +39,7 @@ const TIMER_PRESETS: TimerPreset[] = [
     mode: 'emom',
     duration: 600,
     rounds: 10,
-    icon: 'ðŸ””',
+    icon: '🔔',
     description: 'Every Minute On the Minute',
   },
   {
@@ -47,7 +47,7 @@ const TIMER_PRESETS: TimerPreset[] = [
     name: 'AMRAP 12 min',
     mode: 'amrap',
     duration: 720,
-    icon: 'â™¾ï¸',
+    icon: '♾️',
     description: 'As Many Rounds As Possible',
   },
   {
@@ -58,7 +58,7 @@ const TIMER_PRESETS: TimerPreset[] = [
     rounds: 8,
     work: 20,
     rest: 10,
-    icon: '⚡',
+    icon: '?',
     description: '8 rounds de 20s trabajo / 10s descanso',
   },
   {
@@ -69,7 +69,7 @@ const TIMER_PRESETS: TimerPreset[] = [
     rounds: 8,
     work: 40,
     rest: 20,
-    icon: 'ðŸ”¥',
+    icon: '🔥',
     description: '8 rounds de 40s trabajo / 20s descanso',
   },
   {
@@ -77,7 +77,7 @@ const TIMER_PRESETS: TimerPreset[] = [
     name: 'Descanso Corto (90s)',
     mode: 'countdown',
     duration: 90,
-    icon: 'â¸ï¸',
+    icon: '⏸️',
     description: 'Entre series accesorios',
   },
 ];
@@ -163,7 +163,7 @@ export default function WorkoutTimer() {
   const handleTimerFinish = () => {
     setIsRunning(false);
     setIsPaused(false);
-    Alert.alert('Timer Completado! 🎉', 'Excelente trabajo!');
+    Alert.alert('Timer Completado! ??', 'Excelente trabajo!');
   };
 
   const startTimer = () => {
@@ -208,7 +208,7 @@ export default function WorkoutTimer() {
 
   const getTimerColor = (): string => {
     if (selectedMode === 'tabata') {
-      return isWorkPhase ? 'emerald' : 'amber';
+      return isWorkPhase ? 'primary' : 'amber';
     }
     if (time <= 10 && selectedMode !== 'stopwatch') {
       return 'red';
@@ -243,17 +243,17 @@ export default function WorkoutTimer() {
                   <Ionicons name="timer" size={20} color="#9D12DE" />
                   <View className="flex-1 ml-3">
                     <Text className="text-primary/80 font-bold mb-2">
-                      Timer Versátil
+                      Timer Vers�til
                     </Text>
                     <Text className="text-primary/60 text-sm">
-                      Cronómetro, cuenta regresiva, EMOM, AMRAP, Tabata y más para tus entrenamientos.
+                      Cron�metro, cuenta regresiva, EMOM, AMRAP, Tabata y m�s para tus entrenamientos.
                     </Text>
                   </View>
                 </View>
               </View>
 
               {/* Presets */}
-              <Text className="text-white font-bold text-lg mb-4">Presets Rápidos</Text>
+              <Text className="text-white font-bold text-lg mb-4">Presets R�pidos</Text>
               {TIMER_PRESETS.map((preset) => (
                 <TouchableOpacity
                   key={preset.id}
@@ -286,7 +286,7 @@ export default function WorkoutTimer() {
                   className="flex-1 bg-primary rounded-xl p-4 items-center"
                 >
                   <Ionicons name="stopwatch" size={32} color="white" />
-                  <Text className="text-white font-bold mt-2">Cronómetro</Text>
+                  <Text className="text-white font-bold mt-2">Cron�metro</Text>
                 </TouchableOpacity>
                 <TouchableOpacity
                   onPress={() => { setSelectedMode('countdown'); setTime(180); setTargetTime(180); }}
@@ -304,7 +304,7 @@ export default function WorkoutTimer() {
                 {/* Mode Badge */}
                 <View className={`bg-${getTimerColor()}-500/10 rounded-lg px-4 py-2 border border-${getTimerColor()}-500/30 mb-4`}>
                   <Text className={`text-${getTimerColor()}-400 font-bold text-sm`}>
-                    {selectedMode === 'stopwatch' && 'CRONÃ“METRO'}
+                    {selectedMode === 'stopwatch' && 'CRONÓMETRO'}
                     {selectedMode === 'countdown' && 'CUENTA REGRESIVA'}
                     {selectedMode === 'emom' && 'EMOM'}
                     {selectedMode === 'amrap' && 'AMRAP'}
@@ -368,9 +368,9 @@ export default function WorkoutTimer() {
                   <>
                     <Text className="text-white font-bold text-lg mb-3">EMOM Info</Text>
                     <Text className="text-zinc-400 text-sm mb-2">
-                      • Suena beep cada minuto{'\n'}
-                      • Completa ejercicios y descansa lo que quede{'\n'}
-                      • Total: {totalRounds} rondas
+                      � Suena beep cada minuto{'\n'}
+                      � Completa ejercicios y descansa lo que quede{'\n'}
+                      � Total: {totalRounds} rondas
                     </Text>
                   </>
                 )}
@@ -378,9 +378,9 @@ export default function WorkoutTimer() {
                   <>
                     <Text className="text-white font-bold text-lg mb-3">AMRAP Info</Text>
                     <Text className="text-zinc-400 text-sm mb-2">
-                      • Completa máximas rondas en tiempo{'\n'}
-                      • Mantén técnica perfecta{'\n'}
-                      • Anota rondas completadas al final
+                      � Completa m�ximas rondas en tiempo{'\n'}
+                      � Mant�n t�cnica perfecta{'\n'}
+                      � Anota rondas completadas al final
                     </Text>
                   </>
                 )}

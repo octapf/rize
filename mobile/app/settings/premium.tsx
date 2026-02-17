@@ -1,4 +1,4 @@
-Ôªøimport React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -30,8 +30,8 @@ interface Plan {
 const PREMIUM_FEATURES: PremiumFeature[] = [
   {
     id: '1',
-    name: 'An√°lisis con IA',
-    description: 'An√°lisis avanzado de fotos de comida y t√©cnica',
+    name: 'An·lisis con IA',
+    description: 'An·lisis avanzado de fotos de comida y tÈcnica',
     icon: 'sparkles',
     category: 'IA',
   },
@@ -58,8 +58,8 @@ const PREMIUM_FEATURES: PremiumFeature[] = [
   },
   {
     id: '5',
-    name: 'Estad√≠sticas Avanzadas',
-    description: 'Gr√°ficos y m√©tricas detalladas',
+    name: 'EstadÌsticas Avanzadas',
+    description: 'Gr·ficos y mÈtricas detalladas',
     icon: 'analytics',
     category: 'Analytics',
   },
@@ -73,7 +73,7 @@ const PREMIUM_FEATURES: PremiumFeature[] = [
   {
     id: '7',
     name: 'Soporte Prioritario',
-    description: 'Atenci√≥n al cliente 24/7',
+    description: 'AtenciÛn al cliente 24/7',
     icon: 'chatbubbles',
     category: 'Soporte',
   },
@@ -98,21 +98,21 @@ const PLANS: Plan[] = [
     id: 'yearly',
     name: 'Anual',
     price: 79.99,
-    period: 'a√±o',
+    period: 'aÒo',
     discount: 33,
     popular: true,
     features: [
       'Todas las funciones premium',
       '2 meses gratis',
       'Cancela cuando quieras',
-      'Ahorra $40/a√±o',
+      'Ahorra $40/aÒo',
     ],
   },
   {
     id: 'lifetime',
     name: 'De por Vida',
     price: 199.99,
-    period: '√∫nico pago',
+    period: '˙nico pago',
     features: [
       'Todas las funciones premium',
       'Acceso de por vida',
@@ -127,16 +127,16 @@ export default function Premium() {
 
   const handleSubscribe = () => {
     Alert.alert(
-      'Confirmar Suscripci√≥n',
-      `¬øSuscribirte al plan ${selectedPlan.name} por $${selectedPlan.price}?`,
+      'Confirmar SuscripciÛn',
+      `øSuscribirte al plan ${selectedPlan.name} por $${selectedPlan.price}?`,
       [
         { text: 'Cancelar', style: 'cancel' },
         {
           text: 'Suscribirse',
           onPress: () => {
             Alert.alert(
-              '¬°Bienvenido a Premium!',
-              'Tu suscripci√≥n est√° activa. Disfruta de todas las funciones premium.'
+              '°Bienvenido a Premium!',
+              'Tu suscripciÛn est· activa. Disfruta de todas las funciones premium.'
             );
           },
         },
@@ -145,7 +145,7 @@ export default function Premium() {
   };
 
   const restorePurchases = () => {
-    Alert.alert('Restaurando compras...', 'Verificando tu suscripci√≥n', [
+    Alert.alert('Restaurando compras...', 'Verificando tu suscripciÛn', [
       {
         text: 'OK',
         onPress: () => {
@@ -213,7 +213,7 @@ export default function Premium() {
             >
               {plan.popular && (
                 <View className="absolute -top-2 right-4 bg-amber-500 px-3 py-1 rounded-full">
-                  <Text className="text-white text-xs font-bold">M√É¬ÅS POPULAR</Text>
+                  <Text className="text-white text-xs font-bold">M√ÅS POPULAR</Text>
                 </View>
               )}
 
@@ -311,8 +311,8 @@ export default function Premium() {
               "Vale cada centavo"
             </Text>
             <Text className="text-zinc-300 text-sm leading-5 mb-2">
-              El an√°lisis con IA me ayud√≥ a corregir mi t√©cnica y evitar lesiones.
-              Los planes personalizados son incre√≠bles.
+              El an·lisis con IA me ayudÛ a corregir mi tÈcnica y evitar lesiones.
+              Los planes personalizados son increÌbles.
             </Text>
             <Text className="text-zinc-500 text-xs">- Carlos M.</Text>
           </View>
@@ -324,10 +324,10 @@ export default function Premium() {
               ))}
             </View>
             <Text className="text-white font-semibold mb-2">
-              "La mejor inversi√≥n"
+              "La mejor inversiÛn"
             </Text>
             <Text className="text-zinc-300 text-sm leading-5 mb-2">
-              Las estad√≠sticas avanzadas me permitieron optimizar mi
+              Las estadÌsticas avanzadas me permitieron optimizar mi
               entrenamiento. Resultados visibles en 3 meses.
             </Text>
             <Text className="text-zinc-500 text-xs">- Ana R.</Text>
@@ -342,30 +342,30 @@ export default function Premium() {
 
           <View className="bg-zinc-900 rounded-xl p-4 border border-zinc-800 mb-3">
             <Text className="text-white font-semibold mb-2">
-              ¬øPuedo cancelar en cualquier momento?
+              øPuedo cancelar en cualquier momento?
             </Text>
             <Text className="text-zinc-300 text-sm leading-5">
-              S√≠, puedes cancelar tu suscripci√≥n cuando quieras sin penalizaci√≥n.
-              Tendr√°s acceso hasta el final del per√≠odo pagado.
+              SÌ, puedes cancelar tu suscripciÛn cuando quieras sin penalizaciÛn.
+              Tendr·s acceso hasta el final del perÌodo pagado.
             </Text>
           </View>
 
           <View className="bg-zinc-900 rounded-xl p-4 border border-zinc-800 mb-3">
             <Text className="text-white font-semibold mb-2">
-              ¬øHay garant√≠a de devoluci√≥n?
+              øHay garantÌa de devoluciÛn?
             </Text>
             <Text className="text-zinc-300 text-sm leading-5">
-              Ofrecemos garant√≠a de 7 d√≠as. Si no est√°s satisfecho, te devolvemos
+              Ofrecemos garantÌa de 7 dÌas. Si no est·s satisfecho, te devolvemos
               el 100% de tu dinero, sin preguntas.
             </Text>
           </View>
 
           <View className="bg-zinc-900 rounded-xl p-4 border border-zinc-800">
             <Text className="text-white font-semibold mb-2">
-              ¬øQu√© m√©todos de pago aceptan?
+              øQuÈ mÈtodos de pago aceptan?
             </Text>
             <Text className="text-zinc-300 text-sm leading-5">
-              Aceptamos tarjetas de cr√©dito/d√©bito, PayPal, Apple Pay y Google Pay.
+              Aceptamos tarjetas de crÈdito/dÈbito, PayPal, Apple Pay y Google Pay.
               Todos los pagos son seguros y cifrados.
             </Text>
           </View>
@@ -384,8 +384,8 @@ export default function Premium() {
         </TouchableOpacity>
 
         <Text className="text-zinc-500 text-xs text-center mt-3">
-          Al suscribirte, aceptas nuestros T√©rminos de Servicio y Pol√≠tica de
-          Privacidad. La suscripci√≥n se renueva autom√°ticamente.
+          Al suscribirte, aceptas nuestros TÈrminos de Servicio y PolÌtica de
+          Privacidad. La suscripciÛn se renueva autom·ticamente.
         </Text>
       </View>
     </View>

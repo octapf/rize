@@ -1,0 +1,28 @@
+---
+description: Backend feature implementation patterns
+globs: backend/**/*.ts
+alwaysApply: false
+---
+
+# Backend Feature Pattern
+
+**Aplicar automáticamente**: BACKEND_STANDARDS.md es la fuente de verdad. No requiere que el usuario lo mencione.
+
+## Structure per feature
+```
+features/{name}/
+  {name}.controller.ts  # Express handlers, asyncHandler
+  {name}.service.ts     # Business logic
+  {name}.routes.ts      # Mount under /api/v1/{name}
+  {name}.validation.ts # Zod schemas
+```
+
+## Conventions
+- Use `authMiddleware` for protected routes (from @/middleware/auth)
+- Use `asyncHandler` from @/utils/asyncHandler
+- Validate with `validate(z.object({...}))` from @/middleware/validator
+- Response: `{ success: true, data: ... }` or `{ success: false, error: { code, message } }`
+- Models: import from @/models/* (named exports: User, Workout, etc.)
+
+## Mount new routes in server.ts
+Add: `app.use('/api/v1/{name}', {name}Routes);`

@@ -1,4 +1,4 @@
-ï»¿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -144,13 +144,13 @@ export default function BodyCompositionCalculator() {
         health,
       });
     } catch (error) {
-      Alert.alert('Error', 'Verifica que todos los campos estÃ©n completos');
+      Alert.alert('Error', 'Verifica que todos los campos estén completos');
     }
   };
 
   const methods = [
-    { key: 'navy', label: 'Navy Method', description: 'Mide circunferencias (mÃ¡s fÃ¡cil)', icon: 'analytics' },
-    { key: 'jp3', label: 'Jackson-Pollock 3', description: '3 pliegues cutÃ¡neos (preciso)', icon: 'fitness' },
+    { key: 'navy', label: 'Navy Method', description: 'Mide circunferencias (más fácil)', icon: 'analytics' },
+    { key: 'jp3', label: 'Jackson-Pollock 3', description: '3 pliegues cutáneos (preciso)', icon: 'fitness' },
     { key: 'jp7', label: 'Jackson-Pollock 7', description: '7 pliegues (muy preciso)', icon: 'medal' },
   ];
 
@@ -174,12 +174,12 @@ export default function BodyCompositionCalculator() {
           <View className="bg-gradient-to-r from-blue-500 to-cyan-500 rounded-xl p-6 mb-6">
             <Text className="text-white text-2xl font-bold mb-2">Calcula Tu % Grasa</Text>
             <Text className="text-white opacity-90">
-              MÃ©todos cientÃ­ficamente validados para estimar tu composiciÃ³n corporal
+              Métodos científicamente validados para estimar tu composición corporal
             </Text>
           </View>
 
           {/* Method Selection */}
-          <Text className="text-white font-bold text-lg mb-4">MÃ©todo de CÃ¡lculo</Text>
+          <Text className="text-white font-bold text-lg mb-4">Método de Cálculo</Text>
           {methods.map((m) => (
             <TouchableOpacity
               key={m.key}
@@ -210,7 +210,7 @@ export default function BodyCompositionCalculator() {
           ))}
 
           {/* Gender & Basic Info */}
-          <Text className="text-white font-bold text-lg mb-4 mt-6">InformaciÃ³n BÃ¡sica</Text>
+          <Text className="text-white font-bold text-lg mb-4 mt-6">Información Básica</Text>
           
           <View className="flex-row gap-3 mb-4">
             <TouchableOpacity
@@ -237,7 +237,7 @@ export default function BodyCompositionCalculator() {
 
           <View className="flex-row gap-3 mb-4">
             <View className="flex-1">
-              <Text className="text-zinc-400 text-sm mb-2">Edad (aÃ±os)</Text>
+              <Text className="text-zinc-400 text-sm mb-2">Edad (años)</Text>
               <TextInput
                 value={age}
                 onChangeText={setAge}
@@ -277,7 +277,7 @@ export default function BodyCompositionCalculator() {
               <Text className="text-white font-bold text-lg mb-4 mt-4">Mediciones (cm)</Text>
               <View className="bg-primary/10 rounded-xl p-4 mb-4 border border-primary/30">
                 <Text className="text-primary/80 text-sm mb-2">
-                  Ã°Å¸â€™Â¡ Mide con cinta mÃ©trica en la parte mÃ¡s ancha/estrecha de cada zona
+                  ðŸ’¡ Mide con cinta métrica en la parte más ancha/estrecha de cada zona
                 </Text>
               </View>
               
@@ -317,10 +317,10 @@ export default function BodyCompositionCalculator() {
 
           {(method === 'jp3' || method === 'jp7') && (
             <>
-              <Text className="text-white font-bold text-lg mb-4 mt-4">Pliegues CutÃ¡neos (mm)</Text>
+              <Text className="text-white font-bold text-lg mb-4 mt-4">Pliegues Cutáneos (mm)</Text>
               <View className="bg-purple-500/10 rounded-xl p-4 mb-4 border border-purple-500/30">
                 <Text className="text-purple-400 text-sm mb-2">
-                  Ã°Å¸â€™Â¡ Usa calibrador de pliegues (caliper) - pellizca piel sin mÃºsculo
+                  ðŸ’¡ Usa calibrador de pliegues (caliper) - pellizca piel sin músculo
                 </Text>
               </View>
 
@@ -357,7 +357,7 @@ export default function BodyCompositionCalculator() {
               {method === 'jp7' && (
                 <View className="flex-row gap-3 mb-4">
                   <View className="flex-1">
-                    <Text className="text-zinc-400 text-sm mb-2">TrÃ­ceps</Text>
+                    <Text className="text-zinc-400 text-sm mb-2">Tríceps</Text>
                     <TextInput
                       value={tricep}
                       onChangeText={setTricep}
@@ -417,7 +417,7 @@ export default function BodyCompositionCalculator() {
               <Text className="text-white font-bold text-lg mb-4">Resultados</Text>
               
               <View className={`bg-gradient-to-r rounded-xl p-6 mb-4 ${
-                result.health === 'excellent' ? 'from-emerald-500 to-green-500' :
+                result.health === 'excellent' ? 'from-primary to-primary/100' :
                 result.health === 'good' ? 'from-blue-500 to-cyan-500' :
                 result.health === 'fair' ? 'from-amber-500 to-orange-500' :
                 'from-red-500 to-pink-500'
@@ -447,19 +447,19 @@ export default function BodyCompositionCalculator() {
                 <Text className="text-white font-bold mb-3">Rangos de Referencia ({gender === 'male' ? 'Hombre' : 'Mujer'})</Text>
                 {gender === 'male' ? (
                   <>
-                    <Text className="text-zinc-400 text-sm mb-1">â€¢ 2-5%: Esencial (mÃ­nimo)</Text>
-                    <Text className="text-primary text-sm mb-1">â€¢ 6-13%: Atleta</Text>
-                    <Text className="text-primary/80 text-sm mb-1">â€¢ 14-17%: Fitness</Text>
-                    <Text className="text-amber-400 text-sm mb-1">â€¢ 18-24%: Promedio</Text>
-                    <Text className="text-red-400 text-sm">â€¢ 25%+: Obesidad</Text>
+                    <Text className="text-zinc-400 text-sm mb-1">• 2-5%: Esencial (mínimo)</Text>
+                    <Text className="text-primary text-sm mb-1">• 6-13%: Atleta</Text>
+                    <Text className="text-primary/80 text-sm mb-1">• 14-17%: Fitness</Text>
+                    <Text className="text-amber-400 text-sm mb-1">• 18-24%: Promedio</Text>
+                    <Text className="text-red-400 text-sm">• 25%+: Obesidad</Text>
                   </>
                 ) : (
                   <>
-                    <Text className="text-zinc-400 text-sm mb-1">â€¢ 10-13%: Esencial (mÃ­nimo)</Text>
-                    <Text className="text-primary text-sm mb-1">â€¢ 14-20%: Atleta</Text>
-                    <Text className="text-primary/80 text-sm mb-1">â€¢ 21-24%: Fitness</Text>
-                    <Text className="text-amber-400 text-sm mb-1">â€¢ 25-31%: Promedio</Text>
-                    <Text className="text-red-400 text-sm">â€¢ 32%+: Obesidad</Text>
+                    <Text className="text-zinc-400 text-sm mb-1">• 10-13%: Esencial (mínimo)</Text>
+                    <Text className="text-primary text-sm mb-1">• 14-20%: Atleta</Text>
+                    <Text className="text-primary/80 text-sm mb-1">• 21-24%: Fitness</Text>
+                    <Text className="text-amber-400 text-sm mb-1">• 25-31%: Promedio</Text>
+                    <Text className="text-red-400 text-sm">• 32%+: Obesidad</Text>
                   </>
                 )}
               </View>
@@ -473,12 +473,12 @@ export default function BodyCompositionCalculator() {
               <View className="flex-1 ml-3">
                 <Text className="text-primary/80 font-bold mb-2">Tips Importantes</Text>
                 <Text className="text-primary/60 text-sm">
-                  â€¢ Navy Method: Ã‚Â±4% error (mÃ¡s fÃ¡cil){'\n'}
-                  â€¢ JP3: Ã‚Â±3% error (buena precisiÃ³n){'\n'}
-                  â€¢ JP7: Ã‚Â±2% error (mÃ¡xima precisiÃ³n){'\n'}
-                  â€¢ Mide siempre a la misma hora{'\n'}
-                  â€¢ Re-mide cada 2-4 semanas{'\n'}
-                  â€¢ % grasa &gt; bÃ¡scula para progreso
+                  • Navy Method: Â±4% error (más fácil){'\n'}
+                  • JP3: Â±3% error (buena precisión){'\n'}
+                  • JP7: Â±2% error (máxima precisión){'\n'}
+                  • Mide siempre a la misma hora{'\n'}
+                  • Re-mide cada 2-4 semanas{'\n'}
+                  • % grasa &gt; báscula para progreso
                 </Text>
               </View>
             </View>

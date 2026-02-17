@@ -1,4 +1,4 @@
-ï»¿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -264,7 +264,7 @@ export default function SocialScreen() {
                         {friend.username}
                       </Text>
                       <Text className="text-xs text-gray-500">
-                        Nivel {Math.floor(friend.xp / 100) + 1} â€¢ {friend.xp} XP
+                        Nivel {Math.floor(friend.xp / 100) + 1} • {friend.xp} XP
                       </Text>
                     </View>
                   </View>
@@ -275,7 +275,7 @@ export default function SocialScreen() {
             <Card className="p-8 items-center">
               <Ionicons name="person-add-outline" size={48} color="#9CA3AF" />
               <Text className="text-gray-500 mt-4 text-center">
-                AÃºn no tienes amigos{'\n'}Busca usuarios para agregar
+                Aún no tienes amigos{'\n'}Busca usuarios para agregar
               </Text>
             </Card>
           )}

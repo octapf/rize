@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -45,7 +45,7 @@ const PERSONAL_RECORDS: PersonalRecord[] = [
     date: '2025-01-25T18:00:00',
     previousPR: { weight: 155, reps: 1, date: '2025-01-10T18:00:00' },
     improvement: 3.2,
-    icon: 'ðŸ‹ï¸',
+    icon: '🏋️',
     color: 'bg-red-500',
   },
   {
@@ -57,7 +57,7 @@ const PERSONAL_RECORDS: PersonalRecord[] = [
     date: '2025-01-22T17:00:00',
     previousPR: { weight: 115, reps: 1, date: '2024-12-28T17:00:00' },
     improvement: 4.3,
-    icon: 'ðŸ’ª',
+    icon: '💪',
     color: 'bg-primary',
   },
   {
@@ -69,7 +69,7 @@ const PERSONAL_RECORDS: PersonalRecord[] = [
     date: '2025-01-20T19:00:00',
     previousPR: { weight: 175, reps: 1, date: '2025-01-05T19:00:00' },
     improvement: 2.9,
-    icon: '⚡',
+    icon: '?',
     color: 'bg-amber-500',
   },
   {
@@ -81,7 +81,7 @@ const PERSONAL_RECORDS: PersonalRecord[] = [
     date: '2025-01-18T16:00:00',
     previousPR: { weight: 0, reps: 18, date: '2024-12-20T16:00:00' },
     improvement: 22.2,
-    icon: 'ðŸ”¥',
+    icon: '🔥',
     color: 'bg-primary',
   },
   {
@@ -93,7 +93,7 @@ const PERSONAL_RECORDS: PersonalRecord[] = [
     date: '2025-01-15T07:00:00',
     previousPR: { time: 1320, date: '2024-12-05T07:00:00' },
     improvement: 4.5,
-    icon: 'ðŸƒ',
+    icon: '🏃',
     color: 'bg-purple-500',
   },
   {
@@ -105,7 +105,7 @@ const PERSONAL_RECORDS: PersonalRecord[] = [
     date: '2025-01-12T18:30:00',
     previousPR: { weight: 72.5, reps: 1, date: '2024-11-25T18:30:00' },
     improvement: 3.4,
-    icon: '🎯',
+    icon: '??',
     color: 'bg-cyan-500',
   },
   {
@@ -117,7 +117,7 @@ const PERSONAL_RECORDS: PersonalRecord[] = [
     date: '2025-01-10T15:00:00',
     previousPR: { weight: 0, reps: 1, date: '2024-10-15T15:00:00' },
     improvement: 15.4,
-    icon: 'â¬†ï¸',
+    icon: '⬆️',
     color: 'bg-orange-500',
   },
   {
@@ -128,7 +128,7 @@ const PERSONAL_RECORDS: PersonalRecord[] = [
     date: '2025-01-08T10:00:00',
     previousPR: { reps: 28, date: '2024-12-01T10:00:00' },
     improvement: 14.3,
-    icon: 'ðŸ’¥',
+    icon: '💥',
     color: 'bg-pink-500',
   },
 ];
@@ -170,7 +170,7 @@ export default function PersonalRecords() {
   const addPR = () => {
     Alert.alert(
       'Nuevo PR',
-      '¡Felicitaciones! Registra tu nuevo récord personal',
+      '�Felicitaciones! Registra tu nuevo r�cord personal',
       [
         { text: 'Cancelar', style: 'cancel' },
         { text: 'Registrar', onPress: () => Alert.alert('PR registrado') },
@@ -234,7 +234,7 @@ export default function PersonalRecords() {
             <Ionicons name="arrow-back" size={24} color="white" />
           </TouchableOpacity>
           <Text className="text-white text-2xl font-bold flex-1 ml-3">
-            Récords Personales
+            R�cords Personales
           </Text>
           <TouchableOpacity onPress={addPR}>
             <Ionicons name="add-circle" size={28} color="#9D12DE" />
@@ -327,7 +327,7 @@ export default function PersonalRecords() {
 
               {/* Current PR */}
               <View className="bg-zinc-800 rounded-lg p-4 mb-3">
-                <Text className="text-zinc-400 text-xs mb-2">RÉCORD ACTUAL</Text>
+                <Text className="text-zinc-400 text-xs mb-2">R�CORD ACTUAL</Text>
                 <View className="flex-row items-center justify-between">
                   {record.weight !== undefined && (
                     <View className="flex-1">
@@ -438,7 +438,7 @@ export default function PersonalRecords() {
                 <View className="flex-1">
                   <Text className="text-white font-bold text-lg">{monthly.month}</Text>
                   <Text className="text-zinc-400 text-sm">
-                    {monthly.totalPRs} récords nuevos
+                    {monthly.totalPRs} r�cords nuevos
                   </Text>
                 </View>
                 <Ionicons name="trophy" size={28} color="#FFEA00" />
@@ -465,10 +465,10 @@ export default function PersonalRecords() {
               <Ionicons name="trophy" size={20} color="#9D12DE" />
               <View className="flex-1 ml-3">
                 <Text className="text-primary font-bold mb-2">
-                  Progresión Sistemática
+                  Progresi�n Sistem�tica
                 </Text>
                 <Text className="text-primary/80 text-sm">
-                  Cada PR es un hito. Celebra tus victorias y sigue superándote.
+                  Cada PR es un hito. Celebra tus victorias y sigue super�ndote.
                 </Text>
               </View>
             </View>

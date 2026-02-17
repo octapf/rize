@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -50,10 +50,10 @@ const TRANSFORMATIONS: TransformationPhoto[] = [
     user: 'Carlos Beast',
     duration: 90,
     weightLoss: 18,
-    beforePhoto: 'ðŸ“¸',
-    afterPhoto: 'ðŸ’ª',
+    beforePhoto: '📸',
+    afterPhoto: '💪',
     date: '2025-01-15',
-    story: 'De 98kg a 80kg en 90 días. Deficit 500 kcal + 6x semana gym. Sentadilla pasó de 80kg a 140kg.',
+    story: 'De 98kg a 80kg en 90 d�as. Deficit 500 kcal + 6x semana gym. Sentadilla pas� de 80kg a 140kg.',
     stats: {
       workouts: 72,
       diet: 'Flexible IIFYM',
@@ -71,8 +71,8 @@ const TRANSFORMATIONS: TransformationPhoto[] = [
     user: 'Ana Strong',
     duration: 120,
     muscleGain: 8,
-    beforePhoto: 'ðŸ‘¤',
-    afterPhoto: 'ðŸ‹ï¸',
+    beforePhoto: '👤',
+    afterPhoto: '🏋️',
     date: '2025-01-10',
     story: 'De 52kg a 60kg en 4 meses. Surplus 300 kcal + PPL 5x semana. Primera dominada en semana 6.',
     stats: {
@@ -92,13 +92,13 @@ const TRANSFORMATIONS: TransformationPhoto[] = [
     user: 'Miguel Fitness',
     duration: 180,
     weightLoss: 25,
-    beforePhoto: '😐”',
-    afterPhoto: '😐Ž',
+    beforePhoto: '??�',
+    afterPhoto: '??�',
     date: '2025-01-05',
-    story: '6 meses que cambiaron mi vida. De sedentario a maratonista. Perdí 25kg y gané confianza.',
+    story: '6 meses que cambiaron mi vida. De sedentario a maratonista. Perd� 25kg y gan� confianza.',
     stats: {
       workouts: 108,
-      diet: 'Mediterránea + Cardio',
+      diet: 'Mediterr�nea + Cardio',
       program: 'Cardio + Fuerza',
     },
     metrics: {
@@ -113,10 +113,10 @@ const TRANSFORMATIONS: TransformationPhoto[] = [
     user: 'Laura Warrior',
     duration: 60,
     muscleGain: 5,
-    beforePhoto: '🙂',
-    afterPhoto: 'ðŸ’ƒ',
+    beforePhoto: '??',
+    afterPhoto: '💃',
     date: '2024-12-28',
-    story: 'Recomposición corporal perfecta. Mismo peso pero -8% grasa corporal. Fuerza máxima +40%.',
+    story: 'Recomposici�n corporal perfecta. Mismo peso pero -8% grasa corporal. Fuerza m�xima +40%.',
     stats: {
       workouts: 48,
       diet: 'Carb Cycling',
@@ -133,10 +133,10 @@ const TRANSFORMATIONS: TransformationPhoto[] = [
 
 const MY_PROGRESS: MyProgress = {
   photos: [
-    { date: '2024-11-01', weight: 85, bodyFat: 20, photo: 'ðŸ“¸' },
-    { date: '2024-12-01', weight: 83, bodyFat: 18.5, photo: 'ðŸ“¸' },
-    { date: '2025-01-01', weight: 81, bodyFat: 17, photo: 'ðŸ“¸' },
-    { date: '2025-01-27', weight: 79.5, bodyFat: 16, photo: 'ðŸ“¸' },
+    { date: '2024-11-01', weight: 85, bodyFat: 20, photo: '📸' },
+    { date: '2024-12-01', weight: 83, bodyFat: 18.5, photo: '📸' },
+    { date: '2025-01-01', weight: 81, bodyFat: 17, photo: '📸' },
+    { date: '2025-01-27', weight: 79.5, bodyFat: 16, photo: '📸' },
   ],
   totalDays: 87,
   startDate: '2024-11-01',
@@ -150,7 +150,7 @@ export default function TransformationGallery() {
   const addProgress = () => {
     Alert.alert(
       'Nueva Foto de Progreso',
-      'Captura tu transformación',
+      'Captura tu transformaci�n',
       [
         { text: 'Cancelar', style: 'cancel' },
         {
@@ -163,7 +163,7 @@ export default function TransformationGallery() {
 
   const shareTransformation = (transformation: TransformationPhoto) => {
     Alert.alert(
-      'Compartir Transformación',
+      'Compartir Transformaci�n',
       `${transformation.user}: -${transformation.weightLoss || transformation.muscleGain}kg`,
       [
         { text: 'Instagram Stories' },
@@ -177,7 +177,7 @@ export default function TransformationGallery() {
   const viewTimeline = () => {
     Alert.alert(
       'Timeline Completo',
-      `${myProgress.photos.length} fotos en ${myProgress.totalDays} días`,
+      `${myProgress.photos.length} fotos en ${myProgress.totalDays} d�as`,
       [{ text: 'OK' }]
     );
   };
@@ -249,7 +249,7 @@ export default function TransformationGallery() {
                       {transformation.user}
                     </Text>
                     <Text className="text-zinc-400 text-sm">
-                      {transformation.duration} días de transformación
+                      {transformation.duration} d�as de transformaci�n
                     </Text>
                   </View>
                   <View className="items-end">
@@ -284,7 +284,7 @@ export default function TransformationGallery() {
                     </View>
                     <View className="bg-primary/10 rounded-lg px-2 py-1">
                       <Text className="text-primary text-xs font-bold text-center">
-                        DESPUÉS
+                        DESPU�S
                       </Text>
                     </View>
                   </View>
@@ -327,7 +327,7 @@ export default function TransformationGallery() {
 
                 {/* Stats */}
                 <View className="mb-3">
-                  <Text className="text-zinc-400 text-xs mb-2">ESTADÃSTICAS</Text>
+                  <Text className="text-zinc-400 text-xs mb-2">ESTADÍSTICAS</Text>
                   <View className="flex-row gap-2">
                     <View className="flex-1 bg-zinc-800 rounded-lg p-2">
                       <Text className="text-zinc-400 text-xs">Workouts</Text>
@@ -374,10 +374,10 @@ export default function TransformationGallery() {
           <View className="px-6 pt-6">
             {/* Summary Card */}
             <View className="bg-zinc-900 rounded-xl p-4 border border-zinc-800 mb-6">
-              <Text className="text-zinc-400 text-sm mb-3">TU TRANSFORMACIÃ“N</Text>
+              <Text className="text-zinc-400 text-sm mb-3">TU TRANSFORMACIÓN</Text>
               <View className="flex-row items-center justify-between mb-4">
                 <View className="flex-1">
-                  <Text className="text-zinc-400 text-xs mb-1">DÃAS</Text>
+                  <Text className="text-zinc-400 text-xs mb-1">DÍAS</Text>
                   <Text className="text-white text-3xl font-bold">
                     {myProgress.totalDays}
                   </Text>
@@ -450,7 +450,7 @@ export default function TransformationGallery() {
             {/* Comparison Tool */}
             <View className="bg-zinc-900 rounded-xl p-4 border border-zinc-800 mb-4">
               <Text className="text-white font-bold text-lg mb-3">
-                Comparación Antes/Después
+                Comparaci�n Antes/Despu�s
               </Text>
               <View className="flex-row gap-3 mb-4">
                 <View className="flex-1">
@@ -463,7 +463,7 @@ export default function TransformationGallery() {
                     </Text>
                   </View>
                   <Text className="text-zinc-400 text-xs text-center">
-                    {myProgress.photos[0].weight}kg • {myProgress.photos[0].bodyFat}%
+                    {myProgress.photos[0].weight}kg � {myProgress.photos[0].bodyFat}%
                   </Text>
                 </View>
                 <View className="flex-1">
@@ -478,14 +478,14 @@ export default function TransformationGallery() {
                     </Text>
                   </View>
                   <Text className="text-white text-xs text-center font-bold">
-                    {myProgress.photos[myProgress.photos.length - 1].weight}kg •{' '}
+                    {myProgress.photos[myProgress.photos.length - 1].weight}kg �{' '}
                     {myProgress.photos[myProgress.photos.length - 1].bodyFat}%
                   </Text>
                 </View>
               </View>
               <TouchableOpacity className="bg-primary/10 rounded-lg p-3 border border-primary/30">
                 <Text className="text-primary/80 font-bold text-center">
-                  Compartir Mi Transformación
+                  Compartir Mi Transformaci�n
                 </Text>
               </TouchableOpacity>
             </View>

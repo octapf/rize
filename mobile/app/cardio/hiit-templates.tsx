@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -66,7 +66,7 @@ export default function HIITTemplates() {
       totalTime: 24,
       description: 'Multi-exercise rounds',
       exercises: ['Push-ups', 'Squats', 'Planks', 'Lunges', 'Burpees'],
-      color: 'emerald',
+      color: 'primary',
       icon: 'sync' as const,
     },
     {
@@ -138,7 +138,7 @@ export default function HIITTemplates() {
 
           <View className={`bg-${currentTemplate.color}-500/10 rounded-xl p-6 mb-6 border border-${currentTemplate.color}-500/30`}>
             <View className="flex-row items-center mb-2">
-              <Ionicons name={currentTemplate.icon} size={28} color={`#${currentTemplate.color === 'red' ? 'ef4444' : currentTemplate.color === 'blue' ? '3b82f6' : currentTemplate.color === 'purple' ? 'a855f7' : currentTemplate.color === 'emerald' ? '10b981' : 'f59e0b'}`} />
+              <Ionicons name={currentTemplate.icon} size={28} color={`#${currentTemplate.color === 'red' ? 'ef4444' : currentTemplate.color === 'blue' ? '3b82f6' : currentTemplate.color === 'purple' ? 'a855f7' : currentTemplate.color === 'primary' ? '9D12DE' : 'f59e0b'}`} />
               <Text className={`text-${currentTemplate.color}-400 font-bold text-2xl ml-3`}>
                 {currentTemplate.name}
               </Text>
@@ -203,22 +203,22 @@ export default function HIITTemplates() {
           <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
             <Text className="text-primary font-bold mb-2">HIIT Benefits</Text>
             <Text className="text-primary/80 text-sm">
-              ✓ Burns calories fast{'\n'}
-              ✓ Improves VO2 max{'\n'}
-              ✓ Time-efficient{'\n'}
-              ✓ EPOC effect (afterburn){'\n'}
-              ✓ Preserves muscle mass
+              ? Burns calories fast{'\n'}
+              ? Improves VO2 max{'\n'}
+              ? Time-efficient{'\n'}
+              ? EPOC effect (afterburn){'\n'}
+              ? Preserves muscle mass
             </Text>
           </View>
 
           <View className="bg-red-500/10 rounded-xl p-4 border border-red-500/30 mb-6">
             <Text className="text-red-400 font-bold mb-2">Safety Guidelines</Text>
             <Text className="text-red-300 text-sm">
-              • Warm up 5-10 minutes{'\n'}
-              • Start with 2-3 sessions/week{'\n'}
-              • Don't do HIIT on leg days{'\n'}
-              • Recovery is critical{'\n'}
-              • Stop if form breaks down
+              � Warm up 5-10 minutes{'\n'}
+              � Start with 2-3 sessions/week{'\n'}
+              � Don't do HIIT on leg days{'\n'}
+              � Recovery is critical{'\n'}
+              � Stop if form breaks down
             </Text>
           </View>
         </View>

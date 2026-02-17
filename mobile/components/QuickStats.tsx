@@ -32,30 +32,30 @@ export const QuickStats: React.FC<QuickStatsProps> = ({ stats, isLoading }) => {
       label: 'Esta Semana',
       value: stats?.workoutsThisWeek || 0,
       icon: 'barbell',
-      color: '#10B981',
-      gradient: ['#10B981', '#059669'],
+      color: '#9D12DE',
+      gradient: ['#9D12DE', '#7B1FA2'],
       route: '/workouts/history',
     },
     {
       label: 'Racha Actual',
       value: `${stats?.currentStreak || 0} días`,
       icon: 'flame',
-      color: '#F59E0B',
-      gradient: ['#F59E0B', '#D97706'],
+      color: '#FFEA00',
+      gradient: ['#FFEA00', '#E6D300'],
     },
     {
       label: 'Volumen Total',
       value: `${(stats?.totalVolume || 0).toLocaleString()} kg`,
       icon: 'speedometer',
-      color: '#8B5CF6',
-      gradient: ['#8B5CF6', '#7C3AED'],
+      color: '#9D12DE',
+      gradient: ['#9D12DE', '#7B1FA2'],
     },
     {
       label: 'Nivel',
       value: stats?.level || 1,
       icon: 'trophy',
-      color: '#EF4444',
-      gradient: ['#EF4444', '#DC2626'],
+      color: '#FFEA00',
+      gradient: ['#FFEA00', '#E6D300'],
       route: '/achievements',
     },
   ];
@@ -64,7 +64,7 @@ export const QuickStats: React.FC<QuickStatsProps> = ({ stats, isLoading }) => {
     return (
       <Card className="p-6">
         <View className="items-center justify-center py-8">
-          <ActivityIndicator size="large" color="#10B981" />
+          <ActivityIndicator size="large" color="#9D12DE" />
         </View>
       </Card>
     );
@@ -142,18 +142,18 @@ export const QuickStats: React.FC<QuickStatsProps> = ({ stats, isLoading }) => {
 
       {/* XP Progress Bar (if provided) */}
       {stats?.xp !== undefined && (
-        <Card className="p-4">
+        <Card className="p-4 bg-background border-white/10">
           <View className="flex-row items-center justify-between mb-2">
-            <Text className="text-gray-700 font-semibold">
+            <Text className="text-text font-semibold">
               Progreso al siguiente nivel
             </Text>
-            <Text className="text-gray-500 text-sm">
+            <Text className="text-text/80 text-sm">
               {stats.xp % 100}/100 XP
             </Text>
           </View>
-          <View className="h-3 bg-gray-200 rounded-full overflow-hidden">
+          <View className="h-3 bg-white/10 rounded-full overflow-hidden">
             <View
-              className="h-full bg-emerald-500 rounded-full"
+              className="h-full bg-primary rounded-full"
               style={{ width: `${(stats.xp % 100)}%` }}
             />
           </View>
@@ -162,16 +162,16 @@ export const QuickStats: React.FC<QuickStatsProps> = ({ stats, isLoading }) => {
 
       {/* Records This Month (if provided) */}
       {stats?.recordsThisMonth !== undefined && stats.recordsThisMonth > 0 && (
-        <Card className="p-4 bg-gradient-to-r from-amber-50 to-orange-50">
+        <Card className="p-4 bg-primary/20 border-primary/30">
           <View className="flex-row items-center gap-3">
-            <View className="bg-amber-500 p-3 rounded-xl">
+            <View className="bg-primary p-3 rounded-xl">
               <Ionicons name="trending-up" size={28} color="white" />
             </View>
             <View className="flex-1">
-              <Text className="text-lg font-bold text-gray-900">
+              <Text className="text-lg font-bold text-text">
                 {stats.recordsThisMonth} Records este mes
               </Text>
-              <Text className="text-sm text-gray-600">
+              <Text className="text-sm text-text/80">
                 ¡Sigue mejorando tus marcas!
               </Text>
             </View>

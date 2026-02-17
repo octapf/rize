@@ -1,4 +1,4 @@
-锘縤mport React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   View,
   Text,
@@ -107,19 +107,19 @@ export default function ConfigureSetsScreen() {
   };
 
   const handleConfirm = () => {
-    // Validar seg煤n tipo
+    // Validar seg鷑 tipo
     let allValid = false;
 
     if (exerciseType === 'reps') {
       allValid = sets.every((set) => set.reps && parseInt(set.reps) > 0);
       if (!allValid) {
-        Alert.alert('Error', 'Todas las series deben tener al menos 1 repetici贸n');
+        Alert.alert('Error', 'Todas las series deben tener al menos 1 repetici髇');
         return;
       }
     } else if (exerciseType === 'time') {
       allValid = sets.every((set) => set.duration && parseFloat(set.duration) > 0);
       if (!allValid) {
-        Alert.alert('Error', 'Todas las series deben tener duraci贸n mayor a 0');
+        Alert.alert('Error', 'Todas las series deben tener duraci髇 mayor a 0');
         return;
       }
     } else if (exerciseType === 'distance') {
@@ -191,7 +191,7 @@ export default function ConfigureSetsScreen() {
                 {exerciseType === 'reps' &&
                   'Agrega las series que planeas hacer. El peso es opcional.'}
                 {exerciseType === 'time' &&
-                  `Configura la duraci贸n de cada serie en ${getUnitLabel()}.`}
+                  `Configura la duraci髇 de cada serie en ${getUnitLabel()}.`}
                 {exerciseType === 'distance' &&
                   `Configura la distancia de cada serie en ${getUnitLabel()}.`}
               </Text>
@@ -252,7 +252,7 @@ export default function ConfigureSetsScreen() {
               {exerciseType === 'time' && (
                 <View className="flex-1">
                   <Text className="text-sm font-semibold text-gray-700 mb-2">
-                    Duraci贸n ({getUnitLabel()}) *
+                    Duraci髇 ({getUnitLabel()}) *
                   </Text>
                   <TextInput
                     value={set.duration}

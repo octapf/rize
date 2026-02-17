@@ -1,6 +1,8 @@
 # Design System - RIZE
 
-> **Sistema de diseño completo**: Este documento define todos los tokens visuales, componentes UI, animaciones y patrones de interacción. Basado en las 50 rondas de decisiones UI/UX (rondas 151-200).
+> **Sistema de diseño completo**: Este documento define todos los tokens visuales, componentes UI, animaciones y patrones de interacción.
+>
+> **Fuente de verdad**: `mobile/tailwind.config.js` — Cualquier cambio visual debe reflejarse primero allí y luego en este documento.
 
 ## 📋 Tabla de Contenidos
 
@@ -35,7 +37,7 @@
  ╚═╝  ╚═╝╚═╝╚══════╝╚══════╝
 ```
 
-- **Primary mark**: Wordmark en Barlow Bold
+- **Primary mark**: Wordmark en Poppins Bold
 - **Icono**: R estilizada con flecha ascendente integrada
 - **Uso**: Logo completo en splash screen, icono solo en app icon
 
@@ -43,96 +45,50 @@
 
 ## 🎨 Colores
 
-### Paleta Principal
+> **Definido en**: `mobile/tailwind.config.js`
+
+### Paleta Principal (Dark-First)
 
 ```typescript
+// Tokens en tailwind.config.js
 export const colors = {
-  // Primary (Emerald)
-  primary: {
-    50: '#ECFDF5',
-    100: '#D1FAE5',
-    200: '#A7F3D0',
-    300: '#6EE7B7',
-    400: '#34D399',
-    500: '#10B981', // ← PRIMARIO
-    600: '#059669',
-    700: '#047857',
-    800: '#065F46',
-    900: '#064E3B',
+  background: '#262626',   // ← FONDO PRINCIPAL
+  text: '#E3E3E3',        // ← TEXTO PRINCIPAL
+  primary: '#9D12DE',     // ← PURPLE (acciones, CTAs)
+  highlight: '#FFEA00',   // ← YELLOW (acento, destacados)
+
+  // Aliases
+  surface: '#262626',     // = background
+  accent: '#FFEA00',      // = highlight
+
+  // Glass (overlays, modales)
+  glass: {
+    10: 'rgba(255, 255, 255, 0.1)',
+    20: 'rgba(255, 255, 255, 0.2)',
+    30: 'rgba(255, 255, 255, 0.3)',
   },
 
-  // Functional Colors
-  success: '#10B981', // Mismo que primary
-  warning: '#F59E0B', // Amber 500
-  error: '#EF4444',   // Red 500
-  info: '#3B82F6',    // Blue 500
-
-  // Neutrals (Gray)
-  gray: {
-    50: '#F9FAFB',
-    100: '#F3F4F6',
-    200: '#E5E7EB',
-    300: '#D1D5DB',
-    400: '#9CA3AF',
-    500: '#6B7280',
-    600: '#4B5563',
-    700: '#374151',
-    800: '#1F2937',
-    900: '#111827',
-  },
-
-  // Semantic Tokens
-  background: {
-    light: '#FFFFFF',
-    lightAlt: '#F9FAFB', // gray-50
-    dark: '#111827',     // gray-900
-    darkAlt: '#1F2937',  // gray-800
-  },
-
-  text: {
-    light: {
-      primary: '#111827',   // gray-900
-      secondary: '#6B7280', // gray-500
-      tertiary: '#9CA3AF',  // gray-400
-    },
-    dark: {
-      primary: '#F9FAFB',   // gray-50
-      secondary: '#9CA3AF', // gray-400
-      tertiary: '#6B7280',  // gray-500
-    }
-  }
-};
-```
-
-### Dark Mode Adaptaciones
-
-```typescript
-// Ajustes automáticos en dark mode
-export const darkModeAdjustments = {
-  // Primary más brillante en dark
-  primary: '#34D399', // emerald-400 (vs 500 en light)
-  
-  // Reducir saturación de funcionales
-  warning: '#FBBF24', // amber-400 (vs 500 en light)
-  
-  // Sombras más pronunciadas
-  shadow: {
-    sm: '0 2px 8px rgba(0, 0, 0, 0.5)',
-    md: '0 4px 16px rgba(0, 0, 0, 0.6)',
-    lg: '0 8px 24px rgba(0, 0, 0, 0.7)',
-  }
+  // Functional (semantic)
+  success: '#10B981',  // verde success
+  warning: '#F59E0B',
+  error: '#EF4444',
+  info: '#3B82F6',
 };
 ```
 
 ### Uso de Colores
 
 ```tsx
-// ✅ CORRECTO: Usar semantic tokens
-<View className="bg-background-light dark:bg-background-dark">
-  <Text className="text-text-light-primary dark:text-text-dark-primary">
-    Title
-  </Text>
+// ✅ CORRECTO: Usar tokens de Tailwind
+<View className="bg-background">
+  <Text className="text-text">Title</Text>
+  <View className="bg-primary">
+    <Text className="text-highlight">Destacado</Text>
+  </View>
 </View>
+
+// Glass (modales, overlays)
+<View className="bg-glass-20" />
 
 // ❌ INCORRECTO: Hardcodear valores hex
 <View style={{ backgroundColor: '#FFFFFF' }}>
@@ -144,96 +100,38 @@ export const darkModeAdjustments = {
 
 ## ✍️ Tipografía
 
+> **Definido en**: `mobile/tailwind.config.js` → `fontFamily`
+
 ### Fuentes
 
 ```typescript
 export const fonts = {
-  // Headings
-  barlow: {
-    bold: 'Barlow-Bold',        // 700 - Títulos principales
-    semibold: 'Barlow-SemiBold', // 600 - Subtítulos
-    medium: 'Barlow-Medium',     // 500 - Labels destacados
-  },
+  // Headings (Poppins)
+  heading: 'Poppins_700Bold',
+  headingSemibold: 'Poppins_600SemiBold',
 
-  // Body
-  inter: {
-    semibold: 'Inter-SemiBold',  // 600 - Énfasis
-    medium: 'Inter-Medium',      // 500 - Labels
-    regular: 'Inter-Regular',    // 400 - Texto general
-  }
+  // Body (Inter)
+  body: 'Inter_400Regular',
+  bodyMedium: 'Inter_500Medium',
+  bodySemibold: 'Inter_600SemiBold',
+
+  // Labels (Montserrat)
+  label: 'Montserrat_500Medium',
+  labelBold: 'Montserrat_600SemiBold',
 };
 ```
 
 ### Escala Tipográfica
 
-```typescript
-// Escala modular 1.25 (Major Third)
-export const typography = {
-  display: {
-    fontSize: 40,
-    lineHeight: 48,    // 1.2
-    fontFamily: fonts.barlow.bold,
-    letterSpacing: -0.5,
-  },
-
-  h1: {
-    fontSize: 32,
-    lineHeight: 38,
-    fontFamily: fonts.barlow.bold,
-    letterSpacing: -0.5,
-  },
-
-  h2: {
-    fontSize: 25,
-    lineHeight: 30,
-    fontFamily: fonts.barlow.semibold,
-    letterSpacing: -0.3,
-  },
-
-  h3: {
-    fontSize: 20,
-    lineHeight: 24,
-    fontFamily: fonts.barlow.medium,
-    letterSpacing: 0,
-  },
-
-  body: {
-    fontSize: 16,
-    lineHeight: 24,    // 1.5
-    fontFamily: fonts.inter.regular,
-    letterSpacing: 0,
-  },
-
-  small: {
-    fontSize: 14,
-    lineHeight: 20,    // 1.4
-    fontFamily: fonts.inter.regular,
-    letterSpacing: 0.1,
-  },
-
-  tiny: {
-    fontSize: 12,
-    lineHeight: 16,
-    fontFamily: fonts.inter.medium,
-    letterSpacing: 0.2,
-  },
-
-  label: {
-    fontSize: 12,
-    lineHeight: 16,
-    fontFamily: fonts.inter.medium,
-    letterSpacing: 0.5,
-    textTransform: 'uppercase',
-  }
-};
-```
+Usar las fuentes anteriores con tamaños estándar (`text-2xl`, `text-lg`, `text-base`, etc.) según `tailwind.config.js`.
 
 ### Uso en NativeWind
 
 ```tsx
 // ✅ CORRECTO: Usar clases predefinidas
-<Text className="font-barlow-bold text-2xl">Título</Text>
-<Text className="font-inter-regular text-base">Cuerpo</Text>
+<Text className="font-heading text-2xl">Título</Text>
+<Text className="font-body text-base">Cuerpo</Text>
+<Text className="font-label text-xs uppercase">Label</Text>
 
 // Configurar en tailwind.config.js:
 module.exports = {
@@ -357,7 +255,7 @@ export const grid = {
 - Border: `1px` solid `gray-300`
 - Border radius: `12px`
 - Padding: `12px 16px`
-- Focus: Border `emerald-500`, ring `4px` `emerald-200`
+- Focus: Border `primary`, ring `4px` `primary/30`
 - Error: Border `red-500`, ring `red-200`
 
 ### Card
@@ -378,7 +276,7 @@ export const grid = {
 ```
 
 **Specs**:
-- Background: `white` / `gray-800` (dark)
+- Background: `bg-surface` / `bg-background` (dark-first)
 - Border radius: `16px` (rounded-2xl)
 - Padding: `16px`
 - Shadow: `shadow-sm`
@@ -400,7 +298,7 @@ export const grid = {
 **Specs**:
 - Shape: `rounded-full`
 - Border: `2px` `white` / `gray-800` (dark)
-- Placeholder: Iniciales en bg `emerald-500`, texto `white`
+- Placeholder: Iniciales en bg `primary`, texto `white`
 
 ### Badge
 
@@ -416,7 +314,7 @@ export const grid = {
 - Shape: `rounded-full`
 - Padding: `4px 12px`
 - Font size: `12px` medium
-- Success: bg `emerald-100`, text `emerald-700`
+- Success: bg `primary/20`, text `primary`
 - Warning: bg `amber-100`, text `amber-700`
 
 ### Modal
@@ -652,7 +550,7 @@ export const icons = {
     <RefreshControl
       refreshing={isLoading}
       onRefresh={refetch}
-      tintColor="#10B981"
+      tintColor="#9D12DE"
     />
   }
 >
@@ -699,7 +597,7 @@ Haptics.notificationAsync(Haptics.NotificationFeedbackType.Error);
 style={({ pressed }) => ({ opacity: pressed ? 0.7 : 1 })}
 
 // Focus state (accesibilidad)
-className="focus:ring-2 focus:ring-emerald-500"
+className="focus:ring-2 focus:ring-primary"
 
 // Disabled state
 className="disabled:opacity-50 disabled:cursor-not-allowed"
@@ -712,7 +610,7 @@ className="disabled:opacity-50 disabled:cursor-not-allowed"
 ```tsx
 import { ActivityIndicator } from 'react-native';
 
-<ActivityIndicator size="large" color="#10B981" />
+<ActivityIndicator size="large" color="#9D12DE" />
 ```
 
 #### Skeleton Screen
@@ -727,7 +625,7 @@ import { ActivityIndicator } from 'react-native';
 // Para uploads
 <View className="w-full h-2 bg-gray-200 rounded-full overflow-hidden">
   <View
-    className="h-full bg-emerald-500"
+    className="h-full bg-primary"
     style={{ width: `${progress}%` }}
   />
 </View>
@@ -738,10 +636,10 @@ import { ActivityIndicator } from 'react-native';
 ```tsx
 <View className="flex-1 items-center justify-center p-8">
   <Ionicons name="barbell-outline" size={64} color="#9CA3AF" />
-  <Text className="font-barlow-semibold text-xl text-gray-900 mt-4">
+  <Text className="font-heading-semibold text-xl text-text mt-4">
     Sin workouts aún
   </Text>
-  <Text className="font-inter-regular text-base text-gray-500 text-center mt-2">
+  <Text className="font-body text-base text-text/80 text-center mt-2">
     ¡Registra tu primer entrenamiento y comienza a subir de nivel!
   </Text>
   <Button className="mt-6" onPress={navigateToCreate}>
@@ -755,10 +653,10 @@ import { ActivityIndicator } from 'react-native';
 ```tsx
 <View className="flex-1 items-center justify-center p-8">
   <Ionicons name="cloud-offline-outline" size={64} color="#EF4444" />
-  <Text className="font-barlow-semibold text-xl text-gray-900 mt-4">
+  <Text className="font-heading-semibold text-xl text-text mt-4">
     Sin conexión
   </Text>
-  <Text className="font-inter-regular text-base text-gray-500 text-center mt-2">
+  <Text className="font-body text-base text-text/80 text-center mt-2">
     Verifica tu conexión a internet e intenta de nuevo
   </Text>
   <Button className="mt-6" onPress={retry}>

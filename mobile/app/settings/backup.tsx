@@ -1,4 +1,4 @@
-ï»¿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -25,7 +25,7 @@ const BACKUPS: BackupItem[] = [
     date: '2025-01-27 14:30',
     size: '4.2 MB',
     type: 'auto',
-    categories: ['Entrenamientos', 'NutriciÃ³n', 'Progreso'],
+    categories: ['Entrenamientos', 'Nutrición', 'Progreso'],
     itemCount: 1247,
   },
   {
@@ -33,7 +33,7 @@ const BACKUPS: BackupItem[] = [
     date: '2025-01-20 23:00',
     size: '3.8 MB',
     type: 'auto',
-    categories: ['Entrenamientos', 'NutriciÃ³n', 'Progreso'],
+    categories: ['Entrenamientos', 'Nutrición', 'Progreso'],
     itemCount: 1189,
   },
   {
@@ -41,7 +41,7 @@ const BACKUPS: BackupItem[] = [
     date: '2025-01-15 10:45',
     size: '4.5 MB',
     type: 'manual',
-    categories: ['Entrenamientos', 'NutriciÃ³n', 'Progreso', 'Fotos'],
+    categories: ['Entrenamientos', 'Nutrición', 'Progreso', 'Fotos'],
     itemCount: 1156,
   },
 ];
@@ -55,7 +55,7 @@ export default function BackupRestore() {
   const createBackup = () => {
     Alert.alert(
       'Crear Backup',
-      'Â¿Deseas crear un backup manual de todos tus datos?',
+      '¿Deseas crear un backup manual de todos tus datos?',
       [
         { text: 'Cancelar', style: 'cancel' },
         {
@@ -67,8 +67,8 @@ export default function BackupRestore() {
                 onPress: () => {
                   setTimeout(() => {
                     Alert.alert(
-                      'Â¡Backup Creado!',
-                      'Tu backup se ha guardado correctamente y estÃ¡ disponible para restauraciÃ³n.'
+                      '¡Backup Creado!',
+                      'Tu backup se ha guardado correctamente y está disponible para restauración.'
                     );
                   }, 2000);
                 },
@@ -83,7 +83,7 @@ export default function BackupRestore() {
   const restoreBackup = (backup: BackupItem) => {
     Alert.alert(
       'Restaurar Backup',
-      `Â¿Restaurar datos desde ${backup.date}?\n\nEsto sobrescribirÃ¡ tus datos actuales. Se recomienda crear un backup antes de continuar.`,
+      `¿Restaurar datos desde ${backup.date}?\n\nEsto sobrescribirá tus datos actuales. Se recomienda crear un backup antes de continuar.`,
       [
         { text: 'Cancelar', style: 'cancel' },
         {
@@ -100,7 +100,7 @@ export default function BackupRestore() {
                 onPress: () => {
                   setTimeout(() => {
                     Alert.alert(
-                      'Â¡RestauraciÃ³n Completa!',
+                      '¡Restauración Completa!',
                       'Tus datos han sido restaurados correctamente.'
                     );
                   }, 2500);
@@ -116,7 +116,7 @@ export default function BackupRestore() {
   const deleteBackup = (backupId: string) => {
     Alert.alert(
       'Eliminar Backup',
-      'Â¿EstÃ¡s seguro? Esta acciÃ³n no se puede deshacer.',
+      '¿Estás seguro? Esta acción no se puede deshacer.',
       [
         { text: 'Cancelar', style: 'cancel' },
         {
@@ -139,7 +139,7 @@ export default function BackupRestore() {
             <Ionicons name="arrow-back" size={24} color="white" />
           </TouchableOpacity>
           <Text className="text-white text-2xl font-bold flex-1 ml-3">
-            Backup y RestauraciÃ³n
+            Backup y Restauración
           </Text>
         </View>
 
@@ -152,7 +152,7 @@ export default function BackupRestore() {
             </Text>
           </View>
           <View className="flex-1 bg-zinc-900 rounded-xl p-3 border border-zinc-800">
-            <Text className="text-zinc-400 text-xs">Ãšltimo</Text>
+            <Text className="text-zinc-400 text-xs">Último</Text>
             <Text className="text-white text-sm font-bold">Hoy 14:30</Text>
           </View>
         </View>
@@ -175,15 +175,15 @@ export default function BackupRestore() {
         {/* Auto Backup Settings */}
         <View className="px-6 pt-6">
           <Text className="text-white font-bold text-lg mb-3">
-            ConfiguraciÃ³n de Backup
+            Configuración de Backup
           </Text>
 
           <View className="bg-zinc-900 rounded-xl p-4 border border-zinc-800 mb-3">
             <View className="flex-row items-center justify-between mb-4">
               <View className="flex-1">
-                <Text className="text-white font-semibold">Backup AutomÃ¡tico</Text>
+                <Text className="text-white font-semibold">Backup Automático</Text>
                 <Text className="text-zinc-400 text-sm mt-0.5">
-                  Crea backups automÃ¡ticamente
+                  Crea backups automáticamente
                 </Text>
               </View>
               <Switch
@@ -309,14 +309,14 @@ export default function BackupRestore() {
                           backup.type === 'auto' ? 'text-primary' : 'text-primary'
                         }`}
                       >
-                        {backup.type === 'auto' ? 'AutomÃ¡tico' : 'Manual'}
+                        {backup.type === 'auto' ? 'Automático' : 'Manual'}
                       </Text>
                     </View>
                   </View>
                   <Text className="text-white font-bold">{backup.date}</Text>
                   <View className="flex-row items-center mt-1">
                     <Text className="text-zinc-400 text-sm">{backup.size}</Text>
-                    <Text className="text-zinc-600 mx-2">â€¢</Text>
+                    <Text className="text-zinc-600 mx-2">•</Text>
                     <Text className="text-zinc-400 text-sm">
                       {backup.itemCount.toLocaleString()} elementos
                     </Text>
@@ -366,10 +366,10 @@ export default function BackupRestore() {
                   Sobre los Backups
                 </Text>
                 <Text className="text-primary/60 text-sm leading-5">
-                  â€¢ Los backups se cifran con AES-256{'\n'}â€¢ Se almacenan de
-                  forma segura en la nube{'\n'}â€¢ Puedes tener hasta 10 backups
-                  guardados{'\n'}â€¢ Los backups antiguos se eliminan
-                  automÃ¡ticamente
+                  • Los backups se cifran con AES-256{'\n'}• Se almacenan de
+                  forma segura en la nube{'\n'}• Puedes tener hasta 10 backups
+                  guardados{'\n'}• Los backups antiguos se eliminan
+                  automáticamente
                 </Text>
               </View>
             </View>

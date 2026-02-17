@@ -1,4 +1,4 @@
-ï»¿import { useState } from 'react';
+import { useState } from 'react';
 import { View, Text, ScrollView, KeyboardAvoidingView, Platform } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Link, router } from 'expo-router';
@@ -23,11 +23,11 @@ export default function LoginScreen() {
     mutationFn: authApi.login,
     onSuccess: async (data) => {
       await setAuth(data);
-      toast.success('Â¡Bienvenido de nuevo!');
+      toast.success('¡Bienvenido de nuevo!');
       router.replace('/(tabs)');
     },
     onError: (error: any) => {
-      const message = error.response?.data?.message || 'Error al iniciar sesiÃ³n';
+      const message = error.response?.data?.message || 'Error al iniciar sesión';
       toast.error(message);
       setErrors({ emailOrUsername: message });
     },
@@ -44,7 +44,7 @@ export default function LoginScreen() {
     }
 
     if (!password) {
-      const msg = 'ContraseÃ±a requerida';
+      const msg = 'Contraseña requerida';
       toast.error(msg);
       setErrors({ password: msg });
       return;
@@ -83,8 +83,8 @@ export default function LoginScreen() {
             />
 
             <Input
-              label="ContraseÃ±a"
-              placeholder="â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢"
+              label="Contraseña"
+              placeholder="••••••••"
               value={password}
               onChangeText={setPassword}
               error={errors.password}
@@ -108,16 +108,16 @@ export default function LoginScreen() {
               isLoading={loginMutation.isPending}
               className="mt-4"
             >
-              Iniciar SesiÃ³n
+              Iniciar Sesión
             </Button>
 
             <View className="flex-row items-center justify-center mt-6">
               <Text className="font-body text-sm text-gray-600">
-                Â¿No tienes cuenta?{' '}
+                ¿No tienes cuenta?{' '}
               </Text>
               <Link href="/register" asChild>
                 <Text className="font-label-bold text-sm text-primary">
-                  RegÃ­strate
+                  Regístrate
                 </Text>
               </Link>
             </View>

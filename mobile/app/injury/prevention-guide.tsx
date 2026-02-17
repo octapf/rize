@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -13,7 +13,7 @@ export default function InjuryPrevention() {
 
   const areas = [
     { key: 'shoulder', label: 'Shoulder', icon: 'fitness', color: 'blue' },
-    { key: 'lowerback', label: 'Lower Back', icon: 'body', color: 'emerald' },
+    { key: 'lowerback', label: 'Lower Back', icon: 'body', color: 'primary' },
     { key: 'knee', label: 'Knee', icon: 'walk', color: 'purple' },
     { key: 'elbow', label: 'Elbow', icon: 'barbell', color: 'amber' },
   ];
@@ -42,7 +42,7 @@ export default function InjuryPrevention() {
         { name: 'Wall Slides', sets: '3', reps: '12', frequency: 'Daily', notes: 'Scapular control' },
       ],
       techniqueKeys: [
-        'Keep elbows at 45° on bench press (not 90°)',
+        'Keep elbows at 45� on bench press (not 90�)',
         'Full ROM but avoid end-range under load',
         'Warm up rotator cuff before upper sessions',
         'Balance push/pull ratio (2:3 or 1:2)',
@@ -244,7 +244,7 @@ export default function InjuryPrevention() {
             <Text className="text-amber-400 font-bold mb-3">Risk Factors</Text>
             {currentGuide.riskFactors.map((factor, idx) => (
               <Text key={idx} className="text-amber-300 text-sm mb-2">
-                âš ï¸ {factor}
+                ⚠️ {factor}
               </Text>
             ))}
           </View>
@@ -271,16 +271,16 @@ export default function InjuryPrevention() {
             <Text className="text-primary/80 font-bold mb-3">Technique Keys</Text>
             {currentGuide.techniqueKeys.map((key, idx) => (
               <Text key={idx} className="text-primary/60 text-sm mb-2">
-                ✓ {key}
+                ? {key}
               </Text>
             ))}
           </View>
 
           <View className="bg-red-500/10 rounded-xl p-4 mb-6 border border-red-500/30">
-            <Text className="text-red-400 font-bold mb-3">âš ï¸ Warning Signs - See a Doctor</Text>
+            <Text className="text-red-400 font-bold mb-3">⚠️ Warning Signs - See a Doctor</Text>
             {currentGuide.warningsSigns.map((sign, idx) => (
               <Text key={idx} className="text-red-300 text-sm mb-2">
-                ðŸš¨ {sign}
+                🚨 {sign}
               </Text>
             ))}
           </View>
@@ -288,14 +288,14 @@ export default function InjuryPrevention() {
           <View className="bg-purple-500/10 rounded-xl p-4 border border-purple-500/30 mb-6">
             <Text className="text-purple-400 font-bold mb-2">General Prevention Rules</Text>
             <Text className="text-purple-300 text-sm">
-              • Progressive overload SLOWLY{'\n'}
-              • Perfect form &gt; heavy weight{'\n'}
-              • Warm up properly (10-15 min){'\n'}
-              • Balance muscle groups{'\n'}
-              • Listen to your body{'\n'}
-              • Deload every 6-8 weeks{'\n'}
-              • Sleep 7-9 hours nightly{'\n'}
-              • Pain â‰  gain (stop if sharp pain)
+              � Progressive overload SLOWLY{'\n'}
+              � Perfect form &gt; heavy weight{'\n'}
+              � Warm up properly (10-15 min){'\n'}
+              � Balance muscle groups{'\n'}
+              � Listen to your body{'\n'}
+              � Deload every 6-8 weeks{'\n'}
+              � Sleep 7-9 hours nightly{'\n'}
+              � Pain ≠ gain (stop if sharp pain)
             </Text>
           </View>
         </View>

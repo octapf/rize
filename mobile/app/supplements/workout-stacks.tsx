@@ -1,4 +1,4 @@
-ï»¿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -30,7 +30,7 @@ export default function WorkoutStacks() {
       ],
       timing: '30-45 min pre-workout on empty stomach',
       benefits: ['Insane pumps', 'Increased endurance', 'Better focus'],
-      color: 'emerald',
+      color: 'primary',
     },
     {
       name: 'The Focus Stack',
@@ -109,7 +109,7 @@ export default function WorkoutStacks() {
       ],
       timing: 'Immediately post-workout',
       benefits: ['Maximize protein synthesis', 'Prevent breakdown', 'Glycogen replenishment'],
-      color: 'emerald',
+      color: 'primary',
     },
     {
       name: 'The Lean Stack',
@@ -157,7 +157,7 @@ export default function WorkoutStacks() {
 
       <ScrollView className="flex-1" showsVerticalScrollIndicator={false}>
         <View className="px-6 pt-6">
-          <View className="bg-gradient-to-r from-amber-500 to-emerald-500 rounded-xl p-6 mb-6">
+          <View className="bg-gradient-to-r from-amber-500 to-primary rounded-xl p-6 mb-6">
             <Text className="text-white text-2xl font-bold mb-2">Complete Stacks</Text>
             <Text className="text-white opacity-90 mb-4">
               Pre & post-workout formulas
@@ -230,7 +230,7 @@ export default function WorkoutStacks() {
               <View className="flex-row flex-wrap gap-2">
                 {stack.benefits.map((benefit, benIdx) => (
                   <View key={benIdx} className="bg-zinc-900 rounded-full px-3 py-1.5">
-                    <Text className="text-zinc-300 text-xs">âœ“ {benefit}</Text>
+                    <Text className="text-zinc-300 text-xs">? {benefit}</Text>
                   </View>
                 ))}
               </View>
@@ -240,12 +240,12 @@ export default function WorkoutStacks() {
           <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
             <Text className="text-primary/80 font-bold mb-2">Stack Tips</Text>
             <Text className="text-primary/60 text-sm">
-              â€¢ Start with lower doses{'\n'}
-              â€¢ Assess tolerance before combining{'\n'}
-              â€¢ Buy in bulk to save money{'\n'}
-              â€¢ DIY stacks &gt; pre-made formulas{'\n'}
-              â€¢ Cycle stimulants (caffeine){'\n'}
-              â€¢ Quality &gt; quantity of ingredients
+              • Start with lower doses{'\n'}
+              • Assess tolerance before combining{'\n'}
+              • Buy in bulk to save money{'\n'}
+              • DIY stacks &gt; pre-made formulas{'\n'}
+              • Cycle stimulants (caffeine){'\n'}
+              • Quality &gt; quantity of ingredients
             </Text>
           </View>
         </View>

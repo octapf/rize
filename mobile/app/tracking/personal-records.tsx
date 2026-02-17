@@ -1,4 +1,4 @@
-Ôªøimport React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -24,7 +24,7 @@ interface PersonalRecord {
 const CATEGORIES = [
   { value: 'strength', label: 'Fuerza', icon: 'barbell', color: 'red' },
   { value: 'volume', label: 'Volumen', icon: 'fitness', color: 'blue' },
-  { value: 'endurance', label: 'Resistencia', icon: 'pulse', color: 'emerald' },
+  { value: 'endurance', label: 'Resistencia', icon: 'pulse', color: 'primary' },
   { value: 'bodyweight', label: 'Corporal', icon: 'body', color: 'purple' },
 ];
 
@@ -38,7 +38,7 @@ const MOCK_RECORDS: PersonalRecord[] = [
     unit: 'kg',
     date: new Date(2026, 0, 27),
     previousRecord: 115,
-    notes: 'Nueva marca personal! T√©cnica perfecta',
+    notes: 'Nueva marca personal! TÈcnica perfecta',
   },
   {
     id: '2',
@@ -78,7 +78,7 @@ const MOCK_RECORDS: PersonalRecord[] = [
     value: 12500,
     unit: 'kg',
     date: new Date(2026, 0, 5),
-    notes: 'Volumen total de la sesi√≥n',
+    notes: 'Volumen total de la sesiÛn',
   },
 ];
 
@@ -88,8 +88,8 @@ export default function PersonalRecords() {
 
   const deleteRecord = (id: string) => {
     Alert.alert(
-      'Eliminar R√©cord',
-      '¬øEst√°s seguro?',
+      'Eliminar RÈcord',
+      'øEst·s seguro?',
       [
         { text: 'Cancelar' },
         { text: 'Eliminar', style: 'destructive', onPress: () => setRecords(records.filter((r) => r.id !== id)) },
@@ -98,7 +98,7 @@ export default function PersonalRecords() {
   };
 
   const addNewRecord = () => {
-    Alert.alert('Pr√≥ximamente', 'Formulario para a√±adir nuevo PR en desarrollo');
+    Alert.alert('PrÛximamente', 'Formulario para aÒadir nuevo PR en desarrollo');
   };
 
   const getTypeLabel = (type: string): string => {
@@ -106,9 +106,9 @@ export default function PersonalRecords() {
       '1RM': '1 Rep Max',
       '3RM': '3 Reps Max',
       '5RM': '5 Reps Max',
-      'maxReps': 'M√°x Repeticiones',
-      'maxWeight': 'M√°ximo Peso',
-      'maxVolume': 'M√°ximo Volumen',
+      'maxReps': 'M·x Repeticiones',
+      'maxWeight': 'M·ximo Peso',
+      'maxVolume': 'M·ximo Volumen',
     };
     return labels[type] || type;
   };
@@ -191,8 +191,8 @@ export default function PersonalRecords() {
           {/* Records List */}
           {filteredRecords.length === 0 ? (
             <View className="bg-zinc-900 rounded-xl p-8 items-center border border-zinc-800">
-              <Text className="text-6xl mb-3">√∞≈∏¬è‚Ä†</Text>
-              <Text className="text-white font-bold text-lg mb-2">Sin R√©cords</Text>
+              <Text className="text-6xl mb-3">üèÜ</Text>
+              <Text className="text-white font-bold text-lg mb-2">Sin RÈcords</Text>
               <Text className="text-zinc-400 text-center">
                 Empieza a registrar tus logros personales
               </Text>
@@ -236,7 +236,7 @@ export default function PersonalRecords() {
 
                     {/* Value */}
                     <View className={`bg-${categoryInfo.color}-500 rounded-xl p-4 mb-3`}>
-                      <Text className="text-white opacity-90 text-sm mb-1">R√©cord Personal</Text>
+                      <Text className="text-white opacity-90 text-sm mb-1">RÈcord Personal</Text>
                       <View className="flex-row items-baseline">
                         <Text className="text-white text-5xl font-bold mr-2">
                           {record.value}
@@ -284,12 +284,12 @@ export default function PersonalRecords() {
                   Tips para Nuevos PRs
                 </Text>
                 <Text className="text-amber-300 text-sm">
-                  ‚Ä¢ No intentes PRs cuando est√©s fatigado{'\n'}
-                  ‚Ä¢ Calentamiento espec√≠fico es crucial{'\n'}
-                  ‚Ä¢ Siempre con spotter en ejercicios pesados{'\n'}
-                  ‚Ä¢ T√©cnica perfecta &gt; ego lifting{'\n'}
-                  ‚Ä¢ Descansa bien la noche anterior{'\n'}
-                  ‚Ä¢ Celebra cada logro, por peque√±o que sea!
+                  ï No intentes PRs cuando estÈs fatigado{'\n'}
+                  ï Calentamiento especÌfico es crucial{'\n'}
+                  ï Siempre con spotter en ejercicios pesados{'\n'}
+                  ï TÈcnica perfecta &gt; ego lifting{'\n'}
+                  ï Descansa bien la noche anterior{'\n'}
+                  ï Celebra cada logro, por pequeÒo que sea!
                 </Text>
               </View>
             </View>

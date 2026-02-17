@@ -1,0 +1,33 @@
+---
+description: RIZE - Prompt-Driven Development context and conventions
+alwaysApply: true
+---
+
+# RIZE - Prompt-Driven Development (PDD)
+
+## Project Overview
+Calisthenics tracking app: React Native (Expo) + Node/Express backend. Mobile-first, offline-first.
+
+## OBLIGATORIO (no pedir en cada prompt)
+- **Siempre** seguir BACKEND_STANDARDS.md, FRONTEND_STANDARDS.md, DATA_MODEL.md según el contexto
+- **Siempre** respetar patrones existentes del proyecto
+- **Siempre** usar Zod para validación, asyncHandler, authMiddleware donde aplique
+
+## Before Implementing
+1. Leer docs relevantes del proyecto (STANDARDS, DATA_MODEL)
+2. Revisar features similares en `backend/src/features/` o `mobile/app/`
+3. Respeta la estructura feature-based y convenciones existentes
+
+## Prompt Structure
+El usuario solo necesita especificar **qué** quiere. La IA aplica STANDARDS automáticamente.
+
+## Key Paths
+- Backend API: `backend/src/features/{feature}/`
+- Mobile screens: `mobile/app/`
+- Models: `backend/src/models/`
+- API client: `mobile/src/services/api/`
+
+## After Implementation
+- Run tests (`npm test` in backend/mobile)
+- Verify against existing patterns
+- No breaking changes to public API without notice

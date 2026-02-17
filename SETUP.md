@@ -293,7 +293,7 @@ rize/
 │   │   ├── services/        # API client, storage
 │   │   ├── stores/          # Zustand stores (authStore)
 │   │   └── lib/             # Utilidades (utils.ts)
-│   ├── assets/fonts/        # Fuentes (Barlow, Inter)
+│   ├── assets/fonts/        # Fuentes (Poppins, Inter, Montserrat)
 │   ├── .env                 # Variables de entorno
 │   └── package.json
 │

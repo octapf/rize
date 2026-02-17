@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -41,7 +41,7 @@ export default function MeetPreparationChecklist() {
     twelve_weeks_out: {
       name: '12+ Weeks Out',
       icon: 'barbell',
-      color: 'emerald',
+      color: 'primary',
       focus: {
         title: 'Training Focus',
         goals: [
@@ -456,7 +456,7 @@ export default function MeetPreparationChecklist() {
   const getColorClass = (color: string) => {
     const colors: { [key: string]: string } = {
       blue: 'bg-primary',
-      emerald: 'bg-primary',
+      primary: 'bg-primary',
       purple: 'bg-purple-500',
       amber: 'bg-amber-500',
       red: 'bg-red-500',
@@ -532,19 +532,19 @@ export default function MeetPreparationChecklist() {
           <View className="bg-gradient-to-r from-amber-500/20 to-orange-500/20 rounded-xl p-5 border border-amber-500/30 mb-6">
             <Text className="text-amber-400 font-bold text-lg mb-3">Golden Rules</Text>
             <Text className="text-amber-300 text-sm mb-2">
-              🎯 Opener = 90-95% of max (should feel like RPE 7-8)
+              ?? Opener = 90-95% of max (should feel like RPE 7-8)
             </Text>
             <Text className="text-amber-300 text-sm mb-2">
-              🎯 Nothing new on meet day (gear, warm-up, food)
+              ?? Nothing new on meet day (gear, warm-up, food)
             </Text>
             <Text className="text-amber-300 text-sm mb-2">
-              🎯 Specificity increases as meet approaches
+              ?? Specificity increases as meet approaches
             </Text>
             <Text className="text-amber-300 text-sm mb-2">
-              🎯 Read your federation rule book 2-3 weeks out
+              ?? Read your federation rule book 2-3 weeks out
             </Text>
             <Text className="text-amber-300 text-sm">
-              🎯 Have fun - this is why you train!
+              ?? Have fun - this is why you train!
             </Text>
           </View>
         </View>

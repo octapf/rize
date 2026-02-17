@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -91,7 +91,7 @@ export default function PlateauBreaking() {
     change_stimulus: {
       name: 'Change Training Stimulus',
       icon: 'refresh',
-      color: 'emerald',
+      color: 'primary',
       why_change: {
         title: 'Why Novel Stimulus Works',
         reasons: [
@@ -108,9 +108,9 @@ export default function PlateauBreaking() {
           {
             variable: 'Exercise Selection',
             examples: [
-              'Squat: High bar â†’ Low bar (or vice versa)',
-              'Bench: Flat â†’ Incline focus',
-              'Deadlift: Conventional â†’ Sumo (or vice versa)',
+              'Squat: High bar → Low bar (or vice versa)',
+              'Bench: Flat → Incline focus',
+              'Deadlift: Conventional → Sumo (or vice versa)',
               'Add variations: Front squat, Close grip, Deficit pulls',
             ],
             when: 'Every 8-12 weeks or when stale',
@@ -128,8 +128,8 @@ export default function PlateauBreaking() {
           {
             variable: 'Volume (Sets)',
             examples: [
-              'Low volume (10-12 sets/week) â†’ Moderate (16-18)',
-              'High volume (20+ sets) â†’ Lower volume',
+              'Low volume (10-12 sets/week) → Moderate (16-18)',
+              'High volume (20+ sets) → Lower volume',
               'Add or remove a training day',
               'More sets, lower intensity',
             ],
@@ -138,8 +138,8 @@ export default function PlateauBreaking() {
           {
             variable: 'Intensity (%)',
             examples: [
-              'Heavy focus (85%+) â†’ Moderate (70-80%)',
-              'Moderate work â†’ Heavy singles',
+              'Heavy focus (85%+) → Moderate (70-80%)',
+              'Moderate work → Heavy singles',
               'Add overload work (105-110% partials)',
               'Sub-maximal volume: Everything @70-75%',
             ],
@@ -148,8 +148,8 @@ export default function PlateauBreaking() {
           {
             variable: 'Frequency',
             examples: [
-              '1x per week â†’ 2x per week',
-              '3x per week â†’ 2x per week',
+              '1x per week → 2x per week',
+              '3x per week → 2x per week',
               'High frequency wave: 4-5x week for 3 weeks',
               'Low frequency: 1x per week high volume',
             ],
@@ -158,8 +158,8 @@ export default function PlateauBreaking() {
           {
             variable: 'Tempo',
             examples: [
-              'Normal speed â†’ 3-0-3 tempo (slow)',
-              'Controlled â†’ Explosive (compensatory acceleration)',
+              'Normal speed → 3-0-3 tempo (slow)',
+              'Controlled → Explosive (compensatory acceleration)',
               'Pauses: 2 second pause all reps',
               'Eccentric overload: 5 second descent',
             ],
@@ -219,19 +219,19 @@ export default function PlateauBreaking() {
           {
             type: 'Reduced Volume',
             method: 'Keep intensity, cut sets in half',
-            example: 'Normally 5x5 @ 80% â†’ 2x5 @ 80%',
+            example: 'Normally 5x5 @ 80% → 2x5 @ 80%',
             when: 'Feeling beat up but strength good',
           },
           {
             type: 'Reduced Intensity',
             method: 'Keep sets, reduce weight 30-40%',
-            example: 'Normally 4x3 @ 85% â†’ 4x3 @ 55%',
+            example: 'Normally 4x3 @ 85% → 4x3 @ 55%',
             when: 'Joints sore, need to move light',
           },
           {
             type: 'Reduced Frequency',
             method: 'Fewer training days',
-            example: '4 days per week â†’ 2 days per week',
+            example: '4 days per week → 2 days per week',
             when: 'Systemically fatigued, need time off',
           },
           {
@@ -410,7 +410,7 @@ export default function PlateauBreaking() {
           'Body fat 18%+ (men) or 28%+ (women)',
           'Feel sluggish/unhealthy',
           '3-4 months before competition',
-          'Gained planned weight (e.g., 181 â†’ 198 class)',
+          'Gained planned weight (e.g., 181 → 198 class)',
         ],
       },
     },
@@ -468,7 +468,7 @@ export default function PlateauBreaking() {
   const getColorClass = (color: string) => {
     const colors: { [key: string]: string } = {
       blue: 'bg-primary',
-      emerald: 'bg-primary',
+      primary: 'bg-primary',
       purple: 'bg-purple-500',
       amber: 'bg-amber-500',
       red: 'bg-red-500',
@@ -536,14 +536,14 @@ export default function PlateauBreaking() {
                 <View className="bg-red-500/10 rounded-xl p-4 border border-red-500/30 mb-4">
                   <Text className="text-red-400 font-bold mb-2">Real Plateau:</Text>
                   {currentStrategy.real_vs_perceived?.real_plateau.map((sign: string, idx: number) => (
-                    <Text key={idx} className="text-red-300 text-sm mb-1">• {sign}</Text>
+                    <Text key={idx} className="text-red-300 text-sm mb-1">� {sign}</Text>
                   ))}
                 </View>
 
                 <View className="bg-primary/10 rounded-xl p-4 border border-primary/30">
                   <Text className="text-primary font-bold mb-2">Not Actually Plateau:</Text>
                   {currentStrategy.real_vs_perceived?.not_plateau.map((sign: string, idx: number) => (
-                    <Text key={idx} className="text-primary/80 text-sm mb-1">• {sign}</Text>
+                    <Text key={idx} className="text-primary/80 text-sm mb-1">� {sign}</Text>
                   ))}
                 </View>
               </View>
@@ -556,7 +556,7 @@ export default function PlateauBreaking() {
                     
                     <Text className="text-zinc-400 font-bold text-sm mb-2">Signs:</Text>
                     {cat.signs.map((sign: string, sIdx: number) => (
-                      <Text key={sIdx} className="text-zinc-300 text-sm mb-1">• {sign}</Text>
+                      <Text key={sIdx} className="text-zinc-300 text-sm mb-1">� {sign}</Text>
                     ))}
 
                     <View className="bg-primary/10 rounded-xl p-3 border border-primary/30 mt-3">
@@ -580,19 +580,19 @@ export default function PlateauBreaking() {
             </View>
           )}
 
-          <View className="bg-gradient-to-r from-emerald-500/20 to-teal-500/20 rounded-xl p-5 border border-primary/30 mb-6">
+          <View className="bg-gradient-to-r from-primary/20 to-primary/100/20 rounded-xl p-5 border border-primary/30 mb-6">
             <Text className="text-primary font-bold text-lg mb-3">Key Principles</Text>
             <Text className="text-primary/80 text-sm mb-2">
-              • Identify the root cause before changing everything
+              � Identify the root cause before changing everything
             </Text>
             <Text className="text-primary/80 text-sm mb-2">
-              • Change ONE variable at a time when possible
+              � Change ONE variable at a time when possible
             </Text>
             <Text className="text-primary/80 text-sm mb-2">
-              • Give changes 4-6 weeks to work
+              � Give changes 4-6 weeks to work
             </Text>
             <Text className="text-primary/80 text-sm">
-              • Sometimes you need to get weaker short-term to get stronger long-term
+              � Sometimes you need to get weaker short-term to get stronger long-term
             </Text>
           </View>
         </View>

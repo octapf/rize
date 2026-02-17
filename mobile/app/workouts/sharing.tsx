@@ -1,4 +1,4 @@
-Ôªøimport React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -36,8 +36,8 @@ const MY_WORKOUTS: Workout[] = [
     isPublic: true,
     likes: 142,
     downloads: 89,
-    creator: 'T√∫',
-    description: 'Rutina de empuje con enfoque en volumen para pecho, hombros y tr√≠ceps',
+    creator: 'T˙',
+    description: 'Rutina de empuje con enfoque en volumen para pecho, hombros y trÌceps',
     tags: ['pecho', 'hombros', 'triceps', 'volumen'],
   },
   {
@@ -50,8 +50,8 @@ const MY_WORKOUTS: Workout[] = [
     isPublic: true,
     likes: 98,
     downloads: 54,
-    creator: 'T√∫',
-    description: 'Pierna completa con √©nfasis en sentadilla y peso muerto',
+    creator: 'T˙',
+    description: 'Pierna completa con Ènfasis en sentadilla y peso muerto',
     tags: ['piernas', 'fuerza', 'compuestos'],
   },
   {
@@ -64,8 +64,8 @@ const MY_WORKOUTS: Workout[] = [
     isPublic: false,
     likes: 0,
     downloads: 0,
-    creator: 'T√∫',
-    description: 'Cardio de alta intensidad para quemar calor√≠as',
+    creator: 'T˙',
+    description: 'Cardio de alta intensidad para quemar calorÌas',
     tags: ['cardio', 'hiit', 'rapido'],
   },
 ];
@@ -110,7 +110,7 @@ const COMMUNITY_WORKOUTS: Workout[] = [
     likes: 412,
     downloads: 298,
     creator: 'Pedro Strong',
-    description: 'Programa cl√°sico de fuerza con los 3 grandes',
+    description: 'Programa cl·sico de fuerza con los 3 grandes',
     tags: ['powerlifting', 'fuerza', '5x5'],
   },
 ];
@@ -155,7 +155,7 @@ export default function WorkoutSharing() {
   const shareWorkout = async (workout: Workout) => {
     try {
       await Share.share({
-        message: `üèãÔ∏è ${workout.name}\n\n${workout.description}\n\n${workout.exercises} ejercicios ‚Ä¢ ${workout.duration} min\n\n¬°Descarga en Rize App!`,
+        message: `??? ${workout.name}\n\n${workout.description}\n\n${workout.exercises} ejercicios ï ${workout.duration} min\n\n°Descarga en Rize App!`,
       });
     } catch (error) {
       Alert.alert('Error', 'No se pudo compartir la rutina');
@@ -165,13 +165,13 @@ export default function WorkoutSharing() {
   const togglePublic = (workoutId: string) => {
     Alert.alert(
       'Cambiar Visibilidad',
-      '¬øDeseas hacer esta rutina p√∫blica para que otros la descarguen?',
+      'øDeseas hacer esta rutina p˙blica para que otros la descarguen?',
       [
         { text: 'Cancelar', style: 'cancel' },
         {
-          text: 'Hacer P√∫blica',
+          text: 'Hacer P˙blica',
           onPress: () => {
-            Alert.alert('¬°Publicada!', 'Tu rutina ahora es visible para todos');
+            Alert.alert('°Publicada!', 'Tu rutina ahora es visible para todos');
           },
         },
       ]
@@ -181,13 +181,13 @@ export default function WorkoutSharing() {
   const downloadWorkout = (workout: Workout) => {
     Alert.alert(
       'Descargar Rutina',
-      `${workout.name}\n\nCreada por: ${workout.creator}\n\n¬øDeseas agregar esta rutina a tu biblioteca?`,
+      `${workout.name}\n\nCreada por: ${workout.creator}\n\nøDeseas agregar esta rutina a tu biblioteca?`,
       [
         { text: 'Cancelar', style: 'cancel' },
         {
           text: 'Descargar',
           onPress: () => {
-            Alert.alert('¬°Descargada!', 'La rutina est√° ahora en "Mis Rutinas"');
+            Alert.alert('°Descargada!', 'La rutina est· ahora en "Mis Rutinas"');
           },
         },
       ]
@@ -195,7 +195,7 @@ export default function WorkoutSharing() {
   };
 
   const likeWorkout = (workoutId: string) => {
-    Alert.alert('‚ù§Ô∏è', 'Te gusta esta rutina');
+    Alert.alert('??', 'Te gusta esta rutina');
   };
 
   return (
@@ -218,7 +218,7 @@ export default function WorkoutSharing() {
         <View className="bg-gradient-to-br from-primary to-[#7D0EBE] rounded-xl p-4 mb-4">
           <View className="flex-row items-center justify-between">
             <View className="flex-1">
-              <Text className="text-white/80 text-sm mb-1">Tus Rutinas P√∫blicas</Text>
+              <Text className="text-white/80 text-sm mb-1">Tus Rutinas P˙blicas</Text>
               <Text className="text-white font-bold text-4xl mb-1">
                 {MY_WORKOUTS.filter((w) => w.isPublic).length}
               </Text>
@@ -319,7 +319,7 @@ export default function WorkoutSharing() {
                   {workout.isPublic && (
                     <View className="bg-primary/20 px-3 py-1 rounded-full">
                       <Text className="text-primary text-xs font-bold">
-                        P√∫blica
+                        P˙blica
                       </Text>
                     </View>
                   )}
@@ -468,7 +468,7 @@ export default function WorkoutSharing() {
                 No hay rutinas guardadas
               </Text>
               <Text className="text-zinc-500 text-sm mt-2 text-center">
-                Las rutinas que descargues aparecer√°n aqu√≠
+                Las rutinas que descargues aparecer·n aquÌ
               </Text>
             </View>
           </View>
@@ -484,7 +484,7 @@ export default function WorkoutSharing() {
                   Comparte tu Conocimiento
                 </Text>
                 <Text className="text-primary/60 text-sm">
-                  Cuando publicas una rutina, ayudas a miles de personas a mejorar su entrenamiento. ¬°S√© parte de la comunidad Rize!
+                  Cuando publicas una rutina, ayudas a miles de personas a mejorar su entrenamiento. °SÈ parte de la comunidad Rize!
                 </Text>
               </View>
             </View>

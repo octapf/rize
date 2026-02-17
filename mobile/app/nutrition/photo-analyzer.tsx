@@ -1,4 +1,4 @@
-Ôªøimport React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   View,
   Text,
@@ -102,7 +102,7 @@ export default function FoodPhotoAnalyzer() {
             serving: '150g estimado',
           },
           {
-            name: 'Br√≥coli al Vapor',
+            name: 'BrÛcoli al Vapor',
             confidence: 0.92,
             calories: 35,
             protein: 2.8,
@@ -116,7 +116,7 @@ export default function FoodPhotoAnalyzer() {
         setIsAnalyzing(false);
 
         Alert.alert(
-          'An√°lisis Completo',
+          'An·lisis Completo',
           `Se detectaron ${mockDetections.length} alimentos en la imagen con alta confianza.`
         );
       } else {
@@ -124,7 +124,7 @@ export default function FoodPhotoAnalyzer() {
         setIsAnalyzing(false);
         Alert.alert(
           'Etiqueta Detectada',
-          'Informaci√≥n nutricional extra√≠da correctamente',
+          'InformaciÛn nutricional extraÌda correctamente',
           [
             {
               text: 'Ver Detalles',
@@ -145,15 +145,15 @@ export default function FoodPhotoAnalyzer() {
 
     Alert.alert(
       'Agregar Comida',
-      `Se agregar√°n ${detectedFoods.length} alimentos:\n\n` +
+      `Se agregar·n ${detectedFoods.length} alimentos:\n\n` +
         `Total: ${totalCalories} kcal\n` +
-        `Prote√≠na: ${totalProtein.toFixed(1)}g`,
+        `ProteÌna: ${totalProtein.toFixed(1)}g`,
       [
         { text: 'Cancelar', style: 'cancel' },
         {
           text: 'Agregar Todo',
           onPress: () => {
-            Alert.alert('¬°Agregado!', 'Comida registrada en tu diario', [
+            Alert.alert('°Agregado!', 'Comida registrada en tu diario', [
               {
                 text: 'OK',
                 onPress: () => router.back(),
@@ -174,7 +174,7 @@ export default function FoodPhotoAnalyzer() {
   if (hasPermission === null) {
     return (
       <View className="flex-1 bg-zinc-950 items-center justify-center">
-        <Text className="text-white">Solicitando permiso de c√°mara...</Text>
+        <Text className="text-white">Solicitando permiso de c·mara...</Text>
       </View>
     );
   }
@@ -184,10 +184,10 @@ export default function FoodPhotoAnalyzer() {
       <View className="flex-1 bg-zinc-950 items-center justify-center px-6">
         <Ionicons name="camera-off" size={64} color="#EF4444" />
         <Text className="text-white font-bold text-xl mt-4 text-center">
-          Sin Acceso a C√°mara
+          Sin Acceso a C·mara
         </Text>
         <Text className="text-zinc-400 text-center mt-2 leading-6">
-          Necesitamos acceso a tu c√°mara para analizar fotos de comida.
+          Necesitamos acceso a tu c·mara para analizar fotos de comida.
         </Text>
         <TouchableOpacity
           onPress={() => router.back()}
@@ -210,7 +210,7 @@ export default function FoodPhotoAnalyzer() {
               <Ionicons name="close" size={24} color="white" />
             </TouchableOpacity>
             <Text className="text-white text-xl font-bold flex-1 ml-3">
-              An√°lisis de Foto
+              An·lisis de Foto
             </Text>
             <TouchableOpacity onPress={retakePhoto}>
               <Ionicons name="camera-reverse" size={24} color="white" />
@@ -237,7 +237,7 @@ export default function FoodPhotoAnalyzer() {
                   Analizando con IA...
                 </Text>
                 <Text className="text-primary/60 text-center text-sm mt-2">
-                  Detectando alimentos y calculando informaci√≥n nutricional
+                  Detectando alimentos y calculando informaciÛn nutricional
                 </Text>
               </View>
             </View>
@@ -303,7 +303,7 @@ export default function FoodPhotoAnalyzer() {
                     {/* Macros */}
                     <View className="flex-row gap-3 pt-3 border-t border-zinc-800">
                       <View className="flex-1">
-                        <Text className="text-primary/80 text-xs">Prote√≠na</Text>
+                        <Text className="text-primary/80 text-xs">ProteÌna</Text>
                         <Text className="text-white text-sm font-semibold">
                           {food.protein}g
                         </Text>
@@ -325,7 +325,7 @@ export default function FoodPhotoAnalyzer() {
                     {/* Edit Button */}
                     <TouchableOpacity className="bg-zinc-800 rounded-lg p-2 mt-3">
                       <Text className="text-white text-center text-sm font-semibold">
-                        Ajustar Porci√≥n
+                        Ajustar PorciÛn
                       </Text>
                     </TouchableOpacity>
                   </View>
@@ -415,8 +415,8 @@ export default function FoodPhotoAnalyzer() {
           <View className="bg-black/70 rounded-xl p-4 mt-4 mx-6">
             <Text className="text-zinc-300 text-sm text-center leading-5">
               {analysisMode === 'food'
-                ? '√∞≈∏‚Äú¬∏ La IA detectar√° los alimentos y estimar√° las calor√≠as'
-                : '√∞≈∏¬è¬∑√Ø¬∏¬è Extrae autom√°ticamente la informaci√≥n nutricional'}
+                ? 'üì∏ La IA detectar· los alimentos y estimar· las calorÌas'
+                : 'üè∑Ô∏è Extrae autom·ticamente la informaciÛn nutricional'}
             </Text>
           </View>
         </View>

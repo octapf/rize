@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -26,7 +26,7 @@ export default function DeloadProtocols() {
       bestFor: 'Most lifters, general fatigue',
       implementation: [
         'Keep same exercises and weights',
-        'Cut sets by 50% (4 sets â†’ 2 sets)',
+        'Cut sets by 50% (4 sets → 2 sets)',
         'Keep reps the same',
         'Maintain frequency (still train 3-5x/week)',
         'Focus on technique and speed',
@@ -42,7 +42,7 @@ export default function DeloadProtocols() {
     intensity: {
       name: 'Intensity Deload',
       icon: 'barbell-outline',
-      color: 'emerald',
+      color: 'primary',
       method: 'Reduce intensity by 20-30%',
       description: 'Lighter weights, same volume',
       example: {
@@ -127,7 +127,7 @@ export default function DeloadProtocols() {
   const getColorClasses = (color: string) => {
     const colors: { [key: string]: { bg: string; border: string; text: string } } = {
       blue: { bg: 'bg-primary', border: 'border-primary', text: 'text-primary/80' },
-      emerald: { bg: 'bg-primary', border: 'border-primary', text: 'text-primary' },
+      primary: { bg: 'bg-primary', border: 'border-primary', text: 'text-primary' },
       purple: { bg: 'bg-purple-500', border: 'border-purple-400', text: 'text-purple-400' },
       amber: { bg: 'bg-amber-500', border: 'border-amber-400', text: 'text-amber-400' },
     };
@@ -197,16 +197,16 @@ export default function DeloadProtocols() {
           <View className="bg-amber-500/10 rounded-xl p-4 border border-amber-500/30 mb-6">
             <Text className="text-amber-400 font-bold mb-2">Why Deload?</Text>
             <Text className="text-amber-300 text-sm mb-2">
-              • Training creates fatigue faster than you recover
+              � Training creates fatigue faster than you recover
             </Text>
             <Text className="text-amber-300 text-sm mb-2">
-              • Accumulated fatigue masks strength gains
+              � Accumulated fatigue masks strength gains
             </Text>
             <Text className="text-amber-300 text-sm mb-2">
-              • Deloads allow supercompensation (rebound)
+              � Deloads allow supercompensation (rebound)
             </Text>
             <Text className="text-amber-300 text-sm">
-              • You don't lose gains in one week
+              � You don't lose gains in one week
             </Text>
           </View>
 
@@ -280,7 +280,7 @@ export default function DeloadProtocols() {
             <Text className="text-white font-bold mb-3">Key Points</Text>
             {currentProtocol.notes.map((note, idx) => (
               <Text key={idx} className="text-zinc-300 text-sm mb-2 last:mb-4">
-                • {note}
+                � {note}
               </Text>
             ))}
 
@@ -303,7 +303,7 @@ export default function DeloadProtocols() {
                     <Text className="text-white text-xs font-bold">{item.severity}</Text>
                   </View>
                 </View>
-                <Text className="text-primary text-sm">â†’ {item.action}</Text>
+                <Text className="text-primary text-sm">→ {item.action}</Text>
               </View>
             ))}
           </View>
@@ -329,32 +329,32 @@ export default function DeloadProtocols() {
           <View className="bg-red-500/10 rounded-xl p-4 border border-red-500/30 mb-6">
             <Text className="text-red-400 font-bold mb-2">Common Mistakes</Text>
             <Text className="text-red-300 text-sm mb-2">
-              ✓ Training hard during deload ("don't want to lose gains")
+              ? Training hard during deload ("don't want to lose gains")
             </Text>
             <Text className="text-red-300 text-sm mb-2">
-              ✓ Deloading for 2+ weeks (too long)
+              ? Deloading for 2+ weeks (too long)
             </Text>
             <Text className="text-red-300 text-sm mb-2">
-              ✓ Skipping deloads entirely (accumulated fatigue)
+              ? Skipping deloads entirely (accumulated fatigue)
             </Text>
             <Text className="text-red-300 text-sm">
-              ✓ Deloading too frequently (undermines progress)
+              ? Deloading too frequently (undermines progress)
             </Text>
           </View>
 
           <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
             <Text className="text-primary font-bold mb-2">Pro Tips</Text>
             <Text className="text-primary/80 text-sm mb-2">
-              ✓ Plan deloads in advance (every 4-6 weeks)
+              ? Plan deloads in advance (every 4-6 weeks)
             </Text>
             <Text className="text-primary/80 text-sm mb-2">
-              ✓ Use deload week to work on technique
+              ? Use deload week to work on technique
             </Text>
             <Text className="text-primary/80 text-sm mb-2">
-              ✓ Expect to feel stronger after deload
+              ? Expect to feel stronger after deload
             </Text>
             <Text className="text-primary/80 text-sm">
-              ✓ Deload is not rest - you still train
+              ? Deload is not rest - you still train
             </Text>
           </View>
         </View>

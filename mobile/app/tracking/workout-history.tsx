@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -33,7 +33,7 @@ interface WorkoutSession {
 const WORKOUT_TYPES = [
   { id: 'all', label: 'Todos', icon: 'apps', color: 'zinc' },
   { id: 'push', label: 'Push', icon: 'arrow-up', color: 'blue' },
-  { id: 'pull', label: 'Pull', icon: 'arrow-down', color: 'emerald' },
+  { id: 'pull', label: 'Pull', icon: 'arrow-down', color: 'primary' },
   { id: 'legs', label: 'Piernas', icon: 'walk', color: 'red' },
   { id: 'upper', label: 'Superior', icon: 'body', color: 'purple' },
   { id: 'lower', label: 'Inferior', icon: 'fitness', color: 'amber' },
@@ -52,11 +52,11 @@ const MOCK_SESSIONS: WorkoutSession[] = [
       { name: 'Press Inclinado DB', sets: 3, reps: '10,10,8', weight: 35 },
       { name: 'Press Militar', sets: 4, reps: '8,8,8,6', weight: 60 },
       { name: 'Elevaciones Laterales', sets: 3, reps: '12,12,10', weight: 12 },
-      { name: 'Tríceps Polea', sets: 3, reps: '12,12,12', weight: 40 },
+      { name: 'Tr�ceps Polea', sets: 3, reps: '12,12,12', weight: 40 },
     ],
     totalVolume: 4280,
     rating: 5,
-    notes: 'Excelente sesión, nuevo PR en banca',
+    notes: 'Excelente sesi�n, nuevo PR en banca',
   },
   {
     id: '2',
@@ -69,7 +69,7 @@ const MOCK_SESSIONS: WorkoutSession[] = [
       { name: 'Dominadas', sets: 4, reps: '10,8,8,6', weight: 0 },
       { name: 'Remo Barra', sets: 4, reps: '8,8,8,8', weight: 80 },
       { name: 'Face Pulls', sets: 3, reps: '15,15,15', weight: 25 },
-      { name: 'Curl Bíceps', sets: 3, reps: '10,10,10', weight: 20 },
+      { name: 'Curl B�ceps', sets: 3, reps: '10,10,10', weight: 20 },
     ],
     totalVolume: 4230,
     rating: 4,
@@ -105,7 +105,7 @@ const MOCK_SESSIONS: WorkoutSession[] = [
     ],
     totalVolume: 2912,
     rating: 3,
-    notes: 'Sesión ligera de recuperación',
+    notes: 'Sesi�n ligera de recuperaci�n',
   },
 ];
 
@@ -124,8 +124,8 @@ export default function WorkoutHistory() {
 
   const deleteSession = (id: string) => {
     Alert.alert(
-      'Eliminar Sesión',
-      '¿Estás seguro?',
+      'Eliminar Sesi�n',
+      '�Est�s seguro?',
       [
         { text: 'Cancelar' },
         { text: 'Eliminar', style: 'destructive', onPress: () => setSessions(sessions.filter((s) => s.id !== id)) },
@@ -222,10 +222,10 @@ export default function WorkoutHistory() {
           <Text className="text-white font-bold text-lg mb-4">Historial de Entrenamientos</Text>
           {filteredSessions.length === 0 ? (
             <View className="bg-zinc-900 rounded-xl p-8 items-center border border-zinc-800">
-              <Text className="text-6xl mb-3">ðŸ‹ï¸</Text>
+              <Text className="text-6xl mb-3">🏋️</Text>
               <Text className="text-white font-bold text-lg mb-2">Sin Sesiones</Text>
               <Text className="text-zinc-400 text-center">
-                Tus entrenamientos aparecerán aquí
+                Tus entrenamientos aparecer�n aqu�
               </Text>
             </View>
           ) : (
@@ -265,23 +265,23 @@ export default function WorkoutHistory() {
                     <View className="flex-row flex-wrap gap-2 mb-3">
                       <View className="bg-zinc-800 rounded px-3 py-1">
                         <Text className="text-primary/80 text-xs font-bold">
-                          â±ï¸ {session.duration} min
+                          ⏱️ {session.duration} min
                         </Text>
                       </View>
                       <View className="bg-zinc-800 rounded px-3 py-1">
                         <Text className="text-purple-400 text-xs font-bold">
-                          ðŸ’ª {session.totalVolume.toLocaleString()} kg
+                          💪 {session.totalVolume.toLocaleString()} kg
                         </Text>
                       </View>
                       <View className="bg-zinc-800 rounded px-3 py-1">
                         <Text className="text-primary text-xs font-bold">
-                          ðŸ“ {session.exercises.length} ejercicios
+                          📝 {session.exercises.length} ejercicios
                         </Text>
                       </View>
                       {session.rating && (
                         <View className="bg-zinc-800 rounded px-3 py-1">
                           <Text className="text-amber-400 text-xs font-bold">
-                            {'â­'.repeat(session.rating)}
+                            {'⭐'.repeat(session.rating)}
                           </Text>
                         </View>
                       )}
@@ -303,7 +303,7 @@ export default function WorkoutHistory() {
                             </View>
                             <View className="flex-row items-center gap-2">
                               <Text className="text-zinc-400 text-sm">
-                                {ex.sets} series × {ex.reps} reps
+                                {ex.sets} series � {ex.reps} reps
                               </Text>
                             </View>
                             {ex.notes && (
@@ -353,11 +353,11 @@ export default function WorkoutHistory() {
                   Tips de Progreso
                 </Text>
                 <Text className="text-primary/80 text-sm">
-                  • Revisa tu historial semanalmente{'\n'}
-                  • Busca progresión en peso o reps{'\n'}
-                  • Nota ejercicios que te cuestan{'\n'}
-                  • Repite workouts que funcionan{'\n'}
-                  • Ajusta según tu recuperación
+                  � Revisa tu historial semanalmente{'\n'}
+                  � Busca progresi�n en peso o reps{'\n'}
+                  � Nota ejercicios que te cuestan{'\n'}
+                  � Repite workouts que funcionan{'\n'}
+                  � Ajusta seg�n tu recuperaci�n
                 </Text>
               </View>
             </View>

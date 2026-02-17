@@ -145,9 +145,9 @@ export default function ExerciseDetailScreen() {
           <TouchableOpacity
             key={tab}
             onPress={() => setActiveTab(tab)}
-            className={`flex-1 py-3 ${activeTab === tab ? 'border-b-2 border-emerald-500' : ''}`}
+            className={`flex-1 py-3 ${activeTab === tab ? 'border-b-2 border-primary/100' : ''}`}
           >
-            <Text className={`text-center font-semibold capitalize ${activeTab === tab ? 'text-emerald-600' : 'text-gray-600'}`}>
+            <Text className={`text-center font-semibold capitalize ${activeTab === tab ? 'text-primary' : 'text-gray-600'}`}>
               {tab === 'info' ? 'Info' : tab === 'progress' ? 'Progreso' : 'Historial'}
             </Text>
           </TouchableOpacity>
@@ -250,7 +250,7 @@ export default function ExerciseDetailScreen() {
                   backgroundGradientFrom: '#ffffff',
                   backgroundGradientTo: '#ffffff',
                   decimalPlaces: 1,
-                  color: (opacity = 1) => `rgba(16, 185, 129, ${opacity})`,
+                  color: (opacity = 1) => `rgba(157, 18, 222, ${opacity})`,
                   labelColor: (opacity = 1) => `rgba(107, 114, 128, ${opacity})`,
                 }}
                 bezier
@@ -272,7 +272,7 @@ export default function ExerciseDetailScreen() {
                     <Text className="text-gray-900 font-semibold">
                       {record.weight}kg × {record.reps}
                     </Text>
-                    <Text className="text-emerald-600 font-bold">
+                    <Text className="text-primary font-bold">
                       {record.oneRM.toFixed(1)} kg 1RM
                     </Text>
                   </View>

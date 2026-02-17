@@ -1,4 +1,4 @@
-ï»¿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -278,7 +278,7 @@ export default function CompetitionPrep() {
                   <Text className="text-white font-bold mb-2">Training</Text>
                   {phase.training.map((item, tidx) => (
                     <View key={tidx} className="flex-row items-start mb-1 last:mb-0">
-                      <Text className={`text-${currentPrep.color}-400 mr-2`}>â€¢</Text>
+                      <Text className={`text-${currentPrep.color}-400 mr-2`}>•</Text>
                       <Text className="text-zinc-300 text-sm flex-1">{item}</Text>
                     </View>
                   ))}
@@ -315,19 +315,19 @@ export default function CompetitionPrep() {
           <View className="bg-amber-500/10 rounded-xl p-4 border border-amber-500/30 mb-6">
             <Text className="text-amber-400 font-bold mb-2">General Prep Tips</Text>
             <Text className="text-amber-300 text-sm mb-2">
-              â€¢ Practice competition conditions in training
+              • Practice competition conditions in training
             </Text>
             <Text className="text-amber-300 text-sm mb-2">
-              â€¢ Don't try anything new in final 2 weeks
+              • Don't try anything new in final 2 weeks
             </Text>
             <Text className="text-amber-300 text-sm mb-2">
-              â€¢ Taper is crucial - trust the process
+              • Taper is crucial - trust the process
             </Text>
             <Text className="text-amber-300 text-sm mb-2">
-              â€¢ Sleep and stress management = performance
+              • Sleep and stress management = performance
             </Text>
             <Text className="text-amber-300 text-sm">
-              â€¢ Compete for experience first, results second
+              • Compete for experience first, results second
             </Text>
           </View>
         </View>

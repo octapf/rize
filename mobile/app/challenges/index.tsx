@@ -1,4 +1,4 @@
-ï»¿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -89,7 +89,7 @@ export default function ChallengesScreen() {
       return `${challenge.targetValue} kg`;
     }
     if (challenge.type === 'streak') {
-      return `${challenge.targetValue} dÃ­as`;
+      return `${challenge.targetValue} días`;
     }
     return challenge.targetValue.toString();
   };
@@ -102,7 +102,7 @@ export default function ChallengesScreen() {
       return `${value.toFixed(0)} kg`;
     }
     if (challenge.type === 'streak') {
-      return `${value} dÃ­as`;
+      return `${value} días`;
     }
     return value.toString();
   };
@@ -192,7 +192,7 @@ export default function ChallengesScreen() {
                   </Text>
                 )}
                 <Text className="text-xs text-gray-500 mt-2">
-                  DuraciÃ³n: {selectedChallenge.duration} dÃ­as
+                  Duración: {selectedChallenge.duration} días
                 </Text>
               </Card>
 
@@ -201,11 +201,11 @@ export default function ChallengesScreen() {
                 <>
                   {/* Time Remaining */}
                   {selectedChallenge.status === 'accepted' && selectedChallenge.endDate && (
-                    <Card className="p-4 mb-4 bg-emerald-50 border-primary/20">
+                    <Card className="p-4 mb-4 bg-primary/10 border-primary/20">
                       <View className="flex-row items-center gap-2">
                         <Ionicons name="time-outline" size={20} color="#9D12DE" />
                         <Text className="text-sm font-semibold text-primary">
-                          {getDaysRemaining(selectedChallenge.endDate)} dÃ­as restantes
+                          {getDaysRemaining(selectedChallenge.endDate)} días restantes
                         </Text>
                       </View>
                     </Card>
@@ -258,8 +258,8 @@ export default function ChallengesScreen() {
                         <Ionicons name="trophy" size={24} color="#FFEA00" />
                         <Text className="text-sm font-semibold text-amber-700">
                           {selectedChallenge.winner === (isChallenger ? selectedChallenge.challengerId._id : selectedChallenge.challengedId._id)
-                            ? 'Â¡Ganaste!'
-                            : `GanÃ³ @${opponent.username}`}
+                            ? '¡Ganaste!'
+                            : `Ganó @${opponent.username}`}
                         </Text>
                       </View>
                     </Card>
@@ -375,7 +375,7 @@ export default function ChallengesScreen() {
             <Ionicons name="flash-off-outline" size={64} color="#D1D5DB" />
             <Text className="text-gray-500 text-lg mt-4">No tienes retos</Text>
             <Text className="text-gray-400 text-sm mt-2">
-              Â¡Crea uno y desafÃ­a a tus amigos!
+              ¡Crea uno y desafía a tus amigos!
             </Text>
           </View>
         )}
@@ -433,7 +433,7 @@ export default function ChallengesScreen() {
                       <View className="flex-row items-center gap-2 mt-1">
                         <Ionicons name="time-outline" size={16} color="#9D12DE" />
                         <Text className="text-sm text-primary font-semibold">
-                          {getDaysRemaining(challenge.endDate)} dÃ­as restantes
+                          {getDaysRemaining(challenge.endDate)} días restantes
                         </Text>
                       </View>
                     )}

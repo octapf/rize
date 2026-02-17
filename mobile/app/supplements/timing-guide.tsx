@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -51,7 +51,7 @@ export default function SupplementTiming() {
       halfLife: 'Acute effect',
       notes: 'Empty stomach for best absorption',
       icon: 'water',
-      color: 'emerald',
+      color: 'primary',
     },
     {
       name: 'Creatine',
@@ -84,7 +84,7 @@ export default function SupplementTiming() {
       halfLife: 'Acute during session',
       notes: 'Useful for fasted training',
       icon: 'water',
-      color: 'emerald',
+      color: 'primary',
     },
     {
       name: 'Carbs (Intra)',
@@ -240,7 +240,7 @@ export default function SupplementTiming() {
                   color={
                     supp.color === 'amber' ? '#FFEA00' :
                     supp.color === 'blue' ? '#9D12DE' :
-                    supp.color === 'emerald' ? '#9D12DE' :
+                    supp.color === 'primary' ? '#9D12DE' :
                     supp.color === 'purple' ? '#a855f7' : '#ef4444'
                   }
                 />
@@ -261,7 +261,7 @@ export default function SupplementTiming() {
                   <Text className="text-white font-bold flex-1 text-right ml-2">{supp.benefits}</Text>
                 </View>
                 <View className={`bg-${supp.color}-500/20 rounded-lg p-2 mt-2`}>
-                  <Text className={`text-${supp.color}-300 text-sm`}>ðŸ’¡ {supp.notes}</Text>
+                  <Text className={`text-${supp.color}-300 text-sm`}>💡 {supp.notes}</Text>
                 </View>
               </View>
             </View>
@@ -291,12 +291,12 @@ export default function SupplementTiming() {
           <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
             <Text className="text-primary/80 font-bold mb-2">Timing Tips</Text>
             <Text className="text-primary/60 text-sm">
-              • Consistency &gt; perfect timing{'\n'}
-              • Creatine = anytime (daily saturation){'\n'}
-              • Caffeine = avoid late afternoon{'\n'}
-              • Fat-soluble vitamins with meals{'\n'}
-              • Pre-workout 30-45 min before{'\n'}
-              • Post-workout window = 2-4 hours (not 30 min)
+              � Consistency &gt; perfect timing{'\n'}
+              � Creatine = anytime (daily saturation){'\n'}
+              � Caffeine = avoid late afternoon{'\n'}
+              � Fat-soluble vitamins with meals{'\n'}
+              � Pre-workout 30-45 min before{'\n'}
+              � Post-workout window = 2-4 hours (not 30 min)
             </Text>
           </View>
         </View>

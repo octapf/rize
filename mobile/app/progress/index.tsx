@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -150,10 +150,10 @@ export default function ProgressScreen() {
   const volumeData = prepareVolumeData();
 
   const timeRanges = [
-    { id: '7d' as const, label: '7 días' },
-    { id: '30d' as const, label: '30 días' },
-    { id: '90d' as const, label: '90 días' },
-    { id: 'year' as const, label: '1 año' },
+    { id: '7d' as const, label: '7 d�as' },
+    { id: '30d' as const, label: '30 d�as' },
+    { id: '90d' as const, label: '90 d�as' },
+    { id: 'year' as const, label: '1 a�o' },
   ];
 
   const chartConfig = {
@@ -161,7 +161,7 @@ export default function ProgressScreen() {
     backgroundGradientFrom: '#ffffff',
     backgroundGradientTo: '#ffffff',
     decimalPlaces: 0,
-    color: (opacity = 1) => `rgba(16, 185, 129, ${opacity})`,
+    color: (opacity = 1) => `rgba(157, 18, 222, ${opacity})`,
     labelColor: (opacity = 1) => `rgba(107, 114, 128, ${opacity})`,
     style: {
       borderRadius: 16,
@@ -245,7 +245,7 @@ export default function ProgressScreen() {
           
           {workoutFrequency.data.every(d => d === 0) ? (
             <View className="py-8 items-center">
-              <Text className="text-gray-400">No hay datos en este período</Text>
+              <Text className="text-gray-400">No hay datos en este per�odo</Text>
             </View>
           ) : (
             <BarChart
@@ -273,7 +273,7 @@ export default function ProgressScreen() {
 
           {volumeData.data.every(d => d === 0) ? (
             <View className="py-8 items-center">
-              <Text className="text-gray-400">No hay datos en este período</Text>
+              <Text className="text-gray-400">No hay datos en este per�odo</Text>
             </View>
           ) : (
             <LineChart
@@ -314,7 +314,7 @@ export default function ProgressScreen() {
 
           <View className="gap-3">
             <View className="flex-row items-center justify-between py-3 border-b border-gray-200">
-              <Text className="text-gray-700">Volumen en un día</Text>
+              <Text className="text-gray-700">Volumen en un d�a</Text>
               <Text className="text-gray-900 font-bold">
                 {Math.max(...volumeData.data, 0).toLocaleString()} kg
               </Text>
@@ -326,9 +326,9 @@ export default function ProgressScreen() {
               </Text>
             </View>
             <View className="flex-row items-center justify-between py-3">
-              <Text className="text-gray-700">Racha más larga</Text>
+              <Text className="text-gray-700">Racha m�s larga</Text>
               <Text className="text-gray-900 font-bold">
-                {stats?.user.streak || 0} días
+                {stats?.user.streak || 0} d�as
               </Text>
             </View>
           </View>
@@ -351,7 +351,7 @@ export default function ProgressScreen() {
               </Text>
             </View>
             <View className="flex-row items-center justify-between">
-              <Text className="text-gray-700">Promedio por sesión</Text>
+              <Text className="text-gray-700">Promedio por sesi�n</Text>
               <Text className="text-gray-900 font-bold">
                 {stats?.workouts.total
                   ? Math.round((stats.time.total || 0) / stats.workouts.total)

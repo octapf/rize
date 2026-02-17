@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -23,8 +23,8 @@ export default function DeloadProtocol() {
       color: 'blue',
       icon: 'fitness' as const,
       protocols: [
-        { metric: 'Volume', reduction: '40-50%', example: '3 sets â†’ 2 sets' },
-        { metric: 'Intensity', reduction: '30-40%', example: '100kg â†’ 60-70kg' },
+        { metric: 'Volume', reduction: '40-50%', example: '3 sets → 2 sets' },
+        { metric: 'Intensity', reduction: '30-40%', example: '100kg → 60-70kg' },
         { metric: 'Frequency', reduction: '0%', example: 'Keep same days' },
         { metric: 'Exercises', reduction: '0%', example: 'Same movements' },
       ],
@@ -64,7 +64,7 @@ export default function DeloadProtocol() {
       description: 'Targeted recovery areas',
       duration: '1 week',
       frequency: 'Every 3-4 weeks',
-      color: 'emerald',
+      color: 'primary',
       icon: 'analytics' as const,
       protocols: [
         { metric: 'Heavy Compounds', reduction: '60%', example: 'Reduce squat/dead/bench' },
@@ -146,7 +146,7 @@ export default function DeloadProtocol() {
 
           <View className={`bg-${currentType.color}-500/10 rounded-xl p-5 mb-6 border border-${currentType.color}-500/30`}>
             <View className="flex-row items-center mb-3">
-              <Ionicons name={currentType.icon} size={28} color={`#${currentType.color === 'blue' ? '3b82f6' : currentType.color === 'purple' ? 'a855f7' : '10b981'}`} />
+              <Ionicons name={currentType.icon} size={28} color={`#${currentType.color === 'blue' ? '3b82f6' : currentType.color === 'purple' ? 'a855f7' : '9D12DE'}`} />
               <Text className={`text-${currentType.color}-400 font-bold text-2xl ml-3`}>
                 {currentType.name}
               </Text>
@@ -189,7 +189,7 @@ export default function DeloadProtocol() {
             <Text className={`text-${currentType.color}-400 font-bold mb-3`}>Key Benefits</Text>
             {currentType.benefits.map((benefit, idx) => (
               <View key={idx} className="flex-row items-center mb-2 last:mb-0">
-                <Ionicons name="checkmark-circle" size={18} color={`#${currentType.color === 'blue' ? '3b82f6' : currentType.color === 'purple' ? 'a855f7' : '10b981'}`} />
+                <Ionicons name="checkmark-circle" size={18} color={`#${currentType.color === 'blue' ? '3b82f6' : currentType.color === 'purple' ? 'a855f7' : '9D12DE'}`} />
                 <Text className={`text-${currentType.color}-300 ml-2`}>{benefit}</Text>
               </View>
             ))}
@@ -221,11 +221,11 @@ export default function DeloadProtocol() {
           <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
             <Text className="text-primary font-bold mb-2">Deload Tips</Text>
             <Text className="text-primary/80 text-sm">
-              • Plan deloads proactively{'\n'}
-              • Don't skip them{'\n'}
-              • Use time for mobility{'\n'}
-              • Focus on technique{'\n'}
-              • Trust the process
+              � Plan deloads proactively{'\n'}
+              � Don't skip them{'\n'}
+              � Use time for mobility{'\n'}
+              � Focus on technique{'\n'}
+              � Trust the process
             </Text>
           </View>
         </View>

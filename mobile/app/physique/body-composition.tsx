@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -28,7 +28,7 @@ export default function BodyComposition() {
       id: 'navy',
       name: 'Navy Method',
       icon: 'analytics' as const,
-      accuracy: 'Good (Â±3.5%)',
+      accuracy: 'Good (±3.5%)',
       description: 'Uses circumference measurements',
       measurements: gender === 'male' 
         ? ['Height', 'Neck', 'Waist'] 
@@ -38,7 +38,7 @@ export default function BodyComposition() {
       id: 'calipers',
       name: 'Caliper (3-Site)',
       icon: 'fitness' as const,
-      accuracy: 'Very Good (Â±2-3%)',
+      accuracy: 'Very Good (±2-3%)',
       description: 'Skinfold measurements at 3 sites',
       measurements: gender === 'male'
         ? ['Chest', 'Abdomen', 'Thigh']
@@ -48,7 +48,7 @@ export default function BodyComposition() {
       id: 'visual',
       name: 'Visual Estimate',
       icon: 'eye' as const,
-      accuracy: 'Fair (Â±5%)',
+      accuracy: 'Fair (±5%)',
       description: 'Compare to reference photos',
       measurements: ['Photo comparison'],
     },
@@ -77,13 +77,13 @@ export default function BodyComposition() {
     if (gender === 'male') {
       if (bf < 6) return { category: 'Essential Fat', color: 'red', health: 'Unhealthy Low' };
       if (bf < 14) return { category: 'Athletes', color: 'blue', health: 'Excellent' };
-      if (bf < 18) return { category: 'Fitness', color: 'emerald', health: 'Good' };
+      if (bf < 18) return { category: 'Fitness', color: 'primary', health: 'Good' };
       if (bf < 25) return { category: 'Average', color: 'amber', health: 'Fair' };
       return { category: 'Obese', color: 'red', health: 'High Risk' };
     } else {
       if (bf < 14) return { category: 'Essential Fat', color: 'red', health: 'Unhealthy Low' };
       if (bf < 21) return { category: 'Athletes', color: 'blue', health: 'Excellent' };
-      if (bf < 25) return { category: 'Fitness', color: 'emerald', health: 'Good' };
+      if (bf < 25) return { category: 'Fitness', color: 'primary', health: 'Good' };
       if (bf < 32) return { category: 'Average', color: 'amber', health: 'Fair' };
       return { category: 'Obese', color: 'red', health: 'High Risk' };
     }
@@ -302,16 +302,16 @@ export default function BodyComposition() {
           <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
             <Text className="text-primary/80 font-bold mb-2">Measurement Tips</Text>
             <Text className="text-primary/60 text-sm mb-2">
-              • Measure in the morning before eating
+              � Measure in the morning before eating
             </Text>
             <Text className="text-primary/60 text-sm mb-2">
-              • Keep tape parallel to ground, snug but not tight
+              � Keep tape parallel to ground, snug but not tight
             </Text>
             <Text className="text-primary/60 text-sm mb-2">
-              • Neck: measure below Adam's apple
+              � Neck: measure below Adam's apple
             </Text>
             <Text className="text-primary/60 text-sm">
-              • Waist: at navel, relaxed (don't suck in)
+              � Waist: at navel, relaxed (don't suck in)
             </Text>
           </View>
         </View>

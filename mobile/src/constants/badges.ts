@@ -5,7 +5,7 @@ export const BADGES = {
     name: 'Primer Paso',
     description: 'Completa tu primer entrenamiento',
     icon: 'footsteps',
-    color: '#10B981',
+    color: '#9D12DE',
     tier: 'bronze',
   },
   WORKOUTS_10: {
@@ -99,7 +99,7 @@ export const BADGES = {
     name: 'Aprendiz',
     description: 'Alcanza el nivel 5',
     icon: 'ribbon',
-    color: '#10B981',
+    color: '#9D12DE',
     tier: 'bronze',
   },
   LEVEL_10: {
@@ -133,7 +133,7 @@ export const BADGES = {
     name: 'Récord Personal',
     description: 'Establece tu primer récord',
     icon: 'trending-up',
-    color: '#10B981',
+    color: '#9D12DE',
     tier: 'bronze',
   },
   RECORDS_10: {
@@ -217,7 +217,7 @@ export const BADGES = {
     name: 'Semana Perfecta',
     description: 'Entrena todos los días de la semana',
     icon: 'calendar',
-    color: '#10B981',
+    color: '#9D12DE',
     tier: 'gold',
   },
 };

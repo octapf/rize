@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -55,7 +55,7 @@ export default function ProgrammingIntegration() {
     exercise_selection: {
       name: 'Exercise Selection',
       icon: 'barbell',
-      color: 'emerald',
+      color: 'primary',
       hierarchy: {
         title: 'Exercise Hierarchy for Powerlifting',
         tier_1: {
@@ -96,12 +96,12 @@ export default function ProgrammingIntegration() {
           {
             step: '1. Identify Weak Points',
             method: 'Where do you miss lifts? Video analysis.',
-            example: 'Miss deadlifts off floor → deficit deadlifts',
+            example: 'Miss deadlifts off floor ? deficit deadlifts',
           },
           {
             step: '2. Choose Specific Variations',
             method: 'Pick variations that target that weakness',
-            example: 'Lockout weak on bench → board press, close grip',
+            example: 'Lockout weak on bench ? board press, close grip',
           },
           {
             step: '3. Limit Total Exercises',
@@ -215,13 +215,13 @@ export default function ProgrammingIntegration() {
           model: 'Linear Progression',
           how: 'Add weight every session/week',
           best_for: 'Beginners',
-          example: 'Squat: 225x5 â†’ 230x5 â†’ 235x5',
+          example: 'Squat: 225x5 → 230x5 → 235x5',
         },
         wave: {
           model: 'Wave Loading',
           how: 'Cycle intensity within week',
           best_for: 'Intermediate',
-          example: 'Wave 1: 80%, 85%, 90% â†’ Wave 2: 82%, 87%, 92%',
+          example: 'Wave 1: 80%, 85%, 90% → Wave 2: 82%, 87%, 92%',
         },
         block: {
           model: 'Block Periodization',
@@ -239,15 +239,15 @@ export default function ProgrammingIntegration() {
         title: 'Main Periodization Models',
         linear: {
           name: 'Linear Periodization',
-          structure: 'Progress from high volume/low intensity â†’ low volume/high intensity',
+          structure: 'Progress from high volume/low intensity → low volume/high intensity',
           timeline: '12-16 weeks',
           best_for: 'Beginners to intermediate',
-          example: 'Weeks 1-4: 4x8 @ 70% â†’ Weeks 9-12: 3x3 @ 85%',
+          example: 'Weeks 1-4: 4x8 @ 70% → Weeks 9-12: 3x3 @ 85%',
         },
         block: {
           name: 'Block Periodization',
           structure: 'Distinct blocks focusing on one quality',
-          blocks: 'Accumulation (volume) â†’ Intensification (strength) â†’ Realization (peak)',
+          blocks: 'Accumulation (volume) → Intensification (strength) → Realization (peak)',
           best_for: 'Intermediate to advanced',
           timeline: '4-6 weeks per block',
         },
@@ -297,13 +297,13 @@ export default function ProgrammingIntegration() {
           {
             method: 'Reduced Volume',
             how: 'Cut sets in half',
-            example: '4x5 @ 80% â†’ 2x5 @ 80%',
+            example: '4x5 @ 80% → 2x5 @ 80%',
             when: 'Most common approach',
           },
           {
             method: 'Reduced Intensity',
             how: 'Drop weight 20%',
-            example: '4x5 @ 80% â†’ 4x5 @ 60%',
+            example: '4x5 @ 80% → 4x5 @ 60%',
             when: 'If joints need break',
           },
           {
@@ -352,8 +352,8 @@ export default function ProgrammingIntegration() {
         personal: [
           {
             factor: 'Recovery Capacity',
-            high: 'Young, good sleep, low stress â†’ can handle more volume',
-            low: 'Older, poor sleep, high stress â†’ need lower volume',
+            high: 'Young, good sleep, low stress → can handle more volume',
+            low: 'Older, poor sleep, high stress → need lower volume',
           },
           {
             factor: 'Training Age',
@@ -374,10 +374,10 @@ export default function ProgrammingIntegration() {
       adjustments: {
         title: 'Making Program Adjustments',
         when: [
-          'Consistently exceeding prescribed RPE â†’ reduce volume/intensity',
-          'Never hitting prescribed RPE â†’ increase load or reduce volume',
-          'Not recovering between sessions â†’ add rest day or deload',
-          'Progress stalled 6+ weeks â†’ change stimulus',
+          'Consistently exceeding prescribed RPE → reduce volume/intensity',
+          'Never hitting prescribed RPE → increase load or reduce volume',
+          'Not recovering between sessions → add rest day or deload',
+          'Progress stalled 6+ weeks → change stimulus',
         ],
       },
     },
@@ -452,7 +452,7 @@ export default function ProgrammingIntegration() {
   const getColorClass = (color: string) => {
     const colors: { [key: string]: string } = {
       blue: 'bg-primary',
-      emerald: 'bg-primary',
+      primary: 'bg-primary',
       purple: 'bg-purple-500',
       amber: 'bg-amber-500',
       red: 'bg-red-500',
@@ -528,22 +528,22 @@ export default function ProgrammingIntegration() {
           <View className="bg-gradient-to-r from-amber-500/20 to-orange-500/20 rounded-xl p-5 border border-amber-500/30 mb-6">
             <Text className="text-amber-400 font-bold text-lg mb-3">Integration Principles</Text>
             <Text className="text-amber-300 text-sm mb-2">
-              🎯 Exercise Selection: Tier 1 (comp lifts) â†’ Tier 2 (variations) â†’ Tier 3 (assistance)
+              ?? Exercise Selection: Tier 1 (comp lifts) → Tier 2 (variations) → Tier 3 (assistance)
             </Text>
             <Text className="text-amber-300 text-sm mb-2">
-              🎯 Volume: Progress gradually over months/years
+              ?? Volume: Progress gradually over months/years
             </Text>
             <Text className="text-amber-300 text-sm mb-2">
-              🎯 Intensity: 50-60% moderate, 20-30% heavy, 10-20% light
+              ?? Intensity: 50-60% moderate, 20-30% heavy, 10-20% light
             </Text>
             <Text className="text-amber-300 text-sm mb-2">
-              🎯 Periodization: Choose model based on experience and goals
+              ?? Periodization: Choose model based on experience and goals
             </Text>
             <Text className="text-amber-300 text-sm mb-2">
-              🎯 Recovery: Deload every 3-5 weeks, use autoregulation
+              ?? Recovery: Deload every 3-5 weeks, use autoregulation
             </Text>
             <Text className="text-amber-300 text-sm">
-              🎯 Customization: Adjust to YOUR recovery, weak points, leverages
+              ?? Customization: Adjust to YOUR recovery, weak points, leverages
             </Text>
           </View>
         </View>

@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -37,7 +37,7 @@ export default function InjuryPrevention() {
           causes: ['Poor shoulder position', 'Lack of mobility', 'Weak rotator cuff', 'Too much pressing'],
           prevention: [
             'Retract scapulae on bench (shoulder blades back/down)',
-            'Don\'t flare elbows 90° on bench (45-75° angle)',
+            'Don\'t flare elbows 90� on bench (45-75� angle)',
             'Do face pulls and band pull-aparts (3x/week)',
             'Balance push/pull ratio (1:1 or more pulling)',
             'Improve thoracic mobility',
@@ -92,7 +92,7 @@ export default function InjuryPrevention() {
     prevention: {
       name: 'Prevention Strategies',
       icon: 'shield-checkmark',
-      color: 'emerald',
+      color: 'primary',
       strategies: [
         {
           strategy: 'Progressive Overload',
@@ -113,7 +113,7 @@ export default function InjuryPrevention() {
           description: 'Never skip warm-up sets',
           guidelines: [
             'General warm-up: 5-10 min cardio + mobility',
-            'Specific warm-up: Empty bar â†’ 40% â†’ 50% â†’ 60% â†’ 70% â†’ 80%',
+            'Specific warm-up: Empty bar → 40% → 50% → 60% → 70% → 80%',
             'More warm-up for older lifters (30+)',
             'Extra mobility if feeling tight',
             'Don\'t fatigue yourself in warm-up',
@@ -292,7 +292,7 @@ export default function InjuryPrevention() {
   const getColorClasses = (color: string) => {
     const colors: { [key: string]: { bg: string; border: string; text: string } } = {
       red: { bg: 'bg-red-500', border: 'border-red-400', text: 'text-red-400' },
-      emerald: { bg: 'bg-primary', border: 'border-primary', text: 'text-primary' },
+      primary: { bg: 'bg-primary', border: 'border-primary', text: 'text-primary' },
       amber: { bg: 'bg-amber-500', border: 'border-amber-400', text: 'text-amber-400' },
     };
     return colors[color];
@@ -362,21 +362,21 @@ export default function InjuryPrevention() {
                   <Text className="text-white font-bold mb-2">Causes:</Text>
                   {item.causes.map((cause, cIdx) => (
                     <Text key={cIdx} className="text-zinc-300 text-sm mb-1">
-                      • {cause}
+                      � {cause}
                     </Text>
                   ))}
 
                   <Text className="text-primary font-bold mt-4 mb-2">Prevention:</Text>
                   {item.prevention.map((prev, pIdx) => (
                     <Text key={pIdx} className="text-primary/80 text-sm mb-1">
-                      ✓ {prev}
+                      ? {prev}
                     </Text>
                   ))}
 
                   <Text className="text-amber-400 font-bold mt-4 mb-2">Warning Signs:</Text>
                   {item.signs.map((sign, sIdx) => (
                     <Text key={sIdx} className="text-amber-300 text-sm mb-1">
-                      âš  {sign}
+                      ⚠ {sign}
                     </Text>
                   ))}
 
@@ -407,7 +407,7 @@ export default function InjuryPrevention() {
                   <View className="bg-zinc-800 rounded-xl p-3 mb-3">
                     {strategy.guidelines.map((guideline, gIdx) => (
                       <Text key={gIdx} className="text-white text-sm mb-2 last:mb-0">
-                        • {guideline}
+                        � {guideline}
                       </Text>
                     ))}
                   </View>
@@ -446,7 +446,7 @@ export default function InjuryPrevention() {
                   <Text className="text-zinc-400 text-sm mb-2">Examples:</Text>
                   {item.examples.map((example, eIdx) => (
                     <Text key={eIdx} className="text-zinc-300 text-sm mb-1">
-                      • {example}
+                      � {example}
                     </Text>
                   ))}
                 </View>

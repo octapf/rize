@@ -1,6 +1,7 @@
 /**
- * Automatically downloads and installs Barlow and Inter fonts
+ * Automatically downloads and installs Poppins, Inter, and Montserrat fonts
  * Run: npm run install-fonts
+ * Note: @expo-google-fonts packages are preferred; this script is for manual/offline use.
  */
 const fs = require('fs');
 const path = require('path');
@@ -8,14 +9,15 @@ const https = require('https');
 
 const FONTS_DIR = path.join(__dirname, '..', 'assets', 'fonts');
 
-// Google Fonts API URLs (these are static CDN URLs)
+// Google Fonts CDN URLs (for manual install; app uses @expo-google-fonts)
 const FONT_URLS = {
-  'Barlow-Medium.ttf': 'https://github.com/JulietaUla/Barlow/raw/master/fonts/ttf/Barlow-Medium.ttf',
-  'Barlow-SemiBold.ttf': 'https://github.com/JulietaUla/Barlow/raw/master/fonts/ttf/Barlow-SemiBold.ttf',
-  'Barlow-Bold.ttf': 'https://github.com/JulietaUla/Barlow/raw/master/fonts/ttf/Barlow-Bold.ttf',
+  'Poppins-Bold.ttf': 'https://github.com/google/fonts/raw/main/ofl/poppins/Poppins%5BBold%5D.ttf',
+  'Poppins-SemiBold.ttf': 'https://github.com/google/fonts/raw/main/ofl/poppins/Poppins%5BSemiBold%5D.ttf',
   'Inter-Regular.ttf': 'https://github.com/rsms/inter/raw/master/docs/font-files/Inter-Regular.ttf',
   'Inter-Medium.ttf': 'https://github.com/rsms/inter/raw/master/docs/font-files/Inter-Medium.ttf',
   'Inter-SemiBold.ttf': 'https://github.com/rsms/inter/raw/master/docs/font-files/Inter-SemiBold.ttf',
+  'Montserrat-Medium.ttf': 'https://github.com/google/fonts/raw/main/ofl/montserrat/Montserrat%5BMedium%5D.ttf',
+  'Montserrat-SemiBold.ttf': 'https://github.com/google/fonts/raw/main/ofl/montserrat/Montserrat%5BSemiBold%5D.ttf',
 };
 
 function downloadFile(url, destPath) {

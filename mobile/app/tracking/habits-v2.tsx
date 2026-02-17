@@ -1,4 +1,4 @@
-Ôªøimport React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -24,9 +24,9 @@ interface Habit {
 }
 
 const HABIT_TEMPLATES = [
-  { name: '8h de Sue√±o', icon: 'moon', color: 'blue', category: 'recovery' },
+  { name: '8h de SueÒo', icon: 'moon', color: 'blue', category: 'recovery' },
   { name: '3L de Agua', icon: 'water', color: 'cyan', category: 'nutrition' },
-  { name: 'Prote√≠na en Cada Comida', icon: 'restaurant', color: 'emerald', category: 'nutrition' },
+  { name: 'ProteÌna en Cada Comida', icon: 'restaurant', color: 'primary', category: 'nutrition' },
   { name: 'Entrenamiento', icon: 'barbell', color: 'red', category: 'fitness' },
   { name: '10k Pasos', icon: 'walk', color: 'purple', category: 'fitness' },
   { name: 'Movilidad 15min', icon: 'body', color: 'amber', category: 'recovery' },
@@ -37,7 +37,7 @@ const HABIT_TEMPLATES = [
 const MOCK_HABITS: Habit[] = [
   {
     id: '1',
-    name: '8h de Sue√±o',
+    name: '8h de SueÒo',
     icon: 'moon',
     color: 'blue',
     targetDays: 7,
@@ -95,8 +95,8 @@ export default function HabitTracker() {
   const categories = [
     { key: 'all', label: 'Todos', icon: 'apps', color: 'white' },
     { key: 'fitness', label: 'Fitness', icon: 'barbell', color: '#EF4444' },
-    { key: 'nutrition', label: 'Nutrici√≥n', icon: 'nutrition', color: '#9D12DE' },
-    { key: 'recovery', label: 'Recuperaci√≥n', icon: 'moon', color: '#9D12DE' },
+    { key: 'nutrition', label: 'NutriciÛn', icon: 'nutrition', color: '#9D12DE' },
+    { key: 'recovery', label: 'RecuperaciÛn', icon: 'moon', color: '#9D12DE' },
     { key: 'mindset', label: 'Mindset', icon: 'bulb', color: '#A855F7' },
   ];
 
@@ -146,7 +146,7 @@ export default function HabitTracker() {
     }));
 
     if (!isCompletedToday(habits.find(h => h.id === habitId)!)) {
-      Alert.alert('H√°bito Completado! üéâ', 'Sigue as√≠, la consistencia es clave');
+      Alert.alert('H·bito Completado! ??', 'Sigue asÌ, la consistencia es clave');
     }
   };
 
@@ -165,13 +165,13 @@ export default function HabitTracker() {
     };
     setHabits([...habits, newHabit]);
     setShowAddForm(false);
-    Alert.alert('H√°bito Agregado! √∞≈∏‚Äô¬™', `${template.name} agregado a tu tracker`);
+    Alert.alert('H·bito Agregado! üí™', `${template.name} agregado a tu tracker`);
   };
 
   const deleteHabit = (habitId: string) => {
     Alert.alert(
-      'Eliminar H√°bito',
-      '¬øSeguro? Se perder√° todo el historial',
+      'Eliminar H·bito',
+      'øSeguro? Se perder· todo el historial',
       [
         { text: 'Cancelar' },
         {
@@ -215,7 +215,7 @@ export default function HabitTracker() {
               <Ionicons name="arrow-back" size={24} color="white" />
             </TouchableOpacity>
             <Text className="text-white text-2xl font-bold flex-1 ml-3">
-              Agregar H√°bito
+              Agregar H·bito
             </Text>
           </View>
         </View>
@@ -243,11 +243,11 @@ export default function HabitTracker() {
 
             {/* Custom Habit */}
             <TouchableOpacity
-              onPress={() => Alert.alert('Pr√≥ximamente', 'Crear h√°bito personalizado')}
+              onPress={() => Alert.alert('PrÛximamente', 'Crear h·bito personalizado')}
               className="bg-purple-500/10 rounded-xl p-5 border-2 border-purple-500/30 flex-row items-center justify-center mt-4"
             >
               <Ionicons name="add" size={24} color="#A855F7" />
-              <Text className="text-purple-400 font-bold text-lg ml-2">H√°bito Personalizado</Text>
+              <Text className="text-purple-400 font-bold text-lg ml-2">H·bito Personalizado</Text>
             </TouchableOpacity>
           </View>
         </ScrollView>
@@ -285,7 +285,7 @@ export default function HabitTracker() {
               <Text className="text-white text-3xl font-bold">{stats.totalStreaks}</Text>
             </View>
             <View className="flex-1 bg-gradient-to-r from-amber-500 to-red-500 rounded-xl p-4">
-              <Text className="text-white opacity-90 text-xs mb-1">R√©cord</Text>
+              <Text className="text-white opacity-90 text-xs mb-1">RÈcord</Text>
               <Text className="text-white text-3xl font-bold">{stats.longestStreak}</Text>
             </View>
           </View>
@@ -318,7 +318,7 @@ export default function HabitTracker() {
 
           {/* Habits List */}
           <Text className="text-white font-bold text-lg mb-3">
-            Mis H√°bitos ({filteredHabits.length})
+            Mis H·bitos ({filteredHabits.length})
           </Text>
 
           {filteredHabits.map((habit) => {
@@ -348,13 +348,13 @@ export default function HabitTracker() {
                   <View className="flex-1 bg-primary/10 rounded-lg p-3 border border-primary/30">
                     <Text className="text-primary text-xs mb-1">Streak Actual</Text>
                     <Text className="text-primary font-bold text-2xl">
-                      {habit.currentStreak} √∞≈∏‚Äù¬•
+                      {habit.currentStreak} üî•
                     </Text>
                   </View>
                   <View className="flex-1 bg-amber-500/10 rounded-lg p-3 border border-amber-500/30">
-                    <Text className="text-amber-400 text-xs mb-1">R√©cord</Text>
+                    <Text className="text-amber-400 text-xs mb-1">RÈcord</Text>
                     <Text className="text-amber-400 font-bold text-2xl">
-                      {habit.longestStreak} √∞≈∏¬è‚Ä†
+                      {habit.longestStreak} üèÜ
                     </Text>
                   </View>
                   <View className="flex-1 bg-primary/10 rounded-lg p-3 border border-primary/30">
@@ -400,7 +400,7 @@ export default function HabitTracker() {
                     color={completedToday ? 'white' : '#71717A'}
                   />
                   <Text className={`font-bold text-lg ml-2 ${completedToday ? 'text-white' : 'text-zinc-400'}`}>
-                    {completedToday ? 'Completado Hoy! ‚úì' : 'Marcar como Completado'}
+                    {completedToday ? 'Completado Hoy! ?' : 'Marcar como Completado'}
                   </Text>
                 </TouchableOpacity>
               </View>
@@ -411,10 +411,10 @@ export default function HabitTracker() {
             <View className="bg-zinc-900 rounded-xl p-8 border border-zinc-800 items-center">
               <Ionicons name="add-circle-outline" size={64} color="#52525B" />
               <Text className="text-zinc-400 text-center mt-4 mb-2">
-                No tienes h√°bitos en esta categor√≠a
+                No tienes h·bitos en esta categorÌa
               </Text>
               <TouchableOpacity onPress={() => setShowAddForm(true)}>
-                <Text className="text-primary font-bold">Agregar H√°bito</Text>
+                <Text className="text-primary font-bold">Agregar H·bito</Text>
               </TouchableOpacity>
             </View>
           )}
@@ -425,15 +425,15 @@ export default function HabitTracker() {
               <Ionicons name="bulb" size={20} color="#9D12DE" />
               <View className="flex-1 ml-3">
                 <Text className="text-primary/80 font-bold mb-2">
-                  Tips para Construir H√°bitos
+                  Tips para Construir H·bitos
                 </Text>
                 <Text className="text-primary/60 text-sm">
-                  ‚Ä¢ Empieza con 1-3 h√°bitos m√°ximo{'\n'}
-                  ‚Ä¢ S√© espec√≠fico (3L agua vs "beber agua"){'\n'}
-                  ‚Ä¢ Enlaza h√°bitos (caf√© √¢‚Ä†‚Äô journaling){'\n'}
-                  ‚Ä¢ Celebra streaks peque√±os (3, 7, 14 d√≠as){'\n'}
-                  ‚Ä¢ No rompas la cadena 2 d√≠as seguidos{'\n'}
-                  ‚Ä¢ 21 d√≠as = h√°bito, 90 d√≠as = lifestyle
+                  ï Empieza con 1-3 h·bitos m·ximo{'\n'}
+                  ï SÈ especÌfico (3L agua vs "beber agua"){'\n'}
+                  ï Enlaza h·bitos (cafÈ ‚Üí journaling){'\n'}
+                  ï Celebra streaks pequeÒos (3, 7, 14 dÌas){'\n'}
+                  ï No rompas la cadena 2 dÌas seguidos{'\n'}
+                  ï 21 dÌas = h·bito, 90 dÌas = lifestyle
                 </Text>
               </View>
             </View>

@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -32,7 +32,7 @@ export default function GymFinder() {
       rating: 4.8,
       reviews: 342,
       equipment: ['Squat Racks', 'Deadlift Platform', 'Heavy Dumbbells'],
-      price: 'â‚¬49/mes',
+      price: '€49/mes',
       hours: '24/7',
       type: 'powerlifting',
     },
@@ -43,7 +43,7 @@ export default function GymFinder() {
       rating: 4.9,
       reviews: 187,
       equipment: ['Olympic Lifting', 'Rigs', 'Assault Bikes'],
-      price: 'â‚¬89/mes',
+      price: '€89/mes',
       hours: '6:00 - 22:00',
       type: 'crossfit',
     },
@@ -54,7 +54,7 @@ export default function GymFinder() {
       rating: 4.6,
       reviews: 521,
       equipment: ['Cable Machines', 'Free Weights', 'Cardio'],
-      price: 'â‚¬39/mes',
+      price: '€39/mes',
       hours: '6:00 - 23:00',
       type: 'bodybuilding',
     },
@@ -65,7 +65,7 @@ export default function GymFinder() {
       rating: 4.7,
       reviews: 234,
       equipment: ['Competition Equipment', 'Chains', 'Bands'],
-      price: 'â‚¬59/mes',
+      price: '€59/mes',
       hours: '5:00 - 24:00',
       type: 'powerlifting',
     },
@@ -79,11 +79,11 @@ export default function GymFinder() {
   });
 
   const favoriteGym = (gymName: string) => {
-    Alert.alert('Favorito', `${gymName} añadido a favoritos`);
+    Alert.alert('Favorito', `${gymName} a�adido a favoritos`);
   };
 
   const getDirections = (gymName: string) => {
-    Alert.alert('Navegación', `Abriendo Maps para ${gymName}`);
+    Alert.alert('Navegaci�n', `Abriendo Maps para ${gymName}`);
   };
 
   return (
@@ -236,11 +236,11 @@ export default function GymFinder() {
           <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
             <Text className="text-primary/80 font-bold mb-2">Gym Selection Tips</Text>
             <Text className="text-primary/60 text-sm">
-              • Visita antes de registrarte{'\n'}
-              • Verifica equipamiento disponible{'\n'}
-              • Pregunta por horarios de peak{'\n'}
-              • Lee reviews de otros usuarios{'\n'}
-              • Compara precios y contratos
+              � Visita antes de registrarte{'\n'}
+              � Verifica equipamiento disponible{'\n'}
+              � Pregunta por horarios de peak{'\n'}
+              � Lee reviews de otros usuarios{'\n'}
+              � Compara precios y contratos
             </Text>
           </View>
         </View>

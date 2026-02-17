@@ -1,4 +1,4 @@
-ï»¿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -125,7 +125,7 @@ export default function BadgesScreen() {
             streak: 'Racha',
             volume: 'Volumen',
             level: 'Nivel',
-            records: 'RÃ©cords',
+            records: 'Récords',
             social: 'Social',
             special: 'Especiales',
           };
@@ -222,11 +222,11 @@ export default function BadgesScreen() {
 
                 {/* Status */}
                 {unlockedBadges.includes(selectedBadge!) ? (
-                  <View className="bg-emerald-50 p-4 rounded-xl mb-4">
+                  <View className="bg-primary/10 p-4 rounded-xl mb-4">
                     <View className="flex-row items-center justify-center gap-2">
                       <Ionicons name="checkmark-circle" size={24} color="#9D12DE" />
                       <Text className="text-primary font-bold">
-                        Â¡Desbloqueada!
+                        ¡Desbloqueada!
                       </Text>
                     </View>
                   </View>

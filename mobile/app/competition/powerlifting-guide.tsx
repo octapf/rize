@@ -1,4 +1,4 @@
-ï»¿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -225,7 +225,7 @@ export default function PowerliftingGuide() {
             'Time last warm-up 2-3 lifters before you',
             'Stay warm between attempts (15-20 min)',
           ],
-          example: 'Opener 140kg: 60kg x5, 80kg x3, 100kg x2, 120kg x1 Ã¢â€ â€™ platform',
+          example: 'Opener 140kg: 60kg x5, 80kg x3, 100kg x2, 120kg x1 â†’ platform',
         },
         {
           aspect: 'Between Attempts',
@@ -325,7 +325,7 @@ export default function PowerliftingGuide() {
                   <Text className="text-primary/80 text-xl font-bold mb-4">{section.title}</Text>
                   {section.content.map((item, itemIdx) => (
                     <Text key={itemIdx} className="text-zinc-300 text-sm mb-2 last:mb-0">
-                      â€¢ {item}
+                      • {item}
                     </Text>
                   ))}
                 </View>
@@ -351,14 +351,14 @@ export default function PowerliftingGuide() {
                   <Text className="text-white font-bold mb-3">Rules:</Text>
                   {liftData.rules.map((rule, rIdx) => (
                     <Text key={rIdx} className="text-zinc-300 text-sm mb-2">
-                      âœ“ {rule}
+                      ? {rule}
                     </Text>
                   ))}
 
                   <Text className="text-red-400 font-bold mt-4 mb-3">Common Red Lights:</Text>
                   {liftData.redLights.map((red, redIdx) => (
                     <Text key={redIdx} className="text-red-300 text-sm mb-2">
-                      âœ“ {red}
+                      ? {red}
                     </Text>
                   ))}
                 </View>
@@ -382,7 +382,7 @@ export default function PowerliftingGuide() {
                   <Text className="text-white font-bold mb-3">Training:</Text>
                   {phase.training.map((item, tIdx) => (
                     <Text key={tIdx} className="text-zinc-300 text-sm mb-2">
-                      â€¢ {item}
+                      • {item}
                     </Text>
                   ))}
 
@@ -403,7 +403,7 @@ export default function PowerliftingGuide() {
 
                   {strategy.guidelines.map((guideline, gIdx) => (
                     <Text key={gIdx} className="text-zinc-300 text-sm mb-2">
-                      â€¢ {guideline}
+                      • {guideline}
                     </Text>
                   ))}
 
@@ -419,19 +419,19 @@ export default function PowerliftingGuide() {
           <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
             <Text className="text-primary font-bold mb-2">First Meet Tips</Text>
             <Text className="text-primary/80 text-sm mb-2">
-              â€¢ Go 9/9 (make all 9 attempts) - conservative openers
+              • Go 9/9 (make all 9 attempts) - conservative openers
             </Text>
             <Text className="text-primary/80 text-sm mb-2">
-              â€¢ Experience &gt; total on first meet
+              • Experience &gt; total on first meet
             </Text>
             <Text className="text-primary/80 text-sm mb-2">
-              â€¢ Bring handler/coach if possible
+              • Bring handler/coach if possible
             </Text>
             <Text className="text-primary/80 text-sm mb-2">
-              â€¢ Practice commands in training
+              • Practice commands in training
             </Text>
             <Text className="text-primary/80 text-sm">
-              â€¢ Have fun - it's supposed to be enjoyable!
+              • Have fun - it's supposed to be enjoyable!
             </Text>
           </View>
         </View>

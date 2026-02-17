@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -43,7 +43,7 @@ export default function AutoregulationSystems() {
     rpe: {
       name: 'RPE Training',
       icon: 'speedometer',
-      color: 'emerald',
+      color: 'primary',
       scale: {
         title: 'RPE Scale (1-10)',
         ratings: [
@@ -301,7 +301,7 @@ export default function AutoregulationSystems() {
         cons: [
           'Equipment cost ($200-800+)',
           'Setup time',
-          'Lift-specific (squat velocity â‰  bench velocity)',
+          'Lift-specific (squat velocity ≠ bench velocity)',
           'Learning curve to interpret data',
         ],
       },
@@ -462,7 +462,7 @@ export default function AutoregulationSystems() {
   const getColorClass = (color: string) => {
     const colors: { [key: string]: string } = {
       blue: 'bg-primary',
-      emerald: 'bg-primary',
+      primary: 'bg-primary',
       purple: 'bg-purple-500',
       amber: 'bg-amber-500',
       red: 'bg-red-500',
@@ -486,7 +486,7 @@ export default function AutoregulationSystems() {
 
       <ScrollView className="flex-1" showsVerticalScrollIndicator={false}>
         <View className="px-6 pt-6">
-          <View className="bg-gradient-to-r from-emerald-500 to-cyan-500 rounded-xl p-6 mb-6">
+          <View className="bg-gradient-to-r from-primary to-cyan-500 rounded-xl p-6 mb-6">
             <Text className="text-white text-2xl font-bold mb-2">Autoregulation</Text>
             <Text className="text-white opacity-90">
               RPE, RIR, VBT, APRE & Daily Adaptation
@@ -561,22 +561,22 @@ export default function AutoregulationSystems() {
           <View className="bg-gradient-to-r from-amber-500/20 to-orange-500/20 rounded-xl p-5 border border-amber-500/30 mb-6">
             <Text className="text-amber-400 font-bold text-lg mb-3">Quick Reference</Text>
             <Text className="text-amber-300 text-sm mb-2">
-              • RPE 10 = Max effort, nothing left
+              � RPE 10 = Max effort, nothing left
             </Text>
             <Text className="text-amber-300 text-sm mb-2">
-              • RPE 9 = 1 rep left in tank
+              � RPE 9 = 1 rep left in tank
             </Text>
             <Text className="text-amber-300 text-sm mb-2">
-              • RPE 8 = 2 reps left (most working sets)
+              � RPE 8 = 2 reps left (most working sets)
             </Text>
             <Text className="text-amber-300 text-sm mb-2">
-              • RIR = 10 minus RPE (same thing, different framing)
+              � RIR = 10 minus RPE (same thing, different framing)
             </Text>
             <Text className="text-amber-300 text-sm mb-2">
-              • VBT = Bar speed determines load
+              � VBT = Bar speed determines load
             </Text>
             <Text className="text-amber-300 text-sm">
-              • Takes 4-6 weeks to calibrate RPE/RIR - be patient
+              � Takes 4-6 weeks to calibrate RPE/RIR - be patient
             </Text>
           </View>
         </View>

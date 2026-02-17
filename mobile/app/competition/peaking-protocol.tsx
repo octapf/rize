@@ -1,4 +1,4 @@
-ï»¿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -332,7 +332,7 @@ export default function PeakingProtocol() {
             <Text className="text-white font-bold text-lg mb-4">Week Goals:</Text>
             {currentWeek.goals.map((goal, idx) => (
               <Text key={idx} className="text-zinc-300 mb-2 last:mb-0">
-                âœ“ {goal}
+                ? {goal}
               </Text>
             ))}
           </View>
@@ -340,19 +340,19 @@ export default function PeakingProtocol() {
           <View className="bg-gradient-to-r from-red-500/20 to-purple-500/20 rounded-xl p-4 border border-red-500/30 mb-6">
             <Text className="text-red-400 font-bold mb-2">Critical Peak Principles</Text>
             <Text className="text-red-300 text-sm mb-2">
-              â€¢ Deload hard week 4 - let fatigue dissipate completely
+              • Deload hard week 4 - let fatigue dissipate completely
             </Text>
             <Text className="text-red-300 text-sm mb-2">
-              â€¢ Week 3 test openers - should feel confident and fast
+              • Week 3 test openers - should feel confident and fast
             </Text>
             <Text className="text-red-300 text-sm mb-2">
-              â€¢ Week 2 is LIGHT - resist urge to "do more"
+              • Week 2 is LIGHT - resist urge to "do more"
             </Text>
             <Text className="text-red-300 text-sm mb-2">
-              â€¢ Meet week do almost nothing - trust the process
+              • Meet week do almost nothing - trust the process
             </Text>
             <Text className="text-red-300 text-sm">
-              â€¢ Sleep 8+ hours every night - this is when strength peaks
+              • Sleep 8+ hours every night - this is when strength peaks
             </Text>
           </View>
 

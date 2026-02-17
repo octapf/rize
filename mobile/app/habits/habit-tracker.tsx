@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -24,7 +24,7 @@ export default function HabitTracker() {
   const categories = [
     { id: 'all' as const, name: 'All', color: 'white' },
     { id: 'training' as const, name: 'Training', color: 'blue' },
-    { id: 'nutrition' as const, name: 'Nutrition', color: 'emerald' },
+    { id: 'nutrition' as const, name: 'Nutrition', color: 'primary' },
     { id: 'recovery' as const, name: 'Recovery', color: 'purple' },
     { id: 'mindset' as const, name: 'Mindset', color: 'amber' },
   ];
@@ -177,7 +177,7 @@ export default function HabitTracker() {
   const getCategoryColor = (category: string) => {
     switch (category) {
       case 'training': return 'blue';
-      case 'nutrition': return 'emerald';
+      case 'nutrition': return 'primary';
       case 'recovery': return 'purple';
       case 'mindset': return 'amber';
       default: return 'zinc';
@@ -261,7 +261,7 @@ export default function HabitTracker() {
                       <Ionicons
                         name={habit.icon}
                         size={24}
-                        color={`#${catColor === 'blue' ? '3b82f6' : catColor === 'emerald' ? '10b981' : catColor === 'purple' ? 'a855f7' : 'f59e0b'}`}
+                        color={`#${catColor === 'blue' ? '3b82f6' : catColor === 'primary' ? '9D12DE' : catColor === 'purple' ? 'a855f7' : 'f59e0b'}`}
                       />
                       <Text className={`text-${catColor}-400 font-bold text-lg ml-2 flex-1`}>
                         {habit.name}
@@ -283,7 +283,7 @@ export default function HabitTracker() {
 
                   <View className={`bg-${catColor}-500/20 rounded-lg p-2 border border-${catColor}-500/40`}>
                     <Text className={`text-${catColor}-300 text-sm`}>
-                      ðŸ’¡ {habit.tips}
+                      💡 {habit.tips}
                     </Text>
                   </View>
                 </View>
@@ -328,12 +328,12 @@ export default function HabitTracker() {
           <View className="bg-amber-500/10 rounded-xl p-4 border border-amber-500/30 mb-6">
             <Text className="text-amber-400 font-bold mb-2">Tracking Tips</Text>
             <Text className="text-amber-300 text-sm">
-              • Start with 2-3 habits max{'\n'}
-              • Make it impossible to ignore{'\n'}
-              • Never miss twice in a row{'\n'}
-              • Track immediately (don't delay){'\n'}
-              • Celebrate streaks{'\n'}
-              • Be patient (takes 66 days average)
+              � Start with 2-3 habits max{'\n'}
+              � Make it impossible to ignore{'\n'}
+              � Never miss twice in a row{'\n'}
+              � Track immediately (don't delay){'\n'}
+              � Celebrate streaks{'\n'}
+              � Be patient (takes 66 days average)
             </Text>
           </View>
 

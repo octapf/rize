@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -86,7 +86,7 @@ export default function MotivationStrategies() {
       id: 'accountability',
       name: 'Create Accountability',
       icon: 'people' as const,
-      color: 'emerald',
+      color: 'primary',
       description: 'External pressure to follow through',
       why: 'Humans perform better when answerable to others',
       tactics: [
@@ -242,7 +242,7 @@ export default function MotivationStrategies() {
 
           <View className={`bg-${currentStrategy.color}-500/10 rounded-xl p-5 mb-6 border border-${currentStrategy.color}-500/30`}>
             <View className="flex-row items-center mb-3">
-              <Ionicons name={currentStrategy.icon} size={28} color={`#${currentStrategy.color === 'red' ? 'ef4444' : currentStrategy.color === 'blue' ? '3b82f6' : currentStrategy.color === 'emerald' ? '10b981' : currentStrategy.color === 'purple' ? 'a855f7' : 'f59e0b'}`} />
+              <Ionicons name={currentStrategy.icon} size={28} color={`#${currentStrategy.color === 'red' ? 'ef4444' : currentStrategy.color === 'blue' ? '3b82f6' : currentStrategy.color === 'primary' ? '9D12DE' : currentStrategy.color === 'purple' ? 'a855f7' : 'f59e0b'}`} />
               <Text className={`text-${currentStrategy.color}-400 font-bold text-xl ml-3 flex-1`}>
                 {currentStrategy.name}
               </Text>

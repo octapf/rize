@@ -1,4 +1,4 @@
-Ôªøimport React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -19,12 +19,12 @@ interface WorkoutSchedule {
   notes?: string;
 }
 
-const DAYS_OF_WEEK = ['Lun', 'Mar', 'Mi√©', 'Jue', 'Vie', 'S√°b', 'Dom'];
-const FULL_DAYS = ['Lunes', 'Martes', 'Mi√©rcoles', 'Jueves', 'Viernes', 'S√°bado', 'Domingo'];
+const DAYS_OF_WEEK = ['Lun', 'Mar', 'MiÈ', 'Jue', 'Vie', 'S·b', 'Dom'];
+const FULL_DAYS = ['Lunes', 'Martes', 'MiÈrcoles', 'Jueves', 'Viernes', 'S·bado', 'Domingo'];
 
 const WORKOUT_TYPES = [
   { id: 'push', label: 'Push', icon: 'arrow-up', color: 'blue' },
-  { id: 'pull', label: 'Pull', icon: 'arrow-down', color: 'emerald' },
+  { id: 'pull', label: 'Pull', icon: 'arrow-down', color: 'primary' },
   { id: 'legs', label: 'Piernas', icon: 'walk', color: 'red' },
   { id: 'upper', label: 'Superior', icon: 'body', color: 'purple' },
   { id: 'lower', label: 'Inferior', icon: 'fitness', color: 'amber' },
@@ -74,7 +74,7 @@ export default function WeeklySchedule() {
 
   const clearDay = (day: number) => {
     setSchedule(schedule.filter((s) => s.dayOfWeek !== day));
-    Alert.alert('Eliminado', 'D√≠a limpiado del calendario');
+    Alert.alert('Eliminado', 'DÌa limpiado del calendario');
   };
 
   const weekDates = getWeekDates();
@@ -92,7 +92,7 @@ export default function WeeklySchedule() {
           <Text className="text-white text-2xl font-bold flex-1 ml-3">
             Weekly Schedule
           </Text>
-          <TouchableOpacity onPress={() => Alert.alert('Plantillas', 'Cargar plantilla de semana pr√≥ximamente')}>
+          <TouchableOpacity onPress={() => Alert.alert('Plantillas', 'Cargar plantilla de semana prÛximamente')}>
             <Ionicons name="calendar" size={24} color="white" />
           </TouchableOpacity>
         </View>
@@ -172,14 +172,14 @@ export default function WeeklySchedule() {
                   }}
                   className="bg-red-500/10 rounded-lg p-3 border border-red-500/30 mt-3"
                 >
-                  <Text className="text-red-400 font-bold text-center">Limpiar D√≠a</Text>
+                  <Text className="text-red-400 font-bold text-center">Limpiar DÌa</Text>
                 </TouchableOpacity>
               )}
             </View>
           )}
 
           {/* Detailed Schedule */}
-          <Text className="text-white font-bold text-lg mb-4">Planificaci√≥n Detallada</Text>
+          <Text className="text-white font-bold text-lg mb-4">PlanificaciÛn Detallada</Text>
           {FULL_DAYS.map((dayName, index) => {
             const workout = getWorkoutForDay(index);
             const typeInfo = workout ? getTypeInfo(workout.workoutType) : null;
@@ -212,7 +212,7 @@ export default function WeeklySchedule() {
                       <View className="flex-1">
                         <Text className="text-white font-bold text-lg">{typeInfo!.label}</Text>
                         {workout.time && (
-                          <Text className="text-zinc-400 text-sm">√¢¬è¬∞ {workout.time}</Text>
+                          <Text className="text-zinc-400 text-sm">‚è∞ {workout.time}</Text>
                         )}
                       </View>
                       {workout.duration && (
@@ -244,7 +244,7 @@ export default function WeeklySchedule() {
             <Text className="text-white font-bold text-lg mb-3">Resumen Semanal</Text>
             <View className="flex-row flex-wrap gap-3">
               <View className="flex-1 min-w-[45%] bg-primary/10 rounded-lg p-3 border border-primary/30">
-                <Text className="text-primary text-xs mb-1">D√≠as de Entrenamiento</Text>
+                <Text className="text-primary text-xs mb-1">DÌas de Entrenamiento</Text>
                 <Text className="text-white text-2xl font-bold">
                   {schedule.filter((s) => s.workoutType !== 'rest').length}
                 </Text>
@@ -256,7 +256,7 @@ export default function WeeklySchedule() {
                 </Text>
               </View>
               <View className="flex-1 min-w-[45%] bg-amber-500/10 rounded-lg p-3 border border-amber-500/30">
-                <Text className="text-amber-400 text-xs mb-1">D√≠as de Descanso</Text>
+                <Text className="text-amber-400 text-xs mb-1">DÌas de Descanso</Text>
                 <Text className="text-white text-2xl font-bold">
                   {schedule.filter((s) => s.workoutType === 'rest').length + (7 - schedule.length)}
                 </Text>
@@ -276,14 +276,14 @@ export default function WeeklySchedule() {
               <Ionicons name="calendar" size={20} color="#9D12DE" />
               <View className="flex-1 ml-3">
                 <Text className="text-primary/80 font-bold mb-2">
-                  Tips de Planificaci√≥n
+                  Tips de PlanificaciÛn
                 </Text>
                 <Text className="text-primary/60 text-sm">
-                  ‚Ä¢ M√≠nimo 1 d√≠a descanso entre grupos{'\n'}
-                  ‚Ä¢ Push/Pull/Legs es muy efectivo{'\n'}
-                  ‚Ä¢ Planifica seg√∫n tu horario real{'\n'}
-                  ‚Ä¢ S√© consistente con los horarios{'\n'}
-                  ‚Ä¢ Ajusta seg√∫n recuperaci√≥n
+                  ï MÌnimo 1 dÌa descanso entre grupos{'\n'}
+                  ï Push/Pull/Legs es muy efectivo{'\n'}
+                  ï Planifica seg˙n tu horario real{'\n'}
+                  ï SÈ consistente con los horarios{'\n'}
+                  ï Ajusta seg˙n recuperaciÛn
                 </Text>
               </View>
             </View>

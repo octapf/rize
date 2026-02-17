@@ -1,4 +1,4 @@
-Ôªøimport React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -31,7 +31,7 @@ export default function HealthKitSync() {
   const exportToHealth = () => {
     Alert.alert(
       'Exportar a Health App',
-      'Tus workouts se exportar√°n autom√°ticamente a HealthKit.',
+      'Tus workouts se exportar·n autom·ticamente a HealthKit.',
       [{ text: 'OK' }]
     );
   };
@@ -59,7 +59,7 @@ export default function HealthKitSync() {
             <View className="flex-row items-center">
               <Ionicons name="heart-circle" size={24} color="white" />
               <Text className="text-white ml-2">
-                {dataCategories.filter(d => d.enabled).length} categor√≠as activas
+                {dataCategories.filter(d => d.enabled).length} categorÌas activas
               </Text>
             </View>
           </View>
@@ -71,7 +71,7 @@ export default function HealthKitSync() {
             <View className="flex-row items-center flex-1">
               <Ionicons name="sync" size={24} color="#9D12DE" />
               <View className="ml-3 flex-1">
-                <Text className="text-white font-bold">Sincronizaci√≥n Activa</Text>
+                <Text className="text-white font-bold">SincronizaciÛn Activa</Text>
                 <Text className="text-zinc-400 text-sm">Importar datos de HealthKit</Text>
               </View>
             </View>
@@ -88,7 +88,7 @@ export default function HealthKitSync() {
               <Ionicons name="cloud-upload" size={24} color="#9D12DE" />
               <View className="ml-3 flex-1">
                 <Text className="text-white font-bold">Auto-Sync</Text>
-                <Text className="text-zinc-400 text-sm">Exportar workouts autom√°ticamente</Text>
+                <Text className="text-zinc-400 text-sm">Exportar workouts autom·ticamente</Text>
               </View>
             </View>
             <View className={`w-12 h-6 rounded-full ${autoSync ? 'bg-primary' : 'bg-zinc-700'}`}>
@@ -96,7 +96,7 @@ export default function HealthKitSync() {
             </View>
           </TouchableOpacity>
 
-          <Text className="text-white font-bold text-lg mb-4">Categor√≠as de Datos</Text>
+          <Text className="text-white font-bold text-lg mb-4">CategorÌas de Datos</Text>
 
           {dataCategories.map((category) => (
             <View
@@ -148,11 +148,11 @@ export default function HealthKitSync() {
               <View className="flex-1 ml-3">
                 <Text className="text-primary/80 font-bold mb-2">Sync Bidireccional</Text>
                 <Text className="text-primary/60 text-sm">
-                  ‚Ä¢ Importa datos de HealthKit autom√°ticamente{'\n'}
-                  ‚Ä¢ Exporta workouts a la app Salud{'\n'}
-                  ‚Ä¢ Sincronizaci√≥n en tiempo real{'\n'}
-                  ‚Ä¢ Datos encriptados end-to-end{'\n'}
-                  ‚Ä¢ Compatible con todos los wearables de Apple
+                  ï Importa datos de HealthKit autom·ticamente{'\n'}
+                  ï Exporta workouts a la app Salud{'\n'}
+                  ï SincronizaciÛn en tiempo real{'\n'}
+                  ï Datos encriptados end-to-end{'\n'}
+                  ï Compatible con todos los wearables de Apple
                 </Text>
               </View>
             </View>

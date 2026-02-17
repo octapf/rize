@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -38,7 +38,7 @@ const mockFeed: FeedItem[] = [
     user: { _id: '1', username: 'FitnessKing', avatar: 'F' },
     timestamp: new Date(Date.now() - 1000 * 60 * 30),
     data: {
-      name: 'Día de Pecho',
+      name: 'D�a de Pecho',
       exercises: 5,
       volume: 3200,
       duration: 65,
@@ -54,7 +54,7 @@ const mockFeed: FeedItem[] = [
     timestamp: new Date(Date.now() - 1000 * 60 * 60 * 2),
     data: {
       name: 'Racha Semanal',
-      icon: 'ðŸ”¥',
+      icon: '🔥',
       tier: 'silver',
     },
     likes: 45,
@@ -136,7 +136,7 @@ export default function CommunityFeedScreen() {
       switch (item.type) {
         case 'workout':
           return (
-            <View className="bg-emerald-50 p-4 rounded-xl mt-3">
+            <View className="bg-primary/10 p-4 rounded-xl mt-3">
               <View className="flex-row items-center gap-2 mb-2">
                 <Ionicons name="barbell" size={20} color="#9D12DE" />
                 <Text className="text-primary font-bold text-lg">
@@ -153,7 +153,7 @@ export default function CommunityFeedScreen() {
                   <Text className="text-primary font-bold">{item.data.volume} kg</Text>
                 </View>
                 <View>
-                  <Text className="text-primary text-sm">Duración</Text>
+                  <Text className="text-primary text-sm">Duraci�n</Text>
                   <Text className="text-primary font-bold">{item.data.duration}m</Text>
                 </View>
               </View>
@@ -185,14 +185,14 @@ export default function CommunityFeedScreen() {
               <View className="flex-row items-center gap-2 mb-2">
                 <Ionicons name="trending-up" size={20} color="#8B5CF6" />
                 <Text className="text-purple-900 font-bold text-lg">
-                  ¡Nuevo Récord Personal!
+                  �Nuevo R�cord Personal!
                 </Text>
               </View>
               <Text className="text-purple-800 text-base">
-                <Text className="font-bold">{item.data.exercise}</Text>: {item.data.weight} kg × {item.data.reps} reps
+                <Text className="font-bold">{item.data.exercise}</Text>: {item.data.weight} kg � {item.data.reps} reps
               </Text>
               <Text className="text-purple-600 text-sm mt-1">
-                +{item.data.improvement} kg más que el récord anterior
+                +{item.data.improvement} kg m�s que el r�cord anterior
               </Text>
             </View>
           );
@@ -207,7 +207,7 @@ export default function CommunityFeedScreen() {
                 </Text>
               </View>
               <Text className="text-red-800">
-                {item.data.status === 'won' ? 'ðŸ† Victoria' : 'En progreso'} contra{' '}
+                {item.data.status === 'won' ? '🏆 Victoria' : 'En progreso'} contra{' '}
                 <Text className="font-bold">{item.data.opponent}</Text>
               </Text>
             </View>

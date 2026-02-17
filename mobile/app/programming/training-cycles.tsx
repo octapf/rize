@@ -18,7 +18,7 @@ export default function TrainingCycles() {
       experience: '0-6 months training',
       goal: 'Build foundation, learn movements',
       duration: '12 weeks',
-      color: 'emerald',
+      color: 'primary',
       icon: 'leaf' as const,
       weeks: [
         {
@@ -263,7 +263,7 @@ export default function TrainingCycles() {
 
           <View className={`bg-${currentCycle.color}-500/10 rounded-xl p-5 mb-6 border border-${currentCycle.color}-500/30`}>
             <View className="flex-row items-center mb-4">
-              <Ionicons name={currentCycle.icon} size={28} color={`#${currentCycle.color === 'emerald' ? '10b981' : currentCycle.color === 'blue' ? '3b82f6' : 'a855f7'}`} />
+              <Ionicons name={currentCycle.icon} size={28} color={`#${currentCycle.color === 'primary' ? '9D12DE' : currentCycle.color === 'blue' ? '3b82f6' : 'a855f7'}`} />
               <Text className={`text-${currentCycle.color}-400 font-bold text-2xl ml-3`}>
                 {currentCycle.name}
               </Text>

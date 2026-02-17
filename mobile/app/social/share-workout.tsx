@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -44,14 +44,14 @@ export default function ShareWorkout() {
 
   // Mock friends data
   const friends: Friend[] = [
-    { id: '1', name: 'Carlos Méndez', avatar: 'ðŸ‹ï¸', isOnline: true, mutualFriends: 12 },
-    { id: '2', name: 'Ana García', avatar: 'ðŸ’ª', isOnline: true, mutualFriends: 8 },
-    { id: '3', name: 'Luis Rodríguez', avatar: 'ðŸ”¥', isOnline: false, mutualFriends: 15 },
-    { id: '4', name: 'María López', avatar: '⚡', isOnline: true, mutualFriends: 6 },
-    { id: '5', name: 'Pedro Sánchez', avatar: '🎯', isOnline: false, mutualFriends: 10 },
-    { id: '6', name: 'Laura Martínez', avatar: 'ðŸŒŸ', isOnline: true, mutualFriends: 9 },
-    { id: '7', name: 'Diego Torres', avatar: 'ðŸ’¯', isOnline: false, mutualFriends: 7 },
-    { id: '8', name: 'Sofia Ramírez', avatar: '🚀', isOnline: true, mutualFriends: 11 },
+    { id: '1', name: 'Carlos M�ndez', avatar: '🏋️', isOnline: true, mutualFriends: 12 },
+    { id: '2', name: 'Ana Garc�a', avatar: '💪', isOnline: true, mutualFriends: 8 },
+    { id: '3', name: 'Luis Rodr�guez', avatar: '🔥', isOnline: false, mutualFriends: 15 },
+    { id: '4', name: 'Mar�a L�pez', avatar: '?', isOnline: true, mutualFriends: 6 },
+    { id: '5', name: 'Pedro S�nchez', avatar: '??', isOnline: false, mutualFriends: 10 },
+    { id: '6', name: 'Laura Mart�nez', avatar: '🌟', isOnline: true, mutualFriends: 9 },
+    { id: '7', name: 'Diego Torres', avatar: '💯', isOnline: false, mutualFriends: 7 },
+    { id: '8', name: 'Sofia Ram�rez', avatar: '??', isOnline: true, mutualFriends: 11 },
   ];
 
   const toggleFriend = (friendId: string) => {
@@ -74,11 +74,11 @@ export default function ShareWorkout() {
     if (visibility !== 'private' && selectedFriends.length === 0) {
       Alert.alert(
         'Sin destinatarios',
-        '¿Quieres compartir este workout públicamente?',
+        '�Quieres compartir este workout p�blicamente?',
         [
           { text: 'Cancelar', style: 'cancel' },
           { 
-            text: 'Compartir Público',
+            text: 'Compartir P�blico',
             onPress: () => processShare()
           }
         ]
@@ -96,8 +96,8 @@ export default function ShareWorkout() {
       .join(', ');
 
     Alert.alert(
-      '✅ Workout Compartido!',
-      `${workout.name}\n\nCompartido con: ${friendNames || 'Público'}\n\nVisibilidad: ${visibility}\nComentarios: ${allowComments ? 'Activados' : 'Desactivados'}`,
+      '? Workout Compartido!',
+      `${workout.name}\n\nCompartido con: ${friendNames || 'P�blico'}\n\nVisibilidad: ${visibility}\nComentarios: ${allowComments ? 'Activados' : 'Desactivados'}`,
       [{ text: 'OK', onPress: () => router.back() }]
     );
   };
@@ -105,7 +105,7 @@ export default function ShareWorkout() {
   const shareExternal = async () => {
     try {
       const result = await Share.share({
-        message: `¡Mira mi workout! ðŸ’ª\n\n${workout.name}\n${workout.exercises} ejercicios • ${workout.duration} min\n${workout.calories} calorías quemadas\n\n#Fitness #Workout #GymLife`,
+        message: `�Mira mi workout! 💪\n\n${workout.name}\n${workout.exercises} ejercicios � ${workout.duration} min\n${workout.calories} calor�as quemadas\n\n#Fitness #Workout #GymLife`,
         title: workout.name,
       });
 
@@ -123,7 +123,7 @@ export default function ShareWorkout() {
 
   const getDifficultyColor = (difficulty: string) => {
     switch (difficulty) {
-      case 'beginner': return 'emerald';
+      case 'beginner': return 'primary';
       case 'intermediate': return 'amber';
       case 'advanced': return 'red';
       default: return 'zinc';
@@ -235,7 +235,7 @@ export default function ShareWorkout() {
                 <Text className={`font-bold mt-2 ${
                   visibility === 'public' ? 'text-white' : 'text-zinc-400'
                 }`}>
-                  Público
+                  P�blico
                 </Text>
               </TouchableOpacity>
 
@@ -314,7 +314,7 @@ export default function ShareWorkout() {
                       )}
                     </View>
                     <Text className="text-zinc-400 text-sm">
-                      {friend.mutualFriends} amigos en común
+                      {friend.mutualFriends} amigos en com�n
                     </Text>
                   </View>
 
@@ -350,11 +350,11 @@ export default function ShareWorkout() {
                   Tips para Compartir
                 </Text>
                 <Text className="text-primary/60 text-sm">
-                  • Inspira a otros con tus logros{'\n'}
-                  • Añade mensaje motivacional{'\n'}
-                  • Etiqueta amigos para accountability{'\n'}
-                  • Comparte públicamente para comunidad{'\n'}
-                  • Activa comentarios para feedback
+                  � Inspira a otros con tus logros{'\n'}
+                  � A�ade mensaje motivacional{'\n'}
+                  � Etiqueta amigos para accountability{'\n'}
+                  � Comparte p�blicamente para comunidad{'\n'}
+                  � Activa comentarios para feedback
                 </Text>
               </View>
             </View>

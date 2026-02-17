@@ -1,4 +1,4 @@
-Ôªøimport React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -30,21 +30,21 @@ const ASSESSMENT_QUESTIONS: AssessmentQuestion[] = [
   {
     id: 'm1',
     category: 'mobility',
-    question: '¬øPuedes tocarte los dedos de los pies con piernas rectas?',
+    question: 'øPuedes tocarte los dedos de los pies con piernas rectas?',
     riskLevel: 'medium',
     recommendation: 'Trabaja flexibilidad de isquiotibiales y espalda baja',
   },
   {
     id: 'm2',
     category: 'mobility',
-    question: '¬øPuedes hacer sentadilla profunda (ATG) sin levantar talones?',
+    question: 'øPuedes hacer sentadilla profunda (ATG) sin levantar talones?',
     riskLevel: 'medium',
     recommendation: 'Mejora movilidad de tobillo y cadera',
   },
   {
     id: 'm3',
     category: 'mobility',
-    question: '¬øPuedes juntar las manos detr√°s de la espalda (arriba y abajo)?',
+    question: 'øPuedes juntar las manos detr·s de la espalda (arriba y abajo)?',
     riskLevel: 'low',
     recommendation: 'Trabaja movilidad de hombros',
   },
@@ -53,67 +53,67 @@ const ASSESSMENT_QUESTIONS: AssessmentQuestion[] = [
   {
     id: 's1',
     category: 'stability',
-    question: '¬øPuedes mantener equilibrio en una pierna por 30+ segundos?',
+    question: 'øPuedes mantener equilibrio en una pierna por 30+ segundos?',
     riskLevel: 'medium',
     recommendation: 'Ejercicios unilaterales y trabajo de core',
   },
   {
     id: 's2',
     category: 'stability',
-    question: '¬øPuedes hacer plancha con t√©cnica perfecta 60+ segundos?',
+    question: 'øPuedes hacer plancha con tÈcnica perfecta 60+ segundos?',
     riskLevel: 'low',
     recommendation: 'Fortalece core y estabilizadores',
   },
   {
     id: 's3',
     category: 'stability',
-    question: '¬øTienes control total en movimientos unilaterales (pistol squat, etc)?',
+    question: 'øTienes control total en movimientos unilaterales (pistol squat, etc)?',
     riskLevel: 'low',
-    recommendation: 'Trabaja asimetr√≠as y estabilidad',
+    recommendation: 'Trabaja asimetrÌas y estabilidad',
   },
   
   // Strength
   {
     id: 'st1',
     category: 'strength',
-    question: '¬øPuedes hacer al menos 10 flexiones perfectas seguidas?',
+    question: 'øPuedes hacer al menos 10 flexiones perfectas seguidas?',
     riskLevel: 'medium',
-    recommendation: 'Fortalece pecho, hombros y tr√≠ceps',
+    recommendation: 'Fortalece pecho, hombros y trÌceps',
   },
   {
     id: 'st2',
     category: 'strength',
-    question: '¬øPuedes hacer al menos 1 dominada completa?',
+    question: 'øPuedes hacer al menos 1 dominada completa?',
     riskLevel: 'medium',
-    recommendation: 'Trabaja fuerza de tracci√≥n (pull)',
+    recommendation: 'Trabaja fuerza de tracciÛn (pull)',
   },
   {
     id: 'st3',
     category: 'strength',
-    question: '¬øPuedes sentadilla con tu peso corporal en barra por 5+ reps?',
+    question: 'øPuedes sentadilla con tu peso corporal en barra por 5+ reps?',
     riskLevel: 'high',
-    recommendation: 'Progresi√≥n gradual de fuerza en piernas',
+    recommendation: 'ProgresiÛn gradual de fuerza en piernas',
   },
   
   // Pain
   {
     id: 'p1',
     category: 'pain',
-    question: '¬øSientes dolor en rodillas al subir/bajar escaleras?',
+    question: 'øSientes dolor en rodillas al subir/bajar escaleras?',
     riskLevel: 'high',
-    recommendation: 'Consulta m√©dico, evita impacto hasta resolverlo',
+    recommendation: 'Consulta mÈdico, evita impacto hasta resolverlo',
   },
   {
     id: 'p2',
     category: 'pain',
-    question: '¬øDolor en espalda baja al levantarte o agacharte?',
+    question: 'øDolor en espalda baja al levantarte o agacharte?',
     riskLevel: 'high',
-    recommendation: 'Eval√∫a t√©cnica de peso muerto, fortalece core',
+    recommendation: 'Eval˙a tÈcnica de peso muerto, fortalece core',
   },
   {
     id: 'p3',
     category: 'pain',
-    question: '¬øDolor en hombros al levantar brazos sobre cabeza?',
+    question: 'øDolor en hombros al levantar brazos sobre cabeza?',
     riskLevel: 'high',
     recommendation: 'Evita press overhead, trabaja movilidad escapular',
   },
@@ -122,23 +122,23 @@ const ASSESSMENT_QUESTIONS: AssessmentQuestion[] = [
   {
     id: 'h1',
     category: 'history',
-    question: '¬øHas tenido lesiones previas en √∫ltimos 6 meses?',
+    question: 'øHas tenido lesiones previas en ˙ltimos 6 meses?',
     riskLevel: 'high',
-    recommendation: 'Rehabilitaci√≥n completa antes de cargas pesadas',
+    recommendation: 'RehabilitaciÛn completa antes de cargas pesadas',
   },
   {
     id: 'h2',
     category: 'history',
-    question: '¬øHaces calentamiento adecuado (10+ min) antes de entrenar?',
+    question: 'øHaces calentamiento adecuado (10+ min) antes de entrenar?',
     riskLevel: 'medium',
-    recommendation: 'Calentamiento din√°mico es esencial',
+    recommendation: 'Calentamiento din·mico es esencial',
   },
   {
     id: 'h3',
     category: 'history',
-    question: '¬øHas incrementado peso/volumen >10% en √∫ltimas semanas?',
+    question: 'øHas incrementado peso/volumen >10% en ˙ltimas semanas?',
     riskLevel: 'high',
-    recommendation: 'Progresi√≥n gradual, no m√°s de 5-10% semanal',
+    recommendation: 'ProgresiÛn gradual, no m·s de 5-10% semanal',
   },
 ];
 
@@ -148,7 +148,7 @@ export default function InjuryPrevention() {
 
   const categories = [
     { key: 'mobility', label: 'Movilidad', icon: 'body', color: 'blue' },
-    { key: 'stability', label: 'Estabilidad', icon: 'fitness', color: 'emerald' },
+    { key: 'stability', label: 'Estabilidad', icon: 'fitness', color: 'primary' },
     { key: 'strength', label: 'Fuerza', icon: 'barbell', color: 'red' },
     { key: 'pain', label: 'Dolor', icon: 'warning', color: 'amber' },
     { key: 'history', label: 'Historial', icon: 'time', color: 'purple' },
@@ -247,20 +247,20 @@ export default function InjuryPrevention() {
           <View className="px-6 pt-6">
             {/* Overall Risk */}
             <View className={`bg-gradient-to-r rounded-xl p-6 mb-6 ${
-              overallRisk === 'low' ? 'from-emerald-500 to-green-500' :
+              overallRisk === 'low' ? 'from-primary to-primary/100' :
               overallRisk === 'medium' ? 'from-amber-500 to-orange-500' :
               'from-red-500 to-pink-500'
             }`}>
-              <Text className="text-white opacity-90 text-sm mb-2">Riesgo General de Lesi√≥n</Text>
+              <Text className="text-white opacity-90 text-sm mb-2">Riesgo General de LesiÛn</Text>
               <Text className="text-white text-4xl font-bold mb-3">
-                {overallRisk === 'low' ? '√∞≈∏≈∏¬¢ BAJO' : overallRisk === 'medium' ? '√∞≈∏≈∏¬° MEDIO' : '√∞≈∏‚Äù¬¥ ALTO'}
+                {overallRisk === 'low' ? 'üü¢ BAJO' : overallRisk === 'medium' ? 'üü° MEDIO' : 'üî¥ ALTO'}
               </Text>
               <Text className="text-white opacity-90">
                 {overallRisk === 'low' 
-                  ? 'Buen estado general. Mant√©n tus h√°bitos actuales.'
+                  ? 'Buen estado general. MantÈn tus h·bitos actuales.'
                   : overallRisk === 'medium'
-                  ? 'Algunas √°reas requieren atenci√≥n. Sigue las recomendaciones.'
-                  : 'Varias √°reas de alto riesgo. Prioriza correcciones antes de cargas pesadas.'}
+                  ? 'Algunas ·reas requieren atenciÛn. Sigue las recomendaciones.'
+                  : 'Varias ·reas de alto riesgo. Prioriza correcciones antes de cargas pesadas.'}
               </Text>
             </View>
 
@@ -302,7 +302,7 @@ export default function InjuryPrevention() {
                       </Text>
                       {result.recommendations.map((rec, idx) => (
                         <Text key={idx} className={`text-${cat.color}-300 text-sm mb-1`}>
-                          ‚Ä¢ {rec}
+                          ï {rec}
                         </Text>
                       ))}
                     </View>
@@ -313,31 +313,31 @@ export default function InjuryPrevention() {
 
             {/* Action Plan */}
             <View className="bg-zinc-900 rounded-xl p-5 mb-6 border border-zinc-800">
-              <Text className="text-white font-bold text-lg mb-4">Plan de Acci√≥n</Text>
+              <Text className="text-white font-bold text-lg mb-4">Plan de AcciÛn</Text>
               
               {highRiskCount > 0 ? (
                 <>
-                  <Text className="text-red-400 font-bold mb-3">√¢≈°¬†√Ø¬∏¬è Prioridad Alta:</Text>
+                  <Text className="text-red-400 font-bold mb-3">‚ö†Ô∏è Prioridad Alta:</Text>
                   <Text className="text-zinc-400 text-sm mb-4">
-                    {highRiskCount} √°rea{highRiskCount > 1 ? 's' : ''} de alto riesgo detectada{highRiskCount > 1 ? 's' : ''}. 
-                    Enf√≥cate en corregir estas antes de aumentar intensidad.
+                    {highRiskCount} ·rea{highRiskCount > 1 ? 's' : ''} de alto riesgo detectada{highRiskCount > 1 ? 's' : ''}. 
+                    EnfÛcate en corregir estas antes de aumentar intensidad.
                   </Text>
                 </>
               ) : (
                 <>
-                  <Text className="text-primary font-bold mb-3">‚úì Buen Estado General</Text>
+                  <Text className="text-primary font-bold mb-3">? Buen Estado General</Text>
                   <Text className="text-zinc-400 text-sm mb-4">
-                    No se detectaron riesgos altos. Contin√∫a con tu programa actual.
+                    No se detectaron riesgos altos. Contin˙a con tu programa actual.
                   </Text>
                 </>
               )}
 
-              <Text className="text-white font-bold mb-2">Pr√≥ximos Pasos:</Text>
+              <Text className="text-white font-bold mb-2">PrÛximos Pasos:</Text>
               <Text className="text-zinc-400 text-sm">
-                1. Implementa recomendaciones espec√≠ficas{'\n'}
-                2. Re-eval√∫a en 4 semanas{'\n'}
+                1. Implementa recomendaciones especÌficas{'\n'}
+                2. Re-eval˙a en 4 semanas{'\n'}
                 3. Consulta profesional si dolor persiste{'\n'}
-                4. Progresi√≥n gradual siempre
+                4. ProgresiÛn gradual siempre
               </Text>
             </View>
 
@@ -346,7 +346,7 @@ export default function InjuryPrevention() {
               className="bg-primary rounded-xl p-4 flex-row items-center justify-center mb-6"
             >
               <Ionicons name="refresh" size={20} color="white" />
-              <Text className="text-white font-bold ml-2">Nueva Evaluaci√≥n</Text>
+              <Text className="text-white font-bold ml-2">Nueva EvaluaciÛn</Text>
             </TouchableOpacity>
           </View>
         </ScrollView>
@@ -367,7 +367,7 @@ export default function InjuryPrevention() {
             <Ionicons name="arrow-back" size={24} color="white" />
           </TouchableOpacity>
           <Text className="text-white text-2xl font-bold flex-1 ml-3">
-            Prevenci√≥n de Lesiones
+            PrevenciÛn de Lesiones
           </Text>
         </View>
       </View>
@@ -378,7 +378,7 @@ export default function InjuryPrevention() {
           <View className="bg-gradient-to-r from-red-500 to-orange-500 rounded-xl p-6 mb-6">
             <Text className="text-white text-2xl font-bold mb-2">Screening de Riesgo</Text>
             <Text className="text-white opacity-90 mb-4">
-              Eval√∫a tu riesgo de lesi√≥n y recibe recomendaciones personalizadas
+              Eval˙a tu riesgo de lesiÛn y recibe recomendaciones personalizadas
             </Text>
             <View className="flex-row items-center justify-between">
               <View className="flex-row items-center">
@@ -429,7 +429,7 @@ export default function InjuryPrevention() {
                         <Text className={`font-bold text-center ${
                           answers[question.id] === true ? 'text-white' : 'text-zinc-400'
                         }`}>
-                          S√≠
+                          SÌ
                         </Text>
                       </TouchableOpacity>
                       
@@ -476,11 +476,11 @@ export default function InjuryPrevention() {
                   Importancia del Screening
                 </Text>
                 <Text className="text-primary/60 text-sm">
-                  ‚Ä¢ 60% de lesiones son prevenibles{'\n'}
-                  ‚Ä¢ Identifica debilidades antes que causen problemas{'\n'}
-                  ‚Ä¢ Re-eval√∫a cada 4-6 semanas{'\n'}
-                  ‚Ä¢ Dolor persistente = consulta m√©dico{'\n'}
-                  ‚Ä¢ Prevenci√≥n &gt; rehabilitaci√≥n
+                  ï 60% de lesiones son prevenibles{'\n'}
+                  ï Identifica debilidades antes que causen problemas{'\n'}
+                  ï Re-eval˙a cada 4-6 semanas{'\n'}
+                  ï Dolor persistente = consulta mÈdico{'\n'}
+                  ï PrevenciÛn &gt; rehabilitaciÛn
                 </Text>
               </View>
             </View>

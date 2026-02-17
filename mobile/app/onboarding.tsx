@@ -1,4 +1,4 @@
-ï»¿import React, { useState, useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import {
   View,
   Text,
@@ -43,14 +43,14 @@ const slides: OnboardingSlide[] = [
   {
     id: '3',
     icon: 'people',
-    title: 'ConÃ©ctate con Amigos',
-    description: 'Comparte tus logros, motÃ­vate mutuamente y compite en el leaderboard.',
+    title: 'Conéctate con Amigos',
+    description: 'Comparte tus logros, motívate mutuamente y compite en el leaderboard.',
     gradient: ['#A855F7', '#9333EA'],
   },
   {
     id: '4',
     icon: 'trophy',
-    title: 'Â¡Comienza Ahora!',
+    title: '¡Comienza Ahora!',
     description: 'Crea tu cuenta y empieza tu viaje fitness hoy mismo.',
     gradient: ['#FFEA00', '#D97706'],
   },
@@ -145,7 +145,7 @@ export default function OnboardingScreen() {
               colors={['#9D12DE', '#7C3AED']}
               style={styles.startButtonGradient}
             >
-              <Text style={styles.startText}>Â¡Empezar!</Text>
+              <Text style={styles.startText}>¡Empezar!</Text>
             </LinearGradient>
           </TouchableOpacity>
         )}

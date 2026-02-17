@@ -1,4 +1,4 @@
-Ôªøimport React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -46,13 +46,13 @@ const COOLDOWN_ROUTINES: CooldownRoutine[] = [
         duration: '2 min',
         target: 'Columna vertebral, core',
         instructions: 'En cuatro patas, alternar entre arquear espalda (vaca) y redondear (gato). 10 repeticiones lentas.',
-        tips: 'Sincroniza con respiraci√≥n: inhala vaca, exhala gato',
+        tips: 'Sincroniza con respiraciÛn: inhala vaca, exhala gato',
       },
       {
         name: 'Pigeon Pose',
         duration: '2 min',
-        target: 'Flexores cadera, gl√∫teos',
-        instructions: 'Pierna doblada adelante, otra extendida atr√°s. Inclinarse hacia adelante. 1 min por lado.',
+        target: 'Flexores cadera, gl˙teos',
+        instructions: 'Pierna doblada adelante, otra extendida atr·s. Inclinarse hacia adelante. 1 min por lado.',
         tips: 'Si duele mucho, coloca almohada bajo cadera',
       },
       {
@@ -60,27 +60,27 @@ const COOLDOWN_ROUTINES: CooldownRoutine[] = [
         duration: '2 min',
         target: 'Isquiotibiales',
         instructions: 'Sentado, una pierna extendida, alcanzar dedos del pie. 1 min por lado.',
-        tips: 'Mant√©n espalda recta, no redondees',
+        tips: 'MantÈn espalda recta, no redondees',
       },
       {
         name: 'Quad Stretch',
         duration: '2 min',
-        target: 'Cu√°driceps',
-        instructions: 'De pie, llevar tal√≥n a gl√∫teo, mantener rodillas juntas. 1 min por lado.',
-        tips: 'Ap√≥yate en pared si pierdes balance',
+        target: 'Cu·driceps',
+        instructions: 'De pie, llevar talÛn a gl˙teo, mantener rodillas juntas. 1 min por lado.',
+        tips: 'ApÛyate en pared si pierdes balance',
       },
       {
         name: 'Shoulder Stretch',
         duration: '2 min',
         target: 'Hombros, pecho',
         instructions: 'Brazo cruzado al pecho, presionar con otro brazo. 1 min por lado.',
-        tips: 'Mant√©n hombros relajados',
+        tips: 'MantÈn hombros relajados',
       },
       {
         name: 'Tricep Stretch',
         duration: '2 min',
-        target: 'Tr√≠ceps',
-        instructions: 'Brazo sobre cabeza, codo doblado atr√°s, presionar con otra mano. 1 min por lado.',
+        target: 'TrÌceps',
+        instructions: 'Brazo sobre cabeza, codo doblado atr·s, presionar con otra mano. 1 min por lado.',
         tips: 'No arquees espalda baja',
       },
       {
@@ -91,42 +91,42 @@ const COOLDOWN_ROUTINES: CooldownRoutine[] = [
         tips: 'Hombros pegados al suelo',
       },
     ],
-    benefits: ['Reduce dolor muscular', 'Mejora flexibilidad', 'Acelera recuperaci√≥n', 'Calma sistema nervioso'],
-    icon: 'üßò√¢‚Ç¨¬ç√¢‚Ñ¢‚Äö√Ø¬∏¬è',
+    benefits: ['Reduce dolor muscular', 'Mejora flexibilidad', 'Acelera recuperaciÛn', 'Calma sistema nervioso'],
+    icon: '??‚Äç‚ôÇÔ∏è',
   },
   {
     id: '2',
     name: 'Cooldown Tren Superior',
     duration: 10,
-    focus: 'Post-entrenamiento de empuje/tir√≥n',
+    focus: 'Post-entrenamiento de empuje/tirÛn',
     type: 'upper',
     stretches: [
       {
         name: 'Doorway Pec Stretch',
         duration: '2 min',
         target: 'Pectorales',
-        instructions: 'Brazo en marco de puerta, rotar cuerpo opuesto. Probar √°ngulos diferentes. 1 min por lado.',
-        tips: 'Variaci√≥n: alto/medio/bajo para diferentes fibras',
+        instructions: 'Brazo en marco de puerta, rotar cuerpo opuesto. Probar ·ngulos diferentes. 1 min por lado.',
+        tips: 'VariaciÛn: alto/medio/bajo para diferentes fibras',
       },
       {
         name: 'Lat Stretch',
         duration: '2 min',
         target: 'Dorsales',
-        instructions: 'Agarrar poste, inclinarse hacia atr√°s manteniendo brazos rectos. 1 min por lado.',
+        instructions: 'Agarrar poste, inclinarse hacia atr·s manteniendo brazos rectos. 1 min por lado.',
         tips: 'Siente estiramiento en costado',
       },
       {
         name: 'Behind Back Shoulder Stretch',
         duration: '2 min',
         target: 'Hombros anteriores',
-        instructions: 'Manos entrelazadas detr√°s espalda baja, elevar brazos suavemente.',
-        tips: 'Pecho hacia afuera, esc√°pulas juntas',
+        instructions: 'Manos entrelazadas detr·s espalda baja, elevar brazos suavemente.',
+        tips: 'Pecho hacia afuera, esc·pulas juntas',
       },
       {
         name: 'Overhead Tricep Stretch',
         duration: '1 min',
-        target: 'Tr√≠ceps',
-        instructions: 'Codo doblado atr√°s de cabeza, presionar con mano opuesta. 30 seg/lado.',
+        target: 'TrÌceps',
+        instructions: 'Codo doblado atr·s de cabeza, presionar con mano opuesta. 30 seg/lado.',
         tips: 'Core activado para proteger lumbar',
       },
       {
@@ -134,18 +134,18 @@ const COOLDOWN_ROUTINES: CooldownRoutine[] = [
         duration: '1 min',
         target: 'Antebrazos',
         instructions: 'Brazo extendido, palma hacia abajo, tirar dedos con otra mano. 30 seg/lado.',
-        tips: 'Importante si entrenaste b√≠ceps/espalda',
+        tips: 'Importante si entrenaste bÌceps/espalda',
       },
       {
         name: 'Neck Stretches',
         duration: '2 min',
         target: 'Trapecio, cuello',
         instructions: 'Inclinar cabeza a lado, presionar suavemente. Todas direcciones.',
-        tips: 'Muy suave, nunca rotar r√°pido',
+        tips: 'Muy suave, nunca rotar r·pido',
       },
     ],
-    benefits: ['Previene rigidez hombros', 'Reduce tensi√≥n cuello', 'Mejora postura', 'Libera trapecio'],
-    icon: '√∞≈∏‚Äô¬™',
+    benefits: ['Previene rigidez hombros', 'Reduce tensiÛn cuello', 'Mejora postura', 'Libera trapecio'],
+    icon: 'üí™',
   },
   {
     id: '3',
@@ -157,9 +157,9 @@ const COOLDOWN_ROUTINES: CooldownRoutine[] = [
       {
         name: 'Standing Quad Stretch',
         duration: '2 min',
-        target: 'Cu√°driceps',
-        instructions: 'De pie, tal√≥n a gl√∫teo, rodillas juntas. 1 min/lado.',
-        tips: 'Squeeze gl√∫teos para mayor estiramiento',
+        target: 'Cu·driceps',
+        instructions: 'De pie, talÛn a gl˙teo, rodillas juntas. 1 min/lado.',
+        tips: 'Squeeze gl˙teos para mayor estiramiento',
       },
       {
         name: 'Seated Hamstring Stretch',
@@ -172,22 +172,22 @@ const COOLDOWN_ROUTINES: CooldownRoutine[] = [
         name: '90/90 Hip Stretch',
         duration: '3 min',
         target: 'Rotadores cadera',
-        instructions: 'Sentado con piernas en 90¬∞, cambiar de lado. Inclinarse adelante. 1.5 min/lado.',
-        tips: 'Estiramiento m√°s importante para squatters',
+        instructions: 'Sentado con piernas en 90∞, cambiar de lado. Inclinarse adelante. 1.5 min/lado.',
+        tips: 'Estiramiento m·s importante para squatters',
       },
       {
         name: 'Pigeon Pose',
         duration: '2 min',
-        target: 'Gl√∫teos, flexores cadera',
-        instructions: 'Rodilla doblada adelante, pierna atr√°s extendida. 1 min/lado.',
+        target: 'Gl˙teos, flexores cadera',
+        instructions: 'Rodilla doblada adelante, pierna atr·s extendida. 1 min/lado.',
         tips: 'Respira profundo, relaja en la incomodidad',
       },
       {
         name: 'Calf Stretch',
         duration: '2 min',
-        target: 'Gemelos, s√≥leo',
-        instructions: 'Contra pared, pierna atr√°s recta (gemelo), luego doblada (s√≥leo). 30 seg √ó 2/lado.',
-        tips: 'Tal√≥n pegado al suelo siempre',
+        target: 'Gemelos, sÛleo',
+        instructions: 'Contra pared, pierna atr·s recta (gemelo), luego doblada (sÛleo). 30 seg ◊ 2/lado.',
+        tips: 'TalÛn pegado al suelo siempre',
       },
       {
         name: 'Butterfly Stretch',
@@ -197,8 +197,8 @@ const COOLDOWN_ROUTINES: CooldownRoutine[] = [
         tips: 'Espalda recta, no redondees',
       },
     ],
-    benefits: ['Previene DOMS intenso', 'Mantiene movilidad cadera', 'Reduce tensi√≥n lumbar', 'Acelera recuperaci√≥n'],
-    icon: 'ü¶µ',
+    benefits: ['Previene DOMS intenso', 'Mantiene movilidad cadera', 'Reduce tensiÛn lumbar', 'Acelera recuperaciÛn'],
+    icon: '??',
   },
   {
     id: '4',
@@ -210,47 +210,47 @@ const COOLDOWN_ROUTINES: CooldownRoutine[] = [
       {
         name: 'Light Walk',
         duration: '3 min',
-        target: 'Circulaci√≥n general',
+        target: 'CirculaciÛn general',
         instructions: 'Caminar a paso muy ligero, brazos relajados.',
-        tips: 'Bajar frecuencia card√≠aca gradualmente',
+        tips: 'Bajar frecuencia cardÌaca gradualmente',
       },
       {
         name: 'Arm Circles',
         duration: '1 min',
         target: 'Hombros',
-        instructions: 'C√≠rculos grandes con brazos, 30 seg cada direcci√≥n.',
+        instructions: 'CÌrculos grandes con brazos, 30 seg cada direcciÛn.',
         tips: 'Movimientos controlados y suaves',
       },
       {
         name: 'Leg Swings',
         duration: '2 min',
         target: 'Caderas',
-        instructions: 'Balancear pierna adelante-atr√°s y lateral. 30 seg √ó 2/lado.',
-        tips: 'Mant√©n core tenso para estabilidad',
+        instructions: 'Balancear pierna adelante-atr·s y lateral. 30 seg ◊ 2/lado.',
+        tips: 'MantÈn core tenso para estabilidad',
       },
       {
         name: 'World\'s Greatest Stretch',
         duration: '2 min',
         target: 'Todo el cuerpo',
-        instructions: 'Posici√≥n de lunge, rotar hacia pierna adelantada, alcanzar cielo. 1 min/lado.',
-        tips: 'Movimiento din√°mico, no static hold',
+        instructions: 'PosiciÛn de lunge, rotar hacia pierna adelantada, alcanzar cielo. 1 min/lado.',
+        tips: 'Movimiento din·mico, no static hold',
       },
       {
         name: 'Deep Breathing',
         duration: '2 min',
         target: 'Sistema nervioso',
         instructions: 'Acostado o sentado, 4 seg inhala (nariz), 6 seg exhala (boca). 10 repeticiones.',
-        tips: 'Activa parasimp√°tico, acelera recuperaci√≥n',
+        tips: 'Activa parasimp·tico, acelera recuperaciÛn',
       },
     ],
-    benefits: ['Reduce lactato', 'Mejora circulaci√≥n', 'Previene mareos post-workout', 'Calma SNC'],
-    icon: '√∞≈∏≈°¬∂',
+    benefits: ['Reduce lactato', 'Mejora circulaciÛn', 'Previene mareos post-workout', 'Calma SNC'],
+    icon: 'üö∂',
   },
   {
     id: '5',
     name: 'Foam Rolling (8 min)',
     duration: 8,
-    focus: 'Liberaci√≥n miofascial',
+    focus: 'LiberaciÛn miofascial',
     type: 'active-recovery',
     stretches: [
       {
@@ -263,22 +263,22 @@ const COOLDOWN_ROUTINES: CooldownRoutine[] = [
       {
         name: 'Quad Roll',
         duration: '2 min',
-        target: 'Cu√°driceps',
+        target: 'Cu·driceps',
         instructions: 'Boca abajo, roller bajo muslos, rodar lentamente. 1 min/lado.',
-        tips: 'Busca nudos, mant√©n 20-30 seg',
+        tips: 'Busca nudos, mantÈn 20-30 seg',
       },
       {
         name: 'Upper Back Roll',
         duration: '2 min',
         target: 'Dorsales, trapecios',
-        instructions: 'Boca arriba, roller entre esc√°pulas, brazos cruzados pecho.',
+        instructions: 'Boca arriba, roller entre esc·pulas, brazos cruzados pecho.',
         tips: 'No rodar cuello ni lumbar directamente',
       },
       {
         name: 'Glute Roll',
         duration: '1 min',
-        target: 'Gl√∫teos',
-        instructions: 'Sentado en roller, inclinar hacia lado, rodar gl√∫teo. 30 seg/lado.',
+        target: 'Gl˙teos',
+        instructions: 'Sentado en roller, inclinar hacia lado, rodar gl˙teo. 30 seg/lado.',
         tips: 'Muy doloroso en TFL/piriforme',
       },
       {
@@ -286,11 +286,11 @@ const COOLDOWN_ROUTINES: CooldownRoutine[] = [
         duration: '1 min',
         target: 'Gemelos',
         instructions: 'Piernas sobre roller, elevar cadera, rodar. 30 seg/lado.',
-        tips: 'Rotar pierna para cubrir toda √°rea',
+        tips: 'Rotar pierna para cubrir toda ·rea',
       },
     ],
-    benefits: ['Reduce adherencias fasciales', 'Mejora movilidad', 'Acelera recuperaci√≥n', 'Reduce DOMS'],
-    icon: 'üéØ',
+    benefits: ['Reduce adherencias fasciales', 'Mejora movilidad', 'Acelera recuperaciÛn', 'Reduce DOMS'],
+    icon: '??',
   },
 ];
 
@@ -322,7 +322,7 @@ export default function CooldownRoutines() {
       setCurrentStretch(currentStretch + 1);
     } else {
       Alert.alert(
-        'Cooldown Completado! üéâ',
+        'Cooldown Completado! ??',
         'Excelente trabajo. Recuerda hidratarte y descansar bien.',
         [
           { text: 'Cerrar', onPress: () => { setSelectedRoutine(null); setCurrentStretch(0); } },
@@ -394,10 +394,10 @@ export default function CooldownRoutines() {
                   <Ionicons name="information-circle" size={20} color="#9D12DE" />
                   <View className="flex-1 ml-3">
                     <Text className="text-primary/80 font-bold mb-2">
-                      Por Qu√© Cool Down Es Importante
+                      Por QuÈ Cool Down Es Importante
                     </Text>
                     <Text className="text-primary/60 text-sm">
-                      Reducir frecuencia card√≠aca gradualmente, eliminar lactato, prevenir DOMS y mejorar flexibilidad cuando m√∫sculos est√°n calientes.
+                      Reducir frecuencia cardÌaca gradualmente, eliminar lactato, prevenir DOMS y mejorar flexibilidad cuando m˙sculos est·n calientes.
                     </Text>
                   </View>
                 </View>
@@ -440,7 +440,7 @@ export default function CooldownRoutines() {
                     ))}
                     {routine.stretches.length > 3 && (
                       <Text className="text-primary/80 text-sm ml-3.5">
-                        +{routine.stretches.length - 3} m√°s
+                        +{routine.stretches.length - 3} m·s
                       </Text>
                     )}
                   </View>

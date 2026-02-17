@@ -1,4 +1,4 @@
-ï»¿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -87,7 +87,7 @@ const PROGRESS_PHOTOS: ProgressPhoto[] = [
 const COMPARISONS: Comparison[] = [
   {
     id: '1',
-    name: 'TransformaciÃ³n 90 DÃ­as',
+    name: 'Transformación 90 Días',
     startDate: '2024-10-01',
     endDate: '2025-01-01',
     startWeight: 85.0,
@@ -122,7 +122,7 @@ export default function BodyTransformation() {
   const tabs = [
     { id: 'timeline' as const, label: 'Timeline', icon: 'time' },
     { id: 'comparisons' as const, label: 'Comparaciones', icon: 'git-compare' },
-    { id: 'angles' as const, label: 'ÃƒÂngulos', icon: 'camera' },
+    { id: 'angles' as const, label: 'Ãngulos', icon: 'camera' },
   ];
 
   const angles = [
@@ -134,7 +134,7 @@ export default function BodyTransformation() {
   const takePhoto = () => {
     Alert.alert(
       'Nueva Foto de Progreso',
-      'Selecciona el Ã¡ngulo para la foto',
+      'Selecciona el ángulo para la foto',
       [
         { text: 'Frontal', onPress: () => capturePhoto('frontal') },
         { text: 'Lateral', onPress: () => capturePhoto('lateral') },
@@ -147,13 +147,13 @@ export default function BodyTransformation() {
   const capturePhoto = (angle: string) => {
     Alert.alert(
       'Capturar Foto',
-      `ÃƒÂngulo: ${angle}\n\nConsejos:\nâ€¢ Usa la misma iluminaciÃ³n\nâ€¢ Misma posiciÃ³n de cÃ¡mara\nâ€¢ Misma hora del dÃ­a`,
+      `Ãngulo: ${angle}\n\nConsejos:\n• Usa la misma iluminación\n• Misma posición de cámara\n• Misma hora del día`,
       [
         { text: 'Cancelar', style: 'cancel' },
         {
           text: 'Tomar Foto',
           onPress: () => {
-            Alert.alert('Â¡Foto Guardada!', 'Tu foto de progreso ha sido registrada');
+            Alert.alert('¡Foto Guardada!', 'Tu foto de progreso ha sido registrada');
           },
         },
       ]
@@ -162,14 +162,14 @@ export default function BodyTransformation() {
 
   const createComparison = () => {
     Alert.alert(
-      'Nueva ComparaciÃ³n',
-      'Selecciona las fotos de antes y despuÃ©s para crear una comparaciÃ³n',
+      'Nueva Comparación',
+      'Selecciona las fotos de antes y después para crear una comparación',
       [
         { text: 'Cancelar', style: 'cancel' },
         {
           text: 'Seleccionar Fotos',
           onPress: () => {
-            Alert.alert('Â¡ComparaciÃ³n Creada!', 'Las fotos han sido comparadas');
+            Alert.alert('¡Comparación Creada!', 'Las fotos han sido comparadas');
           },
         },
       ]
@@ -178,7 +178,7 @@ export default function BodyTransformation() {
 
   const shareComparison = (comparison: Comparison) => {
     Alert.alert(
-      'Compartir TransformaciÃ³n',
+      'Compartir Transformación',
       `${comparison.name}\n\n${Math.abs(comparison.weightChange)} kg ${comparison.weightChange > 0 ? 'ganados' : 'perdidos'}`,
       [
         { text: 'Instagram Stories' },
@@ -200,7 +200,7 @@ export default function BodyTransformation() {
             <Ionicons name="arrow-back" size={24} color="white" />
           </TouchableOpacity>
           <Text className="text-white text-2xl font-bold flex-1 ml-3">
-            TransformaciÃ³n Corporal
+            Transformación Corporal
           </Text>
           <TouchableOpacity onPress={takePhoto}>
             <Ionicons name="camera" size={24} color="#9D12DE" />
@@ -216,7 +216,7 @@ export default function BodyTransformation() {
                 +3.6 kg
               </Text>
               <Text className="text-white/80 text-sm">
-                Ãšltimos 27 dÃ­as â€¢ -0.7% grasa
+                Últimos 27 días • -0.7% grasa
               </Text>
             </View>
             <View className="bg-white/20 rounded-full p-4">
@@ -355,7 +355,7 @@ export default function BodyTransformation() {
                       resizeMode="cover"
                     />
                     <View className="absolute top-3 right-3 bg-primary px-3 py-1 rounded-full">
-                      <Text className="text-white text-xs font-bold">DESPUÃ‰S</Text>
+                      <Text className="text-white text-xs font-bold">DESPUÉS</Text>
                     </View>
                   </View>
                 </View>
@@ -369,7 +369,7 @@ export default function BodyTransformation() {
                     <Ionicons name="calendar-outline" size={14} color="#71717A" />
                     <Text className="text-zinc-400 text-sm">
                       {new Date(comparison.startDate).toLocaleDateString('es-ES', { day: 'numeric', month: 'short' })}
-                      {' Ã¢â€ â€™ '}
+                      {' â†’ '}
                       {new Date(comparison.endDate).toLocaleDateString('es-ES', { day: 'numeric', month: 'short' })}
                     </Text>
                   </View>
@@ -408,7 +408,7 @@ export default function BodyTransformation() {
                     <View className="flex-row items-center justify-center">
                       <Ionicons name="share-social" size={18} color="white" />
                       <Text className="text-white font-bold ml-2">
-                        Compartir TransformaciÃ³n
+                        Compartir Transformación
                       </Text>
                     </View>
                   </TouchableOpacity>
@@ -492,13 +492,13 @@ export default function BodyTransformation() {
                   Tips para Mejores Fotos
                 </Text>
                 <Text className="text-primary/60 text-sm mb-1">
-                  â€¢ Toma fotos a la misma hora cada semana
+                  • Toma fotos a la misma hora cada semana
                 </Text>
                 <Text className="text-primary/60 text-sm mb-1">
-                  â€¢ Usa la misma iluminaciÃ³n y posiciÃ³n
+                  • Usa la misma iluminación y posición
                 </Text>
                 <Text className="text-primary/60 text-sm">
-                  â€¢ Fotos cada 2 semanas para ver cambios reales
+                  • Fotos cada 2 semanas para ver cambios reales
                 </Text>
               </View>
             </View>

@@ -1,4 +1,4 @@
-ï»¿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -96,7 +96,7 @@ export default function NutritionScreen() {
     setFats('');
     setWater('2.5');
     setNotes('');
-    Alert.alert('Â¡Guardado!', 'Registro nutricional aÃ±adido');
+    Alert.alert('¡Guardado!', 'Registro nutricional añadido');
   };
 
   const getProgressColor = (current: number, target: number) => {
@@ -114,7 +114,7 @@ export default function NutritionScreen() {
           <TouchableOpacity onPress={() => router.back()} className="p-2">
             <Ionicons name="arrow-back" size={28} color="white" />
           </TouchableOpacity>
-          <Text className="text-2xl font-bold text-white">NutriciÃ³n</Text>
+          <Text className="text-2xl font-bold text-white">Nutrición</Text>
           <View className="w-10" />
         </View>
 
@@ -124,8 +124,8 @@ export default function NutritionScreen() {
             <Text className="text-white font-bold text-lg mb-3">Progreso de Hoy</Text>
             <View className="gap-2">
               {[
-                { label: 'CalorÃ­as', value: todayLog.calories, target: targets.calories, unit: 'kcal' },
-                { label: 'ProteÃ­na', value: todayLog.protein, target: targets.protein, unit: 'g' },
+                { label: 'Calorías', value: todayLog.calories, target: targets.calories, unit: 'kcal' },
+                { label: 'Proteína', value: todayLog.protein, target: targets.protein, unit: 'g' },
                 { label: 'Carbos', value: todayLog.carbs, target: targets.carbs, unit: 'g' },
                 { label: 'Grasas', value: todayLog.fats, target: targets.fats, unit: 'g' },
                 { label: 'Agua', value: todayLog.water, target: targets.water, unit: 'L' },
@@ -158,7 +158,7 @@ export default function NutritionScreen() {
 
       <ScrollView className="flex-1" contentContainerClassName="p-6">
         {/* Add Log */}
-        <Card className="p-4 mb-4 bg-emerald-50 border-primary/20">
+        <Card className="p-4 mb-4 bg-primary/10 border-primary/20">
           <Text className="text-primary font-bold text-lg mb-3">
             Registrar Hoy
           </Text>
@@ -166,7 +166,7 @@ export default function NutritionScreen() {
           <View className="gap-3">
             <View className="flex-row gap-2">
               <View className="flex-1">
-                <Text className="text-gray-700 font-semibold mb-2">CalorÃ­as</Text>
+                <Text className="text-gray-700 font-semibold mb-2">Calorías</Text>
                 <TextInput
                   value={calories}
                   onChangeText={setCalories}
@@ -176,7 +176,7 @@ export default function NutritionScreen() {
                 />
               </View>
               <View className="flex-1">
-                <Text className="text-gray-700 font-semibold mb-2">ProteÃ­na (g)</Text>
+                <Text className="text-gray-700 font-semibold mb-2">Proteína (g)</Text>
                 <TextInput
                   value={protein}
                   onChangeText={setProtein}
@@ -226,7 +226,7 @@ export default function NutritionScreen() {
               <TextInput
                 value={notes}
                 onChangeText={setNotes}
-                placeholder="Ej: DÃ­a de recarga de carbos"
+                placeholder="Ej: Día de recarga de carbos"
                 multiline
                 numberOfLines={2}
                 className="bg-white border border-gray-300 rounded-lg px-3 py-2"
@@ -247,7 +247,7 @@ export default function NutritionScreen() {
           <View className="flex-row items-center justify-between mb-3">
             <View className="flex-row items-center gap-2">
               <Ionicons name="water" size={24} color="#9D12DE" />
-              <Text className="text-text font-bold text-lg">HidrataciÃ³n</Text>
+              <Text className="text-text font-bold text-lg">Hidratación</Text>
             </View>
             <Text className="text-text/70 font-bold">
               {todayLog?.water || 0} / {targets.water} L
@@ -289,7 +289,7 @@ export default function NutritionScreen() {
                     <Text className="text-gray-600 text-xs">P: {log.protein}g</Text>
                     <Text className="text-gray-600 text-xs">C: {log.carbs}g</Text>
                     <Text className="text-gray-600 text-xs">G: {log.fats}g</Text>
-                    <Text className="text-primary text-xs">Ã°Å¸â€™Â§ {log.water}L</Text>
+                    <Text className="text-primary text-xs">ðŸ’§ {log.water}L</Text>
                   </View>
                   {log.notes && (
                     <Text className="text-gray-500 text-xs mt-1">{log.notes}</Text>

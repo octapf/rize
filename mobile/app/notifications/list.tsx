@@ -1,4 +1,4 @@
-ï»¿import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   View,
   Text,
@@ -22,7 +22,7 @@ const mockNotifications: Notification[] = [
     userId: 'me',
     type: 'friend_request',
     title: 'Nueva solicitud de amistad',
-    body: 'Carlos GarcÃ­a quiere ser tu amigo',
+    body: 'Carlos García quiere ser tu amigo',
     data: { userId: 'user1' },
     read: false,
     createdAt: new Date(2026, 0, 27, 11, 30).toISOString(),
@@ -31,8 +31,8 @@ const mockNotifications: Notification[] = [
     _id: '2',
     userId: 'me',
     type: 'workout_like',
-    title: 'Le gustÃ³ tu entrenamiento',
-    body: 'Ana LÃ³pez le dio like a tu workout "Push Day"',
+    title: 'Le gustó tu entrenamiento',
+    body: 'Ana López le dio like a tu workout "Push Day"',
     data: { workoutId: 'w1', userId: 'user2' },
     read: false,
     createdAt: new Date(2026, 0, 27, 10, 15).toISOString(),
@@ -42,7 +42,7 @@ const mockNotifications: Notification[] = [
     userId: 'me',
     type: 'comment',
     title: 'Nuevo comentario',
-    body: 'Pedro comentÃ³ en tu publicaciÃ³n: "Â¡Excelente trabajo!"',
+    body: 'Pedro comentó en tu publicación: "¡Excelente trabajo!"',
     data: { postId: 'p1', userId: 'user3' },
     read: false,
     createdAt: new Date(2026, 0, 27, 9, 45).toISOString(),
@@ -51,7 +51,7 @@ const mockNotifications: Notification[] = [
     _id: '4',
     userId: 'me',
     type: 'achievement',
-    title: 'Â¡Nuevo logro desbloqueado!',
+    title: '¡Nuevo logro desbloqueado!',
     body: 'Has completado 100 entrenamientos',
     data: { achievementId: 'a1' },
     read: true,
@@ -61,8 +61,8 @@ const mockNotifications: Notification[] = [
     _id: '5',
     userId: 'me',
     type: 'challenge',
-    title: 'Nuevo desafÃ­o',
-    body: 'MarÃ­a te retÃ³ a "30 dÃ­as de ejercicio"',
+    title: 'Nuevo desafío',
+    body: 'María te retó a "30 días de ejercicio"',
     data: { challengeId: 'ch1', userId: 'user4' },
     read: true,
     createdAt: new Date(2026, 0, 26, 15, 30).toISOString(),
@@ -226,7 +226,7 @@ export default function NotificationsScreen() {
 
         {unreadCount > 0 && (
           <Text className="text-highlight text-center">
-            {unreadCount} notificaciÃ³n{unreadCount !== 1 ? 'es' : ''} sin leer
+            {unreadCount} notificación{unreadCount !== 1 ? 'es' : ''} sin leer
           </Text>
         )}
       </LinearGradient>

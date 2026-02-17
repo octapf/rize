@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -37,10 +37,10 @@ export default function AutoRegulation() {
       example: {
         scenario: 'Programmed: 4 sets of 5 @ RPE 8',
         execution: [
-          'Set 1: 100kg × 5 @ RPE 7 â†’ too easy, add weight',
-          'Set 2: 105kg × 5 @ RPE 8 â†’ perfect, maintain',
-          'Set 3: 105kg × 5 @ RPE 8.5 â†’ slightly harder, fatigue accumulating',
-          'Set 4: 105kg × 5 @ RPE 9 â†’ harder but completed, good session',
+          'Set 1: 100kg � 5 @ RPE 7 → too easy, add weight',
+          'Set 2: 105kg � 5 @ RPE 8 → perfect, maintain',
+          'Set 3: 105kg � 5 @ RPE 8.5 → slightly harder, fatigue accumulating',
+          'Set 4: 105kg � 5 @ RPE 9 → harder but completed, good session',
         ],
       },
     },
@@ -48,7 +48,7 @@ export default function AutoRegulation() {
       id: 'rir',
       name: 'RIR (Reps in Reserve)',
       icon: 'battery-half' as const,
-      color: 'emerald',
+      color: 'primary',
       description: 'How many reps left before failure',
       scale: {
         0: 'Failure - no reps left',
@@ -93,7 +93,7 @@ export default function AutoRegulation() {
         'Objective measure (no guessing RPE)',
         'Detects fatigue/readiness',
       ],
-      example: 'Squat: First rep 0.6 m/s â†’ stop set when rep hits 0.48 m/s (20% drop)',
+      example: 'Squat: First rep 0.6 m/s → stop set when rep hits 0.48 m/s (20% drop)',
     },
     {
       id: 'amrap',
@@ -108,9 +108,9 @@ export default function AutoRegulation() {
         'Use to estimate 1RM or adjust program',
       ],
       formulas: [
-        'Epley: 1RM = weight × (1 + reps/30)',
-        'Brzycki: 1RM = weight × (36 / (37 - reps))',
-        'Wathan: 1RM = weight × (48.8 + 53.8×e^(-0.075×reps))',
+        'Epley: 1RM = weight � (1 + reps/30)',
+        'Brzycki: 1RM = weight � (36 / (37 - reps))',
+        'Wathan: 1RM = weight � (48.8 + 53.8�e^(-0.075�reps))',
       ],
       frequency: 'Test AMRAP every 3-4 weeks max',
       cautions: [
@@ -141,8 +141,8 @@ export default function AutoRegulation() {
       ],
       bestFor: 'Experienced lifters who know their bodies well',
       example: {
-        goodDay: 'Feel great â†’ hit 140kg squat daily max â†’ back off at 120kg',
-        badDay: 'Feel weak â†’ only 125kg squat feels heavy â†’ back off at 105kg',
+        goodDay: 'Feel great → hit 140kg squat daily max → back off at 120kg',
+        badDay: 'Feel weak → only 125kg squat feels heavy → back off at 105kg',
       },
     },
   ];
@@ -200,7 +200,7 @@ export default function AutoRegulation() {
 
           <View className={`bg-${currentMethod.color}-500/10 rounded-xl p-5 mb-6 border border-${currentMethod.color}-500/30`}>
             <View className="flex-row items-center mb-3">
-              <Ionicons name={currentMethod.icon} size={28} color={`#${currentMethod.color === 'blue' ? '3b82f6' : currentMethod.color === 'emerald' ? '10b981' : currentMethod.color === 'purple' ? 'a855f7' : currentMethod.color === 'red' ? 'ef4444' : 'f59e0b'}`} />
+              <Ionicons name={currentMethod.icon} size={28} color={`#${currentMethod.color === 'blue' ? '3b82f6' : currentMethod.color === 'primary' ? '9D12DE' : currentMethod.color === 'purple' ? 'a855f7' : currentMethod.color === 'red' ? 'ef4444' : 'f59e0b'}`} />
               <Text className={`text-${currentMethod.color}-400 font-bold text-xl ml-3 flex-1`}>
                 {currentMethod.name}
               </Text>
@@ -259,7 +259,7 @@ export default function AutoRegulation() {
               </Text>
               {currentMethod.usage.map((tip, idx) => (
                 <View key={idx} className="flex-row items-start mb-2 last:mb-0">
-                  <Ionicons name="checkmark-circle" size={16} color={`#${currentMethod.color === 'blue' ? '3b82f6' : currentMethod.color === 'emerald' ? '10b981' : currentMethod.color === 'purple' ? 'a855f7' : currentMethod.color === 'red' ? 'ef4444' : 'f59e0b'}`} />
+                  <Ionicons name="checkmark-circle" size={16} color={`#${currentMethod.color === 'blue' ? '3b82f6' : currentMethod.color === 'primary' ? '9D12DE' : currentMethod.color === 'purple' ? 'a855f7' : currentMethod.color === 'red' ? 'ef4444' : 'f59e0b'}`} />
                   <Text className="text-zinc-300 ml-2 flex-1">{tip}</Text>
                 </View>
               ))}
@@ -293,16 +293,16 @@ export default function AutoRegulation() {
           <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
             <Text className="text-primary/80 font-bold mb-2">Why Auto-Regulate?</Text>
             <Text className="text-primary/60 text-sm mb-2">
-              • Not every day is the same - sleep, stress, nutrition vary
+              � Not every day is the same - sleep, stress, nutrition vary
             </Text>
             <Text className="text-primary/60 text-sm mb-2">
-              • Prevents overtraining on bad days
+              � Prevents overtraining on bad days
             </Text>
             <Text className="text-primary/60 text-sm mb-2">
-              • Allows pushing harder on good days
+              � Allows pushing harder on good days
             </Text>
             <Text className="text-primary/60 text-sm">
-              • More sustainable long-term than rigid programming
+              � More sustainable long-term than rigid programming
             </Text>
           </View>
         </View>

@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -36,8 +36,8 @@ interface Participant {
 const COMPETITIONS: Competition[] = [
   {
     id: '1',
-    name: 'Desafío de Volumen Enero',
-    description: 'Mayor número de series completadas',
+    name: 'Desaf�o de Volumen Enero',
+    description: 'Mayor n�mero de series completadas',
     type: 'volume',
     startDate: '2025-01-01',
     endDate: '2025-01-31',
@@ -65,7 +65,7 @@ const COMPETITIONS: Competition[] = [
   {
     id: '3',
     name: 'Racha de Fuego',
-    description: 'La racha más larga sin fallar',
+    description: 'La racha m�s larga sin fallar',
     type: 'streak',
     startDate: '2025-02-01',
     endDate: '2025-02-28',
@@ -82,7 +82,7 @@ const LEADERBOARD: Participant[] = [
   {
     id: '1',
     name: 'Carlos M.',
-    avatar: 'ðŸ”¥',
+    avatar: '🔥',
     score: 487,
     rank: 1,
     trend: 'same',
@@ -90,7 +90,7 @@ const LEADERBOARD: Participant[] = [
   {
     id: '2',
     name: 'Ana R.',
-    avatar: 'ðŸ’ª',
+    avatar: '💪',
     score: 456,
     rank: 2,
     trend: 'up',
@@ -98,15 +98,15 @@ const LEADERBOARD: Participant[] = [
   {
     id: '3',
     name: 'Luis P.',
-    avatar: '⚡',
+    avatar: '?',
     score: 423,
     rank: 3,
     trend: 'down',
   },
   {
     id: '4',
-    name: 'Tú',
-    avatar: 'ðŸ‘¤',
+    name: 'T�',
+    avatar: '👤',
     score: 312,
     rank: 12,
     trend: 'up',
@@ -118,20 +118,20 @@ export default function Competitions() {
 
   const tabs = [
     { id: 'active' as const, label: 'Activas', count: 2 },
-    { id: 'upcoming' as const, label: 'Próximas', count: 1 },
+    { id: 'upcoming' as const, label: 'Pr�ximas', count: 1 },
     { id: 'past' as const, label: 'Pasadas', count: 0 },
   ];
 
   const joinCompetition = (competitionId: string) => {
     Alert.alert(
       'Unirse a Competencia',
-      '¿Deseas participar en esta competencia?',
+      '�Deseas participar en esta competencia?',
       [
         { text: 'Cancelar', style: 'cancel' },
         {
           text: 'Unirse',
           onPress: () => {
-            Alert.alert('¡Registrado!', 'Te has unido a la competencia. ¡Buena suerte!');
+            Alert.alert('�Registrado!', 'Te has unido a la competencia. �Buena suerte!');
           },
         },
       ]
@@ -152,7 +152,7 @@ export default function Competitions() {
           onPress: () => Alert.alert('Competencia creada', 'Invita a tus amigos'),
         },
         {
-          text: 'Racha (días)',
+          text: 'Racha (d�as)',
           onPress: () => Alert.alert('Competencia creada', 'Invita a tus amigos'),
         },
         { text: 'Cancelar', style: 'cancel' },
@@ -205,7 +205,7 @@ export default function Competitions() {
             <Text className="text-primary text-2xl font-bold">2</Text>
           </View>
           <View className="flex-1 bg-zinc-900 rounded-xl p-3 border border-zinc-800">
-            <Text className="text-zinc-400 text-xs">Mejor Posición</Text>
+            <Text className="text-zinc-400 text-xs">Mejor Posici�n</Text>
             <Text className="text-amber-500 text-2xl font-bold">#8</Text>
           </View>
           <View className="flex-1 bg-zinc-900 rounded-xl p-3 border border-zinc-800">
@@ -260,7 +260,7 @@ export default function Competitions() {
             <View className="bg-zinc-900 rounded-xl p-8 border border-zinc-800 items-center">
               <Ionicons name="trophy-outline" size={48} color="#71717A" />
               <Text className="text-zinc-400 font-bold mt-4">
-                No hay competencias {selectedTab === 'active' ? 'activas' : selectedTab === 'upcoming' ? 'próximas' : 'pasadas'}
+                No hay competencias {selectedTab === 'active' ? 'activas' : selectedTab === 'upcoming' ? 'pr�ximas' : 'pasadas'}
               </Text>
               <TouchableOpacity
                 onPress={createCompetition}
@@ -292,7 +292,7 @@ export default function Competitions() {
                           {competition.status === 'active'
                             ? 'EN CURSO'
                             : competition.status === 'upcoming'
-                            ? 'PRÃ“XIMA'
+                            ? 'PRÓXIMA'
                             : 'FINALIZADA'}
                         </Text>
                       </View>
@@ -322,7 +322,7 @@ export default function Competitions() {
                   <>
                     <View className="bg-zinc-800 rounded-lg p-3 mb-3">
                       <View className="flex-row items-center justify-between mb-2">
-                        <Text className="text-zinc-400 text-sm">Tu Posición</Text>
+                        <Text className="text-zinc-400 text-sm">Tu Posici�n</Text>
                         <View
                           className="px-3 py-1 rounded-full"
                           style={{
@@ -342,7 +342,7 @@ export default function Competitions() {
                           {competition.myScore.toLocaleString()}
                         </Text>
                         <Text className="text-zinc-500 text-sm">
-                          Líder: {competition.leaderScore.toLocaleString()}
+                          L�der: {competition.leaderScore.toLocaleString()}
                         </Text>
                       </View>
                       <View className="bg-zinc-900 h-2 rounded-full overflow-hidden mt-2">
@@ -374,7 +374,7 @@ export default function Competitions() {
                     <View className="flex-row gap-2">
                       <TouchableOpacity className="flex-1 bg-primary rounded-lg p-3">
                         <Text className="text-white text-center font-semibold">
-                          Ver Clasificación
+                          Ver Clasificaci�n
                         </Text>
                       </TouchableOpacity>
                       <TouchableOpacity className="flex-1 bg-zinc-800 rounded-lg p-3">
@@ -413,7 +413,7 @@ export default function Competitions() {
               <View
                 key={participant.id}
                 className={`rounded-xl p-4 mb-3 border ${
-                  participant.name === 'Tú'
+                  participant.name === 'T�'
                     ? 'bg-primary/10 border-primary/30'
                     : 'bg-zinc-900 border-zinc-800'
                 }`}
@@ -432,7 +432,7 @@ export default function Competitions() {
                     <View className="flex-row items-center">
                       <Text
                         className={`font-bold ${
-                          participant.name === 'Tú' ? 'text-primary' : 'text-white'
+                          participant.name === 'T�' ? 'text-primary' : 'text-white'
                         }`}
                       >
                         {participant.name}

@@ -1,4 +1,4 @@
-ï»¿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -14,7 +14,7 @@ export default function WarmupGenerator() {
 
   const workoutTypes = [
     { key: 'upper', label: 'Upper Body', icon: 'fitness', color: 'blue' },
-    { key: 'lower', label: 'Lower Body', icon: 'walk', color: 'emerald' },
+    { key: 'lower', label: 'Lower Body', icon: 'walk', color: 'primary' },
     { key: 'push', label: 'Push Day', icon: 'arrow-up', color: 'purple' },
     { key: 'pull', label: 'Pull Day', icon: 'arrow-down', color: 'amber' },
   ];
@@ -284,12 +284,12 @@ export default function WarmupGenerator() {
           <View className="bg-red-500/10 rounded-xl p-4 border border-red-500/30 mb-6">
             <Text className="text-red-400 font-bold mb-2">Warm-up Rules</Text>
             <Text className="text-red-300 text-sm">
-              â€¢ Never skip warm-up{'\n'}
-              â€¢ 10-15 min minimum{'\n'}
-              â€¢ Break a sweat before lifting{'\n'}
-              â€¢ Focus on workout-specific movements{'\n'}
-              â€¢ Ramping sets prime your nervous system{'\n'}
-              â€¢ Warm up = better performance + injury prevention
+              • Never skip warm-up{'\n'}
+              • 10-15 min minimum{'\n'}
+              • Break a sweat before lifting{'\n'}
+              • Focus on workout-specific movements{'\n'}
+              • Ramping sets prime your nervous system{'\n'}
+              • Warm up = better performance + injury prevention
             </Text>
           </View>
         </View>

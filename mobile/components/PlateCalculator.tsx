@@ -77,7 +77,7 @@ export const PlateCalculator: React.FC<PlateCalculatorProps> = ({
       case 15:
         return '#eab308'; // Yellow
       case 10:
-        return '#10b981'; // Green
+        return '#9D12DE'; // Primary
       case 5:
         return '#f5f5f5'; // White
       case 2.5:
@@ -203,12 +203,12 @@ export const PlateCalculator: React.FC<PlateCalculatorProps> = ({
                     <Ionicons
                       name={difference > 0 ? 'arrow-up' : 'arrow-down'}
                       size={16}
-                      color={difference > 0 ? '#ef4444' : '#10b981'}
+                      color={difference > 0 ? '#ef4444' : '#9D12DE'}
                     />
                     <Text
                       style={[
                         styles.differenceText,
-                        { color: difference > 0 ? '#ef4444' : '#10b981' },
+                        { color: difference > 0 ? '#ef4444' : '#9D12DE' },
                       ]}
                     >
                       {Math.abs(difference).toFixed(1)} kg{' '}
@@ -329,7 +329,7 @@ const styles = StyleSheet.create({
   targetWeight: {
     fontSize: 48,
     fontWeight: '900',
-    color: '#10b981',
+    color: '#9D12DE',
   },
   section: {
     marginBottom: 24,
@@ -354,7 +354,7 @@ const styles = StyleSheet.create({
     borderColor: '#333',
   },
   barbellOptionSelected: {
-    borderColor: '#10b981',
+    borderColor: '#9D12DE',
     backgroundColor: '#0a2f1f',
   },
   barbellName: {
@@ -363,14 +363,14 @@ const styles = StyleSheet.create({
     color: '#fff',
   },
   barbellNameSelected: {
-    color: '#10b981',
+    color: '#9D12DE',
   },
   barbellWeight: {
     fontSize: 14,
     color: '#999',
   },
   barbellWeightSelected: {
-    color: '#10b981',
+    color: '#9D12DE',
     fontWeight: '700',
   },
   platesContainer: {
@@ -457,7 +457,7 @@ const styles = StyleSheet.create({
   summaryValueTotal: {
     fontSize: 24,
     fontWeight: '900',
-    color: '#10b981',
+    color: '#9D12DE',
   },
   differenceRow: {
     flexDirection: 'row',

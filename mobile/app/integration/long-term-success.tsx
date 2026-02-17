@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -79,12 +79,12 @@ export default function LongTermSuccess() {
     sustainability: {
       name: 'Sustainable Training',
       icon: 'infinite',
-      color: 'emerald',
+      color: 'primary',
       decade_view: {
         title: 'Think in Decades, Not Days',
         mindset: [
           'You have 30+ years of training ahead',
-          'Missing PRs for 6 months â‰  failure if you train 20 more years',
+          'Missing PRs for 6 months ≠ failure if you train 20 more years',
           'Injuries that sideline you = worse than slow progress',
           'Consistency over decades > heroic bursts',
         ],
@@ -130,7 +130,7 @@ export default function LongTermSuccess() {
           },
           {
             priority: 'Listen to Body',
-            principle: 'Tweak â‰  train through it',
+            principle: 'Tweak ≠ train through it',
             action: 'Back off when something hurts, modify exercises',
           },
           {
@@ -369,7 +369,7 @@ export default function LongTermSuccess() {
   const getColorClass = (color: string) => {
     const colors: { [key: string]: string } = {
       blue: 'bg-primary',
-      emerald: 'bg-primary',
+      primary: 'bg-primary',
       purple: 'bg-purple-500',
       amber: 'bg-amber-500',
       red: 'bg-red-500',
@@ -393,7 +393,7 @@ export default function LongTermSuccess() {
 
       <ScrollView className="flex-1" showsVerticalScrollIndicator={false}>
         <View className="px-6 pt-6">
-          <View className="bg-gradient-to-r from-emerald-500 to-teal-500 rounded-xl p-6 mb-6">
+          <View className="bg-gradient-to-r from-primary to-primary/100 rounded-xl p-6 mb-6">
             <Text className="text-white text-2xl font-bold mb-2">Lifelong Strength</Text>
             <Text className="text-white opacity-90">
               Principles for sustainable powerlifting
@@ -443,19 +443,19 @@ export default function LongTermSuccess() {
           <View className="bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-xl p-5 border border-purple-500/30 mb-6">
             <Text className="text-purple-400 font-bold text-lg mb-3">The Marathon, Not Sprint</Text>
             <Text className="text-purple-300 text-sm mb-2">
-              • Think in decades - you have 30+ years of training ahead
+              � Think in decades - you have 30+ years of training ahead
             </Text>
             <Text className="text-purple-300 text-sm mb-2">
-              • Consistency beats intensity over the long run
+              � Consistency beats intensity over the long run
             </Text>
             <Text className="text-purple-300 text-sm mb-2">
-              • Injuries that sideline you &gt; slow progress
+              � Injuries that sideline you &gt; slow progress
             </Text>
             <Text className="text-purple-300 text-sm mb-2">
-              • Enjoy the process - it's the only way to sustain it
+              � Enjoy the process - it's the only way to sustain it
             </Text>
             <Text className="text-purple-300 text-sm">
-              • Your "why" will carry you through hard times
+              � Your "why" will carry you through hard times
             </Text>
           </View>
 
@@ -465,19 +465,19 @@ export default function LongTermSuccess() {
               Keys to Longevity
             </Text>
             <Text className="text-primary/80 text-sm mb-2">
-              ✓ Perfect technique prevents injuries
+              ? Perfect technique prevents injuries
             </Text>
             <Text className="text-primary/80 text-sm mb-2">
-              ✓ Regular deloads keep you fresh
+              ? Regular deloads keep you fresh
             </Text>
             <Text className="text-primary/80 text-sm mb-2">
-              ✓ Vary training to prevent burnout
+              ? Vary training to prevent burnout
             </Text>
             <Text className="text-primary/80 text-sm mb-2">
-              ✓ Listen to your body always
+              ? Listen to your body always
             </Text>
             <Text className="text-primary/80 text-sm">
-              ✓ Remember - you're building strength for LIFE
+              ? Remember - you're building strength for LIFE
             </Text>
           </View>
         </View>

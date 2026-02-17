@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -23,42 +23,42 @@ export default function TrainingPhilosophy() {
     'progressive-overload': {
       name: 'Progressive Overload',
       icon: 'trending-up' as const,
-      color: 'emerald',
+      color: 'primary',
       principle: 'Gradually increase training stimulus over time',
       importance: 'The fundamental principle of all strength and hypertrophy gains',
       methods: [
         {
           method: 'Add Weight',
           description: 'Most common form of progression',
-          example: 'Bench 100kg × 5 â†’ 102.5kg × 5',
+          example: 'Bench 100kg � 5 → 102.5kg � 5',
           frequency: 'Weekly for beginners, monthly for advanced',
           notes: 'Smallest increments possible (2.5kg for upper, 5kg for lower)',
         },
         {
           method: 'Add Reps',
           description: 'Increase volume at same weight',
-          example: '100kg × 5 reps â†’ 100kg × 6 reps',
+          example: '100kg � 5 reps → 100kg � 6 reps',
           frequency: 'Session to session',
           notes: 'Once you hit top of rep range, add weight and drop reps',
         },
         {
           method: 'Add Sets',
           description: 'Increase total training volume',
-          example: '3 sets × 8 reps â†’ 4 sets × 8 reps',
+          example: '3 sets � 8 reps → 4 sets � 8 reps',
           frequency: 'Weekly or bi-weekly',
           notes: 'Be careful of excessive volume accumulation',
         },
         {
           method: 'Improve Form',
           description: 'Better technique = more muscle tension',
-          example: 'Half reps â†’ full ROM, tempo control',
+          example: 'Half reps → full ROM, tempo control',
           frequency: 'Constantly',
           notes: 'Often overlooked but crucial for long-term progress',
         },
         {
           method: 'Increase Frequency',
           description: 'Train muscle groups more often',
-          example: 'Chest 1x/week â†’ 2x/week',
+          example: 'Chest 1x/week → 2x/week',
           frequency: 'Every mesocycle',
           notes: 'More frequent stimulus can drive more growth',
         },
@@ -121,7 +121,7 @@ export default function TrainingPhilosophy() {
         },
       ],
       application: [
-        'If planned 5×5 @ 80% feels RPE 9, reduce load',
+        'If planned 5�5 @ 80% feels RPE 9, reduce load',
         'If everything feels easy, push a bit harder',
         'Bad sleep/stress = reduce volume or intensity',
         'Feeling great = optional backoff sets',
@@ -181,7 +181,7 @@ export default function TrainingPhilosophy() {
         'Prioritize exercises that match goals',
         'If competing, train competition movements frequently',
         'General fitness? More variety is fine',
-        'Periodize specificity: general â†’ specific â†’ peak',
+        'Periodize specificity: general → specific → peak',
         'Test what you train (don\'t test random exercises)',
       ],
       mistakes: [
@@ -201,21 +201,21 @@ export default function TrainingPhilosophy() {
         {
           method: 'Exercise Variation',
           description: 'Rotate similar movement patterns',
-          example: 'Back squat â†’ front squat â†’ safety bar squat',
+          example: 'Back squat → front squat → safety bar squat',
           frequency: 'Every 4-6 weeks',
           notes: 'Keep main lift, vary accessories',
         },
         {
           method: 'Loading Schemes',
           description: 'Change sets, reps, intensity',
-          example: 'Strength block (5×5) â†’ hypertrophy (4×10)',
+          example: 'Strength block (5�5) → hypertrophy (4�10)',
           frequency: 'Every mesocycle (4-6 weeks)',
           notes: 'Classic periodization approach',
         },
         {
           method: 'Volume Cycling',
           description: 'Accumulation and intensification phases',
-          example: 'High volume, low intensity â†’ low volume, high intensity',
+          example: 'High volume, low intensity → low volume, high intensity',
           frequency: 'Mesocycle to mesocycle',
           notes: 'Prevents burnout and overreaching',
         },
@@ -354,7 +354,7 @@ export default function TrainingPhilosophy() {
           <View className={`bg-${currentPhilosophy.color}-500/10 rounded-xl p-5 mb-6 border border-${currentPhilosophy.color}-500/30`}>
             <View className="flex-row items-center mb-3">
               <Ionicons name={currentPhilosophy.icon} size={28} color={`#${
-                currentPhilosophy.color === 'emerald' ? '10b981' :
+                currentPhilosophy.color === 'primary' ? '9D12DE' :
                 currentPhilosophy.color === 'blue' ? '3b82f6' :
                 currentPhilosophy.color === 'red' ? 'ef4444' :
                 currentPhilosophy.color === 'purple' ? 'a855f7' :

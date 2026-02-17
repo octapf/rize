@@ -1,4 +1,4 @@
-ï»¿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -46,7 +46,7 @@ export default function TrainingMaxCalculator() {
     { percent: 95, label: '95% (Heavy Singles)', color: 'red' },
     { percent: 90, label: '90% (Training Max)', color: 'orange' },
     { percent: 85, label: '85% (Heavy Sets)', color: 'amber' },
-    { percent: 80, label: '80% (Strength Work)', color: 'emerald' },
+    { percent: 80, label: '80% (Strength Work)', color: 'primary' },
     { percent: 75, label: '75% (Volume Work)', color: 'blue' },
     { percent: 70, label: '70% (Speed Work)', color: 'purple' },
     { percent: 65, label: '65% (Technique)', color: 'zinc' },
@@ -55,7 +55,7 @@ export default function TrainingMaxCalculator() {
   const exercises = [
     { name: 'Squat', icon: 'fitness', color: 'blue' },
     { name: 'Bench', icon: 'barbell', color: 'red' },
-    { name: 'Deadlift', icon: 'barbell', color: 'emerald' },
+    { name: 'Deadlift', icon: 'barbell', color: 'primary' },
     { name: 'OHP', icon: 'fitness', color: 'amber' },
   ];
 
@@ -205,11 +205,11 @@ export default function TrainingMaxCalculator() {
           <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
             <Text className="text-primary/80 font-bold mb-2">1RM Tips</Text>
             <Text className="text-primary/60 text-sm">
-              â€¢ Best accuracy con 3-5 reps{'\n'}
-              â€¢ No uses failure sets (deload primero){'\n'}
-              â€¢ Test 1RM cada 8-12 semanas{'\n'}
-              â€¢ Training Max = 90% de 1RM real{'\n'}
-              â€¢ Recalcula con cada PR
+              • Best accuracy con 3-5 reps{'\n'}
+              • No uses failure sets (deload primero){'\n'}
+              • Test 1RM cada 8-12 semanas{'\n'}
+              • Training Max = 90% de 1RM real{'\n'}
+              • Recalcula con cada PR
             </Text>
           </View>
         </View>

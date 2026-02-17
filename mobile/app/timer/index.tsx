@@ -1,4 +1,4 @@
-﻿import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import {
   View,
   Text,
@@ -29,7 +29,7 @@ export default function RestTimerScreen() {
             Vibration.vibrate([0, 500, 200, 500]);
             setIsRunning(false);
             setIsPaused(false);
-            Alert.alert('¡Descanso Terminado!', 'Es hora de volver a entrenar ðŸ’ª', [
+            Alert.alert('�Descanso Terminado!', 'Es hora de volver a entrenar 💪', [
               { text: 'OK', onPress: () => resetTimer() }
             ]);
             return 0;
@@ -114,7 +114,7 @@ export default function RestTimerScreen() {
           <TouchableOpacity onPress={() => router.back()} className="p-2">
             <Ionicons name="arrow-back" size={28} color="white" />
           </TouchableOpacity>
-          <Text className="text-2xl font-bold text-white">Cronómetro de Descanso</Text>
+          <Text className="text-2xl font-bold text-white">Cron�metro de Descanso</Text>
           <View className="w-10" />
         </View>
       </LinearGradient>
@@ -261,7 +261,7 @@ export default function RestTimerScreen() {
             <Ionicons name="information-circle" size={24} color="#9D12DE" />
             <View className="flex-1">
               <Text className="text-text font-semibold mb-1">
-                Recomendación
+                Recomendaci�n
               </Text>
               <Text className="text-text/70 text-sm">
                 Descansa 1-2 min para hipertrofia, 3-5 min para fuerza

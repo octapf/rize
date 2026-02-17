@@ -1,4 +1,4 @@
-Ôªøimport React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -33,7 +33,7 @@ interface MealPlan {
 const MEAL_PLANS: MealPlan[] = [
   {
     id: '1',
-    name: 'Plan Definici√≥n 2800 kcal',
+    name: 'Plan DefiniciÛn 2800 kcal',
     goal: 'Fat Loss',
     dailyCalories: 2800,
     meals: [
@@ -45,7 +45,7 @@ const MEAL_PLANS: MealPlan[] = [
         protein: 45,
         carbs: 75,
         fats: 18,
-        foods: ['Avena 80g', 'Prote√≠na whey 1 scoop', 'Pl√°tano', 'Mantequilla de man√≠ 15g'],
+        foods: ['Avena 80g', 'ProteÌna whey 1 scoop', 'Pl·tano', 'Mantequilla de manÌ 15g'],
         prepTime: 10,
         difficulty: 'easy',
       },
@@ -72,7 +72,7 @@ const MEAL_PLANS: MealPlan[] = [
         foods: [
           'Arroz integral 150g',
           'Carne res magra 180g',
-          'Br√≥coli 200g',
+          'BrÛcoli 200g',
           'Aguacate 30g',
         ],
         prepTime: 30,
@@ -86,7 +86,7 @@ const MEAL_PLANS: MealPlan[] = [
         protein: 40,
         carbs: 50,
         fats: 8,
-        foods: ['Prote√≠na whey 1.5 scoops', 'Avena 60g', 'Fresas 100g'],
+        foods: ['ProteÌna whey 1.5 scoops', 'Avena 60g', 'Fresas 100g'],
         prepTime: 5,
         difficulty: 'easy',
       },
@@ -99,7 +99,7 @@ const MEAL_PLANS: MealPlan[] = [
         carbs: 35,
         fats: 22,
         foods: [
-          'Salm√≥n 180g',
+          'SalmÛn 180g',
           'Batata 150g',
           'Espinacas 100g',
           'Aceite oliva 10ml',
@@ -115,7 +115,7 @@ const MEAL_PLANS: MealPlan[] = [
         protein: 30,
         carbs: 10,
         fats: 12,
-        foods: ['Case√≠na 1 scoop', 'Almendras 20g'],
+        foods: ['CaseÌna 1 scoop', 'Almendras 20g'],
         prepTime: 2,
         difficulty: 'easy',
       },
@@ -129,7 +129,7 @@ const MEAL_PLANS: MealPlan[] = [
     meals: [
       {
         id: 'm1',
-        name: 'Desayuno Anab√≥lico',
+        name: 'Desayuno AnabÛlico',
         time: '07:00',
         calories: 850,
         protein: 50,
@@ -139,8 +139,8 @@ const MEAL_PLANS: MealPlan[] = [
           'Avena 120g',
           'Huevos enteros x4',
           'Pan integral 2 rebanadas',
-          'Pl√°tano',
-          'Mantequilla man√≠ 20g',
+          'Pl·tano',
+          'Mantequilla manÌ 20g',
         ],
         prepTime: 15,
         difficulty: 'easy',
@@ -153,13 +153,13 @@ const MEAL_PLANS: MealPlan[] = [
         protein: 35,
         carbs: 65,
         fats: 12,
-        foods: ['Arroz blanco 150g', 'At√∫n 120g', 'Aceite oliva 10ml'],
+        foods: ['Arroz blanco 150g', 'At˙n 120g', 'Aceite oliva 10ml'],
         prepTime: 10,
         difficulty: 'easy',
       },
       {
         id: 'm3',
-        name: 'Almuerzo Construcci√≥n',
+        name: 'Almuerzo ConstrucciÛn',
         time: '13:00',
         calories: 950,
         protein: 60,
@@ -189,19 +189,19 @@ const MEAL_PLANS: MealPlan[] = [
       },
       {
         id: 'm5',
-        name: 'Post-Workout Recuperaci√≥n',
+        name: 'Post-Workout RecuperaciÛn',
         time: '19:00',
         calories: 550,
         protein: 45,
         carbs: 70,
         fats: 10,
-        foods: ['Prote√≠na whey 2 scoops', 'Avena 80g', 'Pl√°tano', 'Creatina 5g'],
+        foods: ['ProteÌna whey 2 scoops', 'Avena 80g', 'Pl·tano', 'Creatina 5g'],
         prepTime: 5,
         difficulty: 'easy',
       },
       {
         id: 'm6',
-        name: 'Cena Alta Prote√≠na',
+        name: 'Cena Alta ProteÌna',
         time: '21:30',
         calories: 700,
         protein: 55,
@@ -234,8 +234,8 @@ export default function MealPlanning() {
 
   const viewRecipe = (meal: Meal) => {
     Alert.alert(
-      `√∞≈∏‚Äú‚Äì Receta: ${meal.name}`,
-      `Ingredientes:\n${meal.foods.join('\n')}\n\nTiempo de preparaci√≥n: ${meal.prepTime} min`,
+      `üìñ Receta: ${meal.name}`,
+      `Ingredientes:\n${meal.foods.join('\n')}\n\nTiempo de preparaciÛn: ${meal.prepTime} min`,
       [{ text: 'Entendido' }]
     );
   };
@@ -246,7 +246,7 @@ export default function MealPlanning() {
       'Selecciona tu objetivo',
       [
         {
-          text: 'Definici√≥n',
+          text: 'DefiniciÛn',
           onPress: () => setSelectedPlan(MEAL_PLANS[0]),
         },
         {
@@ -261,7 +261,7 @@ export default function MealPlanning() {
   const generateGroceryList = () => {
     const allFoods = selectedPlan.meals.flatMap((meal) => meal.foods);
     Alert.alert(
-      '√∞≈∏‚Ä∫‚Äô Lista de Compras',
+      'üõí Lista de Compras',
       allFoods.join('\n'),
       [
         { text: 'Copiar' },
@@ -301,7 +301,7 @@ export default function MealPlanning() {
             <Ionicons name="arrow-back" size={24} color="white" />
           </TouchableOpacity>
           <Text className="text-white text-2xl font-bold flex-1 ml-3">
-            Planificaci√≥n de Comidas
+            PlanificaciÛn de Comidas
           </Text>
           <TouchableOpacity onPress={changePlan}>
             <Ionicons name="swap-horizontal" size={24} color="#9D12DE" />
@@ -319,7 +319,7 @@ export default function MealPlanning() {
               <Text className="text-primary text-3xl font-bold">
                 {selectedPlan.dailyCalories}
               </Text>
-              <Text className="text-zinc-400 text-xs">kcal/d√≠a</Text>
+              <Text className="text-zinc-400 text-xs">kcal/dÌa</Text>
             </View>
           </View>
 
@@ -336,7 +336,7 @@ export default function MealPlanning() {
                 </Text>
               </View>
               <View className="items-end">
-                <Text className="text-zinc-400 text-xs mb-1">PROTE√É¬çNA</Text>
+                <Text className="text-zinc-400 text-xs mb-1">PROTE√çNA</Text>
                 <Text className="text-white text-2xl font-bold">{proteinConsumed}g</Text>
               </View>
             </View>
@@ -382,7 +382,7 @@ export default function MealPlanning() {
                     <View className="flex-row items-center gap-2">
                       <View className="bg-zinc-800 rounded px-2 py-1">
                         <Text className={`text-xs font-bold ${getDifficultyColor(meal.difficulty)}`}>
-                          {meal.difficulty === 'easy' ? 'F√°cil' : meal.difficulty === 'medium' ? 'Media' : 'Dif√≠cil'}
+                          {meal.difficulty === 'easy' ? 'F·cil' : meal.difficulty === 'medium' ? 'Media' : 'DifÌcil'}
                         </Text>
                       </View>
                       <View className="flex-row items-center">
@@ -409,11 +409,11 @@ export default function MealPlanning() {
                 <View className="bg-zinc-800 rounded-lg p-3 mb-3">
                   <View className="flex-row items-center justify-between">
                     <View className="flex-1">
-                      <Text className="text-zinc-400 text-xs mb-1">CALOR√É¬çAS</Text>
+                      <Text className="text-zinc-400 text-xs mb-1">CALOR√çAS</Text>
                       <Text className="text-white text-xl font-bold">{meal.calories}</Text>
                     </View>
                     <View className="flex-1">
-                      <Text className="text-zinc-400 text-xs mb-1">PROTE√É¬çNA</Text>
+                      <Text className="text-zinc-400 text-xs mb-1">PROTE√çNA</Text>
                       <Text className="text-red-400 text-xl font-bold">{meal.protein}g</Text>
                     </View>
                     <View className="flex-1">
@@ -458,7 +458,7 @@ export default function MealPlanning() {
               <View className="flex-1 ml-3">
                 <Text className="text-primary font-bold mb-2">Consistencia Nutricional</Text>
                 <Text className="text-primary/80 text-sm">
-                  Sigue el plan 6-7 d√≠as a la semana. La nutrici√≥n es 70% de tus resultados.
+                  Sigue el plan 6-7 dÌas a la semana. La nutriciÛn es 70% de tus resultados.
                 </Text>
               </View>
             </View>

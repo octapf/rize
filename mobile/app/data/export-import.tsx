@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -14,7 +14,7 @@ export default function DataExportImport() {
 
   const exportFormats = [
     { key: 'json', label: 'JSON', icon: 'document-text', size: '~2.5 MB', color: 'blue' },
-    { key: 'csv', label: 'CSV', icon: 'grid', size: '~1.8 MB', color: 'emerald' },
+    { key: 'csv', label: 'CSV', icon: 'grid', size: '~1.8 MB', color: 'primary' },
     { key: 'pdf', label: 'PDF Report', icon: 'document', size: '~5.2 MB', color: 'red' },
   ];
 
@@ -35,7 +35,7 @@ export default function DataExportImport() {
 
   const exportData = (format: string) => {
     Alert.alert(
-      'ðŸ“¥ Exporting Data',
+      '📥 Exporting Data',
       `Generando archivo ${format.toUpperCase()}...\n\nTiempo estimado: 30s`,
       [{ text: 'OK' }]
     );
@@ -43,7 +43,7 @@ export default function DataExportImport() {
 
   const importData = () => {
     Alert.alert(
-      'ðŸ“¤ Import Data',
+      '📤 Import Data',
       'Selecciona archivo JSON o CSV para importar',
       [
         { text: 'Cancelar', style: 'cancel' },
@@ -53,7 +53,7 @@ export default function DataExportImport() {
   };
 
   const createBackup = () => {
-    Alert.alert('Backup Creado ✅', 'Todos tus datos han sido respaldados en iCloud');
+    Alert.alert('Backup Creado ?', 'Todos tus datos han sido respaldados en iCloud');
   };
 
   return (
@@ -94,7 +94,7 @@ export default function DataExportImport() {
                   <Text className="text-white font-bold text-lg">{format.label}</Text>
                   <Text className={`text-${format.color}-400 text-sm`}>{format.size}</Text>
                 </View>
-                <Ionicons name="download" size={24} color={`#${format.color === 'blue' ? '3B82F6' : format.color === 'emerald' ? '10B981' : 'EF4444'}`} />
+                <Ionicons name="download" size={24} color={`#${format.color === 'blue' ? '3B82F6' : format.color === 'primary' ? '9D12DE' : 'EF4444'}`} />
               </View>
             </TouchableOpacity>
           ))}
@@ -128,7 +128,7 @@ export default function DataExportImport() {
                     {option.label}
                   </Text>
                   {option.lastBackup && (
-                    <Text className="text-zinc-400 text-sm">Último backup: {option.lastBackup}</Text>
+                    <Text className="text-zinc-400 text-sm">�ltimo backup: {option.lastBackup}</Text>
                   )}
                 </View>
                 <Ionicons
@@ -164,10 +164,10 @@ export default function DataExportImport() {
               <View className="flex-1 ml-3">
                 <Text className="text-primary/80 font-bold mb-2">Data Security</Text>
                 <Text className="text-primary/60 text-sm">
-                  • Encriptación end-to-end{'\n'}
-                  • Backups automáticos diarios{'\n'}
-                  • Exporta antes de cambiar dispositivo{'\n'}
-                  • Import preserva historial completo
+                  � Encriptaci�n end-to-end{'\n'}
+                  � Backups autom�ticos diarios{'\n'}
+                  � Exporta antes de cambiar dispositivo{'\n'}
+                  � Import preserva historial completo
                 </Text>
               </View>
             </View>

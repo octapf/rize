@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -40,31 +40,31 @@ const DAILY_QUESTS: DailyQuest[] = [
   {
     id: '1',
     title: 'Completa tu Workout',
-    description: 'Finaliza tu entrenamiento programado del día',
+    description: 'Finaliza tu entrenamiento programado del d�a',
     xp: 100,
     category: 'workout',
     completed: true,
-    icon: 'ðŸ’ª',
+    icon: '💪',
     color: 'bg-red-500',
   },
   {
     id: '2',
     title: 'Alcanza tus Macros',
-    description: 'Cumple con proteínas, carbos y grasas del día',
+    description: 'Cumple con prote�nas, carbos y grasas del d�a',
     xp: 75,
     category: 'nutrition',
     completed: true,
-    icon: 'ðŸŽ',
+    icon: '🍎',
     color: 'bg-primary',
   },
   {
     id: '3',
     title: 'Duerme 8 Horas',
-    description: 'Registra al menos 8 horas de sueño',
+    description: 'Registra al menos 8 horas de sue�o',
     xp: 50,
     category: 'recovery',
     completed: false,
-    icon: '😐´',
+    icon: '??�',
     color: 'bg-primary',
   },
   {
@@ -74,17 +74,17 @@ const DAILY_QUESTS: DailyQuest[] = [
     xp: 25,
     category: 'social',
     completed: false,
-    icon: 'ðŸ“¸',
+    icon: '📸',
     color: 'bg-purple-500',
   },
   {
     id: '5',
     title: 'Supera un PR',
-    description: 'Establece un nuevo récord personal',
+    description: 'Establece un nuevo r�cord personal',
     xp: 150,
     category: 'challenge',
     completed: false,
-    icon: 'ðŸ†',
+    icon: '🏆',
     color: 'bg-amber-500',
   },
 ];
@@ -95,23 +95,23 @@ const STREAKS: Streak[] = [
     current: 12,
     best: 28,
     active: true,
-    icon: 'ðŸ”¥',
+    icon: '🔥',
     color: 'bg-orange-500',
   },
   {
-    name: 'Nutrición Perfecta',
+    name: 'Nutrici�n Perfecta',
     current: 5,
     best: 14,
     active: true,
-    icon: 'ðŸ¥—',
+    icon: '🥗',
     color: 'bg-primary',
   },
   {
-    name: 'Sueño Ã“ptimo',
+    name: 'Sue�o Óptimo',
     current: 3,
     best: 9,
     active: true,
-    icon: 'ðŸŒ™',
+    icon: '🌙',
     color: 'bg-indigo-500',
   },
   {
@@ -119,7 +119,7 @@ const STREAKS: Streak[] = [
     current: 0,
     best: 7,
     active: false,
-    icon: 'ðŸ’¯',
+    icon: '💯',
     color: 'bg-purple-500',
   },
 ];
@@ -134,10 +134,10 @@ const LEVEL_PROGRESS: LevelProgress = {
 const WEEKLY_BONUS = [
   { day: 'Lun', completed: true },
   { day: 'Mar', completed: true },
-  { day: 'Mié', completed: true },
+  { day: 'Mi�', completed: true },
   { day: 'Jue', completed: false },
   { day: 'Vie', completed: false },
-  { day: 'Sáb', completed: false },
+  { day: 'S�b', completed: false },
   { day: 'Dom', completed: false },
 ];
 
@@ -153,7 +153,7 @@ export default function DailyQuests() {
         )
       );
       Alert.alert(
-        `✅ Quest Completada!`,
+        `? Quest Completada!`,
         `+${quest.xp} XP ganados\n\n"${quest.title}"`,
         [{ text: 'Awesome!' }]
       );
@@ -225,7 +225,7 @@ export default function DailyQuests() {
           </View>
 
           <Text className="text-zinc-400 text-xs text-center">
-            ¡{Math.round(progressPercent)}% hacia el Nivel {LEVEL_PROGRESS.currentLevel + 1}!
+            �{Math.round(progressPercent)}% hacia el Nivel {LEVEL_PROGRESS.currentLevel + 1}!
           </Text>
         </View>
 
@@ -244,7 +244,7 @@ export default function DailyQuests() {
             </View>
             <View className="flex-1 items-end">
               <Text className="text-zinc-400 text-xs mb-1">RACHA</Text>
-              <Text className="text-amber-400 text-3xl font-bold">12ðŸ”¥</Text>
+              <Text className="text-amber-400 text-3xl font-bold">12🔥</Text>
             </View>
           </View>
         </View>
@@ -338,7 +338,7 @@ export default function DailyQuests() {
           <View className="bg-zinc-900 rounded-xl p-4 border border-zinc-800 mb-6 mt-3">
             <Text className="text-white font-bold text-lg mb-3">Bonus Semanal</Text>
             <Text className="text-zinc-400 text-sm mb-4">
-              Completa todas las quests 7 días seguidos para ganar 500 XP bonus
+              Completa todas las quests 7 d�as seguidos para ganar 500 XP bonus
             </Text>
             <View className="flex-row items-center justify-between">
               {WEEKLY_BONUS.map((day, index) => (
@@ -375,7 +375,7 @@ export default function DailyQuests() {
                   <View className="flex-1">
                     <Text className="text-white font-bold">{streak.name}</Text>
                     <Text className="text-zinc-400 text-sm">
-                      Mejor: {streak.best} días
+                      Mejor: {streak.best} d�as
                     </Text>
                   </View>
                 </View>
@@ -387,14 +387,14 @@ export default function DailyQuests() {
                   >
                     {streak.current}
                   </Text>
-                  <Text className="text-zinc-400 text-xs">días</Text>
+                  <Text className="text-zinc-400 text-xs">d�as</Text>
                 </View>
               </View>
 
               {streak.active && (
                 <View className="bg-primary/10 rounded-lg p-2 border border-primary/30">
                   <Text className="text-primary text-xs text-center">
-                    ✓ ¡Racha Activa! ¡No la rompas!
+                    ? �Racha Activa! �No la rompas!
                   </Text>
                 </View>
               )}
@@ -402,7 +402,7 @@ export default function DailyQuests() {
               {!streak.active && (
                 <View className="bg-zinc-800 rounded-lg p-2">
                   <Text className="text-zinc-400 text-xs text-center">
-                    Racha perdida. ¡Empieza de nuevo hoy!
+                    Racha perdida. �Empieza de nuevo hoy!
                   </Text>
                 </View>
               )}
@@ -420,8 +420,8 @@ export default function DailyQuests() {
                   Gamifica tu Progreso
                 </Text>
                 <Text className="text-amber-300 text-sm">
-                  Completa quests, mantén rachas y sube de nivel. Convierte cada
-                  entrenamiento en una victoria épica.
+                  Completa quests, mant�n rachas y sube de nivel. Convierte cada
+                  entrenamiento en una victoria �pica.
                 </Text>
               </View>
             </View>

@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -36,14 +36,14 @@ const CHECKLIST_ITEMS: ChecklistItem[] = [
     id: '1',
     category: 'warmup',
     label: 'Cardio 5-10 min',
-    description: 'Elevar temperatura corporal y frecuencia cardíaca',
+    description: 'Elevar temperatura corporal y frecuencia card�aca',
     isCompleted: false,
     isRequired: true,
   },
   {
     id: '2',
     category: 'warmup',
-    label: 'Calentamiento dinámico',
+    label: 'Calentamiento din�mico',
     description: 'Movimientos activos rango completo',
     isCompleted: false,
     isRequired: true,
@@ -51,7 +51,7 @@ const CHECKLIST_ITEMS: ChecklistItem[] = [
   {
     id: '3',
     category: 'warmup',
-    label: 'Series de aproximación',
+    label: 'Series de aproximaci�n',
     description: 'Sets ligeros del ejercicio principal',
     isCompleted: false,
     isRequired: true,
@@ -61,14 +61,14 @@ const CHECKLIST_ITEMS: ChecklistItem[] = [
     id: '4',
     category: 'mobility',
     label: 'Movilidad articular',
-    description: 'Círculos de hombros, caderas, tobillos',
+    description: 'C�rculos de hombros, caderas, tobillos',
     isCompleted: false,
     isRequired: true,
   },
   {
     id: '5',
     category: 'mobility',
-    label: 'Activación glúteos',
+    label: 'Activaci�n gl�teos',
     description: 'Clamshells, puentes, bandas',
     isCompleted: false,
     isRequired: false,
@@ -76,7 +76,7 @@ const CHECKLIST_ITEMS: ChecklistItem[] = [
   {
     id: '6',
     category: 'mobility',
-    label: 'Activación core',
+    label: 'Activaci�n core',
     description: 'Planchas, dead bugs, bird dogs',
     isCompleted: false,
     isRequired: false,
@@ -94,7 +94,7 @@ const CHECKLIST_ITEMS: ChecklistItem[] = [
     id: '8',
     category: 'equipment',
     label: 'Espacio despejado',
-    description: 'Ãrea de trabajo segura sin obstáculos',
+    description: 'Área de trabajo segura sin obst�culos',
     isCompleted: false,
     isRequired: true,
   },
@@ -102,7 +102,7 @@ const CHECKLIST_ITEMS: ChecklistItem[] = [
     id: '9',
     category: 'equipment',
     label: 'Accesorios listos',
-    description: 'Cinturón, muñequeras, bandas si necesitas',
+    description: 'Cintur�n, mu�equeras, bandas si necesitas',
     isCompleted: false,
     isRequired: false,
   },
@@ -119,14 +119,14 @@ const CHECKLIST_ITEMS: ChecklistItem[] = [
     id: '11',
     category: 'nutrition',
     label: 'Comida pre-workout',
-    description: '1-2h antes: carbos + proteína moderada',
+    description: '1-2h antes: carbos + prote�na moderada',
     isCompleted: false,
     isRequired: true,
   },
   {
     id: '12',
     category: 'nutrition',
-    label: 'Cafeína (opcional)',
+    label: 'Cafe�na (opcional)',
     description: '200-400mg 30-60 min antes si usas',
     isCompleted: false,
     isRequired: false,
@@ -136,14 +136,14 @@ const CHECKLIST_ITEMS: ChecklistItem[] = [
     id: '13',
     category: 'mindset',
     label: 'Objetivo claro',
-    description: 'Sabes qué vas a entrenar y tus metas',
+    description: 'Sabes qu� vas a entrenar y tus metas',
     isCompleted: false,
     isRequired: true,
   },
   {
     id: '14',
     category: 'mindset',
-    label: 'Música/Focus',
+    label: 'M�sica/Focus',
     description: 'Playlist lista o ambiente adecuado',
     isCompleted: false,
     isRequired: false,
@@ -187,8 +187,8 @@ export default function PreWorkoutChecklist() {
   const categories = [
     { key: 'warmup', label: 'Calentamiento', icon: 'flame', color: 'red' },
     { key: 'mobility', label: 'Movilidad', icon: 'body', color: 'blue' },
-    { key: 'equipment', label: 'Equipo', icon: 'barbell', color: 'emerald' },
-    { key: 'nutrition', label: 'Nutrición', icon: 'restaurant', color: 'amber' },
+    { key: 'equipment', label: 'Equipo', icon: 'barbell', color: 'primary' },
+    { key: 'nutrition', label: 'Nutrici�n', icon: 'restaurant', color: 'amber' },
     { key: 'mindset', label: 'Mental', icon: 'bulb', color: 'purple' },
   ];
 
@@ -221,7 +221,7 @@ export default function PreWorkoutChecklist() {
     
     if (completedRequired < requiredCount) {
       Alert.alert(
-        'âš ï¸ Items Requeridos Pendientes',
+        '⚠️ Items Requeridos Pendientes',
         `Completa los ${requiredCount - completedRequired} items requeridos restantes para entrenar seguro.`,
         [
           { text: 'Seguir Completando', style: 'cancel' },
@@ -255,14 +255,14 @@ export default function PreWorkoutChecklist() {
     
     setSessions([newSession, ...sessions]);
     
-    const scoreEmoji = readinessScore >= 90 ? 'ðŸ”¥' : readinessScore >= 70 ? 'ðŸ’ª' : 'âš ï¸';
+    const scoreEmoji = readinessScore >= 90 ? '🔥' : readinessScore >= 70 ? '💪' : '⚠️';
     
     Alert.alert(
       `${scoreEmoji} Readiness Score: ${readinessScore}/100`,
       `${completedCount}/${checklist.length} completados\n\n${
-        readinessScore >= 90 ? '¡Perfecto! Listo para un gran workout' :
-        readinessScore >= 70 ? 'Bien preparado. ¡A entrenar!' :
-        'Considera completar más items para mejor resultado'
+        readinessScore >= 90 ? '�Perfecto! Listo para un gran workout' :
+        readinessScore >= 70 ? 'Bien preparado. �A entrenar!' :
+        'Considera completar m�s items para mejor resultado'
       }`,
       [
         { text: 'Entendido', onPress: () => resetChecklist() }
@@ -273,11 +273,11 @@ export default function PreWorkoutChecklist() {
   const skipChecklist = () => {
     Alert.alert(
       'Saltar Checklist',
-      '¿Seguro quieres saltarte el checklist pre-workout?\n\nNo recomendado: aumenta riesgo de lesión.',
+      '�Seguro quieres saltarte el checklist pre-workout?\n\nNo recomendado: aumenta riesgo de lesi�n.',
       [
         { text: 'No, Completar', style: 'cancel' },
         {
-          text: 'Sí, Saltar',
+          text: 'S�, Saltar',
           style: 'destructive',
           onPress: () => {
             const newSession: ChecklistSession = {
@@ -291,7 +291,7 @@ export default function PreWorkoutChecklist() {
             };
             setSessions([newSession, ...sessions]);
             resetChecklist();
-            Alert.alert('âš ï¸ Checklist Saltado', 'Calienta bien y ten cuidado');
+            Alert.alert('⚠️ Checklist Saltado', 'Calienta bien y ten cuidado');
           }
         }
       ]
@@ -407,7 +407,7 @@ export default function PreWorkoutChecklist() {
         <View className="px-6 pt-6">
           {/* Progress Card */}
           <View className={`bg-gradient-to-r ${
-            readinessScore >= 90 ? 'from-emerald-500 to-green-500' :
+            readinessScore >= 90 ? 'from-primary to-primary/100' :
             readinessScore >= 70 ? 'from-blue-500 to-cyan-500' :
             'from-amber-500 to-orange-500'
           } rounded-xl p-6 mb-6`}>
@@ -512,7 +512,7 @@ export default function PreWorkoutChecklist() {
             >
               <Ionicons name="checkmark-circle" size={24} color="white" />
               <Text className="text-white font-bold text-lg ml-2">
-                {completedRequired === requiredCount ? 'Empezar Workout' : 'Continuar con Precaución'}
+                {completedRequired === requiredCount ? 'Empezar Workout' : 'Continuar con Precauci�n'}
               </Text>
             </TouchableOpacity>
 
@@ -541,14 +541,14 @@ export default function PreWorkoutChecklist() {
               <Ionicons name="information-circle" size={20} color="#9D12DE" />
               <View className="flex-1 ml-3">
                 <Text className="text-primary/80 font-bold mb-2">
-                  Por Qué Usar el Checklist
+                  Por Qu� Usar el Checklist
                 </Text>
                 <Text className="text-primary/60 text-sm">
-                  • Reduce riesgo de lesión hasta 60%{'\n'}
-                  • Mejora rendimiento 15-20%{'\n'}
-                  • Crea rutina y consistencia{'\n'}
-                  • Identifica gaps en preparación{'\n'}
-                  • 90%+ readiness = workout óptimo
+                  � Reduce riesgo de lesi�n hasta 60%{'\n'}
+                  � Mejora rendimiento 15-20%{'\n'}
+                  � Crea rutina y consistencia{'\n'}
+                  � Identifica gaps en preparaci�n{'\n'}
+                  � 90%+ readiness = workout �ptimo
                 </Text>
               </View>
             </View>

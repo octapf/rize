@@ -1,4 +1,4 @@
-Ôªøimport React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -26,8 +26,8 @@ export default function PerformanceInsights() {
     { key: 'all', label: 'Todos', icon: 'apps', color: 'blue' },
     { key: 'strength', label: 'Fuerza', icon: 'barbell', color: 'red' },
     { key: 'volume', label: 'Volumen', icon: 'fitness', color: 'purple' },
-    { key: 'recovery', label: 'Recovery', icon: 'moon', color: 'emerald' },
-    { key: 'nutrition', label: 'Nutrici√≥n', icon: 'nutrition', color: 'amber' },
+    { key: 'recovery', label: 'Recovery', icon: 'moon', color: 'primary' },
+    { key: 'nutrition', label: 'NutriciÛn', icon: 'nutrition', color: 'amber' },
   ];
 
   const insights: PerformanceInsight[] = [
@@ -35,9 +35,9 @@ export default function PerformanceInsights() {
       id: '1',
       category: 'strength',
       title: 'Squat PR Inminente',
-      description: 'Basado en tu progresi√≥n lineal de las √∫ltimas 6 semanas (+2.5kg/semana), est√°s cerca de un PR.',
+      description: 'Basado en tu progresiÛn lineal de las ˙ltimas 6 semanas (+2.5kg/semana), est·s cerca de un PR.',
       severity: 'positive',
-      recommendation: 'Intenta 1RM de 140kg en tu pr√≥xima sesi√≥n de pierna. Probabilidad de √©xito: 87%',
+      recommendation: 'Intenta 1RM de 140kg en tu prÛxima sesiÛn de pierna. Probabilidad de Èxito: 87%',
       impact: 95,
       icon: 'trending-up',
     },
@@ -45,7 +45,7 @@ export default function PerformanceInsights() {
       id: '2',
       category: 'volume',
       title: 'Volumen de Pecho Bajo',
-      description: 'Tu volumen semanal de pecho (12 sets) est√° 40% por debajo del rango √≥ptimo para hypertrophy.',
+      description: 'Tu volumen semanal de pecho (12 sets) est· 40% por debajo del rango Ûptimo para hypertrophy.',
       severity: 'warning',
       recommendation: 'Incrementa a 18-20 sets/semana. Agrega 2 sets de incline press y 2 sets de flies.',
       impact: 78,
@@ -54,30 +54,30 @@ export default function PerformanceInsights() {
     {
       id: '3',
       category: 'recovery',
-      title: 'Excelente Recuperaci√≥n',
-      description: 'Tus m√©tricas de recovery (sue√±o 8h, frecuencia card√≠aca 58 bpm) est√°n √≥ptimas.',
+      title: 'Excelente RecuperaciÛn',
+      description: 'Tus mÈtricas de recovery (sueÒo 8h, frecuencia cardÌaca 58 bpm) est·n Ûptimas.',
       severity: 'positive',
-      recommendation: 'Mant√©n tu rutina actual de sue√±o y nutrici√≥n. Considera aumentar intensidad.',
+      recommendation: 'MantÈn tu rutina actual de sueÒo y nutriciÛn. Considera aumentar intensidad.',
       impact: 92,
       icon: 'checkmark-circle',
     },
     {
       id: '4',
       category: 'frequency',
-      title: 'Frecuencia de Pierna Sub√≥ptima',
+      title: 'Frecuencia de Pierna SubÛptima',
       description: 'Entrenas pierna solo 1x/semana. Para tus objetivos de hypertrophy, esto es insuficiente.',
       severity: 'critical',
-      recommendation: 'Cambia a split de pierna 2x/semana (pesado + volumen). Mejorar√° crecimiento 30-40%.',
+      recommendation: 'Cambia a split de pierna 2x/semana (pesado + volumen). Mejorar· crecimiento 30-40%.',
       impact: 85,
       icon: 'alert-circle',
     },
     {
       id: '5',
       category: 'nutrition',
-      title: 'Prote√≠na Post-Workout Baja',
-      description: 'Consumes solo 15g de prote√≠na post-entrenamiento. √É‚Äúptimo es 25-40g.',
+      title: 'ProteÌna Post-Workout Baja',
+      description: 'Consumes solo 15g de proteÌna post-entrenamiento. √ìptimo es 25-40g.',
       severity: 'warning',
-      recommendation: 'Agrega un scoop adicional de whey (25g) o equivalente en comida s√≥lida.',
+      recommendation: 'Agrega un scoop adicional de whey (25g) o equivalente en comida sÛlida.',
       impact: 68,
       icon: 'nutrition',
     },
@@ -95,9 +95,9 @@ export default function PerformanceInsights() {
       id: '7',
       category: 'volume',
       title: 'Superando Rango de Volumen',
-      description: 'Volumen total semanal de 32 sets est√° en el l√≠mite superior. Riesgo de overtraining.',
+      description: 'Volumen total semanal de 32 sets est· en el lÌmite superior. Riesgo de overtraining.',
       severity: 'warning',
-      recommendation: 'Mant√©n o reduce ligeramente. Monitorea fatiga y performance.',
+      recommendation: 'MantÈn o reduce ligeramente. Monitorea fatiga y performance.',
       impact: 65,
       icon: 'alert',
     },
@@ -105,29 +105,29 @@ export default function PerformanceInsights() {
       id: '8',
       category: 'recovery',
       title: 'Deload Recomendado',
-      description: 'Llevas 8 semanas de progresi√≥n lineal sin deload. Indicadores de fatiga acumulada detectados.',
+      description: 'Llevas 8 semanas de progresiÛn lineal sin deload. Indicadores de fatiga acumulada detectados.',
       severity: 'critical',
-      recommendation: 'Planea deload week pr√≥xima semana: reduce volumen 40-50%, mant√©n intensidad.',
+      recommendation: 'Planea deload week prÛxima semana: reduce volumen 40-50%, mantÈn intensidad.',
       impact: 88,
       icon: 'moon',
     },
     {
       id: '9',
       category: 'nutrition',
-      title: 'D√©ficit Cal√≥rico Muy Agresivo',
-      description: 'Tu d√©ficit actual (-800 cal/d√≠a) es muy alto para tu nivel de actividad.',
+      title: 'DÈficit CalÛrico Muy Agresivo',
+      description: 'Tu dÈficit actual (-800 cal/dÌa) es muy alto para tu nivel de actividad.',
       severity: 'critical',
-      recommendation: 'Reduce d√©ficit a -500 cal/d√≠a para preservar m√∫sculo. P√©rdida m√°s lenta pero sostenible.',
+      recommendation: 'Reduce dÈficit a -500 cal/dÌa para preservar m˙sculo. PÈrdida m·s lenta pero sostenible.',
       impact: 80,
       icon: 'flame',
     },
     {
       id: '10',
       category: 'strength',
-      title: 'Progresi√≥n Lineal Perfecta',
-      description: 'Bench press aumentando 2.5kg cada 2 semanas. Patr√≥n √≥ptimo de progresi√≥n.',
+      title: 'ProgresiÛn Lineal Perfecta',
+      description: 'Bench press aumentando 2.5kg cada 2 semanas. PatrÛn Ûptimo de progresiÛn.',
       severity: 'positive',
-      recommendation: 'Contin√∫a con este protocolo hasta estancarte. Luego cambia a periodizaci√≥n ondulante.',
+      recommendation: 'Contin˙a con este protocolo hasta estancarte. Luego cambia a periodizaciÛn ondulante.',
       impact: 90,
       icon: 'trophy',
     },
@@ -139,7 +139,7 @@ export default function PerformanceInsights() {
 
   const getSeverityColor = (severity: string) => {
     switch (severity) {
-      case 'positive': return 'emerald';
+      case 'positive': return 'primary';
       case 'neutral': return 'blue';
       case 'warning': return 'amber';
       case 'critical': return 'red';
@@ -152,7 +152,7 @@ export default function PerformanceInsights() {
       case 'positive': return 'POSITIVO';
       case 'neutral': return 'INFO';
       case 'warning': return 'ALERTA';
-      case 'critical': return 'CR√É¬çTICO';
+      case 'critical': return 'CR√çTICO';
       default: return '';
     }
   };
@@ -213,7 +213,7 @@ export default function PerformanceInsights() {
             <View className="flex-1 bg-red-500/10 rounded-xl p-4 border border-red-500/30">
               <Ionicons name="alert-circle" size={24} color="#EF4444" />
               <Text className="text-red-400 font-bold text-2xl mt-2">{stats.critical}</Text>
-              <Text className="text-red-300 text-sm">Cr√≠ticos</Text>
+              <Text className="text-red-300 text-sm">CrÌticos</Text>
             </View>
           </View>
 
@@ -281,7 +281,7 @@ export default function PerformanceInsights() {
 
                     <View className={`bg-${color}-500/20 rounded-lg p-3`}>
                       <Text className={`text-${color}-400 font-bold text-sm mb-1`}>
-                        Recomendaci√≥n:
+                        RecomendaciÛn:
                       </Text>
                       <Text className={`text-${color}-300 text-sm`}>
                         {insight.recommendation}
@@ -320,12 +320,12 @@ export default function PerformanceInsights() {
                   Sobre Performance Insights
                 </Text>
                 <Text className="text-primary/60 text-sm">
-                  ‚Ä¢ Actualizados diariamente basado en tus datos{'\n'}
-                  ‚Ä¢ Algoritmos ML detectan patrones y oportunidades{'\n'}
-                  ‚Ä¢ Prioriza insights cr√≠ticos primero{'\n'}
-                  ‚Ä¢ Implementa 1-2 recomendaciones a la vez{'\n'}
-                  ‚Ä¢ Insights positivos = sigue haciendo lo mismo{'\n'}
-                  ‚Ä¢ Re-eval√∫a cada 2 semanas despu√©s de cambios
+                  ï Actualizados diariamente basado en tus datos{'\n'}
+                  ï Algoritmos ML detectan patrones y oportunidades{'\n'}
+                  ï Prioriza insights crÌticos primero{'\n'}
+                  ï Implementa 1-2 recomendaciones a la vez{'\n'}
+                  ï Insights positivos = sigue haciendo lo mismo{'\n'}
+                  ï Re-eval˙a cada 2 semanas despuÈs de cambios
                 </Text>
               </View>
             </View>

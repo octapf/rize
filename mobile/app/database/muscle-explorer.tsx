@@ -1,4 +1,4 @@
-ï»¿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -48,7 +48,7 @@ export default function MuscleGroupExplorer() {
       key: 'legs',
       name: 'Legs',
       icon: 'fitness',
-      color: 'emerald',
+      color: 'primary',
       mainMuscles: ['Quadriceps', 'Hamstrings', 'Glutes', 'Calves'],
       functions: ['Extension', 'Flexion', 'Hip Extension', 'Plantar Flexion'],
       bestExercises: [
@@ -204,11 +204,11 @@ export default function MuscleGroupExplorer() {
           <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
             <Text className="text-primary/80 font-bold mb-2">Training Tips</Text>
             <Text className="text-primary/60 text-sm">
-              â€¢ Progressive overload cada semana{'\n'}
-              â€¢ Full ROM en cada rep{'\n'}
-              â€¢ Mind-muscle connection{'\n'}
-              â€¢ Frequency &gt; volume en beginners{'\n'}
-              â€¢ Recovery 48h entre sesiones
+              • Progressive overload cada semana{'\n'}
+              • Full ROM en cada rep{'\n'}
+              • Mind-muscle connection{'\n'}
+              • Frequency &gt; volume en beginners{'\n'}
+              • Recovery 48h entre sesiones
             </Text>
           </View>
         </View>

@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -60,10 +60,10 @@ export default function PeriodizationMastery() {
     linear: {
       name: 'Linear Periodization',
       icon: 'trending-up',
-      color: 'emerald',
+      color: 'primary',
       structure: {
         title: 'Linear Periodization Structure',
-        concept: 'Progress from high volume/low intensity â†’ low volume/high intensity',
+        concept: 'Progress from high volume/low intensity → low volume/high intensity',
         phases: [
           {
             phase: 'Hypertrophy (Weeks 1-4)',
@@ -382,7 +382,7 @@ export default function PeriodizationMastery() {
         concept: 'Mini-cycles within a session or week',
         within_session: {
           type: 'Intra-Session Waves',
-          example: 'Wave 1: 80%, 85%, 90% â†’ Wave 2: 82%, 87%, 92%',
+          example: 'Wave 1: 80%, 85%, 90% → Wave 2: 82%, 87%, 92%',
           benefit: 'Post-activation potentiation',
         },
         across_weeks: {
@@ -394,7 +394,7 @@ export default function PeriodizationMastery() {
       pendulum: {
         title: 'Pendulum Periodization',
         concept: 'Swing between volume and intensity phases',
-        structure: 'Vol â†’ Int â†’ Vol â†’ Int (shorter phases)',
+        structure: 'Vol → Int → Vol → Int (shorter phases)',
         example: '2 weeks volume, 2 weeks intensity, repeat',
         benefit: 'Constant variation without long phases',
       },
@@ -424,7 +424,7 @@ export default function PeriodizationMastery() {
       beginner_path: {
         title: 'Beginner (Year 1)',
         model: 'LINEAR PERIODIZATION',
-        structure: '12 weeks: Hypertrophy â†’ Strength â†’ Peak',
+        structure: '12 weeks: Hypertrophy → Strength → Peak',
         example: 'Weeks 1-4: 4x10, Weeks 5-8: 5x5, Weeks 9-12: 5x3',
       },
       intermediate_path: {
@@ -458,7 +458,7 @@ export default function PeriodizationMastery() {
   const getColorClass = (color: string) => {
     const colors: { [key: string]: string } = {
       blue: 'bg-primary',
-      emerald: 'bg-primary',
+      primary: 'bg-primary',
       purple: 'bg-purple-500',
       amber: 'bg-amber-500',
       red: 'bg-red-500',
@@ -534,32 +534,32 @@ export default function PeriodizationMastery() {
           <View className="bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-xl p-5 border border-purple-500/30 mb-6">
             <Text className="text-purple-400 font-bold text-lg mb-3">Periodization Models</Text>
             <Text className="text-purple-300 text-sm mb-2">
-              ðŸ“ˆ Linear: High volume â†’ Low volume, Low intensity â†’ High intensity
+              📈 Linear: High volume → Low volume, Low intensity → High intensity
             </Text>
             <Text className="text-purple-300 text-sm mb-2">
-              🧱 Block: Sequential blocks (Accumulation â†’ Intensification â†’ Realization)
+              ?? Block: Sequential blocks (Accumulation → Intensification → Realization)
             </Text>
             <Text className="text-purple-300 text-sm mb-2">
-              ðŸ”„ DUP: Vary volume/intensity within week (Heavy/Volume/Power)
+              🔄 DUP: Vary volume/intensity within week (Heavy/Volume/Power)
             </Text>
             <Text className="text-purple-300 text-sm">
-              🚀 Conjugate: Max Effort + Dynamic Effort, rotating variations
+              ?? Conjugate: Max Effort + Dynamic Effort, rotating variations
             </Text>
           </View>
 
           <View className="bg-cyan-500/10 rounded-xl p-5 border border-cyan-500/30 mb-6">
             <Text className="text-cyan-400 font-bold text-lg mb-3">Choosing a Model</Text>
             <Text className="text-cyan-300 text-sm mb-2">
-              ðŸ”° Beginner: Linear (simple, works great)
+              🔰 Beginner: Linear (simple, works great)
             </Text>
             <Text className="text-cyan-300 text-sm mb-2">
-              ðŸ“Š Intermediate: Block or DUP (try both!)
+              📊 Intermediate: Block or DUP (try both!)
             </Text>
             <Text className="text-cyan-300 text-sm mb-2">
-              ðŸ† Advanced: Any model, possibly mixed
+              🏆 Advanced: Any model, possibly mixed
             </Text>
             <Text className="text-cyan-300 text-sm">
-              ðŸ’ª Bench focus: DUP (high frequency)
+              💪 Bench focus: DUP (high frequency)
             </Text>
           </View>
         </View>

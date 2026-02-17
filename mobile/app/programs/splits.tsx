@@ -1,4 +1,4 @@
-Ôªøimport React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -30,67 +30,67 @@ const TRAINING_SPLITS: TrainingSplit[] = [
   {
     id: '1',
     name: 'Push / Pull / Legs (PPL)',
-    description: 'Divisi√≥n cl√°sica de 6 d√≠as por semana',
-    frequency: '6 d√≠as/semana',
+    description: 'DivisiÛn cl·sica de 6 dÌas por semana',
+    frequency: '6 dÌas/semana',
     level: 'intermediate',
     goal: 'Hipertrofia + Fuerza',
     schedule: [
       {
         day: 'Lunes - Push',
-        focus: 'Pecho, Hombros, Tr√≠ceps',
-        exercises: ['Press Banca', 'Press Inclinado', 'Press Militar', 'Elevaciones Laterales', 'Tr√≠ceps Polea'],
+        focus: 'Pecho, Hombros, TrÌceps',
+        exercises: ['Press Banca', 'Press Inclinado', 'Press Militar', 'Elevaciones Laterales', 'TrÌceps Polea'],
       },
       {
         day: 'Martes - Pull',
-        focus: 'Espalda, B√≠ceps',
+        focus: 'Espalda, BÌceps',
         exercises: ['Peso Muerto', 'Dominadas', 'Remo con Barra', 'Face Pulls', 'Curl con Barra'],
       },
       {
-        day: 'Mi√©rcoles - Legs',
+        day: 'MiÈrcoles - Legs',
         focus: 'Piernas completas',
         exercises: ['Sentadilla', 'Prensa', 'RDL', 'Curl Femoral', 'Elevaciones Gemelos'],
       },
       {
         day: 'Jueves - Push',
-        focus: 'Pecho, Hombros, Tr√≠ceps',
-        exercises: ['Press Inclinado con Mancuernas', 'Aperturas', 'Arnold Press', 'P√°jaros', 'Fondos'],
+        focus: 'Pecho, Hombros, TrÌceps',
+        exercises: ['Press Inclinado con Mancuernas', 'Aperturas', 'Arnold Press', 'P·jaros', 'Fondos'],
       },
       {
         day: 'Viernes - Pull',
-        focus: 'Espalda, B√≠ceps',
+        focus: 'Espalda, BÌceps',
         exercises: ['Remo con Mancuernas', 'Pulldowns', 'Remo en Polea', 'Curl Martillo', 'Curl Concentrado'],
       },
       {
-        day: 'S√°bado - Legs',
+        day: 'S·bado - Legs',
         focus: 'Piernas completas',
         exercises: ['Sentadilla Frontal', 'Zancadas', 'Peso Muerto Sumo', 'Extensiones', 'Gemelos Sentado'],
       },
     ],
     pros: [
       'Alta frecuencia (2x semana por grupo)',
-      '√É‚Äúptimo para hipertrofia',
-      'Buena recuperaci√≥n entre grupos',
+      '√ìptimo para hipertrofia',
+      'Buena recuperaciÛn entre grupos',
       'Flexible y adaptable',
     ],
     cons: [
-      'Requiere 6 d√≠as/semana',
+      'Requiere 6 dÌas/semana',
       'Sesiones largas',
       'Puede ser demandante',
     ],
-    icon: '√∞≈∏‚Äô¬™',
+    icon: 'üí™',
   },
   {
     id: '2',
     name: 'Upper / Lower',
-    description: 'Divisi√≥n de 4 d√≠as alternando tren superior e inferior',
-    frequency: '4 d√≠as/semana',
+    description: 'DivisiÛn de 4 dÌas alternando tren superior e inferior',
+    frequency: '4 dÌas/semana',
     level: 'beginner',
     goal: 'Fuerza + Hipertrofia',
     schedule: [
       {
         day: 'Lunes - Upper',
         focus: 'Tren superior completo',
-        exercises: ['Press Banca', 'Remo con Barra', 'Press Militar', 'Dominadas', 'Curl + Tr√≠ceps'],
+        exercises: ['Press Banca', 'Remo con Barra', 'Press Militar', 'Dominadas', 'Curl + TrÌceps'],
       },
       {
         day: 'Martes - Lower',
@@ -99,17 +99,17 @@ const TRAINING_SPLITS: TrainingSplit[] = [
       },
       {
         day: 'Jueves - Upper',
-        focus: 'Tren superior (variaci√≥n)',
+        focus: 'Tren superior (variaciÛn)',
         exercises: ['Press Inclinado', 'Remo con Mancuernas', 'Aperturas', 'Pulldowns', 'Trabajo Brazos'],
       },
       {
         day: 'Viernes - Lower',
-        focus: 'Tren inferior (variaci√≥n)',
+        focus: 'Tren inferior (variaciÛn)',
         exercises: ['Sentadilla Frontal', 'Peso Muerto', 'Zancadas', 'Extensiones', 'Gemelos'],
       },
     ],
     pros: [
-      'Solo 4 d√≠as/semana',
+      'Solo 4 dÌas/semana',
       'Alta frecuencia (2x grupo)',
       'Ideal principiantes',
       'Balance fuerza/hipertrofia',
@@ -119,13 +119,13 @@ const TRAINING_SPLITS: TrainingSplit[] = [
       'Fatiga en lower days',
       'Menos enfoque por grupo',
     ],
-    icon: '√¢¬¨‚Ä†√Ø¬∏¬è√¢¬¨‚Ä°√Ø¬∏¬è',
+    icon: '‚¨ÜÔ∏è‚¨áÔ∏è',
   },
   {
     id: '3',
-    name: 'Bro Split (5 d√≠as)',
-    description: 'Un grupo muscular por d√≠a',
-    frequency: '5 d√≠as/semana',
+    name: 'Bro Split (5 dÌas)',
+    description: 'Un grupo muscular por dÌa',
+    frequency: '5 dÌas/semana',
     level: 'intermediate',
     goal: 'Hipertrofia',
     schedule: [
@@ -140,49 +140,49 @@ const TRAINING_SPLITS: TrainingSplit[] = [
         exercises: ['Peso Muerto', 'Dominadas', 'Remo con Barra', 'Remo con Mancuernas', 'Pulldowns'],
       },
       {
-        day: 'Mi√©rcoles - Piernas',
-        focus: 'Cu√°driceps + Isquios',
+        day: 'MiÈrcoles - Piernas',
+        focus: 'Cu·driceps + Isquios',
         exercises: ['Sentadilla', 'Prensa', 'RDL', 'Curl Femoral', 'Extensiones', 'Gemelos'],
       },
       {
         day: 'Jueves - Hombros',
         focus: 'Deltoides',
-        exercises: ['Press Militar', 'Elevaciones Laterales', 'P√°jaros', 'Arnold Press', 'Face Pulls'],
+        exercises: ['Press Militar', 'Elevaciones Laterales', 'P·jaros', 'Arnold Press', 'Face Pulls'],
       },
       {
         day: 'Viernes - Brazos',
-        focus: 'B√≠ceps + Tr√≠ceps',
-        exercises: ['Curl con Barra', 'Curl Martillo', 'Tr√≠ceps Polea', 'Fondos', 'Curl Concentrado'],
+        focus: 'BÌceps + TrÌceps',
+        exercises: ['Curl con Barra', 'Curl Martillo', 'TrÌceps Polea', 'Fondos', 'Curl Concentrado'],
       },
     ],
     pros: [
-      'Enfoque total en un m√∫sculo',
+      'Enfoque total en un m˙sculo',
       'Alto volumen por grupo',
-      'Buena congesti√≥n muscular',
+      'Buena congestiÛn muscular',
       'Simple de seguir',
     ],
     cons: [
       'Baja frecuencia (1x semana)',
-      'Sub√≥ptimo para fuerza',
-      'Largo tiempo de recuperaci√≥n',
+      'SubÛptimo para fuerza',
+      'Largo tiempo de recuperaciÛn',
     ],
-    icon: '√∞≈∏‚Äô¬™√∞≈∏‚Äù¬•',
+    icon: 'üí™üî•',
   },
   {
     id: '4',
-    name: 'Full Body (3 d√≠as)',
-    description: 'Cuerpo completo cada sesi√≥n',
-    frequency: '3 d√≠as/semana',
+    name: 'Full Body (3 dÌas)',
+    description: 'Cuerpo completo cada sesiÛn',
+    frequency: '3 dÌas/semana',
     level: 'beginner',
     goal: 'Fuerza + Principiantes',
     schedule: [
       {
         day: 'Lunes - Full Body A',
         focus: 'Cuerpo completo',
-        exercises: ['Sentadilla', 'Press Banca', 'Remo con Barra', 'Press Militar', 'Curl + Tr√≠ceps'],
+        exercises: ['Sentadilla', 'Press Banca', 'Remo con Barra', 'Press Militar', 'Curl + TrÌceps'],
       },
       {
-        day: 'Mi√©rcoles - Full Body B',
+        day: 'MiÈrcoles - Full Body B',
         focus: 'Cuerpo completo',
         exercises: ['Peso Muerto', 'Press Inclinado', 'Dominadas', 'Zancadas', 'Work Hombros'],
       },
@@ -195,7 +195,7 @@ const TRAINING_SPLITS: TrainingSplit[] = [
     pros: [
       'Alta frecuencia (3x semana)',
       'Ideal principiantes',
-      'Maximiza s√≠ntesis proteica',
+      'Maximiza sÌntesis proteica',
       'Flexible horarios',
     ],
     cons: [
@@ -203,13 +203,13 @@ const TRAINING_SPLITS: TrainingSplit[] = [
       'Fatiga central alta',
       'Sesiones largas',
     ],
-    icon: '√∞≈∏¬è‚Äπ√Ø¬∏¬è',
+    icon: 'üèãÔ∏è',
   },
   {
     id: '5',
     name: 'Arnold Split',
-    description: 'Divisi√≥n de Arnold Schwarzenegger',
-    frequency: '6 d√≠as/semana',
+    description: 'DivisiÛn de Arnold Schwarzenegger',
+    frequency: '6 dÌas/semana',
     level: 'advanced',
     goal: 'Hipertrofia Extrema',
     schedule: [
@@ -220,27 +220,27 @@ const TRAINING_SPLITS: TrainingSplit[] = [
       },
       {
         day: 'Martes - Hombros + Brazos',
-        focus: 'Deltoides + B√≠ceps/Tr√≠ceps',
-        exercises: ['Press Militar', 'Curl con Barra', 'Elevaciones Laterales', 'Tr√≠ceps Polea', 'Face Pulls'],
+        focus: 'Deltoides + BÌceps/TrÌceps',
+        exercises: ['Press Militar', 'Curl con Barra', 'Elevaciones Laterales', 'TrÌceps Polea', 'Face Pulls'],
       },
       {
-        day: 'Mi√©rcoles - Piernas',
+        day: 'MiÈrcoles - Piernas',
         focus: 'Piernas completas',
         exercises: ['Sentadilla', 'Peso Muerto Rumano', 'Prensa', 'Curl Femoral', 'Gemelos'],
       },
       {
         day: 'Jueves - Pecho + Espalda',
-        focus: 'Torso (variaci√≥n)',
+        focus: 'Torso (variaciÛn)',
         exercises: ['Press Inclinado', 'Remo con Mancuernas', 'Aperturas', 'Peso Muerto', 'Cable Flyes'],
       },
       {
         day: 'Viernes - Hombros + Brazos',
-        focus: 'Deltoides + B√≠ceps/Tr√≠ceps',
-        exercises: ['Arnold Press', 'Curl Martillo', 'P√°jaros', 'Fondos', 'Elevaciones Frontales'],
+        focus: 'Deltoides + BÌceps/TrÌceps',
+        exercises: ['Arnold Press', 'Curl Martillo', 'P·jaros', 'Fondos', 'Elevaciones Frontales'],
       },
       {
-        day: 'S√°bado - Piernas',
-        focus: 'Piernas (variaci√≥n)',
+        day: 'S·bado - Piernas',
+        focus: 'Piernas (variaciÛn)',
         exercises: ['Sentadilla Frontal', 'Peso Muerto Sumo', 'Zancadas', 'Extensiones', 'Gemelos Sentado'],
       },
     ],
@@ -256,7 +256,7 @@ const TRAINING_SPLITS: TrainingSplit[] = [
       'Requiere mucho tiempo',
       'Alto riesgo sobreentrenamiento',
     ],
-    icon: '√∞≈∏‚Äò‚Äò',
+    icon: 'üëë',
   },
 ];
 
@@ -277,7 +277,7 @@ export default function TrainingSplits() {
 
   const viewSplitDetails = (split: TrainingSplit) => {
     const scheduleText = split.schedule.map(
-      (day) => `${day.day}\n${day.focus}\n‚Ä¢ ${day.exercises.join('\n‚Ä¢ ')}`
+      (day) => `${day.day}\n${day.focus}\nï ${day.exercises.join('\nï ')}`
     ).join('\n\n');
 
     Alert.alert(
@@ -290,12 +290,12 @@ export default function TrainingSplits() {
   const adoptSplit = (splitName: string) => {
     Alert.alert(
       'Adoptar Programa',
-      `¬øQuieres usar "${splitName}" como tu programa de entrenamiento?`,
+      `øQuieres usar "${splitName}" como tu programa de entrenamiento?`,
       [
         { text: 'Cancelar', style: 'cancel' },
         {
           text: 'Adoptar',
-          onPress: () => Alert.alert('‚úì Programa Guardado', 'Ahora puedes seguir este split en tus workouts'),
+          onPress: () => Alert.alert('? Programa Guardado', 'Ahora puedes seguir este split en tus workouts'),
         },
       ]
     );
@@ -304,7 +304,7 @@ export default function TrainingSplits() {
   const getLevelColor = (level: string) => {
     switch (level) {
       case 'beginner':
-        return 'emerald';
+        return 'primary';
       case 'intermediate':
         return 'blue';
       case 'advanced':
@@ -385,7 +385,7 @@ export default function TrainingSplits() {
                   Elige Tu Split
                 </Text>
                 <Text className="text-primary/60 text-sm">
-                  Selecciona seg√∫n tu nivel, disponibilidad y objetivos. Consistencia &gt; Perfecci√≥n.
+                  Selecciona seg˙n tu nivel, disponibilidad y objetivos. Consistencia &gt; PerfecciÛn.
                 </Text>
               </View>
             </View>
@@ -439,7 +439,7 @@ export default function TrainingSplits() {
 
                 {/* Schedule Preview */}
                 <View className="mb-3">
-                  <Text className="text-zinc-400 text-xs mb-2">SEMANA T√É¬çPICA</Text>
+                  <Text className="text-zinc-400 text-xs mb-2">SEMANA T√çPICA</Text>
                   {split.schedule.slice(0, 3).map((day, index) => (
                     <View key={index} className="flex-row items-center mb-1">
                       <View className="w-2 h-2 bg-primary rounded-full mr-2" />
@@ -451,7 +451,7 @@ export default function TrainingSplits() {
                   {split.schedule.length > 3 && (
                     <TouchableOpacity onPress={() => viewSplitDetails(split)}>
                       <Text className="text-primary/80 text-sm ml-4">
-                        Ver {split.schedule.length - 3} d√≠as m√°s √¢‚Ä†‚Äô
+                        Ver {split.schedule.length - 3} dÌas m·s ‚Üí
                       </Text>
                     </TouchableOpacity>
                   )}
@@ -460,18 +460,18 @@ export default function TrainingSplits() {
                 {/* Pros & Cons */}
                 <View className="flex-row gap-2 mb-3">
                   <View className="flex-1">
-                    <Text className="text-primary text-xs font-bold mb-2">‚úì PROS</Text>
+                    <Text className="text-primary text-xs font-bold mb-2">? PROS</Text>
                     {split.pros.slice(0, 2).map((pro, index) => (
                       <Text key={index} className="text-primary/80 text-xs mb-1">
-                        ‚Ä¢ {pro}
+                        ï {pro}
                       </Text>
                     ))}
                   </View>
                   <View className="flex-1">
-                    <Text className="text-red-400 text-xs font-bold mb-2">‚úì CONTRAS</Text>
+                    <Text className="text-red-400 text-xs font-bold mb-2">? CONTRAS</Text>
                     {split.cons.slice(0, 2).map((con, index) => (
                       <Text key={index} className="text-red-300 text-xs mb-1">
-                        ‚Ä¢ {con}
+                        ï {con}
                       </Text>
                     ))}
                   </View>
@@ -507,7 +507,7 @@ export default function TrainingSplits() {
                   Consejo Pro
                 </Text>
                 <Text className="text-amber-300 text-sm">
-                  El mejor programa es el que puedes seguir consistentemente. Elige seg√∫n tu horario, no por lo que hacen influencers.
+                  El mejor programa es el que puedes seguir consistentemente. Elige seg˙n tu horario, no por lo que hacen influencers.
                 </Text>
               </View>
             </View>

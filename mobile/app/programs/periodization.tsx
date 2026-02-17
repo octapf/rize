@@ -1,4 +1,4 @@
-ï»¿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -16,7 +16,7 @@ export default function PeriodizationPlanner() {
     { key: 'hypertrophy', label: 'Hypertrophy', weeks: 4, sets: '3-5', reps: '8-12', intensity: '65-75%', color: 'blue' },
     { key: 'strength', label: 'Strength', weeks: 4, sets: '4-6', reps: '3-6', intensity: '80-90%', color: 'red' },
     { key: 'power', label: 'Power', weeks: 3, sets: '3-5', reps: '1-5', intensity: '85-95%', color: 'purple' },
-    { key: 'deload', label: 'Deload', weeks: 1, sets: '2-3', reps: '8-10', intensity: '50-60%', color: 'emerald' },
+    { key: 'deload', label: 'Deload', weeks: 1, sets: '2-3', reps: '8-10', intensity: '50-60%', color: 'primary' },
   ];
 
   const mesocycles = [
@@ -25,7 +25,7 @@ export default function PeriodizationPlanner() {
       name: 'Mesocycle 1: Foundation',
       duration: '4 weeks',
       phases: ['hypertrophy'],
-      focus: 'Volumen y tÃ©cnica',
+      focus: 'Volumen y técnica',
       completed: true,
     },
     {
@@ -70,7 +70,7 @@ export default function PeriodizationPlanner() {
       <ScrollView className="flex-1" showsVerticalScrollIndicator={false}>
         <View className="px-6 pt-6">
           <View className="bg-gradient-to-r from-purple-500 to-blue-500 rounded-xl p-6 mb-6">
-            <Text className="text-white text-2xl font-bold mb-2">PlanificaciÃ³n Avanzada</Text>
+            <Text className="text-white text-2xl font-bold mb-2">Planificación Avanzada</Text>
             <Text className="text-white opacity-90 mb-4">
               Programa tu entrenamiento por fases
             </Text>
@@ -153,13 +153,13 @@ export default function PeriodizationPlanner() {
           ))}
 
           <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
-            <Text className="text-primary/80 font-bold mb-2">PeriodizaciÃ³n Explicada</Text>
+            <Text className="text-primary/80 font-bold mb-2">Periodización Explicada</Text>
             <Text className="text-primary/60 text-sm">
-              â€¢ Previene estancamiento y overtraining{'\n'}
-              â€¢ Mesociclos de 3-6 semanas{'\n'}
-              â€¢ Deload cada 4-6 semanas{'\n'}
-              â€¢ ProgresiÃ³n estructurada{'\n'}
-              â€¢ Picos de rendimiento planificados
+              • Previene estancamiento y overtraining{'\n'}
+              • Mesociclos de 3-6 semanas{'\n'}
+              • Deload cada 4-6 semanas{'\n'}
+              • Progresión estructurada{'\n'}
+              • Picos de rendimiento planificados
             </Text>
           </View>
         </View>

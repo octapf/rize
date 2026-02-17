@@ -151,7 +151,7 @@ export const RestTimer: React.FC<RestTimerProps> = ({
       <View style={styles.overlay}>
         <View style={styles.container}>
           <LinearGradient
-            colors={isWarning ? ['#ef4444', '#dc2626'] : ['#10b981', '#059669']}
+            colors={isWarning ? ['#ef4444', '#dc2626'] : ['#9D12DE', '#7B1FA2']}
             style={styles.gradient}
           >
             {/* Close Button */}

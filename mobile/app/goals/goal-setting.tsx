@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -35,7 +35,7 @@ export default function GoalSetting() {
     {
       category: 'Body Composition',
       icon: 'body' as const,
-      color: 'emerald',
+      color: 'primary',
       examples: [
         { bad: 'Lose weight', good: 'Reduce body fat from 20% to 15% in 16 weeks', why: 'Measurable metric and timeframe' },
         { bad: 'Get shredded', good: 'Maintain 75kg at 12% body fat by summer', why: 'Specific numbers and season' },
@@ -77,7 +77,7 @@ export default function GoalSetting() {
       word: 'Measurable',
       question: 'How will you track progress?',
       example: 'Test 1RM monthly, track all working sets',
-      color: 'emerald',
+      color: 'primary',
     },
     {
       letter: 'A',
@@ -151,7 +151,7 @@ export default function GoalSetting() {
               className={`bg-${category.color}-500/10 rounded-xl p-5 mb-6 border border-${category.color}-500/30`}
             >
               <View className="flex-row items-center mb-4">
-                <Ionicons name={category.icon} size={24} color={`#${category.color === 'blue' ? '3b82f6' : category.color === 'emerald' ? '10b981' : category.color === 'purple' ? 'a855f7' : 'f59e0b'}`} />
+                <Ionicons name={category.icon} size={24} color={`#${category.color === 'blue' ? '3b82f6' : category.color === 'primary' ? '9D12DE' : category.color === 'purple' ? 'a855f7' : 'f59e0b'}`} />
                 <Text className={`text-${category.color}-400 font-bold text-lg ml-2`}>
                   {category.category}
                 </Text>
@@ -172,7 +172,7 @@ export default function GoalSetting() {
                   </View>
                   <View className={`bg-${category.color}-500/20 rounded-lg p-2 border border-${category.color}-500/40`}>
                     <Text className={`text-${category.color}-300 text-xs`}>
-                      ✓ {example.why}
+                      ? {example.why}
                     </Text>
                   </View>
                 </View>
@@ -183,12 +183,12 @@ export default function GoalSetting() {
           <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
             <Text className="text-primary/80 font-bold mb-2">Goal-Setting Tips</Text>
             <Text className="text-primary/60 text-sm">
-              • Write goals down physically{'\n'}
-              • Share with accountability partner{'\n'}
-              • Review weekly{'\n'}
-              • Celebrate milestones{'\n'}
-              • Adjust if needed, don't quit{'\n'}
-              • One major goal at a time
+              � Write goals down physically{'\n'}
+              � Share with accountability partner{'\n'}
+              � Review weekly{'\n'}
+              � Celebrate milestones{'\n'}
+              � Adjust if needed, don't quit{'\n'}
+              � One major goal at a time
             </Text>
           </View>
 
@@ -220,11 +220,11 @@ export default function GoalSetting() {
             <Text className="text-amber-400 font-bold mb-2">Common Mistakes</Text>
             <View className="space-y-2">
               <Text className="text-amber-300 text-sm">
-                âŒ Too many goals at once{'\n'}
-                âŒ Unrealistic timelines{'\n'}
-                âŒ Vague/unmeasurable targets{'\n'}
-                âŒ No plan to achieve them{'\n'}
-                âŒ Not tracking progress
+                ❌ Too many goals at once{'\n'}
+                ❌ Unrealistic timelines{'\n'}
+                ❌ Vague/unmeasurable targets{'\n'}
+                ❌ No plan to achieve them{'\n'}
+                ❌ Not tracking progress
               </Text>
             </View>
           </View>

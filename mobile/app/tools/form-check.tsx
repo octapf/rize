@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -34,10 +34,10 @@ interface FormCheck {
 const EXERCISE_CHECKLISTS: { [key: string]: FormCheckItem[] } = {
   'Press Banca': [
     { exercise: 'Press Banca', category: 'position', description: 'Pies plantados en el suelo', isCorrect: true },
-    { exercise: 'Press Banca', category: 'position', description: 'Escápulas retraídas y deprimidas', isCorrect: true },
+    { exercise: 'Press Banca', category: 'position', description: 'Esc�pulas retra�das y deprimidas', isCorrect: true },
     { exercise: 'Press Banca', category: 'position', description: 'Arco lumbar natural (no excesivo)', isCorrect: true },
-    { exercise: 'Press Banca', category: 'movement', description: 'Barra toca pecho en línea de pezones', isCorrect: true },
-    { exercise: 'Press Banca', category: 'movement', description: 'Codos a 45° (no 90°)', isCorrect: true },
+    { exercise: 'Press Banca', category: 'movement', description: 'Barra toca pecho en l�nea de pezones', isCorrect: true },
+    { exercise: 'Press Banca', category: 'movement', description: 'Codos a 45� (no 90�)', isCorrect: true },
     { exercise: 'Press Banca', category: 'movement', description: 'Trayectoria vertical', isCorrect: true },
     { exercise: 'Press Banca', category: 'breathing', description: 'Inhalar en descenso, exhalar en push', isCorrect: true },
     { exercise: 'Press Banca', category: 'tempo', description: 'Descenso controlado (2-3s)', isCorrect: true },
@@ -47,13 +47,13 @@ const EXERCISE_CHECKLISTS: { [key: string]: FormCheckItem[] } = {
     { exercise: 'Sentadilla', category: 'position', description: 'Pies ancho de hombros, dedos ligeramente afuera', isCorrect: true },
     { exercise: 'Sentadilla', category: 'position', description: 'Barra en traps (high bar) o deltoides posteriores (low bar)', isCorrect: true },
     { exercise: 'Sentadilla', category: 'position', description: 'Core activado y apretado', isCorrect: true },
-    { exercise: 'Sentadilla', category: 'movement', description: 'Rodillas siguen línea de dedos (sin valgo)', isCorrect: true },
+    { exercise: 'Sentadilla', category: 'movement', description: 'Rodillas siguen l�nea de dedos (sin valgo)', isCorrect: true },
     { exercise: 'Sentadilla', category: 'movement', description: 'Profundidad: cadera bajo rodillas', isCorrect: true },
     { exercise: 'Sentadilla', category: 'movement', description: 'Peso en talones y medio pie', isCorrect: true },
     { exercise: 'Sentadilla', category: 'movement', description: 'Pecho arriba, espalda neutral', isCorrect: true },
-    { exercise: 'Sentadilla', category: 'breathing', description: 'Respiración profunda pre-descenso, aguantar', isCorrect: true },
+    { exercise: 'Sentadilla', category: 'breathing', description: 'Respiraci�n profunda pre-descenso, aguantar', isCorrect: true },
     { exercise: 'Sentadilla', category: 'tempo', description: 'Descenso controlado, romper caderas primero', isCorrect: true },
-    { exercise: 'Sentadilla', category: 'tempo', description: 'Subir explosivo, caderas y hombros simultáneos', isCorrect: true },
+    { exercise: 'Sentadilla', category: 'tempo', description: 'Subir explosivo, caderas y hombros simult�neos', isCorrect: true },
   ],
   'Peso Muerto': [
     { exercise: 'Peso Muerto', category: 'position', description: 'Pies bajo barra, hip-width', isCorrect: true },
@@ -62,9 +62,9 @@ const EXERCISE_CHECKLISTS: { [key: string]: FormCheckItem[] } = {
     { exercise: 'Peso Muerto', category: 'position', description: 'Hombros ligeramente adelante de barra', isCorrect: true },
     { exercise: 'Peso Muerto', category: 'movement', description: 'Barra pegada a piernas todo el movimiento', isCorrect: true },
     { exercise: 'Peso Muerto', category: 'movement', description: 'Empujar suelo con piernas (no tirar con espalda)', isCorrect: true },
-    { exercise: 'Peso Muerto', category: 'movement', description: 'Extensión simultánea cadera/rodillas', isCorrect: true },
-    { exercise: 'Peso Muerto', category: 'movement', description: 'Lockout: glúteos apretados, sin hiperextensión lumbar', isCorrect: true },
-    { exercise: 'Peso Muerto', category: 'breathing', description: 'Respiración profunda, core braced', isCorrect: true },
+    { exercise: 'Peso Muerto', category: 'movement', description: 'Extensi�n simult�nea cadera/rodillas', isCorrect: true },
+    { exercise: 'Peso Muerto', category: 'movement', description: 'Lockout: gl�teos apretados, sin hiperextensi�n lumbar', isCorrect: true },
+    { exercise: 'Peso Muerto', category: 'breathing', description: 'Respiraci�n profunda, core braced', isCorrect: true },
     { exercise: 'Peso Muerto', category: 'tempo', description: 'Pull explosivo pero controlado', isCorrect: true },
   ],
 };
@@ -80,7 +80,7 @@ const MOCK_CHECKS: FormCheck[] = [
       isCorrect: idx < 7,
     })),
     overallScore: 78,
-    coachNotes: 'Mejora tempo en descenso, muy rápido. Resto bien.',
+    coachNotes: 'Mejora tempo en descenso, muy r�pido. Resto bien.',
     status: 'good',
   },
 ];
@@ -135,7 +135,7 @@ export default function FormCheck() {
 
     setChecks([newCheck, ...checks]);
     
-    const statusText = status === 'good' ? '✓ Buena Técnica' : status === 'needs-work' ? 'âš ï¸ Necesita Trabajo' : 'âŒ Técnica Pobre';
+    const statusText = status === 'good' ? '? Buena T�cnica' : status === 'needs-work' ? '⚠️ Necesita Trabajo' : '❌ T�cnica Pobre';
     Alert.alert(`Form Check: ${score}/100`, statusText);
     
     setSelectedExercise(null);
@@ -156,7 +156,7 @@ export default function FormCheck() {
   const getCategoryColor = (category: string) => {
     switch (category) {
       case 'position': return 'blue';
-      case 'movement': return 'emerald';
+      case 'movement': return 'primary';
       case 'breathing': return 'cyan';
       case 'tempo': return 'purple';
       default: return 'zinc';
@@ -187,14 +187,14 @@ export default function FormCheck() {
         <ScrollView className="flex-1" showsVerticalScrollIndicator={false}>
           <View className="px-6 pt-6">
             {/* Current Score */}
-            <View className={`bg-gradient-to-r from-${currentStatus === 'good' ? 'emerald' : currentStatus === 'needs-work' ? 'amber' : 'red'}-500 to-blue-500 rounded-xl p-6 mb-6`}>
+            <View className={`bg-gradient-to-r from-${currentStatus === 'good' ? 'primary' : currentStatus === 'needs-work' ? 'amber' : 'red'}-500 to-blue-500 rounded-xl p-6 mb-6`}>
               <Text className="text-white opacity-90 text-sm mb-2">Score Actual</Text>
               <View className="flex-row items-center justify-between">
                 <Text className="text-white text-5xl font-bold">{currentScore}</Text>
                 <View className="items-end">
                   <Text className="text-white text-2xl opacity-90">/100</Text>
                   <Text className="text-white font-bold text-lg mt-1">
-                    {currentStatus === 'good' ? '✓ Buena' : currentStatus === 'needs-work' ? 'âš ï¸ Mejorable' : 'âŒ Pobre'}
+                    {currentStatus === 'good' ? '? Buena' : currentStatus === 'needs-work' ? '⚠️ Mejorable' : '❌ Pobre'}
                   </Text>
                 </View>
               </View>
@@ -267,7 +267,7 @@ export default function FormCheck() {
             {/* Save Button */}
             <TouchableOpacity
               onPress={saveFormCheck}
-              className={`bg-${currentStatus === 'good' ? 'emerald' : currentStatus === 'needs-work' ? 'amber' : 'red'}-500 rounded-xl p-5 flex-row items-center justify-center mb-6`}
+              className={`bg-${currentStatus === 'good' ? 'primary' : currentStatus === 'needs-work' ? 'amber' : 'red'}-500 rounded-xl p-5 flex-row items-center justify-center mb-6`}
             >
               <Ionicons name="save" size={24} color="white" />
               <Text className="text-white font-bold text-lg ml-2">Guardar Form Check</Text>
@@ -296,7 +296,7 @@ export default function FormCheck() {
         <View className="px-6 pt-6">
           {/* Info */}
           <View className="bg-gradient-to-r from-purple-500 to-blue-500 rounded-xl p-6 mb-6">
-            <Text className="text-white text-2xl font-bold mb-2">Verifica Tu Técnica</Text>
+            <Text className="text-white text-2xl font-bold mb-2">Verifica Tu T�cnica</Text>
             <Text className="text-white opacity-90 mb-4">
               Checklists detallados para ejercicios principales
             </Text>
@@ -325,7 +325,7 @@ export default function FormCheck() {
                 <View className="flex-row items-center">
                   <Ionicons name="list" size={16} color="#9D12DE" />
                   <Text className="text-primary text-sm ml-2">
-                    {checklistLength} puntos de verificación
+                    {checklistLength} puntos de verificaci�n
                   </Text>
                 </View>
               </TouchableOpacity>
@@ -391,15 +391,15 @@ export default function FormCheck() {
               <Ionicons name="bulb" size={20} color="#9D12DE" />
               <View className="flex-1 ml-3">
                 <Text className="text-primary/80 font-bold mb-2">
-                  Cómo Usar Form Check
+                  C�mo Usar Form Check
                 </Text>
                 <Text className="text-primary/60 text-sm">
-                  • Grábate haciendo el ejercicio{'\n'}
-                  • Revisa video en cámara lenta{'\n'}
-                  • Marca cada punto del checklist{'\n'}
-                  • Enfócate en los âŒ para mejorar{'\n'}
-                  • Re-evalúa cada 2-4 semanas{'\n'}
-                  • 80%+ = técnica sólida
+                  � Gr�bate haciendo el ejercicio{'\n'}
+                  � Revisa video en c�mara lenta{'\n'}
+                  � Marca cada punto del checklist{'\n'}
+                  � Enf�cate en los ❌ para mejorar{'\n'}
+                  � Re-eval�a cada 2-4 semanas{'\n'}
+                  � 80%+ = t�cnica s�lida
                 </Text>
               </View>
             </View>

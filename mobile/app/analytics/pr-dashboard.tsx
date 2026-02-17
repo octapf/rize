@@ -1,4 +1,4 @@
-ï»¿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -15,7 +15,7 @@ export default function PRDashboard() {
     { key: 'all', label: 'All PRs', color: 'blue' },
     { key: 'strength', label: 'Strength', color: 'red' },
     { key: 'volume', label: 'Volume', color: 'purple' },
-    { key: 'cardio', label: 'Cardio', color: 'emerald' },
+    { key: 'cardio', label: 'Cardio', color: 'primary' },
   ];
 
   const allPRs = [
@@ -90,7 +90,7 @@ export default function PRDashboard() {
     { name: '100kg Bench', achieved: true, date: '15 Ene 2024' },
     { name: '200kg Deadlift', achieved: true, date: '8 Dic 2024' },
     { name: '150kg Squat', achieved: true, date: '22 Oct 2024' },
-    { name: '225kg Deadlift', achieved: false, date: 'PrÃ³ximamente' },
+    { name: '225kg Deadlift', achieved: false, date: 'Próximamente' },
   ];
 
   const getCategoryIcon = (category: string) => {
@@ -106,7 +106,7 @@ export default function PRDashboard() {
     switch (category) {
       case 'strength': return 'red';
       case 'volume': return 'purple';
-      case 'cardio': return 'emerald';
+      case 'cardio': return 'primary';
       default: return 'blue';
     }
   };
@@ -257,11 +257,11 @@ export default function PRDashboard() {
           <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
             <Text className="text-primary/80 font-bold mb-2">PR Tips</Text>
             <Text className="text-primary/60 text-sm">
-              â€¢ Valida PRs con buena tÃ©cnica{'\n'}
-              â€¢ No intentes PR con fatiga acumulada{'\n'}
-              â€¢ Calentamiento especÃ­fico antes de PRs{'\n'}
-              â€¢ Filma tus PRs para analizar tÃ©cnica{'\n'}
-              â€¢ Celebra cada logro!
+              • Valida PRs con buena técnica{'\n'}
+              • No intentes PR con fatiga acumulada{'\n'}
+              • Calentamiento específico antes de PRs{'\n'}
+              • Filma tus PRs para analizar técnica{'\n'}
+              • Celebra cada logro!
             </Text>
           </View>
         </View>

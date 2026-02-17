@@ -1,4 +1,4 @@
-ï»¿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -21,7 +21,7 @@ export default function HistoricalAnalysis() {
 
   const metrics = [
     { key: 'volume', label: 'Total Volume', icon: 'barbell', color: 'blue' },
-    { key: 'frequency', label: 'Frequency', icon: 'calendar', color: 'emerald' },
+    { key: 'frequency', label: 'Frequency', icon: 'calendar', color: 'primary' },
     { key: 'duration', label: 'Duration', icon: 'time', color: 'purple' },
     { key: 'intensity', label: 'Intensity', icon: 'flash', color: 'amber' },
   ];
@@ -38,7 +38,7 @@ export default function HistoricalAnalysis() {
       title: 'Volume Trending Up',
       desc: '+30% en 3 meses',
       icon: 'trending-up',
-      color: 'emerald',
+      color: 'primary',
       type: 'positive',
     },
     {
@@ -200,7 +200,7 @@ export default function HistoricalAnalysis() {
                   name={insight.icon as any}
                   size={24}
                   color={
-                    insight.color === 'emerald' ? '#9D12DE' :
+                    insight.color === 'primary' ? '#9D12DE' :
                     insight.color === 'blue' ? '#9D12DE' :
                     insight.color === 'amber' ? '#FFEA00' : '#ef4444'
                   }
@@ -233,11 +233,11 @@ export default function HistoricalAnalysis() {
           <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
             <Text className="text-primary/80 font-bold mb-2">Analysis Tips</Text>
             <Text className="text-primary/60 text-sm">
-              â€¢ Look for upward trends{'\n'}
-              â€¢ Plateaus = need change{'\n'}
-              â€¢ Compare similar periods{'\n'}
-              â€¢ Account for deloads{'\n'}
-              â€¢ Monthly review recommended
+              • Look for upward trends{'\n'}
+              • Plateaus = need change{'\n'}
+              • Compare similar periods{'\n'}
+              • Account for deloads{'\n'}
+              • Monthly review recommended
             </Text>
           </View>
         </View>

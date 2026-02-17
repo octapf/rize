@@ -1,4 +1,4 @@
-ï»¿import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   View,
   Text,
@@ -90,7 +90,7 @@ export default function ActiveWorkoutScreen() {
       );
       setWorkout(response.data);
       
-      // Si se completÃ³ la serie, verificar auto-start rest timer
+      // Si se completó la serie, verificar auto-start rest timer
       if (!currentCompleted) {
         const autoStart = await settingsService.getSetting('autoStartRestTimer');
         if (autoStart) {
@@ -105,7 +105,7 @@ export default function ActiveWorkoutScreen() {
   const handleFinish = () => {
     Alert.alert(
       'Finalizar Entrenamiento',
-      'Â¿Seguro que quieres finalizar?',
+      '¿Seguro que quieres finalizar?',
       [
         { text: 'Cancelar', style: 'cancel' },
         {
@@ -114,7 +114,7 @@ export default function ActiveWorkoutScreen() {
           onPress: async () => {
             try {
               await workoutsApi.finishWorkout(id, timer);
-              Alert.alert('Â¡Ã‰xito!', 'Entrenamiento completado', [
+              Alert.alert('¡Éxito!', 'Entrenamiento completado', [
                 { text: 'OK', onPress: () => router.back() },
               ]);
             } catch (error) {
@@ -306,7 +306,7 @@ export default function ActiveWorkoutScreen() {
                         </Text>
                         <Text className="text-xs text-gray-600">
                           {set.reps} reps
-                          {set.weight && ` â€¢ ${set.weight} kg`}
+                          {set.weight && ` • ${set.weight} kg`}
                         </Text>
                       </View>
                     </View>

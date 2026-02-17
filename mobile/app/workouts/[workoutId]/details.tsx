@@ -114,7 +114,7 @@ export default function WorkoutDetailsScreen() {
   if (isLoading) {
     return (
       <View className="flex-1 bg-gray-50 items-center justify-center">
-        <ActivityIndicator size="large" color="#10B981" />
+        <ActivityIndicator size="large" color="#9D12DE" />
       </View>
     );
   }
@@ -128,7 +128,7 @@ export default function WorkoutDetailsScreen() {
         </Text>
         <TouchableOpacity
           onPress={() => router.back()}
-          className="mt-6 bg-emerald-600 px-6 py-3 rounded-full"
+          className="mt-6 bg-primary px-6 py-3 rounded-full"
         >
           <Text className="text-white font-semibold">Volver</Text>
         </TouchableOpacity>
@@ -164,7 +164,7 @@ export default function WorkoutDetailsScreen() {
   return (
     <View className="flex-1 bg-gray-50">
       {/* Header */}
-      <LinearGradient colors={['#10B981', '#059669']} className="px-6 pt-12 pb-6">
+      <LinearGradient colors={['#9D12DE', '#059669']} className="px-6 pt-12 pb-6">
         <View className="flex-row items-center justify-between mb-4">
           <TouchableOpacity onPress={() => router.back()} className="p-2">
             <Ionicons name="arrow-back" size={28} color="white" />
@@ -178,7 +178,7 @@ export default function WorkoutDetailsScreen() {
         </View>
 
         {/* Date */}
-        <Text className="text-emerald-100 text-center">
+        <Text className="text-primary/20 text-center">
           {workout.completedAt
             ? format(new Date(workout.completedAt), "dd 'de' MMMM 'de' yyyy", {
                 locale: es,
@@ -192,7 +192,7 @@ export default function WorkoutDetailsScreen() {
         <View className="flex-row gap-3">
           <Card className="flex-1 p-4">
             <View className="items-center">
-              <Ionicons name="checkmark-circle" size={24} color="#10B981" />
+              <Ionicons name="checkmark-circle" size={24} color="#9D12DE" />
               <Text className="text-gray-600 text-xs mt-2">Completadas</Text>
               <Text className="text-gray-900 text-xl font-bold mt-1">
                 {completedSets}/{totalSets}
@@ -263,7 +263,7 @@ export default function WorkoutDetailsScreen() {
                       <View className="flex-row items-center gap-3">
                         <View
                           className={`w-8 h-8 rounded-full items-center justify-center ${
-                            set.completed ? 'bg-emerald-500' : 'bg-gray-200'
+                            set.completed ? 'bg-primary/100' : 'bg-gray-200'
                           }`}
                         >
                           <Text
@@ -295,7 +295,7 @@ export default function WorkoutDetailsScreen() {
                         <Ionicons
                           name="checkmark-circle"
                           size={20}
-                          color="#10B981"
+                          color="#9D12DE"
                         />
                       )}
                     </View>
@@ -322,7 +322,7 @@ export default function WorkoutDetailsScreen() {
             </Text>
             {!isEditing && (
               <TouchableOpacity onPress={() => setIsEditing(true)}>
-                <Ionicons name="create-outline" size={20} color="#10B981" />
+                <Ionicons name="create-outline" size={20} color="#9D12DE" />
               </TouchableOpacity>
             )}
           </View>
@@ -343,7 +343,7 @@ export default function WorkoutDetailsScreen() {
                 <TouchableOpacity
                   onPress={handleSaveNotes}
                   disabled={updateNotesMutation.isPending}
-                  className="flex-1 bg-emerald-500 py-2.5 rounded-lg"
+                  className="flex-1 bg-primary/100 py-2.5 rounded-lg"
                 >
                   {updateNotesMutation.isPending ? (
                     <ActivityIndicator color="white" size="small" />

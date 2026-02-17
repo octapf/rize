@@ -1,4 +1,4 @@
-ï»¿import React from 'react';
+import React from 'react';
 import { View, Text, ScrollView, TouchableOpacity } from 'react-native';
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
@@ -50,7 +50,7 @@ export default function ProfileScreen() {
           <Text className="text-primary/50">{user?.email}</Text>
           <View className="bg-white/20 px-4 py-2 rounded-full mt-3">
             <Text className="text-white font-semibold">
-              Nivel {Math.floor((user?.xp || 0) / 100) + 1} â€¢ {user?.xp || 0} XP
+              Nivel {Math.floor((user?.xp || 0) / 100) + 1} • {user?.xp || 0} XP
             </Text>
           </View>
         </View>
@@ -96,7 +96,7 @@ export default function ProfileScreen() {
                   Mis Retos
                 </Text>
                 <Text className="text-sm text-gray-600">
-                  DesafÃ­a a tus amigos
+                  Desafía a tus amigos
                 </Text>
               </View>
               <Ionicons name="chevron-forward" size={24} color="#9CA3AF" />
@@ -154,7 +154,7 @@ export default function ProfileScreen() {
                   Mis Medallas
                 </Text>
                 <Text className="text-sm text-gray-600">
-                  Colecciona medallas Ãºnicas
+                  Colecciona medallas únicas
                 </Text>
               </View>
               <Ionicons name="chevron-forward" size={24} color="#9CA3AF" />
@@ -174,7 +174,7 @@ export default function ProfileScreen() {
                   Mi Progreso
                 </Text>
                 <Text className="text-sm text-gray-600">
-                  GrÃ¡ficos y estadÃ­sticas
+                  Gráficos y estadísticas
                 </Text>
               </View>
               <Ionicons name="chevron-forward" size={24} color="#9CA3AF" />
@@ -194,7 +194,7 @@ export default function ProfileScreen() {
                   Medidas Corporales
                 </Text>
                 <Text className="text-sm text-gray-600">
-                  Track tu progreso fÃ­sico
+                  Track tu progreso físico
                 </Text>
               </View>
               <Ionicons name="chevron-forward" size={24} color="#9CA3AF" />
@@ -234,7 +234,7 @@ export default function ProfileScreen() {
                   Medidas Corporales
                 </Text>
                 <Text className="text-sm text-gray-600">
-                  Track tu progreso fÃ­sico
+                  Track tu progreso físico
                 </Text>
               </View>
               <Ionicons name="chevron-forward" size={24} color="#9CA3AF" />
@@ -284,7 +284,7 @@ export default function ProfileScreen() {
 
         {/* Workout History Button */}
         <TouchableOpacity onPress={() => router.push('/workouts/history')}>
-          <Card className="p-4 bg-gradient-to-r from-emerald-50 to-teal-50">
+          <Card className="p-4 bg-gradient-to-r from-primary/10 to-primary/10">
             <View className="flex-row items-center gap-4">
               <View className="bg-primary w-12 h-12 rounded-xl items-center justify-center">
                 <Ionicons name="calendar" size={28} color="white" />
@@ -351,7 +351,7 @@ export default function ProfileScreen() {
               </View>
               <View className="flex-1">
                 <Text className="text-lg font-bold text-gray-900">
-                  RÃ©cords Personales
+                  Récords Personales
                 </Text>
                 <Text className="text-sm text-gray-600">
                   Tus mejores marcas
@@ -384,14 +384,14 @@ export default function ProfileScreen() {
 
         {/* Nutrition */}
         <TouchableOpacity onPress={() => router.push('/nutrition')}>
-          <Card className="p-4 bg-gradient-to-r from-green-50 to-emerald-50">
+          <Card className="p-4 bg-gradient-to-r from-primary/10 to-primary/10">
             <View className="flex-row items-center gap-4">
               <View className="bg-primary w-12 h-12 rounded-xl items-center justify-center">
                 <Ionicons name="nutrition" size={28} color="white" />
               </View>
               <View className="flex-1">
                 <Text className="text-lg font-bold text-gray-900">
-                  NutriciÃ³n
+                  Nutrición
                 </Text>
                 <Text className="text-sm text-gray-600">
                   Track tus macros
@@ -431,10 +431,10 @@ export default function ProfileScreen() {
               </View>
               <View className="flex-1">
                 <Text className="text-lg font-bold text-gray-900">
-                  Dashboard de EstadÃ­sticas
+                  Dashboard de Estadísticas
                 </Text>
                 <Text className="text-sm text-gray-600">
-                  AnÃ¡lisis detallado de tu progreso
+                  Análisis detallado de tu progreso
                 </Text>
               </View>
               <Ionicons name="chevron-forward" size={24} color="#9CA3AF" />
@@ -491,7 +491,7 @@ export default function ProfileScreen() {
               </View>
               <View className="flex-1">
                 <Text className="text-lg font-bold text-gray-900">
-                  ConfiguraciÃ³n
+                  Configuración
                 </Text>
                 <Text className="text-sm text-gray-600">
                   Preferencias y ajustes
@@ -505,7 +505,7 @@ export default function ProfileScreen() {
         {/* Settings Section */}
         <Card className="p-4">
           <Text className="text-lg font-bold text-gray-900 mb-4">
-            ConfiguraciÃ³n
+            Configuración
           </Text>
 
           <TouchableOpacity className="flex-row items-center justify-between py-3 border-b border-gray-200">
@@ -555,7 +555,7 @@ export default function ProfileScreen() {
 
         {/* Logout Button */}
         <Button variant="secondary" onPress={handleLogout}>
-          Cerrar SesiÃ³n
+          Cerrar Sesión
         </Button>
       </ScrollView>
     </View>

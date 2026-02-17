@@ -1,4 +1,4 @@
-ï»¿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -21,10 +21,10 @@ export default function TDEECalculatorScreen() {
   const [result, setResult] = useState<{ bmr: number; tdee: number } | null>(null);
 
   const activityLevels = [
-    { value: 1.2, label: 'Sedentario', desc: 'Poco o ningÃºn ejercicio' },
-    { value: 1.375, label: 'Ligero', desc: '1-3 dÃ­as/semana' },
-    { value: 1.55, label: 'Moderado', desc: '3-5 dÃ­as/semana' },
-    { value: 1.725, label: 'Activo', desc: '6-7 dÃ­as/semana' },
+    { value: 1.2, label: 'Sedentario', desc: 'Poco o ningún ejercicio' },
+    { value: 1.375, label: 'Ligero', desc: '1-3 días/semana' },
+    { value: 1.55, label: 'Moderado', desc: '3-5 días/semana' },
+    { value: 1.725, label: 'Activo', desc: '6-7 días/semana' },
     { value: 1.9, label: 'Muy Activo', desc: 'Ejercicio intenso diario' },
   ];
 
@@ -34,7 +34,7 @@ export default function TDEECalculatorScreen() {
     const a = parseInt(age);
 
     if (!w || !h || !a || w <= 0 || h <= 0 || a <= 0) {
-      Alert.alert('Error', 'Ingresa valores vÃ¡lidos');
+      Alert.alert('Error', 'Ingresa valores válidos');
       return;
     }
 
@@ -57,13 +57,13 @@ export default function TDEECalculatorScreen() {
   const getGoalCalories = () => {
     if (!result) return [];
     return [
-      { goal: 'PÃ©rdida Extrema', calories: Math.round(result.tdee - 1000), desc: '-1000 cal/dÃ­a' },
-      { goal: 'PÃ©rdida RÃ¡pida', calories: Math.round(result.tdee - 750), desc: '-750 cal/dÃ­a' },
-      { goal: 'PÃ©rdida Moderada', calories: Math.round(result.tdee - 500), desc: '-500 cal/dÃ­a' },
-      { goal: 'PÃ©rdida Lenta', calories: Math.round(result.tdee - 250), desc: '-250 cal/dÃ­a' },
+      { goal: 'Pérdida Extrema', calories: Math.round(result.tdee - 1000), desc: '-1000 cal/día' },
+      { goal: 'Pérdida Rápida', calories: Math.round(result.tdee - 750), desc: '-750 cal/día' },
+      { goal: 'Pérdida Moderada', calories: Math.round(result.tdee - 500), desc: '-500 cal/día' },
+      { goal: 'Pérdida Lenta', calories: Math.round(result.tdee - 250), desc: '-250 cal/día' },
       { goal: 'Mantenimiento', calories: result.tdee, desc: 'Mantener peso' },
-      { goal: 'Ganancia Lenta', calories: Math.round(result.tdee + 250), desc: '+250 cal/dÃ­a' },
-      { goal: 'Ganancia Moderada', calories: Math.round(result.tdee + 500), desc: '+500 cal/dÃ­a' },
+      { goal: 'Ganancia Lenta', calories: Math.round(result.tdee + 250), desc: '+250 cal/día' },
+      { goal: 'Ganancia Moderada', calories: Math.round(result.tdee + 500), desc: '+500 cal/día' },
     ];
   };
 
@@ -80,13 +80,13 @@ export default function TDEECalculatorScreen() {
           </TouchableOpacity>
         </View>
         <Text className="text-amber-100 text-center">
-          Gasto energÃ©tico total diario
+          Gasto energético total diario
         </Text>
       </LinearGradient>
 
       <ScrollView className="flex-1" contentContainerClassName="p-4">
         <Card className="p-4 mb-4">
-          <Text className="text-gray-900 font-bold mb-3">GÃ©nero</Text>
+          <Text className="text-gray-900 font-bold mb-3">Género</Text>
           <View className="flex-row gap-2">
             {[
               { id: 'male', label: 'Hombre', icon: 'male' },
@@ -112,7 +112,7 @@ export default function TDEECalculatorScreen() {
           <Text className="text-gray-900 font-bold mb-3">Datos Personales</Text>
           <View className="gap-3">
             <View>
-              <Text className="text-gray-700 font-semibold mb-2">Edad (aÃ±os)</Text>
+              <Text className="text-gray-700 font-semibold mb-2">Edad (años)</Text>
               <TextInput
                 value={age}
                 onChangeText={setAge}
@@ -178,18 +178,18 @@ export default function TDEECalculatorScreen() {
               <View className="gap-4">
                 <View>
                   <Text className="text-gray-600 text-sm mb-1">BMR (Metabolismo Basal)</Text>
-                  <Text className="text-amber-600 font-bold text-3xl">{result.bmr} cal/dÃ­a</Text>
+                  <Text className="text-amber-600 font-bold text-3xl">{result.bmr} cal/día</Text>
                 </View>
                 <View>
                   <Text className="text-gray-600 text-sm mb-1">TDEE (Gasto Total)</Text>
-                  <Text className="text-amber-600 font-bold text-4xl">{result.tdee} cal/dÃ­a</Text>
+                  <Text className="text-amber-600 font-bold text-4xl">{result.tdee} cal/día</Text>
                 </View>
               </View>
             </Card>
 
             <Card className="p-4 mb-4">
               <Text className="text-gray-900 font-bold text-lg mb-4">
-                CalorÃ­as segÃºn tu Objetivo
+                Calorías según tu Objetivo
               </Text>
               <View className="gap-2">
                 {getGoalCalories().map((item, i) => (
@@ -215,7 +215,7 @@ export default function TDEECalculatorScreen() {
             <View className="flex-1">
               <Text className="text-text font-semibold mb-1">Nota</Text>
               <Text className="text-text/70 text-sm">
-                El TDEE es una estimaciÃ³n. Ajusta segÃºn tus resultados reales. Para pÃ©rdida de grasa, empieza con -300 a -500 calorÃ­as.
+                El TDEE es una estimación. Ajusta según tus resultados reales. Para pérdida de grasa, empieza con -300 a -500 calorías.
               </Text>
             </View>
           </View>

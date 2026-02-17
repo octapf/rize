@@ -1,4 +1,4 @@
-ï»¿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -45,16 +45,16 @@ const SLEEP_HISTORY: SleepData[] = [
 const RECOVERY_METRICS: RecoveryMetric[] = [
   {
     id: '1',
-    name: 'Calidad de SueÃ±o',
+    name: 'Calidad de Sueño',
     value: 82,
     max: 100,
     status: 'optimo',
-    recommendation: 'Excelente recuperaciÃ³n. ContinÃºa asÃ­.',
+    recommendation: 'Excelente recuperación. Continúa así.',
     icon: 'moon',
   },
   {
     id: '2',
-    name: 'Variabilidad CardÃ­aca',
+    name: 'Variabilidad Cardíaca',
     value: 65,
     max: 100,
     status: 'normal',
@@ -67,7 +67,7 @@ const RECOVERY_METRICS: RecoveryMetric[] = [
     value: 35,
     max: 100,
     status: 'bajo',
-    recommendation: 'Fatiga elevada. Considera un dÃ­a de descanso.',
+    recommendation: 'Fatiga elevada. Considera un día de descanso.',
     icon: 'battery-charging',
   },
   {
@@ -76,7 +76,7 @@ const RECOVERY_METRICS: RecoveryMetric[] = [
     value: 75,
     max: 100,
     status: 'normal',
-    recommendation: 'MÃºsculos recuperados. Listo para entrenar.',
+    recommendation: 'Músculos recuperados. Listo para entrenar.',
     icon: 'fitness',
   },
 ];
@@ -95,7 +95,7 @@ export default function RecoveryTracking() {
 
   const tabs = [
     { id: 'overview' as const, label: 'General', icon: 'stats-chart' },
-    { id: 'sleep' as const, label: 'SueÃ±o', icon: 'moon' },
+    { id: 'sleep' as const, label: 'Sueño', icon: 'moon' },
     { id: 'hrv' as const, label: 'HRV', icon: 'pulse' },
   ];
 
@@ -131,8 +131,8 @@ export default function RecoveryTracking() {
 
   const logSleep = () => {
     Alert.alert(
-      'Registrar SueÃ±o',
-      'Selecciona las horas de sueÃ±o',
+      'Registrar Sueño',
+      'Selecciona las horas de sueño',
       [
         { text: '< 6 horas', onPress: () => saveSleep(5) },
         { text: '6-7 horas', onPress: () => saveSleep(6.5) },
@@ -144,7 +144,7 @@ export default function RecoveryTracking() {
   };
 
   const saveSleep = (hours: number) => {
-    Alert.alert('Â¡Registrado!', `${hours} horas de sueÃ±o registradas`);
+    Alert.alert('¡Registrado!', `${hours} horas de sueño registradas`);
   };
 
   const averageSleep = (SLEEP_HISTORY.reduce((sum, day) => sum + day.hours, 0) / SLEEP_HISTORY.length).toFixed(1);
@@ -160,7 +160,7 @@ export default function RecoveryTracking() {
             <Ionicons name="arrow-back" size={24} color="white" />
           </TouchableOpacity>
           <Text className="text-white text-2xl font-bold flex-1 ml-3">
-            RecuperaciÃ³n
+            Recuperación
           </Text>
           <TouchableOpacity onPress={logSleep}>
             <Ionicons name="add-circle" size={24} color="#9D12DE" />
@@ -171,12 +171,12 @@ export default function RecoveryTracking() {
         <View className="bg-gradient-to-br from-primary to-[#7D0EBE] rounded-xl p-4 mb-4">
           <View className="flex-row items-center justify-between">
             <View className="flex-1">
-              <Text className="text-white/80 text-sm mb-1">PuntuaciÃ³n de RecuperaciÃ³n</Text>
+              <Text className="text-white/80 text-sm mb-1">Puntuación de Recuperación</Text>
               <Text className="text-white font-bold text-4xl mb-1">
                 {recoveryScore}/100
               </Text>
               <Text className="text-white/80 text-sm">
-                {recoveryScore >= 80 ? 'Â¡Excelente!' : recoveryScore >= 60 ? 'Buena recuperaciÃ³n' : 'Necesitas descanso'}
+                {recoveryScore >= 80 ? '¡Excelente!' : recoveryScore >= 60 ? 'Buena recuperación' : 'Necesitas descanso'}
               </Text>
             </View>
             <View className="bg-white/20 rounded-full p-4">
@@ -217,7 +217,7 @@ export default function RecoveryTracking() {
         {selectedTab === 'overview' && (
           <View className="px-6 pt-6">
             <Text className="text-white font-bold text-lg mb-3">
-              MÃ©tricas de RecuperaciÃ³n
+              Métricas de Recuperación
             </Text>
 
             {RECOVERY_METRICS.map((metric) => (
@@ -267,7 +267,7 @@ export default function RecoveryTracking() {
         {selectedTab === 'sleep' && (
           <View className="px-6 pt-6">
             <Text className="text-white font-bold text-lg mb-3">
-              AnÃ¡lisis de SueÃ±o
+              Análisis de Sueño
             </Text>
 
             {/* Stats Cards */}
@@ -277,7 +277,7 @@ export default function RecoveryTracking() {
                 <Text className="text-white text-2xl font-bold">{averageSleep}h</Text>
               </View>
               <View className="flex-1 bg-zinc-900 rounded-xl p-3 border border-zinc-800">
-                <Text className="text-zinc-400 text-xs">Ãšltima Noche</Text>
+                <Text className="text-zinc-400 text-xs">Última Noche</Text>
                 <Text className="text-primary text-2xl font-bold">
                   {lastNightSleep.hours}h
                 </Text>
@@ -295,7 +295,7 @@ export default function RecoveryTracking() {
 
             {/* Sleep Chart */}
             <View className="bg-zinc-900 rounded-xl p-4 mb-4 border border-zinc-800">
-              <Text className="text-white font-bold mb-3">Ãšltimos 7 DÃ­as</Text>
+              <Text className="text-white font-bold mb-3">Últimos 7 Días</Text>
               <LineChart
                 data={SLEEP_CHART_DATA}
                 width={screenWidth - 80}
@@ -326,13 +326,13 @@ export default function RecoveryTracking() {
 
             {/* Sleep Breakdown */}
             <Text className="text-white font-bold text-lg mb-3">
-              Fases de SueÃ±o (Ãšltima Noche)
+              Fases de Sueño (Última Noche)
             </Text>
 
             <View className="bg-zinc-900 rounded-xl p-4 mb-4 border border-zinc-800">
               <View className="mb-3">
                 <View className="flex-row items-center justify-between mb-2">
-                  <Text className="text-zinc-400">SueÃ±o Profundo</Text>
+                  <Text className="text-zinc-400">Sueño Profundo</Text>
                   <Text className="text-white font-bold">{lastNightSleep.deepSleep}h</Text>
                 </View>
                 <View className="bg-zinc-800 h-2 rounded-full overflow-hidden">
@@ -345,7 +345,7 @@ export default function RecoveryTracking() {
 
               <View className="mb-3">
                 <View className="flex-row items-center justify-between mb-2">
-                  <Text className="text-zinc-400">SueÃ±o REM</Text>
+                  <Text className="text-zinc-400">Sueño REM</Text>
                   <Text className="text-white font-bold">{lastNightSleep.remSleep}h</Text>
                 </View>
                 <View className="bg-zinc-800 h-2 rounded-full overflow-hidden">
@@ -378,7 +378,7 @@ export default function RecoveryTracking() {
             <View className="bg-zinc-900 rounded-xl p-8 border border-zinc-800 items-center">
               <Ionicons name="pulse" size={48} color="#71717A" />
               <Text className="text-zinc-400 font-bold mt-4">
-                IntegraciÃ³n con Wearables PrÃ³ximamente
+                Integración con Wearables Próximamente
               </Text>
               <Text className="text-zinc-500 text-sm mt-2 text-center">
                 Conecta tu Apple Watch o Garmin para ver datos de HRV

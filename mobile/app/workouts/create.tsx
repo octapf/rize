@@ -1,4 +1,4 @@
-锘縤mport React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   View,
   Text,
@@ -53,7 +53,7 @@ export default function CreateWorkoutScreen() {
         exercises: exercisesData.length > 0 ? exercisesData : undefined,
       });
 
-      Alert.alert('脡xito', 'Entrenamiento creado correctamente');
+      Alert.alert('蓌ito', 'Entrenamiento creado correctamente');
       clear(); // Limpiar el draft
       router.back();
     } catch (error: any) {
@@ -106,14 +106,14 @@ export default function CreateWorkoutScreen() {
           </Text>
         </View>
 
-        {/* Duraci贸n */}
+        {/* Duraci髇 */}
         <View>
           <View className="flex-row items-center gap-2 mb-3">
             <View className="bg-primary/10 p-2 rounded-lg">
               <Ionicons name="time" size={20} color="#9D12DE" />
             </View>
             <Text className="text-base font-bold text-gray-900">
-              Duraci贸n (minutos)
+              Duraci髇 (minutos)
             </Text>
           </View>
           <TextInput
@@ -169,7 +169,7 @@ export default function CreateWorkoutScreen() {
                     {item.exercise.name.es}
                   </Text>
                   <Text className="text-sm text-gray-600">
-                    {item.sets.length} serie{item.sets.length > 1 ? 's' : ''} 鈥' '}
+                    {item.sets.length} serie{item.sets.length > 1 ? 's' : ''} 晎' '}
                     {item.sets.map((s) => s.reps).join('-')} reps
                   </Text>
                 </View>
@@ -205,7 +205,7 @@ export default function CreateWorkoutScreen() {
           <TextInput
             value={notes}
             onChangeText={setNotes}
-            placeholder="A帽ade notas sobre tu entrenamiento..."
+            placeholder="A馻de notas sobre tu entrenamiento..."
             multiline
             numberOfLines={4}
             textAlignVertical="top"
@@ -226,16 +226,16 @@ export default function CreateWorkoutScreen() {
             </View>
             <View className="flex-1">
               <Text className="text-base font-bold text-text mb-1">
-                Versi贸n Simplificada
+                Versi髇 Simplificada
               </Text>
               <Text className="text-sm text-text/70 leading-5">
-                Por ahora solo registra el entrenamiento b谩sico. En la pr贸xima actualizaci贸n podr谩s a帽adir series, repeticiones y peso para cada ejercicio.
+                Por ahora solo registra el entrenamiento b醩ico. En la pr髕ima actualizaci髇 podr醩 a馻dir series, repeticiones y peso para cada ejercicio.
               </Text>
             </View>
           </View>
         </View>
 
-        {/* Bot贸n crear */}
+        {/* Bot髇 crear */}
         <TouchableOpacity
           onPress={handleCreate}
           disabled={createWorkout.isPending || !name.trim()}

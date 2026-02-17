@@ -1,4 +1,4 @@
-ï»¿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -70,7 +70,7 @@ export default function PeriodizationPlans() {
       name: 'Daily Undulating (DUP)',
       bestFor: 'Variety, frequent practice',
       duration: 'Ongoing',
-      color: 'emerald',
+      color: 'primary',
       icon: 'sync' as const,
       phases: [
         { name: 'Day 1: Hypertrophy', weeks: 'Every week', sets: '4x10', reps: '10', intensity: '70%', rest: '90s' },
@@ -169,7 +169,7 @@ export default function PeriodizationPlans() {
 
           <View className={`bg-${currentPlan.color}-500/10 rounded-xl p-5 mb-6 border border-${currentPlan.color}-500/30`}>
             <View className="flex-row items-center mb-3">
-              <Ionicons name={currentPlan.icon} size={28} color={`#${currentPlan.color === 'blue' ? '3b82f6' : currentPlan.color === 'purple' ? 'a855f7' : currentPlan.color === 'emerald' ? '10b981' : 'f59e0b'}`} />
+              <Ionicons name={currentPlan.icon} size={28} color={`#${currentPlan.color === 'blue' ? '3b82f6' : currentPlan.color === 'purple' ? 'a855f7' : currentPlan.color === 'primary' ? '9D12DE' : 'f59e0b'}`} />
               <Text className={`text-${currentPlan.color}-400 font-bold text-2xl ml-3`}>
                 {currentPlan.name}
               </Text>
@@ -203,8 +203,8 @@ export default function PeriodizationPlans() {
                     <Text className="text-white font-bold">{phase.weeks}</Text>
                   </View>
                   <View className="flex-row justify-between">
-                    <Text className="text-zinc-400 text-sm">Sets Ã— Reps:</Text>
-                    <Text className="text-white font-bold">{phase.sets} Ã— {phase.reps}</Text>
+                    <Text className="text-zinc-400 text-sm">Sets × Reps:</Text>
+                    <Text className="text-white font-bold">{phase.sets} × {phase.reps}</Text>
                   </View>
                   <View className="flex-row justify-between">
                     <Text className="text-zinc-400 text-sm">Intensity:</Text>
@@ -242,11 +242,11 @@ export default function PeriodizationPlans() {
           <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
             <Text className="text-primary/80 font-bold mb-2">Key Principles</Text>
             <Text className="text-primary/60 text-sm">
-              â€¢ Progressive overload is mandatory{'\n'}
-              â€¢ Deload every 3-6 weeks{'\n'}
-              â€¢ Track all lifts meticulously{'\n'}
-              â€¢ Adjust based on feedback{'\n'}
-              â€¢ Consistency &gt; perfection
+              • Progressive overload is mandatory{'\n'}
+              • Deload every 3-6 weeks{'\n'}
+              • Track all lifts meticulously{'\n'}
+              • Adjust based on feedback{'\n'}
+              • Consistency &gt; perfection
             </Text>
           </View>
         </View>

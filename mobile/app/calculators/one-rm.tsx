@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -39,7 +39,7 @@ export default function OneRMCalculator() {
     const r = parseInt(reps);
 
     if (!w || w <= 0) {
-      Alert.alert('Error', 'Ingresa un peso válido');
+      Alert.alert('Error', 'Ingresa un peso v�lido');
       return;
     }
     if (!r || r <= 0 || r > 15) {
@@ -84,7 +84,7 @@ export default function OneRMCalculator() {
 
   const trainingZones = [
     {
-      name: 'Fuerza Máxima',
+      name: 'Fuerza M�xima',
       range: '90-100%',
       reps: '1-3',
       color: 'red',
@@ -101,15 +101,15 @@ export default function OneRMCalculator() {
       name: 'Hipertrofia',
       range: '70-85%',
       reps: '6-12',
-      color: 'emerald',
-      description: 'Máximo crecimiento muscular',
+      color: 'primary',
+      description: 'M�ximo crecimiento muscular',
     },
     {
       name: 'Resistencia Muscular',
       range: '60-70%',
       reps: '12-20',
       color: 'blue',
-      description: 'Resistencia y definición',
+      description: 'Resistencia y definici�n',
     },
   ];
 
@@ -177,7 +177,7 @@ export default function OneRMCalculator() {
 
             {/* Formula Selection */}
             <View className="mb-4">
-              <Text className="text-zinc-400 text-sm mb-2">Fórmula</Text>
+              <Text className="text-zinc-400 text-sm mb-2">F�rmula</Text>
               <View className="flex-row gap-2">
                 {(Object.keys(formulas) as Array<keyof typeof formulas>).map((f) => (
                   <TouchableOpacity
@@ -213,14 +213,14 @@ export default function OneRMCalculator() {
 
           {/* 1RM Result */}
           {oneRM !== null && (
-            <View className="bg-gradient-to-r from-emerald-500 to-emerald-600 rounded-xl p-6 mb-6">
+            <View className="bg-gradient-to-r from-primary to-primary rounded-xl p-6 mb-6">
               <Text className="text-white/70 text-sm mb-2">TU 1RM ESTIMADO</Text>
               <View className="flex-row items-baseline">
                 <Text className="text-white text-6xl font-bold">{oneRM}</Text>
                 <Text className="text-white/70 text-2xl ml-2">kg</Text>
               </View>
               <Text className="text-primary/50 text-sm mt-2">
-                Fórmula: {formulaNames[formula]}
+                F�rmula: {formulaNames[formula]}
               </Text>
             </View>
           )}
@@ -302,10 +302,10 @@ export default function OneRMCalculator() {
               <Ionicons name="information-circle" size={20} color="#9D12DE" />
               <View className="flex-1 ml-3">
                 <Text className="text-primary/80 font-bold mb-2">
-                  ¿Qué es el 1RM?
+                  �Qu� es el 1RM?
                 </Text>
                 <Text className="text-primary/60 text-sm">
-                  1 Rep Max: el peso máximo que puedes levantar por 1 repetición con buena técnica. Útil para programar entrenamientos basados en porcentajes.
+                  1 Rep Max: el peso m�ximo que puedes levantar por 1 repetici�n con buena t�cnica. �til para programar entrenamientos basados en porcentajes.
                 </Text>
               </View>
             </View>
@@ -319,7 +319,7 @@ export default function OneRMCalculator() {
                   Nota Importante
                 </Text>
                 <Text className="text-amber-300 text-sm">
-                  Estas son estimaciones. Tu 1RM real puede variar según técnica, experiencia y condiciones. Usa para planificar, no para maxear sin preparación.
+                  Estas son estimaciones. Tu 1RM real puede variar seg�n t�cnica, experiencia y condiciones. Usa para planificar, no para maxear sin preparaci�n.
                 </Text>
               </View>
             </View>

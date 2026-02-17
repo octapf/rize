@@ -1,4 +1,4 @@
-Ôªøimport React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -50,11 +50,11 @@ const CURRENT_WEEK: WeeklyReport = {
   avgSleep: 7.8,
   consistency: 100,
   prs: 3,
-  topMuscleGroups: ['Pecho', 'Espalda', 'Cu√°driceps'],
-  achievements: ['Racha 7 d√≠as', 'Nuevo PR Sentadilla', '25 workouts en Enero'],
+  topMuscleGroups: ['Pecho', 'Espalda', 'Cu·driceps'],
+  achievements: ['Racha 7 dÌas', 'Nuevo PR Sentadilla', '25 workouts en Enero'],
   improvements: [
     { metric: 'Volumen Total', value: 12.5, trend: 'up' },
-    { metric: 'Fuerza M√°xima', value: 8.3, trend: 'up' },
+    { metric: 'Fuerza M·xima', value: 8.3, trend: 'up' },
     { metric: 'Consistencia', value: 15, trend: 'up' },
     { metric: 'Grasa Corporal', value: -2.1, trend: 'down' },
   ],
@@ -242,14 +242,14 @@ export default function WeeklyReports() {
 
           <View className="flex-row gap-3 mb-6">
             <View className="flex-1 bg-zinc-900 rounded-xl p-3 border border-zinc-800">
-              <Text className="text-zinc-400 text-xs mb-1">CALOR√É¬çAS</Text>
+              <Text className="text-zinc-400 text-xs mb-1">CALOR√çAS</Text>
               <Text className="text-red-400 text-2xl font-bold">
                 {currentWeek.totalCalories}
               </Text>
               <Text className="text-zinc-400 text-xs">quemadas</Text>
             </View>
             <View className="flex-1 bg-zinc-900 rounded-xl p-3 border border-zinc-800">
-              <Text className="text-zinc-400 text-xs mb-1">SUE√É‚ÄòO AVG</Text>
+              <Text className="text-zinc-400 text-xs mb-1">SUE√ëO AVG</Text>
               <Text className="text-primary/80 text-2xl font-bold">
                 {currentWeek.avgSleep}h
               </Text>
@@ -330,7 +330,7 @@ export default function WeeklyReports() {
           {currentWeek.prs > 0 && (
             <>
               <Text className="text-white font-bold text-lg mb-3">
-                R√©cords Personales
+                RÈcords Personales
               </Text>
               <View className="bg-zinc-900 rounded-xl p-4 border border-zinc-800 mb-6">
                 <View className="flex-row items-center">
@@ -341,10 +341,10 @@ export default function WeeklyReports() {
                   </View>
                   <View className="flex-1">
                     <Text className="text-white font-bold text-lg mb-1">
-                      ¬°PRs Rotos Esta Semana!
+                      °PRs Rotos Esta Semana!
                     </Text>
                     <Text className="text-zinc-400 text-sm">
-                      Sigue super√°ndote cada d√≠a
+                      Sigue super·ndote cada dÌa
                     </Text>
                   </View>
                 </View>
@@ -390,7 +390,7 @@ export default function WeeklyReports() {
                       </Text>
                     </View>
                     <View className="flex-1 bg-zinc-800 rounded-lg p-2">
-                      <Text className="text-zinc-400 text-xs">Calor√≠as</Text>
+                      <Text className="text-zinc-400 text-xs">CalorÌas</Text>
                       <Text className="text-red-400 font-bold">{day.calories}</Text>
                     </View>
                   </View>
@@ -403,11 +403,11 @@ export default function WeeklyReports() {
 
               <View className="flex-row gap-2">
                 <View className="flex-1 bg-zinc-800 rounded-lg p-2">
-                  <Text className="text-zinc-400 text-xs">Sue√±o</Text>
+                  <Text className="text-zinc-400 text-xs">SueÒo</Text>
                   <Text className="text-primary/80 font-bold">{day.sleep}h</Text>
                 </View>
                 <View className="flex-1 bg-zinc-800 rounded-lg p-2">
-                  <Text className="text-zinc-400 text-xs">Nutrici√≥n</Text>
+                  <Text className="text-zinc-400 text-xs">NutriciÛn</Text>
                   <Text className="text-primary font-bold">{day.nutrition}%</Text>
                 </View>
               </View>

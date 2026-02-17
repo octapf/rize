@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -30,7 +30,7 @@ export default function LifetimeProgression() {
       realistic_expectations: {
         title: 'Realistic Timeline to Strength Levels',
         beginner: {
-          level: 'Beginner (Untrained â†’ Novice)',
+          level: 'Beginner (Untrained → Novice)',
           time: '0-6 months',
           progress: 'Rapid - PR every session possible',
         },
@@ -55,7 +55,7 @@ export default function LifetimeProgression() {
     years_1_3: {
       name: 'Years 1-3: Foundation',
       icon: 'home',
-      color: 'emerald',
+      color: 'primary',
       characteristics: {
         title: 'What Defines This Phase',
         attributes: [
@@ -69,15 +69,15 @@ export default function LifetimeProgression() {
       strength_gains: {
         title: 'Expected Strength Gains',
         men: {
-          year_1: 'Squat: 135 â†’ 315, Bench: 95 â†’ 225, Dead: 185 â†’ 405',
-          year_2: 'Squat: 315 â†’ 405, Bench: 225 â†’ 275, Dead: 405 â†’ 495',
-          year_3: 'Squat: 405 â†’ 455, Bench: 275 â†’ 315, Dead: 495 â†’ 545',
+          year_1: 'Squat: 135 → 315, Bench: 95 → 225, Dead: 185 → 405',
+          year_2: 'Squat: 315 → 405, Bench: 225 → 275, Dead: 405 → 495',
+          year_3: 'Squat: 405 → 455, Bench: 275 → 315, Dead: 495 → 545',
           note: 'VERY rough estimates - huge individual variation',
         },
         women: {
-          year_1: 'Squat: 95 â†’ 185, Bench: 65 â†’ 135, Dead: 135 â†’ 245',
-          year_2: 'Squat: 185 â†’ 245, Bench: 135 â†’ 165, Dead: 245 â†’ 315',
-          year_3: 'Squat: 245 â†’ 275, Bench: 165 â†’ 185, Dead: 315 â†’ 365',
+          year_1: 'Squat: 95 → 185, Bench: 65 → 135, Dead: 135 → 245',
+          year_2: 'Squat: 185 → 245, Bench: 135 → 165, Dead: 245 → 315',
+          year_3: 'Squat: 245 → 275, Bench: 165 → 185, Dead: 315 → 365',
         },
       },
       training_approach: {
@@ -412,7 +412,7 @@ export default function LifetimeProgression() {
   const getColorClass = (color: string) => {
     const colors: { [key: string]: string } = {
       blue: 'bg-primary',
-      emerald: 'bg-primary',
+      primary: 'bg-primary',
       purple: 'bg-purple-500',
       amber: 'bg-amber-500',
       red: 'bg-red-500',
@@ -484,29 +484,29 @@ export default function LifetimeProgression() {
             </Text>
           </View>
 
-          <View className="bg-gradient-to-r from-emerald-500/20 to-cyan-500/20 rounded-xl p-5 border border-primary/30 mb-6">
+          <View className="bg-gradient-to-r from-primary/20 to-cyan-500/20 rounded-xl p-5 border border-primary/30 mb-6">
             <Text className="text-primary font-bold text-lg mb-3">Progression Timeline</Text>
             <Text className="text-primary/80 text-sm mb-2">
-              ðŸ“… Years 1-3: Foundation - rapid progress, learning
+              📅 Years 1-3: Foundation - rapid progress, learning
             </Text>
             <Text className="text-primary/80 text-sm mb-2">
-              ðŸ“… Years 3-7: Intermediate - real programming, competition
+              📅 Years 3-7: Intermediate - real programming, competition
             </Text>
             <Text className="text-primary/80 text-sm mb-2">
-              ðŸ“… Years 7-12: Advanced - closing in on potential
+              📅 Years 7-12: Advanced - closing in on potential
             </Text>
             <Text className="text-primary/80 text-sm mb-2">
-              ðŸ“… Years 12+: Elite - at/near genetic limits
+              📅 Years 12+: Elite - at/near genetic limits
             </Text>
             <Text className="text-primary/80 text-sm">
-              ðŸ“… Years 20+: Longevity - smart training for life
+              📅 Years 20+: Longevity - smart training for life
             </Text>
           </View>
 
           <View className="bg-amber-500/10 rounded-xl p-5 border border-amber-500/30 mb-6">
             <Text className="text-amber-400 font-bold text-lg mb-3">Key Principle</Text>
             <Text className="text-amber-300 text-sm">
-              ðŸ’¡ Each phase builds on the previous - you can't skip steps. A strong foundation in years 1-3 determines your ceiling years 10-20. Patience and consistency over decades beats intensity without longevity.
+              💡 Each phase builds on the previous - you can't skip steps. A strong foundation in years 1-3 determines your ceiling years 10-20. Patience and consistency over decades beats intensity without longevity.
             </Text>
           </View>
         </View>

@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -19,7 +19,7 @@ export default function MealTiming() {
   ];
 
   const goals = [
-    { key: 'muscle', label: 'Muscle Gain', color: 'emerald' },
+    { key: 'muscle', label: 'Muscle Gain', color: 'primary' },
     { key: 'fat', label: 'Fat Loss', color: 'red' },
     { key: 'performance', label: 'Performance', color: 'blue' },
   ];
@@ -165,7 +165,7 @@ export default function MealTiming() {
 
       <ScrollView className="flex-1" showsVerticalScrollIndicator={false}>
         <View className="px-6 pt-6">
-          <View className="bg-gradient-to-r from-amber-500 to-emerald-500 rounded-xl p-6 mb-6">
+          <View className="bg-gradient-to-r from-amber-500 to-primary rounded-xl p-6 mb-6">
             <Text className="text-white text-2xl font-bold mb-2">Nutrient Timing</Text>
             <Text className="text-white opacity-90 mb-4">
               When to eat for best results
@@ -239,7 +239,7 @@ export default function MealTiming() {
               <Text className="text-primary text-sm mb-1">{protocol.preWorkout.example}</Text>
               <Text className="text-zinc-500 text-xs">{protocol.preWorkout.macros}</Text>
             </View>
-            <Text className="text-primary/60 text-sm italic">ðŸ’¡ {protocol.preWorkout.why}</Text>
+            <Text className="text-primary/60 text-sm italic">💡 {protocol.preWorkout.why}</Text>
           </View>
 
           <View className="bg-primary/10 rounded-xl p-4 mb-4 border border-primary/30">
@@ -254,7 +254,7 @@ export default function MealTiming() {
               <Text className="text-primary text-sm mb-1">{protocol.intraWorkout.example}</Text>
               <Text className="text-zinc-500 text-xs">{protocol.intraWorkout.macros}</Text>
             </View>
-            <Text className="text-primary/80 text-sm italic">ðŸ’¡ {protocol.intraWorkout.why}</Text>
+            <Text className="text-primary/80 text-sm italic">💡 {protocol.intraWorkout.why}</Text>
           </View>
 
           <View className="bg-purple-500/10 rounded-xl p-4 mb-4 border border-purple-500/30">
@@ -269,7 +269,7 @@ export default function MealTiming() {
               <Text className="text-primary text-sm mb-1">{protocol.postWorkout.example}</Text>
               <Text className="text-zinc-500 text-xs">{protocol.postWorkout.macros}</Text>
             </View>
-            <Text className="text-purple-300 text-sm italic">ðŸ’¡ {protocol.postWorkout.why}</Text>
+            <Text className="text-purple-300 text-sm italic">💡 {protocol.postWorkout.why}</Text>
           </View>
 
           <View className="bg-amber-500/10 rounded-xl p-4 mb-6 border border-amber-500/30">
@@ -284,18 +284,18 @@ export default function MealTiming() {
               <Text className="text-primary text-sm mb-1">{protocol.restOfDay.example}</Text>
               <Text className="text-zinc-500 text-xs">{protocol.restOfDay.macros}</Text>
             </View>
-            <Text className="text-amber-300 text-sm italic">ðŸ’¡ {protocol.restOfDay.why}</Text>
+            <Text className="text-amber-300 text-sm italic">💡 {protocol.restOfDay.why}</Text>
           </View>
 
           <View className="bg-red-500/10 rounded-xl p-4 border border-red-500/30 mb-6">
             <Text className="text-red-400 font-bold mb-2">Meal Timing Reality Check</Text>
             <Text className="text-red-300 text-sm">
-              • Total daily macros &gt; meal timing{'\n'}
-              • 2-4h "anabolic window" not 30 min{'\n'}
-              • Pre-workout more important than post{'\n'}
-              • Consistency beats perfect timing{'\n'}
-              • Listen to your body{'\n'}
-              • Find what works for YOUR schedule
+              � Total daily macros &gt; meal timing{'\n'}
+              � 2-4h "anabolic window" not 30 min{'\n'}
+              � Pre-workout more important than post{'\n'}
+              � Consistency beats perfect timing{'\n'}
+              � Listen to your body{'\n'}
+              � Find what works for YOUR schedule
             </Text>
           </View>
         </View>

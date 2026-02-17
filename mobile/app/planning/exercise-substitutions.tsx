@@ -1,4 +1,4 @@
-ï»¿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -317,16 +317,16 @@ export default function ExerciseSubstitutions() {
           <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
             <Text className="text-primary/80 font-bold mb-2">Substitution Principles</Text>
             <Text className="text-primary/60 text-sm mb-2">
-              â€¢ Match movement pattern (horizontal push, vertical pull, etc.)
+              • Match movement pattern (horizontal push, vertical pull, etc.)
             </Text>
             <Text className="text-primary/60 text-sm mb-2">
-              â€¢ Target same muscle groups
+              • Target same muscle groups
             </Text>
             <Text className="text-primary/60 text-sm mb-2">
-              â€¢ Consider available equipment
+              • Consider available equipment
             </Text>
             <Text className="text-primary/60 text-sm">
-              â€¢ Respect pain signals - don't push through injury
+              • Respect pain signals - don't push through injury
             </Text>
           </View>
         </View>

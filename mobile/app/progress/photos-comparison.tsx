@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -52,7 +52,7 @@ export default function ProgressPhotosComparisonScreen() {
         date: new Date(),
       };
       setPhotos([newPhoto, ...photos]);
-      Alert.alert('Éxito', 'Foto agregada correctamente');
+      Alert.alert('�xito', 'Foto agregada correctamente');
     }
   };
 
@@ -61,7 +61,7 @@ export default function ProgressPhotosComparisonScreen() {
       setSelectedPhotos(selectedPhotos.filter((p) => p !== id));
     } else {
       if (selectedPhotos.length >= 4) {
-        Alert.alert('Límite', 'Máximo 4 fotos para comparar');
+        Alert.alert('L�mite', 'M�ximo 4 fotos para comparar');
         return;
       }
       setSelectedPhotos([...selectedPhotos, id]);
@@ -137,20 +137,20 @@ export default function ProgressPhotosComparisonScreen() {
             <TouchableOpacity onPress={() => setCompareMode(false)}>
               <Ionicons name="arrow-back" size={28} color="white" />
             </TouchableOpacity>
-            <Text className="text-2xl font-bold text-white">Comparación</Text>
-            <TouchableOpacity onPress={() => Alert.alert('Compartir', 'Función en desarrollo')}>
+            <Text className="text-2xl font-bold text-white">Comparaci�n</Text>
+            <TouchableOpacity onPress={() => Alert.alert('Compartir', 'Funci�n en desarrollo')}>
               <Ionicons name="share-outline" size={28} color="white" />
             </TouchableOpacity>
           </View>
         </LinearGradient>
 
         <View className="flex-1 p-4">
-          <Card className="p-4 mb-4 bg-gradient-to-r from-emerald-50 to-green-50">
+          <Card className="p-4 mb-4 bg-gradient-to-r from-primary/10 to-primary/10">
             <View className="flex-row justify-around">
               <View className="items-center">
                 <Text className="text-gray-600 text-sm">Tiempo</Text>
                 <Text className="text-primary font-bold text-2xl">{daysDiff}</Text>
-                <Text className="text-gray-600 text-xs">días</Text>
+                <Text className="text-gray-600 text-xs">d�as</Text>
               </View>
               {weightDiff !== null && (
                 <View className="items-center">
@@ -222,7 +222,7 @@ export default function ProgressPhotosComparisonScreen() {
               No hay fotos
             </Text>
             <Text className="text-gray-600 text-center mt-2">
-              Agrega fotos para seguir tu transformación
+              Agrega fotos para seguir tu transformaci�n
             </Text>
           </View>
         }

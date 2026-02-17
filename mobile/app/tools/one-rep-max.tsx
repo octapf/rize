@@ -1,4 +1,4 @@
-ï»¿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -23,7 +23,7 @@ export default function OneRepMaxCalculatorScreen() {
     const r = parseInt(reps);
 
     if (!w || !r || w <= 0 || r <= 0 || r > 20) {
-      Alert.alert('Error', 'Ingresa valores vÃ¡lidos (1-20 reps)');
+      Alert.alert('Error', 'Ingresa valores válidos (1-20 reps)');
       return;
     }
 
@@ -31,15 +31,15 @@ export default function OneRepMaxCalculatorScreen() {
 
     switch (formula) {
       case 'epley':
-        // Epley formula: weight Ã— (1 + 0.0333 Ã— reps)
+        // Epley formula: weight × (1 + 0.0333 × reps)
         oneRM = w * (1 + 0.0333 * r);
         break;
       case 'brzycki':
-        // Brzycki formula: weight Ã— (36 / (37 - reps))
+        // Brzycki formula: weight × (36 / (37 - reps))
         oneRM = w * (36 / (37 - r));
         break;
       case 'lander':
-        // Lander formula: (100 Ã— weight) / (101.3 - 2.67123 Ã— reps)
+        // Lander formula: (100 × weight) / (101.3 - 2.67123 × reps)
         oneRM = (100 * w) / (101.3 - 2.67123 * r);
         break;
     }
@@ -73,17 +73,17 @@ export default function OneRepMaxCalculatorScreen() {
           </TouchableOpacity>
         </View>
         <Text className="text-red-100 text-center">
-          Calcula tu mÃ¡ximo de una repeticiÃ³n
+          Calcula tu máximo de una repetición
         </Text>
       </LinearGradient>
 
       <ScrollView className="flex-1" contentContainerClassName="p-4">
         <Card className="p-4 mb-4">
-          <Text className="text-gray-900 font-bold mb-3">FÃ³rmula</Text>
+          <Text className="text-gray-900 font-bold mb-3">Fórmula</Text>
           <View className="gap-2">
             {[
-              { id: 'epley', name: 'Epley', desc: 'MÃ¡s popular, precisa para 1-10 reps' },
-              { id: 'brzycki', name: 'Brzycki', desc: 'Precisa para reps mÃ¡s altas' },
+              { id: 'epley', name: 'Epley', desc: 'Más popular, precisa para 1-10 reps' },
+              { id: 'brzycki', name: 'Brzycki', desc: 'Precisa para reps más altas' },
               { id: 'lander', name: 'Lander', desc: 'Conservadora, segura' },
             ].map((f) => (
               <TouchableOpacity
@@ -142,7 +142,7 @@ export default function OneRepMaxCalculatorScreen() {
               <View className="items-center">
                 <Text className="text-red-900 font-bold text-lg mb-2">Tu 1RM Estimado</Text>
                 <Text className="text-red-600 font-bold text-5xl">{result} kg</Text>
-                <Text className="text-gray-600 text-sm mt-2">FÃ³rmula: {formula.charAt(0).toUpperCase() + formula.slice(1)}</Text>
+                <Text className="text-gray-600 text-sm mt-2">Fórmula: {formula.charAt(0).toUpperCase() + formula.slice(1)}</Text>
               </View>
             </Card>
 
@@ -176,10 +176,10 @@ export default function OneRepMaxCalculatorScreen() {
             <View className="flex-1">
               <Text className="text-text font-semibold mb-1">Importante</Text>
               <Text className="text-text/70 text-sm">
-                â€¢ Este cÃ¡lculo es una estimaciÃ³n{'\n'}
-                â€¢ Siempre usa un spotter para mÃ¡ximos{'\n'}
-                â€¢ Calienta adecuadamente antes{'\n'}
-                â€¢ No intentes tu 1RM sin experiencia
+                • Este cálculo es una estimación{'\n'}
+                • Siempre usa un spotter para máximos{'\n'}
+                • Calienta adecuadamente antes{'\n'}
+                • No intentes tu 1RM sin experiencia
               </Text>
             </View>
           </View>

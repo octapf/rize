@@ -1,6 +1,6 @@
 # Assets Necesarios para RIZE
 
-**Placeholders:** Se generan con `npm run generate-assets` en la carpeta `mobile/` (crea icon, splash, adaptive-icon y favicon en verde #10B981). Requiere `pngjs` (devDependency).
+**Placeholders:** Se generan con `npm run generate-assets` en la carpeta `mobile/` (crea icon, splash, adaptive-icon y favicon en primary #9D12DE). Requiere `pngjs` (devDependency).
 
 Para producción, reemplazá por assets finales:
 
@@ -8,7 +8,7 @@ Para producción, reemplazá por assets finales:
 - **Archivo**: `icon.png`
 - **Tamaño**: 1024x1024px
 - **Formato**: PNG con transparencia
-- **Contenido**: Logo RIZE en verde esmeralda (#10B981)
+- **Contenido**: Logo RIZE en primary (#9D12DE)
 
 ## 2. Splash Screen (1284x2778)
 - **Archivo**: `splash.png`
@@ -34,6 +34,6 @@ Para producción, reemplazá por assets finales:
 - https://icon.kitchen: Alternativa online
 
 ## Colores RIZE:
-- **Primary**: #10B981 (Emerald green)
+- **Primary**: #9D12DE (Purple)
 - **Dark**: #065F46
 - **Light**: #D1FAE5

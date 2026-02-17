@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -27,7 +27,7 @@ export default function RecoveryBalance() {
   const totalScore = Math.round(sleepScore + stressScore + volumeScore + sorenessScore);
 
   const getScoreColor = (score: number) => {
-    if (score >= 80) return 'emerald';
+    if (score >= 80) return 'primary';
     if (score >= 60) return 'blue';
     if (score >= 40) return 'amber';
     return 'red';
@@ -57,7 +57,7 @@ export default function RecoveryBalance() {
     {
       name: 'Stress Levels',
       current: `${stressLevel}/10`,
-      optimal: 'â‰¤3/10',
+      optimal: '≤3/10',
       score: stressScore,
       maxScore: 25,
       icon: 'happy',
@@ -71,13 +71,13 @@ export default function RecoveryBalance() {
       score: volumeScore,
       maxScore: 25,
       icon: 'barbell',
-      color: 'emerald',
+      color: 'primary',
       tips: ['Deload every 6-8 weeks', 'Avoid junk volume', 'Quality > quantity', 'Track working sets'],
     },
     {
       name: 'Muscle Soreness',
       current: `${soreness}/5`,
-      optimal: 'â‰¤2/5',
+      optimal: '≤2/5',
       score: sorenessScore,
       maxScore: 15,
       icon: 'fitness',
@@ -246,8 +246,8 @@ export default function RecoveryBalance() {
                   <View className="flex-row items-center flex-1">
                     <Ionicons name={factor.icon as any} size={24} color={
                       factor.color === 'purple' ? '#a855f7' :
-                      factor.color === 'blue' ? '#9D12DE' :
-                      factor.color === 'emerald' ? '#9D12DE' : '#FFEA00'
+                      factor.color === 'blue' ? '#3B82F6' :
+                      factor.color === 'primary' ? '#9D12DE' : '#FFEA00'
                     } />
                     <Text className="text-white font-bold ml-3">{factor.name}</Text>
                   </View>
@@ -271,7 +271,7 @@ export default function RecoveryBalance() {
                 <Text className={`text-${factor.color}-400 font-bold text-xs mb-1`}>IMPROVEMENT TIPS</Text>
                 {factor.tips.map((tip, tipIdx) => (
                   <Text key={tipIdx} className={`text-${factor.color}-300 text-xs mb-1`}>
-                    • {tip}
+                    � {tip}
                   </Text>
                 ))}
               </View>
@@ -285,7 +285,7 @@ export default function RecoveryBalance() {
               <Text className={`text-${rec.color}-400 font-bold mb-3`}>{rec.title}</Text>
               {rec.items.map((item, itemIdx) => (
                 <Text key={itemIdx} className={`text-${rec.color}-300 text-sm mb-2`}>
-                  ✓ {item}
+                  ? {item}
                 </Text>
               ))}
             </View>
@@ -294,12 +294,12 @@ export default function RecoveryBalance() {
           <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
             <Text className="text-primary/80 font-bold mb-2">Recovery Principles</Text>
             <Text className="text-primary/60 text-sm">
-              • Recovery = when muscle grows{'\n'}
-              • Sleep is #1 priority{'\n'}
-              • Stress kills gains{'\n'}
-              • Track trends, not single days{'\n'}
-              • Auto-regulate training intensity{'\n'}
-              • Deload every 6-8 weeks minimum
+              � Recovery = when muscle grows{'\n'}
+              � Sleep is #1 priority{'\n'}
+              � Stress kills gains{'\n'}
+              � Track trends, not single days{'\n'}
+              � Auto-regulate training intensity{'\n'}
+              � Deload every 6-8 weeks minimum
             </Text>
           </View>
         </View>

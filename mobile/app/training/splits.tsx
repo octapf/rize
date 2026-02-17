@@ -1,4 +1,4 @@
-ï»¿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -29,18 +29,18 @@ const SPLITS: WorkoutSplit[] = [
   {
     id: '1',
     name: 'Push/Pull/Legs',
-    description: 'DivisiÃ³n clÃ¡sica de 3 dÃ­as con enfoque en patrones de movimiento',
+    description: 'División clásica de 3 días con enfoque en patrones de movimiento',
     days: 6,
     difficulty: 'intermedio',
     goal: 'hipertrofia',
     popularity: 95,
     schedule: [
-      { day: 'Lunes', focus: 'Push (Pecho/Hombros/TrÃ­ceps)', exercises: 8 },
-      { day: 'Martes', focus: 'Pull (Espalda/BÃ­ceps)', exercises: 7 },
-      { day: 'MiÃ©rcoles', focus: 'Legs (Piernas)', exercises: 6 },
+      { day: 'Lunes', focus: 'Push (Pecho/Hombros/Tríceps)', exercises: 8 },
+      { day: 'Martes', focus: 'Pull (Espalda/Bíceps)', exercises: 7 },
+      { day: 'Miércoles', focus: 'Legs (Piernas)', exercises: 6 },
       { day: 'Jueves', focus: 'Push', exercises: 8 },
       { day: 'Viernes', focus: 'Pull', exercises: 7 },
-      { day: 'SÃ¡bado', focus: 'Legs', exercises: 6 },
+      { day: 'Sábado', focus: 'Legs', exercises: 6 },
     ],
   },
   {
@@ -53,7 +53,7 @@ const SPLITS: WorkoutSplit[] = [
     popularity: 88,
     schedule: [
       { day: 'Lunes', focus: 'Full Body A', exercises: 6 },
-      { day: 'MiÃ©rcoles', focus: 'Full Body B', exercises: 6 },
+      { day: 'Miércoles', focus: 'Full Body B', exercises: 6 },
       { day: 'Viernes', focus: 'Full Body C', exercises: 6 },
     ],
   },
@@ -75,7 +75,7 @@ const SPLITS: WorkoutSplit[] = [
   {
     id: '4',
     name: 'Bro Split 5x',
-    description: 'Un grupo muscular por dÃ­a, ideal para volumen',
+    description: 'Un grupo muscular por día, ideal para volumen',
     days: 5,
     difficulty: 'avanzado',
     goal: 'hipertrofia',
@@ -83,7 +83,7 @@ const SPLITS: WorkoutSplit[] = [
     schedule: [
       { day: 'Lunes', focus: 'Pecho', exercises: 7 },
       { day: 'Martes', focus: 'Espalda', exercises: 7 },
-      { day: 'MiÃ©rcoles', focus: 'Hombros', exercises: 6 },
+      { day: 'Miércoles', focus: 'Hombros', exercises: 6 },
       { day: 'Jueves', focus: 'Piernas', exercises: 8 },
       { day: 'Viernes', focus: 'Brazos', exercises: 6 },
     ],
@@ -140,13 +140,13 @@ export default function WorkoutSplits() {
   const selectSplit = (split: WorkoutSplit) => {
     Alert.alert(
       'Aplicar Rutina',
-      `${split.name}\n\n${split.days} dÃ­as por semana\n\nÂ¿Deseas aplicar esta rutina a tu programa?`,
+      `${split.name}\n\n${split.days} días por semana\n\n¿Deseas aplicar esta rutina a tu programa?`,
       [
         { text: 'Cancelar', style: 'cancel' },
         {
           text: 'Aplicar',
           onPress: () => {
-            Alert.alert('Â¡Rutina Aplicada!', 'Tu nueva rutina estÃ¡ lista para comenzar');
+            Alert.alert('¡Rutina Aplicada!', 'Tu nueva rutina está lista para comenzar');
           },
         },
       ]
@@ -286,7 +286,7 @@ export default function WorkoutSplits() {
                 </View>
                 <View className="bg-purple-500/20 px-3 py-1 rounded-full">
                   <Text className="text-purple-400 text-xs font-bold">
-                    {split.days} dÃ­as/semana
+                    {split.days} días/semana
                   </Text>
                 </View>
                 <View className="bg-amber-500/20 px-3 py-1 rounded-full">
@@ -349,16 +349,16 @@ export default function WorkoutSplits() {
               <Ionicons name="information-circle" size={20} color="#9D12DE" />
               <View className="flex-1 ml-3">
                 <Text className="text-primary/80 font-bold mb-2">
-                  Â¿QuÃ© rutina elegir?
+                  ¿Qué rutina elegir?
                 </Text>
                 <Text className="text-primary/60 text-sm mb-2">
-                  â€¢ Principiante: Full Body 3x semana
+                  • Principiante: Full Body 3x semana
                 </Text>
                 <Text className="text-primary/60 text-sm mb-2">
-                  â€¢ Intermedio: Push/Pull/Legs o Upper/Lower
+                  • Intermedio: Push/Pull/Legs o Upper/Lower
                 </Text>
                 <Text className="text-primary/60 text-sm">
-                  â€¢ Avanzado: Bro Split con alto volumen
+                  • Avanzado: Bro Split con alto volumen
                 </Text>
               </View>
             </View>

@@ -162,7 +162,7 @@ function ConfettiPiece({ index }: { index: number }) {
     opacity: opacity.value,
   }));
 
-  const colors = ['#EF4444', '#F59E0B', '#10B981', '#3B82F6', '#8B5CF6', '#EC4899'];
+  const colors = ['#EF4444', '#F59E0B', '#9D12DE', '#3B82F6', '#8B5CF6', '#EC4899'];
   const color = colors[index % colors.length];
 
   return (

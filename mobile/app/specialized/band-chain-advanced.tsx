@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -59,7 +59,7 @@ export default function BandChainAdvanced() {
     bands: {
       name: 'Band Training',
       icon: 'resize',
-      color: 'emerald',
+      color: 'primary',
       band_types: {
         title: 'Band Selection',
         options: [
@@ -117,7 +117,7 @@ export default function BandChainAdvanced() {
         approaches: [
           {
             method: 'Straight Weight + Bands',
-            example: '365 lbs + mini bands (â‰ˆ40 lbs at top) = 405 lbs at lockout',
+            example: '365 lbs + mini bands (≈40 lbs at top) = 405 lbs at lockout',
             sets_reps: '3-5 sets of 1-3 reps',
             intensity: '60-75% straight weight + bands',
             when: 'Building lockout strength',
@@ -308,14 +308,14 @@ export default function BandChainAdvanced() {
         protocols: [
           {
             name: 'Post-Activation Potentiation',
-            method: 'Heavy bands â†’ Rest 4-5 min â†’ Straight weight speed work',
-            example: '1x3 @ 70% + strong bands â†’ 3x3 @ 60% explosive',
+            method: 'Heavy bands → Rest 4-5 min → Straight weight speed work',
+            example: '1x3 @ 70% + strong bands → 3x3 @ 60% explosive',
             why: 'Heavy work potentiates nervous system',
           },
           {
             name: 'Wave Contrast',
             method: 'Wave 1 with bands, Wave 2 straight weight',
-            example: 'Wave 1: 3-2-1 with bands â†’ Wave 2: 3-2-1 straight weight heavier',
+            example: 'Wave 1: 3-2-1 with bands → Wave 2: 3-2-1 straight weight heavier',
             why: 'Bands feel fast, makes straight weight feel lighter',
           },
           {
@@ -423,7 +423,7 @@ export default function BandChainAdvanced() {
   const getColorClass = (color: string) => {
     const colors: { [key: string]: string } = {
       blue: 'bg-primary',
-      emerald: 'bg-primary',
+      primary: 'bg-primary',
       purple: 'bg-purple-500',
       amber: 'bg-amber-500',
       red: 'bg-red-500',
@@ -496,19 +496,19 @@ export default function BandChainAdvanced() {
           <View className="bg-gradient-to-r from-amber-500/20 to-orange-500/20 rounded-xl p-5 border border-amber-500/30 mb-6">
             <Text className="text-amber-400 font-bold text-lg mb-3">Key Points</Text>
             <Text className="text-amber-300 text-sm mb-2">
-              • Accommodating resistance = variable resistance through ROM
+              � Accommodating resistance = variable resistance through ROM
             </Text>
             <Text className="text-amber-300 text-sm mb-2">
-              • Bands: Exponential, eccentric overload, unstable
+              � Bands: Exponential, eccentric overload, unstable
             </Text>
             <Text className="text-amber-300 text-sm mb-2">
-              • Chains: Linear, predictable, smooth feel
+              � Chains: Linear, predictable, smooth feel
             </Text>
             <Text className="text-amber-300 text-sm mb-2">
-              • Use for lockout strength and speed development
+              � Use for lockout strength and speed development
             </Text>
             <Text className="text-amber-300 text-sm">
-              • Start conservative - more fatiguing than straight weight
+              � Start conservative - more fatiguing than straight weight
             </Text>
           </View>
         </View>

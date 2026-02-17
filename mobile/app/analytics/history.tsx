@@ -1,4 +1,4 @@
-Ôªøimport React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -50,7 +50,7 @@ const WORKOUT_HISTORY: WorkoutSession[] = [
     totalVolume: 8650,
     calories: 420,
     intensity: 'high',
-    muscle_groups: ['Pecho', 'Hombros', 'Tr√≠ceps'],
+    muscle_groups: ['Pecho', 'Hombros', 'TrÌceps'],
     notes: 'Nuevo PR en press banca: 120kg x 3',
   },
   {
@@ -62,7 +62,7 @@ const WORKOUT_HISTORY: WorkoutSession[] = [
     totalVolume: 7240,
     calories: 385,
     intensity: 'medium',
-    muscle_groups: ['Espalda', 'B√≠ceps'],
+    muscle_groups: ['Espalda', 'BÌceps'],
   },
   {
     id: '3',
@@ -73,8 +73,8 @@ const WORKOUT_HISTORY: WorkoutSession[] = [
     totalVolume: 12450,
     calories: 520,
     intensity: 'high',
-    muscle_groups: ['Cu√°driceps', 'Gl√∫teos', 'Isquiotibiales'],
-    notes: 'Sentadilla profunda sinti√©ndose fuerte',
+    muscle_groups: ['Cu·driceps', 'Gl˙teos', 'Isquiotibiales'],
+    notes: 'Sentadilla profunda sintiÈndose fuerte',
   },
   {
     id: '4',
@@ -96,7 +96,7 @@ const WORKOUT_HISTORY: WorkoutSession[] = [
     totalVolume: 10240,
     calories: 465,
     intensity: 'high',
-    muscle_groups: ['Cu√°driceps', 'Gl√∫teos'],
+    muscle_groups: ['Cu·driceps', 'Gl˙teos'],
   },
   {
     id: '6',
@@ -107,7 +107,7 @@ const WORKOUT_HISTORY: WorkoutSession[] = [
     totalVolume: 7140,
     calories: 340,
     intensity: 'medium',
-    muscle_groups: ['Pecho', 'Tr√≠ceps'],
+    muscle_groups: ['Pecho', 'TrÌceps'],
   },
   {
     id: '7',
@@ -130,7 +130,7 @@ const WEEKLY_STATS: WeeklyStats[] = [
     totalVolume: 43570,
     totalCalories: 2095,
     avgDuration: 81,
-    topMuscleGroups: ['Pecho', 'Espalda', 'Cu√°driceps'],
+    topMuscleGroups: ['Pecho', 'Espalda', 'Cu·driceps'],
   },
   {
     week: 'Semana 3 Enero',
@@ -138,7 +138,7 @@ const WEEKLY_STATS: WeeklyStats[] = [
     totalVolume: 48240,
     totalCalories: 2340,
     avgDuration: 76,
-    topMuscleGroups: ['Espalda', 'Gl√∫teos', 'Hombros'],
+    topMuscleGroups: ['Espalda', 'Gl˙teos', 'Hombros'],
   },
   {
     week: 'Semana 2 Enero',
@@ -146,7 +146,7 @@ const WEEKLY_STATS: WeeklyStats[] = [
     totalVolume: 41890,
     totalCalories: 2010,
     avgDuration: 79,
-    topMuscleGroups: ['Pecho', 'Cu√°driceps', 'B√≠ceps'],
+    topMuscleGroups: ['Pecho', 'Cu·driceps', 'BÌceps'],
   },
 ];
 
@@ -174,7 +174,7 @@ export default function WorkoutHistory() {
   const viewWorkoutDetails = (workout: WorkoutSession) => {
     Alert.alert(
       workout.name,
-      `${workout.exercises} ejercicios ‚Ä¢ ${workout.duration} min\n${workout.totalVolume.toLocaleString()}kg volumen\n\n${workout.notes || 'Sin notas'}`,
+      `${workout.exercises} ejercicios ï ${workout.duration} min\n${workout.totalVolume.toLocaleString()}kg volumen\n\n${workout.notes || 'Sin notas'}`,
       [{ text: 'OK' }]
     );
   };
@@ -269,7 +269,7 @@ export default function WorkoutHistory() {
             <View className="bg-zinc-900 rounded-xl p-4 border border-zinc-800 mb-6">
               <View className="flex-row items-center justify-between">
                 <View className="flex-1">
-                  <Text className="text-zinc-400 text-xs mb-1">√öLTIMO WORKOUT</Text>
+                  <Text className="text-zinc-400 text-xs mb-1">⁄LTIMO WORKOUT</Text>
                   <Text className="text-white text-lg font-bold">
                     Hace {Math.floor((Date.now() - new Date(history[0].date).getTime()) / (1000 * 60 * 60))}h
                   </Text>
@@ -323,7 +323,7 @@ export default function WorkoutHistory() {
                   <View className="flex-1 bg-zinc-800 rounded-lg p-2">
                     <View className="flex-row items-center mb-1">
                       <Ionicons name="time" size={14} color="#71717A" />
-                      <Text className="text-zinc-400 text-xs ml-1">Duraci√≥n</Text>
+                      <Text className="text-zinc-400 text-xs ml-1">DuraciÛn</Text>
                     </View>
                     <Text className="text-white font-bold">{workout.duration} min</Text>
                   </View>
@@ -349,7 +349,7 @@ export default function WorkoutHistory() {
                   <View className="flex-1 bg-zinc-800 rounded-lg p-2">
                     <View className="flex-row items-center mb-1">
                       <Ionicons name="flame" size={14} color="#71717A" />
-                      <Text className="text-zinc-400 text-xs ml-1">Calor√≠as</Text>
+                      <Text className="text-zinc-400 text-xs ml-1">CalorÌas</Text>
                     </View>
                     <Text className="text-red-400 font-bold">{workout.calories} kcal</Text>
                   </View>
@@ -400,7 +400,7 @@ export default function WorkoutHistory() {
                     <Text className="text-white text-2xl font-bold">{week.workouts}</Text>
                   </View>
                   <View className="flex-1 bg-zinc-800 rounded-lg p-3">
-                    <Text className="text-zinc-400 text-xs mb-1">AVG DURACI√É‚ÄúN</Text>
+                    <Text className="text-zinc-400 text-xs mb-1">AVG DURACI√ìN</Text>
                     <Text className="text-primary text-2xl font-bold">
                       {week.avgDuration}m
                     </Text>
@@ -415,7 +415,7 @@ export default function WorkoutHistory() {
                     </Text>
                   </View>
                   <View className="flex-1 bg-zinc-800 rounded-lg p-3">
-                    <Text className="text-zinc-400 text-xs mb-1">CALOR√É¬çAS</Text>
+                    <Text className="text-zinc-400 text-xs mb-1">CALOR√çAS</Text>
                     <Text className="text-red-400 text-lg font-bold">
                       {week.totalCalories}
                     </Text>
@@ -507,7 +507,7 @@ export default function WorkoutHistory() {
                       Excelente Mes
                     </Text>
                     <Text className="text-primary/80 text-sm">
-                      Tu consistencia est√° por encima del 90%. Sigue as√≠ para resultados √≥ptimos.
+                      Tu consistencia est· por encima del 90%. Sigue asÌ para resultados Ûptimos.
                     </Text>
                   </View>
                 </View>
@@ -524,7 +524,7 @@ export default function WorkoutHistory() {
                 <View className="flex-row items-start mb-2">
                   <Ionicons name="arrow-forward" size={16} color="#9D12DE" />
                   <Text className="text-zinc-300 text-sm ml-2 flex-1">
-                    Mant√©n tu consistencia del 91.7% o mejor
+                    MantÈn tu consistencia del 91.7% o mejor
                   </Text>
                 </View>
                 <View className="flex-row items-start mb-2">

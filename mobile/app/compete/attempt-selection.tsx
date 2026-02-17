@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -30,7 +30,7 @@ export default function AttemptSelection() {
     {
       name: 'Conservative (9/9 Strategy)',
       icon: 'shield-checkmark' as const,
-      color: 'emerald',
+      color: 'primary',
       description: 'Maximize total, minimize risk',
       attempts: oneRM ? {
         opener: Math.round(parseFloat(oneRM) * 0.92 * 2) / 2,
@@ -187,7 +187,7 @@ export default function AttemptSelection() {
             {strategies.map((strategy, idx) => (
               <View key={idx} className={`bg-${strategy.color}-500/10 rounded-xl p-4 mb-3 last:mb-0 border border-${strategy.color}-500/30`}>
                 <View className="flex-row items-center mb-2">
-                  <Ionicons name={strategy.icon} size={24} color={`#${strategy.color === 'emerald' ? '10b981' : strategy.color === 'red' ? 'ef4444' : '3b82f6'}`} />
+                  <Ionicons name={strategy.icon} size={24} color={`#${strategy.color === 'primary' ? '9D12DE' : strategy.color === 'red' ? 'ef4444' : '3b82f6'}`} />
                   <Text className={`text-${strategy.color}-400 font-bold text-lg ml-2`}>
                     {strategy.name}
                   </Text>
@@ -234,7 +234,7 @@ export default function AttemptSelection() {
             {Object.entries(jumpGuidelines).map(([key, value]) => (
               <View key={key} className="mb-3 last:mb-0">
                 <Text className="text-primary/80 font-bold capitalize mb-1">
-                  {key.replace(/_/g, ' â†’ ').replace('to', 'to')}
+                  {key.replace(/_/g, ' → ').replace('to', 'to')}
                 </Text>
                 <Text className="text-zinc-300 text-sm">{value}</Text>
               </View>
@@ -244,16 +244,16 @@ export default function AttemptSelection() {
           <View className="bg-red-500/10 rounded-xl p-4 border border-red-500/30 mb-6">
             <Text className="text-red-400 font-bold mb-2">Critical Meet Day Rules</Text>
             <Text className="text-red-300 text-sm mb-2">
-              • Never change attempt in warm-up room due to nerves
+              � Never change attempt in warm-up room due to nerves
             </Text>
             <Text className="text-red-300 text-sm mb-2">
-              • Have coach/handler make attempt selections
+              � Have coach/handler make attempt selections
             </Text>
             <Text className="text-red-300 text-sm mb-2">
-              • If opener feels hard, your 1RM estimate was wrong
+              � If opener feels hard, your 1RM estimate was wrong
             </Text>
             <Text className="text-red-300 text-sm">
-              • 9/9 is better than bombing out chasing PRs
+              � 9/9 is better than bombing out chasing PRs
             </Text>
           </View>
         </View>

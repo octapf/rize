@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -50,7 +50,7 @@ export default function MentalTraining() {
       id: 'selftalk',
       name: 'Positive Self-Talk',
       icon: 'chatbubble' as const,
-      color: 'emerald',
+      color: 'primary',
       description: 'Internal dialogue management',
       benefits: [
         'Boosts confidence immediately',
@@ -237,7 +237,7 @@ export default function MentalTraining() {
 
           <View className={`bg-${currentTechnique.color}-500/10 rounded-xl p-5 mb-6 border border-${currentTechnique.color}-500/30`}>
             <View className="flex-row items-center mb-3">
-              <Ionicons name={currentTechnique.icon} size={28} color={`#${currentTechnique.color === 'blue' ? '3b82f6' : currentTechnique.color === 'emerald' ? '10b981' : currentTechnique.color === 'purple' ? 'a855f7' : currentTechnique.color === 'amber' ? 'f59e0b' : 'ef4444'}`} />
+              <Ionicons name={currentTechnique.icon} size={28} color={`#${currentTechnique.color === 'blue' ? '3b82f6' : currentTechnique.color === 'primary' ? '9D12DE' : currentTechnique.color === 'purple' ? 'a855f7' : currentTechnique.color === 'amber' ? 'f59e0b' : 'ef4444'}`} />
               <Text className={`text-${currentTechnique.color}-400 font-bold text-2xl ml-3`}>
                 {currentTechnique.name}
               </Text>

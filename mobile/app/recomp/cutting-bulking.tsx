@@ -1,4 +1,4 @@
-ï»¿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -13,7 +13,7 @@ export default function CuttingBulking() {
 
   const phases = [
     { key: 'cutting', label: 'Cutting', icon: 'trending-down', color: 'red' },
-    { key: 'bulking', label: 'Bulking', icon: 'trending-up', color: 'emerald' },
+    { key: 'bulking', label: 'Bulking', icon: 'trending-up', color: 'primary' },
     { key: 'maintain', label: 'Maintain', icon: 'pause', color: 'amber' },
   ];
 
@@ -165,7 +165,7 @@ export default function CuttingBulking() {
 
       <ScrollView className="flex-1" showsVerticalScrollIndicator={false}>
         <View className="px-6 pt-6">
-          <View className="bg-gradient-to-r from-red-500 to-emerald-500 rounded-xl p-6 mb-6">
+          <View className="bg-gradient-to-r from-red-500 to-primary rounded-xl p-6 mb-6">
             <Text className="text-white text-2xl font-bold mb-2">Cycling Strategy</Text>
             <Text className="text-white opacity-90 mb-4">
               Optimize muscle growth and fat loss
@@ -292,12 +292,12 @@ export default function CuttingBulking() {
           <View className="bg-purple-500/10 rounded-xl p-4 border border-purple-500/30 mb-6">
             <Text className="text-purple-400 font-bold mb-2">Cycling Tips</Text>
             <Text className="text-purple-300 text-sm">
-              â€¢ Bulk when lean (12-15% BF men){'\n'}
-              â€¢ Cut when necessary (18-20% BF men){'\n'}
-              â€¢ Diet breaks prevent metabolic adaptation{'\n'}
-              â€¢ Track weekly averages, not daily{'\n'}
-              â€¢ Adjust based on 2-week trends{'\n'}
-              â€¢ Patience: cycles take 3-6 months
+              • Bulk when lean (12-15% BF men){'\n'}
+              • Cut when necessary (18-20% BF men){'\n'}
+              • Diet breaks prevent metabolic adaptation{'\n'}
+              • Track weekly averages, not daily{'\n'}
+              • Adjust based on 2-week trends{'\n'}
+              • Patience: cycles take 3-6 months
             </Text>
           </View>
         </View>

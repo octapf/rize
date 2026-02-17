@@ -1,4 +1,4 @@
-﻿import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   View,
   Text,
@@ -138,7 +138,7 @@ export default function ActiveWorkout() {
 
   const finishWorkout = () => {
     Alert.alert(
-      '¿Finalizar Entrenamiento?',
+      '�Finalizar Entrenamiento?',
       `Has completado ${totalSetsCompleted} de ${totalSets} series.\n\nTiempo total: ${formatTime(elapsedTime)}`,
       [
         { text: 'Cancelar', style: 'cancel' },
@@ -146,7 +146,7 @@ export default function ActiveWorkout() {
           text: 'Finalizar',
           style: 'destructive',
           onPress: () => {
-            Alert.alert('¡Entrenamiento guardado!', 'Excelente trabajo hoy ðŸ’ª', [
+            Alert.alert('�Entrenamiento guardado!', 'Excelente trabajo hoy 💪', [
               { text: 'OK', onPress: () => router.back() },
             ]);
           },
@@ -193,8 +193,8 @@ export default function ActiveWorkout() {
           <TouchableOpacity
             onPress={() => {
               Alert.alert(
-                '¿Salir del entrenamiento?',
-                'Perderás todo el progreso no guardado',
+                '�Salir del entrenamiento?',
+                'Perder�s todo el progreso no guardado',
                 [
                   { text: 'Cancelar', style: 'cancel' },
                   {
@@ -289,7 +289,7 @@ export default function ActiveWorkout() {
           <View className="flex-row items-center mb-2">
             <Ionicons name="barbell-outline" size={16} color="#71717A" />
             <Text className="text-zinc-400 text-sm ml-2">
-              {currentExercise.targetSets} series × {currentExercise.targetReps} reps
+              {currentExercise.targetSets} series � {currentExercise.targetReps} reps
             </Text>
           </View>
 
@@ -424,7 +424,7 @@ export default function ActiveWorkout() {
           <TextInput
             value={currentExercise.notes}
             onChangeText={(text) => saveNotes(text)}
-            placeholder="Escribe tus notas aquí..."
+            placeholder="Escribe tus notas aqu�..."
             placeholderTextColor="#52525B"
             multiline
             textAlignVertical="top"

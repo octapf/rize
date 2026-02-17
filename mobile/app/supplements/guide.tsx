@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -20,7 +20,7 @@ export default function SupplementGuide() {
         name: 'Protein Powder',
         icon: 'nutrition' as const,
         tier: 'Must Have',
-        color: 'emerald',
+        color: 'primary',
         dosage: '20-40g per serving',
         timing: 'Post-workout or to hit daily protein target',
         benefits: [
@@ -35,7 +35,7 @@ export default function SupplementGuide() {
         name: 'Creatine Monohydrate',
         icon: 'flash' as const,
         tier: 'Must Have',
-        color: 'emerald',
+        color: 'primary',
         dosage: '5g daily',
         timing: 'Any time (consistency matters, timing doesn\'t)',
         benefits: [
@@ -150,7 +150,7 @@ export default function SupplementGuide() {
         name: 'Zinc',
         icon: 'shield' as const,
         tier: 'Recovery',
-        color: 'emerald',
+        color: 'primary',
         dosage: '15-30mg daily',
         timing: 'With food',
         benefits: [
@@ -243,7 +243,7 @@ export default function SupplementGuide() {
             <View key={idx} className={`bg-${supp.color}-500/10 rounded-xl p-5 mb-6 border border-${supp.color}-500/30`}>
               <View className="flex-row items-center justify-between mb-3">
                 <View className="flex-row items-center flex-1">
-                  <Ionicons name={supp.icon} size={28} color={`#${supp.color === 'emerald' ? '10b981' : supp.color === 'red' ? 'ef4444' : supp.color === 'purple' ? 'a855f7' : supp.color === 'blue' ? '3b82f6' : supp.color === 'amber' ? 'f59e0b' : '71717a'}`} />
+                  <Ionicons name={supp.icon} size={28} color={`#${supp.color === 'primary' ? '9D12DE' : supp.color === 'red' ? 'ef4444' : supp.color === 'purple' ? 'a855f7' : supp.color === 'blue' ? '3b82f6' : supp.color === 'amber' ? 'f59e0b' : '71717a'}`} />
                   <Text className={`text-${supp.color}-400 font-bold text-xl ml-3`}>
                     {supp.name}
                   </Text>

@@ -1,4 +1,4 @@
-ï»¿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -47,7 +47,7 @@ export default function TrainingNotes() {
   ];
 
   const noteTemplates = [
-    { icon: 'flame', text: 'Felt strong today', color: 'emerald' },
+    { icon: 'flame', text: 'Felt strong today', color: 'primary' },
     { icon: 'medical', text: 'Minor discomfort', color: 'amber' },
     { icon: 'happy', text: 'Great pump!', color: 'blue' },
     { icon: 'warning', text: 'Form needs work', color: 'red' },
@@ -65,7 +65,7 @@ export default function TrainingNotes() {
 
   const getMoodColor = (mood: string) => {
     switch (mood) {
-      case 'great': return 'emerald';
+      case 'great': return 'primary';
       case 'neutral': return 'blue';
       case 'challenging': return 'amber';
       default: return 'zinc';
@@ -120,7 +120,7 @@ export default function TrainingNotes() {
                     className={`bg-${template.color}-500/20 rounded-lg px-3 py-2 flex-row items-center border border-${template.color}-500/30`}
                   >
                     <Ionicons name={template.icon as any} size={16} color={
-                      template.color === 'emerald' ? '#9D12DE' :
+                      template.color === 'primary' ? '#9D12DE' :
                       template.color === 'amber' ? '#FFEA00' :
                       template.color === 'blue' ? '#9D12DE' :
                       template.color === 'red' ? '#ef4444' : '#a855f7'
@@ -190,11 +190,11 @@ export default function TrainingNotes() {
           <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
             <Text className="text-primary/80 font-bold mb-2">Journaling Benefits</Text>
             <Text className="text-primary/60 text-sm">
-              â€¢ Track what works y what doesn't{'\n'}
-              â€¢ Identify patterns en performance{'\n'}
-              â€¢ Remember form cues{'\n'}
-              â€¢ Monitor energy levels{'\n'}
-              â€¢ Improve future workouts
+              • Track what works y what doesn't{'\n'}
+              • Identify patterns en performance{'\n'}
+              • Remember form cues{'\n'}
+              • Monitor energy levels{'\n'}
+              • Improve future workouts
             </Text>
           </View>
         </View>

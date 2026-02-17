@@ -1,4 +1,4 @@
-ï»¿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -46,7 +46,7 @@ const PLAYLISTS: Playlist[] = [
   {
     id: '2',
     name: 'HIIT Energy',
-    description: 'EDM alto BPM para mÃ¡xima intensidad',
+    description: 'EDM alto BPM para máxima intensidad',
     genre: 'edm',
     bpm: 160,
     duration: 30,
@@ -70,7 +70,7 @@ const PLAYLISTS: Playlist[] = [
   {
     id: '4',
     name: 'Latin Fire',
-    description: 'ReggaetÃ³n y latin para cardio energÃ©tico',
+    description: 'Reggaetón y latin para cardio energético',
     genre: 'latin',
     bpm: 105,
     duration: 45,
@@ -136,8 +136,8 @@ export default function WorkoutPlaylists() {
   const playPlaylist = (playlist: Playlist) => {
     togglePlaylist(playlist.id);
     Alert.alert(
-      `ðŸŽ¯Âµ ${playlist.name}`,
-      `${playlist.tracks} canciones â€¢ ${playlist.duration} min\nBPM promedio: ${playlist.bpm}\n\n${playlist.description}`,
+      `??µ ${playlist.name}`,
+      `${playlist.tracks} canciones • ${playlist.duration} min\nBPM promedio: ${playlist.bpm}\n\n${playlist.description}`,
       [
         { text: 'Reproducir' },
         { text: 'Agregar a Cola' },
@@ -150,7 +150,7 @@ export default function WorkoutPlaylists() {
   const createPlaylist = () => {
     Alert.alert(
       'Nueva Playlist',
-      'Â¿CÃ³mo quieres crear tu playlist?',
+      '¿Cómo quieres crear tu playlist?',
       [
         { text: 'Por Tipo de Entrenamiento' },
         { text: 'Por BPM Target' },
@@ -187,7 +187,7 @@ export default function WorkoutPlaylists() {
             <Ionicons name="arrow-back" size={24} color="white" />
           </TouchableOpacity>
           <Text className="text-white text-2xl font-bold flex-1 ml-3">
-            MÃºsica de Entrenamiento
+            Música de Entrenamiento
           </Text>
           <TouchableOpacity onPress={createPlaylist}>
             <Ionicons name="add-circle-outline" size={24} color="white" />
@@ -204,7 +204,7 @@ export default function WorkoutPlaylists() {
                   {nowPlaying.name}
                 </Text>
                 <Text className="text-white/80 text-sm">
-                  {nowPlaying.tracks} canciones â€¢ {nowPlaying.bpm} BPM
+                  {nowPlaying.tracks} canciones • {nowPlaying.bpm} BPM
                 </Text>
               </View>
               <TouchableOpacity
@@ -329,7 +329,7 @@ export default function WorkoutPlaylists() {
                   <Text className="text-white font-bold">{playlist.tracks}</Text>
                 </View>
                 <View className="flex-1 bg-zinc-800 rounded-lg p-2">
-                  <Text className="text-zinc-400 text-xs">DuraciÃ³n</Text>
+                  <Text className="text-zinc-400 text-xs">Duración</Text>
                   <Text className="text-white font-bold">{playlist.duration} min</Text>
                 </View>
                 <View className="flex-1 bg-zinc-800 rounded-lg p-2">
@@ -357,7 +357,7 @@ export default function WorkoutPlaylists() {
         {/* Music Settings */}
         <View className="px-6 pt-4">
           <Text className="text-white font-bold text-lg mb-3">
-            ConfiguraciÃ³n de MÃºsica
+            Configuración de Música
           </Text>
 
           <View className="bg-zinc-900 rounded-xl p-4 border border-zinc-800 mb-4">
@@ -365,7 +365,7 @@ export default function WorkoutPlaylists() {
               <View className="flex-1">
                 <Text className="text-white font-bold mb-1">Auto-Play</Text>
                 <Text className="text-zinc-400 text-sm">
-                  Inicia mÃºsica al comenzar workout
+                  Inicia música al comenzar workout
                 </Text>
               </View>
               <Switch
@@ -416,7 +416,7 @@ export default function WorkoutPlaylists() {
               <View className="flex-1">
                 <Text className="text-white font-bold mb-1">Audio Motivacional</Text>
                 <Text className="text-zinc-400 text-sm">
-                  Mensajes de Ã¡nimo durante el workout
+                  Mensajes de ánimo durante el workout
                 </Text>
               </View>
               <Switch
@@ -438,10 +438,10 @@ export default function WorkoutPlaylists() {
               <Ionicons name="information-circle" size={20} color="#9D12DE" />
               <View className="flex-1 ml-3">
                 <Text className="text-primary/80 font-bold mb-2">
-                  MÃºsica = Rendimiento
+                  Música = Rendimiento
                 </Text>
                 <Text className="text-primary/60 text-sm">
-                  Estudios muestran que la mÃºsica con BPM adecuado puede mejorar tu rendimiento hasta 15%. Selecciona playlists segÃºn tu tipo de entrenamiento.
+                  Estudios muestran que la música con BPM adecuado puede mejorar tu rendimiento hasta 15%. Selecciona playlists según tu tipo de entrenamiento.
                 </Text>
               </View>
             </View>

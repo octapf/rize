@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -102,7 +102,7 @@ export default function ProgramDesignFramework() {
     structure: {
       name: 'Program Structure',
       icon: 'grid',
-      color: 'emerald',
+      color: 'primary',
       weekly_split: {
         title: 'Weekly Training Split Options',
         splits: [
@@ -293,7 +293,7 @@ export default function ProgramDesignFramework() {
       models: [
         {
           name: 'Linear Periodization',
-          structure: 'Start high volume/low intensity â†’ End low volume/high intensity',
+          structure: 'Start high volume/low intensity → End low volume/high intensity',
           timeline: '8-16 weeks typical',
           pros: ['Simple', 'Predictable', 'Good for beginners', 'Clear progression'],
           cons: ['Lose adaptations from early phases', 'Boring', 'Not optimal for advanced'],
@@ -402,25 +402,25 @@ export default function ProgramDesignFramework() {
           {
             block: 'Weeks 1-4: Accumulation',
             goal: 'Build work capacity and muscle',
-            squat: '4x6 @ 75% â†’ 5x6 @ 78% (progress weekly)',
-            bench: '4x6 @ 75% â†’ 5x6 @ 78%',
-            deadlift: '3x6 @ 72% â†’ 4x6 @ 75%',
+            squat: '4x6 @ 75% → 5x6 @ 78% (progress weekly)',
+            bench: '4x6 @ 75% → 5x6 @ 78%',
+            deadlift: '3x6 @ 72% → 4x6 @ 75%',
             accessories: 'Leg press, Romanian DL, DB bench, rows (3x10-12)',
           },
           {
             block: 'Weeks 5-8: Intensification',
             goal: 'Convert to maximal strength',
-            squat: '4x3 @ 83% â†’ 5x2 @ 88%',
-            bench: '4x3 @ 83% â†’ 5x2 @ 88%',
-            deadlift: '3x3 @ 80% â†’ 4x2 @ 85%',
+            squat: '4x3 @ 83% → 5x2 @ 88%',
+            bench: '4x3 @ 83% → 5x2 @ 88%',
+            deadlift: '3x3 @ 80% → 4x2 @ 85%',
             accessories: 'Reduce volume, keep key movements',
           },
           {
             block: 'Weeks 9-10: Realization',
             goal: 'Peak strength, reduce fatigue',
-            squat: '3x1 @ 90-95% â†’ openers',
-            bench: '3x1 @ 90-95% â†’ openers',
-            deadlift: '2x1 @ 90-95% â†’ openers',
+            squat: '3x1 @ 90-95% → openers',
+            bench: '3x1 @ 90-95% → openers',
+            deadlift: '2x1 @ 90-95% → openers',
             accessories: 'Minimal, maintenance only',
           },
           {
@@ -480,7 +480,7 @@ export default function ProgramDesignFramework() {
   const getColorClass = (color: string) => {
     const colors: { [key: string]: string } = {
       blue: 'bg-primary',
-      emerald: 'bg-primary',
+      primary: 'bg-primary',
       purple: 'bg-purple-500',
       amber: 'bg-amber-500',
       red: 'bg-red-500',
@@ -551,19 +551,19 @@ export default function ProgramDesignFramework() {
             </Text>
           </View>
 
-          <View className="bg-gradient-to-r from-emerald-500/20 to-teal-500/20 rounded-xl p-5 border border-primary/30 mb-6">
+          <View className="bg-gradient-to-r from-primary/20 to-primary/100/20 rounded-xl p-5 border border-primary/30 mb-6">
             <Text className="text-primary font-bold text-lg mb-3">Design Principles</Text>
             <Text className="text-primary/80 text-sm mb-2">
-              • Specificity - train the competition lifts
+              � Specificity - train the competition lifts
             </Text>
             <Text className="text-primary/80 text-sm mb-2">
-              • Progressive overload - add weight/reps/sets over time
+              � Progressive overload - add weight/reps/sets over time
             </Text>
             <Text className="text-primary/80 text-sm mb-2">
-              • Variation - prevent adaptation and overuse
+              � Variation - prevent adaptation and overuse
             </Text>
             <Text className="text-primary/80 text-sm">
-              • Recovery - program deloads and manage fatigue
+              � Recovery - program deloads and manage fatigue
             </Text>
           </View>
         </View>

@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -17,14 +17,14 @@ interface Plate {
 }
 
 const AVAILABLE_PLATES = [
-  { weight: 25, color: 'bg-red-500', label: '25kg', emoji: 'ðŸ”´' },
-  { weight: 20, color: 'bg-primary', label: '20kg', emoji: 'ðŸ”µ' },
-  { weight: 15, color: 'bg-amber-500', label: '15kg', emoji: 'ðŸŸ¡' },
-  { weight: 10, color: 'bg-primary', label: '10kg', emoji: 'ðŸŸ¢' },
-  { weight: 5, color: 'bg-white', label: '5kg', emoji: 'âšª' },
-  { weight: 2.5, color: 'bg-zinc-400', label: '2.5kg', emoji: 'âš«' },
-  { weight: 1.25, color: 'bg-purple-500', label: '1.25kg', emoji: 'ðŸŸ£' },
-  { weight: 0.5, color: 'bg-pink-500', label: '0.5kg', emoji: 'ðŸ”´' },
+  { weight: 25, color: 'bg-red-500', label: '25kg', emoji: '🔴' },
+  { weight: 20, color: 'bg-primary', label: '20kg', emoji: '🔵' },
+  { weight: 15, color: 'bg-amber-500', label: '15kg', emoji: '🟡' },
+  { weight: 10, color: 'bg-primary', label: '10kg', emoji: '🟢' },
+  { weight: 5, color: 'bg-white', label: '5kg', emoji: '⚪' },
+  { weight: 2.5, color: 'bg-zinc-400', label: '2.5kg', emoji: '⚫' },
+  { weight: 1.25, color: 'bg-purple-500', label: '1.25kg', emoji: '🟣' },
+  { weight: 0.5, color: 'bg-pink-500', label: '0.5kg', emoji: '🔴' },
 ];
 
 export default function PlateCalculator() {
@@ -37,11 +37,11 @@ export default function PlateCalculator() {
     const bar = parseFloat(barWeight);
 
     if (!target || target <= 0) {
-      Alert.alert('Error', 'Ingresa un peso objetivo válido');
+      Alert.alert('Error', 'Ingresa un peso objetivo v�lido');
       return;
     }
     if (!bar || bar <= 0) {
-      Alert.alert('Error', 'Ingresa un peso de barra válido');
+      Alert.alert('Error', 'Ingresa un peso de barra v�lido');
       return;
     }
     if (target < bar) {
@@ -76,7 +76,7 @@ export default function PlateCalculator() {
     if (remainingWeight > 0.01) {
       Alert.alert(
         'Peso Aproximado',
-        `No se puede lograr exactamente ${target}kg.\nMás cercano: ${(target - remainingWeight * 2).toFixed(2)}kg\n\n¿Continuar con esta configuración?`,
+        `No se puede lograr exactamente ${target}kg.\nM�s cercano: ${(target - remainingWeight * 2).toFixed(2)}kg\n\n�Continuar con esta configuraci�n?`,
         [
           { text: 'Cancelar', style: 'cancel' },
           { text: 'Aceptar', onPress: () => setResult(plates) },
@@ -123,7 +123,7 @@ export default function PlateCalculator() {
         <View className="px-6 pt-6">
           {/* Input Section */}
           <View className="bg-zinc-900 rounded-xl p-6 mb-6 border border-zinc-800">
-            <Text className="text-white text-lg font-bold mb-4">Configuración</Text>
+            <Text className="text-white text-lg font-bold mb-4">Configuraci�n</Text>
 
             {/* Target Weight */}
             <View className="mb-4">
@@ -143,7 +143,7 @@ export default function PlateCalculator() {
 
             {/* Quick Weights */}
             <View className="mb-4">
-              <Text className="text-zinc-400 text-sm mb-2">Pesos Rápidos</Text>
+              <Text className="text-zinc-400 text-sm mb-2">Pesos R�pidos</Text>
               <View className="flex-row flex-wrap gap-2">
                 {quickWeights.map((weight) => (
                   <TouchableOpacity
@@ -195,7 +195,7 @@ export default function PlateCalculator() {
           {result && (
             <>
               {/* Total Weight */}
-              <View className="bg-gradient-to-r from-emerald-500 to-emerald-600 rounded-xl p-6 mb-6">
+              <View className="bg-gradient-to-r from-primary to-primary rounded-xl p-6 mb-6">
                 <Text className="text-white/70 text-sm mb-2">PESO TOTAL</Text>
                 <View className="flex-row items-baseline">
                   <Text className="text-white text-6xl font-bold">{getTotalWeight()}</Text>
@@ -230,7 +230,7 @@ export default function PlateCalculator() {
                         </View>
                         <View>
                           <Text className="text-white font-bold">
-                            {plate.weight}kg × {plate.count}
+                            {plate.weight}kg � {plate.count}
                           </Text>
                           <Text className="text-zinc-400 text-sm">
                             {(plate.weight * plate.count).toFixed(2)}kg por lado
@@ -248,7 +248,7 @@ export default function PlateCalculator() {
               {/* Visual Representation */}
               <View className="bg-zinc-900 rounded-xl p-6 mb-6 border border-zinc-800">
                 <Text className="text-white text-lg font-bold mb-4">
-                  Visualización
+                  Visualizaci�n
                 </Text>
                 
                 <View className="items-center">
@@ -302,11 +302,11 @@ export default function PlateCalculator() {
                       Resumen de Carga
                     </Text>
                     <Text className="text-primary/60 text-sm">
-                      • Total de discos: {result.reduce((sum, p) => sum + p.count * 2, 0)} unidades
+                      � Total de discos: {result.reduce((sum, p) => sum + p.count * 2, 0)} unidades
                       {'\n'}
-                      • Discos por lado: {result.reduce((sum, p) => sum + p.count, 0)} unidades
+                      � Discos por lado: {result.reduce((sum, p) => sum + p.count, 0)} unidades
                       {'\n'}
-                      • Peso en discos: {(getTotalWeight() - parseFloat(barWeight)).toFixed(2)}kg
+                      � Peso en discos: {(getTotalWeight() - parseFloat(barWeight)).toFixed(2)}kg
                     </Text>
                   </View>
                 </View>
@@ -340,13 +340,13 @@ export default function PlateCalculator() {
                   Tips de Carga
                 </Text>
                 <Text className="text-amber-300 text-sm">
-                  • Carga discos grandes primero (25kg, 20kg)
+                  � Carga discos grandes primero (25kg, 20kg)
                   {'\n'}
-                  • Usa collares para asegurar discos
+                  � Usa collares para asegurar discos
                   {'\n'}
-                  • Carga ambos lados uniformemente
+                  � Carga ambos lados uniformemente
                   {'\n'}
-                  • Micro-discos (0.5kg) para ajustes finos
+                  � Micro-discos (0.5kg) para ajustes finos
                 </Text>
               </View>
             </View>

@@ -1,4 +1,4 @@
-ï»¿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -115,7 +115,7 @@ export default function TemplateBuilder() {
 
       <ScrollView className="flex-1" showsVerticalScrollIndicator={false}>
         <View className="px-6 pt-6">
-          <View className="bg-gradient-to-r from-emerald-500 to-green-500 rounded-xl p-6 mb-6">
+          <View className="bg-gradient-to-r from-primary to-primary/100 rounded-xl p-6 mb-6">
             <Text className="text-white text-2xl font-bold mb-2">Create Template</Text>
             <Text className="text-white opacity-90 mb-4">
               Build your custom program
@@ -217,11 +217,11 @@ export default function TemplateBuilder() {
           <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
             <Text className="text-primary/80 font-bold mb-2">Template Builder Tips</Text>
             <Text className="text-primary/60 text-sm">
-              â€¢ Include compound lifts first{'\n'}
-              â€¢ 4-6 exercises per session{'\n'}
-              â€¢ Balance push/pull ratio{'\n'}
-              â€¢ Progressive overload cada semana{'\n'}
-              â€¢ Save templates para reutilizar
+              • Include compound lifts first{'\n'}
+              • 4-6 exercises per session{'\n'}
+              • Balance push/pull ratio{'\n'}
+              • Progressive overload cada semana{'\n'}
+              • Save templates para reutilizar
             </Text>
           </View>
         </View>

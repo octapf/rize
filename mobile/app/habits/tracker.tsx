@@ -1,4 +1,4 @@
-Ôªøimport React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -36,7 +36,7 @@ const HABIT_TEMPLATES: HabitTemplate[] = [
   {
     id: '1',
     name: 'Beber 8 Vasos de Agua',
-    description: 'Mantente hidratado durante el d√≠a',
+    description: 'Mantente hidratado durante el dÌa',
     frequency: 'diario',
     category: 'salud',
     difficulty: 'facil',
@@ -45,7 +45,7 @@ const HABIT_TEMPLATES: HabitTemplate[] = [
   {
     id: '2',
     name: 'Dormir 8 Horas',
-    description: 'Descanso √≥ptimo para recuperaci√≥n',
+    description: 'Descanso Ûptimo para recuperaciÛn',
     frequency: 'diario',
     category: 'recuperacion',
     difficulty: 'media',
@@ -53,7 +53,7 @@ const HABIT_TEMPLATES: HabitTemplate[] = [
   },
   {
     id: '3',
-    name: 'Entrenar 5 D√≠as',
+    name: 'Entrenar 5 DÌas',
     description: 'Consistencia en el gimnasio',
     frequency: 'semanal',
     category: 'entrenamiento',
@@ -63,7 +63,7 @@ const HABIT_TEMPLATES: HabitTemplate[] = [
   {
     id: '4',
     name: 'Cumplir Macros Diarios',
-    description: 'Prote√≠na, carbohidratos y grasas balanceadas',
+    description: 'ProteÌna, carbohidratos y grasas balanceadas',
     frequency: 'diario',
     category: 'nutricion',
     difficulty: 'dificil',
@@ -97,7 +97,7 @@ const ACTIVE_HABITS: ActiveHabit[] = [
   {
     id: '3',
     templateId: '3',
-    name: 'Entrenar 5 D√≠as',
+    name: 'Entrenar 5 DÌas',
     currentStreak: 3,
     bestStreak: 8,
     completedDays: 3,
@@ -156,27 +156,27 @@ export default function HabitTracker() {
 
   const completeHabit = (habit: ActiveHabit) => {
     if (habit.completedToday) {
-      Alert.alert('Ya Completado', 'Este h√°bito ya fue marcado como completado hoy');
+      Alert.alert('Ya Completado', 'Este h·bito ya fue marcado como completado hoy');
       return;
     }
 
     Alert.alert(
-      '¬°H√°bito Completado!',
-      `+50 XP\n\nRacha actual: ${habit.currentStreak + 1} d√≠as`,
+      '°H·bito Completado!',
+      `+50 XP\n\nRacha actual: ${habit.currentStreak + 1} dÌas`,
       [{ text: 'OK' }]
     );
   };
 
   const addHabitFromTemplate = (template: HabitTemplate) => {
     Alert.alert(
-      'Agregar H√°bito',
-      `${template.name}\n\nRecompensa: ${template.xpReward} XP\nDificultad: ${template.difficulty}\n\n¬øAgregar a tus h√°bitos activos?`,
+      'Agregar H·bito',
+      `${template.name}\n\nRecompensa: ${template.xpReward} XP\nDificultad: ${template.difficulty}\n\nøAgregar a tus h·bitos activos?`,
       [
         { text: 'Cancelar', style: 'cancel' },
         {
           text: 'Agregar',
           onPress: () => {
-            Alert.alert('¬°Agregado!', 'Nuevo h√°bito en seguimiento');
+            Alert.alert('°Agregado!', 'Nuevo h·bito en seguimiento');
             setShowTemplates(false);
           },
         },
@@ -189,9 +189,9 @@ export default function HabitTracker() {
 
     Alert.alert(
       habit.name,
-      `Racha actual: ${habit.currentStreak} d√≠as\nMejor racha: ${habit.bestStreak} d√≠as\n\nCompletado: ${habit.completedDays}/${habit.totalDays} d√≠as\nTasa de √©xito: ${completionRate}%`,
+      `Racha actual: ${habit.currentStreak} dÌas\nMejor racha: ${habit.bestStreak} dÌas\n\nCompletado: ${habit.completedDays}/${habit.totalDays} dÌas\nTasa de Èxito: ${completionRate}%`,
       [
-        { text: 'Ver Estad√≠sticas' },
+        { text: 'Ver EstadÌsticas' },
         { text: 'Cerrar' },
       ]
     );
@@ -210,7 +210,7 @@ export default function HabitTracker() {
             <Ionicons name="arrow-back" size={24} color="white" />
           </TouchableOpacity>
           <Text className="text-white text-2xl font-bold flex-1 ml-3">
-            Rastreador de H√°bitos
+            Rastreador de H·bitos
           </Text>
           <TouchableOpacity onPress={() => setShowTemplates(!showTemplates)}>
             <Ionicons name="add-circle" size={24} color="#9D12DE" />
@@ -245,7 +245,7 @@ export default function HabitTracker() {
         {/* Stats */}
         <View className="flex-row gap-3">
           <View className="flex-1 bg-zinc-900 rounded-xl p-3 border border-zinc-800">
-            <Text className="text-zinc-400 text-xs">H√°bitos Activos</Text>
+            <Text className="text-zinc-400 text-xs">H·bitos Activos</Text>
             <Text className="text-white text-2xl font-bold">{totalActiveHabits}</Text>
           </View>
           <View className="flex-1 bg-zinc-900 rounded-xl p-3 border border-zinc-800">
@@ -265,7 +265,7 @@ export default function HabitTracker() {
           <View className="px-6 pt-6">
             <View className="flex-row items-center justify-between mb-3">
               <Text className="text-white font-bold text-lg">
-                Plantillas de H√°bitos
+                Plantillas de H·bitos
               </Text>
               <TouchableOpacity onPress={() => setShowTemplates(false)}>
                 <Text className="text-primary font-semibold">Cerrar</Text>
@@ -329,7 +329,7 @@ export default function HabitTracker() {
           /* Active Habits */
           <View className="px-6 pt-6">
             <Text className="text-white font-bold text-lg mb-3">
-              Mis H√°bitos
+              Mis H·bitos
             </Text>
 
             {ACTIVE_HABITS.map((habit) => (
@@ -360,7 +360,7 @@ export default function HabitTracker() {
                           {habit.name}
                         </Text>
                         <Text className="text-zinc-400 text-sm">
-                          Racha: {habit.currentStreak} d√≠as √∞≈∏‚Äù¬•
+                          Racha: {habit.currentStreak} dÌas üî•
                         </Text>
                       </View>
                     </View>
@@ -383,7 +383,7 @@ export default function HabitTracker() {
                   <View className="flex-row items-center justify-between mb-1">
                     <Text className="text-zinc-400 text-xs">Progreso</Text>
                     <Text className="text-white text-xs font-bold">
-                      {habit.completedDays}/{habit.totalDays} d√≠as
+                      {habit.completedDays}/{habit.totalDays} dÌas
                     </Text>
                   </View>
                   <View className="bg-zinc-900 h-1.5 rounded-full overflow-hidden">
@@ -399,7 +399,7 @@ export default function HabitTracker() {
 
                 <View className="flex-row items-center justify-between">
                   <Text className="text-zinc-500 text-xs">
-                    Mejor racha: {habit.bestStreak} d√≠as
+                    Mejor racha: {habit.bestStreak} dÌas
                   </Text>
                   <Text className="text-zinc-400 text-xs">
                     {((habit.completedDays / habit.totalDays) * 100).toFixed(0)}% completado
@@ -411,7 +411,7 @@ export default function HabitTracker() {
             {/* Settings */}
             <View className="mt-4">
               <Text className="text-white font-bold text-lg mb-3">
-                Configuraci√≥n
+                ConfiguraciÛn
               </Text>
 
               <View className="bg-zinc-900 rounded-xl p-4 border border-zinc-800">
@@ -419,7 +419,7 @@ export default function HabitTracker() {
                   <View className="flex-1">
                     <Text className="text-white font-semibold">Recordatorios Diarios</Text>
                     <Text className="text-zinc-400 text-sm mt-1">
-                      Recibe notificaciones para tus h√°bitos
+                      Recibe notificaciones para tus h·bitos
                     </Text>
                   </View>
                   <Switch

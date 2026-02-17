@@ -1,4 +1,4 @@
-Ôªøimport React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -33,10 +33,10 @@ const EXERCISE_DATABASE: { [key: string]: Substitution } = {
     alternatives: [
       { name: 'Press con Mancuernas', muscleGroup: 'Pecho', equipment: 'Mancuernas', difficulty: 'Intermedio' },
       { name: 'Flexiones', muscleGroup: 'Pecho', equipment: 'Peso Corporal', difficulty: 'Principiante' },
-      { name: 'Press en M√°quina', muscleGroup: 'Pecho', equipment: 'M√°quina', difficulty: 'Principiante' },
+      { name: 'Press en M·quina', muscleGroup: 'Pecho', equipment: 'M·quina', difficulty: 'Principiante' },
       { name: 'Aperturas con Mancuernas', muscleGroup: 'Pecho', equipment: 'Mancuernas', difficulty: 'Intermedio' },
     ],
-    reason: 'Misma activaci√≥n pectoral, diferentes estabilizadores',
+    reason: 'Misma activaciÛn pectoral, diferentes estabilizadores',
   },
   'sentadilla': {
     original: {
@@ -47,11 +47,11 @@ const EXERCISE_DATABASE: { [key: string]: Substitution } = {
     },
     alternatives: [
       { name: 'Sentadilla Goblet', muscleGroup: 'Piernas', equipment: 'Mancuerna', difficulty: 'Principiante' },
-      { name: 'Sentadilla B√∫lgara', muscleGroup: 'Piernas', equipment: 'Mancuernas', difficulty: 'Intermedio' },
-      { name: 'Prensa de Piernas', muscleGroup: 'Piernas', equipment: 'M√°quina', difficulty: 'Principiante' },
+      { name: 'Sentadilla B˙lgara', muscleGroup: 'Piernas', equipment: 'Mancuernas', difficulty: 'Intermedio' },
+      { name: 'Prensa de Piernas', muscleGroup: 'Piernas', equipment: 'M·quina', difficulty: 'Principiante' },
       { name: 'Zancadas', muscleGroup: 'Piernas', equipment: 'Mancuernas', difficulty: 'Intermedio' },
     ],
-    reason: 'Patr√≥n de sentadilla manteniendo activaci√≥n cu√°driceps',
+    reason: 'PatrÛn de sentadilla manteniendo activaciÛn cu·driceps',
   },
   'peso-muerto': {
     original: {
@@ -62,11 +62,11 @@ const EXERCISE_DATABASE: { [key: string]: Substitution } = {
     },
     alternatives: [
       { name: 'Peso Muerto Rumano', muscleGroup: 'Espalda/Piernas', equipment: 'Barra/Mancuernas', difficulty: 'Intermedio' },
-      { name: 'Buenos D√≠as', muscleGroup: 'Espalda/Piernas', equipment: 'Barra', difficulty: 'Intermedio' },
-      { name: 'Hip Thrusts', muscleGroup: 'Gl√∫teos', equipment: 'Barra', difficulty: 'Intermedio' },
+      { name: 'Buenos DÌas', muscleGroup: 'Espalda/Piernas', equipment: 'Barra', difficulty: 'Intermedio' },
+      { name: 'Hip Thrusts', muscleGroup: 'Gl˙teos', equipment: 'Barra', difficulty: 'Intermedio' },
       { name: 'Hiperextensiones', muscleGroup: 'Espalda Baja', equipment: 'Peso Corporal', difficulty: 'Principiante' },
     ],
-    reason: 'Patr√≥n de bisagra de cadera, cadena posterior',
+    reason: 'PatrÛn de bisagra de cadera, cadena posterior',
   },
   'dominadas': {
     original: {
@@ -76,12 +76,12 @@ const EXERCISE_DATABASE: { [key: string]: Substitution } = {
       difficulty: 'Intermedio',
     },
     alternatives: [
-      { name: 'Pulldowns en Polea', muscleGroup: 'Espalda', equipment: 'M√°quina', difficulty: 'Principiante' },
-      { name: 'Dominadas Asistidas', muscleGroup: 'Espalda', equipment: 'Banda/M√°quina', difficulty: 'Principiante' },
+      { name: 'Pulldowns en Polea', muscleGroup: 'Espalda', equipment: 'M·quina', difficulty: 'Principiante' },
+      { name: 'Dominadas Asistidas', muscleGroup: 'Espalda', equipment: 'Banda/M·quina', difficulty: 'Principiante' },
       { name: 'Remo Invertido', muscleGroup: 'Espalda', equipment: 'Barra', difficulty: 'Intermedio' },
       { name: 'Chin-ups', muscleGroup: 'Espalda', equipment: 'Barra Fija', difficulty: 'Intermedio' },
     ],
-    reason: 'Patr√≥n de tracci√≥n vertical para dorsales',
+    reason: 'PatrÛn de tracciÛn vertical para dorsales',
   },
   'press-militar': {
     original: {
@@ -94,9 +94,9 @@ const EXERCISE_DATABASE: { [key: string]: Substitution } = {
       { name: 'Press con Mancuernas', muscleGroup: 'Hombros', equipment: 'Mancuernas', difficulty: 'Intermedio' },
       { name: 'Press Arnold', muscleGroup: 'Hombros', equipment: 'Mancuernas', difficulty: 'Avanzado' },
       { name: 'Pike Push-ups', muscleGroup: 'Hombros', equipment: 'Peso Corporal', difficulty: 'Intermedio' },
-      { name: 'Press en M√°quina', muscleGroup: 'Hombros', equipment: 'M√°quina', difficulty: 'Principiante' },
+      { name: 'Press en M·quina', muscleGroup: 'Hombros', equipment: 'M·quina', difficulty: 'Principiante' },
     ],
-    reason: 'Presi√≥n vertical para deltoides',
+    reason: 'PresiÛn vertical para deltoides',
   },
   'remo-barra': {
     original: {
@@ -107,11 +107,11 @@ const EXERCISE_DATABASE: { [key: string]: Substitution } = {
     },
     alternatives: [
       { name: 'Remo con Mancuernas', muscleGroup: 'Espalda', equipment: 'Mancuernas', difficulty: 'Intermedio' },
-      { name: 'Remo en Polea', muscleGroup: 'Espalda', equipment: 'M√°quina', difficulty: 'Principiante' },
+      { name: 'Remo en Polea', muscleGroup: 'Espalda', equipment: 'M·quina', difficulty: 'Principiante' },
       { name: 'Remo T-Bar', muscleGroup: 'Espalda', equipment: 'Barra', difficulty: 'Intermedio' },
       { name: 'Remo Pendlay', muscleGroup: 'Espalda', equipment: 'Barra', difficulty: 'Avanzado' },
     ],
-    reason: 'Tracci√≥n horizontal para espalda media',
+    reason: 'TracciÛn horizontal para espalda media',
   },
 };
 
@@ -121,15 +121,15 @@ const INJURY_SUBSTITUTIONS: { [key: string]: string[] } = {
     'Sustituye con: Press neutro, flexiones con manos juntas, face pulls',
   ],
   'espalda-baja': [
-    'Evita: Peso muerto, sentadilla pesada, buenos d√≠as',
+    'Evita: Peso muerto, sentadilla pesada, buenos dÌas',
     'Sustituye con: Goblet squat, prensa piernas, hip thrusts',
   ],
   'rodilla': [
     'Evita: Sentadilla profunda, zancadas, extensiones',
     'Sustituye con: Sentadilla parcial, step-ups bajos, bicicleta',
   ],
-  'mu√±eca': [
-    'Evita: Press banca, flexiones normales, curl de b√≠ceps',
+  'muÒeca': [
+    'Evita: Press banca, flexiones normales, curl de bÌceps',
     'Sustituye con: Press neutro, flexiones en barras paralelas, curl martillo',
   ],
 };
@@ -146,8 +146,8 @@ export default function ExerciseSubstitutions() {
 
   const reasons = [
     { key: 'equipment', label: 'Sin Equipo', icon: 'close-circle', color: 'red' },
-    { key: 'injury', label: 'Lesi√≥n', icon: 'bandage', color: 'amber' },
-    { key: 'preference', label: 'Preferencia', icon: 'heart', color: 'emerald' },
+    { key: 'injury', label: 'LesiÛn', icon: 'bandage', color: 'amber' },
+    { key: 'preference', label: 'Preferencia', icon: 'heart', color: 'primary' },
   ];
 
   if (selectedExercise && EXERCISE_DATABASE[selectedExercise]) {
@@ -191,7 +191,7 @@ export default function ExerciseSubstitutions() {
               <View className="flex-row items-start">
                 <Ionicons name="information-circle" size={20} color="#9D12DE" />
                 <View className="flex-1 ml-3">
-                  <Text className="text-primary/80 font-bold mb-2">Por Qu√© Estas Alternativas</Text>
+                  <Text className="text-primary/80 font-bold mb-2">Por QuÈ Estas Alternativas</Text>
                   <Text className="text-primary/60 text-sm">{substitution.reason}</Text>
                 </View>
               </View>
@@ -221,7 +221,7 @@ export default function ExerciseSubstitutions() {
 
                 <View className="flex-row gap-2">
                   <View className="bg-zinc-800 rounded px-3 py-1">
-                    <Text className="text-zinc-400 text-xs">√∞≈∏¬è‚Äπ√Ø¬∏¬è {alt.equipment}</Text>
+                    <Text className="text-zinc-400 text-xs">üèãÔ∏è {alt.equipment}</Text>
                   </View>
                   <View className={`rounded px-3 py-1 ${
                     alt.difficulty === 'Principiante' ? 'bg-primary/10 border border-primary/30' :
@@ -244,12 +244,12 @@ export default function ExerciseSubstitutions() {
               <View className="flex-row items-start">
                 <Ionicons name="bulb" size={20} color="#FFEA00" />
                 <View className="flex-1 ml-3">
-                  <Text className="text-amber-400 font-bold mb-2">Tips de Sustituci√≥n</Text>
+                  <Text className="text-amber-400 font-bold mb-2">Tips de SustituciÛn</Text>
                   <Text className="text-amber-300 text-sm">
-                    ‚Ä¢ Mant√©n el mismo rango de reps{'\n'}
-                    ‚Ä¢ Ajusta peso seg√∫n dificultad{'\n'}
-                    ‚Ä¢ Prioriza t√©cnica perfecta{'\n'}
-                    ‚Ä¢ Si es por lesi√≥n, consulta m√©dico
+                    ï MantÈn el mismo rango de reps{'\n'}
+                    ï Ajusta peso seg˙n dificultad{'\n'}
+                    ï Prioriza tÈcnica perfecta{'\n'}
+                    ï Si es por lesiÛn, consulta mÈdico
                   </Text>
                 </View>
               </View>
@@ -291,7 +291,7 @@ export default function ExerciseSubstitutions() {
           </View>
 
           {/* Reason Selector */}
-          <Text className="text-white font-bold text-lg mb-3">¬øPor Qu√© Sustituir?</Text>
+          <Text className="text-white font-bold text-lg mb-3">øPor QuÈ Sustituir?</Text>
           <View className="flex-row gap-3 mb-6">
             {reasons.map((reason) => (
               <TouchableOpacity
@@ -323,7 +323,7 @@ export default function ExerciseSubstitutions() {
               <View className="flex-row items-start mb-3">
                 <Ionicons name="warning" size={20} color="#FFEA00" />
                 <Text className="text-amber-400 font-bold ml-2 flex-1">
-                  Sustituciones por Lesi√≥n
+                  Sustituciones por LesiÛn
                 </Text>
               </View>
               
@@ -396,15 +396,15 @@ export default function ExerciseSubstitutions() {
               <Ionicons name="information-circle" size={20} color="#9D12DE" />
               <View className="flex-1 ml-3">
                 <Text className="text-primary/80 font-bold mb-2">
-                  Cu√°ndo Sustituir Ejercicios
+                  Cu·ndo Sustituir Ejercicios
                 </Text>
                 <Text className="text-primary/60 text-sm">
-                  ‚Ä¢ Sin equipo disponible{'\n'}
-                  ‚Ä¢ Lesi√≥n o molestia{'\n'}
-                  ‚Ä¢ Preferencia personal{'\n'}
-                  ‚Ä¢ Variaci√≥n del programa{'\n'}
-                  ‚Ä¢ Adaptaci√≥n para principiantes{'\n'}
-                  ‚Ä¢ Progresi√≥n hacia ejercicios avanzados
+                  ï Sin equipo disponible{'\n'}
+                  ï LesiÛn o molestia{'\n'}
+                  ï Preferencia personal{'\n'}
+                  ï VariaciÛn del programa{'\n'}
+                  ï AdaptaciÛn para principiantes{'\n'}
+                  ï ProgresiÛn hacia ejercicios avanzados
                 </Text>
               </View>
             </View>

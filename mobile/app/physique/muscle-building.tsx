@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -116,7 +116,7 @@ export default function MuscleBuilding() {
       id: 'legs',
       name: 'Legs',
       icon: 'walk' as const,
-      color: 'emerald',
+      color: 'primary',
       primaryExercises: [
         { name: 'Squats', sets: '4x6-8', focus: 'Overall leg mass' },
         { name: 'Romanian Deadlifts', sets: '3x8-10', focus: 'Hamstrings & glutes' },
@@ -220,7 +220,7 @@ export default function MuscleBuilding() {
 
           <View className={`bg-${currentMuscle.color}-500/10 rounded-xl p-5 mb-6 border border-${currentMuscle.color}-500/30`}>
             <View className="flex-row items-center mb-3">
-              <Ionicons name={currentMuscle.icon} size={28} color={`#${currentMuscle.color === 'red' ? 'ef4444' : currentMuscle.color === 'blue' ? '3b82f6' : currentMuscle.color === 'emerald' ? '10b981' : currentMuscle.color === 'purple' ? 'a855f7' : 'f59e0b'}`} />
+              <Ionicons name={currentMuscle.icon} size={28} color={`#${currentMuscle.color === 'red' ? 'ef4444' : currentMuscle.color === 'blue' ? '3b82f6' : currentMuscle.color === 'primary' ? '9D12DE' : currentMuscle.color === 'purple' ? 'a855f7' : 'f59e0b'}`} />
               <Text className={`text-${currentMuscle.color}-400 font-bold text-2xl ml-3`}>
                 {currentMuscle.name}
               </Text>
@@ -271,7 +271,7 @@ export default function MuscleBuilding() {
             </Text>
             {currentMuscle.tips.map((tip, idx) => (
               <View key={idx} className="flex-row items-start mb-2 last:mb-0">
-                <Ionicons name="checkmark-circle" size={18} color={`#${currentMuscle.color === 'red' ? 'ef4444' : currentMuscle.color === 'blue' ? '3b82f6' : currentMuscle.color === 'emerald' ? '10b981' : currentMuscle.color === 'purple' ? 'a855f7' : 'f59e0b'}`} />
+                <Ionicons name="checkmark-circle" size={18} color={`#${currentMuscle.color === 'red' ? 'ef4444' : currentMuscle.color === 'blue' ? '3b82f6' : currentMuscle.color === 'primary' ? '9D12DE' : currentMuscle.color === 'purple' ? 'a855f7' : 'f59e0b'}`} />
                 <Text className="text-zinc-300 ml-2 flex-1">{tip}</Text>
               </View>
             ))}

@@ -90,7 +90,7 @@ export default function AchievementDetailsScreen() {
   if (isLoading) {
     return (
       <View className="flex-1 bg-gray-50 items-center justify-center">
-        <ActivityIndicator size="large" color="#10B981" />
+        <ActivityIndicator size="large" color="#9D12DE" />
       </View>
     );
   }
@@ -216,16 +216,16 @@ export default function AchievementDetailsScreen() {
 
         {/* Unlocked Info */}
         {achievement.unlocked && achievement.unlockedAt && (
-          <Card className="p-6 bg-emerald-50 border-emerald-200">
+          <Card className="p-6 bg-primary/10 border-primary/20">
             <View className="flex-row items-center gap-3 mb-3">
-              <View className="bg-emerald-500 w-12 h-12 rounded-full items-center justify-center">
+              <View className="bg-primary/100 w-12 h-12 rounded-full items-center justify-center">
                 <Ionicons name="checkmark" size={28} color="white" />
               </View>
-              <Text className="flex-1 text-emerald-900 font-bold text-lg">
+              <Text className="flex-1 text-primary/80 font-bold text-lg">
                 ¡Logro Desbloqueado!
               </Text>
             </View>
-            <Text className="text-emerald-700 text-center">
+            <Text className="text-primary text-center">
               Desbloqueado el{' '}
               {format(achievement.unlockedAt, "dd 'de' MMMM 'de' yyyy", {
                 locale: es,

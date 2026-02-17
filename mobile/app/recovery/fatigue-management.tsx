@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -29,7 +29,7 @@ export default function FatigueManagement() {
   const score = fatigueScore();
 
   const getScoreColor = () => {
-    if (score >= 70) return 'emerald';
+    if (score >= 70) return 'primary';
     if (score >= 50) return 'blue';
     if (score >= 30) return 'amber';
     return 'red';
@@ -40,7 +40,7 @@ export default function FatigueManagement() {
       return {
         level: 'Low Fatigue',
         action: 'Train normally',
-        color: 'emerald',
+        color: 'primary',
         details: [
           'Continue current program',
           'Can push intensity',
@@ -98,7 +98,7 @@ export default function FatigueManagement() {
       strategies: [
         { tip: 'Aim for 7-9 hours nightly', priority: 'Critical' },
         { tip: 'Same sleep/wake schedule', priority: 'High' },
-        { tip: 'Dark, cool room (65-68°F)', priority: 'High' },
+        { tip: 'Dark, cool room (65-68�F)', priority: 'High' },
         { tip: 'No screens 1hr before bed', priority: 'Medium' },
         { tip: 'Magnesium supplement', priority: 'Medium' },
       ],
@@ -118,7 +118,7 @@ export default function FatigueManagement() {
     {
       category: 'Nutrition',
       icon: 'nutrition' as const,
-      color: 'emerald',
+      color: 'primary',
       strategies: [
         { tip: 'Adequate calories (not deficit)', priority: 'Critical' },
         { tip: 'Protein 1.6-2.2g/kg', priority: 'Critical' },
@@ -222,11 +222,11 @@ export default function FatigueManagement() {
                 {recommendation.level}
               </Text>
               <Text className="text-white text-lg font-bold mb-3">
-                â†’ {recommendation.action}
+                → {recommendation.action}
               </Text>
               {recommendation.details.map((detail, idx) => (
                 <View key={idx} className="flex-row items-center mb-1">
-                  <Ionicons name="checkmark" size={16} color={`#${scoreColor === 'emerald' ? '10b981' : scoreColor === 'blue' ? '3b82f6' : scoreColor === 'amber' ? 'f59e0b' : 'ef4444'}`} />
+                  <Ionicons name="checkmark" size={16} color={`#${scoreColor === 'primary' ? '9D12DE' : scoreColor === 'blue' ? '3b82f6' : scoreColor === 'amber' ? 'f59e0b' : 'ef4444'}`} />
                   <Text className="text-zinc-300 ml-2 text-sm">{detail}</Text>
                 </View>
               ))}
@@ -239,7 +239,7 @@ export default function FatigueManagement() {
               className={`bg-${strategy.color}-500/10 rounded-xl p-5 mb-6 border border-${strategy.color}-500/30`}
             >
               <View className="flex-row items-center mb-4">
-                <Ionicons name={strategy.icon} size={24} color={`#${strategy.color === 'purple' ? 'a855f7' : strategy.color === 'blue' ? '3b82f6' : strategy.color === 'emerald' ? '10b981' : 'ef4444'}`} />
+                <Ionicons name={strategy.icon} size={24} color={`#${strategy.color === 'purple' ? 'a855f7' : strategy.color === 'blue' ? '3b82f6' : strategy.color === 'primary' ? '9D12DE' : 'ef4444'}`} />
                 <Text className={`text-${strategy.color}-400 font-bold text-lg ml-2`}>
                   {strategy.category}
                 </Text>

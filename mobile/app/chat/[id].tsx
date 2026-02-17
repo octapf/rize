@@ -241,7 +241,7 @@ export default function ChatScreen() {
                   </Text>
                 </View>
                 {mockUser.isOnline && (
-                  <View className="absolute bottom-0 right-0 w-3 h-3 bg-emerald-500 border-2 border-blue-600 rounded-full" />
+                  <View className="absolute bottom-0 right-0 w-3 h-3 bg-primary/100 border-2 border-blue-600 rounded-full" />
                 )}
               </View>
 

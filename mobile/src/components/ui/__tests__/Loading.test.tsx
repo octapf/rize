@@ -108,7 +108,7 @@ describe('Loading', () => {
       
       const text = getByText('Please wait');
       expect(text).toBeTruthy();
-      expect(text.props.style).toContainEqual({ color: '#10B981' });
+      expect(text.props.style).toContainEqual({ color: '#9D12DE' });
     });
 
     it('should render text with custom color', () => {

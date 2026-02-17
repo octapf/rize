@@ -1,4 +1,4 @@
-ï»¿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -38,11 +38,11 @@ const QUICK_TEMPLATES: WorkoutTemplate[] = [
       { id: '2', name: 'Press Inclinado', sets: 3, reps: '8-10', rest: 120, notes: '', category: 'Pecho' },
       { id: '3', name: 'Press Militar', sets: 4, reps: '6-8', rest: 120, notes: '', category: 'Hombros' },
       { id: '4', name: 'Elevaciones Laterales', sets: 3, reps: '12-15', rest: 60, notes: '', category: 'Hombros' },
-      { id: '5', name: 'TrÃ­ceps en Polea', sets: 3, reps: '10-12', rest: 60, notes: '', category: 'TrÃ­ceps' },
+      { id: '5', name: 'Tríceps en Polea', sets: 3, reps: '10-12', rest: 60, notes: '', category: 'Tríceps' },
     ],
     totalExercises: 5,
     estimatedTime: 75,
-    targetMuscles: ['Pecho', 'Hombros', 'TrÃ­ceps'],
+    targetMuscles: ['Pecho', 'Hombros', 'Tríceps'],
   },
   {
     id: '2',
@@ -52,25 +52,25 @@ const QUICK_TEMPLATES: WorkoutTemplate[] = [
       { id: '2', name: 'Dominadas', sets: 4, reps: '8-10', rest: 120, notes: '', category: 'Espalda' },
       { id: '3', name: 'Remo con Barra', sets: 4, reps: '8-10', rest: 120, notes: '', category: 'Espalda' },
       { id: '4', name: 'Face Pulls', sets: 3, reps: '15-20', rest: 60, notes: '', category: 'Hombros' },
-      { id: '5', name: 'Curl con Barra', sets: 3, reps: '10-12', rest: 60, notes: '', category: 'BÃ­ceps' },
+      { id: '5', name: 'Curl con Barra', sets: 3, reps: '10-12', rest: 60, notes: '', category: 'Bíceps' },
     ],
     totalExercises: 5,
     estimatedTime: 75,
-    targetMuscles: ['Espalda', 'BÃ­ceps', 'Hombros'],
+    targetMuscles: ['Espalda', 'Bíceps', 'Hombros'],
   },
   {
     id: '3',
     name: 'Leg Day',
     exercises: [
-      { id: '1', name: 'Sentadilla', sets: 4, reps: '6-8', rest: 180, notes: '', category: 'CuÃ¡driceps' },
-      { id: '2', name: 'Prensa', sets: 3, reps: '10-12', rest: 120, notes: '', category: 'CuÃ¡driceps' },
+      { id: '1', name: 'Sentadilla', sets: 4, reps: '6-8', rest: 180, notes: '', category: 'Cuádriceps' },
+      { id: '2', name: 'Prensa', sets: 3, reps: '10-12', rest: 120, notes: '', category: 'Cuádriceps' },
       { id: '3', name: 'Peso Muerto Rumano', sets: 4, reps: '8-10', rest: 120, notes: '', category: 'Isquios' },
       { id: '4', name: 'Curl Femoral', sets: 3, reps: '12-15', rest: 90, notes: '', category: 'Isquios' },
       { id: '5', name: 'Elevaciones de Gemelos', sets: 4, reps: '15-20', rest: 60, notes: '', category: 'Gemelos' },
     ],
     totalExercises: 5,
     estimatedTime: 75,
-    targetMuscles: ['CuÃ¡driceps', 'Isquios', 'Gemelos'],
+    targetMuscles: ['Cuádriceps', 'Isquios', 'Gemelos'],
   },
 ];
 
@@ -111,7 +111,7 @@ export default function WorkoutBuilder() {
   const removeExercise = (id: string) => {
     Alert.alert(
       'Eliminar Ejercicio',
-      'Â¿Seguro que quieres eliminar este ejercicio?',
+      '¿Seguro que quieres eliminar este ejercicio?',
       [
         { text: 'Cancelar', style: 'cancel' },
         {
@@ -166,9 +166,9 @@ export default function WorkoutBuilder() {
       Alert.alert('Error', 'Agrega ejercicios primero');
       return;
     }
-    Alert.alert('Iniciar Workout', 'Esto iniciarÃ¡ el tracker de workout en vivo', [
+    Alert.alert('Iniciar Workout', 'Esto iniciará el tracker de workout en vivo', [
       { text: 'Cancelar', style: 'cancel' },
-      { text: 'Comenzar', onPress: () => Alert.alert('Â¡A entrenar!') },
+      { text: 'Comenzar', onPress: () => Alert.alert('¡A entrenar!') },
     ]);
   };
 
@@ -219,7 +219,7 @@ export default function WorkoutBuilder() {
           {/* Quick Templates */}
           {showTemplates && exercises.length === 0 && (
             <View className="mb-6">
-              <Text className="text-white text-lg font-bold mb-3">Templates RÃ¡pidos</Text>
+              <Text className="text-white text-lg font-bold mb-3">Templates Rápidos</Text>
               {QUICK_TEMPLATES.map((template) => (
                 <TouchableOpacity
                   key={template.id}
@@ -233,7 +233,7 @@ export default function WorkoutBuilder() {
                         {template.name}
                       </Text>
                       <Text className="text-zinc-400 text-sm">
-                        {template.totalExercises} ejercicios Â· ~{template.estimatedTime} min
+                        {template.totalExercises} ejercicios · ~{template.estimatedTime} min
                       </Text>
                     </View>
                     <Ionicons name="chevron-forward" size={20} color="#71717A" />
@@ -353,7 +353,7 @@ export default function WorkoutBuilder() {
                   Crea Workouts Personalizados
                 </Text>
                 <Text className="text-primary/60 text-sm">
-                  DiseÃ±a entrenamientos segÃºn tus objetivos. GuÃ¡rdalos como templates para reutilizar.
+                  Diseña entrenamientos según tus objetivos. Guárdalos como templates para reutilizar.
                 </Text>
               </View>
             </View>

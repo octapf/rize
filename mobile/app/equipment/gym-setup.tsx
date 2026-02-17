@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -110,7 +110,7 @@ export default function GymSetup() {
     safety: {
       name: 'Safety Equipment',
       icon: 'shield-checkmark',
-      color: 'emerald',
+      color: 'primary',
       equipment: [
         {
           name: 'Power Rack Safeties',
@@ -263,7 +263,7 @@ export default function GymSetup() {
     const colors: { [key: string]: string } = {
       blue: 'bg-primary',
       purple: 'bg-purple-500',
-      emerald: 'bg-primary',
+      primary: 'bg-primary',
       amber: 'bg-amber-500',
     };
     return colors[color];
@@ -393,7 +393,7 @@ export default function GymSetup() {
                   <Text className="text-primary/80 font-bold text-sm mb-2">Tips:</Text>
                   {equip.tips.map((tip, tIdx) => (
                     <Text key={tIdx} className="text-primary/60 text-sm mb-1 last:mb-0">
-                      • {tip}
+                      � {tip}
                     </Text>
                   ))}
                 </View>
@@ -432,16 +432,16 @@ export default function GymSetup() {
           <View className="bg-gradient-to-r from-red-500/20 to-orange-500/20 rounded-xl p-4 border border-red-500/30 mb-6">
             <Text className="text-red-400 font-bold mb-2">Safety First</Text>
             <Text className="text-red-300 text-sm mb-2">
-              • Never bench without safeties or spotter
+              � Never bench without safeties or spotter
             </Text>
             <Text className="text-red-300 text-sm mb-2">
-              • Inspect equipment before every heavy session
+              � Inspect equipment before every heavy session
             </Text>
             <Text className="text-red-300 text-sm mb-2">
-              • Quality equipment = long-term investment
+              � Quality equipment = long-term investment
             </Text>
             <Text className="text-red-300 text-sm">
-              • When in doubt, err on side of safety
+              � When in doubt, err on side of safety
             </Text>
           </View>
         </View>

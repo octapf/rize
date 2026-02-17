@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -309,7 +309,7 @@ export default function StrengthStandardsByLevel() {
             {bw > 0 && (
               <View className="bg-primary/10 rounded-xl p-4 border border-primary/30">
                 <Text className="text-primary/80 text-sm">
-                  {unit === 'lbs' ? `â‰ˆ ${bwKg.toFixed(1)} kg` : `â‰ˆ ${bwLbs.toFixed(1)} lbs`}
+                  {unit === 'lbs' ? `≈ ${bwKg.toFixed(1)} kg` : `≈ ${bwLbs.toFixed(1)} lbs`}
                 </Text>
               </View>
             )}
@@ -422,12 +422,12 @@ export default function StrengthStandardsByLevel() {
 
           <View className="bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-xl p-5 border border-purple-500/30 mb-6">
             <Text className="text-purple-400 font-bold text-lg mb-3">Wilks Score Reference</Text>
-            <Text className="text-purple-300 text-sm mb-2">• 250-300: Novice</Text>
-            <Text className="text-purple-300 text-sm mb-2">• 300-350: Intermediate</Text>
-            <Text className="text-purple-300 text-sm mb-2">• 350-400: Advanced</Text>
-            <Text className="text-purple-300 text-sm mb-2">• 400-450: Competitive</Text>
-            <Text className="text-purple-300 text-sm mb-2">• 450-500: Elite</Text>
-            <Text className="text-purple-300 text-sm">• 500+: World Class</Text>
+            <Text className="text-purple-300 text-sm mb-2">� 250-300: Novice</Text>
+            <Text className="text-purple-300 text-sm mb-2">� 300-350: Intermediate</Text>
+            <Text className="text-purple-300 text-sm mb-2">� 350-400: Advanced</Text>
+            <Text className="text-purple-300 text-sm mb-2">� 400-450: Competitive</Text>
+            <Text className="text-purple-300 text-sm mb-2">� 450-500: Elite</Text>
+            <Text className="text-purple-300 text-sm">� 500+: World Class</Text>
           </View>
         </View>
       </ScrollView>

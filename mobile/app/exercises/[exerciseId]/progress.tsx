@@ -142,7 +142,7 @@ export default function ExerciseProgressScreen() {
     backgroundGradientFrom: '#ffffff',
     backgroundGradientTo: '#ffffff',
     decimalPlaces: 0,
-    color: (opacity = 1) => `rgba(16, 185, 129, ${opacity})`,
+    color: (opacity = 1) => `rgba(157, 18, 222, ${opacity})`,
     labelColor: (opacity = 1) => `rgba(107, 114, 128, ${opacity})`,
     style: {
       borderRadius: 16,
@@ -150,14 +150,14 @@ export default function ExerciseProgressScreen() {
     propsForDots: {
       r: '4',
       strokeWidth: '2',
-      stroke: '#10B981',
+      stroke: '#9D12DE',
     },
   };
 
   if (exerciseLoading || workoutsLoading) {
     return (
       <View className="flex-1 bg-gray-50 items-center justify-center">
-        <ActivityIndicator size="large" color="#10B981" />
+        <ActivityIndicator size="large" color="#9D12DE" />
       </View>
     );
   }
@@ -165,7 +165,7 @@ export default function ExerciseProgressScreen() {
   return (
     <View className="flex-1 bg-gray-50">
       {/* Header */}
-      <LinearGradient colors={['#10B981', '#059669']} className="px-6 pt-12 pb-6">
+      <LinearGradient colors={['#9D12DE', '#059669']} className="px-6 pt-12 pb-6">
         <View className="flex-row items-center justify-between mb-4">
           <TouchableOpacity onPress={() => router.back()} className="p-2">
             <Ionicons name="arrow-back" size={28} color="white" />
@@ -202,7 +202,7 @@ export default function ExerciseProgressScreen() {
               onPress={() => setTimeRange(range.id)}
               className={`px-4 py-2 rounded-full ${
                 timeRange === range.id
-                  ? 'bg-emerald-500'
+                  ? 'bg-primary/100'
                   : 'bg-white border border-gray-200'
               }`}
             >
@@ -221,7 +221,7 @@ export default function ExerciseProgressScreen() {
         <View className="flex-row gap-3">
           <Card className="flex-1 p-4">
             <View className="items-center">
-              <Ionicons name="trending-up" size={24} color="#10B981" />
+              <Ionicons name="trending-up" size={24} color="#9D12DE" />
               <Text className="text-gray-600 text-xs mt-2">Máximo</Text>
               <Text className="text-gray-900 text-xl font-bold mt-1">
                 {allTimeMax} kg
@@ -242,7 +242,7 @@ export default function ExerciseProgressScreen() {
         {/* Max Weight Progress Chart */}
         <Card className="p-4">
           <View className="flex-row items-center gap-2 mb-4">
-            <Ionicons name="barbell" size={24} color="#10B981" />
+            <Ionicons name="barbell" size={24} color="#9D12DE" />
             <Text className="text-lg font-bold text-gray-900">
               Progreso de Peso Máximo
             </Text>

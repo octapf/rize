@@ -203,6 +203,8 @@ calisthenics-app/
 
 5. **[DESIGN_SYSTEM.md](./DESIGN_SYSTEM.md)**: Colores, tipografía, espaciado, componentes UI, animaciones, patrones de interacción.
 
+6. **[PDD_GUIDE.md](./PDD_GUIDE.md)**: Guía de Prompt-Driven Development – cómo desarrollar con IA (Cursor, Copilot), plantillas de prompts y flujo de trabajo.
+
 ### Workflows
 
 - **[Git Workflow](./docs/flujo-trabajo/git-workflow.md)**: Branching strategy, worktrees, commits convencionales.
@@ -326,8 +328,9 @@ EXPO_PUBLIC_ENV=development
 ### Branding
 
 - **Nombre**: RIZE (levántate, sube de nivel)
-- **Color primario**: `#10B981` (Emerald 500)
-- **Tipografía**: Barlow (headings) + Inter (body)
+- **Color primario**: `#9D12DE` (Purple)
+- **Acento**: `#FFEA00` (Yellow)
+- **Tipografía**: Poppins (headings) + Inter (body) + Montserrat (labels)
 - **Iconos**: Ionicons exclusively
 
 ### Principios UX

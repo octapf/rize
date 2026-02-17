@@ -1,4 +1,4 @@
-﻿import { useEffect } from 'react';
+import { useEffect } from 'react';
 import { router } from 'expo-router';
 import { View, ActivityIndicator } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';

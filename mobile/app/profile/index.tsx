@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -38,7 +38,7 @@ export default function UserProfile() {
   const [isEditModalVisible, setEditModalVisible] = useState(false);
   const [name, setName] = useState('Carlos Rodriguez');
   const [username, setUsername] = useState('@carlosfit');
-  const [bio, setBio] = useState('Atleta de calistenia ðŸ’ª | Nivel 15 | Amante del fitness');
+  const [bio, setBio] = useState('Atleta de calistenia 💪 | Nivel 15 | Amante del fitness');
   const [avatarUri, setAvatarUri] = useState<string | null>(null);
 
   // Mock data
@@ -58,7 +58,7 @@ export default function UserProfile() {
       id: '1',
       type: 'workout',
       title: 'Pull Day Completado',
-      subtitle: '12 ejercicios • 65 min',
+      subtitle: '12 ejercicios � 65 min',
       timestamp: new Date(2025, 0, 27, 10, 30),
       icon: 'fitness',
       color: '#9D12DE',
@@ -84,7 +84,7 @@ export default function UserProfile() {
     {
       id: '4',
       type: 'friend',
-      title: 'Nueva amistad con María López',
+      title: 'Nueva amistad con Mar�a L�pez',
       subtitle: 'Ahora son amigos',
       timestamp: new Date(2025, 0, 24, 14, 20),
       icon: 'people',
@@ -93,7 +93,7 @@ export default function UserProfile() {
   ];
 
   const topAchievements = [
-    { id: '1', name: 'Racha de 30 Días', icon: 'flame', color: '#EF4444' },
+    { id: '1', name: 'Racha de 30 D�as', icon: 'flame', color: '#EF4444' },
     { id: '2', name: 'Muscle Up King', icon: 'trophy', color: '#FFEA00' },
     { id: '3', name: '100 Toneladas', icon: 'barbell', color: '#9D12DE' },
   ];
@@ -114,7 +114,7 @@ export default function UserProfile() {
   const saveProfile = () => {
     // TODO: API call to update profile
     setEditModalVisible(false);
-    Alert.alert('Éxito', 'Perfil actualizado correctamente');
+    Alert.alert('�xito', 'Perfil actualizado correctamente');
   };
 
   const levelProgress = (stats.xp / stats.nextLevelXP) * 100;
@@ -123,7 +123,7 @@ export default function UserProfile() {
     <View className="flex-1 bg-zinc-950">
       <ScrollView showsVerticalScrollIndicator={false}>
         {/* Header with gradient background */}
-        <View className="bg-gradient-to-b from-emerald-600 to-emerald-700 pt-12 pb-6 px-6">
+        <View className="bg-gradient-to-b from-primary to-primary pt-12 pb-6 px-6">
           <View className="flex-row items-center justify-between mb-4">
             <TouchableOpacity onPress={() => router.back()}>
               <Ionicons name="arrow-back" size={24} color="white" />
@@ -139,13 +139,13 @@ export default function UserProfile() {
               {avatarUri ? (
                 <Image source={{ uri: avatarUri }} className="w-24 h-24 rounded-full" />
               ) : (
-                <View className="w-24 h-24 rounded-full bg-emerald-800 items-center justify-center">
+                <View className="w-24 h-24 rounded-full bg-primary/80 items-center justify-center">
                   <Text className="text-white text-3xl font-bold">
                     {name.charAt(0)}
                   </Text>
                 </View>
               )}
-              <View className="absolute -bottom-2 -right-2 bg-amber-500 rounded-full w-10 h-10 items-center justify-center border-4 border-emerald-600">
+              <View className="absolute -bottom-2 -right-2 bg-amber-500 rounded-full w-10 h-10 items-center justify-center border-4 border-primary">
                 <Text className="text-white font-bold text-sm">{stats.level}</Text>
               </View>
             </View>
@@ -166,7 +166,7 @@ export default function UserProfile() {
                 {stats.xp.toLocaleString()} / {stats.nextLevelXP.toLocaleString()} XP
               </Text>
             </View>
-            <View className="bg-emerald-800 h-3 rounded-full overflow-hidden">
+            <View className="bg-primary/80 h-3 rounded-full overflow-hidden">
               <View
                 className="bg-amber-500 h-full rounded-full"
                 style={{ width: `${levelProgress}%` }}
@@ -353,11 +353,11 @@ export default function UserProfile() {
 
               {/* Bio */}
               <View className="mb-6">
-                <Text className="text-zinc-400 text-sm mb-2">Biografía</Text>
+                <Text className="text-zinc-400 text-sm mb-2">Biograf�a</Text>
                 <TextInput
                   value={bio}
                   onChangeText={setBio}
-                  placeholder="Cuéntanos sobre ti..."
+                  placeholder="Cu�ntanos sobre ti..."
                   placeholderTextColor="#52525B"
                   multiline
                   numberOfLines={3}

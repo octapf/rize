@@ -20,7 +20,7 @@ const RECORD_TYPES: Record<string, { label: string; icon: string; color: string 
   weight: { label: 'Peso Máximo', icon: 'barbell', color: '#f59e0b' },
   reps: { label: 'Repeticiones', icon: 'repeat', color: '#3b82f6' },
   volume: { label: 'Volumen Total', icon: 'speedometer', color: '#8b5cf6' },
-  duration: { label: 'Duración', icon: 'time', color: '#10b981' },
+  duration: { label: 'Duración', icon: 'time', color: '#9D12DE' },
   distance: { label: 'Distancia', icon: 'navigate', color: '#ef4444' },
 };
 
@@ -183,7 +183,7 @@ export const RecordCelebration: React.FC<RecordCelebrationProps> = ({
             {/* Improvement */}
             {improvement && improvement > 0 && (
               <View style={styles.improvementContainer}>
-                <Ionicons name="trending-up" size={20} color="#10b981" />
+                <Ionicons name="trending-up" size={20} color="#9D12DE" />
                 <Text style={styles.improvement}>
                   +{improvement.toFixed(1)}% de mejora
                 </Text>
@@ -284,7 +284,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     gap: 6,
-    backgroundColor: 'rgba(16, 185, 129, 0.3)',
+    backgroundColor: 'rgba(157, 18, 222, 0.3)',
     paddingHorizontal: 16,
     paddingVertical: 8,
     borderRadius: 20,
@@ -293,7 +293,7 @@ const styles = StyleSheet.create({
   improvement: {
     fontSize: 16,
     fontWeight: '700',
-    color: '#10b981',
+    color: '#9D12DE',
   },
   celebration: {
     fontSize: 18,

@@ -1,4 +1,4 @@
-ï»¿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -51,8 +51,8 @@ export default function PerformanceTesting() {
           'Warm-up as usual',
           'Choose weight you can do 3-8 reps',
           'Perform AMRAP (as many reps as possible)',
-          'Use Epley formula: 1RM = weight Ã— (1 + reps/30)',
-          'Or Brzycki: 1RM = weight Ã— (36 / (37 - reps))',
+          'Use Epley formula: 1RM = weight × (1 + reps/30)',
+          'Or Brzycki: 1RM = weight × (36 / (37 - reps))',
         ],
         safety: [
           'Safer than true 1RM testing',
@@ -104,7 +104,7 @@ export default function PerformanceTesting() {
       {
         name: 'Beep Test (20m Shuttle)',
         icon: 'timer' as const,
-        color: 'emerald',
+        color: 'primary',
         description: 'VO2 max estimation',
         protocol: [
           'Run 20m before beep',
@@ -223,7 +223,7 @@ export default function PerformanceTesting() {
           {currentTests.map((test, idx) => (
             <View key={idx} className={`bg-${test.color}-500/10 rounded-xl p-5 mb-6 border border-${test.color}-500/30`}>
               <View className="flex-row items-center mb-3">
-                <Ionicons name={test.icon} size={28} color={`#${test.color === 'red' ? 'ef4444' : test.color === 'blue' ? '3b82f6' : test.color === 'emerald' ? '10b981' : test.color === 'purple' ? 'a855f7' : 'f59e0b'}`} />
+                <Ionicons name={test.icon} size={28} color={`#${test.color === 'red' ? 'ef4444' : test.color === 'blue' ? '3b82f6' : test.color === 'primary' ? '9D12DE' : test.color === 'purple' ? 'a855f7' : 'f59e0b'}`} />
                 <Text className={`text-${test.color}-400 font-bold text-xl ml-3 flex-1`}>
                   {test.name}
                 </Text>
@@ -287,16 +287,16 @@ export default function PerformanceTesting() {
           <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
             <Text className="text-primary/80 font-bold mb-2">Testing Best Practices</Text>
             <Text className="text-primary/60 text-sm mb-2">
-              â€¢ Test in same conditions each time (time of day, pre-test meal)
+              • Test in same conditions each time (time of day, pre-test meal)
             </Text>
             <Text className="text-primary/60 text-sm mb-2">
-              â€¢ Warm-up adequately but don't fatigue
+              • Warm-up adequately but don't fatigue
             </Text>
             <Text className="text-primary/60 text-sm mb-2">
-              â€¢ Record ALL results for future comparison
+              • Record ALL results for future comparison
             </Text>
             <Text className="text-primary/60 text-sm">
-              â€¢ Re-test every 4-8 weeks to track progress
+              • Re-test every 4-8 weeks to track progress
             </Text>
           </View>
         </View>

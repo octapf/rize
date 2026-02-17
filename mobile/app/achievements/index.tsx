@@ -1,4 +1,4 @@
-ï»¿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -241,11 +241,11 @@ export default function AchievementsScreen() {
                               className={`text-xs font-semibold ${colors.text}`}
                             >
                               {achievement.rarity === 'common'
-                                ? 'ComÃºn'
+                                ? 'Común'
                                 : achievement.rarity === 'rare'
                                 ? 'Raro'
                                 : achievement.rarity === 'epic'
-                                ? 'Ã‰pico'
+                                ? 'Épico'
                                 : 'Legendario'}
                             </Text>
                           </View>

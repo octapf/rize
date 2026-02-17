@@ -1,4 +1,4 @@
-ï»¿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -27,8 +27,8 @@ const mockResults: SearchResult[] = [
   {
     id: '1',
     type: 'user',
-    title: 'Carlos GarcÃ­a',
-    subtitle: '@carlosfit â€¢ Nivel 15',
+    title: 'Carlos García',
+    subtitle: '@carlosfit • Nivel 15',
     icon: 'person',
     color: '#9D12DE',
     route: '/users/1',
@@ -37,7 +37,7 @@ const mockResults: SearchResult[] = [
     id: '2',
     type: 'exercise',
     title: 'Bench Press',
-    subtitle: 'Pecho â€¢ Barra',
+    subtitle: 'Pecho • Barra',
     icon: 'barbell',
     color: '#9D12DE',
     route: '/exercises/bench-press',
@@ -46,7 +46,7 @@ const mockResults: SearchResult[] = [
     id: '3',
     type: 'workout',
     title: 'Push Day Template',
-    subtitle: '5 ejercicios â€¢ 60 min',
+    subtitle: '5 ejercicios • 60 min',
     icon: 'fitness',
     color: '#8B5CF6',
     route: '/workouts/templates/1',
@@ -55,7 +55,7 @@ const mockResults: SearchResult[] = [
     id: '4',
     type: 'challenge',
     title: '30 Days Streak',
-    subtitle: 'Racha â€¢ 500 XP',
+    subtitle: 'Racha • 500 XP',
     icon: 'flame',
     color: '#EF4444',
     route: '/challenges/1',
@@ -63,8 +63,8 @@ const mockResults: SearchResult[] = [
   {
     id: '5',
     type: 'user',
-    title: 'MarÃ­a LÃ³pez',
-    subtitle: '@mariastrong â€¢ Nivel 18',
+    title: 'María López',
+    subtitle: '@mariastrong • Nivel 18',
     icon: 'person',
     color: '#9D12DE',
     route: '/users/2',
@@ -74,7 +74,7 @@ const mockResults: SearchResult[] = [
 const recentSearches = [
   'Bench Press',
   'Push Day',
-  'Carlos GarcÃ­a',
+  'Carlos García',
   '30 Days Streak',
 ];
 
@@ -151,7 +151,7 @@ export default function SearchScreen() {
             <TextInput
               value={searchQuery}
               onChangeText={setSearchQuery}
-              placeholder="Buscar usuarios, ejercicios, desafÃ­os..."
+              placeholder="Buscar usuarios, ejercicios, desafíos..."
               className="flex-1 ml-2 text-gray-900"
               autoFocus
             />
@@ -183,7 +183,7 @@ export default function SearchScreen() {
                     category === cat ? 'text-indigo-600' : 'text-white'
                   }`}
                 >
-                  {cat === 'all' ? 'Todos' : cat === 'users' ? 'Usuarios' : cat === 'exercises' ? 'Ejercicios' : cat === 'workouts' ? 'Entrenamientos' : 'DesafÃ­os'}
+                  {cat === 'all' ? 'Todos' : cat === 'users' ? 'Usuarios' : cat === 'exercises' ? 'Ejercicios' : cat === 'workouts' ? 'Entrenamientos' : 'Desafíos'}
                 </Text>
               </TouchableOpacity>
             ))}
@@ -198,7 +198,7 @@ export default function SearchScreen() {
             {recentSearches.length > 0 && (
               <View className="mb-6">
                 <Text className="text-gray-900 font-bold text-lg mb-3">
-                  BÃºsquedas Recientes
+                  Búsquedas Recientes
                 </Text>
                 <View className="gap-2">
                   {recentSearches.map((search, i) => (
@@ -221,7 +221,7 @@ export default function SearchScreen() {
             {/* Popular Searches */}
             <View className="mb-6">
               <Text className="text-gray-900 font-bold text-lg mb-3">
-                BÃºsquedas Populares
+                Búsquedas Populares
               </Text>
               <View className="flex-row flex-wrap gap-2">
                 {popularSearches.map((search, i) => (
@@ -250,7 +250,7 @@ export default function SearchScreen() {
             {/* Quick Access */}
             <View>
               <Text className="text-gray-900 font-bold text-lg mb-3">
-                Acceso RÃ¡pido
+                Acceso Rápido
               </Text>
               <View className="gap-2">
                 <TouchableOpacity
@@ -274,7 +274,7 @@ export default function SearchScreen() {
                     <Ionicons name="trophy" size={20} color="#EF4444" />
                   </View>
                   <Text className="text-gray-900 font-semibold flex-1">
-                    DesafÃ­os Activos
+                    Desafíos Activos
                   </Text>
                   <Ionicons name="chevron-forward" size={20} color="#9CA3AF" />
                 </TouchableOpacity>
@@ -304,7 +304,7 @@ export default function SearchScreen() {
                   No hay resultados
                 </Text>
                 <Text className="text-gray-600 text-center mt-2">
-                  Intenta con otros tÃ©rminos de bÃºsqueda
+                  Intenta con otros términos de búsqueda
                 </Text>
               </Card>
             ) : (

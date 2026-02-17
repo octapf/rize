@@ -36,13 +36,13 @@ const lightColors = {
   text: '#09090B',
   textSecondary: '#71717A',
   border: '#E4E4E7',
-  primary: '#10B981',
+  primary: '#9D12DE',
   primaryForeground: '#FFFFFF',
   secondary: '#F4F4F5',
   accent: '#3B82F6',
   destructive: '#EF4444',
   muted: '#F4F4F5',
-  success: '#10B981',
+  success: '#9D12DE',
 };
 
 const darkColors = {
@@ -52,13 +52,13 @@ const darkColors = {
   text: '#FAFAFA',
   textSecondary: '#A1A1AA',
   border: '#27272A',
-  primary: '#10B981',
+  primary: '#9D12DE',
   primaryForeground: '#FFFFFF',
   secondary: '#27272A',
   accent: '#3B82F6',
   destructive: '#EF4444',
   muted: '#27272A',
-  success: '#10B981',
+  success: '#9D12DE',
 };
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {

@@ -1,4 +1,4 @@
-Ôªøimport React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -31,7 +31,7 @@ export default function DynamicWarmup() {
 
   const workoutTypes = [
     { key: 'upper', label: 'Upper Body', icon: 'hand-left', color: 'blue' },
-    { key: 'lower', label: 'Lower Body', icon: 'walk', color: 'emerald' },
+    { key: 'lower', label: 'Lower Body', icon: 'walk', color: 'primary' },
     { key: 'full', label: 'Full Body', icon: 'body', color: 'purple' },
     { key: 'cardio', label: 'Cardio', icon: 'pulse', color: 'red' },
   ];
@@ -43,7 +43,7 @@ export default function DynamicWarmup() {
         totalDuration: 12,
         phases: [
           {
-            phase: 'Activaci√≥n Cardiovascular',
+            phase: 'ActivaciÛn Cardiovascular',
             duration: 3,
             exercises: [
               {
@@ -55,7 +55,7 @@ export default function DynamicWarmup() {
                 name: 'Arm Circles',
                 duration: 60,
                 reps: '30 forward + 30 backward',
-                instructions: 'C√≠rculos amplios con brazos extendidos',
+                instructions: 'CÌrculos amplios con brazos extendidos',
               },
               {
                 name: 'High Knees',
@@ -72,37 +72,37 @@ export default function DynamicWarmup() {
                 name: 'Shoulder Circles',
                 duration: 60,
                 reps: '10 forward + 10 backward cada brazo',
-                instructions: 'Rotaci√≥n completa de hombro',
+                instructions: 'RotaciÛn completa de hombro',
               },
               {
                 name: 'Scapular Retractions',
                 duration: 60,
                 reps: '15 reps',
-                instructions: 'Juntar om√≥platos, mantener 2s',
+                instructions: 'Juntar omÛplatos, mantener 2s',
               },
               {
                 name: 'Thread the Needle',
                 duration: 60,
                 reps: '10 por lado',
-                instructions: 'Rotaci√≥n tor√°cica en cuadrupedia',
+                instructions: 'RotaciÛn tor·cica en cuadrupedia',
               },
               {
                 name: 'Band Pull-Aparts',
                 duration: 60,
                 reps: '15 reps',
-                instructions: 'Con banda el√°stica, activar deltoides posteriores',
+                instructions: 'Con banda el·stica, activar deltoides posteriores',
               },
             ],
           },
           {
-            phase: 'Activaci√≥n Muscular',
+            phase: 'ActivaciÛn Muscular',
             duration: 5,
             exercises: [
               {
                 name: 'Push-ups (Light)',
                 duration: 60,
                 reps: '10 reps',
-                instructions: 'T√©cnica perfecta, tempo controlado',
+                instructions: 'TÈcnica perfecta, tempo controlado',
               },
               {
                 name: 'Band Face Pulls',
@@ -114,7 +114,7 @@ export default function DynamicWarmup() {
                 name: 'Scapular Push-ups',
                 duration: 60,
                 reps: '12 reps',
-                instructions: 'Solo retracci√≥n escapular, brazos extendidos',
+                instructions: 'Solo retracciÛn escapular, brazos extendidos',
               },
               {
                 name: 'Cuban Rotations',
@@ -137,7 +137,7 @@ export default function DynamicWarmup() {
         totalDuration: 12,
         phases: [
           {
-            phase: 'Activaci√≥n Cardiovascular',
+            phase: 'ActivaciÛn Cardiovascular',
             duration: 3,
             exercises: [
               {
@@ -148,12 +148,12 @@ export default function DynamicWarmup() {
               {
                 name: 'Butt Kicks',
                 duration: 60,
-                instructions: 'Talones a gl√∫teos, ritmo moderado',
+                instructions: 'Talones a gl˙teos, ritmo moderado',
               },
               {
                 name: 'High Knees',
                 duration: 30,
-                instructions: 'Rodillas al pecho, m√°xima altura',
+                instructions: 'Rodillas al pecho, m·xima altura',
               },
             ],
           },
@@ -165,7 +165,7 @@ export default function DynamicWarmup() {
                 name: 'Leg Swings (Front-Back)',
                 duration: 60,
                 reps: '15 por pierna',
-                instructions: 'Sosteni√©ndote, balanceo controlado',
+                instructions: 'SosteniÈndote, balanceo controlado',
               },
               {
                 name: 'Leg Swings (Side-Side)',
@@ -176,26 +176,26 @@ export default function DynamicWarmup() {
               {
                 name: 'Hip Circles',
                 duration: 60,
-                reps: '10 por direcci√≥n',
-                instructions: 'C√≠rculos amplios de cadera',
+                reps: '10 por direcciÛn',
+                instructions: 'CÌrculos amplios de cadera',
               },
               {
                 name: 'Ankle Circles',
                 duration: 60,
                 reps: '10 por tobillo',
-                instructions: 'Rotaci√≥n completa de tobillo',
+                instructions: 'RotaciÛn completa de tobillo',
               },
             ],
           },
           {
-            phase: 'Activaci√≥n Muscular',
+            phase: 'ActivaciÛn Muscular',
             duration: 5,
             exercises: [
               {
                 name: 'Glute Bridges',
                 duration: 60,
                 reps: '15 reps',
-                instructions: 'Apretar gl√∫teos arriba, 2s hold',
+                instructions: 'Apretar gl˙teos arriba, 2s hold',
               },
               {
                 name: 'Bodyweight Squats',
@@ -212,14 +212,14 @@ export default function DynamicWarmup() {
               {
                 name: 'Monster Walks (Band)',
                 duration: 60,
-                reps: '10 pasos cada direcci√≥n',
-                instructions: 'Con banda en rodillas, activar gl√∫teo medio',
+                reps: '10 pasos cada direcciÛn',
+                instructions: 'Con banda en rodillas, activar gl˙teo medio',
               },
               {
                 name: 'Single-Leg RDL',
                 duration: 60,
                 reps: '8 por pierna',
-                instructions: 'Sin peso, enfoque en balance y activaci√≥n',
+                instructions: 'Sin peso, enfoque en balance y activaciÛn',
               },
             ],
           },
@@ -230,7 +230,7 @@ export default function DynamicWarmup() {
         totalDuration: 10,
         phases: [
           {
-            phase: 'Activaci√≥n General',
+            phase: 'ActivaciÛn General',
             duration: 3,
             exercises: [
               {
@@ -246,19 +246,19 @@ export default function DynamicWarmup() {
               {
                 name: 'Torso Twists',
                 duration: 60,
-                instructions: 'Rotaci√≥n de torso, brazos extendidos',
+                instructions: 'RotaciÛn de torso, brazos extendidos',
               },
             ],
           },
           {
-            phase: 'Movilidad Din√°mica',
+            phase: 'Movilidad Din·mica',
             duration: 4,
             exercises: [
               {
                 name: 'World\'s Greatest Stretch',
                 duration: 120,
                 reps: '5 por lado',
-                instructions: 'Zancada + rotaci√≥n + alcance hacia arriba',
+                instructions: 'Zancada + rotaciÛn + alcance hacia arriba',
               },
               {
                 name: 'Cat-Cow',
@@ -275,14 +275,14 @@ export default function DynamicWarmup() {
             ],
           },
           {
-            phase: 'Activaci√≥n Total',
+            phase: 'ActivaciÛn Total',
             duration: 3,
             exercises: [
               {
                 name: 'Burpees (Light)',
                 duration: 60,
                 reps: '8 reps',
-                instructions: 'Ritmo controlado, no m√°ximo esfuerzo',
+                instructions: 'Ritmo controlado, no m·ximo esfuerzo',
               },
               {
                 name: 'Inchworms',
@@ -304,7 +304,7 @@ export default function DynamicWarmup() {
         totalDuration: 8,
         phases: [
           {
-            phase: 'Activaci√≥n Progresiva',
+            phase: 'ActivaciÛn Progresiva',
             duration: 5,
             exercises: [
               {
@@ -337,7 +337,7 @@ export default function DynamicWarmup() {
               {
                 name: 'High Knees',
                 duration: 30,
-                instructions: 'Preparar para intensidad m√°xima',
+                instructions: 'Preparar para intensidad m·xima',
               },
               {
                 name: 'Butt Kicks',
@@ -363,8 +363,8 @@ export default function DynamicWarmup() {
 
   const startWarmup = () => {
     Alert.alert(
-      'Warmup Iniciado! √∞≈∏‚Äù¬•',
-      `${routine.totalDuration} minutos ‚Ä¢ ${routine.phases.length} fases`,
+      'Warmup Iniciado! üî•',
+      `${routine.totalDuration} minutos ï ${routine.phases.length} fases`,
       [
         { text: 'Cancelar', style: 'cancel' },
         { 
@@ -398,7 +398,7 @@ export default function DynamicWarmup() {
           <View className="bg-gradient-to-r from-orange-500 to-red-500 rounded-xl p-6 mb-6">
             <Text className="text-white text-2xl font-bold mb-2">Warmup Inteligente</Text>
             <Text className="text-white opacity-90 mb-4">
-              Calentamiento din√°mico personalizado seg√∫n tu workout
+              Calentamiento din·mico personalizado seg˙n tu workout
             </Text>
             <View className="flex-row items-center">
               <Ionicons name="timer" size={20} color="white" />
@@ -440,7 +440,7 @@ export default function DynamicWarmup() {
           <Text className="text-white font-bold text-lg mb-4">Rutina Completa</Text>
 
           {routine.phases.map((phase, phaseIdx) => {
-            const phaseColors = ['blue', 'emerald', 'purple'];
+            const phaseColors = ['blue', 'primary', 'purple'];
             const color = phaseColors[phaseIdx % phaseColors.length];
 
             return (
@@ -492,15 +492,15 @@ export default function DynamicWarmup() {
               <Ionicons name="bulb" size={20} color="#9D12DE" />
               <View className="flex-1 ml-3">
                 <Text className="text-primary/80 font-bold mb-2">
-                  Por Qu√© Calentar Din√°micamente
+                  Por QuÈ Calentar Din·micamente
                 </Text>
                 <Text className="text-primary/60 text-sm">
-                  ‚Ä¢ Reduce lesiones hasta 50%{'\n'}
-                  ‚Ä¢ Mejora rendimiento 10-15%{'\n'}
-                  ‚Ä¢ Aumenta rango de movimiento{'\n'}
-                  ‚Ä¢ Activa sistema nervioso{'\n'}
-                  ‚Ä¢ Prepara mentalmente para entrenar{'\n'}
-                  ‚Ä¢ Nunca estires est√°tico en fr√≠o
+                  ï Reduce lesiones hasta 50%{'\n'}
+                  ï Mejora rendimiento 10-15%{'\n'}
+                  ï Aumenta rango de movimiento{'\n'}
+                  ï Activa sistema nervioso{'\n'}
+                  ï Prepara mentalmente para entrenar{'\n'}
+                  ï Nunca estires est·tico en frÌo
                 </Text>
               </View>
             </View>

@@ -1,4 +1,4 @@
-ï»¿import React, { useState, useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import {
   View,
   Text,
@@ -57,11 +57,11 @@ export default function FormCheck() {
         await MediaLibrary.createAssetAsync(video.uri);
 
         Alert.alert(
-          'Â¡Video Guardado!',
-          'Tu video de form check ha sido guardado en la galerÃ­a',
+          '¡Video Guardado!',
+          'Tu video de form check ha sido guardado en la galería',
           [
             {
-              text: 'Ver AnÃ¡lisis',
+              text: 'Ver Análisis',
               onPress: () => router.push('/videos/analysis' as any),
             },
             { text: 'OK' },
@@ -109,7 +109,7 @@ export default function FormCheck() {
           Permisos Requeridos
         </Text>
         <Text className="text-zinc-400 text-center mb-6">
-          Necesitamos acceso a tu cÃ¡mara, micrÃ³fono y galerÃ­a para grabar videos de form check
+          Necesitamos acceso a tu cámara, micrófono y galería para grabar videos de form check
         </Text>
         <TouchableOpacity
           onPress={() => router.back()}
@@ -187,7 +187,7 @@ export default function FormCheck() {
             <View className="absolute top-20 left-0 right-0 items-center">
               <View className="bg-black/70 px-4 py-2 rounded-full">
                 <Text className="text-white text-sm font-semibold">
-                  ColÃ³cate en el centro del cuadro
+                  Colócate en el centro del cuadro
                 </Text>
               </View>
             </View>
@@ -255,19 +255,19 @@ export default function FormCheck() {
           <View className="flex-row items-start mb-1">
             <Ionicons name="checkmark-circle" size={16} color="#9D12DE" />
             <Text className="text-zinc-300 text-sm ml-2 flex-1">
-              Graba desde un Ã¡ngulo lateral (90Â°)
+              Graba desde un ángulo lateral (90°)
             </Text>
           </View>
           <View className="flex-row items-start mb-1">
             <Ionicons name="checkmark-circle" size={16} color="#9D12DE" />
             <Text className="text-zinc-300 text-sm ml-2 flex-1">
-              AsegÃºrate de que tu cuerpo completo estÃ© visible
+              Asegúrate de que tu cuerpo completo esté visible
             </Text>
           </View>
           <View className="flex-row items-start">
             <Ionicons name="checkmark-circle" size={16} color="#9D12DE" />
             <Text className="text-zinc-300 text-sm ml-2 flex-1">
-              Usa buena iluminaciÃ³n
+              Usa buena iluminación
             </Text>
           </View>
         </View>

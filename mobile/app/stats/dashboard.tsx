@@ -1,4 +1,4 @@
-ï»¿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -21,7 +21,7 @@ export default function StatsDashboardScreen() {
 
   // Mock data
   const volumeData = {
-    labels: ['Lun', 'Mar', 'MiÃ©', 'Jue', 'Vie', 'SÃ¡b', 'Dom'],
+    labels: ['Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb', 'Dom'],
     datasets: [
       {
         data: [3200, 4100, 0, 5200, 4800, 0, 6100],
@@ -63,7 +63,7 @@ export default function StatsDashboardScreen() {
     { label: 'Total Entrenamientos', value: '124', icon: 'fitness', color: '#9D12DE', change: '+12%' },
     { label: 'Volumen Total', value: '85.2K kg', icon: 'barbell', color: '#9D12DE', change: '+8%' },
     { label: 'Tiempo Total', value: '62h', icon: 'time', color: '#FFEA00', change: '+5%' },
-    { label: 'Racha Actual', value: '15 dÃ­as', icon: 'flame', color: '#EF4444', change: '+3' },
+    { label: 'Racha Actual', value: '15 días', icon: 'flame', color: '#EF4444', change: '+3' },
   ];
 
   return (
@@ -74,7 +74,7 @@ export default function StatsDashboardScreen() {
           <TouchableOpacity onPress={() => router.back()}>
             <Ionicons name="arrow-back" size={28} color="white" />
           </TouchableOpacity>
-          <Text className="text-2xl font-bold text-white">EstadÃ­sticas</Text>
+          <Text className="text-2xl font-bold text-white">Estadísticas</Text>
           <TouchableOpacity>
             <Ionicons name="share-outline" size={28} color="white" />
           </TouchableOpacity>
@@ -95,7 +95,7 @@ export default function StatsDashboardScreen() {
                   timeRange === range ? 'text-primary' : 'text-white'
                 }`}
               >
-                {range === 'week' ? 'Semana' : range === 'month' ? 'Mes' : 'AÃ±o'}
+                {range === 'week' ? 'Semana' : range === 'month' ? 'Mes' : 'Año'}
               </Text>
             </TouchableOpacity>
           ))}
@@ -147,7 +147,7 @@ export default function StatsDashboardScreen() {
         {/* Muscle Group Distribution */}
         <Card className="p-4 mb-4">
           <Text className="text-gray-900 font-bold text-lg mb-4">
-            DistribuciÃ³n por Grupo Muscular
+            Distribución por Grupo Muscular
           </Text>
           <BarChart
             data={muscleGroupData}
@@ -212,7 +212,7 @@ export default function StatsDashboardScreen() {
                   Racha impresionante
                 </Text>
                 <Text className="text-gray-600 text-sm">
-                  15 dÃ­as consecutivos entrenando. Â¡Sigue asÃ­!
+                  15 días consecutivos entrenando. ¡Sigue así!
                 </Text>
               </View>
             </View>
@@ -223,7 +223,7 @@ export default function StatsDashboardScreen() {
               </View>
               <View className="flex-1">
                 <Text className="text-gray-900 font-semibold">
-                  DÃ­a de descanso recomendado
+                  Día de descanso recomendado
                 </Text>
                 <Text className="text-gray-600 text-sm">
                   Has entrenado piernas 3 veces esta semana
@@ -237,7 +237,7 @@ export default function StatsDashboardScreen() {
         <Card className="p-4 mb-4">
           <View className="flex-row items-center justify-between mb-4">
             <Text className="text-gray-900 font-bold text-lg">
-              RÃ©cords Personales Recientes
+              Récords Personales Recientes
             </Text>
             <TouchableOpacity onPress={() => router.push('/records')}>
               <Text className="text-primary font-semibold">Ver todos</Text>
@@ -246,9 +246,9 @@ export default function StatsDashboardScreen() {
 
           <View className="gap-3">
             {[
-              { exercise: 'Bench Press', weight: '100kg', date: '3 dÃ­as atrÃ¡s' },
-              { exercise: 'Sentadilla', weight: '140kg', date: '1 semana atrÃ¡s' },
-              { exercise: 'Peso Muerto', weight: '160kg', date: '2 semanas atrÃ¡s' },
+              { exercise: 'Bench Press', weight: '100kg', date: '3 días atrás' },
+              { exercise: 'Sentadilla', weight: '140kg', date: '1 semana atrás' },
+              { exercise: 'Peso Muerto', weight: '160kg', date: '2 semanas atrás' },
             ].map((pr, index) => (
               <View
                 key={index}

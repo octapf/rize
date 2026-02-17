@@ -1,4 +1,4 @@
-ï»¿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -13,7 +13,7 @@ export default function MobilityPrograms() {
 
   const programs = [
     { key: 'daily', label: 'Daily Routine', duration: '10 min', color: 'blue' },
-    { key: 'pre-workout', label: 'Pre-Workout', duration: '8 min', color: 'emerald' },
+    { key: 'pre-workout', label: 'Pre-Workout', duration: '8 min', color: 'primary' },
     { key: 'hip-mobility', label: 'Hip Mobility', duration: '15 min', color: 'purple' },
     { key: 'shoulder-health', label: 'Shoulder Health', duration: '12 min', color: 'amber' },
   ];
@@ -50,7 +50,7 @@ export default function MobilityPrograms() {
   };
 
   const benefits = [
-    { title: 'Injury Prevention', desc: 'Reduce risk 60%', icon: 'shield', color: 'emerald' },
+    { title: 'Injury Prevention', desc: 'Reduce risk 60%', icon: 'shield', color: 'primary' },
     { title: 'Better Range of Motion', desc: 'Improved performance', icon: 'fitness', color: 'blue' },
     { title: 'Joint Health', desc: 'Long-term mobility', icon: 'pulse', color: 'purple' },
     { title: 'Pain Reduction', desc: 'Less chronic pain', icon: 'fitness', color: 'amber' },
@@ -67,7 +67,7 @@ export default function MobilityPrograms() {
 
   const getStatusColor = (status: string) => {
     switch (status) {
-      case 'good': return 'emerald';
+      case 'good': return 'primary';
       case 'warning': return 'amber';
       case 'critical': return 'red';
       default: return 'zinc';
@@ -169,7 +169,7 @@ export default function MobilityPrograms() {
                 className={`flex-1 min-w-[45%] bg-${benefit.color}-500/10 rounded-xl p-4 border border-${benefit.color}-500/30`}
               >
                 <Ionicons name={benefit.icon as any} size={24} color={
-                  benefit.color === 'emerald' ? '#9D12DE' :
+                  benefit.color === 'primary' ? '#9D12DE' :
                   benefit.color === 'blue' ? '#9D12DE' :
                   benefit.color === 'purple' ? '#a855f7' : '#FFEA00'
                 } />
@@ -201,11 +201,11 @@ export default function MobilityPrograms() {
           <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
             <Text className="text-primary/80 font-bold mb-2">Mobility Tips</Text>
             <Text className="text-primary/60 text-sm">
-              â€¢ 10 min daily &gt; 1h weekly{'\n'}
-              â€¢ Consistency is key{'\n'}
-              â€¢ Hold stretches 30-90s{'\n'}
-              â€¢ Breathe deeply during holds{'\n'}
-              â€¢ Progressive overload applies to mobility
+              • 10 min daily &gt; 1h weekly{'\n'}
+              • Consistency is key{'\n'}
+              • Hold stretches 30-90s{'\n'}
+              • Breathe deeply during holds{'\n'}
+              • Progressive overload applies to mobility
             </Text>
           </View>
         </View>

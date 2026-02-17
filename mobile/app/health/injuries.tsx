@@ -1,4 +1,4 @@
-ï»¿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -48,7 +48,7 @@ const INJURY_RECORDS: InjuryRecord[] = [
     type: 'pain',
     severity: 3,
     date: '2025-01-25T10:00:00',
-    notes: 'Dolor al presionar por encima de la cabeza. Posible inflamaciÃ³n del manguito rotador.',
+    notes: 'Dolor al presionar por encima de la cabeza. Posible inflamación del manguito rotador.',
     status: 'active',
     affectedExercises: ['Press militar', 'Press banca inclinado', 'Dominadas'],
   },
@@ -58,7 +58,7 @@ const INJURY_RECORDS: InjuryRecord[] = [
     type: 'discomfort',
     severity: 2,
     date: '2025-01-22T15:30:00',
-    notes: 'Molestia leve durante sentadillas profundas. MejorÃ³ con stretching.',
+    notes: 'Molestia leve durante sentadillas profundas. Mejoró con stretching.',
     status: 'healing',
     affectedExercises: ['Sentadilla profunda', 'Pistol squats', 'Lunges'],
   },
@@ -68,7 +68,7 @@ const INJURY_RECORDS: InjuryRecord[] = [
     type: 'pain',
     severity: 4,
     date: '2025-01-15T08:00:00',
-    notes: 'Dolor agudo despuÃ©s de peso muerto con mala tÃ©cnica. Reposo total 7 dÃ­as.',
+    notes: 'Dolor agudo después de peso muerto con mala técnica. Reposo total 7 días.',
     status: 'recovered',
     affectedExercises: ['Peso muerto', 'Sentadilla', 'Good mornings'],
   },
@@ -80,10 +80,10 @@ const MOBILITY_SCORES: MobilityScore[] = [
     score: 32,
     maxScore: 40,
     tests: [
-      { name: 'RotaciÃ³n externa', result: '85Â°', passed: true },
-      { name: 'RotaciÃ³n interna', result: '60Â°', passed: false },
-      { name: 'FlexiÃ³n overhead', result: 'Completa', passed: true },
-      { name: 'AbducciÃ³n horizontal', result: 'Limitada', passed: false },
+      { name: 'Rotación externa', result: '85°', passed: true },
+      { name: 'Rotación interna', result: '60°', passed: false },
+      { name: 'Flexión overhead', result: 'Completa', passed: true },
+      { name: 'Abducción horizontal', result: 'Limitada', passed: false },
     ],
   },
   {
@@ -91,10 +91,10 @@ const MOBILITY_SCORES: MobilityScore[] = [
     score: 38,
     maxScore: 40,
     tests: [
-      { name: 'FlexiÃ³n de cadera', result: '>90Â°', passed: true },
+      { name: 'Flexión de cadera', result: '>90°', passed: true },
       { name: 'Sentadilla profunda', result: 'ATG', passed: true },
       { name: 'Split squat', result: 'Balanceado', passed: true },
-      { name: 'RotaciÃ³n externa', result: 'Normal', passed: true },
+      { name: 'Rotación externa', result: 'Normal', passed: true },
     ],
   },
   {
@@ -102,10 +102,10 @@ const MOBILITY_SCORES: MobilityScore[] = [
     score: 28,
     maxScore: 40,
     tests: [
-      { name: 'DorsiflexiÃ³n', result: '35Â°', passed: false },
+      { name: 'Dorsiflexión', result: '35°', passed: false },
       { name: 'Prueba rodilla-pared', result: '8cm', passed: false },
       { name: 'Equilibrio single-leg', result: '20 seg', passed: true },
-      { name: 'PlantarflexiÃ³n', result: 'Normal', passed: true },
+      { name: 'Plantarflexión', result: 'Normal', passed: true },
     ],
   },
 ];
@@ -128,7 +128,7 @@ const ASYMMETRIES: AsymmetryDetection[] = [
     severity: 'normal',
   },
   {
-    bodyPart: 'Sentadilla BÃºlgara',
+    bodyPart: 'Sentadilla Búlgara',
     leftValue: 30,
     rightValue: 35,
     difference: 5,
@@ -152,16 +152,16 @@ export default function InjuryPrevention() {
   const tabs = [
     { id: 'injuries', label: 'Lesiones', icon: 'bandage' },
     { id: 'mobility', label: 'Movilidad', icon: 'body' },
-    { id: 'asymmetry', label: 'AsimetrÃ­as', icon: 'git-compare' },
+    { id: 'asymmetry', label: 'Asimetrías', icon: 'git-compare' },
   ];
 
   const addInjury = () => {
     Alert.alert(
-      'Registrar LesiÃ³n/Dolor',
+      'Registrar Lesión/Dolor',
       'Documenta cualquier molestia para seguimiento',
       [
         { text: 'Cancelar', style: 'cancel' },
-        { text: 'Registrar', onPress: () => Alert.alert('LesiÃ³n registrada') },
+        { text: 'Registrar', onPress: () => Alert.alert('Lesión registrada') },
       ]
     );
   };
@@ -169,7 +169,7 @@ export default function InjuryPrevention() {
   const updateInjuryStatus = (id: string) => {
     Alert.alert(
       'Actualizar Estado',
-      'Â¿CÃ³mo estÃ¡ evolucionando?',
+      '¿Cómo está evolucionando?',
       [
         {
           text: 'Activa',
@@ -272,7 +272,7 @@ export default function InjuryPrevention() {
             <Ionicons name="arrow-back" size={24} color="white" />
           </TouchableOpacity>
           <Text className="text-white text-2xl font-bold flex-1 ml-3">
-            PrevenciÃ³n de Lesiones
+            Prevención de Lesiones
           </Text>
           <TouchableOpacity onPress={addInjury}>
             <Ionicons name="add-circle" size={28} color="#9D12DE" />
@@ -506,7 +506,7 @@ export default function InjuryPrevention() {
                 {/* Action */}
                 <TouchableOpacity className="bg-primary/10 rounded-lg p-3 border border-primary/30 mt-4">
                   <Text className="text-primary text-sm font-bold text-center">
-                    Realizar EvaluaciÃ³n
+                    Realizar Evaluación
                   </Text>
                 </TouchableOpacity>
               </View>
@@ -523,11 +523,11 @@ export default function InjuryPrevention() {
                 <Ionicons name="information-circle" size={20} color="#9D12DE" />
                 <View className="flex-1 ml-3">
                   <Text className="text-primary/80 font-bold mb-2">
-                    DetecciÃ³n de AsimetrÃ­as
+                    Detección de Asimetrías
                   </Text>
                   <Text className="text-primary/60 text-sm">
                     Las diferencias mayores al 10% pueden aumentar riesgo de lesiones.
-                    Trabaja el lado dÃ©bil individualmente.
+                    Trabaja el lado débil individualmente.
                   </Text>
                 </View>
               </View>
@@ -550,7 +550,7 @@ export default function InjuryPrevention() {
                         asymmetry.severity
                       )}`}
                     >
-                      {getAsymmetrySeverityLabel(asymmetry.severity)} â€¢{' '}
+                      {getAsymmetrySeverityLabel(asymmetry.severity)} •{' '}
                       {asymmetry.differencePercent.toFixed(1)}% diferencia
                     </Text>
                   </View>
@@ -621,8 +621,8 @@ export default function InjuryPrevention() {
                       <Ionicons name="warning" size={16} color="#FFEA00" />
                       <Text className="text-amber-300 text-sm ml-2 flex-1">
                         {asymmetry.leftValue < asymmetry.rightValue
-                          ? 'Trabaja mÃ¡s el lado izquierdo con ejercicios unilaterales'
-                          : 'Trabaja mÃ¡s el lado derecho con ejercicios unilaterales'}
+                          ? 'Trabaja más el lado izquierdo con ejercicios unilaterales'
+                          : 'Trabaja más el lado derecho con ejercicios unilaterales'}
                       </Text>
                     </View>
                   </View>
@@ -639,10 +639,10 @@ export default function InjuryPrevention() {
               <Ionicons name="fitness" size={20} color="#9D12DE" />
               <View className="flex-1 ml-3">
                 <Text className="text-primary font-bold mb-2">
-                  PrevenciÃ³n es Clave
+                  Prevención es Clave
                 </Text>
                 <Text className="text-primary/80 text-sm">
-                  Movilidad + TÃ©cnica + ProgresiÃ³n Inteligente = Cero Lesiones
+                  Movilidad + Técnica + Progresión Inteligente = Cero Lesiones
                 </Text>
               </View>
             </View>

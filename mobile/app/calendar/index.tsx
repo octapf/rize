@@ -1,4 +1,4 @@
-ï»¿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -214,7 +214,7 @@ export default function CalendarScreen() {
                   </View>
                   <View>
                     <Text className="text-primary font-bold">
-                      DÃ­a completado
+                      Día completado
                     </Text>
                     <Text className="text-primary text-sm">
                       {selectedDayWorkout.workoutCount}{' '}
@@ -227,7 +227,7 @@ export default function CalendarScreen() {
 
                 <TouchableOpacity
                   onPress={() => router.push('/workouts/history')}
-                  className="bg-emerald-50 border border-primary/20 rounded-lg py-3"
+                  className="bg-primary/10 border border-primary/20 rounded-lg py-3"
                 >
                   <Text className="text-primary font-semibold text-center">
                     Ver Entrenamientos
@@ -268,10 +268,10 @@ export default function CalendarScreen() {
             </View>
             <View className="flex-1">
               <Text className="text-amber-900 font-bold text-lg">
-                Racha Actual: 7 dÃ­as
+                Racha Actual: 7 días
               </Text>
               <Text className="text-amber-700 text-sm">
-                Â¡Sigue asÃ­! No pierdas tu racha
+                ¡Sigue así! No pierdas tu racha
               </Text>
             </View>
           </View>

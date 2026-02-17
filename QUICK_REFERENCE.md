@@ -59,6 +59,14 @@
 
 ---
 
+## 🤖 Prompt-Driven Development (PDD)
+
+Desarrollar con IA: especificá **qué** querés, la IA propone **cómo**. Ver **[PDD_GUIDE.md](PDD_GUIDE.md)** para plantillas y flujo.
+
+**Reglas Cursor:** `.cursor/rules/` – la IA usa contexto automático (rize-pdd, backend-features, mobile-features).
+
+---
+
 ## 🔧 Common Commands
 
 ### Backend

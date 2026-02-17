@@ -1,4 +1,4 @@
-ï»¿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -18,7 +18,7 @@ export default function BodyRecomposition() {
   const goals = [
     { key: 'recomp', label: 'Recomposition', icon: 'swap-horizontal', color: 'blue' },
     { key: 'cut', label: 'Cut (Fat Loss)', icon: 'trending-down', color: 'red' },
-    { key: 'lean', label: 'Lean Bulk', icon: 'trending-up', color: 'emerald' },
+    { key: 'lean', label: 'Lean Bulk', icon: 'trending-up', color: 'primary' },
     { key: 'maintain', label: 'Maintain', icon: 'remove', color: 'amber' },
   ];
 
@@ -297,12 +297,12 @@ export default function BodyRecomposition() {
           <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
             <Text className="text-primary/80 font-bold mb-2">Recomp Tips</Text>
             <Text className="text-primary/60 text-sm">
-              â€¢ Track weight weekly, not daily{'\n'}
-              â€¢ Photos &gt; scale weight{'\n'}
-              â€¢ Prioritize protein intake{'\n'}
-              â€¢ Sleep is non-negotiable{'\n'}
-              â€¢ Patience = 12-16 weeks minimum{'\n'}
-              â€¢ Adjust based on 2-week averages
+              • Track weight weekly, not daily{'\n'}
+              • Photos &gt; scale weight{'\n'}
+              • Prioritize protein intake{'\n'}
+              • Sleep is non-negotiable{'\n'}
+              • Patience = 12-16 weeks minimum{'\n'}
+              • Adjust based on 2-week averages
             </Text>
           </View>
         </View>

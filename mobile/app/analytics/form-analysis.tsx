@@ -1,4 +1,4 @@
-ï»¿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -28,7 +28,7 @@ export default function FormAnalysis() {
     ],
     bench: [
       { point: 'Bar Path', status: 'good', desc: 'Straight line to chest' },
-      { point: 'Elbow Position', status: 'good', desc: '45-75Â° angle' },
+      { point: 'Elbow Position', status: 'good', desc: '45-75° angle' },
       { point: 'Arch', status: 'warning', desc: 'Could be more pronounced' },
       { point: 'Leg Drive', status: 'critical', desc: 'Feet unstable' },
     ],
@@ -48,7 +48,7 @@ export default function FormAnalysis() {
 
   const getStatusColor = (status: string) => {
     switch (status) {
-      case 'good': return 'emerald';
+      case 'good': return 'primary';
       case 'warning': return 'amber';
       case 'critical': return 'red';
       default: return 'zinc';
@@ -93,7 +93,7 @@ export default function FormAnalysis() {
           <View className="bg-gradient-to-r from-purple-500 to-blue-500 rounded-xl p-6 mb-6">
             <Text className="text-white text-2xl font-bold mb-2">AI Form Check</Text>
             <Text className="text-white opacity-90 mb-4">
-              Mejora tu tÃ©cnica con anÃ¡lisis de video
+              Mejora tu técnica con análisis de video
             </Text>
             <View className="flex-row items-center">
               <Ionicons name="videocam" size={20} color="white" />
@@ -146,7 +146,7 @@ export default function FormAnalysis() {
             </View>
 
             <Text className="text-zinc-400 text-sm">
-              {score >= 80 ? 'Excelente tÃ©cnica!' : score >= 60 ? 'Mejorable' : 'Necesita correcciÃ³n'}
+              {score >= 80 ? 'Excelente técnica!' : score >= 60 ? 'Mejorable' : 'Necesita corrección'}
             </Text>
           </View>
 
@@ -196,11 +196,11 @@ export default function FormAnalysis() {
           <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
             <Text className="text-primary/80 font-bold mb-2">Tips para Grabar</Text>
             <Text className="text-primary/60 text-sm">
-              â€¢ Graba desde un Ã¡ngulo lateral{'\n'}
-              â€¢ Asegura buena iluminaciÃ³n{'\n'}
-              â€¢ Incluye setup completo{'\n'}
-              â€¢ Filma al menos 3 reps{'\n'}
-              â€¢ Usa trÃ­pode o apoyo estable
+              • Graba desde un ángulo lateral{'\n'}
+              • Asegura buena iluminación{'\n'}
+              • Incluye setup completo{'\n'}
+              • Filma al menos 3 reps{'\n'}
+              • Usa trípode o apoyo estable
             </Text>
           </View>
         </View>

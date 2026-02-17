@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -50,7 +50,7 @@ export default function FatigueManagementAdvanced() {
         title: 'Fatigue vs Soreness',
         fatigue: 'CNS/systemic - feel weak, unmotivated, performance down',
         soreness: 'Local muscle - DOMS, hurts to touch, still strong',
-        key: 'Soreness â‰  fatigue. Can be sore but not fatigued (and vice versa)',
+        key: 'Soreness ≠ fatigue. Can be sore but not fatigued (and vice versa)',
       },
       good_vs_bad: {
         title: 'Good Fatigue vs Bad Fatigue',
@@ -244,14 +244,14 @@ export default function FatigueManagementAdvanced() {
     strategies: {
       name: 'Management Strategies',
       icon: 'shield',
-      color: 'emerald',
+      color: 'primary',
       deload: {
         title: 'Deload Strategies',
         when: 'Every 3-5 weeks, or when fatigue signs appear',
         methods: [
           {
             method: 'Reduced Volume',
-            how: 'Cut sets by 50% (4 sets â†’ 2 sets)',
+            how: 'Cut sets by 50% (4 sets → 2 sets)',
             intensity: 'Keep intensity same',
             example: 'Squat: 2x5 @ 80% instead of 4x5 @ 80%',
           },
@@ -537,7 +537,7 @@ export default function FatigueManagementAdvanced() {
       blue: 'bg-primary',
       amber: 'bg-amber-500',
       red: 'bg-red-500',
-      emerald: 'bg-primary',
+      primary: 'bg-primary',
       purple: 'bg-purple-500',
       rose: 'bg-rose-500',
       cyan: 'bg-cyan-500',
@@ -610,41 +610,41 @@ export default function FatigueManagementAdvanced() {
           <View className="bg-gradient-to-r from-red-500/20 to-rose-500/20 rounded-xl p-5 border border-red-500/30 mb-6">
             <Text className="text-red-400 font-bold text-lg mb-3">Fatigue Red Flags</Text>
             <Text className="text-red-300 text-sm mb-2">
-              âš ï¸ Resting heart rate +5-10 BPM above normal
+              ⚠️ Resting heart rate +5-10 BPM above normal
             </Text>
             <Text className="text-red-300 text-sm mb-2">
-              âš ï¸ Poor sleep despite being tired
+              ⚠️ Poor sleep despite being tired
             </Text>
             <Text className="text-red-300 text-sm mb-2">
-              âš ï¸ Dread going to gym (lost motivation)
+              ⚠️ Dread going to gym (lost motivation)
             </Text>
             <Text className="text-red-300 text-sm mb-2">
-              âš ï¸ Performance down &gt;10% for multiple sessions
+              ⚠️ Performance down &gt;10% for multiple sessions
             </Text>
             <Text className="text-red-300 text-sm mb-2">
-              âš ï¸ Persistent soreness that won't go away
+              ⚠️ Persistent soreness that won't go away
             </Text>
             <Text className="text-red-300 text-sm">
-              â†’ If 3+ present: Take rest day or deload week
+              → If 3+ present: Take rest day or deload week
             </Text>
           </View>
 
           <View className="bg-primary/10 rounded-xl p-5 border border-primary/30 mb-6">
             <Text className="text-primary font-bold text-lg mb-3">Recovery Priorities</Text>
             <Text className="text-primary/80 text-sm mb-2">
-              1ï¸âƒ£ Sleep 7-9 hours (most important)
+              1️⃣ Sleep 7-9 hours (most important)
             </Text>
             <Text className="text-primary/80 text-sm mb-2">
-              2ï¸âƒ£ Eat enough food + protein
+              2️⃣ Eat enough food + protein
             </Text>
             <Text className="text-primary/80 text-sm mb-2">
-              3ï¸âƒ£ Deload every 3-5 weeks
+              3️⃣ Deload every 3-5 weeks
             </Text>
             <Text className="text-primary/80 text-sm mb-2">
-              4ï¸âƒ£ 1-2 rest days per week
+              4️⃣ 1-2 rest days per week
             </Text>
             <Text className="text-primary/80 text-sm">
-              5ï¸âƒ£ Everything else is bonus (massage, sauna, etc.)
+              5️⃣ Everything else is bonus (massage, sauna, etc.)
             </Text>
           </View>
         </View>

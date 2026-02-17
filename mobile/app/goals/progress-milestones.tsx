@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -22,7 +22,7 @@ export default function ProgressMilestones() {
   const categories = [
     { id: 'all' as const, name: 'All', icon: 'apps' as const, color: 'white' },
     { id: 'strength' as const, name: 'Strength', icon: 'barbell' as const, color: 'blue' },
-    { id: 'body' as const, name: 'Body', icon: 'body' as const, color: 'emerald' },
+    { id: 'body' as const, name: 'Body', icon: 'body' as const, color: 'primary' },
     { id: 'performance' as const, name: 'Performance', icon: 'flash' as const, color: 'purple' },
     { id: 'habit' as const, name: 'Habits', icon: 'checkmark-circle' as const, color: 'amber' },
   ];
@@ -163,7 +163,7 @@ export default function ProgressMilestones() {
 
   const getDifficultyColor = (difficulty: string) => {
     switch (difficulty) {
-      case 'Beginner': return 'emerald';
+      case 'Beginner': return 'primary';
       case 'Intermediate': return 'blue';
       case 'Advanced': return 'purple';
       default: return 'zinc';
@@ -173,7 +173,7 @@ export default function ProgressMilestones() {
   const getCategoryColor = (category: string) => {
     switch (category) {
       case 'strength': return 'blue';
-      case 'body': return 'emerald';
+      case 'body': return 'primary';
       case 'performance': return 'purple';
       case 'habit': return 'amber';
       default: return 'zinc';
@@ -261,7 +261,7 @@ export default function ProgressMilestones() {
                 >
                   <View className="flex-row items-start justify-between mb-2">
                     <View className="flex-row items-center flex-1">
-                      <Ionicons name={milestone.icon} size={24} color={`#${catColor === 'blue' ? '3b82f6' : catColor === 'emerald' ? '10b981' : catColor === 'purple' ? 'a855f7' : 'f59e0b'}`} />
+                      <Ionicons name={milestone.icon} size={24} color={`#${catColor === 'blue' ? '3b82f6' : catColor === 'primary' ? '9D12DE' : catColor === 'purple' ? 'a855f7' : 'f59e0b'}`} />
                       <Text className={`text-${catColor}-400 font-bold text-lg ml-2 flex-1`}>
                         {milestone.title}
                       </Text>
@@ -281,23 +281,23 @@ export default function ProgressMilestones() {
           <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
             <Text className="text-primary font-bold mb-2">Milestone Benefits</Text>
             <Text className="text-primary/80 text-sm">
-              ✓ Keeps motivation high{'\n'}
-              ✓ Provides clear targets{'\n'}
-              ✓ Celebrates progress{'\n'}
-              ✓ Builds confidence{'\n'}
-              ✓ Documents journey
+              ? Keeps motivation high{'\n'}
+              ? Provides clear targets{'\n'}
+              ? Celebrates progress{'\n'}
+              ? Builds confidence{'\n'}
+              ? Documents journey
             </Text>
           </View>
 
           <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
             <Text className="text-primary/80 font-bold mb-2">How to Use Milestones</Text>
             <Text className="text-primary/60 text-sm">
-              • Pick 1-3 milestones to chase{'\n'}
-              • Break into smaller weekly goals{'\n'}
-              • Track attempts and near-misses{'\n'}
-              • Celebrate when you hit them{'\n'}
-              • Share wins with community{'\n'}
-              • Move to next challenge
+              � Pick 1-3 milestones to chase{'\n'}
+              � Break into smaller weekly goals{'\n'}
+              � Track attempts and near-misses{'\n'}
+              � Celebrate when you hit them{'\n'}
+              � Share wins with community{'\n'}
+              � Move to next challenge
             </Text>
           </View>
         </View>

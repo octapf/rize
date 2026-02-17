@@ -140,7 +140,7 @@ Ninguna tarea en progreso actualmente.
 
 1. **Configurar .env** - Backend (MongoDB URI, JWT secrets) y Mobile (API URL)
    - ℹ️ Ver [ENV_SETUP.md](ENV_SETUP.md) para guía detallada
-2. **Instalar fuentes** - Barlow y Inter en mobile/assets/fonts
+2. **Instalar fuentes** - Poppins, Inter, Montserrat en mobile/assets/fonts
    - ℹ️ Run: `cd mobile && npm run install-fonts`
    - ℹ️ Ver [FONTS_SETUP.md](FONTS_SETUP.md) para instrucciones
 3. **Ejecutar y validar** - Backend → Mobile → Seed data → Probar flujo completo

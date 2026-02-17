@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -70,21 +70,21 @@ export default function ProgressiveOverload() {
     {
       name: 'Volume Progression',
       desc: 'Increase sets or reps',
-      example: '3x8 â†’ 3x9 â†’ 3x10',
+      example: '3x8 → 3x9 → 3x10',
       icon: 'add-circle',
-      color: 'emerald',
+      color: 'primary',
     },
     {
       name: 'Density',
       desc: 'Same work, less rest',
-      example: '90s rest â†’ 60s rest',
+      example: '90s rest → 60s rest',
       icon: 'time',
       color: 'purple',
     },
     {
       name: 'Frequency',
       desc: 'Train more often',
-      example: '2x/week â†’ 3x/week',
+      example: '2x/week → 3x/week',
       icon: 'calendar',
       color: 'amber',
     },
@@ -109,7 +109,7 @@ export default function ProgressiveOverload() {
 
       <ScrollView className="flex-1" showsVerticalScrollIndicator={false}>
         <View className="px-6 pt-6">
-          <View className="bg-gradient-to-r from-emerald-500 to-green-500 rounded-xl p-6 mb-6">
+          <View className="bg-gradient-to-r from-primary to-primary/100 rounded-xl p-6 mb-6">
             <Text className="text-white text-2xl font-bold mb-2">Overload Tracker</Text>
             <Text className="text-white opacity-90 mb-4">
               Progressive improvement tracking
@@ -239,11 +239,11 @@ export default function ProgressiveOverload() {
           <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
             <Text className="text-primary/80 font-bold mb-2">Progressive Overload Tips</Text>
             <Text className="text-primary/60 text-sm">
-              • Small consistent increases &gt; big jumps{'\n'}
-              • Track ALL variables (weight/sets/reps/rest){'\n'}
-              • Deload every 6-8 weeks{'\n'}
-              • Can't progress? Check recovery{'\n'}
-              • Progressive overload = muscle growth
+              � Small consistent increases &gt; big jumps{'\n'}
+              � Track ALL variables (weight/sets/reps/rest){'\n'}
+              � Deload every 6-8 weeks{'\n'}
+              � Can't progress? Check recovery{'\n'}
+              � Progressive overload = muscle growth
             </Text>
           </View>
         </View>

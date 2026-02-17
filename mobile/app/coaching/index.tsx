@@ -1,4 +1,4 @@
-﻿import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   View,
   Text,
@@ -43,8 +43,8 @@ interface CoachingInsight {
 const RECOMMENDATIONS: WorkoutRecommendation[] = [
   {
     id: '1',
-    title: 'Aumentar volumen de tracción',
-    reason: 'Has progresado consistentemente en dominadas las últimas 4 semanas',
+    title: 'Aumentar volumen de tracci�n',
+    reason: 'Has progresado consistentemente en dominadas las �ltimas 4 semanas',
     type: 'increase',
     priority: 'high',
     action: '+2 series de pull-ups',
@@ -63,8 +63,8 @@ const RECOMMENDATIONS: WorkoutRecommendation[] = [
   },
   {
     id: '3',
-    title: 'Mantén intensidad actual',
-    reason: 'Estás progresando a un ritmo sostenible en piernas',
+    title: 'Mant�n intensidad actual',
+    reason: 'Est�s progresando a un ritmo sostenible en piernas',
     type: 'maintain',
     priority: 'medium',
     action: 'Continuar con el plan actual',
@@ -77,7 +77,7 @@ const RECOMMENDATIONS: WorkoutRecommendation[] = [
     reason: 'No has recuperado fuerza en press desde hace 2 semanas',
     type: 'decrease',
     priority: 'medium',
-    action: '2 sesiones semanales â†’ 1 sesión',
+    action: '2 sesiones semanales → 1 sesi�n',
     icon: 'trending-down',
     color: '#EF4444',
   },
@@ -85,7 +85,7 @@ const RECOMMENDATIONS: WorkoutRecommendation[] = [
 
 const RECOVERY_METRICS: RecoveryMetric[] = [
   {
-    name: 'Calidad de sueño',
+    name: 'Calidad de sue�o',
     value: 7.2,
     maxValue: 10,
     status: 'good',
@@ -99,14 +99,14 @@ const RECOVERY_METRICS: RecoveryMetric[] = [
     icon: 'body',
   },
   {
-    name: 'Energía general',
+    name: 'Energ�a general',
     value: 6.8,
     maxValue: 10,
     status: 'good',
     icon: 'flash',
   },
   {
-    name: 'Estrés percibido',
+    name: 'Estr�s percibido',
     value: 6.2,
     maxValue: 10,
     status: 'moderate',
@@ -118,28 +118,28 @@ const INSIGHTS: CoachingInsight[] = [
   {
     id: '1',
     category: 'Volumen',
-    message: 'Tu volumen semanal (68 series) está dentro del rango óptimo para hipertrofia',
+    message: 'Tu volumen semanal (68 series) est� dentro del rango �ptimo para hipertrofia',
     impact: 'positive',
     icon: 'analytics',
   },
   {
     id: '2',
-    category: 'Recuperación',
-    message: 'Descansaste solo 6h promedio esta semana. Intenta 7-9h para mejor recuperación',
+    category: 'Recuperaci�n',
+    message: 'Descansaste solo 6h promedio esta semana. Intenta 7-9h para mejor recuperaci�n',
     impact: 'negative',
     icon: 'bed',
   },
   {
     id: '3',
-    category: 'Progresión',
-    message: 'Has aumentado el peso en 3 ejercicios clave este mes. ¡Excelente progreso!',
+    category: 'Progresi�n',
+    message: 'Has aumentado el peso en 3 ejercicios clave este mes. �Excelente progreso!',
     impact: 'positive',
     icon: 'trophy',
   },
   {
     id: '4',
     category: 'Balance',
-    message: 'Ratio tracción/empuje está equilibrado (1.1:1)',
+    message: 'Ratio tracci�n/empuje est� equilibrado (1.1:1)',
     impact: 'positive',
     icon: 'scale',
   },
@@ -151,7 +151,7 @@ export default function VirtualCoach() {
 
   const tabs = [
     { id: 'recommendations' as const, label: 'Recomendaciones', icon: 'bulb' },
-    { id: 'recovery' as const, label: 'Recuperación', icon: 'heart' },
+    { id: 'recovery' as const, label: 'Recuperaci�n', icon: 'heart' },
     { id: 'insights' as const, label: 'Insights', icon: 'analytics' },
   ];
 
@@ -161,7 +161,7 @@ export default function VirtualCoach() {
     datasets: [
       {
         data: [72, 75, 76, 78],
-        color: (opacity = 1) => `rgba(16, 185, 129, ${opacity})`,
+        color: (opacity = 1) => `rgba(157, 18, 222, ${opacity})`,
         strokeWidth: 3,
       },
     ],
@@ -223,7 +223,7 @@ export default function VirtualCoach() {
         </View>
 
         {/* Performance Score */}
-        <View className="bg-gradient-to-r from-emerald-500/20 to-blue-500/20 rounded-xl p-4 border border-primary/30">
+        <View className="bg-gradient-to-r from-primary/20 to-blue-500/20 rounded-xl p-4 border border-primary/30">
           <View className="flex-row items-center justify-between mb-2">
             <View>
               <Text className="text-zinc-400 text-sm">Performance Score</Text>
@@ -310,7 +310,7 @@ export default function VirtualCoach() {
                     </Text>
                     <View className="bg-zinc-800 rounded-lg p-3">
                       <Text className="text-zinc-300 text-sm font-semibold">
-                        Acción sugerida:
+                        Acci�n sugerida:
                       </Text>
                       <Text className="text-white text-sm mt-1">{rec.action}</Text>
                     </View>
@@ -325,12 +325,12 @@ export default function VirtualCoach() {
                   </View>
                   <TouchableOpacity
                     onPress={() =>
-                      Alert.alert('Aplicar cambio', `¿Aplicar "${rec.action}"?`, [
+                      Alert.alert('Aplicar cambio', `�Aplicar "${rec.action}"?`, [
                         { text: 'Cancelar', style: 'cancel' },
                         {
                           text: 'Aplicar',
                           onPress: () =>
-                            Alert.alert('¡Listo!', 'Cambio aplicado a tu plan'),
+                            Alert.alert('�Listo!', 'Cambio aplicado a tu plan'),
                         },
                       ])
                     }
@@ -348,7 +348,7 @@ export default function VirtualCoach() {
         {selectedTab === 'recovery' && (
           <View className="px-6 py-4">
             <Text className="text-white font-bold text-lg mb-4">
-              Estado de Recuperación
+              Estado de Recuperaci�n
             </Text>
 
             {/* Recovery Metrics */}
@@ -395,8 +395,8 @@ export default function VirtualCoach() {
                     Considera un Deload
                   </Text>
                   <Text className="text-amber-300 text-sm leading-5">
-                    Tu puntuación de recuperación está por debajo del 70%. Un deload
-                    de una semana te ayudará a volver más fuerte.
+                    Tu puntuaci�n de recuperaci�n est� por debajo del 70%. Un deload
+                    de una semana te ayudar� a volver m�s fuerte.
                   </Text>
                   <TouchableOpacity className="bg-amber-500 rounded-lg p-3 mt-3">
                     <Text className="text-white font-semibold text-center">
@@ -410,8 +410,8 @@ export default function VirtualCoach() {
             {/* Sleep Tracker */}
             <View className="bg-zinc-900 rounded-xl p-4 border border-zinc-800 mt-3">
               <View className="flex-row items-center justify-between mb-3">
-                <Text className="text-white font-bold">Tendencia de Sueño</Text>
-                <Text className="text-zinc-400 text-sm">Últimos 7 días</Text>
+                <Text className="text-white font-bold">Tendencia de Sue�o</Text>
+                <Text className="text-zinc-400 text-sm">�ltimos 7 d�as</Text>
               </View>
               <View className="flex-row items-end justify-between">
                 {[6.5, 7, 6, 7.5, 8, 6.5, 7.2].map((hours, index) => (
@@ -436,13 +436,13 @@ export default function VirtualCoach() {
         {selectedTab === 'insights' && (
           <View className="px-6 py-4">
             <Text className="text-white font-bold text-lg mb-4">
-              Análisis Inteligente
+              An�lisis Inteligente
             </Text>
 
             {/* Performance Chart */}
             <View className="bg-zinc-900 rounded-xl p-4 mb-4 border border-zinc-800">
               <Text className="text-white font-bold mb-3">
-                Evolución de Performance
+                Evoluci�n de Performance
               </Text>
               <LineChart
                 data={performanceData}
@@ -453,7 +453,7 @@ export default function VirtualCoach() {
                   backgroundGradientFrom: '#18181B',
                   backgroundGradientTo: '#18181B',
                   decimalPlaces: 0,
-                  color: (opacity = 1) => `rgba(16, 185, 129, ${opacity})`,
+                  color: (opacity = 1) => `rgba(157, 18, 222, ${opacity})`,
                   labelColor: (opacity = 1) => `rgba(161, 161, 170, ${opacity})`,
                   style: {
                     borderRadius: 16,

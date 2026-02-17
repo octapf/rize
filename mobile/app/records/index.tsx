@@ -1,4 +1,4 @@
-ï»¿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -15,10 +15,10 @@ import { recordsApi, ExerciseRecords } from '@/services/api/records.api';
 import { useEffect, useRef } from 'react';
 
 const RECORD_TYPES = {
-  weight: { label: 'Peso MÃ¡ximo', icon: 'barbell', color: '#FFEA00', unit: 'kg' },
+  weight: { label: 'Peso Máximo', icon: 'barbell', color: '#FFEA00', unit: 'kg' },
   reps: { label: 'Repeticiones', icon: 'repeat', color: '#9D12DE', unit: 'reps' },
   volume: { label: 'Volumen Total', icon: 'speedometer', color: '#8b5cf6', unit: 'kg' },
-  duration: { label: 'DuraciÃ³n', icon: 'time', color: '#9D12DE', unit: 'sec' },
+  duration: { label: 'Duración', icon: 'time', color: '#9D12DE', unit: 'sec' },
   distance: { label: 'Distancia', icon: 'navigate', color: '#ef4444', unit: 'km' },
 };
 
@@ -61,7 +61,7 @@ export default function RecordsScreen() {
 
     if (diffDays === 0) return 'Hoy';
     if (diffDays === 1) return 'Ayer';
-    if (diffDays < 7) return `Hace ${diffDays} dÃ­as`;
+    if (diffDays < 7) return `Hace ${diffDays} días`;
     if (diffDays < 30) return `Hace ${Math.floor(diffDays / 7)} semanas`;
     return date.toLocaleDateString('es-ES', { day: '2-digit', month: 'short' });
   };
@@ -256,7 +256,7 @@ export default function RecordsScreen() {
             {!isLoading && allRecords.length === 0 && (
               <View style={styles.empty}>
                 <Ionicons name="trophy-outline" size={64} color="#666" />
-                <Text style={styles.emptyText}>AÃºn no tienes records personales</Text>
+                <Text style={styles.emptyText}>Aún no tienes records personales</Text>
                 <Text style={styles.emptySubtext}>
                   Completa entrenamientos para establecer tus primeros records
                 </Text>
@@ -272,9 +272,9 @@ export default function RecordsScreen() {
             {recentRecords.length === 0 && (
               <View style={styles.empty}>
                 <Ionicons name="flame-outline" size={64} color="#666" />
-                <Text style={styles.emptyText}>No hay records en los Ãºltimos 30 dÃ­as</Text>
+                <Text style={styles.emptyText}>No hay records en los últimos 30 días</Text>
                 <Text style={styles.emptySubtext}>
-                  Â¡Entrena duro para batir tus marcas!
+                  ¡Entrena duro para batir tus marcas!
                 </Text>
               </View>
             )}

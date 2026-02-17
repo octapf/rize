@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -137,8 +137,8 @@ export default function PeakWeek() {
         },
       ],
       tips: [
-        'Water manipulation: 10L Mon â†’ 8L Tue â†’ 6L Wed â†’ 4L Thu â†’ 2L Fri â†’ sips Sat',
-        'Sodium manipulation: High Mon-Wed â†’ Low Thu-Sat',
+        'Water manipulation: 10L Mon → 8L Tue → 6L Wed → 4L Thu → 2L Fri → sips Sat',
+        'Sodium manipulation: High Mon-Wed → Low Thu-Sat',
         'Carb depletion first 3 days, then load last 2-3 days',
         'Practice peak week 4-6 weeks before show',
         'Every body responds differently - adjust based on practice',
@@ -344,7 +344,7 @@ export default function PeakWeek() {
                   <Ionicons name={item.icon} size={20} color="#ef4444" />
                   <Text className="text-red-400 font-bold ml-2 flex-1">{item.mistake}</Text>
                 </View>
-                <Text className="text-primary text-sm">✓ {item.fix}</Text>
+                <Text className="text-primary text-sm">? {item.fix}</Text>
               </View>
             ))}
           </View>
@@ -352,16 +352,16 @@ export default function PeakWeek() {
           <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
             <Text className="text-primary/80 font-bold mb-2">Remember</Text>
             <Text className="text-primary/60 text-sm mb-2">
-              • Peak week can't fix poor preparation
+              � Peak week can't fix poor preparation
             </Text>
             <Text className="text-primary/60 text-sm mb-2">
-              • The work is done - now you just recover
+              � The work is done - now you just recover
             </Text>
             <Text className="text-primary/60 text-sm mb-2">
-              • Trust your training and your plan
+              � Trust your training and your plan
             </Text>
             <Text className="text-primary/60 text-sm">
-              • When in doubt, do LESS not more
+              � When in doubt, do LESS not more
             </Text>
           </View>
         </View>

@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -54,7 +54,7 @@ export default function SpecialtyBars() {
     ssb: {
       name: 'Safety Squat Bar (SSB)',
       icon: 'shield-checkmark',
-      color: 'emerald',
+      color: 'primary',
       description: {
         what: 'Cambered bar with padding and handles in front',
         weight: 'Typically 60-70 lbs (vs 45 lbs regular bar)',
@@ -357,13 +357,13 @@ export default function SpecialtyBars() {
         approaches: [
           {
             method: 'Rotating Main Lift',
-            structure: 'Week 1-3: Regular bar â†’ Week 4-6: Specialty bar',
+            structure: 'Week 1-3: Regular bar → Week 4-6: Specialty bar',
             example: 'SSB for 3 weeks, back to comp squat for 3 weeks',
             when: 'Off-season, working weak points',
           },
           {
             method: 'Secondary Movement',
-            structure: 'Main lift: Competition bar â†’ Second lift: Specialty bar',
+            structure: 'Main lift: Competition bar → Second lift: Specialty bar',
             example: 'Back squat 5x3, then SSB 3x8',
             when: 'Most common approach, close to meet',
           },
@@ -379,9 +379,9 @@ export default function SpecialtyBars() {
         title: '12-Week Specialty Bar Integration',
         weeks_1_4: {
           phase: 'Weeks 1-4: Introduction',
-          monday: 'Squat: 4x5 @ 75% â†’ SSB: 3x8 @ 65%',
-          wednesday: 'Bench: 4x6 @ 75% â†’ Football bar: 3x8',
-          friday: 'Deadlift: 4x4 @ 80% â†’ Trap bar: 3x6 @ 70%',
+          monday: 'Squat: 4x5 @ 75% → SSB: 3x8 @ 65%',
+          wednesday: 'Bench: 4x6 @ 75% → Football bar: 3x8',
+          friday: 'Deadlift: 4x4 @ 80% → Trap bar: 3x6 @ 70%',
         },
         weeks_5_8: {
           phase: 'Weeks 5-8: Main Specialty Work',
@@ -405,7 +405,7 @@ export default function SpecialtyBars() {
           'Allow 2-3 weeks to adapt to new bar',
           'Drop specialty bars 6-8 weeks before meet',
           'Use for volume work more than max effort',
-          'Track separately - SSB PR â‰  back squat PR',
+          'Track separately - SSB PR ≠ back squat PR',
         ],
       },
     },
@@ -416,7 +416,7 @@ export default function SpecialtyBars() {
   const getColorClass = (color: string) => {
     const colors: { [key: string]: string } = {
       blue: 'bg-primary',
-      emerald: 'bg-primary',
+      primary: 'bg-primary',
       purple: 'bg-purple-500',
       amber: 'bg-amber-500',
       red: 'bg-red-500',
@@ -490,22 +490,22 @@ export default function SpecialtyBars() {
           <View className="bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-xl p-5 border border-primary/30 mb-6">
             <Text className="text-primary/80 font-bold text-lg mb-3">Key Principles</Text>
             <Text className="text-primary/60 text-sm mb-2">
-              • Specialty bars are tools, not replacements (usually)
+              � Specialty bars are tools, not replacements (usually)
             </Text>
             <Text className="text-primary/60 text-sm mb-2">
-              • Best for secondary work or addressing weak points
+              � Best for secondary work or addressing weak points
             </Text>
             <Text className="text-primary/60 text-sm mb-2">
-              • SSB: Shoulder-friendly, quad emphasis
+              � SSB: Shoulder-friendly, quad emphasis
             </Text>
             <Text className="text-primary/60 text-sm mb-2">
-              • Trap Bar: Back-friendly deadlift variation
+              � Trap Bar: Back-friendly deadlift variation
             </Text>
             <Text className="text-primary/60 text-sm mb-2">
-              • Football Bar: Neutral grip pressing for joint health
+              � Football Bar: Neutral grip pressing for joint health
             </Text>
             <Text className="text-primary/60 text-sm">
-              • Drop specialty bars 6-8 weeks before competition
+              � Drop specialty bars 6-8 weeks before competition
             </Text>
           </View>
         </View>

@@ -1,4 +1,4 @@
-ï»¿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -16,7 +16,7 @@ export default function PerformanceBenchmarks() {
     { id: 'cardio', name: 'Cardio', icon: 'heart' as const, color: 'red' },
     { id: 'strength', name: 'Strength', icon: 'barbell' as const, color: 'blue' },
     { id: 'power', name: 'Power', icon: 'flash' as const, color: 'amber' },
-    { id: 'endurance', name: 'Endurance', icon: 'time' as const, color: 'emerald' },
+    { id: 'endurance', name: 'Endurance', icon: 'time' as const, color: 'primary' },
   ];
 
   const benchmarks = {
@@ -101,7 +101,7 @@ export default function PerformanceBenchmarks() {
 
   const getDifficultyColor = (difficulty: string) => {
     switch (difficulty) {
-      case 'easy': return 'emerald';
+      case 'easy': return 'primary';
       case 'medium': return 'blue';
       case 'hard': return 'red';
       default: return 'zinc';
@@ -197,11 +197,11 @@ export default function PerformanceBenchmarks() {
           <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
             <Text className="text-primary font-bold mb-2">Testing Tips</Text>
             <Text className="text-primary/80 text-sm">
-              â€¢ Warm up properly before tests{'\n'}
-              â€¢ Test when fresh (early week){'\n'}
-              â€¢ Retest every 8-12 weeks{'\n'}
-              â€¢ Track progress over time{'\n'}
-              â€¢ Don't test all at once
+              • Warm up properly before tests{'\n'}
+              • Test when fresh (early week){'\n'}
+              • Retest every 8-12 weeks{'\n'}
+              • Track progress over time{'\n'}
+              • Don't test all at once
             </Text>
           </View>
         </View>

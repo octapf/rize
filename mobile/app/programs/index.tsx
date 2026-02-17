@@ -1,4 +1,4 @@
-锘縤mport React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -42,7 +42,7 @@ const PROGRAMS: Program[] = [
     level: 'beginner',
     goal: 'Fuerza base',
     workoutsPerWeek: 3,
-    description: 'Programa dise帽ado para construir una base s贸lida de fuerza y t茅cnica en ejercicios fundamentales de calistenia.',
+    description: 'Programa dise馻do para construir una base s髄ida de fuerza y t閏nica en ejercicios fundamentales de calistenia.',
     weeks: [
       {
         weekNumber: 1,
@@ -61,7 +61,7 @@ const PROGRAMS: Program[] = [
     level: 'intermediate',
     goal: 'Hipertrofia',
     workoutsPerWeek: 6,
-    description: 'Rutina cl谩sica dividida en empuje, tracci贸n y piernas para maximizar el crecimiento muscular.',
+    description: 'Rutina cl醩ica dividida en empuje, tracci髇 y piernas para maximizar el crecimiento muscular.',
     weeks: [
       {
         weekNumber: 1,
@@ -99,18 +99,18 @@ const PROGRAMS: Program[] = [
   },
   {
     id: '4',
-    name: 'P茅rdida de Grasa',
+    name: 'P閞dida de Grasa',
     duration: '10 semanas',
     level: 'intermediate',
-    goal: 'Definici贸n',
+    goal: 'Definici髇',
     workoutsPerWeek: 4,
-    description: 'Combinaci贸n de fuerza y cardio metab贸lico para maximizar la quema de grasa mientras preservas m煤sculo.',
+    description: 'Combinaci髇 de fuerza y cardio metab髄ico para maximizar la quema de grasa mientras preservas m鷖culo.',
     weeks: [
       {
         weekNumber: 1,
         workouts: [
-          { day: 1, name: 'Upper Body HIIT', exercises: 8, duration: '40min', type: 'Metab贸lico' },
-          { day: 2, name: 'Lower Body HIIT', exercises: 8, duration: '40min', type: 'Metab贸lico' },
+          { day: 1, name: 'Upper Body HIIT', exercises: 8, duration: '40min', type: 'Metab髄ico' },
+          { day: 2, name: 'Lower Body HIIT', exercises: 8, duration: '40min', type: 'Metab髄ico' },
           { day: 4, name: 'Full Body Circuit', exercises: 10, duration: '45min', type: 'Circuito' },
           { day: 6, name: 'HIIT Cardio', exercises: 6, duration: '35min', type: 'Cardio' },
         ],
@@ -159,13 +159,13 @@ export default function TrainingPrograms() {
   const startProgram = (program: Program) => {
     Alert.alert(
       'Iniciar Programa',
-      `驴Quieres comenzar "${program.name}"?\n\nDuraci贸n: ${program.duration}\nEntrenos por semana: ${program.workoutsPerWeek}`,
+      `縌uieres comenzar "${program.name}"?\n\nDuraci髇: ${program.duration}\nEntrenos por semana: ${program.workoutsPerWeek}`,
       [
         { text: 'Cancelar', style: 'cancel' },
         {
           text: 'Comenzar',
           onPress: () => {
-            Alert.alert('隆Programa Iniciado!', 'Ahora puedes ver tu progreso en la secci贸n de rutinas.');
+            Alert.alert('rograma Iniciado!', 'Ahora puedes ver tu progreso en la secci髇 de rutinas.');
           },
         },
       ]
@@ -314,7 +314,7 @@ export default function TrainingPrograms() {
                     {program.weeks[0].workouts.length > 3 && (
                       <View className="bg-zinc-800 px-3 py-1 rounded-lg">
                         <Text className="text-zinc-400 text-xs font-semibold">
-                          +{program.weeks[0].workouts.length - 3} m谩s
+                          +{program.weeks[0].workouts.length - 3} m醩
                         </Text>
                       </View>
                     )}
@@ -340,7 +340,7 @@ export default function TrainingPrograms() {
                 No se encontraron programas
               </Text>
               <Text className="text-zinc-600 text-sm mt-2 text-center">
-                Intenta cambiar los filtros o buscar otro t茅rmino
+                Intenta cambiar los filtros o buscar otro t閞mino
               </Text>
             </View>
           )}

@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -101,7 +101,7 @@ export default function CommonMistakes() {
     nutrition: {
       name: 'Nutrition Mistakes',
       icon: 'restaurant' as const,
-      color: 'emerald',
+      color: 'primary',
       errors: [
         {
           mistake: 'Not Eating Enough (Trying to Gain Strength/Muscle)',
@@ -275,7 +275,7 @@ export default function CommonMistakes() {
               <Ionicons name={currentCategory.icon} size={28} color={`#${
                 currentCategory.color === 'red' ? 'ef4444' :
                 currentCategory.color === 'purple' ? 'a855f7' :
-                currentCategory.color === 'emerald' ? '10b981' :
+                currentCategory.color === 'primary' ? '9D12DE' :
                 currentCategory.color === 'blue' ? '3b82f6' :
                 'f59e0b'
               }`} />
@@ -303,7 +303,7 @@ export default function CommonMistakes() {
                 <Text className="text-amber-400 font-bold mb-2">Warning Signs</Text>
                 {error.signs.map((sign, sidx) => (
                   <View key={sidx} className="flex-row items-start mb-1">
-                    <Text className="text-amber-400 mr-2">âš </Text>
+                    <Text className="text-amber-400 mr-2">⚠</Text>
                     <Text className="text-amber-300 text-sm flex-1">{sign}</Text>
                   </View>
                 ))}
@@ -313,7 +313,7 @@ export default function CommonMistakes() {
                 <Text className="text-primary font-bold mb-2">How to Fix</Text>
                 {error.fix.map((f, fidx) => (
                   <View key={fidx} className="flex-row items-start mb-1 last:mb-0">
-                    <Text className="text-primary mr-2">✓</Text>
+                    <Text className="text-primary mr-2">?</Text>
                     <Text className="text-primary/80 text-sm flex-1">{f}</Text>
                   </View>
                 ))}

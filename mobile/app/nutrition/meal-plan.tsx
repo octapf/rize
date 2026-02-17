@@ -1,4 +1,4 @@
-Ôªøimport React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -46,7 +46,7 @@ const WEEKLY_PLAN: DayPlan[] = [
         protein: 40,
         carbs: 75,
         fats: 20,
-        foods: ['Avena con prote√≠na', 'Pl√°tano', 'Almendras', 'Caf√©'],
+        foods: ['Avena con proteÌna', 'Pl·tano', 'Almendras', 'CafÈ'],
       },
       {
         id: '2',
@@ -56,7 +56,7 @@ const WEEKLY_PLAN: DayPlan[] = [
         protein: 60,
         carbs: 95,
         fats: 25,
-        foods: ['Pollo a la plancha (200g)', 'Arroz integral', 'Br√≥coli', 'Aguacate'],
+        foods: ['Pollo a la plancha (200g)', 'Arroz integral', 'BrÛcoli', 'Aguacate'],
       },
       {
         id: '3',
@@ -66,7 +66,7 @@ const WEEKLY_PLAN: DayPlan[] = [
         protein: 30,
         carbs: 45,
         fats: 12,
-        foods: ['Batido de prote√≠na', 'Avena', 'Mantequilla de man√≠'],
+        foods: ['Batido de proteÌna', 'Avena', 'Mantequilla de manÌ'],
       },
       {
         id: '4',
@@ -76,17 +76,17 @@ const WEEKLY_PLAN: DayPlan[] = [
         protein: 50,
         carbs: 80,
         fats: 22,
-        foods: ['Salm√≥n al horno (180g)', 'Batata', 'Esp√°rragos', 'Aceite de oliva'],
+        foods: ['SalmÛn al horno (180g)', 'Batata', 'Esp·rragos', 'Aceite de oliva'],
       },
       {
         id: '5',
-        name: 'Pre-Sue√±o',
+        name: 'Pre-SueÒo',
         time: '23:00',
         calories: 150,
         protein: 0,
         carbs: 25,
         fats: 6,
-        foods: ['Case√≠na', 'Nueces'],
+        foods: ['CaseÌna', 'Nueces'],
       },
     ],
   },
@@ -97,7 +97,7 @@ export default function MealPlan() {
   const [showAddMeal, setShowAddMeal] = useState(false);
 
   const currentPlan = WEEKLY_PLAN[selectedDay];
-  const days = ['Lun', 'Mar', 'Mi√©', 'Jue', 'Vie', 'S√°b', 'Dom'];
+  const days = ['Lun', 'Mar', 'MiÈ', 'Jue', 'Vie', 'S·b', 'Dom'];
 
   const getMacroPercentage = (macro: number, total: number) => {
     return ((macro / total) * 100).toFixed(0);
@@ -105,8 +105,8 @@ export default function MealPlan() {
 
   const addMeal = () => {
     Alert.alert(
-      'Pr√≥ximamente',
-      'La funcionalidad de agregar comidas estar√° disponible pronto'
+      'PrÛximamente',
+      'La funcionalidad de agregar comidas estar· disponible pronto'
     );
     setShowAddMeal(false);
   };
@@ -160,7 +160,7 @@ export default function MealPlan() {
         <View className="bg-zinc-900 rounded-xl p-4 border border-zinc-800">
           <View className="flex-row items-center justify-between mb-3">
             <Text className="text-white font-bold text-lg">
-              Total del D√≠a
+              Total del DÌa
             </Text>
             <Text className="text-primary font-bold text-2xl">
               {currentPlan.totalCalories}
@@ -169,7 +169,7 @@ export default function MealPlan() {
 
           <View className="flex-row justify-between">
             <View className="flex-1 items-center">
-              <Text className="text-zinc-400 text-xs mb-1">Prote√≠na</Text>
+              <Text className="text-zinc-400 text-xs mb-1">ProteÌna</Text>
               <Text className="text-red-500 text-xl font-bold">
                 {currentPlan.totalProtein}g
               </Text>
@@ -234,7 +234,7 @@ export default function MealPlan() {
                   <Text className="text-primary font-bold text-2xl">
                     {meal.calories}
                   </Text>
-                  <Text className="text-zinc-500 text-xs">calor√≠as</Text>
+                  <Text className="text-zinc-500 text-xs">calorÌas</Text>
                 </View>
               </View>
 
@@ -294,11 +294,11 @@ export default function MealPlan() {
               <Ionicons name="information-circle" size={24} color="#9D12DE" />
               <View className="flex-1 ml-3">
                 <Text className="text-primary/80 font-bold mb-1">
-                  Consejo del D√≠a
+                  Consejo del DÌa
                 </Text>
                 <Text className="text-primary/60 text-sm leading-5">
-                  Distribuye tu prote√≠na de manera uniforme durante el d√≠a para
-                  maximizar la s√≠ntesis de prote√≠na muscular (20-40g por comida).
+                  Distribuye tu proteÌna de manera uniforme durante el dÌa para
+                  maximizar la sÌntesis de proteÌna muscular (20-40g por comida).
                 </Text>
               </View>
             </View>

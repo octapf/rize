@@ -1,4 +1,4 @@
-ï»¿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -35,12 +35,12 @@ interface Challenge {
 const CHALLENGES: Challenge[] = [
   {
     id: '1',
-    name: '30 DÃ­as de Dominadas',
-    description: 'Completa al menos 10 dominadas cada dÃ­a durante 30 dÃ­as consecutivos',
+    name: '30 Días de Dominadas',
+    description: 'Completa al menos 10 dominadas cada día durante 30 días consecutivos',
     type: 'streak',
     goal: 30,
     current: 12,
-    unit: 'dÃ­as',
+    unit: 'días',
     startDate: new Date(2025, 0, 1),
     endDate: new Date(2025, 0, 31),
     participants: 234,
@@ -81,7 +81,7 @@ const CHALLENGES: Challenge[] = [
   {
     id: '4',
     name: 'Racha de Hierro',
-    description: 'Entrena 5 dÃ­as a la semana durante 4 semanas',
+    description: 'Entrena 5 días a la semana durante 4 semanas',
     type: 'streak',
     goal: 20,
     current: 8,
@@ -96,7 +96,7 @@ const CHALLENGES: Challenge[] = [
   {
     id: '5',
     name: '100 Flexiones Challenge',
-    description: 'Completa 100 flexiones en una sola sesiÃ³n',
+    description: 'Completa 100 flexiones en una sola sesión',
     type: 'skill',
     goal: 100,
     current: 0,
@@ -111,11 +111,11 @@ const CHALLENGES: Challenge[] = [
   {
     id: '6',
     name: 'Noviembre Sin Fallar',
-    description: 'Entrena todos los dÃ­as de noviembre sin excepciÃ³n',
+    description: 'Entrena todos los días de noviembre sin excepción',
     type: 'streak',
     goal: 30,
     current: 30,
-    unit: 'dÃ­as',
+    unit: 'días',
     startDate: new Date(2024, 10, 1),
     endDate: new Date(2024, 10, 30),
     participants: 187,
@@ -149,7 +149,7 @@ export default function Challenges() {
   const getTypeColor = (type: string) => {
     switch (type) {
       case 'volume':
-        return '#10B981';
+        return '#9D12DE';
       case 'streak':
         return '#EF4444';
       case 'skill':
@@ -177,13 +177,13 @@ export default function Challenges() {
           : c
       )
     );
-    Alert.alert('Â¡Unido!', 'Te has unido al challenge. Â¡Buena suerte!');
+    Alert.alert('¡Unido!', 'Te has unido al challenge. ¡Buena suerte!');
   };
 
   const leaveChallenge = (challengeId: string) => {
     Alert.alert(
       'Abandonar Challenge',
-      'Â¿EstÃ¡s seguro de que quieres abandonar este challenge?',
+      '¿Estás seguro de que quieres abandonar este challenge?',
       [
         { text: 'Cancelar', style: 'cancel' },
         {
@@ -280,7 +280,7 @@ export default function Challenges() {
             <View className="flex-row items-center mr-4">
               <Ionicons name="time-outline" size={16} color="#71717A" />
               <Text className="text-zinc-500 text-xs ml-1">
-                {daysRemaining} dÃ­as restantes
+                {daysRemaining} días restantes
               </Text>
             </View>
           )}
@@ -423,7 +423,7 @@ export default function Challenges() {
               activeTab === 'upcoming' ? 'text-primary' : 'text-zinc-400'
             }`}
           >
-            PrÃ³ximos
+            Próximos
           </Text>
         </TouchableOpacity>
         <TouchableOpacity
@@ -455,15 +455,15 @@ export default function Challenges() {
               {activeTab === 'active'
                 ? 'No hay challenges activos'
                 : activeTab === 'upcoming'
-                ? 'No hay challenges prÃ³ximos'
-                : 'No has completado ningÃºn challenge aÃºn'}
+                ? 'No hay challenges próximos'
+                : 'No has completado ningún challenge aún'}
             </Text>
             {activeTab === 'active' && (
               <TouchableOpacity
                 onPress={() => setActiveTab('upcoming')}
                 className="mt-4 bg-primary px-6 py-3 rounded-xl"
               >
-                <Text className="text-white font-semibold">Ver PrÃ³ximos Challenges</Text>
+                <Text className="text-white font-semibold">Ver Próximos Challenges</Text>
               </TouchableOpacity>
             )}
           </View>

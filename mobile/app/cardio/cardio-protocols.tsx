@@ -1,4 +1,4 @@
-ï»¿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -15,7 +15,7 @@ export default function CardioProtocols() {
 
   const cardioTypes = [
     { id: 'running' as CardioType, name: 'Running', icon: 'walk' as const, color: 'blue' },
-    { id: 'cycling' as CardioType, name: 'Cycling', icon: 'bicycle' as const, color: 'emerald' },
+    { id: 'cycling' as CardioType, name: 'Cycling', icon: 'bicycle' as const, color: 'primary' },
     { id: 'swimming' as CardioType, name: 'Swimming', icon: 'water' as const, color: 'purple' },
     { id: 'rowing' as CardioType, name: 'Rowing', icon: 'boat' as const, color: 'amber' },
   ];
@@ -38,7 +38,7 @@ export default function CardioProtocols() {
         intensity: '80-85% max HR',
         frequency: '1x per week',
         notes: 'Comfortably hard, zone 3-4',
-        color: 'emerald',
+        color: 'primary',
       },
       {
         name: 'Interval Training',
@@ -76,7 +76,7 @@ export default function CardioProtocols() {
         intensity: '88-94% FTP',
         frequency: '1-2x per week',
         notes: 'Productive discomfort',
-        color: 'emerald',
+        color: 'primary',
       },
       {
         name: 'VO2 Max Intervals',
@@ -114,7 +114,7 @@ export default function CardioProtocols() {
         intensity: '85-90% effort',
         frequency: '1x per week',
         notes: '30-45s rest between',
-        color: 'emerald',
+        color: 'primary',
       },
       {
         name: 'Sprint Sets',
@@ -152,7 +152,7 @@ export default function CardioProtocols() {
         intensity: '80-85% max HR',
         frequency: '1x per week',
         notes: 'Rate 24-28 spm',
-        color: 'emerald',
+        color: 'primary',
       },
       {
         name: 'Interval Training',
@@ -232,7 +232,7 @@ export default function CardioProtocols() {
               className={`bg-${protocol.color}-500/10 rounded-xl p-5 mb-6 border border-${protocol.color}-500/30`}
             >
               <View className="flex-row items-center mb-3">
-                <Ionicons name="fitness" size={24} color={`#${protocol.color === 'zinc' ? '71717a' : protocol.color === 'blue' ? '3b82f6' : protocol.color === 'emerald' ? '10b981' : protocol.color === 'red' ? 'ef4444' : protocol.color === 'purple' ? 'a855f7' : 'f59e0b'}`} />
+                <Ionicons name="fitness" size={24} color={`#${protocol.color === 'zinc' ? '71717a' : protocol.color === 'blue' ? '3b82f6' : protocol.color === 'primary' ? '9D12DE' : protocol.color === 'red' ? 'ef4444' : protocol.color === 'purple' ? 'a855f7' : 'f59e0b'}`} />
                 <Text className={`text-${protocol.color}-400 font-bold text-xl ml-2`}>
                   {protocol.name}
                 </Text>
@@ -265,11 +265,11 @@ export default function CardioProtocols() {
           <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
             <Text className="text-primary/80 font-bold mb-2">Weekly Structure</Text>
             <Text className="text-primary/60 text-sm">
-              â€¢ Mix different intensities{'\n'}
-              â€¢ 80/20 rule: 80% easy, 20% hard{'\n'}
-              â€¢ Don't go hard every day{'\n'}
-              â€¢ Recovery is essential{'\n'}
-              â€¢ Progress gradually
+              • Mix different intensities{'\n'}
+              • 80/20 rule: 80% easy, 20% hard{'\n'}
+              • Don't go hard every day{'\n'}
+              • Recovery is essential{'\n'}
+              • Progress gradually
             </Text>
           </View>
         </View>

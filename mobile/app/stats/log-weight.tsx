@@ -1,4 +1,4 @@
-ï»¿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -46,7 +46,7 @@ export default function BodyWeightScreen() {
     const weight = parseFloat(newWeight);
     
     if (!weight || weight <= 0 || weight > 300) {
-      Alert.alert('Error', 'Por favor ingresa un peso vÃ¡lido');
+      Alert.alert('Error', 'Por favor ingresa un peso válido');
       return;
     }
 
@@ -61,13 +61,13 @@ export default function BodyWeightScreen() {
     setNewWeight('');
     setNewNotes('');
     setShowAddModal(false);
-    Alert.alert('Â¡Guardado!', 'Peso registrado correctamente');
+    Alert.alert('¡Guardado!', 'Peso registrado correctamente');
   };
 
   const handleDeleteEntry = (id: string) => {
     Alert.alert(
       'Eliminar Registro',
-      'Â¿Seguro que quieres eliminar este registro?',
+      '¿Seguro que quieres eliminar este registro?',
       [
         { text: 'Cancelar', style: 'cancel' },
         {
@@ -171,7 +171,7 @@ export default function BodyWeightScreen() {
                 <TextInput
                   value={newNotes}
                   onChangeText={setNewNotes}
-                  placeholder="Ej: DespuÃ©s del desayuno"
+                  placeholder="Ej: Después del desayuno"
                   multiline
                   numberOfLines={2}
                   className="bg-white border border-gray-300 rounded-lg px-4 py-3"
@@ -208,7 +208,7 @@ export default function BodyWeightScreen() {
         {entries.length > 0 && (
           <Card className="p-4">
             <Text className="text-gray-900 font-bold text-lg mb-3">
-              EvoluciÃ³n del Peso
+              Evolución del Peso
             </Text>
             <ScrollView horizontal showsHorizontalScrollIndicator={false}>
               <LineChart
@@ -240,7 +240,7 @@ export default function BodyWeightScreen() {
             </ScrollView>
 
             <Text className="text-gray-600 text-xs text-center mt-2">
-              Ãšltimas {last30Entries.length} mediciones
+              Últimas {last30Entries.length} mediciones
             </Text>
           </Card>
         )}
@@ -319,9 +319,9 @@ export default function BodyWeightScreen() {
                 Consejos
               </Text>
               <Text className="text-amber-700 text-sm">
-                â€¢ PÃ©sate a la misma hora cada dÃ­a{'\n'}
-                â€¢ Preferiblemente en ayunas{'\n'}
-                â€¢ SÃ© consistente con la ropa
+                • Pésate a la misma hora cada día{'\n'}
+                • Preferiblemente en ayunas{'\n'}
+                • Sé consistente con la ropa
               </Text>
             </View>
           </View>

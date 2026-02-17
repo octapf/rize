@@ -1,4 +1,4 @@
-ï»¿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -39,8 +39,8 @@ const NUTRITION_GOALS: NutritionGoal[] = [
   {
     id: 'cut',
     type: 'cut',
-    label: 'DefiniciÃ³n',
-    description: 'DÃ©ficit calÃ³rico moderado para perder grasa',
+    label: 'Definición',
+    description: 'Déficit calórico moderado para perder grasa',
     calorieAdjustment: -500,
     macroSplit: { protein: 40, carbs: 30, fats: 30 },
   },
@@ -48,7 +48,7 @@ const NUTRITION_GOALS: NutritionGoal[] = [
     id: 'bulk',
     type: 'bulk',
     label: 'Volumen',
-    description: 'SuperÃ¡vit calÃ³rico para ganar masa muscular',
+    description: 'Superávit calórico para ganar masa muscular',
     calorieAdjustment: 300,
     macroSplit: { protein: 30, carbs: 45, fats: 25 },
   },
@@ -56,15 +56,15 @@ const NUTRITION_GOALS: NutritionGoal[] = [
     id: 'maintain',
     type: 'maintain',
     label: 'Mantenimiento',
-    description: 'CalorÃ­as de mantenimiento',
+    description: 'Calorías de mantenimiento',
     calorieAdjustment: 0,
     macroSplit: { protein: 30, carbs: 40, fats: 30 },
   },
   {
     id: 'recomp',
     type: 'recomp',
-    label: 'RecomposiciÃ³n',
-    description: 'Ganar mÃºsculo y perder grasa simultÃ¡neamente',
+    label: 'Recomposición',
+    description: 'Ganar músculo y perder grasa simultáneamente',
     calorieAdjustment: -100,
     macroSplit: { protein: 40, carbs: 35, fats: 25 },
   },
@@ -73,13 +73,13 @@ const NUTRITION_GOALS: NutritionGoal[] = [
 const MEAL_TEMPLATES: MealTemplate[] = [
   {
     id: '1',
-    name: 'Desayuno Alto en ProteÃ­na',
+    name: 'Desayuno Alto en Proteína',
     time: '08:00',
     calories: 450,
     protein: 35,
     carbs: 40,
     fats: 12,
-    foods: ['3 huevos', '100g avena', '1 plÃ¡tano', 'CafÃ©'],
+    foods: ['3 huevos', '100g avena', '1 plátano', 'Café'],
     category: 'Desayuno',
   },
   {
@@ -95,18 +95,18 @@ const MEAL_TEMPLATES: MealTemplate[] = [
   },
   {
     id: '3',
-    name: 'Pre-Workout EnergÃ©tico',
+    name: 'Pre-Workout Energético',
     time: '16:30',
     calories: 300,
     protein: 25,
     carbs: 35,
     fats: 6,
-    foods: ['1 scoop whey', '1 plÃ¡tano', 'CafÃ©', '30g avena'],
+    foods: ['1 scoop whey', '1 plátano', 'Café', '30g avena'],
     category: 'Snack',
   },
   {
     id: '4',
-    name: 'Post-Workout RecuperaciÃ³n',
+    name: 'Post-Workout Recuperación',
     time: '19:00',
     calories: 550,
     protein: 40,
@@ -123,7 +123,7 @@ const MEAL_TEMPLATES: MealTemplate[] = [
     protein: 35,
     carbs: 25,
     fats: 15,
-    foods: ['150g salmÃ³n', 'Ensalada', 'BrÃ³coli', 'Aceite oliva'],
+    foods: ['150g salmón', 'Ensalada', 'Brócoli', 'Aceite oliva'],
     category: 'Cena',
   },
 ];
@@ -158,15 +158,15 @@ export default function AdvancedNutrition() {
   const generatePlan = () => {
     Alert.alert(
       'Generar Plan Semanal',
-      `Se generarÃ¡ un plan de 7 dÃ­as basado en tu objetivo de ${selectedGoal.label} con ${targetCalories} kcal/dÃ­a`,
+      `Se generará un plan de 7 días basado en tu objetivo de ${selectedGoal.label} con ${targetCalories} kcal/día`,
       [
         { text: 'Cancelar', style: 'cancel' },
         {
           text: 'Generar',
           onPress: () => {
             Alert.alert(
-              'Â¡Plan Generado!',
-              'Tu plan nutricional de 7 dÃ­as estÃ¡ listo. Se ha sincronizado con tu calendario.'
+              '¡Plan Generado!',
+              'Tu plan nutricional de 7 días está listo. Se ha sincronizado con tu calendario.'
             );
           },
         },
@@ -270,7 +270,7 @@ export default function AdvancedNutrition() {
               <View className="flex-1">
                 <Text className="text-primary/80 font-bold">TDEE Estimado</Text>
                 <Text className="text-primary/60 text-sm mt-1">
-                  Gasto energÃ©tico total diario
+                  Gasto energético total diario
                 </Text>
               </View>
               <View className="flex-row items-center">
@@ -300,12 +300,12 @@ export default function AdvancedNutrition() {
         {/* Macro Split */}
         <View className="px-6 pt-6">
           <Text className="text-white font-bold text-lg mb-3">
-            DistribuciÃ³n de Macros
+            Distribución de Macros
           </Text>
           <View className="bg-zinc-900 rounded-xl p-4 border border-zinc-800">
             <View className="mb-3">
               <View className="flex-row items-center justify-between mb-2">
-                <Text className="text-primary/80 font-semibold">ProteÃ­na</Text>
+                <Text className="text-primary/80 font-semibold">Proteína</Text>
                 <Text className="text-white font-bold">
                   {selectedGoal.macroSplit.protein}% ({proteinGrams}g)
                 </Text>
@@ -396,7 +396,7 @@ export default function AdvancedNutrition() {
               {/* Macros */}
               <View className="flex-row gap-3">
                 <View className="flex-1 bg-primary/10 rounded-lg p-2">
-                  <Text className="text-primary/80 text-xs">ProteÃ­na</Text>
+                  <Text className="text-primary/80 text-xs">Proteína</Text>
                   <Text className="text-white text-sm font-bold">{meal.protein}g</Text>
                 </View>
                 <View className="flex-1 bg-amber-500/10 rounded-lg p-2">
@@ -434,7 +434,7 @@ export default function AdvancedNutrition() {
                 <View className="flex-1">
                   <Text className="text-white font-bold">{template.name}</Text>
                   <Text className="text-zinc-400 text-sm mt-1">
-                    {template.category} â€¢ {template.time}
+                    {template.category} • {template.time}
                   </Text>
                 </View>
                 <View className="flex-row items-center">
@@ -498,7 +498,7 @@ export default function AdvancedNutrition() {
                   }`}
                 >
                   {Math.abs(currentCalories - targetCalories) < 100
-                    ? 'Â¡Plan Ãƒâ€œptimo!'
+                    ? '¡Plan Ã“ptimo!'
                     : 'Ajusta tu Plan'}
                 </Text>
                 <Text
@@ -509,7 +509,7 @@ export default function AdvancedNutrition() {
                   }`}
                 >
                   {Math.abs(currentCalories - targetCalories) < 100
-                    ? `EstÃ¡s dentro del rango objetivo. Macros: P ${currentProtein}g, C ${currentCarbs}g, G ${currentFats}g`
+                    ? `Estás dentro del rango objetivo. Macros: P ${currentProtein}g, C ${currentCarbs}g, G ${currentFats}g`
                     : `Te ${
                         currentCalories > targetCalories ? 'sobran' : 'faltan'
                       } ${Math.abs(
@@ -525,7 +525,7 @@ export default function AdvancedNutrition() {
             className="bg-primary rounded-xl p-4 mt-3"
           >
             <Text className="text-white text-center font-bold text-lg">
-              Generar Plan de 7 DÃ­as
+              Generar Plan de 7 Días
             </Text>
           </TouchableOpacity>
         </View>

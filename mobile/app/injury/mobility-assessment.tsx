@@ -1,4 +1,4 @@
-ï»¿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -30,7 +30,7 @@ export default function MobilityAssessment() {
       category: 'Hip Flexor',
       test: 'Thomas Test',
       instruction: 'Lie on bench edge, pull one knee to chest, other leg hangs',
-      pass: 'Thigh parallel or below, knee at 90Â°',
+      pass: 'Thigh parallel or below, knee at 90°',
       fail: 'Thigh rises above parallel',
       improvement: [
         'Kneeling hip flexor stretch (60s)',
@@ -44,8 +44,8 @@ export default function MobilityAssessment() {
       category: 'Hamstring',
       test: 'Straight Leg Raise',
       instruction: 'Lie down, raise one straight leg while other stays flat',
-      pass: 'Leg reaches 70-80Â° from ground',
-      fail: 'Leg reaches <70Â° OR opposite leg bends',
+      pass: 'Leg reaches 70-80° from ground',
+      fail: 'Leg reaches <70° OR opposite leg bends',
       improvement: [
         'Lying hamstring stretch (60s)',
         'Standing toe touch progression',
@@ -72,8 +72,8 @@ export default function MobilityAssessment() {
       category: 'Thoracic Spine',
       test: 'Seated Rotation Test',
       instruction: 'Sit with arms crossed, rotate torso both ways',
-      pass: '45Â° rotation each side',
-      fail: '<45Â° rotation OR pain',
+      pass: '45° rotation each side',
+      fail: '<45° rotation OR pain',
       improvement: [
         'Thoracic extensions on foam roller',
         'Open book stretch (10 each)',
@@ -85,7 +85,7 @@ export default function MobilityAssessment() {
     {
       category: 'Hip Internal Rotation',
       test: '90/90 Position',
-      instruction: 'Sit with both knees at 90Â°, one in front, one to side',
+      instruction: 'Sit with both knees at 90°, one in front, one to side',
       pass: 'Both hips rest on ground comfortably',
       fail: 'Cannot achieve position OR knee lifts',
       improvement: [
@@ -135,7 +135,7 @@ export default function MobilityAssessment() {
   const score = totalTests > 0 ? Math.round((passCount / totalTests) * 100) : 0;
 
   const getScoreColor = () => {
-    if (score >= 80) return 'emerald';
+    if (score >= 80) return 'primary';
     if (score >= 60) return 'blue';
     if (score >= 40) return 'amber';
     return 'red';
@@ -210,11 +210,11 @@ export default function MobilityAssessment() {
 
                 <View className="flex-row gap-2 mb-3">
                   <View className="flex-1 bg-primary/10 rounded-lg p-2 border border-primary/30">
-                    <Text className="text-primary text-xs font-bold mb-1">âœ“ PASS</Text>
+                    <Text className="text-primary text-xs font-bold mb-1">? PASS</Text>
                     <Text className="text-primary/80 text-xs">{test.pass}</Text>
                   </View>
                   <View className="flex-1 bg-red-500/10 rounded-lg p-2 border border-red-500/30">
-                    <Text className="text-red-400 text-xs font-bold mb-1">âœ“ FAIL</Text>
+                    <Text className="text-red-400 text-xs font-bold mb-1">? FAIL</Text>
                     <Text className="text-red-300 text-xs">{test.fail}</Text>
                   </View>
                 </View>
@@ -261,7 +261,7 @@ export default function MobilityAssessment() {
                     </Text>
                     {test.improvement.map((step, stepIdx) => (
                       <Text key={stepIdx} className="text-amber-300 text-sm mb-1">
-                        â€¢ {step}
+                        • {step}
                       </Text>
                     ))}
                     <Text className="text-zinc-400 text-xs mt-2 italic">
@@ -276,12 +276,12 @@ export default function MobilityAssessment() {
           <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
             <Text className="text-primary/80 font-bold mb-2">Assessment Guidelines</Text>
             <Text className="text-primary/60 text-sm">
-              â€¢ Test when fresh (not post-workout){'\n'}
-              â€¢ No pain = stop immediately{'\n'}
-              â€¢ Retest monthly to track progress{'\n'}
-              â€¢ Work on failures 10 min/day{'\n'}
-              â€¢ Mobility before strength{'\n'}
-              â€¢ Be honest with yourself
+              • Test when fresh (not post-workout){'\n'}
+              • No pain = stop immediately{'\n'}
+              • Retest monthly to track progress{'\n'}
+              • Work on failures 10 min/day{'\n'}
+              • Mobility before strength{'\n'}
+              • Be honest with yourself
             </Text>
           </View>
         </View>

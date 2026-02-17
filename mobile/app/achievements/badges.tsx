@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -36,12 +36,12 @@ const ACHIEVEMENTS: Achievement[] = [
     icon: 'fitness',
     unlocked: true,
     unlockedDate: '2025-01-01',
-    reward: { xp: 100, badge: '🥉' },
+    reward: { xp: 100, badge: '??' },
   },
   {
     id: '2',
     name: 'Racha de Fuego',
-    description: 'Entrena 7 días seguidos',
+    description: 'Entrena 7 d�as seguidos',
     category: 'consistencia',
     tier: 'silver',
     icon: 'flame',
@@ -49,18 +49,18 @@ const ACHIEVEMENTS: Achievement[] = [
     progress: 7,
     maxProgress: 7,
     unlockedDate: '2025-01-15',
-    reward: { xp: 500, badge: 'ðŸ”¥' },
+    reward: { xp: 500, badge: '🔥' },
   },
   {
     id: '3',
-    name: 'Centurión',
+    name: 'Centuri�n',
     description: 'Alcanza 100kg en press de banca',
     category: 'fuerza',
     tier: 'gold',
     icon: 'barbell',
     unlocked: true,
     unlockedDate: '2025-01-20',
-    reward: { xp: 1000, badge: 'ðŸ†' },
+    reward: { xp: 1000, badge: '🏆' },
   },
   {
     id: '4',
@@ -72,7 +72,7 @@ const ACHIEVEMENTS: Achievement[] = [
     unlocked: false,
     progress: 28,
     maxProgress: 42,
-    reward: { xp: 1000, badge: 'ðŸƒ' },
+    reward: { xp: 1000, badge: '🏃' },
   },
   {
     id: '5',
@@ -84,7 +84,7 @@ const ACHIEVEMENTS: Achievement[] = [
     unlocked: false,
     progress: 143,
     maxProgress: 500,
-    reward: { xp: 2500, badge: 'â­' },
+    reward: { xp: 2500, badge: '⭐' },
   },
   {
     id: '6',
@@ -96,7 +96,7 @@ const ACHIEVEMENTS: Achievement[] = [
     unlocked: false,
     progress: 2.2,
     maxProgress: 3.0,
-    reward: { xp: 2500, badge: 'ðŸ’ª' },
+    reward: { xp: 2500, badge: '💪' },
   },
   {
     id: '7',
@@ -108,7 +108,7 @@ const ACHIEVEMENTS: Achievement[] = [
     unlocked: false,
     progress: 12,
     maxProgress: 50,
-    reward: { xp: 10000, badge: 'ðŸ’Ž' },
+    reward: { xp: 10000, badge: '💎' },
   },
   {
     id: '8',
@@ -120,7 +120,7 @@ const ACHIEVEMENTS: Achievement[] = [
     unlocked: false,
     progress: 6,
     maxProgress: 10,
-    reward: { xp: 1000, badge: '🎯“' },
+    reward: { xp: 1000, badge: '??�' },
   },
 ];
 
@@ -469,7 +469,7 @@ export default function AchievementBadges() {
                   Sistema de Logros
                 </Text>
                 <Text className="text-primary/60 text-sm">
-                  Desbloquea logros completando desafíos en diferentes categorías. Cada logro otorga XP y badges para mostrar tus logros.
+                  Desbloquea logros completando desaf�os en diferentes categor�as. Cada logro otorga XP y badges para mostrar tus logros.
                 </Text>
               </View>
             </View>

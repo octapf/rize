@@ -1,4 +1,4 @@
-ï»¿import { useState } from 'react';
+import { useState } from 'react';
 import { View, Text, ScrollView, KeyboardAvoidingView, Platform } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Link, router } from 'expo-router';
@@ -28,7 +28,7 @@ export default function RegisterScreen() {
     mutationFn: authApi.register,
     onSuccess: async (data) => {
       await setAuth(data);
-      toast.success('Â¡Cuenta creada exitosamente!');
+      toast.success('¡Cuenta creada exitosamente!');
       router.replace('/(tabs)');
     },
     onError: (error: any) => {
@@ -53,7 +53,7 @@ export default function RegisterScreen() {
     if (!email.trim()) {
       newErrors.email = 'El email es requerido';
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      newErrors.email = 'Email invÃ¡lido';
+      newErrors.email = 'Email inválido';
     }
 
     if (!username.trim()) {
@@ -63,14 +63,14 @@ export default function RegisterScreen() {
     }
 
     if (!password) {
-      newErrors.password = 'La contraseÃ±a es requerida';
+      newErrors.password = 'La contraseña es requerida';
     } else if (password.length < 8) {
-      newErrors.password = 'La contraseÃ±a debe tener al menos 8 caracteres';    } else if (!/[A-Z]/.test(password)) {
-      newErrors.password = 'La contraseÃ±a debe contener al menos una mayÃºscula';
+      newErrors.password = 'La contraseña debe tener al menos 8 caracteres';    } else if (!/[A-Z]/.test(password)) {
+      newErrors.password = 'La contraseña debe contener al menos una mayúscula';
     } else if (!/[a-z]/.test(password)) {
-      newErrors.password = 'La contraseÃ±a debe contener al menos una minÃºscula';
+      newErrors.password = 'La contraseña debe contener al menos una minúscula';
     } else if (!/[0-9]/.test(password)) {
-      newErrors.password = 'La contraseÃ±a debe contener al menos un nÃºmero';    }
+      newErrors.password = 'La contraseña debe contener al menos un número';    }
 
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
@@ -123,14 +123,14 @@ export default function RegisterScreen() {
             />
 
             <Input
-              label="ContraseÃ±a"
-              placeholder="â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢"
+              label="Contraseña"
+              placeholder="••••••••"
               value={password}
               onChangeText={setPassword}
               error={errors.password}
               secureTextEntry={!showPassword}
               autoCapitalize="none"
-              helperText="MÃ­nimo 8 caracteres, 1 mayÃºscula, 1 minÃºscula, 1 nÃºmero"
+              helperText="Mínimo 8 caracteres, 1 mayúscula, 1 minúscula, 1 número"
               leftIcon={<Ionicons name="lock-closed-outline" size={20} color="#6B7280" />}
               rightIcon={
                 <Ionicons
@@ -154,11 +154,11 @@ export default function RegisterScreen() {
 
             <View className="flex-row items-center justify-center mt-6">
               <Text className="font-body text-sm text-gray-600">
-                Â¿Ya tienes cuenta?{' '}
+                ¿Ya tienes cuenta?{' '}
               </Text>
               <Link href="/login" asChild>
                 <Text className="font-label-bold text-sm text-primary">
-                  Inicia SesiÃ³n
+                  Inicia Sesión
                 </Text>
               </Link>
             </View>

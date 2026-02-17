@@ -1,4 +1,4 @@
-ï»¿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -77,11 +77,11 @@ export default function CommonMistakes() {
     ],
     bench: [
       {
-        mistake: 'Flared Elbows (90Â°)',
+        mistake: 'Flared Elbows (90°)',
         why: 'Trying to mimic bodybuilding fly, lack of education',
         consequence: 'Shoulder impingement, rotator cuff injury, less strength',
         fix: [
-          'Tuck elbows to 45-75Â° angle',
+          'Tuck elbows to 45-75° angle',
           'Cue "bend the bar" inward',
           'Retract scapula hard',
           'Lower to nipple line, not neck',
@@ -343,11 +343,11 @@ export default function CommonMistakes() {
           <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
             <Text className="text-primary/80 font-bold mb-2">General Tips</Text>
             <Text className="text-primary/60 text-sm">
-              â€¢ Film every heavy set{'\n'}
-              â€¢ Get coaching/form checks{'\n'}
-              â€¢ Ego check at the door{'\n'}
-              â€¢ Master basics before advanced{'\n'}
-              â€¢ Consistency builds patterns
+              • Film every heavy set{'\n'}
+              • Get coaching/form checks{'\n'}
+              • Ego check at the door{'\n'}
+              • Master basics before advanced{'\n'}
+              • Consistency builds patterns
             </Text>
           </View>
         </View>

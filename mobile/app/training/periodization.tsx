@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -101,7 +101,7 @@ export default function PeriodizationTemplates() {
     dup: {
       name: 'DUP (Daily Undulating)',
       icon: 'pulse',
-      color: 'emerald',
+      color: 'primary',
       duration: 'Ongoing',
       bestFor: 'Intermediates, variety seekers',
       phases: [
@@ -192,7 +192,7 @@ export default function PeriodizationTemplates() {
     const colors: { [key: string]: { bg: string; border: string; text: string } } = {
       blue: { bg: 'bg-primary', border: 'border-primary', text: 'text-primary/80' },
       purple: { bg: 'bg-purple-500', border: 'border-purple-400', text: 'text-purple-400' },
-      emerald: { bg: 'bg-primary', border: 'border-primary', text: 'text-primary' },
+      primary: { bg: 'bg-primary', border: 'border-primary', text: 'text-primary' },
       red: { bg: 'bg-red-500', border: 'border-red-400', text: 'text-red-400' },
     };
     return colors[color];
@@ -288,7 +288,7 @@ export default function PeriodizationTemplates() {
                 <View className="border-t border-zinc-700 pt-3">
                   {phase.notes.map((note, noteIdx) => (
                     <Text key={noteIdx} className="text-zinc-300 text-sm mb-1">
-                      • {note}
+                      � {note}
                     </Text>
                   ))}
                 </View>
@@ -305,7 +305,7 @@ export default function PeriodizationTemplates() {
             </View>
             {currentTemplate.pros.map((pro, idx) => (
               <Text key={idx} className="text-primary text-sm mb-2 last:mb-0">
-                ✓ {pro}
+                ? {pro}
               </Text>
             ))}
           </View>
@@ -319,7 +319,7 @@ export default function PeriodizationTemplates() {
             </View>
             {currentTemplate.cons.map((con, idx) => (
               <Text key={idx} className="text-amber-400 text-sm mb-2 last:mb-0">
-                âš  {con}
+                ⚠ {con}
               </Text>
             ))}
           </View>
@@ -327,16 +327,16 @@ export default function PeriodizationTemplates() {
           <View className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
             <Text className="text-primary/80 font-bold mb-2">Implementation Tips</Text>
             <Text className="text-primary/60 text-sm mb-2">
-              • Stick to one model for full cycle (don't program hop)
+              � Stick to one model for full cycle (don't program hop)
             </Text>
             <Text className="text-primary/60 text-sm mb-2">
-              • Track all lifts to ensure progression
+              � Track all lifts to ensure progression
             </Text>
             <Text className="text-primary/60 text-sm mb-2">
-              • Don't skip deloads (recovery is when you grow)
+              � Don't skip deloads (recovery is when you grow)
             </Text>
             <Text className="text-primary/60 text-sm">
-              • Adjust based on recovery and life stress
+              � Adjust based on recovery and life stress
             </Text>
           </View>
         </View>

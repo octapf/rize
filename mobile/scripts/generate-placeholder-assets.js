@@ -1,5 +1,5 @@
 /**
- * Generates placeholder icon and splash images (emerald #10B981).
+ * Generates placeholder icon and splash images (primary #9D12DE).
  * Run: npm run generate-assets
  * Requires: npm install (pngjs is a devDependency)
  */
@@ -8,10 +8,10 @@ const path = require('path');
 const { PNG } = require('pngjs');
 
 const ASSETS_DIR = path.join(__dirname, '..', 'assets');
-// RIZE brand color
-const R = 16;
-const G = 185;
-const B = 129;
+// RIZE brand color (primary #9D12DE)
+const R = 157;
+const G = 18;
+const B = 222;
 const A = 255;
 
 function fillWithColor(png, r, g, b, a) {

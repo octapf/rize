@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -68,7 +68,7 @@ export default function WeighIn() {
     {
       name: 'Slow Cut (Beginner)',
       icon: 'time' as const,
-      color: 'emerald',
+      color: 'primary',
       timeline: '4-8 weeks',
       description: 'Gradual weight loss through diet',
       steps: [
@@ -188,10 +188,10 @@ export default function WeighIn() {
               </View>
               <Text className="text-primary/60 text-sm">
                 {parseFloat(weightToLose) <= 2 
-                  ? '✓ Easy - minimal manipulation needed' 
+                  ? '? Easy - minimal manipulation needed' 
                   : parseFloat(weightToLose) <= 5 
-                  ? 'âš  Moderate - water cut recommended' 
-                  : 'âš  Difficult - consider slow cut or weight class up'}
+                  ? '⚠ Moderate - water cut recommended' 
+                  : '⚠ Difficult - consider slow cut or weight class up'}
               </Text>
             </View>
           </View>
@@ -226,7 +226,7 @@ export default function WeighIn() {
           {currentStrategy && (
             <View className={`bg-${currentStrategy.color}-500/10 rounded-xl p-5 mb-6 border border-${currentStrategy.color}-500/30`}>
               <View className="flex-row items-center mb-3">
-                <Ionicons name={currentStrategy.icon} size={24} color={`#${currentStrategy.color === 'blue' ? '3b82f6' : '10b981'}`} />
+                <Ionicons name={currentStrategy.icon} size={24} color={`#${currentStrategy.color === 'blue' ? '3b82f6' : '9D12DE'}`} />
                 <Text className={`text-${currentStrategy.color}-400 font-bold text-xl ml-2`}>
                   {currentStrategy.name}
                 </Text>
@@ -286,19 +286,19 @@ export default function WeighIn() {
           <View className="bg-amber-500/10 rounded-xl p-4 border border-amber-500/30 mb-6">
             <Text className="text-amber-400 font-bold mb-2">Safety First</Text>
             <Text className="text-amber-300 text-sm mb-2">
-              • Never attempt water cut without prior practice
+              � Never attempt water cut without prior practice
             </Text>
             <Text className="text-amber-300 text-sm mb-2">
-              • Monitor urine color (dark = too dehydrated)
+              � Monitor urine color (dark = too dehydrated)
             </Text>
             <Text className="text-amber-300 text-sm mb-2">
-              • Stop if experiencing severe cramps/dizziness
+              � Stop if experiencing severe cramps/dizziness
             </Text>
             <Text className="text-amber-300 text-sm mb-2">
-              • Consider moving up a weight class if &gt;5kg over
+              � Consider moving up a weight class if &gt;5kg over
             </Text>
             <Text className="text-amber-300 text-sm">
-              • Prioritize performance over making weight
+              � Prioritize performance over making weight
             </Text>
           </View>
         </View>

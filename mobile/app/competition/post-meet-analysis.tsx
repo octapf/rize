@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -37,7 +37,7 @@ export default function PostMeetAnalysis() {
     performance: {
       name: 'Performance Analysis',
       icon: 'stats-chart',
-      color: 'emerald',
+      color: 'primary',
       results: {
         title: 'Analyzing Your Results',
         metrics: [
@@ -291,11 +291,11 @@ export default function PostMeetAnalysis() {
         controllable: {
           type: 'Things You Can Fix',
           examples: [
-            'Technical errors â†’ work on technique',
-            'Weak points â†’ specific accessory work',
-            'Poor warm-up â†’ adjust routine',
-            'Bad attempt selection â†’ be more conservative/aggressive',
-            'Missed commands â†’ practice with commands',
+            'Technical errors → work on technique',
+            'Weak points → specific accessory work',
+            'Poor warm-up → adjust routine',
+            'Bad attempt selection → be more conservative/aggressive',
+            'Missed commands → practice with commands',
           ],
           action: 'Address these in next training cycle',
         },
@@ -458,7 +458,7 @@ export default function PostMeetAnalysis() {
   const getColorClass = (color: string) => {
     const colors: { [key: string]: string } = {
       blue: 'bg-primary',
-      emerald: 'bg-primary',
+      primary: 'bg-primary',
       purple: 'bg-purple-500',
       amber: 'bg-amber-500',
       red: 'bg-red-500',
@@ -530,41 +530,41 @@ export default function PostMeetAnalysis() {
             </Text>
           </View>
 
-          <View className="bg-gradient-to-r from-emerald-500/20 to-cyan-500/20 rounded-xl p-5 border border-primary/30 mb-6">
+          <View className="bg-gradient-to-r from-primary/20 to-cyan-500/20 rounded-xl p-5 border border-primary/30 mb-6">
             <Text className="text-primary font-bold text-lg mb-3">Analysis Framework</Text>
             <Text className="text-primary/80 text-sm mb-2">
-              ðŸ“Š Performance: Review attempts, totals, videos
+              📊 Performance: Review attempts, totals, videos
             </Text>
             <Text className="text-primary/80 text-sm mb-2">
-              ðŸ”§ Technical: What worked, what broke down
+              🔧 Technical: What worked, what broke down
             </Text>
             <Text className="text-primary/80 text-sm mb-2">
-              ✅ Preparation: Training cycle, peak timing, logistics
+              ? Preparation: Training cycle, peak timing, logistics
             </Text>
             <Text className="text-primary/80 text-sm mb-2">
-              ðŸ“š Lessons: What to keep, what to change
+              📚 Lessons: What to keep, what to change
             </Text>
             <Text className="text-primary/80 text-sm">
-              🎯 Planning: Adjust goals and next training cycle
+              ?? Planning: Adjust goals and next training cycle
             </Text>
           </View>
 
           <View className="bg-amber-500/10 rounded-xl p-5 border border-amber-500/30 mb-6">
             <Text className="text-amber-400 font-bold text-lg mb-3">Key Questions</Text>
             <Text className="text-amber-300 text-sm mb-2">
-              â“ Did you hit your goal total?
+              ❓ Did you hit your goal total?
             </Text>
             <Text className="text-amber-300 text-sm mb-2">
-              â“ Which lift was strongest/weakest relative to training?
+              ❓ Which lift was strongest/weakest relative to training?
             </Text>
             <Text className="text-amber-300 text-sm mb-2">
-              â“ Were attempts too conservative or too aggressive?
+              ❓ Were attempts too conservative or too aggressive?
             </Text>
             <Text className="text-amber-300 text-sm mb-2">
-              â“ Any technical breakdowns that need fixing?
+              ❓ Any technical breakdowns that need fixing?
             </Text>
             <Text className="text-amber-300 text-sm">
-              â“ What's the #1 thing to address in next training cycle?
+              ❓ What's the #1 thing to address in next training cycle?
             </Text>
           </View>
         </View>

@@ -1,4 +1,4 @@
-ï»¿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -30,7 +30,7 @@ const EXERCISES: Exercise[] = [
     id: '1',
     name: 'Sentadilla con Barra',
     category: 'Compuesto',
-    muscleGroup: ['CuÃ¡driceps', 'GlÃºteos', 'Isquios', 'Core'],
+    muscleGroup: ['Cuádriceps', 'Glúteos', 'Isquios', 'Core'],
     equipment: ['Barra', 'Rack', 'Discos'],
     difficulty: 'intermedio',
     description: 'Rey de los ejercicios de pierna. Desarrolla fuerza y masa en tren inferior.',
@@ -45,7 +45,7 @@ const EXERCISES: Exercise[] = [
     ],
     tips: [
       'Mira un punto fijo adelante, no hacia arriba',
-      'MantÃ©n pecho alto durante todo el movimiento',
+      'Mantén pecho alto durante todo el movimiento',
       'No dejes que las rodillas colapsen hacia adentro',
       'El movimiento inicia en la cadera, no en las rodillas',
     ],
@@ -69,27 +69,27 @@ const EXERCISES: Exercise[] = [
     id: '2',
     name: 'Press de Banca',
     category: 'Compuesto',
-    muscleGroup: ['Pecho', 'TrÃ­ceps', 'Hombros Anteriores'],
+    muscleGroup: ['Pecho', 'Tríceps', 'Hombros Anteriores'],
     equipment: ['Barra', 'Banco Plano', 'Discos'],
     difficulty: 'intermedio',
     description: 'Ejercicio fundamental para desarrollo de pecho y fuerza de empuje.',
     videoUrl: 'bench.mp4',
     instructions: [
-      'AcuÃ©state en el banco, ojos bajo la barra',
-      'Retrae y deprime escÃ¡pulas (juntas y hacia abajo)',
-      'Agarre ligeramente mÃ¡s ancho que hombros',
+      'Acuéstate en el banco, ojos bajo la barra',
+      'Retrae y deprime escápulas (juntas y hacia abajo)',
+      'Agarre ligeramente más ancho que hombros',
       'Crea un arco natural en la espalda baja',
-      'Baja la barra controlada hasta pecho (lÃ­nea pezones)',
+      'Baja la barra controlada hasta pecho (línea pezones)',
       'Presiona explosivamente hasta lockout',
     ],
     tips: [
-      'MantÃ©n glÃºteos en el banco todo el tiempo',
+      'Mantén glúteos en el banco todo el tiempo',
       'Usa leg drive: empuja el suelo con los pies',
-      'La barra debe moverse en lÃ­nea diagonal',
+      'La barra debe moverse en línea diagonal',
       'No rebotes la barra en el pecho',
     ],
     variations: [
-      'Press Inclinado 30Â°',
+      'Press Inclinado 30°',
       'Press Declinado',
       'Close Grip Bench',
       'Paused Bench',
@@ -97,18 +97,18 @@ const EXERCISES: Exercise[] = [
       'Floor Press',
     ],
     commonMistakes: [
-      'Perder retracciÃ³n escapular durante el press',
+      'Perder retracción escapular durante el press',
       'Bajar la barra muy alta (hacia el cuello)',
       'Aleteo de codos (flare excesivo)',
       'No usar leg drive',
-      'Despegar glÃºteos del banco',
+      'Despegar glúteos del banco',
     ],
   },
   {
     id: '3',
     name: 'Peso Muerto Convencional',
     category: 'Compuesto',
-    muscleGroup: ['Espalda Baja', 'GlÃºteos', 'Isquios', 'Trapecios'],
+    muscleGroup: ['Espalda Baja', 'Glúteos', 'Isquios', 'Trapecios'],
     equipment: ['Barra', 'Discos'],
     difficulty: 'avanzado',
     description: 'Ejercicio de cadena posterior por excelencia. Desarrolla fuerza total del cuerpo.',
@@ -116,17 +116,17 @@ const EXERCISES: Exercise[] = [
     instructions: [
       'Pies bajo la barra, ancho de cadera',
       'Agarre justo fuera de las piernas',
-      'Cadera mÃ¡s alta que rodillas, hombros sobre barra',
+      'Cadera más alta que rodillas, hombros sobre barra',
       'Espalda neutral, pecho alto',
       'Empuja el suelo con las piernas (leg drive)',
-      'Extiende cadera y rodillas simultÃ¡neamente',
-      'Lockout: aprieta glÃºteos al final',
+      'Extiende cadera y rodillas simultáneamente',
+      'Lockout: aprieta glúteos al final',
     ],
     tips: [
       'La barra debe estar pegada al cuerpo todo el tiempo',
       'No inicies el pull con la espalda',
       'Piensa en "empujar el suelo" no "tirar la barra"',
-      'Usa cinturÃ³n en sets pesados (>85% 1RM)',
+      'Usa cinturón en sets pesados (>85% 1RM)',
     ],
     variations: [
       'Sumo Deadlift',
@@ -137,7 +137,7 @@ const EXERCISES: Exercise[] = [
       'Snatch Grip Deadlift',
     ],
     commonMistakes: [
-      'Redondear la espalda baja (flexiÃ³n lumbar)',
+      'Redondear la espalda baja (flexión lumbar)',
       'Iniciar con cadera muy baja (squat deadlift)',
       'Separar la barra del cuerpo',
       'Hiperextender la espalda en lockout',
@@ -148,15 +148,15 @@ const EXERCISES: Exercise[] = [
     id: '4',
     name: 'Dominadas',
     category: 'Compuesto',
-    muscleGroup: ['Dorsales', 'BÃ­ceps', 'Core'],
+    muscleGroup: ['Dorsales', 'Bíceps', 'Core'],
     equipment: ['Barra de Dominadas'],
     difficulty: 'intermedio',
-    description: 'Mejor ejercicio de tracciÃ³n vertical para espalda y desarrollo de fuerza relativa.',
+    description: 'Mejor ejercicio de tracción vertical para espalda y desarrollo de fuerza relativa.',
     videoUrl: 'pullups.mp4',
     instructions: [
       'Agarre prono (palmas hacia adelante), ancho de hombros',
       'Cuelga con brazos extendidos (dead hang)',
-      'Retrae escÃ¡pulas antes de iniciar',
+      'Retrae escápulas antes de iniciar',
       'Tira de los codos hacia el suelo',
       'Sube hasta que barbilla pase la barra',
       'Desciende controlado hasta dead hang',
@@ -164,7 +164,7 @@ const EXERCISES: Exercise[] = [
     tips: [
       'No uses swing o kipping (crossfit style)',
       'Piensa en tirar codos hacia bolsillos traseros',
-      'MantÃ©n core activado todo el tiempo',
+      'Mantén core activado todo el tiempo',
       'Si no puedes hacer una, usa bandas de asistencia',
     ],
     variations: [
@@ -179,7 +179,7 @@ const EXERCISES: Exercise[] = [
       'No hacer rango completo (dead hang a barbilla sobre barra)',
       'Usar momentum excesivo',
       'Encoger hombros hacia las orejas',
-      'No retraer escÃ¡pulas al inicio',
+      'No retraer escápulas al inicio',
       'Cruzar las piernas innecesariamente',
     ],
   },
@@ -187,24 +187,24 @@ const EXERCISES: Exercise[] = [
     id: '5',
     name: 'Press Militar (OHP)',
     category: 'Compuesto',
-    muscleGroup: ['Hombros', 'TrÃ­ceps', 'Core'],
+    muscleGroup: ['Hombros', 'Tríceps', 'Core'],
     equipment: ['Barra', 'Discos'],
     difficulty: 'avanzado',
     description: 'Ejercicio rey de hombros. Desarrolla fuerza de empuje vertical y estabilidad.',
     videoUrl: 'ohp.mp4',
     instructions: [
       'Pies a ancho de cadera',
-      'Barra en clavÃ­culas, codos ligeramente adelante',
+      'Barra en clavículas, codos ligeramente adelante',
       'Agarre justo fuera de hombros',
-      'Activa glÃºteos y core fuertemente',
+      'Activa glúteos y core fuertemente',
       'Presiona barra verticalmente, mete cabeza hacia adelante',
-      'Lockout con bÃ­ceps junto a orejas',
+      'Lockout con bíceps junto a orejas',
     ],
     tips: [
       'No hiperextender la espalda baja',
       'La trayectoria es vertical, no hacia adelante',
-      'Aprieta glÃºteos para prevenir arco excesivo',
-      'Usa valsalva (respiraciÃ³n intra-abdominal)',
+      'Aprieta glúteos para prevenir arco excesivo',
+      'Usa valsalva (respiración intra-abdominal)',
     ],
     variations: [
       'Push Press',
@@ -218,7 +218,7 @@ const EXERCISES: Exercise[] = [
       'Convertirlo en incline bench (lean back excesivo)',
       'No meter la cabeza bajo la barra en lockout',
       'Presionar hacia adelante en vez de arriba',
-      'Perder tensiÃ³n en core y glÃºteos',
+      'Perder tensión en core y glúteos',
       'Grip demasiado ancho',
     ],
   },
@@ -230,7 +230,7 @@ export default function ExerciseLibrary() {
   const [selectedMuscle, setSelectedMuscle] = useState<string>('all');
   const [selectedExercise, setSelectedExercise] = useState<string | null>(null);
 
-  const categories = ['all', 'Compuesto', 'Aislamiento', 'OlÃ­mpico', 'Calistenia'];
+  const categories = ['all', 'Compuesto', 'Aislamiento', 'Olímpico', 'Calistenia'];
   const muscleGroups = [
     'all',
     'Pecho',
@@ -409,7 +409,7 @@ export default function ExerciseLibrary() {
               {/* Muscle Groups */}
               <View className="bg-zinc-800 rounded-lg p-3 mb-3">
                 <Text className="text-white font-bold text-sm mb-2">
-                  MÃºsculos Trabajados
+                  Músculos Trabajados
                 </Text>
                 <View className="flex-row flex-wrap gap-2">
                   {exercise.muscleGroup.map((muscle, index) => (
@@ -447,7 +447,7 @@ export default function ExerciseLibrary() {
                 ))}
                 {exercise.instructions.length > 3 && (
                   <Text className="text-primary/80 text-xs mt-2">
-                    +{exercise.instructions.length - 3} pasos mÃ¡s...
+                    +{exercise.instructions.length - 3} pasos más...
                   </Text>
                 )}
               </View>

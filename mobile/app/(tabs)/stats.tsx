@@ -1,4 +1,4 @@
-ï»¿import React from 'react';
+import React from 'react';
 import {
   View,
   Text,
@@ -36,7 +36,7 @@ export default function StatsScreen() {
     <View className="flex-1 bg-gray-50">
       {/* Header */}
       <LinearGradient colors={['#9D12DE', '#7C3AED']} className="px-6 pt-12 pb-6">
-        <Text className="text-3xl font-bold text-white mb-2">EstadÃ­sticas</Text>
+        <Text className="text-3xl font-bold text-white mb-2">Estadísticas</Text>
         <Text className="text-primary/50">Tu progreso y logros</Text>
       </LinearGradient>
 
@@ -61,7 +61,7 @@ export default function StatsScreen() {
           {/* XP Progress to next level */}
           <View className="mt-4">
             <View className="flex-row justify-between mb-2">
-              <Text className="text-white/80 text-xs">PrÃ³ximo nivel</Text>
+              <Text className="text-white/80 text-xs">Próximo nivel</Text>
               <Text className="text-white text-xs font-semibold">
                 {((stats?.user.xp || 0) % 100)}/100 XP
               </Text>
@@ -80,9 +80,9 @@ export default function StatsScreen() {
           <View className="flex-row items-center justify-between">
             <View className="flex-1">
               <Text className="text-white/90 text-sm mb-1">Racha Actual</Text>
-              <Text className="text-white text-4xl font-bold">{streak} dÃ­as</Text>
+              <Text className="text-white text-4xl font-bold">{streak} días</Text>
               <Text className="text-orange-100 text-sm mt-1">
-                Â¡Sigue asÃ­! ðŸ”¥
+                ¡Sigue así! ??
               </Text>
             </View>
             <View className="bg-white/20 p-4 rounded-2xl">
@@ -122,7 +122,7 @@ export default function StatsScreen() {
         {/* Overall Stats */}
         <View>
           <Text className="text-xl font-bold text-gray-900 mb-4">
-            EstadÃ­sticas Totales
+            Estadísticas Totales
           </Text>
           <Card className="p-4">
             <View className="gap-4">
@@ -195,7 +195,7 @@ export default function StatsScreen() {
         {stats?.chart && stats.chart.length > 0 && (
           <View>
             <Text className="text-xl font-bold text-gray-900 mb-4">
-              Ãšltimos 30 DÃ­as
+              Últimos 30 Días
             </Text>
             <Card className="p-4">
               <View className="flex-row justify-around items-end h-32">
