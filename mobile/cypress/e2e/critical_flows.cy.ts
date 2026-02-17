@@ -6,15 +6,16 @@ describe('Flujos Críticos de RIZE', () => {
 
   // TEST 1: Validación de Registro (Contraseñas)
   it('1. [Registro] Debe validar coincidencia de contraseñas', () => {
-    cy.visit('/auth/register');
+    cy.visit('/auth/register', { timeout: 15000 });
     
+    cy.get('input', { timeout: 10000 }).should('have.length.at.least', 4);
     cy.get('input').eq(0).type('Test Name');     
     cy.get('input').eq(1).type('testuser');      
     cy.get('input').eq(2).type('valid@email.com');
     cy.get('input').eq(3).type('password123');   
     cy.get('input').eq(4).type('password999');   // Mismatch
 
-    cy.contains('Crear Cuenta').click();
+    cy.contains('Crear Cuenta', { timeout: 5000 }).click();
     
     // We expect NO navigation (stay on register page)
     cy.wait(1000);

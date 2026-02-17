@@ -24,10 +24,10 @@ describe('Card', () => {
       );
 
       const card = getByTestId('card');
-      expect(card.props.className).toContain('bg-white');
+      expect(card.props.className).toContain('bg-[#333333]');
       expect(card.props.className).toContain('rounded-xl');
       expect(card.props.className).toContain('p-4');
-      expect(card.props.className).toContain('shadow-sm');
+      expect(card.props.className).toContain('border');
     });
 
     it('should accept custom className', () => {

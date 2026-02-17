@@ -23,6 +23,8 @@ web-build/
 
 # Testing
 coverage/
+cypress/screenshots/
+cypress/videos/
 
 # IDE
 .vscode/

@@ -47,19 +47,33 @@ Valida el flujo principal de la app:
 
 ### Prerequisitos
 - Backend corriendo en `localhost:5000`
-- Expo corriendo en `localhost:8081`
-- Usuario de test creado en DB: `test@test.com` / `Admin123`
+- Expo web corriendo en `localhost:8081`:
+  ```bash
+  npm run web
+  # o: npx expo start --web --port 8081
+  ```
+- Usuario de test creado en DB: `test@test.com` / `Admin123` (solo para tests con API real)
 
 ### Comando para ejecutar tests
 
+**Terminal 1** – Iniciar servidor web:
+```bash
+cd mobile
+npm run web
+```
+
+**Terminal 2** – Ejecutar Cypress:
 ```bash
 cd mobile
 
 # Abrir Cypress Test Runner (interfaz interactiva)
-npm run cypress:open
+npm run test:e2e
 
 # Ejecutar tests en headless (sin interfaz)
-npm run cypress:run
+npm run test:e2e:run
+
+# Usar puerto alternativo (ej. 19006)
+CYPRESS_BASE_URL=http://127.0.0.1:19006 npm run test:e2e:run
 
 # Ejecutar solo tests de workout
 npm run cypress:run -- --spec cypress/e2e/workout-flow.cy.ts

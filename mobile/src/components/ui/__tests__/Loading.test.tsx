@@ -70,7 +70,8 @@ describe('Loading', () => {
       );
       
       const text = getByText('Loading...');
-      expect(text.props.style).toContainEqual({ color: customColor });
+      const styleArray = Array.isArray(text.props.style) ? text.props.style.flat(Infinity).filter(Boolean) : [text.props.style];
+      expect(styleArray.some(s => s && typeof s === 'object' && s.color === customColor)).toBe(true);
     });
   });
 
@@ -108,7 +109,8 @@ describe('Loading', () => {
       
       const text = getByText('Please wait');
       expect(text).toBeTruthy();
-      expect(text.props.style).toContainEqual({ color: '#9D12DE' });
+      const styleArray = Array.isArray(text.props.style) ? text.props.style.flat(Infinity).filter(Boolean) : [text.props.style];
+      expect(styleArray.some(s => s && typeof s === 'object' && s.color === '#9D12DE')).toBe(true);
     });
 
     it('should render text with custom color', () => {
@@ -117,7 +119,8 @@ describe('Loading', () => {
       );
       
       const text = getByText('Loading data');
-      expect(text.props.style).toContainEqual({ color: '#FF5722' });
+      const styleArray = Array.isArray(text.props.style) ? text.props.style.flat(Infinity).filter(Boolean) : [text.props.style];
+      expect(styleArray.some(s => s && typeof s === 'object' && s.color === '#FF5722')).toBe(true);
     });
   });
 
