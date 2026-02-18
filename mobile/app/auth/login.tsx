@@ -111,6 +111,8 @@ export default function LoginScreen() {
                     <Ionicons name="mail-outline" size={20} color="#E3E3E3" style={{ opacity: 0.7 }} />
                     <TextInput
                       testID="login-email-input"
+                      // @ts-expect-error data-testid for Cypress/RN Web
+                      data-testid="login-email-input"
                       className="flex-1 ml-3 text-text font-body text-base"
                       placeholder="ejemplo@email.com"
                       placeholderTextColor="rgba(227, 227, 227, 0.4)"
@@ -129,6 +131,8 @@ export default function LoginScreen() {
                     <Ionicons name="lock-closed-outline" size={20} color="#E3E3E3" style={{ opacity: 0.7 }} />
                     <TextInput
                       testID="login-password-input"
+                      // @ts-expect-error data-testid for Cypress/RN Web
+                      data-testid="login-password-input"
                       className="flex-1 ml-3 text-text font-body text-base"
                       placeholder="••••••••"
                       placeholderTextColor="rgba(227, 227, 227, 0.4)"
@@ -149,6 +153,8 @@ export default function LoginScreen() {
 
                 <TouchableOpacity 
                   testID="login-button"
+                  // @ts-expect-error data-testid for Cypress/RN Web
+                  data-testid="login-button"
                   className="bg-primary py-4 rounded-2xl items-center mt-4 shadow-[0_0_25px_rgba(157,18,222,0.5)] active:opacity-90 active:scale-[0.98] transition-transform"
                   onPress={handleLogin}
                   disabled={isLoading}

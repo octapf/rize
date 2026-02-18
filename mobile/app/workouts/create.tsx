@@ -234,6 +234,7 @@ export default function CreateWorkoutScreen() {
           onPress={handleCreate}
           disabled={createWorkout.isPending || !name.trim()}
           activeOpacity={0.8}
+          testID="create-workout-submit"
         >
           <LinearGradient
             colors={createWorkout.isPending || !name.trim() ? ['#9CA3AF', '#6B7280'] : ['#9D12DE', '#7C3AED']}

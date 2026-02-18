@@ -85,6 +85,22 @@ export interface WorkoutStatsResponse {
 }
 
 export const workoutsApi = {
+  /** Get current user's workouts - used by Home, history, progress, etc. */
+  getUserWorkouts: async (): Promise<{
+    success: boolean;
+    data: { workouts: Workout[]; pagination: { total: number; page: number; pages: number } };
+  }> => {
+    const response = await apiClient.get<WorkoutsResponse>('/workouts?limit=20');
+    const res = response.data;
+    return {
+      success: res.success,
+      data: {
+        workouts: res.data,
+        pagination: res.pagination,
+      },
+    };
+  },
+
   getWorkouts: async (query?: WorkoutsQuery): Promise<WorkoutsResponse> => {
     const params = new URLSearchParams();
     if (query?.page) params.append('page', query.page.toString());

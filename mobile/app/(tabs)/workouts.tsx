@@ -41,6 +41,7 @@ export default function WorkoutsScreen() {
             onPress={() => router.push('/workouts/create')}
             className="bg-[#9D12DE] rounded-full p-4 border border-white/10 shadow-lg shadow-purple-500/30"
             style={{ elevation: 5 }}
+            testID="create-workout-fab"
           >
             <Ionicons name="add" size={28} color="#FFF" />
           </TouchableOpacity>
@@ -77,6 +78,7 @@ export default function WorkoutsScreen() {
               <TouchableOpacity
                 onPress={() => router.push('/workouts/create')}
                 className="bg-[#9D12DE] px-6 py-3 rounded-full flex-row items-center gap-2"
+                testID="create-workout-empty"
               >
                 <Ionicons name="add-circle" size={20} color="white" />
                 <Text className="text-white font-semibold">Crear Entrenamiento</Text>

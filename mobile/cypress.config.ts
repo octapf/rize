@@ -6,8 +6,9 @@ export default defineConfig({
     viewportWidth: 375,
     viewportHeight: 812,
     defaultCommandTimeout: 15000,
-    requestTimeout: 15000,
-    responseTimeout: 15000,
+    requestTimeout: 10000,
+    responseTimeout: 10000,
+    pageLoadTimeout: 20000,
     retries: { runMode: 1, openMode: 0 },
     setupNodeEvents(on, config) {
       // implement node event listeners here
